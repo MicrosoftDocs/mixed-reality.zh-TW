@@ -1,0 +1,129 @@
+---
+title: 進階的 HoloLens 模擬器] 和 [混合實境模擬器輸入
+description: 使用鍵盤、 滑鼠及 X 方塊控制站，以模擬輸入的 HoloLens 模擬器和 Windows Mixed Reality 模擬器的詳細的指示。
+author: ChimeraScorn
+ms.author: cwhite
+ms.date: 02/24/2018
+ms.topic: article
+keywords: HoloLens，模擬器，模擬 Windows Mixed Reality
+ms.openlocfilehash: 59bea340a2ecdd2d65481c9ace4ab3f0bf15bc6f
+ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59591188"
+---
+# <a name="advanced-hololens-emulator-and-mixed-reality-simulator-input"></a>進階的 HoloLens 模擬器] 和 [混合實境模擬器輸入
+
+大部分的模擬器使用者只需要使用的基本輸入的控制項[HoloLens 模擬器](using-the-hololens-emulator.md#basic-emulator-input)或[Windows Mixed Reality 模擬器](using-the-windows-mixed-reality-simulator.md#basic-simulator-input)。 下面的詳細資料，會發現需要模擬更複雜的輸入類型的進階使用者。
+
+> [!NOTE]
+> HoloLens 2 的特定的詳細指引[即將推出](index.md#news-and-notes)。
+
+## <a name="concepts"></a>概念
+
+若要開始控制虛擬輸入 HoloLens 模擬器和 Windows Mixed Reality 模擬器，您應該先了解一些概念。
+
+動作是指控制和變更的位置和方向的場景中的項目。 目標的控制物件時，動作是使用輪替和沿著三個軸平移 （移動） 控制。
+* **偏航**:開啟左邊或右邊。
+* **字距**:開啟增加或相應減少。
+* **向前復原**:向前復原至並存。
+* **X**:左或向右移動。
+* **Y**:上移或下移。
+* **Z**:向前或向後移動。
+
+[筆勢](gestures.md)而且動作控制器的輸入會緊密對應到如何在實體裝置：
+* **動作**:這會模擬按下至 thumb 食指或提取控制站上的 [動作] 按鈕的動作。 例如，動作輸入可用來模擬空中點選手勢，捲動的內容，並按下保留。
+* **[Bloom](gestures.md#bloom)或 主資料夾**:HoloLens 百花齊放筆勢或交還給殼層，以及執行系統動作用控制器的 [首頁] 按鈕。
+
+指針會有豐富的 reprresentation HoloLens V2 中。  除了追蹤/未追蹤，並可供駕駛筆勢，手現在有相互連貫的基本架構模型的大小，以及公開給開發人員。  這會引入 20 上每一個指針的追蹤的點。  
+* **聯合**:其中一個指定的追蹤手二十個追蹤的位置。 這會有一個點與其相關聯的 3d 空間。
+* **會造成**:所有追蹤的角接點的完整集合。 在此階段中，這會是 20 接點的集合。 
+
+在此階段中，我們不會公開直接控制的個別透過模擬器 UI 的每個共同位置。 不過您可能會設定它們透過模擬 API。 相反地，我們有一組實用的代表性帶來，模擬器可讓您切換。
+
+您也可以控制模擬的感應器輸入狀態：
+* **重設**:這會傳回所有模擬的感應器，為其預設值。
+* **追蹤**:循環的位置追蹤模式。 這包括：
+  * **預設**:OS 選擇最佳基礎的系統提出之要求的追蹤模式。
+   * **方向**:強制執行僅限方向的追蹤，不論的系統提出之要求。
+   * **位置**:強制位置追蹤，不論要求是由系統所組成。
+
+## <a name="types-of-input"></a>類型的輸入
+
+下表顯示如何每個輸入的輸入對應到鍵盤、 滑鼠及 Xbox 控制器。 每個類型都有不同的對應，根據輸入的控制項模式;本文件稍後會提供輸入的控制項模式的詳細資訊。
+
+|  |  鍵盤 |  滑鼠 |  Xbox 控制器 | 
+|----------|----------|----------|----------|
+|  Yaw |  左 / 右的箭號 |  向左 / 向右拖曳 |  右搖桿左 / 右 | 
+|  上下移動 |  向上/向下箭號 |  向上 / 向下拖曳 |  右搖桿向上 / 向下 | 
+|  Roll |  Q / E |  |  DPad 左 / 右 | 
+|  X |  A / D |  |  左搖桿左 / 右 | 
+|  Y |  向上翻頁/向下翻頁 |  |  DPad 向上 / 向下 | 
+|  Z |  W / S |  |  左搖桿向上 / 向下 | 
+|  動作 |  Enter 或空格 |  右邊的按鈕 |  按鈕或其中一個觸發程序 | 
+|  Bloom |  F2 或 Windows 鍵 （Windows 金鑰僅適用於 HoloLens 模擬器） |  |  B 按鈕 | 
+|  控制器的底框的按鈕 |  G (Windows Mixed Reality 模擬器專用) |  |  | 
+|  控制器 [功能表] 按鈕 |  M (Windows Mixed Reality 模擬器專用) |  |  | 
+|  控制器觸控板觸控 |  U (Windows Mixed Reality 模擬器專用) |  |  | 
+|  控制器觸控按下 |  P (Windows Mixed Reality 模擬器專用) |  |  | 
+|  設定手動姿勢 | 7、 8、 9 或 0 |  |  |
+|  重設 |  Escape 鍵 |  |  [開始] 按鈕 | 
+|  追蹤 |  T 或 F3 |  |  X 按鈕 | 
+
+
+注意：只有 Windows Mixed Reality 模擬器，在控制器按鈕可以是一隻手或其他使用手形目標修飾詞的鎖定。
+
+## <a name="targeting"></a>目標預測 
+
+部分上面輸入的概念，就能他們自己。  動作、 Bloom、 Reset 及追蹤是完整的概念，不需要不會影響和的任何額外的修飾詞為目標。  不過，其餘的概念可以套用至多個目標的其中一個。 我們引進了讓您指定的預期您的命令應該套用至目標的方式。  在所有情況下，就可以指定透過 UI 或透過鍵盤按下，要 targtet 的物件。  在某些情況下，它，也可以直接指定 xbox 控制器。 
+
+下表說明目標，並以方式啟用每個選項。
+
+| 物件 | 鍵盤修飾詞 | 控制器修飾詞 | 模擬器 UI 修飾詞 |
+|----------|----------|----------|----------|
+| 本文 | <default> | <default> | <default> |
+| 標頭 | 保留 H | <None available> | 在 UI 中的標頭圖釘 |
+| 左側/控制站 | 韺靮鎏 Alt 按鈕 | 左的 Shoulder 按鈕 | 左側圖釘 | 
+| 右手邊/控制站 | 右邊的 Alt 按鈕 | 右 Shoulder 按鈕 | 右手邊圖釘 |
+| 眼睛 | 保留 Y | <No contoller modifier available> | 眼睛圖釘 |
+  
+下表顯示每個目標修飾詞如何對應每個核心移動輸入概念
+
+|  預設值 （本文） |  手動/控制站 (按住 alt 鍵分擔 /) |  標頭 （按住 H）  |  眼睛 （按住 Y） |
+|----------|----------|----------|----------|
+|  Yaw |  左 / 右開啟主體 |  左 / 右移動游標 |  左 / 右開啟標頭 | 眼睛視線尋找左/右 |
+|  上下移動 |  向上 / 向下開啟標頭 |  向上 / 向下移動游標 |  向上 / 向下開啟標頭 | 眼睛視線看起來向上/向下 | 
+|  Roll |  左 / 右滾動標頭 |  |  左 / 右滾動標頭 | （無動作） |
+|  X |  左 / 右的投影片主體 |  左 / 右移動游標/控制站 |  左 / 右開啟標頭 | （無動作） |
+|  Y |  向上 / 向下移動主體 |  向上 / 向下移動游標/控制站 |  向上 / 向下開啟標頭 | （無動作） |
+|  Z |  移動正 / 回溯的主體 |  將手/控制站正 / 向後移 |  向上 / 向下開啟標頭 | （無動作） |
+ 
+注意：只有 Windows Mixed Reality 模擬器，在控制器按鈕可以是一隻手或其他使用手形目標修飾詞的鎖定。 同樣地，在 HoloLens 只能在模擬器，相互連貫的手姿勢的可以是一隻手或其他使用手動修飾詞的鎖定。 
+ 
+## <a name="controlling-an-app"></a>控制應用程式
+
+這篇文章已說明一組完整的輸入的類型和 HoloLens 模擬器和 Windows Mixed Reality 模擬器中可用的輸入的模式。 下列一組控制項是日常使用的建議：
+
+|  運算 |  鍵盤和滑鼠 |  控制器 | 
+|----------|----------|----------|
+|  主體 X |  A / D |  左搖桿左 / 右 | 
+|  主體 Y |  向上翻頁/向下翻頁 |  DPad 向上 / 向下 | 
+|  主體 Z |  W / S |  左搖桿向上 / 向下 | 
+|  內文繞 |  拖曳滑鼠左 / 右 |  右搖桿左 / 右 | 
+|  Head 繞 |  H + 拖曳滑鼠向左 / 右 |  （在鍵盤） H + 右搖桿左 / 右 | 
+|  標頭字幅 |  拖曳滑鼠向上 / 向下 |  右搖桿向上 / 向下 | 
+|  Head 向前復原 |  Q / E |  DPad 左 / 右 | 
+|  手狀 X |  Alt + 拖曳滑鼠向左 / 右 |  Shoulder + 右搖桿左 / 右 | 
+|  手狀 Y |  Alt + 拖曳滑鼠向上 / 向下 |  Shoulder + 右搖桿向上 / 向下 | 
+|  手狀 Z |  Alt + W / S |  Shoulder + 左搖桿向上 / 向下 | 
+|  動作 |  滑鼠右按鈕 |  觸發程序 | 
+|  百花齊放 / 首頁 |  F2 或 Windows 鍵 （Windows 金鑰是僅針對 HoloLens 模擬器） |  B 按鈕 | 
+|  重設 |  ESC |  [開始] 按鈕 | 
+|  追蹤 |  T |  X 按鈕 | 
+|  捲動 |  Alt + 向右鍵滑鼠按鈕 + 向上 / 向下拖曳滑鼠 |  Shoulder 觸發程序 + 右搖桿向上 / 向下 | 
+
+## <a name="see-also"></a>另請參閱
+* [安裝工具](install-the-tools.md)
+* [使用 HoloLens 模擬器](using-the-hololens-emulator.md)
+* [使用 Windows Mixed Reality 模擬器](using-the-windows-mixed-reality-simulator.md)

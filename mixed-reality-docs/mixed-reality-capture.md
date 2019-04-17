@@ -1,0 +1,82 @@
+---
+title: 混合實境擷取
+description: 使用混合的實境擷取資訊。
+author: wguyman
+ms.author: wguyman
+ms.date: 10/02/2018
+ms.topic: article
+keywords: mrc，混合實境擷取、 相片、 視訊、 相機、 擷取、 使用量、 資料流、 即時串流、 示範
+ms.openlocfilehash: 18a80083bd25974905874c6c2ec0de87dc7424ab
+ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59596710"
+---
+# <a name="mixed-reality-capture"></a><span data-ttu-id="c027d-104">混合實境擷取</span><span class="sxs-lookup"><span data-stu-id="c027d-104">Mixed reality capture</span></span>
+
+<span data-ttu-id="c027d-105">HoloLens 讓使用者混合現實與數位世界的體驗。</span><span class="sxs-lookup"><span data-stu-id="c027d-105">HoloLens gives users the experience of mixing the real world with the digital world.</span></span> <span data-ttu-id="c027d-106">混合的實境擷取 (MRC) 可讓您擷取相片或視訊的經驗。</span><span class="sxs-lookup"><span data-stu-id="c027d-106">Mixed reality capture (MRC) let you capture that experience as either a photograph or a video.</span></span> <span data-ttu-id="c027d-107">這可讓您與其他人分享的體驗，讓它們能夠看到全像投影，因為您會看到它們。</span><span class="sxs-lookup"><span data-stu-id="c027d-107">This lets you share the experience with others by allowing them to see the holograms as you see them.</span></span> <span data-ttu-id="c027d-108">這類的影片和相片會從第一個人的觀點。</span><span class="sxs-lookup"><span data-stu-id="c027d-108">Such videos and photos are from a first-person point of view.</span></span> <span data-ttu-id="c027d-109">針對第三位使用者的觀點而言，使用[spectator 檢視](spectator-view.md)。</span><span class="sxs-lookup"><span data-stu-id="c027d-109">For a third-person point of view, use [spectator view](spectator-view.md).</span></span>
+
+<span data-ttu-id="c027d-110">分享影片之間社交圈超越混合的實境擷取的使用案例。</span><span class="sxs-lookup"><span data-stu-id="c027d-110">Use cases for mixed reality capture go beyond sharing videos amongst a social circle.</span></span> <span data-ttu-id="c027d-111">影片可用來指示其他人如何使用應用程式。</span><span class="sxs-lookup"><span data-stu-id="c027d-111">Videos can be used to instruct others on how to use an app.</span></span> <span data-ttu-id="c027d-112">開發人員可以使用視訊或仍然可改善重新產生步驟及偵錯的應用程式體驗。</span><span class="sxs-lookup"><span data-stu-id="c027d-112">Developers can use videos or stills to improve repro steps and debug app experiences.</span></span>
+
+## <a name="live-streaming-from-hololens"></a><span data-ttu-id="c027d-113">即時串流從 HoloLens</span><span class="sxs-lookup"><span data-stu-id="c027d-113">Live streaming from HoloLens</span></span>
+
+<span data-ttu-id="c027d-114">[Windows 10 年 10 月 2018 Update](release-notes-october-2018.md) Miracast 支援加入 HoloLens。</span><span class="sxs-lookup"><span data-stu-id="c027d-114">The [Windows 10 October 2018 Update](release-notes-october-2018.md) adds Miracast support to HoloLens.</span></span> <span data-ttu-id="c027d-115">選取  **Connect**底部的 開始 功能表啟動 已啟用 Miracast 的裝置和配接器的選擇器 按鈕。</span><span class="sxs-lookup"><span data-stu-id="c027d-115">Select the **Connect** button at the bottom of the Start menu to bring up a picker for Miracast-enabled devices and adapters.</span></span> <span data-ttu-id="c027d-116">選取您要開始串流處理的裝置。</span><span class="sxs-lookup"><span data-stu-id="c027d-116">Select the device to which you want to begin streaming.</span></span> <span data-ttu-id="c027d-117">完成時，選取**中斷連線**底部的 [開始] 功能表的按鈕。</span><span class="sxs-lookup"><span data-stu-id="c027d-117">When done, select the **Disconnect** button at the bottom of the Start menu.</span></span>  <span data-ttu-id="c027d-118">**連接**並**中斷連線**也會提供在 [快速動作] 功能表上。</span><span class="sxs-lookup"><span data-stu-id="c027d-118">**Connect** and **Disconnect** are also available on the quick actions menu.</span></span> 
+
+<span data-ttu-id="c027d-119">[Windows Device Portal](using-the-windows-device-portal.md)公開即時串流處理的選項，在開發人員模式的裝置。</span><span class="sxs-lookup"><span data-stu-id="c027d-119">The [Windows Device Portal](using-the-windows-device-portal.md) exposes live streaming options for devices that are in Developer mode.</span></span>
+
+## <a name="taking-mixed-reality-captures"></a><span data-ttu-id="c027d-120">採用混合的實境擷取</span><span class="sxs-lookup"><span data-stu-id="c027d-120">Taking mixed reality captures</span></span>
+
+<span data-ttu-id="c027d-121">![按一下底部的 [開始] 功能表的 [相機] 圖示](images/cameraiconinpins-300px.png)</span><span class="sxs-lookup"><span data-stu-id="c027d-121">![Click the camera icon at the bottom of the Start menu](images/cameraiconinpins-300px.png)</span></span><br>
+<span data-ttu-id="c027d-122">*按一下底部的 [開始] 功能表的 [相機] 圖示*</span><span class="sxs-lookup"><span data-stu-id="c027d-122">*Click the camera icon at the bottom of the Start menu*</span></span>
+
+<span data-ttu-id="c027d-123">有多種方式來起始混合的實境擷取：</span><span class="sxs-lookup"><span data-stu-id="c027d-123">There are multiple ways to initiate a mixed reality capture:</span></span>
+* <span data-ttu-id="c027d-124">Cortana 可以用在所有時間不論目前正在執行的應用程式。</span><span class="sxs-lookup"><span data-stu-id="c027d-124">Cortana can be used at all times regardless of the app currently running.</span></span> <span data-ttu-id="c027d-125">只是說: 「 嘿 Cortana，拍照 」 或 「 嘿 Cortana，開始錄製。 」</span><span class="sxs-lookup"><span data-stu-id="c027d-125">Just say, "Hey Cortana, take a picture" or "Hey Cortana, start recording."</span></span> <span data-ttu-id="c027d-126">若要停止的影片，請說 「 嘿 Cortana 停止錄製。 」</span><span class="sxs-lookup"><span data-stu-id="c027d-126">To stop a video, say "Hey Cortana, stop recording."</span></span>
+* <span data-ttu-id="c027d-127">在 [開始] 功能表上選取**相機**或是**視訊**。</span><span class="sxs-lookup"><span data-stu-id="c027d-127">On the Start menu, select either **Camera** or **Video**.</span></span> <span data-ttu-id="c027d-128">使用[空中點選](gestures.md#air-tap)開啟內建的 MRC 相機 UI。</span><span class="sxs-lookup"><span data-stu-id="c027d-128">Use [air-tap](gestures.md#air-tap) to open the built-in MRC camera UI.</span></span>
+* <span data-ttu-id="c027d-129">在 [快速動作] 功能表上選取**相機**或**視訊**開啟內建的 MRC 相機 UI。</span><span class="sxs-lookup"><span data-stu-id="c027d-129">On the quick actions menu, select either **Camera** or **Video** to open the built-in MRC camera UI.</span></span>
+* <span data-ttu-id="c027d-130">應用程式都能夠公開其自己的 UI，使用自訂的混合的實境擷取，或從[Windows 10 年 10 月 2018 Update](release-notes-october-2018.md)，[內建 MRC 相機 UI](mixed-reality-capture-for-developers.md)。</span><span class="sxs-lookup"><span data-stu-id="c027d-130">Apps are able to expose their own UI for mixed reality capture using custom or, as of the [Windows 10 October 2018 Update](release-notes-october-2018.md), [built-in MRC camera UI](mixed-reality-capture-for-developers.md).</span></span>
+* <span data-ttu-id="c027d-131">唯一 HoloLens:</span><span class="sxs-lookup"><span data-stu-id="c027d-131">Unique to HoloLens:</span></span> 
+    * <span data-ttu-id="c027d-132">[Windows Device Portal](using-the-windows-device-portal.md)混合的實境擷取頁面，可用來取得相片、 影片、 即時資料流，並檢視擷取。</span><span class="sxs-lookup"><span data-stu-id="c027d-132">[Windows Device Portal](using-the-windows-device-portal.md) has a mixed reality capture page that can be used to take photos, videos, live stream, and view captures.</span></span>
+    * <span data-ttu-id="c027d-133">按兩**音量提高**並**音量降低**按鈕，同時以拍照，不論目前正在執行的應用程式。</span><span class="sxs-lookup"><span data-stu-id="c027d-133">Press both the **volume up** and **volume down** buttons simultaneously to take a picture, regardless of the app currently running.</span></span>
+    * <span data-ttu-id="c027d-134">保存**音量提高**並**音量降低**三秒，若要開始錄製視訊的按鈕。</span><span class="sxs-lookup"><span data-stu-id="c027d-134">Hold the **volume up** and **volume down** buttons for three seconds to start recording a video.</span></span> <span data-ttu-id="c027d-135">若要停止的影片，請點選兩者**音量提高**並**音量降低**同時按鈕。</span><span class="sxs-lookup"><span data-stu-id="c027d-135">To stop a video, tap both **volume up** and **volume down** buttons simultaneously.</span></span>
+* <span data-ttu-id="c027d-136">唯一沈浸式耳機：</span><span class="sxs-lookup"><span data-stu-id="c027d-136">Unique to immersive headsets:</span></span> 
+    * <span data-ttu-id="c027d-137">使用動作控制站，保存**Windows**按鈕，然後點選**觸發程序**來拍照。</span><span class="sxs-lookup"><span data-stu-id="c027d-137">Using a motion controller, hold the **Windows** button and then tap the **trigger** to take a picture.</span></span> 
+    * <span data-ttu-id="c027d-138">使用動作控制站，保存**Windows**按鈕，然後點選**功能表**按鈕以啟動錄製影片。</span><span class="sxs-lookup"><span data-stu-id="c027d-138">Using a motion controller, hold the **Windows** button and then tap the **menu** button to start recording video.</span></span> <span data-ttu-id="c027d-139">保存**Windows**按鈕，然後點選**觸發程序**若要停止錄製影片。</span><span class="sxs-lookup"><span data-stu-id="c027d-139">Hold the **Windows** button and then tap the **trigger** to stop recording video.</span></span>
+    
+>[!NOTE]
+><span data-ttu-id="c027d-140">[Windows 10 年 10 月 2018 Update](release-notes-october-2018.md) bloom 和 [Windows] 按鈕的行為方式會變更。</span><span class="sxs-lookup"><span data-stu-id="c027d-140">The [Windows 10 October 2018 Update](release-notes-october-2018.md) changes how bloom and Windows button behave.</span></span> <span data-ttu-id="c027d-141">更新前, bloom 筆勢或 Windows 按鈕便會停止記錄。</span><span class="sxs-lookup"><span data-stu-id="c027d-141">Before the update, the bloom gesture or Windows button would stop recording.</span></span> <span data-ttu-id="c027d-142">更新之後，bloom 筆勢 或 Windows 按鈕會開啟 開始 功能表 （或如果您是在應用程式中的 快速動作 功能表）。</span><span class="sxs-lookup"><span data-stu-id="c027d-142">After the update, the bloom gesture or the Windows button opens the Start menu (or the quick actions menu if you are in an app).</span></span> <span data-ttu-id="c027d-143">在功能表中，選取**停止視訊**停止錄製。</span><span class="sxs-lookup"><span data-stu-id="c027d-143">In the menu, select **Stop video** to stop recording.</span></span>
+
+### <a name="limitations-of-mixed-reality-capture"></a><span data-ttu-id="c027d-144">混合的實境擷取的限制</span><span class="sxs-lookup"><span data-stu-id="c027d-144">Limitations of mixed reality capture</span></span>
+
+<span data-ttu-id="c027d-145">HoloLens，在系統將會節流 30 赫茲轉譯速率。</span><span class="sxs-lookup"><span data-stu-id="c027d-145">On HoloLens, the system will throttle the render rate to 30Hz.</span></span> <span data-ttu-id="c027d-146">這會建立執行應用程式不需要保留固定的預算保留，因此 MRC 一些成長空間，並也會比對的 30fps MRC 影片記錄畫面播放速率。</span><span class="sxs-lookup"><span data-stu-id="c027d-146">This creates some headroom for MRC to run so the app doesn’t need to keep a constant budget reserve, and also matches the MRC video record framerate of 30fps.</span></span>
+
+<span data-ttu-id="c027d-147">影片會有最大長度為五分鐘的時間。</span><span class="sxs-lookup"><span data-stu-id="c027d-147">Videos have a maximum length of five minutes.</span></span>
+
+<span data-ttu-id="c027d-148">內建的 MRC 相機 UI 只支援單一 MRC 作業一次 （拍攝照片是互斥的錄製的視訊）。</span><span class="sxs-lookup"><span data-stu-id="c027d-148">The built-in MRC camera UI only supports a single MRC operation at a time (taking a picture is mutually exclusive from recording a video).</span></span>
+
+### <a name="file-formats"></a><span data-ttu-id="c027d-149">檔案格式</span><span class="sxs-lookup"><span data-stu-id="c027d-149">File formats</span></span>
+
+<span data-ttu-id="c027d-150">混合的實境會擷取從 Cortana 語音命令，並開始 功能表工具建立的檔案格式如下：</span><span class="sxs-lookup"><span data-stu-id="c027d-150">Mixed reality captures from Cortana voice commands and Start Menu tools create files in the following formats:</span></span>
+
+|  <span data-ttu-id="c027d-151">類型</span><span class="sxs-lookup"><span data-stu-id="c027d-151">Type</span></span>  |  <span data-ttu-id="c027d-152">格式</span><span class="sxs-lookup"><span data-stu-id="c027d-152">Format</span></span>  |  <span data-ttu-id="c027d-153">延伸</span><span class="sxs-lookup"><span data-stu-id="c027d-153">Extension</span></span>  |  <span data-ttu-id="c027d-154">解析度</span><span class="sxs-lookup"><span data-stu-id="c027d-154">Resolution</span></span>  |  <span data-ttu-id="c027d-155">音訊</span><span class="sxs-lookup"><span data-stu-id="c027d-155">Audio</span></span> | 
+|----------|----------|----------|----------|----------|
+|  <span data-ttu-id="c027d-156">Photo</span><span class="sxs-lookup"><span data-stu-id="c027d-156">Photo</span></span>  |  [<span data-ttu-id="c027d-157">JPEG</span><span class="sxs-lookup"><span data-stu-id="c027d-157">JPEG</span></span>](https://en.wikipedia.org/wiki/JPEG)  |  <span data-ttu-id="c027d-158">.jpg</span><span class="sxs-lookup"><span data-stu-id="c027d-158">.jpg</span></span>  |  <span data-ttu-id="c027d-159">1408x792px (HoloLens) 1920x1080px<br> （沈浸式耳機）</span><span class="sxs-lookup"><span data-stu-id="c027d-159">1408x792px (HoloLens) 1920x1080px (Immersive headsets)</span></span> |  <span data-ttu-id="c027d-160">N/A</span><span class="sxs-lookup"><span data-stu-id="c027d-160">N/A</span></span> | 
+|  <span data-ttu-id="c027d-161">視訊</span><span class="sxs-lookup"><span data-stu-id="c027d-161">Video</span></span>  |  [<span data-ttu-id="c027d-162">MPEG-4</span><span class="sxs-lookup"><span data-stu-id="c027d-162">MPEG-4</span></span>](https://en.wikipedia.org/wiki/MPEG-4)  |  <span data-ttu-id="c027d-163">.mp4</span><span class="sxs-lookup"><span data-stu-id="c027d-163">.mp4</span></span>  |  <span data-ttu-id="c027d-164">1408x792px (HoloLens) 1632x918px （沈浸式耳機）</span><span class="sxs-lookup"><span data-stu-id="c027d-164">1408x792px (HoloLens) 1632x918px (Immersive headsets)</span></span> |  <span data-ttu-id="c027d-165">48 kHz 立體聲</span><span class="sxs-lookup"><span data-stu-id="c027d-165">48kHz Stereo</span></span> | 
+
+## <a name="viewing-mixed-reality-captures"></a><span data-ttu-id="c027d-166">檢視混合的實境擷取</span><span class="sxs-lookup"><span data-stu-id="c027d-166">Viewing mixed reality captures</span></span>
+
+<span data-ttu-id="c027d-167">混合的實境擷取相片和視訊會儲存到裝置的 「 手機相簿"資料夾中。</span><span class="sxs-lookup"><span data-stu-id="c027d-167">Mixed reality capture photos and videos are saved to the device's "Camera roll" folder.</span></span> <span data-ttu-id="c027d-168">這些可以透過存取[照片 app](see-your-photos.md#photos-app)或檔案總管。</span><span class="sxs-lookup"><span data-stu-id="c027d-168">These can be accessed via the [Photos app](see-your-photos.md#photos-app) or File Explorer.</span></span>
+
+<span data-ttu-id="c027d-169">在 PC 上連線到 HoloLens，您也可以使用[Windows Device Portal](using-the-windows-device-portal.md#mixed-reality-capture)或 [檔案總管] 中您的電腦 ([透過 MTP](release-notes-april-2018.md#new-features-for-hololens))。</span><span class="sxs-lookup"><span data-stu-id="c027d-169">On a PC connected to HoloLens, you can also use [Windows Device Portal](using-the-windows-device-portal.md#mixed-reality-capture) or your PC's File Explorer ([via MTP](release-notes-april-2018.md#new-features-for-hololens)).</span></span>
+
+<span data-ttu-id="c027d-170">如果您安裝[OneDrive 應用程式](https://www.microsoft.com/p/onedrive/9wzdncrfj1p3)，您可以開啟**相機上傳，** 和 MRC 相片和視訊會同步至 OneDrive 和其他裝置使用 OneDrive。</span><span class="sxs-lookup"><span data-stu-id="c027d-170">If you install the [OneDrive app](https://www.microsoft.com/p/onedrive/9wzdncrfj1p3), you can turn on **Camera upload,** and your MRC photos and videos will sync to OneDrive and your other devices using OneDrive.</span></span>
+
+>[!NOTE]
+><span data-ttu-id="c027d-171">從 Windows 10 April 2018 Update，相片應用程式將不會再上傳相片和視訊到 OneDrive。</span><span class="sxs-lookup"><span data-stu-id="c027d-171">As of the Windows 10 April 2018 Update, the Photos app will no longer upload your photos and videos to OneDrive.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="c027d-172">另請參閱</span><span class="sxs-lookup"><span data-stu-id="c027d-172">See also</span></span>
+* [<span data-ttu-id="c027d-173">Spectator 檢視</span><span class="sxs-lookup"><span data-stu-id="c027d-173">Spectator view</span></span>](spectator-view.md)
+* [<span data-ttu-id="c027d-174">之外的可尋獲相機</span><span class="sxs-lookup"><span data-stu-id="c027d-174">Locatable camera</span></span>](locatable-camera.md)
+* [<span data-ttu-id="c027d-175">混合實境擷取適用於開發人員</span><span class="sxs-lookup"><span data-stu-id="c027d-175">Mixed reality capture for developers</span></span>](mixed-reality-capture-for-developers.md)
+* [<span data-ttu-id="c027d-176">請參閱您的相片</span><span class="sxs-lookup"><span data-stu-id="c027d-176">See your photos</span></span>](see-your-photos.md)
+* [<span data-ttu-id="c027d-177">使用 Windows Device Portal</span><span class="sxs-lookup"><span data-stu-id="c027d-177">Using the Windows Device Portal</span></span>](using-the-windows-device-portal.md)

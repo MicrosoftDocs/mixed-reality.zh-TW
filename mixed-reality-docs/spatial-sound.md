@@ -1,0 +1,65 @@
+---
+title: 空間音效
+description: 在混合的實境應用程式中使用空間的聲音，可讓您 convincingly 放置在 3D 空間中的音效。
+author: hak0n
+ms.author: hakons
+ms.date: 03/21/2018
+ms.topic: article
+keywords: 空間的音效、 環繞音效、 3d 的音訊、 3d 的音效、 空間音訊
+ms.openlocfilehash: ccb236a8b53e757ba632a1c7c6cb2d4f07735910
+ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59592147"
+---
+# <a name="spatial-sound"></a><span data-ttu-id="605d4-104">空間音效</span><span class="sxs-lookup"><span data-stu-id="605d4-104">Spatial sound</span></span>
+
+<span data-ttu-id="605d4-105">當物件不在我們的視野時，我們能夠察覺發生什麼情況我們週遭的方式之一是透過音效。</span><span class="sxs-lookup"><span data-stu-id="605d4-105">When objects are out of our line of sight, one of the ways that we can perceive what's going on around us is through sound.</span></span> <span data-ttu-id="605d4-106">在 Windows Mixed Reality，音訊引擎會提供混合實境體驗聽覺元件，藉由模擬 3D 方向、 距離和環境模擬使用的音效。</span><span class="sxs-lookup"><span data-stu-id="605d4-106">In Windows Mixed Reality, the audio engine provides the aural component of the mixed-reality experience by simulating 3D sound using direction, distance, and environmental simulations.</span></span> <span data-ttu-id="605d4-107">在 應用程式中使用空間的聲音各地使用者允許開發人員 convincingly 置於 3 維空間 （球形） 中的音效。</span><span class="sxs-lookup"><span data-stu-id="605d4-107">Using spatial sound in an application allows developers to convincingly place sounds in a 3 dimensional space (sphere) all around the user.</span></span> <span data-ttu-id="605d4-108">這些聽起來再看起來將如同就像是來自真正的實體物件或使用者的周圍環境中混合的實境全像投影。</span><span class="sxs-lookup"><span data-stu-id="605d4-108">Those sounds will then seem as if they were coming from real physical objects or the mixed reality holograms in the user's surroundings.</span></span> <span data-ttu-id="605d4-109">假設[全像投影](hologram.md)會進行的光線的物件，並幫助的有時音效、 音效元件地面全像投影使其更可信，並建立更多人沉迷的體驗。</span><span class="sxs-lookup"><span data-stu-id="605d4-109">Given that [holograms](hologram.md) are objects made of light and sometimes sound, the sound component helps ground holograms making them more believable and creating a more immersive experience.</span></span>
+
+<span data-ttu-id="605d4-110">雖然全像投影只可以出現視覺上使用者的視線所指向的位置，您的應用程式的聲音可能來自所有方向;上方下, 面，一邊，等等。您可以使用這項功能，以強調目前可能不存在的使用者檢視中的物件。</span><span class="sxs-lookup"><span data-stu-id="605d4-110">Although holograms can only appear visually where the user's gaze is pointing, your app's sound can come from all directions; above, below, behind, to the side, etc. You can use this feature to draw attention to an object that might not currently be in the user's view.</span></span> <span data-ttu-id="605d4-111">使用者能夠察覺聲音，動畫從混合現實世界中的來源。</span><span class="sxs-lookup"><span data-stu-id="605d4-111">A user can perceive sounds to be emanating from a source in the mixed-reality world.</span></span> <span data-ttu-id="605d4-112">比方說，當使用者即將來臨的物件或物件取得較近時，會增加磁碟區。</span><span class="sxs-lookup"><span data-stu-id="605d4-112">For example, as the user gets closer to an object or the object gets closer to them, the volume increases.</span></span> <span data-ttu-id="605d4-113">同樣地，當物件移動周圍的使用者，或反之亦然，空間的聲音會讓聽起來來自直接從物件的假象。</span><span class="sxs-lookup"><span data-stu-id="605d4-113">Similarly, as objects move around a user, or vice versa, spatial sounds give the illusion that sounds are coming directly from the object.</span></span>
+
+<br>
+
+>[!VIDEO https://www.youtube.com/embed/PTPvx7mDon4]
+
+## <a name="device-support"></a><span data-ttu-id="605d4-114">裝置支援</span><span class="sxs-lookup"><span data-stu-id="605d4-114">Device support</span></span>
+
+<table>
+<tr>
+<th><span data-ttu-id="605d4-115">功能</span><span class="sxs-lookup"><span data-stu-id="605d4-115">Feature</span></span></th><th style="width:150px"> <span data-ttu-id="605d4-116"><a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></span><span class="sxs-lookup"><span data-stu-id="605d4-116"><a href="hololens-hardware-details.md">HoloLens (1st gen)</a></span></span></th><th style="width:150px"><span data-ttu-id="605d4-117">HoloLens 2</span><span class="sxs-lookup"><span data-stu-id="605d4-117">HoloLens 2</span></span></th><th style="width:150px"><span data-ttu-id="605d4-118"><a href="immersive-headset-hardware-details.md">沈浸式耳機</a></span><span class="sxs-lookup"><span data-stu-id="605d4-118"><a href="immersive-headset-hardware-details.md">Immersive headsets</a></span></span></th>
+</tr><tr>
+
+<td> <span data-ttu-id="605d4-119">空間音效</span><span class="sxs-lookup"><span data-stu-id="605d4-119">Spatial sound</span></span></td><td style="text-align: center;"> <span data-ttu-id="605d4-120">✔️</span><span class="sxs-lookup"><span data-stu-id="605d4-120">✔️</span></span></td><td style="text-align: center;"> <span data-ttu-id="605d4-121">✔️</span><span class="sxs-lookup"><span data-stu-id="605d4-121">✔️</span></span></td><td style="text-align: center;"> <span data-ttu-id="605d4-122">✔️ （使用耳機）</span><span class="sxs-lookup"><span data-stu-id="605d4-122">✔️ (with headphones)</span></span></td>
+
+</tr>
+</table>
+
+## <a name="simulating-the-perceived-location-and-distance-of-sounds"></a><span data-ttu-id="605d4-123">模擬的認知的位置和距離的音效</span><span class="sxs-lookup"><span data-stu-id="605d4-123">Simulating the perceived location and distance of sounds</span></span>
+
+<span data-ttu-id="605d4-124">藉由分析如何音效達到這兩個耳朵，我們的大腦決定距離和物件發出聲音的方向。</span><span class="sxs-lookup"><span data-stu-id="605d4-124">By analyzing how sound reaches both our ears, our brain determines the distance and direction of the object emitting the sound.</span></span> <span data-ttu-id="605d4-125">模型化幽靈回應特性 이 어 空間中的點從所接收的聲音 HRTF （或標頭相關傳輸函式） 時，模擬這種互動。</span><span class="sxs-lookup"><span data-stu-id="605d4-125">An HRTF (or Head Related Transfer Function) simulates this interaction by modeling the spectral response that characterizes how an ear receives sound from a point in space.</span></span> <span data-ttu-id="605d4-126">空間的音訊引擎會使用個人化的 HRTFs 拓展混合的實境體驗，並模擬來自不同的方向和距離的音效。</span><span class="sxs-lookup"><span data-stu-id="605d4-126">The spatial audio engine uses personalized HRTFs to expand the mixed reality experience, and simulate sounds that are coming from various directions and distances.</span></span>
+
+<br>
+
+>[!VIDEO https://www.youtube.com/embed/aB3TDjYklmo]
+
+<span data-ttu-id="605d4-127">向左或右音訊 (azimuth) 提示源自音效抵達每個 이 어 時間差異。</span><span class="sxs-lookup"><span data-stu-id="605d4-127">Left or right audio (azimuth) cues originate from differences in the time sound arrives at each ear.</span></span> <span data-ttu-id="605d4-128">向上和向下提示源自幽靈 outer 이 어 圖形 (pinnae) 所產生的變更。</span><span class="sxs-lookup"><span data-stu-id="605d4-128">Up and down cues originate from spectral changes produced by the outer ear shape (pinnae).</span></span> <span data-ttu-id="605d4-129">指定在音訊來源，系統可以模擬耳朵來在不同時間抵達的音效的體驗。</span><span class="sxs-lookup"><span data-stu-id="605d4-129">By designating where audio is coming from, the system can simulate the experience of sound arriving at different times to our ears.</span></span> <span data-ttu-id="605d4-130">請注意，在 HoloLens，azimuth 往個人化，而提高權限模擬基礎 anthropometrics 平均組。</span><span class="sxs-lookup"><span data-stu-id="605d4-130">Note that on HoloLens, while azimuth spatialization is personalized, the simulation of elevation is based on an average set of anthropometrics.</span></span> <span data-ttu-id="605d4-131">因此，提高精確度，可能比 azimuth 精確度較不精確。</span><span class="sxs-lookup"><span data-stu-id="605d4-131">Thus, elevation accuracy may be less accurate than azimuth accuracy.</span></span>
+
+<span data-ttu-id="605d4-132">音效的特性也會變更根據它們的環境。</span><span class="sxs-lookup"><span data-stu-id="605d4-132">The characteristics of sounds also change based on the environment in which they exist.</span></span> <span data-ttu-id="605d4-133">比方說，喊叫的洞裡會導致您的聲音，彈開牆壁、 現場和上限，建立迴音效果。</span><span class="sxs-lookup"><span data-stu-id="605d4-133">For instance, shouting in a cave will cause your voice to bounce off the walls, floors, and ceilings, creating an echo effect.</span></span> <span data-ttu-id="605d4-134">空間的聲音的空間模型設定重現這些反射放置在特定的音訊環境中的音效。</span><span class="sxs-lookup"><span data-stu-id="605d4-134">The room model setting of spatial sound reproduces these reflections to place sounds in a particular audio environment.</span></span> <span data-ttu-id="605d4-135">您可以使用此設定，以符合使用者的實際位置為該空間中的音效模擬來建立更多人沉迷的音訊體驗。</span><span class="sxs-lookup"><span data-stu-id="605d4-135">You can use this setting to match the user's actual location for simulation of sounds in that space to create a more immersive audio experience.</span></span>
+
+## <a name="integrating-spatial-sound"></a><span data-ttu-id="605d4-136">整合空間的音效</span><span class="sxs-lookup"><span data-stu-id="605d4-136">Integrating spatial sound</span></span>
+
+<span data-ttu-id="605d4-137">由於混合實境的一般原則是要地面[全像投影](hologram.md)應該在使用者的真實世界或虛擬環境，spatialized 從全像投影的大部分音效。</span><span class="sxs-lookup"><span data-stu-id="605d4-137">Because the general principle of mixed reality is to ground [holograms](hologram.md) in the user's physical world or virtual environment, most sounds from holograms should be spatialized.</span></span> <span data-ttu-id="605d4-138">HoloLens，在有自然 CPU 和記憶體的預算考量，但您可以使用 10-12 空間音效語音那里同時使用小於 ~ 12%的 CPU （其中四個核心的 ~ 70%)。</span><span class="sxs-lookup"><span data-stu-id="605d4-138">On HoloLens, there are naturally CPU and memory budget considerations, but you can use 10-12 spatial sound voices there while using less than ~12% of the CPU (~70% of one of the four cores).</span></span> <span data-ttu-id="605d4-139">建議的使用的空間音效語音包括：</span><span class="sxs-lookup"><span data-stu-id="605d4-139">Recommended use for spatial sound voices include:</span></span>
+* <span data-ttu-id="605d4-140">視線 （反白顯示的物件，特別是當超出檢視） 的混合。</span><span class="sxs-lookup"><span data-stu-id="605d4-140">Gaze Mixing (highlighting objects, particularly when out of view).</span></span> <span data-ttu-id="605d4-141">當雷射需要使用者的注意力時，則在該全像圖上播放音效 （例如具有虛擬 dog 樹皮）。</span><span class="sxs-lookup"><span data-stu-id="605d4-141">When a hologram needs a user's attention, play a sound on that hologram (e.g. have a virtual dog bark).</span></span> <span data-ttu-id="605d4-142">這可協助使用者尋找全像圖不在檢視中時。</span><span class="sxs-lookup"><span data-stu-id="605d4-142">This helps the user to find the hologram when it is not in view.</span></span>
+* <span data-ttu-id="605d4-143">音訊 Haptics （反應式音訊 touchless 互動）。</span><span class="sxs-lookup"><span data-stu-id="605d4-143">Audio Haptics (reactive audio for touchless interactions).</span></span> <span data-ttu-id="605d4-144">比方說，當使用者的手或移動控制站進入和離開筆勢框架時，才能播放的音效。</span><span class="sxs-lookup"><span data-stu-id="605d4-144">For example, play a sound when the user's hand or motion controller enters and exits the gesture frame.</span></span> <span data-ttu-id="605d4-145">或當使用者選取雷射播放的音效。</span><span class="sxs-lookup"><span data-stu-id="605d4-145">Or play a sound when the user selects a hologram.</span></span>
+* <span data-ttu-id="605d4-146">深度 （環境的相關使用者的聲音）。</span><span class="sxs-lookup"><span data-stu-id="605d4-146">Immersion (ambient sounds surrounding the user).</span></span>
+
+<span data-ttu-id="605d4-147">務必也請注意，雖然混用空間的音效標準立體聲音聽起來可能很有效地建立實際環境，是立體聲的音效應該要保留的空間的音效，例如反射 （細微層面的空間相對較無訊息距離提示），可能很難聽到吵雜的環境中。</span><span class="sxs-lookup"><span data-stu-id="605d4-147">It is also important to note that while blending standard stereo sounds with spatial sound can be effective in creating realistic environments, the stereo sounds should be relatively quiet to leave room for the subtle aspects of spatial sound, such as reflections (distance cues) that can be difficult to hear in a noisy environment.</span></span>
+
+<span data-ttu-id="605d4-148">Windows 的空間音效引擎只支援播放 48 的 k 取樣率。</span><span class="sxs-lookup"><span data-stu-id="605d4-148">Windows' spatial sound engine only supports a 48k sample rate for playback.</span></span> <span data-ttu-id="605d4-149">大部分中的介軟體，例如 Unity，將會自動將音效檔轉換成支援的格式，但直接使用 Windows 音訊 Api 時請比對來影響所支援之格式內容的格式。</span><span class="sxs-lookup"><span data-stu-id="605d4-149">Most middleware, such as Unity, will automatically convert sound files into the supported format, but when using Windows Audio APIs directly please match the format of the content to the format supported by the effect.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="605d4-150">另請參閱</span><span class="sxs-lookup"><span data-stu-id="605d4-150">See also</span></span>
+* [<span data-ttu-id="605d4-151">MR Spatial 220</span><span class="sxs-lookup"><span data-stu-id="605d4-151">MR Spatial 220</span></span>](holograms-220.md)
+* [<span data-ttu-id="605d4-152">在 Unity 中的空間音效</span><span class="sxs-lookup"><span data-stu-id="605d4-152">Spatial sound in Unity</span></span>](spatial-sound-in-unity.md)
+* [<span data-ttu-id="605d4-153">DirectX 中的空間音效</span><span class="sxs-lookup"><span data-stu-id="605d4-153">Spatial sound in DirectX</span></span>](spatial-sound-in-directx.md)
+* [<span data-ttu-id="605d4-154">空間完善的設計</span><span class="sxs-lookup"><span data-stu-id="605d4-154">Spatial sound design</span></span>](spatial-sound-design.md)

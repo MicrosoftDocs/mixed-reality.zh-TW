@@ -1,0 +1,66 @@
+---
+title: 混合的實境應用程式類型
+description: 開發 Windows Mixed Reality 應用程式的優點之一是會有各種平台可支援全面沈浸式的虛擬環境，以透過使用者的目前 environmentl 淺資訊圖層的體驗。
+author: rwinj
+ms.author: willyang
+ms.date: 03/21/2018
+ms.topic: article
+keywords: Windows Mixed Reality，設計、 應用程式模式
+ms.openlocfilehash: 97f8039dcd9bbf8ee3d6c7be926db16b60a76b97
+ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59591359"
+---
+# <a name="types-of-mixed-reality-apps"></a><span data-ttu-id="b3eb8-104">混合的實境應用程式類型</span><span class="sxs-lookup"><span data-stu-id="b3eb8-104">Types of mixed reality apps</span></span>
+
+<span data-ttu-id="b3eb8-105">開發 Windows Mixed Reality 應用程式的優點之一是會有各種平台可以支援的體驗。</span><span class="sxs-lookup"><span data-stu-id="b3eb8-105">One of the advantages of developing apps for Windows Mixed Reality is that there is a spectrum of experiences that the platform can support.</span></span> <span data-ttu-id="b3eb8-106">全面沈浸式的虛擬環境中，透過使用者的目前環境中，分層的淺色資訊從 Windows Mixed Reality 會提供一組強固的工具，可將任何體驗融入生活。</span><span class="sxs-lookup"><span data-stu-id="b3eb8-106">From fully immersive, virtual environments, to light information layering over a user’s current environment, Windows Mixed Reality provides a robust set of tools to bring any experience to life.</span></span> <span data-ttu-id="b3eb8-107">請務必了解在有關，以及此頻譜體驗位於其開發程序初期的應用程式製作者的。</span><span class="sxs-lookup"><span data-stu-id="b3eb8-107">It is important for an app maker to understand early in their development process as to where along this spectrum their experience lies.</span></span> <span data-ttu-id="b3eb8-108">應用程式的設計結構和技術的路徑進行開發，最終會影響此決策。</span><span class="sxs-lookup"><span data-stu-id="b3eb8-108">This decision will ultimately impact both the app design makeup and the technological path for development.</span></span>
+
+## <a name="enhanced-environment-apps-hololens-only"></a><span data-ttu-id="b3eb8-109">增強的環境的應用程式 (僅 HoloLens)</span><span class="sxs-lookup"><span data-stu-id="b3eb8-109">Enhanced environment apps (HoloLens only)</span></span>
+
+<span data-ttu-id="b3eb8-110">其中一種最強大的混合的實境可以帶入使用者的值是由加速的數位資訊或在使用者的目前環境中的內容位置。</span><span class="sxs-lookup"><span data-stu-id="b3eb8-110">One of the most powerful ways that mixed reality can bring value to users is by facilitating the placement of digital information or content in a user’s current environment.</span></span> <span data-ttu-id="b3eb8-111">這是增強的環境應用程式。</span><span class="sxs-lookup"><span data-stu-id="b3eb8-111">This is an enhanced environment app.</span></span> <span data-ttu-id="b3eb8-112">這種方法是最受歡迎的應用程式，是最重要的內容位置的真實世界中的數位內容及/或保留使用者的真實世界環境"present"其體驗期間是索引鍵。</span><span class="sxs-lookup"><span data-stu-id="b3eb8-112">This approach is popular for apps where the contextual placement of digital content in the real world is paramount and/or keeping the user’s real world environment “present” during their experience is key.</span></span> <span data-ttu-id="b3eb8-113">這種方法也可讓使用者輕鬆地從真實世界工作移到數位的工作，並輕鬆回借貸來保證，使用者會看到所宣稱其環境的一部分的混合的實境應用程式的更多 credence。</span><span class="sxs-lookup"><span data-stu-id="b3eb8-113">This approach also allows users to easily move from real world tasks to digital tasks and back easily, lending even more credence to promise that the mixed reality apps the user sees are truly a part of their environment.</span></span>
+
+<span data-ttu-id="b3eb8-114">![增強的環境的應用程式](images/enhancedenvironmentapps-640px.jpg)</span><span class="sxs-lookup"><span data-stu-id="b3eb8-114">![Enhanced environment apps](images/enhancedenvironmentapps-640px.jpg)</span></span><br>
+<span data-ttu-id="b3eb8-115">*增強的環境的應用程式*</span><span class="sxs-lookup"><span data-stu-id="b3eb8-115">*Enhanced environment apps*</span></span>
+
+<span data-ttu-id="b3eb8-116">**範例會使用**</span><span class="sxs-lookup"><span data-stu-id="b3eb8-116">**Example uses**</span></span>
+* <span data-ttu-id="b3eb8-117">可讓使用者建立和放置備忘稿，解決他們的環境混合的實境 「 記事本 」 樣式應用程式</span><span class="sxs-lookup"><span data-stu-id="b3eb8-117">A mixed reality notepad style app that allows users to create and place notes around their environment</span></span>
+* <span data-ttu-id="b3eb8-118">Mixed 的 reality 電視應用程式放在熟悉的位置，進行檢視</span><span class="sxs-lookup"><span data-stu-id="b3eb8-118">A mixed reality television app placed in a comfortable spot for viewing</span></span>
+* <span data-ttu-id="b3eb8-119">混合的實境，烹飪應用程式放上方廚房島，以協助烹飪的工作</span><span class="sxs-lookup"><span data-stu-id="b3eb8-119">A mixed reality cooking app placed above the kitchen island to assist in a cooking task</span></span>
+* <span data-ttu-id="b3eb8-120">Mixed 的 reality 應用程式，讓使用者 「 超人 」 的感覺 （也就是全像之上的放置和模擬真實世界的物件，同時允許使用者檢視 」 內 「 全）</span><span class="sxs-lookup"><span data-stu-id="b3eb8-120">A mixed reality app that gives users the feeling of “x-ray vision” (i.e. a hologram placed on top of and mimics a real world object, while allowing the user to see “inside it” holographically)</span></span>
+* <span data-ttu-id="b3eb8-121">混合的實境附註放在提供背景工作的必要資訊的處理站</span><span class="sxs-lookup"><span data-stu-id="b3eb8-121">Mixed reality annotations placed throughout a factory to give worker’s necessary information</span></span>
+* <span data-ttu-id="b3eb8-122">在辦公室空間中的混合的實境 wayfinding</span><span class="sxs-lookup"><span data-stu-id="b3eb8-122">Mixed reality wayfinding in an office space</span></span>
+* <span data-ttu-id="b3eb8-123">（也就是棋盤遊戲樣式體驗） 的混合的實境桌面體驗</span><span class="sxs-lookup"><span data-stu-id="b3eb8-123">Mixed reality tabletop experiences (i.e. board game style experiences)</span></span>
+* <span data-ttu-id="b3eb8-124">混合的實境通訊應用程式，像是 Skype</span><span class="sxs-lookup"><span data-stu-id="b3eb8-124">Mixed reality communication apps like Skype</span></span>
+
+## <a name="blended-environment-apps"></a><span data-ttu-id="b3eb8-125">混合式的環境的應用程式</span><span class="sxs-lookup"><span data-stu-id="b3eb8-125">Blended environment apps</span></span>
+
+<span data-ttu-id="b3eb8-126">指定辨識，並將對應的使用者環境的 Windows Mixed Reality 的能力，就能夠建立可完全重疊的使用者空間的數位層。</span><span class="sxs-lookup"><span data-stu-id="b3eb8-126">Given Windows Mixed Reality’s ability to recognize and map the user's environment, it is capable of creating a digital layer that can be completely overlaid on the user’s space.</span></span> <span data-ttu-id="b3eb8-127">很少會遵守的形狀和使用者的環境的界限，但應用程式可能會選擇最適合應用程式中的使用者將可享有特定項目轉換。</span><span class="sxs-lookup"><span data-stu-id="b3eb8-127">Thin layer respects the shape and boundaries of the user’s environment, but the app may choose to transform certain elements best suited to immerse the user in the app.</span></span> <span data-ttu-id="b3eb8-128">這稱為混合式的環境的應用程式。</span><span class="sxs-lookup"><span data-stu-id="b3eb8-128">This is called a blended environment app.</span></span> <span data-ttu-id="b3eb8-129">不同於增強的環境應用程式中，混合式的環境的應用程式可能只在意夠最佳環境會將其結構用於令人滿意的特定使用者行為 （例如令人滿意的移動或瀏覽） 或藉由變更 （廚房取代項目計數器是幾乎可設定面板顯示不同的並排顯示模式）。</span><span class="sxs-lookup"><span data-stu-id="b3eb8-129">Unlike an enhanced environment app, blended environment apps may only care enough about the environment to best use its makeup for encouraging specific user behavior (like encouraging movement or exploration) or by replacing elements with changes (a kitchen counter is virtually skinned to show a different tile pattern).</span></span> <span data-ttu-id="b3eb8-130">這種類型的體驗可能甚至將項目轉換成完全不同的物件，但仍會留粗略的維度做為其基底物件的 (廚房島會轉換成廢紙箱 crime thriller 遊戲)。</span><span class="sxs-lookup"><span data-stu-id="b3eb8-130">This type of experience may even transform an element into an entirely different object, but still retain the rough dimensions of the object as its base (a kitchen island is transformed into a dumpster for a crime thriller game).</span></span>
+
+<span data-ttu-id="b3eb8-131">![混合式的環境的應用程式](images/blendedenvironmentapps-640px.jpg)</span><span class="sxs-lookup"><span data-stu-id="b3eb8-131">![Blended environment apps](images/blendedenvironmentapps-640px.jpg)</span></span><br>
+<span data-ttu-id="b3eb8-132">*混合式的環境的應用程式*</span><span class="sxs-lookup"><span data-stu-id="b3eb8-132">*Blended environment apps*</span></span>
+
+<span data-ttu-id="b3eb8-133">**範例會使用**</span><span class="sxs-lookup"><span data-stu-id="b3eb8-133">**Example uses**</span></span>
+* <span data-ttu-id="b3eb8-134">混合的實境內部設計應用程式，可以繪製牆壁、 countertops 或在不同的色彩和模式的樓層</span><span class="sxs-lookup"><span data-stu-id="b3eb8-134">A mixed reality interior design app that can paint walls, countertops or floors in different colors and patterns</span></span>
+* <span data-ttu-id="b3eb8-135">Mixed 的 reality 應用程式，可讓汽車層新設計的反覆項目上現有的汽車即將推出的汽車重新整理設計工具</span><span class="sxs-lookup"><span data-stu-id="b3eb8-135">A mixed reality app that allows an automotive designer to layer new design iterations for an upcoming car refresh on top of an existing car</span></span>
+* <span data-ttu-id="b3eb8-136">平台是 「 涵蓋 」，而且取代所孩子的遊戲中的混合的實境水果獨立</span><span class="sxs-lookup"><span data-stu-id="b3eb8-136">A bed is “covered” and replaced by a mixed reality fruit stand in children’s game</span></span>
+* <span data-ttu-id="b3eb8-137">在電腦桌前是 「 涵蓋 」，並取代為混合實境廢紙箱 crime thriller 遊戲中</span><span class="sxs-lookup"><span data-stu-id="b3eb8-137">A desk is “covered” and replaced with a mixed reality dumpster in a crime thriller game</span></span>
+* <span data-ttu-id="b3eb8-138">首行茫茫是 「 涵蓋 」，並取代為路標大致上使用相同的形狀和維度</span><span class="sxs-lookup"><span data-stu-id="b3eb8-138">A hanging lantern is “covered” and replaced with signpost using roughly the same shape and dimension</span></span>
+* <span data-ttu-id="b3eb8-139">應用程式，可讓使用者以其實際或沉浸式世界牆、 顯示神奇的世界中的狂歡漏洞</span><span class="sxs-lookup"><span data-stu-id="b3eb8-139">An app that allows users to blast holes in their real or immersive world walls, which reveal a magical world</span></span>
+
+## <a name="immersive-environment-apps"></a><span data-ttu-id="b3eb8-140">沈浸式環境的應用程式</span><span class="sxs-lookup"><span data-stu-id="b3eb8-140">Immersive environment apps</span></span>
+
+<span data-ttu-id="b3eb8-141">沈浸式環境的應用程式會環繞完全變更使用者的世界的環境，並可以將它們放在不同的時間和空間。</span><span class="sxs-lookup"><span data-stu-id="b3eb8-141">Immersive environment apps are centered around an environment that completely changes the user’s world and can place them in a different time and space.</span></span> <span data-ttu-id="b3eb8-142">這些環境可以感覺非同小可，只受限於應用程式建立者的想像力的沈浸式和密切的體驗。</span><span class="sxs-lookup"><span data-stu-id="b3eb8-142">These environments can feel very real, creating immersive and thrilling experiences that are only limited by the app creator’s imagination.</span></span> <span data-ttu-id="b3eb8-143">不同於混合式的環境的應用程式，一旦 Windows Mixed Reality 識別使用者的空間的沈浸式環境的應用程式可能會完全忽略使用者的目前環境，並取代整個股票它自己的其中一個。</span><span class="sxs-lookup"><span data-stu-id="b3eb8-143">Unlike blended environment apps, once Windows Mixed Reality identifies the user’s space, an immersive environment app may totally disregard the user’s current environment and replace it whole stock with one of its own.</span></span> <span data-ttu-id="b3eb8-144">這些經驗可能也完全不同的時間和空間，這表示使用者可以逐步羅馬大街沉浸式體驗，同時保有相對仍在其真實世界空間中。</span><span class="sxs-lookup"><span data-stu-id="b3eb8-144">These experiences may also completely separate time and space, meaning a user could walk the streets of Rome in an immersive experience, while remaining relatively still in their real world space.</span></span> <span data-ttu-id="b3eb8-145">在真實世界環境的內容可能不重要的沈浸式環境的應用程式。</span><span class="sxs-lookup"><span data-stu-id="b3eb8-145">Context of the real world environment may not be important to an immersive environment app.</span></span>
+
+<span data-ttu-id="b3eb8-146">![沈浸式環境的應用程式](images/windows-mixed-reality-640px.jpg)</span><span class="sxs-lookup"><span data-stu-id="b3eb8-146">![Immersive environment apps](images/windows-mixed-reality-640px.jpg)</span></span><br>
+<span data-ttu-id="b3eb8-147">*沈浸式環境的應用程式*</span><span class="sxs-lookup"><span data-stu-id="b3eb8-147">*Immersive environment apps*</span></span>
+
+<span data-ttu-id="b3eb8-148">**範例會使用**</span><span class="sxs-lookup"><span data-stu-id="b3eb8-148">**Example uses**</span></span>
+* <span data-ttu-id="b3eb8-149">可讓使用者導覽空間，以完全不同，從他們自己的沈浸式應用程式 （也就是逐步著名的建置、 博物館、 熱門的縣 （市））</span><span class="sxs-lookup"><span data-stu-id="b3eb8-149">An immersive app that lets a user tour a space completely separate from their own (i.e. walk through a famous building, museum, popular city)</span></span>
+* <span data-ttu-id="b3eb8-150">沈浸式應用程式，可協調事件或案例的使用者 （亦即戰役或效能）</span><span class="sxs-lookup"><span data-stu-id="b3eb8-150">An immersive app that orchestrates an event or scenario around the user (i.e. a battle or a performance)</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="b3eb8-151">另請參閱</span><span class="sxs-lookup"><span data-stu-id="b3eb8-151">See also</span></span>
+* [<span data-ttu-id="b3eb8-152">開發概觀</span><span class="sxs-lookup"><span data-stu-id="b3eb8-152">Development overview</span></span>](development-overview.md)
+* [<span data-ttu-id="b3eb8-153">應用程式模型</span><span class="sxs-lookup"><span data-stu-id="b3eb8-153">App model</span></span>](app-model.md)
+* [<span data-ttu-id="b3eb8-154">應用程式檢視</span><span class="sxs-lookup"><span data-stu-id="b3eb8-154">App views</span></span>](app-views.md)

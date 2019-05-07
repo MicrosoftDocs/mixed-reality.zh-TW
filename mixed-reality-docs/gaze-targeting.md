@@ -6,13 +6,31 @@ ms.author: jennyk
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 混合實境、 視線、 視線目標，就會有互動，設計
-ms.openlocfilehash: c3225e27331f8afcda65469eb84fe5470bf6ee8c
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 1ac4f06208a7574fced0a7e27e93469ec93bf6e0
+ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592084"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64873918"
 ---
+# <a name="gaze-and-dwell"></a>視線和詳述
+有許多不同的方式，以確認_認可_例如結合使用的視線_語音_或_交給筆勢_。
+有幾個使用者案例，使用者的手可能忙碌中或無法追蹤 （例如過大的韌手套的 factory 工作者）。 語音輸入也不可能因為使用者喜好設定、 社交內容或吵雜的環境。
+另一個選項來執行做為後援的解決方案_認可_只是保留盯著我們所謂的 UI 項目_探討_。
+A_探討_可進行與標頭或眼睛視線。 這個概念很簡單，而且可分成下列階段細分： 
+1. 使用者啟動 gazing 在全像攝影版的按鈕
+
+2. 在簡短的開始延遲 （例如，150 毫秒） 後會啟動一些視覺化回饋動畫。 開始延遲用來避免讓使用者以立即彈出的意見反應的時間。
+    - 針對_眼睛視線_，我們建議下列的視覺效果的設計會探討意見反應：
+      - **Blend 它**:順暢 blend 中從幾乎沒有顯示在第一次到完全不透明的意見反應。 這讓意見反應，較少的轉移和 overwhleming，而完全配合系統有使用者真正想要使用此按鈕的信心。
+      - **將它提取**:非可減少的大小，並移往目標，納入使用者視覺化注意 center，請建立視覺化回饋。 
+
+3. 預先定義的詳述持續時間 （例如 800 毫秒） 之後, 詳述完成，並觸發相關聯的事件。
+    - 提供一些完成聽覺或視覺化回饋真的將常用的項目現在已選取。
+
+![探討狀態](images/eyes_dwellstate_recommendation.png)
+
+
 # <a name="gaze-targeting"></a>為目標的視線
 
 使用者能夠針對他們想要進行互動，無論輸入強制回應性的項目所建立的所有互動。 在 Windows Mixed Reality，這通常是使用使用者的視線。
@@ -32,7 +50,7 @@ ms.locfileid: "59592084"
 </table>
 
 > [!NOTE]
-> HoloLens 2 的特定的詳細指引[即將推出](index.md#news-and-notes)。
+> HoloLens 2 的特定的詳細指引[即將推出](index.md)。
 
 ## <a name="target-sizing-and-feedback"></a>目標大小和意見反應
 
@@ -82,4 +100,4 @@ ms.locfileid: "59592084"
 ## <a name="see-also"></a>另請參閱
 * [筆勢](gestures.md)
 * [語音設計](voice-design.md)
-* [資料指標](cursors.md)
+* [游標](cursors.md)

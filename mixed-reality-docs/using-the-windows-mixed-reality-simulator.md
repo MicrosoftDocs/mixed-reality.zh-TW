@@ -1,17 +1,17 @@
 ---
 title: 使用 Windows Mixed Reality 模擬器
 description: Windows Mixed Reality 模擬器可讓您測試您的電腦，而不需要 Windows Mixed Reality 沈浸式耳機上的混合的實境應用程式。
-author: JonMLyons
-ms.author: jlyons
-ms.date: 03/21/2018
+author: pbarnettms
+ms.author: pbarnett
+ms.date: 04/25/2019
 ms.topic: article
 keywords: Windows 混合現實情況下，模擬器測試
-ms.openlocfilehash: 782cab85f163edd2afc4251210b7596c73dcc8b8
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: a7cbd5b5ca1c0ed0e4f81715d337d5eec68117f0
+ms.sourcegitcommit: f5c1dedb3b9e29f27f627025b9e7613931a7ce18
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59596337"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64580696"
 ---
 # <a name="using-the-windows-mixed-reality-simulator"></a>使用 Windows Mixed Reality 模擬器
 
@@ -28,7 +28,7 @@ Windows Mixed Reality 模擬器可讓您測試您的電腦，而不需要 Window
    4. 按一下 **設定**來確認您的選擇
 4. 按一下 **適用於開發人員**混合實境入口網站左邊的按鈕
 5. 若要開啟模擬切換開關**上**
-   * 這需要系統管理員權限，而且您必須接受使用者帳戶控制 對話方塊出現
+   * 啟用模擬會安裝並啟用預設左模擬的 DOF 6 控制站。  之前的 Windows 10 2019 年更新，安裝模擬的 6 DOF 控制站需要系統管理員權限。  如果出現的話，您必須接受 [使用者帳戶控制] 對話方塊。
 
 您現在應該執行的模擬 ！
 
@@ -50,14 +50,16 @@ Windows Mixed Reality 模擬器可讓您測試您的電腦，而不需要 Window
 ## <a name="tracked-controllers"></a>追蹤控制站
 
 混合實境模擬器可以模擬最多兩個掌上型追蹤的動作控制站。 讓他們在混合實境入口網站中使用的切換開關。 每個模擬的控制站有：
-* 在空間中的位置
+* 位置和空間中的方向
 * 首頁按鈕
 * 功能表按鈕
 * 調整底框的按鈕
 * 觸控板
+* 搖桿
+* 電池電量
 
 ## <a name="see-also"></a>另請參閱
 * [使用 HoloLens 模擬器](using-the-hololens-emulator.md)
 * [進階混合的實境模擬器輸入](advanced-hololens-emulator-and-mixed-reality-simulator-input.md)
-* [在 Unity 中的空間對應](spatial-mapping-in-unity.md)
+* [Unity 中的空間對應](spatial-mapping-in-unity.md)
 * [DirectX 中的空間對應](spatial-mapping-in-directx.md)

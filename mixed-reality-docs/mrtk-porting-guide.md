@@ -1,21 +1,21 @@
 ---
 title: HoloLens 2 準備您的應用程式
 description: HoloLens 有現有的應用程式開發人員適用對象 （第 1 代） 及/或較舊 MRTK，並想要 MRTK 第 2 版 」 和 「 HoloLens 2 的連接埠。
-author: author:grbury
+author: grbury
 ms.author: grbury
 ms.date: 04/12/19
 ms.topic: article
 keywords: Windows Mixed Reality，MRTK MRTK 第 2 版、 HoloLens 2 測試
-ms.openlocfilehash: a5a329f69f5f9cc64666483adc92786ae8910b2f
-ms.sourcegitcommit: 07773e094ace2e828e329bd55da759983be3b8c1
+ms.openlocfilehash: 369470326d815ee711e96264939dd2e0487879b6
+ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59597199"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64873917"
 ---
 # <a name="getting-your-existing-app-ready-for-hololens-2"></a>HoloLens 2 準備您現有的應用程式
 
-本指南被專為協助開發人員為 HoloLens 1 對新的 HoloLens 2 裝置及其應用程式移植現有的 Unity 應用程式。 有四個主要的步驟，以 HoloLens 1 Unity 應用程式移植到 HoloLens 2。 下列各節將詳細說明每個階段的資訊。 
+本指南專為協助開發人員的 HoloLens 有現有的 Unity 應用程式 （第 1 代） 移植他們的應用程式，在新的 HoloLens 2 裝置。 有四個重要的步驟，移植 HoloLens （第 1 代） 為 HoloLens 2 的 Unity 應用程式。 下列各節將詳細說明每個階段的資訊。 
 
 | 步驟 1 | 步驟 2 | 步驟 3 | 步驟 4 |
 |----------|-------------------|-------------------|-------------------|
@@ -31,11 +31,12 @@ ms.locfileid: "59597199"
 
 ## <a name="migrate-project-to-latest-version-of-unity"></a>將專案移轉至最新版本的 Unity
 
-移植您的 Unity 應用程式的第一個步驟是在 Unity 的最新版本中開啟它。 目前，有兩個選項可供選擇：Unity 2018.3.x 或 Unity 2019.1.x beta 版。 有多個之間的權衡得失下列兩個版本，但重要的主要差異是適用於 ARM64 在 Unity 2019 + 所編譯的能力。 
+如果使用 MRTK v2，Unity 2018 LTS 會是最佳的長期支援路徑與 Unity 或 MRTK 中沒有重大變更。  建議的 Unity 組建中每個上述 「 安裝工具 」 是 Unity 2018.3，這會成為 Unity 2018 的 LTS 版本。  此外，MRTK v2 將一律保證 Unity 2018 LTS 支援，但不是一定保證支援 Unity 的每個反覆項目 2019.x。 
 
-開發人員應該評估任何[外掛程式相依性](https://docs.unity3d.com/Manual/Plugins.html)目前存在於其專案和這些 Dll 是否可以建置適用於 ARM64。 如果無法建立硬式相依性外掛程式適用於 ARM64，則一個必須利用 Unity 2018 LTS。 移植到 ARM64 通常想要使用，可能的話，因為有相較於 ARM32 的裝置上看到的許多效能改良。
+若要協助釐清其他差異 Unity 2018.3.x 或 Unity 2019.1.x，兩者的精確度所能夠編譯適用於 ARM64 Unity 2019 中的主要差異的外框取捨之間下列兩個版本，如下。 
 
-此外，混合實境 Toolkit V2 將一律保證 Unity 2018 LTS 支援，但不是一定保證支援 Unity 2019.x+ 的每個反覆項目。 
+開發人員應該評估任何[外掛程式相依性](https://docs.unity3d.com/Manual/Plugins.html)目前存在於其專案和這些 Dll 是否可以建置適用於 ARM64。 如果無法建立硬式相依性外掛程式適用於 ARM64，則一個必須利用 Unity 2018 LTS。
+
 
 | Unity 2018.3.x | Unity 2019.1 + |
 |----------|-------------------|
@@ -131,6 +132,6 @@ MRTK 第 2 版是新的工具組，在 Unity 支援這兩個 HoloLens 之上 （
 * [開始使用 MRTK 第 2 版](mrtk-getting-started.md)
 * [MRTK 第 2 版如何](https://microsoft.github.io/MixedRealityToolkit-Unity/External/HowTo/README.html)
 * [安裝工具](install-the-tools.md)
-* [Unity 的建議的設定](recommended-settings-for-unity.md)
+* [Unity 的建議設定](recommended-settings-for-unity.md)
 * [了解效能 for Mixed Reality](understanding-performance-for-mixed-reality.md)
 

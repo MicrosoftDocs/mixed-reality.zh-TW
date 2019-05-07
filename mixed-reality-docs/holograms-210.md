@@ -6,12 +6,12 @@ ms.author: kurtie
 ms.date: 03/21/2018
 ms.topic: article
 keywords: holotoolkit mixedrealitytoolkit、 mixedrealitytoolkit-academy，教學課程，視線 unity
-ms.openlocfilehash: 63c55e8a7a348f2a3e0cc29a9795d7fabcef5df0
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 076314389ec5ed70347c26d50c6a993f55da0758
+ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591563"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "64993549"
 ---
 >[!NOTE]
 >混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會**_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
@@ -103,7 +103,7 @@ ms.locfileid: "59591563"
 
 1. 移至**編輯 > 專案設定 > 品質**。
 2. 按一下向下鍵在**預設**在 Windows 市集圖示的資料列。
-3. 選取 **最快**for **Windows 市集應用程式**。
+3. 選取 **非常低**for **Windows 市集應用程式**。
 
 ### <a name="import-project-assets"></a>匯入專案資產
 

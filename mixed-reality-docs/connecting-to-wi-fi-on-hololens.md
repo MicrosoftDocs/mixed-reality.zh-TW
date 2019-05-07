@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 09/27/2018
 ms.topic: article
 keywords: HoloLens、 wifi、 無線網路、 網際網路、 ip、 ip 位址
-ms.openlocfilehash: 0440c3dad48d73db51e7d730e79d6eb1e74a5694
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: b064514124d861c0734ca51b3878d4a68b592fab
+ms.sourcegitcommit: f5c1dedb3b9e29f27f627025b9e7613931a7ce18
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59596691"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64670120"
 ---
 # <a name="connecting-to-wi-fi-on-hololens"></a>連線至 Wi-fi HoloLens 上
 
@@ -40,7 +40,7 @@ HoloLens 包含 802.11ac-2 的 Wi-fi 電台的能力，2x。 連線到 Wi-fi 網
 5. 選取 [Wi-fi] 滑桿切換，將它移到 「 關閉 」 位置。 這會關閉 Wi-fi 無線通訊的 RF 元件，並停用 HoloLens 上的所有 Wi-fi 功能。 
 
     >[!WARNING]
-    >HoloLens 將無法自動載入您[空格](environment-considerations-for-hololens.md#spaces)Wi-fi 選項已停用。
+    >HoloLens 將無法自動載入您[空格](environment-considerations-for-hololens.md#WiFi fingerprint considerations)Wi-fi 選項已停用。
     
 6. 移動滑桿切換到開啟的 Wi-fi 選項和還原 Microsoft HoloLens 上的 Wi-fi 功能的 「 開啟 」 位置。 選取的 Wi-fi 選項狀態 (「 On 」 的 「 關閉 」) 會在重新啟動期間保存。
 

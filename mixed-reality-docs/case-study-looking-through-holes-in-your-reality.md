@@ -6,12 +6,12 @@ ms.author: ericrehm
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，HoloLens magic 的視窗中，視差
-ms.openlocfilehash: 0c0828a6ebbefdcff7f0a66f48469007c5c532df
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 945a09614fbc77400825b524f4e0b591bf7b1f6b
+ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592112"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64873931"
 ---
 # <a name="case-study---looking-through-holes-in-your-reality"></a>案例研究-仔細檢查您實際上的漏洞
 
@@ -93,7 +93,7 @@ ColorMask 0
 
 在 Unity 編輯器中檢視此模型會顯示圍繞 flowerpot 大型黑色方塊。 HoloLens，在方塊就會消失，讓 magic 視窗效果的方法。
 
-如果您想要建置使用這項技術的應用程式，請參閱[MR 基本概念 101 教學課程](holograms-101.md)中[混合實境 Academy](academy.md)。 第 7 章結尾中會顯示隱藏的底世界 （如上面圖所示） 您 floor 遽增。 誰說教學課程必須無聊？
+如果您想要建置使用這項技術的應用程式，請參閱[MR 基本概念 101 教學課程](holograms-101.md)中[混合實境教學課程](tutorials.md)。 第 7 章結尾中會顯示隱藏的底世界 （如上面圖所示） 您 floor 遽增。 誰說教學課程必須無聊？
 
 以下是一些概念的您可以採取這個想法下一步:
 * 將可讓內容內的虛擬的洞裡互動式方法。 讓使用者有一些影響超過其牆真的能夠改進難怪這個技巧可提供的意義。
@@ -109,7 +109,7 @@ ColorMask 0
 </table>
 
 ## <a name="see-also"></a>另請參閱
-* [MR 101 基本知識：完整的專案，與裝置](holograms-101.md)
+* [MR Basics 101：使用裝置完成專案](holograms-101.md)
 * [座標系統](coordinate-systems.md)
-* [空間的錨點](spatial-anchors.md)
+* [空間錨點](spatial-anchors.md)
 * [空間對應](spatial-mapping.md)

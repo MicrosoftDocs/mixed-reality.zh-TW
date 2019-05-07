@@ -6,12 +6,12 @@ ms.author: kurtie
 ms.date: 03/21/2018
 ms.topic: article
 keywords: holotoolkit、 mixedrealitytoolkit、 mixedrealitytoolkit unity、 academy、 教學課程中，空間的對應、 介面重構，網格
-ms.openlocfilehash: 8d5715337ddd20e9868b18fdf0c63c704f584972
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: ed58676a0fda660cc6b4c197239aeb53166baa4d
+ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59594609"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "64993564"
 ---
 >[!NOTE]
 >混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會**_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
@@ -85,7 +85,7 @@ ms.locfileid: "59594609"
     * 麥克風
     * SpatialPerception
 * 移至**編輯 > 專案設定 > 品質**
-* 在 [ **Inspector** ] 面板中，在 Windows 市集圖示，選取黑色的向下箭頭，在 'Default' 資料列，並將變更預設設定，以**Fastest**。
+* 在 [ **Inspector** ] 面板中，在 Windows 市集圖示，選取黑色的向下箭頭，在 'Default' 資料列，並將變更預設設定，以**非常低**。
 * 移至**資產 > 匯入封裝 > 自訂套件**。
 * 瀏覽至 **...\HolographicAcademy-Holograms-230-SpatialMapping\Starting**資料夾。
 * 按一下  **Planetarium.unitypackage**。

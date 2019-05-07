@@ -6,12 +6,12 @@ ms.author: kurtie
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 混合實境，Windows Mixed Reality、 HoloLens、 沉浸式 vr mr、 開始著手，全像圖、 academy、 教學課程
-ms.openlocfilehash: 1f4a5490383671fba694b386015ff6742d37241b
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: fd3bed955e80ec18b7be500adbdb0fcb7062d129
+ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591130"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "64993615"
 ---
 >[!NOTE]
 >混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會**_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
@@ -32,7 +32,7 @@ ms.locfileid: "59591130"
 </tr>
 </table>
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 * Windows 10 電腦的正確設定[安裝工具](install-the-tools.md)。
 
@@ -97,7 +97,7 @@ Unity Main Camera 處理追蹤的前端和立體視覺呈現。 有一些變更�
 
 維護高的畫面播放速率 HoloLens 上是很重要，因為我們想要微調的最快效能的品質設定。 如需詳細效能資訊，請[Unity 的效能建議](performance-recommendations-for-unity.md)。
 1. 選取**編輯 > 專案設定 > 品質**
-2. 選取 **下拉式清單**下方**Windows 市集**標誌，然後選取**非常低**。 您知道綠色方塊中，Windows 存放區資料行中最快的資料列時正確地套用設定。
+2. 選取 **下拉式清單**下方**Windows 市集**標誌，然後選取**非常低**。 您知道設定正確時套用的 Windows 市集的資料行中的方塊並**非常低**資料列是綠色。
 
 **混合的實境應用程式，以阻擋顯示目標**，您可以將品質設定保留為其預設值。
 

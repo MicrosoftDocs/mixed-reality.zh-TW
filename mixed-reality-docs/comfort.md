@@ -3,15 +3,15 @@ title: 緩和
 description: 在自然的檢視，人力 visual 系統依賴多個來源的詳細資訊，或"提示，，"來解譯 3D 圖形和物件的相對位置。
 author: erickjpaul
 ms.author: erpau
-ms.date: 02/13/2019
+ms.date: 04/5/2019
 ms.topic: article
-keywords: 混合的實境，設計、 緩和
-ms.openlocfilehash: dbf7080f5b9a2ebafdbd06fca79fae717b3207ed
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+keywords: 混合實境，設計、 緩和，HoloLens 2 HoloLens （第 1 代）
+ms.openlocfilehash: 3dac997923b3f2319cb97137c1bbd9a12c4126b1
+ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597058"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "64993632"
 ---
 # <a name="comfort"></a>緩和
 
@@ -34,7 +34,7 @@ HoloLens 顯示被固定的光學距離約 2.0 m 遠離使用者。 因此，使
 ![對於將使用者從全像投影的最佳距離。](images/distanceguiderendering-950px.png)<br>
 *對於將使用者從全像投影的最佳距離*
 
-#### <a name="best-practices-for-hololens-1st-gen-and-hololens-2"></a>HoloLens 的最佳作法 （第 1 代） 和 HoloLens 2
+### <a name="best-practices-for-hololens-1st-gen-and-hololens-2"></a>HoloLens 的最佳作法 （第 1 代） 和 HoloLens 2
 
 最大的緩和**全像放置的最佳區域是之間 1.25 m 和 5m**。 每個案例中，在設計工具應該嘗試鼓勵使用者互動的結構內容場景 1 百萬個或與內容較遠 (例如調整[內容大小，並在預設位置參數](gaze-targeting.md))。 
 
@@ -42,10 +42,14 @@ HoloLens 顯示被固定的光學距離約 2.0 m 遠離使用者。 因此，使
 
 深入了解移動的物件都是靜態物件，以產生 discomfort 由於 vergence 住宿衝突，導致更有可能的。 同樣地，需要快速切換接近焦點和最焦點 （例如，因為快顯的雷射，需要直接互動） 的使用者可能會導致 visual discomfort 和疲勞。 因此，**額外小心頻率降到最低的使用者： 檢視內容，深入了解; 移動或快速之間切換焦點遠近全像投影**。 
 
-設計 (near) 互動 HoloLens 2 中的直接內容時或**任何應用程式中的內容必須放置的位置更接近於 1 分鐘，額外小心以確保使用者緩和**。 Discomfort 由於 vergence 住宿衝突的可能性以指數方式增加與減少檢視距離。 **我們建議您建立應用程式的使用者應該在檢視即將 (< 1 m) 的內容的時間量為基礎，並深入了解移動的 「 深度 budget"**。 舉例來說，若要避免將使用者放在這些情況下超過 25%的時間。 如果超過深度預算時，建議您小心使用者測試以確保它保持舒適的體驗。
+### <a name="additional-considerations-for-hololens-2-and-near-interaction-distances"></a>HoloLens 2 和互動距離附近的其他考量
 
-> [!NOTE]
-> HoloLens 2 的特定的詳細指引[即將推出](index.md#news-and-notes)。
+設計 (near) 互動 HoloLens 2 中的直接內容時或**任何應用程式中的內容必須放置的位置更接近於 1 分鐘，額外小心以確保使用者緩和**。 Discomfort 由於 vergence 住宿衝突的可能性以指數方式增加與減少檢視距離。 此外，使用者可能會遇到增加的 bluriness 互動距離近檢視的內容，因此我們建議您測試的內容呈現最佳的全像放置也以更接近 (小於 1.0 m 裁剪平面下) 的區域內時要請確定它會維持清楚且方便檢視。 
+
+**我們建議您建立應用程式的使用者應該在檢視即將 (小於 1.0 m) 的內容的時間量為基礎，並深入了解移動的 「 深度 budget"**。 舉例來說，若要避免將使用者放在這些情況下超過 25%的時間。 如果超過深度預算時，建議您小心使用者測試以確保它保持舒適的體驗。 
+
+一般情況下，我們也建議仔細測試，以確保在任何互動需求 （例如，下列項目的速度移動、 連線能力等），互動距離近保持舒適的使用者。 
+
 
 ### <a name="guidance-for-immersive-devices"></a>沈浸式裝置的指引
 
@@ -65,8 +69,7 @@ HoloLens 的 （第 1 代），預估 IPD 且在裝置設定[校正](calibration
 
 #### <a name="hololens-2"></a>HoloLens 2
 
-> [!NOTE]
-> HoloLens 2 的特定的詳細指引[即將推出](index.md#news-and-notes)。
+HoloLens 2 IPD 是估計和期間眼睛/裝置設定[校正](calibration.md)。 已設定新使用者的裝置，校正必須執行才能確定 IPD 已正確設定。 VO 會佔用自動 HoloLens 2 中。 
 
 ### <a name="guidance-for-immersive-devices"></a>沈浸式裝置的指引
 
@@ -120,7 +123,7 @@ Windows Mixed Reality 沈浸式 HMDs 有 IPD 或 VO 無自動校正。 可以手
 
 ## <a name="text-legibility"></a>文字可讀性
 
-最佳的文字可讀性有助於減少眼睛疲勞和維護使用者緩和，尤其是在應用程式或要求使用者在 HMD 中讀取的案例。 取決於各種因素，包括各種的顯示屬性 （例如，像素密度、 亮度、 對比）、 功能濾鏡屬性 （例如 chromatic 脫離） 和文字/字型屬性 （例如，特定字型的文字可讀性特性，例如粗細、 襯線、 等等的字型、 背景色彩的色彩）。  
+最佳的文字可讀性有助於減少眼睛疲勞和維護使用者緩和，尤其是在應用程式或要求使用者在 HMD 中讀取的案例。 取決於各種因素，包括各種的顯示屬性 （例如，像素密度、 亮度、 對比）、 功能濾鏡屬性 （例如 chromatic 脫離） 和文字/字型屬性 （例如，特定字型的文字可讀性特性喜歡 weight、 間距、 襯線、 等等的字型、 背景色彩的色彩)。  
 
 一般情況下，我們建議測試特定的應用程式，以利閱讀，並讓字型的大小一樣大，因為是可行的舒適的體驗。 下面我們提供做為起點進行開發的一般指引。 請注意，所有的字型大小以度為單位的報告[視覺化角度](https://en.wikipedia.org/wiki/Visual_angle)而不是特定的實體大小，內含的指引可獲得最佳的全像放置的區域內的任何距離因為它負責的大小文字，而且它會出現在檢視器的距離。 
 
@@ -130,18 +133,25 @@ Windows Mixed Reality 沈浸式 HMDs 有 IPD 或 VO 無自動校正。 可以手
 
 #### <a name="hololens-1st-gen"></a>HoloLens （第 1 代）
 
-易於閱讀垂直的字型大小下限是大約 0.35 °，舒適的垂直字型的大小至少大約 0.5 ° 在 2m 距離呈現給使用者的讀取內容。 
+易於閱讀的字型大小下限 （字型基準 ascender 來測量） 是大約 0.35 °，舒適的字型大小至少大約 0.5 ° 在 2m 距離呈現給使用者的讀取內容。 
 
 #### <a name="hololens-2"></a>HoloLens 2
 
-> [!NOTE]
-> HoloLens 2 的特定的詳細指引[即將推出](index.md#news-and-notes)。
+易於閱讀的字型大小下限 （字型基準 ascender 來測量） 至少大約是： 
+   - 0.4 °-0.5 ° 在 45 cm （直接操作距離） 
+   - 0.35 °-0.4 ° 在 2.0 m
+   
+舒服地易於閱讀的字型的大小 （從字型基準 ascender 來測量） 至少大約是： 
+   - 0.65 °-0.8 ° 在 45 cm （直接操作距離）
+   - 0.6 °-0.75 ° 在 2.0 m
+
+請注意，需要因上述 vergence 住宿衝突而被稍微大一點的直接操作距離文字的字型大小 （使用者的眼睛會配合在距離 2.0 m HoloLens 顯示，讓內容在轉譯，例如 45 cm可能會出現更模糊的使用者）。 
 
 ### <a name="guidance-for-immersive-devices"></a>沈浸式裝置的指引
 
-沈浸式裝置通常會有較高的對比比例，因為完整外部環境中，會受阻擋，但部分有較低的有效的像素密度，因為前面顯示的功能濾鏡的縮放比例。 
+沈浸式裝置通常會有較高的對比比例，因為完整外部環境中，會受阻擋，但可能會因為前面顯示的功能濾鏡的縮放比例部分具有較低的有效的像素密度。 
 
-Windows Mixed Reality 沈浸式 HMDs，易於閱讀垂直的字型大小下限是大約 0.7 0.9 ° 和舒適的垂直字型的大小是 1.0 ° 大約在 2 分鐘距離呈現給使用者的讀取內容。
+Windows Mixed Reality 沈浸式 HMDs，易於閱讀垂直的字型大小下限 （字型基準 ascender 來測量） 是大約 0.7 0.9 ° 和舒適的垂直字型大小會讀取內容呈現在 2 個 m，距離約 1.0 °使用者。
 
 ## <a name="gaze-direction"></a>視線方向
 
@@ -160,8 +170,8 @@ Windows Mixed Reality 沈浸式 HMDs，易於閱讀垂直的字型大小下限�
 當使用者要保留的體驗期間引發手的形狀，就會累積跑車疲勞。 它也可以 fatiguing 為需要使用者重複做出空中點選手勢經過長時間。 因此，建議的經驗，避免需要常數、 重複的筆勢輸入。 可藉由納入短暫休息或供應項目混用筆勢和語音輸入的應用程式互動中達成此目標。
 
 ## <a name="see-also"></a>另請參閱
-* [Gaze](gaze.md)
-* [全像穩定性](hologram-stability.md)
-* [互動的基本概念](interaction-fundamentals.md)
-* [全像攝影版的框架](holographic-frame.md)
+* [目光](gaze.md)
+* [全像投影穩定性](hologram-stability.md)
+* [互動基本概念](interaction-fundamentals.md)
+* [全像攝影框架](holographic-frame.md)
 * [校正](calibration.md)

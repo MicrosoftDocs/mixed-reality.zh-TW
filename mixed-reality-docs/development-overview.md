@@ -6,12 +6,12 @@ ms.author: grbury
 ms.date: 02/10/2019
 ms.topic: article
 keywords: 取得已啟動，基本概念、 HoloLens、 HoloLens 2 沈浸式耳機、 unity / visual studio
-ms.openlocfilehash: 1d23e458477cc23252ccd4c44f67c400aa356965
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.openlocfilehash: 23bd173f89a468b4403d44236534bfe811a968dd
+ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59597130"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64873982"
 ---
 # <a name="development-overview"></a>開發概觀
 
@@ -41,13 +41,13 @@ ms.locfileid: "59597130"
 </tr><tr>
 <td> <a href="hardware-accessories.md">Gamepad</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
 </tr><tr>
-<td> <a href="motion-controllers.md">動作控制站</a></td><td></td><td></td><td style="text-align: center;">✔️</td>
+<td> <a href="motion-controllers.md">運動控制器</a></td><td></td><td></td><td style="text-align: center;">✔️</td>
 </tr><tr>
 <th> 認知和空間的功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
 </tr><tr>
 <td> <a href="coordinate-systems.md">全局座標</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
 </tr><tr>
-<td> <a href="spatial-sound.md">空間的音效</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
+<td> <a href="spatial-sound.md">空間音效</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
 </tr><tr>
 <td> <a href="spatial-mapping.md">空間對應</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td></td>
 </tr>
@@ -75,13 +75,13 @@ ms.locfileid: "59597130"
 * [Windows 裝置入口網站](using-the-windows-device-portal.md)
 * [HoloLens 模擬器](using-the-hololens-emulator.md)（即將推出的 HoloLens 2 模擬器）
 * [Windows Mixed Reality 模擬器](using-the-windows-mixed-reality-simulator.md)
-* [應用程式的品質準則](app-quality-criteria.md)
+* [應用程式品質準則](app-quality-criteria.md)
 
 ## <a name="see-also"></a>另請參閱
 * [安裝工具](install-the-tools.md)
 * <a href="https://azure.microsoft.com/topic/mixed-reality" target="_blank">混合的實境服務</a>
-* [混合的實境教學課程](academy.md)
+* [混合的實境教學課程](tutorials.md)
 * [開放原始碼專案](open-source-projects.md)
-* [MR 基本概念 100:開始使用 Unity](holograms-100.md)
+* [MR Basics 100：開始使用 Unity](holograms-100.md)
 * [Windows Mixed Reality 最小電腦的硬體相容性指導方針](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)
 * [提交至 Windows 市集應用程式](submitting-an-app-to-the-microsoft-store.md)

@@ -6,12 +6,12 @@ ms.author: haejinl
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、 HoloLens、 設計、 編輯、 個人
-ms.openlocfilehash: e16be57d42bdc003fd601b94e054c7c25ebd290e
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 050645e6096559a4f37b033e5ddfdc5444039c08
+ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597098"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64873948"
 ---
 # <a name="case-study---my-first-year-on-the-hololens-design-team"></a>案例研究-我的第一年 HoloLens 上設計小組
 
@@ -105,7 +105,7 @@ Skeuomorphism 的優點是清除。 熟悉的環境和這個遊戲中的物件�
 
 **「 無論程度我勾勒出 3d 場景，耳機在實際的經驗是幾乎不會草圖相同。所以請務必測試在場景中目標耳機。 」 — Hae Jin Lee**
 
-我試著 HoloLens 原型設計、 在的所有教學課程[混合實境 Academy](academy.md)啟動。 然後我開始玩[HoloToolkit.Unity](https://github.com/Microsoft/HoloToolkit-Unity/) Microsoft 提供給開發人員加速開發的全像攝影版的應用程式。 當我遇到問題的結果時，我把問題張貼至[HoloLens 問題與解答論壇](https://forums.hololens.com/categories/questions-and-answers/)。
+我試著 HoloLens 原型設計、 在的所有教學課程[混合實境教學課程](tutorials.md)啟動。 然後我開始玩[HoloToolkit.Unity](https://github.com/Microsoft/HoloToolkit-Unity/) Microsoft 提供給開發人員加速開發的全像攝影版的應用程式。 當我遇到問題的結果時，我把問題張貼至[HoloLens 問題與解答論壇](https://forums.hololens.com/categories/questions-and-answers/)。
 
 之後取得的 HoloLens 原型設計的基本了解，我想要讓其他非位程式設計師在自己的原型。 所以我有所教導如何開發使用 HoloLens 簡單彈藥影片教學課程。 我簡要說明基本概念，因此甚至如果您曾經零 HoloLens 開發中，您應該能夠跟著做。
 

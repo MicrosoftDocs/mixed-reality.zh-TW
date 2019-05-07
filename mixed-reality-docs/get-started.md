@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 08/06/2018
 ms.topic: article
 keywords: 要開始，基本概念、 HoloLens、 沈浸式耳機、 ar、 vr、 unity、 visual studio、 快速入門中，如何
-ms.openlocfilehash: 92fbc6eee227da571ff36401f84cf81a093062d7
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 4277de37ffe4a7ab03f382626452b96bf9157634
+ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59594861"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64873964"
 ---
 # <a name="get-started"></a>立即開始
 
@@ -63,7 +63,7 @@ ms.locfileid: "59594861"
 
 既然您已成功建立第一個 MR 專案，您可能飢餓了 ！ 以下是一些應該可以幫助的資源：
 * [混合實境開發人員文件](mixed-reality.md)-您已經在這裡，但還有更多檢查，包括技術文件、 設計指引、 範例專案，以及案例研究。
-* [混合的實境 academy](academy.md) -依照本教學課程涵蓋範圍從專案中，實作核心 MR 建置組塊所設定，來整合 Azure 雲端服務到 MR 應用程式。
+* [混合實境教學課程](tutorials.md)-依照本教學課程涵蓋範圍從專案中，實作核心 MR 建置組塊所設定，來整合 Azure 雲端服務到 MR 應用程式。
 * [了解 Unity](https://unity3d.com/learn) -Unity 的網站提供的教學課程、 專案和現場直播訓練工作階段建立者的每個階段的學習。
 
 您也可以從這些絕佳的社群資源取得說明：

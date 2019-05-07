@@ -7,12 +7,12 @@ ms.author: grbury
 ms.date: 02/12/2019
 ms.topic: article
 keywords: 混合實境，開發、 開發、 HoloLens、 unity、 directx
-ms.openlocfilehash: e48a1cbfbe084de9382b9fa1104b2d5fc0f68fcc
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: b4fa41171fff1f1fdc10359c93f4d1e7e4a84867
+ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591118"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "64993587"
 ---
 # <a name="development-launchpad"></a>開發 [啟動列]
 
@@ -38,7 +38,7 @@ ms.locfileid: "59591118"
                             <a href="install-the-tools.md">安裝工具</a>
                         </p>
                         <p>
-                            <a href="holograms-100.md">教學課程和範例應用程式</a>
+                            <a href="mrlearning-base-ch1.md">MR 學習：HoloLens 2 和 MRTK v2</a>
                         </p>
                     </div>
                 </div>
@@ -132,10 +132,10 @@ Unreal-即將推出 ！
                     <div class="cardText">
                         <h3>移植指南</h3>
                         <p>
-                            <a href="mrtk-porting-guide.md">更新至最新的混合<br>但實際上工具組 (MRTK)</a>
+                            <a href="mrtk-porting-guide.md">HoloLens 2 來更新應用程式<br>從 HoloLens （第 1 代）</a>
                         </p>
                         <p>
-HoloLens （第 1 代） 為 HoloLens 2<br>- 即將推出 ！
+                            <a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/HTKToMRTKPortingGuide.html">混合的實境工具組 (MRTK)<br>API 移轉指南</a>
                         </p>
                         <p>
                             <a href="porting-guides.md">耳機沈浸式應用程式</a>
@@ -202,13 +202,13 @@ HoloLens （第 1 代） 為 HoloLens 2<br>- 即將推出 ！
 </tr><tr>
 <td> <a href="hardware-accessories.md">Gamepad</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
 </tr><tr>
-<td> <a href="motion-controllers.md">動作控制站</a></td><td></td><td></td><td style="text-align: center;">✔️</td>
+<td> <a href="motion-controllers.md">運動控制器</a></td><td></td><td></td><td style="text-align: center;">✔️</td>
 </tr><tr>
 <th style="width:175px">認知和空間的功能</th><th style="width:125px; text-align: center;"><a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:125px; text-align: center;">HoloLens 2</a></th><th style="width:125px; text-align: center;"> <a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
 </tr><tr>
 <td> <a href="coordinate-systems.md">全局座標</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
 </tr><tr>
-<td> <a href="spatial-sound.md">空間的音效</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
+<td> <a href="spatial-sound.md">空間音效</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
 </tr><tr>
 <td> <a href="spatial-mapping.md">空間對應</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td></td>
 </tr>
@@ -235,5 +235,5 @@ HoloLens （第 1 代） 為 HoloLens 2<br>- 即將推出 ！
 * [Windows 裝置入口網站](using-the-windows-device-portal.md)
 * [HoloLens 模擬器](using-the-hololens-emulator.md)
 * [Windows Mixed Reality 模擬器](using-the-windows-mixed-reality-simulator.md)
-* [應用程式的品質準則](app-quality-criteria.md)
+* [應用程式品質準則](app-quality-criteria.md)
 

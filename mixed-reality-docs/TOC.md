@@ -76,25 +76,32 @@
 ### [版本資訊 - 2016 年 3 月](release-notes-march-2016.md)
 
 # [設計](design.md)
-## [關於本設計指南](about-this-design-guidance.md)
+## [關於本設計指引](about-this-design-guidance.md)
 ## 開始進行設計
 ### [什麼是混合實境？](mixed-reality.md)
 ### [什麼是全像投影？](hologram.md)
+### [舒適度](Comfort.md)
+### [全像攝影框架](Holographic-frame.md)
+### [空間對應設計](Spatial-mapping-design.md)
+### [空間音效設計](Spatial-sound-design.md)
 ### [在設計小組的第一年](case-study-my-first-year-on-the-hololens-design-team.md)
 ### [擴充混合實境的設計程序](case-study-expanding-the-design-process-for-mixed-reality.md)
 ### [追求更個人化的運算](case-study-the-pursuit-of-more-personal-computing.md)
 ### [AfterNow 的程序 - 構想、原型設計、建置](case-study-afternows-process-envisioning,-prototyping,-building.md)
-## 互動設計
-### [互動基本概念](Interaction-fundamentals.md)
-### [舒適度](Comfort.md)
-### [目光目標](Gaze-targeting.md)
-### [筆勢](Gestures.md)
-### [語音設計](Voice-design.md)
-### [什麼是全像投影？](Hologram.md)
-### [全像攝影框架](Holographic-frame.md)
-### [空間對應設計](Spatial-mapping-design.md)
-### [空間音效設計](Spatial-sound-design.md)
-### [運動控制器](Motion-controllers.md)
+## MR 設計系統和工具
+### [本能互動](Interaction-fundamentals.md)
+#### [手部和運動控制器](hands-and-tools.md)
+##### [直接操作](direct-manipulation.md)
+##### [指向和行動](point-and-commit.md)
+##### [運動控制器](Motion-controllers.md)
+#### [免持式](hands-free.md)
+##### [目光和停駐](Gaze-and-dwell.md)
+##### [目光和語音](Voice-design.md)
+#### [頭部目光和行動](gaze-and-commit.md)
+### 補充互動
+#### [眼睛目光](eye-tracking.md)
+#### [目光目標](Gaze-targeting.md)
+#### [筆勢](Gestures.md)
 ## 樣式
 ### [色彩、光線和材質](color,-light-and-materials.md)
 ### [空間音效設計](spatial-sound-design.md)
@@ -130,7 +137,8 @@
 ## Unity
 ### [Unity 開發概觀](unity-development-overview.md)
 ### 開始使用
-#### [混合實境工具組](mrtk-getting-started.md)
+#### [使用混合實境工具組第 2 版加速開發](mrtk-getting-started.md)
+#### [設定 Windows Mixed Reality 的 Unity 專案](Configure-Unity-Project.md)
 #### [Unity 的建議設定](recommended-settings-for-unity.md)
 #### [Unity 播放模式](unity-play-mode.md)
 #### [匯出和建置 Unity Visual Studio 解決方案](exporting-and-building-a-unity-visual-studio-solution.md)
@@ -141,6 +149,7 @@
 #### [Unity 中的持續性](persistence-in-unity.md)
 #### [Unity 中的目光](gaze-in-unity.md)
 #### [Unity 中的筆勢和運動控制器](gestures-and-motion-controllers-in-unity.md)
+#### [Unity 中的手部和眼睛追蹤](hand-eye-in-unit.md)
 #### [Unity 中的語音輸入](voice-input-in-unity.md)
 #### [Unity 中的空間對應](spatial-mapping-in-unity.md)
 #### [Unity 中的空間音效](spatial-sound-in-unity.md)
@@ -153,6 +162,7 @@
 ### 進階主題
 #### [搭配使用 HoloLens 的 Windows 命名空間和 Unity 應用程式](using-the-windows-namespace-with-unity-apps-for-hololens.md)
 #### [使用 Unity 的 Vuforia](vuforia-development-overview.md)
+### 舊版文件 (Unity 2017.4/HTK/MRTK v1)
 ## Unreal
 ### HoloLens 2 的 Unreal - 即將推出！
 ## DirectX
@@ -176,9 +186,18 @@
 #### [新增全像攝影遠端處理](add-holographic-remoting.md)
 ## WebVR
 ### [在 Edge 中使用 Windows Mixed Reality 的 WebVR](using-webvr-in-edge-with-windows-mixed-reality.md)
-## [教學課程和範例應用程式](academy.md)
+## [教學課程和範例應用程式](tutorials.md)
 ### Unity
-#### 開放原始碼範例應用程式
+#### MR 學習模組
+##### HoloLens 2
+###### [基本模組 - 概觀與目標](mrlearning-base.md)
+####### [專案初始化和第一個應用程式](mrlearning-base-ch1.md)
+####### [使用者介面、手部追蹤及混合實境工具組組態](mrlearning-base-ch2.md)
+####### [動態內容放置和解算器](mrlearning-base-ch3.md)
+####### [3D 物件互動](mrlearning-base-ch4.md)
+####### [進階輸入](mrlearning-base-ch5.md)
+####### [示範應用程式](mrlearning-base-ch6.md)
+#### HoloLens (第 1 代) 開啟原始碼範例應用程式
 ##### [元素週期表](periodic-table-of-the-elements.md)
 ##### [月球模組](lunar-module.md)
 ##### [星系探險](galaxy-explorer.md)
@@ -266,8 +285,8 @@
 
 # 計畫和活動
 ## [混合實境開發日](mr-dev-days.md)
+### [混合實境開發日工作階段](mr-dev-days-sessions.md)
 ### [混合實境開發日常見問題集](mr-dev-days-faq.md)
-## [實境展示](realities-show.md)
 ## [San Francisco Reactor Academy 活動行事曆](sf-academy-events.md)
 ## [CVPR 2018 HoloLens 研究模式工作階段](cvpr-2018.md)
 ## [ECCV 2018 HoloLens 為電腦視覺研究工具](eccv-2018.md)

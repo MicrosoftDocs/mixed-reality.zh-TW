@@ -1,21 +1,21 @@
 ---
-title: 語音設計
+title: 視線和語音
 description: 凝視、 手勢及語音 (GGV) 是在 HoloLens 互動的主要方法。 這篇文章提供語音設計縝密的指導方針。
-author: rwinj
-ms.author: randyw
-ms.date: 03/21/2018
+author: grbury
+ms.author: grbury
+ms.date: 04/21/2019
 ms.topic: article
 keywords: Windows Mixed Reality，設計、 互動、 語音
-ms.openlocfilehash: 2df0e15c66891b08577fcf203d11f7c7008247f1
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 35e4c72026acaa36e5fd686cf892dd602f6626d6
+ms.sourcegitcommit: a4a53e6772805d89a47588857e3e8fb1fd8d9710
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59596715"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65469078"
 ---
-# <a name="voice-design"></a>語音設計
+# <a name="gaze-and-voice"></a>視線和語音
 
-凝視、 手勢及語音 (GGV) 是在 HoloLens 互動的主要方法。 [視線](gaze.md)搭配[游標](cursors.md)是使用者為目標的內容，他們就可以互動的機制。 [筆勢](gestures.md)或是[語音](voice-input.md)是目的機制。 視線可用筆勢或語音來完成互動。
+凝視、 手勢及語音 (GGV) 會在 HoloLens 互動的主要方法 （第 1 代）。 [視線](gaze.md)搭配[游標](cursors.md)是使用者為目標的內容，他們就可以互動的機制。 [筆勢](gestures.md)或是[語音](voice-input.md)是目的機制。 視線可用筆勢或語音來完成互動。
 
 在沉浸式耳機，互動的主要方法還有視線認可點認可 (與[移動控制器](motion-controllers.md))。 如果使用者具有的耳機與語音功能，可以使用語音搭配視線或點以完成某個動作。
 
@@ -27,7 +27,7 @@ ms.locfileid: "59596715"
 <tr>
 <th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
 </tr><tr>
-<td> 語音</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️ （具有附加的耳機）</td>
+<td>視線和語音</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️ （具有附加的耳機）</td>
 </tr>
 </table>
 
@@ -102,4 +102,4 @@ Windows Mixed Reality 採用"看到它，它說出"語音模型所在**按鈕上
 
 ## <a name="see-also"></a>另請參閱
 * [筆勢](gestures.md)
-* [為目標的視線](gaze-targeting.md)
+* [目光目標](gaze-targeting.md)

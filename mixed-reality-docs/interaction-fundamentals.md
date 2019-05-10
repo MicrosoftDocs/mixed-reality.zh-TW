@@ -6,12 +6,12 @@ ms.author: shengkait
 ms.date: 04/11/2019
 ms.topic: article
 keywords: 混合實境，視線、 視線目標，就會有互動，設計
-ms.openlocfilehash: f52a0cd8ec53bfe0f4c5da2c054c538eda1c93ca
-ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
+ms.openlocfilehash: c762518a224138dab248670eaef23ccb92016fce
+ms.sourcegitcommit: a4a53e6772805d89a47588857e3e8fb1fd8d9710
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "64993595"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65469100"
 ---
 # <a name="introducing-instinctual-interactions"></a>簡介 instinctual 互動
 簡單、 instinctual 互動的原理是這整個 Microsoft 混合實境平台。  我們已採取三個步驟，以確保應用程式設計師和開發人員可以提供簡單且直覺式的互動，供其客戶。 
@@ -55,13 +55,13 @@ ms.locfileid: "64993595"
         <td>HoloLens 2<br>Windows 包含 6DOF 控制站的沈浸式</td>
     </tr>
     <tr>
-        <td><a href="hands-free.md">Hands-free</a></td>
+        <td><a href="hands-free.md">免持式</a></td>
         <td>其中使用者的手佔用例如作業學習，維護的情境體驗</td>
         <td>有些學習所需<br>如果無法使用指針<br>與語音和自然語言的配對</td>
         <td>HoloLens 2<br>HoloLens （第 1 代）<br> 沈浸式 Windows</td>
     </tr>
     <tr>
-        <td><a href="gaze-and-commit.md">Head 視線與認可</a></td>
+        <td><a href="gaze-and-commit.md">頭部目光和行動</a></td>
         <td>點選體驗例如 3D 簡報、 示範</td>
         <td>需要訓練 HMDs 上但不是能在行動裝置<br>最適合可存取的控制站<br>最適合 HoloLens （第 1 代）</td>
         <td>HoloLens 2<br>HoloLens （第 1 代）<br> 沈浸式 Windows<br> Mobile AR</td>
@@ -107,7 +107,7 @@ ms.locfileid: "64993595"
     <tr>
         <td><strong>型號</strong></td>
         <td><strong>如何知道它是否運作？</strong></td>
-        <td><strong>如何知道哪些怎麼辦？</strong></td>
+        <td><strong>如何知道我可以做什麼？</strong></td>
         <td><strong>如何得知我只是做什麼？</strong></td>
     </tr>
     <tr>
@@ -117,7 +117,7 @@ ms.locfileid: "64993595"
         <td>我聽到可發出聲音的音調看動畫上擷取和釋放。</td>
     </tr>
     <tr>
-        <td><a href="gaze-and-commit.md">Head 視線與認可</a></td>
+        <td><a href="gaze-and-commit.md">頭部目光和行動</a></td>
         <td>我看到我的檢視的中央資料指標。</td>
         <td>視線游標會變更透過某些物件時的狀態。</td>
         <td>我看到/聽到視覺和聽覺確認，當我採取的動作。</td>
@@ -175,9 +175,9 @@ ms.locfileid: "64993595"
  
 
 ## <a name="see-also"></a>另請參閱
-* [Head 視線與認可](gaze-and-commit.md)
+* [頭部目光和行動](gaze-and-commit.md)
 * [直接操作](direct-manipulation.md)
-* [點和認可](point-and-commit.md)
+* [指向和行動](point-and-commit.md)
 * [目光目標](gaze-targeting.md)
 * [筆勢](gestures.md)
 * [語音設計](voice-design.md)

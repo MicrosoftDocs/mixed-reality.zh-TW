@@ -6,12 +6,12 @@ ms.author: liamar
 ms.date: 03/31/2019
 ms.topic: article
 keywords: 混合實境，視線、 詳述、 互動，設計
-ms.openlocfilehash: a50ae948a351f5152ebb98778da9be8c08090d72
-ms.sourcegitcommit: 222cba2d622b47f75949bf8af80d5c62de4dceab
+ms.openlocfilehash: d99180b6eb278eb6d7bf322c01a1c7cceb7fad1f
+ms.sourcegitcommit: a4a53e6772805d89a47588857e3e8fb1fd8d9710
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64914615"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65469068"
 ---
 # <a name="gaze-and-dwell"></a>視線和詳述
 
@@ -128,7 +128,7 @@ ms.locfileid: "64914615"
  
  ## <a name="see-also"></a>另請參閱
 * [直接操作](direct-manipulation.md)
-* [點和認可](point-and-commit.md)
+* [指向和行動](point-and-commit.md)
 * [互動基本概念](interaction-fundamentals.md)
-* [Head 視線與認可](gaze-and-commit.md)
-* [視線和語音](voice-design.md)
+* [頭部目光和行動](gaze-and-commit.md)
+* [目光和語音](voice-design.md)

@@ -6,12 +6,12 @@ ms.author: daescu
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 事件、 行事曆、 academy、 排程、 sf，san francisco、 reactor
-ms.openlocfilehash: c896cf398bd10fc12e5afed6313cbd95e5370c31
-ms.sourcegitcommit: f5c1dedb3b9e29f27f627025b9e7613931a7ce18
+ms.openlocfilehash: 15867ebd15406741d96ea5f61a66b5d80fcfde6a
+ms.sourcegitcommit: 37b628d6e24377ffc8fe9a09750fc0033107d151
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64670122"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65536098"
 ---
 # <a name="microsoft-mixed-reality-events"></a>Microsoft 混合實境事件
 
@@ -21,23 +21,6 @@ ms.locfileid: "64670122"
 680 Folsom 北路 1234 號<br>
 San Francisco, CA 94107
 
-
-
----
-## <a name="mixed-reality-dev-days-seattlehttpsdocsmicrosoftcomen-uswindowsmixed-realitymr-dev-days"></a>**[混合的實境開發天西雅圖](https://docs.microsoft.com/en-us/windows/mixed-reality/mr-dev-days)**
-### <a name="may-2-3-2019"></a>2-3，2019 年
-在混合實境開發天，您將建置的技能、 網路和您要將上一層樓的混合的實境應用程式的想法。
-
-**[這裡的詳細資訊](https://docs.microsoft.com/en-us/windows/mixed-reality/mr-dev-days)**
-
-
-
----
-## <a name="microsoft-build-seattlehttpsemea01safelinksprotectionoutlookcomurlhttps3a2f2fwwwmicrosoftcom2fen-us2fbuilddata027c017cdaescu40microsoftcom7ca8ddee063b7949a9992308d6903e62b07c72f988bf86f141af91ab2d7cd011db477c17c07c636854994961104348sdatahozczluhbppxuyjak5i802k6bej5flmn0gek7c12bihw3dreserved0"></a>**[Microsoft / / 建置，西雅圖](https://emea01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.microsoft.com%2Fen-us%2Fbuild&data=02%7C01%7Cdaescu%40microsoft.com%7Ca8ddee063b7949a9992308d6903e62b0%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636854994961104348&sdata=hozCZlUHbpPxuYJaK5i802K6beJ5flmN0gEK7C1%2BIHw%3D&reserved=0)**
-### <a name="may-6-10-2019"></a>6-10，2019 年
-加入我們在西雅圖 Microsoft 頂級支援事件適用於開發人員。 歡迎參加，體驗最新的開發人員工具和技術。 Imagine 建立軟體，藉由取得業界深入解析到未來的軟體開發的新方法。 您若要了解新開發趨勢與創新的方式，程式碼的社群進行交流。
-
-**報名 Microsoft //Build 2019年[這裡](https://emea01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.microsoft.com%2Fen-us%2Fbuild&data=02%7C01%7Cdaescu%40microsoft.com%7Ca8ddee063b7949a9992308d6903e62b0%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636854994961104348&sdata=hozCZlUHbpPxuYJaK5i802K6beJ5flmN0gEK7C1%2BIHw%3D&reserved=0)**
 
 
 ---

@@ -6,19 +6,19 @@ ms.author: shengkait
 ms.date: 04/11/2019
 ms.topic: article
 keywords: 混合實境，視線、 視線目標，就會有互動，設計
-ms.openlocfilehash: c762518a224138dab248670eaef23ccb92016fce
-ms.sourcegitcommit: a4a53e6772805d89a47588857e3e8fb1fd8d9710
+ms.openlocfilehash: 8c578d9a67f6809df69fb132f4c46a381726596e
+ms.sourcegitcommit: d6d96d552ec10cd7e6502fbbc1905432e2878325
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65469100"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65524343"
 ---
 # <a name="introducing-instinctual-interactions"></a>簡介 instinctual 互動
 簡單、 instinctual 互動的原理是這整個 Microsoft 混合實境平台。  我們已採取三個步驟，以確保應用程式設計師和開發人員可以提供簡單且直覺式的互動，供其客戶。 
 
 首先，我們已確認我們令人讚嘆的感應器和輸入的技術，包括手動追蹤、 追蹤、 眼睛和自然語言，結合無縫式的多樣式互動模型。  根據我們的研究，設計和開發 multimodally-而不根據單一輸入--建立 instinctual 體驗的關鍵。
 
-其次，我們了解許多開發人員目標多個裝置，不論其是指 HoloLens 2 和 HoloLens （第 1 代） 或 HoloLens 和 VR。  因此，我們已設計我們的互動模型，才能在裝置上 （即使輸入的技術而異，每個裝置上）。  比方說，Windows 沈浸式耳機 6DOF 控制站上的遠端互動和 HoloLens 2 這兩個最互動使用的相同的提供和模式，輕鬆跨裝置應用程式。 不只是此方便開發人員和設計工具，但它自然給使用者。 
+其次，我們了解許多開發人員目標多個裝置，不論其是指 HoloLens 2 和 HoloLens （第 1 代） 或 HoloLens 和 VR。  因此，我們已設計我們的互動模型，才能在裝置上 （即使輸入的技術而異，每個裝置上）。  比方說，Windows 沈浸式耳機 6DoF 控制站上的遠端互動和 HoloLens 2 這兩個最互動使用的相同的提供和模式，輕鬆跨裝置應用程式。 不只是此方便開發人員和設計工具，但它自然給使用者。 
 
 最後，雖然我們辨識有數千個更有效、 更吸引人，並在 MR 神奇互動，但我們發現該刻意採用的互動模型中端對端應用程式是確保使用者是否順利的最佳辦法，有絕佳的體驗。  為此，我們包含了這個互動的指導方針中的三個項目：
 * 我們已建立結構周圍的三個主要的互動模型的元件和模式所需的每本指導方針
@@ -51,8 +51,8 @@ ms.locfileid: "65469100"
     <tr>
         <td><a href="hands-and-tools.md">指針和工具</a></td>
         <td>3D 空間的體驗<br>例如空間配置和設計、 操作的內容或模擬</td>
-        <td>適用於新的使用者<br>學習曲線很低<br>奠基於對的簡單 visual 提供<br>手動追蹤和 6 DoF 控制器之間的一致 UX<br>如果結合語音、 眼睛追蹤或前端的視線很棒</td>
-        <td>HoloLens 2<br>Windows 包含 6DOF 控制站的沈浸式</td>
+        <td>適用於新的使用者<br>學習曲線很低<br>奠基於對的簡單 visual 提供<br>手動追蹤和 6DoF 控制站之間的一致 UX<br>如果結合語音、 眼睛追蹤或前端的視線很棒</td>
+        <td>HoloLens 2<br>Windows 包含 6DoF 控制站的沈浸式</td>
     </tr>
     <tr>
         <td><a href="hands-free.md">免持式</a></td>

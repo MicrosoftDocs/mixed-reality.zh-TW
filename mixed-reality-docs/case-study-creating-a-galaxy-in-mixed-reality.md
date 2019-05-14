@@ -8,7 +8,7 @@ ms.topic: article
 keywords: Galaxy Explorer、 HoloLens、 Windows Mixed Reality，分享您的想法，案例研究
 ms.openlocfilehash: a478eaa35144a8ee0fbeaeb43cec4b9f901890ab
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59597018"
@@ -147,7 +147,7 @@ float3 ComputeStarPosition(StarDescriptor star)
 
 ### <a name="a-bit-of-context-first"></a>A 位元內容的第一次
 
-在遊戲中使用的紋理時紋理大小會很少會符合我們想要使用它，在的區域，但我們可以使用不同種類的篩選，以取得要進行插補，我們想要從材質的像素的色彩的圖形卡的紋理 ([紋理篩選<c3/>)。 我們感興趣的篩選[雙線性篩選](https://msdn.microsoft.com/library/windows/desktop/bb172357.aspx)會計算任何使用最近鄰近項目 4 的像素的值。
+在遊戲中使用的紋理時紋理大小會很少會符合我們想要使用它，在的區域，但我們可以使用不同種類的篩選，以取得要進行插補，我們想要從材質的像素的色彩的圖形卡的紋理 ([紋理篩選<c3/>)。](https://msdn.microsoft.com/library/dn642451.aspx) 我們感興趣的篩選[雙線性篩選](https://msdn.microsoft.com/library/windows/desktop/bb172357.aspx)會計算任何使用最近鄰近項目 4 的像素的值。
 
 ![原始再進行篩選](images/texture-1.png)
 

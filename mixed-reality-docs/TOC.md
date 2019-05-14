@@ -48,11 +48,13 @@
 ### [AfterNow 的程序 - 構想、原型設計、建置](case-study-afternows-process-envisioning,-prototyping,-building.md)
 ### [建置 HoloSketch - HoloLens 的空間配置和 UX 繪製應用程式](case-study-building-holosketch,-a-spatial-layout-and-ux-sketching-app-for-hololens.md)
 ### [擷取及建立 HoloTour 的內容](case-study-capturing-and-creating-content-for-holotour.md)
-### [在混合實境中建立星系](case-study-creating-a-galaxy-in-mixed-reality.md)
 ### [在 Fragments 中建立沉浸式體驗](case-study-creating-an-immersive-experience-in-fragments.md)
 ### [為 HoloTour 建立不可能的檢視方塊](case-study-creating-impossible-perspectives-for-holotour.md)
 ### [擴充混合實境的設計程序](case-study-expanding-the-design-process-for-mixed-reality.md)
 ### [擴充 HoloLens 的空間對應功能](case-study-expanding-the-spatial-mapping-capabilities-of-hololens.md)
+### 星系探險
+#### [在 Hololens (第一代) 混合實境中建立星系](case-study-creating-a-galaxy-in-mixed-reality.md)
+#### [更新 HoloLens 2 的星系探險](galaxy-explorer-update.md)
 ### [了解 HoloStudio UI 和互動設計](case-study-3-holostudio-ui-and-interaction-design-learnings.md)
 ### [Lowe 廚房的教學課程](case-study-lessons-from-the-lowes-kitchen.md)
 ### [在實境中的透視技術](case-study-looking-through-holes-in-your-reality.md)
@@ -76,7 +78,7 @@
 ### [版本資訊 - 2016 年 3 月](release-notes-march-2016.md)
 
 # [設計](design.md)
-## [關於本設計指引](about-this-design-guidance.md)
+## [關於本設計指南](about-this-design-guidance.md)
 ## 開始進行設計
 ### [什麼是混合實境？](mixed-reality.md)
 ### [什麼是全像投影？](hologram.md)
@@ -190,7 +192,8 @@
 ### Unity
 #### MR 學習模組
 ##### HoloLens 2
-###### [基本模組 - 概觀與目標](mrlearning-base.md)
+###### 基本模組
+####### [基本模組 - 概觀與目標](mrlearning-base.md)
 ####### [專案初始化和第一個應用程式](mrlearning-base-ch1.md)
 ####### [使用者介面、手部追蹤及混合實境工具組組態](mrlearning-base-ch2.md)
 ####### [動態內容放置和解算器](mrlearning-base-ch3.md)

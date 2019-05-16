@@ -6,12 +6,12 @@ ms.author: wguyman
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 6dof 控制器、 動作控制站
-ms.openlocfilehash: b44964ab872bd080349ecf1b04b3f7082b521a24
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 7db1c16f8243081dc8f53e8722391f102c38e0d3
+ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597070"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65629115"
 ---
 # <a name="motion-controllers"></a>動作控制站
 
@@ -230,10 +230,10 @@ Windows Mixed Reality 支援各種不同的外型規格中的動作控制站，�
 [提供意見反應](give-us-feedback.md)意見反應中樞中使用的 「 混合的實境-> 輸入 「 類別目錄。
 
 ## <a name="see-also"></a>另請參閱
-* [筆勢和 Unity 中的動作控制站](gestures-and-motion-controllers-in-unity.md)
-* [視線、 手勢和在 DirectX 中的動作控制站](gaze,-gestures,-and-motion-controllers-in-directx.md)
+* [Unity 中的筆勢和運動控制器](gestures-and-motion-controllers-in-unity.md)
+* [指針與 DirectX 中的動作控制站](hands-and-motion-controllers-in-directx.md)
 * [筆勢](gestures.md)
-* [MR 輸入 213:動作控制站](mixed-reality-213.md)
+* [MR Input 213：運動控制器](mixed-reality-213.md)
 * [人十分熱心的指南：您主要的 Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home)
 * [人十分熱心的指南：使用 Windows Mixed Reality 中的遊戲和應用程式](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/using-games-and-apps-in-windows-mixed-reality)
 * [追蹤內到外的運作方式](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/tracking-system)

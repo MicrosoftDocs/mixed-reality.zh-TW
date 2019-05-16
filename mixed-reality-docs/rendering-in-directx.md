@@ -6,12 +6,12 @@ ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，全像投影、 轉譯、 3D 圖形，HolographicFrame，轉譯迴圈、 更新迴圈、 逐步解說、 範例程式碼
-ms.openlocfilehash: fd35f971af4c3c9dfd7f21ee396c92216b3246e9
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.openlocfilehash: 6edcaf808f2d7d48f480169e5579adb8984678a0
+ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59597150"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65629039"
 ---
 # <a name="rendering-in-directx"></a>在 DirectX 中轉譯
 
@@ -89,7 +89,7 @@ auto viewTransformContainer = cameraPose.TryGetViewTransform(coordinateSystem);
 
 ### <a name="process-gaze-and-gesture-input"></a>處理序視線和輸入筆勢
 
-[視線](gaze.md)並[筆勢](gestures.md)輸入不是以時間為基礎，因此不需要在更新**StepTimer**函式。 不過[此輸入](gaze,-gestures,-and-motion-controllers-in-directx.md)是指應用程式需要查看每個畫面格。
+[視線](gaze-in-directx.md)並[手](hands-and-motion-controllers-in-directx.md)輸入不是以時間為基礎，因此不需要在更新**StepTimer**函式。 不過這項輸入是應用程式需要查看每個畫面格的項目。
 
 ### <a name="process-time-based-updates"></a>處理時間為基礎的更新
 

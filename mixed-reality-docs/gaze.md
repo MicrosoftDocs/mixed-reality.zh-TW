@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 混合的實境、 視線、 互動，設計
-ms.openlocfilehash: 9a12a5a3b3a583477fd98caeaa2f6890c67e2655
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 738ba9063a5d00f3bbedce989d93076d56ad1a44
+ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597074"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65629093"
 ---
 # <a name="gaze"></a>注視
 
@@ -61,6 +61,6 @@ HoloLens 2 上的互動可以使用者的前端視線的目標或透過附近或
 一旦使用者已針對全像或使用其視線的真實物件，其下一個步驟是該物件上採取動作。 讓使用者以採取動作的主要方式是透過[筆勢](gestures.md)，[動作控制站](motion-controllers.md)並[語音](voice-input.md)。
 
 ## <a name="see-also"></a>另請參閱
-* [MR 輸入 210:Gaze](holograms-210.md)
-* [視線、 手勢和在 DirectX 中的動作控制站](gaze,-gestures,-and-motion-controllers-in-directx.md)
-* [在 Unity 視線](gaze-in-unity.md)
+* [MR Input 210：目光](holograms-210.md)
+* [DirectX 中的前端和眼睛視線](gaze-in-directx.md)
+* [Unity 中的目光](gaze-in-unity.md)

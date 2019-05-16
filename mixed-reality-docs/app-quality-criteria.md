@@ -6,12 +6,12 @@ ms.author: crderr
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 應用程式品質準則，混合實境，混合實境應用程式
-ms.openlocfilehash: 8070a434be462a636b314527c59f299ca77fb6d4
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: e9f6cd5a6017e11cd167c8141d29b82f89af08e4
+ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59595480"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65628998"
 ---
 # <a name="app-quality-criteria"></a>應用程式的品質準則
 
@@ -61,7 +61,7 @@ ms.locfileid: "59595480"
 * [了解效能 for Mixed Reality](understanding-performance-for-mixed-reality.md)
 * [全像穩定性和畫面播放速率](hologram-stability.md#frame-rate)
 * [資產的效能預算](asset-creation-process.md)
-* [Unity 的效能建議](performance-recommendations-for-unity.md)
+* [對 Unity 的效能建議](performance-recommendations-for-unity.md)
 
 #### <a name="tools-and-tutorials"></a>工具和教學課程
 
@@ -119,8 +119,8 @@ ms.locfileid: "59595480"
 * [全像穩定性和畫面播放速率](hologram-stability.md#frame-rate)
 * [案例研究，使用穩定平面](case-study-using-the-stabilization-plane-to-reduce-holographic-turbulence.md)
 * [了解效能 for Mixed Reality](understanding-performance-for-mixed-reality.md)
-* [Unity 的效能建議](performance-recommendations-for-unity.md)
-* [空間的錨點](spatial-anchors.md)
+* [對 Unity 的效能建議](performance-recommendations-for-unity.md)
+* [空間錨點](spatial-anchors.md)
 * [處理追蹤錯誤](coordinate-systems.md#handling-tracking-errors)
 * [靜態參考座標系](coordinate-systems.md#stationary-frame-of-reference)
 
@@ -168,12 +168,12 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
 * [掃描處理程序的房間](case-study-expanding-the-spatial-mapping-capabilities-of-hololens.md)
 * [空間的錨點的最佳作法](spatial-anchors.md#best-practices)
 * [處理追蹤錯誤](coordinate-systems.md#handling-tracking-errors)
-* [在 Unity 中的空間對應](spatial-mapping-in-unity.md)
+* [Unity 中的空間對應](spatial-mapping-in-unity.md)
 * [Vuforia 開發概觀](vuforia-development-overview.md)
 
 #### <a name="tools-and-tutorials"></a>工具和教學課程
 
-* [MR 空間 230:空間對應](holograms-230.md)
+* [MR Spatial 230：空間對應](holograms-230.md)
 * [MR 工具組，空間的對應程式庫](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit/SpatialMapping/README.md)
 * [MR 附屬套件，海報校正範例](https://github.com/Microsoft/MixedRealityCompanionKit/tree/master/PosterCalibrationSample)
 * [MR 附屬套件，Kinect IPD](https://github.com/Microsoft/MixedRealityCompanionKit/tree/master/KinectIPD)
@@ -225,7 +225,7 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
 ### <a name="resources"></a>資源
 
 * [轉譯距離](hologram-stability.md#hologram-render-distances)
-* [在 Unity 中的焦點](focus-point-in-unity.md)
+* [Unity 中的焦點](focus-point-in-unity.md)
 * [小數位數的實驗](scale.md#experimenting-with-scale)
 * [文字，建議使用的字型大小](typography.md#recommended-font-size)
 
@@ -260,7 +260,7 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
 ### <a name="resources"></a>資源
 
 * [轉譯距離](hologram-stability.md#hologram-render-distances)
-* [在 Unity 中的焦點](focus-point-in-unity.md)
+* [Unity 中的焦點](focus-point-in-unity.md)
 
 ## <a name="use-of-spatial-sound"></a>使用的空間的音效
 
@@ -300,15 +300,15 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
 
 #### <a name="documentation"></a>文件
 
-* [空間的音效](spatial-sound.md)
-* [空間完善的設計](spatial-sound-design.md)
-* [在 Unity 中的空間音效](spatial-sound-in-unity.md)
+* [空間音效](spatial-sound.md)
+* [空間音效設計](spatial-sound-design.md)
+* [Unity 中的空間音效](spatial-sound-in-unity.md)
 * [案例研究，如 HoloTour 聲音的空間](case-study-spatial-sound-design-for-holotour.md)
 * [案例研究，RoboRaid 中使用空間的音效](case-study-using-spatial-sound-in-roboraid.md)
 
 #### <a name="tools-and-tutorials"></a>工具和教學課程
 
-* [MR 空間 220:空間的音效](holograms-220.md)
+* [MR Spatial 220：空間音效](holograms-220.md)
 * [MRToolkit，空間音訊](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit/SpatialSound/README.md)
 
 ## <a name="focus-on-holographic-frame-fov-boundaries"></a>焦點放在全像攝影版的框架 (FOV) 界限
@@ -348,7 +348,7 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
 
 #### <a name="documentation"></a>文件
 
-* [全像攝影版的框架](holographic-frame.md)
+* [全像攝影框架](holographic-frame.md)
 * [案例研究、 HoloStudio UI 和互動的設計做法](case-study-3-holostudio-ui-and-interaction-design-learnings.md?#problem-2-modal-dialogs-are-sometimes-out-of-the-holographic-frame)
 * [小數位數的物件和環境](scale.md)
 * [資料指標的視覺提示](cursors.md#visual-cues)
@@ -402,13 +402,13 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
 
 * [互動設計](hologram.md)
 * [色彩、 光線及材料](color,-light-and-materials.md)
-* [告示板和 tag-along](billboarding-and-tag-along.md)
-* [互動的基本概念](interaction-fundamentals.md)
+* [佈告板和常駐標籤](billboarding-and-tag-along.md)
+* [互動基本概念](interaction-fundamentals.md)
 * [自我動作和使用者 locomotion](comfort.md#self-motion-and-user-locomotion)
 
 #### <a name="tools-and-tutorials"></a>工具和教學課程
 
-* [MR 輸入 210:Gaze](holograms-210.md)
+* [MR Input 210：目光](holograms-210.md)
 
 ## <a name="input-interaction-clarity"></a>輸入的互動清晰度
 
@@ -453,20 +453,21 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
 
 * [Windows MR 互動的基本概念](interaction-fundamentals.md)
 * [可互動的物件](interactable-object.md)
-* [為目標的視線](gaze-targeting.md)
-* [資料指標](cursors.md)
+* [目光目標](gaze-targeting.md)
+* [游標](cursors.md)
 * [舒適度與視線](comfort.md#gaze-direction)
 * [筆勢](gestures.md)
 * [語音輸入](voice-input.md)
 * [語音設計](voice-design.md)
-* [動作控制站](motion-controllers.md)
-* [移植指南 Unity 的輸入](input-porting-guide-for-unity.md)
-* [在 Unity 中的鍵盤輸入](keyboard-input-in-unity.md)
-* [在 Unity 視線](gaze-in-unity.md)
-* [筆勢和 Unity 中的動作控制站](gestures-and-motion-controllers-in-unity.md)
-* [在 Unity 中的語音輸入](voice-input-in-unity.md)
-* [鍵盤、 滑鼠及 DirectX 中的控制站輸入](keyboard,-mouse,-and-controller-input-in-directx.md)
-* [凝視、 手勢及在 DirectX 中的動作控制站](gaze,-gestures,-and-motion-controllers-in-directx.md)
+* [運動控制器](motion-controllers.md)
+* [Unity 的輸入移植指南](input-porting-guide-for-unity.md)
+* [Unity 中的鍵盤輸入](keyboard-input-in-unity.md)
+* [Unity 中的目光](gaze-in-unity.md)
+* [Unity 中的筆勢和運動控制器](gestures-and-motion-controllers-in-unity.md)
+* [Unity 中的語音輸入](voice-input-in-unity.md)
+* [DirectX 中的鍵盤、滑鼠及控制器輸入](keyboard,-mouse,-and-controller-input-in-directx.md)
+* [DirectX 中的前端和眼睛視線](gaze-in-directx.md)
+* [指針與 DirectX 中的動作控制站](hands-and-motion-controllers-in-directx.md)
 * [DirectX 中的語音輸入](voice-input-in-directx.md)
 
 #### <a name="tools-and-tutorials"></a>工具和教學課程
@@ -475,9 +476,9 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
 * [Cast 研究：HoloStudio UI 和互動的設計做法](case-study-3-holostudio-ui-and-interaction-design-learnings.md)
 * [範例應用程式：定期的資料表的項目](periodic-table-of-the-elements.md)
 * [範例應用程式：農曆模組](lunar-module.md)
-* [MR 輸入 210:Gaze](holograms-210.md)
-* [MR 輸入 211:筆勢](holograms-211.md)
-* [MR 輸入 212:語音](holograms-212.md)
+* [MR Input 210：目光](holograms-210.md)
+* [MR Input 211：筆勢](holograms-211.md)
+* [MR Input 212：語音](holograms-212.md)
 
 ## <a name="interactable-objects"></a>可互動的物件
 
@@ -516,7 +517,7 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
 #### <a name="documentation"></a>文件
 
 * [可互動的物件](interactable-object.md)
-* [在 Unity 中的文字](text-in-unity.md)
+* [Unity 中的文字](text-in-unity.md)
 * [應用程式列和週框方塊](app-bar-and-bounding-box.md)
 * [語音設計](voice-design.md)
 
@@ -560,7 +561,7 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
 
 #### <a name="documentation"></a>文件
 
-* [聊天室掃描視覺效果](room-scan-visualization.md)
+* [空間位置掃描視覺效果](room-scan-visualization.md)
 * [案例研究：展開 HoloLens 空間的對應的功能](case-study-expanding-the-spatial-mapping-capabilities-of-hololens.md)
 * [案例研究：空間設計完善的 HoloTour](case-study-spatial-sound-design-for-holotour.md)
 * [案例研究：在片段中建立沉浸式體驗](case-study-creating-an-immersive-experience-in-fragments.md)
@@ -600,7 +601,7 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
 
 ### <a name="resources"></a>資源
 
-* [全像攝影版的框架](holographic-frame.md)
+* [全像攝影框架](holographic-frame.md)
 
 ## <a name="data-loading"></a>載入資料
 

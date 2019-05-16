@@ -1,17 +1,18 @@
 ---
-title: 視線與認可
-description: 視線和 commit 輸入模型的概觀
+title: Head 視線與認可
+description: Head 視線和 commit 輸入模型的概觀
 author: caseymeekhof
 ms.author: cmeekhof
 ms.date: 03/31/2019
 ms.topic: article
+ms.localizationpriority: high
 keywords: 混合實境，視線、 視線目標，就會有互動，設計
-ms.openlocfilehash: 7bce18853e46d71d963574b35c393e5a5dbf2cd0
-ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
+ms.openlocfilehash: 95f2cef8c10ce3d0d2a218953613fef6f0a00362
+ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64873979"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65730814"
 ---
 # <a name="head-gaze-and-commit"></a>Head 視線與認可
 Head 視線和認可為牽涉到目標物件的向前指您前端 （head-方向）、 方向與輸入的模型，然後處理它與次要輸入例如空中點選手筆勢或語音命令"Select"。 它會被視為 「 目前 」 輸入的模型與間接的操作，這表示它最適合用於互動超過手臂觸達的內容。
@@ -53,14 +54,14 @@ Head 視線和認可為牽涉到目標物件的向前指您前端 （head-方向
 - 按下 'A' 上的 Xbox 遊戲台
 - 按下 'A' 上的 Xbox 調適性控制器
 
-### <a name="gaze-and-air-tap-gesture"></a>視線和空中點選手勢
+### <a name="head-gaze-and-air-tap-gesture"></a>Head 視線和空中點選手勢
 空中點選是點選手勢與垂直手持。 若要執行空中點選、 引發食指為準備的位置，則捏合以拇指和食指引發備份，以釋放。 HoloLens 1 空中點選是最常見的第二個輸入。
 
 ![在準備好位置，然後點選或按一下 移動手指](images/readyandpress.jpg)<br>
 
 空中點選也會提供在 HoloLens 2，它具有與原始版本已經放寬。 現在支援幾乎所有類型的 pinches，只要手形椅背與股仍然是。 這可讓您了解，並執行動作的使用者更容易。  讓現有的應用程式將會自動取得新的行為，在重新編譯 HoloLens 2 之後，這個新的空中點選會取代舊的憑證，透過相同的 API。
 
-### <a name="gaze-and-select-voice-command"></a>視線和 「 選取 」 語音命令
+### <a name="head-gaze-and-select-voice-command"></a>Head 視線和 「 選取 」 語音命令
 語音命令是其中一種主要的互動方法，在混合實境上。 它提供非常強大的 「 實際操作免費 」 機制，來控制系統。 有的語音互動模型的 diferent 類型：
 
 - [選取]，一般的命令，可讓執行 [按一下] 時閉路或做為第二個輸入的認可。
@@ -72,7 +73,7 @@ Head 視線和認可為牽涉到目標物件的向前指您前端 （head-方向
 若要尋找更多詳細資料和可用的命令以及如何使用 comprenhesive 清單，請查看我們[語音設計](voice-design.md)指引。
 
 
-### <a name="gaze-and-hololens-clicker"></a>視線和 HoloLens Clicker
+### <a name="head-gaze-and-hololens-clicker"></a>Head 視線和 HoloLens Clicker
 HoloLens Clicker 是專為 HoloLens 建置第一個周邊裝置，並隨附 HoloLens 1 Development Edition。 HoloLens Clicker 可讓使用者按一下 以最少的手動動作，並認可為次要輸入。 HoloLens clicker 會連接到 HoloLens 1 或 2 使用藍牙低能源 (BTLE)。
 
 ![](images/hololens-clicker-500px.jpg)<br>
@@ -83,7 +84,7 @@ HoloLens Clicker
 
 
 
-### <a name="gaze-and-xbox-wireless-controller"></a>視線和 Xbox 無線控制器
+### <a name="head-gaze-and-xbox-wireless-controller"></a>Head 視線和 Xbox 無線控制器
 Xbox 無線控制器可讓執行 [按一下] 時閉路做為次要輸入使用的按鈕。 裝置會對應至一組預設的動作，協助您瀏覽和控制系統。 如果您想要自訂控制器，請設定您的 Xbox 無線控制站使用 Xbox Accesories 應用程式。
 
 ![](images/xboxcontroller.jpg)<br>
@@ -92,7 +93,7 @@ Xbox 無線控制器
 [配對您的 PC 與 Xbox 控制器](hardware-accessories.md#pairing-bluetooth-accessories)
 
 
-### <a name="gaze-and-xbox-adaptive-controller"></a>視線和 Xbox 的自適性控制器
+### <a name="head-gaze-and-xbox-adaptive-controller"></a>Head 視線和 Xbox 的自適性控制器
 主要設計用來透過有限的行動性需求的玩家，Xbox 調適性控制器是可協助您更方便使用混合實境聯合的中樞的裝置。
 
 Xbox 調適性控制器可讓執行 [按一下] 時閉路做為次要輸入使用的按鈕。 裝置會對應至一組預設的動作，協助您瀏覽和控制系統。 如果您想要自訂控制器，請設定 Xbox 調適性控制器使用 Xbox Accesories 應用程式。
@@ -110,16 +111,11 @@ Xbox 調適性控制器的連接埠
 <a href=https://www.xbox.com/en-US/xbox-one/accessories/controllers/xbox-adaptive-controller>更多可用的資訊 Xbox 網站上</a>
 
 
-# <a name="device-support"></a>裝置支援
-Head 視線，也提供所有混合的實境耳機上認可。 是 HoloLens 第 1 版上的主要輸入的模型。 其他耳機通常包含一個手動基礎指標的機制，例如動作控制站，或以手動追蹤。 這些裝置上的應用程式應該偏好[點認可](point-and-commit.md)盡可能最互動。
-
-眼睛視線和認可位於 HoloLens 2，但不是主要的輸入的模型。 移至"Eye 視線設計指導方針 」 一節探討時這可能適合您的應用程式。
-
 # <a name="head-gaze-design-guidelines"></a>Head 視線設計指導方針
 > [!NOTE]
 > 特定視線設計的詳細指引[即將推出](index.md)。
 
-## <a name="gaze-targeting"></a>為目標的視線
+## <a name="head-gaze-targeting"></a>Head 視線目標
 使用者能夠針對他們想要進行互動，無論輸入強制回應性的項目所建立的所有互動。 在 Windows Mixed Reality，這通常是使用使用者的視線。
 若要啟用的使用者，才能順利運作的體驗，系統的導出了解使用者的意圖，以及使用者的實際的意圖，必須為儘可能密集地對齊。 程度系統解譯使用者的預定的動作正確，增加滿意度和效能改善。
 
@@ -142,7 +138,7 @@ Head 視線，也提供所有混合的實境耳機上認可。 是 HoloLens 第 
 ## <a name="improving-targeting-behaviors"></a>改善目標的行為
 如果使用者意圖為目標的項目可以決定 （或接近近似），它可以接受"near miss"會嘗試在互動，如同它們已正確目標很有幫助。 有少數幾個成功的方法，可以將其納入混合的實境體驗：
 
-### <a name="gaze-stabilization-gravity-wells"></a>視線穩定 (「 重力 wells")
+### <a name="head-gaze-stabilization-gravity-wells"></a>Head 視線穩定 (「 重力 wells")
 這應該開啟大部分/所有的時間。 這項技術會移除使用者可能有自然的前端/頸部做法。 也因為尋找/談到的行為而移動。
 
 ### <a name="closest-link-algorithms"></a>最接近的連結演算法
@@ -209,10 +205,10 @@ HoloLens 辨識手勢，藉由追蹤或兩個都看得到裝置的實際操作�
 
 ## <a name="see-also"></a>另請參閱
 * [直接操作](direct-manipulation.md)
-* [點和認可](point-and-commit.md)
+* [指向和行動](point-and-commit.md)
 * [互動基本概念](interaction-fundamentals.md)
-* [視線和詳述](gaze-targeting.md)
-* [視線和語音](voice-design.md)
+* [目光和停駐](gaze-targeting.md)
+* [目光和語音](voice-design.md)
 
 
 

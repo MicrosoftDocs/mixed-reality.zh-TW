@@ -1,19 +1,19 @@
 ---
-title: 最佳化您的應用程式，針對免持聽筒
+title: 不需要用手
 description: 最佳化您的應用程式，針對免持聽筒
 author: liamar
 ms.author: liamar
 ms.date: 04/20/2019
 ms.topic: article
 keywords: 混合實境，免持聽筒，視線，視線目標，就會有互動，設計
-ms.openlocfilehash: f39a9524831161997b59be6cf89b124fa5b29c78
-ms.sourcegitcommit: d6d96d552ec10cd7e6502fbbc1905432e2878325
+ms.openlocfilehash: 59a460a0c46ace7e633381019d29af54b1061695
+ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65524333"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65629014"
 ---
-# <a name="optimizing-your-app-for-hands-free"></a>最佳化您的應用程式，針對免持聽筒
+# <a name="hands-free"></a>不需要用手
 
 
 
@@ -31,18 +31,16 @@ ms.locfileid: "65524333"
 
 ## <a name="hands-free-modalities"></a>免持聽筒型態
 
-### <a name="voice-commanding"></a>語音命令
+### <a name="voice-commandingvoice-designmd"></a>[語音命令](voice-design.md)
 
 使用您的語音命令和控制介面可以不只允許使用者操作 handsfree，但也略過多個步驟。 此樣式的使用方式的範圍可以從允許使用者只讀取任何按鈕名稱大聲來啟動它，如所示，請參閱-it-say-it，來與代理程式可以為您完成的工作人員交談。
 
-* [語音設計](voice-design.md)
 
 
-### <a name="head-gaze-and-dwell"></a>Head 視線和詳述
+### <a name="head-gaze-and-dwellgaze-and-dwellmd"></a>[Head 視線和詳述](gaze-and-dwell.md)
 
 在某些免持聽筒的情況下，使用您的聲音不是理想或甚至可以。 大聲工廠環境、 隱私權或社交規範都可以條件約束。 標頭視線 + 探討模型可讓使用者使用其前端的向量來點，而延遲，以瀏覽應用程式或談論按鈕會啟動它之後一段時間 （通常大約 1 秒左右）。 
 
-* [目光和停駐](gaze-and-dwell.md)
 
 ## <a name="transitioning-in-and-out-of-hands-free"></a>轉換流入和流出免持聽筒
 

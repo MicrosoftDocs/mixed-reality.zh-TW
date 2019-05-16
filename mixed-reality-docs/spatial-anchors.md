@@ -5,13 +5,14 @@ author: thetuvix
 ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
+ms.localizationpriority: high
 keywords: 座標系統、 空間座標系統、 全球規模、 全球、 小數位數、 位置、 方向、 錨點、 空間的錨點、 世界鎖定時，世界鎖定的持續性，共用
-ms.openlocfilehash: eb0fae7881f1b6517da57305ef2fa3cb1ed78648
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.openlocfilehash: 16165194d040ad22f7885897eddcc65cf9dcaec3
+ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59597127"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65730854"
 ---
 # <a name="spatial-anchors"></a>空間的錨點
 
@@ -74,8 +75,8 @@ ms.locfileid: "59597127"
 
 ## <a name="see-also"></a>另請參閱
 * [座標系統](coordinate-systems.md)
-* [在混合實境中共用體驗](shared-experiences-in-mixed-reality.md)
-* <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure 空間的錨點</a>
-* [在 Unity 中的持續性](persistence-in-unity.md)
+* [混合實境中的共用體驗](shared-experiences-in-mixed-reality.md)
+* <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure Spatial Anchors</a>
+* [Unity 中的持續性](persistence-in-unity.md)
 * [DirectX 中的空間錨點](coordinate-systems-in-directx.md#place-holograms-in-the-world-using-spatial-anchors)
 * [案例研究-仔細檢查您實際上的漏洞](case-study-looking-through-holes-in-your-reality.md)

@@ -1,25 +1,23 @@
 ---
-title: 視線和語音
+title: 語音命令
 description: 凝視、 手勢及語音 (GGV) 是在 HoloLens 互動的主要方法。 這篇文章提供語音設計縝密的指導方針。
-author: grbury
-ms.author: grbury
+author: shentan
+ms.author: shentan
 ms.date: 04/21/2019
 ms.topic: article
+ms.localizationpriority: high
 keywords: Windows Mixed Reality，設計、 互動、 語音
-ms.openlocfilehash: 35e4c72026acaa36e5fd686cf892dd602f6626d6
-ms.sourcegitcommit: a4a53e6772805d89a47588857e3e8fb1fd8d9710
+ms.openlocfilehash: 49fa199b2656db95b15583ccfbee39f33942f180
+ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65469078"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65730793"
 ---
-# <a name="gaze-and-voice"></a>視線和語音
+# <a name="voice-commanding"></a>語音命令
 
-凝視、 手勢及語音 (GGV) 會在 HoloLens 互動的主要方法 （第 1 代）。 [視線](gaze.md)搭配[游標](cursors.md)是使用者為目標的內容，他們就可以互動的機制。 [筆勢](gestures.md)或是[語音](voice-input.md)是目的機制。 視線可用筆勢或語音來完成互動。
+使用語音命令時，視線通常做為目標的 mechaninism，是否為指標 (「 select 」) 或指示您的應用程式的命令 （"看到它，它說出"）。 當然，有些語音命令不需要為目標，例如 「 移至啟動 」 或 「 嗨，Cortana。 」
 
-在沉浸式耳機，互動的主要方法還有視線認可點認可 (與[移動控制器](motion-controllers.md))。 如果使用者具有的耳機與語音功能，可以使用語音搭配視線或點以完成某個動作。
-
-設計時應用程式，您應該考慮如何讓這些互動，也一起運作。
 
 ## <a name="device-support"></a>裝置支援
 
@@ -27,7 +25,7 @@ ms.locfileid: "65469078"
 <tr>
 <th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
 </tr><tr>
-<td>視線和語音</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️ （具有附加的耳機）</td>
+<td></td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️ （具有附加的耳機）</td>
 </tr>
 </table>
 
@@ -51,13 +49,16 @@ ms.locfileid: "65469078"
    * 「 嘿 Cortana 」
    * [選取]
 
-### <a name="what-users-can-say"></a>使用者可以說
+### <a name="select"></a>[選取]
 
-當使用者以透過視線或指向任何按鈕為目標，它們可以說出單字 **"Select"** 啟用該按鈕。 「 選取 」 是其中一個會永遠接聽該通訊埠的低電源關鍵字。 繼續進行，使用者也可以使用 「 按鈕文法 」 整個系統或應用程式中。 比方說，同時查看應用程式，使用者可以說出命令 （這是在應用程式列中） 的 「 移除 」 可以移除世界的應用程式。
+指出在任何時間的 [選取]，將會啟用任何視線資料指標指向。 
+
+>注意：HoloLens 2 視線資料指標需求，要先叫用說出單字"select"。 說: 「 選取 」 再次啟用。 若要隱藏視線資料指標，只要使用雙手-airtap 或觸控物件。 
 
 ### <a name="see-it-say-it"></a>看到它，例如它
 
 Windows Mixed Reality 採用"看到它，它說出"語音模型所在**按鈕上的標籤都相同的相關聯的語音命令**。 因為沒有任何 dissonance 標籤和語音命令之間，使用者可以進一步了解到控制系統。 為了強化，談論 按鈕，同時 **「 語音會探討提示 」** 似乎通訊的按鈕可使用語音。
+
 
 ![請參閱它說它範例 1](images/voice-seeitsayit1-640px.jpg)
 

@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 混合實境，空間的定位器，空間的參考框架、 空間座標系統，空間的階段中，範例程式碼、 映像穩定、 空間的錨點、 空間錨點存放區、 追蹤遺失、 逐步解說
-ms.openlocfilehash: c8cdb39cbf4634edb4ed0a595381fc70f1388ce4
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.openlocfilehash: 5a48e0a829ba8647718e28ec20760d8a764b13fe
+ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59597146"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65628977"
 ---
 # <a name="coordinate-systems-in-directx"></a>DirectX 中的座標系統
 
@@ -622,7 +622,7 @@ HoloLens，針對此畫面格的座標系統的原點位於旋轉的中心點的
 SpatialPointerPose^ pose = SpatialPointerPose::TryGetAtTimestamp(currentCoordinateSystem, prediction->Timestamp);
 ```
 
-此 SpatialPointerPose 有位置根據全像所需的資訊[使用者的目前標題](gaze,-gestures,-and-motion-controllers-in-directx.md)。
+此 SpatialPointerPose 有位置根據全像所需的資訊[使用者的目前標題](gaze-in-directx.md)。
 
 基於使用者的詳細資訊，我們會使用線性插補 (「 lerp") 平滑的位置變更，使得它經過一段時間，就會發生。 這是使用者於鎖定至其視線闀更舒適。 Lerping tag-along 全像的位置也可讓我們依抑制移動; 穩定全像如果我們沒有這個抑制，使用者會看到全像圖抖動由於功能通常被視為是使用者的標頭的音調移動。
 
@@ -796,7 +796,8 @@ Windows 全像攝影版的應用程式範本隨附於已為您建立的 Locatabi
 
 ## <a name="see-also"></a>另請參閱
 * [座標系統](coordinate-systems.md)
-* [空間的錨點](spatial-anchors.md)
-* <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure 空間的錨點</a>
-* [視線、 手勢和在 DirectX 中的動作控制站](gaze,-gestures,-and-motion-controllers-in-directx.md)
+* [空間錨點](spatial-anchors.md)
+* <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure Spatial Anchors</a>
+* [DirectX 中的前端和眼睛視線](gaze-in-directx.md)
+* [指針與 DirectX 中的動作控制站](hands-and-motion-controllers-in-directx.md)
 * [DirectX 中的空間對應](spatial-mapping-in-directx.md)

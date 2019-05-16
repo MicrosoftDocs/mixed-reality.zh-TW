@@ -5,22 +5,20 @@ author: yoyozilla
 ms.author: yoyozilla
 ms.date: 2/11/2019
 ms.topic: article
+ms.localizationpriority: high
 keywords: 最新狀態，工具，開始，基本概念、 unity、 visual studio 工具組
-ms.openlocfilehash: da924d98f6869fadb9736000f666616f1372faa3
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.openlocfilehash: 03a310457bf5ef498a6369a158b697c7fa59d6d9
+ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59597134"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65730873"
 ---
 # <a name="install-the-tools"></a>安裝工具
 
 取得您要建置 Microsoft HoloLens 和沈浸式 (VR) 耳機 Windows Mixed Reality 應用程式的工具。 沒有任何個別的 SDK for Windows Mixed Reality 開發;Windows 10 sdk，您將使用 Visual Studio。
 
-沒有混合的實境裝置嗎？ 您可以安裝[HoloLens （第 1 代） 模擬器](using-the-hololens-emulator.md)測試沒有 HoloLens 的混合的實境應用程式的一些功能。 您也可以使用[Windows Mixed Reality 模擬器](using-the-windows-mixed-reality-simulator.md)來測試您的混合的實境應用程式的沈浸式耳機。
-
-> [!NOTE]
-> 只有 HoloLens 2 模擬器的詳細指引[即將推出](index.md#news-and-notes)。
+沒有混合的實境裝置嗎？ 您可以安裝[HoloLens 模擬器](using-the-hololens-emulator.md)測試沒有 HoloLens 的混合的實境應用程式的一些功能。 您也可以使用[Windows Mixed Reality 模擬器](using-the-windows-mixed-reality-simulator.md)來測試您的混合的實境應用程式的沈浸式耳機。
 
 我們建議您安裝 Unity 遊戲引擎，因為最簡單的方式，若要開始建立混合實境應用程式，不過，您也可以建置針對 DirectX 如果您想要使用自訂的引擎。
 
@@ -38,8 +36,8 @@ ms.locfileid: "59597134"
 |---------|---------|---------|
 | ![Windows 標誌](images/Windows10_logo.png)<br><br><a href="https://www.microsoft.com/software-download/windows10" target="_blank">**Windows 10**<br>（手動安裝連結）</a> | 使您的電腦的作業系統比對，您要建置混合的實境應用程式的平台，請安裝最新版的 Windows 10。 | **安裝 Windows 10** <br> <ul><li>在 設定，或藉由建立安裝媒體 （使用左側的資料行中的連結），您可以安裝最新版的 Windows 10 透過 Windows Update。<li>請參閱[目前的版本資訊](release-notes-october-2018.md)如需最新混合實境功能可以使用每個版本的 Windows 10。</ul> **啟用您的電腦上的開發人員模式**設定 > 更新與安全性 > 適用於開發人員。 <br><br> **請注意，適用於企業和公司管理的電腦：** 如果您的電腦由管理您組織的 IT 部門，您可能需要與其連絡以更新。 <br><br> **'N' 個版本的 Windows:**'N' 個 Windows 版本不支援 Windows Mixed Reality 沈浸式 (VR) 耳機。 |
 | ![Visual Studio 標誌](images/visualstudio_logo.png)<br><br><a href="https://visualstudio.microsoft.com/downloads/" target="_blank">**Visual Studio 2017**<br>（安裝連結）</a> | 功能完整的整合式的開發環境 (IDE) 的 Windows 和更多功能。 您將使用 Visual Studio 來撰寫程式碼、 偵錯、 測試及部署。 | **若要安裝的工作負載：** <ul><li>使用的桌面開發C++</li><li>通用 Windows 平台開發</li></ul>**Unity 的注意事項：** 除非您有意嘗試安裝較新的 (非 LTS) 版本的 Unity 針對特定用途，我們建議*不*的 Visual Studio 安裝過程中安裝的 Unity 工作負載，並改為安裝 2018.3 LTSUnity，註記下的資料流。<br> <br>**注意：** 有一些已知的問題，目前在 Visual Studio 2019 的混合的實境開發。  現在，我們建議您繼續使用 Visual Studio 2017。 |
-| ![Windows 標誌](images/Windows10_logo.png)<br><br><a href="https://www.microsoft.com/software-download/windowsinsiderpreviewSDK" target="_blank">**Windows SDK Insider Preview 18362**<br>（手動安裝連結）</a> | 提供最新的標頭、 程式庫、 中繼資料，以及工具建置 HoloLens 2 上的 Windows 10 應用程式。 | 若要建置 HoloLens 2 應用程式，您將需要<a href="https://insider.windows.com">成為 Windows Insider</a>並安裝 Windows SDK Insider Preview，18362 或更新版本的組建。<br> <br> 如果您只開發桌面 Windows Mixed Reality 耳機或 HoloLens 的應用程式 （第 1 代），您可以使用 Visual Studio 2017 所安裝的 Windows SDK。 |
-| ![Visual Studio 標誌](images/HoloLensIcon.jpg)<br><br><a href="https://go.microsoft.com/fwlink/?linkid=2065980" target="_blank">**HoloLens （第 1 代） 模擬器] 和 [全像攝影版的專案範本**<br>(安裝連結：10.0.17763.253)</a> | 這個模擬器可讓您 HoloLens 上執行應用程式 （第 1 代） 而不需要實體 HoloLens 的虛擬機器映像。<br> <br> 此套件也包含 Visual Studio 全像攝影版的 DirectX 專案範本。 | 請參閱[使用 HoloLens 模擬器](using-the-hololens-emulator.md)如需開始使用模擬器的詳細資訊。<br> <br> **您的系統必須支援 HYPER-V**模擬器安裝成功。 請參閱下方詳細資料的系統需求一節。 如有需要，您可以選取要安裝的範本不需模擬器。<br> <br> 特有 HoloLens 2 模擬器的詳細指引[即將推出](index.md#news-and-notes)。 |
+| ![Windows 標誌](images/Windows10_logo.png)<br><br><a href="https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk" target="_blank">**Windows 10 SDK (10.0.18362.0)**<br>（手動安裝連結）</a> | 提供最新的標頭、 程式庫、 中繼資料，以及工具建置 HoloLens 2 上的 Windows 10 應用程式。 | 若要建置 HoloLens 2 應用程式，您必須安裝 Windows SDK，建置 18362 或更新版本。<br> <br> 如果您只開發桌面 Windows Mixed Reality 耳機或 HoloLens 的應用程式 （第 1 代），您可以使用 Visual Studio 2017 所安裝的 Windows SDK。 |
+| ![Visual Studio 標誌](images/HoloLensIcon.jpg)<br><br><a href="https://go.microsoft.com/fwlink/?linkid=2087187" target="_blank">**HoloLens 2 模擬器**<br>(安裝連結：10.0.18362.1005)</a><br> <br><a href="https://go.microsoft.com/fwlink/?linkid=2065980" target="_blank">**HoloLens （第 1 代） 模擬器**<br>(安裝連結：10.0.17763.253)</a> | 模擬器可讓您在沒有實體的 HoloLens HoloLens 虛擬機器映像上執行應用程式。<br> <br> 此套件也包含 Visual Studio 全像攝影版的 DirectX 專案範本。 | 請參閱[使用 HoloLens 模擬器](using-the-hololens-emulator.md)如需開始使用模擬器的詳細資訊。<br> <br> **您的系統必須支援 HYPER-V**模擬器安裝成功。 請參閱下方詳細資料的系統需求一節。 如有需要，您可以選取要安裝的範本不需模擬器。<br>|
 | ![Unity 標誌](images/unity_logo.png)<br><br><a href="https://unity3d.com/get-unity/download" target="_blank">**Unity 2018.3**<br>（安裝連結）</a> | Unity 遊戲引擎是最簡單的方式，來建立混合的實境體驗，Windows Mixed Reality 功能的內建支援。 | 通常建議 Unity LTS （長字詞支援） 資料流做為用來啟動新的專案，最佳的版本更新至其最新的修訂，挑選最新穩定的修正程式。<br> <br> 目前的建議是使用**Unity 2018.3.x**、 所需之 MRTK v2，以及這將很快 Unity 2018 LTS 建置。 <br> <br> 有些開發人員可能想要針對特定的理由要使用不同版本的 Unity。 針對這些情況下，Unity 會支援不同版本的並排顯示的安裝。 |
 | ![MRTK 標誌](images/MRTKIcon.jpg)<br><br><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/releases" target="_blank">**適用於 Unity 的混合的實境工具組 (MRTK v2)**</a> | Unity 的 MRTK v2 是開放原始碼跨平台開發套件的混合的實境應用程式。<br><br> MRTK v2 被要加速開發以 Microsoft HoloLens，Windows Mixed Reality 沈浸式 (VR) 耳機和 OpenVR 平台為目標的應用程式。 專案目標是減少障礙，以建立混合的實境應用程式的項目，並參與社群，我們都成長。 | 深入了解 MRTK v2 造訪專案組<a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/wiki" target="_blank">GitHub wiki</a>。 |
 
@@ -59,10 +57,7 @@ Windows 10 SDK 最適合在 Windows 10 的作業系統。 此 SDK 也支援 Wind
 
 當設定開發電腦 HoloLens 的開發，請確定它符合系統需求<a href="https://unity3d.com/unity/system-requirements" target="_blank">Unity</a>並<a href="https://www.visualstudio.com/productinfo/vs2017-system-requirements-vs" target="_blank">Visual Studio</a>。 如果您打算使用 HoloLens （第 1 代） 的模擬器，您會想要確定您的電腦符合[HoloLens 模擬器系統需求](using-the-hololens-emulator.md#hololens-emulator-system-requirements)以及。
 
-若要開始使用 HoloLens （第 1 代） 的模擬器，請參閱[使用 HoloLens 模擬器](using-the-hololens-emulator.md)。
-
-> [!NOTE]
-> 只有 HoloLens 2 模擬器的詳細指引[即將推出](index.md#news-and-notes)。
+若要開始使用 HoloLens 模擬器，請參閱[使用 HoloLens 模擬器](using-the-hololens-emulator.md)。
 
 如果您打算開發 HoloLens 與 Windows Mixed Reality 沈浸式的 (VR) 耳機時，請使用系統建議和需求下一節。
 

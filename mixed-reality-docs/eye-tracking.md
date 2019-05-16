@@ -5,13 +5,14 @@ author: sostel
 ms.author: sostel
 ms.date: 04/05/2019
 ms.topic: article
+ms.localizationpriority: high
 keywords: 混合實境、 輸入、 眼睛視線的眼睛追蹤
-ms.openlocfilehash: 75cbba9048b620e4b00492ad3f71315fabf86677
-ms.sourcegitcommit: f5c1dedb3b9e29f27f627025b9e7613931a7ce18
+ms.openlocfilehash: f61f813c702cbeaa03ddc50c6a1958af3566bc1c
+ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2019
-ms.locfileid: "64581048"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65730771"
 ---
 # <a name="eye-tracking-on-hololens-2"></a>HoloLens 2 上追蹤
 HoloLens 2 允許的內容和 Holographic 內的人了解帶入新境界藉由提供驚人的能力，利用使用者正在查看的相關資訊的開發人員的體驗。 此頁面可讓開發人員如何受惠眼睛追蹤不同使用案例，以及設計眼睛視線基礎的使用者介面時需要留意的概觀。 

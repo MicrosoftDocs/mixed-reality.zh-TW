@@ -1,21 +1,19 @@
 ---
-title: 指針的直接管理
+title: 直接操作
 description: 直接操作輸入模型的概觀
 author: caseymeekhof
 ms.author: cmeekhof
 ms.date: 04/02/2019
 ms.topic: article
-ms.localizationpriority: high
 keywords: 混合實境、 視線、 視線目標，就會有互動，設計、 附近，手 HoloLens
-ms.openlocfilehash: e241e13a778de0889942a3643246e087a107db86
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 803157bb248a5541ed524ac4f828ccbba9d59ce1
+ms.sourcegitcommit: 82d4e5cf4ad46bfdc44d0606844e28c75b6e67ce
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730743"
+ms.locfileid: "65730504"
 ---
-# <a name="direct-manipulation-with-hands"></a>指針的直接管理
-直接操作是需要動到全像投影雙手直接輸入的模型。 直接操作的目標是物件的行為就如同真實世界中。 可以啟動按鈕，只要按下這些物件可以藉由抓取，撿起，2D 內容的行為類似虛擬觸控螢幕。  因為這個緣故，直接操作很容易讓使用者了解，並很好玩的太。  它會被視為 「 附近 」 輸入的模型，這表示它最適合用於互動手臂內到達的內容。
+# <a name="direct-manipulation"></a>直接操作
 
 HoloLens 2 具有直接操作輸入的模型，可讓您接觸全像投影 dircly 雙手。 直接操作的目標是的行為就如同真實世界中的物件。 您可以啟動，只要按下的按鈕和甚至和挑選、 抓取，和移動物件。 在這些情況下，2D 內容的行為類似虛擬觸控螢幕。
 
@@ -25,13 +23,11 @@ HoloLens 2 具有直接操作輸入的模型，可讓您接觸全像投影 dircl
 
 ## <a name="device-support"></a>裝置支援
 
-
 | 輸入的模型 | [HoloLens （第 1 代）](https://review.docs.microsoft.com/en-us/windows/mixed-reality/hololens-hardware-details?branch=master) | HoloLens 2 |[沈浸式耳機](https://review.docs.microsoft.com/en-us/windows/mixed-reality/immersive-headset-hardware-details?branch=master)|
 |:-------- | :-------| :--------| :------------|
 | 直接操作 | 不支援的 ❌ | 建議的 ✔️ | ➕ 替代[點，並認可](https://review.docs.microsoft.com/en-us/windows/mixed-reality/point-and-commit?branch=master)建議。
 
-直接操作是 HoloLens 2 上的主要輸入的模型，並利用新的相互連貫的手動追蹤系統。 輸入的模型也會提供在透過移動控制站，使用擬真耳機，但不是建議做為主要物件操作之外的互動。  直接 manipluation 並不適用於 HoloLens （第 1 代）。
-
+直接操作是 HoloLens 2 上的主要輸入的模型，並利用新的相互連貫的手動追蹤系統。 輸入的模型也會提供在透過移動控制站，使用擬真耳機，但不是建議做為主要物件操作之外的互動。  無法使用 HoloLens 第 1 版上直接 manipluation。
 
 ## <a name="collidable-fingertip"></a>Collidable 寫寫看
 
@@ -115,7 +111,7 @@ HoloLens 2 可讓可讓的使用者啟用導向其指針來操作 3D hologramphi
 
 ## <a name="instinctual-gestures"></a>Instinctual 筆勢
 
-HoloLens 與 （第 1 代），我們教導使用者幾個預先定義的筆勢，例如 Bloom 和空中點選。 HoloLens 2 中，我們不要求使用者記住任何符號的筆勢。 所有必要的使用者筆勢，全像投影和內容互動的使用者必須是 instinctual。 完成 instinctual 筆勢的方式是引導使用者來執行透過 UI 提供的設計的筆勢。
+不同於 HoloLens （第 1 代），我們教導使用者幾個預先定義的筆勢，例如 Bloom 和空中點選。 HoloLens 2 中，我們不要求使用者記住任何符號的筆勢。 所有必要的使用者筆勢，全像投影和內容互動的使用者必須是 instinctual。 完成 instinctual 筆勢的方式是引導使用者來執行透過 UI 提供的設計的筆勢。
 
 比方說，如果我們鼓勵您抓取的物件或使用兩個手指縮小的控點，該物件或控制項控點應該很小。 如果我們想要執行五個手指抓取，表示物件或控制項控點應該相當大。 類似於按鈕，小按鈕會限制使用者一根手指，以按龐大的按鈕會鼓勵使用者使用其手掌按它時。
 
@@ -133,7 +129,7 @@ HoloLens 與 （第 1 代），我們教導使用者幾個預先定義的筆勢�
 * **當**:減少錯誤地觸發操作回應。 追蹤可讓您進一步了解哪些使用者目前可供使用。
 例如，假設您正在閱讀透過全像攝影版 （指示） 的文字時達到超過擷取您的實際工作的工具。
 
-如此一來，您不小心移動您的手跨您甚至還沒有發現之前 （甚至是外部使用者的欄位的-視角 (FOV) 或許） 一些互動式全像攝影版按鈕。
+  如此一來，您不小心移動您的手跨您甚至還沒有發現之前 （甚至是外部使用者的欄位的-視角 (FOV) 或許） 一些互動式全像攝影版按鈕。
 
   長話短說：如果使用者尚未看過全像一段時間，但它偵測觸控或掌握事件，它可能是使用者不實際想要進行互動，全像。
 
@@ -147,7 +143,6 @@ HoloLens 與 （第 1 代），我們教導使用者幾個預先定義的筆勢�
 
 ## <a name="see-also"></a>另請參閱
 
-* [頭部目光和行動](gaze-and-commit.md)
+* [視線與認可](gaze-and-commit.md)
 * [指向和行動](point-and-commit.md)
-* [本能互動](interaction-fundamentals.md)
-
+* [互動基本概念](interaction-fundamentals.md)

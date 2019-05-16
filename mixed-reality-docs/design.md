@@ -6,13 +6,14 @@ author: rwinj
 ms.author: randyw
 ms.date: 03/21/2018
 ms.topic: article
+ms.localizationpriority: high
 keywords: Windows Mixed Reality，設計、 互動、 樣式、 色彩、 應用程式模式、 控制項、 範例應用程式、 混合實境工具組、 MRTK
-ms.openlocfilehash: aa7b1ba42823324bf247580781b46a4f4c885d99
-ms.sourcegitcommit: d6d96d552ec10cd7e6502fbbc1905432e2878325
+ms.openlocfilehash: 1a0c8c2f5fa6aac7c4f5b8f574cd617193e9d943
+ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65524345"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65730839"
 ---
 # <a name="design-for-mixed-reality"></a>混合實境的設計
 
@@ -230,7 +231,7 @@ ms.locfileid: "65524345"
                             </div>
                         </div>
                         <div class="cardText">
-                            <h3>Galaxy Explorer</h3>
+                            <h3>星系探險</h3>
                             <p>Galaxy 總管專案已準備。 您與社群共用您的想法，選擇您的應用程式中，然後再保存的小組建置它，並立即可以取得原始程式碼。</p>
                         </div>
                     </div>

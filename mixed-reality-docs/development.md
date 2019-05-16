@@ -6,13 +6,14 @@ author: grbury
 ms.author: grbury
 ms.date: 02/12/2019
 ms.topic: article
+ms.localizationpriority: high
 keywords: 混合實境，開發、 開發、 HoloLens、 unity、 directx
-ms.openlocfilehash: b4fa41171fff1f1fdc10359c93f4d1e7e4a84867
-ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
+ms.openlocfilehash: 59b41c6b71e546bac6e3b76c038229d6de45b535
+ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "64993587"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65730789"
 ---
 # <a name="development-launchpad"></a>開發 [啟動列]
 
@@ -192,7 +193,7 @@ Unreal-即將推出 ！
 </tr><tr>
 <td> <a href="gaze.md">Head 視線</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
 </tr><tr>
-<td> <a href="gaze.md">眼睛視線</a></td><td></td><td style="text-align: center;">✔️</td><td></td>
+<td> <a href="gaze.md">眼睛目光</a></td><td></td><td style="text-align: center;">✔️</td><td></td>
 </tr><tr>
  <td> <a href="gestures.md">相互連貫的指針</a></td><td></td><td style="text-align: center;">✔️</td><td></td>
 </tr><tr>

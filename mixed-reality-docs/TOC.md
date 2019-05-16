@@ -90,20 +90,17 @@
 ### [擴充混合實境的設計程序](case-study-expanding-the-design-process-for-mixed-reality.md)
 ### [追求更個人化的運算](case-study-the-pursuit-of-more-personal-computing.md)
 ### [AfterNow 的程序 - 構想、原型設計、建置](case-study-afternows-process-envisioning,-prototyping,-building.md)
-## MR 設計系統和工具
-### [本能互動](Interaction-fundamentals.md)
-#### [手部和運動控制器](hands-and-tools.md)
-##### [直接操作](direct-manipulation.md)
-##### [指向和行動](point-and-commit.md)
-##### [運動控制器](Motion-controllers.md)
-#### [免持式](hands-free.md)
-##### [目光和停駐](Gaze-and-dwell.md)
-##### [目光和語音](Voice-design.md)
-#### [頭部目光和行動](gaze-and-commit.md)
+## [本能互動](Interaction-fundamentals.md)
+### [手部和運動控制器](hands-and-tools.md)
+#### [手部直接操作](direct-manipulation.md)
+#### [手部指向和行動](point-and-commit.md)
+#### [運動控制器](Motion-controllers.md)
+### [免持式](hands-free.md)
+#### [語音命令](Voice-design.md)
+#### [頭部目光和停駐](Gaze-and-dwell.md)
+### [頭部目光和行動](gaze-and-commit.md)
 ### 補充互動
 #### [眼睛目光](eye-tracking.md)
-#### [目光目標](Gaze-targeting.md)
-#### [筆勢](Gestures.md)
 ## 樣式
 ### [色彩、光線和材質](color,-light-and-materials.md)
 ### [空間音效設計](spatial-sound-design.md)
@@ -175,7 +172,8 @@
 #### [DirectX 中的呈現](rendering-in-directx.md)
 ### 核心基本要素
 #### [DirectX 中的座標系統](coordinate-systems-in-directx.md)
-#### [DirectX 中的目光、筆勢和運動控制器](gaze,-gestures,-and-motion-controllers-in-directx.md)
+#### [DirectX 中的頭部和眼睛目光](gaze-in-directx.md)
+#### [DirectX 中的手部和運動控制器](hands-and-motion-controllers-in-directx.md)
 #### [DirectX 中的語音輸入](voice-input-in-directx.md)
 #### [DirectX 中的空間音效](spatial-sound-in-directx.md)
 #### [DirectX 中的空間對應](spatial-mapping-in-directx.md)
@@ -186,6 +184,7 @@
 ### 進階主題
 #### [使用全像攝影 DirectX 應用程式中的 XAML](using-xaml-with-holographic-directx-apps.md)
 #### [新增全像攝影遠端處理](add-holographic-remoting.md)
+### [OpenXR](openxr.md)
 ## WebVR
 ### [在 Edge 中使用 Windows Mixed Reality 的 WebVR](using-webvr-in-edge-with-windows-mixed-reality.md)
 ## [教學課程和範例應用程式](tutorials.md)

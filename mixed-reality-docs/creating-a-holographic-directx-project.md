@@ -6,12 +6,12 @@ ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，全像攝影版的應用程式、 新的應用程式、 UWP 應用程式、 範本應用程式、 全像投影、 新的專案、 逐步解說、 下載、 範例程式碼
-ms.openlocfilehash: 7d1ea0246cf823f74e68b4e67fbcfc275d081688
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.openlocfilehash: a7eac9d8056fe5f7bcc442d6441f71331fa96cf6
+ms.sourcegitcommit: 19c9bff21061d485821b61c9f3498daef8fa8235
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59597123"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65828114"
 ---
 # <a name="creating-a-holographic-directx-project"></a>建立全像攝影版的 DirectX 專案
 
@@ -33,18 +33,23 @@ DirectX 11 全像攝影版 UWP 應用程式範本十分類似的 DirectX 11 UWP 
 
 ## <a name="creating-a-uwp-project"></a>建立 UWP 專案
 
-安裝工具之後您可以建立全像攝影版的 DirectX UWP 專案。 若要建立新的專案：
+一次[工具會安裝](install-the-tools.md)然後，您就可以建立全像攝影版的 DirectX UWP 專案。
+
+若要建立新的專案：
 1. 開始**Visual Studio**。
 2. 從**檔案**功能表上，指向**新增**，然後選取**專案**從內容功能表。 **新的專案** 對話方塊隨即開啟。
 3. 依序展開**已安裝**左側，展開**視覺化C++** 語言節點。
 4. 瀏覽至**Windows 通用 > Holographic**節點，然後選取**全像攝影版的 DirectX 11 應用程式 (通用 Windows) (C++/WinRT)**。
+   ![全像攝影版的 DirectX 11 的螢幕擷取畫面C++在 Visual Studio 中的 WinRT UWP 應用程式專案範本](images/holographic-directx-app-cpp-new-project.png)<br>
+   *全像攝影版的 DirectX 11C++在 Visual Studio 中的 WinRT UWP 應用程式專案範本*
    >[!IMPORTANT]
    >請務必將專案範本的名稱包含"(C++/WinRT) 」。  如果沒有，您有舊版安裝的全像攝影版的專案範本。  若要取得最新的專案範本中，[安裝最新的 HoloLens 模擬器](using-the-hololens-emulator.md)。
 5. 填寫**名稱**並**位置**文字方塊中，然後按一下或點選**確定**。 會建立全像攝影版的應用程式專案。
-6. 開發目標設定為只 HoloLens 2，請確定**目標版本**並**最低版本**設定為**Windows 10 版本 1903年**。  如果您的也目標 HoloLens （第 1 代） 或桌上型電腦的 Windows Mixed Reality 耳機，您可以設定**最低版本**要**Windows 10 版本 1809年**相反地，雖然這需要一些<a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code" target="_blank">版本 adapative 檢查</a>在您的程式碼時使用的 HoloLens 2 的新功能。
-
-![全像攝影版的應用程式專案範本，在 Visual Studio 中的螢幕擷取畫面](images/holographic-directx-app-cpp-new-project.png)<br>
-*在 Visual Studio 中的全像攝影版的應用程式專案範本*
+6. 開發目標設定為只 HoloLens 2，請確定**目標版本**並**最低版本**設定為**Windows 10 版本 1903年**。  如果您的也目標 HoloLens （第 1 代） 或桌上型電腦的 Windows Mixed Reality 耳機，您可以設定**最低版本**要**Windows 10 版本 1809年**相反地，雖然這需要一些<a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code" target="_blank">版本的自動調整檢查</a>在您的程式碼時使用的 HoloLens 2 的新功能。
+   ![設定 Windows 10 版本 1903年目標和最小版本的螢幕擷取畫面](images/new-uwp-project.png)<br>
+   *設定**Windows 10 版本 1903年**目標及最低版本*
+   >[!IMPORTANT]
+   >如果您看不見**Windows 10 版本 1903年**的選項，您沒有安裝最新版 Windows 10 SDK。  若要取得此選項才會出現，<a href="https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk" target="_blank">安裝 10.0.18362.0 版本或更新版本的 Windows 10 SDK</a>。
 
 範本會產生專案，使用<a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/" target="_blank"> C++/WinRT</a>，C + + 17 語言推演，支援任何符合標準的 C + + 17 編譯器的 Windows 執行階段 api。  專案會示範如何建立世界鎖定 cube 已放入使用者的兩個計量。 使用者可以[空中點選](gestures.md#air-tap)或按下按鈕，將 cube 放在不同的位置所指定的使用者在控制器上[視線](gaze.md)。 您可以修改此專案來建立任何 mixed 的 reality 應用程式。
 
@@ -153,7 +158,7 @@ int APIENTRY wWinMain(
 ## <a name="see-also"></a>另請參閱
 * [取得 HolographicSpace](getting-a-holographicspace.md)
 * <a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspaceh" target="_blank">HolographicSpace</a>
-* [在 DirectX 中轉譯](rendering-in-directx.md)
+* [DirectX 中的呈現](rendering-in-directx.md)
 * [使用 Visual Studio 來部署和偵錯](using-visual-studio.md)
 * [使用 HoloLens 模擬器](using-the-hololens-emulator.md)
-* [使用全像攝影版的 DirectX 應用程式中的 XAML](using-xaml-with-holographic-directx-apps.md)
+* [使用全像攝影 DirectX 應用程式中的 XAML](using-xaml-with-holographic-directx-apps.md)

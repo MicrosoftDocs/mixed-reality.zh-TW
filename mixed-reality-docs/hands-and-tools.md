@@ -6,12 +6,12 @@ ms.author: shengkait
 ms.date: 04/26/2019
 ms.topic: article
 keywords: 混合實境，實際操作、 移動控制站、 互動，設計
-ms.openlocfilehash: 4f4231dd816dc71e42d16aca1b518ad03440116e
-ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
+ms.openlocfilehash: b13efadd111ca970abe625221fb8045644822c37
+ms.sourcegitcommit: b5bad4eeb5cdd0c2a7b639442656c306e8b5853b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65629021"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65813984"
 ---
 # <a name="hands-and-motion-controllers"></a>指針 」 和 「 動作控制站
 ## <a name="scenarios"></a>案例
@@ -25,10 +25,10 @@ ms.locfileid: "65629021"
 * 建立位置為基礎的服務以及做為背景使用真實世界的遊戲
 
 ## <a name="hands-and-motion-controllers-modalities"></a>雙手及動作控制器的型態
-### <a name="direct-manipulation-with-handsdirect-manipulationmd"></a>[指針的直接管理](direct-manipulation.md)
+### <a name="direct-manipulation-with-handsdirect-manipulationmd"></a>[手部直接操作](direct-manipulation.md)
 這是指針，與使用者相關能夠觸碰並直接操作全像投影的強大的強制回應性。 由 leaveraging 日常生活體驗，以及提供適當的視覺化提供，使用者就能夠使用相同的方式管理真實世界物件的互動以虛擬的。   
 
-### <a name="point-and-commit-with-handspoint-and-commitmd"></a>[點與包含實際操作的認可](point-and-commit.md)
+### <a name="point-and-commit-with-handspoint-and-commitmd"></a>[手部指向和行動](point-and-commit.md)
 此模式可讓使用者互動全像投影的距離。 它可讓使用者能夠發揮最大恍神。 使用者可以任意位置放置全像投影，並仍可以存取這些從任何的距離。 心智模型和手勢，來控制及管理 2D 和 3D 全像投影為高度同步與直接操作。
 
 ### <a name="motion-controllersmotion-controllersmd"></a>[運動控制器](motion-controllers.md)

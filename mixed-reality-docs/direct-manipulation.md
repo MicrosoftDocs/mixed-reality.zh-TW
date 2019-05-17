@@ -7,17 +7,17 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境、 視線、 視線目標，就會有互動，設計、 附近，手 HoloLens
-ms.openlocfilehash: e241e13a778de0889942a3643246e087a107db86
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 5952d2ecb75f7addacffcec2776f34289abda6cf
+ms.sourcegitcommit: b5bad4eeb5cdd0c2a7b639442656c306e8b5853b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730743"
+ms.locfileid: "65814000"
 ---
 # <a name="direct-manipulation-with-hands"></a>指針的直接管理
 直接操作是需要動到全像投影雙手直接輸入的模型。 直接操作的目標是物件的行為就如同真實世界中。 可以啟動按鈕，只要按下這些物件可以藉由抓取，撿起，2D 內容的行為類似虛擬觸控螢幕。  因為這個緣故，直接操作很容易讓使用者了解，並很好玩的太。  它會被視為 「 附近 」 輸入的模型，這表示它最適合用於互動手臂內到達的內容。
 
-HoloLens 2 具有直接操作輸入的模型，可讓您接觸全像投影 dircly 雙手。 直接操作的目標是的行為就如同真實世界中的物件。 您可以啟動，只要按下的按鈕和甚至和挑選、 抓取，和移動物件。 在這些情況下，2D 內容的行為類似虛擬觸控螢幕。
+HoloLens 2 具有直接操作輸入的模型，可讓您接觸全像投影直接與您手裡。 直接操作的目標是的行為就如同真實世界中的物件。 您可以啟動，只要按下的按鈕和甚至和挑選、 抓取，和移動物件。 在這些情況下，2D 內容的行為類似虛擬觸控螢幕。
 
 直接操作很容易讓使用者了解，而且它有太有趣。 它會被視為 「 接近實際操作 」 輸入的模型，這表示它最適合用於 arm 的範圍內的內容與互動。
 

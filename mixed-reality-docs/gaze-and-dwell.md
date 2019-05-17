@@ -7,12 +7,12 @@ ms.date: 05/13/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境，視線、 詳述、 互動，設計
-ms.openlocfilehash: 9f9fa89d7730e21e89bd24ce3b483d129c8a16db
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 05457b35c13422c8aa6663bdf52a489a4f5afdaa
+ms.sourcegitcommit: b5bad4eeb5cdd0c2a7b639442656c306e8b5853b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730773"
+ms.locfileid: "65813986"
 ---
 # <a name="head-gaze-and-dwell"></a>Head 視線和詳述
 
@@ -92,9 +92,9 @@ Head 視線和詳述的過人之處的人手正忙於處理其他工作，並語
 ### <a name="high-frequency-buttons"></a>高頻率按鈕
 ![Microsoft Dynamics 365 指南下一步 按鈕](images/GuideNextButton.png "Microsoft Dynamics 365 指南下一步 按鈕")高頻率餂鈕蒻通常用整個應用程式。 良好的範例，這些是 Microsoft Dynamics 365 指南中的 下一步 和上一步 按鈕。
 
-* 高頻率按鈕應該...
-  * 會比較容易遇到 head 視線較大的按鈕，
-  * 保持眼睛高度，以避免工學就附近。
+高頻率按鈕應該...
+* 會比較容易遇到 head 視線較大的按鈕，
+* 保持眼睛高度，以避免工學就附近。
 
 ### <a name="low-frequency-buttons"></a>低頻率按鈕
 低頻率餂鈕蒻，不或與之互動，定期整個應用程式。 按鈕可存取 [設定] 功能表中或按鈕即可清除所有的工作，可能是不錯的範例。

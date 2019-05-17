@@ -7,12 +7,12 @@ ms.date: 02/26/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合的實境，unity 教學課程 hololens
-ms.openlocfilehash: 4546e4c8d973cbd4ce4190a974a4de9c01197e56
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: c5490e6a3b542a5ca677b309e5ed1171f8666fe7
+ms.sourcegitcommit: b5bad4eeb5cdd0c2a7b639442656c306e8b5853b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730942"
+ms.locfileid: "65814015"
 ---
 # <a name="mr-learning-base-module---project-initialization-and-first-application"></a>MR 學習基底模組-專案初始化 」 和 「 第一個應用程式
 
@@ -83,7 +83,7 @@ ms.locfileid: "65730942"
 4. 建立並命名您的應用程式的新資料夾。 在下圖中，同名的資料夾已建立 「 應用程式 」，以包含應用程式。 按一下 [選取資料夾]，開始建置新建立的資料夾。 建置完成之後，您可以關閉 [建立設定] 視窗中，在 Unity 中。 
     ![第 1 課 Chapter5 步驟 4](images/Lesson1Chapter5Step4.JPG)
 
-  > 注意：如果建置失敗，再試一次建置或重新啟動 Unity 並再次建置。 如果您看到錯誤，例如 「 錯誤：CS0246 = 找不到"XX"的輸入或命名空間名稱 (您是否遺漏 using 指示詞或組件參考？) 」，則您可能需要安裝[Windows 10 SDK (10.0.18362.0)](<https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk>)
+  > 注意：如果建置失敗，再試一次建置或重新啟動 Unity 並再次建置。 如果您看到錯誤，例如 「 錯誤：CS0246 = 找不到"XX"的類型或命名空間名稱 (您是否遺漏 using 指示詞或組件參考？) 」，則您可能需要安裝[Windows 10 SDK (10.0.18362.0)](<https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk>)
   >
 
 5. 在建置完成之後，開啟新建立的資料夾包含您新建置的應用程式的檔案。 按兩下 「 MixedRealityBase.sln 」 解決方案 （或對應的名稱，如果您使用您的專案的替代名稱） 以在 Visual Studio 中開啟方案檔。

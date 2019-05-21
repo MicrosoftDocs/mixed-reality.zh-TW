@@ -8,7 +8,7 @@ ms.topic: article
 keywords: mrc、 相片、 視訊、 擷取、 相機
 ms.openlocfilehash: c2d98baf16b2ea724247224aabadc1e2ca533ec1
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59591595"
@@ -105,7 +105,7 @@ MRC 應該可以運作而不需要額外的工作，從開發人員，但有幾�
 
 ### <a name="mrc-with-built-in-camera-ui"></a>使用內建相機 UI MRC
 
-開發人員可以使用*[相機擷取 UI API](https://docs.microsoft.com/windows/uwp/audio-video-camera/capture-photos-and-video-with-cameracaptureui)* 取得的使用者擷取混合的實境相片或視訊，只要短短幾行程式碼。
+開發人員可以使用 *[相機擷取 UI API](https://docs.microsoft.com/windows/uwp/audio-video-camera/capture-photos-and-video-with-cameracaptureui)* 取得的使用者擷取混合的實境相片或視訊，只要短短幾行程式碼。
 
 此 API 會啟動內建 MRC 相機 UI，使用者可以拍攝相片或視訊，並傳回結果擷取到您的應用程式。  如果您想要建立您自己的相機 UI，或需要較低層級存取擷取資料流，您可以建立自訂的混合實境擷取錄製器。
 

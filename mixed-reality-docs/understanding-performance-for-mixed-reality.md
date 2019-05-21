@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 混合實境、 混合的實境，虛擬實境、 VR、 MR、 效能、 最佳化、 CPU、 GPU 的 Windows
 ms.openlocfilehash: ce59f9023c21dc7c981a2bb97d9fbd0c57622dbf
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59596074"
@@ -59,7 +59,7 @@ ms.locfileid: "59596074"
 1) 應用程式畫面播放速率**變**，您可能會**CPU 繫結**
 
 >[!NOTE]
->Unity 讓您能夠輕鬆地修改您的應用程式，透過在執行階段的轉譯目標解析度*[XRSettings.renderViewportScale](https://docs.unity3d.com/ScriptReference/XR.XRSettings-renderViewportScale.html)* 屬性。 在裝置上所呈現的最終映像有固定的解析度。 平台將範例建置在顯示器上呈現較高解析度影像輸出較低的解析度。 
+>Unity 讓您能夠輕鬆地修改您的應用程式，透過在執行階段的轉譯目標解析度 *[XRSettings.renderViewportScale](https://docs.unity3d.com/ScriptReference/XR.XRSettings-renderViewportScale.html)* 屬性。 在裝置上所呈現的最終映像有固定的解析度。 平台將範例建置在顯示器上呈現較高解析度影像輸出較低的解析度。 
 >
 >```CS
 >UnityEngine.XR.XRSettings.renderScale = 0.7f;
@@ -86,7 +86,7 @@ ms.locfileid: "59596074"
     - 在 Unity 中，做法是藉由變更**材質品質**中**編輯** > **專案設定** >   **[品質設定](https://docs.unity3d.com/Manual/class-QualitySettings.html)**。
 - **填滿率**指的是轉譯要在 gpu 每秒繪製的像素的輸送量。
     - 若要識別填滿速率限制，降低顯示器解析度，並檢查畫面播放速率獲得改善。 
-    - 在 Unity 中，這可以透過*[XRSettings.renderViewportScale](https://docs.unity3d.com/ScriptReference/XR.XRSettings-renderViewportScale.html)* 屬性
+    - 在 Unity 中，這可以透過 *[XRSettings.renderViewportScale](https://docs.unity3d.com/ScriptReference/XR.XRSettings-renderViewportScale.html)* 屬性
 
 記憶體頻寬通常會涉及到最佳化
 1) 減少紋理的解決方式

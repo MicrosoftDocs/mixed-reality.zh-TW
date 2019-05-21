@@ -8,13 +8,13 @@ ms.topic: article
 keywords: azure、 混合實境、 academy、 unity、 教學課程、 api、 函式、 儲存體、 hololens、 vr 沈浸式，
 ms.openlocfilehash: a828c7f0ac3016462f5c7e874545bf50a2db6771
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59591278"
 ---
 >[!NOTE]
->混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會**_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
+>混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
 
 <br> 
 
@@ -250,7 +250,7 @@ ms.locfileid: "59591278"
 
     ![指定新的 unity 專案的名稱](images/AzureLabs-Lab5-18.png)
 
-3.  使用 Unity 開啟，就代表值得查看以預設值**指令碼編輯器**設為**Visual Studio**。 移至**編輯* > *喜好設定** 從新的視窗中，然後瀏覽至**外部工具**。 變更**外部指令碼編輯器**要**Visual Studio 2017**。 關閉**喜好設定**視窗。
+3.  使用 Unity 開啟，就代表值得查看以預設值**指令碼編輯器**設為**Visual Studio**。 移至 **編輯* > *喜好設定** 從新的視窗中，然後瀏覽至 **外部工具** 。 變更**外部指令碼編輯器**要**Visual Studio 2017**。 關閉**喜好設定**視窗。
 
     ![設定 visual studio，為指令碼編輯器](images/AzureLabs-Lab5-19.png)
 
@@ -469,7 +469,7 @@ ms.locfileid: "59591278"
 
 1.  新增 **.unitypackage** unity 所使用的檔案**資產 > 匯入封裝 > 自訂封裝**功能表選項。
 
-2.  在 **匯入 Unity 封裝**方塊，顯示，您可以選取下方的所有內容 **外掛程式*> * 儲存 * *。 取消選取所有項目不需要這堂課程。
+2.  在 **匯入 Unity 封裝**方塊，顯示，您可以選取下方的所有內容 **外掛程式* > *儲存**。 取消選取所有項目不需要這堂課程。
 
     ![匯入封裝](images/AzureLabs-Lab5-45.png)
 
@@ -1031,7 +1031,7 @@ ms.locfileid: "59591278"
 
 ## <a name="chapter-10---completing-the-azureservices-class"></a>第 10 章-完成所需的 AzureServices 類別
 
-與其他指令碼中的地方，它現在便能夠*完整**所需的 AzureServices*類別。 這會透過來達成：
+與其他指令碼中的地方，它現在便能夠*完整* *所需的 AzureServices*類別。 這會透過來達成：
 
 1.  新增名為的新方法*CreateCloudIdentityAsync()*，若要設定驗證所需的變數來與 Azure 進行通訊。
 

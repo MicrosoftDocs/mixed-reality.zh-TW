@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 2D 應用程式，UWP，一般應用程式、 HoloLens、 沈浸式耳機，應用程式模型後按鈕、 應用程式列、 dpi、 解析，小數位數
 ms.openlocfilehash: 35a2e7774a79e35893821467f7e9ef8c004efa20
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59595365"
@@ -147,7 +147,7 @@ Windows 10 從實際螢幕像素為單位來移動所有視覺效果的設計**�
 
 **標題︰** 會顯示*displayname*應用程式執行個體相關聯的圖格
 
-**上一頁按鈕：** 引發*[BackRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.backrequested.aspx)* 時按下的事件。 上一步 按鈕的可見性會受到 *[SystemNavigationManager.AppViewBackButtonVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.aspx)*。
+**上一頁按鈕：** 引發 *[BackRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.backrequested.aspx)* 時按下的事件。 上一步 按鈕的可見性會受到 *[SystemNavigationManager.AppViewBackButtonVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.aspx)*。
 
 ![應用程式列在 2D 應用程式檢視中的 UI](images/12697297-10104100857470613-1470416918759008487-o-500px.jpg)<br>
 *應用程式列在 2D 應用程式檢視中的 UI*

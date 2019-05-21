@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 共用、 錨點、 WorldAnchor、 MR 共用 250、 WorldAnchorTransferBatch、 SpatialPerception、 傳輸、 本機的錨點傳輸，錨點匯出、 錨點匯入
 ms.openlocfilehash: 82bcd07417fd5aa1b265ebc3c8edc939101dd783
 ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/13/2019
 ms.locfileid: "59597107"
@@ -34,7 +34,7 @@ ms.locfileid: "59597107"
 
 ### <a name="anchor-transfer"></a>錨點傳輸
 
-**命名空間：***UnityEngine.XR.WSA.Sharing*<br>
+**命名空間：**  *UnityEngine.XR.WSA.Sharing*<br>
 **類型**：*WorldAnchorTransferBatch*
 
 要傳送[WorldAnchor](coordinate-systems-in-unity.md)，其中必須建立要傳送的錨點。 一個 HoloLens 的使用者會掃描其環境，並以手動方式或以程式設計方式的點則會在 要共用經驗的錨點的空間中選擇。 可以序列化，代表此點的資料，然後傳送至共用體驗中的裝置。 然後每個裝置的錨點的資料還原序列化，並嘗試在空間中尋找該時間點。 為了讓錨點傳送工作，每個裝置必須已掃描足夠的環境中，可以識別代表錨點的指標。

@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 全像投影，穩定性 hololens
 ms.openlocfilehash: 9b0227102934650d5640a4ac1c4d6f59ecd8e6dd
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59592120"
@@ -28,7 +28,7 @@ ms.locfileid: "59592120"
 * **漂移。** 使用者會看到這全像圖顯示與它原本所在。 這會從遠處放全像投影[空間的錨點](spatial-anchors.md)，特別是在未完全對應環境的組件。 建立空間的錨點接近全像投影降低漂移的可能性。
 * **Jumpiness。** 當雷射 「 取出 」 或者 「 跳 「 它的位置遠離偶爾。 這可能是因為追蹤會調整以符合您的環境更新了解全像投影。
 * **Swim.** 當雷射出現 sway 對應至使用者的標頭的動作。 無法在全像投影時，發生這種的情況[穩定平面](hologram-stability.md#stabilization-plane)，而且如果不是 HoloLens[校正](calibration.md)目前的使用者。 使用者可以重新執行[校正](calibration.md)要修正此問題的應用程式。 開發人員可以更新的穩定平面，來進一步加強的穩定性。
-* **色彩區隔。** 則會顯示成 HoloLens 是色彩循序顯示，其中 60 赫茲 （欄位會顯示在 240 Hz 的個別色彩） 在 flash 的紅-綠-藍綠色色頻。 每當使用者追蹤移動雷射他或她的眼睛，該全像前置和尾端邊緣分隔其構成的色彩，產生 rainbow 作用中。 程度的區隔是仰賴全像圖的速度。 在某些罕見的情況下，移動的快速同時查看靜止闀的標頭也可能導致 rainbow 效果。 這就叫做*[色彩區隔](hologram-stability.md#color-separation)*。
+* **色彩區隔。** 則會顯示成 HoloLens 是色彩循序顯示，其中 60 赫茲 （欄位會顯示在 240 Hz 的個別色彩） 在 flash 的紅-綠-藍綠色色頻。 每當使用者追蹤移動雷射他或她的眼睛，該全像前置和尾端邊緣分隔其構成的色彩，產生 rainbow 作用中。 程度的區隔是仰賴全像圖的速度。 在某些罕見的情況下，移動的快速同時查看靜止闀的標頭也可能導致 rainbow 效果。 這就叫做 *[色彩區隔](hologram-stability.md#color-separation)* 。
 
 ## <a name="frame-rate"></a>畫面播放速率
 

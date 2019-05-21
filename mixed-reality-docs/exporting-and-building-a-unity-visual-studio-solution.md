@@ -8,7 +8,7 @@ ms.topic: article
 keywords: unity，visual studio 中，匯出、 建置、 部署
 ms.openlocfilehash: 68c86fdfe0e589536dafe2bf53c7d4e5dffcc514
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59596380"
@@ -26,8 +26,8 @@ ms.locfileid: "59596380"
 2. 按一下 **加入開啟的場景**將場景新增至組建。
 3. 在 [**組建設定**] 對話方塊中，選擇要匯出的 HoloLens 的下列選項：
    * **平台：***通用 Windows 平台*，並確定選取**切換平台**您所選項目的才會生效。
-   * **SDK:***通用的 10*。
-   * **UWP 建置型別：***D3D*。
+   * **SDK:**  *通用的 10*。
+   * **UWP 建置型別：**  *D3D*。
 4. **選擇性**:**UnityC#專案：** 檢查。
 
 >[!NOTE]

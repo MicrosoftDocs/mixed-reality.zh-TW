@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 3D，標誌、 圖示、 模型、 啟動器、 3D 的啟動器、 圖格、 即時的 cube win32
 ms.openlocfilehash: ac3d5e17614bcd1072f6843a46bf0525f441f130
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59594651"
@@ -20,7 +20,7 @@ ms.locfileid: "59594651"
 
 [Windows Mixed Reality 家用](navigating-the-windows-mixed-reality-home.md)是使用者啟動應用程式之前的登陸位置的起點。 根據預設，沈浸式 Win32 VR 應用程式和遊戲必須耳機之外，從啟動，而且不會出現在混合實境 [開始] 功能表上的 [所有應用程式] 清單。 不過，藉由遵循這篇文章中的指示，來實作 3D 應用程式啟動器，沈浸式的 Win32 VR 經驗可以從啟動 Windows Mixed Reality 開始 功能表和家庭環境內。
 
-這只適用於外部資料流的沈浸式 Win32 VR 體驗 distributied。 以 VR 體驗[透過資料流散發](updating-your-steamvr-application-for-windows-mixed-reality.md)，我們已[SteamVR beta 版更新 Windows Mixed Reality](https://steamcommunity.com/games/719950/announcements/detail/1687045485866139800)以及最新的 Windows Insider RS5 航班以便 SteamVR 向上標題顯示在 Windows 中混合實境開始] 功能表會自動使用預設啟動程式的 [所有應用程式] 清單中。 換句話說，這篇文章中所述的方法不需要為 SteamVR 標題，並會覆寫 Windows Mixed Reality SteamVR Beta 功能。
+這只適用於外部資料流的沈浸式 Win32 VR 體驗 distributied。 以 VR 體驗[透過資料流散發](updating-your-steamvr-application-for-windows-mixed-reality.md)，我們已[SteamVR beta 版更新 Windows Mixed Reality](https://steamcommunity.com/games/719950/announcements/detail/1687045485866139800)以及最新的 Windows Insider RS5 航班以便 SteamVR 向上標題顯示在 Windows 中混合實境開始 功能表會自動使用預設啟動程式的 [所有應用程式] 清單中。 換句話說，這篇文章中所述的方法不需要為 SteamVR 標題，並會覆寫 Windows Mixed Reality SteamVR Beta 功能。
 
 ## <a name="3d-app-launcher-creation-process"></a>3D 應用程式啟動器建立程序
 
@@ -36,7 +36,7 @@ ms.locfileid: "59594651"
 Win32 應用程式會出現在混合實境 [開始] 功能表上的 [所有應用程式] 清單中，如果您為其建立 3D 應用程式啟動程式。 若要這樣做，請建立[視覺項目資訊清單](https://msdn.microsoft.com/library/windows/apps/dn393983.aspx)XML 檔案參考 3D 應用程式啟動器，依照下列步驟：
 
 1. 建立**3D 應用程式啟動器資產 GLB 檔案**(請參閱[模型，以及匯出](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md))。
-2. 建立**[視覺化項目資訊清單](https://msdn.microsoft.com/library/windows/apps/dn393983.aspx)** 應用程式。
+2. 建立 **[視覺化項目資訊清單](https://msdn.microsoft.com/library/windows/apps/dn393983.aspx)** 應用程式。
     1. 您可以開始[下列範例](#sample-visual-elements-manifest)。  請參閱完整[視覺項目資訊清單](https://msdn.microsoft.com/library/windows/apps/dn393983.aspx)文件，如需詳細資訊。
     2. 更新**Square150x150Logo**並**Square70x70Logo**與 PNG/JPG/GIF 應用程式。
         * 這些將用於 Windows Mixed Reality 所有應用程式清單中的應用程式的 2D 標誌和桌面上的 [開始] 功能表。

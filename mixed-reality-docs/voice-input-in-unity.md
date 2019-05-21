@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 輸入的語音、 KeywordRecognizer、 GrammarRecognizer、 麥克風、 聽寫、 語音
 ms.openlocfilehash: ef8114a1c877fe9b858122e0c64628d4b71a69cd
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59597011"
@@ -37,8 +37,8 @@ KeywordRecognizer （其中兩種類型的 PhraseRecognizers），與您的應�
 
 ### <a name="keywordrecognizer"></a>KeywordRecognizer
 
-**命名空間：***UnityEngine.Windows.Speech*<br>
-**類型：***KeywordRecognizer*， *PhraseRecognizedEventArgs*， *SpeechError*， *SpeechSystemStatus*
+**命名空間：** *UnityEngine.Windows.Speech*<br>
+**類型：** *KeywordRecognizer*， *PhraseRecognizedEventArgs*， *SpeechError*， *SpeechSystemStatus*
 
 我們需要一些儲存某些按鍵 using 陳述式：
 
@@ -99,7 +99,7 @@ keywordRecognizer.Start();
 
 ### <a name="grammarrecognizer"></a>GrammarRecognizer
 
-**命名空間：***UnityEngine.Windows.Speech*<br>
+**命名空間：** *UnityEngine.Windows.Speech*<br>
 **型別**:*GrammarRecognizer*， *PhraseRecognizedEventArgs*， *SpeechError*， *SpeechSystemStatus*
 
 如果您指定使用 SRGS 您辨識文法，會使用 GrammarRecognizer。 應用程式有多個只是幾個關鍵字，如果您想要辨識更複雜的片語，或如果您想要輕鬆地開啟和關閉一組命令，這非常有用。 請參閱：[建立使用 SRGS XML 文法](https://msdn.microsoft.com/library/hh378349(v=office.14).aspx)檔案格式資訊。
@@ -141,7 +141,7 @@ grammarRecognizer.Start();
 
 ## <a name="dictation"></a>聽寫
 
-**命名空間：***UnityEngine.Windows.Speech*<br>
+**命名空間：** *UnityEngine.Windows.Speech*<br>
 **型別**:*DictationRecognizer*， *SpeechError*， *SpeechSystemStatus*
 
 您可以使用 DictationRecognizer 使用者的語音轉換文字。 會公開 DictationRecognizer[聽寫](voice-input.md#dictation)功能和支援註冊與接聽假設和片語完成事件，讓它們說話時，您可以為這兩個您使用者提供意見反應，之後。 Start （） 和了 stop （） 方法分別啟用和停用段聽寫辨識。 完成後，辨識器，它應該處置使用 dispose （） 方法來釋放它所使用的資源。 它會釋出這些資源自動記憶體回收期間的其他效能成本如果它們不會釋放，在這之前。

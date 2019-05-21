@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 相片、 視訊、 hololens、 相機、 unity，可以找到
 ms.openlocfilehash: f0183400f55b1c6663a9a20ab4992befe5ad0718
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59595114"
@@ -26,8 +26,8 @@ ms.locfileid: "59595114"
 
 ## <a name="photo-capture"></a>拍攝相片
 
-**命名空間：***UnityEngine.XR.WSA.WebCam*<br>
-**類型：***PhotoCapture*
+**命名空間：** *UnityEngine.XR.WSA.WebCam*<br>
+**類型：** *PhotoCapture*
 
 *PhotoCapture*類型可讓您充分仍與相片視訊攝影機中的相片。 使用最一般的模式，就*PhotoCapture*來拍攝相片如下所示：
 1. 建立*PhotoCapture*物件
@@ -202,8 +202,8 @@ void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptur
 
 ## <a name="video-capture"></a>影像擷取
 
-**命名空間：***UnityEngine.XR.WSA.WebCam*<br>
-**類型：***VideoCapture*
+**命名空間：** *UnityEngine.XR.WSA.WebCam*<br>
+**類型：** *VideoCapture*
 
 *VideoCapture*函式非常類似於*PhotoCapture*。 只有兩個差異是，您必須指定框架每個第二個 (FPS) 值，然後您可以只將直接儲存到磁碟儲存為.mp4 檔案。 若要使用的步驟*VideoCapture*如下所示：
 1. 建立*VideoCapture*物件

@@ -8,7 +8,7 @@ ms.topic: article
 keywords: Visual Studio、 HoloLens、 混合實境，偵錯、 部署
 ms.openlocfilehash: 6bd47d7212d321791a11ff4db91c3e172c91f463
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59594874"
@@ -76,7 +76,7 @@ HoloLens IP 位址變更，您還可以變更目標電腦的 IP 位址，方法�
 若要取消對您所有的電腦，它搭配，HoloLens 啟動**設定**應用程式，移至**更新 > 適用於開發人員**並點選**清除**。
 
 ## <a name="deploying-an-app-to-the-hololens-1st-gen-emulator"></a>將應用程式部署到 HoloLens （第 1 代） 模擬器
-1. 請確定您已**[安裝 HoloLens 模擬器](install-the-tools.md)**。
+1. 請確定您已 **[安裝 HoloLens 模擬器](install-the-tools.md)** 。
 2. 選取  **x86**建置您的應用程式的組態。
 ![x86 建置在 Visual Studio 中的組態](images/x86setting.png)
 3. 選取  **HoloLens 模擬器**部署目標下拉式選單中![Visual Studio 中的模擬器目標](images/deployemulator.png)

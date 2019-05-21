@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 操作說明、 附屬應用程式、 藍芽、 bt、 控制器、 遊戲台、 clicker、 xbox
 ms.openlocfilehash: c25f849cbf05a78ba2fe7118dbe160d05e0f5e3f
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59596979"
@@ -19,7 +19,7 @@ Windows Mixed Reality 裝置支援 附屬應用程式。 您會將 支援的附�
 
 使用 HoloLens 的附屬應用程式的兩個常見案例是取代空中點選手勢和虛擬的鍵盤。 這麼做，是兩個最常見的附屬應用程式**HoloLens Clicker**並**藍芽鍵盤**。 Microsoft HoloLens 藍芽 4.1 選項以及支援[藍芽 HID](https://en.wikipedia.org/wiki/List_of_Bluetooth_profiles#Human_Interface_Device_Profile_.28HID.29)並[藍芽 GATT](https://en.wikipedia.org/wiki/List_of_Bluetooth_profiles#Generic_Attribute_Profile_.28GATT.29)設定檔。
 
-Windows Mixed Reality 沈浸式耳機需要附屬應用程式之外的輸入[視線](gaze.md)並[語音](voice-input.md)。 支援的附屬應用程式包括**鍵盤和滑鼠**，**遊戲台**，並**[動作控制站](motion-controllers.md)**。
+Windows Mixed Reality 沈浸式耳機需要附屬應用程式之外的輸入[視線](gaze.md)並[語音](voice-input.md)。 支援的附屬應用程式包括 **鍵盤和滑鼠** ， **遊戲台** ， 並 **[動作控制站](motion-controllers.md)** 。
 
 ## <a name="pairing-bluetooth-accessories"></a>配對的藍牙配件
 

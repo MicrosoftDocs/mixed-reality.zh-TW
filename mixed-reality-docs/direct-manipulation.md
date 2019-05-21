@@ -7,19 +7,15 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境、 視線、 視線目標，就會有互動，設計、 附近，手 HoloLens
-ms.openlocfilehash: 5952d2ecb75f7addacffcec2776f34289abda6cf
-ms.sourcegitcommit: b5bad4eeb5cdd0c2a7b639442656c306e8b5853b
+ms.openlocfilehash: 412d77a1d7446f82ddf43f051fdb149cb1fd559c
+ms.sourcegitcommit: d565a69a9320e736304372b3f010af1a4d286a62
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65814000"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65940762"
 ---
 # <a name="direct-manipulation-with-hands"></a>指針的直接管理
 直接操作是需要動到全像投影雙手直接輸入的模型。 直接操作的目標是物件的行為就如同真實世界中。 可以啟動按鈕，只要按下這些物件可以藉由抓取，撿起，2D 內容的行為類似虛擬觸控螢幕。  因為這個緣故，直接操作很容易讓使用者了解，並很好玩的太。  它會被視為 「 附近 」 輸入的模型，這表示它最適合用於互動手臂內到達的內容。
-
-HoloLens 2 具有直接操作輸入的模型，可讓您接觸全像投影直接與您手裡。 直接操作的目標是的行為就如同真實世界中的物件。 您可以啟動，只要按下的按鈕和甚至和挑選、 抓取，和移動物件。 在這些情況下，2D 內容的行為類似虛擬觸控螢幕。
-
-直接操作很容易讓使用者了解，而且它有太有趣。 它會被視為 「 接近實際操作 」 輸入的模型，這表示它最適合用於 arm 的範圍內的內容與互動。
 
 直接操作是功能可見性為基礎，這表示它的使用者易記。 沒有符號的筆勢，以教導使用者。 所有的互動是以視覺化的項目，您可以接觸或抓取。
 
@@ -148,6 +144,6 @@ HoloLens 與 （第 1 代），我們教導使用者幾個預先定義的筆勢�
 ## <a name="see-also"></a>另請參閱
 
 * [頭部目光和行動](gaze-and-commit.md)
-* [指向和行動](point-and-commit.md)
+* [手部指向和行動](point-and-commit.md)
 * [本能互動](interaction-fundamentals.md)
 

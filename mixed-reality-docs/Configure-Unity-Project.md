@@ -6,12 +6,12 @@ ms.author: Yoyoz
 ms.date: 04/15/2018
 ms.topic: article
 keywords: Unity，混合實境，開發、 開始，新的專案
-ms.openlocfilehash: 4ee81eca25109da428d7b3addf59e102ddc5c5cf
-ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
+ms.openlocfilehash: aad38474781fd78425d48034877122d36d9e3e93
+ms.sourcegitcommit: d565a69a9320e736304372b3f010af1a4d286a62
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "64993543"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65940760"
 ---
 # <a name="configure-a-new-unity-project-for-windows-mixed-reality"></a>為 Windows Mixed Reality 設定新的 Unity 專案 
 
@@ -36,6 +36,9 @@ ms.locfileid: "64993543"
 4. 在  **XR 設定**區段中，按一下**受支援的虛擬實境**核取方塊以新增**虛擬實境裝置**清單。
 5. 在  **XR 設定**群組中，確認 **「 Windows Mixed Reality"** 列為支援的裝置。 （這可能會顯示為 「 Windows 全像 」 在較舊版本的 Unity）
 
+![Unity 的品質設定](images/getting-started-unity-quality-settings.jpg)<br>
+*Unity xr 設定*
+
 您的應用程式現在可以進行基本全像攝影版的轉譯和空間的輸入。 若要更進一步，並利用特定功能，您的應用程式必須宣告適當的功能資訊清單中。 可以在 Unity 中進行資訊清單宣告，因此它們會包含在每個後續的專案匯入。 設定位於**Player 設定 > 適用於通用 Windows 平台的設定 > 發行設定 > 功能**。 啟用常用 Unity Api for Mixed Reality 適用的功能如下：
 
 |  功能  |  需要功能的 Api | 
@@ -48,7 +51,7 @@ ms.locfileid: "64993543"
 
 **Unity 的品質設定**
 
-![Unity 的品質設定](images/unityqualitysettings-350px.png)<br>
+![Unity 的品質設定](images/getting-started-unity-quality-settings.jpg)<br>
 *Unity 的品質設定*
 
 HoloLens 有 mobile 類別的 GPU。 如果您的應用程式的目標 HoloLens，您會想的品質設定為最快的效能微調請確定我們會保留完整的畫面播放速率：

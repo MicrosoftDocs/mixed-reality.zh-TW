@@ -1,6 +1,6 @@
 # <a name="the-making-of-galaxy-explorer-for-hololens-2"></a>HoloLens 2 Galaxy 總管的 Making
 
-歡迎加入我們如何更新 Galaxy 總管 HoloLens 2 的旅程。 [Galaxy Explorer](https://docs.microsoft.com/en-us/windows/mixed-reality/galaxy-explorer "Galaxy 總管")原本做為開放原始碼應用程式開發的 HoloLens （第 1 代） 透過共用您的想法計劃中，有許多人的第一個混合的實境體驗的其中一個。 現在我們要更新以便[HoloLens 2 的嶄新功能](https://www.microsoft.com/en-gb/hololens/hardware)。
+歡迎加入我們如何更新 Galaxy 總管 HoloLens 2 的旅程。 [Galaxy Explorer](https://docs.microsoft.com/windows/mixed-reality/galaxy-explorer "Galaxy 總管")原本做為開放原始碼應用程式開發的 HoloLens （第 1 代） 透過共用您的想法計劃中，有許多人的第一個混合的實境體驗的其中一個。 現在我們要更新以便[HoloLens 2 的嶄新功能](https://www.microsoft.com/hololens/hardware)。
 
 做為其中一個 Microsoft 混合實境 Studios(1)，我們通常開發商業級解決方案和是開發和測試創意和開發過程的目標平台上。 我們現在有獨特的情況中的不但是卻有 HoloLens 2 裝置的存取權，但很興奮地啟動 Galaxy Explorer 的更新。 我們正在著手利用架構和工具，此專案 (例如[MRTK v2](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html))，可供我們和社群-而且我們想要讓您沿著好好體驗吧。
 

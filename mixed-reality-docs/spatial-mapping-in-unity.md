@@ -8,7 +8,7 @@ ms.topic: article
 keywords: Unity、 空間的對應、 轉譯器，collider、 網狀結構、 掃描、 元件
 ms.openlocfilehash: f938f5921cb2c06342a9ebcd376d690c10584df9
 ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/13/2019
 ms.locfileid: "59597147"
@@ -75,7 +75,7 @@ Unity 提供 2 個元件，輕鬆地將空間的對應新增至您的應用程�
 
 如果您需要更多的控制權比您獲得的空間對應的轉譯器和空間的對應 Collider 元件時，您可以使用低層級的空間對應指令碼 Api。
 
-**命名空間：***UnityEngine.XR.WSA*<br>
+**命名空間：** *UnityEngine.XR.WSA*<br>
 **型別**:*SurfaceObserver*， *SurfaceChange*， *SurfaceData*， *SurfaceId*
 
 以下是使用空間的對應 Api 的應用程式的建議流程的大綱。

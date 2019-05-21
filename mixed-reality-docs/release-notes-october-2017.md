@@ -8,14 +8,14 @@ ms.topic: article
 keywords: 版本資訊、 版本、 windows 10、 組建、 rs3、 os
 ms.openlocfilehash: 7274dcf1db449fa35981eb72192fea9873fcc90a
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59591184"
 ---
 # <a name="release-notes---october-2017"></a>版本資訊-2017 年 10 月
 
-混合實境的 Windows 歡迎使用 ！ 新版**[Windows 10 Fall Creators Update](https://blogs.windows.com/windowsexperience/2017/10/17/whats-new-windows-10-fall-creators-update/)** 導入了新的支援[Windows Mixed Reality 沈浸式耳機](immersive-headset-hardware-details.md)並[動作控制站](motion-controllers.md)，讓您得以探索新的環境，玩 VR 遊戲，並體驗沈浸式娛樂，當連接到[Windows Mixed Reality 相容電腦](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)。
+混合實境的 Windows 歡迎使用 ！ 新版 **[Windows 10 Fall Creators Update](https://blogs.windows.com/windowsexperience/2017/10/17/whats-new-windows-10-fall-creators-update/)** 導入了新的支援 [Windows Mixed Reality 沈浸式耳機](immersive-headset-hardware-details.md)並[動作控制站](motion-controllers.md)，讓您得以探索新的環境，玩 VR 遊戲，並體驗沈浸式娛樂，當連接到[Windows Mixed Reality 相容電腦](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)。
 
 版本的 Windows Mixed Reality 耳機和動作的控制器是大規模的團隊的努力和重要的進展的高潮[Windows Mixed Reality 平台](mixed-reality.md)，其中包括[Microsoft HoloLens](hololens-hardware-details.md). 雖然 HoloLens 不接收的更新版本的 Windows 10 Fall Creators Update，就必須知道，尚未停止 HoloLens 上的工作，我們會有大量的所獲得的經驗和見解，以從我們最新的工作套用於整個 Windows Mixed Reality。 事實上，Windows Mixed Reality 沈浸式耳機 」 和 「 動作控制站都代表一個絕佳的項目指向 HoloLens 的開發也使用相同的 Api，工具，概念適用於兩者。
 

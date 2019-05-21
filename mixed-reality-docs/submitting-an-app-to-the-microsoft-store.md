@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 應用程式，uwp，提交，請提交、 篩選、 中繼資料、 系統需求、 關鍵字、 wack、 憑證、 封裝、 appx、 推銷
 ms.openlocfilehash: 4eb69fbaa22f4864305f09d5e1bf1c1860a0d31f
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59594573"
@@ -147,11 +147,11 @@ HoloLens 和/或沈浸式耳機的運作方式的應用程式就如同提交至 
 1. 在  **[產品宣告](submitting-an-app-to-the-microsoft-store.md#mixed-reality-product-declarations)** 區段底下[屬性](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)。
 2. 在  **[系統需求](submitting-an-app-to-the-microsoft-store.md#mixed-reality-system-requirements)** 區段底下[屬性](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)。
 3. 在  **[裝置系列可用性](submitting-an-app-to-the-microsoft-store.md#device-family-availability)** 區段底下[封裝](https://docs.microsoft.com/windows/uwp/publish/upload-app-packages)。
-4. 在數個**[存放區清單頁面](submitting-an-app-to-the-microsoft-store.md#store-listing-page)** 欄位。
+4. 在數個 **[存放區清單頁面](submitting-an-app-to-the-microsoft-store.md#store-listing-page)** 欄位。
 
 ### <a name="mixed-reality-product-declarations"></a>混合的實境產品宣告
 
-在  **[屬性](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)** 頁面上的應用程式提交程序中，您會發現與混合實境中相關的數個選項**[產品宣告](https://docs.microsoft.com/windows/uwp/publish/app-declarations)** 一節。
+在 **[屬性](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)** 頁面上的應用程式提交程序中，您會發現與混合實境中相關的數個選項 **[產品宣告](https://docs.microsoft.com/windows/uwp/publish/app-declarations)** 一節。
 
 ![混合的實境產品宣告](images/product-declarations-900px.png)<br>
 混合的實境產品宣告
@@ -169,7 +169,7 @@ HoloLens 和/或沈浸式耳機的運作方式的應用程式就如同提交至 
 
 ### <a name="mixed-reality-system-requirements"></a>混合的實境系統需求
 
-在  **[屬性](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)** 頁面上的應用程式提交程序中，您會發現與混合實境中相關的數個選項**[系統需求](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties#system-requirements)** 一節。
+在 **[屬性](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)** 頁面上的應用程式提交程序中，您會發現與混合實境中相關的數個選項 **[系統需求](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties#system-requirements)** 一節。
 
 ![系統需求](images/system-reqs-800px.png)<br>
 系統需求

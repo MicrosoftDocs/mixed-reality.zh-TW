@@ -8,15 +8,15 @@ ms.topic: article
 keywords: HoloLens，持續性，Unity
 ms.openlocfilehash: b6a67e52b3a5ce724a90eb1a479c5eda74b0c4cb
 ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/13/2019
 ms.locfileid: "59597115"
 ---
 # <a name="persistence-in-unity"></a>在 Unity 中的持續性
 
-**命名空間：***UnityEngine.XR.WSA.Persistence*<br>
-**類別：***WorldAnchorStore*
+**命名空間：** *UnityEngine.XR.WSA.Persistence*<br>
+**類別：** *WorldAnchorStore*
 
 WorldAnchorStore 是建立全像攝影版的體驗的關鍵，全像投影在特定的實際位置在保持應用程式的執行個體。 這樣，您的使用者或釘選個別全像投影的工作區中想要的話，並找出於稍後在他們想透過您的應用程式的許多用途。
 

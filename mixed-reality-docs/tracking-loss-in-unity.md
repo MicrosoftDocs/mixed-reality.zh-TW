@@ -8,7 +8,7 @@ ms.topic: article
 keywords: Unity，追蹤遺失、 追蹤遺失映像
 ms.openlocfilehash: eb675860d67e9cad0d1129b3a6f61343990a4179
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59595714"
@@ -27,8 +27,8 @@ ms.locfileid: "59595714"
 
 若要以手動方式處理追蹤遺失，您需要前往**編輯** > **專案設定** > **Player**  >  **通用 Windows 平台設定 索引標籤** > **開頭顯示畫面影像** > **Windows 全像攝影版**並取消核取 「 上追蹤遺失暫停並顯示映像". 在那之後，您需要使用下面指定的 Api 來處理追蹤變更。
 
-**命名空間：***UnityEngine.XR.WSA*<br>
-**類型：***WorldManager*
+**命名空間：** *UnityEngine.XR.WSA*<br>
+**類型：** *WorldManager*
 
 * 世界管理員會公開事件，以偵測追蹤遺失/獲得 (*WorldManager.OnPositionalLocatorStateChanged*) 查詢的目前狀態的屬性和 (*WorldManager.state*)
 * 不使用中追蹤狀態時，相機不會出現轉譯於虛擬世界中，即使在使用者將轉譯中。 這表示物件將不會再對應到實體的任何位置，而且所有會出現鎖定的主體。

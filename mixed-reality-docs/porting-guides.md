@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 連接埠、 移轉、 unity、 中介軟體引擎，UWP
 ms.openlocfilehash: a4a8c78f1c45fd8e3b85a767d139bae9f67540e0
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59595360"
@@ -107,7 +107,7 @@ XRDevice.SetTrackingSpaceType(TrackingSpaceType.Stationary);
 
 這會設定 Unity 的全局座標系統來追蹤[靜態參考座標系](coordinate-systems.md#spatial-coordinate-systems)。 在 「 定態的追蹤模式中，內容會放在編輯器中只前方相機的預設位置 （正向是-Z） 應用程式啟動時，會出現在使用者之前。 以 recenter 使用者的插入擴充槽原點，您可以呼叫 Unity [XR。InputTracking.Recenter](https://docs.unity3d.com/ScriptReference/XR.InputTracking.Recenter.html)方法。
 
-如果您要移植**常設擴展經驗**或**聊天室擴展經驗**，將要放置內容相對於最低限度值。 您會理解使用者的 floor 使用**[空間階段](coordinate-systems.md#spatial-coordinate-systems)**、 樓層來源和選擇性空間界限代表使用者的定義、 設定期間第一次執行。 對於這些體驗，您必須確定設定為 Unity **RoomScale**追蹤空間型別。 雖然 RoomScale 是預設值，您會想要加以明確設定，並確保您取得上一步，則為 true，以擷取其中使用者已離開聊天室它們校正移動其電腦的情況下：
+如果您要移植**常設擴展經驗**或**聊天室擴展經驗**，將要放置內容相對於最低限度值。 您會理解使用者的 floor 使用 **[空間階段](coordinate-systems.md#spatial-coordinate-systems)** 、 樓層來源和選擇性空間界限代表使用者的定義、 設定期間第一次執行。 對於這些體驗，您必須確定設定為 Unity **RoomScale**追蹤空間型別。 雖然 RoomScale 是預設值，您會想要加以明確設定，並確保您取得上一步，則為 true，以擷取其中使用者已離開聊天室它們校正移動其電腦的情況下：
 
 ```cs
 if (XRDevice.SetTrackingSpaceType(TrackingSpaceType.RoomScale))
@@ -144,7 +144,7 @@ else
 ### <a name="unity-step-9-work-through-your-input-model"></a>Unity 步驟 9:透過您輸入的模型運作
 
 每個遊戲或應用程式為目標的現有 HMD 會有一組它所處理的輸入、 輸入所需的體驗，與特定 Api，它會呼叫以取得這些輸入的類型。 我們已投資在嘗試建立以簡單又直截了當越好，以善用 Windows Mixed Reality 中可用的輸入。
-1. 閱讀**[輸入移植指南 Unity](input-porting-guide-for-unity.md)** 如需詳細的 Windows Mixed Reality 公開 （expose） 的輸入，以及如何對應至您應用程式可能會立即執行。
+1. 閱讀 **[輸入移植指南 Unity](input-porting-guide-for-unity.md)** 如需詳細的 Windows Mixed Reality 公開 （expose） 的輸入，以及如何對應至您應用程式可能會立即執行。
 2. 選擇您要利用 Unity 的跨-VR-SDK 輸入 API，或 MR 特定輸入的 API。 一般的 Input.GetButton/Input.GetAxis Api 所使用 Unity VR 應用程式，今天就[Oculus 輸入](https://docs.unity3d.com/Manual/OculusControllers.html)並[OpenVR 輸入](https://docs.unity3d.com/Manual/OpenVRControllers.html)。 如果您的應用程式已經在使用這些 Api 的動作控制站，這是最簡單的路徑，-您應該只需要重新對應按鈕與軸在輸入管理員。
     * 您可以存取在 Unity 中使用的一般跨-VR-SDK Input.GetButton/Input.GetAxis Api 或 MR 專屬 UnityEngine.XR.WSA.Input Api 移動控制站的資料。 （先前以在 Unity 5.6 UnityEngine.XR.WSA.Input 命名空間）
     * 請參閱[工具組中的範例](https://github.com/Microsoft/HoloToolkit-Unity/pull/572)，結合遊樂器 」 和 「 動作控制站。

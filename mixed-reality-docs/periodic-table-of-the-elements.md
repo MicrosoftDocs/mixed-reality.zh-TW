@@ -8,7 +8,7 @@ ms.topic: article
 keywords: Windows Mixed Reality，設計，範例應用程式，控制項
 ms.openlocfilehash: ad95d2bcfd1b70d805adcceb36be0c6c29b838f0
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59596692"
@@ -18,7 +18,7 @@ ms.locfileid: "59596692"
 >[!NOTE]
 >這篇文章討論探勘的範例，我們已在中建立[混合實境設計實驗室](https://github.com/Microsoft/MRDesignLabs_Unity)，我們分享我們所獲得的經驗相關的位置和建議混合實境應用程式開發。 當我們新的探索，就會持續改進我們的設計相關的文章和程式碼。
 
-[項目的周期資料表](https://github.com/Microsoft/MRDesignLabs_Unity_PeriodicTable)是 Microsoft 的混合實境設計實驗室一個開放原始碼的範例應用程式。 與此專案中，您可以了解如何使用各種使用的介面型別來配置在 3D 空間中物件的陣列**[物件集合](object-collection.md)**。 也了解如何建立可互動回應 HoloLens 的標準輸入的物件。 您可以使用此專案的元件建立您自己也就是混合實境應用程式體驗。
+[項目的周期資料表](https://github.com/Microsoft/MRDesignLabs_Unity_PeriodicTable)是 Microsoft 的混合實境設計實驗室一個開放原始碼的範例應用程式。 與此專案中，您可以了解如何使用各種使用的介面型別來配置在 3D 空間中物件的陣列 **[物件集合](object-collection.md)** 。 也了解如何建立可互動回應 HoloLens 的標準輸入的物件。 您可以使用此專案的元件建立您自己也就是混合實境應用程式體驗。
 
 ![時段的資料表的項目應用程式](images/640px-periodictable-hero.jpg)
 

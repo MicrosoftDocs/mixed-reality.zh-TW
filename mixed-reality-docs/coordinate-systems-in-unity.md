@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 座標系統、 空間座標系統、 方向、 插入擴充槽級別、 常設-小數位數的空間-調整、 全球規模，360 度，插入擴充槽，常設、 聊天室、 世界、 可調整、 位置、 方向、 Unity、 錨點、 空間的錨點、 世界錨點，世界鎖定世界鎖定，以鎖定主體，主體鎖定，追蹤遺失，locatability，範圍中，recenter
 ms.openlocfilehash: 36d74488b23587e5c89b40faf97921a10be7473b
 ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/13/2019
 ms.locfileid: "59597106"
@@ -21,8 +21,8 @@ Windows Mixed Reality 跨各種不同的支援應用程式[體驗標尺](coordin
 
 ## <a name="building-an-orientation-only-or-seated-scale-experience"></a>建立僅限方向或插入擴充槽-小數位數的體驗
 
-**命名空間：***UnityEngine.XR*<br>
-**類型：***XRDevice*
+**命名空間：**  *UnityEngine.XR*<br>
+**類型：**  *XRDevice*
 
 建置**僅限方向**或**插入擴充槽擴展經驗**，您必須設定 Unity 固定為追蹤的空間型別。 這會設定 Unity 的全局座標系統來追蹤[靜態參考座標系](coordinate-systems.md#spatial-coordinate-systems)。 在 「 定態的追蹤模式中，內容會放在編輯器中只前方相機的預設位置 （正向是-Z） 應用程式啟動時，會出現在使用者之前。
 
@@ -30,8 +30,8 @@ Windows Mixed Reality 跨各種不同的支援應用程式[體驗標尺](coordin
 XRDevice.SetTrackingSpaceType(TrackingSpaceType.Stationary);
 ```
 
-**命名空間：***UnityEngine.XR*<br>
-**類型：***InputTracking*
+**命名空間：**  *UnityEngine.XR*<br>
+**類型：** *InputTracking*
 
 為純**僅限方向的體驗**例如 360 度視訊檢視器中 （其中位置標頭的更新會讓視覺效果），然後您可以設定[XR。InputTracking.disablePositionalTracking](https://docs.unity3d.com/ScriptReference/XR.InputTracking-disablePositionalTracking.html)設為 true:
 
@@ -47,10 +47,10 @@ InputTracking.Recenter();
 
 ## <a name="building-a-standing-scale-or-room-scale-experience"></a>建置常設-小數位數或聊天室擴展經驗
 
-**命名空間：***UnityEngine.XR*<br>
-**類型：***XRDevice*
+**命名空間：**  *UnityEngine.XR*<br>
+**類型：**  *XRDevice*
 
-針對**常設擴展**或**聊天室擴展經驗**，您必須將內容放置相對於最低限度值。 您會理解使用者的 floor 使用**[空間階段](coordinate-systems.md#spatial-coordinate-systems)**、 樓層來源和選擇性空間界限代表使用者的定義、 設定期間第一次執行。
+針對**常設擴展**或**聊天室擴展經驗**，您必須將內容放置相對於最低限度值。 您會理解使用者的 floor 使用 **[空間階段](coordinate-systems.md#spatial-coordinate-systems)** 、 樓層來源和選擇性空間界限代表使用者的定義、 設定期間第一次執行。
 
 若要確保 Unity 使用其在 floor 層級的全局座標系統作業，您可以 Unity 設 RoomScale 追蹤空間類型，並確認集合成功：
 
@@ -69,8 +69,8 @@ else
 
 一旦您的應用程式已成功設定追蹤的空間型別，內容放在 y 軸上 RoomScale = 的 0 平面會出現在最低限度值。 （0，0，0） 處的原點，將會在最低限度值的空間在安裝期間，使用者名人-z 表示它們已在安裝期間對向的正向方向其中的特定位置。
 
-**命名空間：***UnityEngine.Experimental.XR*<br>
-**類型：***界限*
+**命名空間：** *UnityEngine.Experimental.XR*<br>
+**類型：** *界限*
 
 在指令碼，您可以呼叫您 TryGetGeometry 方法正在 UnityEngine.Experimental.XR.Boundary 型別，以取得界限的多邊形，然後指定 TrackedArea 界限類型。 如果使用者定義的界限 （得到頂點清單），您就會知道它是安全地傳遞**聊天室擴展經驗**給使用者，可以走的地方周圍場景您建立。
 
@@ -86,8 +86,8 @@ if (UnityEngine.Experimental.XR.Boundary.TryGetGeometry(vertices, Boundary.Type.
 
 ## <a name="building-a-world-scale-experience"></a>建置全球規模的體驗
 
-**命名空間：***UnityEngine.XR.WSA*<br>
-**類型：***WorldAnchor*
+**命名空間：**  *UnityEngine.XR.WSA*<br>
+**類型：** *WorldAnchor*
 
 代表 true**全球級別體驗**在讓使用者超過 5 公尺走廊的 HoloLens，您需要超過所使用的空間調整體驗的新技術。 您將使用的一個重要技術是建立[空間的錨點](coordinate-systems.md#spatial-anchors)鎖定精確地就地真實世界中，不論幅度有漫遊的使用者，在全像投影的叢集，然後[日後再次在尋找這些全像投影工作階段](coordinate-systems.md#spatial-anchor-persistence)。
 

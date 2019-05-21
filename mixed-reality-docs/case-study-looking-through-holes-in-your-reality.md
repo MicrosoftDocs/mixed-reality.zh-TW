@@ -19,7 +19,7 @@ ms.locfileid: "64873931"
 
 ## <a name="the-tech"></a>技術
 
-如果您已得力外星人，因為它們可能會中斷在您壁 **[RoboRaid](https://www.youtube.com/watch?v=Hf9qkURqtbM)**，解除鎖定在安全的背景牆**[片段](case-study-creating-an-immersive-experience-in-fragments.md)**，或已幸運若要查看在 UNSC 無限大機庫 **[E3 2015 Halo 5 體驗](https://www.youtube.com/watch?v=QDw5QjDtFy8)**，則您已了解正是我要討論。 根據您的想像力，此 visual 的技巧可以用在您泥中放入暫存的漏洞，或隱藏在鬆散的 floorboard 的世界。
+如果您已得力外星人，因為它們可能會中斷在您壁 **[RoboRaid](https://www.youtube.com/watch?v=Hf9qkURqtbM)**，解除鎖定在安全的背景牆 **[片段](case-study-creating-an-immersive-experience-in-fragments.md)**，或已幸運若要查看在 UNSC 無限大機庫 **[E3 2015 Halo 5 體驗](https://www.youtube.com/watch?v=QDw5QjDtFy8)**，則您已了解正是我要討論。 根據您的想像力，此 visual 的技巧可以用在您泥中放入暫存的漏洞，或隱藏在鬆散的 floorboard 的世界。
 
 ![RoboRaid 加入三維的管道和後置您的背景牆，只能透過建立為 invaders 突破的漏洞來顯示其他結構。](images/roboraid-640px.png)
 

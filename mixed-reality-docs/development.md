@@ -8,12 +8,12 @@ ms.date: 02/12/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境，開發、 開發、 HoloLens、 unity、 directx
-ms.openlocfilehash: 59b41c6b71e546bac6e3b76c038229d6de45b535
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 8833d2d692f2082c939bcfc3bb55e5d159e8c9ac
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730789"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974816"
 ---
 # <a name="development-launchpad"></a>開發 [啟動列]
 
@@ -158,7 +158,7 @@ Unreal-即將推出 ！
                     <div class="cardText">
                         <h3>開發基本概念</h3>
                         <p>
-                            <a href="Interaction-fundamentals.md">互動</a>
+                            <a href="Interaction-fundamentals.md">Instinctual 互動</a>
                         </p>
                         <p>
                             <a href="rendering.md">全像攝影版的轉譯</a>

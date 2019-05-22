@@ -160,6 +160,7 @@
 #### [Unity 中的鍵盤輸入](keyboard-input-in-unity.md)
 ### 進階主題
 #### [搭配使用 HoloLens 的 Windows 命名空間和 Unity 應用程式](using-the-windows-namespace-with-unity-apps-for-hololens.md)
+#### [Unity 中的混合實境原生物件](unity-xrdevice-advanced.md)
 #### [使用 Unity 的 Vuforia](vuforia-development-overview.md)
 ### 舊版文件 (Unity 2017.4/HTK/MRTK v1)
 ## Unreal

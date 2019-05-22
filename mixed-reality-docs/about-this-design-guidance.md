@@ -6,12 +6,12 @@ ms.author: jonwie
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，設計、 簡介、 指導方針
-ms.openlocfilehash: b4f128c001a2fa6ed72e1548ef82693ad1488099
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: ca69118dfeb766c1386420cd81053b9acb485ba7
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591405"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974851"
 ---
 # <a name="about-this-design-guidance"></a>關於本設計指南
 
@@ -31,7 +31,7 @@ ms.locfileid: "59591405"
 
 以下是如何組織此設計指引的快速概觀。 您可以找到每個區域，並提供的多篇文章的連結區段。
 * **[開始進行設計](mixed-reality.md)** -讀取我們的高階想法，並了解我們所遵循的原則。
-* **[互動設計](interaction-fundamentals.md)** -了解輸入、 命令、 巡覽和其他互動的基本概念設計您的應用程式。
+* **[Instinctual 互動](interaction-fundamentals.md)** -了解輸入、 命令、 巡覽和其他互動的基本概念設計您的應用程式。
 * **[樣式](typography.md)** -使用色彩、 印刷樣式和動作，讓您的應用程式可愛。
 * **[應用程式模式](types-of-mixed-reality-apps.md)** -了解如何應用程式可以跨越案例沈浸式和真實世界的環境。
 * **[控制項](interactable-object.md)** -使用控制項和模式，如建置組塊來建立您自己的應用程式體驗。

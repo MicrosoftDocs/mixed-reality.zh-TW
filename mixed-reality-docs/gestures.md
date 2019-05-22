@@ -6,12 +6,12 @@ ms.author: cmeekhof
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 混合的實境，手勢互動、 設計
-ms.openlocfilehash: fabd47fef424186b826c410de725f805ff7005f5
-ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
+ms.openlocfilehash: 52ba7070e2c9b5632d5978c70571fcf9cda3f499
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65629059"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974890"
 ---
 # <a name="gestures"></a>手勢
 
@@ -110,9 +110,9 @@ HoloLens 辨識手勢，藉由追蹤或兩個都看得到裝置的實際操作�
 * 中斷筆勢框架界限的結果應該降到最低。 一般情況下，這表示應該停止的界限上，動作的結果，但不是會反轉。 例如，如果使用者移動一些全像攝影版的物件之間的空間，移動時，應該停止的筆勢框架遭到入侵，但**不**傳回給起始點。 使用者可能會遇到一些挫折然後，但可能更快速地了解界限，並不需要每次重新啟動其完整的預定的動作。
 
 ## <a name="see-also"></a>另請參閱
-* [目光目標](gaze-targeting.md)
+* [頭部目光和停駐](gaze-and-dwell.md)
 * [語音設計](voice-design.md)
 * [MR Input 211：筆勢](holograms-211.md)
 * [Unity 中的筆勢和運動控制器](gestures-and-motion-controllers-in-unity.md)
-* [指針與 DirectX 中的動作控制站](hands-and-motion-controllers-in-directx.md)
+* [DirectX 中的手部和運動控制器](hands-and-motion-controllers-in-directx.md)
 * [運動控制器](motion-controllers.md)

@@ -6,12 +6,12 @@ ms.author: erpau
 ms.date: 04/5/2019
 ms.topic: article
 keywords: 混合實境，設計、 緩和，HoloLens 2 HoloLens （第 1 代）
-ms.openlocfilehash: 3dac997923b3f2319cb97137c1bbd9a12c4126b1
-ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
+ms.openlocfilehash: 8dea3765f01a6a82fccc002d1cd5c7c9c77d0980
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "64993632"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974771"
 ---
 # <a name="comfort"></a>緩和
 
@@ -172,6 +172,6 @@ Windows Mixed Reality 沈浸式 HMDs，易於閱讀垂直的字型大小下限 �
 ## <a name="see-also"></a>另請參閱
 * [目光](gaze.md)
 * [全像投影穩定性](hologram-stability.md)
-* [互動基本概念](interaction-fundamentals.md)
+* [本能互動](interaction-fundamentals.md)
 * [全像攝影框架](holographic-frame.md)
 * [校正](calibration.md)

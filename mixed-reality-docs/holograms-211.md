@@ -8,13 +8,13 @@ ms.topic: article
 keywords: holotoolkit、 mixedrealitytoolkit、 mixedrealitytoolkit unity、 academy、 教學課程中，軌跡
 ms.openlocfilehash: 76d2b4c0ac3d0a3783b091f7dc8c39548a18b548
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59596146"
 ---
 >[!NOTE]
->混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會**_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
+>混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
 
 # <a name="mr-input-211-gesture"></a>MR 輸入 211:手勢
 
@@ -523,7 +523,7 @@ public class GestureAction : MonoBehaviour, INavigationHandler, IManipulationHan
 9. 按一下  **+** 按鈕，然後選取**展開模型**關鍵字下拉式清單中。
 10. 按一下  **+** 下的回應，並將拖曳**AstronautManager**從**階層**到**None （物件）** 欄位。
 11. 現在，按一下  **No 函式**下拉式清單中，選取**AstronautManager**，然後**ExpandModelCommand**。
-12. 按一下 語音輸入處理常式**+** 按鈕，然後選取**重設的模型**關鍵字下拉式清單中。
+12. 按一下 語音輸入處理常式 **+** 按鈕，然後選取**重設的模型**關鍵字下拉式清單中。
 13. 按一下  **+** 下的回應，並將拖曳**AstronautManager**從**階層**到**None （物件）** 欄位。
 14. 現在，按一下  **No 函式**下拉式清單中，選取**AstronautManager**，然後**ResetModelCommand**。
 

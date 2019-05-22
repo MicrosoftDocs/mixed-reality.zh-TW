@@ -7,12 +7,12 @@ ms.date: 04/05/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境、 輸入、 眼睛視線的眼睛追蹤
-ms.openlocfilehash: f61f813c702cbeaa03ddc50c6a1958af3566bc1c
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 948d6ad36bfa3f7b179268a8e6241c9a2ce8e732
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730771"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974769"
 ---
 # <a name="eye-tracking-on-hololens-2"></a>HoloLens 2 上追蹤
 HoloLens 2 允許的內容和 Holographic 內的人了解帶入新境界藉由提供驚人的能力，利用使用者正在查看的相關資訊的開發人員的體驗。 此頁面可讓開發人員如何受惠眼睛追蹤不同使用案例，以及設計眼睛視線基礎的使用者介面時需要留意的概觀。 
@@ -127,7 +127,7 @@ HoloLens 2 允許的內容和 Holographic 內的人了解帶入新境界藉由�
 5. **不是精確的帳戶：** 我們會區分兩種類型的不精確也就是通知使用者：位移和抖動。 位址位移的最簡單方式是提供夠大的目標，才能與互動 (> 2 ° 中視覺化的角度 – 做為參考： 您的縮圖是大約 2 ° 中視覺化的角度，當您延伸您的 arm (1))。 這會導致下列指導方針：
     - 不會強制使用者選取目標太小：研究顯示，是否目標是足夠大 （和系統設計也），使用者會描述為輕鬆就能和神奇的互動。 如果目標變得太小，則使用者會說明經驗 fatiguing 和令人洩氣。
     
-# <a name="eye-gaze-design-guidelines-placeholder"></a>眼睛視線設計指導方針 （預留位置）
+# <a name="eye-gaze-design-guidelines"></a>眼睛視線設計指導方針
 
 HoloLens 2 中，我們有絕佳的機會，以進行而不是前端的視線使用眼睛視線的視線 & 更快且更方便的認可。 不過，眼睛視線至前端的視線，在某些方面非常不同的行為，因此隨附一些獨特的挑戰。 眼睛視線設計指導方針，在我們摘要說明一般的優點和挑戰，以做為輸入的媒體，在全像攝影版的應用程式中使用的眼睛追蹤時納入考量。 在本節中，我們會著重在特定的設計考量的眼睛視線 & 認可。 首先，我們的眼睛非常快速移動，因此很適合用來快速檢視跨目標。 眼睛視線適用於快速視線 & 認可動作，結合快速認可，例如空中點選或按鈕按下時，尤其如此。
 
@@ -138,9 +138,8 @@ HoloLens 2 中，我們有絕佳的機會，以進行而不是前端的視線使
 需要留意的視線和認可訊號的同步處理：輸入訊號的同步處理可能會更少的一項挑戰，簡單的視線 & 認可，因此，別擔心 ！ 是應該注意如果您想要使用更複雜的認可動作，不過，可能會很長的語音命令或複雜的手勢。 想像一下您查看目標，並發出長語音命令。 您說出所需的時間和系統偵測到您所說的內容所需的時間，請納入考量，您眼睛的視線已通常是長時間移動到場景中一些新的目標。 因此，讓您知道它們可能會需要之前已辨識的命令，請查看目標或處理方式來判斷命令和哪些使用者有探討了當時之輸入的使用者。
 
 ## <a name="see-also"></a>另請參閱
-* [視線與認可](gaze-and-commit.md)
-* [Head 視線目標](gaze-targeting.md)
+* [頭部目光和行動](gaze-and-commit.md)
 * [筆勢](gestures.md)
-* [語音設計](voice-design.md)
+* [語音命令](voice-design.md)
 * [運動控制器](motion-controllers.md)
 * [舒適度](comfort.md)

@@ -7,12 +7,12 @@ ms.date: 04/11/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境、 視線、 視線目標，就會有互動，設計、 hololens MMR，multimodal
-ms.openlocfilehash: 771ebe44dc984c9d4550638bef405810d86b8d69
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 9d0e639d7474c7e8728282acfa8d288cfeec7043
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730826"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974909"
 ---
 # <a name="introducing-instinctual-interactions"></a>簡介 instinctual 互動
 
@@ -141,12 +141,13 @@ ms.locfileid: "65730826"
 
 ## <a name="see-also"></a>另請參閱
 * [頭部目光和行動](gaze-and-commit.md)
-* [直接操作](direct-manipulation.md)
-* [指向和行動](point-and-commit.md)
-* [目光目標](gaze-targeting.md)
+* [頭部目光和停駐](gaze-and-dwell.md)
+* [手部直接操作](direct-manipulation.md)
+* [手部指向和行動](point-and-commit.md)
 * [筆勢](gestures.md)
-* [語音設計](voice-design.md)
+* [語音命令](voice-design.md)
 * [運動控制器](motion-controllers.md)
 * [空間音效設計](spatial-sound-design.md)
 * [空間對應設計](spatial-mapping-design.md)
 * [舒適度](comfort.md)
+

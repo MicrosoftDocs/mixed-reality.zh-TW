@@ -6,12 +6,12 @@ ms.author: crderr
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 應用程式品質準則，混合實境，混合實境應用程式
-ms.openlocfilehash: e9f6cd5a6017e11cd167c8141d29b82f89af08e4
-ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
+ms.openlocfilehash: 756bc148f290aa3406c9ac8bb7003d463c62772c
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65628998"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974743"
 ---
 # <a name="app-quality-criteria"></a>應用程式的品質準則
 
@@ -403,7 +403,7 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
 * [互動設計](hologram.md)
 * [色彩、 光線及材料](color,-light-and-materials.md)
 * [佈告板和常駐標籤](billboarding-and-tag-along.md)
-* [互動基本概念](interaction-fundamentals.md)
+* [本能互動](interaction-fundamentals.md)
 * [自我動作和使用者 locomotion](comfort.md#self-motion-and-user-locomotion)
 
 #### <a name="tools-and-tutorials"></a>工具和教學課程
@@ -451,14 +451,14 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
 
 #### <a name="documentation"></a>文件
 
-* [Windows MR 互動的基本概念](interaction-fundamentals.md)
+* [本能互動](interaction-fundamentals.md)
 * [可互動的物件](interactable-object.md)
-* [目光目標](gaze-targeting.md)
+* [頭部目光和停駐](gaze-and-dwell.md)
 * [游標](cursors.md)
 * [舒適度與視線](comfort.md#gaze-direction)
 * [筆勢](gestures.md)
 * [語音輸入](voice-input.md)
-* [語音設計](voice-design.md)
+* [語音命令](voice-design.md)
 * [運動控制器](motion-controllers.md)
 * [Unity 的輸入移植指南](input-porting-guide-for-unity.md)
 * [Unity 中的鍵盤輸入](keyboard-input-in-unity.md)
@@ -466,8 +466,8 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
 * [Unity 中的筆勢和運動控制器](gestures-and-motion-controllers-in-unity.md)
 * [Unity 中的語音輸入](voice-input-in-unity.md)
 * [DirectX 中的鍵盤、滑鼠及控制器輸入](keyboard,-mouse,-and-controller-input-in-directx.md)
-* [DirectX 中的前端和眼睛視線](gaze-in-directx.md)
-* [指針與 DirectX 中的動作控制站](hands-and-motion-controllers-in-directx.md)
+* [DirectX 中的頭部和眼睛目光](gaze-in-directx.md)
+* [DirectX 中的手部和運動控制器](hands-and-motion-controllers-in-directx.md)
 * [DirectX 中的語音輸入](voice-input-in-directx.md)
 
 #### <a name="tools-and-tutorials"></a>工具和教學課程
@@ -519,7 +519,7 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
 * [可互動的物件](interactable-object.md)
 * [Unity 中的文字](text-in-unity.md)
 * [應用程式列和週框方塊](app-bar-and-bounding-box.md)
-* [語音設計](voice-design.md)
+* [語音命令](voice-design.md)
 
 #### <a name="tools-and-tutorials"></a>工具和教學課程
 

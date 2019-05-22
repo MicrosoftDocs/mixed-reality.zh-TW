@@ -6,12 +6,12 @@ ms.author: jennyk
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 混合實境、 視線、 視線目標，就會有互動，設計
-ms.openlocfilehash: 1ac4f06208a7574fced0a7e27e93469ec93bf6e0
-ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
+ms.openlocfilehash: bbacf9bc0039280b9944f2ad6616108d9ceae1cd
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64873918"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974923"
 ---
 # <a name="gaze-and-dwell"></a>視線和詳述
 有許多不同的方式，以確認_認可_例如結合使用的視線_語音_或_交給筆勢_。
@@ -99,5 +99,5 @@ A_探討_可進行與標頭或眼睛視線。 這個概念很簡單，而且可�
 
 ## <a name="see-also"></a>另請參閱
 * [筆勢](gestures.md)
-* [語音設計](voice-design.md)
+* [語音命令](voice-design.md)
 * [游標](cursors.md)

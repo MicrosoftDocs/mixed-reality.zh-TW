@@ -6,12 +6,12 @@ ms.author: adlinv
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，告示板 tag-along
-ms.openlocfilehash: 8215b96aff1f3c2d43e959f04ad83d41ffd32b2a
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: e33ab0121398742b2e48553c9cbf2c1debdc6abf
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59595984"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974781"
 ---
 # <a name="billboarding-and-tag-along"></a>告示板和 tag-along
 
@@ -36,6 +36,6 @@ Tag-along 物件都有參數，來調整它們的行為的方式。 內容可以
 就像真正的 head 鎖定的內容，充斥或 nauseating 如果它們之間移動，或年春季太多的使用者檢視，可以證明 tag-along 物件。 因為的使用者看起來，然後快速地停止，其選擇題告訴他們，他們已停止。 其平衡會通知他們，其標頭已停止微調，以及其願景所看到開啟的世界停駐點。 不過，如果使用者已停止時，會保留在移動 tag-along，它可能會混淆其角度來看。
 
 ## <a name="see-also"></a>另請參閱
-* [資料指標](cursors.md)
-* [互動的基本概念](interaction-fundamentals.md)
-* [Comfort](comfort.md)
+* [游標](cursors.md)
+* [本能互動](interaction-fundamentals.md)
+* [舒適度](comfort.md)

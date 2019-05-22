@@ -8,13 +8,13 @@ ms.topic: article
 keywords: azure、 混合實境、 academy、 unity、 教學課程、 api、 microsoft graph、 hololens、 沉浸式 vr
 ms.openlocfilehash: 98fe2c872f332a21fff3af6751ae555968073a24
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59591150"
 ---
 >[!NOTE]
->混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會**_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
+>混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
 
 # <a name="mr-and-azure-311---microsoft-graph"></a>MR 和 Azure 311-Microsoft Graph
 
@@ -165,7 +165,7 @@ ms.locfileid: "59591150"
 
     1. 在 [**其他設定**] 索引標籤：
 
-        1.  **指令碼****執行階段版本**應該**實驗性**（.NET 4.6 對等），這會觸發程序需要重新啟動編輯器。
+        1.  **指令碼** **執行階段版本**應該**實驗性**（.NET 4.6 對等），這會觸發程序需要重新啟動編輯器。
 
         2. **指令碼後端**應該是 **.NET**
 
@@ -266,12 +266,12 @@ ms.locfileid: "59591150"
 
 若要建立此類別：
 
-1.  以滑鼠右鍵按一下**資產**中的資料夾 *[專案] 面板*，然後選取 **建立*> * 資料夾 * *。 將資料夾命名**指令碼**。
+1.  以滑鼠右鍵按一下**資產**中的資料夾 *[專案] 面板*，然後選取 **建立* > *資料夾**。 將資料夾命名**指令碼**。
 
     ![](images/AzureLabs-Lab311-26.png)
     ![](images/AzureLabs-Lab311-27.png)
 
-2.  開啟**指令碼**資料夾，在該資料夾中，按一下滑鼠右鍵，**建立*> * C\#指令碼 * *。 指令碼命名**MeetingsUI。**
+2.  開啟**指令碼**資料夾，在該資料夾中，按一下滑鼠右鍵，**建立* > *C\# 指令碼**。 指令碼命名**MeetingsUI。**
 
     ![](images/AzureLabs-Lab311-28.png)
 
@@ -475,7 +475,7 @@ ms.locfileid: "59591150"
     ```
 
     > [!NOTE]
-    > 變更**appId**值，成為**應用程式識別碼**您記下在**[第 1 章](#chapter-1---create-your-app-in-the-application-registration-portal)，步驟 4**。 這個值應該是顯示在相同**應用程式註冊入口網站，** 在您的應用程式註冊頁面中。
+    > 變更 **appId** 值，成為 **應用程式識別碼** 您記下在 **[第 1 章](#chapter-1---create-your-app-in-the-application-registration-portal)，步驟 4** 。 這個值應該是顯示在相同**應用程式註冊入口網站，** 在您的應用程式註冊頁面中。
 
 8.  內**Graph**類別中，將方法加入**SignInAsync()** 並**AquireTokenAsync()**，，會提示使用者插入的登入認證。
 
@@ -846,7 +846,7 @@ ms.locfileid: "59591150"
         private GestureRecognizer _gestureRecognizer;
     ```
 
-7.  取代**啟動**方法; 請注意，它會覆寫方法，它會呼叫的 'base' 視線類別方法。 **Start （)** 類別初始化時，輸入辨識向註冊，並建立登入將會呼叫* 按鈕*場景中：
+7.  取代**啟動**方法; 請注意，它會覆寫方法，它會呼叫的 'base' 視線類別方法。  **Start （)** 類別初始化時，輸入辨識向註冊，並建立登入將會呼叫 *按鈕* 場景中：
 
     ```csharp    
         /// <summary>
@@ -868,7 +868,7 @@ ms.locfileid: "59591150"
         }
     ```
 
-8.  新增**CreateSignInButton()** 方法，它會具現化的登入* 按鈕*場景中並設定其屬性：
+8.  新增 **CreateSignInButton()** 方法，它會具現化的登入 *按鈕* 場景中並設定其屬性：
 
     ```csharp    
         /// <summary>
@@ -939,7 +939,7 @@ ms.locfileid: "59591150"
 
 此專案的 Unity 區段所需的所有項目現在已完成，所以該是時候建置從 Unity。
 
-1.  瀏覽至*組建設定*(**檔案*> * 建置設定)。
+1.  瀏覽至 *組建設定* (**檔案* > *建置設定**)。
 
     ![](images/AzureLabs-Lab311-33.png)
 

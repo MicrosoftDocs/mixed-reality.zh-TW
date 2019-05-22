@@ -8,13 +8,13 @@ ms.topic: article
 keywords: azure、 混合實境、 academy、 unity、 教學課程、 api、 電腦視景、 hololens、 沉浸式 vr microsoft bot framework v4、 web 應用程式 bot、 bot framework、 microsoft bot
 ms.openlocfilehash: b828aa4415103d280459bd2c666004c994b3e59d
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59597078"
 ---
 >[!NOTE]
->混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會**_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
+>混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
 
 # <a name="mr-and-azure-312-bot-integration"></a>MR 和 Azure 312:Bot 整合
 
@@ -88,7 +88,7 @@ ms.locfileid: "59597078"
 
     ![建立機器人應用程式](images/AzureLabs-Lab312-03.png)
 
-5.  以滑鼠右鍵按一下您*專案*， **MyBot**，請在**方案總管 中**，然後按一下**新增** **|****類別**。
+5.  以滑鼠右鍵按一下您*專案*， **MyBot**，請在**方案總管 中**，然後按一下 **新增** **|** **類別**。
 
     ![建立機器人應用程式](images/AzureLabs-Lab312-04.png)
 
@@ -836,7 +836,7 @@ ms.locfileid: "59597078"
     ```
 
     > [!NOTE] 
-    > 請確定您插入您**Bot 祕密金鑰**成**botSecret**變數。 您將已記下您**Bot 祕密金鑰**在開始本課程中，在**[第 2 章](#chapter-2---create-the-azure-bot-service)，步驟 10**。
+    > 請確定您插入您**Bot 祕密金鑰**成**botSecret**變數。 您將已記下您 **Bot 祕密金鑰** 在開始本課程中，在 **[第 2 章](#chapter-2---create-the-azure-bot-service)，步驟 10** 。
 
 7. 程式碼**Awake()** 並**start （)** 現在需要加入。 
 

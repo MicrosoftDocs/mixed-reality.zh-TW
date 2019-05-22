@@ -8,13 +8,13 @@ ms.topic: article
 keywords: azure 中，自訂的視覺物件偵測、 混合實境、 academy、 unity、 教學課程、 api、 hololens
 ms.openlocfilehash: 89ee79943a88de8a34c679ae33621db5770908b0
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59591148"
 ---
 >[!NOTE]
->混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會**_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
+>混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
 
 # <a name="mr-and-azure-310-object-detection"></a>Mr 和 Azure 310:物件偵測
 
@@ -24,7 +24,7 @@ ms.locfileid: "59591148"
 
 ![課程結果](images/AzureLabs-Lab310-00.png)
 
-**Azure Custom Vision、 物體偵測**是一項 Microsoft 服務可讓開發人員建置自訂映像分類器。 這些分類器可以再搭配新的映像來偵測該新的映像 」 中的物件，藉由提供** 方塊界限**的映像本身。 服務提供簡單、 容易使用的線上的入口網站，來簡化此程序。 如需詳細資訊，請瀏覽下列連結：
+**Azure Custom Vision、 物體偵測**是一項 Microsoft 服務可讓開發人員建置自訂映像分類器。 這些分類器可以再搭配新的映像來偵測該新的映像 」 中的物件，藉由提供 **方塊界限** 的映像本身。 服務提供簡單、 容易使用的線上的入口網站，來簡化此程序。 如需詳細資訊，請瀏覽下列連結：
 
 * [Azure 的自訂視覺頁面](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/home)
 * [限制和配額](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/limits-and-quotas)
@@ -208,7 +208,7 @@ ms.locfileid: "59591148"
 
     ![](images/AzureLabs-Lab310-22.png)
 
-3.  使用 Unity 開啟，就代表值得查看以預設值**指令碼編輯器**設為**Visual Studio**。 移至**編輯* > *喜好設定** 從新的視窗中，然後瀏覽至**外部工具**。 變更**外部指令碼編輯器**要**Visual Studio**。 關閉**喜好設定**視窗。
+3.  使用 Unity 開啟，就代表值得查看以預設值**指令碼編輯器**設為**Visual Studio**。 移至 **編輯* > *喜好設定** 從新的視窗中，然後瀏覽至 **外部工具** 。 變更**外部指令碼編輯器**要**Visual Studio**。 關閉**喜好設定**視窗。
 
     ![](images/AzureLabs-Lab310-23.png)
 

@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 全像投影，穩定性 hololens
-ms.openlocfilehash: 9b0227102934650d5640a4ac1c4d6f59ecd8e6dd
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.openlocfilehash: b35b904e3c662c5ebd0670a98044706fe208e348
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592120"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974932"
 ---
 # <a name="hologram-stability"></a>全像穩定性
 
@@ -147,5 +147,5 @@ HoloLens 顯示由於，有時可以感受稱為 「 色彩區隔 」 成品。 
 
 ## <a name="see-also"></a>另請參閱
 * [了解效能 for Mixed Reality](understanding-performance-for-mixed-reality.md)
-* [色彩、 光線和材質](color,-light-and-materials.md)
-* [互動的基本概念](interaction-fundamentals.md)
+* [色彩、光線和材質](color,-light-and-materials.md)
+* [本能互動](interaction-fundamentals.md)

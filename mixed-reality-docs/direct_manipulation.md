@@ -6,12 +6,12 @@ ms.author: cmeekhof
 ms.date: 04/02/2019
 ms.topic: article
 keywords: 混合實境、 視線、 視線目標，就會有互動，設計、 附近，手 HoloLens
-ms.openlocfilehash: 803157bb248a5541ed524ac4f828ccbba9d59ce1
-ms.sourcegitcommit: 82d4e5cf4ad46bfdc44d0606844e28c75b6e67ce
+ms.openlocfilehash: a9e67f21587381dbc1090f89935eaa2b88630dae
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730504"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974760"
 ---
 # <a name="direct-manipulation"></a>直接操作
 
@@ -143,6 +143,6 @@ HoloLens 2 可讓可讓的使用者啟用導向其指針來操作 3D hologramphi
 
 ## <a name="see-also"></a>另請參閱
 
-* [視線與認可](gaze-and-commit.md)
-* [指向和行動](point-and-commit.md)
-* [互動基本概念](interaction-fundamentals.md)
+* [頭部目光和行動](gaze-and-commit.md)
+* [手部指向和行動](point-and-commit.md)
+* [本能互動](interaction-fundamentals.md)

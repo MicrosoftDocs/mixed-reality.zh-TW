@@ -8,13 +8,13 @@ ms.topic: article
 keywords: azure、 混合實境、 academy、 edge、 iot edge、 教學課程、 api、 通知、 函數、 資料表、 沈浸式 hololens、 vr、 iot、 虛擬機器、 ubuntu、 python
 ms.openlocfilehash: 1ab7c48ac3cff1cb2283cadb171098af9e148628
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59591132"
 ---
 >[!NOTE]
->混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會**_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
+>混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
 
 # <a name="mr-and-azure-313-iot-hub-service"></a>MR 和 Azure 313:IoT 中樞服務
 
@@ -935,7 +935,7 @@ ms.locfileid: "59591132"
 
 5. 一旦展開時，您新建立**儲存體帳戶**應該可用。 按一下您的儲存體中，左邊的箭號之後，會展開，然後尋找**資料表**，按一下，以顯示旁的箭號**資料表**在最後一章中所建立。 按兩下您**資料表**。
 
-6. 您的資料表將會開啟您的 Visual Studio 視窗中央。 按一下 [資料表] 圖示，以**+** （加上） 在其上。
+6. 您的資料表將會開啟您的 Visual Studio 視窗中央。 按一下 [資料表] 圖示，以 **+** （加上） 在其上。
 
     ![加入新的資料表](images/AzureLabs-Lab313-48.png)
 
@@ -1039,7 +1039,7 @@ ms.locfileid: "59591132"
 
     ![前往資源](images/AzureLabs-Lab313-57.png)
 
-11. 在新的面板的左側，按一下**+** （加號） 旁的圖示*函式*，以建立新的函式。
+11. 在新的面板的左側，按一下 **+** （加號） 旁的圖示*函式*，以建立新的函式。
 
     ![新增新的函式](images/AzureLabs-Lab313-58.png)
 
@@ -1143,7 +1143,7 @@ ms.locfileid: "59591132"
 
 20. 中位置的程式碼，請按一下**儲存**。
 
-21. 接下來，按一下**\<** （箭頭） 圖示，在頁面的右手邊。
+21. 接下來，按一下 **\<** （箭頭） 圖示，在頁面的右手邊。
 
     ![自訂函式](images/AzureLabs-Lab313-66.png)
 

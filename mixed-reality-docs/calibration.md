@@ -6,18 +6,19 @@ ms.author: xerxesb
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 校正、 緩和、 視覺效果、 品質、 ipd
-ms.openlocfilehash: 91af069bc4ae5e49d9eb9c529f0d0db7b1567fc8
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 5f8e6aef1df0efe4c64c807e627f69c7949363f2
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597002"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974807"
 ---
-# <a name="calibration"></a>校正
-
-校正您 IPD （interpupillary 距離），可以改善您的視覺效果的品質。 HoloLens 與 Windows Mixed Reality 沈浸式耳機提供方式來自訂 IPD。
+# <a name="improve-visual-quality-and-comfort"></a>改善的視覺品質和緩和
+HoloLens、 HoloLens 2 和 Windows Mixed Reality 沈浸式耳機提供不同的方式，來改善品質視覺效果。 
 
 ## <a name="hololens"></a>HoloLens
+
+校正您 IPD （interpupillary 距離），可以改善您的視覺效果的品質。
 
 ### <a name="during-setup"></a>在安裝期間
 
@@ -54,10 +55,21 @@ Cortana 導入了本身之後，第一個步驟中，安裝程式就會是校正
 
 ## <a name="hololens-2"></a>HoloLens 2
 
-> [!NOTE]
-> HoloLens 2 的特定的詳細指引[即將推出](index.md#news-and-notes)。
+### <a name="calibration"></a>校正 
 
-## <a name="immersive-headsets"></a>沈浸式耳機
+HoloLens 2，將會提示您在裝置安裝程序期間校正視覺效果。 系統會要求使用者查看 fixation 目標集。 這可調整的使用者，以確保正確定位全像投影，更方便的 3D 檢視體驗的全像轉譯的裝置，並改善顯示品質。 而不需要任何手動微調作業，會發生所有的調整。 
+
+### <a name="calibration-when-sharing-a-device"></a>當共用裝置的校正 
+
+Hololens 2 裝置可以在人員，而不需要任何裝置安裝程序完成每一位人員之間共用。 Hololens 2 會提示使用者校正視覺效果，當裝置會放在標頭，如果使用者是新的裝置。 如果使用者已經有校正裝置上的視覺效果，顯示將會順暢地調整的品質和舒適的檢視體驗當使用者將裝置放在標頭。  
+
+### <a name="launching-the-calibration-app-from-settings"></a>啟動校正應用程式設定
+1. 您可以使用 啟動筆勢來前往 開始 功能表。
+2. 選取  **+** 來檢視所有的應用程式，如果**設定**尚未釘選到開始。
+3. 啟動**設定**。
+4. 瀏覽至**系統** > **公用程式**，然後選取**開啟校正**。
+
+## <a name="immersive-headsets"></a>沉浸式頭戴裝置
 
 若要變更 IPD 耳機內，開啟 [設定] 應用程式，並瀏覽至**混合實境** > **耳機顯示**並移動滑桿控制項。 在 耳機，您會看到即時變更。 如果您知道您 IPD，或許 optometrist，前往您可以從輸入它直接以及。
 

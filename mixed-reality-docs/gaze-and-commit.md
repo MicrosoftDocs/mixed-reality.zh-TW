@@ -7,12 +7,12 @@ ms.date: 03/31/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境，視線、 視線目標，就會有互動，設計
-ms.openlocfilehash: 95f2cef8c10ce3d0d2a218953613fef6f0a00362
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: a84465de3479bf3da2131b94dd522539cd7de6e9
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730814"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974872"
 ---
 # <a name="head-gaze-and-commit"></a>Head 視線與認可
 Head 視線和認可為牽涉到目標物件的向前指您前端 （head-方向）、 方向與輸入的模型，然後處理它與次要輸入例如空中點選手筆勢或語音命令"Select"。 它會被視為 「 目前 」 輸入的模型與間接的操作，這表示它最適合用於互動超過手臂觸達的內容。
@@ -70,7 +70,7 @@ Head 視線和認可為牽涉到目標物件的向前指您前端 （head-方向
 - 交談的使用者介面或實體，例如 Cortana 具有 AI 自然語言功能。
 - 自訂 commnads
 
-若要尋找更多詳細資料和可用的命令以及如何使用 comprenhesive 清單，請查看我們[語音設計](voice-design.md)指引。
+若要尋找更多詳細資料和可用的命令以及如何使用 comprenhesive 清單，請查看我們[語音命令](voice-design.md)指引。
 
 
 ### <a name="head-gaze-and-hololens-clicker"></a>Head 視線和 HoloLens Clicker
@@ -204,11 +204,11 @@ HoloLens 辨識手勢，藉由追蹤或兩個都看得到裝置的實際操作�
 
 
 ## <a name="see-also"></a>另請參閱
-* [直接操作](direct-manipulation.md)
-* [指向和行動](point-and-commit.md)
-* [互動基本概念](interaction-fundamentals.md)
-* [目光和停駐](gaze-targeting.md)
-* [目光和語音](voice-design.md)
+* [手部直接操作](direct-manipulation.md)
+* [手部指向和行動](point-and-commit.md)
+* [本能互動](interaction-fundamentals.md)
+* [頭部目光和停駐](gaze-and-dwell.md)
+* [語音命令](voice-design.md)
 
 
 

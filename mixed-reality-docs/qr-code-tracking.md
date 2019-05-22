@@ -6,12 +6,12 @@ ms.author: yoyoz
 ms.date: 11/06/2018
 ms.topic: article
 keywords: vr lbe，位置為基礎的娛樂、 vr arcade arcade，沉浸式 qr，qr 代碼
-ms.openlocfilehash: b0f4480496c15f811979f76143acbd456d89e249
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.openlocfilehash: e6588552c0cfa8bffa19ac2be5c247c5f73dc19c
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59597131"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974891"
 ---
 # <a name="qr-code-tracking"></a>追蹤的 QR 代碼
 
@@ -31,7 +31,7 @@ ms.locfileid: "59597131"
 </table>
 
 ## <a name="enabling-and-disabling-qr-code-tracking-for-your-headset"></a>啟用和停用 QR 程式碼耳機的追蹤
-注意：本節僅適用於[Windows 10 年 10 月 2018 Update (也稱為 RS5)](release-notes-october-2018.md)。 從 19 h 1 組建及更新版本，您將不不必執行這項操作。
+注意:本節僅適用於[Windows 10 年 10 月 2018 Update (也稱為 RS5)](release-notes-october-2018.md)。 從 19 h 1 組建及更新版本，您將不不必執行這項操作。
 不論您正在開發的混合的實境應用程式，將會利用追蹤的 QR 代碼，或您是客戶的其中一個應用程式，您必須以手動方式啟動追蹤耳機的驅動程式中的 QR 代碼。
 
 若要**開啟 追蹤的 QR 代碼**的沈浸式 (VR) 耳機：
@@ -176,7 +176,7 @@ QRTracking 外掛程式會公開的 Api 可讓追蹤的 QR 代碼。 若要使�
 您可以找到如何使用混合實境工具組中的 QR 追蹤 API 範例[GitHub 網站](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker)。
 
 MRTK 已實作所需的指令碼，以 simpilify QR 追蹤使用方式。 所有所需的資產來開發 QR 追蹤應用程式位於 「 QRTracker"資料夾。 有兩個場景： 第一個是只會偵測到，以及第二個示範如何使用附加至 QR 代碼座標系統，以顯示 全像投影顯示 QR 代碼的詳細資料的範例。
-沒有 prefab"QRScanner 」 來使用 QRCodes 加入所有必要的 scrips。 指令碼 QRCodeManager 是 singileton 類別會實作 QRCode API，您可以將它新增至您的場景。 指令碼 」 AttachToQRCode 」 用來附加全像投影的 QR 代碼 coodridnate 系統，此指令碼可以新增至任何您全像投影。 「 SpatialGraphCoordinateSystem"會示範如何使用 QRCode 座標系統。 可以使用這些指令碼，因為您的專案場景中，或您可以撰寫您自己直接使用外掛程式上面所述。
+沒有 prefab"QRScanner 」 來使用 QRCodes 加入所有必要的指令碼。 指令碼 QRCodeManager 是實作 QRCode API 的單一類別。 這必須新增至場景。 指令碼 」 AttachToQRCode 」 用來附加全像投影的 QR 代碼座標系統，此指令碼可以新增至任何您全像投影。 「 SpatialGraphCoordinateSystem"會示範如何使用 QRCode 座標系統。 這些指令碼可用來當做-是專案中的場景，或者您可以使用來撰寫您自己直接外掛程式上面所述。
 
 ### <a name="implementing-qr-code-tracking-in-unity-without-mrtk"></a>實作追蹤沒有 MRTK Unity 中的 QR 代碼
 
@@ -185,7 +185,7 @@ MRTK 已實作所需的指令碼，以 simpilify QR 追蹤使用方式。 所有
 1. 在您的 unity 專案名稱的 [assets] 資料夾中建立新的資料夾：「 外掛程式 」。
 2. 從所有必要的檔案複製[此資料夾](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker/Plugins)您剛才建立的本機 「 外掛程式 」 資料夾。
 3. 您可以使用追蹤的指令碼中的 QR [MRTK 指令碼 資料夾](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker/Scripts)或自行撰寫。
-注意：這些外掛程式會僅適用於[Windows 10 年 10 月 2018 Update (也稱為 RS5)](release-notes-october-2018.md)組建。 下一步 的 windows 版本中，將會更新外掛程式。 目前外掛程式實驗，並不適用於 windows 的未來版本。 新的外掛程式將會發行可從下一個 windows 版本並不會回溯相容及不適用於 RS5）。
+注意:這些外掛程式會僅適用於[Windows 10 年 10 月 2018 Update (也稱為 RS5)](release-notes-october-2018.md)組建。 下一步 的 windows 版本中，將會更新外掛程式。 目前外掛程式實驗，並不適用於 windows 的未來版本。 新的外掛程式將會發行可從下一個 windows 版本並不會回溯相容及不適用於 RS5）。
 
 ## <a name="implementing-qr-code-tracking-in-directx"></a>實作追蹤 DirectX 中的 QR 代碼
 

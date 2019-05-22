@@ -7,12 +7,12 @@ ms.date: 05/13/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境，視線、 詳述、 互動，設計
-ms.openlocfilehash: 05457b35c13422c8aa6663bdf52a489a4f5afdaa
-ms.sourcegitcommit: b5bad4eeb5cdd0c2a7b639442656c306e8b5853b
+ms.openlocfilehash: aa4713407f14e94c88e654ae6648c4949f98e580
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65813986"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974869"
 ---
 # <a name="head-gaze-and-dwell"></a>Head 視線和詳述
 
@@ -124,8 +124,8 @@ Head 視線和詳述的過人之處的人手正忙於處理其他工作，並語
 * 重新建立 UX 熟悉盡可能經常使用相同的模式
  
  ## <a name="see-also"></a>另請參閱
-* [直接操作](direct-manipulation.md)
-* [指向和行動](point-and-commit.md)
-* [互動基本概念](interaction-fundamentals.md)
+* [手部直接操作](direct-manipulation.md)
+* [手部指向和行動](point-and-commit.md)
+* [本能互動](interaction-fundamentals.md)
 * [頭部目光和行動](gaze-and-commit.md)
-* [目光和語音](voice-design.md)
+* [語音命令](voice-design.md)

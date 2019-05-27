@@ -7,12 +7,12 @@ ms.date: 04/21/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality，設計、 互動、 語音
-ms.openlocfilehash: 49fa199b2656db95b15583ccfbee39f33942f180
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 084c1228d17c3e23b38d9b8918c13080598aea98
+ms.sourcegitcommit: 8d6e5723283c03f984f1fafef81afa5aab5d04bc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730793"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66039184"
 ---
 # <a name="voice-commanding"></a>語音命令
 
@@ -53,7 +53,7 @@ ms.locfileid: "65730793"
 
 指出在任何時間的 [選取]，將會啟用任何視線資料指標指向。 
 
->注意：HoloLens 2 視線資料指標需求，要先叫用說出單字"select"。 說: 「 選取 」 再次啟用。 若要隱藏視線資料指標，只要使用雙手-airtap 或觸控物件。 
+>注意:HoloLens 2 視線資料指標需求，要先叫用說出單字"select"。 說: 「 選取 」 再次啟用。 若要隱藏視線資料指標，只要使用雙手-airtap 或觸控物件。 
 
 ### <a name="see-it-say-it"></a>看到它，例如它
 
@@ -103,4 +103,4 @@ Windows Mixed Reality 採用"看到它，它說出"語音模型所在**按鈕上
 
 ## <a name="see-also"></a>另請參閱
 * [筆勢](gestures.md)
-* [目光目標](gaze-targeting.md)
+* [頭部目光和停駐](gaze-and-dwell.md)

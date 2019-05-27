@@ -6,12 +6,12 @@ ms.author: shengkait
 ms.date: 04/26/2019
 ms.topic: article
 keywords: 混合實境，實際操作、 移動控制站、 互動，設計
-ms.openlocfilehash: b13efadd111ca970abe625221fb8045644822c37
-ms.sourcegitcommit: b5bad4eeb5cdd0c2a7b639442656c306e8b5853b
+ms.openlocfilehash: d0e54c71ab42a09f2f9c6063a85441b98e729af1
+ms.sourcegitcommit: 8d6e5723283c03f984f1fafef81afa5aab5d04bc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65813984"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66039171"
 ---
 # <a name="hands-and-motion-controllers"></a>指針 」 和 「 動作控制站
 ## <a name="scenarios"></a>案例
@@ -38,7 +38,7 @@ ms.locfileid: "65813984"
 
 ## <a name="see-also"></a>另請參閱
 * [頭部目光和行動](gaze-and-commit.md)
-* [直接操作 （靠近手動互動）](direct-manipulation.md)
-* [點和認可 （Far 手動互動）](point-and-commit.md)
+* [頭部目光和停駐](gaze-and-dwell.md)
+* [手部直接操作](direct-manipulation.md)
+* [手部指向和行動](point-and-commit.md)
 * [免持式](hands-free.md)
-* [目光和停駐](gaze-targeting.md)

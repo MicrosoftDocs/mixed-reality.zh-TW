@@ -24,6 +24,7 @@
 #### [查看您的相片](see-your-photos.md)
 #### [感應器調整](sensor-tuning.md)
 #### [更新 HoloLens](updating-hololens.md)
+#### [裝置共用](device-sharing.md)
 #### [HoloLens 示範調整與清理指南](hololens-demo-guide.md)
 ### 沉浸式頭戴裝置
 #### [沉浸式頭戴裝置硬體詳細資料](immersive-headset-hardware-details.md)

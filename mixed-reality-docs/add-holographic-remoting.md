@@ -6,17 +6,21 @@ ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，全像投影、 全像攝影版的遠端執行功能、 遠端轉譯、 轉譯、 HoloLens、 遠端全像投影的網路
-ms.openlocfilehash: 4726c6af43fe1b89fc8298e459a1af9dfa5fc667
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.openlocfilehash: 1e9567976bad1e2b72e95feca292bf3475893230
+ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59597135"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270350"
 ---
 # <a name="add-holographic-remoting"></a>新增全像攝影版的遠端處理
 
+## <a name="hololens-2"></a>HoloLens 2
+
 > [!NOTE]
 > HoloLens 2 的特定的詳細指引[即將推出](index.md#news-and-notes)。
+
+使用全像攝影版的遠端處理的 HoloLens 開發人員必須更新他們的應用程式，使其與 HoloLens 2 相容。  這將需要全像攝影版的遠端處理 NuGet 封裝尚未公開可用的新版本。  如果連接到全像攝影版 HoloLens 2 上的遠端播放程式嘗試使用 HoloLens NuGet 套件的應用程式，連接將會失敗。  HoloLens 2 NuGet 套件可供使用之後，請觀看此頁面的更新。
 
 ## <a name="add-holographic-remoting-to-your-desktop-or-uwp-app"></a>將全像攝影版的遠端執行功能新增至您的桌面或 UWP 應用程式
 

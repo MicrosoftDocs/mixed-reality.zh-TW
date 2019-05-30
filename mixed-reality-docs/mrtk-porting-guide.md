@@ -7,12 +7,12 @@ ms.date: 04/12/19
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality，MRTK MRTK 第 2 版、 HoloLens 2 測試
-ms.openlocfilehash: 98fde1a597bcc20b14037176748258d35ef99ab9
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 02dabd21b7a6add2ce53fe291a447e49057184d0
+ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730871"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270389"
 ---
 # <a name="getting-your-existing-app-ready-for-hololens-2"></a>HoloLens 2 準備您現有的應用程式
 
@@ -48,12 +48,13 @@ ms.locfileid: "65730871"
 
 ## <a name="update-sceneproject-settings-in-unity"></a>更新 Unity 中的場景/專案設定
 
-更新至 Unity 之後 2018.3.x 或 Unity 2019 +，建議您更新在 Unity 中為裝置上獲得最佳結果的特定設定。 這些設定所述在詳細資料 **[for Unity 建議設定](Recommended-settings-for-Unity.md)**。
+更新至 Unity 之後 2018.3.x 或 Unity 2019 +，建議您更新在 Unity 中為裝置上獲得最佳結果的特定設定。 這些設定所述在詳細資料 **[for Unity 建議設定](Recommended-settings-for-Unity.md)** 。
 
 它應該是重新反覆執行的[.NET 指令碼的後端](https://docs.unity3d.com/Manual/windowsstore-dotnet.html)遭到非難 Unity 2018 和*移除*中 Unity 2019，因此開發人員應該慎重考慮其專案切換至[IL2CPP](https://docs.unity3d.com/Manual/IL2CPP.html)。 
 
 > [!NOTE]
 > IL2CPP 指令碼的後端可能會造成更長的建置時間從 Unity Visual studio，因此開發人員應該會設定為其開發人員電腦[最佳化 IL2CPP 建置時間](https://docs.unity3d.com/Manual/IL2CPP-OptimizingBuildTimes.html)。
+> 此外，可能是安裝有幫助[快取伺服器](https://docs.unity3d.com/Manual/CacheServer.html)，特別是針對大量的資產 （不含指令碼檔案） 或經常使用的 Unity 專案變更場景/資產。 開啟專案時，Unity 會儲存成開發電腦上的內部快取格式符合資格的資產。 必須重新匯入，因此重新處理時修改項目。 此程序可以執行一次和儲存在快取伺服器，因此與其他開發人員為了節省時間，而不是處理重新匯入新的變更在本機的每位開發人員共用。
 
 移至已更新的 Unity 版本之後解決任何重大變更之後，開發人員應該建置並測試 HoloLens 上其目前的應用程式 （第 1 代）。 此外，這是建立並儲存原始檔控制認可的好時機。 
 

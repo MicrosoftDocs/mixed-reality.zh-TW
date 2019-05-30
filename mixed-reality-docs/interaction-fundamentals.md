@@ -7,12 +7,12 @@ ms.date: 04/11/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境、 視線、 視線目標，就會有互動，設計、 hololens MMR，multimodal
-ms.openlocfilehash: 9d0e639d7474c7e8728282acfa8d288cfeec7043
-ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
+ms.openlocfilehash: d018179e20d26ee8b7b24bc74d7c1711bc788282
+ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65974909"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270379"
 ---
 # <a name="introducing-instinctual-interactions"></a>簡介 instinctual 互動
 
@@ -36,11 +36,11 @@ ms.locfileid: "65974909"
 
 每個這些互動模型是便利又強大，而且可用於其自己的權限，和所有適用於一組客戶的需求。 檢視圖表下方，而是針對案例、 範例和每個互動模型的優點。  
 
-**型號** | **[指針和工具](https://docs.microsoft.com/en-us/windows/mixed-reality/hands-and-tools)** | **[免持聽筒](https://docs.microsoft.com/en-us/windows/mixed-reality/hands-free)** | **[視線並認可](https://docs.microsoft.com/en-us/windows/mixed-reality/gaze-and-commit?)**
+**型號** | **[指針 」 和 「 動作控制站](hands-and-tools.md)** | **[免持聽筒](hands-free.md)** | **[Head 視線與認可](gaze-and-commit.md)**
 |--------- | --------------| ------------| ---------|
 **範例案例** | 3D 空間的體驗，例如空間版面配置與設計，內容操作或模擬 | 其中使用者的手都被佔用，例如工作學習，維護的情境體驗| 點選體驗，例如 3D 簡報、 示範
-**調整** | 適用於新的使用者，結合的 wit 語音眼睛追蹤或前端的視線。 學習曲線很低。 手動追蹤和 6 DoF 控制器之間的一致 UX。 | 學習所需的部分。 如果實際操作是無法使用的組，與語音和自然語言 | 需要訓練 HMDs 上但不是能在行動裝置。 最適合可存取的控制器最適合 HoloLens （第 1 代） |
-**硬體** | HoloLens 2 沈浸式耳機 | HoloLens 2 HoloLens （第 1 代） 沈浸式耳機 | HoloLens 2 沈浸式耳機 | HoloLens 2 HoloLens （第 1 代） 沈浸式耳機 Mobile AR |
+**調整** | 適用於新的使用者，結合的 wit 語音眼睛追蹤或前端的視線。 學習曲線很低。 手動追蹤和 6 DoF 控制器之間的一致 UX。 | 學習所需的部分。 如果實際操作是無法使用的組，與語音和自然語言 | 需要訓練 HMDs 上但不是能在行動裝置。 最適合可存取的控制器。 最適合 HoloLens （第 1 代）。 |
+**硬體** | HoloLens 2 <br>沉浸式頭戴裝置 | HoloLens 2 <br>HoloLens （第 1 代） <br>沉浸式頭戴裝置 | HoloLens 2 <br>沉浸式頭戴裝置 | HoloLens 2 <br>HoloLens （第 1 代） <br>沉浸式頭戴裝置 <br>Mobile AR |
 
 以下圖例和從我們的 Unity MRTK 範例內容的連結以及頁面上，是順暢地一起使用所有可用的輸入，在每個互動模型的詳細的資訊。
 
@@ -75,7 +75,7 @@ ms.locfileid: "65974909"
         <td><strong>如何得知我只是做什麼？</strong></td>
     </tr>
     <tr>
-        <td><a href="hands-and-tools.md">指針和工具</a></td>
+        <td><a href="hands-and-tools.md">手部和運動控制器</a></td>
         <td>我看到 mesh 手的形狀，我看到寫寫看功能可見性或手動 / 控制器光線。</td>
         <td>我看到 grabbable 的控制代碼或我的手附近時，會顯示週框方塊。</td>
         <td>我聽到可發出聲音的音調看動畫上擷取和釋放。</td>

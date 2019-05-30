@@ -7,12 +7,12 @@ ms.date: 02/26/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合的實境，unity 教學課程 hololens
-ms.openlocfilehash: 04ed2217c473c5649c1850fcc757d866e23b9b56
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 6f05b2cecd388b1b2f13e7e5228bc90091eee3bd
+ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730900"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270404"
 ---
 # <a name="mr-learning-base-module---dynamic-content-placement-and-solvers"></a>MR 學習基底模組-動態內容的位置和解
 
@@ -31,7 +31,7 @@ ms.locfileid: "65730900"
 
 ![解](images/lesson3_chapter1_step1im.PNG)
 
->注意：在本課程中我們將只介紹"軌道"求解器和 「 RadialView"規劃求解的實作。 若要深入了解 MRTK 中可用之完整範圍的詳細，請瀏覽： https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html
+>注意:在本課程中我們將只介紹"軌道"求解器和 「 RadialView"規劃求解的實作。 若要深入了解 MRTK 中可用之完整範圍的詳細，請瀏覽： https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html
 
 ### <a name="use-a-solver-to-follow-the-user"></a>若要追蹤使用者使用規劃求解
 本指南的目標是提升我們先前所建立，它會依照使用者的視線方向的按鈕集合。 前一版的 MRTK 和 HoloToolkit 的詳細資訊，這被指 「 taglong 」 功能。
@@ -44,11 +44,11 @@ ms.locfileid: "65730900"
 
 ![Lesson3 Chapter2 Step2im](images/Lesson3_Chapter2_step2im.PNG)
 
->注意：當您新增元件時，您會發現，系統會將新增軌道的指令碼，並規劃求解的處理常式指令碼偵測器索引標籤中，這是必要的元件。 
+>注意:當您新增元件時，您會發現，系統會將新增軌道的指令碼，並規劃求解的處理常式指令碼偵測器索引標籤中，這是必要的元件。 
 
 3. 若要設定按鈕的集合，以追蹤使用者，我們必須實作下列調整 （另請參閱下面的影像）：
 - 在軌道的指令碼中，設定 [方向類型] 下拉式清單，以 「 繞只。 」 這可讓物件的該只有一個軸旋轉，它如下所示的使用者。
-- 設定區域的位移為 0，所有軸上。 設定全局的位移為 x = 0，y =-0.1 和 z = 0.6。 因此，當使用者變更高度，固定的高度，在實際環境中，將會維持物件同時仍然允許它追蹤使用者，當使用者移動的環境相關，這會鎖定移動物件。 可調整這些值，以達到 wade 範圍的行為。
+- 設定區域的位移為 0，所有軸上。 設定全局的位移為 x = 0，y =-0.1 和 z = 0.6。 因此，當使用者變更高度，固定的高度，在實際環境中，將會維持物件同時仍然允許它追蹤使用者，當使用者移動的環境相關，這會鎖定移動物件。 若要達成各種不同的行為，您可以調整這些值。
 - 針對後續行為，藉此按鈕才需依照使用者的檢視之後使用者開啟他或她的頭夠遠，您可以選取的 「 使用角度逐步執行程式碼的世界位移 」 核取方塊 (請注意：這個項目可能會截斷某些在畫面上，在下圖中所顯示的原狀。）比方說，若要追蹤使用者只能每隔 90 度的物件，設定步驟的數目等於 4 （在範例中，左邊的綠色箭號標記）。 
 
 ![Lesson3 Chapter2 Step3im](images/Lesson3_chapter2_step3im.PNG)

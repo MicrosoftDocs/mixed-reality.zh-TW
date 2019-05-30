@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens、 遠端處理，全像攝影版的遠端處理
-ms.openlocfilehash: 16add6c72b594822cacbef6c92ce196ab9b13429
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 24213444686dd2e5dbda4016dd551a8ead8f305a
+ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597086"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270309"
 ---
 # <a name="holographic-remoting-player"></a>全像攝影版的遠端播放程式
 
@@ -19,8 +19,7 @@ ms.locfileid: "59597086"
 
 全像攝影版的遠端播放程式只能搭配專為支援全像攝影版的遠端執行功能的 PC 應用程式。
 
-> [!NOTE]
-> HoloLens 2 的特定的詳細指引[即將推出](index.md#news-and-notes)。
+全像攝影版的遠端播放程式可供 HoloLens 和 HoloLens 2。  支援全像攝影版的遠端處理 HoloLens 的 PC 應用程式需要更新為支援全像攝影版 Remtoing HoloLens 2。  請如果您有支援版本相關的問題，連絡您的應用程式提供者。
 
 ## <a name="connecting-to-the-holographic-remoting-player"></a>連接到全像攝影版的遠端播放程式
 
@@ -48,10 +47,10 @@ ms.locfileid: "59597086"
 在 主畫面中，您可以說**停用 診斷**關閉診斷。
 
 ## <a name="pc-system-requirements"></a>電腦的系統需求
-* 您的電腦**必須**執行 Windows 10 年度更新版。
+* 您的電腦**必須**執行 Windows 10 年度更新版或更新版本。
 * 我們建議 GeForce GTX 970 或 AMD Radeon R9 290 或更好的圖形卡。
 * 我們建議您透過乙太網路，以減少無線躍點數目的網路連接您的電腦。
 
 ## <a name="see-also"></a>另請參閱
-* [全像攝影版的遠端軟體授權條款](microsoft-holographic-remoting-software-license-terms.md)
+* [全像攝影遠端軟體授權條款](microsoft-holographic-remoting-software-license-terms.md)
 * [Microsoft 隱私權聲明](https://go.microsoft.com/fwlink/?LinkId=521839)

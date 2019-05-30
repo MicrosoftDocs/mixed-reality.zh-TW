@@ -1,23 +1,25 @@
 ---
 title: 商業功能
-description: Microsoft HoloLens Commercial Suite，包含可簡化管理 HoloLens 裝置的企業功能。
-author: xerxesb85
-ms.author: xerxesb
-ms.date: 03/21/2018
+description: Microsoft HoloLens Commercial Suite，包含可簡化管理 HoloLens 裝置的企業功能。  HoloLens 2 個 equipt 與預設的商業功能。
+author: scooley
+ms.author: scooley
+ms.date: 05/23/2019
 ms.topic: article
 keywords: HoloLens、 商業、 功能、 mdm、 行動裝置管理、 資訊站模式
-ms.openlocfilehash: 5fd5c56983fb3e94376fac08c6e96510bccc0002
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 4da540072fd32ac99692f0a13eb5852337c493bb
+ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597082"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270364"
 ---
 # <a name="commercial-features"></a>商業功能
 
-Microsoft HoloLens Commercial Suite，包含可簡化管理 HoloLens 裝置的企業功能。 商業功能隨附於 Windows 作業系統中，但它們會啟用授權。 在幾乎所有的情況下，授權會啟用 Microsoft 裝置管理組織中註冊的 HoloLens 時。 請連絡當地的 Microsoft 客戶經理，購買 Microsoft HoloLens Commercial Suite。
+Microsoft HoloLens Commercial Suite，包含可簡化管理 HoloLens 裝置的企業功能。
 
-&nbsp;
+HoloLens 隨附兩個授權選項、 開發人員授權和商業授權。  從開發人員 liense 升級至以解除鎖定 HoloLens 的商業 capabilitis 的商業授權。  請連絡當地的 Microsoft 客戶經理，購買 Microsoft HoloLens Commercial Suite。
+
+**HoloLens 2 的新功能**-所有的 HoloLens 2 隨附在每部裝置上可用的商業功能。
 
 >[!VIDEO https://www.youtube.com/embed/tNd0e2CiAkE]
 
@@ -30,7 +32,7 @@ Microsoft HoloLens Commercial Suite，包含可簡化管理 HoloLens 裝置的�
 * **HoloLens 的行動裝置管理 (MDM)。** 您的 IT 部門可以管理多個的 HoloLens 裝置同時使用 Microsoft Intune 等的解決方案。 您可以管理設定、選取要安裝的應用程式，並且設定針對您組織所需來量身訂做的安全性設定。
 
   ![HoloLens 上的行動裝置管理提供企業級裝置管理跨多個裝置。](images/201608-enterprisemanagement-400px.png)
-  
+   
 * **Windows Update for Business。** 控制裝置和長期維護分支的支援的作業系統更新。
 * **資料安全性。** HoloLens 上已啟用 BitLocker 資料加密，以提供相同等級的任何其他 Windows 裝置的安全性保護。
 * **公司存取。** 您的組織中的任何人可以遠端連線到公司網路時透過 HoloLens 上的虛擬私人網路。 HoloLens 也可以存取需要認證的 Wi-fi 網路。
@@ -84,7 +86,7 @@ Microsoft HoloLens Commercial Suite，包含可簡化管理 HoloLens 裝置的�
 
 ## <a name="enabling-commercial-features"></a>啟用商業功能
 
-商業功能，例如 Microsoft Store for Business，kiosk 模式及企業 Wi-fi 存取是由組織的設定 IT 系統管理員。[HoloLens Windows IT 中心](https://technet.microsoft.com/itpro/hololens/index)提供裝置註冊和安裝應用程式從 Microsoft Store for Business 中的逐步指示。
+商業功能，例如 Microsoft Store for Business，kiosk 模式及企業 Wi-fi 存取是由組織的設定 IT 系統管理員。[HoloLens Windows IT 中心](https://docs.microsoft.com/hololens)提供裝置註冊和安裝應用程式從 Microsoft Store for Business 中的逐步指示。
 
 ## <a name="see-also"></a>另請參閱
 * [IT 專業人員指南 HoloLens](https://technet.microsoft.com/itpro/hololens/index)

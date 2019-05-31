@@ -6,12 +6,12 @@ ms.author: liamar
 ms.date: 04/20/2019
 ms.topic: article
 keywords: 混合實境，免持聽筒，視線，視線目標，就會有互動，設計
-ms.openlocfilehash: 59a460a0c46ace7e633381019d29af54b1061695
-ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
+ms.openlocfilehash: 23b1def15c4ad900265fab2a2c8757cf96706fbc
+ms.sourcegitcommit: 5b4292ef786447549c0199003e041ca48bb454cd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65629014"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66402336"
 ---
 # <a name="hands-free"></a>不需要用手
 
@@ -37,7 +37,7 @@ ms.locfileid: "65629014"
 
 
 
-### <a name="head-gaze-and-dwellgaze-and-dwellmd"></a>[Head 視線和詳述](gaze-and-dwell.md)
+### <a name="head-gaze-and-dwellgaze-and-dwellmd"></a>[頭部目光和停駐](gaze-and-dwell.md)
 
 在某些免持聽筒的情況下，使用您的聲音不是理想或甚至可以。 大聲工廠環境、 隱私權或社交規範都可以條件約束。 標頭視線 + 探討模型可讓使用者使用其前端的向量來點，而延遲，以瀏覽應用程式或談論按鈕會啟動它之後一段時間 （通常大約 1 秒左右）。 
 
@@ -96,5 +96,5 @@ ms.locfileid: "65629014"
 
 ## <a name="see-also"></a>另請參閱
 * [頭部目光和行動](gaze-and-commit.md)
-* [直接操作](direct-manipulation.md)
-* [指向和行動](point-and-commit.md)
+* [手部直接操作](direct-manipulation.md)
+* [手部指向和行動](point-and-commit.md)

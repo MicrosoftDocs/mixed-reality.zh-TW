@@ -7,12 +7,12 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境、 視線、 視線目標，就會有互動，設計、 附近，手 HoloLens
-ms.openlocfilehash: 412d77a1d7446f82ddf43f051fdb149cb1fd559c
-ms.sourcegitcommit: d565a69a9320e736304372b3f010af1a4d286a62
+ms.openlocfilehash: 6e3512eab4070680c48ee8e95240a17e9925822f
+ms.sourcegitcommit: 5b4292ef786447549c0199003e041ca48bb454cd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65940762"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66402386"
 ---
 # <a name="direct-manipulation-with-hands"></a>指針的直接管理
 直接操作是需要動到全像投影雙手直接輸入的模型。 直接操作的目標是物件的行為就如同真實世界中。 可以啟動按鈕，只要按下這些物件可以藉由抓取，撿起，2D 內容的行為類似虛擬觸控螢幕。  因為這個緣故，直接操作很容易讓使用者了解，並很好玩的太。  它會被視為 「 附近 」 輸入的模型，這表示它最適合用於互動手臂內到達的內容。
@@ -22,9 +22,9 @@ ms.locfileid: "65940762"
 ## <a name="device-support"></a>裝置支援
 
 
-| 輸入的模型 | [HoloLens （第 1 代）](https://review.docs.microsoft.com/en-us/windows/mixed-reality/hololens-hardware-details?branch=master) | HoloLens 2 |[沈浸式耳機](https://review.docs.microsoft.com/en-us/windows/mixed-reality/immersive-headset-hardware-details?branch=master)|
+| 輸入的模型 | [HoloLens （第 1 代）](hololens-hardware-details.md) | HoloLens 2 |[沈浸式耳機](immersive-headset-hardware-details.md)|
 |:-------- | :-------| :--------| :------------|
-| 直接操作 | 不支援的 ❌ | 建議的 ✔️ | ➕ 替代[點，並認可](https://review.docs.microsoft.com/en-us/windows/mixed-reality/point-and-commit?branch=master)建議。
+| 指針的直接管理 | 不支援的 ❌ | 建議的 ✔️ | 替代方案，➕[點，並認可與實際操作](point-and-commit.md)建議。
 
 直接操作是 HoloLens 2 上的主要輸入的模型，並利用新的相互連貫的手動追蹤系統。 輸入的模型也會提供在透過移動控制站，使用擬真耳機，但不是建議做為主要物件操作之外的互動。  直接 manipluation 並不適用於 HoloLens （第 1 代）。
 

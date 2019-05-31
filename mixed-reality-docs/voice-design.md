@@ -7,12 +7,12 @@ ms.date: 04/21/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality，設計、 互動、 語音
-ms.openlocfilehash: 084c1228d17c3e23b38d9b8918c13080598aea98
-ms.sourcegitcommit: 8d6e5723283c03f984f1fafef81afa5aab5d04bc
+ms.openlocfilehash: f2362400cba2946c3e97a7128c410ddcd17b4362
+ms.sourcegitcommit: 5b4292ef786447549c0199003e041ca48bb454cd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66039184"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66402373"
 ---
 # <a name="voice-commanding"></a>語音命令
 
@@ -25,7 +25,7 @@ ms.locfileid: "66039184"
 <tr>
 <th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
 </tr><tr>
-<td></td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️ （具有附加的耳機）</td>
+<td>語音命令</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️ （具有附加的耳機）</td>
 </tr>
 </table>
 
@@ -87,7 +87,7 @@ Windows Mixed Reality 採用"看到它，它說出"語音模型所在**按鈕上
 ![資料指標的語音意見反應狀態](images/voicefeedbackstates.png)<br>
 *資料指標的語音意見反應狀態*
 
-## <a name="top-things-users-should-know-about-speech-on-windows-mixed-reality"></a>最上層的項目使用者應該了解 Windows Mixed reality，"speech"
+## <a name="top-things-users-should-know-about-speech-in-mixed-reality"></a>最上層的項目使用者時，應了解 「 語音 」 上，在混合實境中
 * 假設 **"Select"** 時目標 （您可以使用這任何地方按一下按鈕） 按鈕。
 * 您可以說**應用程式列按鈕的標籤名稱**在採取行動的某些應用程式。 比方說，同時查看應用程式，使用者可以說的命令 「 移除 」 世界中移除的應用程式 （這將節省毋需按一下您用手時間）。
 * 您可以起始接聽招呼語的 Cortana **「 嘿 Cortana 」。** 您可以詢問她問題 (「 嘿 Cortana，如何調整成高是艾菲爾鐵塔 」)，告訴她開啟應用程式 (「 嘿 Cortana，開啟 Netflix 」)，或只能告訴她啟動 (「 嘿 Cortana，採用我首頁 」) 的 [開始] 功能表和更多功能。

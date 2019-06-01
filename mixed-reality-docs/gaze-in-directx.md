@@ -6,16 +6,16 @@ ms.author: cmeekhof
 ms.date: 05/09/2019
 ms.topic: article
 keywords: 視線、 前端的視線、 標頭追蹤、 追蹤、 directx、 輸入、 全像投影
-ms.openlocfilehash: f9764132df0ca4ae2f02d8f9a5740530676eb4f5
-ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
+ms.openlocfilehash: ac72c5305527ed2d68945aeb32051cf2246a736e
+ms.sourcegitcommit: 60060386305eabfac2758a2c861a43c36286b151
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65629611"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453738"
 ---
-# <a name="head-and-eye-gaze-in-directx"></a>DirectX 中的前端和眼睛視線
+# <a name="head-and-eye-gaze-input-in-directx"></a>前端和眼睛視線 DirectX 中的輸入
 
-在 Windows Mixed Reality，視線輸入用來判斷使用者正在查看。 這可以用來驅動主要輸入的模型，例如[視線並認可](gaze-and-commit.md)，同時還可以提供內容的互動類型。 有兩種類型的視線向量可透過 API： 視線和眼睛視線前端。  同時，提供三個維度的光線，與來源和方向。 應用程式可以接著 raycast 到場景或真實世界中，並判斷使用者的目標。
+在 Windows Mixed Reality、 眼睛和前端的視線輸入用來判斷使用者正在查看。 這可以用來驅動主要輸入的模型，例如[前端視線和認可](gaze-and-commit.md)，同時還可以提供內容的互動類型。 有兩種類型的視線向量可透過 API： 視線和眼睛視線前端。  同時，提供三個維度的光線，與來源和方向。 應用程式可以接著 raycast 到場景或真實世界中，並判斷使用者的目標。
 
 **Head 視線**代表使用者的大腦中指向的方向。 將此視為位置和裝置本身的正向方向，代表在中心位置與點之間兩個顯示。  混合實境的所有裝置上使用 Head 視線。
 
@@ -47,20 +47,9 @@ if (pointerPose)
 
 ## <a name="using-eye-gaze"></a>使用眼睛視線
 
-非常類似於前端的視線眼睛視線 API。  它會使用相同[SpatialPointerPose](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Input.Spatial.SpatialPointerPose) API，可提供無限遠的光線，來源和方向，您可以針對您的場景 raycast。  唯一的差別是您必須明確啟用追蹤後，再使用所要求存取的眼睛。
-
-### <a name="declaring-the-gaze-input-capability"></a>宣告*視線輸入*功能
-
-按兩下 [appxmanifest 中的檔案*方案總管] 中*。  然後瀏覽至*能力*區段，並檢查*視線輸入*功能。 
-
-![視線輸入的功能](images/gaze-input-capability.png)
-
-這樣會加入下列行以*封裝*appxmanifest 檔案中的區段：
-```xml
-  <Capabilities>
-    <DeviceCapability Name="gazeInput" />
-  </Capabilities>
-```
+非常類似於前端的視線眼睛視線 API。  它會使用相同[SpatialPointerPose](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Input.Spatial.SpatialPointerPose) API，可提供無限遠的光線，來源和方向，您可以針對您的場景 raycast。  唯一的差別是您要明確啟用才能使用它的眼睛追蹤功能。 這麼做，您需要執行兩個步驟：
+1. 要求使用者使用應用程式中追蹤權限。
+2. 可讓您封裝資訊清單中的 「 視線輸入 」 功能。
 
 ### <a name="requesting-access-to-gaze-input"></a>要求的存取權視線輸入
 當您的應用程式啟動時，呼叫[EyesPose::RequestAccessAsync](https://docs.microsoft.com/en-us/uwp/api/windows.perception.people.eyespose.requestaccessasync#Windows_Perception_People_EyesPose_RequestAccessAsync)眼睛追蹤的要求存取。 系統會提示使用者如有需要並傳回[GazeInputAccessStatus::Allowed](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.gazeinputaccessstatus)一旦授與存取權。 這會是管理的非同步呼叫，因此它需要一些額外。 下列範例會啟動等候結果，其儲存至成員變數，呼叫的已卸離 std::thread *m_isEyeTrackingEnabled*。
@@ -82,11 +71,50 @@ std::thread requestAccessThread([this]()
 requestAccessThread.detach();
 
 ```
-
 正在啟動的已卸離的執行緒只是選項之一來處理非同步呼叫。  或者，您可以使用新[co_await](https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/concurrency)所支援的功能C++/WinRT。
+以下是詢問使用者權限的另一個範例：
+-   EyesPose::IsSupported() 允許應用程式只有眼睛追蹤器時，觸發程序權限對話方塊。
+-   GazeInputAccessStatus m_gazeInputAccessStatus;這是為了避免一再彈出權限提示。
+
+```cpp
+GazeInputAccessStatus m_gazeInputAccessStatus; // This is to prevent popping up the permission prompt over and over again.
+
+// This will trigger to show the permission prompt to the user.
+// Ask for access if there is a corresponding device and registry flag did not disable it.
+if (Windows::Perception::People::EyesPose::IsSupported() &&
+   (m_gazeInputAccessStatus == GazeInputAccessStatus::Unspecified))
+{ 
+    Concurrency::create_task(Windows::Perception::People::EyesPose::RequestAccessAsync()).then(
+    [this](GazeInputAccessStatus status)
+    {
+        // GazeInputAccessStatus::{Allowed, DeniedBySystem, DeniedByUser, Unspecified}
+            m_gazeInputAccessStatus = status;
+        
+        // Let's be sure to not ask again.
+        if(status == GazeInputAccessStatus::Unspecified)
+        {
+                m_gazeInputAccessStatus = GazeInputAccessStatus::DeniedBySystem;    
+        }
+    });
+}
+
+```
+
+
+### <a name="declaring-the-gaze-input-capability"></a>宣告*視線輸入*功能
+
+按兩下 [appxmanifest 中的檔案*方案總管] 中*。  然後瀏覽至*能力*區段，並檢查*視線輸入*功能。 
+
+![視線輸入的功能](images/gaze-input-capability.png)
+
+這樣會加入下列行以*封裝*appxmanifest 檔案中的區段：
+```xml
+  <Capabilities>
+    <DeviceCapability Name="gazeInput" />
+  </Capabilities>
+```
 
 ### <a name="getting-the-eye-gaze-ray"></a>取得眼睛視線光線
-
 一旦您收到存取權等，您可以自由抓取眼睛視線光線的每個畫面。  如同前端的視線，取得[SpatialPointerPose](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Input.Spatial.SpatialPointerPose)藉由呼叫[SpatialPointerPose::TryGetAtTimestamp](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp)所需的時間戳記和座標系統。 包含 SpatialPointerPose [EyesPose](https://docs.microsoft.com/en-us/uwp/api/windows.perception.people.eyespose)物件傳遞[眼睛](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose.eyes)屬性。 此為非 null 才會啟用追蹤。 從這裡您可以檢查裝置中的使用者是否藉由呼叫追蹤校正眼睛[EyesPose::IsCalibrationValid](https://docs.microsoft.com/en-us/uwp/api/windows.perception.people.eyespose.iscalibrationvalid#Windows_Perception_People_EyesPose_IsCalibrationValid)。  接下來，使用[視線](https://docs.microsoft.com/en-us/uwp/api/windows.perception.people.eyespose.gaze#Windows_Perception_People_EyesPose_Gaze)屬性來取得[SpatialRay](https://docs.microsoft.com/en-us/uwp/api/windows.perception.spatial.spatialray) contianing 眼睛視線位置和方向。 視線屬性可以有時可以是 null，因此請務必檢查為這。 這可能會發生是如果校正的使用者暫時關閉其眼睛。
 
 下列程式碼示範如何存取眼睛視線無限遠的光線。
@@ -115,12 +143,13 @@ if (pointerPose)
 
 ## <a name="correlating-gaze-with-other-inputs"></a>相互關聯的視線，與其他輸入
 
-有時候您可能會發現您需要[SpatialPointerPose](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose)過去與事件對應。 比方說，如果使用者執行空中點選時，您的應用程式可能會想知道他們正在看著。 基於此目的，只使用[SpatialPointerPose::TryGetAtTimestamp](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp)與預測的畫面格時間將不夠準確因為系統的輸入的處理和顯示時間之間的延遲。
+有時候您可能會發現您需要[SpatialPointerPose](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose)過去與事件對應。 比方說，如果使用者執行空中點選時，您的應用程式可能會想知道他們正在看著。 基於此目的，只使用[SpatialPointerPose::TryGetAtTimestamp](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp)與預測的畫面格時間將不夠準確因為系統的輸入的處理和顯示時間之間的延遲。 此外，如果使用眼睛視線為目標，我們的眼睛通常完成認可動作前，甚至是移。 這是不是問題的簡單空中點選，但當長時間的語音命令結合快速眼睛移動變得十分重要。 若要解決這種情況的一個方法是讓額外的呼叫[SpatialPointerPose::TryGetAtTimestamp](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp)，使用對應至輸入事件的歷程記錄時間戳記。  
 
-若要解決這種情況的一個方法是讓額外的呼叫[SpatialPointerPose::TryGetAtTimestamp](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp)，使用對應至輸入事件的歷程記錄時間戳記。  不過，對於透過 SpatialInteractionManager 路由的輸入，還有更容易的方法。 [SpatialInteractionSourceState](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialinteractionsourcestate)有其自己[TryGetAtTimestamp](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialinteractionsourcestate.trygetpointerpose)函式。 會提供完全相互關聯的電話[SpatialPointerPose](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose)而不需要猜測。 如需有關使用 SpatialInteractionSourceStates 的詳細資訊，看看[雙手及 DirectX 中的動作控制站](hands-and-motion-controllers-in-directx.md)文件。
+不過，對於透過 SpatialInteractionManager 路由的輸入，還有更容易的方法。 [SpatialInteractionSourceState](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialinteractionsourcestate)有其自己[TryGetAtTimestamp](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialinteractionsourcestate.trygetpointerpose)函式。 會提供完全相互關聯的電話[SpatialPointerPose](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose)而不需要猜測。 如需有關使用 SpatialInteractionSourceStates 的詳細資訊，看看[雙手及 DirectX 中的動作控制站](hands-and-motion-controllers-in-directx.md)文件。
 
 ## <a name="see-also"></a>另請參閱
-* [指針與 DirectX 中的動作控制站](hands-and-motion-controllers-in-directx.md)
+* [前端視線，並且認可輸入的模型](gaze-and-commit.md)
+* [HoloLens 2 上追蹤](eye-tracking.md)
 * [DirectX 中的座標系統](coordinate-systems-in-directx.md)
-* [視線並認可輸入的模型](gaze-and-commit.md)
-
+* [DirectX 中的語音輸入](voice-input-in-directx.md)
+* [DirectX 中的手部和運動控制器](hands-and-motion-controllers-in-directx.md)

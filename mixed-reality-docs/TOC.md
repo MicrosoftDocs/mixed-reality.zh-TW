@@ -165,7 +165,7 @@
 #### [使用 Unity 的 Vuforia](vuforia-development-overview.md)
 ### 舊版文件 (Unity 2017.4/HTK/MRTK v1)
 ## Unreal
-### HoloLens 2 的 Unreal - 即將推出！
+### [Unreal for HoloLens 2 早期切入](https://www.unrealengine.com/en-US/blog/unreal-engine-4-support-for-hololens-2-released-in-early-access)
 ## DirectX
 ### [DirectX 開發概觀](directx-development-overview.md)
 ### 開始使用

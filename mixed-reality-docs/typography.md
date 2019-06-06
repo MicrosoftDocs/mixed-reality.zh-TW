@@ -6,18 +6,18 @@ ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，設計、 樣式、 字型、 印刷樣式、 ui、 ux
-ms.openlocfilehash: b4bac35cbc412ec7102748350c2f5c1e236c2f7d
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: debf125a7f82ac79fe3ad776ba9c8c0b69396848
+ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59596044"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66692386"
 ---
 # <a name="typography"></a>印刷樣式
 
 在您的應用程式體驗中提供資訊的重要項目文字。 就像在 2D 螢幕上的印刷樣式，目標是清楚且容易閱讀。 有了混合實境的 3d 外觀，就有機會影響文字和整體使用者體驗更佳的方式。
 
-![HoloLens 中的印刷樣式範例](images/640px-typography-hero2.jpg)<br>
+![HoloLens 中的印刷樣式範例](images/typography-cover.png)<br>
 *HoloLens 中的印刷樣式範例*
 
 當我們談論 3D 中的型別時，我們傾向於認為立體、 體積型的 3D 文字。 有些商標設計和一些其他受限應用程式，除了立體的文字通常會降低文字的可讀性。 即使我們 3d 設計體驗，我們使用 2D 類型因為會更清晰且容易閱讀。
@@ -33,7 +33,7 @@ HoloLens，在全像投影使用加法類色彩系統為基礎的光線建構型
 使用不同類型的大小和重量，建置對比和階層。 定義型別遞增，並遵循整個應用程式體驗會提供絕佳的使用者體驗與一致的資訊階層。
 
 ![類型 ramp 範例](images/typography-ramp-1000px.jpg)<br>
-*類型 ramp 範例*
+*定義型別遞增，並遵循整個應用程式體驗*
 
 ### <a name="limit-your-fonts"></a>限制您的字型
 
@@ -53,41 +53,55 @@ HoloLens，在全像投影使用加法類色彩系統為基礎的光線建構型
 
 
 ![我們建議使用深色或彩色後調色盤上的白色文字。](images/typography-whiteonblack2-1000px.jpg)
-
-我們建議使用深色或彩色後調色盤上的白色文字。
-
+*暗色或彩色後調色盤上的白色文字的範例。*
 <br>
-
-
-![黑色文字範例](images/640px-typography-textcolors.jpg)
 
 若要使用深色的文字，您應該使用亮後盤子讓它更容易閱讀。 在累加式的色彩系統中，黑色會以透明方式顯示。 這表示您將無法看到回盤子的黑色文字而不需要以顏色標示。
 
-<br>
+![黑色文字範例](images/typography-whiteonblack.png)
+<br>*上一步的白色與黑色白色文字的範例*
 
 
 ![黑色文字範例](images/640px-typography-blackonwhite.jpg)
-
-在 UWP 應用程式，例如存放區或設定值，您可以找到黑色文字的範例。
+<br>*在 系統應用程式-存放區和設定的黑色文字的範例*
 
 ## <a name="recommended-font-size"></a>建議使用的字型大小
 
-![兩種計量會顯示文字的最佳距離。](images/typography-distance-1000px.jpg)
+您可能已經想到，我們使用電腦或平板電腦裝置 （通常在 12 – 產生 32pt) 之間的類型大小的 2 公尺的距離看變得很小。 它取決於特性的每種字型，但一般情況下檢視角度和字型高度，以利閱讀建議的最小周圍 0.35°-0.4°/12.21-13.97mm 根據我們的使用者研究工作。 它是關於 35 40pt 上面介紹的縮放因數。 
 
-兩種計量會顯示文字的最佳距離。
+在 0.45m(45cm) 幾近互動，最小易於閱讀字型檢視角度和高度是 0.4 °-0.5 ° / 3.14 – 3.9 mm。 它是關於 9 12pt 上面介紹的縮放因數。
 
-混合的實境牽涉到 3d 的深度，因為它不一定容易通訊字型的大小。 使用者的緩和的兩種計量會是放置全像投影的最佳距離。 我們可以使用距離這麼做為基礎來尋找最佳的字型大小。
+![不久，到目前為止的互動範圍](images/typography-distance-1000px.jpg)
+*內容在附近，遠的互動範圍*
 
-您可能已經想到，我們使用電腦或平板電腦裝置 （通常在 12 – 產生 32pt) 之間的類型大小的 2 公尺的距離看變得很小。 這取決於每個字型的特性，但在一般情況下，建議最小的類型大小，以利閱讀，而不需要筆劃震動是大約 30 pt。 如果您的應用程式應該使用更接近的距離，就可以使用較小的類型大小。 **點大小為基礎的 Unity 3D 文字網格和 UI 文字。如需詳細的度量和縮放比例，請參閱[Unity 中的文字](text-in-unity.md)。**
+### <a name="the-minimum-legible-font-size"></a>易於閱讀的字型大小下限
+| 距離 | 檢視角度 | 文字高度 | 字型的大小 * * |
+|---------|---------|---------|---------|
+| 45 cm （直接操作距離） | 0.4°-0.5° | 3.14–3.9mm | 8.9–11.13pt |
+| 2m | 0.35°-0.4° | 12.21–13.97mm | 34.63-39.58pt |
+
+
+### <a name="the-comfortably-legible-font-size"></a>舒服地易於閱讀的字型大小
+| 距離 | 檢視角度 | 文字高度 | 字型的大小 * * |
+|---------|---------|---------|---------|
+| 45 cm （直接操作距離） | 0.65°-0.8° | 5.1-6.3mm | 14.47-17.8pt |
+| 2m | 0.6°-0.75° | 20.9-26.2mm | 59.4-74.2pt |
+
+
+Segoe UI （Windows 的預設字型） 也適用於大部分的情況。 不過，在避免使用 light 或半淺色字型系列較小，因為將震動精簡型的垂直筆劃，而且它會降低易讀性。 新式的字型，具有足夠的筆劃粗細正常運作。 比方說，新細明體新細明體看起來美觀和 HoloLens 中使用規則或粗體加權非常清晰。
+
+* * 如需詳細資訊在 Unity 中的文字大小計算時，請參閱頁面[Unity 中的文字](text-in-unity.md)
+
+![檢視角度](images/Text_In_Unity_ViewingAngle.jpg)
+*檢視距離、 角度和文字的高度*
 
 ## <a name="resources"></a>資源
 * [Segoe 字型](http://download.microsoft.com/download/1/B/C/1BCF071A-78EE-4968-ACBE-15461C274B61/Segoe%20fonts%20v1705.zip)
 * [HoloLens 字型](http://download.microsoft.com/download/3/8/D/38D659E2-4B9C-413A-B2E7-1956181DC427/Hololens%20font.zip)
 
 ![HoloLens 字型可讓您使用 Windows Mixed Reality 符號字符](images/300px-hololensmdl2symbols.jpg)
-
-HoloLens 字型可讓您使用 Windows Mixed Reality 符號字符。
+<br>*HoloLens 字型可讓您使用 Windows Mixed Reality 符號字符。*
 
 ## <a name="see-also"></a>另請參閱
-* [在 Unity 中的文字](http://holodocsfuture/index.php?title=Text_in_Unity&action=edit&redlink=1)
-* [色彩、 光線和材質](color,-light-and-materials.md)
+* [Unity 中的文字](text-in-unity.md)
+* [色彩、光線和材質](color,-light-and-materials.md)

@@ -6,12 +6,12 @@ ms.author: thmignon
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 3D，模型，模型化的指引，資產需求，編寫指導方針、 啟動器、 3D 的啟動器、 紋理、 材料、 複雜度、 三角形、 網狀結構、 多邊形、 polycount，限制
-ms.openlocfilehash: 209a92a8e7070ca23bcb9402d8716f3f91747a96
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 73af40cf2915742cab612625c8243a36ee74d748
+ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591393"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66692291"
 ---
 # <a name="create-3d-models-for-use-in-the-home"></a>在家中建立使用 3D 模型
 
@@ -29,11 +29,11 @@ ms.locfileid: "59591393"
 
 ## <a name="detailed-guidance"></a>詳細的指導方針
 
-## <a name="exporting-models"></a>匯出模型
+### <a name="exporting-models"></a>匯出模型
 
 家用的 Windows Mixed Reality 預期 3D 資產傳遞.glb 檔案格式使用內嵌的影像和二進位資料。 Glb 是 glTF 格式，也就是獲微軟授權使用的二進位版本 Khronos 群組所維護的 3D 資產傳遞的免費開放標準。 隨著 glTF 發展為一種業界標準的可互通的 3D 內容也會格式的 Microsoft 的支援在 Windows 應用程式和體驗。 如果您尚未建立 glTF 資產之前，您可以找到[份支援匯出工具和轉換器](https://github.com/KhronosGroup/glTF/blob/master/README.md#converters-and-exporters)glTF 工作群組的 github 頁面上。  
 
-## <a name="modeling-guidelines"></a>模型化的指導方針
+### <a name="modeling-guidelines"></a>模型化的指導方針
 
 Windows 必須使用下列的模型化指導方針，以確保相容性與混合實境的居家體驗產生的資產。 在您選擇的程式中建立模型時請記住下列建議事項：
 1. 總軸應該設定為"Y"。
@@ -57,7 +57,7 @@ Windows 必須使用下列的模型化指導方針，以確保相容性與混合
 |  LOD 1 |  5,000  |  10,000 | 
 |  LOD 2 |  2,500  |  10,000 | 
 
-### <a name="node-counts-and-submesh-limits"></a>節點計數和子網狀的限制
+### <a name="node-counts-and-submesh-limits"></a>節點計數和子網狀限制
 家用的 Windows Mixed Reality 不支援具有超過 64 個節點或每 LOD 32 submeshes 模型。 節點是中的概念[glTF 規格](https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#nodes-and-hierarchy)，場景中定義的物件。 陣列中的定義 submeshes[基本型別](https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#meshes)物件中 mesh 上。 
 
 |  功能 |  描述  |  最大支援 | 文件 |
@@ -279,6 +279,6 @@ GlTF 資產必須指向使用 Windows MR 所呈現的場景屬性的預設場景
 
 ## <a name="see-also"></a>另請參閱
 
-* [實作 3D 應用程式啟動器 (UWP app)](implementing-3d-app-launchers.md)
-* [實作 3D 應用程式啟動器 （Win32 應用程式）](implementing-3d-app-launchers-win32.md)
-* [瀏覽家用的 Windows Mixed Reality](navigating-the-windows-mixed-reality-home.md)
+* [實作 3D 應用程式啟動器 (UWP 應用程式)](implementing-3d-app-launchers.md)
+* [實作 3D 應用程式啟動器 (Win32 應用程式)](implementing-3d-app-launchers-win32.md)
+* [瀏覽 Windows Mixed Reality 住家](navigating-the-windows-mixed-reality-home.md)

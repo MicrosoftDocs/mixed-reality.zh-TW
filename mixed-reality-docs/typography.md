@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，設計、 樣式、 字型、 印刷樣式、 ui、 ux
-ms.openlocfilehash: debf125a7f82ac79fe3ad776ba9c8c0b69396848
-ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
+ms.openlocfilehash: 6371aa9b12b61d12acdaaae5f7730ff2ae9757f0
+ms.sourcegitcommit: c2a5bff423feba7d29d5431c870b6017c2fe1bc2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66692386"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66750342"
 ---
 # <a name="typography"></a>印刷樣式
 
@@ -67,9 +67,9 @@ HoloLens，在全像投影使用加法類色彩系統為基礎的光線建構型
 
 ## <a name="recommended-font-size"></a>建議使用的字型大小
 
-您可能已經想到，我們使用電腦或平板電腦裝置 （通常在 12 – 產生 32pt) 之間的類型大小的 2 公尺的距離看變得很小。 它取決於特性的每種字型，但一般情況下檢視角度和字型高度，以利閱讀建議的最小周圍 0.35°-0.4°/12.21-13.97mm 根據我們的使用者研究工作。 它是關於 35 40pt 上面介紹的縮放因數。 
+您可能已經想到，我們使用電腦或平板電腦裝置 （通常在 12 – 產生 32pt) 之間的類型大小的 2 公尺的距離看變得很小。 它取決於特性的每種字型，但一般情況下檢視角度和字型高度，以利閱讀建議的最小周圍 0.35°-0.4°/12.21-13.97mm 根據我們的使用者研究工作。 中導入的縮放因數是 35 40pt [Unity 中的文字](text-in-unity.md)頁面。 
 
-在 0.45m(45cm) 幾近互動，最小易於閱讀字型檢視角度和高度是 0.4 °-0.5 ° / 3.14 – 3.9 mm。 它是關於 9 12pt 上面介紹的縮放因數。
+在 0.45m(45cm) 幾近互動，最小易於閱讀字型檢視角度和高度是 0.4 °-0.5 ° / 3.14 – 3.9 mm。 中導入的縮放因數是 9 12pt [Unity 中的文字](text-in-unity.md)。
 
 ![不久，到目前為止的互動範圍](images/typography-distance-1000px.jpg)
 *內容在附近，遠的互動範圍*

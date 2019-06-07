@@ -6,12 +6,12 @@ ms.author: joekelly
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，空間的音效、 設計、 樣式
-ms.openlocfilehash: c8f5268faf5eef779401c046947c3137d177cb89
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: c758037300392d9365c16933677fb0f026976c2a
+ms.sourcegitcommit: c2a5bff423feba7d29d5431c870b6017c2fe1bc2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591140"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66750311"
 ---
 # <a name="spatial-sound-design"></a>空間完善的設計
 
@@ -26,12 +26,23 @@ ms.locfileid: "59591140"
 ## <a name="device-support"></a>裝置支援
 
 <table>
-<tr>
-<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
-</tr><tr>
-<td> 空間音效</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><strong>功能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+    </tr>
+     <tr>
+        <td>空間完善的設計</td>
+        <td>✔️</td>
+        <td>✔️</td>
+    </tr>
 </table>
+
 
 ## <a name="four-key-things-spatial-sound-does-for-mixed-reality-development"></a>四個空間的聲音會替混合的實境開發的重要事項
 
@@ -96,5 +107,5 @@ ms.locfileid: "59591140"
 在混合實境，以獲得最佳使用者體驗，以 3D 的音訊，都應該使用空間的音效，而不是傳統的 3D 音訊技術來達成。 一般情況下，改善的空間值得小型的 CPU 成本是透過標準 3D 音效。 標準 3D 音訊可以用於低優先順序的音效、 音效 spatialized 但不一定是繫結至實體或虛擬的物件和使用者永遠不會需要找出與應用程式互動的物件。
 
 ## <a name="see-also"></a>另請參閱
-* [空間的音效](spatial-sound.md)
+* [空間音效](spatial-sound.md)
 * [空間對應](spatial-mapping.md)

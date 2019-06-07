@@ -1,17 +1,17 @@
 ---
 title: 使用 Unity 的 Vuforia
 description: 利用 Vuforia 來建置 Unity 中的 Windows Mixed Reality 應用程式。
-author: ChimeraScorn
-ms.author: cwhite
-ms.date: 03/21/2018
+author: ailyadis
+ms.author: ''
+ms.date: 01/28/2019
 ms.topic: article
 keywords: Vuforia，標記、 座標、 參考架構追蹤
-ms.openlocfilehash: 43a74989b931fee898af0aeae9e240303b2eef01
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: c0d2f6d0707e1ddd3ee00d3eb80af9fb459f252b
+ms.sourcegitcommit: c2a5bff423feba7d29d5431c870b6017c2fe1bc2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59595989"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66750347"
 ---
 # <a name="using-vuforia-engine-with-unity"></a>使用 Unity 使用 Vuforia 引擎
 
@@ -60,7 +60,7 @@ HoloLens 的開發 Vuforia 引擎應用程式基本上是開發 Vuforia 引擎�
 10. 選取組建，以產生 Visual Studio 專案
 11. 從 Visual Studio 中建置可執行檔，並將它安裝在您的 HoloLens 上
 
-注意：從開始版本 7.2、 HoloLens Vuforia 引擎範例包含範例場景，包括模型目標的使用方式範例
+注意:從開始版本 7.2、 HoloLens Vuforia 引擎範例包含範例場景，包括模型目標的使用方式範例
 
 ## <a name="the-vuforia-developer-portal"></a>Vuforia 開發人員入口網站
 
@@ -93,8 +93,8 @@ Vuforia 引擎會將自動轉換會使用延伸的追蹤，到 HoloLens 空間�
 * [安裝工具](install-the-tools.md)
 * [座標系統](coordinate-systems.md)
 * [空間對應](spatial-mapping.md)
-* [在 Unity 中的相機](camera-in-unity.md)
-* [匯出和建置 Unity Visual Studio 方案](exporting-and-building-a-unity-visual-studio-solution.md)
+* [Unity 中的相機](camera-in-unity.md)
+* [匯出和建置 Unity Visual Studio 解決方案](exporting-and-building-a-unity-visual-studio-solution.md)
 * [Vuforia 文件：為 Unity 中的 Windows 10 開發](https://library.vuforia.com/articles/Solution/Developing-for-Windows-10-in-Unity)
 * [Vuforia 文件：如何安裝 Vuforia Unity 延伸模組](https://library.vuforia.com/articles/Solution/Installing-the-Unity-Extension)
 * [Vuforia 文件：使用 Unity 的 HoloLens 範例](https://library.vuforia.com/articles/Solution/Working-with-the-HoloLens-sample-in-Unity)

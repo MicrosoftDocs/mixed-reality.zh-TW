@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens、 遠端處理，全像攝影版的遠端處理
-ms.openlocfilehash: 24213444686dd2e5dbda4016dd551a8ead8f305a
-ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
+ms.openlocfilehash: b8354295f9752e73cc9b34c1769254e49808b63f
+ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66270309"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813716"
 ---
 # <a name="holographic-remoting-player"></a>全像攝影版的遠端播放程式
 
@@ -52,5 +52,5 @@ ms.locfileid: "66270309"
 * 我們建議您透過乙太網路，以減少無線躍點數目的網路連接您的電腦。
 
 ## <a name="see-also"></a>另請參閱
-* [全像攝影遠端軟體授權條款](microsoft-holographic-remoting-software-license-terms.md)
+* [全像攝影遠端軟體授權條款](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
 * [Microsoft 隱私權聲明](https://go.microsoft.com/fwlink/?LinkId=521839)

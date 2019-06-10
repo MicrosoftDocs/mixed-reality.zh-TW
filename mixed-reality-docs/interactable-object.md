@@ -6,79 +6,98 @@ ms.author: jennyk
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 混合的實境、 控制項、 互動、 ui、 ux
-ms.openlocfilehash: f349d21707375690e00b0f7e465634c62be1537e
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: eea7eff6c591a9319b920936ce2be511cecb7496
+ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59594760"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813762"
 ---
 # <a name="interactable-object"></a>可互動的物件
 
 按鈕長久以來所用的觸發事件 2D 抽象全球隱喻。 在三維的混合的現實世界中，我們沒有不再侷限於這個抽象層再的世界。 任何能**互動的物件**觸發事件。 可互動的物件可以表示為任何項目從咖啡杯資料表在空中浮在球形文字說明。 我們仍執行能用在某些情況下這類對話方塊 UI 如同傳統的按鈕。 按鈕的視覺表示方式取決於內容。
 
-![Interactible 物件英雄影像](images/640px-interactibleobject-hero-640px.jpg)
+![Interactible 物件](images/640px-interactibleobject-hero-640px.jpg)
 
 
-在  **[混合實境 Toolkit](https://github.com/Microsoft/MixedRealityToolkit-Unity)**，我們建立了一系列的 Unity 指令碼和 prefabs，可協助您建立可互動的物件。 您可以使用這些來建立任何類型的使用者可以與之互動，使用這些標準的互動狀態的物件： 觀察，設為目標，並按下。 您可以輕鬆自訂視覺效果的設計，與您自己的資產。 詳細的動畫可以自訂所建立，並指派對應的動畫剪輯，在 Unity 的 [動畫] 控制器中的互動狀態，或使用 offset 和小數位數。 
+## <a name="important-properties-of-the-interactable-object"></a>可互動的物件的重要屬性
 
+### <a name="visual-cue"></a>視覺提示
 
-## <a name="visual-feedback-for-the-different-input-interaction-states"></a>針對不同的輸入的互動狀態的視覺回饋
+視覺提示是眼睛光線的形式接收，且 visual 系統處理期間視覺的感應式提示。 由於 visual 系統是主控在許多物種，尤其是人類的視覺提示是大型中發現世界的如何資訊。
 
-在混合實境，全像攝影版的物件會混合使用真實世界的環境，因為它可能會難以了解哪些物件是可互動。 在您的經驗中任何可互動的物件，請務必提供差異化的視覺化回饋，針對每個輸入的狀態。 這可協助使用者了解您的使用經驗的哪個部分是可互動，並使用一致的互動方法，讓使用者有信心。
+在混合實境，全像攝影版的物件會混合使用真實世界的環境，因為它可能會難以了解哪些物件是可互動。 在您的經驗中任何可互動的物件，請務必提供差異化的視覺提示，針對每個輸入的狀態。 這可協助使用者了解您的使用經驗的哪個部分是可互動，並使用一致的互動方法，讓使用者有信心。
 
-任何物件該使用者可以與互動，我們建議使用有不同的視覺回饋，針對這三個輸入狀態：
-* **觀察**:預設的閒置狀態的物件。
-* **目標**:當物件的目標與視線指標時，手指鄰近性或動作控制器的指標。
+#### <a name="far-interactions"></a>遠的互動
+
+任何物件該使用者可以互動視線、 手無限遠的光線，與動作控制器的光線，我們建議您有不同的視覺提示。 這三種輸入狀態：
+* **預設值 （觀察）** :預設的閒置狀態的物件。
+* **目標 （暫留）** :當物件的目標與視線指標時，手指鄰近性或動作控制器的指標。
 * **按下**:當物件已按下使用空中點選手勢、 手指按或動作控制器的 [選取] 按鈕。
 
-![全像攝影版的按鈕](images/640px-interactibleobject-holographicbutton-650px.jpg)<br>
-*觀察狀態設為目標的狀態，並按下狀態*
+您可以使用的技術，例如反白顯示或縮放比例來提供視覺提示使用者輸入的狀態。 在 Windows Mixed Reality，您可以找到視覺化不同輸入的狀態，在 [開始] 功能表和應用程式列按鈕的範例。 
 
-在 Windows Mixed Reality，您可以找到視覺化不同輸入的狀態，在 [開始] 功能表和應用程式列按鈕的範例。 您可以使用的技術，例如反白顯示或縮放比例提供視覺化回應使用者輸入的狀態。
+![目標狀態，與按下狀態的視覺化觀察狀態範例](images/640px-interactibleobject-states.png)<br>
+*目標狀態，與按下狀態的視覺化觀察狀態範例*
 
-在 HoloLens 2 中，因為它支援完全相互連貫的手動追蹤輸入，我們可以提供根據傳遞給鄰近的額外提供。 [HoloLens 2 中的按鈕](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Button.html)顯示此範例。
+![觀察狀態設為目標的狀態，並在全像攝影版的按鈕上按下狀態](images/MRTK_InteractableState.png)<br>
+*觀察狀態設為目標的狀態，並在全像攝影版的按鈕上按下狀態*
 
-![Pressable 按鈕](images/640px-interactibleobject-pressablebutton-650px.jpg)<br>
+#### <a name="neardirect-interactions"></a>Near(direct) 互動
+
+HoloLens 2 支援相互連貫的手動追蹤可讓您與物件互動的輸入。 不含 haptic 意見反應和 perception 完美的深度，有時很難判斷您的手距離是從物件，或您是否會觸碰。 請務必提供足夠的視覺提示來溝通狀態的物件，特別在全像投影的關聯性中實際操作。
+
+您可以使用視覺化回饋，通訊下列：
+* **預設值 （觀察）** :預設的閒置狀態的物件。
+* **將滑鼠移至**:手狀即將全像 」，這是進行通訊，手動變更視覺效果的目標全像圖。 
+* **距離和的互動點**: 手狀接近全像圖時，設計通訊預計的互動點，以及如何遠離物件是指的意見反應
+* **請連絡 Begin**:變更視覺效果 （光線，色彩） 進行通訊的觸控發生
+* **Grasped**:變更視覺效果 （光線，色彩） grasped 物件的時機。
+* **請連絡結束**:變更視覺效果 （光線，色彩） 觸控時結束。
+
+![視覺化附近互動狀態範例](images/640px-interactibleobject-states-near.jpg)<br>
+*視覺化附近互動狀態範例*
+
+[HoloLens 2 中的按鈕](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Button.html)示範視覺化不同輸入的互動狀態。
+
+![HoloLens 2 pressable 按鈕的範例](images/640px-interactibleobject-pressablebutton-650px2.jpg)<br>
+*HoloLens 2 pressable 按鈕的範例*
+
+HoloLens 2 中沒有可改善使用者的信心，深度認知上其他視覺提示。 上寫寫看信號出現，並相應減少，因為寫寫看即將來臨的物件。 按下狀態的一個點到最後聚合信號。 此視覺化功能可見性可協助使用者了解物件之間的距離。
+
+![寫寫看環狀視覺效果](images/640px-interactibleobject-pressablebutton-650px3.jpg)<br>
+*HoloLens 2 寫寫看環狀視覺效果*
+
+![在手相近的視覺化回饋](images/HoloLens2_Proximity.gif)<br>
+*根據鄰近-週框方塊的視覺化回饋的範例*
 
 
+### <a name="audio-cue"></a>音訊提示
+直接手動互動，適當的音訊意見反應可以大幅改善使用者體驗。 使用來傳達下列音訊意見反應：
+* **請連絡開始**:觸控式開始時播放音效
+* **連絡人的結束**:播放音效觸控端
+* **抓取開始**:擷取啟動時播放音效
+* **抓取結束**:播放音效抓取端
 
+### <a name="voice-command"></a>語音命令
+任何可互動的物件，請務必支援替代的互動選項。 在預設情況下，建議您使用支援語音命令是可互動的任何物件。 若要改善探索能力，您可以提供工具提示上暫留狀態。
 
-## <a name="interactable-object-samples"></a>可互動的物件範例
+<img src="images/640px-interactibleobject-voicecommand.jpg" alt="Tooltip for the voice command" title="語音命令的工具提示" width="350"><br/>*語音命令的工具提示*
 
-### <a name="mesh-button"></a>網狀結構按鈕
+## <a name="creating-interactable-object-with-mixed-reality-toolkit-mrtk"></a>建立可互動的物件與混合實境工具組 (MRTK)
 
-![網狀結構按鈕](images/640px-interactibleobject-meshbutton.jpg)
+在  **[混合實境 Toolkit](https://github.com/Microsoft/MixedRealityToolkit-Unity)** ，您可以找到 Unity 指令碼的一系列 prefabs，可協助您建立可互動的物件。 您可以使用這些物件的各種類型的輸入的互動狀態回應。
 
-這些是可互動的物件為使用基本類型和匯入的 3D 網格的範例。 您可以輕鬆地指派不同的規模、 位移和色彩值來回應每個輸入的互動狀態。
+* **[Interactable](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Interactable.html)**
+* **[按鈕](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Button.html)**
+* **[手動互動範例場景](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_HandInteractionExamples.md)**
 
-### <a name="toolbar"></a>工具列
-
-![工具列](images/640px-interactibleobject-toolbar.jpg)
-
-工具列是廣泛使用的模式，在混合的實境體驗中。 它是簡單的按鈕與其他的行為集合，例如[Billboarding 和 tag-along](billboarding-and-tag-along.md)。 此範例會使用從 MixedRealityToolkit Billboarding 和 tag-along 指令碼。 您可以控制詳細的行為，包括距離，移動速度和臨界值。
-
-### <a name="traditional-button"></a>傳統的按鈕
-
-![傳統的按鈕](images/640px-interactibleobject-traditionalbutton.jpg)
-
-此範例顯示傳統的 2D 樣式 按鈕。 每個輸入的狀態具有稍有不同的深度和動畫屬性。
-
-### <a name="other-examples"></a>其他範例
-
-![推播 按鈕](images/640px-interactibleobject-pushbutton.jpg)<br>
-*推播 按鈕*
-<br>
-![真實生活物件](images/640px-interactibleobject-reallifeobject.jpg)<br>
-*真實物件*
-
-使用 HoloLens，您可以利用的實體空間。 想像一下全像攝影版的按鈕，在實體的塗鴉牆上。 或如何在實際的資料表上的咖啡 cup？ 使用從模型化軟體匯入的 3D 模型，我們可以建立可互動的物件，類似於現實生活中的物件。 因為它是數位物件時，我們可以新增神奇的互動。
-
-## <a name="interactable-object-in-mixed-reality-toolkit"></a>混合實境工具組中的互動物件
-您可以找到[Interactable 範例物件混合實境工具組中](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Interactable.html)
+提供各種選項，例如 MixedRealityToolkit 的標準著色器**鄰近 light**可協助您建立視覺與音訊提示。
+* **[MRTK 標準著色器](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation/README_MRTKStandardShader.md)**
 
 
 ## <a name="see-also"></a>另請參閱
-* [在混合的實境 Toolkit Unity pressable 按鈕](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Button.html)
-* [物件集合](object-collection.md)
-* [告示板和 tag-along](billboarding-and-tag-along.md)
+
+* **[週框方塊](app-bar-and-bounding-box.md)**
+* **[物件集合](object-collection.md)**
+* **[告示板和 tag-along](billboarding-and-tag-along.md)**

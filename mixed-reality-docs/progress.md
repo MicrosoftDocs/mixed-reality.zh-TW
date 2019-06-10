@@ -6,18 +6,18 @@ ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，設計、 控制項、 ui、 ux
-ms.openlocfilehash: 9edddc7800f0d7334d1ceba97b9a06fd6d4580ac
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: d62d86c690233f351b6c156c66eba33cb2687ea6
+ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59596019"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813741"
 ---
 # <a name="displaying-progress"></a>顯示進度
 
 進度控制項為使用者提供回饋，告知正在進行長時間執行的操作。 根據所使用的指示器，它可以表示在進度指示器可見的時候，使用者無法與 App 互動，也可以指示可能需要等待多久的時間。
 
-![HoloLens 進度環範例](images/640px-progress-hero.jpg)<br>
+![HoloLens 進度環範例](images/HoloLens2_Loader.gif)<br>
 *HoloLens 進度環範例*
 
 ## <a name="types-of-progress"></a>進度的類型
@@ -47,7 +47,8 @@ ms.locfileid: "59596019"
 * 最好一律以提供有關最新動態給使用者的狀態資訊。 進度 prefab 提供不同的視覺樣式，包括 Windows 標準的信號類型進行提供狀態。 您也可以使用動畫使用自訂的網狀結構，如果您想要您的進度，以與您的應用程式的品牌保持一致的樣式。
 
 ## <a name="see-also"></a>另請參閱
-* [指令碼和 prefabs 混合實境工具組的進度](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/UX/Readme/README_ProgressExample.md)
+* [進行指令碼及混合實境 toolkit prefabs](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/Features/UX/Prefabs/Loader)
+* [週框方塊](app-bar-and-bounding-box.md)
 * [可互動的物件](interactable-object.md)
 * [物件集合](object-collection.md)
-* [告示板和 tag-along](billboarding-and-tag-along.md)
+* [佈告板和常駐標籤](billboarding-and-tag-along.md)

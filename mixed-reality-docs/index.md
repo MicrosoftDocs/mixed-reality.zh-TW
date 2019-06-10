@@ -8,12 +8,12 @@ ms.date: 02/24/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境、探索、散佈、索引、登陸頁面、設計、開發、教學課程、範例應用程式、基本概念、案例研究、資源、HoloLens 操作說明、開放原始碼專案
-ms.openlocfilehash: ed319e2abf61caed5f36b425a4cc609ca9501dec
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 810d9846fd217cd1acb3ae0060c11f5c9173191e
+ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730883"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813751"
 ---
 # <a name="mixed-reality-documentation"></a>混合實境文件
 
@@ -171,10 +171,10 @@ ms.locfileid: "65730883"
 <td>MRTK 中 HoloLens 2 的新功能預覽</td><td>2019 年 4 月</td><td> <ul><li><a href=https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html>MRTK 文件</a><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/mrtk-getting-started>開始使用 MRTK 第 2 版</a></td>
 </tr>
 <tr>
-<td>HoloLens 2 的設計和開發指引</td><td>2019 年 4 月</td><td> <ul><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools>安裝工具</a><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-hololens-emulator>HoloLens 2 模擬器</a><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/interaction-fundamentals>本能互動設計指引</a>
+<td>HoloLens 2 的設計和開發指引</td><td>2019 年 4 月</td><td> <ul><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools>安裝工具</a><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-hololens-emulator>HoloLens 2 模擬器</a><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/interaction-fundamentals>本能互動設計指引</a></td>
 </tr>
 <tr>
-  <td>Unreal 的詳細資訊</td><td>2019 年 5 月</td><td></td>
+  <td>Unreal 的詳細資訊</td><td>2019 年 5 月</td><td> <ul><li><a href=https://www.unrealengine.com/en-US/blog/unreal-engine-4-support-for-hololens-2-released-in-early-access>Unreal Engine 4 優先存取</a></td>
 </tr>
 </table>
 

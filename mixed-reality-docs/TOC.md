@@ -133,7 +133,7 @@
 ## 混合實境雲端服務
 ### [Azure Spatial Anchors](https://docs.microsoft.com/azure/spatial-anchors)
 ### [全像攝影遠端播放程式](holographic-remoting-player.md)
-### [全像攝影遠端軟體授權條款](microsoft-holographic-remoting-software-license-terms.md)
+### [全像攝影遠端軟體授權條款](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
 ## Unity
 ### [Unity 開發概觀](unity-development-overview.md)
 ### 開始使用

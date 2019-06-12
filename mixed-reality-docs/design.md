@@ -1,27 +1,27 @@
 ---
 layout: LandingPage
 title: 設計
-description: 本指南是以 Microsoft 設計工具、 開發人員、 計畫經理和研究人員，其工作橫跨全像攝影版的裝置 （例如 HoloLens) 和沈浸式裝置 （例如 Acer 和 HP Windows Mixed Reality 耳機） 撰寫的。 因此，這項工作視為一份 「 如何設計 Windows 掛接標頭的顯示畫面 」 主題。
+description: 本指南是以 Microsoft 設計工具、開發人員、程式經理和研究人員所撰寫，其工作橫跨全像攝影裝置) 例如 HoloLens) 和沈浸式裝置 (例如 Acer 和 HP Windows Mixed Reality 頭戴式裝置)。 因此，請將此工作視為「如何設計 Windows 頭戴式顯示器」的一組主題。
 author: rwinj
 ms.author: randyw
 ms.date: 03/21/2018
 ms.topic: article
 ms.localizationpriority: high
-keywords: Windows Mixed Reality，設計、 互動、 樣式、 色彩、 應用程式模式、 控制項、 範例應用程式、 混合實境工具組、 MRTK
+keywords: Windows Mixed Reality, 設計, 互動, 樣式, 色彩, 應用程式模式, 控制項, 範例應用程式, 混合實境工具組, MRTK
 ms.openlocfilehash: 88de9008dbea6cce3b980bbbe3d0f45b7818e7c9
-ms.sourcegitcommit: 8d6e5723283c03f984f1fafef81afa5aab5d04bc
-ms.translationtype: MT
+ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/05/2019
 ms.locfileid: "66039204"
 ---
-# <a name="design-for-mixed-reality"></a>混合實境的設計
+# <a name="design-for-mixed-reality"></a>混合實境設計
 
-![混合實境的設計](images/Bicycle-Leschi10.gif)
+![混合實境設計](images/Bicycle-Leschi10.gif)
 
-本指南是以 Microsoft 設計工具、 開發人員、 計畫經理和研究人員，其工作橫跨全像攝影版的裝置 （例如 HoloLens) 和沈浸式裝置 （例如 Acer 和 HP Windows Mixed Reality 耳機） 撰寫的。 因此，這項工作視為一份 「 如何設計 Windows 掛接標頭的顯示畫面 」 主題。
+本指南是以 Microsoft 設計工具、開發人員、程式經理和研究人員所撰寫，其工作橫跨全像攝影裝置) 例如 HoloLens) 和沈浸式裝置 (例如 Acer 和 HP Windows Mixed Reality 頭戴式裝置)。 因此，請將此工作視為「如何設計 Windows 頭戴式顯示器」的一組主題。
 
-## <a name="article-categories"></a>文件類別目錄
+## <a name="article-categories"></a>文章類別
 
 <ul class="panelContent cardsF">
     <li>
@@ -36,19 +36,19 @@ ms.locfileid: "66039204"
                     <div class="cardText">
                         <h3>開始進行設計</h3>
                         <p>
-                            <a href="mixed-reality.md">什麼被混合實境？</a>
+                            <a href="mixed-reality.md">什麼是混合實境？</a>
                         </p>
                         <p>
-                            <a href="about-this-design-guidance.md">有關本指引</a>
+                            <a href="about-this-design-guidance.md">關於本指南</a>
                         </p>
                         <p>
-                            <a href="case-study-my-first-year-on-the-hololens-design-team.md">設計團隊我第一年</a>
+                            <a href="case-study-my-first-year-on-the-hololens-design-team.md">在設計小組的第一年</a>
                         </p>
                         <p>
-                            <a href="case-study-expanding-the-design-process-for-mixed-reality.md">擴充設計程序的混合實境</a>
+                            <a href="case-study-expanding-the-design-process-for-mixed-reality.md">擴充混合實境的設計程序</a>
                         </p>
                         <p>
-                            <a href="case-study-the-pursuit-of-more-personal-computing.md">為達成更多個人運算</a>
+                            <a href="case-study-the-pursuit-of-more-personal-computing.md">追求更個人化的運算</a>
                         </p>
                     </div>
                 </div>
@@ -67,19 +67,19 @@ ms.locfileid: "66039204"
                     <div class="cardText">
                         <h3>MR 設計系統和工具</h3>
                         <p>
-                            <a href="comfort.md">Comfort</a>
+                            <a href="comfort.md">舒適度</a>
                         </p>
             <p>
-                            <a href="interaction-fundamentals.md">Instinctual 互動</a>
+                            <a href="interaction-fundamentals.md">本能互動</a>
                         </p>
                         <p>
-                            <a href="hands-and-tools.md">指針 」 和 「 動作控制站</a>
+                            <a href="hands-and-tools.md">手部和運動控制器</a>
                         </p>
                         <p>
-                            <a href="hands-free.md">免持聽筒</a>
+                            <a href="hands-free.md">免持式</a>
                         </p>
                          <p>
-                            <a href="gaze-and-commit.md">Head 視線與認可</a>
+                            <a href="gaze-and-commit.md">頭部注視並認可</a>
                         </p>
                     </div>
                 </div>
@@ -98,16 +98,16 @@ ms.locfileid: "66039204"
                     <div class="cardText">
                         <h3>樣式</h3>
                         <p>
-                            <a href="color,-light-and-materials.md">色彩、 光線和材質</a>
+                            <a href="color,-light-and-materials.md">色彩、光線和材質</a>
                         </p>
                          <p>
-                            <a href="spatial-sound-design.md">空間完善的設計</a>
+                            <a href="spatial-sound-design.md">空間音效設計</a>
                         </p>
                         <p>
                             <a href="typography.md">印刷樣式</a>
                         </p>
                         <p>
-                            <a href="scale.md">小數位數</a>
+                            <a href="scale.md">縮放比例</a>
                         </p>                      
                     </div>
                 </div>
@@ -126,16 +126,16 @@ ms.locfileid: "66039204"
                     <div class="cardText">
                         <h3>應用程式模式</h3>
                         <p>
-                            <a href="types-of-mixed-reality-apps.md">混合的實境應用程式類型</a>
+                            <a href="types-of-mixed-reality-apps.md">混合實境應用程式類型</a>
                         </p>
                         <p>
-                            <a href="room-scan-visualization.md">聊天室掃描視覺效果</a>
+                            <a href="room-scan-visualization.md">空間位置掃描視覺效果</a>
                         </p>
                         <p>
-                            <a href="cursors.md">資料指標</a>
+                            <a href="cursors.md">游標</a>
                         </p>
                         <p>
-                            <a href="billboarding-and-tag-along.md">告示板和 tag-along</a>
+                            <a href="billboarding-and-tag-along.md">佈告板和常駐標籤</a>
                         </p>
                     </div>
                 </div>
@@ -154,7 +154,7 @@ ms.locfileid: "66039204"
                     <div class="cardText">
                         <h3>控制項</h3>
                         <p>
-                            <a href="text-in-unity.md">在 Unity 中的文字</a>
+                            <a href="text-in-unity.md">Unity 中的文字</a>
                         </p>
                         <p>
                             <a href="interactable-object.md">可互動的物件</a>
@@ -178,12 +178,12 @@ ms.locfileid: "66039204"
 
 ## <a name="sample-apps"></a>範例應用程式
 
-建立絕佳的體驗，從設計和我們的團隊所建立的範例。
+從我們的團隊所設計和建立的範例，打造絕佳的體驗。
 
 <br>
 <ul id="cardtypes-W" class="cardsW panelContent" style="display: flex; margin-top: 0px;">
     <li>
-        <a href="periodic-table-of-the-elements.md" title="定期的資料表的項目" data-linktype="absolute-path">
+        <a href="periodic-table-of-the-elements.md" title="元素週期表" data-linktype="absolute-path">
             <div class="cardSize">
                 <div class="cardPadding">
                     <div class="card">
@@ -193,8 +193,8 @@ ms.locfileid: "66039204"
                             </div>
                         </div>
                         <div class="cardText">
-                            <h3>定期的資料表的項目</h3>
-                            <p>了解如何使用各種使用的物件集合的介面型別來配置在 3D 空間中物件的陣列。</p>
+                            <h3>元素週期表</h3>
+                            <p>了解如何使用物件集合，透過各種介面類型在 3D 空間中配置物件陣列。</p>
                         </div>
                     </div>
                 </div>
@@ -202,7 +202,7 @@ ms.locfileid: "66039204"
         </a>        
     </li>
     <li>
-        <a href="lunar-module.md" title="農曆模組" data-linktype="absolute-path">
+        <a href="lunar-module.md" title="月球模組" data-linktype="absolute-path">
             <div class="cardSize">
                 <div class="cardPadding">
                     <div class="card">
@@ -212,8 +212,8 @@ ms.locfileid: "66039204"
                             </div>
                         </div>
                         <div class="cardText">
-                            <h3>農曆模組</h3>
-                            <p>了解如何擴充 HoloLens 雙手追蹤與 Xbox 控制器輸入基底的筆勢。</p>
+                            <h3>月球模組</h3>
+                            <p>了解如何透過雙手追蹤和 Xbox 控制器輸入來擴充 HoloLens 基本手勢。</p>
                         </div>
                     </div>
                 </div>
@@ -221,7 +221,7 @@ ms.locfileid: "66039204"
         </a>
     </li>
     <li>
-        <a href="galaxy-explorer.md" title="Galaxy 總管" data-linktype="absolute-path">
+        <a href="galaxy-explorer.md" title="Galaxy Explorer" data-linktype="absolute-path">
             <div class="cardSize">
                 <div class="cardPadding">
                     <div class="card">
@@ -232,7 +232,7 @@ ms.locfileid: "66039204"
                         </div>
                         <div class="cardText">
                             <h3>星系探險</h3>
-                            <p>Galaxy 總管專案已準備。 您與社群共用您的想法，選擇您的應用程式中，然後再保存的小組建置它，並立即可以取得原始程式碼。</p>
+                            <p>Galaxy Explorer 專案已準備就緒。 您與社群分享了您的想法，選擇應用程式，觀看小組建置它，並可立即取得原始程式碼。</p>
                         </div>
                     </div>
                 </div>
@@ -248,7 +248,7 @@ ms.locfileid: "66039204"
 
 <ul id="cardtypes-D" class="cardsD panelContent" style="display: flex; margin-top: 0px;">
     <li>
-    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity" title="混合的實境工具組-Unity" data-linktype="absolute-path">
+    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity" title="混合實境工具組 - Unity" data-linktype="absolute-path">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -258,7 +258,7 @@ ms.locfileid: "66039204"
                         </div>
                     </div>                    
             <div class="cardText">
-                        <h3>混合的實境工具組-Unity</h3>
+                        <h3>混合實境工具組 - Unity</h3>
                         <p> </p>
                     </div>
                 </div>
@@ -267,7 +267,7 @@ ms.locfileid: "66039204"
       </a>  
     </li>
     <li>
-    <a href="https://github.com/Microsoft/MixedRealityToolkit" title="混合的實境工具組" data-linktype="absolute-path">
+    <a href="https://github.com/Microsoft/MixedRealityToolkit" title="混合實境工具組" data-linktype="absolute-path">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -277,7 +277,7 @@ ms.locfileid: "66039204"
                         </div>
                     </div>                    
             <div class="cardText">
-                        <h3>混合的實境工具組</h3>
+                        <h3>混合實境工具組</h3>
                         <p> </p>
                     </div>
                 </div>
@@ -330,7 +330,7 @@ ms.locfileid: "66039204"
 
 <ul id="cardtypes-D" class="cardsD panelContent" style="display: flex; margin-top: 0px;">
     <li>
-    <a href="http://fluent.microsoft.com" title="Fluent Design System" data-linktype="absolute-path">
+    <a href="http://fluent.microsoft.com" title="Fluent Design 系統" data-linktype="absolute-path">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -349,7 +349,7 @@ ms.locfileid: "66039204"
       </a>  
     </li>
     <li>
-    <a href="https://www.microsoft.com/design/inclusive" title="內含在 Microsoft 的設計" data-linktype="absolute-path">
+    <a href="https://www.microsoft.com/design/inclusive" title="Microsoft 的全人設計" data-linktype="absolute-path">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -359,7 +359,7 @@ ms.locfileid: "66039204"
                         </div>
                     </div>                    
             <div class="cardText">
-                        <h3>內含在 Microsoft 的設計</h3>
+                        <h3>Microsoft 的全人設計</h3>
                         <p> </p>
                     </div>
                 </div>
@@ -368,7 +368,7 @@ ms.locfileid: "66039204"
       </a>  
     </li>   
         <li>
-    <a href="https://developer.microsoft.com/windows/apps/design" title="通用 Windows 平台 (UWP) 應用程式的設計" data-linktype="absolute-path">
+    <a href="https://developer.microsoft.com/windows/apps/design" title="通用 Windows 平台 (UWP) 應用程式設計" data-linktype="absolute-path">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -378,7 +378,7 @@ ms.locfileid: "66039204"
                         </div>
                     </div>                    
             <div class="cardText">
-                        <h3>通用 Windows 平台 (UWP) 應用程式的設計</h3>
+                        <h3>通用 Windows 平台 (UWP) 應用程式設計</h3>
                         <p> </p>
                     </div>
                 </div>

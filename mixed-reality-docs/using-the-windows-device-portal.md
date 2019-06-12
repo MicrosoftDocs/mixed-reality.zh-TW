@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: Windows Device Portal HoloLens
-ms.openlocfilehash: 8b9935d6b64abfd22e2e856e0142c953a6366008
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: f4319e1efa94d90bfb8cc4e5815ffa87fc865a7f
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59594633"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829997"
 ---
 # <a name="using-the-windows-device-portal"></a>使用 Windows Device Portal
 
@@ -32,11 +32,11 @@ Windows Device Portal，如 HoloLens 可讓您設定及從遠端管理您的裝�
 1. 開啟您的 HoloLens 並將裝置戴上。
 2. 做出[盛開](gestures.md#bloom)手勢來啟動主功能表。
 3. 注視**設定**圖格，並執行[空中點選](gestures.md#air-tap)筆勢。 執行第二個空中點選来放在您的環境中的應用程式。 當您放置 [設定] App 之後，該 App 便會啟動。
-4. 選取 [更新] 功能表項目。
-5. 選取 [適用於開發人員] 功能表項目。
-6. 啟用 [開發人員模式]。
+4. 選取 [更新]  功能表項目。
+5. 選取 [適用於開發人員]  功能表項目。
+6. 啟用 [開發人員模式]  。
 7. [向下捲動](gestures.md#composite-gestures)並啟用**裝置入口網站**。
-8. 如果您要設定 Windows Device Portal，因此可以透過 USB 或 Wifi 將應用程式部署到此 HoloLens，按一下**配對**要[產生配對的 pin 碼](using-visual-studio.md#pairing-your-device-hololens)。 直到您輸入 pin 碼到 Visual Studio 在您第一次部署期間，則您可以保留釘選快顯視窗設定應用程式。
+8. 如果您要設定 Windows Device Portal，因此可以透過 USB 或 Wifi 將應用程式部署到此 HoloLens，按一下**配對**要[產生配對的 pin 碼](using-visual-studio.md)。 直到您輸入 pin 碼到 Visual Studio 在您第一次部署期間，則您可以保留釘選快顯視窗設定應用程式。
 
    ![在 [設定] 應用程式，適用於 Windows Holographic 的啟用開發人員模式](images/deviceportalsettings.png)
 
@@ -56,7 +56,7 @@ Windows Device Portal，如 HoloLens 可讓您設定及從遠端管理您的裝�
 
 ## <a name="connecting-to-an-emulator"></a>連接到模擬器
 
-您也可以透過模擬器使用 Device Portal。 若要連接到裝置入口網站，使用[工具列](using-the-hololens-emulator.md#anatomy-of-the-hololens-emulator)。 按一下這個圖示：![開啟 [裝置入口網站] 圖示](images/emulator-deviceportal.png)**開啟裝置入口網站**:開啟 Windows Device Portal HoloLens os 在模擬器中。
+您也可以透過模擬器使用 Device Portal。 若要連接到裝置入口網站，使用[工具列](using-the-hololens-emulator.md)。 按一下這個圖示：![開啟 [裝置入口網站] 圖示](images/emulator-deviceportal.png)**開啟裝置入口網站**:開啟 Windows Device Portal HoloLens os 在模擬器中。
 
 ## <a name="creating-a-username-and-password"></a>建立使用者名稱和密碼
 
@@ -71,7 +71,7 @@ Windows Device Portal，如 HoloLens 可讓您設定及從遠端管理您的裝�
 5. 輸入密碼並確認它。 密碼長度必須至少為七個字元。 它並不需要是 MSA 或網域密碼。
 6. 按一下 **配對**連接到 HoloLens 上的 Windows Device Portal。
 
-如果您想要隨時變更此使用者名稱或密碼，您可以重複此程序造訪 [裝置安全性] 頁面，按一下**安全性**靠右或巡覽至上方的連結： https://<YOUR_HOLOLENS_IP_位址 > / devicesecurity.htm。
+如果您想要隨時變更此使用者名稱或密碼，您可以造訪 [裝置安全性] 頁面瀏覽至重複此程序： https://<YOUR_HOLOLENS_IP_ADDRESS>/devicepair.htm。
 
 ## <a name="security-certificate"></a>安全性憑證
 
@@ -80,7 +80,7 @@ Windows Device Portal，如 HoloLens 可讓您設定及從遠端管理您的裝�
 每個 HoloLens 都會為其 SSL 連線產生唯一的自我簽署憑證。 根據預設，此憑證並不會受到您電腦的網頁瀏覽器信任，因此您可能會收到「憑證錯誤」。 藉由從您的 HoloLens 下載此憑證 (透過 USB 或您信任的 Wi-Fi 網路)，並在電腦上信任它，您便能安全地連線到您的裝置。
 1. **請確定您是在安全的網路 （USB 或您信任的 Wi-fi 網路）。**
 2. 從裝置入口網站的 [安全性] 頁面下載此裝置的憑證。
-   * 按一下 **安全性**從最上層的正確清單圖示的連結，或瀏覽至： https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm
+   * 瀏覽至： https://<YOUR_HOLOLENS_IP_ADDRESS>/devicepair.htm
 3. 安裝在 「 受信任的根憑證授權 」 儲存在您的電腦的憑證。
    * 從 [Windows] 功能表中，輸入：管理電腦憑證，並啟動小程式。
    * 依序展開**信任的根憑證授權單位**資料夾。
@@ -110,7 +110,7 @@ Windows Device Portal，如 HoloLens 可讓您設定及從遠端管理您的裝�
 首頁將顯示下列資訊：
 * **裝置狀態：** 監視您的裝置的健全狀況，並報告重大錯誤。
 * **Windows 資訊：** 顯示 HoloLens 的名稱和目前安裝的 Windows 版本。
-* [喜好設定] 區段包含下列設定：
+* [喜好設定]  區段包含下列設定：
    * **IPD**:設定 interpupillary 距離 (IPD)，也就是之間的距離，以公釐，使用者的 pupils 時直接長遠的中央之間。 此設定會立即生效。 預設值會在您設定裝置時自動計算。
    * **裝置名稱**:指派名稱給 HoloLens。 在變更此值之後，必須重新啟動裝置才能生效。 按一下後**儲存**，對話方塊會詢問您是否要立即重新啟動裝置，或稍後重新開機。
    * **睡眠設定**:設定裝置進入睡眠狀態時它已插入電源之前，並在使用電池時的等待時間長度。
@@ -165,7 +165,7 @@ Windows Device Portal，如 HoloLens 可讓您設定及從遠端管理您的裝�
 
 擷取[Windows Performance Recorder](https://msdn.microsoft.com/library/windows/hardware/hh448205.aspx) (WPR) 追蹤從您的 HoloLens。
 * **可用的設定檔**:從下拉式清單中，然後按一下或點選 選取 WPR 設定檔**啟動**若要開始追蹤。
-* **自訂設定檔**:按一下或點選**瀏覽**選擇 WPR 設定檔從您的電腦。 按一下或點選 [上傳並開始] 以開始追蹤。
+* **自訂設定檔**:按一下或點選**瀏覽**選擇 WPR 設定檔從您的電腦。 按一下或點選 [上傳並開始] 以開始追蹤。 
 
 若要停止追蹤，按一下 [停止] 連結。 下載完成的追蹤檔之前，請停留在此頁面。
 
@@ -244,9 +244,9 @@ Windows Device Portal，如 HoloLens 可讓您設定及從遠端管理您的裝�
 
 按一下或點選 [啟用] 以開始追蹤。 提供者已新增到 [啟用的提供者] 下拉式清單中。
 * **自訂提供者**:選取自訂的 ETW 提供者 」 和 「 追蹤層級。 依 GUID 識別提供者。 不要在 GUID 中包含括號。
-* **啟用的提供者**:列出已啟用的提供者。 從下拉式清單選取提供者，然後按一下或點選 [停用] 以停止追蹤。 按一下或點選 [全部停止] 以暫停所有追蹤。
-* **提供者記錄**:顯示目前的工作階段期間啟用啟用的 ETW 提供者。 按一下或點選 [啟用] 以啟用已停用的提供者。 按一下或點選 [清除] 以清除歷程記錄。
-* **事件**:列出所選的提供者，以資料表格式的 ETW 事件。 此表格會即時更新。 下方資料表中，按一下**清除** 按鈕，從資料表中刪除所有 ETW 事件。 這不會停用任何提供者。 您可以按一下 **\[儲存到檔案\]**，將目前收集的 ETW 事件匯出到本機的 CSV 檔案。
+* **啟用的提供者**:列出已啟用的提供者。 從下拉式清單選取提供者，然後按一下或點選 [停用] 以停止追蹤。  按一下或點選 [全部停止] 以暫停所有追蹤。 
+* **提供者記錄**:顯示目前的工作階段期間啟用啟用的 ETW 提供者。 按一下或點選 [啟用] 以啟用已停用的提供者。  按一下或點選 [清除] 以清除歷程記錄。 
+* **事件**:列出所選的提供者，以資料表格式的 ETW 事件。 此表格會即時更新。 下方資料表中，按一下**清除** 按鈕，從資料表中刪除所有 ETW 事件。 這不會停用任何提供者。 您可以按一下 **\[儲存到檔案\]** ，將目前收集的 ETW 事件匯出到本機的 CSV 檔案。
 * **篩選**:可讓您篩選識別碼、 關鍵字、 層級，提供者名稱、 工作名稱或文字所收集的 ETW 事件。 您可以一起結合數個準則：
    1. 準則套用至相同的屬性-事件可滿足這些條件的任何一個會顯示。
    2. 準則的事件必須滿足所有條件的都套用不同的屬性-

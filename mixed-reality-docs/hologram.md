@@ -6,12 +6,12 @@ ms.author: befolsom
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、 HoloLens、 全像投影、 設計、 互動
-ms.openlocfilehash: 5a6cc4df764b1f92f6bea2d7d6e6effe2164e4d6
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 714b08db23aa641252291aebe89fa3059c209a6f
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591185"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829777"
 ---
 # <a name="what-is-a-hologram"></a>什麼是全像投影？
 
@@ -24,11 +24,24 @@ HoloLens 可讓您建立**全像投影**、 物件所做的光線和音效，會
 ## <a name="device-support"></a>裝置支援
 
 <table>
-<tr>
-<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
-</tr><tr>
-<td> 全像投影</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
-</tr>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><strong>功能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens （第 1 代）</strong></a></td>
+        <td><strong>HoloLens 2</strong></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+    </tr>
+     <tr>
+        <td>全像投影</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>❌</td>
+    </tr>
 </table>
 
 ## <a name="a-hologram-is-made-of-light-and-sound"></a>雷射組成光線和音效
@@ -50,7 +63,7 @@ HoloLens 可讓您建立**全像投影**、 物件所做的光線和音效，會
 某些全像投影請改為遵循使用者。 這些 tag-along 全像投影會將本身相對於使用者，無論他們逐步解說的位置。 您甚至可以選擇來與您全像一段時間，並再將它放在塗鴉牆上一旦您取得另一個房間內。
 
 **最佳作法**
-* 某些情況下可能會要求全像投影，維持輕鬆探索或可見的體驗。 有兩種高層級的方法，以這種定位。 暫且把他們 **「 顯示鎖定 」** 並 **「 主體鎖定 」**。
+* 某些情況下可能會要求全像投影，維持輕鬆探索或可見的體驗。 有兩種高層級的方法，以這種定位。 暫且把他們 **「 顯示鎖定 」** 並 **「 主體鎖定 」** 。
    * 顯示鎖定的內容是依位置來建立 「 鎖定 」 裝置螢幕。 弔詭的多種原因所造成，包括 「 clingyness 」，讓許多使用者受挫非自然掌控，且想要"shake 它。 」 一般情況下，許多設計工具中發現最好避免顯示鎖定的內容。
    * 主體鎖定方法是更 forgivable。 主體鎖定時，雷射行動網卡的使用者主體或視線向量，但位於使用者周圍的 3d 空間中。 許多體驗已採用其中全像 「 遵循 」 使用者視線，可讓使用者旋轉其主體，並移動空間，而不會遺失全像本文鎖定的行為。 併入延遲有助於感覺更自然的全像移動。 比方說，一些核心 Windows 全像攝影版作業系統的 UI 會在接下來溫和，類似彈性的延遲時間的使用者的視線，當使用者開啟腦袋內文-鎖定使用變化。
 * 在置入全像舒適的檢視距離通常約 1-2 俖籇標頭。
@@ -85,5 +98,5 @@ HoloLens 可讓您建立**全像投影**、 物件所做的光線和音效，會
 ![在客廳中全像攝影版的虛數世界](images/designoverview.jpg)
 
 ## <a name="see-also"></a>另請參閱
-* [空間的音效](spatial-sound.md)
-* [色彩、 光線和材質](color,-light-and-materials.md)
+* [空間音效](spatial-sound.md)
+* [色彩、光線和材質](color,-light-and-materials.md)

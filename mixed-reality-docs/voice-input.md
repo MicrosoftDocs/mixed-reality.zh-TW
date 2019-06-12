@@ -6,12 +6,12 @@ ms.author: hakons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: ggv、 語音、 cortana、 語音、 輸入
-ms.openlocfilehash: 7fb5618c13ff1ed446241f744b598cfe2484ea45
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: e21310b940e4a4c3019f61edea695b452e74ab62
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59596982"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829955"
 ---
 # <a name="voice-input"></a>語音輸入
 
@@ -26,11 +26,24 @@ ms.locfileid: "59596982"
 ## <a name="device-support"></a>裝置支援
 
 <table>
-<tr>
-<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"><a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
-</tr><tr>
-<td> 語音輸入</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️ （與麥克風）</td>
-</tr>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><strong>功能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens （第 1 代）</strong></a></td>
+        <td><strong>HoloLens 2</strong></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+    </tr>
+     <tr>
+        <td>語音輸入</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️ （與麥克風）</td>
+    </tr>
 </table>
 
 ## <a name="the-select-command"></a>「 Select 」 命令
@@ -113,5 +126,5 @@ Windows Mixed Reality Developer Edition 版本 2017年中，音訊的端點管�
 
 ## <a name="see-also"></a>另請參閱
 * [DirectX 中的語音輸入](voice-input-in-directx.md)
-* [在 Unity 中的語音輸入](voice-input-in-unity.md)
-* [MR 輸入 212:語音](holograms-212.md)
+* [Unity 中的語音輸入](voice-input-in-unity.md)
+* [MR Input 212：語音](holograms-212.md)

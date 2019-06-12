@@ -1,17 +1,17 @@
 ---
-title: 應用程式列和週框方塊
+title: 週框方塊以及應用程式列
 description: 應用程式列是物件層級功能表，其中包含一系列的下邊緣的雷射的界限會顯示的按鈕。
 author: radicalad
 ms.author: adlinv
-ms.date: 03/21/2018
+ms.date: 06/07/2019
 ms.topic: article
 keywords: Windows Mixed Reality，橫條圖、 週框方塊的應用程式
-ms.openlocfilehash: ab472e1c988e6bdfb0a69d90e90280082b3db759
-ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
+ms.openlocfilehash: d289be31129324c6ff419b69dbce52bd8f62eb64
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66813836"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829681"
 ---
 # <a name="bounding-box-and-app-bar"></a>週框方塊以及應用程式列
 ![週框是在混合實境中的物件操作的標準介面。](images/640px-boundingbox-hero.jpg)<br>

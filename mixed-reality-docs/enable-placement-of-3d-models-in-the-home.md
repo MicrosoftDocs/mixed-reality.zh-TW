@@ -6,12 +6,12 @@ ms.author: thmignon
 ms.date: 05/04/2018
 ms.topic: article
 keywords: 3D、 模型、 家中的位置、 位置、 全球、 模型、 混合的實境家用、 web、 應用程式
-ms.openlocfilehash: 3a50353aae8e03c3ebb3ee9ec2f642f21836e925
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 954086b79e3614e1b75ceb7560f9fc87435530fa
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597094"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829729"
 ---
 # <a name="enable-placement-of-3d-models-in-the-mixed-reality-home"></a>啟用在首頁的混合實境中的 3D 模型的位置
 
@@ -25,11 +25,21 @@ ms.locfileid: "59597094"
 ## <a name="device-support"></a>裝置支援
 
 <table>
-<tr>
-<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
-</tr><tr>
-<td>新增模型通訊協定</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><strong>功能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+    </tr>
+     <tr>
+        <td>新增模型通訊協定</td>
+        <td>✔️</td>
+        <td>✔️</td>
+    </tr>
 </table>
 
 ## <a name="overview"></a>總覽
@@ -84,4 +94,4 @@ private async void launchURI_Click(object sender, RoutedEventArgs e)
 ## <a name="see-also"></a>另請參閱
 
 * [建立 3D 模型，使用 Windows Mixed Reality 在家中](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)
-* [瀏覽家用的 Windows Mixed Reality](navigating-the-windows-mixed-reality-home.md)
+* [瀏覽 Windows Mixed Reality 住家](navigating-the-windows-mixed-reality-home.md)

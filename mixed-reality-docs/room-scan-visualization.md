@@ -6,12 +6,12 @@ ms.author: alexpf
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，應用程式模式、 設計、 HoloLens、 聊天室掃描，空間的對應，介面重構，網格
-ms.openlocfilehash: 8ffde9d476e25016f986321377dce8125ee3a596
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 09df4464ea4dac01dfad637886b07b861f468d4d
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59596943"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829910"
 ---
 # <a name="room-scan-visualization"></a>聊天室掃描視覺效果
 
@@ -27,11 +27,21 @@ ms.locfileid: "59596943"
 ## <a name="device-support"></a>裝置支援
 
 <table>
-<tr>
-<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
-</tr><tr>
-<td> 聊天室掃描視覺效果</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><strong>功能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+    </tr>
+     <tr>
+        <td>聊天室掃描視覺效果</td>
+        <td>✔️</td>
+        <td>❌</td>
+    </tr>
 </table>
 
 
@@ -85,4 +95,4 @@ ms.locfileid: "59596943"
 ## <a name="see-also"></a>另請參閱
 * [空間對應設計](spatial-mapping-design.md)
 * [座標系統](coordinate-systems.md)
-* [空間完善的設計](spatial-sound-design.md)
+* [空間音效設計](spatial-sound-design.md)

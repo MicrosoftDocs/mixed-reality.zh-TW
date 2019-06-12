@@ -1,21 +1,21 @@
 ---
-title: Head 視線與認可
-description: Head 視線和 commit 輸入模型的概觀
+title: 頭部注視並認可
+description: 頭部注視並認可輸入模型的概觀
 author: caseymeekhof
 ms.author: cmeekhof
 ms.date: 03/31/2019
 ms.topic: article
 ms.localizationpriority: high
-keywords: 混合實境，視線、 視線目標，就會有互動，設計
-ms.openlocfilehash: a84465de3479bf3da2131b94dd522539cd7de6e9
-ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
-ms.translationtype: MT
+keywords: Mixed Reality, 注視, 注視定向, 互動, 設計
+ms.openlocfilehash: d9eae3c0cfceba7c2c31425941dfce865f3aa609
+ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65974872"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66692309"
 ---
-# <a name="head-gaze-and-commit"></a>Head 視線與認可
-Head 視線和認可為牽涉到目標物件的向前指您前端 （head-方向）、 方向與輸入的模型，然後處理它與次要輸入例如空中點選手筆勢或語音命令"Select"。 它會被視為 「 目前 」 輸入的模型與間接的操作，這表示它最適合用於互動超過手臂觸達的內容。
+# <a name="head-gaze-and-commit"></a>頭部注視並認可
+「頭部注視並認可」是一種輸入模型，其涉及以頭部向前指的方向 (頭部方向) 瞄準物件，然後以次要輸入 (例如空中點選手勢或語音命令 "Select") 產生作用。 我們將其視為間接操作的「遠距」輸入模型，這表示它最適合用於伸手可及範圍內的內容互動。
 
 ## <a name="device-support"></a>裝置支援
 
@@ -27,183 +27,183 @@ Head 視線和認可為牽涉到目標物件的向前指您前端 （head-方向
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>輸入的模型</strong></td>
-        <td><a href="hololens-hardware-details.md"><strong>HoloLens （第 1 代）</strong></a></td>
+        <td><strong>輸入模型</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 代)</strong></a></td>
         <td><strong>HoloLens 2</strong></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
     </tr>
      <tr>
-        <td>Head 視線與認可</td>
-        <td>建議的 ✔️</td>
-        <td>✔️ 建議 (第三個選擇-<a href="interaction-fundamentals.md">查看其他選項</a>)</td>
+        <td>頭部注視並認可</td>
+        <td>✔️ 建議使用</td>
+        <td>✔️ 建議使用 (第三個選擇 - <a href="interaction-fundamentals.md">查看其他選項</a>)</td>
         <td>➕ 替代選項</td>
     </tr>
 </table>
 
-## <a name="head-gaze"></a>Head 視線
-混合的實境耳機使用位置和方向的使用者的標頭來判斷其前端方向的向量。 您可以將此視為直接在使用者的眼睛之間直接繼續點從雷射。 這是很粗略的使用者正在尋找其中的近似值。 您的應用程式可以交集此光線，具有虛擬或實際物件，並在該位置，以讓使用者知道什麼它們的目前目標繪製資料指標。
+## <a name="head-gaze"></a>頭部注視
+混合實境頭戴式裝置使用使用者頭部的位置和方向來判斷其頭部方向向量。 您可以將此視為直接從使用者的雙眼之間向前直指的雷射。 這是相當粗略的使用者觀看位置概算。 您的應用程式可以讓此射線與虛擬或實際物件相交並在該位置繪製游標，讓使用者知道他們目前所定向的目標。
 
-除了前端的視線，例如 HoloLens 2 一些混合的實境耳機會包含追蹤產生眼睛視線向量的系統。 這會提供精細的測量的使用者注視的位置。 可建置視線並認可使用眼睛視線互動，但這是隨附一組非常不同的設計上的限制，將會分別在涵蓋這[追蹤文章的眼睛](eye-tracking.md)。
+除了頭部注視以外，有些混合實境頭戴式裝置 (例如 HoloLens 2) 包含可產生眼部注視向量的眼動追蹤系統。 這會對使用者觀看的位置提供精細的測量。 使用眼部注視可以建立注視並認可互動，但這伴隨著一組非常不同的設計限制，其將會分別涵蓋於[眼動追蹤文章](eye-tracking.md)中。
 
 ## <a name="commit"></a>認可
-目標物件或 UI 項目之後, 使用者就可以互動或者 「 按一下 」 使用之次要輸入。 這就是模型的認可步驟。 支援下列的 commit 方法：
+瞄準物件或 UI 元素之後，使用者可以使用次要輸入進行互動或「按一下」。 這也稱為模型的認可步驟。 支援的認可方法如下：
 
 - 空中點選手勢
-- 將語音命令 「 Select 」，或其中一個目標的語音命令
-- 按下的單一按鈕[HoloLens Clicker](hardware-accessories.md#hololens-clicker)
-- 按下 'A' 上的 Xbox 遊戲台
-- 按下 'A' 上的 Xbox 調適性控制器
+- 說出語音命令 "Select"，或其中一個目標式語音命令
+- 按下 [HoloLens Clicker](hardware-accessories.md#hololens-clicker) 上的單一按鈕
+- 按下 Xbox Gamepad 上的 'A' 按鈕
+- 按下 Xbox Adaptive Controller 上的 'A' 按鈕
 
-### <a name="head-gaze-and-air-tap-gesture"></a>Head 視線和空中點選手勢
-空中點選是點選手勢與垂直手持。 若要執行空中點選、 引發食指為準備的位置，則捏合以拇指和食指引發備份，以釋放。 HoloLens 1 空中點選是最常見的第二個輸入。
+### <a name="head-gaze-and-air-tap-gesture"></a>頭部注視和空中點選手勢
+空中點選是手部直立的點選手勢。 若要執行空中點選，舉起食指朝向就緒位置，然後搭配拇指捏合並提起食指放開。 在 HoloLens 1 上，空中點選是最常見的次要輸入。
 
-![在準備好位置，然後點選或按一下 移動手指](images/readyandpress.jpg)<br>
+![將手指放在就緒位置，然後點選或按一下移動](images/readyandpress.jpg)<br>
 
-空中點選也會提供在 HoloLens 2，它具有與原始版本已經放寬。 現在支援幾乎所有類型的 pinches，只要手形椅背與股仍然是。 這可讓您了解，並執行動作的使用者更容易。  讓現有的應用程式將會自動取得新的行為，在重新編譯 HoloLens 2 之後，這個新的空中點選會取代舊的憑證，透過相同的 API。
+空中點選也適用於 HoloLens 2，它已從原始版本放寬。 現在支援幾乎所有類型的捏合動作，只要手部直立並保持靜止。 這可讓使用者更容易了解和執行手勢。  這項新的空中點選透過相同的 API 取代舊的空中點選，所以現有應用程式會在針對 HoloLens 2 重新編譯之後自動取得新行為。
 
-### <a name="head-gaze-and-select-voice-command"></a>Head 視線和 「 選取 」 語音命令
-語音命令是其中一種主要的互動方法，在混合實境上。 它提供非常強大的 「 實際操作免費 」 機制，來控制系統。 有的語音互動模型的 diferent 類型：
+### <a name="head-gaze-and-select-voice-command"></a>頭部注視和 "Select" 語音命令
+語音命令是 Mixed Reality 上其中一種主要互動方法。 它提供非常強大的「免持式」機制來控制系統。 語音互動模型有不同的類型：
 
-- [選取]，一般的命令，可讓執行 [按一下] 時閉路或做為第二個輸入的認可。
-- 物件命令，例如 「 關閉 」 或 「 放大 」，可讓執行並認可至做為次要輸入動作。
-- 全域 commnads，例如 移至 開始 並不需要為目標。
-- 交談的使用者介面或實體，例如 Cortana 具有 AI 自然語言功能。
-- 自訂 commnads
+- 一般命令 "Select"，可允許執行 [按一下] 行動或作為次要輸入認可。
+- 「關閉」或「放大」等物件命令，可允許執行並作為次要輸入認可至動作。
+- 「立即開始」等不需要目標的全域命令。
+- 具有 AI 自然語言功能的交談使用者介面或實體 (例如 Cortana)。
+- 自訂命令
 
-若要尋找更多詳細資料和可用的命令以及如何使用 comprenhesive 清單，請查看我們[語音命令](voice-design.md)指引。
-
-
-### <a name="head-gaze-and-hololens-clicker"></a>Head 視線和 HoloLens Clicker
-HoloLens Clicker 是專為 HoloLens 建置第一個周邊裝置，並隨附 HoloLens 1 Development Edition。 HoloLens Clicker 可讓使用者按一下 以最少的手動動作，並認可為次要輸入。 HoloLens clicker 會連接到 HoloLens 1 或 2 使用藍牙低能源 (BTLE)。
-
-![](images/hololens-clicker-500px.jpg)<br>
-HoloLens Clicker
-
-您可以找到詳細資訊和指示，來配對裝置[這裡](hardware-accessories.md#pairing-bluetooth-accessories)
+若要尋找更多詳細資料和可用命令完整清單以及其使用方式，請查看我們的[語音命令](voice-design.md)指引。
 
 
+### <a name="head-gaze-and-hololens-clicker"></a>頭部注視和 HoloLens Clicker
+HoloLens Clicker 是專為 HoloLens 建置的第一個周邊裝置且隨附於 HoloLens 1 Development Edition。 HoloLens Clicker 可讓使用者以最少手動動作按一下，並認可為次要輸入。 HoloLens Clicker 會使用藍牙低能源 (BTLE) 連線到 HoloLens 1 或 2。
+
+![HoloLens Clicker](images/hololens-clicker-500px.jpg)<br>
+*HoloLens Clicker*
+
+您可以在[這裡](hardware-accessories.md#pairing-bluetooth-accessories)找到裝置配對的詳細資訊和指示。
 
 
-### <a name="head-gaze-and-xbox-wireless-controller"></a>Head 視線和 Xbox 無線控制器
-Xbox 無線控制器可讓執行 [按一下] 時閉路做為次要輸入使用的按鈕。 裝置會對應至一組預設的動作，協助您瀏覽和控制系統。 如果您想要自訂控制器，請設定您的 Xbox 無線控制站使用 Xbox Accesories 應用程式。
-
-![](images/xboxcontroller.jpg)<br>
-Xbox 無線控制器
-
-[配對您的 PC 與 Xbox 控制器](hardware-accessories.md#pairing-bluetooth-accessories)
 
 
-### <a name="head-gaze-and-xbox-adaptive-controller"></a>Head 視線和 Xbox 的自適性控制器
-主要設計用來透過有限的行動性需求的玩家，Xbox 調適性控制器是可協助您更方便使用混合實境聯合的中樞的裝置。
+### <a name="head-gaze-and-xbox-wireless-controller"></a>頭部注視和 Xbox 無線控制器
+Xbox 無線控制器允許使用 A 按鈕來執行 [按一下] 行動作為次要輸入。 裝置會對應至一組預設動作，協助您導覽和控制系統。 如果您想要自訂控制器，請使用 Xbox Accesories 應用程式來設定 Xbox 無線控制器。
 
-Xbox 調適性控制器可讓執行 [按一下] 時閉路做為次要輸入使用的按鈕。 裝置會對應至一組預設的動作，協助您瀏覽和控制系統。 如果您想要自訂控制器，請設定 Xbox 調適性控制器使用 Xbox Accesories 應用程式。
+![Xbox 無線控制器](images/xboxcontroller.jpg)<br>
+*Xbox 無線控制器*
 
-![](images/xbox-adaptive-controller-devices.jpg)<br>
-Xbox 調適性控制器
-
-連線外部的裝置，例如參數、 按鈕、 掛接，以及建立唯一是您的自訂控制站體驗搖桿。 按鈕、 搖桿和觸發程序的輸入被控制與輔助透過 3.5 公釐端子與 USB 連接埠連線的裝置。
-
-![](images/xbox-adaptive-controller-ports.jpg)<br>
-Xbox 調適性控制器的連接埠
-
-[指示裝置配對](hardware-accessories.md#pairing-bluetooth-accessories)
-
-<a href=https://www.xbox.com/en-US/xbox-one/accessories/controllers/xbox-adaptive-controller>更多可用的資訊 Xbox 網站上</a>
+[將 Xbox 控制器與您的電腦配對](hardware-accessories.md#pairing-bluetooth-accessories)
 
 
-# <a name="head-gaze-design-guidelines"></a>Head 視線設計指導方針
+### <a name="head-gaze-and-xbox-adaptive-controller"></a>頭部注視和 Xbox Adaptive Controller
+Xbox Adaptive Controller 是裝置的統一中樞，有助於更方便存取 Mixed Reality，其主要設計訴求是要透過有限的行動性來符合玩家的需求。
+
+Xbox Adaptive Controller 允許使用 A 按鈕來執行 [按一下] 行動作為次要輸入。 裝置會對應至一組預設動作，協助您導覽和控制系統。 如果您想要自訂控制器，請使用 Xbox Accesories 應用程式來設定 Xbox Adaptive Controller。
+
+![Xbox Adaptive Controller](images/xbox-adaptive-controller-devices.jpg)<br>
+*Xbox Adaptive Controller*
+
+連接外部裝置 (例如開關、按鈕、底座和搖桿)，建立您專屬的自訂控制站體驗。 按鈕、搖桿和觸發器輸入都是使用透過 3.5mm 插口與 USB 連接埠連線的輔助裝置控制。
+
+![Xbox Adaptive Controller 連接埠](images/xbox-adaptive-controller-ports.jpg)<br>
+*Xbox Adaptive Controller 連接埠*
+
+[裝置配對指示](hardware-accessories.md#pairing-bluetooth-accessories)
+
+<a href=https://www.xbox.com/en-US/xbox-one/accessories/controllers/xbox-adaptive-controller>在 Xbox 網站上可取得更多資訊</a>
+
+
+## <a name="design-guidelines"></a>設計指導方針
 > [!NOTE]
-> 特定視線設計的詳細指引[即將推出](index.md)。
+> [即將推出](index.md)注視設計專屬的詳細指引。
 
-## <a name="head-gaze-targeting"></a>Head 視線目標
-使用者能夠針對他們想要進行互動，無論輸入強制回應性的項目所建立的所有互動。 在 Windows Mixed Reality，這通常是使用使用者的視線。
-若要啟用的使用者，才能順利運作的體驗，系統的導出了解使用者的意圖，以及使用者的實際的意圖，必須為儘可能密集地對齊。 程度系統解譯使用者的預定的動作正確，增加滿意度和效能改善。
+## <a name="head-gaze-targeting"></a>頭部注視定向
+無論輸入形式為何，當使用者能夠瞄準他們想要進行互動的元素時，所有互動就已建立。 在 Windows Mixed Reality 中，這通常會使用使用者的注視進行。
+若要讓使用者能夠順利體驗，系統導出的使用者意圖理解，以及使用者的實際意圖都必須儘可能相吻合。 系統儘可能正確解譯使用者的預定動作，所以滿意度提升且效能改善。
 
 
-## <a name="target-sizing-and-feedback"></a>目標大小和意見反應
-視線向量可能會重複用來順利的目標，但通常最適合 gross 目標 （取得較大目標）。 1 到 1.5 度的最小目標大小應該在大部分情況下，允許成功的使用者動作，但目標 3 度通常可讓較快的速度。 請注意，使用者目標實際上是 3D 元素--即使 2D 區域的大小任何投影面向它們應該將目標設為區域。 提供一些主要的項目是 「 作用中 」 （該使用者以其為目標） 的提示會非常有用-這可能包括經過處理，例如顯示 「 暫留 」 效果、 音效反白顯示或需按幾下，或清除元素的資料指標的對齊方式。
+## <a name="target-sizing-and-feedback"></a>目標大小調整和回饋
+雖已重複表示注視向量可用於細微定向，但通常最適合用於粗略定向 (取得較大的目標)。 在大部分情況下，1 到 1.5 度的最小目標大小應可達成成功的使用者動作，但是 3 度的目標通常可讓速度提升。 請注意，使用者定向的大小實際上是 2D 區域 (即使是 3D 元素)，無論哪個投影面向他們都應該是可作為目標的區域。 提供元素為「作用中」(使用者以其為目標) 的一些明顯線索非常有用 - 這可能包括視覺「暫留」效果、音訊醒目提示或點按，或游標與元素的清楚比對等處理。
 
 ![2 個計量表距離的最佳目標大小](images/gazetargeting-size-1000px.jpg)<br>
 *2 個計量表距離的最佳目標大小*
 
-![舉例來說，反白顯示的視線目標的物件](images/gazetargeting-highlighting-640px.jpg)<br>
-*舉例來說，反白顯示的視線目標的物件*
+![醒目提示注視目標物件的範例](images/gazetargeting-highlighting-640px.jpg)<br>
+*醒目提示注視目標物件的範例*
 
 ## <a name="target-placement"></a>目標位置
-使用者將通常無法找到位於很高或極低的 UI 項目中的視角，將焦點放在周圍 （通常大約是眼睛層級） 及其主要焦點區域注意大多。 將大部分的目標放在一些合理的頻外，周圍視覺層級可以幫助。 指定使用者傾向專注於相對較小視覺效果區域 （願景 attentional 圓錐圖是大約 10 度），隨時分組的 UI 項目程度它們在概念上相關可以利用注意鏈結的行為項目到項目以使用者身分將其視線通過區域。 在設計 UI 時，請記住視野 HoloLens 和沈浸式耳機之間的潛在大變異。
+使用者通常找不到其視野中位於很高或很低的 UI 元素，而將其大部分的注意力放在其主要焦點的四周 (通常大約在眼部水平高度)。 將大部分的目標放在眼部水平周圍的合理頻帶會有所幫助。 假設使用者傾向於隨時將焦點放在相對較小的視覺區域 (視覺的注意視錐大約是 10 度)，將概念上相關的 UI 元素聚集在一起，可以在使用者目光掃過區域時運用逐一項目的注意鏈結行為。 在設計 UI 時，請記住 HoloLens 與沉浸式頭戴裝置之間的視野可能有很大的變化。
 
-![舉例而言，更輕鬆的視線 Galaxy 檔案總管中的目標群組的 UI 項目](images/gazetargeting-grouping-1000px.jpg)<br>
-*舉例而言，更輕鬆的視線 Galaxy 檔案總管中的目標群組的 UI 項目*
+![方便在 Galaxy Explorer 中進行注視定向的分組 UI 元素範例](images/gazetargeting-grouping-1000px.jpg)<br>
+*方便在 Galaxy Explorer 中進行注視定向的分組 UI 元素範例*
 
-## <a name="improving-targeting-behaviors"></a>改善目標的行為
-如果使用者意圖為目標的項目可以決定 （或接近近似），它可以接受"near miss"會嘗試在互動，如同它們已正確目標很有幫助。 有少數幾個成功的方法，可以將其納入混合的實境體驗：
+## <a name="improving-targeting-behaviors"></a>改善定向行為
+如果可以判定使用者瞄準某物的意圖 (或極為近似)，則接受互動時的「近似差錯」嘗試 (彷彿已正確瞄準) 很有幫助。 有少數幾個成功方法可以納入混合實境體驗：
 
-### <a name="head-gaze-stabilization-gravity-wells"></a>Head 視線穩定 (「 重力 wells")
-這應該開啟大部分/所有的時間。 這項技術會移除使用者可能有自然的前端/頸部做法。 也因為尋找/談到的行為而移動。
+### <a name="head-gaze-stabilization-gravity-wells"></a>頭部注視穩定 (「重力穴」)
+在大部分/所有的時間，應該開啟此功能。 這項技術會消除使用者可能會有的頭部/頸部緊張情形。 以及由於觀看/說話行為而造成的移動。
 
 ### <a name="closest-link-algorithms"></a>最接近的連結演算法
-這些最適合疏鬆的互動式內容區域中。 如果有較高的機率，您可以決定使用者已嘗試進行互動，您可以只假設某些層級的意圖來補充其目標的能力。
+這些最適合用於具有疏鬆互動式內容的區域。 如果您非常可能判定使用者嘗試進行互動的項目，則只要假定某些層級的意圖，即可補充其定向能力。
 
-### <a name="backdatingpostdating-actions"></a>Backdating/postdating 動作
-這項機制可用於需要速度的工作。 當使用者透過一系列的目標/啟用調動的速度移動時，它可用假設某些意圖，並允許遺失的步驟，可以根據使用者具有焦點稍微之前或之後 （50 毫秒前/後是有效的點選稍微目標及早測試）。
+### <a name="backdatingpostdating-actions"></a>回溯記日/事後記日動作
+這項機制對於要求速度的工作很實用。 當使用者快速掃過一系列的定向/啟用調動時，假定某個意圖並允許錯過的步驟在使用者於點選稍前或稍後聚焦的目標上起作用 (在早期測試中於前/後 50 毫秒生效)。
 
 ### <a name="smoothing"></a>平滑處理
-這項機制可用於路徑移動，減少些許抖動/搖晃因為自然磁頭移動特性。 當透過 smooth 大小/距離的移動，而不是經過一段時間的路徑動作平滑處理
+這項機制可用於路徑移動，減少自然頭部移動特性所造成的些許抖動/搖晃。 平滑處理路徑移動時，請依照移動的大小/距離 (而非隨著時間) 進行平滑處理
 
-### <a name="magnetism"></a>磁場
-這項機制可以視為 「 最接近連結 」 演算法-繪製為目標，向資料指標，或 （不論明顯與否），只需增加 hitboxes 的較通用版本使用者達到可能的目標，使用互動式的版面配置，以一些知識使用者意圖更好的方法。 這可以是特別強大，小型的目標。
+### <a name="magnetism"></a>磁性
+這項機制可以視為更普遍的「最接近連結」演算法版本 - 繪製指向目標的游標，或只要在使用者接近適當目標時增加命中框 (不論是否看得見)，使用互動式版面配置的一些知識更完善處理使用者意圖。 這對於小型目標特別有效果。
 
 ### <a name="focus-stickiness"></a>焦點黏著度
-當判斷哪些焦點提供給互動項目附近，會提供目前焦點的項目偏差。 這有助於減少不穩定的焦點時具有自然雜訊的兩個項目之間的中間點在浮動切換行為。
+在判斷要聚焦在哪些附近互動式元素時，提供目前焦點所在元素的偏差。 這有助於在浮動於兩個具有自然雜訊的元素間中點時，減少不穩定的焦點切換行為。
 
 
-## <a name="composite-gestures"></a>複合的筆勢
-應用程式，可以識別多個個別的點選。 結合點選，按住並釋放與左手邊移動，您可以執行更複雜的複合筆勢。 低層級空間輸入資料 （從空中點選和 Bloom） 開發人員可以存取建置這些複合或高階的筆勢。
+## <a name="composite-gestures"></a>複合手勢
+應用程式不只可以辨識個別的點選動作。 結合點選、按住和放開與手部移動，即可執行更複雜的複合手勢。 這些複合或高階手勢是以開發人員可以存取的低階空間輸入資料 (來自空中點選和綻開) 為建置基礎。
 
 ### <a name="air-tap"></a>空中點選
-空中點選手勢 （以及下列其他筆勢） 只回應特定的點選。 若要偵測其他點選動作，例如功能表或掌握，您的應用程式必須直接使用兩個主要元件筆勢上一節中所述的較低層級互動。
+空中點選手勢 (以及下列其他手勢) 只會回應特定點選動作。 若要偵測其他點選動作 (例如功能表或抓握)，您的應用程式必須直接使用上面兩個主要元件手勢一節中所述的較低層級互動。
 
 ### <a name="tap-and-hold"></a>Tap and hold
-保留只維護空中點選向下指位置。 空中點選並按住的組合可讓各種不同的更複雜 「 按一下並拖曳 」 互動結合例如挑出物件，而非在啟用 arm 移動時或 「 mousedown 」 次要互動，例如顯示操作功能表。
-不過，為使用者設計這個筆勢很容易就能在任何擴充筆勢的過程中放寬他們手 postures 時，應注意。
+按住只是維持空中點選的手指朝下位置。 空中點選和按住的組合若搭配手臂移動 (例如拿起物件)，即可進行各種更複雜的「點擊並拖曳」互動，而不需加以啟動或以「滑鼠點擊」次要互動 (例如顯示快顯功能表)。
+不過，針對這個手勢進行設計時應格外小心，因為使用者很容易在任何延伸手勢的過程中放鬆其手勢。
 
 ### <a name="manipulation"></a>操作
-操作筆勢可以用來移動、 調整大小或旋轉雷射，當您想要以回應使用者的手移動到的 1 對 1 全像中。 這類的 1 對 1 移動的用法之一是讓使用者繪製或繪製世界中。
-操作筆勢的初始目標應該視線或指向所完成。 一旦在點選並按住物件的任何操作啟動，然後處理以手動方式移動，讓使用者看著，而這些操作。
+當您希望全像投影可 1:1 回應使用者的手部移動時，操作手勢可用來移動、調整大小或旋轉全像投影。 這類 1:1 移動的用途之一是要讓使用者可以實際繪圖。
+操作手勢的初始定向應經由注視或指向來完成。 一旦啟動點選並按住，任何物件操作都由手部移動接著處理，讓使用者在操作時有空四周環顧。
 
-### <a name="navigation"></a>巡覽
-瀏覽筆勢的運作方式如同虛擬搖桿，而且可用來瀏覽 UI 的小工具，例如放射狀功能表。 您點選並按住啟動筆勢，然後移動 您的手在正規化 3D cube 中，以初始按下時。 設為 1，其中 0 表示的起始點，您可以從-1 值移動您的手沿著 X、 Y 或 Z 軸。
-瀏覽可用來建置速度為基礎連續捲動或縮放筆勢，類似於按一下滑鼠中間按鈕，然後再移動滑鼠向上和向下捲動 2D 的 UI。
+### <a name="navigation"></a>瀏覽
+瀏覽手勢的運作方式如同虛擬搖桿，可用來瀏覽 UI 小工具，例如放射狀功能表。 您可點選並按住來啟動手勢，然後在標準化 3D Cube (在初次按壓時置中) 中移動您的手。 您可以將您的手沿著 X、 Y 或 Z 軸從值 -1 移到 1 (而 0 表示起點)。
+瀏覽可用來建置以速度為基礎的連續捲動或縮放手勢，類似於藉由按一下滑鼠中間按鈕，然後上下移動滑鼠來捲動 2D UI。
 
-巡覽及 rails 指的是辨識特定座標軸內移動，直到該軸上達到特定臨界值。 這只時很有用，在多個軸中的移動已啟用應用程式中由開發人員，例如應用程式是設定為可辨識之間的瀏覽筆勢，X，Y 軸，但也指定如果 X 軸 rails 使用。 在此情況下系統將會在 X 軸的手移動，只要它們都保留在虛數 rails （輔助線） 在 X 軸，如果辨識手動移動，也會發生 Y 軸。
+利用滑軌瀏覽就是指在達到特定座標軸上特定閾值前，辨識該座標軸內移動的功能。 只有當開發人員在應用程式中啟用多個座標軸移動時，這項功能才有用，例如將應用程式設定為可辨識遍及 X、Y 軸的瀏覽手勢，但也包含採用滑軌的指定 X 軸。 在此情況下，如果手部移動也會發生於 Y 軸，只要這些移動留在 X 軸上的虛構滑軌 (輔助線) 內，系統就會辨識遍及 X 軸的手部移動。
 
-在 2D 應用程式，使用者可以捲動、 放大，或在應用程式內拖曳使用垂直巡覽筆勢。 這會插入虛擬的手指修飾，以模擬觸控筆勢相同類型的應用程式。 使用者可以選取其中一個這些動作進行應用程式，藉由選取按鈕，或說出 '< 捲 /token&gt 拖曳/縮放 > Tool' 上方的列上的工具之間切換。
+在 2D 應用程式內，使用者可以使用垂直瀏覽手勢在應用程式內捲動、縮放或拖曳。 這會在應用程式中插入虛擬手指觸控，以模擬同類型的觸控手勢。 在應用程式上方工具列中的工具之間切換 (藉由選取按鈕或說出「<捲動/拖曳/縮放> 工具」)，使用者即可選取發生哪個動作。
 
-[深入了解複合的筆勢](gestures.md#composite-gestures)
+[複合手勢的詳細資訊](gestures.md#composite-gestures)
 
-## <a name="gesture-recognizers"></a>筆勢辨識器
+## <a name="gesture-recognizers"></a>手勢辨識器
 
-使用筆勢辨識的其中一個優點是，您可以設定只針對目前的目標全像圖可接受的筆勢筆勢辨識器。 平台即可只去除混淆為了區分這些特定的支援的筆勢。 如此一來，只支援空中點選全像圖可以接受任何按下及放開之間的時間長度，在全像圖時，支援同時點選並按住可以點選，按住不放以完成後升級保留時間臨界值。
+使用手勢辨識的其中一個優勢，就是您可以只針對目前定向的全像投影可接受的手勢，設定手勢辨識器。 此平台只會為了區分這些特定支援的手勢而進行必要的去除混淆。 如此一來，只支援空中點選的全像投影可以接受在按下與放開之間的任何時間長度，而同時支援點選和按住的全像投影可以在按住時間閾值後將點選提升為按住。
 
-## <a name="hand-recognition"></a>手狀辨識
-HoloLens 辨識手勢，藉由追蹤或兩個都看得到裝置的實際操作的位置。 HoloLens 為 [就緒] 狀態 （背面朝您與食指的手） 或 （背面朝您食指下手掌形狀） 的已按下的狀態時，會看到實際操作。 當其他會帶來在手，HoloLens 將會忽略它們。
-針對每一個指針的 HoloLens 偵測，您可以存取它的位置 （不含方向） 和其已按下的狀態。 因為手形接近筆勢框架邊緣時，也會提供方向向量，您可以讓他們了解如何移動其手拿回 HoloLens 可以看到顯示給使用者。
+## <a name="hand-recognition"></a>手部辨識
+HoloLens 可藉由追蹤裝置可見的任一手或雙手位置來辨識手勢。 當手部處於就緒狀態 (手背朝向您且食指朝上) 或按下狀態 (手背朝向您且食指朝下) 時，HoloLens 就會看見手部。 當手部為其他姿勢時，HoloLens 就會忽略手部。
+對於 HoloLens 偵測到的每隻手，您可以存取其位置 (不含方向) 及其按下狀態。 當手部接近手勢框架邊緣時，您也會取得方向向量，而您可對使用者顯示該向量，讓他們知道如何移動其手部以回到 HoloLens 可看見手部的位置。
 
-## <a name="gesture-frame"></a>筆勢框架
-手形 HoloLens 上的手勢，必須是"筆勢範圍內"，範圍中之筆勢感應數位相機中所見適當 （非常大約鼻子機身，來回大任之間）。 使用者需要辨識動作的成功和自己的緩和 （筆勢框架必須透過 HoloLens、 其檢視內，並保留其手臂 uncomfortably 以便進行互動，則有許多使用者會一開始假設） 的這個區域進行定型。 當使用 HoloLens Clicker，雙手不需要筆勢框架內。
+## <a name="gesture-frame"></a>手勢框架
+對於 HoloLens 上的手勢，手部必須在「手勢框架」內，也就是手勢感應攝影機可適度看見的範圍 (約略是從鼻子到腰部的範圍，且介於雙肩之間) 中。 使用者必須同時針對動作成功與其本身的舒適度，接受這個辨識範圍的訓練 (許多使用者一開始都假定手勢框架必定在其 HoloLens 視野內，且為了進行互動而不自在地高舉其手臂)。 使用 HoloLens Clicker 時，您的手不需要在手勢框架內。
 
-在連續的筆勢的情況下特別的是，會有些風險的使用者移動板中間的筆勢 （例如移動某個全像攝影版的物件） 時中的筆勢框架外部，並會遺失其預期的結果。
+尤其在連續手勢的情況下，在手勢過程 (例如在移動某個全像攝影物件時) 中將手部移出手勢框架的使用者會有些風險，並且會失去其預期的結果。
 
-有三個您應該考慮的事項：
+您應該考量下列三個事項：
 
-- 使用者教育筆勢畫面格的存在和大約界限 （這教授 HoloLens 安裝期間）。
+- 教育使用者有關手勢框架的存在性和大約界限 (這在 HoloLens 設定期間教導)。
 
-- 當其筆勢是接近/重大筆勢框架界限，應用程式內，不想要的結果會導致遺失的筆勢的程度，請通知使用者。 研究顯示的這類通知系統中，索引鍵的品質和 HoloLens 殼層提供這種類型的通知 （視覺效果，集中的資料指標，指出哪一個界限中跨越正在進行的方向） 的良好範例。
+- 當手勢接近/突破應用程式內的手勢框架界限時，通知使用者，因為遺失手勢會導致不想要的結果。 研究已顯示這類通知系統的主要品質，而 HoloLens 殼層提供這類型通知的良好範例 (視覺化，位於中央游標，指出發生越界的方向)。
 
-- 中斷筆勢框架界限的結果應該降到最低。 一般情況下，這表示應該停止的界限上，動作的結果，但不是會反轉。 例如，如果使用者移動一些全像攝影版的物件之間的空間，移動時，應該停止筆勢框架遭到入侵，但不是會傳回給起始點。 使用者可能會遇到一些挫折然後，但可能更快速地了解界限，並不需要每次重新啟動其完整的預定的動作。
+- 您應該將突破手勢框架界限的後果最小化。 一般而言，這表示手勢的結果應止於界限，但不會反轉。 例如，如果使用者正在房間內移動某個全像攝影物件，則當手勢框架被突破時，就應該停止移動，但不會回到起點。 使用者可能遭遇一些挫敗，但可以更快了解界限，而不必每次重新開始其完整的預定動作。
 
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 * [手部直接操作](direct-manipulation.md)
 * [手部指向和行動](point-and-commit.md)
 * [本能互動](interaction-fundamentals.md)

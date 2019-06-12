@@ -6,12 +6,12 @@ ms.author: thmignon
 ms.date: 04/30/2018
 ms.topic: article
 keywords: Windows Mixed Reality、 混合實境，虛擬實境、 VR、 MR、 首頁、 自訂環境、 位置、 cliff 房子、 skyloft、 使用者，建立
-ms.openlocfilehash: ef140efd88aa0d3329ae2aa7e5b202c3bfe77c0a
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.openlocfilehash: 8f5a3a1bdf5728260b0b7717c74a50f3356ca04a
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591122"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829645"
 ---
 # <a name="add-custom-home-environments"></a>新增自訂的家庭環境
 
@@ -25,11 +25,21 @@ ms.locfileid: "59591122"
 ## <a name="device-support"></a>裝置支援
 
 <table>
-<tr>
-<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
-</tr><tr>
-<td> 自訂的家庭環境</td><td style="text-align: center;"></td><td style="text-align: center;"> ✔️</td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><strong>功能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+    </tr>
+     <tr>
+        <td>自訂的家庭環境</td>
+        <td>❌</td>
+        <td>✔️</td>
+    </tr>
 </table>
 
 ## <a name="trying-a-sample-environment"></a>嘗試的範例環境
@@ -91,7 +101,7 @@ Flag|建議的值|描述
 -max-texture-size|1024 或 2048| 調整此選項可改善紋理的品質，預設值是 512 x 512。 請注意，較大的值會大幅影響環境的檔案大小因此牢記在心 256 mb 的限制
 -min-version|1803|舊版 windows 上才支援自訂的環境 > = 1803年。 這個旗標將會移除較舊版本的紋理，並減少檔案大小的最終的資產
 
-例如: 
+例如:
 
 ```cmd
 WindowsMRAssetConverter FileToConvert.gltf -max-texture-size 1024 -min-version 1803

@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 對應 Windows Mixed Reality，設計、 空間、 HoloLens、 surface 的重構、 網狀結構
-ms.openlocfilehash: d2ddcbf9458769a60cd3ed2871c5f3405c75f10c
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 451213a79e1d482d64725ce750065611830beec3
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591195"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829963"
 ---
 # <a name="spatial-mapping-design"></a>空間對應設計
 
@@ -20,11 +20,21 @@ ms.locfileid: "59591195"
 ## <a name="device-support"></a>裝置支援
 
 <table>
-<tr>
-<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
-</tr><tr>
-<td> 空間對應</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><strong>功能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+    </tr>
+     <tr>
+        <td>空間對應設計</td>
+        <td>✔️</td>
+        <td>❌</td>
+    </tr>
 </table>
 
 ## <a name="why-is-spatial-mapping-important"></a>空間對應為何如此重要？
@@ -196,6 +206,6 @@ HoloLens 學習在其環境中的介面，因為使用者會查看它們。 經�
 * 最好進行測試與實際 （以及在理想情況下未 coached） 的使用者，因為它們不可能完全相同的方式，您在使用 HoloLens 或您的應用程式。 事實上，它可能會令您吃驚如何分歧人的行為、 知識和假設可以 ！
 
 ## <a name="see-also"></a>另請參閱
-* [聊天室掃描視覺效果](room-scan-visualization.md)
-* [空間完善的設計](spatial-sound-design.md)
-* [在 Unity 中的持續性](persistence-in-unity.md)
+* [空間位置掃描視覺效果](room-scan-visualization.md)
+* [空間音效設計](spatial-sound-design.md)
+* [Unity 中的持續性](persistence-in-unity.md)

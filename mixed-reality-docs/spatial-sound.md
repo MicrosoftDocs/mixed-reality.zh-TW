@@ -6,12 +6,12 @@ ms.author: hakons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 空間的音效、 環繞音效、 3d 的音訊、 3d 的音效、 空間音訊
-ms.openlocfilehash: ccb236a8b53e757ba632a1c7c6cb2d4f07735910
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: a30a484c4e47593556fbd1786158262551e11d22
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592147"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829925"
 ---
 # <a name="spatial-sound"></a>空間音效
 
@@ -26,13 +26,24 @@ ms.locfileid: "59592147"
 ## <a name="device-support"></a>裝置支援
 
 <table>
-<tr>
-<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"><a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
-</tr><tr>
-
-<td> 空間音效</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️ （使用耳機）</td>
-
-</tr>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><strong>功能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens （第 1 代）</strong></a></td>
+        <td><strong>HoloLens 2</strong></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+    </tr>
+     <tr>
+        <td>空間音效</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️ （使用耳機）</td>
+    </tr>
 </table>
 
 ## <a name="simulating-the-perceived-location-and-distance-of-sounds"></a>模擬的認知的位置和距離的音效
@@ -60,6 +71,6 @@ Windows 的空間音效引擎只支援播放 48 的 k 取樣率。 大部分中�
 
 ## <a name="see-also"></a>另請參閱
 * [MR Spatial 220](holograms-220.md)
-* [在 Unity 中的空間音效](spatial-sound-in-unity.md)
+* [Unity 中的空間音效](spatial-sound-in-unity.md)
 * [DirectX 中的空間音效](spatial-sound-in-directx.md)
-* [空間完善的設計](spatial-sound-design.md)
+* [空間音效設計](spatial-sound-design.md)

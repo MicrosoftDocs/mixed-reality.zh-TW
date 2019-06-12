@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 座標系統、 空間座標系統、 方向、 插入擴充槽級別、 常設-小數位數的空間-調整、 全球規模，360 度，插入擴充槽，常設、 聊天室、 世界、 擴展、 位置、 方向、 固定、 附加檔案、 階段、 錨點、 空間的錨點，世界鎖定、 世界鎖定、 主體鎖定、 主體鎖定範圍中，持續性、 共用、 追蹤遺失，雲端空間的錨點
-ms.openlocfilehash: fc76a30895a85ab5ca8396540a82965cc35c494e
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.openlocfilehash: f4b945a3ffb83b9ac0a94e0d793a19939aece3bb
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59597143"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829857"
 ---
 # <a name="coordinate-systems"></a>座標系統
 
@@ -24,19 +24,48 @@ ms.locfileid: "59597143"
 ## <a name="device-support"></a>裝置支援
 
 <table>
-<tr>
-<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
-</tr><tr>
-<td> <a href="coordinate-systems.md#stationary-frame-of-reference">靜態參考座標系</a></td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
-</tr><tr>
-<td> <a href="coordinate-systems.md#attached-frame-of-reference">附加的畫面格的參考</a></td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
-</tr><tr>
-<td> <a href="coordinate-systems.md#stage-frame-of-reference">階段參考架構</a></td><td style="text-align: center;"> 尚不支援</td><td style="text-align: center;"> 尚不支援</td><td style="text-align: center;"> ✔️</td>
-</tr><tr>
-<td> <a href="coordinate-systems.md#spatial-anchors">空間的錨點</a></td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
-</tr><tr>
-<td> <a href="spatial-mapping.md">空間對應</a></td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
-</tr>
+    <colgroup>
+    <col width="40%" />
+    <col width="20%" />
+    <col width="20%" />
+    <col width="20%" />
+    </colgroup>
+    <tr>
+        <td><strong>功能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens （第 1 代）</strong></a></td>
+        <td><strong>HoloLens 2</strong></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+    </tr>
+     <tr>
+        <td><a href="coordinate-systems.md#stationary-frame-of-reference">靜態參考座標系</a></td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+    </tr>
+    <tr>
+        <td><a href="coordinate-systems.md#attached-frame-of-reference">附加的畫面格的參考</a></td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+    </tr>
+    <tr>
+        <td><a href="coordinate-systems.md#stage-frame-of-reference">階段參考架構</a></td>
+        <td>尚不支援</td>
+        <td>尚不支援</td>
+        <td>✔️</td>
+    </tr>
+    <tr>
+        <td><a href="coordinate-systems.md#spatial-anchors">空間錨點</a></td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+    </tr>
+    <tr>
+        <td><a href="spatial-mapping.md">空間對應</a></td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>❌</td>
+    </tr>
 </table>
 
 ## <a name="mixed-reality-experience-scales"></a>混合的實境體驗標尺
@@ -194,9 +223,9 @@ Head 鎖定的內容通常用來取代全像投影所附加至使用者，或放
 
 ## <a name="see-also"></a>另請參閱
 * [GDC 2017 簡報空間座標系統和全像攝影版的轉譯](https://channel9.msdn.com/events/GDC/GDC-2017/GDC2017-008)
-* [在 Unity 中的座標系統](coordinate-systems-in-unity.md)
+* [Unity 中的座標系統](coordinate-systems-in-unity.md)
 * [DirectX 中的座標系統](coordinate-systems-in-directx.md)
-* [空間的錨點](spatial-anchors.md)
-* [在混合實境中共用體驗](shared-experiences-in-mixed-reality.md)
-* <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure 空間的錨點</a>
+* [空間錨點](spatial-anchors.md)
+* [混合實境中的共用體驗](shared-experiences-in-mixed-reality.md)
+* <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure Spatial Anchors</a>
 * [案例研究-仔細檢查您實際上的漏洞](case-study-looking-through-holes-in-your-reality.md)

@@ -119,7 +119,7 @@
 ### [可互動的物件](interactable-object.md)
 ### [物件集合](object-collection.md)
 ### [顯示進度](progress.md)
-### [應用程式列和週框方塊](app-bar-and-bounding-box.md)
+### [週框方塊和應用程式列](app-bar-and-bounding-box.md)
 ## 混合實境住家設計
 ### [3D 應用程式啟動程式設計指引](3d-app-launcher-design-guidance.md)
 ### [建立用於住家的 3D 模型](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)

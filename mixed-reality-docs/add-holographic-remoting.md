@@ -3,15 +3,15 @@ title: 新增全像攝影版的遠端處理
 description: 說明如何使用全像攝影版的遠端處理，透過網路呈現 HoloLens 全像投影。
 author: MikeRiches
 ms.author: mriches
-ms.date: 03/21/2018
+ms.date: 05/24/2019
 ms.topic: article
 keywords: Windows Mixed Reality，全像投影、 全像攝影版的遠端執行功能、 遠端轉譯、 轉譯、 HoloLens、 遠端全像投影的網路
-ms.openlocfilehash: 1e9567976bad1e2b72e95feca292bf3475893230
-ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
+ms.openlocfilehash: 8d645f634ff0fc820893f5554fd602aa3a2f38e3
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66270350"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829617"
 ---
 # <a name="add-holographic-remoting"></a>新增全像攝影版的遠端處理
 

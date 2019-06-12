@@ -1,214 +1,214 @@
 ---
 title: 使用 HoloLens 模擬器
-description: HoloLens 模擬器可讓您測試您的電腦，而不需要實體 HoloLens 上的混合的實境應用程式。
+description: HoloLens 模擬器可讓您在沒有實體 HoloLens 的電腦上測試混合實境應用程式。
 author: pbarnettms
 ms.author: pbarnett
 ms.date: 04/25/2019
 ms.topic: article
 ms.localizationpriority: high
-keywords: HoloLens、 模擬器
+keywords: HoloLens, 模擬器
 ms.openlocfilehash: 0dfca73e6c8e1809e1bea3df6ca344b3de0698d5
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
-ms.translationtype: MT
+ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/05/2019
 ms.locfileid: "65730914"
 ---
 # <a name="using-the-hololens-emulator"></a>使用 HoloLens 模擬器
 
-HoloLens 模擬器可讓您測試您的電腦，而不需要實體 HoloLens 上全像攝影版的應用程式，並隨附 HoloLens 的開發工具組。 模擬器會使用 HYPER-V 虛擬機器。 通常會由 HoloLens 上感應器的人力和環境輸入是改為模擬使用您的鍵盤、 滑鼠或 Xbox 控制器。 應用程式不需要修改，才能在模擬器上執行，而且不知道它們不真正的 HoloLens 上執行。
+HoloLens 模擬器可讓您在沒有實體 HoloLens 的電腦上測試全像攝影應用程式，且隨附 HoloLens 開發工具組。 模擬器會使用 Hyper-V 虛擬機器。 通常會由 HoloLens 上的感應器讀取的人類和環境輸入，改為使用鍵盤、滑鼠或 Xbox 控制器來模擬。 應用程式不需要經過修改就能在模擬器上執行，而且也不知道其並非在真實的 HoloLens 上執行。
 
-如果您想要開發適用於桌面的電腦的 Windows Mixed Reality 沈浸式 (VR) 耳機應用程式或遊戲，請參閱[Windows Mixed Reality 模擬器](using-the-windows-mixed-reality-simulator.md)，這可讓您改為模擬桌面耳機。
+如果您想要開發適用於桌上型電腦的 Windows Mixed Reality 沈浸式 (VR) 頭戴式裝置應用程式或遊戲，請參閱 [Windows Mixed Reality 模擬器](using-the-windows-mixed-reality-simulator.md)，其可讓您改為模擬桌上型電腦頭的戴式裝置。
 
 
 ## <a name="installing-the-hololens-emulator"></a>安裝 HoloLens 模擬器
-下載模擬器 HoloLens 和全像攝影版的專案範本。
+下載 HoloLens 模擬器和全像攝影專案範本。
 
 版本： 
-* [HoloLens 2 模擬器] 和 [全像攝影版的專案範本](https://go.microsoft.com/fwlink/?linkid=2087187)。
-* [HoloLens 模擬器 （第 1 代） 和全像攝影版的專案範本](https://go.microsoft.com/fwlink/?linkid=2065980)。
+* [HoloLens 2 模擬器和全像攝影專案範本](https://go.microsoft.com/fwlink/?linkid=2087187)。
+* [HoloLens 模擬器 (第 1 代) 和全像攝影專案範本](https://go.microsoft.com/fwlink/?linkid=2065980)。
 
-您可以找到舊版組建的 HoloLens 模擬器[HoloLens 模擬器封存](hololens-emulator-archive.md)頁面。
+您可以在 [HoloLens 模擬器封存](hololens-emulator-archive.md)頁面上找到 HoloLens 模擬器的舊版組建。
 
-### <a name="hololens-emulator-system-requirements"></a>HoloLens 模擬器系統需求
+### <a name="hololens-emulator-system-requirements"></a>HoloLens 模擬器的系統需求
 
-HoloLens 模擬器會使用 HYPER-V 與 RemoteFx （第 1 代模擬器） 或 GPU-PV （HoloLens 2 模擬器） 硬體加速的圖形。 若要使用模擬器，請確定您的電腦符合下列硬體需求：
-* 64 位元 Windows 10 Pro、 Enterprise 或教育版 
+HoloLens 模擬器會使用 Hyper-V 與 RemoteFx (第 1 代模擬器) 或 GPU-PV (HoloLens 2 模擬器) 來提供硬體加速圖形。 若要使用模擬器，請確定您的電腦符合下列硬體需求：
+* 64 位元 Windows 10 專業版、企業版或教育版 
     >[!NOTE]
-    >Windows 10 家用版不支援 HYPER-V 或 HoloLens 模擬器。  
-    >HoloLens 2 模擬器可讓您需要的 Windows 10 年 10 月 2018 update 或更新版本。
+    >Windows 10 家用版不支援 Hyper-V 或 HoloLens 模擬器。  
+    >HoloLens 2 模擬器需要 Windows 10 2018 年 10 月更新或更新版本。
 * 64 位元 CPU
-* CPU 4 個核心 （或多個 Cpu，總共有 4 個核心）
-* 8 GB 的 RAM 或以上
-* 在 BIOS 中必須是下列功能[支援，並啟用](http://blogs.technet.com/b/iftekhar/archive/2010/08/09/enable-hardware-settings-in-bios-to-run-hyper-v.aspx):
+* 4 核心 CPU (或有多個 CPU，且總共有 4 個核心)
+* 8 GB RAM 或更多
+* BIOS 必須[支援並啟用](http://blogs.technet.com/b/iftekhar/archive/2010/08/09/enable-hardware-settings-in-bios-to-run-hyper-v.aspx)下列功能：
    * 硬體協助虛擬化
    * 第二層位址轉譯 (SLAT)
    * 硬體型資料執行防止 (DEP)。
 * GPU 需求
    * DirectX 11.0 或更新版本
-   * WDDM 1.2 圖形驅動程式或更新版本 （第 1 代）
-   * WDDM 2.5 圖形驅動程式 （HoloLens 2 模擬器）
-   * 模擬器可能會使用不支援的 GPU，但將會明顯變慢
+   * WDDM 1.2 圖形驅動程式或更新版本 (第 1 代)
+   * WDDM 2.5 圖形驅動程式 (HoloLens 2 模擬器)
+   * 模擬器可與不支援的 GPU 搭配運作，但速度會明顯變慢
 
-如果您的系統符合上述需求，**請確定您的系統上，已啟用 「 HYPER-V 」 功能**透過 控制台-> 程式-> 程式和功能-> 上的 開啟 Windows 功能，或關閉-> 確認「 HYPER-V 」 已選取的模擬器安裝才能成功。
+如果您的系統符合上述需求，**請確定該系統上已啟用「Hyper-V」功能**，方法是透過 [控制台] -> [程式] -> [程式和功能] -> [開啟或關閉 Windows 功能] -> 確定「Hyper-V」已選取以便能成功安裝模擬器。
 
-## <a name="deploying-apps-to-the-hololens-emulator"></a>應用程式部署到 HoloLens 模擬器
+## <a name="deploying-apps-to-the-hololens-emulator"></a>將應用程式部署至 HoloLens 模擬器
 
-1. 載入您在 Visual Studio 中的應用程式方案。
+1. 在 Visual Studio 中載入您的應用程式解決方案。
     >[!NOTE]
-    >當使用 Unity 時，從 Unity 建置您的專案，然後如往常般將建置的方案載入至 Visual Studio。
-2. HoloLens 模擬器 （第 1 代），請確定在平台設定為**x86**。 HoloLens 2 模擬器，請確定 「 平台設為**x86**或是**x64**。
-3. 選取想要**HoloLens 模擬器**作為偵錯的目標裝置的版本。
-4. 移至**偵錯 > 啟動偵錯**或按**F5**啟動模擬器和部署您的應用程式進行偵錯。
+    >在使用 Unity 時，請從 Unity 建置專案，然後如往常般將建置好的解決方案載入至 Visual Studio。
+2. 若為 HoloLens 模擬器 (第 1 代)，請確定平台已設定為 **x86**。 若為 HoloLens 2 模擬器，請確定平台已設定為 **x86** 或 **x64**。
+3. 選取想要的 **HoloLens 模擬器**版本作為要偵錯的目標裝置。
+4. 移至 [偵錯] > [開始偵錯]  或按 **F5** 啟動模擬器，然後部署要偵錯的應用程式。
 
-模擬器可能需要一分鐘或更多以第一次啟動時開機。 我們建議您保持模擬器開啟偵錯工作階段期間讓您可以快速地將應用程式部署到執行中的模擬器。
+模擬器首次啟動時，可能需要一分鐘以上的時間才能啟動。 建議您在偵錯工作階段期間讓模擬器保持開啟，以便能夠快速地將應用程式部署到執行中的模擬器。
 
 ## <a name="basic-emulator-input"></a>基本的模擬器輸入
 
-控制模擬器是非常類似於許多常見的 3D 視訊遊戲。 有可用的輸入的選項使用鍵盤、 滑鼠或 Xbox 控制器。 您可以將導向穿著 HoloLens 的模擬使用者動作控制模擬器。 您的動作移動周圍的模擬的使用者並在模擬器中執行的應用程式回應在實際裝置上所顯示的一樣。
+控制模擬器的方式和許多常見的 3D 電玩遊戲非常類似。 可用的輸入選項包括使用鍵盤、滑鼠或 Xbox 控制器。 您可以藉由指揮穿戴 HoloLens 的模擬使用者做一些動作來控制模擬器。 您的動作會在模擬使用者周圍移動，且在模擬器中執行的應用程式會像在實際裝置中操作一樣地做出回應。
 
-HoloLens 上的游標 （第 1 代） 遵循磁頭移動和旋轉。  在 HoloLens 2 模擬器中，游標會遵循手動移動和方向。
+HoloLens (第 1 代) 上的游標會跟著頭部的移動和旋轉。  在 HoloLens 2 模擬器中，游標則會跟著手部的移動和方向。
 
-* **上一步，向前保留，並以滑鼠右鍵**-使用 W、 A、 S 和 D 鍵盤或 Xbox 控制器上的左搖桿上的索引鍵。
-* **查閱，向下、 左、 並以滑鼠右鍵**-按一下並拖曳滑鼠，使用方向鍵在鍵盤或 Xbox 控制器上正確的隨身碟上。
-* **空中點選手勢**-按一下滑鼠右鍵，在鍵盤上按 Enter 鍵或使用 Xbox 控制器上的按鈕。
-* **Bloom/系統筆勢**-在鍵盤上按 Windows 鍵或 F2 鍵或按下 B 上的 Xbox 控制器。
-* **另一方面移動捲動**-按住 Alt 鍵，請按住滑鼠按鈕，並拖曳滑鼠，增加 / 減少，或 Xbox 控制器中按住正確的觸發程序和一個按鈕並向上和向下移動右隨身碟。
-* **移動和方向會送**（HoloLens 2 僅限模擬器）-按住 Alt 鍵並拖曳滑鼠向上 / 向下 / 左 / 右移動游標，或使用方向鍵和問與 / 來旋轉及傾斜手形 E。  Xbox 控制器，請按住左邊或右邊緩衝器左搖桿左 / 右 / 正 / 後，移動手形右搖桿並用來旋轉，以及上行 / 下行來提高或降低手形 Dpad 上。
+* **向前走、向後走、向左走和向右走** - 使用鍵盤上的 W、A、S 和 D 鍵或 Xbox 控制器上的左搖桿。
+* **向上看、向下看、向左看和向右看** - 按一下並拖曳滑鼠、使用鍵盤上的方向鍵或 Xbox 控制器上的右搖桿。
+* **空中點選手勢** - 按一下滑鼠右鍵、按鍵盤上的 Enter 鍵或使用 Xbox 控制器上的 A 鈕。
+* **綻開/系統手勢** - 按鍵盤上的 Windows 鍵或 F2 鍵，或按 Xbox 控制器上的 B 鈕。
+* **移動手部來捲動** - 按住 Alt 鍵、按住滑鼠右鍵，然後將滑鼠往上/往下拖曳，或在 Xbox 控制器中，按下 RT 鍵和 A 鈕並將右搖桿往上和往下移動。
+* **手部移動和方向** (僅限 HoloLens 2 模擬器) - 按住 Alt 鍵並將滑鼠往上/往下/往左/往右拖曳來移動手部，或使用方向鍵和 Q/E 來旋轉及傾斜手部。  若為 Xbox 控制器，則按住 LB 鍵或 RB 鍵並使用左搖桿來將手部往左/往右/往前/往後移動、使用右搖桿來旋轉手部，以及 Dpad 上的向上/向下來提高或降低手部。
 
 ## <a name="anatomy-of-the-hololens-2-emulator"></a>HoloLens 2 模擬器的結構 
 
 ### <a name="main-window"></a>主視窗
 
-![HoloLens 2 模擬器主視窗](images/emulator2-900px.png)
+![HoloLens 2 模擬器的主視窗](images/emulator2-900px.png)
 
 ### <a name="toolbar"></a>工具列
 
-在主視窗的右邊，您會發現模擬器工具列。 工具列包含下列按鈕：
-* ![關閉圖示](images/emulator-close.png)**關閉**:關閉模擬器。
-* ![最小化 圖示](images/emulator-minimize.png)**最小化**:最小化 [模擬器] 視窗。
-* ![Simulation_icon](images/emulator-simulation-panel.png) **模擬控制台**:顯示或隱藏[模擬控制台](#simulation-control-panel)來設定和控制[輸入到模擬器](#basic-emulator-input)。
-* ![全螢幕圖示](images/emulator-fit.png)**全螢幕**:符合的模擬器畫面。
-* ![顯示比例 圖示](images/emulator-zoom.png)**縮放**:放大及縮小，請讓模擬器。
-* ![説明圖示](images/emulator-help.png)**協助**:開啟模擬器的說明。
-* ![開啟裝置入口網站 圖示](images/emulator-deviceportal.png)**開啟裝置入口網站**:開啟 Windows Device Portal HoloLens os 在模擬器中。
-* ![工具圖示](images/emulator-tools.png)**工具**:開啟**其他工具**窗格。
+在主視窗右邊，您會找到模擬器工具列。 工具列包含下列按鈕：
+* ![關閉圖示](images/emulator-close.png) **關閉**：關閉模擬器。
+* ![最小化圖示](images/emulator-minimize.png) **最小化**：將模擬器視窗最小化。
+* ![Simulation_icon](images/emulator-simulation-panel.png) **模擬控制台**：顯示或隱藏用來設定和控制[模擬器輸入](#basic-emulator-input)的[模擬控制台](#simulation-control-panel)。
+* ![全螢幕圖示](images/emulator-fit.png) **全螢幕**：讓模擬器變成全螢幕大小。
+* ![縮放圖示](images/emulator-zoom.png) **縮放**：讓模擬器放大和縮小。
+* ![説明圖示](images/emulator-help.png)**説明**：開啟模擬器的說明。
+* ![開啟裝置入口網站圖示](images/emulator-deviceportal.png) **開啟裝置入口網站**：在模擬器中開啟 HoloLens OS 的 Windows 裝置入口網站。
+* ![工具圖示](images/emulator-tools.png) **工具**：開啟 [其他工具]  窗格。
 
 ### <a name="simulation-control-panel"></a>模擬控制台
 
-[模擬] 控制台可讓您檢視目前的位置和方向的模擬人類與模擬的輸入裝置。  它也可讓您設定這兩個模擬的輸入，例如顯示或隱藏一或兩個實際操作，且用來控制模擬的輸入，例如您的電腦鍵盤、 滑鼠及遊戲台的裝置。
+模擬控制台可讓您檢視模擬的人類與輸入裝置目前的位置和方向。  其也可讓您設定模擬輸入 (例如，顯示或隱藏單手或雙手) 以及用於控制模擬輸入的裝置 (例如，電腦的鍵盤、滑鼠和遊戲台)。
 
 ![模擬控制台](images/emulator-simulation-control-panel.png)
 
-* 若要隱藏或顯示模擬面板，請按一下工具列按鈕或鍵盤上按下 f7 鍵。
-* 停留在控制項或顯示工具提示，其中包含鍵盤、 滑鼠及遊戲台控制項的欄位。
-* 若要顯示或隱藏手的形狀，切換左手或右手邊下適當的參數。
-* 若要控制手形，使用鍵盤上的遊戲台向左或右緩衝器上的向左或右邊的 Alt 鍵。
-* 若要引導至一個或兩個實際操作的所有輸入，按一下 下切換開關的圖釘按鈕。  這是相當於按住 Alt 鍵的手。
-* 若要控制眼睛視線方向，請按一下"眼睛 」 一節中的圖釘。  這是相當於按下鍵盤上的 'Y' 鍵。
-* 若要載入記錄的空間，按一下 [載入] 按鈕，「 記錄 」 一節。  請參閱[模擬聊天室](#simulated-rooms)如需詳細資訊。
-* 若要調整模擬人為或模擬的輸入的裝置將 nelze přesunout nebo otočit 鍵盤回應的速度，滑鼠或遊戲台輸入，按一下 [輸入設定] 旁的齒輪圖示和調整滑桿。
-* 根據預設，鍵盤輸入會控制模擬的人力和模擬輸入。  若要讓您的電腦透過傳送到 HoloLens 的鍵盤輸入，取消核取 「 模擬使用鍵盤 」。  F4 則是這項設定的快速鍵。
-* 如果已顯示 [模擬] 面板，則按下 f8 鍵會移至它的鍵盤焦點。
-* 若要卸除從模擬器視窗的 [模擬] 面板，按一下底部的 [面板] 按鈕，或在鍵盤上按下 f9 鍵。  關閉視窗，或再次按 f9 鍵會將視窗還原成模擬器。
-* 可以啟動 [模擬] 控制台中，是個別的應用程式，可讓您連接到和控制 HoloLens 2 模擬器、 HoloLens 2 裝置或 Windows Mixed Reality 模擬從 %programfiles(x86) 執行 PerceptionSimulationInput.exe \Windows Kits\10\Microsoft XDE\10.0.18362.0\。
+* 若要隱藏或顯示模擬控制台，請按一下工具列按鈕或按鍵盤上的 F7 鍵。
+* 將滑鼠停留在控制項或欄位上以顯示工具提示，其內含適用的鍵盤、滑鼠和遊戲台控制項。
+* 若要顯示或隱藏手部，請切換左手或右手底下的適當開關。
+* 若要控制手部，請使用鍵盤上左邊或右邊的 Alt 鍵，或使用遊戲台上的 LB 鍵或 RB 鍵。
+* 若要將所有輸入引導至單手或雙手，請按一下切換開關底下的圖釘按鈕。  對於手部來說，這相當於按住 Alt 鍵。
+* 若要控制眼睛注視方向，請按一下 [眼睛] 區段中的圖釘。  在鍵盤上，這相當於按住 [Y] 鍵。
+* 若要載入空間記錄，請按一下 [記錄] 區段中的 [載入] 按鈕。  如需詳細資訊，請參閱[模擬空間](#simulated-rooms)。
+* 若要調整所模擬人類或模擬輸入裝置為回應鍵盤、滑鼠或遊戲台的輸入所做移動或旋轉的速度，請按一下 [輸入設定] 旁的齒輪圖示，然後調整滑桿。
+* 根據預設，鍵盤輸入會控制所模擬的人類和模擬輸入。  若要讓電腦的鍵盤輸入傳送至 HoloLens，請取消核取 [使用鍵盤來模擬]。  F4 是這項設定的快速鍵。
+* 如果模擬控制台已顯示，則按 F8 鍵可將鍵盤焦點移至該控制台。
+* 若要從模擬器視窗卸除模擬控制台，請按一下控制台底部的按鈕，或在鍵盤上按 F9 鍵。  關閉視窗或再次按 F9 鍵會讓視窗返回模擬器。
+* 您可以用個別應用程式的形式來啟動模擬控制台，這可讓您藉由從 %ProgramFiles(x86)%\Windows Kits\10\Microsoft XDE\10.0.18362.0\ 執行 PerceptionSimulationInput.exe，來控制並連線至 HoloLens 2 模擬器、HoloLens 2 裝置或 Windows Mixed Reality 模擬。
 
 ### <a name="account-tab"></a>[帳戶] 索引標籤
 
-[帳戶] 索引標籤可讓您將模擬器設定為使用 Microsoft 帳戶登入。 這是適用於測試要求使用者登入帳戶的 Api。  切換這個選項需要您完全關閉並重新啟動 HoloLens 模擬器設定才會生效。  如果啟用此選項時，後續啟動模擬器會要求您登入，就像使用者會在啟動 HoloLens 的第一次。  若要快速地輸入您使用您的電腦鍵盤的認證，第一次關閉 「 使用鍵盤模擬 」 模擬控制台中，或切換鍵盤設定開啟或關閉鍵盤上按 F4。
+[帳戶] 索引標籤可讓您將模擬器設定為使用 Microsoft 帳戶來登入。 這適用於會要求使用者使用帳戶來登入的測試 API。  若要切換這個選項，您必須先徹底關閉再重新啟動 HoloLens 模擬器，設定才會生效。  如果此選項啟用，後續在啟動模擬器時，系統就會要求您登入，就和使用者在首次啟動 HoloLens 時會進行的程序一樣。  若要使用電腦的鍵盤快速輸入認證，請先關閉模擬控制台中的 [使用鍵盤來模擬]，或按鍵盤上的 F4 來將鍵盤設定切換為開啟或關閉。
 
-### <a name="optional-settings-tab"></a>選擇性設定 索引標籤
+### <a name="optional-settings-tab"></a>[選擇性設定] 索引標籤
 
-[選用設定] 索引標籤會顯示控制項，以啟用或停用硬體加速的圖形。  依預設，如果您的電腦的圖形介面卡驅動程式支援，將使用硬體加速的圖形。  如果您的圖形卡驅動程式不支援 GPU-PV，將不會顯示此選項。
+[選擇性設定] 索引標籤會顯示用來啟用或停用硬體加速圖形的控制項。  依預設，如果電腦的圖形卡驅動程式有支援硬體加速圖形，便會加以使用。  如果圖形卡的驅動程式不支援 GPU-PV，系統就不會顯示此選項。
 
-### <a name="diagnostics-tab"></a>診斷 索引標籤
+### <a name="diagnostics-tab"></a>[診斷] 索引標籤
 
-[診斷] 索引標籤中連結的表單，以 Windows Device Portal 虛擬 GPU 的狀態，顯示模擬器的 IP 位址。
+[診斷] 索引標籤會顯示模擬器的 IP 位址 (以 Windows 裝置入口網站連結的形式) 以及虛擬 GPU 的狀態。
 
 
-## <a name="anatomy-of-the-hololens-1st-gen-emulator"></a>HoloLens 的結構 （第 1 代） 模擬器
+## <a name="anatomy-of-the-hololens-1st-gen-emulator"></a>HoloLens (第 1 代) 模擬器的結構
 
 ### <a name="main-window"></a>主視窗
 
-當模擬器啟動時，您會看到一個可顯示 HoloLens OS 視窗。
+當模擬器啟動時，您會看到一個顯示了 HoloLens OS 的視窗。
 
-![HoloLens 模擬器主視窗](images/emulator-890px.png)
+![HoloLens 模擬器的主視窗](images/emulator-890px.png)
 
 ### <a name="toolbar"></a>工具列
 
-在主視窗的右邊，您會發現模擬器工具列。 工具列包含下列按鈕：
-* ![關閉圖示](images/emulator-close.png)**關閉**:關閉模擬器。
-* ![最小化 圖示](images/emulator-minimize.png)**最小化**:最小化 [模擬器] 視窗。
-* ![人性化的輸入的圖示](images/emulator-control.png)**人力輸入**:滑鼠和鍵盤用來模擬人類[輸入至模擬器](#basic-emulator-input)。
-* ![鍵盤和滑鼠輸入的圖示](images/emulator-input.png)**鍵盤和滑鼠輸入**:鍵盤和滑鼠輸入會直接傳遞到 HoloLens 作業系統做為鍵盤和滑鼠事件連線藍芽鍵盤和滑鼠。
-* ![全螢幕圖示](images/emulator-fit.png)**全螢幕**:符合的模擬器畫面。
-* ![顯示比例 圖示](images/emulator-zoom.png)**縮放**:放大及縮小，請讓模擬器。
-* ![説明圖示](images/emulator-help.png)**協助**:開啟模擬器的說明。
-* ![開啟裝置入口網站 圖示](images/emulator-deviceportal.png)**開啟裝置入口網站**:開啟 Windows Device Portal HoloLens os 在模擬器中。
-* ![工具圖示](images/emulator-tools.png)**工具**:開啟**其他工具**窗格。
+在主視窗右邊，您會找到模擬器工具列。 工具列包含下列按鈕：
+* ![關閉圖示](images/emulator-close.png) **關閉**：關閉模擬器。
+* ![最小化圖示](images/emulator-minimize.png) **最小化**：將模擬器視窗最小化。
+* ![人類輸入圖示](images/emulator-control.png) **人類輸入**：滑鼠和鍵盤可用來模擬人類對[模擬器的輸入](#basic-emulator-input)。
+* ![鍵盤和滑鼠輸入圖示](images/emulator-input.png) **鍵盤和滑鼠輸入**：鍵盤和滑鼠輸入會直接以鍵盤和滑鼠事件的形式傳遞到 HoloLens OS，彷彿您是與藍牙鍵盤和滑鼠連線。
+* ![全螢幕圖示](images/emulator-fit.png) **全螢幕**：讓模擬器變成全螢幕大小。
+* ![縮放圖示](images/emulator-zoom.png) **縮放**：讓模擬器放大和縮小。
+* ![説明圖示](images/emulator-help.png)**説明**：開啟模擬器的說明。
+* ![開啟裝置入口網站圖示](images/emulator-deviceportal.png) **開啟裝置入口網站**：在模擬器中開啟 HoloLens OS 的 Windows 裝置入口網站。
+* ![工具圖示](images/emulator-tools.png) **工具**：開啟 [其他工具]  窗格。
 
-### <a name="simulation-tab"></a>模擬 索引標籤
+### <a name="simulation-tab"></a>[模擬] 索引標籤
 
-中的 預設 索引標籤**額外的工具** 窗格是**模擬** 索引標籤。
+[其他工具]  窗格中的預設索引標籤是 [模擬]  索引標籤。
 
-![HoloLens 模擬器 [其他工具] 窗格](images/emulator-simulation-500px.png)
+![HoloLens 模擬器的 [其他工具] 窗格](images/emulator-simulation-500px.png)
 
-[模擬] 索引標籤會顯示模擬的感應器用來驅動 HoloLens OS 在模擬器中的目前狀態。 將滑鼠停留在 [模擬] 索引標籤中的任何值，將會提供工具提示描述如何控制該值。
+[模擬] 索引標籤會顯示用來在模擬器中驅動 HoloLens OS 的模擬感應器目前是什麼狀態。 將滑鼠停留在 [模擬] 索引標籤中的任何值上，便會提供描述如何控制該值的工具提示。
 
-### <a name="room-tab"></a>空間索引標籤
+### <a name="room-tab"></a>[空間] 索引標籤
 
-模擬器會模擬世界空間對應網狀結構與模擬"聊天室"形式的輸入。 此索引標籤可讓您挑選的空間可載入而不是預設的空間。
+模擬器會以來自所模擬「空間」的空間對應網格形式，模擬世界輸入。 此索引標籤可讓您挑選所要載入的空間，而非載入預設空間。
 
-![HoloLens 模擬器 '聊天室' 索引標籤](images/emulator-room-500px.png)
+![HoloLens 模擬器的 [空間] 索引標籤](images/emulator-room-500px.png)
 
-請參閱[模擬聊天室](#simulated-rooms)如需詳細資訊。
+如需詳細資訊，請參閱[模擬空間](#simulated-rooms)。
 
 ### <a name="account-tab"></a>[帳戶] 索引標籤
 
-[帳戶] 索引標籤可讓您將模擬器設定為使用 Microsoft 帳戶登入。 這是適用於測試 API 的要求使用者登入的帳戶。 之後核取方塊，在此頁面上後續啟動模擬器將會要求您登入，就像使用者一樣第一次啟動 HoloLens。
+[帳戶] 索引標籤可讓您將模擬器設定為使用 Microsoft 帳戶來登入。 這適用於會要求使用者使用帳戶來登入的測試 API。 在此頁面上核取該方塊後，後續在啟動模擬器時，系統就會要求您登入，就和使用者在首次啟動 HoloLens 時會進行的程序一樣。
 
-## <a name="simulated-rooms"></a>模擬的聊天室
+## <a name="simulated-rooms"></a>模擬空間
 
-模擬的聊天室可用於在多個環境中測試您的應用程式。 數個房間隨附模擬器，一旦您安裝模擬時，會發現它們在 %programfiles (x86) %\Windows Kits\10\Microsoft XDE\\\Plugins\Rooms （版本）。 所有這些聊天室使用 HoloLens 的實際環境中所擷取的：
-* **DefaultRoom.xef** -電視、 咖啡桌，與兩個 sofas 小型起居室的絨布。 當您啟動模擬器時，請載入預設。
-* **Bedroom1.xef** -小型臥室與支援人員。
-* **Bedroom2.xef** -臥室皇后大小平台、 與衣櫃、 nightstands，walk-in 衣櫥。
-* **GreatRoom.xef** -客廳、 餐桌，與廚房的大型的開放空間絕佳空間。
-* **LivingRoom.xef** -起居室的絨布壁爐、 沙發、 armchairs，以及具有花瓶的咖啡資料表。
+模擬空間可用於在多個環境測試應用程式。 模擬器會隨附數個空間，一旦您安裝模擬，就會在 %ProgramFiles(x86)%\Windows Kits\10\Microsoft XDE\\(版本)\Plugins\Rooms 中發現這些空間。 這些空間全都是使用 HoloLens 在真實環境中擷取下來的：
+* **DefaultRoom.xef** - 小型客廳，配備有電視、咖啡桌與兩個沙發。 會在您啟動模擬器時依預設載入。
+* **Bedroom1.xef** - 小型臥室，配備有書桌。
+* **Bedroom2.xef** - 一間臥室，配備有大號雙人床、梳妝台、床頭櫃和衣帽間。
+* **GreatRoom.xef** - 大型開放空間，有客廳、餐桌和廚房。
+* **LivingRoom.xef** - 客廳，配備有壁爐、沙發、扶手椅和擺了一個花瓶的咖啡桌。
 
-您也可以記錄使用的模擬頁面在模擬器中使用您自己聊天室[Windows Device Portal](using-the-windows-device-portal.md)您 HoloLens 上 （第 1 代）。
+您也可以在 HoloLens (第 1 代) 上使用 [Windows 裝置入口網站](using-the-windows-device-portal.md)的 [模擬] 頁面，來記錄自己的空間以便在模擬器中使用。
 
-在模擬器中，您只會看到全像投影您轉譯，並將不會看到全像投影背後模擬的空間。 這是相較於真正的 HoloLens，您看到兩者混合在一起。 如果您想要看到模擬的聊天室 HoloLens 模擬器中，您必須更新您的應用程式，以轉譯場景中的空間對應網格。
+在模擬器中，您只會看到您所呈現的全像投影，而不會看到全像投影背後的模擬空間。 相較之下，在真正的 HoloLens 中，您會看到兩者混合在一起。 如果您想要在 HoloLens 模擬器中看到模擬空間，就必須更新應用程式以呈現場景中的空間對應網格。
 
 ## <a name="troubleshooting"></a>疑難排解
 
-安裝模擬器，您需要時，您可能會看到錯誤 *「 Visual Studio 2015 Update 1 及 UWP 工具 1.2 版 「*。 有三個可能的原因，此錯誤：
-* 您沒有 Visual Studio （Visual Studio 2019、 Visual Studio 2017 或 Visual Studio 2015 Update 1 或更新版本） 不夠新版本。 若要修正此問題，安裝最新版的 Visual Studio。
-* 您擁有的版本不夠新，Visual Studio 中，但您不需要安裝的通用 Windows 平台 (UWP) 工具。 這是適用於 Visual Studio 的選用功能。
+您可能會在安裝模擬器時看到錯誤，內容指出您需要「Visual Studio 2015 Update 1 和 UWP 工具 1.2 版」  。 此錯誤有三個可能的原因：
+* 您的 Visual Studio 版本不夠新 (Visual Studio 2019、Visual Studio 2017 或 Visual Studio 2015 Update 1 或更新版本)。 若要修正此問題，請安裝最新版的 Visual Studio。
+* 您的 Visual Studio 版本夠新，但未安裝通用 Windows 平台 (UWP) 工具。 這是 Visual Studio 的選用功能。
 
-您可能也會看到安裝模擬器上非-Pro/Enterprise/教育 SKU 的 Windows 錯誤，或如果您沒有 HYPER-V 功能啟用。
-* 請閱讀[系統需求](#hololens-emulator-system-requirements)的一組完整的需求一節。
-* 請也確保您的系統上，已啟用 HYPER-V 功能。
+在非專業版/企業版/教育版 SKU 的 Windows 上安裝模擬器時，或如果您尚未啟用 Hyper-V 功能，則可能也會看到錯誤。
+* 如需整組需求，請閱讀上面的[系統需求](#hololens-emulator-system-requirements)一節。
+* 也請確定您的系統上已啟用 Hyper-V 功能。
 
-如果您的安裝已順利完成，但您看不到 HoloLens 模擬器部署和偵錯的選項，請檢查下列內容：
-* 您的 Visual Studio 專案設定設為 x86 （HoloLens 第 1 代） 或 x86 或 x64 （HoloLens 2 模擬器）。
-* 如果使用 Visual Studio 2019，平台工具組，在您的專案組態中設為 v142。
+如果安裝順利完成，HoloLens 模擬器卻未成為部署和偵錯選項，請確認下列設定：
+* Visual Studio 專案設定已設定為 x86 (HoloLens 第 1 代) 或 x86 或 x64 (HoloLens 2 模擬器)。
+* 如果使用 Visual Studio 2019，專案設定中的平台工具組已設定為 v142。
 
-如果您的安裝已順利完成，但 Visual Studio 會顯示嘗試啟動 HoloLens 模擬器時發生錯誤，請嘗試下列動作：
+如果安裝順利完成，但 Visual Studio 在嘗試啟動 HoloLens 模擬器時顯示錯誤，請嘗試下列動作：
 * 以系統管理員身分執行 Visual Studio
-* 如果您只會有已安裝的 Visual Studio 2019，請確認在 HKEY_LOCAL_MACHINE\Software\Microsoft\Windows Kits\Installed 根目錄的登錄值"KitsRoot10 」 指向 32 位元 Program Files 資料夾 (例如，"C:\Program Files (x86) \Windows 套件\10")。  如果沒有，請解除安裝 HoloLens 模擬器，將登錄值變更為 32 位元 Program Files 資料夾，然後再重新安裝 HoloLens 模擬器。  Visual Studio 2019 16.0.3 已解決此問題。
+* 如果您只安裝過 Visual Studio 2019，請確認 HKEY_LOCAL_MACHINE\Software\Microsoft\Windows Kits\Installed Roots 上的登錄值 "KitsRoot10" 指向 32 位元的 Program Files 資料夾 (例如 "C:\Program Files (x86)\Windows Kits\10")。  如果沒有，請解除安裝 HoloLens 模擬器、將登錄值變更為 32 位元的 Program Files 資料夾，再重新安裝 HoloLens 模擬器。  Visual Studio 2019 16.0.3 已解決此問題。
 
-如果模擬器啟動時，顯示 「 無效位元組編碼 」 錯誤對話方塊：
-* 刪除 %localappdata%\Microsoft\XDE\HCS 中的所有檔案，並再試一次。
+如果模擬器在啟動時顯示「位元組編碼無效」錯誤對話方塊：
+* 請刪除 %localappdata%\Microsoft\XDE\HCS 中的所有檔案，然後再試一次。
 
-如果您在 Visual Studio 中的偵錯目標清單是空 （比方說，「 開始 」 是唯一的選項），您已遵循上述所有疑難排解步驟：
-* 刪除 'ConfigurationCache' 資料夾中 %localappdata%\Microsoft\VisualStudio\\<*安裝識別碼*> \CoreCon 並再試一次。
+如果 Visual Studio 中的偵錯目標清單是空的 (例如，只有 [開始] 選項)，而且您已遵循上述所有疑難排解步驟來操作過：
+* 請刪除 %localappdata%\Microsoft\VisualStudio\\<*installation id*>\CoreCon 中的 'ConfigurationCache' 資料夾，然後再試一次。
 
-如果您的系統停止回應啟動模擬器時，停用硬體加速的模擬器圖形。
-* 建立名為"DisableGPU 」 在 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\XDE\10.0 登錄 DWORD 值，並將其值設定為 1。
+如果系統在模擬器啟動時停止回應，請停用模擬器圖形的硬體加速。
+* 在 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\XDE\10.0 建立名為 "DisableGPU" 的登錄 DWORD 值，並將其值設定為 1。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 * [進階 HoloLens 模擬器和混合實境模擬器輸入](advanced-hololens-emulator-and-mixed-reality-simulator-input.md)
-* [HoloLens 模擬器軟體歷程記錄](hololens-emulator-archive.md)
+* [HoloLens 模擬器軟體的歷程記錄](hololens-emulator-archive.md)
 * [Unity 中的空間對應](spatial-mapping-in-unity.md)
 * [DirectX 中的空間對應](spatial-mapping-in-directx.md)

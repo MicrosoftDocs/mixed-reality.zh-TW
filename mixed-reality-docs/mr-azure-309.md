@@ -106,7 +106,7 @@ Application Insights 是 Microsoft 服務，讓開發人員從其應用程式收
 
     6.  您也必須確認您已了解這些條款和條件套用到此服務。
 
-    7.  選取 [建立]。
+    7.  選取 [建立]  。
 
         ![Azure 入口網站](images/AzureLabs-Lab309-03.png)
 
@@ -263,7 +263,7 @@ Application Insights 是 Microsoft 服務，讓開發人員從其應用程式收
     > [!NOTE]
     > 將標示這類的外掛程式，會設定它們僅適用於在 Unity 編輯器中。 有一組不同的專案會匯出從 Unity 後要使用 WSA 資料夾中的 Dll。
 
-6.  接下來，您必須開啟**WSA**資料夾內**Insights**資料夾。 您會看到您剛才設定的相同檔案的複本。 選取此檔案，並在偵測器中，確定該**任何平台**是**unchecked**，然後確定**只** **WSAPlayer**是**檢查**。 按一下 **[套用]**。
+6.  接下來，您必須開啟**WSA**資料夾內**Insights**資料夾。 您會看到您剛才設定的相同檔案的複本。 選取此檔案，並在偵測器中，確定該**任何平台**是**unchecked**，然後確定**只** **WSAPlayer**是**檢查**。 按一下 **[套用]** 。
 
     ![匯入 Unity 封裝](images/AzureLabs-Lab309-25.png)
 
@@ -350,7 +350,7 @@ Application Insights 是 Microsoft 服務，讓開發人員從其應用程式收
     > [!NOTE]
     > 這些*位置*的值為*建議*。 您可以自由設定到任何您想要的物件的位置，如果物件的距離太遠從相機是應用程式的使用者更容易。
 
-11. 當您的應用程式執行時，它必須能夠識別中的場景，為了達成此目的的物件，它們需要來加以標記。 選取其中一個物件，並在*Inspector* ] 面板中，按一下 [**新增標記...**，這將會交換*Inspector*具有**標記 & 層**面板。
+11. 當您的應用程式執行時，它必須能夠識別中的場景，為了達成此目的的物件，它們需要來加以標記。 選取其中一個物件，並在*Inspector* ] 面板中，按一下 [**新增標記...** ，這將會交換*Inspector*具有**標記 & 層**面板。
 
     ![設定 Unity 場景中的物件](images/AzureLabs-Lab309-41.png) ![](images/AzureLabs-Lab309-42.png)
 
@@ -825,7 +825,7 @@ Application Insights 是 Microsoft 服務，讓開發人員從其應用程式收
         }
     ```
 
-6.  內**DataFromAnalytics**類別中，以滑鼠右鍵後**start （)** 方法，新增下列方法呼叫**FetchAnalytics()**。 這個方法會負責的機碼值組清單已填入*GameObject*和預留位置事件計數數目。 然後初始化**GetWebRequest()** 協同程式。 若要呼叫的查詢結構*Application Insights*可以找到這個方法內同時，如同*查詢 URL*端點。
+6.  內**DataFromAnalytics**類別中，以滑鼠右鍵後**start （)** 方法，新增下列方法呼叫**FetchAnalytics()** 。 這個方法會負責的機碼值組清單已填入*GameObject*和預留位置事件計數數目。 然後初始化**GetWebRequest()** 協同程式。 若要呼叫的查詢結構*Application Insights*可以找到這個方法內同時，如同*查詢 URL*端點。
 
     ```csharp
         private void FetchAnalytics()
@@ -857,7 +857,7 @@ Application Insights 是 Microsoft 服務，讓開發人員從其應用程式收
         }
     ```
 
-7.  正下方**FetchAnalytics()** 方法，新增一個方法，叫做**GetWebRequest()**，就會傳回*IEnumerator*。 這個方法會負責要求事件，且具有特定對應的次數*GameObject*，已呼叫內*Application Insights*。 傳回所有已傳送的查詢，當**DetermineWinner()** 呼叫方法。
+7.  正下方**FetchAnalytics()** 方法，新增一個方法，叫做**GetWebRequest()** ，就會傳回*IEnumerator*。 這個方法會負責要求事件，且具有特定對應的次數*GameObject*，已呼叫內*Application Insights*。 傳回所有已傳送的查詢，當**DetermineWinner()** 呼叫方法。
 
     ```csharp
         /// <summary>
@@ -923,7 +923,7 @@ Application Insights 是 Microsoft 服務，讓開發人員從其應用程式收
         }
     ```
 
-8.  下一個方法是**DetermineWinner()**，其排序的清單*GameObject*並*Int*組，根據最高的事件計數。 然後，會變更的材質的色彩*GameObject*要*綠色*（做為其具有最高計數的意見反應）。 這會顯示分析結果的訊息。
+8.  下一個方法是**DetermineWinner()** ，其排序的清單*GameObject*並*Int*組，根據最高的事件計數。 然後，會變更的材質的色彩*GameObject*要*綠色*（做為其具有最高計數的意見反應）。 這會顯示分析結果的訊息。
 
     ```csharp
         /// <summary>
@@ -1205,7 +1205,7 @@ Application Insights 是 Microsoft 服務，讓開發人員從其應用程式收
 
 此專案的 Unity 區段所需的所有項目現在已完成，所以該是時候建置從 Unity。
 
-1.  瀏覽至**組建設定**， **(檔案 > 組建設定...)**.
+1.  瀏覽至**組建設定**， **(檔案 > 組建設定...)** .
 
 2.  從**Build Settings**  視窗中，按一下**建置**。
 

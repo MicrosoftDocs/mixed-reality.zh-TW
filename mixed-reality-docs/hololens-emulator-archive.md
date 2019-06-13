@@ -6,12 +6,12 @@ ms.author: pbarnett
 ms.date: 4/25/2019
 ms.topic: article
 keywords: HoloLens、 模擬器、 組建和版本
-ms.openlocfilehash: 75ea6d1ab3f949d28364baca408d79ec9e4bb846
-ms.sourcegitcommit: 222cba2d622b47f75949bf8af80d5c62de4dceab
+ms.openlocfilehash: 017193756b5c57c5bb45351db208533f980701a7
+ms.sourcegitcommit: 150d258a23130026c8792da383a3993657841fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64914629"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67024481"
 ---
 HoloLens 模擬器 （第 1 代） 和 HoloLens 2 模擬器組建安裝並排顯示。 我們通常建議使用最新可用的組建，但可能會有您想要或需要測試對舊的模擬器應用程式的情況。 此頁面包含發行版本的連結。
 
@@ -21,7 +21,8 @@ HoloLens 模擬器 （第 1 代） 和 HoloLens 2 模擬器組建安裝並排顯
 
 |  組建 |  發行日期 |  附註 | 
 |----------|----------|----------|
-|  [HoloLens 2 模擬器組建 10.0.18362.1005](https://go.microsoft.com/fwlink/?linkid=2087187) | 2019 年 4 月 16日日 | 最新的 HoloLens 2 組建。 |
+|  [HoloLens 2 模擬器組建 10.0.18362.1019](https://go.microsoft.com/fwlink/?linkid=2095316) | 2019 年 6 月 11日日 | 最新的 HoloLens 2 組建。  不再需要系統管理員身分執行。  啟動 [新增] 功能表捷徑。 |
+|  [HoloLens 2 模擬器組建 10.0.18362.1005](https://go.microsoft.com/fwlink/?linkid=2087187) | 2019 年 4 月 16日日 |  |
 
 
 # <a name="hololens-emulator-1st-gen-archive"></a>HoloLens 模擬器 （第 1 代） 封存

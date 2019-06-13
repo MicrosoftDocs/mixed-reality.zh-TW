@@ -6,12 +6,12 @@ ms.author: crderr
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 應用程式品質準則，混合實境，混合實境應用程式
-ms.openlocfilehash: dfa1390190fad8d84982171dfbcfa101b20501dc
-ms.sourcegitcommit: c2a5bff423feba7d29d5431c870b6017c2fe1bc2
+ms.openlocfilehash: 8e635585c0981d81bf71fb5577232af28f2a0fdd
+ms.sourcegitcommit: 150d258a23130026c8792da383a3993657841fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66750314"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67024491"
 ---
 # <a name="app-quality-criteria"></a>應用程式的品質準則
 
@@ -37,7 +37,7 @@ ms.locfileid: "66750314"
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -100,7 +100,7 @@ ms.locfileid: "66750314"
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -162,7 +162,7 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -226,7 +226,7 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -283,7 +283,7 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -326,7 +326,7 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -385,7 +385,7 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -441,7 +441,7 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -504,7 +504,7 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -584,7 +584,7 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -618,7 +618,7 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
 
 * [可互動的物件](interactable-object.md)
 * [Unity 中的文字](text-in-unity.md)
-* [應用程式列和週框方塊](app-bar-and-bounding-box.md)
+* [週框方塊和應用程式列](app-bar-and-bounding-box.md)
 * [語音命令](voice-design.md)
 
 #### <a name="tools-and-tutorials"></a>工具和教學課程
@@ -639,7 +639,7 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -694,7 +694,7 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -737,7 +737,7 @@ Misalignments 的全像投影的實體物件 （如果要置於彼此） 是清�
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
         <td></td>
     </tr>
      <tr>

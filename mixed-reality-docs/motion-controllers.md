@@ -6,12 +6,12 @@ ms.author: wguyman
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 6dof 控制器、 動作控制站
-ms.openlocfilehash: 7db1c16f8243081dc8f53e8722391f102c38e0d3
-ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
+ms.openlocfilehash: fc6b0dcf7f338224af9ea9bc59e07187c33adda2
+ms.sourcegitcommit: 150d258a23130026c8792da383a3993657841fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65629115"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67024549"
 ---
 # <a name="motion-controllers"></a>動作控制站
 
@@ -23,10 +23,23 @@ ms.locfileid: "65629115"
 ## <a name="device-support"></a>裝置支援
 
 <table>
+<colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+</colgroup>
 <tr>
-<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
-</tr><tr>
-<td> 動作控制站</td><td style="text-align: center;"></td><td style="text-align: center;"></td><td style="text-align: center;"> ✔️</td>
+     <td><strong>功能</strong></td>
+     <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 代)</strong></a></td>
+     <td><strong>HoloLens 2</strong></td>
+     <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
+</tr>
+<tr>
+     <td>動作控制站</td>
+     <td>❌</td>
+     <td>❌</td>
+     <td>✔️</td>
 </tr>
 </table>
 
@@ -175,7 +188,7 @@ Windows Mixed Reality 支援各種不同的外型規格中的動作控制站，�
 
 ## <a name="interactions-low-level-spatial-input"></a>互動：低層級的空間輸入
 
-指針 」 和 「 動作控制站之間的核心互動都有**選取 **，**功能表**，**抓住**，**觸控板**， **搖桿**，並**首頁**。
+指針 」 和 「 動作控制站之間的核心互動都有**選取** ，**功能表**，**抓住**，**觸控板**， **搖桿**，並**首頁**。
 * **選取**是啟用的全像，其中包含後面接著發行按下的主要互動。 動作控制站，您可以執行選取的按使用控制器的觸發程序。 其他執行 Select 的方式是透過說話[語音命令](voice-input.md)"Select"。 同一個 select 的互動可用於任何應用程式。 將選取視為相當於滑鼠按一下，一種通用的動作，您了解一次，，然後套用到您的所有應用程式。
 * **功能表**是次要的互動，可處理的物件，用來提取的內容功能表，或採取其他一些次要的動作。 與動作控制站，您可以採取功能表動作，使用控制器的 *功能表* 按鈕。 （也就是漢堡 [功能表] 圖示，在其上的按鈕）
 * **掌握**是如何使用者可以直接採取動作來操作這些瞭若指掌於物件。 與動作控制站，您可以掌握動作藉由緊密扭曲您的第一個。 動作控制器可能會偵測到掌握，以擷取按鈕、 palm 觸發程序或其他感應器。
@@ -231,7 +244,7 @@ Windows Mixed Reality 支援各種不同的外型規格中的動作控制站，�
 
 ## <a name="see-also"></a>另請參閱
 * [Unity 中的筆勢和運動控制器](gestures-and-motion-controllers-in-unity.md)
-* [指針與 DirectX 中的動作控制站](hands-and-motion-controllers-in-directx.md)
+* [DirectX 中的手部和運動控制器](hands-and-motion-controllers-in-directx.md)
 * [筆勢](gestures.md)
 * [MR Input 213：運動控制器](mixed-reality-213.md)
 * [人十分熱心的指南：您主要的 Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home)

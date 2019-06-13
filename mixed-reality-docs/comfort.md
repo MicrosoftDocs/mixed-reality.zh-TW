@@ -6,12 +6,12 @@ ms.author: erpau
 ms.date: 04/5/2019
 ms.topic: article
 keywords: 混合實境，設計、 緩和，HoloLens 2 HoloLens （第 1 代）
-ms.openlocfilehash: 8dea3765f01a6a82fccc002d1cd5c7c9c77d0980
-ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
+ms.openlocfilehash: e3a78e9a990d207b19b287e1897897a5d6dee3ca
+ms.sourcegitcommit: 150d258a23130026c8792da383a3993657841fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65974771"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67024438"
 ---
 # <a name="comfort"></a>緩和
 
@@ -46,7 +46,7 @@ HoloLens 顯示被固定的光學距離約 2.0 m 遠離使用者。 因此，使
 
 設計 (near) 互動 HoloLens 2 中的直接內容時或**任何應用程式中的內容必須放置的位置更接近於 1 分鐘，額外小心以確保使用者緩和**。 Discomfort 由於 vergence 住宿衝突的可能性以指數方式增加與減少檢視距離。 此外，使用者可能會遇到增加的 bluriness 互動距離近檢視的內容，因此我們建議您測試的內容呈現最佳的全像放置也以更接近 (小於 1.0 m 裁剪平面下) 的區域內時要請確定它會維持清楚且方便檢視。 
 
-**我們建議您建立應用程式的使用者應該在檢視即將 (小於 1.0 m) 的內容的時間量為基礎，並深入了解移動的 「 深度 budget"**。 舉例來說，若要避免將使用者放在這些情況下超過 25%的時間。 如果超過深度預算時，建議您小心使用者測試以確保它保持舒適的體驗。 
+**我們建議您建立應用程式的使用者應該在檢視即將 (小於 1.0 m) 的內容的時間量為基礎，並深入了解移動的 「 深度 budget"** 。 舉例來說，若要避免將使用者放在這些情況下超過 25%的時間。 如果超過深度預算時，建議您小心使用者測試以確保它保持舒適的體驗。 
 
 一般情況下，我們也建議仔細測試，以確保在任何互動需求 （例如，下列項目的速度移動、 連線能力等），互動距離近保持舒適的使用者。 
 
@@ -63,7 +63,7 @@ IPD 指 pupils 或個人的眼睛的中心之間的距離。 VO 指的是潛在�
 
 ### <a name="guidance-for-holographic-devices"></a>適用於全像攝影版裝置的指引
 
-#### <a name="hololens-1st-gen"></a>HoloLens （第 1 代）
+#### <a name="hololens-1st-gen"></a>HoloLens (第 1 代)
 
 HoloLens 的 （第 1 代），預估 IPD 且在裝置設定[校正](calibration.md)。 已設定新使用者的裝置，您必須執行校正或 IPD 必須手動設定。 VO 完全取決於適合的裝置。 具體來說，VO 降到最低，裝置必須將滑鼠停在使用者的大腦，因此顯示會使用他/她的眼睛的軸的層級。 
 
@@ -127,11 +127,13 @@ Windows Mixed Reality 沈浸式 HMDs 有 IPD 或 VO 無自動校正。 可以手
 
 一般情況下，我們建議測試特定的應用程式，以利閱讀，並讓字型的大小一樣大，因為是可行的舒適的體驗。 下面我們提供做為起點進行開發的一般指引。 請注意，所有的字型大小以度為單位的報告[視覺化角度](https://en.wikipedia.org/wiki/Visual_angle)而不是特定的實體大小，內含的指引可獲得最佳的全像放置的區域內的任何距離因為它負責的大小文字，而且它會出現在檢視器的距離。 
 
+請參閱[印刷樣式](typography.md)並[Unity 中的文字](text-in-unity.md)頁面如需詳細指導方針。
+
 ### <a name="guidance-for-holographic-devices"></a>適用於全像攝影版裝置的指引
 
 適用於全像攝影版的裝置/輕的白色背景上呈現黑色/濃文字會提供最一致的對比比例，因為背景會 occlude 呈現背後的真實的干擾。 呈現黑色/深色背景上的白色/輕文字，可讓多個真實世界的環境顯示，這可能會影響文字可讀性。 
 
-#### <a name="hololens-1st-gen"></a>HoloLens （第 1 代）
+#### <a name="hololens-1st-gen"></a>HoloLens (第 1 代)
 
 易於閱讀的字型大小下限 （字型基準 ascender 來測量） 是大約 0.35 °，舒適的字型大小至少大約 0.5 ° 在 2m 距離呈現給使用者的讀取內容。 
 

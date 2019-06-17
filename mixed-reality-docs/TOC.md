@@ -1,9 +1,9 @@
 # [安裝工具](install-the-tools.md)
 # [準備好應用程式以使用 HL2](mrtk-porting-guide.md)
-# [探索](index.md)
+# 探索
+## [混合實境文件](index.md)
 ## [什麼是混合實境？](mixed-reality.md)
 ## [什麼是全像投影？](hologram.md)
-
 ## 硬體
 ### HoloLens
 #### [HoloLens 2 硬體詳細資料](https://www.microsoft.com/hololens/hardware)
@@ -78,7 +78,8 @@
 ### [版本資訊 - 2016 年 5 月](release-notes-may-2016.md)
 ### [版本資訊 - 2016 年 3 月](release-notes-march-2016.md)
 
-# [設計](design.md)
+# 設計
+## [混合實境設計](design.md)
 ## [關於本設計指南](about-this-design-guidance.md)
 ## 開始進行設計
 ### [什麼是混合實境？](mixed-reality.md)
@@ -129,7 +130,8 @@
 ### [HoloSketch](case-study-building-holosketch,-a-spatial-layout-and-ux-sketching-app-for-hololens.md)
 ### [資產建立程序](asset-creation-process.md)
 
-# [開發](development.md)
+# 開發
+## [開發啟動列](development.md)
 ## 混合實境雲端服務
 ### [Azure Spatial Anchors](https://docs.microsoft.com/azure/spatial-anchors)
 ### [全像攝影遠端播放程式](holographic-remoting-player.md)

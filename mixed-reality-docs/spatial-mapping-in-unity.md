@@ -1,17 +1,17 @@
 ---
 title: 在 Unity 中的空間對應
 description: 轉譯和碰撞的真實世界中的幾何周圍 Unity。
-author: thetuvix
-ms.author: alexturn
+author: davidkline-ms
+ms.author: davidkl
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Unity、 空間的對應、 轉譯器，collider、 網狀結構、 掃描、 元件
-ms.openlocfilehash: f938f5921cb2c06342a9ebcd376d690c10584df9
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
-ms.translationtype: HT
+ms.openlocfilehash: 8f7bad1651ab31b2e83ad9d9c8f465547fbbdc5a
+ms.sourcegitcommit: 2f600e5ad00cd447b180b0f89192b4b9d86bbc7e
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59597147"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "67148643"
 ---
 # <a name="spatial-mapping-in-unity"></a>在 Unity 中的空間對應
 
@@ -75,7 +75,7 @@ Unity 提供 2 個元件，輕鬆地將空間的對應新增至您的應用程�
 
 如果您需要更多的控制權比您獲得的空間對應的轉譯器和空間的對應 Collider 元件時，您可以使用低層級的空間對應指令碼 Api。
 
-**命名空間：** *UnityEngine.XR.WSA*<br>
+**命名空間：**  *UnityEngine.XR.WSA*<br>
 **型別**:*SurfaceObserver*， *SurfaceChange*， *SurfaceData*， *SurfaceId*
 
 以下是使用空間的對應 Api 的應用程式的建議流程的大綱。
@@ -455,9 +455,9 @@ Import_UnderstandingMesh –
 如需有關使用混合實境 Toolkit v2 中使用 空間對應的詳細資訊，請參閱<a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/SpatialAwareness/SpatialAwarenessGettingStarted.html" target="_blank">空間感知區段</a>MRTK 文件。
 
 ## <a name="see-also"></a>另請參閱
-* [MR 空間 230:空間對應](holograms-230.md)
+* [MR Spatial 230：空間對應](holograms-230.md)
 * [座標系統](coordinate-systems.md)
-* [在 Unity 中的座標系統](coordinate-systems-in-unity.md)
+* [Unity 中的座標系統](coordinate-systems-in-unity.md)
 * <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity" target="_blank">MixedRealityToolkit</a>
 * <a href="http://docs.unity3d.com/ScriptReference/MeshFilter.html" target="_blank">UnityEngine.MeshFilter</a>
 * <a href="http://docs.unity3d.com/ScriptReference/MeshCollider.html" target="_blank">UnityEngine.MeshCollider</a>

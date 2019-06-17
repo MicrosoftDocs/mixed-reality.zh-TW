@@ -3,15 +3,15 @@ title: 可互動的物件
 description: 按鈕長久以來所用的觸發事件 2D 抽象全球隱喻。 在三維的混合的現實世界中，我們沒有不再侷限於這個抽象層再的世界。
 author: cre8ivepark
 ms.author: jennyk
-ms.date: 02/24/2019
+ms.date: 06/06/2019
 ms.topic: article
 keywords: 混合的實境、 控制項、 互動、 ui、 ux
-ms.openlocfilehash: eea7eff6c591a9319b920936ce2be511cecb7496
-ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
+ms.openlocfilehash: b0397e00763f70e4caf55a84b6541085e56fafd4
+ms.sourcegitcommit: 2f600e5ad00cd447b180b0f89192b4b9d86bbc7e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66813762"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "67148747"
 ---
 # <a name="interactable-object"></a>可互動的物件
 
@@ -84,20 +84,51 @@ HoloLens 2 中沒有可改善使用者的信心，深度認知上其他視覺提
 
 <img src="images/640px-interactibleobject-voicecommand.jpg" alt="Tooltip for the voice command" title="語音命令的工具提示" width="350"><br/>*語音命令的工具提示*
 
+## <a name="sizing"></a>調整大小
+為了確保可互動的所有物件都可以輕鬆地都是觸及使用者建議確保可互動的符合根據它會放置在使用者的距離的最小大小 （通常以視覺化角度的度數為單位）。 Visual 角度的度數為單位根據使用者與物件之間的距離，並會保持不變，而目標的實體大小從使用者的變更，可能會變更為之間的距離。 若要判斷所需的實體大小，確定和程度的距離為基礎的物件視覺化的角度會嘗試使用計算機，例如： http://elvers.us/perception/visualAngle/
+
+以下是可互動內容的最小大小的建議
+
+### <a name="target-size-for-direct-hand-interaction"></a>直接手動互動的目標大小
+| 距離 | 檢視角度 | 大小 |
+|---------|---------|---------|
+| 45 cm  | 不小於 2 ° | 1.6 x 1.6 cm |
+
+![直接手動互動的目標大小](images/TargetSizingNear.jpg)<br>
+*直接手動互動的目標大小*
+
+在建立時直接互動的按鈕，我們建議您較大大小下限為 3.2 x 3.2 cm，以確保有足夠空間來容納圖示和潛在某些文字 * *
+
+| 距離 | 最小大小 |
+|---------|---------|
+| 45 cm  | 3.2 x 3.2 cm |
+
+![按鈕的目標大小](images/TargetSizingButtons.png)<br>
+*按鈕的目標大小*
+
+
+### <a name="target-size-for-hand-ray-or-gaze-interaction"></a>目標手光線的大小或視線互動
+| 距離 | 檢視角度 | 大小 |
+|---------|---------|---------|
+| 2m  | 不小於 1 ° | 3.5 x 3.5 cm |
+
+![目標手光線的大小或視線互動](images/TargetSizingFar.jpg)<br>
+*目標手光線的大小或視線互動*
+
 ## <a name="creating-interactable-object-with-mixed-reality-toolkit-mrtk"></a>建立可互動的物件與混合實境工具組 (MRTK)
 
 在  **[混合實境 Toolkit](https://github.com/Microsoft/MixedRealityToolkit-Unity)** ，您可以找到 Unity 指令碼的一系列 prefabs，可協助您建立可互動的物件。 您可以使用這些物件的各種類型的輸入的互動狀態回應。
 
-* **[Interactable](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Interactable.html)**
-* **[按鈕](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Button.html)**
-* **[手動互動範例場景](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_HandInteractionExamples.md)**
+* [Interactable](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Interactable.html)
+* [Button](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Button.html)
+* [手動互動範例場景](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_HandInteractionExamples.md)
 
 提供各種選項，例如 MixedRealityToolkit 的標準著色器**鄰近 light**可協助您建立視覺與音訊提示。
-* **[MRTK 標準著色器](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation/README_MRTKStandardShader.md)**
+* [MRTK 標準著色器](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation/README_MRTKStandardShader.md)
 
 
 ## <a name="see-also"></a>另請參閱
 
-* **[週框方塊](app-bar-and-bounding-box.md)**
-* **[物件集合](object-collection.md)**
-* **[告示板和 tag-along](billboarding-and-tag-along.md)**
+* [週框方塊](app-bar-and-bounding-box.md)
+* [物件集合](object-collection.md)
+* [佈告板和常駐標籤](billboarding-and-tag-along.md)

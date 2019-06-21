@@ -21,8 +21,8 @@ ms.locfileid: "65942094"
 
 ## <a name="xrdevice"></a>XRDevice 
 
-**命名空間：***UnityEngine.XR*<br>
-**類型：***XRDevice*
+**命名空間：** *UnityEngine.XR*<br>
+**類型：** *XRDevice*
 
 *XRDevice*型別可讓您使用的基礎原生物件的存取權<a href="https://docs.unity3d.com/ScriptReference/XR.XRDevice.GetNativePtr.html" target="_blank">GetNativePtr</a>方法。 GetNativePtr 所傳回，則不同的平台而有所不同。 通用 Windows 平台上，當 Windows Mixed Reality XR SDK 為目標，XRDevice.GetNativePtr 會傳回與下列結構的指標 (IntPtr): 
 

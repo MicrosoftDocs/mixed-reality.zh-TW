@@ -6,12 +6,12 @@ ms.author: Yoyoz
 ms.date: 04/15/2018
 ms.topic: article
 keywords: Unity，混合實境，開發、 開始，新的專案
-ms.openlocfilehash: aad38474781fd78425d48034877122d36d9e3e93
-ms.sourcegitcommit: d565a69a9320e736304372b3f010af1a4d286a62
+ms.openlocfilehash: 68dded9d0fc9e861bdda56c4954d72ddafafa686
+ms.sourcegitcommit: 30246ab9b9be44a3c707061753e53d4bf401eb6b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65940760"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67326097"
 ---
 # <a name="configure-a-new-unity-project-for-windows-mixed-reality"></a>為 Windows Mixed Reality 設定新的 Unity 專案 
 
@@ -21,7 +21,7 @@ ms.locfileid: "65940760"
 
 ## <a name="per-project-settings"></a>每個專案設定
 
-若要目標 Windows Mixed Reality，必須先設定您的 Unity 專案，以匯出為通用 Windows 平台應用程式：
+若要目標 Windows Mixed Reality，必須先設定您的 Unity 專案，以匯出為通用 Windows 平台應用程式： 
 1. 選取**檔案 > 組建設定...**
 2. 選取 **通用 Windows 平台**平台清單，然後按一下**切換平台**
 3. 設定**SDK**到**通用 10**

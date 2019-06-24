@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens、 元件、 感應器、 技術、 技術、 卸除、 卸除，
-ms.openlocfilehash: ddbce274a0573ab72e1ff7b523b6ac4b8fbb6ba2
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 56b10fa9751c626578c697cd370347482a121b2a
+ms.sourcegitcommit: 30246ab9b9be44a3c707061753e53d4bf401eb6b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59596938"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67326196"
 ---
 # <a name="hololens-1st-gen-hardware-details"></a>HoloLens （第 1 代） 的硬體詳細資料
 
@@ -21,7 +21,7 @@ Microsoft HoloLens 是全球第一部完整 untethered 全像攝影版電腦。 
 
 ## <a name="how-to-get-microsoft-hololens"></a>如何取得 Microsoft HoloLens
 
-Microsoft HoloLens 是可做為這兩種開發版本購買和 Commercial Suite，組態 （其中包含已新增的安全性和裝置管理瑕疵責任擔保和企業功能）。 如果您是在北美洲，則您也可以透過合作夥伴租用 HoloLens。
+Microsoft HoloLens 可購買做為這兩種開發版本，因此 Commercial Suite，組態，包括保證和企業功能加入安全性和裝置管理。 如果您是在北美洲，則您也可以透過合作夥伴租用 HoloLens。
 
 [如需購買或租用 Microsoft HoloLens 的詳細資訊，請按一下這裡](https://www.microsoft.com/hololens/buy)。
 
@@ -62,7 +62,7 @@ Microsoft HoloLens 是可做為這兩種開發版本購買和 Commercial Suite�
 * 電池狀態 Led
 * Wi-Fi 802.11ac
 * Micro USB 2.0
-* 4.1 藍牙 LE
+* 4\.1 藍牙 LE
 
 ### <a name="power"></a>電源
 * 電池壽命
@@ -78,11 +78,11 @@ Microsoft HoloLens 是可做為這兩種開發版本購買和 Commercial Suite�
 * 自訂 Microsoft 全像攝影版處理單元 (HPU 1.0)
 
 ### <a name="weight"></a>粗細
-* 579g
+* 579 g
 
 ### <a name="memory"></a>記憶體
 * 64 GB Flash
-* 2GB RAM
+* 2 GB RAM
 
 ### <a name="whats-in-the-box"></a>什麼是在方塊中
 * HoloLens Development 版

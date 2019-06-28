@@ -6,12 +6,12 @@ ms.author: jennyk
 ms.date: 06/06/2019
 ms.topic: article
 keywords: 混合的實境、 控制項、 互動、 ui、 ux
-ms.openlocfilehash: b0397e00763f70e4caf55a84b6541085e56fafd4
-ms.sourcegitcommit: 2f600e5ad00cd447b180b0f89192b4b9d86bbc7e
+ms.openlocfilehash: 57299cbb758a69603fc68ad5d43af8f2216e5104
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67148747"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67415357"
 ---
 # <a name="interactable-object"></a>可互動的物件
 
@@ -85,12 +85,12 @@ HoloLens 2 中沒有可改善使用者的信心，深度認知上其他視覺提
 <img src="images/640px-interactibleobject-voicecommand.jpg" alt="Tooltip for the voice command" title="語音命令的工具提示" width="350"><br/>*語音命令的工具提示*
 
 ## <a name="sizing"></a>調整大小
-為了確保可互動的所有物件都可以輕鬆地都是觸及使用者建議確保可互動的符合根據它會放置在使用者的距離的最小大小 （通常以視覺化角度的度數為單位）。 Visual 角度的度數為單位根據使用者與物件之間的距離，並會保持不變，而目標的實體大小從使用者的變更，可能會變更為之間的距離。 若要判斷所需的實體大小，確定和程度的距離為基礎的物件視覺化的角度會嘗試使用計算機，例如： http://elvers.us/perception/visualAngle/
+為了確保可互動的所有物件都可以輕鬆地接觸都到的使用者，我們建議您確定可互動的符合大小下限 （通常長達 visual 弧線的程度視覺化角度） 根據它會放置在使用者的距離。 視覺化的角度根據使用者的眼睛與物件之間的距離，並會保持不變，而目標的實體大小從使用者的變更，可能會變更為之間的距離。 若要判斷使用者之間的距離為基礎的物件所需的實體大小，請嘗試使用 visual 的角度計算機這類[這個](http://elvers.us/perception/visualAngle/)。
 
-以下是可互動內容的最小大小的建議
+以下是可互動內容的最小大小的建議。
 
 ### <a name="target-size-for-direct-hand-interaction"></a>直接手動互動的目標大小
-| 距離 | 檢視角度 | 大小 |
+| 距離 | 檢視角度 | Size |
 |---------|---------|---------|
 | 45 cm  | 不小於 2 ° | 1.6 x 1.6 cm |
 
@@ -108,7 +108,7 @@ HoloLens 2 中沒有可改善使用者的信心，深度認知上其他視覺提
 
 
 ### <a name="target-size-for-hand-ray-or-gaze-interaction"></a>目標手光線的大小或視線互動
-| 距離 | 檢視角度 | 大小 |
+| 距離 | 檢視角度 | Size |
 |---------|---------|---------|
 | 2m  | 不小於 1 ° | 3.5 x 3.5 cm |
 

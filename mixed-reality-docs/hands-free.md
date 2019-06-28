@@ -6,12 +6,12 @@ ms.author: liamar
 ms.date: 04/20/2019
 ms.topic: article
 keywords: 混合實境，免持聽筒，視線，視線目標，就會有互動，設計
-ms.openlocfilehash: 4d21fa10eabb446565bddebccdbde5e2e7bcc72a
-ms.sourcegitcommit: 30246ab9b9be44a3c707061753e53d4bf401eb6b
+ms.openlocfilehash: 7942192f644a7133335f089cfaaccfaebdd9292e
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67326146"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414387"
 ---
 # <a name="hands-free"></a>不需要用手
 
@@ -39,10 +39,10 @@ ms.locfileid: "67326146"
 
 ### <a name="head-gaze-and-dwellgaze-and-dwellmd"></a>[頭部目光和停駐](gaze-and-dwell.md)
 
-在某些免持聽筒的情況下，使用您的聲音不是理想或甚至可以。 大聲工廠環境、 隱私權或社交規範都可以條件約束。 標頭視線 + 探討模型可讓使用者使用其前端的向量來點，而延遲，以瀏覽應用程式或談論按鈕會啟動它之後一段時間，通常約 1 第二個左右。 
+在某些免持聽筒的情況下，使用您的聲音不是理想或甚至可以。 大聲工廠環境、 隱私權或社交規範都可以條件約束。 標頭視線 + 探討模型可讓使用者使用其前端的向量來點，而延遲，以瀏覽應用程式或談論按鈕會啟動它之後一段時間，通常約 1 秒左右。 
 
 
-## <a name="transitioning-in-and-out-of-hands-freey"></a>流入和流出手 freey 轉換
+## <a name="transitioning-in-and-out-of-hands-free"></a>轉換流入和流出免持聽筒
 
 針對這些案例中，釋放您手裡，互動的命令和導覽全像投影的範圍可以從正在操作應用程式，端對端的使用者可以在任何轉換中和的便利性需求時間。 
 
@@ -54,7 +54,7 @@ ms.locfileid: "67326146"
 比方說，如果使用者是在工廠，觀賞視訊她 Hololens 上的參考，並決定要挑選扳手，若要開始使用，她很可能會開始在 handsfree 不必寫下按下按鈕扳手。 她應該要能夠叫用語音命令的語音工作階段，會探討已顯示的 UI，以開始詳述，或說出單字"select"。
 
 使用者應該能夠： 
-* 切換至 handsfree handsfree 時
+* 切換至免持聽筒雖然免持聽筒
 * 切換到您手裡使用的實際操作
 * 切換至使用控制器的控制站 
 
@@ -96,5 +96,5 @@ ms.locfileid: "67326146"
 
 ## <a name="see-also"></a>另請參閱
 * [頭部目光和行動](gaze-and-commit.md)
-* [直接操作](direct-manipulation.md)
-* [指向和行動](point-and-commit.md)
+* [手部直接操作](direct-manipulation.md)
+* [手部指向和行動](point-and-commit.md)

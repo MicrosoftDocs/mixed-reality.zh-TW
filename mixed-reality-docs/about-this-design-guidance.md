@@ -6,12 +6,12 @@ ms.author: jonwie
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，設計、 簡介、 指導方針
-ms.openlocfilehash: 6173f7cd2bcc4280f86f8f5ecaae1e90e01b62a0
-ms.sourcegitcommit: 30246ab9b9be44a3c707061753e53d4bf401eb6b
+ms.openlocfilehash: 0e5601898c2b1f351b5ab2aaa491a7c64ae57f7e
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67326120"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414166"
 ---
 # <a name="about-this-design-guidance"></a>關於本設計指南
 
@@ -33,7 +33,7 @@ ms.locfileid: "67326120"
 * **[開始進行設計](mixed-reality.md)** -讀取我們的高階想法，並了解我們所遵循的原則。
 * **[Instinctual 互動](interaction-fundamentals.md)** -了解輸入、 命令、 巡覽和其他互動的基本概念設計您的應用程式。
 * **[樣式](typography.md)** -使用色彩、 印刷樣式和動作，讓應用程式可愛。
-* **[應用程式模式](types-of-mixed-reality-apps.md)** -了解如何應用程式; ications 可以跨越沈浸式和真實世界的環境的案例。
+* **[應用程式模式](types-of-mixed-reality-apps.md)** -了解如何應用程式可以跨越案例沈浸式和真實世界的環境。
 * **[控制項](interactable-object.md)** -做為建置組塊使用控制項和模式，來建立您自己的應用程式體驗。
 * **[範例應用程式](design.md#sample-apps)** -建立絕佳的體驗，從設計和我們的團隊所建立的範例。
 * **[設計工具和資源](design.md#design-tools)** -快速啟動專案設計範本與工具。

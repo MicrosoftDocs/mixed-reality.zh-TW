@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 2D 應用程式，UWP，一般應用程式、 HoloLens、 沈浸式耳機，應用程式模型後按鈕、 應用程式列、 dpi、 解析，小數位數
-ms.openlocfilehash: 35a2e7774a79e35893821467f7e9ef8c004efa20
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.openlocfilehash: f9792a7e5fd9729bf9f5f632c699c74c58c10ddf
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59595365"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414226"
 ---
 # <a name="updating-2d-uwp-apps-for-mixed-reality"></a>更新混合實境的 2D UWP 應用的程式
 
@@ -147,7 +147,7 @@ Windows 10 從實際螢幕像素為單位來移動所有視覺效果的設計**�
 
 **標題︰** 會顯示*displayname*應用程式執行個體相關聯的圖格
 
-**上一頁按鈕：** 引發 *[BackRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.backrequested.aspx)* 時按下的事件。 上一步 按鈕的可見性會受到 *[SystemNavigationManager.AppViewBackButtonVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.aspx)*。
+**上一頁按鈕：** 引發 *[BackRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.backrequested.aspx)* 時按下的事件。 上一步 按鈕的可見性會受到 *[SystemNavigationManager.AppViewBackButtonVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.aspx)* 。
 
 ![應用程式列在 2D 應用程式檢視中的 UI](images/12697297-10104100857470613-1470416918759008487-o-500px.jpg)<br>
 *應用程式列在 2D 應用程式檢視中的 UI*
@@ -177,9 +177,9 @@ Windows 會負責針對 UWP 應用程式，此複雜度完全轉譯您[視線](g
 
 ## <a name="see-also"></a>另請參閱
 * [應用程式模型](app-model.md)
-* [Gaze](gaze.md)
+* [目光](gaze.md)
 * [筆勢](gestures.md)
-* [動作控制站](motion-controllers.md)
-* [Voice](voice-input.md)
-* [提交至 Microsoft Store 應用程式](submitting-an-app-to-the-microsoft-store.md)
+* [運動控制器](motion-controllers.md)
+* [語音輸入](voice-input.md)
+* [將應用程式提交到 Microsoft Store](submitting-an-app-to-the-microsoft-store.md)
 * [使用 HoloLens 模擬器](using-the-hololens-emulator.md)

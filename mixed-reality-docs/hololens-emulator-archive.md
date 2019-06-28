@@ -6,12 +6,12 @@ ms.author: pbarnett
 ms.date: 4/25/2019
 ms.topic: article
 keywords: HoloLens、 模擬器、 組建和版本
-ms.openlocfilehash: 017193756b5c57c5bb45351db208533f980701a7
-ms.sourcegitcommit: 150d258a23130026c8792da383a3993657841fb4
+ms.openlocfilehash: 34aee87310cbdfed4e209fbba955db9cf3ff722f
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67024481"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414406"
 ---
 HoloLens 模擬器 （第 1 代） 和 HoloLens 2 模擬器組建安裝並排顯示。 我們通常建議使用最新可用的組建，但可能會有您想要或需要測試對舊的模擬器應用程式的情況。 此頁面包含發行版本的連結。
 

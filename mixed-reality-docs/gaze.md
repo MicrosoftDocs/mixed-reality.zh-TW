@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 混合實境、 視線、 互動，設計
-ms.openlocfilehash: e0c1a925f6faeb37ec35e511cef36f9c06672c8a
-ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
+ms.openlocfilehash: 7e65d26d3e9edabbd01d35a887ffc8622a3c6337
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66829746"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414374"
 ---
 # <a name="gaze"></a>注視
 
@@ -37,9 +37,9 @@ HoloLens 上 （第 1 代），互動應該通常衍生其目標從使用者的�
     </colgroup>
     <tr>
         <td><strong>功能</strong></td>
-        <td><a href="hololens-hardware-details.md"><strong>HoloLens （第 1 代）</strong></a></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 代)</strong></a></td>
         <td><strong>HoloLens 2</strong></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
     </tr>
      <tr>
         <td>Head 視線</td>
@@ -84,5 +84,5 @@ HoloLens 上 （第 1 代），互動應該通常衍生其目標從使用者的�
 * [MR Input 210：Head 視線](holograms-210.md)
 * [DirectX 中的頭部和眼睛目光](gaze-in-directx.md)
 * [在 Unity 中的標頭視線](gaze-in-unity.md)
-* [HoloLens 2 上追蹤](eye-tracking.md)
+* [HoloLens 2 上的眼睛視線](eye-tracking.md)
 * [在 Unity 中使用混合實境工具組的眼睛視線](https://aka.ms/mrtk-eyes)

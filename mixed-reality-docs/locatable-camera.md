@@ -5,13 +5,13 @@ author: cdedmonds
 ms.author: wguyman, cdedmonds
 ms.date: 06/12/2019
 ms.topic: article
-keywords: 相機、 hololens、 色彩相機前端向
-ms.openlocfilehash: f661fc82fbeab9a870e8ccf7044c9bb375bed7e3
-ms.sourcegitcommit: 30246ab9b9be44a3c707061753e53d4bf401eb6b
+keywords: 相機、 hololens、 色彩相機、 面向、 hololens 2，cv，電腦視覺，fiducial 前端、 標記、 qr 代碼、 qr、 相片、 視訊
+ms.openlocfilehash: e4e7fce50ec2865650b6b7cbafa59af8819d220c
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67326295"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67415257"
 ---
 # <a name="locatable-camera"></a>之外的可尋獲相機
 
@@ -21,7 +21,7 @@ HoloLens 包含可讓應用程式，以查看使用者會看到裝置的正面�
 
 ### <a name="hololens-first-generation"></a>HoloLens （第一代）
 
-* 已修正的焦點相片/影片 (PV) 相機，白色自動平衡、 自動曝光，與完整的映像處理管道
+* 已修正的焦點相片/影片 (PV) 相機白色自動平衡、 自動曝光，與完整的映像處理管線。
 * 面向世界的白色隱私權 LED 將會位於相機作用中時
 * 相機支援下列模式 （所有模式都是 16:9 外觀比例） 在 30、 24、 20、 15 及 5 的 fps:
 
@@ -35,20 +35,32 @@ HoloLens 包含可讓應用程式，以查看使用者會看到裝置的正面�
 
 ### <a name="hololens-2"></a>HoloLens 2
 
-* 自動焦點相片/影片 (PV) 相機，白色自動平衡、 自動曝光，與完整的映像處理管道
-* 面向世界的白色隱私權 LED 將會位於相機作用中時
-* 相機支援 （所有的視訊模式是 16:9 外觀比例） 的模式如下：
+* 自動焦點相片/影片 (PV) 相機白色自動平衡、 自動曝光，與完整的映像處理管線。
+* 觀景窗作用中時，會位於面向世界的白色隱私權 LED。
+* HoloLens 2 支援不同的相機設定檔。 了解如何[探索並選取相機功能](https://docs.microsoft.com/en-us/windows/uwp/audio-video-camera/camera-profiles)。
+* 相機支援下列設定檔和 （所有的視訊模式是 16:9 外觀比例） 的解決方法：
+  
+  | 設定檔                                         | 視訊     | 預覽   | 仍     | 畫面播放速率 | 水平視野 (H FOV) | 建議的用法                             |
+  |-------------------------------------------------|-----------|-----------|-----------|-------------|----------------------------------|---------------------------------------------|
+  | Legacy,0  BalancedVideoAndPhoto,100             | 2272x1278 | 2272x1278 |           | 15,30       | 64.69                            | 高品質的視訊錄製                |
+  | Legacy,0  BalancedVideoAndPhoto,100             |           |           | 3904x2196 |             | 64.69                            | 高品質拍攝相片                  |
+  | BalancedVideoAndPhoto,120                       | 1952x1100 | 1952x1100 | 1952x1100 | 15,30       | 64.69                            | 持續時間較長的案例                     |
+  | BalancedVideoAndPhoto,120                       | 1504x846  | 1504x846  |           | 15,30       | 64.69                            | 持續時間較長的案例                     |
+  | 視訊會議 100                           | 1952x1100 | 1952x1100 | 1952x1100 | 15,30,60    | 64.69                            | 視訊會議，持續時間較長的案例 |
+  | 視訊會議 100                           | 1504x846  | 1504x846  |           | 5,15,30,60  | 64.69                            | 視訊會議，持續時間較長的案例 |
+  | 視訊會議，100 BalancedVideoAndPhoto 120 | 1920x1080 | 1920x1080 | 1920x1080 | 15,30       | 64.69                            | 視訊會議，持續時間較長的案例 |
+  | 視訊會議，100 BalancedVideoAndPhoto 120 | 1280x720  | 1280x720  | 1280x720  | 15,30       | 64.69                            | 視訊會議，持續時間較長的案例 |
+  | 視訊會議，100 BalancedVideoAndPhoto 120 | 1128x635  |           |           | 15,30       | 64.69                            | 視訊會議，持續時間較長的案例 |
+  | 視訊會議，100 BalancedVideoAndPhoto 120 | 960x540   |           |           | 15,30       | 64.69                            | 視訊會議，持續時間較長的案例 |
+  | 視訊會議，100 BalancedVideoAndPhoto 120 | 760x428   |           |           | 15,30       | 64.69                            | 視訊會議，持續時間較長的案例 |
+  | 視訊會議，100 BalancedVideoAndPhoto 120 | 640x360   |           |           | 15,30       | 64.69                            | 視訊會議，持續時間較長的案例 |
+  | 視訊會議，100 BalancedVideoAndPhoto 120 | 500x282   |           |           | 15,30       | 64.69                            | 視訊會議，持續時間較長的案例 |
+  | 視訊會議，100 BalancedVideoAndPhoto 120 | 424x240   |           |           | 15,30       | 64.69                            | 視訊會議，持續時間較長的案例 |
 
-  >[!NOTE]
-  >這些模式會有所 HoloLens 2 正式運作之前的變更。
-
-  |  視訊  |  預覽  |  仍  |  畫面播放速率  |  水平視野 (H FOV) |  建議的用法 | 
-  |----------|----------|----------|----------|----------|----------|
-  |  1920x1080 |  1920x1080 |  N/A |  30、 15 的 fps  |  54deg  |  （透過視訊穩定功能的預設模式） | 
-  |  N/A |  N/A |  3904X2196 |  N/A  |  64deg |  最高的解析度靜止影像 | 
-  |  2272x1278 |  2272x1278 |  N/A |  30、 15 的 fps  |  64deg |  溢出掃描 （填補） 解析度視訊穩定功能之前 | 
-  |  1952x1100 |  1952x1100 |  1952x1100  |  30、 15 的 fps  |  64deg |  高品質的串流處理 | 
-  |  1280x720 |  1280x720 |  N/A |  30、 15、 5 的 fps  |  64deg |  針對串流和映像處理工作的低電源/解決模式 | 
+>[!NOTE]
+>客戶可以利用[混合實境擷取](mixed-reality-capture.md)拍攝影片或應用程式，包括全像投影和視訊穩定的相片。
+>
+>身為開發人員，有一些您應該考慮建立您的應用程式，如果您想要客戶擷取內容時的外觀可能不如時的考量。 您可以也啟用 （和自訂） 直接在您的應用程式內的混合的實境擷取。 深入了解[開發人員的混合實境擷取](mixed-reality-capture-for-developers.md)。
 
 ## <a name="locating-the-device-camera-in-the-world"></a>尋找裝置相機在全局
 

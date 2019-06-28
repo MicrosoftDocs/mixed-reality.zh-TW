@@ -3,15 +3,15 @@ title: HoloLens 的已知問題
 description: 這是已知的問題可能會影響 HoloLens 的開發人員的清單。
 author: mattzmsft
 ms.author: mazeller
-ms.date: 04/1/2019
+ms.date: 06/14/2019
 ms.topic: article
 keywords: 針對進行疑難排解，已知問題，協助
-ms.openlocfilehash: 2423c7292e453d97461c299e8bddfa063a29d3cd
-ms.sourcegitcommit: 2f600e5ad00cd447b180b0f89192b4b9d86bbc7e
+ms.openlocfilehash: fd70171a908dab016b375e2207436dc11d625af9
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67148698"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414356"
 ---
 # <a name="hololens-known-issues"></a>HoloLens 的已知問題
 

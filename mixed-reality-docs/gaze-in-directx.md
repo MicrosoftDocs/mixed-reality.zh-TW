@@ -6,12 +6,12 @@ ms.author: cmeekhof
 ms.date: 05/09/2019
 ms.topic: article
 keywords: 視線、 前端的視線、 標頭追蹤、 追蹤、 directx、 輸入、 全像投影
-ms.openlocfilehash: ac72c5305527ed2d68945aeb32051cf2246a736e
-ms.sourcegitcommit: 60060386305eabfac2758a2c861a43c36286b151
+ms.openlocfilehash: edf20a621178d76bfc97477f9f9b2eca200f1318
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66453738"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414413"
 ---
 # <a name="head-and-eye-gaze-input-in-directx"></a>前端和眼睛視線 DirectX 中的輸入
 
@@ -149,7 +149,7 @@ if (pointerPose)
 
 ## <a name="see-also"></a>另請參閱
 * [前端視線，並且認可輸入的模型](gaze-and-commit.md)
-* [HoloLens 2 上追蹤](eye-tracking.md)
+* [HoloLens 2 上的眼睛視線](eye-tracking.md)
 * [DirectX 中的座標系統](coordinate-systems-in-directx.md)
 * [DirectX 中的語音輸入](voice-input-in-directx.md)
 * [DirectX 中的手部和運動控制器](hands-and-motion-controllers-in-directx.md)

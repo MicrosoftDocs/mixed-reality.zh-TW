@@ -8,12 +8,12 @@ ms.date: 02/24/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境、探索、散佈、索引、登陸頁面、設計、開發、教學課程、範例應用程式、基本概念、案例研究、資源、HoloLens 操作說明、開放原始碼專案
-ms.openlocfilehash: 810d9846fd217cd1acb3ae0060c11f5c9173191e
-ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
+ms.openlocfilehash: cf513cebbbf4f05721811cb82d584f9039e378b7
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66813751"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67415390"
 ---
 # <a name="mixed-reality-documentation"></a>混合實境文件
 
@@ -53,7 +53,7 @@ ms.locfileid: "66813751"
                                           </div>
                                           <div class="cardText">
                                               <h3>開發</h3>
-                                              <p>獲得開發指南、學習技術和了解科學。</p>
+                                              <p>獲得開發指南、學習技術並了解科學。</p>
                                           </div>
                                       </div>
                                   </div>
@@ -147,11 +147,11 @@ ms.locfileid: "66813751"
 
 [![HoloLens 2](images/hololens2.jpg)](https://www.microsoft.com/hololens/hardware)
 
-[HoloLens 2](https://www.microsoft.com/hololens/hardware)提供最舒適且身歷其境的沈浸式混合實境體驗，採用領先業界的解決方案，可在數分鐘內實現價值 - 這些都由於 Microsoft 雲端與 AI 服務的可靠性、安全性及可擴展性而得到增強。 [HoloLens 2 開發版](https://www.microsoft.com/en-us/hololens/developers)可透過將 HoloLens 2 與 Unity 軟體免費試用版和雲端服務的 Azure 點數合併的供應項目，協助您加速啟動混合實境計劃。
+[HoloLens 2](https://www.microsoft.com/hololens/hardware) 提供最舒適且身歷其境的沈浸式混合實境體驗，採用領先業界的解決方案，可在數分鐘內實現價值。 這些全都由於 Microsoft 雲端與 AI 服務的可靠性、安全性及可擴展性而得到增強。 [HoloLens 2 開發版](https://www.microsoft.com/en-us/hololens/developers)可透過將 HoloLens 2 與 Unity 軟體免費試用版和雲端服務的 Azure 點數合併的供應項目，協助您加速啟動混合實境計劃。
 
 <h2>新聞與資訊</h2>
 
-<h3>2019 年 4 月</h3>
+<h3>2019 年 6 月</h3>
 
 如同我們的承諾，我們很高興能與您分享更多混合實境的優點！ 我們期待聽到您的意見反應，並誠摯地邀請您[參與討論](https://holodevelopersslack.azurewebsites.net/)，包含您想要看到我們提供的主題、想要聽的演講、需要的教學課程或操作方法... 您也可以透過 [Twitter](https://twitter.com/MxdRealityDev) 與我們聯繫，並[加入開發人員計劃](https://aka.ms/iwantmr)，直接更新新的文件、工具、事件等等。 敬請期待，我們即將推出更多功能！
 
@@ -162,7 +162,7 @@ ms.locfileid: "66813751"
 <tr>
 <td><b>移植指南</b> <br>1. HoloToolKit (HTK)/混合實境工具組 (MRTK) 至 MRTK 第 2 版
 <br>2. HoloLens (第 1 代) 至 HoloLens 2 (x86 至 ARM、互動和設計建議)
-</td></td><td>3 月 - 2019 年 5 月</td><td> <ul><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/mrtk-porting-guide>準備好應用程式以使用 HoloLens 2</a><li><a href=https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/HTKToMRTKPortingGuide.html>HoloToolKit 至 MRTK API</a></td>
+</td></td><td>3 月 - 2019 年 5 月</td><td> <ul><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/mrtk-porting-guide>讓現有應用程式做好使用 HoloLens 2 的準備</a><li><a href=https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/HTKToMRTKPortingGuide.html>HoloToolKit 至 MRTK API</a></td>
 </tr>
 <tr>
 <td>每月開放原始碼開發人員模組 (教學課程/範例應用程式)</td><td>3 月 - 2019 年 6 月</td><td> <ul><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/mrlearning-base-ch1>MR 學習基本模組</a></td>

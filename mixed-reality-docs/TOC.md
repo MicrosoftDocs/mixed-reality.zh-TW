@@ -71,7 +71,8 @@
 
 
 ## 混合實境版本資訊
-### [目前版本資訊](release-notes-october-2018.md)
+### [目前版本資訊](release-notes-may-2019.md)
+### [版本資訊 - 2018 年 10 月](release-notes-october-2018.md)
 ### [版本資訊 - 2018 年 4 月](release-notes-april-2018.md)
 ### [版本資訊 - 2017 年 10 月](release-notes-october-2017.md)
 ### [版本資訊 - 2016 年 8 月](release-notes-august-2016.md)
@@ -194,16 +195,29 @@
 ### [在 Edge 中使用 Windows Mixed Reality 的 WebVR](using-webvr-in-edge-with-windows-mixed-reality.md)
 ## [教學課程和範例應用程式](tutorials.md)
 ### Unity
-#### MR 學習模組
-##### HoloLens 2
-###### 基本模組
-####### [基本模組 - 概觀與目標](mrlearning-base.md)
-####### [專案初始化和第一個應用程式](mrlearning-base-ch1.md)
-####### [使用者介面、手部追蹤及混合實境工具組組態](mrlearning-base-ch2.md)
-####### [動態內容放置和解算器](mrlearning-base-ch3.md)
-####### [3D 物件互動](mrlearning-base-ch4.md)
-####### [進階輸入](mrlearning-base-ch5.md)
-####### [示範應用程式](mrlearning-base-ch6.md)
+#### HoloLens 2 教學課程
+##### 入門教學課程
+###### [1.概觀和目標](mrlearning-base.md)
+###### [2.初始化您的專案和第一個應用程式](mrlearning-base-ch1.md)
+###### [3.建立使用者介面並設定混合實境工具組](mrlearning-base-ch2.md)
+###### [4.放置動態內容並使用解算器](mrlearning-base-ch3.md)
+###### [5.與 3D 物件互動](mrlearning-base-ch4.md)
+###### [6.探索進階的輸入選項](mrlearning-base-ch5.md)
+###### [7.建立月球模組應用程式範例](mrlearning-base-ch6.md)
+##### Azure Spatial Anchor 教學課程
+###### [1.開始使用 Azure Spatial Anchors](mrlearning-asa-ch1.md)
+###### [2.儲存、擷取和共用 Azure Spatial Anchors](mrlearning-asa-ch2.md)
+##### Azure 語音服務教學課程
+###### [1.整合並使用語音辨識和文字記錄](mrlearning-speechSDK-ch1.md)
+###### [2.新增本機語音轉換文字翻譯離線模式](mrlearning-speechSDK-ch2.md)
+###### [3.新增 Azure 辨識服務語音翻譯元件](mrlearning-speechSDK-ch3.md)
+###### [4.設定意圖和自然語言理解](mrlearning-speechSDK-ch4.md)
+##### 多使用者功能教學課程
+###### [1.設定 Photon Unity 網路](mrlearning-sharing(photon)-ch1.md)
+###### [2.準備 Unity 以進行開發](mrlearning-sharing(photon)-ch2.md)
+###### [3.連線多個使用者](mrlearning-sharing(photon)-ch3.md)
+###### [4.與多個使用者共用物件移動](mrlearning-sharing(photon)-ch4.md)
+###### [5.將 Azure Spatial Anchors 整合到共用體驗](mrlearning-sharing(photon)-ch5.md)
 #### HoloLens (第 1 代) 開啟原始碼範例應用程式
 ##### [元素週期表](periodic-table-of-the-elements.md)
 ##### [月球模組](lunar-module.md)

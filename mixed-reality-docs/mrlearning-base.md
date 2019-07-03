@@ -6,14 +6,14 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: d4220527a7de8e596f2825fd9d199d536510b972
-ms.sourcegitcommit: 2f600e5ad00cd447b180b0f89192b4b9d86bbc7e
+ms.openlocfilehash: 389a23129d4dfc5819cdc45d071b678e3792089d
+ms.sourcegitcommit: cf9f8ebbca0301e9d277853771ff6e47701ba1c1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67148630"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67523152"
 ---
-# <a name="mr-learning-base-module-overview--objectives"></a>MR 學習基底模組概觀與目標
+# <a name="1-overview-and-objectives"></a>1.概觀和目標
 
 ## <a name="device-support"></a>裝置支援
 

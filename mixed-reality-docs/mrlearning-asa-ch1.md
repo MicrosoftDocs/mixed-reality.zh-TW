@@ -6,14 +6,14 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: c120d22f955d366042bbcb9ac73eaa4f13dc20e9
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: fcca828fa228894e0e60986c6c7fd0053b210357
+ms.sourcegitcommit: cf9f8ebbca0301e9d277853771ff6e47701ba1c1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67415275"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67523231"
 ---
-# <a name="getting-started-with-azure-spatial-anchors-on-hololens-2"></a>開始使用 Azure HoloLens 2 上的空間錨點
+# <a name="1-getting-started-with-azure-spatial-anchors"></a>1.開始使用 Azure 空間的錨點
 
 歡迎來到 HoloLens 2 教學課程的第二個模組。 開始之前，務必讓所有的[必要條件](https://docs.microsoft.com/en-us/azure/spatial-anchors/quickstarts/get-started-unity-hololens)完成。 如果您尚未完成第一個[基底模組](mrlearning-base.md)，建議您先完成該模組。 如果您從新的 Unity 專案，請依照下列中的新專案建立步驟[基底模組](mrlearning-base.md)。 
 
@@ -21,7 +21,7 @@ ms.locfileid: "67415275"
 
 * 了解使用 Azure 空間的錨點標記 HoloLens 2 開發基礎
 
-* 建立、 上傳，並下載空間的錨點
+* 建立、 上傳及下載空間的錨點
 
   
 
@@ -40,7 +40,7 @@ ms.locfileid: "67415275"
 
 > 注意:如需有關如何匯入 Azure 空間的錨點，如需 MR 基底模組資產套件特定指示的步驟 6 和步驟 3 到 4 的特殊指示上混合實境工具組 (MRKT) 中的特定指示，請參閱步驟 5。
 
-1. 在專案中建立新的場景。 以滑鼠右鍵按一下您的場景資料夾，按一下 [建立]，然後場景。 命名新的場景 ASALearningmodule。
+1. 在專案中建立新的場景。 以滑鼠右鍵按一下您的場景資料夾，按一下 [建立]，再場景。 命名新的場景 ASALearningmodule。
 
 ![module2chapter1step1im](images/module2chapter1step1im.PNG)
 
@@ -49,7 +49,7 @@ ms.locfileid: "67415275"
 
 ![module2chapter1step3im](images/module2chapter1step3im.PNG)
 
-> 注意:您會看到快顯視窗，指出: 「 您必須選擇檔案的混合實境工具組 」。 按一下 [確定] 將帶您前往步驟 4。
+> 注意:您會看到快顯視窗顯示時，您必須選擇一個檔案的混合實境工具組。 按一下 [確定] 將帶您前往步驟 4。
 
 4. 當選擇 MRTK 檔案，選取，DefaultMixedRealityToolkitConfigurationProfile。
 
@@ -153,7 +153,7 @@ ms.locfileid: "67415275"
 
 7. 對您的裝置進行建置之前，請確定裝置處於開發人員模式。 如果這是您第一次部署到 HoloLens 2，Visual Studio 可能會要求您使用 pin 碼來與 HoloLens 2 配對。 請遵循[這些指示](https://docs.microsoft.com/en-us/windows/mixed-reality/using-visual-studio)若要啟用開發人員模式，或與 Visual Studio 配對。
 
-8. 選取發行組態，而且"RM"架構，用於建置以 HoloLens 2 設定 Visual Studio。
+8. 選取發行組態，以及 RM 架構，用於建置以 HoloLens 2 設定 Visual Studio。
     ![Lesson1Chapter5Step8](images/Lesson1Chapter5Step8.JPG)
    
 9. 最後一個步驟是建置到您的裝置，選取 偵錯 > 啟動但不偵錯。 選取 啟動但不偵錯會立即開始在您的裝置時不會出現在 Visual Studio 成功組建 ithout 偵錯資訊的應用程式。 這也表示，當您的應用程式在 HoloLens 2 上執行時，您可以在不需要停止應用程式的情況下拔掉 USB 纜線。 您也可以選取組建 > 部署的方案，而不需要自動啟動應用程式部署到您的裝置。
@@ -176,9 +176,9 @@ ms.locfileid: "67415275"
     
     7. 啟動 Azure 空間的錨點的工作階段。
     
-    8. 尋找 Azure 空間的 aachors。 
+    8. 尋找 Azure 空間的錨點。 
     
-    您應該移回至原始位置您的電子將它放在建立錨點時）。
+    建立錨點時，您應該移回至原始位置您的電子會將它。
     9. 刪除 Azure 空間的錨點。
     
     10. 停止 Azure 工作階段。
@@ -198,7 +198,7 @@ ms.locfileid: "67415275"
    > 注意:有各種不同的重新定位體驗，包括使用按鈕來切換週框方塊括住的經驗，使用 （例如，在此步驟中所用的 cube)，重新調整物件的位置和旋轉的 gizmo 使用的使用者體驗流程等等。
 
 ## <a name="congratulations"></a>恭喜！
-在這一課，您已了解 Azure 空間的錨點的基本概念。 此 esson 提供您幾個按鈕，可讓您瀏覽啟動及停止 Azure 工作階段，以及建立、 上傳，以及下載 azure 的錨點，單一裝置上所需的各種步驟。 在下一課中，我們將學習如何將 Azure 的錨點識別碼儲存至擷取，您 HoloLens 2，即使重新啟動應用程式。 在系列中，您也將學習如何達成空間的對齊方式，並了解多使用者共用工作階段 （即將推出的共用模組一部分）。 多個裝置之間傳輸錨點識別碼
+在本教學課程中，您已了解 Azure 空間的錨點的基本概念。 此 esson 提供您幾個按鈕，可讓您瀏覽啟動及停止 Azure 工作階段，以及建立、 上傳，以及下載 azure 的錨點，單一裝置上所需的各種步驟。 在下一課中，我們將學習如何將 Azure 的錨點識別碼儲存至擷取，您 HoloLens 2，即使重新啟動應用程式。 在系列中，您也將學習如何達成空間的對齊方式，並了解共用工作階段的多重使用者的多個裝置之間傳輸錨點識別碼即將推出，做為共用教學課程的一部分。
 
 [下一課：ASA Lesson 2](mrlearning-asa-ch2.md)
 

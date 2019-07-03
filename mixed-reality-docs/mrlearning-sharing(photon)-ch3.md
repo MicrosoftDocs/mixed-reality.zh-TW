@@ -6,14 +6,14 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 4625acfcb3353e9537961a444012452139705359
-ms.sourcegitcommit: 78e21e887bf4357c96c9ab2164559d610e8c041e
+ms.openlocfilehash: 44cc41b10ed79d3085ec601ec9cf21af47b0fea5
+ms.sourcegitcommit: cf9f8ebbca0301e9d277853771ff6e47701ba1c1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67465219"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67523301"
 ---
-# <a name="connecting-multiple-users"></a>**連接多個使用者** 
+# <a name="connecting-multiple-users"></a>連接多個使用者
 
 在這一課中，我們了解如何連接多個使用者，即時分享經驗的一部分。 本課程結束時，您可以開啟多個裝置上的應用程式，並查看 顯示圖片，由球體，聯結每個人的表示法。 
 

@@ -6,16 +6,16 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: b729de818dfa21df8fbce782a24a611a365ac795
-ms.sourcegitcommit: 78e21e887bf4357c96c9ab2164559d610e8c041e
+ms.openlocfilehash: 2a4ea599fd4887f30589c2d839be305d3dc8d1bd
+ms.sourcegitcommit: cf9f8ebbca0301e9d277853771ff6e47701ba1c1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67465229"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67523199"
 ---
-# <a name="synchronizing-shared-object-movements"></a>同步處理共用的物件移動
+# <a name="4-sharing-object-movements-with-multiple-users"></a>4.具有多個使用者共用的物件移動
 
-在這一課中，我們了解如何共用物件的移動，以便在共用的工作階段的所有參與者都可以一起共同作業，並檢視其他人互動。 這一課為建置基礎所建置的一部分陰曆啟動器[基底模組的教學課程](mrlearning-base.md)。
+在本教學課程中，我們了解如何共用物件的移動，以便在共用的工作階段的所有參與者都可以一起共同作業，並檢視其他人互動。 這一課為建置基礎所建置的一部分陰曆啟動器[基底模組的教學課程](mrlearning-base.md)。
 
 目標：
 
@@ -26,7 +26,7 @@ ms.locfileid: "67465229"
 ### <a name="instructions"></a>指示
 
 
-1. 在上一課 (Control + S) 中儲存的場景。 您可以為它命名 HLSharedProjectMainPart4.unity 以便更輕鬆地尋找當您需要它。
+1. 在上一課 (Control + S) 中儲存的場景。 您可以加以命名，HLSharedProjectMainPart4.unity，以便更輕鬆地尋找當您需要它。
 
 2. 從 專案 視窗中，在資產-> 指令碼 資料夾，按兩下 GenericNetSync 在 Visual Studio，或用過程式碼會使用的編輯器中開啟它。  ![](images/module3chapter4updatestep2.png)
 

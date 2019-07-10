@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure、 混合實境、 academy、 unity、 教學課程、 api、 microsoft graph、 hololens、 沉浸式 vr
-ms.openlocfilehash: 98fe2c872f332a21fff3af6751ae555968073a24
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.openlocfilehash: 04c72a7ef7724cfcc27867f7f003c171a6f7851f
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591150"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694530"
 ---
 >[!NOTE]
 >混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
@@ -37,7 +37,7 @@ ms.locfileid: "59591150"
 
 <table>
 <tr>
-<th>課程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
+<th>課程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></th>
 </tr><tr>
 <td> MR 和 Azure 311:Microsoft Graph</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> </td>
 </tr>
@@ -123,15 +123,15 @@ ms.locfileid: "59591150"
 
     ![](images/AzureLabs-Lab311-10.png)
 
-3.  使用 Unity 開啟，就代表值得查看以預設值**指令碼編輯器**設為**Visual Studio**。 移至**編輯 > 偏好**，然後在新視窗中，瀏覽**外部工具**。 變更**外部指令碼編輯器**要**Visual Studio 2017**。 關閉**喜好設定**視窗。
+3.  使用 Unity 開啟，就代表值得查看以預設值**指令碼編輯器**設為**Visual Studio**。 移至**編輯** > **喜好設定**並從新的視窗，然後瀏覽至**外部工具**。 變更**外部指令碼編輯器**要**Visual Studio 2017**。 關閉**喜好設定**視窗。
 
     ![](images/AzureLabs-Lab311-11.png)
 
-4.  移至**檔案 > 組建設定**，然後選取**通用 Windows 平台**，然後按一下**切換平台**按鈕以套用您的選擇。
+4.  移至**檔案** > **組建設定**，然後選取**通用 Windows 平台**，然後按一下**切換平台**按鈕，以套用您的選擇。
 
     ![](images/AzureLabs-Lab311-12.png)
 
-5.  當您依然在**檔案 > 組建設定**，請確定：
+5.  當您依然在**檔案** > **組建設定**，請確定：
 
     1. **裝置為目標**設為**HoloLens**
     2. **建置型別**設為**D3D**
@@ -187,7 +187,7 @@ ms.locfileid: "59591150"
 
 9.  關閉*組建設定*視窗。
 
-10.  儲存您的場景和專案 (**檔案 > 儲存場景檔案 > 儲存專案**)。
+10.  儲存您的場景和專案 (**檔案** > **儲存場景檔案** > **儲存專案**)。
 
 ## <a name="chapter-3---import-libraries-in-unity"></a>第 3 章-在 Unity 中的匯入程式庫
 
@@ -205,7 +205,7 @@ ms.locfileid: "59591150"
 
 若要匯入套件：
 
-1.  使用將 Unity 套件新增至 Unity **資產* > *匯入封裝* > *自訂封裝** 功能表選項。 選取您剛才下載的封裝。
+1.  使用將 Unity 套件新增至 Unity**資產** > **匯入封裝** > **自訂封裝**功能表選項。 選取您剛才下載的封裝。
 
 2.  在 **匯入 Unity 封裝**方塊會顯示。 請確認所有項目底下 （而且包括）**外掛程式**已選取。
 
@@ -234,7 +234,7 @@ ms.locfileid: "59591150"
 
         ![](images/AzureLabs-Lab311-23.png)
 
-7.  按一下 **[套用]**。
+7.  按一下 **[套用]** 。
 
 ## <a name="chapter-4---camera-setup"></a>第 4 章-觀景窗設定
 
@@ -266,12 +266,12 @@ ms.locfileid: "59591150"
 
 若要建立此類別：
 
-1.  以滑鼠右鍵按一下**資產**中的資料夾 *[專案] 面板*，然後選取 **建立* > *資料夾**。 將資料夾命名**指令碼**。
+1.  以滑鼠右鍵按一下**資產**中的資料夾 *[專案] 面板*，然後選取**建立** > **資料夾**。 將資料夾命名**指令碼**。
 
     ![](images/AzureLabs-Lab311-26.png)
     ![](images/AzureLabs-Lab311-27.png)
 
-2.  開啟**指令碼**資料夾，在該資料夾中，按一下滑鼠右鍵，**建立* > *C\# 指令碼**。 指令碼命名**MeetingsUI。**
+2.  開啟**指令碼**資料夾，在該資料夾中，按一下滑鼠右鍵，**建立** >   **C#指令碼**。 指令碼命名**MeetingsUI。**
 
     ![](images/AzureLabs-Lab311-28.png)
 
@@ -477,7 +477,7 @@ ms.locfileid: "59591150"
     > [!NOTE]
     > 變更 **appId** 值，成為 **應用程式識別碼** 您記下在 **[第 1 章](#chapter-1---create-your-app-in-the-application-registration-portal)，步驟 4** 。 這個值應該是顯示在相同**應用程式註冊入口網站，** 在您的應用程式註冊頁面中。
 
-8.  內**Graph**類別中，將方法加入**SignInAsync()** 並**AquireTokenAsync()**，，會提示使用者插入的登入認證。
+8.  內**Graph**類別中，將方法加入**SignInAsync()** 並**AquireTokenAsync()** ，，會提示使用者插入的登入認證。
 
     ```csharp
         /// <summary>
@@ -548,9 +548,9 @@ ms.locfileid: "59591150"
 
 9.  新增下列兩種方法：
 
-    1.  **BuildTodayCalendarEndpoint()**，哪些組建會指定日期和時間範圍內，已排程的會議中擷取的 URI。
+    1.  **BuildTodayCalendarEndpoint()** ，哪些組建會指定日期和時間範圍內，已排程的會議中擷取的 URI。
 
-    2.  **ListMeetingsAsync()**，會要求從已排程的會議*Microsoft Graph*。
+    2.  **ListMeetingsAsync()** ，會要求從已排程的會議*Microsoft Graph*。
 
     ```csharp
         /// <summary>
@@ -628,7 +628,7 @@ ms.locfileid: "59591150"
 
 3.  按兩下要使用 Visual Studio 中開啟它的指令碼。
 
-4.  變更命名空間程式碼，以符合下面其中一個，以及新增 '**\[System.Serializable\]**' 上述標記您**GazeInput**類別，以便它可以序列化：
+4.  變更命名空間程式碼，以符合下面其中一個，以及新增 ' **\[System.Serializable\]** ' 上述標記您**GazeInput**類別，以便它可以序列化：
 
     ```csharp
     using UnityEngine;
@@ -846,7 +846,7 @@ ms.locfileid: "59591150"
         private GestureRecognizer _gestureRecognizer;
     ```
 
-7.  取代**啟動**方法; 請注意，它會覆寫方法，它會呼叫的 'base' 視線類別方法。  **Start （)** 類別初始化時，輸入辨識向註冊，並建立登入將會呼叫 *按鈕* 場景中：
+7.  取代**啟動**方法; 請注意，它會覆寫方法，它會呼叫的 'base' 視線類別方法。 **Start （)** 類別初始化時，輸入辨識向註冊，並建立登入將會呼叫 *按鈕* 場景中：
 
     ```csharp    
         /// <summary>
@@ -945,7 +945,7 @@ ms.locfileid: "59591150"
 
 2.  如果您尚未，勾選**Unity C\#專案**。
 
-3.  按一下 [建置] 。 將會啟動 unity**檔案總管**視窗中，您要建立，然後選取 建置到應用程式的資料夾。 現在，建立該資料夾並將它命名**應用程式**。 然後使用**應用程式**按一下 選取資料夾**選取資料夾**。
+3.  按一下 [建置]  。 將會啟動 unity**檔案總管**視窗中，您要建立，然後選取 建置到應用程式的資料夾。 現在，建立該資料夾並將它命名**應用程式**。 然後使用**應用程式**按一下 選取資料夾**選取資料夾**。
 
 4.  Unity 會開始建置您的專案**應用程式**資料夾。
 

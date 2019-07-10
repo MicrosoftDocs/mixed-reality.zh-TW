@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure、 混合實境、 academy、 unity、 教學課程、 api、 函式、 儲存體、 hololens、 vr 沈浸式，
-ms.openlocfilehash: a828c7f0ac3016462f5c7e874545bf50a2db6771
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.openlocfilehash: 5f3d0c6990249bc32e4c0f55c72dd884c4c2214e
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591278"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694551"
 ---
 >[!NOTE]
 >混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
@@ -42,7 +42,7 @@ ms.locfileid: "59591278"
 
 <table>
 <tr>
-<th>課程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
+<th>課程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></th>
 </tr><tr>
 <td>MR 和 Azure 305:函式和儲存體</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
@@ -91,17 +91,17 @@ ms.locfileid: "59591278"
 
     ![建立服務](images/AzureLabs-Lab5-02.png)
 
-4.  一旦您按下**建立**:
+4.  一旦您按下 **建立** :
 
     1.  插入*名稱*您的帳戶，請留意這個欄位只接受數字和小寫字母。
 
     2.  針對*部署模型*，選取**Resource manager**。
 
-    3.  針對*帳戶種類*，選取**儲存體 (一般用途 v1)**。
+    3.  針對*帳戶種類*，選取**儲存體 (一般用途 v1)** 。
 
     4.  判斷*位置*資源群組 （如果您要建立新的資源群組）。 位置，在理想情況下會在應用程式會執行所在的區域。 在特定區域中，才可以使用一些 Azure 的資產。
 
-    5.  針對*複寫*選取**讀取-存取-異地備援儲存體 (RA-GRS)**。
+    5.  針對*複寫*選取**讀取-存取-異地備援儲存體 (RA-GRS)** 。
 
     6.  針對*效能*，選取**標準**。
 
@@ -115,7 +115,7 @@ ms.locfileid: "59591278"
 
     10. 您也必須確認您已了解這些條款和條件套用到此服務。
 
-    11. 選取 [建立]。
+    11. 選取 [建立]  。
 
         ![輸入的服務資訊](images/AzureLabs-Lab5-03.png)
 
@@ -156,7 +156,7 @@ ms.locfileid: "59591278"
 
     ![函式應用程式資訊](images/AzureLabs-Lab5-09.png)
 
-3.  一旦您按下**建立**:
+3.  一旦您按下 **建立** :
 
     1.  提供*應用程式名稱*。 字母和數字此處只能使用 （允許上限或下限的大小寫）。
 
@@ -178,7 +178,7 @@ ms.locfileid: "59591278"
 
         ![輸入函式應用程式詳細資料](images/AzureLabs-Lab5-10.png)
 
-4.  按一下 [建立] 按鈕。
+4.  按一下 [建立]  按鈕。
 
 5.  一旦您按下**建立**，您必須建立服務，這可能需要一分鐘。
 
@@ -223,7 +223,7 @@ ms.locfileid: "59591278"
         }
     ```
 
-13. 選取 \[儲存\]。
+13. 選取 \[儲存\]  。
 
 14. 結果看起來應該像下列映像。
 
@@ -250,15 +250,15 @@ ms.locfileid: "59591278"
 
     ![指定新的 unity 專案的名稱](images/AzureLabs-Lab5-18.png)
 
-3.  使用 Unity 開啟，就代表值得查看以預設值**指令碼編輯器**設為**Visual Studio**。 移至 **編輯* > *喜好設定** 從新的視窗中，然後瀏覽至 **外部工具** 。 變更**外部指令碼編輯器**要**Visual Studio 2017**。 關閉**喜好設定**視窗。
+3.  使用 Unity 開啟，就代表值得查看以預設值**指令碼編輯器**設為**Visual Studio**。 移至**編輯** > **喜好設定**並從新的視窗，然後瀏覽至**外部工具**。 變更**外部指令碼編輯器**要**Visual Studio 2017**。 關閉**喜好設定**視窗。
 
     ![設定 visual studio，為指令碼編輯器](images/AzureLabs-Lab5-19.png)
 
-4.  接下來，移至**檔案 > 組建設定**，並切換至平台**通用 Windows 平台**，按一下**切換平台** 按鈕。
+4.  接下來，移至**檔案** > **組建設定**，並切換至平台**通用 Windows 平台**，按一下**切換平台**  按鈕。
 
     ![切換至 uwp 的平台](images/AzureLabs-Lab5-20.png)
 
-5.  移至**檔案 > 組建設定**並確定：
+5.  移至**檔案** > **組建設定**並確定：
 
     1. **裝置為目標**設定為**任何裝置**。
 
@@ -318,7 +318,7 @@ ms.locfileid: "59591278"
 
 10.  關閉 [建立設定] 視窗。
 
-11. 儲存您的場景和專案 (**檔案 > 儲存場景檔案 > 儲存專案**)。
+11. 儲存您的場景和專案 (**檔案** > **儲存場景檔案** > **儲存專案**)。
 
 ## <a name="chapter-4---setup-main-camera"></a>第 4 章-安裝主攝影機
 
@@ -421,7 +421,7 @@ ms.locfileid: "59591278"
 
 6.  接下來，您會建立**3D 文字**来提供意見反應對 Azure 服務之狀態物件。
 
-    以滑鼠右鍵按一下**GazeButton**階層中面板 一次，並新增**3D 物件 > 3D 文字**物件做為*子*。
+    以滑鼠右鍵按一下**GazeButton**階層中面板 一次，並新增**3D 物件** > **3D 文字**物件當做*子*。
 
     ![建立新的 3D 文字物件](images/AzureLabs-Lab5-42.png)
 
@@ -467,9 +467,9 @@ ms.locfileid: "59591278"
 
 若要 SDK 匯入您自己的專案，請確定您已下載最新[從 GitHub '.unitypackage](https://aka.ms/azstorage-unitysdk)。 然後，執行下列作業：
 
-1.  新增 **.unitypackage** unity 所使用的檔案**資產 > 匯入封裝 > 自訂封裝**功能表選項。
+1.  新增 **.unitypackage** unity 所使用的檔案**資產** > **匯入封裝** > **自訂封裝**功能表選項。
 
-2.  在 **匯入 Unity 封裝**方塊，顯示，您可以選取下方的所有內容 **外掛程式* > *儲存**。 取消選取所有項目不需要這堂課程。
+2.  在 **匯入 Unity 封裝**方塊，顯示，您可以選取下方的所有內容**外掛程式** > **儲存體**。 取消選取所有項目不需要這堂課程。
 
     ![匯入封裝](images/AzureLabs-Lab5-45.png)
 
@@ -519,7 +519,7 @@ ms.locfileid: "59591278"
 
 若要建立此類別：
 
-1.  以滑鼠右鍵按一下*Asset*資料夾，位於 [專案] 面板**建立 > 資料夾**。 將資料夾命名**指令碼**。
+1.  以滑鼠右鍵按一下*Asset*資料夾，位於 [專案] 面板**建立** > **資料夾**。 將資料夾命名**指令碼**。
 
     ![建立新資料夾](images/AzureLabs-Lab5-50.png)
 
@@ -527,7 +527,7 @@ ms.locfileid: "59591278"
 
 2.  按兩下剛才建立開啟的資料夾。
 
-3.  在資料夾中，以滑鼠右鍵按一下**建立 >C#指令碼**。 呼叫指令碼*所需的 AzureServices*。
+3.  在資料夾中，以滑鼠右鍵按一下**Create**  >   **C#指令碼**。 呼叫指令碼*所需的 AzureServices*。
 
 4.  按兩下新*所需的 AzureServices*類別，以開啟它*Visual Studio*。
 
@@ -637,7 +637,7 @@ ms.locfileid: "59591278"
     ```
 
     > [!IMPORTANT]
-    > 我們將會填入的程式碼*CallAzureFunctionForNextShape()* 中[未來一章](#chapter-10---completing-the-AzureServices-class)。
+    > 我們將會填入的程式碼*CallAzureFunctionForNextShape()* 中[未來一章](#chapter-10---completing-the-azureservices-class)。
 
 9.  刪除*update （)* 方法，因為這個類別不會使用它。
 
@@ -657,7 +657,7 @@ ms.locfileid: "59591278"
 
 1.  移至**指令碼**您先前建立的資料夾。
 
-2.  在資料夾中，以滑鼠右鍵按一下**建立 >C#指令碼**。 呼叫指令碼*ShapeFactory*。
+2.  在資料夾中，以滑鼠右鍵按一下**Create**  >   **C#指令碼**。 呼叫指令碼*ShapeFactory*。
 
 3.  按兩下新*ShapeFactory*指令碼，以開啟它*Visual Studio*。
 
@@ -767,7 +767,7 @@ ms.locfileid: "59591278"
 
 1.  移至**指令碼**您先前建立的資料夾。
 
-2.  在 [專案] 面板中，以滑鼠右鍵按一下**建立 >C#指令碼**。 呼叫指令碼*視線*。
+2.  在 [專案] 面板中，以滑鼠右鍵按一下**建立** >   **C#指令碼**。 呼叫指令碼*視線*。
 
 3.  按兩下新*視線*指令碼，以開啟它*Visual Studio。*
 
@@ -1033,7 +1033,7 @@ ms.locfileid: "59591278"
 
 與其他指令碼中的地方，它現在便能夠*完整* *所需的 AzureServices*類別。 這會透過來達成：
 
-1.  新增名為的新方法*CreateCloudIdentityAsync()*，若要設定驗證所需的變數來與 Azure 進行通訊。
+1.  新增名為的新方法*CreateCloudIdentityAsync()* ，若要設定驗證所需的變數來與 Azure 進行通訊。
 
     > 這個方法也會檢查先前儲存的檔案，包含 [圖形] 清單中存在。
     >
@@ -1106,7 +1106,7 @@ ms.locfileid: "59591278"
         }
     ```
 
-3.  方法的程式碼中填滿*CallAzureFunctionForNextShape()*。 您將使用先前建立*Azure 函數應用程式*要求形狀索引。 一旦收到新的形狀時，這個方法會將傳送圖形，以*ShapeFactory*場景中建立新的形狀的類別。 若要完成本文中使用下列程式碼*CallAzureFunctionForNextShape()*。
+3.  方法的程式碼中填滿*CallAzureFunctionForNextShape()* 。 您將使用先前建立*Azure 函數應用程式*要求形狀索引。 一旦收到新的形狀時，這個方法會將傳送圖形，以*ShapeFactory*場景中建立新的形狀的類別。 若要完成本文中使用下列程式碼*CallAzureFunctionForNextShape()* 。
 
     ```csharp
         /// <summary>
@@ -1197,11 +1197,11 @@ ms.locfileid: "59591278"
 
 若要開始建置程序：
 
-1.  移至**檔案 > 組建設定**。
+1.  移至**檔案** > **組建設定**。
 
     ![建置應用程式](images/AzureLabs-Lab5-54.png)
 
-2.  按一下 [建置] 。 將會啟動 unity*檔案總管*視窗中，您要建立，然後選取 建置到應用程式的資料夾。 現在，建立該資料夾並將它命名*應用程式*。 然後使用*應用程式*資料夾選取，請按下**選取資料夾**。
+2.  按一下 [建置]  。 將會啟動 unity*檔案總管*視窗中，您要建立，然後選取 建置到應用程式的資料夾。 現在，建立該資料夾並將它命名*應用程式*。 然後使用*應用程式*資料夾選取，請按下**選取資料夾**。
 
 3.  Unity 會開始建置您的專案*應用程式*資料夾。
 
@@ -1218,8 +1218,8 @@ ms.locfileid: "59591278"
 3.  在 **方案組態**選取**偵錯**。
 
     > 針對 Microsoft HoloLens，您可能會發現它更輕鬆地將此設為*遠端機器*，如此一來，您不行動網卡到您的電腦。 不過，您必須也執行下列作業：
-    > - 了解**IP 位址**的您 HoloLens，位於*設定 > 網路和網際網路 > Wi-fi > 進階選項*; IPv4 是您應該使用的位址。 
-    > - 請確定**開發人員模式**是**上**; 在找到*設定 > 更新與安全性 > 適用於開發人員*。
+    > - 了解**IP 位址**的您 HoloLens，位於**設定** > **網路和網際網路** >  **Wi-fi** > **進階選項**; IPv4 是您應該使用的位址。 
+    > - 請確定**開發人員模式**是**上**; 在找到**設定** > **更新與安全性** >  **適用於開發人員**。
 
     ![部署解決方案](images/AzureLabs-Lab5-55.png)
 

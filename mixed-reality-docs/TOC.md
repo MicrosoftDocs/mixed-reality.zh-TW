@@ -207,6 +207,7 @@
 ##### Azure Spatial Anchor 教學課程
 ###### [1.開始使用 Azure Spatial Anchors](mrlearning-asa-ch1.md)
 ###### [2.儲存、擷取和共用 Azure Spatial Anchors](mrlearning-asa-ch2.md)
+###### [3.顯示 Azure Spatial Anchor 意見反應](mrlearning-asa-ch3.md)
 ##### Azure 語音服務教學課程
 ###### [1.整合並使用語音辨識和文字記錄](mrlearning-speechSDK-ch1.md)
 ###### [2.新增本機語音轉換文字翻譯離線模式](mrlearning-speechSDK-ch2.md)

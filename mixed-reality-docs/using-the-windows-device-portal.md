@@ -6,18 +6,18 @@ ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: Windows Device Portal HoloLens
-ms.openlocfilehash: f4319e1efa94d90bfb8cc4e5815ffa87fc865a7f
-ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
+ms.openlocfilehash: 79a4a1f99125028fcaf71e185eb00093aa8c742f
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66829997"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694587"
 ---
 # <a name="using-the-windows-device-portal"></a>使用 Windows Device Portal
 
 <table>
 <tr>
-<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"><a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
+<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens (第 1 代)</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"><a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></th>
 </tr><tr>
 <td> Windows Device Portal</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
 </tr>
@@ -52,11 +52,11 @@ Windows Device Portal，如 HoloLens 可讓您設定及從遠端管理您的裝�
 
 1. [安裝工具](install-the-tools.md)藉此確定您有 Visual Studio Update 1 安裝在您的電腦上的 Windows 10 開發人員工具。 這將能啟用 USB 連線能力。
 2. 透過 Micro-USB 纜線將您的 HoloLens 與電腦連接。
-3. 從您電腦上的網頁瀏覽器，移至 http://127.0.0.1:10080。
+3. 從您電腦上的網頁瀏覽器，移至 http://127.0.0.1:10080 。
 
 ## <a name="connecting-to-an-emulator"></a>連接到模擬器
 
-您也可以透過模擬器使用 Device Portal。 若要連接到裝置入口網站，使用[工具列](using-the-hololens-emulator.md)。 按一下這個圖示：![開啟 [裝置入口網站] 圖示](images/emulator-deviceportal.png)**開啟裝置入口網站**:開啟 Windows Device Portal HoloLens os 在模擬器中。
+您也可以透過模擬器使用 Device Portal。 若要連接到裝置入口網站，使用[工具列](using-the-hololens-emulator.md)。 按一下這個圖示：![開啟 [裝置入口網站] 圖示](images/emulator-deviceportal.png)**開啟裝置入口網站**:在模擬器中開啟 HoloLens OS 的 Windows 裝置入口網站。
 
 ## <a name="creating-a-username-and-password"></a>建立使用者名稱和密碼
 
@@ -144,19 +144,29 @@ Windows Device Portal，如 HoloLens 可讓您設定及從遠端管理您的裝�
 ![在 Microsoft HoloLens 上的 Windows Device Portal 中的混合的實境擷取頁面](images/windows-device-portal-mixed-reality-capture-page-1000px.png)<br>
 *在 Microsoft HoloLens 上的 Windows Device Portal 中的混合的實境擷取頁面*
 
-使用[混合實境擷取](mixed-reality-capture.md)頁面，即可從 HoloLens 儲存媒體資料流。
+使用 [混合實境擷取] 頁面來儲存來自 HoloLens 的媒體串流。
 * **設定**:控制的媒體資料流，會擷取藉由檢查下列設定：
   * **全像投影**:擷取視訊資料流中全像攝影版的內容。 全像投影是以單聲道進行轉譯，而非立體聲。
   * **PV 相機**:擷取相片或視訊攝影機的視訊資料流。
   * **Mic 音訊**:會擷取從麥克風陣列的音訊。
   * **應用程式音訊**:會擷取從目前正在執行的應用程式的音訊。
+  * **從相機轉譯**:對齊的相片或視訊攝影機角度從擷取如果[所執行的應用程式支援](mixed-reality-capture-for-developers.md#render-from-the-pv-camera-opt-in)(HoloLens 2)。
   * **即時預覽品質**:選取螢幕解析度、 畫面播放速率和串流處理速率的即時預覽。
 * 按一下或點選**即時預覽** 按鈕，顯示擷取的資料流。 **停止即時預覽**停止擷取資料流。
 * 按一下或點選**記錄**開始錄製的混合實境資料流中，使用指定的設定。 **停止錄製**結束錄製，並將它儲存。
 * 按一下或點選**Take 相片**才靜止影像會從擷取的資料流。
 * **影片和相片**:顯示一份該裝置採取了視訊和相片的擷取。
 
-請注意，HoloLens App 無法在您正在從 Device Portal 錄製或串流即時預覽時，擷取 MRC 相片或視訊。
+> [!NOTE]
+> 有[限制同時 MRC](mixed-reality-capture-for-developers.md#simultaneous-mrc-limitations):
+> * 如果應用程式嘗試存取相片/影片相機，而 Windows Device Portal 器錄製影片中，將會停止錄製的影片。
+>   * HoloLens 2 不會停止錄製影片，如果應用程式 acesses 相片/影片相機 SharedReadOnly 模式。
+> * 如果應用程式正在使用的相片/影片相機，Windows Device Portal 可拍攝相片或視訊的記錄。
+> * 即時資料流：
+>   * HoloLens （第 1 代） 可防止應用程式時 Windows Device Portal 的即時資料流存取相片/影片相機。
+>   * HoloLens （第 1 代） 將無法進行應用程式正在使用的相片/影片相機的即時資料流。
+>   * HoloLens 2 會自動停止即時串流，當應用程式嘗試存取 ExclusiveControl 模式之相片/影片觀景窗。
+>   * HoloLens 2 可啟動應用程式正在使用 PV 相機的即時資料流。
 
 ### <a name="performance-tracing"></a>效能追蹤
 
@@ -242,7 +252,7 @@ Windows Device Portal，如 HoloLens 可讓您設定及從遠端管理您的裝�
    3. 警告
    4. 非錯誤警告
 
-按一下或點選 [啟用] 以開始追蹤。 提供者已新增到 [啟用的提供者] 下拉式清單中。
+按一下或點選 [啟用] 以開始追蹤。  提供者已新增到 [啟用的提供者] 下拉式清單中。 
 * **自訂提供者**:選取自訂的 ETW 提供者 」 和 「 追蹤層級。 依 GUID 識別提供者。 不要在 GUID 中包含括號。
 * **啟用的提供者**:列出已啟用的提供者。 從下拉式清單選取提供者，然後按一下或點選 [停用] 以停止追蹤。  按一下或點選 [全部停止] 以暫停所有追蹤。 
 * **提供者記錄**:顯示目前的工作階段期間啟用啟用的 ETW 提供者。 按一下或點選 [啟用] 以啟用已停用的提供者。  按一下或點選 [清除] 以清除歷程記錄。 

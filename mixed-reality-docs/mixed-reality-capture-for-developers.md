@@ -6,19 +6,16 @@ ms.author: mazeller
 ms.date: 02/24/2019
 ms.topic: article
 keywords: mrc、 相片、 視訊、 擷取、 相機
-ms.openlocfilehash: c2d98baf16b2ea724247224aabadc1e2ca533ec1
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.openlocfilehash: d1675d2d6c74c6d15ca245a66719e00f2a7c2111
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591595"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694367"
 ---
 # <a name="mixed-reality-capture-for-developers"></a>混合實境擷取適用於開發人員
 
-> [!NOTE]
-> HoloLens 2 的特定的詳細指引[即將推出](index.md#news-and-notes)。 
-
-請參閱[應用程式中的啟用 MRC](#enabling-mrc-in-your-app)以下新的 MRC 功能有關的 HoloLens 2 指導方針。
+> [注意 ！]請參閱[PV 相機中呈現](#render-from-the-pv-camera-opt-in)以下新的 MRC 功能有關的 HoloLens 2 指導方針。
 
 因為使用者無法接管[混合實境擷取](mixed-reality-capture.md)(MRC) 相片或視訊在任何時間，有幾件事開發您的應用程式時，您應該謹記在心。 這包括 MRC 視覺品質和正在回應系統的變更，正在擷取 MRCs 時的最佳作法。
 
@@ -34,22 +31,91 @@ MRC HoloLens （第一代） 上的支援視訊和相片最多 720p，雖然 MRC
 
 ### <a name="enabling-mrc-in-your-app"></a>應用程式中啟用 MRC
 
-根據預設，應用程式並沒有採取任何動作，讓使用者可以採取混合的實境擷取。 不過，因為 HoloLens 2 的設計會增加相片/影片 (PV) 相機與顯示之間的距離，我們將會引進新的選項，來產生第 3 個相機轉譯對齊 PV 相機**HoloLens 2**。 
+根據預設，應用程式並沒有採取任何動作，讓使用者可以採取混合的實境擷取。
 
-選擇單元到第 3 個攝影機呈現 HoloLens 2 供應項目上下列增強功能對預設 MRC 經驗：
-* 全像您實體環境和實際操作 （適用於幾近互動） 的對齊方式應該是精確完全距離，而不是有的位移距離以外[專注點](focus-point-in-unity.md)您可能會看到預設 MRC 中。
+### <a name="enabling-improved-alignment-for-mrc-in-your-app"></a>啟用 MRC 應用程式中的改善的調整
+
+根據預設，混合的實境擷取會結合相片/影片 (PV) 相機右邊的眼睛全像攝影版的輸出。 這些兩個來源會結合使用由目前執行的沈浸式應用程式設定的焦點。
+
+這表示全像投影焦點平面之外，不會對齊也 （因為 PV 觀景窗之間的正確顯示實際的距離）。
+
+#### <a name="set-the-focus-point"></a>設定焦點
+
+（在 HoloLens) 的沈浸式應用程式應該設定[專注點](focus-point-in-unity.md)使用者想要其穩定平面的位置。 這可確保最佳的對齊方式，在這兩個耳機和混合的實境擷取。
+
+如果未設定婧鎏鶗懘，穩定平面將會預設為兩個計量。
+
+#### <a name="render-from-the-pv-camera-opt-in"></a>呈現從 PV 相機 （選用功能）
+
+HoloLens 2 加入沈浸式應用程式的能力**PV 相機中呈現**混合的實境擷取正在執行時。 若要確保正確的應用程式支援的其他轉譯，則應用程式必須 opt-in 以這項功能。
+
+轉譯 PV 相機的供應項目從以下的改良，對預設 MRC 經驗：
+* 全像您實體環境和實際操作 （適用於幾近互動） 的對齊方式應該是正確的完全距離，而不需要在焦點點以外的距離的位移，您可能會看到預設 MRC。
 * 耳機在右邊的眼睛將不會遭到入侵，因為它不會用來呈現全像投影 MRC 輸出。
+
+有三個步驟，若要啟用轉譯從 PV 相機：
+1. 啟用 PhotoVideoCamera HolographicViewConfiguration
+2. 處理其他 HolographicCamera 轉譯
+3. 請確認您的著色器和程式碼正確呈現此額外 HolographicCamera 從
+
+##### <a name="enable-the-photovideocamera-holographicviewconfiguration"></a>啟用 PhotoVideoCamera HolographicViewConfiguration
+
+若要選擇加入應用程式只是讓 PhotoVideoCamera [HolographicViewConfiguration](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic.HolographicViewConfiguration):
+```csharp
+var display = Windows.Graphics.Holographic.HolographicDisplay.GetDefault();
+var view = display.TryGetViewConfiguration(Windows.Graphics.Holographic.HolographicViewConfiguration.PhotoVideoCamera);
+if (view != null)
+{
+   view.IsEnabled = true;
+}
+```
+
+##### <a name="handle-the-additional-holographiccamera-render-in-directx"></a>處理其他 HolographicCamera 呈現在 DirectX
+
+當應用程式已選擇加入要呈現從 PV 相機及混合的實境擷取功能開始：
+1. HolographicSpace 的 CameraAdded 事件就會引發。 如果應用程式無法處理觀景窗在這個階段，就會延期此事件。
+2. 當事件完成 （而且有任何未完成延期時） HolographicCamera 會出現在下一步 的 HolographicFrame AddedCameras 清單中。
+
+當混合的實境擷取停駐點 （或應用程式在混合的實境擷取正在執行時，會停用檢視設定）： HolographicCamera 會出現在下一步 的 HolographicFrame RemovedCameras 清單和 HolographicSpace CameraRemoved 事件將引發。
+
+A [ViewConfiguration](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera.viewconfiguration) HolographicCamera 以協助找出相機所屬的設定已加入屬性。
+
+##### <a name="handle-the-additional-holographiccamera-render-in-unity"></a>處理其他 HolographicCamera 呈現在 Unity 中
+
+>[!NOTE]
+> 要呈現 PV 相機中的 unity 支援正在開發，尚無法使用。 PV 相機中的轉譯支援 Unity 組建可用時，將會更新這份文件。
+
+##### <a name="verify-shaders-and-code-support-additional-cameras"></a>確認著色器和程式碼支援其他觀景窗
+
+執行混合的實境擷取和檢查有不尋常的對齊方式、 遺失的內容或效能問題。 更新著色器和適當的程式碼。
+
+某些無法支援額外的攝影機呈現的場景時，您可以在這些期間停用 PhotoVideoCamera HolographicViewConfiguration。
 
 ### <a name="disabling-mrc-in-your-app"></a>在您的應用程式中停用 MRC
 
-當 2D 應用程式時，使用[DXGI_PRESENT_RESTRICT_TO_OUTPUT](https://msdn.microsoft.com/library/windows/desktop/bb509554(v=vs.85).aspx)或是[DXGI_SWAP_CHAIN_FLAG_HW_PROTECTED](https://msdn.microsoft.com/library/windows/desktop/bb173076(v=vs.85).aspx)應用程式的視覺化內容將會顯示具有正確設定交換鏈結的受保護的內容，混合的實境擷取正在執行時，會自動隱藏。
+#### <a name="2d-app"></a>2D 應用程式
+
+2D 應用程式可以選擇隱藏執行混合的實境擷取時其視覺化內容：
+* 看見[DXGI_PRESENT_RESTRICT_TO_OUTPUT](https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-present)旗標
+* 建立具有應用程式的交換鏈結[DXGI_SWAP_CHAIN_FLAG_HW_PROTECTED](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag)旗標
+* Windows 10 可能 2019年更新，請設定 ApplicationView 的[IsScreenCaptureEnabled](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.isscreencaptureenabled)
+
+#### <a name="immersive-app"></a>沈浸式應用程式
+
+沈浸式應用程式可以選擇排除，藉以混合的實境擷取其視覺化內容：
+* 設定的 HolographicCameraRenderingParameter [IsContentProtectionEnabled](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.iscontentprotectionenabled)停用混合的實境擷取其相關聯的框架
+* 設定的 HolographicCamera [IsHardwareContentProtectionEnabled](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera.ishardwarecontentprotectionenabled)停用其相關聯的全像攝影版相機的混合的實境擷取
+
+#### <a name="password-keyboard"></a>密碼鍵盤
+
+Windows 10 可能 2019年的更新，可以看到密碼或 pin 碼的鍵盤時，混合的實境擷取自動排除視覺內容。
 
 ### <a name="knowing-when-mrc-is-active"></a>了解當 MRC 在作用中
 
-[AppCapture](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.appcapture.aspx)類別可用的應用程式中了解混合實境擷取的系統 （例如音訊或視訊） 的執行時。
+[AppCapture](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AppCapture)類別可用的應用程式中了解混合實境擷取的系統 （例如音訊或視訊） 的執行時。
 
 >[!NOTE]
->AppCapture [GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.appcapture.getforcurrentview.aspx) API 可以傳回 null，如果混合實境擷取無法在裝置上使用。 務必也要取消註冊您的應用程式已暫止的 CapturingChanged 事件，否則 MRC 可以進入封鎖狀態。
+>AppCapture [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapture.getforcurrentview) API 可以傳回 null，如果混合實境擷取無法在裝置上使用。 務必也要取消註冊您的應用程式已暫止的 CapturingChanged 事件，否則 MRC 可以進入封鎖狀態。
 
 ### <a name="best-practices-hololens-specific"></a>最佳作法 （特定的 HoloLens）
 
@@ -119,34 +185,37 @@ MRC 應該可以運作而不需要額外的工作，從開發人員，但有幾�
 
 Unity 應用程式應該會看到[Locatable_camera_in_Unity](locatable-camera-in-unity.md)来啟用全像投影的屬性。
 
-其他應用程式可以使用來執行這[Windows 媒體擷取 Api](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.mediacapture.aspx)控制相機，並新增 MRC 視訊和音訊效果中仍然可和影片包含虛擬全像投影和應用程式音訊。
+其他應用程式可以使用來執行這[Windows 媒體擷取 Api](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture)控制相機，並新增 MRC 視訊和音訊效果中仍然可和影片包含虛擬全像投影和應用程式音訊。
 
 應用程式具有要新增效果的兩個選項：
-* 較舊的 API:[Windows.Media.Capture.MediaCapture.AddEffectAsync()](https://msdn.microsoft.com/library/windows/apps/br211961.aspx)
-* 新的 Microsoft 建議 API （傳回的物件，因此您能夠管理動態屬性）：[Windows.Media.Capture.MediaCapture.AddVideoEffectAsync()](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.mediacapture.addvideoeffectasync.aspx) / [Windows.Media.Capture.MediaCapture.AddAudioEffectAsync()](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.mediacapture.addaudioeffectasync.aspx) ，您需要應用程式建立其自己實作[IVideoEffectDefinition](https://msdn.microsoft.com/library/windows/apps/windows.media.effects.ivideoeffectdefinition.aspx)並[IAudioEffectDefinition](https://msdn.microsoft.com/library/windows/apps/windows.media.effects.iaudioeffectdefinition.aspx)。 請參閱範例使用方式的 MRC 作用範例。
+* 較舊的 API:[Windows.Media.Capture.MediaCapture.AddEffectAsync()](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.addeffectasync)
+* 新的 Microsoft 建議 API （傳回的物件，因此您能夠管理動態屬性）：[Windows.Media.Capture.MediaCapture.AddVideoEffectAsync()](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.addvideoeffectasync) / [Windows.Media.Capture.MediaCapture.AddAudioEffectAsync()](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.addaudioeffectasync) ，您需要應用程式建立其自己實作[IVideoEffectDefinition](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IVideoEffectDefinition)並[IAudioEffectDefinition](https://docs.microsoft.com/uwp/api/windows.media.effects.iaudioeffectdefinition)。 請參閱範例使用方式的 MRC 作用範例。
 
-（請注意，Visual Studio 中，不會辨識這些命名空間，但字串仍然有效）
+>[!NOTE]
+> Visual Studio 中，不會辨識 Windows.Media.MixedRealityCapture 命名空間，但字串仍然有效。
 
 MRC 視訊效果 (**Windows.Media.MixedRealityCapture.MixedRealityCaptureVideoEffect**)
 
-|  屬性名稱  |  類型  |  預設值  |  描述 | 
+|  屬性名稱  |  type  |  Default Value  |  描述 | 
 |----------|----------|----------|----------|
-|  StreamType  |  UINT32 ([MediaStreamType](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.mediastreamtype.aspx))  |  1 (VideoRecord)  |  描述對使用此效果的擷取資料流。 不使用音訊。 | 
-|  HologramCompositionEnabled  |  布林值  |  TRUE  |  若要啟用或停用全像投影影片擷取畫面中的旗標。 | 
-|  RecordingIndicatorEnabled  |  布林值  |  TRUE  |  若要啟用或停用在全像擷取的畫面上的記錄指標的旗標。 | 
-|  VideoStabilizationEnabled  |  布林值  |  FALSE  |  若要啟用或停用由 HoloLens 追蹤器的視訊穩定功能旗標。 | 
+|  StreamType  |  UINT32 ([MediaStreamType](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaStreamType))  |  1 (VideoRecord)  |  描述對使用此效果的擷取資料流。 不使用音訊。 | 
+|  HologramCompositionEnabled  |  boolean  |  TRUE  |  若要啟用或停用全像投影影片擷取畫面中的旗標。 | 
+|  RecordingIndicatorEnabled  |  boolean  |  TRUE  |  若要啟用或停用在全像擷取的畫面上的記錄指標的旗標。 | 
+|  VideoStabilizationEnabled  |  boolean  |  FALSE  |  若要啟用或停用由 HoloLens 追蹤器的視訊穩定功能旗標。 | 
 |  VideoStabilizationBufferLength  |  UINT32  |  0  |  設定歷程記錄的框架數目用於視訊穩定功能。 0 是 0 延遲和幾乎 「 免費 」 能力和效能的觀點。 建議 （但要付出的延遲和記憶體的 15 框架） 的最高品質的 15。 | 
 |  GlobalOpacityCoefficient  |  FLOAT  |  0.9 (HoloLens) 1.0 （沈浸式耳機）  |  設定全域的不透明度係數的全像範圍中從 0.0 （完全透明） 到 1.0 （完全不透明）。 | 
-|  BlankOnProtectedContent  |  布林值  |  FALSE  |  若要啟用或停用 如果沒有 2d 的 UWP 應用程式顯示受保護的內容，傳回空框架的旗標。 如果這個旗標設定為 false 且 2d UWP 應用程式會顯示受保護的內容、 2d 的 UWP 應用程式將會取代受保護的內容材質中這兩個耳機及混合的實境擷取畫面中。 |
-|  ShowHiddenMesh  |  布林值  |  FALSE  |  若要啟用或停用顯示全像攝影版相機的隱藏的區域網格和相鄰內容的旗標。 |
+|  BlankOnProtectedContent  |  boolean  |  FALSE  |  若要啟用或停用 如果沒有 2d 的 UWP 應用程式顯示受保護的內容，傳回空框架的旗標。 如果這個旗標設定為 false 且 2d UWP 應用程式會顯示受保護的內容、 2d 的 UWP 應用程式將會取代受保護的內容材質中這兩個耳機及混合的實境擷取畫面中。 |
+|  ShowHiddenMesh  |  boolean  |  FALSE  |  若要啟用或停用顯示全像攝影版相機的隱藏的區域網格和相鄰內容的旗標。 |
+| OutputSize | Size | 0, 0 | 在剪輯的視訊穩定後，設定想要的輸出大小。 如果指定了 0 或無效的輸出大小，則會選擇預設裁剪大小。 |
+| PreferredHologramPerspective | UINT32 | 1 (PhotoVideoCamera) | 列舉用來指出應該擷取哪種全像攝影版的相機檢視設定。 設定 0 （顯示器） 表示應用程式不會呈現從相片或視訊攝影機要求 |
 
 MRC 音訊效果 (**Windows.Media.MixedRealityCapture.MixedRealityCaptureAudioEffect**)
 
 <table>
 <tr>
 <th>屬性名稱</th>
-<th>類型</th>
-<th>預設值</th>
+<th>type</th>
+<th>Default Value</th>
 <th>描述</th>
 </tr>
 <tr>
@@ -171,9 +240,25 @@ MRC 音訊效果 (**Windows.Media.MixedRealityCapture.MixedRealityCaptureAudioEf
 
 相片或視訊攝影機僅限於在同一時間可以存取它的處理序數目。 處理序正在錄製影片，或利用任何其他處理序的相片將會失敗取得相片/影片相機。 （這適用於混合實境擷取和標準的相片/影片擷取）
 
-使用 Windows 10 April 2018 Update，這項限制不適用於如果內建的 MRC 相機 UI 用來讓照相或拍攝影片之後應用程式已開始使用相片/影片相機。 當發生這種情況的內建的 MRC 相機 UI 畫面播放速率與解析度可能會降低其一般的值。
+HoloLens 2 應用程式可以使用的 MediaCaptureInitializationSettings [SharingMode](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.sharingmode)屬性，指出他們想要執行 SharedReadOnly，如果它們不需要將相片/攝影機的專有控制權。 擷取的畫面播放速率與解析度，這樣做表示會受限於其他應用程式已設定的項目提供的相機。
 
-使用 Windows 10 年 10 月 2018 Update，這項限制不適用於透過 Miracast 串流 MRC。
+##### <a name="built-in-mrc-photovideo-camera-access"></a>內建 MRC 相片/影片相機存取
+
+內建於 Windows 10 （透過 Cortana、 [開始] 功能表、 硬體快速鍵 Miracast、 Windows Device Portal） MRC 功能：
+* 預設會使用 ExclusiveControl 執行
+
+不過，支援已新增至每個子系統，在共用模式中運作：
+* 如果應用程式要求 ExclusiveControl 存取相片/攝影機，內建 MRC 將會自動停止使用相片/攝影機，因此應用程式的要求將會成功
+* 如果內建 MRC 已啟動時，應用程式必須 ExclusiveControl，內建 MRC 將以 SharedReadOnly 模式執行
+
+此共用的模式功能具有某些限制：
+* 相片透過 Cortana、 硬體的捷徑或 [開始] 功能表：需要 Windows 10 April 2018 Update （或更新版本）
+* 透過 Cortana、 硬體的捷徑或 [開始] 功能表的影片：需要 Windows 10 April 2018 Update （或更新版本）
+* 資料流透過 Miracast MRC:需要 Windows 10 年 10 月 2018年更新 （或更新版本）
+* 透過 Windows Device Portal，或透過 HoloLens 小幫手應用程式的資料流 MRC:需要 HoloLens 2
+
+>[!NOTE]
+> 內建的 MRC 相機 UI 畫面播放速率與解析度可能會降低其一般的值從另一個應用程式使用相片/攝影機時。
 
 #### <a name="mrc-access"></a>MRC 存取
 
@@ -182,5 +267,5 @@ MRC 音訊效果 (**Windows.Media.MixedRealityCapture.MixedRealityCaptureAudioEf
 先前的 windows 10 April 2018 Update，應用程式的自訂 MRC 錄製器已與系統 MRC （擷取相片、 擷取影片或來自 Windows Device Portal） 互斥。
 
 ## <a name="see-also"></a>另請參閱
-* [混合的實境擷取](mixed-reality-capture.md)
-* [Spectator 檢視](spectator-view.md)
+* [混合實境擷取](mixed-reality-capture.md)
+* [觀眾檢視](spectator-view.md)

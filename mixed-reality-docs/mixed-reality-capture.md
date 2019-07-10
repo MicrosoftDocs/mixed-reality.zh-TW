@@ -6,12 +6,12 @@ ms.author: wguyman
 ms.date: 10/02/2018
 ms.topic: article
 keywords: mrc，混合實境擷取、 相片、 視訊、 相機、 擷取、 使用量、 資料流、 即時串流、 示範
-ms.openlocfilehash: 18a80083bd25974905874c6c2ec0de87dc7424ab
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 7af60682f78f624e6b41ded88c8a77e70d40194c
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59596710"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694503"
 ---
 # <a name="mixed-reality-capture"></a>混合實境擷取
 
@@ -21,9 +21,11 @@ HoloLens 讓使用者混合現實與數位世界的體驗。 混合的實境擷�
 
 ## <a name="live-streaming-from-hololens"></a>即時串流從 HoloLens
 
-[Windows 10 年 10 月 2018 Update](release-notes-october-2018.md) Miracast 支援加入 HoloLens。 選取  **Connect**底部的 開始 功能表啟動 已啟用 Miracast 的裝置和配接器的選擇器 按鈕。 選取您要開始串流處理的裝置。 完成時，選取**中斷連線**底部的 [開始] 功能表的按鈕。  **連接**並**中斷連線**也會提供在 [快速動作] 功能表上。 
+[Windows 10 年 10 月 2018 Update](release-notes-october-2018.md) Miracast 支援加入 HoloLens。 選取  **Connect**底部的 開始 功能表啟動 已啟用 Miracast 的裝置和配接器的選擇器 按鈕。 選取您要開始串流處理的裝置。 完成時，選取**中斷連線**底部的 [開始] 功能表的按鈕。  **連接**並**中斷連線**也會提供在 [快速動作] 功能表上。
 
-[Windows Device Portal](using-the-windows-device-portal.md)公開即時串流處理的選項，在開發人員模式的裝置。
+[Windows Device Portal](using-the-windows-device-portal.md)並[Microsoft HoloLens 附屬應用程式](https://www.microsoft.com/store/productId/9NBLGGH4QWNX)公開即時串流的開發人員模式中的裝置的選項。
+
+[Dynamics 365 遠端協助](https://dynamics.microsoft.com/en-us/mixed-reality/remote-assist)支援即時資料流從 HoloLens，員工在遠端位置。
 
 ## <a name="taking-mixed-reality-captures"></a>採用混合的實境擷取
 
@@ -48,7 +50,7 @@ HoloLens 讓使用者混合現實與數位世界的體驗。 混合的實境擷�
 
 ### <a name="limitations-of-mixed-reality-capture"></a>混合的實境擷取的限制
 
-HoloLens，在系統將會節流 30 赫茲轉譯速率。 這會建立執行應用程式不需要保留固定的預算保留，因此 MRC 一些成長空間，並也會比對的 30fps MRC 影片記錄畫面播放速率。
+HoloLens，在系統將會節流 30 赫茲轉譯速率。 這會建立執行應用程式不需要保留固定的預算保留，因此 MRC 一些成長空間，並也會比對的 （最多至） 30 fps MRC 影片記錄畫面播放速率。
 
 影片會有最大長度為五分鐘的時間。
 
@@ -58,10 +60,19 @@ HoloLens，在系統將會節流 30 赫茲轉譯速率。 這會建立執行應�
 
 混合的實境會擷取從 Cortana 語音命令，並開始 功能表工具建立的檔案格式如下：
 
-|  類型  |  格式  |  延伸  |  解析度  |  音訊 | 
+|  type  |  格式  |  延伸  |  解析度  |  音訊 | 
 |----------|----------|----------|----------|----------|
-|  Photo  |  [JPEG](https://en.wikipedia.org/wiki/JPEG)  |  .jpg  |  1408x792px (HoloLens) 1920x1080px<br> （沈浸式耳機） |  N/A | 
-|  視訊  |  [MPEG-4](https://en.wikipedia.org/wiki/MPEG-4)  |  .mp4  |  1408x792px (HoloLens) 1632x918px （沈浸式耳機） |  48 kHz 立體聲 | 
+|  Photo  |  [JPEG](https://en.wikipedia.org/wiki/JPEG)  |  .jpg  |  3904x2196px (HoloLens 2)<br> 1408x792px (HoloLens)<br> 1920x1080px<br> （沈浸式耳機） |  N/A | 
+|  視訊  |  [MPEG-4](https://en.wikipedia.org/wiki/MPEG-4)  |  .mp4  |  1920x1080px<br> 在 30fps (HoloLens 2)<br> 1216x684px 在 24 fps (HoloLens)<br> 在 30 fps （沈浸式耳機） 1632x918px |  48 kHz 立體聲 | 
+
+>[!NOTE]
+>如果相片/攝影機已在使用另一個應用程式，同時即時資料流，或當系統資源不足時，可以較小的相片和視訊的解析度。
+
+### <a name="video-stabilization"></a>視訊穩定功能
+
+預設值：
+* 即時串流 Miracast 移轉時，會套用零延遲的視訊穩定功能。
+* 長時間延遲的視訊穩定功能會套用至擷取使用內建 MRC 相機 UI、 Cortana 語音命令，以及 Windows Device Portal 的影片。
 
 ## <a name="viewing-mixed-reality-captures"></a>檢視混合的實境擷取
 
@@ -75,8 +86,8 @@ HoloLens，在系統將會節流 30 赫茲轉譯速率。 這會建立執行應�
 >從 Windows 10 April 2018 Update，相片應用程式將不會再上傳相片和視訊到 OneDrive。
 
 ## <a name="see-also"></a>另請參閱
-* [Spectator 檢視](spectator-view.md)
-* [之外的可尋獲相機](locatable-camera.md)
-* [混合實境擷取適用於開發人員](mixed-reality-capture-for-developers.md)
-* [請參閱您的相片](see-your-photos.md)
-* [使用 Windows Device Portal](using-the-windows-device-portal.md)
+* [觀眾檢視](spectator-view.md)
+* [定位相機](locatable-camera.md)
+* [適用於開發人員的混合實境擷取](mixed-reality-capture-for-developers.md)
+* [查看您的相片](see-your-photos.md)
+* [使用 Windows 裝置入口網站](using-the-windows-device-portal.md)

@@ -6,12 +6,12 @@ ms.author: JLyons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens、 Windows Device Portal，API
-ms.openlocfilehash: 507ab98734adea80d0aad41d99124e3d91846f28
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 4b5b48c13b1b7ec8bfdf447f42097a8448b6a0e6
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59596067"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694440"
 ---
 # <a name="device-portal-api-reference"></a>裝置入口網站的 API 參考
 
@@ -278,17 +278,6 @@ ms.locfileid: "59596067"
 
 ## <a name="mixed-reality-capture"></a>混合實境擷取
 
-**/api/holographic/mrc/file (DELETE)**
-
-刪除混合的實境，從裝置記錄。
-
-參數
-* 檔案名稱：編碼時，要刪除之檔案的名稱，hex64
-
-**/api/holographic/mrc/settings (GET)**
-
-取得預設的混合實境擷取設定
-
 **/api/holographic/mrc/file (GET)**
 
 從裝置的混合的實境檔案下載。 使用 op = 進行串流處理的資料流查詢參數。
@@ -297,6 +286,38 @@ ms.locfileid: "59596067"
 * 檔案名稱：編碼時，若要取得之視訊檔的名稱，hex64
 * op： 資料流
 
+**/api/holographic/mrc/file (DELETE)**
+
+刪除混合的實境，從裝置記錄。
+
+參數
+* 檔案名稱：編碼時，要刪除之檔案的名稱，hex64
+
+**/api/holographic/mrc/files (GET)**
+
+傳回儲存在裝置上的混合的實境檔案清單
+
+**/api/holographic/mrc/photo (POST)**
+
+採用混合的實境相片，並建立該裝置上的檔案
+
+參數
+* holo： 擷取全像投影： true 或 false （預設為 false）
+* pv： 擷取 PV 相機： true 或 false （預設為 false）
+* RenderFromCamera:從相片/攝影機角度 (HoloLens 2) 轉譯： true 或 false （預設為 true）
+
+**/api/holographic/mrc/settings (GET)**
+
+取得預設的混合實境擷取設定
+
+**/api/holographic/mrc/settings (POST)**
+
+設定預設的混合實境擷取設定。  其中某些設定會套用至系統的 MRC 相片和視訊擷取。
+
+**/api/holographic/mrc/status (GET)**
+
+取得混合實境記錄 （執行、 已停止） 的狀態
+
 **/api/holographic/mrc/thumbnail (GET)**
 
 取得指定的檔案的縮圖影像。
@@ -304,81 +325,56 @@ ms.locfileid: "59596067"
 參數
 * 檔案名稱：編碼時，所要求的縮圖之檔案的名稱，hex64
 
-**/api/holographic/mrc/status (GET)**
-
-取得混合實境記錄 （執行、 已停止） 的狀態
-
-**/api/holographic/mrc/files (GET)**
-
-傳回儲存在裝置上的混合的實境檔案清單
-
-**/api/holographic/mrc/settings (POST)**
-
-設定預設的混合實境擷取設定
-
 **/api/holographic/mrc/video/control/start (POST)**
 
 開始混合的實境錄音
 
 參數
-* holo： 擷取全像投影： true 或 false
-* pv： 擷取 PV 相機： true 或 false
-* mic： 擷取麥克風： true 或 false
-* 回送： 擷取應用程式音訊： true 或 false
+* holo： 擷取全像投影： true 或 false （預設為 false）
+* pv： 擷取 PV 相機： true 或 false （預設為 false）
+* mic： 擷取麥克風： true 或 false （預設為 false）
+* 回送： 擷取應用程式音訊： true 或 false （預設為 false）
+* RenderFromCamera:從相片/攝影機角度 (HoloLens 2) 轉譯： true 或 false （預設為 true）
+* vstab:(HoloLens 2) 啟用視訊穩定功能： true 或 false （預設為 true）
+* vstabbuffer:(HoloLens 2) 視訊穩定緩衝區延遲：0 到 30 個畫面格 （預設為 15 的畫面格）
 
 **/api/holographic/mrc/video/control/stop (POST)**
 
 停止目前的混合實境錄製
 
-**/api/holographic/mrc/photo (POST)**
+## <a name="mixed-reality-streaming"></a>資料流的混合的實境
 
-採用混合的實境相片，並建立該裝置上的檔案
+HoloLens 支援混合實境透過區塊下載的分散 mp4 即時的預覽。
 
-參數
+混合的實境資料流共用相同的參數來控制什麼擷取一組：
 * holo： 擷取全像投影： true 或 false
 * pv： 擷取 PV 相機： true 或 false
+* mic： 擷取麥克風： true 或 false
+* 回送： 擷取應用程式音訊： true 或 false
 
-資料流的混合的實境
+如果指定了其中一個項目： 將擷取全像投影、 相片或視訊攝影機和應用程式音訊<br>
+如果指定了任何： 未指定的參數會預設為 false
+
+選擇性參數 (HoloLens 2)
+* RenderFromCamera: 從相片/影片相機的觀點來看，呈現: true 或 false （預設為 true）
+* vstab： 啟用視訊穩定功能： true 或 false （預設為 false）
+* vstabbuffer： 視訊穩定緩衝區延遲：0 到 30 個畫面格 （預設為 15 的畫面格）
 
 **/api/holographic/stream/live.mp4 (GET)**
 
-起始分段下載 mp4 片段
-
-參數
-* holo： 擷取全像投影： true 或 false
-* pv： 擷取 PV 相機： true 或 false
-* mic： 擷取麥克風： true 或 false
-* 回送： 擷取應用程式音訊： true 或 false
+1280x720p 30fps 5Mbit 資料流。
 
 **/api/holographic/stream/live_high.mp4 (GET)**
 
-起始分段下載 mp4 片段
-
-參數
-* holo： 擷取全像投影： true 或 false
-* pv： 擷取 PV 相機： true 或 false
-* mic： 擷取麥克風： true 或 false
-* 回送： 擷取應用程式音訊： true 或 false
-
-**/api/holographic/stream/live_low.mp4 (GET)**
-
-起始分段下載 mp4 片段
-
-參數
-* holo： 擷取全像投影： true 或 false
-* pv： 擷取 PV 相機： true 或 false
-* mic： 擷取麥克風： true 或 false
-* 回送： 擷取應用程式音訊： true 或 false
+1280x720p 30fps 5Mbit 資料流。
 
 **/api/holographic/stream/live_med.mp4 (GET)**
 
-起始分段下載 mp4 片段
+854x480p 30fps 2.5Mbit 資料流。
 
-參數
-* holo： 擷取全像投影： true 或 false
-* pv： 擷取 PV 相機： true 或 false
-* mic： 擷取麥克風： true 或 false
-* 回送： 擷取應用程式音訊： true 或 false
+**/api/holographic/stream/live_low.mp4 (GET)**
+
+428x240p 15 fps 0.6Mbit 資料流。
 
 ## <a name="networking"></a>網路功能
 
@@ -532,5 +528,5 @@ ms.locfileid: "59596067"
 * 在啟動時，會傳回 WPR 工作階段狀態。
 
 ## <a name="see-also"></a>另請參閱
-* [使用 Windows Device Portal](using-the-windows-device-portal.md)
+* [使用 Windows 裝置入口網站](using-the-windows-device-portal.md)
 * [裝置入口網站 core API 參考 (UWP)](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

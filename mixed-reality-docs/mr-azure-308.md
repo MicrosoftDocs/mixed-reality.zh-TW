@@ -6,15 +6,15 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure、 混合實境、 academy、 unity、 教學課程、 api、 通知、 函式、 資料表、 通知中樞、 hololens、 沉浸式 vr
-ms.openlocfilehash: ed56c936a0498b6e0ac804da15a2c6ec98239d0c
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 3b6e930acd81c7d6e3addc107ec0da605d38cad1
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59596998"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694610"
 ---
 >[!NOTE]
->混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會**_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
+>混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
 
 <br>
 
@@ -46,7 +46,7 @@ ms.locfileid: "59596998"
 
 <table>
 <tr>
-<th>課程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
+<th>課程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></th>
 </tr><tr>
 <td> MR 和 Azure 308:跨裝置通知</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
@@ -133,7 +133,7 @@ ms.locfileid: "59596998"
 
     ![建立通知中樞執行個體](images/AzureLabs-Lab8-07.png)
 
-4.  一旦您按下***建立***:
+4.  一旦您按下 ***建立*** :
 
     1.  插入您想要的名稱，此服務執行個體。
 
@@ -149,7 +149,7 @@ ms.locfileid: "59596998"
 
     6.  您也必須確認您已了解這些條款和條件套用到此服務。
 
-    7. 選取 [建立]。
+    7. 選取 [建立]  。
 
         ![填寫 服務詳細資料](images/AzureLabs-Lab8-08.png)
 
@@ -196,11 +196,11 @@ ms.locfileid: "59596998"
 
     2. 針對**部署模型**，按一下**Resource manager**。
 
-    3.  針對**帳戶種類**，使用下拉式功能表，選取**儲存體 (一般用途 v1)**。
+    3.  針對**帳戶種類**，使用下拉式功能表，選取**儲存體 (一般用途 v1)** 。
 
     4. 選取適當**位置**。
     
-    5.  針對**複寫**下拉式功能表中，選取**讀取-存取-異地備援儲存體 (RA-GRS)**。
+    5.  針對**複寫**下拉式功能表中，選取**讀取-存取-異地備援儲存體 (RA-GRS)** 。
 
     6.  針對**效能**，按一下**標準**。
 
@@ -214,7 +214,7 @@ ms.locfileid: "59596998"
 
     10. 離開**虛擬網路**作為**停用**如果這是您的選項。
 
-    11. 按一下 [建立] 。
+    11. 按一下 [建立]  。
 
         ![填入儲存體詳細資料](images/AzureLabs-Lab8-15.png)
 
@@ -232,7 +232,7 @@ ms.locfileid: "59596998"
     
     ![](images/AzureLabs-Lab8-18.PNG)
 
-10. 在右側面板會變更以顯示**表格服務**資訊，您要在其中加入新的資料表。 依序按一下**+** **表格**左上角的按鈕。
+10. 在右側面板會變更以顯示**表格服務**資訊，您要在其中加入新的資料表。 依序按一下 **+** **表格**左上角的按鈕。
 
     ![開啟資料表](images/AzureLabs-Lab8-19.png)
 
@@ -251,7 +251,7 @@ ms.locfileid: "59596998"
 
 1.  開啟**Visual Studio**。
 
-2.  從功能表中，按一下**檢視 > Cloud Explorer**。
+2.  從功能表中，按一下**檢視** > **Cloud Explorer**。
 
     ![開啟 cloud explorer](images/AzureLabs-Lab8-22.png)
 
@@ -272,7 +272,7 @@ ms.locfileid: "59596998"
 
     ![開啟場景物件的資料表](images/AzureLabs-Lab8-24.png)
 
-6.  您的資料表將會開啟您的 Visual Studio 視窗中央。 按一下 [資料表] 圖示，以**+** （加上） 在其上。
+6.  您的資料表將會開啟您的 Visual Studio 視窗中央。 按一下 [資料表] 圖示，以 **+** （加上） 在其上。
 
     ![加入新的資料表](images/AzureLabs-Lab8-25.png)
 
@@ -372,7 +372,7 @@ ms.locfileid: "59596998"
 
     9. 您不需要*Application Insights*在此應用程式，因此您將它保留**關閉**。
 
-    10. 按一下 [建立] 。
+    10. 按一下 [建立]  。
 
         ![建立新的執行個體](images/AzureLabs-Lab8-34.png)
 
@@ -492,7 +492,7 @@ ms.locfileid: "59596998"
 
 18. 中位置的程式碼，請按一下**儲存**。
 
-19. 接下來，按一下**\<** （箭頭） 圖示，在頁面的右手邊。
+19. 接下來，按一下 **\<** （箭頭） 圖示，在頁面的右手邊。
 
     ![開啟上傳 面板](images/AzureLabs-Lab8-43.png)
 
@@ -651,15 +651,15 @@ ms.locfileid: "59596998"
 
     ![建立專案](images/AzureLabs-Lab8-53.png)
 
-3.  使用 Unity 開啟，就代表值得查看以預設值**指令碼編輯器**設為**Visual Studio**。 移至**編輯 > 偏好**，然後在新視窗中，瀏覽**外部工具**。 變更**外部指令碼編輯器**要**Visual Studio 2017**。 關閉**喜好設定**視窗。
+3.  使用 Unity 開啟，就代表值得查看以預設值**指令碼編輯器**設為**Visual Studio**。 移至**編輯** > **喜好設定**並從新的視窗，然後瀏覽至**外部工具**。 變更**外部指令碼編輯器**要**Visual Studio 2017**。 關閉**喜好設定**視窗。
 
     ![設定外部的 VS 工具](images/AzureLabs-Lab8-54.png)
 
-4.  接下來，移至**檔案 > 組建設定**，然後選取**通用 Windows 平台**，然後按一下**切換平台**按鈕以套用您的選擇。
+4.  接下來，移至**檔案** > **組建設定**，然後選取**通用 Windows 平台**，然後按一下 **切換平台**按鈕以套用您的選擇。
 
     ![切換平台](images/AzureLabs-Lab8-55.png)
 
-5.  當您依然在**檔案 > 組建設定**，請確定：
+5.  當您依然在**檔案** > **組建設定**，請確定：
 
     1.  **裝置為目標**設為**任何裝置**
 
@@ -713,7 +713,7 @@ ms.locfileid: "59596998"
 
 9.  關閉**組建設定**視窗。
 
-10. 將場景和專案儲存至 **檔案 > 儲存場景*/ * 檔案 > 儲存專案。
+10. 儲存您的場景和專案**檔案** > **儲存場景檔案** > **儲存專案**。
 
     > [!IMPORTANT]
     > 如果您想要跳過*Unity 設定*元件 （桌面應用程式），此專案並繼續直接進入程式碼，請放心[下載此.unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20308%20-%20Cross-device%20notifications/Azure-MR-308-Desktop.unitypackage)，它匯入到您的專案做為[**自訂封裝**](https://docs.unity3d.com/Manual/AssetPackages.html)，然後繼續從[第 9 章](#chapter-9---create-the-tabletoscene-class-in-the-desktop-unity-project)。  您仍必須新增指令碼元件。
@@ -744,7 +744,7 @@ ms.locfileid: "59596998"
 
 ![取消選取任何平台](images/AzureLabs-Lab8-62.png)
 
-5.  具有*這些特定的外掛程式*選取，**取消核取****任何平台**並**取消核取** **WSAPlayer**然後按一下**套用**。
+5.  具有*這些特定的外掛程式*選取，**取消核取** **任何平台**並**取消核取** **WSAPlayer**然後按一下**套用**。
 
     ![適用於平台的 dll](images/AzureLabs-Lab8-63.png)
 
@@ -780,7 +780,7 @@ ms.locfileid: "59596998"
 
 若要建立此類別：
 
-1.  以滑鼠右鍵按一下**Asset**  資料夾位於 專案 面板**建立 > 資料夾**。 將資料夾命名**指令碼**。
+1.  以滑鼠右鍵按一下**Asset**  資料夾位於 專案 面板**建立** > **資料夾**。 將資料夾命名**指令碼**。
 
     ![建立指令碼 資料夾](images/AzureLabs-Lab8-66.png)
 
@@ -788,7 +788,7 @@ ms.locfileid: "59596998"
 
 2.  按兩下剛才建立開啟的資料夾。
 
-3.  以滑鼠右鍵按一下**指令碼**資料夾中，按一下**建立** **C\#指令碼**。 指令碼命名**TableToScene**。
+3.  以滑鼠右鍵按一下**指令碼**資料夾中，按一下**建立** >   **C#指令碼**。 指令碼命名**TableToScene**。
 
     ![新的 c# 指令碼](images/AzureLabs-Lab8-68.png)
     ![TableToScene 重新命名](images/AzureLabs-Lab8-69.png)
@@ -1038,7 +1038,7 @@ ms.locfileid: "59596998"
         }
     ```
 
-6.  內**update （)** 方法，將會偵測滑鼠輸入，並拖曳，會依次移動 Gameobject 場景中的下列程式碼。 如果使用者拖曳並卸除物件，它會將名稱和物件的座標傳遞至方法**UpdateCloudScene()**，這會呼叫 Azure 函式應用程式服務，這會更新 Azure 資料表和觸發程序通知。
+6.  內**update （)** 方法，將會偵測滑鼠輸入，並拖曳，會依次移動 Gameobject 場景中的下列程式碼。 如果使用者拖曳並卸除物件，它會將名稱和物件的座標傳遞至方法**UpdateCloudScene()** ，這會呼叫 Azure 函式應用程式服務，這會更新 Azure 資料表和觸發程序通知。
 
     ```csharp
         /// <summary>
@@ -1136,7 +1136,7 @@ ms.locfileid: "59596998"
 
 此專案的 Unity 區段所需的所有項目現在已完成。
 
-1.  瀏覽至**組建設定**(**檔案 > 組建設定**)。
+1.  瀏覽至**組建設定**(**檔案** > **組建設定**)。
 
 2.  從**Build Settings**  視窗中，按一下**建置**。
 
@@ -1167,15 +1167,15 @@ ms.locfileid: "59596998"
 
     ![name UnityMRNotifHub](images/AzureLabs-Lab8-80.png)
 
-3.  使用 Unity 開啟，就代表值得查看以預設值**指令碼編輯器**設為**Visual Studio**。 移至**編輯 > 偏好**，然後在新視窗中，瀏覽**外部工具**。 變更**外部指令碼編輯器**要**Visual Studio 2017**。 關閉**喜好設定**視窗。
+3.  使用 Unity 開啟，就代表值得查看以預設值**指令碼編輯器**設為**Visual Studio**。 移至**編輯** > **喜好設定**並從新的視窗，然後瀏覽至**外部工具**。 變更**外部指令碼編輯器**要**Visual Studio 2017**。 關閉**喜好設定**視窗。
 
     ![設定 VS 外部編輯器](images/AzureLabs-Lab8-81.png)
 
-4.  接下來，移至**檔案 > 組建設定**，並切換至平台**通用 Windows 平台**，按一下**切換平台** 按鈕。
+4.  接下來，移至**檔案** > **組建設定**，並切換至平台**通用 Windows 平台**，按一下**切換平台**  按鈕。
 
     ![切換至 UWP 的平台](images/AzureLabs-Lab8-82.png)
 
-5.  移至**檔案 > 組建設定**並確定：
+5.  移至**檔案** > **組建設定**並確定：
 
     1.  **裝置為目標**設為**任何裝置**
 
@@ -1229,11 +1229,11 @@ ms.locfileid: "59596998"
 
             ![刻度網際網路用戶端](images/AzureLabs-Lab8-89.png)
 
-8.  回到**Build Settings** *Unity C\#專案*不再呈現灰色： 這旁邊的核取方塊。
+8.  回到**Build Settings**， **UnityC#專案**不再呈現灰色： 這旁邊的核取方塊。
 
 9.  完成這些變更，關閉 [建立設定] 視窗。
 
-10. 將場景和專案儲存至 **檔案**儲存場景*/ *檔案** 儲存專案。
+10. 儲存您的場景和專案**檔案** > **儲存場景檔案** > **儲存專案**。
 
     > [!IMPORTANT]
     > 如果您想要跳過*Unity 設定*元件為此專案中 （混合實境應用程式），並直接在程式碼中繼續進行，請放心[下載此.unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20308%20-%20Cross-device%20notifications/Azure-MR-308-MR.unitypackage)，它匯入到您的專案，作為[**自訂封裝**](https://docs.unity3d.com/Manual/AssetPackages.html)，然後繼續從[第 14 章](#chapter-14---creating-the-tabletoscene-class-in-the-mixed-reality-unity-project)。 您仍必須新增指令碼元件。
@@ -1245,9 +1245,9 @@ ms.locfileid: "59596998"
 
 若要 SDK 匯入您自己的專案，請確定您已下載最新[.unitypackage](https://aka.ms/azstorage-unitysdk)。 然後，執行下列作業：
 
-1.  新增您從上述項目，下載到使用 Unity.unitypackage**資產 > 匯入封裝 > 自訂封裝**功能表選項。
+1.  新增您從上述項目，下載到使用 Unity.unitypackage**資產** > **匯入封裝** > **自訂封裝**功能表選項.
 
-2.  在 **匯入 Unity 封裝**方塊，顯示，您可以選取下方的所有內容**外掛程式 > 儲存體**。
+2.  在 **匯入 Unity 封裝**方塊，顯示，您可以選取下方的所有內容**外掛程式** > **儲存體**。
 
     ![匯入封裝](images/AzureLabs-Lab8-90.png)
 
@@ -1263,7 +1263,7 @@ ms.locfileid: "59596998"
 
     ![選取外掛程式](images/AzureLabs-Lab8-91.png)
 
-5.  具有*這些特定的外掛程式*選取，**取消核取****任何平台**並**取消核取** **WSAPlayer**然後按一下**套用**。
+5.  具有*這些特定的外掛程式*選取，**取消核取** **任何平台**並**取消核取** **WSAPlayer**然後按一下**套用**。
 
     ![適用於平台的變更](images/AzureLabs-Lab8-92.png)
 
@@ -1410,7 +1410,7 @@ ms.locfileid: "59596998"
         }
     ```
 
-8.  下列方法**InitNotificationAsync()**，會向通知中樞服務在初始化應用程式。 程式碼標記為註解為 Unity 將無法建置專案。 當您匯入 Visual Studio 中的 Azure 傳訊的 Nuget 套件，您將會移除註解。
+8.  下列方法**InitNotificationAsync()** ，會向通知中樞服務在初始化應用程式。 程式碼標記為註解為 Unity 將無法建置專案。 當您匯入 Visual Studio 中的 Azure 傳訊的 Nuget 套件，您將會移除註解。
 
     ```csharp
         /// <summary>
@@ -1433,7 +1433,7 @@ ms.locfileid: "59596998"
         }
     ```
 
-9.  下列處理常式中，**通道\_PushNotificationReceived()**，每次接收到通知時，就會觸發。 它將會還原序列化該通知上方，它會於桌面應用程式中，已移動之 Azure 資料表實體，然後將對應的 GameObject MR 場景中移至相同的位置。 
+9.  下列處理常式中，**通道\_PushNotificationReceived()** ，每次接收到通知時，就會觸發。 它將會還原序列化該通知上方，它會於桌面應用程式中，已移動之 Azure 資料表實體，然後將對應的 GameObject MR 場景中移至相同的位置。 
     
     > [!IMPORTANT]
     > 因為程式碼會參考 Azure 傳訊程式庫，您將會新增在建置使用 Nuget 套件管理員，在 Visual Studio 的 Unity 專案之後，會註解化程式碼。 因此，Unity 專案將無法建置，除非它標記為註解。請注意，您應該建置您的專案，然後想要傳回至 Unity，您必須**恢復註解**該程式碼。
@@ -1483,7 +1483,7 @@ ms.locfileid: "59596998"
 
 這一章等同於建置前一個專案的程序。 此專案的 Unity 區段所需的所有項目現在已完成，所以該是時候建置從 Unity。
 
-1.  瀏覽至**組建設定**(**檔案 > 組建設定...** ).
+1.  瀏覽至**組建設定**(**檔案** > **組建設定**)。
 
 2.  從**Build Settings**  功能表中，確保**UnityC#專案*** 已核 （這可讓您在建置後編輯此專案中的指令碼）。
 
@@ -1508,7 +1508,7 @@ ms.locfileid: "59596998"
 ## <a name="chapter-17---add-nuget-packages-to-the-unitymrnotifhub-solution"></a>第 17 章-加入 UnityMRNotifHub 方案的 NuGet 套件
 
 > [!WARNING] 
-> 請記住，一旦您將下列 NuGet 封裝 (並在下一個程式碼取消註解[章](#chapter-18---edit-unitymrnotifhub-application,-notificationreciever-class))，程式碼，在 Unity 專案中，重新開啟時將會顯示錯誤。 如果您想要返回並繼續編輯在 Unity 編輯器中，您將需要發表評論該 errosome 程式碼中，，然後取消註解一次更新的版本，一旦您已回到 Visual Studio。 
+> 請記住，一旦您將下列 NuGet 封裝 (並在下一個程式碼取消註解[章](#chapter-18---edit-unitymrnotifhub-application-notificationreceiver-class))，程式碼，在 Unity 專案中，重新開啟時將會顯示錯誤。 如果您想要返回並繼續編輯在 Unity 編輯器中，您將需要發表評論該 errosome 程式碼中，，然後取消註解一次更新的版本，一旦您已回到 Visual Studio。 
 
 完成混合的實境組建之後，瀏覽至混合的實境專案中，您建立，並按兩下該資料夾，若要使用 Visual Studio 2017 中開啟您的方案中的方案 (.sln) 檔案。
 您現在需要新增**WindowsAzure.Messaging.managed** NuGet 套件，這是用來接收來自通知中樞通知程式庫。
@@ -1611,17 +1611,17 @@ ms.locfileid: "59596998"
 
 1.  開啟的方案。
 
-2.  在方案總管 窗格中，移至 UWP 應用程式專案上按一下滑鼠右鍵**存放區**，和**與市集建立關聯的應用程式...**.
+2.  在方案總管 窗格中，移至 UWP 應用程式專案上按一下滑鼠右鍵**存放區**，和**與市集建立關聯的應用程式...** .
 
     ![開啟市集關聯](images/AzureLabs-Lab8-105.png)
 
-3.  會出現一個新的視窗呼叫**產生關聯您的應用程式與 Windows 市集**。 按一下 [下一步] 。
+3.  會出現一個新的視窗呼叫**產生關聯您的應用程式與 Windows 市集**。 按一下 [下一步]  。
 
     ![請移至下一個畫面](images/AzureLabs-Lab8-106.png)
 
 4.  它會載入與您已登入的帳戶相關聯的所有應用程式。 如果您未登入您的帳戶，您可以**登入**此頁面上。
 
-5.  尋找**市集應用程式名稱**，您在本教學課程開頭所建立，並加以選取。 然後按一下 [下一步] 。
+5.  尋找**市集應用程式名稱**，您在本教學課程開頭所建立，並加以選取。 然後按一下 [下一步]  。
 
     ![尋找並選取您的存放區名稱](images/AzureLabs-Lab8-107.png)
 

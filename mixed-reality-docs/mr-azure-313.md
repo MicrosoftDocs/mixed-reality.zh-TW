@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/11/2018
 ms.topic: article
 keywords: azure、 混合實境、 academy、 edge、 iot edge、 教學課程、 api、 通知、 函數、 資料表、 沈浸式 hololens、 vr、 iot、 虛擬機器、 ubuntu、 python
-ms.openlocfilehash: 1ab7c48ac3cff1cb2283cadb171098af9e148628
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.openlocfilehash: 93f7dc64426360d2e02b0ee0a9b1796fc8f2b469
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591132"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694594"
 ---
 >[!NOTE]
 >混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
@@ -49,13 +49,13 @@ ms.locfileid: "59591132"
 
 <table>
 <tr>
-<th>課程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
+<th>課程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></th>
 </tr><tr>
 <td> MR 和 Azure 313:IoT 中樞服務</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
 </table>
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 如與混合實境，包括 Microsoft HoloLens，開發最新的必要條件，請造訪[安裝工具](https://docs.microsoft.com/windows/mixed-reality/install-the-tools)文章。
 
@@ -91,7 +91,7 @@ ms.locfileid: "59591132"
 3. 設定您**Ubuntu 虛擬機器**使用**HYPER-V**。 下列資源將協助您進行程序。
     1.  首先，請遵循下列連結來[下載 Ubuntu 16.04.4 LTS (Xenial Xerus) ISO](http://au.releases.ubuntu.com/16.04/)。 選取  **64 位元電腦 (AMD64) 桌面映像**。
     2.  請確定**HYPER-V**啟用您的 Windows 10 電腦上。 您可以依照此連結以取得指導方針[安裝和啟用 Windows 10 上的 HYPER-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)。
-    3.  啟動 HYPER-V 並建立新的 Ubuntu VM。 您可以遵循此連結[如何使用 HYPER-V 建立的 VM 上的逐步解說指南](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/create-virtual-machine)。 若要要求時 **[從開機映像檔安裝作業系統]**，選取**Ubuntu ISO**您稍早有下載。
+    3.  啟動 HYPER-V 並建立新的 Ubuntu VM。 您可以遵循此連結[如何使用 HYPER-V 建立的 VM 上的逐步解說指南](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/create-virtual-machine)。 若要要求時 **[從開機映像檔安裝作業系統]** ，選取**Ubuntu ISO**您稍早有下載。
 
     > [!NOTE]
     > 使用**HYPER-V 快速建立**不建議進行。  
@@ -277,7 +277,7 @@ ms.locfileid: "59591132"
         sudo apt-get install python-pip
     ```
 
-2.  在本章中，您可能會提示您，由*終端機*、 權限使用裝置儲存空間，以及供您輸入**y/n** （是或否），型別 **'y'**，然後按下**Enter**金鑰，才能接受。
+2.  在本章中，您可能會提示您，由*終端機*、 權限使用裝置儲存空間，以及供您輸入**y/n** （是或否），型別 **'y'** ，然後按下**Enter**金鑰，才能接受。
 
 3.  該命令完成之後，使用下列命令來安裝**curl**:
 
@@ -320,7 +320,7 @@ ms.locfileid: "59591132"
 
     1.  使用鍵盤上的方向鍵來捲動的清單 （您必須捲動一些方式），到行包含":
 
-        「**\<將裝置連接字串 &GT;**"。
+        「 **\<將裝置連接字串 >** "。
 
     2. 替換成一行，**包括括號**，使用**Device Connection String**您稍早所。
 
@@ -370,7 +370,7 @@ ms.locfileid: "59591132"
 
 4. 一旦安裝擴充功能之後，請關閉並重新開啟 VS Code。
 
-5. VS Code 開啟一次，然後瀏覽至**檢視 > 整合式終端機**。
+5. VS Code 開啟一次，然後瀏覽至**檢視** > **整合式終端機**。
 
 6. 您現在將會安裝**Cookiecutter**。 在終端機中執行下列 bash 命令：
 
@@ -390,7 +390,7 @@ ms.locfileid: "59591132"
 
 此時，您需要建立容器，要推入的模組，與*Container Registry*。 一旦您已推送您的容器，您將使用*IoT 中樞 Edge*將其部署到您的裝置，正在執行的服務*IoT Edge 執行階段*。
 
-1. 從 VS Code 中，按一下**檢視 > 命令選擇區**。
+1. 從 VS Code 中，按一下**檢視** > **命令選擇區**。
 
 2. 在 選擇區中，搜尋並執行**Azure IoT Edge:新的 Iot Edge 方案**。
 
@@ -404,7 +404,7 @@ ms.locfileid: "59591132"
 
 7. 您會發現預先建置*Docker 映像儲存機制*調色盤上，即可顯示位址。 它看起來像：
 
-    **localhost:5000 /-NAME 您模組-**。 
+    **localhost:5000 /-NAME 您模組-** 。 
 
 8. 刪除**localhost:5000**，並在其位置插入*Container Registry* **登入伺服器**位址，您已記下建立時**容器登錄服務**([在步驟 8，第 2 章](#chapter-2---the-container-registry-service))。 按下**Enter**金鑰，才能確認該位址。
 
@@ -744,7 +744,7 @@ ms.locfileid: "59591132"
 
 ## <a name="chapter-9---package-the-solution-as-a-container"></a>第 9 章-封裝做為容器解決方案
 
-1.  您現在已準備好將檔案 「 套件 」 做為容器並將資料推送至您**Azure Container Registry**。 在 VS Code 中，開啟*整合式終端機*(**檢視 > 整合式終端機 / CTRL + '**)，並使用下列這一行加入登入**Docker** (替代值命令的認證與您**Azure Container Registry (ACR)**):
+1.  您現在已準備好將檔案 「 套件 」 做為容器並將資料推送至您**Azure Container Registry**。 在 VS Code 中，開啟*整合式終端機*(**檢視** > **整合式終端機**或是**Ctrl** + **\`** )，並使用下列這一行加入登入**Docker** (取代之命令的認證值您**Azure Container Registry (ACR)** ):
 
     ```bash
         docker login -u <ACR username> -p <ACR password> <ACR login server>
@@ -856,11 +856,11 @@ ms.locfileid: "59591132"
 
     2. 針對**部署模型**，按一下**Resource manager**。
 
-    3. 針對**帳戶種類**，使用下拉式功能表中，按一下**儲存體 (一般用途 v1)**。
+    3. 針對**帳戶種類**，使用下拉式功能表中，按一下**儲存體 (一般用途 v1)** 。
 
     4. 按一下適當**位置**。
     
-    5. 針對**複寫**下拉式功能表中，按一下**讀取-存取-異地備援儲存體 (RA-GRS)**。
+    5. 針對**複寫**下拉式功能表中，按一下**讀取-存取-異地備援儲存體 (RA-GRS)** 。
 
     6. 針對**效能**，按一下**標準**。
 
@@ -874,7 +874,7 @@ ms.locfileid: "59591132"
 
     10. 離開**虛擬網路**作為**停用**，如果這是您的選項。
 
-    11. 按一下 [建立] 。
+    11. 按一下 [建立]  。
 
         ![填入儲存體詳細資料](images/AzureLabs-Lab313-37.png)
 
@@ -916,7 +916,7 @@ ms.locfileid: "59591132"
 
 1. 開啟**Visual Studio** (**不**Visual Studio Code)。
 
-2. 從功能表中，按一下**檢視 > Cloud Explorer**。
+2. 從功能表中，按一下**檢視** > **Cloud Explorer**。
 
     ![開啟 cloud explorer](images/AzureLabs-Lab313-45.png)
 
@@ -1023,7 +1023,7 @@ ms.locfileid: "59591132"
 
     9. 您不需要*Application Insights*在此應用程式，因此您將它保留**關閉**。
 
-    10. 按一下 [建立] 。
+    10. 按一下 [建立]  。
 
         ![建立新的執行個體](images/AzureLabs-Lab313-55.png)
 
@@ -1047,7 +1047,7 @@ ms.locfileid: "59591132"
 
     ![自訂函式](images/AzureLabs-Lab313-59.png)
 
-13. 下一步 頁面上，直到您找到捲動**IoT 中樞 （事件中樞）**，然後按一下它。
+13. 下一步 頁面上，直到您找到捲動**IoT 中樞 （事件中樞）** ，然後按一下它。
 
     ![自訂函式](images/AzureLabs-Lab313-60.png)
 
@@ -1190,7 +1190,7 @@ ms.locfileid: "59591132"
 
 3.  登入*Power BI*與您**Microsoft 365 帳戶**。 您可能會重新導向至瀏覽器中，登入。 一旦您已註冊，返回 Power BI 應用程式，並再次登入。
 
-4.  按一下 **取得資料**，然後按一下**更多...**.
+4.  按一下 **取得資料**，然後按一下**更多...** .
 
     ![Power BI](images/AzureLabs-Lab313-74.png)
 

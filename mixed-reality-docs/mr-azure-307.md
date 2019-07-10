@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure、 混合實境、 academy、 unity、 教學課程、 api、 機器學習服務，ml、 機器學習 studio、 hololens、 沈浸式、 vr
-ms.openlocfilehash: 93263817df0fd809a09b32c1b34a636eab7026a1
-ms.sourcegitcommit: 9b6949d7cd2e67e6bde9b32aebeaeea325baa6c4
+ms.openlocfilehash: 89d9758dedb6a2389644dda887bfadf5b28f6dd2
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66516044"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694548"
 ---
 >[!NOTE]
 >混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
@@ -40,7 +40,7 @@ ms.locfileid: "66516044"
 
 <table>
 <tr>
-<th>課程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
+<th>課程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></th>
 </tr><tr>
 <td> MR 和 Azure 307:機器學習</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
@@ -220,7 +220,7 @@ ms.locfileid: "66516044"
 
 2.  空白實驗，將會顯示新的頁面：
 
-3.  從左側面板中，展開 **儲存的資料集* > *我的資料集** 拖曳**ProductsTableCSV**入**實驗畫布**。
+3.  從左側面板中，展開**儲存的資料集** > **我的資料集**拖曳**ProductsTableCSV**入**實驗畫布**.
 
     ![Machine Learning Studio:實驗](images/AzureLabs-Lab7-16.png)
 
@@ -236,7 +236,7 @@ ms.locfileid: "66516044"
 
     ![Machine Learning Studio:實驗](images/AzureLabs-Lab7-19.png)
 
-7.  在 **實驗**左側面板中，展開 **Machine Learning* > * 訓練 * *。 拖曳**定型模型**中的項目縮小到實驗畫布。 畫布看起來應該與相同如下。
+7.  在 **實驗**左側面板中，展開**Machine Learning** > **訓練**。 拖曳**定型模型**中的項目縮小到實驗畫布。 畫布看起來應該與相同如下。
 
     ![Machine Learning Studio:實驗](images/AzureLabs-Lab7-20.png)
 
@@ -252,21 +252,21 @@ ms.locfileid: "66516044"
 
 11. 您要定型**多級羅吉斯迴歸**演算法來預測銷售最**產品**根據日期和日期的小時。 超出本文件提供 Azure Machine Learning studio 中，不過，不同演算法的詳細說明的範圍是您可以深入了解從[機器學習服務演算法小祕技](https://docs.microsoft.com/azure/machine-learning/studio/algorithm-cheat-sheet)
 
-12. 從 實驗 項目面板的 在左側，展開 * **Machine Learning* > *初始化模型*> * 分類 * * *，然後拖曳**多級羅吉斯迴歸**至實驗畫布的項目。
+12. 從 實驗 項目面板的 在左側，展開**Machine Learning** > **初始化模型** > **分類**，並將拖曳**多級羅吉斯迴歸**至實驗畫布的項目。
 
 13. 輸出中，連接到從底部**多級羅吉斯迴歸**的左上方輸入**定型模型**項目。
 
     ![Machine Learning Studio:實驗](images/AzureLabs-Lab7-23.png)
 
-14. 在清單中的實驗項目，在左側面板中，展開 **Machine Learning* > * 分數 * *，然後將拖曳**評分模型**至畫布的項目。
+14. 在清單中的實驗項目，在左側面板中，依序展開**Machine Learning** > **分數**，然後將拖曳**評分模型**至畫布的項目。
 
 15. 輸出中，連接到從底部**定型模型**的左上方輸入**評分模型**。
 
-16. 從右下方輸出連接到**資料分割**，到右上方的輸入 **評分模型*項目*。
+16. 從右下方輸出連接到**資料分割**，到右上方的輸入**評分模型**項目。
 
     ![Machine Learning Studio:實驗](images/AzureLabs-Lab7-24.png)
 
-17. 在這份**實驗**在左側面板中的項目會展開 * **Machine Learning* > * 評估 * * *，然後拖曳**評估模型**拖曳到畫布上的項目。
+17. 在這份**實驗**的左側面板中的項目會展開**Machine Learning** > **評估**，並拖曳**評估模型**拖曳到畫布上的項目。
 
 18. 從輸出連接到**評分模型**的左上方輸入**評估模型**。
 
@@ -334,9 +334,9 @@ ms.locfileid: "66516044"
 
 1.  開啟**Unity**並建立新的 Unity 專案，稱為**MR\_。** 請確定專案類型設定為**3D**。
 
-2.  使用 Unity 開啟，就代表值得查看以預設值**指令碼編輯器**設為**Visual Studio**。 移至 ***編輯* > *喜好設定*** 從新的視窗中，然後瀏覽至 **外部工具** 。 變更**外部指令碼編輯器**要**Visual Studio 2017**。 關閉**喜好設定**視窗。
+2.  使用 Unity 開啟，就代表值得查看以預設值**指令碼編輯器**設為**Visual Studio**。 移至**編輯** > **喜好設定**並從新的視窗，然後瀏覽至**外部工具**。 變更**外部指令碼編輯器**要**Visual Studio 2017**。 關閉**喜好設定**視窗。
 
-3.  接下來，移至 ***檔案* > *組建設定*** 切換平台**通用 Windows 平台**，按一下***切換平台*** 按鈕。
+3.  接下來，移至**檔案** > **組建設定**，並切換至平台**通用 Windows 平台**，按一下***切換平台***  按鈕。
 
 4.  此外，請確定：
 
@@ -527,7 +527,7 @@ ms.locfileid: "66516044"
 
 1.  移至**指令碼**資料夾，請在 **[專案] 面板**。
 
-2.  在資料夾中，以滑鼠右鍵按一下**Create** > **C\#指令碼**。 呼叫指令碼**ProductPrediction**。
+2.  在資料夾中，以滑鼠右鍵按一下**Create**  >   **C#指令碼**。 呼叫指令碼**ProductPrediction**。
 
 3.  按兩下新**ProductPrediction**指令碼，以開啟它**Visual Studio 2017**。
 
@@ -811,7 +811,7 @@ ms.locfileid: "66516044"
 
 14. 拖曳**ProductPrediction**類別的指令碼從**指令碼**資料夾中，拖曳至**Main Camera**物件。
 
-15. 儲存您的場景和專案**檔案** >  ***儲存場景* / *檔案***  >  **儲存專案**。
+15. 儲存您的場景和專案**檔案** > **儲存場景/檔案** > **儲存專案**。
 
 ## <a name="chapter-10---build-the-uwp-solution"></a>第 10 章-建置 UWP 方案
 
@@ -819,11 +819,11 @@ ms.locfileid: "66516044"
 
 若要建置：
 
-1.  按一下儲存目前的場景**檔案** **儲存場景**。
+1.  按一下儲存目前的場景**檔案** > **儲存場景**。
 
-2.  移至**檔案** **組建設定**
+2.  移至**檔案** > **組建設定**
 
-3.  核取方塊稱為**Unity C\#專案**（這是重要因為這樣可讓您完成建置後編輯類別）。
+3.  核取方塊稱為**UnityC#專案**（這是重要因為這樣可讓您完成建置後編輯類別）。
 
 4.  按一下 **將開啟的場景新增**，
 

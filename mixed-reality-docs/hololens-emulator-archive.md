@@ -6,12 +6,12 @@ ms.author: pbarnett
 ms.date: 4/25/2019
 ms.topic: article
 keywords: HoloLens、 模擬器、 組建和版本
-ms.openlocfilehash: 34aee87310cbdfed4e209fbba955db9cf3ff722f
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: b209e444c223c3183d2680976f68c33a3b6ed79b
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414406"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694421"
 ---
 HoloLens 模擬器 （第 1 代） 和 HoloLens 2 模擬器組建安裝並排顯示。 我們通常建議使用最新可用的組建，但可能會有您想要或需要測試對舊的模擬器應用程式的情況。 此頁面包含發行版本的連結。
 
@@ -21,7 +21,8 @@ HoloLens 模擬器 （第 1 代） 和 HoloLens 2 模擬器組建安裝並排顯
 
 |  組建 |  發行日期 |  附註 | 
 |----------|----------|----------|
-|  [HoloLens 2 模擬器組建 10.0.18362.1019](https://go.microsoft.com/fwlink/?linkid=2095316) | 2019 年 6 月 11日日 | 最新的 HoloLens 2 組建。  不再需要系統管理員身分執行。  啟動 [新增] 功能表捷徑。 |
+|  [HoloLens 2 模擬器組建 10.0.18362.1021](https://go.microsoft.com/fwlink/?linkid=2098508) | 2019 年 7 月 8日日 | 最新的 HoloLens 2 組建。  解決 DiskStream.dll 簽署問題 |
+|  [HoloLens 2 模擬器組建 10.0.18362.1019](https://go.microsoft.com/fwlink/?linkid=2095316) | 2019 年 6 月 11日日 | 不再需要系統管理員身分執行。  啟動 [新增] 功能表捷徑。 |
 |  [HoloLens 2 模擬器組建 10.0.18362.1005](https://go.microsoft.com/fwlink/?linkid=2087187) | 2019 年 4 月 16日日 |  |
 
 

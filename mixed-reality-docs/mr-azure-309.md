@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure、 混合實境、 academy、 unity、 教學課程、 api、 application insights、 hololens、 沉浸式 vr
-ms.openlocfilehash: 838dbe38724d29f4c5987e2f6ac7a07231015c82
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.openlocfilehash: e14a32f9a38e3e8f3054d19310782f7c2d4784a1
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59596994"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694564"
 ---
 >[!NOTE]
 >混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
@@ -38,7 +38,7 @@ Application Insights 是 Microsoft 服務，讓開發人員從其應用程式收
 
 <table>
 <tr>
-<th>課程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
+<th>課程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></th>
 </tr><tr>
 <td> MR 和 Azure 309:Application insights</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
@@ -47,7 +47,7 @@ Application Insights 是 Microsoft 服務，讓開發人員從其應用程式收
 > [!NOTE]
 > 雖然這堂課程主要著重於 Windows Mixed Reality 沈浸式 (VR) 耳機，您也可以套用到 Microsoft HoloLens 本課程中您學到什麼。 當您依照本課程中，您會看到便箋上的任何變更，您可能需要用來支援 HoloLens。 當使用 HoloLens，您可能會發現某些回應語音擷取期間。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 > [!NOTE]
 > 本教學課程專為具有基礎經驗的 Unity 開發人員和C#。 請同時了解必要條件和書面的指示此文件中代表什麼已經過測試，並在寫入 (第 2018 年 7 月) 的時間驗證。 中所示，您可以自由使用最新的軟體[安裝工具](install-the-tools.md)發行項，但它不應該假設，本課程中的資訊將會完全符合您會發現在較新的軟體，比所列下面。
@@ -90,7 +90,7 @@ Application Insights 是 Microsoft 服務，讓開發人員從其應用程式收
 
     ![Azure 入口網站](images/AzureLabs-Lab309-02.png)
 
-4.  一旦您按下**建立**:
+4.  一旦您按下 **建立** :
 
     1.  插入您想要**名稱**此服務執行個體。
 
@@ -225,11 +225,11 @@ Application Insights 是 Microsoft 服務，讓開發人員從其應用程式收
 
         ![設定 Unity 專案](images/AzureLabs-Lab309-21.png)
 
-9.  回到**Build Settings**， **Unity C\#專案**不再呈現灰色，這旁邊的核取方塊。
+9.  回到**Build Settings**， **UnityC#專案**不再呈現灰色，這旁邊的核取方塊。
 
 10.  關閉 [建立設定] 視窗。
 
-11.  儲存您的場景和專案 (**檔案 > 儲存場景檔案 > 儲存專案**)。
+11.  儲存您的場景和專案 (**檔案** > **儲存場景檔案** > **儲存專案**)。
 
 
 ## <a name="chapter-3---import-the-unity-package"></a>第 3 章-匯入 Unity 封裝
@@ -275,7 +275,7 @@ Application Insights 是 Microsoft 服務，讓開發人員從其應用程式收
 
 在這一章將設定觀景窗和控制項，以允許使用者查看，並在場景中移動。
 
-1.  以滑鼠右鍵按一下空白區域，在階層窗格中，然後**建立 > 空白**。
+1.  以滑鼠右鍵按一下空白區域，在階層窗格中，然後**Create** > **空**。
 
     ![設定觀景窗和使用者控制項](images/AzureLabs-Lab309-26.png)
 
@@ -377,11 +377,11 @@ Application Insights 是 Microsoft 服務，讓開發人員從其應用程式收
 
 若要建立此類別：
 
-1.  以滑鼠右鍵按一下*專案 面板*，然後**建立 > 資料夾**。 將資料夾命名**指令碼**。
+1.  以滑鼠右鍵按一下*專案 面板*，然後**建立** > **資料夾**。 將資料夾命名**指令碼**。
 
     ![建立 ApplicationInsightsTracker 類別](images/AzureLabs-Lab309-46.png)  ![建立 ApplicationInsightsTracker 類別](images/AzureLabs-Lab309-47.png)
 
-2.  具有**指令碼**建立資料夾，按兩下，以開啟。 然後，在該資料夾中，按一下滑鼠右鍵**建立 > C\#指令碼**。 指令碼命名**ApplicationInsightsTracker**。
+2.  具有**指令碼**建立資料夾，按兩下，以開啟。 然後，在該資料夾中，按一下滑鼠右鍵**Create**  >   **C#指令碼**。 指令碼命名**ApplicationInsightsTracker**。
 
 3.  按兩下新**ApplicationInsightsTracker**指令碼，以開啟它**Visual Studio**。
 
@@ -505,7 +505,7 @@ Application Insights 是 Microsoft 服務，讓開發人員從其應用程式收
 
 1.  按兩下**指令碼**資料夾，將它開啟。
 
-2.  以滑鼠右鍵按一下**指令碼**資料夾中，按一下**建立** > **C\#指令碼**。 指令碼命名**視線**。
+2.  以滑鼠右鍵按一下**指令碼**資料夾中，按一下**建立** >   **C#指令碼**。 指令碼命名**視線**。
 
 3.  按兩下要使用 Visual Studio 中開啟它的指令碼。
 
@@ -699,7 +699,7 @@ Application Insights 是 Microsoft 服務，讓開發人員從其應用程式收
 
 1.  按兩下**指令碼**資料夾，將它開啟。
 
-2.  以滑鼠右鍵按一下**指令碼**資料夾中，按一下**建立** **C\# > 指令碼**。 指令碼命名**ObjectTrigger**。
+2.  以滑鼠右鍵按一下**指令碼**資料夾中，按一下**建立** >   **C#指令碼**。 指令碼命名**ObjectTrigger**。
 
 3.  按兩下要使用 Visual Studio 中開啟它的指令碼。 以下列取代現有的程式碼：
 
@@ -771,7 +771,7 @@ Application Insights 是 Microsoft 服務，讓開發人員從其應用程式收
 
 1.  按兩下**指令碼**資料夾，將它開啟。
 
-2.  以滑鼠右鍵按一下**指令碼**資料夾中，按一下**建立** **C\# > 指令碼**。 指令碼命名**DataFromAnalytics**。
+2.  以滑鼠右鍵按一下**指令碼**資料夾中，按一下**建立** >   **C#指令碼**。 指令碼命名**DataFromAnalytics**。
 
 3.  按兩下要使用 Visual Studio 中開啟它的指令碼。
 
@@ -1000,7 +1000,7 @@ Application Insights 是 Microsoft 服務，讓開發人員從其應用程式收
 
 1.  按兩下**指令碼**資料夾，將它開啟。
 
-2.  以滑鼠右鍵按一下**指令碼**資料夾中，按一下**建立** > **C\#指令碼**。 指令碼命名**移動**。
+2.  以滑鼠右鍵按一下**指令碼**資料夾中，按一下**建立** >   **C#指令碼**。 指令碼命名**移動**。
 
 3.  按兩下要開啟它的指令碼*Visual Studio*。
 
@@ -1205,7 +1205,7 @@ Application Insights 是 Microsoft 服務，讓開發人員從其應用程式收
 
 此專案的 Unity 區段所需的所有項目現在已完成，所以該是時候建置從 Unity。
 
-1.  瀏覽至**組建設定**， **(檔案 > 組建設定...)** .
+1.  瀏覽至**組建設定**，(**檔案** > **組建設定**)。
 
 2.  從**Build Settings**  視窗中，按一下**建置**。
 

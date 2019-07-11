@@ -3,15 +3,15 @@ title: HoloLens 的已知問題
 description: 這是已知的問題可能會影響 HoloLens 的開發人員的清單。
 author: mattzmsft
 ms.author: mazeller
-ms.date: 06/14/2019
+ms.date: 07/10/2019
 ms.topic: article
 keywords: 針對進行疑難排解，已知問題，協助
-ms.openlocfilehash: fd70171a908dab016b375e2207436dc11d625af9
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: 1ef9e9f411e16d2f604930f3146ede1d03d7c0f6
+ms.sourcegitcommit: c36b8c8573f51afa79504c4a17084e4f55d2f664
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414356"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67789484"
 ---
 # <a name="hololens-known-issues"></a>HoloLens 的已知問題
 
@@ -20,19 +20,61 @@ ms.locfileid: "67414356"
 ## <a name="unable-to-connect-and-deploy-to-hololens-through-visual-studio"></a>無法連接，然後部署至透過 Visual Studio 的 HoloLens
 
 >[!NOTE]
->上次更新日期：6/14 @ 6 PM-問題進行調查。
+>上次更新日期：7/8 下午 7:25-@ 小組已識別的根本原因和目前正努力修正。 因應措施如下所示。 
 
-HoloLens 和 Visual Studio 小組正在調查可能會防止使用者將部署至透過 Visual Studio 的 HoloLens 裝置的問題。
- 
-在部署階段期間使用者回報下列錯誤訊息，儘管 HoloLens 裝置而開發人員機器*開發人員模式*啟用：
+我們可以找出此問題的根本原因。 然後使用相同的 HoloLens 後續使用最新版的 Visual Studio 2017 或 Visual Studio 2019 和 Visual Studio 2015 或 Visual Studio 2017 的早期版本來部署和偵錯其 HoloLens 上的應用程式的使用者會受到影響。 
 
-*DEP0100:請確定目標裝置已啟用開發人員模式。無法取得開發人員授權上<device IP>因為錯誤 80004005。*
+由較新版本的 Visual Studio 部署新版的元件，但造成失敗的較新版本的裝置上剩餘檔案從舊的版本。  這會導致下列錯誤訊息：DEP0100:請確定目標裝置已啟用開發人員模式。 無法取得開發人員授權上<ip>因為錯誤 80004005。
  
 **因應措施**： 
+
+我們的小組目前正努力修正程式。 在此同時，您可以使用下列步驟來解決此問題，並協助解除部署和偵錯：  
+1. 開啟 Visual Studio
+2. 檔案-> 新增-> 專案
+3. 視覺化C#]-> [Windows 桌面]-> [主控台應用程式 (.NET Framework)
+4. 提供專案名稱 (例如 HoloLensDeploymentFix)，並確定至少架構設定為.NET Framework 4.5，然後按一下 [確定]。
+5. 以滑鼠右鍵按一下方案總管 中的 參考 節點，並新增下列參考 （按一下 瀏覽 區段中，然後按一下 瀏覽...按鈕）：
+    ```
+    C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x86\Microsoft.Tools.Deploy.dll
+    C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x86\Microsoft.Tools.Connectivity.dll
+    C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x86\SirepInterop.dll
+    ```
+    >[!NOTE]
+    >如果您沒有安裝 10.0.18362.0，使用您所擁有的最新版本。
  
-使用者報告將裝置重設解決此問題，但我們無法保證，這將會作用在所有情況下。 您可以找到您的裝置重設的指示[此處](https://support.microsoft.com/en-us/help/13452/hololens-restart-reset-or-recover-hololens)。
+6. 以滑鼠右鍵按一下方案總管] 中的專案，然後選擇 [新增]-> [現有項目。
  
-一旦問題造成的根，我們會提供更新。 
+7. 瀏覽至 C:\Program Files (x86) \Windows Kits\10\bin\10.0.18362.0\x86 並變更篩選，以"的所有檔案 (\*。\*) 」
+ 
+8. 選取 SirepClient.dll 和 SshClient.dll，然後按一下 [新增]。
+ 
+9. 找出並選取方案總管 （它們應該是檔案的清單底部） 中的這兩個檔案並將"複製到輸出目錄 中 屬性 視窗變更為 一律複製
+ 
+10. 在檔案頂端，加入現有的 'using' 陳述式清單中的下列： 
+    ```
+    using Microsoft.Tools.Deploy;
+    using System.Net;
+    ```
+ 
+11. 在 「 靜態 void Main(...)"，新增下列程式碼：
+    ```
+    RemoteDeployClient client = RemoteDeployClient.CreateRemoteDeployClient();
+    client.Connect(new ConnectionOptions()
+    {
+        Credentials = new NetworkCredential("DevToolsUser", string.Empty),
+        IPAddress = IPAddress.Parse(args[0])
+    });
+    client.RemoteDevice.DeleteFile(@"C:\Data\Users\DefaultAccount\AppData\Local\DevelopmentFiles\VSRemoteTools\x86\CoreCLR\mscorlib.ni.dll");
+    ```
+12. 組建]-> [建置方案
+ 
+13. 開啟命令提示字元包含已編譯的.exe (例如 C:\MyProjects\HoloLensDeploymentFix\bin\Debug) 的資料夾
+ 
+14. 執行可執行檔，並提供裝置的 IP 位址，做為命令列引數。  （如果透過 USB 連接，您可以使用 127.0.0.1，否則請使用裝置的 WiFi IP 位址。）例如，"HoloLensDeploymentFix 127.0.0.1"
+ 
+15. 一旦此工具已結束但沒有任何訊息 （這應該只需要幾秒鐘的時間），您現在將能夠部署和偵錯從 Visual Studio 2017 或更新版本。  不需要繼續的使用此工具。
+
+我們將進一步提供可用的更新。
 
 ## <a name="issues-launching-the-microsoft-store-and-apps-on-hololens"></a>啟動 Microsoft Store 和 HoloLens 上的應用程式的問題
 

@@ -6,14 +6,14 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 389a23129d4dfc5819cdc45d071b678e3792089d
-ms.sourcegitcommit: cf9f8ebbca0301e9d277853771ff6e47701ba1c1
+ms.openlocfilehash: 3c779d731d7cf139ebcbe305c94754970e937b57
+ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67523152"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68293618"
 ---
-# <a name="1-overview-and-objectives"></a>1.概觀和目標
+# <a name="1-overview-and-objectives"></a>1.總覽和目標
 
 ## <a name="device-support"></a>裝置支援
 
@@ -25,7 +25,7 @@ ms.locfileid: "67523152"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>課程</strong></td>
+        <td><strong>粗</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 代)</strong></a></td>
         <td><a href="https://www.microsoft.com/en-us/hololens/hardware"><strong>HoloLens 2</strong></a></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
@@ -42,7 +42,9 @@ ms.locfileid: "67523152"
 
 ### <a name="prerequisites"></a>先決條件
 
-* Windows 10 電腦的正確設定[安裝工具](install-the-tools.md)
+* [已安裝正確工具](install-the-tools.md)的 WINDOWS 10 電腦
 * Windows 10 SDK 10.0.18362.0 或更新版本
-* 基本C#程式設計的能力。
-* HoloLens 2 裝置[開發設定的](using-visual-studio.md#enabling-developer-mode)。
+* 一些基本C#的程式設計能力。
+* [為開發設定](using-visual-studio.md#enabling-developer-mode)的 HoloLens 2 裝置。
+
+[下一課：初始化您的專案和第一個應用程式](mrlearning-base-ch1.md)

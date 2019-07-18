@@ -1,85 +1,93 @@
 ---
-title: 學習模組共用 HoloLens 2 MR
-description: 完成這個課程來了解如何實作 HoloLens 2 應用程式內的多使用者分享的經驗。
+title: HoloLens 2 的 MR 學習共用模組
+description: 完成此課程, 以瞭解如何在 HoloLens 2 應用程式中執行多使用者共用體驗。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 2a4ea599fd4887f30589c2d839be305d3dc8d1bd
-ms.sourcegitcommit: cf9f8ebbca0301e9d277853771ff6e47701ba1c1
+ms.openlocfilehash: 3e4be00ddeab6d91dbbc8226bfa3dc543cded095
+ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67523199"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68293693"
 ---
-# <a name="4-sharing-object-movements-with-multiple-users"></a>4.具有多個使用者共用的物件移動
+# <a name="4-sharing-object-movements-with-multiple-users"></a>4.與多個使用者共用物件移動
 
-在本教學課程中，我們了解如何共用物件的移動，以便在共用的工作階段的所有參與者都可以一起共同作業，並檢視其他人互動。 這一課為建置基礎所建置的一部分陰曆啟動器[基底模組的教學課程](mrlearning-base.md)。
+在本教學課程中, 我們將瞭解如何共用物件的移動, 讓共用會話的所有參與者都可以共同合作, 並查看彼此的互動。 這一課是以[基本模組教學](mrlearning-base.md)課程中建立的陰曆啟動器為基礎。
 
-目標：
+目標
 
-- 將 3D 模型到共用陰曆啟動器
-- 將專案設定為共用的 3D 模型的移動。
-- 了解如何建置基本的多使用者共同作業應用程式
+- 帶入陰曆啟動器作為要共用的3D 模型
+- 將您的專案設定為共用3D 模型的移動。
+- 瞭解如何建立基本的多使用者協同作業應用程式
 
 ### <a name="instructions"></a>指示
 
 
-1. 在上一課 (Control + S) 中儲存的場景。 您可以加以命名，HLSharedProjectMainPart4.unity，以便更輕鬆地尋找當您需要它。
+1. 從上一課 (Control + S) 儲存場景。 您可以將它命名為 HLSharedProjectMainPart4, 以便在需要時更容易找到。
 
-2. 從 專案 視窗中，在資產-> 指令碼 資料夾，按兩下 GenericNetSync 在 Visual Studio，或用過程式碼會使用的編輯器中開啟它。  ![](images/module3chapter4updatestep2.png)
+2. 從 [專案] 視窗的 [資產-> 腳本] 資料夾中, 按兩下 [GenericNetSync], 在 Visual Studio 或您使用的程式碼編輯器中開啟它。  
 
-3. 在行 34 和 38，移除 / / 若要啟動的程式碼，我們將在這一課使用的資料表。 接下來，將檔案儲存。 ![](images/module3chapter4updatestep3.png)
+![module3chapter4updatestep2](images/module3chapter4updatestep2.png)
 
-4. 在 專案 視窗中，按兩下 PhotonRoom.cs 檔案，在 資產-> 在 Visual Studio 中開啟的 指令碼 資料夾。 ![](images/module3chapter4updatestep4.png)
+3. 在行34和38上, 移除//以啟動我們將在此課程中使用之資料表的程式碼。 接下來, 儲存檔案。 
 
-5. 就像在步驟 3 中，我們需要移除 / / 啟用在 25、 26 及 106 的幾行程式碼。![](images/module3chapter4updatestep5a.png) ![](images/module3chapter4updatestep5b.png)
+![module3chapter4updatestep3](images/module3chapter4updatestep3.png)
 
-6. 在階層檢視中，選取 NetworkRoom 物件。![](images/module3chapter4updatestep6.png)
+4. 在 [專案] 視窗中, 按兩下 [資產-> 腳本] 資料夾中的 PhotonRoom.cs 檔案, 在 Visual Studio 中將它開啟。 
 
-7. 在 [專案] 檢視中，瀏覽至資產]-> [資源]-> [Prefabs。 首先，拖放資料表 prefab PhotonRoom 類別上的 Tableprefab 插槽。 接下來將拖放 LunarModule prefab PhotonRoom 類別上的模組 Prefab 插槽。 ![](images/module3chapter4updatestep7.png)
+![module3chapter4updatestep4](images/module3chapter4updatestep4.png)
 
-   注意:如果您按一下其中一個 prefab 物件和版本，偵測器會切換至該物件。 按一下、 拖放，並釋放每個物件至其適當的位置。
+5. 就像在步驟3中, 我們需要移除//以在第25、26和106行啟用程式碼。
 
+![module3chapter4updatestep5a](images/module3chapter4updatestep5a.png) 
 
+![module3chapter4updatestep5b](images/module3chapter4updatestep5b.png)
 
-8. 按一下 MixedRealityPlayspace，左邊的箭號，向下移動子遊戲物件、 MainCamera SharedPlayground prefab 到。 接下來，刪除 prefab，MixedRealityPlayspace，若要刪除選取的 prefab，在鍵盤上點選 [刪除]）。
+6. 在 [階層] 視圖中, 選取 [NetworkRoom] 物件。
+
+![module3chapter4updatestep6](images/module3chapter4updatestep6.png)
+
+7. 在 專案 視圖中, 流覽至 資產-> 資源-> Prefabs。 首先, 將資料表 prefab 拖放到 PhotonRoom 類別上的 Tableprefab 位置。 接下來, 將 LunarModule prefab 拖放到 PhotonRoom 類別上的模組 Prefab 位置。
+
+![module3chapter4updatestep7](images/module3chapter4updatestep7.png)
+
+   注意:如果您按一下其中一個 prefab 物件和 [釋放], 則偵測器會切換至該物件。 按一下、拖放, 然後將每個物件釋放到適當的位置。
+
+8. 按一下 [MixedRealityPlayspace] 左邊的箭號, 然後將 [子遊戲] 物件向下 MainCamera 至 [SharedPlayground] prefab。 接下來, 刪除 prefab、MixedRealityPlayspace、刪除、選取 prefab, 然後在您的鍵盤上點一下 [刪除]。
 ![Module3hapter4step5im](images/module3chapter4step5im.PNG)
 
-注意:請確定將 Main Camera 與 SharedPlayground 的位置會設定成 0,0,0。
+>注意:請確定主要相機和 SharedPlayground 位置都設定為 0, 0, 0。
+>
 
-9. 建立新的遊戲物件來建立新的物件設定為子物件 SharedPlayground 父物件。 父物件，以滑鼠右鍵按一下，然後選取 建立空白。 
+9. 建立新的遊戲物件集, 做為 SharedPlayground 父物件的子物件, 以建立新的物件。 以滑鼠右鍵按一下父物件, 然後選取 [建立空的]。 
 
-10. 在您階層中選取新的物件，將物件的名稱變更為 TableAnchor，在 [偵測器] 面板。 此外，按一下 新增元件，並搜尋 TableAnchor 元件。 選取它，並將它新增至物件。 
+10. 在您的階層中選取新的物件後, 請在 [偵測器] 面板中將物件的名稱變更為 TableAnchor。 此外, 按一下 [新增元件], 然後搜尋 TableAnchor 元件。 選取它, 並將它新增至物件。 
 
 ![Module3Chapter4step6im](images/module3chapter4step7im.PNG)
 
-> 注意:設定定位為 x = 1，y = 0.55 和 z = 2。 此外，設定 旋轉角度 y = 90。 
+> 注意:將定位設定為 x = 1、y =-0.55 和 z = 2。 此外, 請將旋轉設定為 y = 90。 
 >
 > ![Module3Chapter4step6im](images/module3chapter4noteim.PNG)
 
-11. 現在從 Prefabs 資料夾中的 [專案] 面板，請將資料表 prefab 拖曳到您剛才建立的 「 TableAnchor"子物件。
+11. 現在, 從 [Prefabs] 資料夾的 [專案] 面板中, 將資料表 prefab 拖曳至您剛才建立的 "TableAnchor" 子物件。
 
 ![Module3Chapter4step8im](images/module3chapter4step8im.PNG)
 
-
-
-12. 最後，如果在 DebugWindow 物件中，您可以變更其寬度為 80 及高度設為 10。
+12. 最後, 在 DebugWindow 物件中, 將 [寬度] 變更為 50, 並將 [高度] 變更為20。
 
 ![Module3Chapter4step9im](images/module3chapter4step11im.PNG)
-
-
-
 
 ## <a name="congratulations"></a>恭喜！
 
 
-這項操作完成，加入您的 Unity 專案的所有使用者可四處都移動陰曆的啟動器。 所有的移動會同步處理，讓每位使用者可以看到其他人互動。 這些概念做為基本建置組塊的完整功能、 共用的共同作業體驗。 
+完成後, 加入 Unity 專案的所有使用者都可以移動陰曆啟動器。 所有的移動都會同步處理, 讓每個使用者都可以看到彼此的互動。 這些概念可做為全功能、共用共同作業體驗的基本組建區塊。 
 
-雖然所有的使用者連接共用，一部分，而且可以看到的物件相對的移動，應用程式是經驗的仍然無法正確對齊虛擬人偶和物件，以便在實體內的相同位置的物件與彼此，請參閱 < 本機使用者世界。 若要錨定在本機的共用的體驗，每個裝置會需要的實體環境的共識。 在這個模組中，我們將會達到此目的使用[Azure 空間的錨點](<https://azure.microsoft.com/en-us/services/spatial-anchors/>)(ASA)，將在下一課中實作。
+雖然所有使用者都是以共用體驗的一部分進行連線, 而且可以查看物件的相對移動, 但應用程式仍無法精確地對齊虛擬人偶和物件, 讓本機使用者可以在實體中的相同位置看到彼此和物件成為. 為了錨定本機共用體驗, 每個裝置都需要對實體環境有共同的瞭解。 在此課程模組中, 我們將使用將在下一課中實行的[Azure 空間錨點](<https://azure.microsoft.com/en-us/services/spatial-anchors/>)(ASA) 來達到此目的。
 
-下一課之前，我們必須完成 ASA 學習模組，它涵蓋了 ASA 基本的 Azure 帳戶和資源建立，而其他基本的建築物區塊需要之前我們將這整合到我們分享經驗。
+在繼續進行下一課之前, 我們必須先完成 ASA 學習課程模組, 其中涵蓋 ASA 基本概念、Azure 帳戶和資源建立, 以及其他所需的基本建築物組塊, 才可將其整合到我們的共用體驗。
 
-[下一課：第 5 課 Sharing(Photon)](mrlearning-sharing(photon)-ch5.md)
+[下一課：共用 (Photon) 第5課](mrlearning-sharing(photon)-ch5.md)
 

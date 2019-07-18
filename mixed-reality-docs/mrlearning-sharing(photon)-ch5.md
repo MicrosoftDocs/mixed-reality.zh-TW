@@ -1,56 +1,57 @@
 ---
-title: 學習模組共用 HoloLens 2 MR
-description: 完成這個課程來了解如何實作 HoloLens 2 應用程式內的多使用者分享的經驗。
+title: HoloLens 2 的 MR 學習共用模組
+description: 完成此課程, 以瞭解如何在 HoloLens 2 應用程式中執行多使用者共用體驗。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 2a16d318c6d749bcbf6ed9db0d6cd2228a6ea06e
-ms.sourcegitcommit: 78e21e887bf4357c96c9ab2164559d610e8c041e
+ms.openlocfilehash: 1ae880208e79e2e045bd5e7298db260b7f0b2232
+ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67465207"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68293631"
 ---
-# <a name="azure-spatial-anchors-and-shared-experiences"></a>Azure 空間的錨點和共用的經驗
+# <a name="azure-spatial-anchors-and-shared-experiences"></a>Azure 空間錨點和共用體驗
 
-在這一課中，我們了解如何將 Azure 空間的錨點 (ASA) 整合到我們分享經驗。 ASA 可讓多個位於相同位置的裝置有常見的參考，如果其實體的環境是錨點的虛擬體驗，使得所有參與者都看到相同的實體位置中的物件。
+在本課程中, 我們將瞭解如何將 Azure 空間錨點 (ASA) 整合到我們的共用體驗中。 如果實體環境是錨定虛擬經驗, 讓所有參與者在相同的實體位置中看到物件, 則 ASA 允許多個共置的裝置擁有共同的參考。
 
-繼續進行這一課之前，我們必須完成 ASA 的學習模組，將討論 ASA 基本概念、 Azure 帳戶並建立資源和其他我們可以將 ASA 整合到我們分享經驗之前所需的基本建築物區塊。
+繼續進行本課程之前, 我們必須先完成 ASA 學習課程模組, 其中將涵蓋 ASA 基本概念、Azure 帳戶和資源建立, 以及在我們將 ASA 整合到我們的共用體驗之前所需的其他基本建築物組塊。
 
-目標：
+目標
 
-- 將 ASA 整合到 multi-device 對齊的共用體驗
-- 了解 ASA 本機的共用經驗的內容中的運作方式的基本概念
+- 將 ASA 整合到多裝置對齊的共用體驗。
+- 瞭解 ASA 如何在本機共用體驗的內容中運作的基本概念。
 
 ### <a name="instructions"></a>指示
 
-1. 將專案儲存在上一課 （control + S），並命名"HLSharedProjectMainPart5.unity 」 以便更輕鬆地尋找當您再次需要它。
+1. 儲存上一課 (control + S) 中的專案, 並將它命名為 "HLSharedProjectMainPart5", 以便在您再次需要時更容易找到。
 
-2. 選取 TableAnchor prefab 下方 MixedRealityPlayspace 父物件，並將它刪除。
+2. 選取 MixedRealityPlayspace 父物件底下的 [TableAnchor] prefab, 然後將它刪除。
 
 ![Module3Chapter5tep2im](images/module3chapter5step2im.PNG)
 
-
-
-3.  在 專案檢視移至 資產-> 資源-> Prefabs，並將拖曳 TableAnchor prefab 物件上方的 SharedPlayground 讓子系。
-4.  展開 MixedRealityPlayspace 父物件、 TableAnchor 物件，然後展開 [按鈕] 物件。 
+3.  在 專案 視圖中, 移至 資產-> 資源-> Prefabs, 然後將 TableAnchor prefab 拖曳至 SharedPlayground 物件上方, 使其成為子系。
+4.  展開 MixedRealityPlayspace 父物件 TableAnchor 物件, 並同時展開 [按鈕] 物件。 
 
 ![Module3hapter5step5im](images/module3chapter5step5im.PNG)
 
-4. 現在在階層中，選取 ShareAzureAnchorButton，並移動您的注意 Inaspector 面板。 向下捲動，如下圖所示的下拉式選單，選取 AnchorModuleScript 並按一下 ShareAnchorNetework()。
+4. 現在, 在階層中選取 [ShareAzureAnchorButton], 並將您的注意力移至 [Inaspector] 面板。 向下流覽至下圖所示的下拉式功能表, 然後選取 [AnchorModuleScript], 再按一下 [ShareAnchorNetework ()]。
 
 ![Module3hapter5step6im](images/module3chapter5step6im.PNG)
 
-5. 選取 GetAzureAnchorButton （請參閱步驟 4），並移動您回到 [偵測器] 面板的注意。 向下捲動，如下圖所示的下拉式選單和選取 AnchorModuleScript，並按一下 GetSharedAnchorNetwork()，然後儲存。
+5. 選取 [GetAzureAnchorButton] (請參閱步驟 4), 並將您的注意力移回 [檢查] 面板。 向下流覽至下圖所示的下拉式功能表, 然後選取 [AnchorModuleScript], 再按一下 [GetSharedAnchorNetwork ()], 然後按一下 [儲存]。
 
 ![Module3hapter5step7im](images/module3chapter5step7im.PNG)
 
+6. 若要測試共用模組, 請按一下 [啟動 Azure ASA 會話] 按鈕, 以啟動 azure 空間錨點會話, 然後按一下 [建立 Azure 錨點] 按鈕以建立 azure 錨點, 並等待一段時間讓 azure 錨點建立。 建立 azure 錨點之後, 請按一下 [共用 Azure 錨點] 按鈕, 從 HoloLens 共用建立的 azure 錨點。
 
+7. 若要在另一部 HoloLens 中接收共用的 azure 錨點, 請按一下 [啟動 Azure ASA 會話] 來啟動並進入目前的 ASA 會話, 然後按一下 [取得 Azure 錨點] 按鈕, 從其他 HoloLens 取得共用的 azure 錨點。
 
+   > 注意:個別按鈕上對應動作的所有詳細資料都會顯示在 [調試] 視窗中。
 
 ## <a name="congratulations"></a>恭喜！
 
-在這一課，您了解如何整合 Azure 的強大新空間錨點來對齊共的裝置共用體驗中的內容 ！ 這一課也結束時，共用的模組。 我們了解如何設定新的 Photon 帳戶，請將 Photon 與自己使用這個雙關語整合到新的 Unity 應用程式中，設定虛擬人偶 」 和 「 共用的物件，以及最後對齊這些使用 ASA 的多個參與者。 
+在這一課, 您已瞭解如何整合 Azure 強大的新空間錨點, 以將共置的裝置對齊共用體驗! 本課程也會結束共用模組。 我們已瞭解如何設定新的 Photon 帳戶、將 Photon 和雙關語整合到新的 Unity 應用程式、設定虛擬人偶和共用物件, 最後使用 ASA 來對齊多個參與者。 
 

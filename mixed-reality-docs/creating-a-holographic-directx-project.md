@@ -1,69 +1,69 @@
 ---
-title: 建立全像攝影版的 DirectX 專案
-description: 說明如何建立新的全像攝影版應用程式，以根據 Windows Mixed Reality 應用程式範本。
+title: 建立全像攝影 DirectX 專案
+description: 說明如何根據 Windows Mixed Reality 應用程式範本建立新的全像攝影應用程式。
 author: MikeRiches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Windows Mixed Reality，全像攝影版的應用程式、 新的應用程式、 UWP 應用程式、 範本應用程式、 全像投影、 新的專案、 逐步解說、 下載、 範例程式碼
-ms.openlocfilehash: a7eac9d8056fe5f7bcc442d6441f71331fa96cf6
-ms.sourcegitcommit: 19c9bff21061d485821b61c9f3498daef8fa8235
+keywords: Windows Mixed Reality, 全像攝影應用程式, 新的應用程式, UWP 應用程式, 範本應用程式, 全息影像, 新專案, 逐步解說, 下載, 範例程式碼
+ms.openlocfilehash: 24f217021cd448f19a744696de42f580f139f76f
+ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65828114"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68387620"
 ---
-# <a name="creating-a-holographic-directx-project"></a>建立全像攝影版的 DirectX 專案
+# <a name="creating-a-holographic-directx-project"></a>建立全像攝影 DirectX 專案
 
-全像攝影版的應用程式建立都是 HoloLens<a href="https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide" target="_blank">通用 Windows 平台 (UWP) 應用程式</a>。  如果目標桌面 Windows Mixed Reality 耳機，您可以建立 UWP 應用程式或 Win32 應用程式。
+您為 HoloLens 建立的全像攝影應用程式將會是<a href="https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide" target="_blank">通用 Windows 平臺 (UWP) 應用程式</a>。  如果以桌面 Windows Mixed Reality 耳機為目標, 您可以建立 UWP 應用程式或 Win32 應用程式。
 
-DirectX 11 全像攝影版 UWP 應用程式範本十分類似的 DirectX 11 UWP 應用程式範本中;它包含程式迴圈 （或 「 遊戲迴圈 」）， **DeviceResources**類別來管理的 Direct3D 裝置和內容，以及簡化的內容轉譯器類別。 它也有<a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview" target="_blank">IFrameworkView</a>，就像任何其他的 UWP 應用程式。
+DirectX 11 全像攝影版 UWP 應用程式範本與 DirectX 11 UWP 應用程式範本十分相似;其中包含一個程式迴圈 (或「遊戲迴圈」)、一個**DeviceResources**類別來管理 Direct3D 裝置和內容, 以及一個簡化的內容轉譯器類別。 它也有<a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview" target="_blank">IFrameworkView</a>, 就像任何其他 UWP 應用程式一樣。
 
-混合的實境應用程式，不過，有一些額外功能，未出現在一般的 Direct3D 11 UWP 應用程式。 Windows 全像攝影版的應用程式範本是能夠：
-* 處理全像攝影版的數位相機與相關聯的 Direct3D 裝置資源。
-* 從系統擷取相機背景緩衝區。
-* 處理[視線](gaze.md)輸入，並辨識簡單[筆勢](gestures.md)。
-* 進入全螢幕是立體聲的轉譯模式。
+不過, mixed reality 應用程式具有一些不存在於一般 Direct3D 11 UWP 應用程式中的額外功能。 Windows 全像應用程式範本可以:
+* 處理與全像攝影相機相關聯的 Direct3D 裝置資源。
+* 從系統取出相機背面緩衝區。
+* 處理[注視](gaze.md)的輸入, 並辨識簡單[手勢](gestures.md)。
+* 進入全螢幕身歷聲轉譯模式。
 
-## <a name="how-do-i-get-started"></a>如何開始？
+## <a name="how-do-i-get-started"></a>如何? 開始使用了嗎？
 
-第一個[安裝工具](install-the-tools.md)，下列有關下載 Visual Studio 2017 的指示和 Microsoft HoloLens 模擬器。 全像攝影版的應用程式範本會包含在相同的安裝程式，為 Microsoft HoloLens 模擬器。 也請確定安裝之前，已選取要安裝的範本選項。
+請依照下載 Visual Studio 2019 和 Microsoft HoloLens 模擬器中的指示, 先[安裝這些工具](install-the-tools.md)。 全像攝影應用程式範本包含在與 Microsoft HoloLens 模擬器相同的安裝程式中。 此外, 請確定已選取 [安裝範本] 選項, 然後再安裝。
 
-您現在已準備好建立您的 DirectX 11 Windows Mixed Reality 應用程式 ！ 請注意，若要移除範例內容，標記為註解**DRAW_SAMPLE_CONTENT**中的前置處理器指示詞*pch.h*。
+現在您已經準備好建立 DirectX 11 Windows Mixed Reality 應用程式! 請注意, 若要移除範例內容, 請將*pch*中的**DRAW_SAMPLE_CONTENT**預處理器指示詞標記為批註。
 
 ## <a name="creating-a-uwp-project"></a>建立 UWP 專案
 
-一次[工具會安裝](install-the-tools.md)然後，您就可以建立全像攝影版的 DirectX UWP 專案。
+[安裝工具](install-the-tools.md)之後, 您就可以建立全像的 DirectX UWP 專案。
 
-若要建立新的專案：
-1. 開始**Visual Studio**。
-2. 從**檔案**功能表上，指向**新增**，然後選取**專案**從內容功能表。 **新的專案** 對話方塊隨即開啟。
-3. 依序展開**已安裝**左側，展開**視覺化C++** 語言節點。
-4. 瀏覽至**Windows 通用 > Holographic**節點，然後選取**全像攝影版的 DirectX 11 應用程式 (通用 Windows) (C++/WinRT)**。
-   ![全像攝影版的 DirectX 11 的螢幕擷取畫面C++在 Visual Studio 中的 WinRT UWP 應用程式專案範本](images/holographic-directx-app-cpp-new-project.png)<br>
-   *全像攝影版的 DirectX 11C++在 Visual Studio 中的 WinRT UWP 應用程式專案範本*
+若要建立新的專案:
+1. 啟動**Visual Studio**。
+2. 從 [  檔案] 功能表, 指向 [**新增**], 然後從內容功能表中選取 [**專案**]。 [**新增專案**] 對話方塊隨即開啟。
+3. 展開左側的 [**已安裝**], 然後展開 [**視覺效果C++** 語言] 節點。
+4. 流覽至 [ **Windows 通用 >** 全像攝影] 節點, 然後選取 [全像**C++/WinRT] [DirectX 11 應用程式 (通用 Windows)** ]。
+   ![Visual Studio 中的全像「 C++DirectX 11/WinRT UWP 應用程式」專案範本的螢幕擷取畫面](images/holographic-directx-app-cpp-new-project.png)<br>
+   *Visual Studio 中的C++全息版 DirectX 11/WinRT UWP 應用程式專案範本*
    >[!IMPORTANT]
-   >請務必將專案範本的名稱包含"(C++/WinRT) 」。  如果沒有，您有舊版安裝的全像攝影版的專案範本。  若要取得最新的專案範本中，[安裝最新的 HoloLens 模擬器](using-the-hololens-emulator.md)。
-5. 填寫**名稱**並**位置**文字方塊中，然後按一下或點選**確定**。 會建立全像攝影版的應用程式專案。
-6. 開發目標設定為只 HoloLens 2，請確定**目標版本**並**最低版本**設定為**Windows 10 版本 1903年**。  如果您的也目標 HoloLens （第 1 代） 或桌上型電腦的 Windows Mixed Reality 耳機，您可以設定**最低版本**要**Windows 10 版本 1809年**相反地，雖然這需要一些<a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code" target="_blank">版本的自動調整檢查</a>在您的程式碼時使用的 HoloLens 2 的新功能。
-   ![設定 Windows 10 版本 1903年目標和最小版本的螢幕擷取畫面](images/new-uwp-project.png)<br>
-   *設定**Windows 10 版本 1903年**目標及最低版本*
+   >請確定專案範本的名稱包含 "(C++/WinRT)"。  如果沒有, 則會安裝較舊版本的全像攝影專案範本。  若要取得最新的專案範本, 請[安裝最新的 HoloLens 模擬器](using-the-hololens-emulator.md)。
+5. 填寫 [**名稱**] 和 [**位置**] 文字方塊, 然後按一下或點擊 **[確定]** 。 會建立全像攝影應用程式專案。
+6. 針對僅以 HoloLens 2 為目標的開發, 請確定 [**目標版本**] 和 [**最低版本**] 設定為 [ **Windows 10, 版本 1903**]。  如果您也以 HoloLens (第1代) 或桌面 Windows Mixed Reality 耳機為目標, 則可以改為將**最低版本**設定為**windows 10 版本 1809** , 但在使用 new 時, 您的程式碼中需要一些版本調適型<a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code" target="_blank">檢查</a>HoloLens 2 的功能。
+   ![將 Windows 10 (版本 1903) 設為目標和最低版本的螢幕擷取畫面](images/new-uwp-project.png)<br>
+   *將**Windows 10 (版本 1903)** 設定為目標和最低版本*
    >[!IMPORTANT]
-   >如果您看不見**Windows 10 版本 1903年**的選項，您沒有安裝最新版 Windows 10 SDK。  若要取得此選項才會出現，<a href="https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk" target="_blank">安裝 10.0.18362.0 版本或更新版本的 Windows 10 SDK</a>。
+   >如果您沒有看到 [ **windows 10, 版本 1903** ] 選項, 則不會安裝最新的 WINDOWS 10 SDK。  若要讓此選項出現, 請<a href="https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk" target="_blank">安裝 Windows 10 SDK 的版本10.0.18362.0 或更新版本</a>。
 
-範本會產生專案，使用<a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/" target="_blank"> C++/WinRT</a>，C + + 17 語言推演，支援任何符合標準的 C + + 17 編譯器的 Windows 執行階段 api。  專案會示範如何建立世界鎖定 cube 已放入使用者的兩個計量。 使用者可以[空中點選](gestures.md#air-tap)或按下按鈕，將 cube 放在不同的位置所指定的使用者在控制器上[視線](gaze.md)。 您可以修改此專案來建立任何 mixed 的 reality 應用程式。
+此範本會使用<a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/" target="_blank"> C++/WinRT</a>產生專案, 這是支援任何符合標準之 c + + 17 編譯器的 Windows 執行階段 api 的 c + + 17 語言投影。  此專案會示範如何建立世界鎖定的 cube, 這是由使用者放置兩個計量。 使用者可以[按一下](gestures.md#air-tap)或按下控制器上的按鈕, 將 cube 放在使用者[注視](gaze.md)所指定的不同位置。 您可以修改此專案, 以建立任何混合現實應用程式。
 
-或者，您可以在其中建立新的專案使用**Visual C#** 全像攝影版的專案範本，此作業取決於 SharpDX。  如果您全像攝影版C#未啟動專案，這是從 Windows 全像攝影版的應用程式範本，您必須從 Windows Mixed Reality 的 ms.fxcompile.targets 檔案複製到C#範本專案，然後匯入在您的.csproj 檔案以編譯 HLSL您新增至您專案的檔案。
+或者, 您可以使用以 SharpDX 為基礎的**Visual C#** 全像投影專案範本來建立新的專案。  如果您的C#全像攝影專案未從 windows 全像攝影應用程式範本開始, 您必須從 Windows Mixed Reality C#範本專案複製 fxcompile 檔案, 並將它匯入 .csproj 檔案中, 才能編譯 HLSL您新增至專案的檔案。
 
-檢閱[使用 Visual Studio 部署和偵錯](using-visual-studio.md)如需如何建置和部署範例，您的 HoloLens、 電腦連接的沈浸式裝置或模擬器。
+請參閱[使用 Visual Studio 部署和調試](using-visual-studio.md)程式, 以瞭解如何建立範例, 並將其部署至您的 HoloLens、已連接沉浸式裝置的電腦或模擬器。
 
-下列指示的其餘部分將假設您使用C++來建置您的應用程式。
+下面的其餘指示會假設您使用C++來建立應用程式。
 
 ### <a name="uwp-app-entry-point"></a>UWP 應用程式進入點
 
-在全像攝影版的 UWP 應用程式啟動**wWinMain** AppView.cpp 中的函式。 **WWinMain**函式會建立應用程式的<a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview" target="_blank">IFrameworkView</a>並啟動<a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication" target="_blank">CoreApplication</a>使用它。
+您的全像攝影 UWP 應用程式會在 AppView 中的**wWinMain**函式開始。 **WWinMain**函式會建立應用程式的<a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview" target="_blank">IFrameworkView</a> , 並使用它來啟動<a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication" target="_blank">CoreApplication</a> 。
 
-從**AppView.cpp**:
+從**AppView**:
 
 ```cpp
 // The main function bootstraps into the IFrameworkView.
@@ -75,19 +75,19 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 }
 ```
 
-從那時起，AppView 類別會處理與 Windows 基本輸入的事件、 corewindow，否則事件和傳訊和等等的互動。 它也會建立應用程式所使用的 HolographicSpace。
+從該時間點開始, AppView 類別會處理與 Windows 基本輸入事件、CoreWindow 事件和訊息等的互動。 它也會建立您的應用程式所使用的 HolographicSpace。
 
 ## <a name="creating-a-win32-project"></a>建立 Win32 專案
 
-最簡單的方式開始建置全像攝影版的專案是採用 Win32 <a href="https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/BasicHologram" target="_blank"> *BasicHologram* Win32 範例</a>。
+開始建立 Win32 全像投影專案最簡單的方式, 就是調整<a href="https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/BasicHologram" target="_blank"> *BasicHologram*的 win32 範例</a>。
 
-這個 Win32 範例會使用<a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/" target="_blank"> C++/WinRT</a>，C + + 17 語言推演，支援任何符合標準的 C + + 17 編譯器的 Windows 執行階段 api。  專案會示範如何建立世界鎖定 cube 已放入使用者的兩個計量。 使用者可以將 cube 放在不同的位置所指定的使用者在控制器上項目按下按鈕[視線](gaze.md)。 您可以修改此專案來建立任何 mixed 的 reality 應用程式。
+這個 Win32 範例會使用<a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/" target="_blank"> C++/WinRT</a>, 這是支援任何符合標準之 c + + 17 編譯器的 Windows 執行階段 api 的 c + + 17 語言投影。  此專案會示範如何建立世界鎖定的 cube, 這是由使用者放置兩個計量。 使用者可以按下控制器上的按鈕, 將 cube 放在使用者[注視](gaze.md)所指定的不同位置。 您可以修改此專案, 以建立任何混合現實應用程式。
 
 ### <a name="win32-app-entry-point"></a>Win32 應用程式進入點
 
-在全像攝影版的 Win32 應用程式啟動**wWinMain** AppMain.cpp 中的函式。 **WWinMain**函式會建立應用程式的 HWND，並啟動其訊息迴圈。
+您的全像的 Win32 應用程式會從 AppMain 中的**wWinMain**函式開始。 **WWinMain**函數會建立應用程式的 HWND 並啟動其訊息迴圈。
 
-從**AppMain.cpp**:
+從**AppMain**:
 
 ```cpp
 int APIENTRY wWinMain(
@@ -119,41 +119,41 @@ int APIENTRY wWinMain(
 }
 ```
 
-從那時起，AppMain 類別會處理與基本的視窗訊息，並依此類推的互動。 它也會建立應用程式所使用的 HolographicSpace。
+從該時間點開始, AppMain 類別會處理與基本視窗訊息的互動, 依此類推。 它也會建立您的應用程式所使用的 HolographicSpace。
 
-## <a name="render-holographic-content"></a>呈現全像攝影版的內容
+## <a name="render-holographic-content"></a>呈現全像攝影內容
 
-專案的**內容**資料夾包含類別，可以轉譯在全像投影[全像攝影版的空間](getting-a-holographicspace.md)。 在範本中的預設全像圖是兩個使用者俖籇所下的旋轉立方體。 繪製這個 cube 中實作**SpinningCubeRenderer.cpp**，其中包含這些金鑰的方法：
+專案的**Content**資料夾包含可在全像攝影[空間](getting-a-holographicspace.md)中轉譯全息影像的類別。 範本中的預設全息影像是一個旋轉的 cube, 這會將兩個計量放在使用者之外。 繪製此 cube 會在**SpinningCubeRenderer**中實作為下列主要方法:
 
 |  方法  |  說明 | 
 |----------|----------|
-|  `CreateDeviceDependentResources` |  載入著色器，並建立 cube 網狀結構。 | 
-|  `PositionHologram` |  所指定的位置放置闀<a href="https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialpointerpose" target="_blank">SpatialPointerPose</a>。 | 
-|  `Update` |  旋轉立方體，並設定模型的矩陣。 | 
-|  `Render` |  呈現的畫面格使用的端點和像素著色器。 | 
+|  `CreateDeviceDependentResources` |  載入著色器並建立 cube 網格。 | 
+|  `PositionHologram` |  將全息影像放在提供的<a href="https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialpointerpose" target="_blank">SpatialPointerPose</a>所指定的位置。 | 
+|  `Update` |  旋轉 cube, 並設定模型矩陣。 | 
+|  `Render` |  使用頂點和圖元著色器來呈現框架。 | 
 
-**著色器**子資料夾包含四個預設的著色器實作：
+**著色**子資料夾包含四個預設的著色器執行:
 
-|  著色器  |  說明 | 
+|  器  |  說明 | 
 |----------|----------|
-|  `GeometryShader.hlsl` |  這種傳遞離開的未經修改的幾何。 | 
-|  `PixelShader.hlsl` |  若要通過的色彩資料。 插補色彩資料，並指派給像素在點陣化步驟。 | 
-|  `VertexShader.hlsl` |  若要執行 GPU 上的頂點處理簡單的著色器。 | 
-|  `VPRTVertexShader.hlsl` |  若要執行，適用於 Windows Mixed Reality 是立體聲轉譯在 GPU 上的頂點處理簡單的著色器。 | 
+|  `GeometryShader.hlsl` |  不修改 geometry 的傳遞。 | 
+|  `PixelShader.hlsl` |  傳遞色彩資料。 色彩資料會插補並指派給點陣化步驟的圖元。 | 
+|  `VertexShader.hlsl` |  在 GPU 上執行頂點處理的簡單著色器。 | 
+|  `VPRTVertexShader.hlsl` |  在 GPU 上執行頂點處理的簡單著色器, 已針對 Windows Mixed Reality 身歷聲轉譯進行優化。 | 
 
-`VertexShaderShared.hlsl` 包含常見的程式碼之間共用`VertexShader.hlsl`和`VPRTVertexShader.hlsl`。
+`VertexShaderShared.hlsl`包含和`VertexShader.hlsl` `VPRTVertexShader.hlsl`之間共用的通用程式碼。
 
-著色器編譯時建置專案時，它們是在載入**SpinningCubeRenderer::CreateDeviceDependentResources**方法。
+建立專案時, 會編譯著色器, 而且會在**SpinningCubeRenderer:: CreateDeviceDependentResources**方法中載入。
 
-## <a name="interact-with-your-holograms"></a>與您全像投影互動
+## <a name="interact-with-your-holograms"></a>與您的全息影像互動
 
-在處理使用者輸入**SpatialInputHandler**類別，會遭到<a href="https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionmanager" target="_blank">SpatialInteractionManager</a>執行個體，並訂閱<a href="https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionmanager.sourcepressed" target="_blank">SourcePressed</a>事件。 這可讓偵測空中點選手勢和其他空間的輸入的事件。
+使用者輸入會在**SpatialInputHandler**類別中處理, 這會取得<a href="https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionmanager" target="_blank">SpatialInteractionManager</a>實例並訂閱<a href="https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionmanager.sourcepressed" target="_blank">SourcePressed</a>事件。 這可偵測空中手勢和其他空間輸入事件。
 
-## <a name="update-holographic-content"></a>更新全像攝影版的內容
+## <a name="update-holographic-content"></a>更新全像攝影內容
 
-您在遊戲迴圈中，其預設實作中的混合的實境應用程式更新**更新**方法中的`AppMain.cpp`。 **更新**方法會更新場景物件，例如旋轉立方體，並傳回<a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe" target="_blank">HolographicFrame</a>用來取得最新的檢視和投影矩陣，並呈現交換鏈結的物件。
+您的混合現實應用程式會在遊戲迴圈中更新, 預設會在的**Update**方法`AppMain.cpp`中執行。 **Update**方法會更新場景物件 (例如旋轉的 cube), 並傳回用來取得最新的視圖和投影矩陣並呈現交換鏈的<a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe" target="_blank">HolographicFrame</a>物件。
 
-**呈現**方法中的`AppMain.cpp`採用<a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe" target="_blank">HolographicFrame</a>並呈現目前的畫面格，以每個全像攝影版的相機，根據目前的應用程式與空間位置的狀態。
+中  `AppMain.cpp`的 Render 方法會採用<a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe" target="_blank">HolographicFrame</a> , 並根據目前的應用程式和空間定位狀態, 將目前的框架轉譯為每個全像攝影攝影機。
 
 ## <a name="see-also"></a>另請參閱
 * [取得 HolographicSpace](getting-a-holographicspace.md)

@@ -1,66 +1,66 @@
 ---
-title: 提交至 Microsoft Store 應用程式
-description: 本文提供上提交您的 Microsoft Store，包括如何封裝和測試您的應用程式和秘訣，傳遞認證，並協助您的應用程式存放區中的探索能力的混合的實境應用程式的秘訣。
+title: 將應用程式提交至 Microsoft Store
+description: 本文提供將混合現實應用程式提交至 Microsoft Store 的秘訣, 包括如何封裝和測試您的應用程式, 以及傳遞認證並協助您在存放區中探索應用程式的秘訣。
 author: mattzmsft
 ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
-keywords: 應用程式，uwp，提交，請提交、 篩選、 中繼資料、 系統需求、 關鍵字、 wack、 憑證、 封裝、 appx、 推銷
-ms.openlocfilehash: 4eb69fbaa22f4864305f09d5e1bf1c1860a0d31f
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+keywords: 應用程式, uwp, 提交, 提交, 篩選, 中繼資料, 系統需求, 關鍵字, wack, 認證, 套件, appx, 商品
+ms.openlocfilehash: af8ee89b2cae42fc3abeec072acde20f437eb820
+ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59594573"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68387746"
 ---
-# <a name="submitting-an-app-to-the-microsoft-store"></a>提交至 Microsoft Store 應用程式
+# <a name="submitting-an-app-to-the-microsoft-store"></a>將應用程式提交至 Microsoft Store
 
-兩者[HoloLens](hololens-hardware-details.md)以及 Windows 10 電腦加強您[沈浸式耳機](immersive-headset-hardware-details.md)執行通用 Windows 平台應用程式。 是否您上傳的應用程式支援 HoloLens 或電腦 （或兩者），您將應用程式提交到透過 Microsoft Store[合作夥伴中心](https://partner.microsoft.com/dashboard)。
+[HoloLens](hololens-hardware-details.md)和 WINDOWS 10 電腦都能讓您的[沉浸式耳機](immersive-headset-hardware-details.md)執行通用 Windows 平臺應用程式。 無論您是提交支援 HoloLens 或 PC (或兩者) 的應用程式, 您都可以透過[合作夥伴中心](https://partner.microsoft.com/dashboard)將您的應用程式提交到 Microsoft Store。
 
-如果您還沒有合作夥伴中心開發人員帳戶，您可以[立即註冊](https://developer.microsoft.com/store/register)。
+如果您還沒有合作夥伴中心的開發人員帳戶, 您可以[立即註冊](https://developer.microsoft.com/store/register)。
 
-## <a name="packaging-a-mixed-reality-app"></a>封裝 mixed 的 reality 應用程式
+## <a name="packaging-a-mixed-reality-app"></a>封裝混合現實應用程式
 
-### <a name="prepare-image-assets-included-in-the-appx"></a>準備應用程式中包含的影像資產
+### <a name="prepare-image-assets-included-in-the-appx"></a>準備包含在 appx 中的映射資產
 
-有數個應用程式建置工具，建置應用程式的 appx 封裝以提交至市集所需的影像資產。 您可以深入了解[圖格和圖示的資產的指導方針](https://msdn.microsoft.com/library/windows/apps/mt412102.aspx)MSDN 上。
+Appx 建立工具需要數個映射資產, 以將您的應用程式建立至 appx 套件以提交至存放區。 您可以在 MSDN 上深入瞭解[磚和圖示資產的指導方針](https://msdn.microsoft.com/library/windows/apps/mt412102.aspx)。
 
-| 所需的資產 | 建議的小數位數 | 影像格式 | 而這會顯示？ | 
+| 必要的資產 | 建議的調整 | 影像格式 | 這會顯示在哪裡？ | 
 |----------|----------|----------|------------------|
-| 正方形 71x71 標誌 | 任何值 |  PNG | N/A | 
-| 正方形 150 x 150 標誌 | 150 x 150 （100%級別） 或 225 x 225 （150%小數位數） | PNG | （如果未提供 310x310） 啟動 pin 與所有應用程式中，瀏覽市集搜尋建議，存放區 [列出] 頁面中，存放區，存放區搜尋 | 
-|  寬 310 x 150 標誌 |  任何值  |  PNG  |  N/A | 
-|  市集標誌 |  75 x 75 （150%小數位數）  |  PNG  |  合作夥伴中心 」、 「 報表應用程式撰寫評論，我的程式庫 | 
-|  啟動顯示畫面 |  930 x 450 （150%小數位數）  |  PNG  |  2D 應用程式啟動器 （平板電腦） | 
+| 方形71x71 正方形標誌 | Any |  PNG | N/A | 
+| 方形150x150 正方形標誌 | 150x150 正方形 (100% scale) 或 225x225 (150% scale) | PNG | 啟動 pin 和所有應用程式 (如果未提供310x310 正方形)、儲存搜尋建議、商店清單頁面、儲存流覽、儲存搜尋 | 
+|  寬310x150 寬標誌 |  Any  |  PNG  |  N/A | 
+|  儲存標誌 |  75x75 (150% scale)  |  PNG  |  合作夥伴中心, 報表應用程式, 撰寫評論, 我的文件庫 | 
+|  啟動顯示畫面 |  930x450 (150% scale)  |  PNG  |  2D 應用程式啟動器 (平板電腦) | 
 
-另外還有 HoloLens 運用的一些建議的資產。
+另外還有一些建議的資產, 可供 HoloLens 利用。
 
-| 建議的資產 | 建議的小數位數 | 而這會顯示？ | 
+| 建議的資產 | 建議的調整 | 這會顯示在哪裡？ | 
 |----------|----------|----------|
-|  正方形 310x310 標誌 |  310x310 （150%小數位數） |  啟動 pin 與所有應用程式 | 
+|  方形310x310 正方形標誌 |  310x310 正方形 (150% scale) |  啟動 pin 和所有應用程式 | 
 
-### <a name="live-tile-requirements"></a>即時磚的需求
+### <a name="live-tile-requirements"></a>動態磚需求
 
-HoloLens 上的 [開始] 功能表將使用的最大包含方形磚的影像。
+HoloLens 上的 [開始] 功能表會使用最大的內含正方形磚影像。
 
-您可能會看到 Microsoft 所發行的某些應用程式有 3D 的 launcher，可用於其應用程式。 開發人員可以新增其應用程式使用的 3D 程式啟動器[這些指示](implementing-3d-app-launchers.md)。
+您可能會看到 Microsoft 發佈的某些應用程式具有其應用程式的3D 啟動器。 開發人員可以使用[這些指示](implementing-3d-app-launchers.md), 為其應用程式新增3d 啟動器。
 
-### <a name="specifying-target-and-minimum-version-of-windows"></a>指定目標和最低 Windows 版本
+### <a name="specifying-target-and-minimum-version-of-windows"></a>指定 Windows 的目標和最低版本
 
-如果您的混合的實境應用程式包含專屬於 Windows 版的功能，務必指定目標和通用 Windows 應用程式將支援的最低平台版本。
+如果您的混合現實應用程式包含特定 Windows 版本特有的功能, 請務必指定通用 Windows 應用程式將支援的目標和最小平臺版本。
 
-**這特別適用於目標的應用程式[Windows Mixed Reality 沈浸式耳機](immersive-headset-hardware-details.md)，至少需要 Windows 10 Fall Creators Update (10.0;組建 16299） 才能正確運作。**
+**這特別適用于以[Windows Mixed Reality 沉浸式耳機](immersive-headset-hardware-details.md)為目標的應用程式, 這需要至少 Windows 10 秋季建立者更新 (10.0;組建 16299) 以正常運作。**
 
-系統會提示您設定目標和最低 Windows 版本，當您在 Visual Studio 中建立新的通用 Windows 專案。 您也可以變更這項設定的現有專案中的 [專案] 功能表，然後 [< 應用程式名稱的 > 屬性] 底部的下拉式選單。
+當您在 Visual Studio 中建立新的通用 Windows 專案時, 系統將會提示您設定目標和最低版本的 Windows。 您也可以在 [專案] 功能表中變更現有專案的這項設定, 然後在下拉式功能表底部的 [< 您的應用程式名稱 > 屬性]。
 
-![將最小值和目標平台版本，在 Visual Studio 2017](images/visual-studio-min-version-500px.png)<br>
-設定最小值，以在 Visual Studio 中的平台版本為目標
+![設定 Visual Studio 2019 中的最低和目標平臺版本](images/visual-studio-min-version-500px.png)<br>
+在 Visual Studio 中設定最低和目標平臺版本
 
 ### <a name="specifying-target-device-families"></a>指定目標裝置系列
 
-Windows Mixed Reality 應用程式 (兩者[HoloLens](hololens-hardware-details.md)並[沈浸式耳機](immersive-headset-hardware-details.md)) 是通用的 Windows 平台，因此任何應用程式封裝的一部分[目標裝置系列](https://msdn.microsoft.com/library/windows/apps/dn986903.aspx)"Windows.Universal"是能夠使用沈浸式耳機 HoloLens 或 Windows 10 電腦上執行。 確切地說，如果您未指定目標裝置系列在您的應用程式資訊清單中，您可能會不慎開啟應用程式設為非預期的 Windows 10 裝置。 請遵循下列步驟來指定預定的 Windows 10 裝置系列，然後[請仔細檢查上傳您的應用程式套件，在合作夥伴中心，以提交至市集時，會選取正確的裝置系列。](submitting-an-app-to-the-microsoft-store.md#submitting-your-mixed-reality-app-to-the-store)
+Windows Mixed Reality 應用程式 (適用于[HoloLens](hololens-hardware-details.md)和[沉浸式耳機](immersive-headset-hardware-details.md)) 是通用 Windows 平臺的一部分, 因此任何[目標裝置系列](https://msdn.microsoft.com/library/windows/apps/dn986903.aspx)為 "Windows. 通用" 的應用程式套件都能夠在 HoloLens 上執行或具有沉浸式耳機的 Windows 10 電腦。 話雖如此, 如果您未在應用程式資訊清單中指定目標裝置系列, 您可能會不小心開啟應用程式, 而不是非預期的 Windows 10 裝置。 請遵循下列步驟來指定想要的 Windows 10 裝置系列, 然後[再次確認您在合作夥伴中心上傳應用程式套件以提交至存放區時, 已選取正確的裝置系列。](submitting-an-app-to-the-microsoft-store.md#submitting-your-mixed-reality-app-to-the-store)
 
-若要在 Visual Studio 中設定此欄位，以滑鼠右鍵按一下 Package.appxmanifest 並選取 檢視程式碼 」，然後尋找 TargetDeviceFamily 名稱 欄位。 根據預設，它看起來可能如下所示：
+若要在 Visual Studio 中設定此欄位, 請以滑鼠右鍵按一下 package.appxmanifest.xml 並選取 [查看程式碼], 然後尋找 [y 名稱] 欄位。 根據預設, 它看起來可能如下所示:
 
 ```
 <Dependencies>
@@ -68,7 +68,7 @@ Windows Mixed Reality 應用程式 (兩者[HoloLens](hololens-hardware-details.m
 </Dependencies>
 ```
 
-如果您的應用程式會建立**HoloLens**，則您可以確認它只能安裝在 HoloLens 藉由指定的 「 Windows.Holographic"的目標裝置系列。 
+如果您的應用程式是針對**HoloLens**所建立, 則您可以藉由指定「Windows 全像攝影」的目標裝置系列, 確保它只會安裝在 hololens 上。 
 
 ```
 <Dependencies>
@@ -76,7 +76,7 @@ Windows Mixed Reality 應用程式 (兩者[HoloLens](hololens-hardware-details.m
 </Dependencies>
 ```
 
-如果您的應用程式會建立**Windows Mixed Reality 沈浸式耳機**，則您可以確認它只安裝 Windows 10 Fall Creators Update （視需要的 Windows Mixed Reality） 與 Windows 10 電腦上所指定目標裝置系列 」 Windows.Desktop"和"10.0.16299.0 」 的 MinVersion。
+如果您的應用程式是針對**Windows Mixed Reality 沉浸式耳機**所建立, 則您可以藉由指定目標裝置系列的「, 確保它只會安裝在 Windows 10 電腦上, 並具有 Windows 10 秋季建立者更新 (Windows Mixed Reality 的必要項)Windows Desktop "及" 10.0.16299.0 "的 MinVersion。
 
 ```
 <Dependencies>
@@ -84,7 +84,7 @@ Windows Mixed Reality 應用程式 (兩者[HoloLens](hololens-hardware-details.m
 </Dependencies>
 ```
 
-最後，如果您的應用程式要在兩者上執行**HoloLens 與 Windows Mixed Reality 沈浸式耳機**，您可以確保應用程式僅可供這些兩個裝置系列，並同時確保每個目標的正確包含的每個目標裝置系列，其中包含其各自的 MinVersion 列的最低 Windows 版本。
+最後, 如果您的應用程式要在**HoloLens 和 Windows Mixed Reality 沉浸式頭戴式**裝置上執行, 您可以確保應用程式僅適用于這兩個裝置系列, 並同時確保每個目標都是正確的最小 Windows 版本, 方法是為每個目標裝置系列包含其各自的 MinVersion 的一行。
 
 ```
 <Dependencies>
@@ -93,151 +93,151 @@ Windows Mixed Reality 應用程式 (兩者[HoloLens](hololens-hardware-details.m
 </Dependencies>
 ```
 
-您可以深入了解以裝置系列為目標，請閱讀[TargetDeviceFamily UWP 文件](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)。
+您可以閱讀[y UWP 檔](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily), 深入瞭解目標裝置系列。
 
-### <a name="associate-app-with-the-store"></a>應用程式與市集建立關聯
+### <a name="associate-app-with-the-store"></a>將應用程式與存放區產生關聯
 
-從 Visual Studio 方案中的 專案 功能表中選擇 」 存放區 > 建立關聯的應用程式與市集建立關聯。 如果您這麼做，您可以在應用程式中測試購買和通知情況。 當您將您的應用程式關聯的存放區時，這些值會下載至應用程式資訊清單檔案目前的專案在本機電腦上：
+從 Visual Studio 解決方案的 [專案] 功能表中, 選擇 [儲存 > 將應用程式與存放區建立關聯]。 如果您這樣做, 您可以在應用程式中測試購買和通知案例。 當您將應用程式與存放區建立關聯時, 這些值會下載到本機電腦上目前專案的應用程式資訊清單檔中:
 * 套件顯示名稱
 * 封裝名稱
 * 發行者識別碼
 * 發行者顯示名稱
-* 版本
+* Version
 
-如果您覆寫預設 package.appxmanifest 檔案建立自訂.xml 檔，資訊清單，無法將您的應用程式與市集建立關聯。 如果您嘗試與市集建立關聯的自訂資訊清單檔，您會看到一則錯誤訊息。
+如果您為資訊清單建立自訂 .xml 檔案, 以覆寫預設的 package.appxmanifest.xml 檔案, 則無法將應用程式與存放區建立關聯。 如果您嘗試將自訂資訊清單檔與存放區產生關聯, 您會看到錯誤訊息。
 
-### <a name="creating-an-upload-package"></a>建立上傳封裝
+### <a name="creating-an-upload-package"></a>建立上傳套件
 
-請依照下列指導方針[封裝通用 Windows 應用程式，適用於 Windows 10](https://msdn.microsoft.com/library/hh454036.aspx#Anchor_2)。
+遵循[封裝適用于 Windows 10 的通用 windows 應用程式中的](https://msdn.microsoft.com/library/hh454036.aspx#Anchor_2)指導方針。
 
-建立上傳封裝的最後一個步驟就驗證套件使用[Windows 應用程式認證套件](#windows-app-certification-kit)。
+建立上傳套件的最後一個步驟是使用[Windows 應用程式認證套件](#windows-app-certification-kit)來驗證套件。
 
-如果您會將套件專為 HoloLens 至現有的產品所提供其他的 Windows 10 裝置系列上，您也會想要了解[版本號碼可能會如何影響的套件會傳遞給特定的客戶](https://msdn.microsoft.com/library/windows/apps/mt188602.aspx)，並[如何將套件發佈到不同的作業系統](https://msdn.microsoft.com/library/windows/apps/mt188601.aspx)。
+如果您要將特別針對 HoloLens 的套件新增至其他 Windows 10 裝置系列上提供的現有產品, 您也會想要瞭解[版本號碼可能會如何影響哪些套件會傳遞給特定客戶](https://msdn.microsoft.com/library/windows/apps/mt188602.aspx), 以及[如何將封裝散發至不同的作業系統](https://msdn.microsoft.com/library/windows/apps/mt188601.aspx)。
 
-一般的指導方針是，最高的版本號碼套件適用的裝置將會是一個分散式存放區。
+一般指引是適用于裝置的最高版本號碼套件, 會是存放區所散發的封裝。
 
-HoloLens 使用者如果沒有 Windows.Universal 封裝和 Windows.Holographic 封裝，而且 Windows.Universal 封裝具有較高的版本號碼，會下載較高的版本號碼 Windows.Universal 套件，而非 Windows.Holographic封裝。 有數種方法解決這個問題：
-1. 確保您的平台特定套件，例如 Windows.Holographic 一定的版本號碼高於您的平台無從驗證套件，例如 Windows.Universal
-2. 不會封裝應用程式因為 Windows.Universal 如果您也會有平台特定套件-改為 package Windows.Universal 針對您要用於特定平台
+如果有一個 Windows 通用封裝和一個 Windows 全像的套件, 而 Windows 通用套件的版本號碼較高, 則 HoloLens 使用者會下載較高版本的 Windows. 通用套件, 而不是 Windows 的全息版包裹. 有數種方法解決這個問題：
+1. 請確定您的平臺特定套件 (例如 Windows) 的版本號碼一律高於您的平臺中立套件 (例如 Windows)。
+2. 如果您也有平臺特定套件, 請勿將應用程式封裝為 [通用], 而是針對您想要在其上使用的特定平臺封裝 Windows 通用套件。
 
 >[!NOTE]
-> 您可以宣告單一封裝可套用到多個目標裝置系列
+> 您可以宣告單一封裝, 以適用于多個目標裝置系列
 
-3. 建立適用於所有平台的單一 Windows.Universal 封裝。 因此建議使用上述的解決方案，不立即絕佳這個的支援。
+3. 建立可跨所有平臺運作的單一 Windows 通用套件。 對這方面的支援並不大, 因此建議使用上述解決方案。
 
 ## <a name="testing-your-app"></a>測試您的應用程式
 
 ### <a name="windows-app-certification-kit"></a>Windows 應用程式認證套件
 
-當您建立應用程式封裝以提交至合作夥伴中心，透過 Visual Studio 時，建立應用程式套件精靈 會提示您建立的封裝對執行 Windows 應用程式認證套件。 為了順利提交程序至存放區，所以最好先確認[Windows 應用程式認證套件測試](https://msdn.microsoft.com/library/windows/apps/jj657973.aspx)對您的應用程式傳遞到本機電腦上再一併提交至存放區。 目前不支援遠端 HoloLens 上執行 Windows 應用程式認證套件。
+當您透過 Visual Studio 建立要提交至合作夥伴中心的應用程式套件時, [建立應用程式套件] wizard 會提示您針對所建立的套件執行 Windows 應用程式認證套件。 若要對存放區進行順暢的提交程式, 最好先確認[Windows 應用程式認證套件測試](https://msdn.microsoft.com/library/windows/apps/jj657973.aspx)是否已在本機電腦上傳遞您的應用程式, 再將其提交至存放區。 目前不支援在遠端 HoloLens 上執行 Windows 應用程式認證套件。
 
-### <a name="run-on-all-targeted-device-families"></a>在 所有目標的裝置系列上執行
+### <a name="run-on-all-targeted-device-families"></a>在所有目標裝置系列上執行
 
-Windows 通用平台可讓您建立單一的應用程式在所有 Windows 10 裝置系列上執行。 不過，它並不保證在通用 Windows 應用程式，只是將所有裝置系列上運作。 您選擇讓 HoloLens 或任何其他 Windows 10 目標裝置系列上提供您的應用程式之前，重要的是您[測試應用程式](testing-your-app-on-hololens.md)上每個這些裝置系列，以確保良好的體驗。
+Windows 通用平臺可讓您建立在所有 Windows 10 裝置系列上執行的單一應用程式。 不過, 它並不保證通用 Windows 應用程式只會在所有裝置系列上工作。 在您選擇讓您的應用程式可在 HoloLens 或其他任何 Windows 10 目標裝置系列上使用時, 請務必在每個裝置系列上[測試應用程式](testing-your-app-on-hololens.md), 以確保有良好的體驗。
 
-## <a name="submitting-your-mixed-reality-app-to-the-store"></a>提交您的混合的實境應用程式存放區
+## <a name="submitting-your-mixed-reality-app-to-the-store"></a>將您的混合現實應用程式提交至存放區
 
-如果您提交 mixed 的 reality 應用程式為基礎的 Unity 專案，請參閱本[視訊](https://channel9.msdn.com/Blogs/One-Dev-Minute/How-to-publish-your-Unity-game-as-a-UWP-app)第一次。
+如果您要提交以 Unity 專案為基礎的混合現實應用程式, 請先參閱這段[影片](https://channel9.msdn.com/Blogs/One-Dev-Minute/How-to-publish-your-Unity-game-as-a-UWP-app)。
 
-HoloLens 和/或沈浸式耳機的運作方式的應用程式就如同提交至 Microsoft Store 任何 UWP 應用程式的一般情況下，提交 Windows Mixed Reality。 之後，您就[建立您的應用程式，並保留其名稱](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)，您應該遵循[UWP 提交的檢查清單](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
+一般來說, 提交適用于 HoloLens 和/或沉浸式耳機的 Windows Mixed Reality 應用程式, 就像是將任何 UWP 應用程式提交到 Microsoft Store。 一旦您藉[由保留其名稱來建立應用程式](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)之後, 您應該遵循[UWP 提交檢查清單](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
 
-您將會執行第一件事之一就是[選取 類別目錄和子類別](https://docs.microsoft.com/windows/uwp/publish/category-and-subcategory-table)針對您的混合的實境體驗。 請務必您**選擇您的應用程式最精確的分類**，我們可以推銷您的應用程式，在正確的存放區類別中，並確保它會顯示您可以使用相關的搜尋查詢。 **因為遊戲不會導致更好的曝光度，您的應用程式中，列出 VR 標題**和可能導致它無法顯示在多個調整類別，並降低擁擠。
+您要做的第一件事, 就是為您的混合現實體驗[選取類別和子類別](https://docs.microsoft.com/windows/uwp/publish/category-and-subcategory-table)。 **請務必為您的應用程式選擇最精確的類別**, 讓我們可以將您的應用程式放在正確的商店類別中, 並確保它會使用相關的搜尋查詢來顯示。 **將您的 VR 標題列為遊戲並不會讓您的應用程式得到更好的曝光,** 而且可能會使其無法顯示在更適合和較不擁擠的類別中。
 
-不過，提交程序，您會想要混合的實境特有的選取項目中有四個主要領域：
-1. 在  **[產品宣告](submitting-an-app-to-the-microsoft-store.md#mixed-reality-product-declarations)** 區段底下[屬性](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)。
-2. 在  **[系統需求](submitting-an-app-to-the-microsoft-store.md#mixed-reality-system-requirements)** 區段底下[屬性](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)。
-3. 在  **[裝置系列可用性](submitting-an-app-to-the-microsoft-store.md#device-family-availability)** 區段底下[封裝](https://docs.microsoft.com/windows/uwp/publish/upload-app-packages)。
+不過, 提交程式中有四個主要區域, 您會想要進行混合的現實特定選擇:
+1. 在 [[屬性](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)] 底下的 [ **[產品](submitting-an-app-to-the-microsoft-store.md#mixed-reality-product-declarations)** 宣告] 區段中。
+2. 在 [[屬性](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)] 底下的 [ **[系統需求](submitting-an-app-to-the-microsoft-store.md#mixed-reality-system-requirements)** ] 區段中。
+3. 在 [[套件](https://docs.microsoft.com/windows/uwp/publish/upload-app-packages)] 底下的 [ **[裝置系列可用性](submitting-an-app-to-the-microsoft-store.md#device-family-availability)** ] 區段中。
 4. 在數個 **[存放區清單頁面](submitting-an-app-to-the-microsoft-store.md#store-listing-page)** 欄位。
 
-### <a name="mixed-reality-product-declarations"></a>混合的實境產品宣告
+### <a name="mixed-reality-product-declarations"></a>混合現實產品聲明
 
 在 **[屬性](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)** 頁面上的應用程式提交程序中，您會發現與混合實境中相關的數個選項 **[產品宣告](https://docs.microsoft.com/windows/uwp/publish/app-declarations)** 一節。
 
-![混合的實境產品宣告](images/product-declarations-900px.png)<br>
-混合的實境產品宣告
+![混合現實產品聲明](images/product-declarations-900px.png)<br>
+混合現實產品聲明
 
-首先，您會想要識別您的應用程式，可提供混合的實境體驗的裝置類型。 這可確保在市集中的 Windows Mixed Reality 集合中包含您的應用程式，並顯示在使用者瀏覽市集，連接的沈浸式耳機之後 （或瀏覽 HoloLens 上的存放區時）。
+首先, 您會想要識別應用程式提供混合現實體驗的裝置類型。 這可確保您的應用程式會包含在存放區中的 Windows Mixed Reality 集合中, 並在連接沉浸式耳機 (或在 HoloLens 上流覽商店時) 呈現給使用者流覽 Store。
 
-接下來為 「 這項體驗根據而設計的 Windows Mixed Reality: 」
-* 請檢查**PC**方塊才沈浸式耳機連線到使用者的電腦時，您的應用程式提供 VR 體驗。 您應該檢查是否要將您的應用程式設計專用來執行在沉浸式耳機，或者它是一個標準 PC 遊戲/應用程式，提供混合的實境模式和/或額外內容，當話筒連接此方塊。
-* 請檢查**HoloLens**方塊才 HoloLens 上執行時，您的應用程式提供了全像攝影版的體驗。
-* 請檢查**兩者**方塊，如果您的應用程式提供混合的實境體驗這兩種裝置類型，例如[混合的實境 Academy"專案 Island"的應用程式](mixed-reality-250.md)來自 Build 2017。
+在「此體驗是針對 Windows Mixed Reality 而設計的:」旁,
+* 只有當您的應用程式在有沉浸式耳機連線到使用者的電腦時, 才會提供 VR 體驗, 才選取 [**電腦**] 方塊。 您應該核取此方塊, 無論您的應用程式是專門設計用來在沉浸式頭戴式裝置上執行, 或是在耳機連線時提供混合現真實模式及/或額外內容的標準電腦遊戲/應用程式。
+* 只有當您的應用程式在 HoloLens 上執行時, 才會提供全像攝影體驗, 請檢查**hololens**方塊。
+* 如果您的應用程式提供兩種裝置類型的混合現實體驗, 例如組建2017中的[混合現實學術「專案島」應用程式](mixed-reality-250.md), 請檢查**這兩個**方塊。
 
-如果您選取"PC"上方時，您需要設定"mixed 的 reality setup"（活動層級）。 這只適用於在電腦連線到沈浸式的耳機，隨著上 HoloLens 的混合的實境應用程式的全球規模和使用者不在安裝期間定義的範圍執行的混合的實境體驗。
-* 選擇**Seated + 常設**如果使用者停留在一個位置 （範例為遊戲其中您要插入擴充槽的飛機 cockpit） 的用意設計您的應用程式。
-* 選擇**所有體驗**如果您的應用程式專為使用者周圍會教他或她在安裝期間所定義的界限內的意圖 (範例可能是遊戲 where 您端步驟和鴨子閃躲前方的攻擊)。
+如果您選取上方的 [PC], 您會想要設定 [混合現實設定] (活動層級)。 這僅適用于連接到沉浸式耳機的電腦上執行的混合現實體驗, 因為 HoloLens 上的混合現實應用程式是全球規模, 而且使用者不會在安裝期間定義界限。
+* 如果您的應用程式設計的目的是讓使用者停留在同一個位置 (例如, 您在飛機的環境中坐在一場遊戲中), 請選擇 [內部] **+ [待命**]。
+* 如果您的應用程式設計的目的是讓使用者在安裝期間所定義的界限內進行操作, 請選擇 [**所有體驗**] (例如, 您可以在其中逐步執行並進入減到最淡攻擊的遊戲)。
 
-### <a name="mixed-reality-system-requirements"></a>混合的實境系統需求
+### <a name="mixed-reality-system-requirements"></a>混合現實系統需求
 
 在 **[屬性](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)** 頁面上的應用程式提交程序中，您會發現與混合實境中相關的數個選項 **[系統需求](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties#system-requirements)** 一節。
 
 ![系統需求](images/system-reqs-800px.png)<br>
 系統需求
 
-在本節中，您將混合的實境應用程式識別 （必要） 的最低硬體和建議 （選擇性） 的硬體。
+在本節中, 您將識別混合現實應用程式的最小 (必要) 硬體和建議 (選擇性) 硬體。
 
-**輸入的硬體：**
+**輸入硬體:**
 
-使用核取方塊，告訴您的應用程式是否支援的潛在客戶**麥克風**(如[語音輸入](voice-input.md))，  **[Xbox 控制器或遊戲台](hardware-accessories.md#bluetooth-gamepads)**，和/或 **[Windows Mixed Reality 動作控制站](motion-controllers.md)**。 這項資訊會呈現在存放區中的應用程式的產品詳細資料頁面上，並可協助您取得適當的應用程式/遊戲集合中包含的應用程式 （例如，集合可能存在的支援動作控制站的所有遊戲）。
+如果您的應用程式支援**麥克風**(適用于[語音輸入](voice-input.md))、 **[Xbox 控制器或遊戲台](hardware-accessories.md#bluetooth-gamepads)** , 以及 (或) **[Windows Mixed Reality 動作控制器](motion-controllers.md)** , 請使用核取方塊來告知潛在客戶。 這項資訊會顯示在您應用程式的產品詳細資料頁面上, 並可協助您的應用程式包含在適當的應用程式/遊戲集合中 (例如, 支援動作控制器的所有遊戲可能會有一個集合)。
 
-要仔細考量，需選取 「 最小硬體 」 或 「 建議的硬體 」 輸入類型的核取方塊。 
+請仔細針對輸入類型選取 [最低硬體] 或 [建議的硬體] 核取方塊。 
 
-例如:  
-* 如果您的遊戲需要動作控制站，但接受透過麥克風的語音輸入，選取 Windows Mixed 的 Reality 移動 「 控制項 」，旁邊的 「 最小硬體 」 核取方塊，但 「 建議的硬體 」 的核取方塊旁邊 「 麥克風 」。 
-* 如果您的遊戲可玩 Xbox 控制器/遊戲台或移動控制器，您可能選取 「 Xbox 控制器或遊戲台 」 旁的 「 最小硬體 」 核取方塊，然後選取 「 Windows Mixed 的 Reality 移動旁邊的 「 建議的硬體 」 核取方塊控制站 」 做為動作控制站可能會提供遊戲台升級的經驗。
+例如: 
+* 如果您的遊戲需要動作控制器, 但接受透過麥克風的語音輸入, 請選取 [Windows Mixed Reality 動作控制器] 旁的 [最小硬體] 核取方塊, 但 [麥克風] 旁的 [建議的硬體] 核取方塊。 
+* 如果您的遊戲可以透過 Xbox controller/遊戲台或動作控制器來播放, 則可以選取 [Xbox controller 或遊戲台] 旁的 [最小硬體] 核取方塊, 然後選取 [Windows Mixed Reality 動作] 旁的 [建議的硬體] 核取方塊[控制器] 作為 [動作控制器], 可能會提供從遊戲台進行的逐步解說。
 
-**Windows Mixed Reality 沈浸式耳機：**
+**Windows Mixed Reality 沉浸式耳機:**
 
-指出沈浸式耳機，才可使用您的應用程式，還是是選擇性的是重要客戶滿意度和教育。
+指出是否需要沉浸式耳機才能使用您的應用程式, 或者是選擇性的, 對於客戶滿意度和教育而言, 是不可或缺的。
 
-如果您的應用程式可以*只*透過沉浸式耳機，選取 「 Windows Mixed 的 Reality 沈浸式耳機 」 旁的 「 最小硬體 」 核取方塊 這會做為存放區中的應用程式的產品詳細資料頁面上的 [購買] 按鈕上方警告讓客戶認為他們添購他們像傳統桌面應用程式的電腦運作的應用程式。
+如果您的應用程式*只能*透過沉浸式耳機使用, 請選取 [Windows Mixed Reality 沉浸式耳機] 旁的 [最小硬體] 核取方塊。 這會顯示在 [購買] 按鈕上方的 [存放區] 中, 作為警告, 讓客戶不會認為購買的應用程式可在其電腦上運作, 例如傳統的桌面應用程式。
 
-如果您的應用程式等傳統的 PC 應用程式中，在桌面上執行，但連線的沈浸式耳機時，可提供 VR 體驗 （您的應用程式的完整內容是否可用，或只有部分），選取 「 Windows Mixed Reality 旁邊的 「 建議的硬體 」 核取方塊沈浸式耳機。 」 在您的應用程式產品詳細資料頁面上將任何警告不顯示 [購買] 按鈕上方，如果您的應用程式函式，為沈浸式耳機沒有傳統桌面應用程式連線。
+如果您的應用程式在桌上型電腦上執行, 例如傳統的 PC 應用程式, 但在有沉浸式耳機連線時提供 VR 體驗 (不論您的應用程式的完整內容是否可供使用, 或是只有部分), 請選取 [Windows Mixed Reality] 旁的 [建議的硬體] 核取方塊沉浸式耳機。」 如果您的應用程式以傳統桌面應用程式的形式運作, 而未連接沉浸式耳機, 則應用程式產品詳細資料頁面上的 [購買] 按鈕不會出現任何警告。
 
-**電腦規格：**
+**電腦規格:**
 
-如果您想要盡可能達到許多 Windows Mixed Reality 沈浸式耳機使用者應用程式時，您會想要[目標](understanding-performance-for-mixed-reality.md)的電腦規格[Windows 整合式圖形的混合實境電腦](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)。
+如果您想要讓應用程式盡可能觸達許多 Windows Mixed Reality 的沉浸式耳機使用者, 您會想要以整合式[圖形的 Windows Mixed Reality 電腦](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)的電腦規格為[目標](understanding-performance-for-mixed-reality.md)。
 
-混合的實境應用程式為目標的最小的 Windows Mixed Reality 電腦需求，還是需要特定的電腦組態 (例如的專用的 GPU [Windows Mixed Reality Ultra PC](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)，您應該使用相關指示「 最小硬體 」 資料行中的電腦規格。
+無論您的混合現實應用程式是以最小的 Windows Mixed Reality 電腦需求為目標, 或是需要特定的電腦設定 (例如[Windows Mixed Reality ULTRA 電腦](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)的專用 GPU), 您都應該在中指出有相關的電腦規格「最低硬體」資料行。
 
-如果您的混合的實境應用程式設計為較佳，或提供更高解析度的圖形，在特定電腦的組態或圖形卡上應該具有相關電腦規格中的 「 建議的硬體 」 資料行，以表示您的選擇。
+如果您的混合現實應用程式設計成在特定電腦設定或圖形配接器上執行得更好, 或提供更高解析度的圖形, 您應該在 [建議的硬體] 資料行中指出有相關的電腦規格。
 
-這僅適用於您的混合的實境應用程式會使用連線至 PC 的沈浸式耳機。 此外，您的混合的實境應用程式只會在 HoloLens 上執行，如果您不需要為 HoloLens 只能在一個硬體設定，表示電腦規格。
+這僅適用于您的混合現實應用程式使用連接到電腦的沉浸式耳機時。 如果您的混合現實應用程式只在 HoloLens 上執行, 您就不需要指出電腦規格, 因為 HoloLens 只有一個硬體設定。
 
 ### <a name="device-family-availability"></a>裝置系列可用性
 
-如果您已經[正確封裝您的應用程式](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)在 Visual Studio 中，將它上傳應用程式提交程序的 [封裝] 頁面上應該會產生資料表，找出您的應用程式可使用的裝置系列。
+如果您已在 Visual Studio 中[正確封裝您的應用程式](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements), 請在應用程式提交流程的 [套件] 頁面上上傳它, 應該會產生一個資料表來識別您的應用程式將可供使用的裝置系列。
 
-![裝置系列上市情況 」 表格](images/device-family-table-900px.png)<br>
-裝置系列上市情況 」 表格
+![裝置系列可用性表](images/device-family-table-900px.png)<br>
+裝置系列可用性表
 
-如果您的混合的實境應用程式的運作方式在沉浸式耳機，則在最低 「 Windows 10 Desktop 」 就應該選取資料表中。 如果您的混合的實境應用程式的運作上 HoloLens，則在最低 「 Windows 10 全像攝影版 」 應該被選取。 如果您的應用程式在這兩種 Windows Mixed Reality 耳機類型上執行，例如[混合的實境 Academy"專案 Island"的應用程式](mixed-reality-250.md)，應該選取 「 Windows 10 Desktop 」 和 「 Windows 10 全像攝影版 」。
+如果您的混合現實應用程式適用于沉浸式耳機, 則至少應在表格中選取「Windows 10 桌面」。 如果您的混合現實應用程式在 HoloLens 上運作, 則至少應選取「Windows 10 全像攝影版」。 如果您的應用程式同時在 Windows Mixed Reality 耳機類型上執行, 例如[混合現實學術「專案島」應用程式](mixed-reality-250.md), 則應選取「Windows 10 桌上出版」和「windows 10 全像攝影」。
 
 >[!TIP]
->許多開發人員會遇到錯誤上, 傳其應用程式封裝與封裝資訊清單與您的應用程式/發行者帳戶資訊，在合作夥伴中心之間的不符時。 使用 Windows 開發人員帳戶 （您用來登入合作夥伴中心的那一個） 相關聯的相同帳戶登入 Visual Studio 通常可以避免這些錯誤。 如果您使用相同的帳戶，您可以在 Microsoft Store 中其身分識別您的應用程式關聯，您在封裝之前。
+>許多開發人員在上傳其應用程式套件時遇到錯誤, 與套件資訊清單和合作夥伴中心內的應用程式/發行者帳戶資訊相關。 使用與您的 Windows 開發人員帳戶 (您用來登入合作夥伴中心的帳戶) 相關聯的相同帳戶登入 Visual Studio, 通常可以避免這些錯誤。 如果您使用相同的帳戶, 您將能夠在封裝應用程式之前, 將其與 Microsoft Store 中的身分識別建立關聯。
 
-![您的應用程式相關聯的 Microsoft Store](images/associate-your-app-700px.png)<br>
-將您的應用程式與 Visual Studio 中的 Microsoft Store 產生關聯
+![將您的應用程式與 Microsoft Store 產生關聯](images/associate-your-app-700px.png)<br>
+將您的應用程式與中的 Microsoft Store 建立關聯 Visual Studio
 
-### <a name="store-listing-page"></a>存放區清單頁面
+### <a name="store-listing-page"></a>商店清單頁面
 
-在 [存放區清單](https://docs.microsoft.com/windows/uwp/publish/create-app-store-listings)頁面的 應用程式提交程序時，有幾個地方，您可以新增混合的實境應用程式相關的有用的資訊。
+在應用程式提交流程的 [[商店清單](https://docs.microsoft.com/windows/uwp/publish/create-app-store-listings)] 頁面上, 有幾個地方可以讓您新增混合現實應用程式的實用資訊。
 
 >[!IMPORTANT]
->若要確保正確分類的存放區和 Windows Mixed Reality 客戶變成可探索您的應用程式，您應該加入 **」 Windows Mixed Reality"** 做為其中一個 「 搜尋字詞 」 （您可以尋找搜尋字詞擴充的應用程式「 共用欄位 」 一節）。
+>為確保您的應用程式已由商店正確分類並可供 Windows Mixed Reality 客戶使用, 您應該將「 **Windows Mixed Reality** 」新增為應用程式的其中一個「搜尋詞彙」 (您可以藉由展開 [共用欄位] 來尋找搜尋詞彙區段)。
 
-![新增至搜尋詞彙的 Windows Mixed Reality](images/search-terms-800px.png)<br>
-新增至搜尋詞彙的"Windows Mixed Reality"
+![將 Windows Mixed Reality 加入搜尋詞彙](images/search-terms-800px.png)<br>
+將「Windows Mixed Reality」新增至搜尋詞彙
 
-## <a name="offering-a-free-trial-for-your-game-or-app"></a>遊戲或應用程式的免費試用版供應項目
+## <a name="offering-a-free-trial-for-your-game-or-app"></a>為您的遊戲或應用程式提供免費試用版
 
-許多的取用者會有限制為沒有經驗與虛擬實境購買 Windows Mixed Reality 沈浸式耳機之前。 它們可能不知道什麼期望密集遊戲，並可能不熟悉如何使用自己的緩和臨界值，以嶄新的體驗。 許多客戶也可以嘗試以不具有徽章的電腦上的 Windows Mixed Reality 沈浸式耳機[Windows Mixed Reality 電腦](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)。 基於這些考量，我們強烈建議您考慮供應項目[免費試用](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#free-trial)您付費的混合的實境應用程式或遊戲。
+在購買 Windows Mixed Reality 沉浸式耳機之前, 許多消費者都不會有虛擬實境的經驗。 他們可能不知道要從密集遊戲中預期的內容, 而且在沉浸式體驗中可能不熟悉自己的緩和閾值。 許多客戶也可以在未徽章為[Windows Mixed Reality 電腦](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)的電腦上, 嘗試使用 Windows mixed Reality 沉浸式耳機。 基於這些考慮, 我們強烈建議您考慮為付費的混合現實應用程式或遊戲提供[免費試用版](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#free-trial)。
 
 ## <a name="see-also"></a>另請參閱
 * [混合實境](mixed-reality.md)
 * [開發概觀](development-overview.md)
 * [應用程式檢視](app-views.md)
-* [了解效能 for Mixed Reality](understanding-performance-for-mixed-reality.md)
+* [瞭解混合現實的效能](understanding-performance-for-mixed-reality.md)
 * [Unity 的效能建議](performance-recommendations-for-unity.md)
 * [測試 HoloLens 上的應用程式](testing-your-app-on-hololens.md)
-* [Windows Mixed Reality 最小電腦的硬體相容性指導方針](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)
+* [Windows Mixed Reality 最低電腦硬體相容性指導方針](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)

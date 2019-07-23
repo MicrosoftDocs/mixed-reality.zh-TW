@@ -6,12 +6,12 @@ ms.author: chriba
 ms.date: 02/11/2019
 ms.topic: article
 keywords: Spectator View、iPhone、iOS、iPad、OpenCV、攝影機、ARKit、HoloLens、Mixed Reality、MixedRealityToolkit、示範、記錄
-ms.openlocfilehash: 02088d7b218a25c72f2eb98ae24c85a90e6e5b86
-ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
+ms.openlocfilehash: 135a566456f1000669d2033edcf0d0b4649ccdf3
+ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293611"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68387663"
 ---
 # <a name="spectator-view-for-hololens-and-hololens-2"></a>HoloLens 和 HoloLens 2 的 Spectator 視圖
 
@@ -20,7 +20,7 @@ ms.locfileid: "68293611"
 ## <a name="overview"></a>總覽
 
 當您戴 HoloLens 時, 我們通常會忘記不具有該功能的人員無法體驗我們可以世界真奇妙的情況。 Spectator View 可讓其他人在2D 螢幕上看到 HoloLens 使用者在世界中看到的內容。
-Spectator View 提供快速且實惠的方法, 讓您以行動裝置錄製 HD 中的全息影像。 它也提供 DSLR 攝影機的全像攝影的專業品質錄影。
+Spectator View 提供快速且實惠的方法, 讓您以行動裝置錄製 HD 中的全息影像。 它也提供具有攝影機的全像攝影的專業品質錄影。
 
 ## <a name="key-resources"></a>重要資源
 
@@ -28,7 +28,7 @@ Spectator View 提供快速且實惠的方法, 讓您以行動裝置錄製 HD �
 * [**結構**](https://github.com/microsoft/MixedReality-SpectatorView/blob/master/doc/SpectatorView.Architecture.md)
 * [**範例**](https://github.com/microsoft/MixedReality-SpectatorView/tree/master/samples)
 * [**行動設定指示**](https://github.com/microsoft/MixedReality-SpectatorView/blob/master/doc/SpectatorView.Setup.md)
-* [**DSLR 設定指示**](https://github.com/microsoft/MixedReality-SpectatorView/blob/master/doc/SpectatorView.Setup.DSLR.md)
+* [**攝影機設定指示**](https://github.com/microsoft/MixedReality-SpectatorView/blob/master/doc/SpectatorView.Setup.VideoCamera.md)
 
 ## <a name="use-cases"></a>使用案例
 * 您可以使用 iPhone 或 Android 裝置記錄混合現實體驗。 以全 HD 記錄, 並將消除鋸齒功能套用到全息影像, 甚至是陰影。 這是一種符合成本效益且快速的方式, 可讓您掌握全息影像的影片。
@@ -48,15 +48,15 @@ Spectator View 提供快速且實惠的方法, 讓您以行動裝置錄製 HD �
 
 下表顯示不同的 Spectator View 功能及其功能。 選擇最適合您影片錄製需求的選項:
 
-|                                      | 行動訊息                  |                    DSLR 攝影機              |
+|                                      | 行動訊息                  |                    攝影機              |
 |--------------------------------------|:-----------------------:|:-------------------------------------------:|
-| HD 品質                           |         全 HD         |        專業品質 filming (由 DSLR 決定)      |
+| HD 品質                           |         全 HD         |        專業品質 filming (由攝影機決定)      |
 | 輕鬆移動相機                 |            ✔            |                      ✔                      |
 | 第三個人檢視                    |            ✔            |                      ✔                      |
 | 可以串流至螢幕           |            ✔            |                      ✔                      |
 | 台                             |            ✔            |                                             |
 | 無線                             |            ✔            |                                             |
-| 其他必要的硬體         |     Android 手機、iPhone    | HoloLens + Rig + 架 + DSLR + PC + Unity |
+| 其他必要的硬體         |     Android 手機、iPhone    | HoloLens + Rig + 架 + 攝影機 + PC + Unity |
 | 硬體投資                  |           低            |                     高                    |
 | 跨平台                       |           Android、iOS   |                                             |
 | 已同步處理的內容                 |            ✔            |                      ✔                      |

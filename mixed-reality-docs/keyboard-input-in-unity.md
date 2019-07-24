@@ -1,68 +1,68 @@
 ---
-title: 在 Unity 中的鍵盤輸入
-description: Unity 提供 TouchScreenKeyboard 類別時不沒有可用的任何實體鍵盤接受鍵盤輸入。
+title: Unity 中的鍵盤輸入
+description: Unity 提供 TouchScreenKeyboard 類別, 可在沒有可用的實體鍵盤時接受鍵盤輸入。
 author: thetuvix
 ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
-keywords: 鍵盤輸入，unity touchscreenkeyboard
+keywords: 鍵盤、輸入、unity、touchscreenkeyboard
 ms.openlocfilehash: 35f6f0df993931eea35db7b167110b341ea0c0f2
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597039"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63515734"
 ---
-# <a name="keyboard-input-in-unity"></a>在 Unity 中的鍵盤輸入
+# <a name="keyboard-input-in-unity"></a>Unity 中的鍵盤輸入
 
 **命名空間：**  *UnityEngine*<br>
- **類型**：*[TouchScreenKeyboard](http://docs.unity3d.com/ScriptReference/TouchScreenKeyboard.html)*
+ **類型**： *[TouchScreenKeyboard](http://docs.unity3d.com/ScriptReference/TouchScreenKeyboard.html)*
 
-雖然 HoloLens 支援許多形式的輸入包括藍芽鍵盤，大部分的應用程式不能假設所有使用者都有可用的實體鍵盤。 如果您的應用程式需要文字輸入，則應該提供某種形式的螢幕小鍵盤。
+雖然 HoloLens 支援許多形式的輸入, 包括藍牙鍵盤, 但大部分的應用程式都無法假設所有使用者都有可用的實體鍵盤。 如果您的應用程式需要文字輸入, 則應該提供某種形式的螢幕小鍵盤。
 
 Unity 提供 *[TouchScreenKeyboard](http://docs.unity3d.com/ScriptReference/TouchScreenKeyboard.html)* 時不沒有可用的任何實體鍵盤接受鍵盤輸入的類別。
 
 ## <a name="hololens-system-keyboard-behavior-in-unity"></a>在 Unity 中的 HoloLens 系統鍵盤行為
 
-HoloLens，在*TouchScreenKeyboard*運用系統的螢幕小鍵盤。 體積型檢視上方重疊，因此必須要建立次要 2D XAML 檢視，以顯示鍵盤，則傳回回到體積型檢視中，提交輸入之後的 Unity 無法系統的螢幕小鍵盤。 使用者流程如下所示：
-1. 使用者執行動作導致應用程式程式碼呼叫*TouchScreenKeyboard*
-    * 應用程式會負責暫停的應用程式狀態，然後再呼叫*TouchScreenKeyboard*
-    * 應用程式可能會終止之前曾經切換回到體積型檢視
-2. Unity 會切換成 2D 的 XAML 檢視也就是世界中的 自動放置
-3. 使用者輸入文字時，使用系統鍵盤和送出或取消
-4. Unity 會切換回體積型檢視
-    * 應用程式會負責繼續執行應用程式時*TouchScreenKeyboard*完成
-5. 已送出的文字可用於*TouchScreenKeyboard*
+在 HoloLens 上, *TouchScreenKeyboard*會利用系統的螢幕小鍵盤。 系統的 [螢幕小鍵盤] 無法在體積型視圖上重迭, 因此 Unity 必須建立次要 2D XAML 視圖來顯示鍵盤, 然後在送出輸入之後回到體積型 view。 使用者流程如下所示:
+1. 使用者執行動作, 導致應用程式代碼呼叫*TouchScreenKeyboard*
+    * 在呼叫*TouchScreenKeyboard*之前, 應用程式會負責暫停應用程式狀態
+    * 應用程式可能會在切換回體積型視圖之前終止
+2. Unity 切換為自動放在世界中的 2D XAML 視圖
+3. 使用者使用系統鍵盤輸入文字並提交或取消
+4. Unity 切換回體積型視圖
+    * 當*TouchScreenKeyboard*完成時, 應用程式會負責繼續應用程式狀態
+5. 提交的文字可在*TouchScreenKeyboard*中取得
 
-### <a name="available-keyboard-views"></a>可用鍵盤的檢視
+### <a name="available-keyboard-views"></a>可用的鍵盤流覽
 
-有六個不同的鍵盤檢視：
+有六種不同的鍵盤視圖可供使用:
 * 單行文字方塊
-* 標題的單行文字方塊
+* 含標題的單行文字方塊
 * 多行文字方塊
-* 標題的多行文字方塊
+* 具有標題的多行文字方塊
 * 單行密碼方塊
-* 標題的單行密碼方塊
+* 具有標題的單行密碼方塊
 
-## <a name="how-to-enable-the-system-keyboard-in-unity"></a>如何啟用系統鍵盤在 Unity 中
+## <a name="how-to-enable-the-system-keyboard-in-unity"></a>如何在 Unity 中啟用系統鍵盤
 
-只有適用於 Unity 應用程式會使用 [UWP 建置類型] 設定為"XAML"匯出 HoloLens 系統鍵盤。 沒有您選擇 [UWP 建置類型] 為"XAML"透過 「 D3D 」 時所做的權衡取捨。 如果您不熟悉這些權衡取捨，您可能想要探索[解決方案的替代輸入](#alternative-keyboard-options)系統鍵盤。
-1. 開啟**檔案**功能表，然後選取**組建設定...**
-2. 確保**平台**設為**Windows 市集**，則**SDK**設定為**通用 10**，並設定**UWP 建置型別**要**XAML**。
-3. 在 **組建設定** 對話方塊中，按一下 **播放程式設定...** 按鈕
-4. 選取 [**設定適用於 Windows 市集**] 索引標籤
-5. 依序展開**其他設定**群組
-6. 在 **轉譯**區段中，按一下**虛擬實境支援**核取方塊以加入新**虛擬實境裝置**清單
-7. 請確定**Windows 全像攝影版**會出現在清單中的虛擬實境 Sdk
+HoloLens 系統鍵盤僅適用于以「UWP 組建類型」設定為「XAML」的 Unity 應用程式。 當您選擇「XAML」做為「UWP 組建類型」而不是「D3D」時, 會產生取捨。 如果您不熟悉這些取捨, 您可能會想要探索系統鍵盤的[替代輸入解決方案](#alternative-keyboard-options)。
+1. 開啟 [ 檔案] 功能表, 然後選取 [**組建設定**]。
+2. 確定**平臺**已設定為 [ **Windows Store**], **SDK**設定為 [**通用 10**], 並將**UWP 組建類型**設定為 [ **XAML**]。
+3. 在 [**組建設定**] 對話方塊中, 按一下 [ **Player 設定 ...** ] 按鈕
+4. 選取 [ **Windows Store 的設定**] 索引標籤
+5. 展開 [**其他設定**] 群組
+6. 在轉譯區段中, 勾選 [**支援虛擬實境**] 核取方塊, 以新增**虛擬實境裝置**清單
+7. 確保**Windows**全像顯示在虛擬實境 sdk 清單中
 
 >[!NOTE]
->如果您不與 HoloLens 裝置，將建置標示為受支援的虛擬實境中，專案會匯出為 2D XAML 應用程式。
+>如果您未將此組建標示為 HoloLens 裝置所支援的虛擬實境, 專案將會匯出為 2D XAML 應用程式。
 
-## <a name="using-the-system-keyboard-in-your-unity-app"></a>在您的 Unity 應用程式中使用系統鍵盤
+## <a name="using-the-system-keyboard-in-your-unity-app"></a>在 Unity 應用程式中使用系統鍵盤
 
 ### <a name="declare-the-keyboard"></a>宣告鍵盤
 
-在類別中，宣告一個變數來存放*TouchScreenKeyboard* ，並傳回變數，以容納字串鍵盤。
+在類別中, 宣告用來儲存*TouchScreenKeyboard*的變數, 以及用來保存鍵盤所傳回之字串的變數。
 
 ```cs
 UnityEngine.TouchScreenKeyboard keyboard;
@@ -71,7 +71,7 @@ public static string keyboardText = "";
 
 ### <a name="invoke-the-keyboard"></a>叫用鍵盤
 
-要求的鍵盤輸入發生事件時，呼叫其中一個函式所需的輸入類型而定。 請注意，標題會 textPlaceholder 參數中指定。
+當要求鍵盤輸入時發生事件時, 請根據所需的輸入類型呼叫其中一個函式。 請注意, 標題是在 textPlaceholder 參數中指定。
 
 ```cs
 // Single-line textbox
@@ -93,9 +93,9 @@ keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, 
 keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, false, true, false, "Secure Single-line Title");
 ```
 
-### <a name="retrieve-typed-contents"></a>擷取具類型的內容
+### <a name="retrieve-typed-contents"></a>取出具類型的內容
 
-在更新迴圈中，檢查是否鍵盤接收到新的輸入並將它儲存在其他地方使用。
+在更新迴圈中, 檢查鍵盤是否收到新的輸入, 並加以儲存以供其他地方使用。
 
 ```cs
 if (TouchScreenKeyboard.visible == false && keyboard != null)
@@ -110,8 +110,8 @@ if (TouchScreenKeyboard.visible == false && keyboard != null)
 
 ## <a name="alternative-keyboard-options"></a>替代鍵盤選項
 
-我們了解切換移出的 2D 檢視的體積型檢視不是最理想的方式從使用者取得文字輸入。
+我們瞭解, 將體積型視圖切換到2D 視圖並不是取得使用者文字輸入的理想方式。
 
-目前的替代方案，運用系統鍵盤，透過 Unity 包括：
-* 使用語音聽寫輸入 (<b>附註：</b>這通常是在字典中找不到的文字容易發生錯誤，並且不適合用於密碼項目)
-* 在您的應用程式專屬的檢視中建立適用於使用鍵盤
+透過 Unity 運用系統鍵盤的目前替代方案包括:
+* 使用語音聽寫進行輸入 (<b>注意:</b>這通常容易發生在字典中找不到的單字, 且不適合用于密碼輸入)
+* 建立可在應用程式獨佔視圖中運作的鍵盤

@@ -1,47 +1,47 @@
 ---
-title: Unity 之外的可尋獲觀景窗
-description: 在 Unity HoloLens 之外的可尋獲相機使用方式。
+title: Unity 中的定位相機
+description: 在 Unity 中使用 HoloLens 的相機。
 author: wguyman
 ms.author: wguyman
 ms.date: 03/21/2018
 ms.topic: article
-keywords: 相片、 視訊、 hololens、 相機、 unity，可以找到
+keywords: 相片、影片、hololens、攝影機、unity、定位
 ms.openlocfilehash: f0183400f55b1c6663a9a20ab4992befe5ad0718
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59595114"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63515445"
 ---
-# <a name="locatable-camera-in-unity"></a>Unity 之外的可尋獲觀景窗
+# <a name="locatable-camera-in-unity"></a>Unity 中的定位相機
 
-## <a name="enabling-the-capability-for-photo-video-camera"></a>啟用此功能的相片攝影機
+## <a name="enabling-the-capability-for-photo-video-camera"></a>啟用相片攝影機的功能
 
-「 網路攝影機 」 功能必須宣告要使用的應用程式[相機](locatable-camera.md)。
-1. 瀏覽至"編輯 > 專案設定 > Player"頁面在 Unity 編輯器中，請移至播放程式設定
+必須為應用程式宣告「網路攝影機」功能, 才能使用[相機](locatable-camera.md)。
+1. 在 Unity 編輯器中, 流覽至 [編輯 > 專案設定 > Player] 頁面, 移至播放程式設定
 2. 按一下 [Windows Store] 索引標籤
-3. 在 「 發行的設定 > 功能 」 區段中，檢查**網路攝影機**並**麥克風**功能
+3. 在 [發佈設定 > 功能] 區段中, 檢查**網路**攝影機和**麥克風**功能
 
-只有一項作業一次發生的相機。 若要判斷哪一種模式 （相片、 視訊或 none） 在攝影機處於目前，您可以檢查 UnityEngine.XR.WSA.WebCam.Mode。
+相機一次只能發生單一作業。 若要判斷相機目前所在的模式 (相片、影片或無), 您可以檢查 UnityEngine XR。
 
-## <a name="photo-capture"></a>拍攝相片
+## <a name="photo-capture"></a>相片捕獲
 
-**命名空間：** *UnityEngine.XR.WSA.WebCam*<br>
+**命名空間：** *UnityEngine. XR. WSA. 網路攝影機*<br>
 **類型：** *PhotoCapture*
 
-*PhotoCapture*類型可讓您充分仍與相片視訊攝影機中的相片。 使用最一般的模式，就*PhotoCapture*來拍攝相片如下所示：
+*PhotoCapture*類型可讓您以相片攝影機拍照。 使用*PhotoCapture*拍攝相片的一般模式如下:
 1. 建立*PhotoCapture*物件
-2. 建立*CameraParameters*我們想要的設定物件
-3. Start Photo Mode via *StartPhotoModeAsync*
-4. 取得所需的相片
-    * （選擇性）該圖片的互動
-5. 停止相片模式，並清除資源
+2. 使用我們想要的設定來建立*CameraParameters*物件
+3. 透過*StartPhotoModeAsync*啟動相片模式
+4. 採用所需的相片
+    * 選擇性與該圖片互動
+5. 停止相片模式並清除資源
 
-### <a name="common-set-up-for-photocapture"></a>一般設定適用於 PhotoCapture
+### <a name="common-set-up-for-photocapture"></a>適用于 PhotoCapture 的一般設定
 
-所有的三個用途，我們開始相同上述的前 3 個步驟
+對於這三種用法, 我們從上述的前3個步驟開始
 
-我們先建立*PhotoCapture*物件
+我們一開始先建立*PhotoCapture*物件
 
 ```cs
 PhotoCapture photoCaptureObject = null;
@@ -51,7 +51,7 @@ PhotoCapture photoCaptureObject = null;
    }
 ```
 
-接下來我們可以在這裡儲存我們的物件、 設定我們的參數，以及啟動相片模式
+接下來, 我們要儲存物件、設定參數和啟動相片模式
 
 ```cs
 void OnPhotoCaptureCreated(PhotoCapture captureObject)
@@ -70,7 +70,7 @@ void OnPhotoCaptureCreated(PhotoCapture captureObject)
    }
 ```
 
-最後，我們也會使用相同清除此處所提供的程式碼
+最後, 我們也會使用此處顯示的相同「清理」程式碼
 
 ```cs
 void OnStoppedPhotoMode(PhotoCapture.PhotoCaptureResult result)
@@ -80,13 +80,13 @@ void OnStoppedPhotoMode(PhotoCapture.PhotoCaptureResult result)
    }
 ```
 
-完成這些步驟中之後, 您可以選擇擷取相片的類型。
+在這些步驟之後, 您可以選擇要捕獲的相片類型。
 
-### <a name="capture-a-photo-to-a-file"></a>擷取至檔案相片
+### <a name="capture-a-photo-to-a-file"></a>將相片捕獲至檔案
 
-擷取相片直接以檔案為最簡單的操作。 相片可以儲存為 JPG 或 PNG。
+最簡單的作業是直接將相片捕獲到檔案。 相片可以儲存為 JPG 或 PNG。
 
-如果我們已成功啟動相片模式，我們現在會拍攝相片，並將它儲存在磁碟上
+如果我們已成功啟動相片模式, 我們現在會拍攝相片, 並將其儲存在磁片上
 
 ```cs
 private void OnPhotoModeStarted(PhotoCapture.PhotoCaptureResult result)
@@ -105,7 +105,7 @@ private void OnPhotoModeStarted(PhotoCapture.PhotoCaptureResult result)
    }
 ```
 
-在擷取後到磁碟的相片，我們將會結束相片模式，並再清除物件
+將相片捕獲到磁片之後, 我們會結束相片模式, 然後清除我們的物件
 
 ```cs
 void OnCapturedPhotoToDisk(PhotoCapture.PhotoCaptureResult result)
@@ -122,13 +122,13 @@ void OnCapturedPhotoToDisk(PhotoCapture.PhotoCaptureResult result)
    }
 ```
 
-### <a name="capture-a-photo-to-a-texture2d"></a>擷取相片以 Texture2D
+### <a name="capture-a-photo-to-a-texture2d"></a>將相片捕獲到 Texture2D
 
-擷取資料到 Texture2D，程序時，非常類似於擷取到磁碟。
+將資料捕獲到 Texture2D 時, 此程式非常類似于捕獲至磁片。
 
-我們會遵循上述程序設定。
+我們將遵循上述的設定程式。
 
-在  *OnPhotoModeStarted*，我們會擷取記憶體的框架。
+在*OnPhotoModeStarted*中, 我們將會在記憶體中捕捉一個框架。
 
 ```cs
 private void OnPhotoModeStarted(PhotoCapture.PhotoCaptureResult result)
@@ -144,7 +144,7 @@ private void OnPhotoModeStarted(PhotoCapture.PhotoCaptureResult result)
    }
 ```
 
-然後，我們將材質套用我們的結果，並使用的常見清除上述程式碼。
+然後, 我們會將結果套用至材質, 並使用上述的一般清除程式碼。
 
 ```cs
 void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptureFrame photoCaptureFrame)
@@ -163,11 +163,11 @@ void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptur
    }
 ```
 
-### <a name="capture-a-photo-and-interact-with-the-raw-bytes"></a>與未經處理位元組擷取相片和互動
+### <a name="capture-a-photo-and-interact-with-the-raw-bytes"></a>捕捉相片並與原始位元組互動
 
-在記憶體中的未經處理位元組與互動框架中，我們將遵循相同的設定上述的步驟並*OnPhotoModeStarted*如同擷取相片以 Texture2D。 不同之處在於*OnCapturedPhotoToMemory*我們可以在此取得未經處理位元組，並與其互動。
+為了與記憶體內框架中的原始位元組互動, 我們將遵循與上述相同的設定步驟, 並*OnPhotoModeStarted*為將相片捕獲到 Texture2D。 其差異在於*OnCapturedPhotoToMemory*中, 我們可以取得原始位元組並與其互動。
 
-在此範例中，我們將建立*清單<Color>* 可能在進一步處理或套用到透過紋理*SetPixels()*
+在此範例中, 我們將建立可透過*SetPixels ()* 進一步處理或套用至材質的 *<Color>清單*
 
 ```cs
 void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptureFrame photoCaptureFrame)
@@ -200,20 +200,20 @@ void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptur
    }
 ```
 
-## <a name="video-capture"></a>影像擷取
+## <a name="video-capture"></a>影片捕獲
 
-**命名空間：** *UnityEngine.XR.WSA.WebCam*<br>
+**命名空間：** *UnityEngine. XR. WSA. 網路攝影機*<br>
 **類型：** *VideoCapture*
 
-*VideoCapture*函式非常類似於*PhotoCapture*。 只有兩個差異是，您必須指定框架每個第二個 (FPS) 值，然後您可以只將直接儲存到磁碟儲存為.mp4 檔案。 若要使用的步驟*VideoCapture*如下所示：
+*VideoCapture*的功能非常類似*PhotoCapture*。 唯一的兩個差異在於, 您必須指定每秒一個畫面 (FPS) 值, 而且您只能將磁片直接儲存為一個檔案。 使用*VideoCapture*的步驟如下所示:
 1. 建立*VideoCapture*物件
-2. 建立*CameraParameters*我們想要的設定物件
-3. 開始透過視訊模式*StartVideoModeAsync*
+2. 使用我們想要的設定來建立*CameraParameters*物件
+3. 透過*StartVideoModeAsync*啟動影片模式
 4. 開始錄製影片
 5. 停止錄製影片
-6. 停止視訊模式，並清除資源
+6. 停止影片模式並清除資源
 
-我們先建立我們*VideoCapture*物件*VideoCapture m_VideoCapture = null;*
+我們一開始先建立*VideoCapture*物件*VideoCapture m_VideoCapture = null;*
 
 ```cs
 void Start ()
@@ -222,7 +222,7 @@ void Start ()
    }
 ```
 
-接著會設定的參數，我們將需要進行錄製和開始。
+然後, 我們會設定要用於錄製和啟動的參數。
 
 ```cs
 void OnVideoCaptureCreated (VideoCapture videoCapture)
@@ -252,7 +252,7 @@ void OnVideoCaptureCreated (VideoCapture videoCapture)
    }
 ```
 
-一旦啟動，我們將開始錄製
+開始之後, 我們將開始錄製
 
 ```cs
 void OnStartedVideoCaptureMode(VideoCapture.VideoCaptureResult result)
@@ -267,7 +267,7 @@ void OnStartedVideoCaptureMode(VideoCapture.VideoCaptureResult result)
    }
 ```
 
-啟動錄製後，您可以更新 UI 或行為，若要啟用停止。 這裡我們只是記錄
+記錄開始之後, 您可以更新您的 UI 或行為以啟用停止。 我們只要記錄
 
 ```cs
 void OnStartedRecordingVideo(VideoCapture.VideoCaptureResult result)
@@ -277,7 +277,7 @@ void OnStartedRecordingVideo(VideoCapture.VideoCaptureResult result)
    }
 ```
 
-稍後，我們會想要停止錄製。 從計時器或使用者輸入，比方說，這可能會發生。
+稍後, 我們會想要停止錄製。 例如, 計時器或使用者輸入可能會發生這種情況。
 
 ```cs
 // The user has indicated to stop recording
@@ -287,7 +287,7 @@ void OnStartedRecordingVideo(VideoCapture.VideoCaptureResult result)
    }
 ```
 
-一旦停止錄製後，我們將會停止視訊的模式，並清除我們的資源。
+記錄停止後, 我們會停止影片模式並清除我們的資源。
 
 ```cs
 void OnStoppedRecordingVideo(VideoCapture.VideoCaptureResult result)
@@ -304,8 +304,8 @@ void OnStoppedRecordingVideo(VideoCapture.VideoCaptureResult result)
 ```
 
 ## <a name="troubleshooting"></a>疑難排解
-* 沒有解決方案可用
-    * 請確定**網路攝影機**功能在您的專案中指定。
+* 沒有任何可用的解決方案
+    * 請確定您的專案中已指定**網路**攝影機功能。
 
 ## <a name="see-also"></a>另請參閱
-* [之外的可尋獲相機](locatable-camera.md)
+* [定位相機](locatable-camera.md)

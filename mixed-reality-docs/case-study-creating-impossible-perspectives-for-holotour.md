@@ -1,95 +1,95 @@
 ---
-title: 案例研究-建立 HoloTour 不可能的檢視方塊
-description: 我們希望您在要 unforgettable Microsoft HoloLens 的 HoloTour 的經驗。 除了傳統的觀光停駐點，我們計劃出一些 「 不可能的檢視方塊 」。
+title: 案例研究-建立 HoloTour 不可能的觀點
+description: 我們希望您可以 unforgettable HoloTour for Microsoft HoloLens 的體驗。 除了傳統的旅遊停止之外, 我們還規劃了一些「不可能的觀點」。
 author: DannyAskew
 ms.author: daaske
 ms.date: 03/21/2018
 ms.topic: article
-keywords: 混合實境 HoloTour、 HoloLens、 Windows
+keywords: HoloTour、HoloLens、Windows Mixed Reality
 ms.openlocfilehash: be00df73543aa295e1e0dbe1462a888d6bb24954
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591859"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63523560"
 ---
-# <a name="case-study---creating-impossible-perspectives-for-holotour"></a>案例研究-建立 HoloTour 不可能的檢視方塊
+# <a name="case-study---creating-impossible-perspectives-for-holotour"></a>案例研究-建立 HoloTour 不可能的觀點
 
-我們希望您在要 unforgettable Microsoft HoloLens 的 HoloTour 的經驗。 除了傳統的觀光停駐點，我們計劃出一些 「 不可能的檢視方塊 」 – 分鐘的時間，是不可能在任何導覽體驗，但它們透過 HoloLens 中的技術中，我們無法將直接傳送到客廳。 建立這些經驗的內容需要一些不同的技術，比我們的標準的擷取程序。
+我們希望您可以 unforgettable HoloTour for Microsoft HoloLens 的體驗。 除了傳統的旅遊之外, 我們還規劃了一些「不可能的觀點」, 也就是在任何導覽上不可能發生, 但透過 HoloLens 中的技術, 我們可以直接進入您的生活室。 建立這些體驗的內容時, 需要一些與標準 capture 程式不同的技術。
 
-## <a name="the-content-challenge"></a>內容的挑戰
+## <a name="the-content-challenge"></a>內容挑戰
 
-HoloTour 體驗中有某些場景 — 例如熱空氣球形文字說明寫透過現代 Rome and 在古羅馬競技場打在 gladiatorial 大大增強，可提供您不會看到任何其他地方的唯一檢視。 這些時間旨在激發創意及後，您透過 HoloTour 不只是教育體驗您存取。 也就是我們希望您記住，並取得興奮地告訴其他人的時間。 因為我們無法納入我們的數位相機 rig 天空，而且我們還沒有 （還） 控制時間移動，每一種 「 不可能的觀點 」 會呼叫特殊的方法，來建立內容。
+在 HoloTour 體驗中, 有些場景 (例如, 最新的羅馬的熱氣球) 和 gladiatorial 會對抗古羅馬的 Colosseum, 這會提供您不會在其他地方看到的獨特視圖。 這些時間是為了激發和 amaze 您, 而不只是教育經驗, 讓您的旅遊 HoloTour。 這些都是我們想要記住的時間, 讓其他人感到興奮。 因為我們無法將攝影機 rig 帶到天空中, 而且我們尚未進行時間旅遊, 所以每個「不可能的觀點」都被呼叫, 以取得建立內容的特殊方法。
 
 ## <a name="behind-the-scenes"></a>幕後
 
-建立這些唯一的時間和所需而已 filming 和編輯檢視方塊。 花費大量時間、 具有許多不同的技術，加上一些 Hollywood 神奇的人員。
+建立這些獨特的時間和觀點, 不僅是 filming 和編輯所需。 它耗費了相當長的時間、具有許多不同技能的人員, 以及有點 Hollywood 的神奇。
 
-### <a name="viewing-rome-from-a-hot-air-balloon"></a>從一個熱空氣球形文字說明檢視羅馬
+### <a name="viewing-rome-from-a-hot-air-balloon"></a>從空氣熱氣球觀看羅馬
 
-從我們規劃初期階段，我們知道我們想要進行 HoloTour 中的空照圖檢視。 看到天上羅馬可讓您檢視方塊中大部分的人永遠不會取得以查看和了解如何受歡迎的地標位於在空間上。 嘗試擷取此我們現有的網路攝影機和麥克風 rig 已經大幅困難，但幸好我們不需要進行。
+從我們初期的規劃日開始, 我們知道我們想要在 HoloTour 中進行空中查看。 從天空看到羅馬, 可讓您瞭解大部分人都不會看到的觀點, 並瞭解地標的空間。 試著使用現有的攝影機和麥克風 rig 自我捕捉, 並不容易, 但幸運的是, 我們不需要這麼做。
 
-首先，務必說明所有您瀏覽 HoloTour 中的位置中有移動。 我們的目標是要讓您 「 像是你真的有 」 及您要藉由移動隨身帶著走在現實生活中括住，因為我們虛擬目的地所需的傳達以及環境移動。 比方說，當您在旅途上造訪 Pantheon，您會看到整個 plaza 自己和整體性的步驟的人員。 背景的影片，可讓您覺得您真的維護在位置中，而不靜態的預備環境中。
+首先, 請務必說明您在 HoloTour 中流覽的所有位置都已移動。 我們的目標是讓您「感到滿意」, 而且因為您在現實生活中都是以移動的方式來環繞, 所以我們的虛擬目的地也需要用來傳達環境的移動。 比方說, 當您造訪 Pantheon 時, 您會看到晃在 plaza 中的人員, 以及整體性的步驟。 背景動作有助於讓您感到滿意, 而不是在暫存的靜態環境中。
 
-若要建立的球形文字說明賽車的空照圖檢視，我們曾在 Microsoft，以取得存取權的 Rome 的空拍全景影像與其他團隊。 絕佳這些映像的品質和檢視已令人驚艷，但我們不需要修改場景中使用它們，他們覺得還相較於其他部分的教學課程和影片缺乏是令人分心。 
+為了建立氣球的鳥瞰圖, 我們與 Microsoft 的其他團隊合作, 以取得羅馬的航空全景影像。 這些影像的品質很不錯, 而且看起來很棒, 但當我們在幕後使用它們, 而不需要修改時, 就會覺得 lifeless 與導覽的其他部分相較, 而沒有動作會造成干擾。 
 
 
-![熱空氣球形文字說明購物籃，浮動在羅馬。](images/hotairballoon1-300px.png)<br>
-*熱空氣球形文字說明購物籃浮動在羅馬*
+![熱空氣球形籃, 浮動于羅馬。](images/hotairballoon1-300px.png)<br>
+*熱門的空氣球形籃, 浮動于羅馬*
 
-若要確保的空照圖位置符合相同品質列做為其他目的地，我們決定將靜態相片轉換成生活移動場景。 第一個步驟是要編輯的映像和複合移動到其中。 我們簽約，協助我們進行此視覺效果演出者。 編輯是為了顯示緩時變離開的雲端、 by 鳥類和偶爾的平面或周遊 skyline 直昇機。 到地上，cars 的數目對磁碟機的街道。 如果您已開始在 HoloTour Rome 的導覽，就不太可能，您已明確察覺任何此移動。 這是真的很棒 ！ 細微的動作並非引起您的注意，但這些小小的風格，沒有人注意到立即它已在場景中的靜態影像。
+為了確保空中位置符合與其他目的地相同的品質列, 我們決定將靜態相片轉換成生活中, 移動場景。 第一個步驟是在其中編輯影像和複合動作。 我們已簽訂視覺效果的演出者, 以協助我們進行此工作。 編輯是為了顯示雲端的緩慢離開、鳥瞰的飛行, 還有一個平面或直升機會進行天際線。 一開始, 有一些車輛用來推動街道。 如果您已經在 HoloTour 中的羅馬教學課程, 就不太可能明確知道這項移動的任何一項。 其實很棒! 微妙的動作並不是用來留意您的眼睛, 但是在沒有這些小部分的情況下, 人們會立即注意到它是場景中的靜態影像。
 
-我們的第二件事就是讓您用來檢視場景有利點。 您不會覺得您真的有是如果它看起來會像是您只要浮動在 midair，讓我們建立一個球形文字說明的 3D 模型，並放在其中您。 這可讓您到處球形文字說明，並查看以取得更好的觀點來看的邊緣。 我們發現這是遇到空拍影像自然又有趣的方式。
+我們所做的第二件事, 是提供您一個有利點來觀看場景。 如果您似乎只是在 midair 中浮動, 就不會覺得很像, 因此我們建立了球形的3D 模型, 並將您放在裡面。 這可讓您逐步解說氣球並查看邊緣, 以取得更好的觀點。 我們發現這是體驗空拍影像的自然且有趣的方式。
 
-熱空氣球形文字說明體驗會顯示為我們的音訊團隊面臨獨特的挑戰，為物流，以致無法擁有數千英呎停留 Rome 的麥克風。 幸運的是，我們有大量的環境的音訊擷取從各地我們能夠在後期製作期間使用的城市。 我們會將音訊的 fixit 發出器位於其中的全新已擷取其相對位置。 音訊的篩選之後，將遙不可及，如同您所期待它有人球迷熱空氣球形文字說明中的觀點提供真確，方向 soundscape 適用於場景的音效。
+空氣進入氣球的體驗為我們的音訊團隊帶來了獨特的挑戰, 因為物流讓我們無法使麥克風在羅馬上停留數千英尺。 幸運的是, 我們在後置生產期間可以使用大量的環境音訊捕捉, 而這些都是透過城市。 我們將音訊發射器放在從一開始捕獲它們的相對位置。 然後, 音訊會經過篩選, 使其聽起來很遠, 就好像您是從騎于熱聲球形的人觀點來收聽, 為場景提供了真實的方向 soundscape。
 
-### <a name="time-traveling-to-ancient-rome"></a>時間移動至古羅馬
+### <a name="time-traveling-to-ancient-rome"></a>時間到達古羅馬
 
-歷史遺跡及整個 Rome 的建築的剩餘部分是令人印象深刻甚至兩千多年之後其結構，但我們深知必須顯示項目，可能會類似回到過去並查看這些結構，因為它們是出現在古羅馬獨一無二的機會。
+歷史遺跡和大樓在每個羅馬的剩餘部分, 在其建築後2000仍相當令人印象深刻, 但我們知道我們有獨特的機會, 可以向您示範要回到何處, 並查看這些結構在古羅馬中的外觀。
 
-當然，沒有任何影片片段或靜態圖像） 的競技場打的樣子時它所建立，因此我們需要自行建立。 我們只需要大量的研究，若要深入了更瞭解結構，因為我們可能;了解資料它已從進行，檢閱架構的圖表，以及讀取記錄的描述以取得足夠的資訊，能夠進行虛擬重新建立。 
+當然, Colosseum 在建立時似乎沒有任何影片或靜態影像), 因此我們需要自行建立。 我們必須進行大量研究, 以盡可能深入瞭解結構。瞭解其來源的資料、查看架構圖表和閱讀歷程記錄描述, 以取得足夠的資訊來進行虛擬重建。 
 
-![現代斯遺跡含有覆疊顯示它起來在古羅馬競技場 floor 競技場打。](images/rome-colosseum-overlay-500px.png)<br>
-*現代斯遺跡含有覆疊顯示它起來在古羅馬競技場 floor 競技場打*
+![Colosseum 的現代化日毀損, 其中會顯示「場地」的重迭, 如同古的羅馬圖所示。](images/rome-colosseum-overlay-500px.png)<br>
+*Colosseum 的現代化日毀損, 其中會顯示在古羅馬中的場地樓層, 如下所示*
 
-我們想要進行第一件事是增強傳統的教學課程與教育重疊。 HoloTour 中時以今日，瀏覽競技場打遺跡競技場最低限度值轉換為各位示範如何它起來期間使用，包括詳盡的 underground 臨時區域。 在一般的教學課程中，您可能必須向您說明這項資訊可能嘗試發揮想像，但 HoloTour 中就可以看到它。
+我們要做的第一件事, 就是使用教育重迭來強化傳統的導覽。 在 HoloTour 中, 當您造訪 Colosseum 的毀損時, 會進行轉換以顯示其在使用期間的樣子, 包括精緻的地下臨時區域。 在一般導覽中, 您可能會看到這項資訊, 而且您可以試著想像它, 但在 HoloTour 中, 您實際上可以看見它。
 
-這類重疊我們有我們演出者比對的觀點來看，我們擷取錄影範圍並以手動方式建立覆疊影像。 檢視方塊必須相符，如此一來，時，我們將取代影片我們同時會正確對齊的影像。
+就像這樣的重迭而言, 我們的演出者與我們的「捕捉」素材的觀點相符, 並以手動方式建立疊加影像。 此觀點必須相符, 如此一來, 當我們以影像取代影片時, 兩者都會適當地對齊。
 
-### <a name="staging-the-gladiator-fight"></a>預備 gladiator 辯論
+### <a name="staging-the-gladiator-fight"></a>Gladiator 對抗
 
-雖然重疊非常吸引人的方式，教導大眾關於歷程記錄，我們已最期待已傳輸您回到過去。 覆疊是只從特定的觀點來看，靜止影像，但時間移動需要進行模型化，整個競技場打，如上文所述，我們需要將影片放在場景方向，以讓它可以運作。 花費了相當多的心力。
+雖然重迭是讓人們傳達歷程記錄的吸引人, 但我們最興奮的就是將您及時送回。 重迭只是來自特定觀點的一個靜止影像, 但是出差時間需要模型化整個 Colosseum, 而且如先前所述, 我們需要在場景中進行動作, 讓它感覺正常。 達到此目的需要耗費大量的時間。
 
-這項任務是太大，我們的團隊、 單獨執行，因此我們封面團隊共事，是使用 Whiskytree，外部效果公司，通常適用於 Hollywood 影片的視覺效果。 Whiskytree 將協助我們將在其 heyday 中, 重新建立競技場打，讓我們將教導您有關常設競技場地板上時的結構，並且從皇帝方塊建立 gladiator 辯論的檢視。 喝采當場和揮手橫幅新增微妙的動作才能讓您覺得這些是實際的位置並不只是映像。
+這種工作對我們的小組而言太大, 所以我們的藝術團隊與 Whiskytree, 這是一家外部效應公司, 通常會在 Hollywood 電影的視覺效果上運作。 Whiskytree 協助我們在其 heyday 中重新建立 Colosseum, 讓我們能夠教您有關結構, 同時位於場地樓層, 並從天皇的方塊建立 gladiator 的。 [歡呼 crowds] 和 [揮手] 橫幅會新增必要的動作, 使其感覺像是真正的地方, 而不只是影像。
 
-![重新建立競技場打所示從競技場最低限度值。 當檢視 HoloTour，橫幅 flutter 中變得輕而易舉，讓影片的滿足感。](images/recreated-colosseum-holotour-500px.png)<br>
-*重新建立競技場打所示從競技場最低限度值。當檢視 HoloTour，橫幅 flutter 中變得輕而易舉，讓影片的滿足感。*
+![重新建立的 Colosseum, 如同從場地樓層所見。 在 HoloTour 中觀看時, 橫幅 flutter 會變得輕而易舉, 讓您感受到各種動作。](images/recreated-colosseum-holotour-500px.png)<br>
+*重新建立的 Colosseum, 如同從場地樓層所見。在 HoloTour 中觀看時, 橫幅 flutter 會變得輕而易舉, 讓您感受到各種動作。*
 
-羅馬導覽的高潮 gladiator 奮戰。 Whiskytree 提供給我們的競技場和 3D 群眾模擬轉譯成視訊，但我們需要新增在 gladiators 競技場地板上。 我們的程序的這個部分會看起來更像 Hollywood 視訊生產環境的專案從 incubation game studio。 我們的團隊成員對應出粗略的辯論序列，並調整與 choreographer。 我們雇用了，接移將我們的模擬 （mock） 經過實際環境的動作項目，並購買 armor，讓它們看起來的部分。 最後，我們圖書館綠色螢幕針對整個場景。
+與 gladiator 對抗之羅馬最後的導覽。 Whiskytree 為我們提供了以影片呈現的場地和3D 的對等模擬, 但我們需要在 gladiators 中新增場地。 我們程式的這個部分看起來比 incubation 遊戲 studio 中的專案更像是 Hollywood video 生產。 我們小組的成員對應了粗略的對抗順序, 然後使用 choreographer 來進行精簡。 我們雇用了動作專案來預備我們的 mock 工作並購買 armor, 讓他們能夠查看這部分。 最後, 我們會針對綠色畫面 filmed 整個場景。
 
-![我們 gladiators 取得之間採用的指示。](images/green-screen-gladiators-holotour-500px.jpg)<br>
-*我們 gladiatiors，取得指示之間採用*
+![我們的 gladiators, 取得之間的指示。](images/green-screen-gladiators-holotour-500px.jpg)<br>
+*我們的 gladiatiors, 取得之間的指示*
 
-此場景會置於您皇帝的方塊，表示從這個角度所需的所有網站。 如果我們圖書館從何處 gladiators 奮戰競技場地板上，我們就已經能夠正確複合奮戰序列中更新版本中，讓我們架設我們相機運算子在非常高的剪式增益，往下看 filming 的辯論順序。
+這個場景會將您放在天皇的方塊中, 這表示所有需要從該觀點來看的素材。 如果我們從 gladiators 在場地中的過程中 filmed, 我們就不能在稍後正確地撰寫對抗順序, 因此我們將相機運算子放在非常高的剪取中, 並向下查看 filming 的對抗順序。
 
-![取得正確的觀點來看： filming 從剪式增益。](images/scissor-lift-holotour-500px.jpg)<br>
-*取得正確的觀點來看： filming 剪式隨即從*
+![取得正確的觀點: 從剪取 filming。](images/scissor-lift-holotour-500px.jpg)<br>
+*取得正確的觀點: 從剪取 filming*
 
-在後續的生產環境中 gladiators 已複合到競技場 floor 和觀點來看是正確的但仍然有一項問題： 的綠色螢幕上 gladiators 陰影移除了複合 （compositing） 程序的一部分。 沒有陰影，它看起來像 gladiators 已在空中浮點數。 幸運的是，Whiskytree 是適合用來解決此類的問題，它們就會用於技術的強項一堆新增至場景的陰影。 結果是您看到的教學課程中今天。
+在後置生產環境中, gladiators 會複合到場地樓層, 而觀點則是正確的, 但仍有一個問題: 綠色螢幕上的 gladiators 陰影已移除, 做為撰寫程式的一部分。 如果沒有遮蔽, 它看起來就像是在空氣中浮動 gladiators。 幸運的是, Whiskytree 只是解決這種問題, 而他們使用了一些技術 wizardry, 將陰影新增回場景中。 結果就是您今天在導覽中看到的內容。
 
 ## <a name="about-the-authors"></a>關於作者
 
 <table style="border:0">
 <tr>
 <td style="border:0" width="60px"> <img alt="David Haley" width="60" height="60" src="images/haley.png" /></td>
-<td style="border:0" width="408"> <b>David Haley</b>是資深開發人員已了解有關相機 rig 和視訊播放比他認為可能來自 HoloTour 上運作。</td>
+<td style="border:0" width="408"> <b>David Haley</b>是資深的開發人員, 他已瞭解如何在 HoloTour 上工作, 更深入瞭解相機 rig 和影片播放。</td>
 
 <td style="border:0" width="60px"> <img alt="Jason Syltebo" width="60" height="60" src="images/syltebo.png" /></td>
-<td style="border:0" width="408"> <b>Jason Syltebo</b>是確保您會遇到的每個您瀏覽，即使您回到過去的目的地 soundscape 音訊設計師。</td>
+<td style="border:0" width="408"> <b>Jason Syltebo</b>是一種音訊設計人員, 其可確保您可以體驗到您造訪的每個目的地的 soundscape, 即使您回到目前為止。</td>
 </tr>
 <tr>
 <td style="border:0" width="60px"> <img alt="Danny Askew" width="60" height="60" src="images/askew.png" /></td>
-<td style="border:0" width="408"> <b>Danny Askew</b>是視訊演出者提出確定場 Rome 是越好，真是完美。</td>
+<td style="border:0" width="408"> <b>Danny Askew</b>是一位影片演出者, 他可以確保您的最完美地進行羅馬。</td>
 
 <td style="border:0" width="60px"></td>
 <td style="border:0" width="408"></td>

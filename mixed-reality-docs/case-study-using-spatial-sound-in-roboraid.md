@@ -1,97 +1,97 @@
 ---
-title: 案例研究-RoboRaid 中使用空間的音效
-description: 空間的聲音是其中一項最令人興奮的功能的 Microsoft HoloLens，提供一種方式，讓使用者察覺發生什麼情況其周圍當物件不符合的視野。
+title: 案例研究-在 RoboRaid 中使用空間音效
+description: 空間音效是 Microsoft HoloLens 其中一項最令人興奮的功能, 可讓使用者在物件不在視線的同時, 觀察其周圍的狀況。
 author: mattzmsft
 ms.author: hakons
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Windows Mixed Reality，HoloLens，RoboRaid，空間的音效
+keywords: Windows Mixed Reality、HoloLens、RoboRaid、空間音效
 ms.openlocfilehash: 4bb050b4a4051c121c488ea38e150a8973bd7c04
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592124"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63524168"
 ---
-# <a name="case-study---using-spatial-sound-in-roboraid"></a>案例研究-RoboRaid 中使用空間的音效
+# <a name="case-study---using-spatial-sound-in-roboraid"></a>案例研究-在 RoboRaid 中使用空間音效
 
-Charles Sinex，音訊的潛在客戶，Microsoft HoloLens Experience 小組，談論他發現時建立音訊的獨特的挑戰[RoboRaid](https://www.microsoft.com/en-us/p/roboraid/9nblggh5fv3j)，混合的實境第一人稱射擊。
+Charles Sinex 是 Microsoft HoloLens Experience 小組的音訊領導人, 討論他在建立[RoboRaid](https://www.microsoft.com/en-us/p/roboraid/9nblggh5fv3j)的音訊時所遇到的獨特挑戰, 這是一位混合現實的第一員射擊。
 
 ## <a name="the-tech"></a>技術
 
-[空間音效](spatial-sound.md)是其中一項最令人興奮的功能的 Microsoft HoloLens，提供一種方式，讓使用者察覺發生什麼情況其周圍當物件不符合的視野。
+[空間音效](spatial-sound.md)是 Microsoft HoloLens 其中一項最令人興奮的功能, 可讓使用者在物件不在視線的同時, 觀察其周圍的狀況。
 
-在 RoboRaid，最明顯且有效的使用空間是聲音的警示事情外部使用者的周邊視覺將播放程式。 比方說，Breacher 可以輸入從任何空間，請在掃描牆，但如果您不會遇到進入其中的位置，您可能會遺失。 若要提醒您此入侵，您將聽取不同的位元的音訊輸出來自其中 Breacher 輸入時，可讓您知道您要迅速採取行動，以將它停止。
+在 RoboRaid 中, 最明顯且有效的空間音效用法, 就是在使用者的周邊願景以外, 提醒播放程式發生問題。 例如, Breacher 可以從房間內的任何掃描牆輸入, 但如果您不是面對輸入的位置, 您可能會錯過它。 若要提醒您此目睹, 您會聽到 Breacher 輸入的不同位音訊, 這可讓您知道您需要快速地採取行動來停止它。
 
 ## <a name="behind-the-scenes"></a>幕後
 
-建立空間音效 HoloLens 的應用程式的程序讓新的且唯一，而且缺乏過去的專案，以做為參考可能會導致大量的標頭時遇到問題，正準備碰上。 希望這些範例的音訊的挑戰我們面臨著讓 RoboRaid 將可協助您建立您自己的應用程式的 音訊。
+為 HoloLens 應用程式建立空間音效的過程是全新且唯一的, 而且缺少過去用來參考的專案, 可能會在您遇到問題時導致許多 head 抓著。 希望我們在進行 RoboRaid 時所面臨的音訊挑戰範例, 會在您為自己的應用程式建立音訊時提供協助。
 
-### <a name="be-mindful-of-taxing-the-cpu"></a>請注意的消耗 CPU
+### <a name="be-mindful-of-taxing-the-cpu"></a>請留意 CPU 的負擔
 
-空間的聲音可能很嚴苛，而在 CPU 上。 對於忙碌的體驗，像是 RoboRaid 則是保留的空間音效在任何給定時間的八個執行個體的重要項目。 大部分的情況下，很簡單，只要設定不同的音訊事件的執行個體的限制，如此會終止之後達到限制時所發生的任何執行個體。 比方說，當無人機繁衍 （spawn），其 screams 僅限於三個執行個體在任何指定時間。 只有約四個無人機可以繁衍 （spawn） 一次，考量三個 screams 很因為沒有任何方法，您的大腦可追蹤的許多發音相似的音訊事件。 這釋出了資源的其他空間之音效的事件，例如敵人爆炸或準備要傳送的敵人。
+空間音效可能會要求 CPU。 對於 RoboRaid 之類的忙碌體驗而言, 將空間音效的實例保持在任何指定時間的八位之下是很重要的。 在大部分的情況下, 您可以輕鬆地設定不同音訊事件的實例限制, 以便在達到限制之後發生的任何實例終止。 例如, 當無人機產生時, 其 screams 會在任何指定時間限制為三個實例。 一次只考慮四個無人機, 有三個 screams 是很好的, 因為您的大腦無法追蹤許多類似發音的音訊事件。 這會釋出其他空間音效事件的資源, 例如敵人爆炸或敵人準備要進行。
 
-### <a name="rewarding-a-successful-dodge"></a>奬勵成功閃避
+### <a name="rewarding-a-successful-dodge"></a>獎勵成功減淡
 
-Dodging 技師修理是遊戲的其中一個最重要的層面中 RoboRaid，和我們認為 HoloLens 體驗真正特有的項目。 因此，我們希望成功加亮獲益匪淺給播放器。 我們 Doppler"whizz-著 「 聽起來很早在開發吸引人。 我的計劃一開始是使用迴圈和操作即時使用磁碟區、 音調、 和篩選。 此實作將會非常複雜，因此認可可以真正開始建置此資源之前，我們建立便宜原型使用的資產 Doppler 效果現成只是為了了解它實情 *。 使此 whizz 的資產會播放完全 0.7 秒彈藥將已過玩家的 ear 和認為真的令人驚奇的結果之前，我們有天份的開發人員成功了 ！ 不用說，我們會拋棄了底線的更複雜的解決方案，並實作原型。
+躲過技師修理是 RoboRaid 中游戲的其中一個最重要的層面, 也是我們覺得真正獨特的 HoloLens 經驗。 因此, 我們想要讓 dodges 對玩家的成功率非常有益。 在開發過程中, 我們 Doppler 「whizz」聽起來非常吸引人。 一開始, 我的計畫是使用迴圈, 並使用磁片區、音調和篩選來即時操作。 這項作業的實現非常詳盡, 因此在認可資源以實際建立之前, 我們使用具有 Doppler 效果內建的資產建立了成本較低的原型, 只是為了瞭解它覺得 *。 我們的開發人員使其成為 it, 讓這項 whizz 的資產在 projectile 將由玩家的耳傳遞之前, 只會在0.7 秒內播放一筆, 而結果則令人驚訝! 不用說, 我們 ditched 了更複雜的解決方案, 並實作為原型。
 
-* * (如果您想要建立具有內建的 Doppler 效果的音訊資產的詳細資訊，請參閱 Charles Deenan 呼叫音效的設計工具的文章[在 2 分鐘內的 100 Whooshes](http://designingsound.org/2010/02/charles-deenen-special-100-whooshes-in-2-minutes/)。) *
+\* * (如果您想要使用內建的 Doppler 效果來建立音訊資產的詳細資訊, 請參閱[在2分鐘內稱為 100 Whooshes](http://designingsound.org/2010/02/charles-deenen-special-100-whooshes-in-2-minutes/)的音效設計工具 Charles Deenan 一文。)*
 <br>
-![已成功躲過敵人的彈藥獎勵滿足 whizz 的音效播放程式。](images/successful-dodge-roboraid-500px.jpg)
+![成功躲過敵人的 projectile 以滿足 whizz 的音效來獎勵玩家。](images/successful-dodge-roboraid-500px.jpg)
 
-### <a name="ditching-ineffective-sounds"></a>無效的音效的拋棄
+### <a name="ditching-ineffective-sounds"></a>拋棄失效的音效
 
-一開始，我們有想要播放遽增背後播放音效，一旦他們已成功 dodged 敵人的彈藥，但是我們決定拋棄這有幾個原因。 首先，不認為不如我們用於閃避 whizz 由 SFX。 彈藥叫用您背後的牆上的時間，其他項目會發生在遊戲中會很多音效的遮罩。 其次，我們沒有衝突上下限，因此我們無法取得播放彈藥叫用最低限度值，而不是背景牆時遽增。 但最後，有空間音效的 CPU 成本。 Elite Scorpion 敵人 （一牆內可以搜耙） 都有特殊的攻擊，這大約八個投擲。 不只您在混合中，讓大型的混亂，它也導入了個三長兩爆因為它已達到 CPU 太難。
+一開始, 我們想要在玩家成功 dodged 敵人 projectile 後播放播放程式, 但我們決定基於幾個原因而揚棄。 首先, 它不會像我們用於減淡的 whizz 的 SFX 一樣有效。 在 projectile 觸及您背後的牆之後, 遊戲中也會發生其他問題, 而這聽起來會很容易遮蔽。 其次, 我們不會發生衝突, 因此無法在 projectile 達到地面而非牆時, 讓我們無法播放。 最後, 空間音效還有 CPU 成本。 Scorpion 的敵人 (可以在牆內進行編目的) 有一項特殊的攻擊, 寄大約八炮彈。 這不僅會使混合變得很大, 也引進了混亂的聲, 因為它的 CPU 太困難。
 
-### <a name="communicating-a-hit"></a>叫用的通訊
+### <a name="communicating-a-hit"></a>溝通點擊
 
-有趣的問題，在我們認為是唯一的 HoloLens 體驗，這是有效到播放程式通訊，它們具有已達到的困難度。 混合的實境體驗成功是劇本會發生您感覺。 這表示您所認為自己客廳中對抗外星人機器人的入侵。
+我們遇到了一項有趣的問題, 我們覺得這對 HoloLens 體驗而言是唯一的, 這是很難有效地與他們所叫用的玩家溝通。 如何讓混合現實的體驗成功, 正是您覺得這是您的故事。 這表示您必須在自己的生活中, 相信您正在對抗一間的機器人目睹。
 
-播放程式顯然不會覺得任何項目時就會叫用，因此我們必須找到真正說服播放程式的方法有不良有 happed 給他們。 在傳統的遊戲中，您可能會看到可能有點 grunt 的動畫，可讓您知道您的字元已叫用，或畫面可能會閃爍紅色和您的字元。 由於這種提示沒有作用中的混合的實境體驗，因此我們決定結合真的誇張的音效，指出您的視覺提示已損毀。 建立巨量的音效，並使得它 ducked 所有項目向下混合中那麼顯著。 然後，若要讓它更引人注目，我們新增簡短的警告音效彷彿已接收的核能 sub。 
+播放程式明顯不會感覺到任何事, 因此我們必須找出一種方法, 讓玩家相信 happed。 在傳統遊戲中, 您可能會看到可讓您知道您的字元已被叫用的動畫, 或螢幕可能會以紅色閃爍, 而您的字元可能會 grunt 很少。 因為這些類型的提示在混合現實的體驗中無法使用, 所以我們決定將視覺提示與真正放大的音效結合, 以指出您已損毀。 我建立了一個很大的音效, 讓它在混合中 ducked 所有專案。 然後, 為了讓它更進一步, 我們新增了一段簡短的警告音效, 就像是在取得某個的「核用」。 
 <br>
-![當播放程式取得 RoboRaid 中叫用的時它們會視覺提示，請參閱 <，但也會取得誇張音訊提示，告知他們已損毀。](images/player-hit-roboraid-500px.jpg)
+![當玩家遇到 RoboRaid 時, 會看到視覺提示, 但也會取得放大的音訊提示, 告訴他們已損毀。](images/player-hit-roboraid-500px.jpg)
 
-### <a name="getting-big-sound-from-small-speakers"></a>從小型的主講人取得巨量的音效
+### <a name="getting-big-sound-from-small-speakers"></a>從小型說話者取得大音效
 
-HoloLens 主講人是裝置的小型且需求，因此您不能預期聽到太多低階淺。 類似於針對智慧型手機或手持式遊戲裝置、 音訊設計師與作曲者一定要留意其音訊的頻率內容開發。 我一律設計音效，或寫入完整的頻率範圍的音樂，因為頭戴耳機是使用者的選項。 不過，為了確保與 HoloLens 演講者之間的相容性，我執行測試偶爾將 EQ 放在我工作就會發生任何 DAW master 中。 EQ 設定組成高通篩選條件 （不會有太的陡峭） 約 600 到 700 Hz 和低通篩選在大約 10 K （非常陡峭）。 這將使您的約略想法您聽起來如何將裝置上的播放。
+HoloLens 喇叭的小型和光線會符合裝置的需求, 因此您不會聽到太多的低端。 與智慧型手機或手持遊戲裝置的開發類似, 音效設計人員和作曲家必須留意其音訊的頻率內容。 我一直都是以完整的頻率範圍來設計聲音或書寫音樂, 因為戴耳機是使用者的選擇。 不過, 為了確保與 HoloLens 喇叭的相容性, 我偶爾會藉由將 EQ 放在我所處理的任何白苗文的主伺服器中, 來執行測試。 EQ 設定是由高於600到 700 Hz (沒有太多) 和低通濾波器 (非常高) 的高傳遞濾波器所組成。 這應該會讓您瞭解如何在裝置上播放聲音。
 
-如果您依賴在低音提供變更音樂中的同步選取的意義，您可能會發現在套用此 EQ 設定時，您的音樂完全失去根的意義。 若要解決此問題，我是一個 octave 更高版本 （具有某些豐富諧波） 低音中加入另一個圖層中，混合，以取得根後的意義。 有時候，使用向上諧波 amp 的扭曲，會提供足夠的頻率內容中較高的範圍，讓我們認為有一點底下的大腦。 這適用於 SFX 影響、 爆炸，或音效的特殊分鐘的時間，例如主管的進階攻擊。 您真的不能依賴低階讓播放程式的影響或加權。 如同音樂扭曲提供少量無暇絕對協助。
+如果您依賴低音來對音樂中的弦進行變更, 您可能會發現當您套用此 EQ 設定時, 音樂完全失去了根目錄的意義。 為了解決這個問題, 我將另一層新增至低音, 這是一個 octave 較高 (使用一些豐富的諧波), 並將其混合以取得 root 的意義。 有時候, 使用失真來 amp 諧波會在較高範圍提供足夠的頻率內容, 讓我們的大腦覺得它底下有一些東西。 這適用于像是一段特殊時間的 SFX, 像是影響、爆炸或音效, 例如老闆的超級攻擊。 您真的無法依賴低端, 讓玩家有意義的影響或權數。 就像使用音樂一樣, 使用扭曲來提供一些借助電腦絕對有説明。
 
-### <a name="making-your-audio-cues-stand-out"></a>讓您脫穎而出的音訊提示
+### <a name="making-your-audio-cues-stand-out"></a>讓您的音訊提示更醒目
 
-當然，所有團隊成員想 bombastic 音樂、 雲端主張，以及 瘋狂爆炸;但是他們也想要能夠聽到 voiceover 或任何其他關鍵遊戲音效提示。
+當然, 小組中的每個人都想要 bombastic 音樂、主張, 以及令人不可思議的爆炸;但他們也希望能夠聽到 voiceover 或任何其他遊戲關鍵的音訊提示。
 
-主控台遊戲的頻率的完整範圍，您會有更多的選項，將頻率，視聲音的重要性而定。 RoboRaid，不過，我已有限制範圍的頻率，我無法從音效出曲線的數目。 比方說，如果您使用低通濾波器和從高階的範圍太多出的曲線，就沒有剩餘的聲音，因為沒有更低階的任何項目。
+在具有完整範圍頻率的主控台遊戲上, 您有更多選項可以根據音效的重要性來細分頻率。 不過, 在 RoboRaid 中, 我限制了我可以從音效彎曲的頻率範圍。 比方說, 如果您使用低通濾波器, 並從範圍較高的曲線向外彎曲, 就不會有任何專案留在音效中, 因為沒有太多的低端。
 
-為了讓 RoboRaid 音效最大的大小會在裝置上，我們必須降低的完整體驗的動態範圍，而且廣泛使用的 「 迴避 」 藉由建立清楚的階層架構的不同類型的音效的重要性。 我將 「 迴避 」 從-2-6 db 根據重要性而定。 我個人不喜歡明顯避遊戲，因此我花了很多時間微調淡出輸入/輸出執行時間和磁碟區衰減數量。 我們設定空間音效、 非空間音效、 VO，和不音樂、 殘響器 dry 匯流排的不同匯流排上，然後建立非常高的優先順序，嚴重且非關鍵匯流排。 資產接著已移至其適當的匯流排上設定。
+為了讓 RoboRaid 聽起來像是裝置上的最大, 我們必須降低整個體驗的動態範圍, 並藉由為不同類型的音效建立清楚的重要性階層, 以充分運用回避。 我根據重要性設定-2 到-6 資料庫的回避。 我個人不喜歡遊戲中的明顯回避, 因此我花了很多時間微調淡入/縮小時間和磁片區衰減量。 我們為空間音效、非空間音效、VO 和試匯流排設定不同的匯流排, 而不會對音樂進行回音, 然後建立非常高的優先順序、關鍵和非重大匯流排。 然後, 我們會設定資產以移至適當的匯流排。
 
-我希望有音訊專業人員必須盡可能狂歡依照我從事 RoboRaid 處理自己的應用程式。 我無法等候了 （並聽聽 ！） 什麼 Microsoft 外部洋溢的人會擬定的 HoloLens。
+我希望音訊專業人員能夠在自己的應用程式上運作, 因為我在 RoboRaid 上工作。 我看不到 (聽過!) Microsoft 外部的人才會針對 HoloLens 提出哪些內容。
 
-## <a name="do-it-yourself"></a>自行進行此作業
+## <a name="do-it-yourself"></a>自行執行
 
-我發現特定事件 （例如爆炸） 聽起來 「 更大 」 的一個技巧 — 像是他們要填滿的空間，是要建立此空間的聲音 mono 資產，並混合與 2D 的立體聲資產，以 3D 中播放。 它確實承擔一些調整，因為是立體聲的內容中有太多的資訊將會降低 mono 的資產的方向。 不過，讓正確的平衡會導致龐大的音效，可讓玩家開啟它們的頭正確的方向。
+我發現讓特定事件 (例如爆炸) 聽起來更大的一項技巧, 像是填滿空間, 就是為空間音效建立 mono 資產, 並使用2D 身歷聲資產來重新播放3D。 它確實會進行一些微調, 因為身歷聲內容中的資訊過多會降低 mono 資產的方向。 不過, 取得平衡會產生很大的音效, 讓玩家能夠以正確的方向來輪流列印頭。
 
-您可以嘗試自行使用下列的音訊資產：
+您可以使用下列音訊資產自行嘗試:
 
-**案例 1**
-1. 下載[roboraid_enemy_explo_mono.wav](images/roboraid-enemy-explo-mono.wav)和設定為透過空間音效的播放，並將它指派到的事件。
-2. 下載[roboraid_enemy_explo_stereo.wav](images/roboraid-enemy-explo-stereo.wav)並設定為在 2D 劇院中播放，並將指派給與上述相同的事件。 因為這些資產會正規化為 Unity，契比雪夫這兩項資產的磁碟的區，讓它不裁剪。
-3. 同時扮演這兩種音效。 移動您腦子大約覺得它聽如何空間。
+**案例1**
+1. 下載[roboraid_enemy_explo_mono](images/roboraid-enemy-explo-mono.wav) , 並將其設定為透過空間音效播放, 並將其指派給事件。
+2. 下載[roboraid_enemy_explo_stereo](images/roboraid-enemy-explo-stereo.wav) , 並將其設定為在2d 身歷聲中播放, 並將指派給與上述相同的事件。 因為這些資產會正規化為 Unity, 所以 attenuate 這兩個資產的數量, 使其不會進行裁剪。
+3. 同時播放這兩個聲音。 四處移動您的頭部, 感受它的外觀。
 
-**案例 2**
-1. 下載[roboraid_enemy_explo_summed.wav](images/roboraid-enemy-explo-summed.wav)透過空間音效的播放設定並指派到的事件。
-2. 播放此資產本身，然後比較案例 1 中的事件。
-3. 請嘗試不同的資產負債的 mono 和立體聲的檔案。
+**案例2**
+1. 下載[roboraid_enemy_explo_summed](images/roboraid-enemy-explo-summed.wav) , 並將其設定為透過空間音效播放並指派給事件。
+2. 單獨播放此資產, 然後與案例1中的事件進行比較。
+3. 嘗試不同的 mono 和身歷聲檔案平衡。
 
 ## <a name="about-the-author"></a>關於作者
 
 <table style="border-collapse:collapse">
 <tr>
 <td style="border-style: none" width="60px"><img alt="Picture of Charles Sinex" width="60" height="60" src="images/genericusertile.jpg"></td>
-<td style="border-style: none"><b>Charles Sinex</b><br>音訊的工程師 @Microsoft</td>
+<td style="border-style: none"><b>Charles Sinex</b><br>音訊工程師@Microsoft</td>
 </tr>
 </table>
 
 ## <a name="see-also"></a>另請參閱
-* [空間的音效](spatial-sound.md)
-* [Microsoft HoloLens 的 RoboRaid](https://www.microsoft.com/en-us/p/roboraid/9nblggh5fv3j)
+* [空間音效](spatial-sound.md)
+* [適用于 Microsoft HoloLens 的 RoboRaid](https://www.microsoft.com/en-us/p/roboraid/9nblggh5fv3j)

@@ -1,11 +1,11 @@
 ---
-title: 追蹤的 QR 代碼
-description: 了解如何開啟追蹤您的 Windows Mixed Reality 沈浸式 (VR) 耳機的 QR 代碼，並在 VR 應用程式中實作的功能。
+title: QR 代碼追蹤
+description: 瞭解如何開啟 Windows Mixed Reality 沉浸 (VR) 耳機的 QR 代碼追蹤, 並在您的 VR 應用程式中執行此功能。
 author: yoyozilla
 ms.author: yoyoz
 ms.date: 11/06/2018
 ms.topic: article
-keywords: vr lbe，位置為基礎的娛樂、 vr arcade arcade，沉浸式 qr，qr 代碼
+keywords: vr, lbe, 以位置為基礎的娛樂, vr arcade, arcade, 沉浸, qr, qr 代碼
 ms.openlocfilehash: 465056cf645a8b9dc9e0e2d3f9dacf887df67c52
 ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
@@ -13,12 +13,12 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 06/11/2019
 ms.locfileid: "66829977"
 ---
-# <a name="qr-code-tracking"></a>追蹤的 QR 代碼
+# <a name="qr-code-tracking"></a>QR 代碼追蹤
 
-沈浸式 (VR) 耳機的 Windows Mixed Reality 驅動程式中實作追蹤的 QR 代碼。 藉由啟用 QR 程式碼追蹤程式耳機驅動程式中的，耳機掃描 QR 代碼並回報給想要的應用程式。 這項功能才可使用的[Windows 10 年 10 月 2018 Update (也稱為 RS5)](release-notes-october-2018.md)。
+QR 代碼追蹤會在適用于沉浸式 (VR) 耳機的 Windows Mixed Reality 驅動程式中執行。 藉由在耳機驅動程式中啟用 QR 代碼追蹤器, 頭戴式裝置會掃描 QR 代碼, 並回報給感興趣的應用程式。 這項功能僅適用于[Windows 10 2018 年10月更新 (也稱為 RS5)](release-notes-october-2018.md)。
 
 >[!NOTE]
->目前在這篇文章中的程式碼片段示範如何使用C++/CX 而不是 C + + 17 相容C++中所使用的 /WinRT [ C++全像攝影版的專案範本](creating-a-holographic-directx-project.md)。  概念是相等的C++/WinRT 專案，但您必須將轉譯程式碼。
+>本文中的程式碼片段目前示範如何使用C++/cx, C++ [ C++ ](creating-a-holographic-directx-project.md)而不是 C + 17 相容的/WinRT, 如全像攝影專案範本中所使用。  概念相當於C++/WinRT 專案, 但您必須轉譯程式碼。
 
 ## <a name="device-support"></a>裝置支援
 
@@ -31,44 +31,44 @@ ms.locfileid: "66829977"
     <tr>
         <td><strong>功能</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
     </tr>
      <tr>
-        <td>追蹤的 QR 代碼</td>
+        <td>QR 代碼追蹤</td>
         <td>❌</td>
         <td>✔️</td>
     </tr>
 </table>
 
-## <a name="enabling-and-disabling-qr-code-tracking-for-your-headset"></a>啟用和停用 QR 程式碼耳機的追蹤
-注意:本節僅適用於[Windows 10 年 10 月 2018 Update (也稱為 RS5)](release-notes-october-2018.md)。 從 19 h 1 組建及更新版本，您將不不必執行這項操作。
-不論您正在開發的混合的實境應用程式，將會利用追蹤的 QR 代碼，或您是客戶的其中一個應用程式，您必須以手動方式啟動追蹤耳機的驅動程式中的 QR 代碼。
+## <a name="enabling-and-disabling-qr-code-tracking-for-your-headset"></a>啟用和停用頭戴式裝置的 QR 代碼追蹤
+注意:本節僅適用于[Windows 10 2018 年10月更新 (也稱為 RS5)](release-notes-october-2018.md)。 從19h1 的組建開始, 您不需要這麼做。
+無論您開發的是將利用 QR 代碼追蹤的混合現實應用程式, 或您是其中一個應用程式的客戶, 都必須在頭戴式裝置的驅動程式中手動開啟 QR 代碼追蹤。
 
-若要**開啟 追蹤的 QR 代碼**的沈浸式 (VR) 耳機：
+若要開啟您的沉浸式 (VR) 耳機的**QR 代碼追蹤**:
 
-1. 關閉您的電腦上的混合的實境入口網站應用程式。
-2. 請拔除耳機，從您的電腦。
-3. 在命令提示字元執行下列指令碼：<br>
+1. 在您的電腦上關閉混合現實入口網站應用程式。
+2. 從您的電腦拔下頭戴式裝置。
+3. 在命令提示字元中執行下列腳本:<br>
     `reg add "HKLM\SOFTWARE\Microsoft\HoloLensSensors" /v  EnableQRTrackerDefault /t REG_DWORD /d 1 /F`
-4. 重新連線到您的 PC 耳機。
+4. 將您的耳機重新連接到您的電腦。
 
-若要**關閉 QR 代碼追蹤**的沈浸式 (VR) 耳機：
+若要關閉沉浸式 (VR) 耳機的**QR 代碼追蹤**:
 
-1. 關閉您的電腦上的混合的實境入口網站應用程式。
-2. 請拔除耳機，從您的電腦。
-3. 在命令提示字元執行下列指令碼：<br>
+1. 在您的電腦上關閉混合現實入口網站應用程式。
+2. 從您的電腦拔下頭戴式裝置。
+3. 在命令提示字元中執行下列腳本:<br>
     `reg add "HKLM\SOFTWARE\Microsoft\HoloLensSensors" /v  EnableQRTrackerDefault /t REG_DWORD /d 0 /F`
-4. 重新連線到您的 PC 耳機。 這會讓任何探索到的 QR 代碼 「 非-之外的可尋獲。 」
+4. 將您的耳機重新連接到您的電腦。 這會使任何探索到的 QR 代碼「無法定位」。
 
 ## <a name="printing-codes"></a>列印代碼
 
-首先[規格的 QR 代碼](https://www.qrcode.com/en/howto/code.html)指出 「 QR 代碼符號區域需要的邊界或 「 無訊息區 」 周圍可使用它。 邊界是不會在此對話方塊列印的清除區域周圍的符號。 QR 代碼需要四個模組寬的邊界，在符號的所有側邊。 」 這需要對每一側，模組-程式碼中的單一黑色方塊的大小四倍的寬度。 [Spec] 頁面包含如何列印 QR 代碼，並找出特定大小的 QR 代碼所需的區域大小的建議。
+首先最重要的是, [qr 代碼的規格](https://www.qrcode.com/en/howto/code.html)指出「qr 代碼符號區域需要使用邊界或「無訊息區域」。 邊界是符號周圍的清楚區域, 其中不會列印任何內容。 QR 代碼需要在符號的兩邊有四個全模組的寬邊界。」 這在每一端都必須有一個寬度, 也就是模組大小的四倍-程式碼中的單一黑色正方形。 [規格] 頁面包含如何列印 QR 代碼的建議, 並找出建立特定大小的 QR 代碼所需的區域。
 
-目前 QR 程式碼偵測品質很容易變動的照明和底圖的。 若要避免此問題，請注意您照明和列印適當的程式碼。 在已加上特別光明的光源的場景，列印黑色灰色背景上的程式碼。 在低亮度場景，黑色白色運作。 同樣地，如果特別深的程式碼的背景，嘗試灰色的程式碼為黑色，如果您偵測率很低。 否則，如果淺色背景，一般的程式碼應該就夠用。
+目前, QR 代碼偵測品質很容易受到不同的照明和背景影響。 若要對抗此情況, 請記下您的照明, 並列印適當的程式碼。 在具有特別明亮光源的場景中, 列印灰色背景上為黑色的程式碼。 在低光線場景下, 黑色 on 白色作用。 同樣地, 如果程式碼的背景特別深, 如果您的偵測速率很低, 請嘗試黑色的灰色程式碼。 否則, 如果背景較淡, 一般程式碼應該會正常執行。
 
 ## <a name="qrtracking-api"></a>QRTracking API
 
-QRTracking 外掛程式會公開的 Api 可讓追蹤的 QR 代碼。 若要使用外掛程式，您必須使用下列類型從*QRCodesTrackerPlugin*命名空間。
+QRTracking 外掛程式會公開適用于 QR 代碼追蹤的 Api。 若要使用外掛程式, 您必須使用*QRCodesTrackerPlugin*命名空間中的下列類型。
 
 ```cs
  // QRTracker plugin namespace
@@ -179,27 +179,27 @@ QRTracking 外掛程式會公開的 Api 可讓追蹤的 QR 代碼。 若要使�
 }
 ```
 
-## <a name="implementing-qr-code-tracking-in-unity"></a>實作追蹤 Unity 中的 QR 代碼
+## <a name="implementing-qr-code-tracking-in-unity"></a>在 Unity 中執行 QR 代碼追蹤
 
-### <a name="sample-unity-scenes-in-mrtk-mixed-reality-toolkit"></a>範例 MRTK （混合實境工具組） 中的 Unity 場景
+### <a name="sample-unity-scenes-in-mrtk-mixed-reality-toolkit"></a>MRTK 中的範例 Unity 場景 (混合現實工具組)
 
-您可以找到如何使用混合實境工具組中的 QR 追蹤 API 範例[GitHub 網站](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker)。
+您可以在混合現實工具組[GitHub 網站](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker)中找到如何使用 QR 追蹤 API 的範例。
 
-MRTK 已實作所需的指令碼，以 simpilify QR 追蹤使用方式。 所有所需的資產來開發 QR 追蹤應用程式位於 「 QRTracker"資料夾。 有兩個場景： 第一個是只會偵測到，以及第二個示範如何使用附加至 QR 代碼座標系統，以顯示 全像投影顯示 QR 代碼的詳細資料的範例。
-沒有 prefab"QRScanner 」 來使用 QRCodes 加入所有必要的指令碼。 指令碼 QRCodeManager 是實作 QRCode API 的單一類別。 這必須新增至場景。 指令碼 」 AttachToQRCode 」 用來附加全像投影的 QR 代碼座標系統，此指令碼可以新增至任何您全像投影。 「 SpatialGraphCoordinateSystem"會示範如何使用 QRCode 座標系統。 這些指令碼可用來當做-是專案中的場景，或者您可以使用來撰寫您自己直接外掛程式上面所述。
+MRTK 已實作為 simpilify QR 追蹤使用方式所需的腳本。 開發 QR 追蹤應用程式所需的所有資產都位於 "QRTracker" 資料夾中。 有兩個場景: 第一個範例只會在偵測到 QR 代碼時顯示其詳細資料, 而第二個則示範如何使用附加至 QR 代碼的座標系統來顯示全息影像。
+有一個 prefab 的「QRScanner」, 它會將所有必要的腳本新增至幕後, 以使用 QRCodes。 腳本 QRCodeManager 是單一類別, 可執行 QRCode API。 這必須新增至您的場景。 「AttachToQRCode」腳本是用來將全息影像附加到 QR 代碼座標系統, 此腳本可以新增至任何全息影像。 「SpatialGraphCoordinateSystem」會顯示如何使用 QRCode 座標系統。 這些腳本可以在您的專案場景中以相同的方式使用, 或者您可以直接使用此外掛程式來撰寫您自己的程式碼, 如上所述。
 
-### <a name="implementing-qr-code-tracking-in-unity-without-mrtk"></a>實作追蹤沒有 MRTK Unity 中的 QR 代碼
+### <a name="implementing-qr-code-tracking-in-unity-without-mrtk"></a>在 Unity 中以不 MRTK 的方式來執行 QR 代碼追蹤
 
-您也可以在 Unity 中使用 QR 追蹤 API，而不需要仰賴 MRTK。 若要使用的 API，您必須準備您的專案，使用下列指示：
+您也可以在 Unity 中使用 QR 追蹤 API, 而不需依賴 MRTK 的相依性。 若要使用 API, 您必須使用下列指示來準備您的專案:
 
-1. 在您的 unity 專案名稱的 [assets] 資料夾中建立新的資料夾：「 外掛程式 」。
-2. 從所有必要的檔案複製[此資料夾](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker/Plugins)您剛才建立的本機 「 外掛程式 」 資料夾。
-3. 您可以使用追蹤的指令碼中的 QR [MRTK 指令碼 資料夾](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker/Scripts)或自行撰寫。
-注意:這些外掛程式會僅適用於[Windows 10 年 10 月 2018 Update (也稱為 RS5)](release-notes-october-2018.md)組建。 下一步 的 windows 版本中，將會更新外掛程式。 目前外掛程式實驗，並不適用於 windows 的未來版本。 新的外掛程式將會發行可從下一個 windows 版本並不會回溯相容及不適用於 RS5）。
+1. 在 unity 專案的 [資產] 資料夾中, 使用下列名稱建立新的資料夾:「外掛程式」。
+2. 將[此資料夾](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker/Plugins)中的所有必要檔案複製到您剛才建立的本機「外掛程式」資料夾中。
+3. 您可以使用 [ [MRTK 腳本] 資料夾](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker/Scripts)中的 QR 追蹤腳本, 或自行撰寫。
+注意:這些外掛程式僅適用于[Windows 10 2018 年10月更新 (也稱為 RS5)](release-notes-october-2018.md)組建。 外掛程式將會在下一個 windows 版本中更新。 目前的外掛程式是實驗性的, 在未來的 windows 版本中將無法使用。 新的外掛程式將會發佈, 可從下一個 windows 版本中使用, 而且不會回溯相容, 也無法搭配 RS5 使用。
 
-## <a name="implementing-qr-code-tracking-in-directx"></a>實作追蹤 DirectX 中的 QR 代碼
+## <a name="implementing-qr-code-tracking-in-directx"></a>在 DirectX 中執行 QR 代碼追蹤
 
-若要使用 QRTrackingPlugin Visual Studio 中，您必須將 QRTrackingPlugin 的參考新增至.winmd。 您可以找到[所需的檔案支援的平台這裡](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker/Plugins/WSA)。
+若要在 Visual Studio 中使用 QRTrackingPlugin, 您必須將 QRTrackingPlugin 的參考加入至 winmd。 您可以在[這裡找到支援的平臺所需](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker/Plugins/WSA)的檔案。
 
 ```cpp
 // MyClass.h
@@ -251,13 +251,13 @@ void MyClass::OnRemovedQRCode(QRCodesTrackerPlugin::QRCodeRemovedEventArgs ^args
 
 ## <a name="getting-a-coordinate-system"></a>取得座標系統
 
-我們會定義右的座標系統，配合在左上角位於左上方的快速偵測正方形的 QR 代碼。 如下所示的座標系統。 Z 軸指向納入文件 （未顯示），但在 Unity z 軸和慣用左手紙張用完。
+我們會定義右座標系統, 並將其與左上角 [快速偵測] 方塊左上方的 QR 代碼對齊。 座標系統如下所示。 Z 軸指向紙張 (未顯示), 但是在 Unity 中, Z 軸不在紙張中, 而是左手頁。
 
-定義 SpatialCoordinateSystem 靠所示。 您可以從使用 API 的平台取得此座標系統*Windows::Perception::Spatial::Preview::SpatialGraphInteropPreview::CreateCoordinateSystemForNode*。
+定義的 SpatialCoordinateSystem 會依照所示對齊。 您可以使用 API *Windows::P erception:: 空間::P 審查:: SpatialGraphInteropPreview:: CreateCoordinateSystemForNode*, 從平臺取得此座標系統。
 
 ![QR 代碼座標系統](images/Qr-coordinatesystem.png) 
 
-從 QRCode ^ 物件程式碼，下列程式碼示範如何建立矩形，並將它放在 QR 座標系統：
+在 QRCode ^ Code 物件中, 下列程式碼會示範如何建立矩形, 並將它放在 QR 座標系統中:
 
 ```cpp
 // Creates a 2D rectangle in the x-y plane, with the specified properties.
@@ -274,19 +274,19 @@ std::vector<float3> SpatialStageManager::CreateRectangle(float width, float heig
 }
 ```
 
-您可以使用的實體大小，以建立 QR 矩形：
+您可以使用實體大小來建立 QR 矩形:
 
 ```cpp
 std::vector<float3> qrVertices = CreateRectangle(Code->PhysicalSizeMeters, Code->PhysicalSizeMeters); 
 ```
 
-座標系統可以用來繪製 QR 代碼，或附加全像投影至的位置中：
+座標系統可以用來繪製 QR 代碼, 或將全息影像附加至位置:
 
 ```cpp
 Windows::Perception::Spatial::SpatialCoordinateSystem^ qrCoordinateSystem = Windows::Perception::Spatial::Preview::SpatialGraphInteropPreview::CreateCoordinateSystemForNode(Code->Id);
 ```
 
-總之，您*QRCodesTrackerPlugin::QRCodeAddedHandler*可能看起來像這樣：
+您的*QRCodesTrackerPlugin:: QRCodeAddedHandler*可能會看起來像這樣:
 
 ```cpp
 void MyClass::OnAddedQRCode(QRCodesTrackerPlugin::QRCodeAddedEventArgs ^args)
@@ -308,26 +308,26 @@ void MyClass::OnAddedQRCode(QRCodesTrackerPlugin::QRCodeAddedEventArgs ^args)
 }
 ```
 
-## <a name="troubleshooting-and-faq"></a>疑難排解和常見問題集
+## <a name="troubleshooting-and-faq"></a>疑難排解和常見問題
 
 **一般疑難排解**
 
-* 為您的電腦執行 Windows 10 年 10 月 2018年更新嗎？
-* 您已設定登錄機碼？ 之後重新啟動裝置嗎？
-* 是 QR 程式碼版本支援的版本嗎？ 目前的 API 支援最多 QR 程式碼版本 20 個。 我們建議使用一般用途的第 5 版。 
-* 為您關閉 QR 代碼足以嗎？ 越接近相機 QR 代碼，可支援更高的 QR 程式碼版本的 API。  
+* 您的電腦是否正在執行 Windows 10 2018 年10月更新？
+* 您是否已設定 reg 金鑰？ 之後重新開機裝置嗎？
+* QR 代碼版本是否為支援的版本？ 目前的 API 最多支援 QR 代碼版本20。 我們建議使用第5版來進行一般使用。 
+* 您夠接近 QR 代碼嗎？ 相機愈接近 QR 代碼, API 可支援的 QR 代碼版本愈高。  
 
-**我要如何關閉 QR 代碼，來偵測它是？**
+**我需要什麼時間才能偵測到 QR 代碼？**
 
-這將取決於大小的 QR 代碼，而且也哪一個版本。 第 1 版 QR 代碼，範圍從 5 cm 側邊到 25 公分側邊，最小偵測距離範圍 0.15 公尺至 0.5 的計量。 最遠了這些可以偵測到從會從較小的 QR 代碼目標大約 0.3 公尺至愈大 1.4 計量。 大於的 QR 代碼，您可以評估;偵測距離大小呈線性增加。 我們追蹤程式不適用於具有邊的 QR 代碼小於 5 cm。
+這將取決於 QR 代碼的大小, 以及它的版本。 針對第1版的 QR 代碼, 從 5 cm 端到 25 cm 端, 最小偵測距離的範圍是從0.15 計量到0.5 計量。 從大約0.3 計量中, 可以偵測到最遠的, 以較大的 QR 代碼目標為1.4 計量。 對於大於此值的 QR 代碼, 您可以進行評估;大小的偵測距離會以線性方式增加。 我們的追蹤程式無法處理具有小於 5 cm 的 QR 代碼。
 
-**請勿使用標誌工作的 QR 代碼？**
+**具有標誌的 QR 代碼是否有效？**
 
-具有標誌的 QR 代碼尚未經過測試，以及目前不支援。
+具有標誌的 QR 代碼尚未經過測試, 目前不受支援。
 
-**如何清除 QR 代碼從我的應用程式讓它們不會保存？**
+**如何? 從我的應用程式中清除 QR 代碼, 使其不會保存？**
 
-* QR 代碼，才會保存在開機工作階段中。 一旦重新啟動 （或重新啟動的驅動程式），它們會進入並偵測為新物件下一次。
-* QR 程式碼歷程記錄時，會儲存在系統層級上，在驅動程式工作階段中，但您可以設定您的應用程式，如果您想要忽略超過特定的時間戳記的 QR 代碼。 目前 API 並支援清除 QR 程式碼歷程記錄，因為多個應用程式可能感興趣的資料。
+* QR 代碼只會保存在開機會話中。 一旦您重新開機 (或重新開機驅動程式), 它們就會消失, 並在下次偵測為新物件。
+* QR 代碼歷程記錄會儲存在驅動程式會話的系統層級, 但是您可以設定應用程式, 略過超過特定時間戳記的 QR 代碼 (如有需要)。 目前, API 支援清除 QR 代碼歷程記錄, 因為多個應用程式可能會對資料感興趣。
 
-**外掛程式 RS5 和未來的版本不相容**RS5 新版的外掛程式只適用於的 RS5，未來版本將無法運作。 Expermental 外掛程式將會取代為實際的外掛程式，並應該是，我們可以使用在未來的 windows 版本。
+**RS5 和未來版本的外掛程式不會相容**RS5 版本的外掛程式僅適用于 RS5, 且在未來版本中將無法運作。 Expermental 外掛程式會以 real 外掛程式取代, 而且應該是我們可以在未來版本的 windows 中使用的外掛程式。

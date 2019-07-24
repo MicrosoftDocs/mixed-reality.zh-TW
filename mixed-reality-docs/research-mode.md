@@ -1,11 +1,11 @@
 ---
-title: HoloLens 參考資料模式
-description: HoloLens 上使用參考資料模式，應用程式可以存取重要的裝置感應器資料流 （深度、 追蹤、 環境和 IR 反射率）。
+title: HoloLens 研究模式
+description: 使用 HoloLens 的 Research 模式, 應用程式可以存取金鑰裝置感應器串流 (深度、環境追蹤和 IR-反射率)。
 author: davidgedye
 ms.author: dgedye
 ms.date: 05/03/2018
 ms.topic: article
-keywords: 參考資料模式、 cv、 rs4、 電腦視覺、 參考資料、 HoloLens
+keywords: 研究模式, cv, rs4, 電腦視覺, research, HoloLens
 ms.openlocfilehash: e9a7683f8d582b459185066e74655e8f2b236db4
 ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
@@ -13,18 +13,18 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 06/11/2019
 ms.locfileid: "66829927"
 ---
-# <a name="hololens-research-mode"></a>HoloLens 參考資料模式
+# <a name="hololens-research-mode"></a>HoloLens 研究模式
 
 > [!NOTE]
-> 這項功能已加入的一部分[Windows 10 April 2018 Update](release-notes-april-2018.md)的 HoloLens，並不適用於較早的版本。
+> 這項功能已新增為 HoloLens 的[Windows 10 2018 年4月更新](release-notes-april-2018.md)的一部分, 且在舊版中無法使用。
 
-參考資料模式是在裝置提供應用程式存取金鑰的感應器的 HoloLens 的新功能。 它們包括：
-- 四個追蹤對應建築和前端的追蹤系統使用的數位相機的環境。
-- 兩個版本的深度相機資料 – 一個用於高頻率 (30 FPS) 深度接近感應，常用的手中追蹤，另一個則用於低頻率 (也就是 1 FPS) 遠深度感應，目前使用空間的對應，
-- IR-反射率資料流，用來計算深度，但本身的價值，因為這些映像從 HoloLens 照明標幟及合理受到環境光線 HoloLens 的兩個版本。
+Research 模式是 HoloLens 的新功能, 可讓應用程式存取裝置上的重要感應器。 它們包括：
+- 系統使用的四個環境追蹤攝影機, 用於地圖建立和標題追蹤。
+- 兩個版本的深度相機資料–一個用於高頻率 (30 FPS) 近深度檢測, 通常用於手動追蹤, 另一個用於較低頻率 (1 FPS) 的深度感應, 目前用於空間對應,
+- 有兩個版本的 IR 反射率串流, 由 HoloLens 用來計算深度, 但有價值, 因為這些影像會從 HoloLens 照亮, 而且會受到環境光線的適當影響。
 
-![參考資料模式應用程式螢幕擷取畫面](images/sensor-stream-viewer.jpg)<br>
-*混合的實境的擷取會顯示在參考資料模式中使用的八個感應器資料流的測試應用程式*
+![研究模式應用程式螢幕擷取畫面](images/sensor-stream-viewer.jpg)<br>
+*測試應用程式的混合現實捕捉, 會顯示 Research 模式中提供的八個感應器串流*
 
 ## <a name="device-support"></a>裝置支援
 
@@ -37,46 +37,46 @@ ms.locfileid: "66829927"
     <tr>
         <td><strong>功能</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沈浸式耳機</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
     </tr>
      <tr>
-        <td>參考資料模式</td>
+        <td>研究模式</td>
         <td>✔️</td>
         <td>❌</td>
     </tr>
 </table>
 
-## <a name="before-using-research-mode"></a>之前使用參考資料模式
+## <a name="before-using-research-mode"></a>使用研究模式之前
 
-參考資料模式也稱為： 適合學術和產業研究人員嘗試在電腦視景和機器人的欄位中的新概念。  參考資料模式並不適用於將整個企業中部署或可在 Microsoft Store 應用程式。 參考資料模式可降低您的裝置的安全性，而消耗更多的電池電力，比正常作業的原因。 Microsoft 不認可任何未來的裝置上支援此模式中。 因此，我們建議您用它來開發及測試新的想法;不過，您將無法廣泛部署的應用程式，使用參考資料模式，或有任何的保證，讓它將繼續在未來的硬體上運作。
+研究模式的命名良好: 它適用于學術和產業研究人員在電腦視覺和機器人領域中嘗試新構想。  研究模式不適用於將在企業中部署或可在 Microsoft Store 中使用的應用程式。 這是因為研究模式會降低裝置的安全性, 而且耗用的電池電力遠高於正常作業。 Microsoft 不會承諾在任何未來的裝置上支援此模式。 因此, 我們建議您使用它來開發和測試新的想法;不過, 您將無法廣泛部署使用研究模式的應用程式, 也無法保證它會繼續在未來的硬體上工作。
 
-## <a name="enabling-research-mode"></a>啟用參考資料模式
+## <a name="enabling-research-mode"></a>啟用研究模式
 
-參考資料模式是開發人員模式下的子模式。 您必須先啟用開發人員模式中設定應用程式 (**設定 > 更新與安全性 > 適用於開發人員**):
+Research 模式是開發人員模式的子模式。 您必須先在 設定 應用程式中啟用開發人員模式 (**設定 > 適用于開發人員的 更新 & 安全性 >** ):
 
-1. 將 「 使用開發人員功能 」 設定為**上**
-2. 將 [啟用裝置入口網站] 設定為**上**
+1. 將 [使用開發人員功能] 設定為 [**開啟**]
+2. 將 [啟用裝置入口網站] 設定為 [**開啟**]
 
-然後使用 連線到您的 HoloLens，相同的 Wi-fi 網路的網頁瀏覽器瀏覽至您 HoloLens 的 IP 位址 (一貫**設定 > 網路和網際網路 > Wi-fi > 硬體屬性**)。 這是[裝置入口網站](using-the-windows-device-portal.md)，，您會看到入口網站的 「 系統 」 一節中的 「 參考資料模式 」 的頁面：
+然後使用連線到與 HoloLens 相同之 Wi-fi 網路的網頁瀏覽器, 流覽至 HoloLens 的 IP 位址 (透過 [**設定] > [網路 &] [網際網路] > [wi-fi > 硬體**內容]) 來取得。 這是[裝置入口網站](using-the-windows-device-portal.md), 您會在入口網站的 [系統] 區段中找到 [研究模式] 頁面:
 
-![研究 HoloLens 裝置入口網站的 [模式] 索引的標籤](images/ResearchModeDevPortal.png)<br>
-*HoloLens 裝置入口網站中的參考資料模式*
+![HoloLens 裝置入口網站的 [研究模式] 索引標籤](images/ResearchModeDevPortal.png)<br>
+*HoloLens 裝置入口網站中的研究模式*
 
-選取之後**允許感應器資料流存取**，您需要重新啟動 HoloLens。 從裝置入口網站中，在 "Power"功能表項目在頁面頂端，您可以執行這項操作。
+選取 [**允許存取感應器串流**] 之後, 您將需要重新開機 HoloLens。 您可以從裝置入口網站, 在頁面頂端的 [電源] 功能表項目底下執行此動作。
 
-一旦重新啟動您的裝置之後，已透過裝置入口網站中載入的應用程式應該能夠存取參考資料模式資料流。
+一旦您的裝置重新開機, 透過裝置入口網站載入的應用程式應該能夠存取研究模式串流。
 
 ## <a name="using-sensor-data-in-your-apps"></a>在您的應用程式中使用感應器資料
 
-應用程式可以存取所開啟的感應器資料流資料[媒體基礎](https://msdn.microsoft.com/library/windows/desktop/ms694197)完全相同的方式存取相片及視訊攝影機資料流中的資料流。 
+應用程式可以藉由以存取相片/視頻相機串流的相同方式, 開啟[媒體基礎](https://msdn.microsoft.com/library/windows/desktop/ms694197)串流來存取感應器串流資料。 
 
-HoloLens 的開發工作的所有 Api 也都可在 參考資料模式。 特別是，應用程式可以知道精確 HoloLens 所在 6DoF 空間中每個感應器畫面格擷取時間點。
+在研究模式下也可以使用適用于 HoloLens 開發的所有 Api。 特別是, 應用程式可以確切知道 HoloLens 在每個感應器框架捕獲時間的6DoF 空間。
 
-顯示存取各種參考資料模式資料流的方式、 如何使用內建函式和 extrinsics，以及如何將記錄資料流的範例應用程式可用於[HoloLensForCV GitHub 存放庫](https://github.com/Microsoft/HoloLensForCV)。
+範例應用程式會顯示如何存取各種研究模式串流、如何使用內建函式和 extrinsics, 以及如何記錄串流, 可在[HoloLensForCV GitHub](https://github.com/Microsoft/HoloLensForCV)存放庫中取得。
 
 ## <a name="known-issues"></a>已知問題
 
-請參閱[問題追蹤程式](https://github.com/Microsoft/HololensForCV/issues)HoloLensForCV 存放庫中。
+請參閱 HoloLensForCV 存放庫中的[問題追蹤](https://github.com/Microsoft/HololensForCV/issues)器。
 
 ## <a name="see-also"></a>另請參閱
 

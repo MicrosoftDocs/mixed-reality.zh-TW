@@ -5,14 +5,13 @@ author: shentan
 ms.author: shentan
 ms.date: 04/21/2019
 ms.topic: article
-ms.localizationpriority: high
 keywords: Windows Mixed Reality, 設計, 互動, 語音
-ms.openlocfilehash: f2362400cba2946c3e97a7128c410ddcd17b4362
-ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
-ms.translationtype: HT
+ms.openlocfilehash: 724ef87dae1c731289af51504a518193c20b7d96
+ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66402373"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68387650"
 ---
 # <a name="voice-commanding"></a>語音命令
 
@@ -22,11 +21,24 @@ ms.locfileid: "66402373"
 ## <a name="device-support"></a>裝置支援
 
 <table>
-<tr>
-<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens (第 1 代)</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></th>
-</tr><tr>
-<td>語音命令</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️ (連結頭戴式裝置)</td>
-</tr>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><strong>功能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 代)</strong></a></td>
+        <td><strong>HoloLens 2</strong></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
+    </tr>
+     <tr>
+        <td>語音命令</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️ (連結頭戴式裝置)</td>
+    </tr>
 </table>
 
 
@@ -53,7 +65,7 @@ ms.locfileid: "66402373"
 
 在任何時候說出 "Select"，都會啟用注視游標所指的目標。 
 
->注意：在 HoloLens 2 中，必須先說出 "Select" 一詞來叫用注視游標。 再次說出 "Select" 便能啟用。 若要隱藏注視游標，使用雙手就可以 - 空中點選或觸碰物件。 
+>注意:在 HoloLens 2 中，必須先說出 "Select" 一詞來叫用注視游標。 再次說出 "Select" 便能啟用。 若要隱藏注視游標，使用雙手就可以 - 空中點選或觸碰物件。 
 
 ### <a name="see-it-say-it"></a>看到什麼就說什麼
 
@@ -63,7 +75,7 @@ Windows Mixed Reality 採用「看到什麼就說什麼」語音模型，**按�
 ![看到什麼就說什麼的範例 1](images/voice-seeitsayit1-640px.jpg)
 
 ![看到什麼就說什麼的範例 2](images/voice-seeitsayit2-640px.jpg)<br>
-「看到什麼就說什麼」的範例 
+「看到什麼就說什麼」的範例
 
 ### <a name="voices-strengths"></a>語音的優點
 
@@ -101,6 +113,6 @@ Windows Mixed Reality 採用「看到什麼就說什麼」語音模型，**按�
 * 如何讓我的語音以特定應用程式或應用程式命令作為目標？
 * 在 HoloLens 上的全像攝影畫面外，是否可以使用語音來命令物件？
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [筆勢](gestures.md)
 * [頭部目光和停駐](gaze-and-dwell.md)

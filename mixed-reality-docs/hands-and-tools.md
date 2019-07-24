@@ -1,11 +1,11 @@
 ---
-title: 指針 」 和 「 動作控制站
-description: 指針 」 和 「 動作控制站互動的概觀
+title: 實習和運動控制器
+description: 實習與運動控制器互動的總覽
 author: shengkait
 ms.author: shengkait
 ms.date: 04/26/2019
 ms.topic: article
-keywords: 混合實境，實際操作、 移動控制站、 互動，設計
+keywords: Mixed Reality, 實習, 運動控制器, 互動, 設計
 ms.openlocfilehash: d0e54c71ab42a09f2f9c6063a85441b98e729af1
 ms.sourcegitcommit: 8d6e5723283c03f984f1fafef81afa5aab5d04bc
 ms.translationtype: MT
@@ -13,26 +13,26 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 05/23/2019
 ms.locfileid: "66039171"
 ---
-# <a name="hands-and-motion-controllers"></a>指針 」 和 「 動作控制站
+# <a name="hands-and-motion-controllers"></a>實習和運動控制器
 ## <a name="scenarios"></a>案例
-如果您選擇採用此互動模型，在讀取後[設計指導方針](interaction-fundamentals.md)，這表示您正在開發應用程式要求使用者使用兩個實際操作與全像攝影版的世界互動。 您的應用程式即將達到的目的是移除虛擬與實體之間的界限。
+如果您在閱讀[設計指導方針](interaction-fundamentals.md)之後選擇採用此互動模型, 就表示您正在開發的應用程式需要使用者使用兩個手來與全像攝影世界互動。 您的應用程式即將達到在虛擬與實體之間移除 boundry 的目標。
 
-某些特定情況下可能是：
-* 提供資訊工作者 2D vitual 畫面和 Ui 顯示及控制內容
-* 提供第一列的背景工作角色教學課程和處理站生產線中的指南
-* 開發專業的工具，協助和教育醫療專業人員  
-* 使用 3D 虛擬物件，來裝飾現實世界裡，或建立第二個的世界 
-* 建立位置為基礎的服務以及做為背景使用真實世界的遊戲
+某些特定案例可能是:
+* 提供資訊工作者 2D vitual 畫面和 Ui 以顯示和控制內容
+* 在 factory 元件行中提供第一行工作者教學課程和指南
+* 開發專業工具來協助及教育醫療專業人員  
+* 使用3D 虛擬物件裝飾真實世界或建立第二個世界 
+* 使用真實世界作為背景來建立位置服務和遊戲
 
-## <a name="hands-and-motion-controllers-modalities"></a>雙手及動作控制器的型態
+## <a name="hands-and-motion-controllers-modalities"></a>實習和運動控制器形式
 ### <a name="direct-manipulation-with-handsdirect-manipulationmd"></a>[手部直接操作](direct-manipulation.md)
-這是指針，與使用者相關能夠觸碰並直接操作全像投影的強大的強制回應性。 由 leaveraging 日常生活體驗，以及提供適當的視覺化提供，使用者就能夠使用相同的方式管理真實世界物件的互動以虛擬的。   
+這是運用手的功能, 可供使用者直接碰觸和操作全息影像。 藉由 leaveraging 每日生活經驗, 並提供適當的視覺 affordances, 使用者就能夠使用相同的方式來操作真實世界的物件, 以與虛擬化進行互動。   
 
 ### <a name="point-and-commit-with-handspoint-and-commitmd"></a>[手部指向和行動](point-and-commit.md)
-此模式可讓使用者互動全像投影的距離。 它可讓使用者能夠發揮最大恍神。 使用者可以任意位置放置全像投影，並仍可以存取這些從任何的距離。 心智模型和手勢，來控制及管理 2D 和 3D 全像投影為高度同步與直接操作。
+這種方式可讓使用者在某個距離內與全息影像互動。 它可讓使用者充分利用周圍的環境。 使用者可以將全息影像放在任何位置, 而且仍然可以從任何距離進行存取。 控制和操作2D 和3D 全像投影的心理模型和手勢, 與直接操作的程式高度同步。
 
 ### <a name="motion-controllersmotion-controllersmd"></a>[運動控制器](motion-controllers.md)
-動作控制站都是藉由大型距離範圍擴及提供精確的互動，同時使用一或兩個實際操作擴充使用者的實體功能的工具。 這些硬體附屬應用程式提供許多常用的互動，並提供 surefooted、 tactile 意見反應的各種動作的捷徑。 動作控制站目前只適用於 WMR 案例。 
+「動作控制器」是一種工具, 藉由在使用一或兩個手間的精確互動, 來擴充使用者的實體功能。 這些硬體配件提供許多常用互動的快捷方式, 並提供 surefooted、觸覺各種動作的意見反應。 目前, 動作控制器僅適用于 WMR 案例。 
 
 ![](images/Hands-and-controllers-720px.jpg)<br>
 

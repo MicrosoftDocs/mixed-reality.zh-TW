@@ -1,11 +1,11 @@
 ---
-title: 全像攝影版的遠端播放程式
-description: 全像攝影版的遠端播放程式是小幫手應用程式連接到電腦的應用程式和支援全像攝影版的遠端執行功能的遊戲。 全像攝影版的遠端資料流全像攝影版內容從 PC 到您的 Microsoft HoloLens 中即時使用 Wi-fi 連線。
+title: 全像攝影遠端播放
+description: 全像攝影遠端播放程式是一種隨附的應用程式, 可連接到支援全像攝影遠端的電腦應用程式和遊戲。 全像攝影遠端處理會使用 Wi-fi 連線, 即時將全像個人電腦的內容串流至您的 Microsoft HoloLens。
 author: JonMLyons
 ms.author: jlyons
 ms.date: 03/21/2018
 ms.topic: article
-keywords: HoloLens、 遠端處理，全像攝影版的遠端處理
+keywords: HoloLens、遠端、全像攝影遠端
 ms.openlocfilehash: b8354295f9752e73cc9b34c1769254e49808b63f
 ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
 ms.translationtype: MT
@@ -13,43 +13,43 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 06/07/2019
 ms.locfileid: "66813716"
 ---
-# <a name="holographic-remoting-player"></a>全像攝影版的遠端播放程式
+# <a name="holographic-remoting-player"></a>全像攝影遠端播放
 
-全像攝影版的遠端播放程式是小幫手應用程式連接到電腦的應用程式和支援全像攝影版的遠端執行功能的遊戲。 全像攝影版的遠端資料流全像攝影版內容從 PC 到您的 Microsoft HoloLens 中即時使用 Wi-fi 連線。
+全像攝影遠端播放程式是一種隨附的應用程式, 可連接到支援全像攝影遠端的電腦應用程式和遊戲。 全像攝影遠端處理會使用 Wi-fi 連線, 即時將全像個人電腦的內容串流至您的 Microsoft HoloLens。
 
-全像攝影版的遠端播放程式只能搭配專為支援全像攝影版的遠端執行功能的 PC 應用程式。
+全像攝影遠端播放程式只能用於專為支援全像攝影遠端功能而設計的電腦應用程式。
 
-全像攝影版的遠端播放程式可供 HoloLens 和 HoloLens 2。  支援全像攝影版的遠端處理 HoloLens 的 PC 應用程式需要更新為支援全像攝影版 Remtoing HoloLens 2。  請如果您有支援版本相關的問題，連絡您的應用程式提供者。
+全像是 HoloLens 和 HoloLens 2 都提供全像攝影遠端播放程式。  使用 HoloLens 支援全像攝影遠端功能的電腦應用程式必須更新, 以支援使用 HoloLens 2 的全像 Remtoing。  如果您對支援的版本有任何疑問, 請洽詢您的應用程式提供者。
 
-## <a name="connecting-to-the-holographic-remoting-player"></a>連接到全像攝影版的遠端播放程式
+## <a name="connecting-to-the-holographic-remoting-player"></a>連接到全像攝影遠端播放播放機
 
-依照您的應用程式連接到全像攝影版的遠端播放程式的指示。 您必須輸入您可以在遠端處理播放程式的主畫面看到，如下所示的 HoloLens 裝置的 IP 位址：
+遵循您應用程式的指示, 連接到全像攝影的遠端播放播放機。 您將需要輸入 HoloLens 裝置的 IP 位址, 您可以在遠端播放程式的主畫面上看到它, 如下所示:
 
-![全像攝影版的遠端播放程式](images/holographicremotingplayer.png)
+![全像攝影遠端播放](images/holographicremotingplayer.png)
 
-每當您看到主畫面中，您會知道您沒有連接的應用程式。
+當您看到主畫面時, 您會知道您沒有連線的應用程式。
 
-請注意，全像攝影版的遠端連線**不會加密**。 您應該一律使用全像攝影版的遠端處理，透過您信任的安全之 Wi-fi 連線。
+請注意, 全像攝影遠端連線**不會加密**。 您應該一律在您信任的安全 Wi-fi 連線上使用全像攝影遠端。
 
 ## <a name="quality-and-performance"></a>品質和效能
 
-品質和效能的經驗會有所不同三個因素：
-* **您執行全像攝影版體驗**-轉譯高解析度或高詳細內容的應用程式可能需要更快的電腦或更快的無線連線。
-* **您的電腦硬體**-您的個人電腦必須能夠執行，並編碼您全像攝影版的體驗，在每秒 60 畫面格數。 如圖形卡，我們通常建議 GeForce GTX 970 或 AMD Radeon R9 290 或高愈好。 同樣地，您的特定體驗可能需要較高或較低的卡片。
-* **您的 Wi-fi 連線**-透過 Wi-fi 串流處理您全像攝影版的體驗。 使用低壅塞的高速網路可提高品質。 使用透過乙太網路纜線連接的電腦，而不是 Wi-fi，可能也提升品質。
+您的體驗品質和效能會因三個因素而有所不同:
+* **您**正在執行的全像攝影體驗-呈現高解析度或高度詳細內容的應用程式, 可能需要更快速的電腦或更快的無線連線。
+* **您**的電腦硬體-您的電腦必須能夠在每秒60畫面上執行及編碼您的全像體驗。 針對圖形配接器, 我們通常建議使用 GeForce GTX 970 或 AMD Radeon R9 290 或更高的品質。 同樣地, 您的特定體驗可能需要較高或較低的卡片。
+* **您的 wi-fi**連線-您的全像攝影體驗會透過 wi-fi 進行串流處理。 使用具有低擁塞的快速網路, 將品質最大化。 使用透過 Ethernet 纜線 (而非 Wi-fi) 連線的電腦, 也可以改善品質。
 
 ## <a name="diagnostics"></a>診斷
 
-若要測量您連線的品質，說 **[啟用診斷]** 在全像攝影版的遠端播放程式的主畫面。 當診斷啟用後時，應用程式會顯示您：
-* **FPS** -呈現的畫面格的平均數目遠端處理播放程式會接收和每秒轉譯。 理想狀況是 60 FPS。
-* **延遲**-平均的從您的電腦移至 HoloLens 的畫面格所花費的時間量。 愈低愈好。 這是多半取決於您的 Wi-fi 網路。
+若要測量連線的品質, 請在全像攝影遠端播放程式的主畫面上說「**啟用診斷**」。 啟用診斷時, 應用程式會顯示:
+* **FPS** -遠端播放者每秒接收和轉譯的轉譯框架平均數目。 理想的情況是 60 FPS。
+* **延遲**-框架從您的電腦移至 HoloLens 所需的平均時間量。 越低越好。 這主要取決於您的 Wi-fi 網路。
 
-在 主畫面中，您可以說**停用 診斷**關閉診斷。
+在主畫面上, 您可以說「**停用診斷**」來關閉診斷。
 
-## <a name="pc-system-requirements"></a>電腦的系統需求
+## <a name="pc-system-requirements"></a>電腦系統需求
 * 您的電腦**必須**執行 Windows 10 年度更新版或更新版本。
-* 我們建議 GeForce GTX 970 或 AMD Radeon R9 290 或更好的圖形卡。
-* 我們建議您透過乙太網路，以減少無線躍點數目的網路連接您的電腦。
+* 我們建議使用 GeForce GTX 970 或 AMD Radeon R9 290 或更好的圖形配接器。
+* 我們建議您透過 ethernet 將電腦連線到您的網路, 以減少無線躍點的數目。
 
 ## <a name="see-also"></a>另請參閱
 * [全像攝影遠端軟體授權條款](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)

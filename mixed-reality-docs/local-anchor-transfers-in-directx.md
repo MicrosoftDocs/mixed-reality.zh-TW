@@ -1,39 +1,39 @@
 ---
-title: DirectX 中的本機的錨點傳輸
-description: 說明如何同步處理兩個的 HoloLens 裝置傳輸空間的錨點。
+title: DirectX 中的本機錨點傳輸
+description: 說明如何藉由傳輸空間錨點來同步處理兩部 HoloLens 裝置。
 author: MikeRiches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
-keywords: HoloLens，同步處理，空間的錨點、 傳輸、 多人遊戲，檢視、 案例、 逐步解說、 範例程式碼、 傳輸、 本機的錨點傳輸，錨點匯出、 錨點匯入
+keywords: HoloLens, 同步處理, 空間錨點, 傳輸, 多人遊戲, 視圖, 案例, 逐步解說, 範例程式碼, 傳輸, 本機錨點傳輸, 錨點匯出, 錨點匯入
 ms.openlocfilehash: 5d03f4bfa764b9948ec4718bce86127cfcc3e303
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59597111"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63515480"
 ---
-# <a name="local-anchor-transfers-in-directx"></a>DirectX 中的本機的錨點傳輸
+# <a name="local-anchor-transfers-in-directx"></a>DirectX 中的本機錨點傳輸
 
-在無法使用的情況下<a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure 空間的錨點</a>，本機的錨點傳輸啟用一個 HoloLens 裝置匯出要匯入第二個的 HoloLens 裝置所錨點。
-
->[!NOTE]
->本機的錨點傳輸提供較不強大的錨點重新叫用比<a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure 空間的錨點</a>，以及 iOS 和 Android 裝置不支援這種方法。
+在無法使用<a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure 空間錨點</a>的情況下, 本機錨點傳輸可讓一個 hololens 裝置匯出錨點, 以供第二個 hololens 裝置匯入。
 
 >[!NOTE]
->目前在這篇文章中的程式碼片段示範如何使用C++/CX 而不是 C + + 17 相容C++中所使用的 /WinRT [ C++全像攝影版的專案範本](creating-a-holographic-directx-project.md)。  概念是相等的C++/WinRT 專案，但您必須將轉譯程式碼。
+>本機錨點傳輸提供較不健全的錨點回收, 而不是使用<a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure 空間錨點</a>, 而且此方法不支援 IOS 和 Android 裝置。
 
-## <a name="transferring-spatial-anchors"></a>傳輸的空間錨點
+>[!NOTE]
+>本文中的程式碼片段目前示範如何使用C++/cx, C++ [ C++ ](creating-a-holographic-directx-project.md)而不是 C + 17 相容的/WinRT, 如全像攝影專案範本中所使用。  概念相當於C++/WinRT 專案, 但您必須轉譯程式碼。
 
-您可以使用 Windows Mixed Reality 裝置之間傳輸空間的錨點[SpatialAnchorTransferManager](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchortransfermanager.aspx)。 此 API 可讓您在世界中，尋找該確切的位置所需所有支援的感應器資料的套件組合設定錨點，然後再匯入另一個裝置上的該配套。 第二個裝置上的應用程式已匯入後會錨定，每個應用程式可能會呈現全像投影使用共用空間錨點的座標系統中，會出現在真實世界中的相同位置。
+## <a name="transferring-spatial-anchors"></a>傳輸空間錨點
 
-請注意，空間的錨點不能將不同的裝置類型，例如 HoloLens 空間錨點可能無法使用的沈浸式耳機之外的可尋獲。  傳送的錨點也與不相容的 iOS 或 Android 裝置。
+您可以使用[SpatialAnchorTransferManager](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchortransfermanager.aspx), 在 Windows Mixed Reality 裝置之間傳輸空間錨點。 此 API 可讓您將錨點與所需的所有支援感應器資料組合在一起, 以尋找世界中的確切位置, 然後在另一個裝置上匯入該配套。 當第二個裝置上的應用程式匯入該錨點之後, 每個應用程式都可以使用該共用空間錨點的座標系統來轉譯全息影像, 然後在實際情況下出現于相同的位置。
 
-## <a name="set-up-your-app-to-use-the-spatialperception-capability"></a>將您的應用程式設定為使用 spatialPerception 功能
+請注意, 空間錨點無法在不同的裝置類型之間傳輸, 例如, 可能無法使用沉浸式耳機來定位 HoloLens 空間錨點。  轉移的錨點也與 iOS 或 Android 裝置不相容。
 
-您的應用程式必須被授與使用 spatialPerception 功能，才能使用的權限[SpatialAnchorTransferManager](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchortransfermanager.aspx)。 這是必要的因為傳輸空間的錨點牽涉到共用附近會錨定，其中可能含有機密資訊的收集一段時間的感應器映像。
+## <a name="set-up-your-app-to-use-the-spatialperception-capability"></a>設定應用程式以使用 spatialPerception 功能
 
-宣告您的應用程式的 package.appxmanifest 檔案中的這項功能。 以下為範例：
+您的應用程式必須先獲得使用 spatialPerception 功能的許可權, 才能使用[SpatialAnchorTransferManager](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchortransfermanager.aspx)。 這是必要的, 因為傳輸空間錨點牽涉到在該錨點的區域中共用收集的感應器影像, 其中可能包含機密資訊。
+
+在您應用程式的 package.appxmanifest.xml 檔案中宣告這項功能。 以下為範例：
 
 ```
 <Capabilities>
@@ -41,7 +41,7 @@ ms.locfileid: "59597111"
 </Capabilities>
 ```
 
-功能是來自**uap2**命名空間。 若要存取此命名空間資訊清單中，將它包含*xlmns*屬性中&lt;封裝 > 項目。 以下為範例：
+這項功能來自**uap2**命名空間。 若要在資訊清單中取得這個命名空間的存取權, 請將它當做&lt;xlmns 屬性包含在封裝 > 元素中。 以下為範例：
 
 ```
 <Package
@@ -53,11 +53,11 @@ ms.locfileid: "59597111"
     >
 ```
 
-**注意：** 您的應用程式必須要求在執行階段功能，才可存取 SpatialAnchor 匯出/匯入 Api。 請參閱[RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchortransfermanager.requestaccessasync.aspx)在下面的範例。
+**注意：** 您的應用程式必須在執行時間要求功能, 才能存取 SpatialAnchor 的匯出/匯入 Api。 請參閱下列範例中的[RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchortransfermanager.requestaccessasync.aspx) 。
 
-## <a name="serialize-anchor-data-by-exporting-it-with-the-spatialanchortransfermanager"></a>藉由匯出與 SpatialAnchorTransferManager 序列化錨點的資料
+## <a name="serialize-anchor-data-by-exporting-it-with-the-spatialanchortransfermanager"></a>使用 SpatialAnchorTransferManager 將錨點資料匯出以進行序列化
 
-在匯出程式碼範例包含 helper 函式 （序列化） [SpatialAnchor](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchor.aspx)資料。 此匯出 API 將序列化字串關聯的錨點的索引鍵 / 值組的集合中的所有錨點。
+Helper 函式包含在程式碼範例中, 可匯出 (序列化) [SpatialAnchor](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchor.aspx)資料。 此匯出 API 會將索引鍵/值組集合中的所有錨點序列化, 並將字串與錨點產生關聯。
 
 ```
 // ExportAnchorDataAsync: Exports a byte buffer containing all of the anchors in the given collection.
@@ -72,7 +72,7 @@ task<bool> SpatialAnchorImportExportHelper::ExportAnchorDataAsync(
 {
 ```
 
-首先，我們需要設定資料流。 這可讓我們為 1。）使用 TryExportAnchorsAsync 來將資料放在緩衝區中擁有的應用程式，以及 2）。讀取-也就是 WinRT 資料流-匯出的位元組緩衝區資料流中的資料，我們自己的記憶體緩衝區中，也就是 std:: vector&lt;位元組 >。
+首先, 我們需要設定資料流程。 這可讓我們成為1。)使用 TryExportAnchorsAsync 將資料放在應用程式所擁有的緩衝區中, 以及2。將資料從匯出的位元組緩衝區資料流程 (也就是 WinRT 資料流程) 讀取到我們自己的記憶體緩衝區, 也就是 std::&lt;vector byte >。
 
 ```
 // Create a random access stream to process the anchor byte data.
@@ -81,7 +81,7 @@ InMemoryRandomAccessStream^ stream = ref new InMemoryRandomAccessStream();
 IOutputStream^ outputStream = stream->GetOutputStreamAt(0);
 ```
 
-我們需要要求權限來存取空間資料，包括匯出的系統的錨點。
+我們需要要求許可權才能存取空間資料, 包括系統所匯出的錨點。
 
 ```
 // Request access to spatial data.
@@ -104,7 +104,7 @@ auto accessRequestedTask = create_taskSpatialAnchorTransferManager::RequestAcces
 });
 ```
 
-如果出現權限，而且會在匯出的錨點，我們可以讀取資料流。 在這裡，我們也會示範如何建立 DataReader 和 InputStream，我們將用來讀取資料。
+如果我們取得許可權並匯出錨點, 我們可以讀取資料流程。 在此, 我們也會示範如何建立要用來讀取資料的 DataReader 和 InputStream。
 
 ```
 // Get the input stream for the anchor byte stream.
@@ -129,7 +129,7 @@ return accessRequestedTask.then([anchorByteDataOut, stream, reader](bool nchorsE
     }
 ```
 
-我們從資料流讀取位元組之後，我們就可以將它們儲存到自己的資料緩衝區就像這樣。
+從資料流程讀取位元組之後, 我們可以將它們儲存到我們自己的資料緩衝區, 如下所示。
 
 ```
 }).then([anchorByteDataOut, reader](size_t bytesRead)
@@ -148,9 +148,9 @@ return accessRequestedTask.then([anchorByteDataOut, stream, reader](bool nchorsE
 };
 ```
 
-## <a name="deserialize-anchor-data-by-importing-it-into-the-system-using-the-spatialanchortransfermanager"></a>藉由將它匯入系統，請使用 SpatialAnchorTransferManager 還原序列化錨點的資料
+## <a name="deserialize-anchor-data-by-importing-it-into-the-system-using-the-spatialanchortransfermanager"></a>使用 SpatialAnchorTransferManager 將錨點資料匯入至系統以將其還原序列化
 
-在程式碼範例中，將先前匯出的資料包含 helper 函式。 此還原序列化函式會提供類似 SpatialAnchorStore 所提供的功能-的索引鍵 / 值組的集合，不過我們有這項資料從其他來源，例如網路通訊端。 您可以處理，以及有關這項資料，再將其儲存為離線，並使用應用程式內的記憶體，原因 （如果適用） 或您的應用程式 SpatialAnchorStore。
+Helper 函式包含在程式碼範例中, 用以載入先前匯出的資料。 這個還原序列化函式會提供索引鍵/值組的集合, 與 SpatialAnchorStore 所提供的相同, 不同之處在于我們從另一個來源 (例如網路通訊端) 獲得這項資料。 您可以使用應用程式內記憶體或 (如果適用的話) 應用程式的 SpatialAnchorStore, 在離線儲存資料之前, 處理和原因。
 
 ```
 // ImportAnchorDataAsync: Imports anchors from a byte buffer that was previously exported.
@@ -166,7 +166,7 @@ task<bool> SpatialAnchorImportExportHelper::ImportAnchorDataAsync(
 {
 ```
 
-首先，我們需要建立資料流物件來存取錨點的資料。 我們將寫入的資料從我們的緩衝區系統緩衝區，因此我們將建立為了完成我們的目標的位元組緩衝區中的錨點放 SpatialAnchors 系統寫入至記憶體中的資料流資料寫入元。
+首先, 我們需要建立資料流程物件來存取錨定資料。 我們將從緩衝區將資料寫入系統緩衝區, 因此我們將建立寫入記憶體中資料流程的資料寫入元, 以達成將位元組緩衝區的錨點放入系統的 SpatialAnchors 的目標。
 
 ```
 // Create a random access stream for the anchor data.
@@ -177,7 +177,7 @@ IOutputStream^ outputStream = stream->GetOutputStreamAt(0);
 DataWriter^ writer = ref new DataWriter(outputStream);
 ```
 
-同樣地，我們需要確保應用程式有匯出空間的錨點的資料，可能包括使用者的環境的私用資訊的權限。
+同樣地, 我們需要確保應用程式有權匯出空間錨點資料, 其中可能包含使用者環境的私用資訊。
 
 ```
 // Request access to transfer spatial anchors.
@@ -189,7 +189,7 @@ return create_task(SpatialAnchorTransferManager::RequestAccessAsync()).then(
         // Access is allowed.
 ```
 
-如果允許存取時，我們可以撰寫從緩衝區的位元組系統資料流。
+如果允許存取, 我們可以將緩衝區中的位元組寫入系統資料流程。
 
 ```
 // Write the bytes to the stream.
@@ -206,7 +206,7 @@ return create_task(SpatialAnchorTransferManager::RequestAccessAsync()).then(
     }
 ```
 
-如果已成功儲存的位元組資料流中，我們可以嘗試使用 SpatialAnchorTransferManager 資料匯入。
+如果我們成功地將位元組儲存在資料流程中, 我們可以嘗試使用 SpatialAnchorTransferManager 匯入該資料。
 
 ```
 }).then([writer, stream](unsigned int bytesWritten)
@@ -235,7 +235,7 @@ return create_task(SpatialAnchorTransferManager::RequestAccessAsync()).then(
     }
 ```
 
-如果無法匯入資料，我們會取得字串關聯的錨點的索引鍵 / 值組的地圖檢視。 我們可以載入這我們自己記憶體中的資料集合，並使用該集合，看起來我們有興趣使用的錨點。
+如果可以匯入資料, 我們會取得索引鍵/值組的地圖視圖, 將字串與錨點產生關聯。 我們可以將此載入至自己的記憶體中資料收集, 並使用該集合來尋找我們有興趣使用的錨點。
 
 ```
 }).then([anchorMapOut](task<Windows::Foundation::Collections::IMapView<String^, SpatialAnchor^>^>  previousTask)
@@ -270,33 +270,33 @@ return create_task(SpatialAnchorTransferManager::RequestAccessAsync()).then(
 }
 ```
 
-**注意：** 您可以匯入錨點，因為不一定表示您可以使用它立即。 錨點可能位於不同的空間或另一個實體位置完全;無法之外的可尋獲錨點，直到它收到的裝置有足夠 visual 錨點中，建立要還原的錨點位置，相對於已知的目前環境的環境資訊。 用戶端實作應該嘗試先嘗試使用實況內容，在執行之前先尋找相對於您的區域座標系統中或參考框架的錨點。 例如，嘗試定期直到開始是之外的可尋獲錨點時，才找出相對於目前的座標系統的錨點。
+**注意：** 這是因為您可以匯入錨點, 但不一定表示您可以立即使用它。 錨點可能會位於不同的房間, 或完全位於另一個實體位置;在收到錨點的裝置有足夠的視覺效果資訊來建立錨點所用的環境時, 就不會找出錨定, 以還原相對於已知目前環境的錨點位置。 用戶端執行應該嘗試找出相對於您當地座標系統或參考框架的錨點, 然後再繼續嘗試將其用於即時內容。 例如, 請嘗試定期尋找相對於目前座標系統的錨點, 直到開始定位錨點為止。
 
-## <a name="special-considerations"></a>特殊的考量
+## <a name="special-considerations"></a>特殊考慮
 
-[TryExportAnchorsAsync](https://msdn.microsoft.com/library/windows/apps/mt592763.aspx) API 可讓多個[SpatialAnchors](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchor.aspx)匯出到相同的不透明二進位 blob。 不過，還有哪些資料將包含的 blob，取決於是否匯出單一呼叫中的單一 SpatialAnchor 或多個 SpatialAnchors 些微的差異。
+[TryExportAnchorsAsync](https://msdn.microsoft.com/library/windows/apps/mt592763.aspx) API 允許將多個[SpatialAnchors](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchor.aspx)匯出到同一個不透明的二進位 blob。 不過, blob 所包含的資料會有些許差異, 端視單一呼叫中是否匯出單一 SpatialAnchor 或多個 SpatialAnchors 而定。
 
-### <a name="export-of-a-single-spatialanchor"></a>單一 SpatialAnchor 的匯出
+### <a name="export-of-a-single-spatialanchor"></a>匯出單一 SpatialAnchor
 
-Blob 包含 pe-15 SpatialAnchor 環境的表示法，以便匯入 SpatialAnchor 在裝置上可辨識的環境。 匯入完成之後，新的 SpatialAnchor 會提供給裝置。 假設使用者最近已經錨定的區域中，將予以之外的可尋獲，而且可以轉譯附加到 SpatialAnchor 全像投影。 這些全像投影會顯示在一樣匯出 SpatialAnchor 在原始裝置的相同實體位置。
+Blob 會在 SpatialAnchor 區域中包含環境的標記法, 以便在匯入 SpatialAnchor 的裝置上辨識環境。 匯入完成之後, 裝置將會提供新的 SpatialAnchor。 假設使用者最近曾在錨點附近, 則可以將它放在可呈現的位置, 並將其連接到 SpatialAnchor。 這些全息影像會顯示在匯出 SpatialAnchor 的原始裝置上的相同實體位置。
 
-![單一 SpatialAnchor 的匯出](images/singleanchor.png)
+![匯出單一 SpatialAnchor](images/singleanchor.png)
 
-### <a name="export-of-multiple-spatialanchors"></a>多個 SpatialAnchors 的匯出
+### <a name="export-of-multiple-spatialanchors"></a>匯出多個 SpatialAnchors
 
-單一 SpatialAnchor 匯出，例如 blob 會包含所有指定的 SpatialAnchors pe-15 環境的表示法。 此外，blob 包含包含 SpatialAnchors，之間連線的相關資訊，如果它們位於相同的實體空間中。 這表示，如果兩個鄰近 SpatialAnchors 匯入，然後雷射附加至*第二個*SpatialAnchor 會之外的可尋獲，即使裝置只會辨識四周圍環境*第一個*SpatialAnchor，因為資料不足，無法計算兩個 SpatialAnchors 之間進行轉換，所以已包含在 blob 中。 如果兩個 SpatialAnchors 個別匯出 （兩個不同的呼叫 TryExportSpatialAnchors） 就可能不會有足夠的第一個是可以找到當第二個 SpatialAnchor 全像投影附加 blob 中包含的資料所在。
+如同匯出單一 SpatialAnchor, blob 會在所有指定 SpatialAnchors 的鄰近範圍中包含環境的標記法。 此外, blob 會包含包含的 SpatialAnchors 之間的連線相關資訊 (如果它們位於相同的實體空間)。 這表示如果匯入兩個鄰近的 SpatialAnchors, 則即使裝置只會辨識*第一個*SpatialAnchor 周圍的環境, 也會找出附加到*第二*個 SpatialAnchor 的全息影像, 因為有足夠的資料可供兩個 SpatialAnchors 之間的計算轉換已包含在 blob 中。 如果這兩個 SpatialAnchors 是個別匯出的 (兩個 TryExportSpatialAnchors 呼叫), 則 blob 中可能不會包含足夠的資料, 以供連接到第二個 SpatialAnchor 的全息影像在第一個位置找到。
 
-![使用單一的 TryExportAnchorsAsync 呼叫匯出多個錨點](images/multipleanchors.png) ![針對每個錨點使用個別的 TryExportAnchorsAsync 呼叫匯出的多個錨點](images/separateanchors.png)
+![使用單一 TryExportAnchorsAsync 呼叫匯出多個錨點](images/multipleanchors.png) ![針對每個錨點使用個別的 TryExportAnchorsAsync 呼叫匯出多個錨點](images/separateanchors.png)
 
-## <a name="example-send-anchor-data-using-a-windowsnetworkingstreamsocket"></a>範例：傳送使用 Windows::Networking::StreamSocket 的錨點資料
+## <a name="example-send-anchor-data-using-a-windowsnetworkingstreamsocket"></a>範例：使用 Windows:: 網路:: StreamSocket 傳送錨點資料
 
-在這裡，我們會提供如何使用匯出的錨點的資料，藉由傳送 TCP 網路上的範例。 這是從 HolographicSpatialAnchorTransferSample。
+在這裡, 我們會提供範例, 說明如何藉由在 TCP 網路上傳送來使用匯出的錨點資料。 這是來自 HolographicSpatialAnchorTransferSample。
 
-WinRT StreamSocket 類別會使用 PPL 工作程式庫。 在網路錯誤的情況下使用重新擲回的例外狀況鏈結中下一個工作被傳回的錯誤。 包含的例外狀況的 HRESULT，指出錯誤狀態。
+WinRT StreamSocket 類別會使用 PPL 工作程式庫。 發生網路錯誤時, 會使用重新擲回的例外狀況, 將錯誤傳回給鏈中的下一個工作。 例外狀況包含 HRESULT, 表示錯誤狀態。
 
-### <a name="use-a-windowsnetworkingstreamsocketlistener-with-tcp-to-send-exported-anchor-data"></a>使用與 TCP 的 Windows::Networking::StreamSocketListener，傳送匯出的錨點的資料
+### <a name="use-a-windowsnetworkingstreamsocketlistener-with-tcp-to-send-exported-anchor-data"></a>使用 Windows:: 網路:: StreamSocketListener 搭配 TCP 來傳送匯出的錨點資料
 
-建立會接聽連接的伺服器執行個體。
+建立接聽連接的伺服器實例。
 
 ```
 void SampleAnchorTcpServer::ListenForConnection()
@@ -326,7 +326,7 @@ void SampleAnchorTcpServer::ListenForConnection()
 }
 ```
 
-當收到連接時，使用用戶端通訊端連線傳送錨點的資料。
+當收到連接時, 請使用用戶端通訊端連接來傳送錨點資料。
 
 ```
 void SampleAnchorTcpServer::OnConnectionReceived(StreamSocketListener^ listener, StreamSocketListenerConnectionReceivedEventArgs^ args)
@@ -340,7 +340,7 @@ void SampleAnchorTcpServer::OnConnectionReceived(StreamSocketListener^ listener,
 }
 ```
 
-現在，我們可以開始傳送資料流，其中包含匯出的錨點的資料。
+現在, 我們可以開始傳送包含匯出錨點資料的資料流程。
 
 ```
 void SampleAnchorTcpServer::OutputToClientSocket(IMap<String^, SpatialAnchor^>^ anchorsToSend)
@@ -370,7 +370,7 @@ void SampleAnchorTcpServer::OutputToClientSocket(IMap<String^, SpatialAnchor^>^ 
 }
 ```
 
-我們可以傳送資料流本身之前，我們必須先傳送標頭的封包。 此標頭的封包必須是固定的長度，而且它也必須指出的長度是錨點資料流的位元組陣列變數在此範例中，我們已傳送的任何其他標頭資料，因此我們標頭是 4 個位元組，包含 32 位元不帶正負號的整數。
+我們必須先傳送標頭封包, 才可以傳送資料流程本身。 此標頭封包的長度必須是固定的, 而且也必須指出錨點資料流程的變數陣列長度 (以位元組為單位)。在此範例中, 我們沒有其他要傳送的標頭資料, 因此我們的標頭長度為4個位元組, 且包含32位不帶正負號的整數。
 
 ```
 Concurrency::task<bool> SampleAnchorTcpServer::SendAnchorDataLengthMessage(size_t dataStreamLength)
@@ -413,7 +413,7 @@ Concurrency::task<bool> SampleAnchorTcpServer::SendAnchorDataStreamIMap<String^,
         return task_from_result<bool>(false);
 ```
 
-一旦資料流的長度，以位元組為單位，傳送至用戶端之後，我們可以繼續進行將通訊端的資料流中寫入資料流本身。 這會導致傳送到用戶端的錨點的儲存區位元組。
+資料流程長度 (以位元組為單位) 傳送至用戶端之後, 我們就可以繼續將資料流程本身寫入通訊端資料流程。 這會導致將錨點存放區位元組傳送給用戶端。
 
 ```
 }).then([this](bool dataLengthSent)
@@ -447,7 +447,7 @@ Concurrency::task<bool> SampleAnchorTcpServer::SendAnchorDataStreamIMap<String^,
 }
 ```
 
-如本主題稍早所述，我們必須準備好處理包含網路錯誤狀態訊息的例外狀況。 未預期的錯誤，我們可以將寫入例外狀況資訊的偵錯主控台就像這樣。 這可讓我們對於我們的程式碼範例中是無法完成連線，則無法完成傳送錨點資料時，發生了什麼事的線索。
+如本主題稍早所述, 我們必須準備好處理包含網路錯誤狀態訊息的例外狀況。 對於不預期的錯誤, 我們可以將例外狀況資訊寫入至偵錯工具主控台, 如下所示。 如果我們的程式碼範例無法完成連接, 或如果無法完成傳送錨點資料, 這將會提供線索給我們。
 
 ```
 void SampleAnchorTcpServer::HandleException(Exception^ exception)
@@ -460,11 +460,11 @@ void SampleAnchorTcpServer::HandleException(Exception^ exception)
 }
 ```
 
-### <a name="use-a-windowsnetworkingstreamsocket-with-tcp-to-receive-exported-anchor-data"></a>若要接收匯出的錨點的資料使用 TCP 的 Windows::Networking::StreamSocket
+### <a name="use-a-windowsnetworkingstreamsocket-with-tcp-to-receive-exported-anchor-data"></a>使用 Windows:: 網路:: StreamSocket 搭配 TCP 來接收匯出的錨點資料
 
-首先，我們必須連線到伺服器。 此程式碼範例示範如何建立並設定 StreamSocket，並建立可用來取得使用通訊端連線的網路資料的 DataReader。
+首先, 我們必須連接到伺服器。 此程式碼範例示範如何建立和設定 StreamSocket, 並建立一個 DataReader, 讓您用來取得使用通訊端連接的網路資料。
 
-**注意：** 如果您執行此範例程式碼，請確定您設定及啟動之前啟動用戶端的伺服器。
+**注意：** 如果您執行此範例程式碼, 請確定您已設定並啟動伺服器, 然後再啟動用戶端。
 
 ```
 task<bool> SampleAnchorTcpClient::ConnectToServer()
@@ -530,9 +530,9 @@ task<bool> SampleAnchorTcpClient::ConnectToServer()
 }
 ```
 
-一旦連線，我們可以等候伺服器以傳送資料。 我們這樣做，藉由在資料流資料讀取器上呼叫 LoadAsync。
+連接完成後, 我們就可以等候伺服器傳送資料。 我們藉由在資料流程資料讀取器上呼叫 LoadAsync 來完成此動作。
 
-我們收到的位元組為單位的第一個設定應該一律是標頭的封包，這表示錨點資料流的位元組長度，如上一節所述。
+我們收到的第一組位元組應該一律是標頭封包, 以指出上一節中所述的錨點資料流程位元組長度。
 
 ```
 void SampleAnchorTcpClient::WaitForAnchorDataStream()
@@ -581,7 +581,7 @@ task<size_t> SampleAnchorTcpClient::ReceiveAnchorDataLengthMessage()
 }
 ```
 
-我們已收到的標頭的封包之後，我們會知道多少個位元組的錨點我們應該預期的資料。 我們可以繼續從資料流讀取位元組。
+在我們收到標頭封包之後, 我們知道應該會有多少個位元組的錨點資料。 我們可以繼續從資料流程讀取這些位元組。
 
 ```
 }).then([this](size_t dataStreamLength)
@@ -608,9 +608,9 @@ task<size_t> SampleAnchorTcpClient::ReceiveAnchorDataLengthMessage()
 }
 ```
 
-以下是我們的程式碼來接收錨點的資料流。 同樣地，我們將首先將位元組從資料流;這項作業可能需要一些時間才能完成，如 StreamSocket 等待從網路接收的位元組數量。
+以下是用來接收錨點資料流程的程式碼。 同樣地, 我們會先從資料流程載入位元組;這項作業可能需要一些時間才能完成, 因為 StreamSocket 會等待收到來自網路的位元組數量。
 
-載入作業完成時，我們可以讀取該位元組數。 如果我們收到的預計錨點的資料流的位元組數目，我們可以繼續並匯入的錨點資料;如果沒有，則必須有某種形式的錯誤。 比方說，這種情形的伺服器執行個體終止之前就可以完成傳送資料流，或網路前用戶端可接收的整個資料流關閉時。
+當載入作業完成時, 我們可以讀取該位元組數目。 如果我們收到預期錨點資料流程的位元組數目, 我們可以繼續匯入錨定資料;如果不是, 則必須有某種類型的錯誤。 例如, 當伺服器實例在完成傳送資料流程之前就終止, 或在用戶端接收整個資料流程之前, 網路也會關閉之前, 就可能發生這種情況。
 
 ```
 task<bool> SampleAnchorTcpClient::ReceiveAnchorDataStream()
@@ -660,7 +660,7 @@ task<bool> SampleAnchorTcpClient::ReceiveAnchorDataStream()
 }
 ```
 
-同樣地，我們必須準備處理不明的網路錯誤。
+同樣地, 我們必須準備好處理未知的網路錯誤。
 
 ```
 void SampleAnchorTcpClient::HandleException(Exception^ exception)
@@ -672,9 +672,9 @@ void SampleAnchorTcpClient::HandleException(Exception^ exception)
 }
 ```
 
-就這麼容易！ 現在，您應該有足夠的資訊，請嘗試尋找透過網路接收的錨點。 同樣地，請注意，用戶端必須成功找出錨點; 的空間不足，無法 visual 的追蹤資料如果立即無法運作，請嘗試四處跑一段時間。 如果仍然無法運作，讓伺服器傳送更多的錨點，和用戶端的運作方式的其中一個同意使用網路通訊。 您可以試試看下載 HolographicSpatialAnchorTransferSample、 設定您的用戶端和伺服器 Ip，並將它部署至用戶端和伺服器的 HoloLens 裝置。
+就這麼容易！ 現在, 您應該要有足夠的資訊, 以嘗試尋找透過網路接收的錨點。 同樣地, 請注意, 用戶端必須有足夠的視覺化追蹤資料, 空間才能成功找出錨點;如果無法立即使用, 請嘗試一段時間。 如果仍然無法運作, 請讓伺服器傳送更多錨點, 並使用網路通訊來同意適用于用戶端的訊息。 您可以下載 HolographicSpatialAnchorTransferSample、設定您的用戶端和伺服器 Ip, 並將其部署至用戶端和伺服器 HoloLens 裝置, 以試做。
 
 ## <a name="see-also"></a>另請參閱
 * [平行模式程式庫 (PPL)](https://msdn.microsoft.com/library/dd492418.aspx)
-* [Windows.Networking.StreamSocket](https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.streamsocket.aspx)
-* [Windows.Networking.StreamSocketListener](https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.streamsocketlistener.aspx)
+* [StreamSocket](https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.streamsocket.aspx)
+* [StreamSocketListener](https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.streamsocketlistener.aspx)

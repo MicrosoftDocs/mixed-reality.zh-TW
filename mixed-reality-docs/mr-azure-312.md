@@ -1,112 +1,112 @@
 ---
 title: MR 和 Azure 312-Bot 整合
-description: 完成此課程來了解如何建立及部署 bot，使用 Microsoft Bot Framework v4，並與其通訊的混合的實境應用程式中。
+description: 完成此課程以瞭解如何使用 Microsoft Bot Framework v4 來建立和部署 bot, 並在混合現實應用程式中與其通訊。
 author: drneil
 ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
-keywords: azure、 混合實境、 academy、 unity、 教學課程、 api、 電腦視景、 hololens、 沉浸式 vr microsoft bot framework v4、 web 應用程式 bot、 bot framework、 microsoft bot
+keywords: azure, 混合現實, 學術, unity, 教學課程, api, 電腦視覺, hololens, 沉浸, vr, microsoft bot framework v4, web 應用程式 bot, bot framework, microsoft bot
 ms.openlocfilehash: b828aa4415103d280459bd2c666004c994b3e59d
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597078"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63542858"
 ---
 >[!NOTE]
-><span data-ttu-id="21654-104">混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。</span><span class="sxs-lookup"><span data-stu-id="21654-104">The Mixed Reality Academy tutorials were designed with HoloLens (1st gen) and Mixed Reality Immersive Headsets in mind.</span></span>  <span data-ttu-id="21654-105">因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。</span><span class="sxs-lookup"><span data-stu-id="21654-105">As such, we feel it is important to leave these tutorials in place for developers who are still looking for guidance in developing for those devices.</span></span>  <span data-ttu-id="21654-106">這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。</span><span class="sxs-lookup"><span data-stu-id="21654-106">These tutorials will **_not_** be updated with the latest toolsets or interactions being used for HoloLens 2.</span></span>  <span data-ttu-id="21654-107">它們會繼續運作，支援的裝置上維護。</span><span class="sxs-lookup"><span data-stu-id="21654-107">They will be maintained to continue working on the supported devices.</span></span> <span data-ttu-id="21654-108">會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。</span><span class="sxs-lookup"><span data-stu-id="21654-108">There will be a new series of tutorials that will be posted in the future that will demonstrate how to develop for HoloLens 2.</span></span>  <span data-ttu-id="21654-109">當他們回傳時，本聲明將會更新這些教學課程的連結。</span><span class="sxs-lookup"><span data-stu-id="21654-109">This notice will be updated with a link to those tutorials when they are posted.</span></span>
+><span data-ttu-id="fc646-104">混合現實學術教學課程的設計是使用 HoloLens (第1代) 和混合現實的沉浸式耳機。</span><span class="sxs-lookup"><span data-stu-id="fc646-104">The Mixed Reality Academy tutorials were designed with HoloLens (1st gen) and Mixed Reality Immersive Headsets in mind.</span></span>  <span data-ttu-id="fc646-105">因此, 對於仍在尋找這些裝置開發指引的開發人員而言, 我們覺得這些教學課程很重要。</span><span class="sxs-lookup"><span data-stu-id="fc646-105">As such, we feel it is important to leave these tutorials in place for developers who are still looking for guidance in developing for those devices.</span></span>  <span data-ttu-id="fc646-106">這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。</span><span class="sxs-lookup"><span data-stu-id="fc646-106">These tutorials will **_not_** be updated with the latest toolsets or interactions being used for HoloLens 2.</span></span>  <span data-ttu-id="fc646-107">系統會保留這些資訊, 以繼續在支援的裝置上運作。</span><span class="sxs-lookup"><span data-stu-id="fc646-107">They will be maintained to continue working on the supported devices.</span></span> <span data-ttu-id="fc646-108">未來將會有一系列新的教學課程, 將示範如何針對 HoloLens 2 進行開發。</span><span class="sxs-lookup"><span data-stu-id="fc646-108">There will be a new series of tutorials that will be posted in the future that will demonstrate how to develop for HoloLens 2.</span></span>  <span data-ttu-id="fc646-109">此通知會在張貼時, 使用這些教學課程的連結進行更新。</span><span class="sxs-lookup"><span data-stu-id="fc646-109">This notice will be updated with a link to those tutorials when they are posted.</span></span>
 
-# <a name="mr-and-azure-312-bot-integration"></a><span data-ttu-id="21654-110">MR 和 Azure 312:Bot 整合</span><span class="sxs-lookup"><span data-stu-id="21654-110">MR and Azure 312: Bot integration</span></span>
+# <a name="mr-and-azure-312-bot-integration"></a><span data-ttu-id="fc646-110">MR 和 Azure 312:Bot 整合</span><span class="sxs-lookup"><span data-stu-id="fc646-110">MR and Azure 312: Bot integration</span></span>
 
-<span data-ttu-id="21654-111">在此課程中，您將學習如何建立並部署使用 Microsoft Bot Framework V4 bot，並透過 Windows Mixed Reality 應用程式與其通訊。</span><span class="sxs-lookup"><span data-stu-id="21654-111">In this course, you will learn how to create and deploy a bot using the Microsoft Bot Framework V4 and communicate with it through a Windows Mixed Reality application.</span></span> 
+<span data-ttu-id="fc646-111">在此課程中, 您將瞭解如何使用 Microsoft Bot Framework V4 來建立和部署 bot, 並透過 Windows Mixed Reality 應用程式與它進行通訊。</span><span class="sxs-lookup"><span data-stu-id="fc646-111">In this course, you will learn how to create and deploy a bot using the Microsoft Bot Framework V4 and communicate with it through a Windows Mixed Reality application.</span></span> 
 
 ![](images/AzureLabs-Lab312-00.png)
 
-<span data-ttu-id="21654-112">**Microsoft Bot Framework V4**是一組 Api 可提供開發人員工具來建置可擴充且可調整的 bot 應用程式。</span><span class="sxs-lookup"><span data-stu-id="21654-112">The **Microsoft Bot Framework V4** is a set of APIs designed to provide developers with the tools to build an extensible and scalable bot application.</span></span> <span data-ttu-id="21654-113">如需詳細資訊，請瀏覽[Microsoft Bot Framework 頁面](https://dev.botframework.com/)或[V4 Git 存放庫](https://github.com/Microsoft/botbuilder-dotnet/wiki)。</span><span class="sxs-lookup"><span data-stu-id="21654-113">For more information, visit the [Microsoft Bot Framework page](https://dev.botframework.com/) or the [V4 Git Repository](https://github.com/Microsoft/botbuilder-dotnet/wiki).</span></span>
+<span data-ttu-id="fc646-112">**Microsoft Bot Framework V4**是一組 api, 專為開發人員提供工具來建立可擴充且可擴充的 Bot 應用程式。</span><span class="sxs-lookup"><span data-stu-id="fc646-112">The **Microsoft Bot Framework V4** is a set of APIs designed to provide developers with the tools to build an extensible and scalable bot application.</span></span> <span data-ttu-id="fc646-113">如需詳細資訊, 請造訪[Microsoft Bot Framework 頁面](https://dev.botframework.com/)或[V4 Git 存放庫](https://github.com/Microsoft/botbuilder-dotnet/wiki)。</span><span class="sxs-lookup"><span data-stu-id="fc646-113">For more information, visit the [Microsoft Bot Framework page](https://dev.botframework.com/) or the [V4 Git Repository](https://github.com/Microsoft/botbuilder-dotnet/wiki).</span></span>
 
-<span data-ttu-id="21654-114">完成本課程之後，您就會建置的 Windows Mixed Reality 應用程式，可以執行下列作業：</span><span class="sxs-lookup"><span data-stu-id="21654-114">After completing this course, you will have built a Windows Mixed Reality application, which will be able to do the following:</span></span>
+<span data-ttu-id="fc646-114">完成此課程之後, 您將會建立一個 Windows Mixed Reality 應用程式, 它將能夠執行下列動作:</span><span class="sxs-lookup"><span data-stu-id="fc646-114">After completing this course, you will have built a Windows Mixed Reality application, which will be able to do the following:</span></span>
 
-1. <span data-ttu-id="21654-115">使用**點選手勢**開始接聽使用者語音 bot。</span><span class="sxs-lookup"><span data-stu-id="21654-115">Use a **Tap Gesture** to start the bot listening for the users voice.</span></span>
-2. <span data-ttu-id="21654-116">當使用者說過的項目 bot 會嘗試提供回應。</span><span class="sxs-lookup"><span data-stu-id="21654-116">When the user has said something, the bot will attempt to provide a response.</span></span>
-3. <span data-ttu-id="21654-117">Bot 回覆文字顯示，bot，Unity 場景中靠近定位。</span><span class="sxs-lookup"><span data-stu-id="21654-117">Display the bots reply as text, positioned near the bot, in the Unity Scene.</span></span>
+1. <span data-ttu-id="fc646-115">使用點按**手勢**來啟動接聽使用者語音的 bot。</span><span class="sxs-lookup"><span data-stu-id="fc646-115">Use a **Tap Gesture** to start the bot listening for the users voice.</span></span>
+2. <span data-ttu-id="fc646-116">當使用者說過某個專案時, bot 會嘗試提供回應。</span><span class="sxs-lookup"><span data-stu-id="fc646-116">When the user has said something, the bot will attempt to provide a response.</span></span>
+3. <span data-ttu-id="fc646-117">在 Unity 場景中, 將 bot 回復顯示為文字, 位於 bot 附近。</span><span class="sxs-lookup"><span data-stu-id="fc646-117">Display the bots reply as text, positioned near the bot, in the Unity Scene.</span></span>
 
-<span data-ttu-id="21654-118">在您的應用程式，則您對於如何將整合結果進行設計。</span><span class="sxs-lookup"><span data-stu-id="21654-118">In your application, it is up to you as to how you will integrate the results with your design.</span></span> <span data-ttu-id="21654-119">本課程旨在教導您如何將 Azure 服務整合與您的 Unity 專案。</span><span class="sxs-lookup"><span data-stu-id="21654-119">This course is designed to teach you how to integrate an Azure Service with your Unity project.</span></span> <span data-ttu-id="21654-120">它是您的作業，以使用您從這個課程，以增強您的混合的實境應用程式所獲得的知識。</span><span class="sxs-lookup"><span data-stu-id="21654-120">It is your job to use the knowledge you gain from this course to enhance your mixed reality application.</span></span>
+<span data-ttu-id="fc646-118">在您的應用程式中, 您可以決定如何將結果與您的設計整合。</span><span class="sxs-lookup"><span data-stu-id="fc646-118">In your application, it is up to you as to how you will integrate the results with your design.</span></span> <span data-ttu-id="fc646-119">本課程的設計目的是要告訴您如何將 Azure 服務與您的 Unity 專案整合。</span><span class="sxs-lookup"><span data-stu-id="fc646-119">This course is designed to teach you how to integrate an Azure Service with your Unity project.</span></span> <span data-ttu-id="fc646-120">您的工作是使用您從這個課程取得的知識, 來增強您的混合現實應用程式。</span><span class="sxs-lookup"><span data-stu-id="fc646-120">It is your job to use the knowledge you gain from this course to enhance your mixed reality application.</span></span>
 
-## <a name="device-support"></a><span data-ttu-id="21654-121">裝置支援</span><span class="sxs-lookup"><span data-stu-id="21654-121">Device support</span></span>
+## <a name="device-support"></a><span data-ttu-id="fc646-121">裝置支援</span><span class="sxs-lookup"><span data-stu-id="fc646-121">Device support</span></span>
 
 <table>
 <tr>
-<th><span data-ttu-id="21654-122">課程</span><span class="sxs-lookup"><span data-stu-id="21654-122">Course</span></span></th><th style="width:150px"> <span data-ttu-id="21654-123"><a href="hololens-hardware-details.md">HoloLens</a></span><span class="sxs-lookup"><span data-stu-id="21654-123"><a href="hololens-hardware-details.md">HoloLens</a></span></span></th><th style="width:150px"> <span data-ttu-id="21654-124"><a href="immersive-headset-hardware-details.md">沈浸式耳機</a></span><span class="sxs-lookup"><span data-stu-id="21654-124"><a href="immersive-headset-hardware-details.md">Immersive headsets</a></span></span></th>
+<th><span data-ttu-id="fc646-122">粗</span><span class="sxs-lookup"><span data-stu-id="fc646-122">Course</span></span></th><th style="width:150px"> <span data-ttu-id="fc646-123"><a href="hololens-hardware-details.md">HoloLens</a></span><span class="sxs-lookup"><span data-stu-id="fc646-123"><a href="hololens-hardware-details.md">HoloLens</a></span></span></th><th style="width:150px"> <span data-ttu-id="fc646-124"><a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></span><span class="sxs-lookup"><span data-stu-id="fc646-124"><a href="immersive-headset-hardware-details.md">Immersive headsets</a></span></span></th>
 </tr><tr>
-<td> <span data-ttu-id="21654-125">MR 和 Azure 312:Bot 整合</span><span class="sxs-lookup"><span data-stu-id="21654-125">MR and Azure 312: Bot integration</span></span></td><td style="text-align: center;"> <span data-ttu-id="21654-126">✔️</span><span class="sxs-lookup"><span data-stu-id="21654-126">✔️</span></span></td><td style="text-align: center;"> <span data-ttu-id="21654-127">✔️</span><span class="sxs-lookup"><span data-stu-id="21654-127">✔️</span></span></td>
+<td> <span data-ttu-id="fc646-125">MR 和 Azure 312:Bot 整合</span><span class="sxs-lookup"><span data-stu-id="fc646-125">MR and Azure 312: Bot integration</span></span></td><td style="text-align: center;"> <span data-ttu-id="fc646-126">✔️</span><span class="sxs-lookup"><span data-stu-id="fc646-126">✔️</span></span></td><td style="text-align: center;"> <span data-ttu-id="fc646-127">✔️</span><span class="sxs-lookup"><span data-stu-id="fc646-127">✔️</span></span></td>
 </tr>
 </table>
 
 > [!NOTE]
-> <span data-ttu-id="21654-128">雖然這堂課程主要著重於 HoloLens，您也可以套用您在此課程 Windows Mixed Reality 沈浸式 (VR) 耳機來了解。</span><span class="sxs-lookup"><span data-stu-id="21654-128">While this course primarily focuses on HoloLens, you can also apply what you learn in this course to Windows Mixed Reality immersive (VR) headsets.</span></span> <span data-ttu-id="21654-129">因為沈浸式 (VR) 耳機並沒有可存取的相機，您必須連線到您的 PC 外部相機。</span><span class="sxs-lookup"><span data-stu-id="21654-129">Because immersive (VR) headsets do not have accessible cameras, you will need an external camera connected to your PC.</span></span> <span data-ttu-id="21654-130">當您遵循本課程中，您會看到 備忘稿上用來支援沈浸式 (VR) 耳機時，您可能需要的任何變更。</span><span class="sxs-lookup"><span data-stu-id="21654-130">As you follow along with the course, you will see notes on any changes you might need to employ to support immersive (VR) headsets.</span></span>
+> <span data-ttu-id="fc646-128">雖然此課程主要著重于 HoloLens, 但您也可以將在本課程中學習到的內容套用至 Windows Mixed Reality 沉浸式 (VR) 耳機。</span><span class="sxs-lookup"><span data-stu-id="fc646-128">While this course primarily focuses on HoloLens, you can also apply what you learn in this course to Windows Mixed Reality immersive (VR) headsets.</span></span> <span data-ttu-id="fc646-129">因為沉浸式 (VR) 耳機沒有可存取的相機, 所以您需要連接到電腦的外部相機。</span><span class="sxs-lookup"><span data-stu-id="fc646-129">Because immersive (VR) headsets do not have accessible cameras, you will need an external camera connected to your PC.</span></span> <span data-ttu-id="fc646-130">隨著課程的遵循, 您將會看到支援沉浸式 (VR) 耳機時, 您可能需要採取的任何變更的附注。</span><span class="sxs-lookup"><span data-stu-id="fc646-130">As you follow along with the course, you will see notes on any changes you might need to employ to support immersive (VR) headsets.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="21654-131">先決條件</span><span class="sxs-lookup"><span data-stu-id="21654-131">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="fc646-131">必要條件</span><span class="sxs-lookup"><span data-stu-id="fc646-131">Prerequisites</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="21654-132">本教學課程專為具有基礎經驗的 Unity 開發人員和C#。</span><span class="sxs-lookup"><span data-stu-id="21654-132">This tutorial is designed for developers who have basic experience with Unity and C#.</span></span> <span data-ttu-id="21654-133">請同時了解必要條件和書面的指示此文件中代表什麼已經過測試，並在寫入 (第 2018 年 7 月) 的時間驗證。</span><span class="sxs-lookup"><span data-stu-id="21654-133">Please also be aware that the prerequisites and written instructions within this document represent what has been tested and verified at the time of writing (July 2018).</span></span> <span data-ttu-id="21654-134">中所示，您可以自由使用最新的軟體[安裝工具](install-the-tools.md)發行項，但它不應該假設，本課程中的資訊將會完全符合您會發現在較新的軟體，比所列下面。</span><span class="sxs-lookup"><span data-stu-id="21654-134">You are free to use the latest software, as listed within the [install the tools](install-the-tools.md) article, though it should not be assumed that the information in this course will perfectly match what you will find in newer software than what is listed below.</span></span>
+> <span data-ttu-id="fc646-132">本教學課程是專為具備 Unity 和C#基本經驗的開發人員所設計。</span><span class="sxs-lookup"><span data-stu-id="fc646-132">This tutorial is designed for developers who have basic experience with Unity and C#.</span></span> <span data-ttu-id="fc646-133">也請注意, 本檔中的必要條件和書面指示, 代表在撰寫本文時已測試和驗證的內容 (2018 年7月)。</span><span class="sxs-lookup"><span data-stu-id="fc646-133">Please also be aware that the prerequisites and written instructions within this document represent what has been tested and verified at the time of writing (July 2018).</span></span> <span data-ttu-id="fc646-134">您可以免費使用 [[安裝工具](install-the-tools.md)] 文章中所列的最新軟體, 但不應假設本課程中的資訊完全符合您在較新軟體中找到的內容, 而不是如下所示。</span><span class="sxs-lookup"><span data-stu-id="fc646-134">You are free to use the latest software, as listed within the [install the tools](install-the-tools.md) article, though it should not be assumed that the information in this course will perfectly match what you will find in newer software than what is listed below.</span></span>
 
-<span data-ttu-id="21654-135">我們建議下列的硬體和軟體這堂課程：</span><span class="sxs-lookup"><span data-stu-id="21654-135">We recommend the following hardware and software for this course:</span></span>
+<span data-ttu-id="fc646-135">在此課程中, 我們建議您採用下列硬體和軟體:</span><span class="sxs-lookup"><span data-stu-id="fc646-135">We recommend the following hardware and software for this course:</span></span>
 
-- <span data-ttu-id="21654-136">開發電腦，[相容於 Windows Mixed Reality](https://support.microsoft.com/help/4039260/windows-10-mixed-reality-pc-hardware-guidelines)沈浸式 (VR) 耳機開發</span><span class="sxs-lookup"><span data-stu-id="21654-136">A development PC, [compatible with Windows Mixed Reality](https://support.microsoft.com/help/4039260/windows-10-mixed-reality-pc-hardware-guidelines) for immersive (VR) headset development</span></span>
-- [<span data-ttu-id="21654-137">Windows 10 Fall Creators Update （或更新版本） 啟用的開發人員模式</span><span class="sxs-lookup"><span data-stu-id="21654-137">Windows 10 Fall Creators Update (or later) with Developer mode enabled</span></span>](install-the-tools.md#installation-checklist)
-- [<span data-ttu-id="21654-138">最新的 Windows 10 SDK</span><span class="sxs-lookup"><span data-stu-id="21654-138">The latest Windows 10 SDK</span></span>](install-the-tools.md#installation-checklist)
-- [<span data-ttu-id="21654-139">Unity 2017.4</span><span class="sxs-lookup"><span data-stu-id="21654-139">Unity 2017.4</span></span>](install-the-tools.md#installation-checklist)
-- [<span data-ttu-id="21654-140">Visual Studio 2017</span><span class="sxs-lookup"><span data-stu-id="21654-140">Visual Studio 2017</span></span>](install-the-tools.md#installation-checklist)
-- <span data-ttu-id="21654-141">A [Windows Mixed Reality 沈浸式 (VR) 耳機](immersive-headset-hardware-details.md)或是[Microsoft HoloLens](hololens-hardware-details.md)啟用開發人員模式</span><span class="sxs-lookup"><span data-stu-id="21654-141">A [Windows Mixed Reality immersive (VR) headset](immersive-headset-hardware-details.md) or [Microsoft HoloLens](hololens-hardware-details.md) with Developer mode enabled</span></span>
-- <span data-ttu-id="21654-142">Azure 和 Azure Bot 擷取的網際網路存取。</span><span class="sxs-lookup"><span data-stu-id="21654-142">Internet access for Azure, and for Azure Bot retrieval.</span></span> <span data-ttu-id="21654-143">如需詳細資訊，[請遵循此連結](https://dev.botframework.com/)。</span><span class="sxs-lookup"><span data-stu-id="21654-143">For more information, [please follow this link](https://dev.botframework.com/).</span></span>
+- <span data-ttu-id="fc646-136">[與 Windows Mixed Reality 相容](https://support.microsoft.com/help/4039260/windows-10-mixed-reality-pc-hardware-guidelines)的開發電腦, 可用於沉浸式 (VR) 耳機開發</span><span class="sxs-lookup"><span data-stu-id="fc646-136">A development PC, [compatible with Windows Mixed Reality](https://support.microsoft.com/help/4039260/windows-10-mixed-reality-pc-hardware-guidelines) for immersive (VR) headset development</span></span>
+- [<span data-ttu-id="fc646-137">已啟用開發人員模式的 Windows 10 秋季建立者更新 (或更新版本)</span><span class="sxs-lookup"><span data-stu-id="fc646-137">Windows 10 Fall Creators Update (or later) with Developer mode enabled</span></span>](install-the-tools.md#installation-checklist)
+- [<span data-ttu-id="fc646-138">最新的 Windows 10 SDK</span><span class="sxs-lookup"><span data-stu-id="fc646-138">The latest Windows 10 SDK</span></span>](install-the-tools.md#installation-checklist)
+- [<span data-ttu-id="fc646-139">Unity 2017。4</span><span class="sxs-lookup"><span data-stu-id="fc646-139">Unity 2017.4</span></span>](install-the-tools.md#installation-checklist)
+- [<span data-ttu-id="fc646-140">Visual Studio 2017</span><span class="sxs-lookup"><span data-stu-id="fc646-140">Visual Studio 2017</span></span>](install-the-tools.md#installation-checklist)
+- <span data-ttu-id="fc646-141">已啟用開發人員模式的[Windows Mixed Reality 沉浸 (VR) 耳機](immersive-headset-hardware-details.md)或[Microsoft HoloLens](hololens-hardware-details.md)</span><span class="sxs-lookup"><span data-stu-id="fc646-141">A [Windows Mixed Reality immersive (VR) headset](immersive-headset-hardware-details.md) or [Microsoft HoloLens](hololens-hardware-details.md) with Developer mode enabled</span></span>
+- <span data-ttu-id="fc646-142">適用于 Azure 的網際網路存取, 以及適用于 Azure Bot 的抓取。</span><span class="sxs-lookup"><span data-stu-id="fc646-142">Internet access for Azure, and for Azure Bot retrieval.</span></span> <span data-ttu-id="fc646-143">如需詳細資訊,[請遵循此連結](https://dev.botframework.com/)。</span><span class="sxs-lookup"><span data-stu-id="fc646-143">For more information, [please follow this link](https://dev.botframework.com/).</span></span>
 
-### <a name="before-you-start"></a><span data-ttu-id="21654-144">開始之前</span><span class="sxs-lookup"><span data-stu-id="21654-144">Before you start</span></span>
+### <a name="before-you-start"></a><span data-ttu-id="fc646-144">開始之前</span><span class="sxs-lookup"><span data-stu-id="fc646-144">Before you start</span></span>
 
-1.  <span data-ttu-id="21654-145">若要避免發生建置此專案的問題，強烈建議您建立根或接近根資料夾中，本教學課程中所述的專案 （長的資料夾路徑可能會造成問題，在建置階段）。</span><span class="sxs-lookup"><span data-stu-id="21654-145">To avoid encountering issues building this project, it is strongly suggested that you create the project mentioned in this tutorial in a root or near-root folder (long folder paths can cause issues at build-time).</span></span>
-2.  <span data-ttu-id="21654-146">設定並測試您的 HoloLens。</span><span class="sxs-lookup"><span data-stu-id="21654-146">Set up and test your HoloLens.</span></span> <span data-ttu-id="21654-147">如果您需要支援設定您的 HoloLens[請務必瀏覽 HoloLens 安裝文章](https://docs.microsoft.com/hololens/hololens-setup)。</span><span class="sxs-lookup"><span data-stu-id="21654-147">If you need support setting up your HoloLens, [make sure to visit the HoloLens setup article](https://docs.microsoft.com/hololens/hololens-setup).</span></span> 
-3.  <span data-ttu-id="21654-148">它是個不錯的主意，若要開始開發新的 HoloLens 應用程式 （有時候它可以幫助每位使用者執行這些工作） 時執行校正和感應器調整。</span><span class="sxs-lookup"><span data-stu-id="21654-148">It is a good idea to perform Calibration and Sensor Tuning when beginning developing a new HoloLens app (sometimes it can help to perform those tasks for each user).</span></span> 
+1.  <span data-ttu-id="fc646-145">為避免在建立此專案時發生問題, 強烈建議您在根或接近根資料夾中建立本教學課程中所述的專案 (長資料夾路徑可能會在組建階段造成問題)。</span><span class="sxs-lookup"><span data-stu-id="fc646-145">To avoid encountering issues building this project, it is strongly suggested that you create the project mentioned in this tutorial in a root or near-root folder (long folder paths can cause issues at build-time).</span></span>
+2.  <span data-ttu-id="fc646-146">設定並測試您的 HoloLens。</span><span class="sxs-lookup"><span data-stu-id="fc646-146">Set up and test your HoloLens.</span></span> <span data-ttu-id="fc646-147">如果您需要支援設定 HoloLens,[請務必造訪 hololens 安裝程式一文](https://docs.microsoft.com/hololens/hololens-setup)。</span><span class="sxs-lookup"><span data-stu-id="fc646-147">If you need support setting up your HoloLens, [make sure to visit the HoloLens setup article](https://docs.microsoft.com/hololens/hololens-setup).</span></span> 
+3.  <span data-ttu-id="fc646-148">開始開發新的 HoloLens 應用程式時, 最好先執行校正和感應器微調 (有時候它有助於為每個使用者執行這些工作)。</span><span class="sxs-lookup"><span data-stu-id="fc646-148">It is a good idea to perform Calibration and Sensor Tuning when beginning developing a new HoloLens app (sometimes it can help to perform those tasks for each user).</span></span> 
 
-<span data-ttu-id="21654-149">校正的說明，請遵循此[HoloLens 校正文章連結](calibration.md#hololens)。</span><span class="sxs-lookup"><span data-stu-id="21654-149">For help on Calibration, please follow this [link to the HoloLens Calibration article](calibration.md#hololens).</span></span>
+<span data-ttu-id="fc646-149">如需校正的說明, 請遵循此[HoloLens 校正文章的連結](calibration.md#hololens)。</span><span class="sxs-lookup"><span data-stu-id="fc646-149">For help on Calibration, please follow this [link to the HoloLens Calibration article](calibration.md#hololens).</span></span>
 
-<span data-ttu-id="21654-150">如需微調感應器的說明，請遵循此[HoloLens 感應器調整的文章連結](sensor-tuning.md)。</span><span class="sxs-lookup"><span data-stu-id="21654-150">For help on Sensor Tuning, please follow this [link to the HoloLens Sensor Tuning article](sensor-tuning.md).</span></span>
+<span data-ttu-id="fc646-150">如需感應器微調的說明, 請遵循此[HoloLens 感應器微調文章連結](sensor-tuning.md)。</span><span class="sxs-lookup"><span data-stu-id="fc646-150">For help on Sensor Tuning, please follow this [link to the HoloLens Sensor Tuning article](sensor-tuning.md).</span></span>
 
-## <a name="chapter-1--create-the-bot-application"></a><span data-ttu-id="21654-151">第 1 章-建立機器人應用程式</span><span class="sxs-lookup"><span data-stu-id="21654-151">Chapter 1 – Create the Bot application</span></span>
+## <a name="chapter-1--create-the-bot-application"></a><span data-ttu-id="fc646-151">第1章–建立 Bot 應用程式</span><span class="sxs-lookup"><span data-stu-id="fc646-151">Chapter 1 – Create the Bot application</span></span>
 
-<span data-ttu-id="21654-152">第一個步驟是建立您的機器人，做為本機的 ASP.Net Core Web 應用程式。</span><span class="sxs-lookup"><span data-stu-id="21654-152">The first step is to create your bot as a local ASP.Net Core Web application.</span></span> <span data-ttu-id="21654-153">一旦您完成並測試它，將會發行至 Azure 入口網站。</span><span class="sxs-lookup"><span data-stu-id="21654-153">Once you have finished and tested it, you will publish it to the Azure Portal.</span></span>
+<span data-ttu-id="fc646-152">第一個步驟是將您的 bot 建立為本機 ASP.Net 核心 Web 應用程式。</span><span class="sxs-lookup"><span data-stu-id="fc646-152">The first step is to create your bot as a local ASP.Net Core Web application.</span></span> <span data-ttu-id="fc646-153">完成並測試之後, 您會將它發佈至 Azure 入口網站。</span><span class="sxs-lookup"><span data-stu-id="fc646-153">Once you have finished and tested it, you will publish it to the Azure Portal.</span></span>
 
-1.  <span data-ttu-id="21654-154">開啟 Visual Studio。</span><span class="sxs-lookup"><span data-stu-id="21654-154">Open Visual Studio.</span></span> <span data-ttu-id="21654-155">建立新專案，選取**ASP NET Core Web 應用程式**做為專案類型 （您會發現它在.NET Core 的小節），並稱之為**MyBot**。</span><span class="sxs-lookup"><span data-stu-id="21654-155">Create a new project, select **ASP NET Core Web Application** as the project type (you will find it under the subsection .NET Core) and call it **MyBot**.</span></span> <span data-ttu-id="21654-156">按一下 [確定] 。</span><span class="sxs-lookup"><span data-stu-id="21654-156">Click **OK**.</span></span>
+1.  <span data-ttu-id="fc646-154">開啟 Visual Studio。</span><span class="sxs-lookup"><span data-stu-id="fc646-154">Open Visual Studio.</span></span> <span data-ttu-id="fc646-155">建立新的專案, 選取 [ **ASP NET Core Web 應用程式**] 做為 [專案類型] (您會在 [.net Core] 子區段下找到), 並將它命名為**MyBot**。</span><span class="sxs-lookup"><span data-stu-id="fc646-155">Create a new project, select **ASP NET Core Web Application** as the project type (you will find it under the subsection .NET Core) and call it **MyBot**.</span></span> <span data-ttu-id="fc646-156">按一下 [確定] 。</span><span class="sxs-lookup"><span data-stu-id="fc646-156">Click **OK**.</span></span>
 
-2.  <span data-ttu-id="21654-157">在視窗中會出現選取**空**。</span><span class="sxs-lookup"><span data-stu-id="21654-157">In the Window that will appear select **Empty**.</span></span> <span data-ttu-id="21654-158">也請確定目標設為**ASP NET Core 2.0**並驗證已設為**不需要驗證**。</span><span class="sxs-lookup"><span data-stu-id="21654-158">Also make sure the target is set to **ASP NET Core 2.0** and the Authentication is set to **No Authentication**.</span></span> <span data-ttu-id="21654-159">按一下 [確定] 。</span><span class="sxs-lookup"><span data-stu-id="21654-159">Click **OK**.</span></span>  
+2.  <span data-ttu-id="fc646-157">在將出現的視窗中, 選取 [**空白**]。</span><span class="sxs-lookup"><span data-stu-id="fc646-157">In the Window that will appear select **Empty**.</span></span> <span data-ttu-id="fc646-158">此外, 請確定 [目標] 設定為 [ **ASP NET Core 2.0** ], 並將 [驗證] 設定為 [**無驗證**]。</span><span class="sxs-lookup"><span data-stu-id="fc646-158">Also make sure the target is set to **ASP NET Core 2.0** and the Authentication is set to **No Authentication**.</span></span> <span data-ttu-id="fc646-159">按一下 [確定 **Deploying Office Solutions**]。</span><span class="sxs-lookup"><span data-stu-id="fc646-159">Click **OK**.</span></span>  
 
-    ![建立機器人應用程式](images/AzureLabs-Lab312-01.png)
+    ![建立 bot 應用程式](images/AzureLabs-Lab312-01.png)
 
-3.  <span data-ttu-id="21654-161">現在將會開啟解決方案。</span><span class="sxs-lookup"><span data-stu-id="21654-161">The solution will now open.</span></span> <span data-ttu-id="21654-162">以滑鼠右鍵按一下方案**Mybot**中**方案總管**，然後按一下**管理方案的 NuGet 套件**。</span><span class="sxs-lookup"><span data-stu-id="21654-162">Right-click on Solution **Mybot** in the **Solution Explorer** and click on **Manage NuGet Packages for Solution**.</span></span> 
+3.  <span data-ttu-id="fc646-161">解決方案隨即開啟。</span><span class="sxs-lookup"><span data-stu-id="fc646-161">The solution will now open.</span></span> <span data-ttu-id="fc646-162">以滑鼠右鍵按一下**方案總管**中的 [方案**Mybot** ], 然後按一下 [**管理方案的 NuGet 套件**]。</span><span class="sxs-lookup"><span data-stu-id="fc646-162">Right-click on Solution **Mybot** in the **Solution Explorer** and click on **Manage NuGet Packages for Solution**.</span></span> 
 
-    ![建立機器人應用程式](images/AzureLabs-Lab312-02.png)
+    ![建立 Bot 應用程式](images/AzureLabs-Lab312-02.png)
 
-4.  <span data-ttu-id="21654-164">在 **瀏覽**索引標籤上，搜尋**Microsoft.Bot.Builder.Integration.AspNet.Core** (請確定您已**包含發行前版本**檢查)。</span><span class="sxs-lookup"><span data-stu-id="21654-164">In the **Browse** tab, search for **Microsoft.Bot.Builder.Integration.AspNet.Core** (make sure you have **Include pre-release** checked).</span></span> <span data-ttu-id="21654-165">選取的套件版本**4.0.1**，和勾選的 [專案] 方塊。</span><span class="sxs-lookup"><span data-stu-id="21654-165">Select the package version **4.0.1-preview**, and tick the project boxes.</span></span> <span data-ttu-id="21654-166">然後按一下**安裝**。</span><span class="sxs-lookup"><span data-stu-id="21654-166">Then click on **Install**.</span></span> <span data-ttu-id="21654-167">現在您已安裝所需的程式庫**Bot Framework v4**。</span><span class="sxs-lookup"><span data-stu-id="21654-167">You have now installed the libraries needed for the **Bot Framework v4**.</span></span> <span data-ttu-id="21654-168">關閉 [NuGet] 頁面。</span><span class="sxs-lookup"><span data-stu-id="21654-168">Close the NuGet page.</span></span>
+4.  <span data-ttu-id="fc646-164">在 [**流覽**] 索引標籤中, 搜尋 [ **Microsoft. Bot. Core** ] (請確定您已核取 [**包含發行前版本**])。</span><span class="sxs-lookup"><span data-stu-id="fc646-164">In the **Browse** tab, search for **Microsoft.Bot.Builder.Integration.AspNet.Core** (make sure you have **Include pre-release** checked).</span></span> <span data-ttu-id="fc646-165">選取套件版本**4.0.1-preview**, 然後勾選 [專案] 方塊。</span><span class="sxs-lookup"><span data-stu-id="fc646-165">Select the package version **4.0.1-preview**, and tick the project boxes.</span></span> <span data-ttu-id="fc646-166">然後按一下 [**安裝**]。</span><span class="sxs-lookup"><span data-stu-id="fc646-166">Then click on **Install**.</span></span> <span data-ttu-id="fc646-167">您現在已安裝**Bot Framework v4**所需的程式庫。</span><span class="sxs-lookup"><span data-stu-id="fc646-167">You have now installed the libraries needed for the **Bot Framework v4**.</span></span> <span data-ttu-id="fc646-168">關閉 [NuGet] 頁面。</span><span class="sxs-lookup"><span data-stu-id="fc646-168">Close the NuGet page.</span></span>
 
-    ![建立機器人應用程式](images/AzureLabs-Lab312-03.png)
+    ![建立 bot 應用程式](images/AzureLabs-Lab312-03.png)
 
-5.  <span data-ttu-id="21654-170">以滑鼠右鍵按一下您*專案*， **MyBot**，請在**方案總管 中**，然後按一下 **新增** **|** **類別**。</span><span class="sxs-lookup"><span data-stu-id="21654-170">Right-click on your *Project*, **MyBot**, in the **Solution Explorer** and click on **Add** **|** **Class**.</span></span>
+5.  <span data-ttu-id="fc646-170">以滑鼠右鍵按一下您*專案*， **MyBot**，請在**方案總管 中**，然後按一下 **新增** **|** **類別**。</span><span class="sxs-lookup"><span data-stu-id="fc646-170">Right-click on your *Project*, **MyBot**, in the **Solution Explorer** and click on **Add** **|** **Class**.</span></span>
 
-    ![建立機器人應用程式](images/AzureLabs-Lab312-04.png)
+    ![建立 Bot 應用程式](images/AzureLabs-Lab312-04.png)
 
-6.  <span data-ttu-id="21654-172">將類別命名為**MyBot** ，然後按一下**新增**。</span><span class="sxs-lookup"><span data-stu-id="21654-172">Name the class **MyBot** and click on **Add**.</span></span>
+6.  <span data-ttu-id="fc646-172">將類別命名為**MyBot** , 然後按一下 [**新增**]。</span><span class="sxs-lookup"><span data-stu-id="fc646-172">Name the class **MyBot** and click on **Add**.</span></span>
 
-    ![建立機器人應用程式](images/AzureLabs-Lab312-05.png)
+    ![建立 bot 應用程式](images/AzureLabs-Lab312-05.png)
 
-7.  <span data-ttu-id="21654-174">重複前一個點，來建立名為另一個類別**ConversationContext**。</span><span class="sxs-lookup"><span data-stu-id="21654-174">Repeat the previous point, to create another class named **ConversationContext**.</span></span> 
+7.  <span data-ttu-id="fc646-174">重複上一個點, 以建立名為**ConversationCoNtext**的另一個類別。</span><span class="sxs-lookup"><span data-stu-id="fc646-174">Repeat the previous point, to create another class named **ConversationContext**.</span></span> 
 
-8.  <span data-ttu-id="21654-175">以滑鼠右鍵按一下**wwwroot**中**方案總管**，然後按一下**新增** **|** **新項目**.</span><span class="sxs-lookup"><span data-stu-id="21654-175">Right-click on **wwwroot** in the **Solution Explorer** and click on **Add** **|** **New Item**.</span></span> <span data-ttu-id="21654-176">選取  **HTML 網頁**（您會發現它在 Web 子區段下）。</span><span class="sxs-lookup"><span data-stu-id="21654-176">Select  **HTML Page** (you will find it under the subsection Web).</span></span> <span data-ttu-id="21654-177">將檔案命名**default.html**。</span><span class="sxs-lookup"><span data-stu-id="21654-177">Name the file **default.html**.</span></span> <span data-ttu-id="21654-178">按一下 **\[新增\]**。</span><span class="sxs-lookup"><span data-stu-id="21654-178">Click **Add**.</span></span>
+8.  <span data-ttu-id="fc646-175">以滑鼠右鍵按一下**方案總管**中的 [ **wwwroot** ], 然後按一下 [**加入** **|** **新專案**]。</span><span class="sxs-lookup"><span data-stu-id="fc646-175">Right-click on **wwwroot** in the **Solution Explorer** and click on **Add** **|** **New Item**.</span></span> <span data-ttu-id="fc646-176">選取 [ **HTML 網頁**] (您會在子區段網站底下找到)。</span><span class="sxs-lookup"><span data-stu-id="fc646-176">Select  **HTML Page** (you will find it under the subsection Web).</span></span> <span data-ttu-id="fc646-177">將檔案命名為 **.html**。</span><span class="sxs-lookup"><span data-stu-id="fc646-177">Name the file **default.html**.</span></span> <span data-ttu-id="fc646-178">按一下 **\[新增\]** 。</span><span class="sxs-lookup"><span data-stu-id="fc646-178">Click **Add**.</span></span>
 
-    ![建立機器人應用程式](images/AzureLabs-Lab312-06.png)
+    ![建立 bot 應用程式](images/AzureLabs-Lab312-06.png)
 
-9.  <span data-ttu-id="21654-180">類別的清單中的物件 /**方案總管 中**看起來應該像下列映像。</span><span class="sxs-lookup"><span data-stu-id="21654-180">The list of classes / objects in the **Solution Explorer** should look like the image below.</span></span>
+9.  <span data-ttu-id="fc646-180">**方案總管**中的類別/物件清單看起來應該如下圖所示。</span><span class="sxs-lookup"><span data-stu-id="fc646-180">The list of classes / objects in the **Solution Explorer** should look like the image below.</span></span>
 
-    ![建立機器人應用程式](images/AzureLabs-Lab312-07.png)
+    ![建立 bot 應用程式](images/AzureLabs-Lab312-07.png)
 
-10. <span data-ttu-id="21654-182">按兩下**ConversationContext**類別。</span><span class="sxs-lookup"><span data-stu-id="21654-182">Double-click on the **ConversationContext** class.</span></span> <span data-ttu-id="21654-183">這個類別是對話的負責保存用來維護內容機器人的變數。</span><span class="sxs-lookup"><span data-stu-id="21654-183">This class is responsible for holding the variables used by the bot to maintain the context of the conversation.</span></span> <span data-ttu-id="21654-184">因為，將會維護此類別的執行個體中的這些交談內容值的任何執行個體**MyBot**類別將會重新整理每個活動接收的時間。</span><span class="sxs-lookup"><span data-stu-id="21654-184">These conversation context values are maintained in an instance of this class, because any instance of the **MyBot** class will refresh each time an activity is received.</span></span> <span data-ttu-id="21654-185">將下列程式碼新增至類別：</span><span class="sxs-lookup"><span data-stu-id="21654-185">Add the following code to the class:</span></span>
+10. <span data-ttu-id="fc646-182">按兩下 [ **ConversationCoNtext** ] 類別。</span><span class="sxs-lookup"><span data-stu-id="fc646-182">Double-click on the **ConversationContext** class.</span></span> <span data-ttu-id="fc646-183">此類別負責保存 bot 用來維護交談內容的變數。</span><span class="sxs-lookup"><span data-stu-id="fc646-183">This class is responsible for holding the variables used by the bot to maintain the context of the conversation.</span></span> <span data-ttu-id="fc646-184">這些交談內容值會保留在這個類別的實例中, 因為每次接收到活動時, **MyBot**類別的任何實例都會重新整理。</span><span class="sxs-lookup"><span data-stu-id="fc646-184">These conversation context values are maintained in an instance of this class, because any instance of the **MyBot** class will refresh each time an activity is received.</span></span> <span data-ttu-id="fc646-185">將下列程式碼新增至類別:</span><span class="sxs-lookup"><span data-stu-id="fc646-185">Add the following code to the class:</span></span>
 
     ```csharp
     namespace MyBot
@@ -120,7 +120,7 @@ ms.locfileid: "59597078"
     }
     ```
 
-11. <span data-ttu-id="21654-186">按兩下**MyBot**類別。</span><span class="sxs-lookup"><span data-stu-id="21654-186">Double-click on the **MyBot** class.</span></span> <span data-ttu-id="21654-187">這個類別會裝載任何連入的活動所呼叫，從客戶的處理常式。</span><span class="sxs-lookup"><span data-stu-id="21654-187">This class will host the handlers called by any incoming activity from the customer.</span></span> <span data-ttu-id="21654-188">此類別中，您將加入的程式碼，用來建置 bot 和客戶之間的對話。</span><span class="sxs-lookup"><span data-stu-id="21654-188">In this class you will add the code used to build the conversation between the bot and the customer.</span></span> <span data-ttu-id="21654-189">如先前所述，此類別的執行個體被初始化每一個接收活動的時間。</span><span class="sxs-lookup"><span data-stu-id="21654-189">As mentioned earlier, an instance of this class is initialized each time an activity is received.</span></span> <span data-ttu-id="21654-190">將下列程式碼新增至此類別：</span><span class="sxs-lookup"><span data-stu-id="21654-190">Add the following code to this class:</span></span>
+11. <span data-ttu-id="fc646-186">按兩下 [ **MyBot** ] 類別。</span><span class="sxs-lookup"><span data-stu-id="fc646-186">Double-click on the **MyBot** class.</span></span> <span data-ttu-id="fc646-187">這個類別會裝載客戶所呼叫的處理常式。</span><span class="sxs-lookup"><span data-stu-id="fc646-187">This class will host the handlers called by any incoming activity from the customer.</span></span> <span data-ttu-id="fc646-188">在此類別中, 您將新增用來建立 bot 與客戶之間交談的程式碼。</span><span class="sxs-lookup"><span data-stu-id="fc646-188">In this class you will add the code used to build the conversation between the bot and the customer.</span></span> <span data-ttu-id="fc646-189">如先前所述, 每次接收到活動時, 就會初始化這個類別的實例。</span><span class="sxs-lookup"><span data-stu-id="fc646-189">As mentioned earlier, an instance of this class is initialized each time an activity is received.</span></span> <span data-ttu-id="fc646-190">將下列程式碼新增至此類別:</span><span class="sxs-lookup"><span data-stu-id="fc646-190">Add the following code to this class:</span></span>
 
     ```csharp
     using Microsoft.Bot;
@@ -174,7 +174,7 @@ ms.locfileid: "59597078"
     }
     ```
 
-12. <span data-ttu-id="21654-191">按兩下**啟動**類別。</span><span class="sxs-lookup"><span data-stu-id="21654-191">Double-click on the **Startup** class.</span></span> <span data-ttu-id="21654-192">這個類別會初始化 bot。</span><span class="sxs-lookup"><span data-stu-id="21654-192">This class will initialize the bot.</span></span> <span data-ttu-id="21654-193">將下列程式碼新增至類別：</span><span class="sxs-lookup"><span data-stu-id="21654-193">Add the following code to the class:</span></span>
+12. <span data-ttu-id="fc646-191">按兩下 [**啟動**] 類別。</span><span class="sxs-lookup"><span data-stu-id="fc646-191">Double-click on the **Startup** class.</span></span> <span data-ttu-id="fc646-192">此類別將會初始化 bot。</span><span class="sxs-lookup"><span data-stu-id="fc646-192">This class will initialize the bot.</span></span> <span data-ttu-id="fc646-193">將下列程式碼新增至類別:</span><span class="sxs-lookup"><span data-stu-id="fc646-193">Add the following code to the class:</span></span>
 
     ```csharp
     using Microsoft.AspNetCore.Builder;
@@ -226,7 +226,7 @@ ms.locfileid: "59597078"
     }
     ```
 
-13. <span data-ttu-id="21654-194">開啟**程式**類別檔案，並確認它的程式碼如下所示相同：</span><span class="sxs-lookup"><span data-stu-id="21654-194">Open the **Program** class file and verify the code in it is the same as the following:</span></span>
+13. <span data-ttu-id="fc646-194">開啟 Program 類別檔案, 並確認其中的**程式**代碼與下列內容相同:</span><span class="sxs-lookup"><span data-stu-id="fc646-194">Open the **Program** class file and verify the code in it is the same as the following:</span></span>
 
     ```csharp
     using Microsoft.AspNetCore;
@@ -249,252 +249,252 @@ ms.locfileid: "59597078"
     }
     ```
 
-14. <span data-ttu-id="21654-195">請務必儲存您的變更，若要這樣做，請移至**檔案** > **全部儲存**，從頂端的 Visual Studio 工具列。</span><span class="sxs-lookup"><span data-stu-id="21654-195">Remember to save your changes, to do so, go to **File** > **Save All**, from the toolbar at the top of Visual Studio.</span></span>
+14. <span data-ttu-id="fc646-195">請記得儲存您的變更, 若要這麼做,   > 請從 Visual Studio 頂端的工具列移至 [檔案] [**全部儲存**]。</span><span class="sxs-lookup"><span data-stu-id="fc646-195">Remember to save your changes, to do so, go to **File** > **Save All**, from the toolbar at the top of Visual Studio.</span></span>
 
-## <a name="chapter-2---create-the-azure-bot-service"></a><span data-ttu-id="21654-196">第 2-建立 Azure Bot 服務</span><span class="sxs-lookup"><span data-stu-id="21654-196">Chapter 2 - Create the Azure Bot Service</span></span>
+## <a name="chapter-2---create-the-azure-bot-service"></a><span data-ttu-id="fc646-196">第2章-建立 Azure Bot 服務</span><span class="sxs-lookup"><span data-stu-id="fc646-196">Chapter 2 - Create the Azure Bot Service</span></span>
 
-<span data-ttu-id="21654-197">既然您已針對您的 bot 建立程式碼，您必須將它發行到的執行個體*Web 應用程式 Bot*服務，在 Azure 入口網站上的。</span><span class="sxs-lookup"><span data-stu-id="21654-197">Now that you have built the code for your bot, you have to publish it to an instance of the *Web App Bot* Service, on the Azure Portal.</span></span> <span data-ttu-id="21654-198">本章將說明如何建立並設定在 Azure 上的機器人服務，然後再將您的程式碼發佈到它。</span><span class="sxs-lookup"><span data-stu-id="21654-198">This Chapter will show you how to create and configure the Bot Service on Azure and then publish your code to it.</span></span>
+<span data-ttu-id="fc646-197">既然您已建立 bot 的程式碼, 您必須將它發佈至 Azure 入口網站上的*Web 應用程式 bot*服務實例。</span><span class="sxs-lookup"><span data-stu-id="fc646-197">Now that you have built the code for your bot, you have to publish it to an instance of the *Web App Bot* Service, on the Azure Portal.</span></span> <span data-ttu-id="fc646-198">本章將示範如何在 Azure 上建立和設定 Bot 服務, 然後將您的程式碼發佈至其中。</span><span class="sxs-lookup"><span data-stu-id="fc646-198">This Chapter will show you how to create and configure the Bot Service on Azure and then publish your code to it.</span></span>
 
-1.  <span data-ttu-id="21654-199">首先，登入 Azure 入口網站 (https://portal.azure.com)。</span><span class="sxs-lookup"><span data-stu-id="21654-199">First, log in to the Azure Portal (https://portal.azure.com).</span></span> 
+1.  <span data-ttu-id="fc646-199">首先, 登入 Azure 入口網站 (https://portal.azure.com) 。</span><span class="sxs-lookup"><span data-stu-id="fc646-199">First, log in to the Azure Portal (https://portal.azure.com).</span></span> 
 
-    1. <span data-ttu-id="21654-200">如果您還沒有 Azure 帳戶，您必須建立一個。</span><span class="sxs-lookup"><span data-stu-id="21654-200">If you do not already have an Azure account, you will need to create one.</span></span> <span data-ttu-id="21654-201">如果您要遵循本教學課程中的教室或實驗室的情況下，要求您的講師或其中一個新帳戶的說明設定 proctors。</span><span class="sxs-lookup"><span data-stu-id="21654-201">If you are following this tutorial in a classroom or lab situation, ask your instructor or one of the proctors for help setting up your new account.</span></span>
+    1. <span data-ttu-id="fc646-200">如果您還沒有 Azure 帳戶, 您將需要建立一個。</span><span class="sxs-lookup"><span data-stu-id="fc646-200">If you do not already have an Azure account, you will need to create one.</span></span> <span data-ttu-id="fc646-201">如果您是在課堂或實驗室的情況下進行本教學課程, 請洽詢您的講師或其中一個 proctors, 以協助設定您的新帳戶。</span><span class="sxs-lookup"><span data-stu-id="fc646-201">If you are following this tutorial in a classroom or lab situation, ask your instructor or one of the proctors for help setting up your new account.</span></span>
 
-2.  <span data-ttu-id="21654-202">一旦您登入，按一下**建立資源**在左上角，，然後搜尋*Web 應用程式 bot*，然後按一下**Enter**。</span><span class="sxs-lookup"><span data-stu-id="21654-202">Once you are logged in, click on **Create a resource** in the top left corner, and search for *Web App bot*, and click **Enter**.</span></span>
+2.  <span data-ttu-id="fc646-202">登入之後, 按一下左上角的 [**建立資源**], 然後搜尋*Web 應用程式 bot*, 再按**Enter 鍵**。</span><span class="sxs-lookup"><span data-stu-id="fc646-202">Once you are logged in, click on **Create a resource** in the top left corner, and search for *Web App bot*, and click **Enter**.</span></span>
 
     ![建立 Azure Bot 服務](images/AzureLabs-Lab312-08.png)
  
-3.  <span data-ttu-id="21654-204">新的頁面將提供的描述*Web 應用程式 Bot*服務。</span><span class="sxs-lookup"><span data-stu-id="21654-204">The new page will provide a description of the *Web App Bot* Service.</span></span> <span data-ttu-id="21654-205">在左下方的這個頁面上，選取**建立**按鈕，以建立與這個關聯服務。</span><span class="sxs-lookup"><span data-stu-id="21654-205">At the bottom left of this page, select the **Create** button, to create an association with this Service.</span></span>
+3.  <span data-ttu-id="fc646-204">新頁面將會提供*Web 應用程式 Bot*服務的描述。</span><span class="sxs-lookup"><span data-stu-id="fc646-204">The new page will provide a description of the *Web App Bot* Service.</span></span> <span data-ttu-id="fc646-205">在此頁面的左下方, 選取 [**建立**] 按鈕, 以建立與此服務的關聯。</span><span class="sxs-lookup"><span data-stu-id="fc646-205">At the bottom left of this page, select the **Create** button, to create an association with this Service.</span></span>
 
     ![建立 Azure Bot 服務](images/AzureLabs-Lab312-09.png)
  
-4.  <span data-ttu-id="21654-207">一旦您按下**建立**:</span><span class="sxs-lookup"><span data-stu-id="21654-207">Once you have clicked on **Create**:</span></span>
+4.  <span data-ttu-id="fc646-207">一旦您按下 **建立** :</span><span class="sxs-lookup"><span data-stu-id="fc646-207">Once you have clicked on **Create**:</span></span>
 
-    1. <span data-ttu-id="21654-208">插入您想要**名稱**此服務執行個體。</span><span class="sxs-lookup"><span data-stu-id="21654-208">Insert your desired **Name** for this Service instance.</span></span>
-    2. <span data-ttu-id="21654-209">選取 **訂用帳戶**。</span><span class="sxs-lookup"><span data-stu-id="21654-209">Select a **Subscription**.</span></span>
-    3. <span data-ttu-id="21654-210">選擇**資源群組**或建立新的帳戶。</span><span class="sxs-lookup"><span data-stu-id="21654-210">Choose a **Resource Group** or create a new one.</span></span> <span data-ttu-id="21654-211">資源群組可用來監視、 控制存取權，佈建及管理 Azure 資產的集合計費。</span><span class="sxs-lookup"><span data-stu-id="21654-211">A resource group provides a way to monitor, control access, provision and manage billing for a collection of Azure assets.</span></span> <span data-ttu-id="21654-212">建議將所有 Azure 服務在一般的資源群組相關聯 （例如例如這些課程中） 的單一專案保留）。</span><span class="sxs-lookup"><span data-stu-id="21654-212">It is recommended to keep all the Azure Services associated with a single project (e.g. such as these courses) under a common resource group).</span></span>
+    1. <span data-ttu-id="fc646-208">為此服務實例插入您想要的**名稱**。</span><span class="sxs-lookup"><span data-stu-id="fc646-208">Insert your desired **Name** for this Service instance.</span></span>
+    2. <span data-ttu-id="fc646-209">選取**訂**用帳戶。</span><span class="sxs-lookup"><span data-stu-id="fc646-209">Select a **Subscription**.</span></span>
+    3. <span data-ttu-id="fc646-210">選擇**資源群組**或建立一個新的。</span><span class="sxs-lookup"><span data-stu-id="fc646-210">Choose a **Resource Group** or create a new one.</span></span> <span data-ttu-id="fc646-211">資源群組提供一種方式來監視、控制存取、布建及管理 Azure 資產集合的計費。</span><span class="sxs-lookup"><span data-stu-id="fc646-211">A resource group provides a way to monitor, control access, provision and manage billing for a collection of Azure assets.</span></span> <span data-ttu-id="fc646-212">建議您將與單一專案相關聯的所有 Azure 服務 (例如這些課程) 都保留在通用資源群組下)。</span><span class="sxs-lookup"><span data-stu-id="fc646-212">It is recommended to keep all the Azure Services associated with a single project (e.g. such as these courses) under a common resource group).</span></span>
 
-        > <span data-ttu-id="21654-213">如果您想要深入了解 Azure 資源群組，[請遵循此連結](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)</span><span class="sxs-lookup"><span data-stu-id="21654-213">If you wish to read more about Azure Resource Groups, [please follow this link](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)</span></span>
+        > <span data-ttu-id="fc646-213">如果您想要深入瞭解 Azure 資源群組,[請遵循此連結](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)</span><span class="sxs-lookup"><span data-stu-id="fc646-213">If you wish to read more about Azure Resource Groups, [please follow this link](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)</span></span>
 
-    4. <span data-ttu-id="21654-214">（如果您要建立新的資源群組），請判斷您的資源群組的位置。</span><span class="sxs-lookup"><span data-stu-id="21654-214">Determine the Location for your resource group (if you are creating a new Resource Group).</span></span> <span data-ttu-id="21654-215">位置，在理想情況下會在應用程式會執行所在的區域。</span><span class="sxs-lookup"><span data-stu-id="21654-215">The location would ideally be in the region where the application would run.</span></span> <span data-ttu-id="21654-216">在特定區域中，才可以使用一些 Azure 的資產。</span><span class="sxs-lookup"><span data-stu-id="21654-216">Some Azure assets are only available in certain regions.</span></span>
-    5. <span data-ttu-id="21654-217">選取 **定價層**適合您，如果這是第一個時間來建立*Web 應用程式 Bot*服務，免費層 （名為 F0） 應該是您可以使用</span><span class="sxs-lookup"><span data-stu-id="21654-217">Select the **Pricing Tier** appropriate for you, if this is the first time creating a *Web App Bot* Service, a free tier (named F0) should be available to you</span></span>
-    6. <span data-ttu-id="21654-218">**應用程式名稱**可以只保留相同*Bot 名稱*。</span><span class="sxs-lookup"><span data-stu-id="21654-218">**App name** can just be left the same as the *Bot name*.</span></span> 
-    7. <span data-ttu-id="21654-219">離開*Bot 範本*作為**基本 (C#)**。</span><span class="sxs-lookup"><span data-stu-id="21654-219">Leave the *Bot template* as **Basic (C#)**.</span></span>
-    8. <span data-ttu-id="21654-220">*App service 方案/位置*應該已自動填入您的帳戶。</span><span class="sxs-lookup"><span data-stu-id="21654-220">*App service plan/Location* should have been auto-filled for your account.</span></span>
-    9. <span data-ttu-id="21654-221">設定**Azure 儲存體**您想要用來裝載您的機器人。</span><span class="sxs-lookup"><span data-stu-id="21654-221">Set the **Azure Storage** that you wish to use to host your Bot.</span></span> <span data-ttu-id="21654-222">如果您還沒有，您可以在此建立。</span><span class="sxs-lookup"><span data-stu-id="21654-222">If you dont have one already, you can create it here.</span></span>
-    10. <span data-ttu-id="21654-223">您也必須確認您已了解這些條款和條件套用到此服務。</span><span class="sxs-lookup"><span data-stu-id="21654-223">You will also need to confirm that you have understood the Terms and Conditions applied to this Service.</span></span>
-    11. <span data-ttu-id="21654-224">按一下 [建立]。</span><span class="sxs-lookup"><span data-stu-id="21654-224">Click Create.</span></span>
+    4. <span data-ttu-id="fc646-214">判斷資源群組的位置 (如果您要建立新的資源群組)。</span><span class="sxs-lookup"><span data-stu-id="fc646-214">Determine the Location for your resource group (if you are creating a new Resource Group).</span></span> <span data-ttu-id="fc646-215">位置最好是在應用程式執行所在的區域中。</span><span class="sxs-lookup"><span data-stu-id="fc646-215">The location would ideally be in the region where the application would run.</span></span> <span data-ttu-id="fc646-216">某些 Azure 資產僅適用于特定區域。</span><span class="sxs-lookup"><span data-stu-id="fc646-216">Some Azure assets are only available in certain regions.</span></span>
+    5. <span data-ttu-id="fc646-217">選取適合您的**定價層**, 如果這是您第一次建立*Web 應用程式 Bot*服務, 則應該提供免費層 (名為 F0)</span><span class="sxs-lookup"><span data-stu-id="fc646-217">Select the **Pricing Tier** appropriate for you, if this is the first time creating a *Web App Bot* Service, a free tier (named F0) should be available to you</span></span>
+    6. <span data-ttu-id="fc646-218">**應用程式名稱**可以與*Bot 名稱*保持一致。</span><span class="sxs-lookup"><span data-stu-id="fc646-218">**App name** can just be left the same as the *Bot name*.</span></span> 
+    7. <span data-ttu-id="fc646-219">將*Bot 範本*保留為 [**基本C#] ()** 。</span><span class="sxs-lookup"><span data-stu-id="fc646-219">Leave the *Bot template* as **Basic (C#)**.</span></span>
+    8. <span data-ttu-id="fc646-220">*應用程式服務方案/位置*應該已自動填入您的帳戶。</span><span class="sxs-lookup"><span data-stu-id="fc646-220">*App service plan/Location* should have been auto-filled for your account.</span></span>
+    9. <span data-ttu-id="fc646-221">設定您想要用來裝載 Bot 的**Azure 儲存體**。</span><span class="sxs-lookup"><span data-stu-id="fc646-221">Set the **Azure Storage** that you wish to use to host your Bot.</span></span> <span data-ttu-id="fc646-222">如果您還沒有帳戶, 可以在這裡建立。</span><span class="sxs-lookup"><span data-stu-id="fc646-222">If you dont have one already, you can create it here.</span></span>
+    10. <span data-ttu-id="fc646-223">您也必須確認您已瞭解適用于此服務的條款及條件。</span><span class="sxs-lookup"><span data-stu-id="fc646-223">You will also need to confirm that you have understood the Terms and Conditions applied to this Service.</span></span>
+    11. <span data-ttu-id="fc646-224">按一下 [建立]。</span><span class="sxs-lookup"><span data-stu-id="fc646-224">Click Create.</span></span>
  
         ![建立 Azure Bot 服務](images/AzureLabs-Lab312-10.png)
 
-5.  <span data-ttu-id="21654-226">一旦您按下**建立**，您必須建立服務，這可能需要一分鐘。</span><span class="sxs-lookup"><span data-stu-id="21654-226">Once you have clicked on **Create**, you will have to wait for the Service to be created, this might take a minute.</span></span>
+5.  <span data-ttu-id="fc646-226">按一下 [**建立**] 之後, 您必須等候服務建立, 這可能需要一分鐘的時間。</span><span class="sxs-lookup"><span data-stu-id="fc646-226">Once you have clicked on **Create**, you will have to wait for the Service to be created, this might take a minute.</span></span>
 
-6.  <span data-ttu-id="21654-227">通知會出現在入口網站中，一旦建立服務執行個體。</span><span class="sxs-lookup"><span data-stu-id="21654-227">A notification will appear in the Portal once the Service instance is created.</span></span>
+6.  <span data-ttu-id="fc646-227">建立服務實例之後, 入口網站中會出現通知。</span><span class="sxs-lookup"><span data-stu-id="fc646-227">A notification will appear in the Portal once the Service instance is created.</span></span>
 
     ![建立 Azure Bot 服務](images/AzureLabs-Lab312-11.png) 
  
-7.  <span data-ttu-id="21654-229">按一下通知，以探索新的服務執行個體。</span><span class="sxs-lookup"><span data-stu-id="21654-229">Click on the notification to explore your new Service instance.</span></span> 
+7.  <span data-ttu-id="fc646-229">按一下通知以探索新的服務實例。</span><span class="sxs-lookup"><span data-stu-id="fc646-229">Click on the notification to explore your new Service instance.</span></span> 
 
     ![建立 Azure Bot 服務](images/AzureLabs-Lab312-12.png)
  
-8. <span data-ttu-id="21654-231">按一下 **移至資源**通知，以探索新的服務執行個體中的按鈕。</span><span class="sxs-lookup"><span data-stu-id="21654-231">Click the **Go to resource** button in the notification to explore your new Service instance.</span></span> <span data-ttu-id="21654-232">您會前往新的 Azure 服務執行個體。</span><span class="sxs-lookup"><span data-stu-id="21654-232">You will be taken to your new Azure Service instance.</span></span> 
+8. <span data-ttu-id="fc646-231">按一下通知中的 [**移至資源**] 按鈕, 探索新的服務實例。</span><span class="sxs-lookup"><span data-stu-id="fc646-231">Click the **Go to resource** button in the notification to explore your new Service instance.</span></span> <span data-ttu-id="fc646-232">您將會進入新的 Azure 服務實例。</span><span class="sxs-lookup"><span data-stu-id="fc646-232">You will be taken to your new Azure Service instance.</span></span> 
 
     ![建立 Azure Bot 服務](images/AzureLabs-Lab312-13.png)
  
-9.  <span data-ttu-id="21654-234">此時您需要設定稱為功能**直線**以允許用戶端應用程式與此 Bot 服務進行通訊。</span><span class="sxs-lookup"><span data-stu-id="21654-234">At this point you need to setup a feature called **Direct Line** to allow your client application to communicate with this Bot Service.</span></span> <span data-ttu-id="21654-235">按一下 **通道**，然後在**新增精選的頻道**區段中，按一下**設定直接線路通道**。</span><span class="sxs-lookup"><span data-stu-id="21654-235">Click on **Channels**, then in the **Add a featured channel** section, click on **Configure Direct Line channel**.</span></span>
+9.  <span data-ttu-id="fc646-234">此時, 您必須設定稱為**Direct Line**的功能, 以允許您的用戶端應用程式與此 Bot 服務進行通訊。</span><span class="sxs-lookup"><span data-stu-id="fc646-234">At this point you need to setup a feature called **Direct Line** to allow your client application to communicate with this Bot Service.</span></span> <span data-ttu-id="fc646-235">按一下 [**通道**], 然後在 [**新增精選頻道**] 區段中, 按一下 [**設定 Direct Line 通道**]。</span><span class="sxs-lookup"><span data-stu-id="fc646-235">Click on **Channels**, then in the **Add a featured channel** section, click on **Configure Direct Line channel**.</span></span>
 
     ![建立 Azure Bot 服務](images/AzureLabs-Lab312-14.png)
 
-10. <span data-ttu-id="21654-237">在此頁面中，您會發現**祕密金鑰**，可讓您的用戶端應用程式與機器人進行驗證。</span><span class="sxs-lookup"><span data-stu-id="21654-237">In this page you will find the **Secret keys** that will allow your client app to authenticate with the bot.</span></span> <span data-ttu-id="21654-238">按一下 **顯示**按鈕並複製的其中一個顯示的金鑰，因為您將需要這稍後會在您的專案。</span><span class="sxs-lookup"><span data-stu-id="21654-238">Click on the **Show** button and take a copy of one of the displayed Keys, as you will need this later in your project.</span></span> 
+10. <span data-ttu-id="fc646-237">在此頁面中, 您會找到可讓您的用戶端應用程式向 bot 驗證的**秘密金鑰**。</span><span class="sxs-lookup"><span data-stu-id="fc646-237">In this page you will find the **Secret keys** that will allow your client app to authenticate with the bot.</span></span> <span data-ttu-id="fc646-238">按一下 [**顯示**] 按鈕, 並複製其中一個顯示的索引鍵, 因為您稍後會在專案中需要此資訊。</span><span class="sxs-lookup"><span data-stu-id="fc646-238">Click on the **Show** button and take a copy of one of the displayed Keys, as you will need this later in your project.</span></span> 
 
     ![建立 Azure Bot 服務](images/AzureLabs-Lab312-15.png)
 
-## <a name="chapter-3--publish-the-bot-to-the-azure-web-app-bot-service"></a><span data-ttu-id="21654-240">第 3-將 Bot 發行至 Azure Web 應用程式 Bot 服務</span><span class="sxs-lookup"><span data-stu-id="21654-240">Chapter 3 – Publish the Bot to the Azure Web App Bot Service</span></span>
+## <a name="chapter-3--publish-the-bot-to-the-azure-web-app-bot-service"></a><span data-ttu-id="fc646-240">第3章-將 Bot 發佈至 Azure Web 應用程式 Bot 服務</span><span class="sxs-lookup"><span data-stu-id="fc646-240">Chapter 3 – Publish the Bot to the Azure Web App Bot Service</span></span>
 
-<span data-ttu-id="21654-241">現在，您的服務已準備就緒，您需要將您的 Bot 程式碼，您建置之前，您新建立的 Web 應用程式 Bot 服務的發佈。</span><span class="sxs-lookup"><span data-stu-id="21654-241">Now that your Service is ready, you need to publish your Bot code, that you built previously, to your newly created Web App Bot Service.</span></span>
+<span data-ttu-id="fc646-241">現在, 您的服務已就緒, 您必須將先前建立的 Bot 程式碼發佈至新建立的 Web App Bot 服務。</span><span class="sxs-lookup"><span data-stu-id="fc646-241">Now that your Service is ready, you need to publish your Bot code, that you built previously, to your newly created Web App Bot Service.</span></span>
 
 > [!NOTE] 
-> <span data-ttu-id="21654-242">您必須將您的 Bot 發行至 Azure 服務，每次您變更 Bot 解決方案 / c o d。</span><span class="sxs-lookup"><span data-stu-id="21654-242">You will have to publish your Bot to the Azure Service every time you make changes to the Bot solution / code.</span></span>
+> <span data-ttu-id="fc646-242">您每次對 Bot 解決方案/程式碼進行變更時, 都必須將 Bot 發佈至 Azure 服務。</span><span class="sxs-lookup"><span data-stu-id="fc646-242">You will have to publish your Bot to the Azure Service every time you make changes to the Bot solution / code.</span></span>
 
-1.  <span data-ttu-id="21654-243">回到您先前建立的 Visual Studio 方案。</span><span class="sxs-lookup"><span data-stu-id="21654-243">Go back to your Visual Studio Solution that you created previously.</span></span> 
-2.  <span data-ttu-id="21654-244">以滑鼠右鍵按一下您**MyBot**專案中，在**方案總管**，然後按一下**發行**。</span><span class="sxs-lookup"><span data-stu-id="21654-244">Right-click on your **MyBot** project, in the **Solution Explorer**, then click on **Publish**.</span></span>
+1.  <span data-ttu-id="fc646-243">回到您先前建立的 Visual Studio 解決方案。</span><span class="sxs-lookup"><span data-stu-id="fc646-243">Go back to your Visual Studio Solution that you created previously.</span></span> 
+2.  <span data-ttu-id="fc646-244">在 **方案總管**中, 以滑鼠右鍵按一下您的**MyBot**專案, 然後按一下 **發行**。</span><span class="sxs-lookup"><span data-stu-id="fc646-244">Right-click on your **MyBot** project, in the **Solution Explorer**, then click on **Publish**.</span></span>
 
-    ![將 Bot 發行至 Azure Web 應用程式 Bot 服務](images/AzureLabs-Lab312-16.png)
+    ![將 Bot 發佈至 Azure Web 應用程式 Bot 服務](images/AzureLabs-Lab312-16.png)
 
-3.  <span data-ttu-id="21654-246">在上*挑選發行目標*頁面上，按一下**App Service**，然後**選取現有**，最後按一下**建立設定檔**（您可能需要按一下旁邊的下拉式箭號*發佈*按鈕，如果這是不可見)。</span><span class="sxs-lookup"><span data-stu-id="21654-246">On the *Pick a publish target* page, click **App Service**, then **Select Existing**, lastly click on **Create Profile** (you may need to click on the dropdown arrow alongside the *Publish* button, if this is not visible).</span></span>
+3.  <span data-ttu-id="fc646-246">在 [*挑選發佈目標*] 頁面上, 按一下 [ **App Service**], 然後**選取 [現有**], 最後按一下 [**建立設定檔**] (如果看不到, 您可能需要按一下 [*發行*] 按鈕旁的下拉式箭號)。</span><span class="sxs-lookup"><span data-stu-id="fc646-246">On the *Pick a publish target* page, click **App Service**, then **Select Existing**, lastly click on **Create Profile** (you may need to click on the dropdown arrow alongside the *Publish* button, if this is not visible).</span></span>
 
-    ![將 Bot 發行至 Azure Web 應用程式 Bot 服務](images/AzureLabs-Lab312-17.png)
+    ![將 Bot 發佈至 Azure Web 應用程式 Bot 服務](images/AzureLabs-Lab312-17.png)
 
-4. <span data-ttu-id="21654-248">如果您尚未登入到您的 Microsoft 帳戶，您必須在此處進行。</span><span class="sxs-lookup"><span data-stu-id="21654-248">If you are not yet logged in into your Microsoft Account, you have to do it here.</span></span>
-5. <span data-ttu-id="21654-249">在上**發佈**您會發現您需要設定相同的頁面**訂用帳戶**用於*Web 應用程式 Bot*建立服務。</span><span class="sxs-lookup"><span data-stu-id="21654-249">On the **Publish** page you will find you have to set the same **Subscription** that you used for the *Web App Bot* Service creation.</span></span> <span data-ttu-id="21654-250">然後設定**檢視**作為**資源群組**，然後在下拉式清單的資料夾結構中，選取**資源群組**您先前建立。</span><span class="sxs-lookup"><span data-stu-id="21654-250">Then set the **View** as **Resource Group** and, in the drop down folder structure, select the **Resource Group** you have created previously.</span></span> <span data-ttu-id="21654-251">按一下 [確定] 。</span><span class="sxs-lookup"><span data-stu-id="21654-251">Click **OK**.</span></span> 
+4. <span data-ttu-id="fc646-248">如果您尚未登入您的 Microsoft 帳戶, 您必須在這裡執行此動作。</span><span class="sxs-lookup"><span data-stu-id="fc646-248">If you are not yet logged in into your Microsoft Account, you have to do it here.</span></span>
+5. <span data-ttu-id="fc646-249">在 [**發佈**] 頁面上, 您會發現您必須設定用來建立*Web 應用程式 Bot*服務的相同**訂**用帳戶。</span><span class="sxs-lookup"><span data-stu-id="fc646-249">On the **Publish** page you will find you have to set the same **Subscription** that you used for the *Web App Bot* Service creation.</span></span> <span data-ttu-id="fc646-250">然後將 [ **View** ] 設定為 [**資源群組**], 然後在 [下拉式資料夾結構] 中, 選取您先前建立的**資源群組**。</span><span class="sxs-lookup"><span data-stu-id="fc646-250">Then set the **View** as **Resource Group** and, in the drop down folder structure, select the **Resource Group** you have created previously.</span></span> <span data-ttu-id="fc646-251">按一下 [確定] 。</span><span class="sxs-lookup"><span data-stu-id="fc646-251">Click **OK**.</span></span> 
 
-    ![將 Bot 發行至 Azure Web 應用程式 Bot 服務](images/AzureLabs-Lab312-18.png)
+    ![將 Bot 發佈至 Azure Web 應用程式 Bot 服務](images/AzureLabs-Lab312-18.png)
 
-6.  <span data-ttu-id="21654-253">現在，按一下**發佈**按鈕，並等候 Bot 發行 （可能需要幾分鐘的時間）。</span><span class="sxs-lookup"><span data-stu-id="21654-253">Now click on the **Publish** button, and wait for the Bot to be published (it might take a few minutes).</span></span>
+6.  <span data-ttu-id="fc646-253">現在, 按一下 [**發佈**] 按鈕, 並等候 Bot 發佈 (可能需要幾分鐘的時間)。</span><span class="sxs-lookup"><span data-stu-id="fc646-253">Now click on the **Publish** button, and wait for the Bot to be published (it might take a few minutes).</span></span>
 
-    ![將 Bot 發行至 Azure Web 應用程式 Bot 服務](images/AzureLabs-Lab312-19.png)
+    ![將 Bot 發佈至 Azure Web 應用程式 Bot 服務](images/AzureLabs-Lab312-19.png)
 
 
-## <a name="chapter-4--set-up-the-unity-project"></a><span data-ttu-id="21654-255">第 4 章-設定 Unity 專案</span><span class="sxs-lookup"><span data-stu-id="21654-255">Chapter 4 – Set up the Unity project</span></span>
+## <a name="chapter-4--set-up-the-unity-project"></a><span data-ttu-id="fc646-255">第4章–設定 Unity 專案</span><span class="sxs-lookup"><span data-stu-id="fc646-255">Chapter 4 – Set up the Unity project</span></span>
 
-<span data-ttu-id="21654-256">下列已啟動的一組典型混合實境，進行開發，且此情況下，是良好的其他專案範本。</span><span class="sxs-lookup"><span data-stu-id="21654-256">The following is a typical set up for developing with mixed reality, and as such, is a good template for other projects.</span></span>
+<span data-ttu-id="fc646-256">以下是使用混合現實進行開發的一般設定, 因此, 這是適用于其他專案的絕佳範本。</span><span class="sxs-lookup"><span data-stu-id="fc646-256">The following is a typical set up for developing with mixed reality, and as such, is a good template for other projects.</span></span>
 
-1.  <span data-ttu-id="21654-257">開啟*Unity*然後按一下**新增**。</span><span class="sxs-lookup"><span data-stu-id="21654-257">Open *Unity* and click **New**.</span></span> 
+1.  <span data-ttu-id="fc646-257">開啟*Unity* , 然後按一下 [**新增**]。</span><span class="sxs-lookup"><span data-stu-id="fc646-257">Open *Unity* and click **New**.</span></span> 
 
     ![設定 Unity 專案](images/AzureLabs-Lab312-20.png)
 
-2.  <span data-ttu-id="21654-259">您現在必須提供 Unity 專案名稱。</span><span class="sxs-lookup"><span data-stu-id="21654-259">You will now need to provide a Unity project name.</span></span> <span data-ttu-id="21654-260">插入**Hololens Bot**。</span><span class="sxs-lookup"><span data-stu-id="21654-260">Insert **Hololens Bot**.</span></span> <span data-ttu-id="21654-261">請確定已設定的專案範本**3D**。</span><span class="sxs-lookup"><span data-stu-id="21654-261">Make sure the project template is set to **3D**.</span></span> <span data-ttu-id="21654-262">設定**位置**適用於您的某個位置 （請記住，使其更接近根目錄是較佳）。</span><span class="sxs-lookup"><span data-stu-id="21654-262">Set the **Location** to somewhere appropriate for you (remember, closer to root directories is better).</span></span> <span data-ttu-id="21654-263">然後，按一下**建立專案**。</span><span class="sxs-lookup"><span data-stu-id="21654-263">Then, click **Create project**.</span></span>
+2.  <span data-ttu-id="fc646-259">現在您將需要提供 Unity 專案名稱。</span><span class="sxs-lookup"><span data-stu-id="fc646-259">You will now need to provide a Unity project name.</span></span> <span data-ttu-id="fc646-260">插入**Hololens Bot**。</span><span class="sxs-lookup"><span data-stu-id="fc646-260">Insert **Hololens Bot**.</span></span> <span data-ttu-id="fc646-261">請確定專案範本已設定為 [ **3d**]。</span><span class="sxs-lookup"><span data-stu-id="fc646-261">Make sure the project template is set to **3D**.</span></span> <span data-ttu-id="fc646-262">將位置設定為適合您的**位置**(請記住, 接近根目錄較佳)。</span><span class="sxs-lookup"><span data-stu-id="fc646-262">Set the **Location** to somewhere appropriate for you (remember, closer to root directories is better).</span></span> <span data-ttu-id="fc646-263">然後, 按一下 [**建立專案**]。</span><span class="sxs-lookup"><span data-stu-id="fc646-263">Then, click **Create project**.</span></span>
 
     ![設定 Unity 專案](images/AzureLabs-Lab312-21.png)
 
-3.  <span data-ttu-id="21654-265">使用 Unity 開啟，就代表值得查看以預設值**指令碼編輯器**設為**Visual Studio**。</span><span class="sxs-lookup"><span data-stu-id="21654-265">With Unity open, it is worth checking the default **Script Editor** is set to **Visual Studio**.</span></span> <span data-ttu-id="21654-266">移至**編輯 > 偏好**，然後在新視窗中，瀏覽**外部工具**。</span><span class="sxs-lookup"><span data-stu-id="21654-266">Go to **Edit > Preferences** and then from the new window, navigate to **External Tools**.</span></span> <span data-ttu-id="21654-267">變更**外部指令碼編輯器**要**Visual Studio 2017**。</span><span class="sxs-lookup"><span data-stu-id="21654-267">Change **External Script Editor** to **Visual Studio 2017**.</span></span> <span data-ttu-id="21654-268">關閉**喜好設定**視窗。</span><span class="sxs-lookup"><span data-stu-id="21654-268">Close the **Preferences** window.</span></span>
+3.  <span data-ttu-id="fc646-265">在 Unity 開啟的情況下, 值得檢查預設**腳本編輯器**是否設定為**Visual Studio**。</span><span class="sxs-lookup"><span data-stu-id="fc646-265">With Unity open, it is worth checking the default **Script Editor** is set to **Visual Studio**.</span></span> <span data-ttu-id="fc646-266">移至 **編輯 > 喜好**設定, 然後在新視窗中, 流覽至 **外部工具**。</span><span class="sxs-lookup"><span data-stu-id="fc646-266">Go to **Edit > Preferences** and then from the new window, navigate to **External Tools**.</span></span> <span data-ttu-id="fc646-267">將**外部腳本編輯器**變更為**Visual Studio 2017**。</span><span class="sxs-lookup"><span data-stu-id="fc646-267">Change **External Script Editor** to **Visual Studio 2017**.</span></span> <span data-ttu-id="fc646-268">關閉 [**喜好**設定] 視窗。</span><span class="sxs-lookup"><span data-stu-id="fc646-268">Close the **Preferences** window.</span></span>
 
     ![設定 Unity 專案](images/AzureLabs-Lab312-22.png)
 
-4.  <span data-ttu-id="21654-270">接下來，移至**檔案 > 組建設定**，然後選取**通用 Windows 平台**，然後按一下**切換平台**按鈕以套用您的選擇。</span><span class="sxs-lookup"><span data-stu-id="21654-270">Next, go to **File > Build Settings** and select **Universal Windows Platform**, then click on the **Switch Platform** button to apply your selection.</span></span>
+4.  <span data-ttu-id="fc646-270">接下來, 移至 [檔案] **> [組建設定**], 並選取 [**通用 Windows 平臺**], 然後按一下 [**切換平臺**] 按鈕以套用您的選取專案。</span><span class="sxs-lookup"><span data-stu-id="fc646-270">Next, go to **File > Build Settings** and select **Universal Windows Platform**, then click on the **Switch Platform** button to apply your selection.</span></span>
 
     ![設定 Unity 專案](images/AzureLabs-Lab312-23.png)
 
-5.  <span data-ttu-id="21654-272">當您依然在**檔案 > 組建設定**並確定：</span><span class="sxs-lookup"><span data-stu-id="21654-272">While still in **File > Build Settings** and make sure that:</span></span>
+5.  <span data-ttu-id="fc646-272">仍在 檔案 **> 組建設定**, 並確認:</span><span class="sxs-lookup"><span data-stu-id="fc646-272">While still in **File > Build Settings** and make sure that:</span></span>
 
-    1.  <span data-ttu-id="21654-273">**裝置為目標**設為**Hololens**</span><span class="sxs-lookup"><span data-stu-id="21654-273">**Target Device** is set to **Hololens**</span></span>
+    1.  <span data-ttu-id="fc646-273">**目標裝置**設定為**Hololens**</span><span class="sxs-lookup"><span data-stu-id="fc646-273">**Target Device** is set to **Hololens**</span></span>
 
-        > <span data-ttu-id="21654-274">針對擬真耳機，設定**目標裝置**要*任何裝置*。</span><span class="sxs-lookup"><span data-stu-id="21654-274">For the immersive headsets, set **Target Device** to *Any Device*.</span></span>
+        > <span data-ttu-id="fc646-274">針對沉浸式耳機, 將 [**目標裝置**] 設定為 [*任何裝置*]。</span><span class="sxs-lookup"><span data-stu-id="fc646-274">For the immersive headsets, set **Target Device** to *Any Device*.</span></span>
 
-    2.  <span data-ttu-id="21654-275">**建置型別**設為**D3D**</span><span class="sxs-lookup"><span data-stu-id="21654-275">**Build Type** is set to **D3D**</span></span>
+    2.  <span data-ttu-id="fc646-275">**組建類型**設定為**D3D**</span><span class="sxs-lookup"><span data-stu-id="fc646-275">**Build Type** is set to **D3D**</span></span>
 
-    3.  <span data-ttu-id="21654-276">**SDK**設為**最新安裝**</span><span class="sxs-lookup"><span data-stu-id="21654-276">**SDK** is set to **Latest installed**</span></span>
+    3.  <span data-ttu-id="fc646-276">**SDK**已設定為**最新安裝**</span><span class="sxs-lookup"><span data-stu-id="fc646-276">**SDK** is set to **Latest installed**</span></span>
 
-    4.  <span data-ttu-id="21654-277">**Visual Studio 版本**設為**最新安裝**</span><span class="sxs-lookup"><span data-stu-id="21654-277">**Visual Studio Version** is set to **Latest installed**</span></span>
+    4.  <span data-ttu-id="fc646-277">**Visual Studio 版本**設定為 [**最新安裝**]</span><span class="sxs-lookup"><span data-stu-id="fc646-277">**Visual Studio Version** is set to **Latest installed**</span></span>
 
-    5.  <span data-ttu-id="21654-278">**建置並執行**設為**本機電腦**</span><span class="sxs-lookup"><span data-stu-id="21654-278">**Build and Run** is set to **Local Machine**</span></span>
+    5.  <span data-ttu-id="fc646-278">**組建和執行**設定為**本機電腦**</span><span class="sxs-lookup"><span data-stu-id="fc646-278">**Build and Run** is set to **Local Machine**</span></span>
 
-    6.  <span data-ttu-id="21654-279">儲存場景，並將它新增至組建。</span><span class="sxs-lookup"><span data-stu-id="21654-279">Save the scene and add it to the build.</span></span> 
+    6.  <span data-ttu-id="fc646-279">儲存場景, 並將它加入至組建。</span><span class="sxs-lookup"><span data-stu-id="fc646-279">Save the scene and add it to the build.</span></span> 
 
-        1. <span data-ttu-id="21654-280">做法是選取**加入開啟的場景**。</span><span class="sxs-lookup"><span data-stu-id="21654-280">Do this by selecting **Add Open Scenes**.</span></span> <span data-ttu-id="21654-281">儲存視窗會出現。</span><span class="sxs-lookup"><span data-stu-id="21654-281">A save window will appear.</span></span>
+        1. <span data-ttu-id="fc646-280">選取 [新增] [**開啟場景**] 來執行此動作。</span><span class="sxs-lookup"><span data-stu-id="fc646-280">Do this by selecting **Add Open Scenes**.</span></span> <span data-ttu-id="fc646-281">[儲存] 視窗隨即出現。</span><span class="sxs-lookup"><span data-stu-id="fc646-281">A save window will appear.</span></span>
         
             ![設定 Unity 專案](images/AzureLabs-Lab312-24.png)
 
-        2. <span data-ttu-id="21654-283">建立新的資料夾，以及任何未來、 場景，然後選取**新的資料夾**按鈕，以建立新的資料夾，其命名**場景**。</span><span class="sxs-lookup"><span data-stu-id="21654-283">Create a new folder for this, and any future, scene, then select the **New folder** button, to create a new folder, name it **Scenes**.</span></span>
+        2. <span data-ttu-id="fc646-283">為此建立新的資料夾, 並在任何未來的場景中選取 [**新增資料夾**] 按鈕, 以建立新的資料夾, 將其命名為**場景**。</span><span class="sxs-lookup"><span data-stu-id="fc646-283">Create a new folder for this, and any future, scene, then select the **New folder** button, to create a new folder, name it **Scenes**.</span></span>
 
              ![設定 Unity 專案](images/AzureLabs-Lab312-25.png)
 
-        3. <span data-ttu-id="21654-285">開啟您剛建立**場景**資料夾，然後在*檔名*： 文字欄位中，輸入**BotScene**，然後按一下**儲存**。</span><span class="sxs-lookup"><span data-stu-id="21654-285">Open your newly created **Scenes** folder, and then in the *File name*: text field, type **BotScene**, then click on **Save**.</span></span>
+        3. <span data-ttu-id="fc646-285">開啟新建立的 [**幕後**] 資料夾, 然後在 [*檔案名*: 文字] 欄位中, 輸入**BotScene**, 然後按一下 [**儲存**]。</span><span class="sxs-lookup"><span data-stu-id="fc646-285">Open your newly created **Scenes** folder, and then in the *File name*: text field, type **BotScene**, then click on **Save**.</span></span>
 
             ![設定 Unity 專案](images/AzureLabs-Lab312-26.png)
 
-    7. <span data-ttu-id="21654-287">剩餘的設定，**組建設定**，應保持為預設值，現在。</span><span class="sxs-lookup"><span data-stu-id="21654-287">The remaining settings, in **Build Settings**, should be left as default for now.</span></span>
+    7. <span data-ttu-id="fc646-287">[**組建設定**] 中的其餘設定, 現在應該保留為預設值。</span><span class="sxs-lookup"><span data-stu-id="fc646-287">The remaining settings, in **Build Settings**, should be left as default for now.</span></span>
 
-6. <span data-ttu-id="21654-288">中*組建設定*視窗中，按一下**播放程式設定** 按鈕，這會開啟 相關 面板中的空間位置*Inspector*所在。</span><span class="sxs-lookup"><span data-stu-id="21654-288">In the *Build Settings* window, click on the **Player Settings** button, this will open the related panel in the space where the *Inspector* is located.</span></span> 
+6. <span data-ttu-id="fc646-288">在 [*組建設定*] 視窗中, 按一下 [ **Player 設定**] 按鈕, 這會在偵測*器*所在的空間中開啟相關的面板。</span><span class="sxs-lookup"><span data-stu-id="fc646-288">In the *Build Settings* window, click on the **Player Settings** button, this will open the related panel in the space where the *Inspector* is located.</span></span> 
 
     ![設定 Unity 專案](images/AzureLabs-Lab312-27.png)
 
-7. <span data-ttu-id="21654-290">在此窗格中，少數設定需要驗證：</span><span class="sxs-lookup"><span data-stu-id="21654-290">In this panel, a few settings need to be verified:</span></span>
+7. <span data-ttu-id="fc646-290">在此面板中, 需要驗證幾項設定:</span><span class="sxs-lookup"><span data-stu-id="fc646-290">In this panel, a few settings need to be verified:</span></span>
 
-    1. <span data-ttu-id="21654-291">在 [**其他設定**] 索引標籤：</span><span class="sxs-lookup"><span data-stu-id="21654-291">In the **Other Settings** tab:</span></span>
+    1. <span data-ttu-id="fc646-291">在 [**其他設定**] 索引標籤中:</span><span class="sxs-lookup"><span data-stu-id="fc646-291">In the **Other Settings** tab:</span></span>
 
-        1. <span data-ttu-id="21654-292">**指令碼執行階段版本**應該 **（.NET 4.6 對等） 的實驗性**; 變更這項需要重新啟動的編輯器。</span><span class="sxs-lookup"><span data-stu-id="21654-292">**Scripting Runtime Version** should be **Experimental (NET 4.6 Equivalent)**; changing this will require a restart of the Editor.</span></span>
-        2. <span data-ttu-id="21654-293">**指令碼後端**應該是 **.NET**</span><span class="sxs-lookup"><span data-stu-id="21654-293">**Scripting Backend** should be **.NET**</span></span>
-        3. <span data-ttu-id="21654-294">**API 相容性層級**應該是 **.NET 4.6**</span><span class="sxs-lookup"><span data-stu-id="21654-294">**API Compatibility Level** should be **.NET 4.6**</span></span>
+        1. <span data-ttu-id="fc646-292">**腳本執行階段版本**應該是**實驗性 (NET 4.6 對等)** ;變更此項將需要重新開機編輯器。</span><span class="sxs-lookup"><span data-stu-id="fc646-292">**Scripting Runtime Version** should be **Experimental (NET 4.6 Equivalent)**; changing this will require a restart of the Editor.</span></span>
+        2. <span data-ttu-id="fc646-293">**腳本後端**應該是 **.net**</span><span class="sxs-lookup"><span data-stu-id="fc646-293">**Scripting Backend** should be **.NET**</span></span>
+        3. <span data-ttu-id="fc646-294">**API 相容性層級**應該是 **.net 4.6**</span><span class="sxs-lookup"><span data-stu-id="fc646-294">**API Compatibility Level** should be **.NET 4.6**</span></span>
 
             ![設定 Unity 專案](images/AzureLabs-Lab312-28.png)
       
-    2. <span data-ttu-id="21654-296">內**發佈設定**索引標籤之下**功能**，檢查：</span><span class="sxs-lookup"><span data-stu-id="21654-296">Within the **Publishing Settings** tab, under **Capabilities**, check:</span></span>
+    2. <span data-ttu-id="fc646-296">在 [**發行設定**] 索引標籤的 [**功能**] 底下, 檢查:</span><span class="sxs-lookup"><span data-stu-id="fc646-296">Within the **Publishing Settings** tab, under **Capabilities**, check:</span></span>
 
-        - <span data-ttu-id="21654-297">**InternetClient**</span><span class="sxs-lookup"><span data-stu-id="21654-297">**InternetClient**</span></span>
-        - <span data-ttu-id="21654-298">**Microphone**</span><span class="sxs-lookup"><span data-stu-id="21654-298">**Microphone**</span></span>
+        - <span data-ttu-id="fc646-297">**InternetClient**</span><span class="sxs-lookup"><span data-stu-id="fc646-297">**InternetClient**</span></span>
+        - <span data-ttu-id="fc646-298">**十分**</span><span class="sxs-lookup"><span data-stu-id="fc646-298">**Microphone**</span></span>
 
             ![設定 Unity 專案](images/AzureLabs-Lab312-29.png)
 
-    3. <span data-ttu-id="21654-300">在下方窗格中， **XR 設定**(參閱下方**發佈設定**)，刻度**虛擬實境支援**，請確定**Windows Mixed Reality SDK**加入。</span><span class="sxs-lookup"><span data-stu-id="21654-300">Further down the panel, in **XR Settings** (found below **Publish Settings**), tick **Virtual Reality Supported**, make sure the **Windows Mixed Reality SDK** is added.</span></span>
+    3. <span data-ttu-id="fc646-300">在面板中, 于 [ **XR 設定**] (在 [**發佈設定**] 下方找到) 中, 支援 [勾選**虛擬實境**], 並確定已新增 [ **Windows Mixed Reality SDK** ]。</span><span class="sxs-lookup"><span data-stu-id="fc646-300">Further down the panel, in **XR Settings** (found below **Publish Settings**), tick **Virtual Reality Supported**, make sure the **Windows Mixed Reality SDK** is added.</span></span>
 
         ![設定 Unity 專案](images/AzureLabs-Lab312-30.png)
 
-8.  <span data-ttu-id="21654-302">回到*Build Settings* _Unity C#_ 專案不再呈現灰色，這旁邊的核取方塊。</span><span class="sxs-lookup"><span data-stu-id="21654-302">Back in *Build Settings* _Unity C#_ Projects is no longer greyed out; tick the checkbox next to this.</span></span> 
-9.  <span data-ttu-id="21654-303">關閉 [建立設定] 視窗。</span><span class="sxs-lookup"><span data-stu-id="21654-303">Close the Build Settings window.</span></span>
-10. <span data-ttu-id="21654-304">儲存您的場景和專案 (**檔案 > 儲存場景檔案 > 儲存專案**)。</span><span class="sxs-lookup"><span data-stu-id="21654-304">Save your scene and project (**FILE > SAVE SCENE / FILE > SAVE PROJECT**).</span></span>
+8.  <span data-ttu-id="fc646-302">回到*組建設定* _Unity C#_ 專案已不再呈現灰色;勾選 [] 旁的核取方塊。</span><span class="sxs-lookup"><span data-stu-id="fc646-302">Back in *Build Settings* _Unity C#_ Projects is no longer greyed out; tick the checkbox next to this.</span></span> 
+9.  <span data-ttu-id="fc646-303">關閉 [組建設定] 視窗。</span><span class="sxs-lookup"><span data-stu-id="fc646-303">Close the Build Settings window.</span></span>
+10. <span data-ttu-id="fc646-304">儲存場景和專案 (**file > 儲存場景/檔案 > 儲存專案**)。</span><span class="sxs-lookup"><span data-stu-id="fc646-304">Save your scene and project (**FILE > SAVE SCENE / FILE > SAVE PROJECT**).</span></span>
 
 
-## <a name="chapter-5--camera-setup"></a><span data-ttu-id="21654-305">第 5 章-觀景窗設定</span><span class="sxs-lookup"><span data-stu-id="21654-305">Chapter 5 – Camera setup</span></span>
+## <a name="chapter-5--camera-setup"></a><span data-ttu-id="fc646-305">第5章–相機設定</span><span class="sxs-lookup"><span data-stu-id="fc646-305">Chapter 5 – Camera setup</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="21654-306">如果您想要跳過*Unity 設定*元件的課程，並繼續直接進入程式碼，請自由下載此[Azure MR-312 Package.unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20312%20-%20Bot%20integration/Azure-MR-312.unitypackage)，它匯入到您的專案，作為[**自訂封裝**](https://docs.unity3d.com/Manual/AssetPackages.html)，然後繼續從[第 7 章](#chapter-7-–-create-the-botobjects-class)。</span><span class="sxs-lookup"><span data-stu-id="21654-306">If you wish to skip the *Unity Set up* component of this course, and continue straight into code, feel free to download this [Azure-MR-312-Package.unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20312%20-%20Bot%20integration/Azure-MR-312.unitypackage), import it into your project as a [**Custom Package**](https://docs.unity3d.com/Manual/AssetPackages.html), and then continue from [Chapter 7](#chapter-7-–-create-the-botobjects-class).</span></span>
+> <span data-ttu-id="fc646-306">如果您想要略過此課程的*Unity 設定*元件, 並直接繼續閱讀程式碼, 您可以免費下載此[Azure-MR-312-unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20312%20-%20Bot%20integration/Azure-MR-312.unitypackage), 將它匯入您的專案中做為[**自訂套件**](https://docs.unity3d.com/Manual/AssetPackages.html), 然後繼續進行[第7章](#chapter-7-–-create-the-botobjects-class)。</span><span class="sxs-lookup"><span data-stu-id="fc646-306">If you wish to skip the *Unity Set up* component of this course, and continue straight into code, feel free to download this [Azure-MR-312-Package.unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20312%20-%20Bot%20integration/Azure-MR-312.unitypackage), import it into your project as a [**Custom Package**](https://docs.unity3d.com/Manual/AssetPackages.html), and then continue from [Chapter 7](#chapter-7-–-create-the-botobjects-class).</span></span>
 
-1.  <span data-ttu-id="21654-307">在 *階層面板*，選取**Main Camera**。</span><span class="sxs-lookup"><span data-stu-id="21654-307">In the *Hierarchy panel*, select the **Main Camera**.</span></span> 
-2.  <span data-ttu-id="21654-308">選取之後，您將能夠看到所有的元件**Main Camera**中*Inspector 面板*。</span><span class="sxs-lookup"><span data-stu-id="21654-308">Once selected, you will be able to see all the components of the **Main Camera** in the *Inspector panel*.</span></span>
+1.  <span data-ttu-id="fc646-307">在 [階層]*面板*中, 選取**主要相機**。</span><span class="sxs-lookup"><span data-stu-id="fc646-307">In the *Hierarchy panel*, select the **Main Camera**.</span></span> 
+2.  <span data-ttu-id="fc646-308">選取之後, 您就可以在 [偵測*器] 面板*中看到**主要攝影機**的所有元件。</span><span class="sxs-lookup"><span data-stu-id="fc646-308">Once selected, you will be able to see all the components of the **Main Camera** in the *Inspector panel*.</span></span>
 
-    1. <span data-ttu-id="21654-309">**相機物件**必須命名為**Main Camera** （請注意拼字檢查）</span><span class="sxs-lookup"><span data-stu-id="21654-309">The **Camera object** must be named **Main Camera** (note the spelling)</span></span>
-    2. <span data-ttu-id="21654-310">Main Camera**標記**必須設為**MainCamera** （請注意拼字檢查）</span><span class="sxs-lookup"><span data-stu-id="21654-310">The Main Camera **Tag** must be set to **MainCamera** (note the spelling)</span></span>
-    3. <span data-ttu-id="21654-311">請確定**轉換的位置**設定為**0，0，0**</span><span class="sxs-lookup"><span data-stu-id="21654-311">Make sure the **Transform Position** is set to **0, 0, 0**</span></span>
-    4. <span data-ttu-id="21654-312">設定**清除旗標**要**單色**。</span><span class="sxs-lookup"><span data-stu-id="21654-312">Set **Clear Flags** to **Solid Color**.</span></span>
-    5. <span data-ttu-id="21654-313">設定**背景**相機元件以色彩**黑色，0 的 Alpha (十六進位的程式碼: #00000000)**</span><span class="sxs-lookup"><span data-stu-id="21654-313">Set the **Background** Color of the Camera component to **Black, Alpha 0 (Hex Code: #00000000)**</span></span>
+    1. <span data-ttu-id="fc646-309">**相機物件**必須命名為**主要攝影機**(請注意拼寫)</span><span class="sxs-lookup"><span data-stu-id="fc646-309">The **Camera object** must be named **Main Camera** (note the spelling)</span></span>
+    2. <span data-ttu-id="fc646-310">主要相機**標記**必須設定為**MainCamera** (請注意拼寫)</span><span class="sxs-lookup"><span data-stu-id="fc646-310">The Main Camera **Tag** must be set to **MainCamera** (note the spelling)</span></span>
+    3. <span data-ttu-id="fc646-311">請確定**轉換位置**設定為**0, 0, 0**</span><span class="sxs-lookup"><span data-stu-id="fc646-311">Make sure the **Transform Position** is set to **0, 0, 0**</span></span>
+    4. <span data-ttu-id="fc646-312">將 [**清除旗標**] 設定為**純色**。</span><span class="sxs-lookup"><span data-stu-id="fc646-312">Set **Clear Flags** to **Solid Color**.</span></span>
+    5. <span data-ttu-id="fc646-313">將相機元件的**背景**色彩設定為**黑色, Alpha 0 (十六進位碼: #00000000)**</span><span class="sxs-lookup"><span data-stu-id="fc646-313">Set the **Background** Color of the Camera component to **Black, Alpha 0 (Hex Code: #00000000)**</span></span>
 
-    ![照相機設定](images/AzureLabs-Lab312-31.png)
+    ![相機設定](images/AzureLabs-Lab312-31.png)
  
 
-## <a name="chapter-6--import-the-newtonsoft-library"></a><span data-ttu-id="21654-315">第 6 章-匯入 Newtonsoft 程式庫</span><span class="sxs-lookup"><span data-stu-id="21654-315">Chapter 6 – Import the Newtonsoft library</span></span>
+## <a name="chapter-6--import-the-newtonsoft-library"></a><span data-ttu-id="fc646-315">第6章–匯入 Newtonsoft 程式庫</span><span class="sxs-lookup"><span data-stu-id="fc646-315">Chapter 6 – Import the Newtonsoft library</span></span>
 
-<span data-ttu-id="21654-316">若要可協助您還原序列化和序列化物件接收和傳送到 Bot 服務，您需要下載**Newtonsoft**程式庫。</span><span class="sxs-lookup"><span data-stu-id="21654-316">To help you deserialize and serialize objects received and sent to the Bot Service you need to download the **Newtonsoft** library.</span></span> <span data-ttu-id="21654-317">您會發現[相容的版本已經組織使用的正確 Unity 資料夾結構這裡](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20312%20-%20Bot%20integration/NewtonsoftDLL.unitypackage)。</span><span class="sxs-lookup"><span data-stu-id="21654-317">You will find a [compatible version already organized with the correct Unity folder structure here](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20312%20-%20Bot%20integration/NewtonsoftDLL.unitypackage).</span></span> 
+<span data-ttu-id="fc646-316">若要協助您還原序列化並將接收和傳送至 Bot 服務的物件序列化, 您需要下載**Newtonsoft**程式庫。</span><span class="sxs-lookup"><span data-stu-id="fc646-316">To help you deserialize and serialize objects received and sent to the Bot Service you need to download the **Newtonsoft** library.</span></span> <span data-ttu-id="fc646-317">您會在[這裡找到已使用正確 Unity 資料夾結構組織的相容版本](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20312%20-%20Bot%20integration/NewtonsoftDLL.unitypackage)。</span><span class="sxs-lookup"><span data-stu-id="fc646-317">You will find a [compatible version already organized with the correct Unity folder structure here](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20312%20-%20Bot%20integration/NewtonsoftDLL.unitypackage).</span></span> 
 
-<span data-ttu-id="21654-318">若要 Newtonsoft 程式庫匯入專案中，使用 Unity 套件所附的這堂課程。</span><span class="sxs-lookup"><span data-stu-id="21654-318">To import the Newtonsoft library into your project, use the Unity Package which came with this course.</span></span>
+<span data-ttu-id="fc646-318">若要將 Newtonsoft 程式庫匯入您的專案, 請使用本課程隨附的 Unity 套件。</span><span class="sxs-lookup"><span data-stu-id="fc646-318">To import the Newtonsoft library into your project, use the Unity Package which came with this course.</span></span>
 
-1.  <span data-ttu-id="21654-319">新增 *.unitypackage*若要使用的 Unity**資產** > **匯入封裝** > **自訂封裝**功能表選項。</span><span class="sxs-lookup"><span data-stu-id="21654-319">Add the *.unitypackage* to Unity by using the **Assets** > **Import Package** > **Custom Package** menu option.</span></span>
+1.  <span data-ttu-id="fc646-319">使用 [**資產** > ] [匯**入套件** > ] [**自訂套件**] 功能表選項, 將*unitypackage*新增至 Unity。</span><span class="sxs-lookup"><span data-stu-id="fc646-319">Add the *.unitypackage* to Unity by using the **Assets** > **Import Package** > **Custom Package** menu option.</span></span>
 
     ![匯入 Newtonsoft 程式庫](images/AzureLabs-Lab312-34.png)
 
-2.  <span data-ttu-id="21654-321">在 **匯入 Unity 封裝**方塊會顯示。 請確認所有項目底下 （而且包括）**外掛程式**已選取。</span><span class="sxs-lookup"><span data-stu-id="21654-321">In the **Import Unity Package** box that pops up, ensure everything under (and including) **Plugins** is selected.</span></span>
+2.  <span data-ttu-id="fc646-321">在快顯的 [匯**入 Unity 封裝**] 方塊中, 確定已選取 (和包含)**外掛程式**底下的所有專案。</span><span class="sxs-lookup"><span data-stu-id="fc646-321">In the **Import Unity Package** box that pops up, ensure everything under (and including) **Plugins** is selected.</span></span>
 
     ![匯入 Newtonsoft 程式庫](images/AzureLabs-Lab312-35.png)
 
-3.  <span data-ttu-id="21654-323">按一下 **匯入**按鈕以新增至您的專案項目。</span><span class="sxs-lookup"><span data-stu-id="21654-323">Click the **Import** button to add the items to your project.</span></span>
+3.  <span data-ttu-id="fc646-323">按一下 [匯**入**] 按鈕, 將專案新增至您的專案。</span><span class="sxs-lookup"><span data-stu-id="fc646-323">Click the **Import** button to add the items to your project.</span></span>
 
-4.  <span data-ttu-id="21654-324">移至**Newtonsoft**下方的資料夾**外掛程式**專案檢視，然後選取 Newtonsoft 外掛程式中。</span><span class="sxs-lookup"><span data-stu-id="21654-324">Go to the **Newtonsoft** folder under **Plugins** in the project view and select the Newtonsoft plugin.</span></span>
+4.  <span data-ttu-id="fc646-324">移至 [專案] 視圖中 [**外掛程式**] 底下的 [ **Newtonsoft** ] 資料夾, 然後選取 [Newtonsoft] 外掛程式。</span><span class="sxs-lookup"><span data-stu-id="fc646-324">Go to the **Newtonsoft** folder under **Plugins** in the project view and select the Newtonsoft plugin.</span></span>
 
     ![](images/AzureLabs-Lab312-35b.png)
 
-5.  <span data-ttu-id="21654-325">使用選取 Newtonsoft 外掛程式，請確認**任何平台**是**取消核取**，然後確定**WSAPlayer**也是**未核取**，然後按一下**套用**。</span><span class="sxs-lookup"><span data-stu-id="21654-325">With the Newtonsoft plugin selected, ensure that **Any Platform** is **unchecked**, then ensure that **WSAPlayer** is also **unchecked**, then click **Apply**.</span></span> <span data-ttu-id="21654-326">這只是要確認已正確設定檔案。</span><span class="sxs-lookup"><span data-stu-id="21654-326">This is just to confirm that the files are configured correctly.</span></span>
+5.  <span data-ttu-id="fc646-325">選取 Newtonsoft 外掛程式後, 請確認已**取消**核取**任何平臺**, 然後確定**WSAPlayer**也已**取消**核取, 然後按一下 [套用]。</span><span class="sxs-lookup"><span data-stu-id="fc646-325">With the Newtonsoft plugin selected, ensure that **Any Platform** is **unchecked**, then ensure that **WSAPlayer** is also **unchecked**, then click **Apply**.</span></span> <span data-ttu-id="fc646-326">這只是為了確認檔案已正確設定。</span><span class="sxs-lookup"><span data-stu-id="fc646-326">This is just to confirm that the files are configured correctly.</span></span>
 
     ![](images/AzureLabs-Lab312-35c.png)
 
     > [!NOTE]
-    > <span data-ttu-id="21654-327">標示這些外掛程式會設定它們僅適用於在 Unity 編輯器中。</span><span class="sxs-lookup"><span data-stu-id="21654-327">Marking these plugins configures them to only be used in the Unity Editor.</span></span> <span data-ttu-id="21654-328">有一組不同的專案會匯出從 Unity 後要使用 WSA 資料夾中。</span><span class="sxs-lookup"><span data-stu-id="21654-328">There are a different set of them in the WSA folder which will be used after the project is exported from Unity.</span></span>
+    > <span data-ttu-id="fc646-327">標記這些外掛程式會將它們設定為僅在 Unity 編輯器中使用。</span><span class="sxs-lookup"><span data-stu-id="fc646-327">Marking these plugins configures them to only be used in the Unity Editor.</span></span> <span data-ttu-id="fc646-328">在 [WSA] 資料夾中有一組不同的集合, 將在從 Unity 匯出專案之後使用。</span><span class="sxs-lookup"><span data-stu-id="fc646-328">There are a different set of them in the WSA folder which will be used after the project is exported from Unity.</span></span>
 
-6.  <span data-ttu-id="21654-329">接下來，您必須開啟**WSA**資料夾內**Newtonsoft**資料夾。</span><span class="sxs-lookup"><span data-stu-id="21654-329">Next, you need to open the **WSA** folder, within the **Newtonsoft** folder.</span></span> <span data-ttu-id="21654-330">您會看到您剛才設定的相同檔案的複本。</span><span class="sxs-lookup"><span data-stu-id="21654-330">You will see a copy of the same file you just configured.</span></span> <span data-ttu-id="21654-331">選取檔案，並在偵測器中，確定該</span><span class="sxs-lookup"><span data-stu-id="21654-331">Select the file, and then in the inspector, ensure that</span></span>
-    -   <span data-ttu-id="21654-332">**任何平台**是**unchecked**</span><span class="sxs-lookup"><span data-stu-id="21654-332">**Any Platform** is **unchecked**</span></span> 
-    -   <span data-ttu-id="21654-333">**只有** **WSAPlayer**是**檢查**</span><span class="sxs-lookup"><span data-stu-id="21654-333">**only** **WSAPlayer** is **checked**</span></span>
-    -   <span data-ttu-id="21654-334">**不會處理**是**檢查**</span><span class="sxs-lookup"><span data-stu-id="21654-334">**Dont process** is **checked**</span></span>
+6.  <span data-ttu-id="fc646-329">接下來, 您需要在**Newtonsoft**資料夾中開啟 [ **WSA** ] 資料夾。</span><span class="sxs-lookup"><span data-stu-id="fc646-329">Next, you need to open the **WSA** folder, within the **Newtonsoft** folder.</span></span> <span data-ttu-id="fc646-330">您會看到您剛才設定的相同檔案的複本。</span><span class="sxs-lookup"><span data-stu-id="fc646-330">You will see a copy of the same file you just configured.</span></span> <span data-ttu-id="fc646-331">選取檔案, 然後在偵測器中, 確定</span><span class="sxs-lookup"><span data-stu-id="fc646-331">Select the file, and then in the inspector, ensure that</span></span>
+    -   <span data-ttu-id="fc646-332">未核取 **任何平臺**</span><span class="sxs-lookup"><span data-stu-id="fc646-332">**Any Platform** is **unchecked**</span></span> 
+    -   <span data-ttu-id="fc646-333">**僅限**已**核**取**WSAPlayer**</span><span class="sxs-lookup"><span data-stu-id="fc646-333">**only** **WSAPlayer** is **checked**</span></span>
+    -   <span data-ttu-id="fc646-334">未**選取** **進程**</span><span class="sxs-lookup"><span data-stu-id="fc646-334">**Dont process** is **checked**</span></span>
 
     ![](images/AzureLabs-Lab312-35d.png)
 
-## <a name="chapter-7--create-the-bottag"></a><span data-ttu-id="21654-335">第 7 – 建立 BotTag</span><span class="sxs-lookup"><span data-stu-id="21654-335">Chapter 7 – Create the BotTag</span></span>
+## <a name="chapter-7--create-the-bottag"></a><span data-ttu-id="fc646-335">第7章–建立 BotTag</span><span class="sxs-lookup"><span data-stu-id="fc646-335">Chapter 7 – Create the BotTag</span></span>
 
-1.  <span data-ttu-id="21654-336">建立新**標記**呼叫的物件**BotTag**。</span><span class="sxs-lookup"><span data-stu-id="21654-336">Create a new **Tag** object called **BotTag**.</span></span> <span data-ttu-id="21654-337">您可以選取 Main Camera 在場景中。</span><span class="sxs-lookup"><span data-stu-id="21654-337">Select the Main Camera in the scene.</span></span> <span data-ttu-id="21654-338">按一下標記下拉式功能表偵測器 面板中。</span><span class="sxs-lookup"><span data-stu-id="21654-338">Click on the Tag drop down menu in the Inspector panel.</span></span> <span data-ttu-id="21654-339">按一下 **新增標記**。</span><span class="sxs-lookup"><span data-stu-id="21654-339">Click on **Add Tag**.</span></span>
+1.  <span data-ttu-id="fc646-336">建立名為**BotTag**的新**標記**物件。</span><span class="sxs-lookup"><span data-stu-id="fc646-336">Create a new **Tag** object called **BotTag**.</span></span> <span data-ttu-id="fc646-337">選取場景中的主要攝影機。</span><span class="sxs-lookup"><span data-stu-id="fc646-337">Select the Main Camera in the scene.</span></span> <span data-ttu-id="fc646-338">按一下 [偵測器] 面板中的 [標記] 下拉式功能表。</span><span class="sxs-lookup"><span data-stu-id="fc646-338">Click on the Tag drop down menu in the Inspector panel.</span></span> <span data-ttu-id="fc646-339">按一下 [**新增標記**]。</span><span class="sxs-lookup"><span data-stu-id="fc646-339">Click on **Add Tag**.</span></span>
 
-    ![照相機設定](images/AzureLabs-Lab312-32.png)
+    ![相機設定](images/AzureLabs-Lab312-32.png)
  
-2.  <span data-ttu-id="21654-341">按一下  **+** 符號。</span><span class="sxs-lookup"><span data-stu-id="21654-341">Click on the **+** symbol.</span></span> <span data-ttu-id="21654-342">指定新**標記**作為**BotTag**，*儲存*。</span><span class="sxs-lookup"><span data-stu-id="21654-342">Name the new **Tag** as **BotTag**, *Save*.</span></span>
+2.  <span data-ttu-id="fc646-341">**+** 按一下符號。</span><span class="sxs-lookup"><span data-stu-id="fc646-341">Click on the **+** symbol.</span></span> <span data-ttu-id="fc646-342">將新**標記**命名為**BotTag**,*儲存*。</span><span class="sxs-lookup"><span data-stu-id="fc646-342">Name the new **Tag** as **BotTag**, *Save*.</span></span>
 
-    ![照相機設定](images/AzureLabs-Lab312-33.png)
+    ![相機設定](images/AzureLabs-Lab312-33.png)
 
 > [!WARNING] 
-> <span data-ttu-id="21654-344">**不這麼做**套用**BotTag**到 Main Camera。</span><span class="sxs-lookup"><span data-stu-id="21654-344">**Do not** apply the **BotTag** to the Main Camera.</span></span> <span data-ttu-id="21654-345">如果您不小心這麼做，請務必變更標記回到 Main Camera *MainCamera*。</span><span class="sxs-lookup"><span data-stu-id="21654-345">If you have accidentally done this, make sure to change the Main Camera tag back to *MainCamera*.</span></span>
+> <span data-ttu-id="fc646-344">**請勿**將**BotTag**套用到主要相機。</span><span class="sxs-lookup"><span data-stu-id="fc646-344">**Do not** apply the **BotTag** to the Main Camera.</span></span> <span data-ttu-id="fc646-345">如果您不小心這麼做, 請務必將主要攝影機標記變更回*MainCamera*。</span><span class="sxs-lookup"><span data-stu-id="fc646-345">If you have accidentally done this, make sure to change the Main Camera tag back to *MainCamera*.</span></span>
 
-## <a name="chapter-8--create-the-botobjects-class"></a><span data-ttu-id="21654-346">第 8 章-建立 BotObjects 類別</span><span class="sxs-lookup"><span data-stu-id="21654-346">Chapter 8 – Create the BotObjects class</span></span>
+## <a name="chapter-8--create-the-botobjects-class"></a><span data-ttu-id="fc646-346">第8章–建立 BotObjects 類別</span><span class="sxs-lookup"><span data-stu-id="fc646-346">Chapter 8 – Create the BotObjects class</span></span>
 
-<span data-ttu-id="21654-347">您必須建立第一個指令碼**BotObjects**類別，這是空的類別建立，因此一系列的其他類別的物件可儲存在相同的指令碼，並在場景中其他指令碼存取。</span><span class="sxs-lookup"><span data-stu-id="21654-347">The first script you need to create is the **BotObjects** class, which is an empty class created so that a series of other class objects can be stored within the same script and accessed by other scripts in the scene.</span></span>
+<span data-ttu-id="fc646-347">您需要建立的第一個腳本是**BotObjects**類別, 這是一個已建立的空白類別, 可將一系列的其他類別物件儲存在相同的腳本中, 並由場景中的其他腳本存取。</span><span class="sxs-lookup"><span data-stu-id="fc646-347">The first script you need to create is the **BotObjects** class, which is an empty class created so that a series of other class objects can be stored within the same script and accessed by other scripts in the scene.</span></span>
 
-<span data-ttu-id="21654-348">建立這個類別是純粹的架構的選擇，這些物件可以改為裝載於稍後在本課程中，您將建立 Bot 指令碼。</span><span class="sxs-lookup"><span data-stu-id="21654-348">The creation of this class is purely an architectural choice, these objects could instead be hosted in the Bot script that you will create later in this course.</span></span>
+<span data-ttu-id="fc646-348">建立此類別純粹是架構選擇, 這些物件可以改為裝載于您稍後將在本課程中建立的 Bot 腳本。</span><span class="sxs-lookup"><span data-stu-id="fc646-348">The creation of this class is purely an architectural choice, these objects could instead be hosted in the Bot script that you will create later in this course.</span></span>
 
-<span data-ttu-id="21654-349">若要建立此類別：</span><span class="sxs-lookup"><span data-stu-id="21654-349">To create this class:</span></span> 
+<span data-ttu-id="fc646-349">若要建立此類別:</span><span class="sxs-lookup"><span data-stu-id="fc646-349">To create this class:</span></span> 
 
-1.  <span data-ttu-id="21654-350">以滑鼠右鍵按一下 *[專案] 面板*，然後**建立 > 資料夾**。</span><span class="sxs-lookup"><span data-stu-id="21654-350">Right-click in the *Project panel*, then **Create > Folder**.</span></span> <span data-ttu-id="21654-351">將資料夾命名**指令碼**。</span><span class="sxs-lookup"><span data-stu-id="21654-351">Name the folder **Scripts**.</span></span> 
+1.  <span data-ttu-id="fc646-350">在 *專案 面板*中按一下滑鼠右鍵, 然後**建立 > 資料夾**。</span><span class="sxs-lookup"><span data-stu-id="fc646-350">Right-click in the *Project panel*, then **Create > Folder**.</span></span> <span data-ttu-id="fc646-351">將資料夾命名為**Scripts**。</span><span class="sxs-lookup"><span data-stu-id="fc646-351">Name the folder **Scripts**.</span></span> 
 
-    ![建立指令碼 資料夾。](images/AzureLabs-Lab312-36.png)
+    ![建立腳本資料夾。](images/AzureLabs-Lab312-36.png)
 
-2.  <span data-ttu-id="21654-353">按兩下**指令碼**資料夾將它開啟。</span><span class="sxs-lookup"><span data-stu-id="21654-353">Double-click on the **Scripts** folder to open it.</span></span> <span data-ttu-id="21654-354">然後在該資料夾，然後按一下滑鼠右鍵，並選取**建立 >C#指令碼**。</span><span class="sxs-lookup"><span data-stu-id="21654-354">Then within that folder, right-click, and select **Create > C# Script**.</span></span> <span data-ttu-id="21654-355">指令碼命名**BotObjects**。</span><span class="sxs-lookup"><span data-stu-id="21654-355">Name the script **BotObjects**.</span></span> 
+2.  <span data-ttu-id="fc646-353">按兩下 [**腳本**] 資料夾以開啟它。</span><span class="sxs-lookup"><span data-stu-id="fc646-353">Double-click on the **Scripts** folder to open it.</span></span> <span data-ttu-id="fc646-354">然後在該資料夾中, 以滑鼠右鍵按一下, 然後選取 [**建立 > C#腳本**]。</span><span class="sxs-lookup"><span data-stu-id="fc646-354">Then within that folder, right-click, and select **Create > C# Script**.</span></span> <span data-ttu-id="fc646-355">將腳本命名為**BotObjects**。</span><span class="sxs-lookup"><span data-stu-id="fc646-355">Name the script **BotObjects**.</span></span> 
 
-3.  <span data-ttu-id="21654-356">按兩下新**BotObjects**指令碼，以開啟它**Visual Studio**。</span><span class="sxs-lookup"><span data-stu-id="21654-356">Double-click on the new **BotObjects** script to open it with **Visual Studio**.</span></span>
+3.  <span data-ttu-id="fc646-356">按兩下新的**BotObjects**腳本, 以**Visual Studio**開啟它。</span><span class="sxs-lookup"><span data-stu-id="fc646-356">Double-click on the new **BotObjects** script to open it with **Visual Studio**.</span></span>
 
-4.  <span data-ttu-id="21654-357">刪除指令碼的內容，並取代為下列程式碼：</span><span class="sxs-lookup"><span data-stu-id="21654-357">Delete the content of the script and replace it with the following code:</span></span>
+4.  <span data-ttu-id="fc646-357">刪除腳本的內容, 並將它取代為下列程式碼:</span><span class="sxs-lookup"><span data-stu-id="fc646-357">Delete the content of the script and replace it with the following code:</span></span>
 
     ```csharp
     using System;
@@ -552,21 +552,21 @@ ms.locfileid: "59597078"
     }
     ```
 
-6.  <span data-ttu-id="21654-358">請務必儲存您的變更，在*Visual Studio* ，然後傳回給*Unity*。</span><span class="sxs-lookup"><span data-stu-id="21654-358">Be sure to save your changes in *Visual Studio* before returning to *Unity*.</span></span>
+6.  <span data-ttu-id="fc646-358">請務必先將您的變更儲存在*Visual Studio*中, 然後再返回*Unity*。</span><span class="sxs-lookup"><span data-stu-id="fc646-358">Be sure to save your changes in *Visual Studio* before returning to *Unity*.</span></span>
 
-## <a name="chapter-9--create-the-gazeinput-class"></a><span data-ttu-id="21654-359">第 9 章 – 建立 GazeInput 類別</span><span class="sxs-lookup"><span data-stu-id="21654-359">Chapter 9 – Create the GazeInput class</span></span>
+## <a name="chapter-9--create-the-gazeinput-class"></a><span data-ttu-id="fc646-359">第9章–建立 GazeInput 類別</span><span class="sxs-lookup"><span data-stu-id="fc646-359">Chapter 9 – Create the GazeInput class</span></span>
 
-<span data-ttu-id="21654-360">下一步要建立的類別是**GazeInput**類別。</span><span class="sxs-lookup"><span data-stu-id="21654-360">The next class you are going to create is the **GazeInput** class.</span></span> <span data-ttu-id="21654-361">這個類別會負責：</span><span class="sxs-lookup"><span data-stu-id="21654-361">This class is responsible for:</span></span>
+<span data-ttu-id="fc646-360">下一個您即將建立的類別是**GazeInput**類別。</span><span class="sxs-lookup"><span data-stu-id="fc646-360">The next class you are going to create is the **GazeInput** class.</span></span> <span data-ttu-id="fc646-361">此類別負責:</span><span class="sxs-lookup"><span data-stu-id="fc646-361">This class is responsible for:</span></span>
 
-- <span data-ttu-id="21654-362">建立資料指標，代表*視線*播放程式。</span><span class="sxs-lookup"><span data-stu-id="21654-362">Creating a cursor that will represent the *gaze* of the player.</span></span>
-- <span data-ttu-id="21654-363">偵測物件叫用的視線，播放程式，並保存至偵測到的物件的參考。</span><span class="sxs-lookup"><span data-stu-id="21654-363">Detecting objects hit by the gaze of the player, and holding a reference to detected objects.</span></span>
+- <span data-ttu-id="fc646-362">建立代表播放程式外觀的游標 。</span><span class="sxs-lookup"><span data-stu-id="fc646-362">Creating a cursor that will represent the *gaze* of the player.</span></span>
+- <span data-ttu-id="fc646-363">偵測播放程式的注視所叫用的物件, 並保留偵測到之物件的參考。</span><span class="sxs-lookup"><span data-stu-id="fc646-363">Detecting objects hit by the gaze of the player, and holding a reference to detected objects.</span></span>
 
-<span data-ttu-id="21654-364">若要建立此類別：</span><span class="sxs-lookup"><span data-stu-id="21654-364">To create this class:</span></span> 
+<span data-ttu-id="fc646-364">若要建立此類別:</span><span class="sxs-lookup"><span data-stu-id="fc646-364">To create this class:</span></span> 
 
-1.  <span data-ttu-id="21654-365">移至**指令碼**您先前建立的資料夾。</span><span class="sxs-lookup"><span data-stu-id="21654-365">Go to the **Scripts** folder you created previously.</span></span> 
-2.  <span data-ttu-id="21654-366">在資料夾中，以滑鼠右鍵按一下**建立 >C#指令碼**。</span><span class="sxs-lookup"><span data-stu-id="21654-366">Right-click inside the folder, **Create > C# Script**.</span></span> <span data-ttu-id="21654-367">呼叫指令碼**GazeInput**。</span><span class="sxs-lookup"><span data-stu-id="21654-367">Call the script **GazeInput**.</span></span> 
-3.  <span data-ttu-id="21654-368">按兩下新**GazeInput**指令碼，以開啟它**Visual Studio**。</span><span class="sxs-lookup"><span data-stu-id="21654-368">Double-click on the new **GazeInput** script to open it with **Visual Studio**.</span></span>
-4.  <span data-ttu-id="21654-369">插入下面這一行的類別名稱的頂端：</span><span class="sxs-lookup"><span data-stu-id="21654-369">Insert the following line right on top of the class name:</span></span>
+1.  <span data-ttu-id="fc646-365">移至您先前建立的**腳本**資料夾。</span><span class="sxs-lookup"><span data-stu-id="fc646-365">Go to the **Scripts** folder you created previously.</span></span> 
+2.  <span data-ttu-id="fc646-366">以滑鼠右鍵按一下資料夾內的 [**建立C# > 腳本**]。</span><span class="sxs-lookup"><span data-stu-id="fc646-366">Right-click inside the folder, **Create > C# Script**.</span></span> <span data-ttu-id="fc646-367">呼叫腳本**GazeInput**。</span><span class="sxs-lookup"><span data-stu-id="fc646-367">Call the script **GazeInput**.</span></span> 
+3.  <span data-ttu-id="fc646-368">按兩下新的**GazeInput**腳本, 以**Visual Studio**開啟它。</span><span class="sxs-lookup"><span data-stu-id="fc646-368">Double-click on the new **GazeInput** script to open it with **Visual Studio**.</span></span>
+4.  <span data-ttu-id="fc646-369">在類別名稱的頂端插入下列一行:</span><span class="sxs-lookup"><span data-stu-id="fc646-369">Insert the following line right on top of the class name:</span></span>
 
     ```csharp
     /// <summary>
@@ -576,7 +576,7 @@ ms.locfileid: "59597078"
     public class GazeInput : MonoBehaviour
     ```
 
-5.  <span data-ttu-id="21654-370">然後新增下列變數內**GazeInput**類別，上述**start （)** 方法：</span><span class="sxs-lookup"><span data-stu-id="21654-370">Then add the following variables inside the **GazeInput** class, above the **Start()** method:</span></span>
+5.  <span data-ttu-id="fc646-370">然後, 在**GazeInput**類別內的**Start ()** 方法上方新增下列變數:</span><span class="sxs-lookup"><span data-stu-id="fc646-370">Then add the following variables inside the **GazeInput** class, above the **Start()** method:</span></span>
 
     ```csharp
         [Tooltip("Used to compare whether an object is to be interacted with.")]
@@ -612,7 +612,7 @@ ms.locfileid: "59597078"
         private Vector3 _gazeDirection;
     ```
 
-6.  <span data-ttu-id="21654-371">程式碼**start （)** 應該加入方法。</span><span class="sxs-lookup"><span data-stu-id="21654-371">Code for **Start()** method should be added.</span></span> <span data-ttu-id="21654-372">在類別初始化時，這將會呼叫：</span><span class="sxs-lookup"><span data-stu-id="21654-372">This will be called when the class initializes:</span></span>
+6.  <span data-ttu-id="fc646-371">應該加入**Start ()** 方法的程式碼。</span><span class="sxs-lookup"><span data-stu-id="fc646-371">Code for **Start()** method should be added.</span></span> <span data-ttu-id="fc646-372">當類別初始化時, 會呼叫此:</span><span class="sxs-lookup"><span data-stu-id="fc646-372">This will be called when the class initializes:</span></span>
 
     ```csharp
         /// <summary>
@@ -625,7 +625,7 @@ ms.locfileid: "59597078"
         }
     ```
 
-7.  <span data-ttu-id="21654-373">實作的方法，將會具現化，並設定視線資料指標：</span><span class="sxs-lookup"><span data-stu-id="21654-373">Implement a method that will instantiate and setup the gaze cursor:</span></span> 
+7.  <span data-ttu-id="fc646-373">執行將會具現化並設定注視游標的方法:</span><span class="sxs-lookup"><span data-stu-id="fc646-373">Implement a method that will instantiate and setup the gaze cursor:</span></span> 
 
     ```csharp
         /// <summary>
@@ -647,7 +647,7 @@ ms.locfileid: "59597078"
         }
     ```
 
-8.  <span data-ttu-id="21654-374">實作的方法，將設定從 Main Camera Raycast 並追蹤的目前具有焦點的物件。</span><span class="sxs-lookup"><span data-stu-id="21654-374">Implement the methods that will setup the Raycast from the Main Camera and will keep track of the current focused object.</span></span>
+8.  <span data-ttu-id="fc646-374">執行將從主要攝影機設定 Raycast 的方法, 並將追蹤目前的焦點物件。</span><span class="sxs-lookup"><span data-stu-id="fc646-374">Implement the methods that will setup the Raycast from the Main Camera and will keep track of the current focused object.</span></span>
 
     ```csharp
         /// <summary>
@@ -745,25 +745,25 @@ ms.locfileid: "59597078"
         }
     ```
  
-9.  <span data-ttu-id="21654-375">請務必儲存您的變更，在*Visual Studio* ，然後傳回給*Unity*。</span><span class="sxs-lookup"><span data-stu-id="21654-375">Be sure to save your changes in *Visual Studio* before returning to *Unity*.</span></span>
+9.  <span data-ttu-id="fc646-375">請務必先將您的變更儲存在*Visual Studio*中, 然後再返回*Unity*。</span><span class="sxs-lookup"><span data-stu-id="fc646-375">Be sure to save your changes in *Visual Studio* before returning to *Unity*.</span></span>
 
-## <a name="chapter-10--create-the-bot-class"></a><span data-ttu-id="21654-376">第 10 章 – 建立 Bot 類別</span><span class="sxs-lookup"><span data-stu-id="21654-376">Chapter 10 – Create the Bot class</span></span>
+## <a name="chapter-10--create-the-bot-class"></a><span data-ttu-id="fc646-376">第10章–建立 Bot 類別</span><span class="sxs-lookup"><span data-stu-id="fc646-376">Chapter 10 – Create the Bot class</span></span>
 
-<span data-ttu-id="21654-377">現在會呼叫您要建立指令碼**Bot**。</span><span class="sxs-lookup"><span data-stu-id="21654-377">The script you are going to create now is called **Bot**.</span></span> <span data-ttu-id="21654-378">這是您的應用程式的核心類別，它會儲存：</span><span class="sxs-lookup"><span data-stu-id="21654-378">This is the core class of your application, it stores:</span></span> 
+<span data-ttu-id="fc646-377">您即將建立的腳本稱為**Bot**。</span><span class="sxs-lookup"><span data-stu-id="fc646-377">The script you are going to create now is called **Bot**.</span></span> <span data-ttu-id="fc646-378">這是您應用程式的核心類別, 它會儲存:</span><span class="sxs-lookup"><span data-stu-id="fc646-378">This is the core class of your application, it stores:</span></span> 
 
-- <span data-ttu-id="21654-379">您的 Web 應用程式 Bot 認證</span><span class="sxs-lookup"><span data-stu-id="21654-379">Your Web App Bot credentials</span></span>
-- <span data-ttu-id="21654-380">收集使用者語音命令方法</span><span class="sxs-lookup"><span data-stu-id="21654-380">The method that collects the user voice commands</span></span>
-- <span data-ttu-id="21654-381">必要起始交談的 Web 應用程式 Bot 方法</span><span class="sxs-lookup"><span data-stu-id="21654-381">The method necessary to initiate conversations with your Web App Bot</span></span> 
-- <span data-ttu-id="21654-382">為了將訊息傳送至您的 Web 應用程式 Bot 方法</span><span class="sxs-lookup"><span data-stu-id="21654-382">The method necessary to send messages to your Web App Bot</span></span> 
+- <span data-ttu-id="fc646-379">您的 Web 應用程式 Bot 認證</span><span class="sxs-lookup"><span data-stu-id="fc646-379">Your Web App Bot credentials</span></span>
+- <span data-ttu-id="fc646-380">收集使用者語音命令的方法</span><span class="sxs-lookup"><span data-stu-id="fc646-380">The method that collects the user voice commands</span></span>
+- <span data-ttu-id="fc646-381">起始與 Web 應用程式 Bot 交談的必要方法</span><span class="sxs-lookup"><span data-stu-id="fc646-381">The method necessary to initiate conversations with your Web App Bot</span></span> 
+- <span data-ttu-id="fc646-382">將訊息傳送至 Web 應用程式 Bot 所需的方法</span><span class="sxs-lookup"><span data-stu-id="fc646-382">The method necessary to send messages to your Web App Bot</span></span> 
 
-<span data-ttu-id="21654-383">若要將訊息傳送到 Bot 服務時， **SendMessageToBot()** 協同程式將會建置的活動，這是使用者所傳送的資料 Bot Framework 可辨識的物件。</span><span class="sxs-lookup"><span data-stu-id="21654-383">To send messages to the Bot Service, the **SendMessageToBot()** coroutine will build an activity, which is an object recognized by the Bot Framework as data sent by the user.</span></span> 
+<span data-ttu-id="fc646-383">為了將訊息傳送至 Bot 服務, **SendMessageToBot ()** 協同程式會建立活動, 此為 bot Framework 識別為使用者傳送之資料的物件。</span><span class="sxs-lookup"><span data-stu-id="fc646-383">To send messages to the Bot Service, the **SendMessageToBot()** coroutine will build an activity, which is an object recognized by the Bot Framework as data sent by the user.</span></span> 
  
-<span data-ttu-id="21654-384">若要建立此類別：</span><span class="sxs-lookup"><span data-stu-id="21654-384">To create this class:</span></span> 
+<span data-ttu-id="fc646-384">若要建立此類別:</span><span class="sxs-lookup"><span data-stu-id="fc646-384">To create this class:</span></span> 
 
-1. <span data-ttu-id="21654-385">按兩下**指令碼**資料夾，將它開啟。</span><span class="sxs-lookup"><span data-stu-id="21654-385">Double-click on the **Scripts** folder, to open it.</span></span> 
-2. <span data-ttu-id="21654-386">以滑鼠右鍵按一下**指令碼**資料夾中，按一下**建立 >C#指令碼**。</span><span class="sxs-lookup"><span data-stu-id="21654-386">Right-click inside the **Scripts** folder, click **Create > C# Script**.</span></span> <span data-ttu-id="21654-387">指令碼命名**Bot**。</span><span class="sxs-lookup"><span data-stu-id="21654-387">Name the script **Bot**.</span></span> 
-3. <span data-ttu-id="21654-388">按兩下新的指令碼，以使用 Visual Studio 中開啟它。</span><span class="sxs-lookup"><span data-stu-id="21654-388">Double-click on the new script to open it with Visual Studio.</span></span>
-4. <span data-ttu-id="21654-389">更新命名空間相同，如下所示，在頂端**Bot**類別：</span><span class="sxs-lookup"><span data-stu-id="21654-389">Update the namespaces to be the same as the following, at the top of the **Bot** class:</span></span>
+1. <span data-ttu-id="fc646-385">按兩下 [**腳本**] 資料夾以開啟它。</span><span class="sxs-lookup"><span data-stu-id="fc646-385">Double-click on the **Scripts** folder, to open it.</span></span> 
+2. <span data-ttu-id="fc646-386">在 [**腳本**] 資料夾內部按一下滑鼠右鍵, 然後按一下 [**建立 > C#腳本**]。</span><span class="sxs-lookup"><span data-stu-id="fc646-386">Right-click inside the **Scripts** folder, click **Create > C# Script**.</span></span> <span data-ttu-id="fc646-387">將腳本命名為**Bot**。</span><span class="sxs-lookup"><span data-stu-id="fc646-387">Name the script **Bot**.</span></span> 
+3. <span data-ttu-id="fc646-388">按兩下新的腳本, 以 Visual Studio 開啟它。</span><span class="sxs-lookup"><span data-stu-id="fc646-388">Double-click on the new script to open it with Visual Studio.</span></span>
+4. <span data-ttu-id="fc646-389">在**Bot**類別的頂端, 將命名空間更新為與下列相同:</span><span class="sxs-lookup"><span data-stu-id="fc646-389">Update the namespaces to be the same as the following, at the top of the **Bot** class:</span></span>
 
     ```csharp
     using Newtonsoft.Json;
@@ -774,7 +774,7 @@ ms.locfileid: "59597078"
     using UnityEngine.Windows.Speech;
     ```
  
-5. <span data-ttu-id="21654-390">內部**Bot**類別新增下列變數：</span><span class="sxs-lookup"><span data-stu-id="21654-390">Inside the **Bot** class add the following variables:</span></span>
+5. <span data-ttu-id="fc646-390">在**Bot**類別內, 新增下列變數:</span><span class="sxs-lookup"><span data-stu-id="fc646-390">Inside the **Bot** class add the following variables:</span></span>
 
     ```csharp
         /// <summary>
@@ -836,9 +836,9 @@ ms.locfileid: "59597078"
     ```
 
     > [!NOTE] 
-    > <span data-ttu-id="21654-391">請確定您插入您**Bot 祕密金鑰**成**botSecret**變數。</span><span class="sxs-lookup"><span data-stu-id="21654-391">Make sure you insert your **Bot Secret Key** into the **botSecret** variable.</span></span> <span data-ttu-id="21654-392">您將已記下您 **Bot 祕密金鑰** 在開始本課程中，在 **[第 2 章](#chapter-2---create-the-azure-bot-service)，步驟 10** 。</span><span class="sxs-lookup"><span data-stu-id="21654-392">You will have noted your **Bot Secret Key** at the beginning of this course, in **[Chapter 2](#chapter-2---create-the-azure-bot-service), step 10**.</span></span>
+    > <span data-ttu-id="fc646-391">請務必將您的**Bot 秘密金鑰**插入**botSecret**變數中。</span><span class="sxs-lookup"><span data-stu-id="fc646-391">Make sure you insert your **Bot Secret Key** into the **botSecret** variable.</span></span> <span data-ttu-id="fc646-392">您將已記下您 **Bot 祕密金鑰** 在開始本課程中，在 **[第 2 章](#chapter-2---create-the-azure-bot-service)，步驟 10** 。</span><span class="sxs-lookup"><span data-stu-id="fc646-392">You will have noted your **Bot Secret Key** at the beginning of this course, in **[Chapter 2](#chapter-2---create-the-azure-bot-service), step 10**.</span></span>
 
-7. <span data-ttu-id="21654-393">程式碼**Awake()** 並**start （)** 現在需要加入。</span><span class="sxs-lookup"><span data-stu-id="21654-393">Code for **Awake()** and **Start()** now needs to be added.</span></span> 
+7. <span data-ttu-id="fc646-393">現在必須加入**喚醒 ()** 和**Start ()** 的程式碼。</span><span class="sxs-lookup"><span data-stu-id="fc646-393">Code for **Awake()** and **Start()** now needs to be added.</span></span> 
 
     ```csharp
         /// <summary>
@@ -858,7 +858,7 @@ ms.locfileid: "59597078"
         }
     ```
 
-8. <span data-ttu-id="21654-394">新增語音擷取開始及結束時，會呼叫由語音程式庫的兩個處理常式。</span><span class="sxs-lookup"><span data-stu-id="21654-394">Add the two handlers that are called by the speech libraries when voice capture begins and ends.</span></span> <span data-ttu-id="21654-395">*DictationRecognizer*將會自動停止擷取使用者的心聲，當使用者停止讀出。</span><span class="sxs-lookup"><span data-stu-id="21654-395">The *DictationRecognizer* will automatically stop capturing the user voice when the user stops speaking.</span></span>
+8. <span data-ttu-id="fc646-394">加入語音媒體櫃開始和結束時所呼叫的兩個處理常式。</span><span class="sxs-lookup"><span data-stu-id="fc646-394">Add the two handlers that are called by the speech libraries when voice capture begins and ends.</span></span> <span data-ttu-id="fc646-395">當使用者停止說話時, *DictationRecognizer*將會自動停止捕捉使用者心聲。</span><span class="sxs-lookup"><span data-stu-id="fc646-395">The *DictationRecognizer* will automatically stop capturing the user voice when the user stops speaking.</span></span>
 
     ```csharp
         /// <summary>
@@ -887,7 +887,7 @@ ms.locfileid: "59597078"
         
     ```
 
-1. <span data-ttu-id="21654-396">下列處理常式會收集使用者的語音輸入的結果，並呼叫協同程式負責將訊息傳送至 Web 應用程式 Bot Service。</span><span class="sxs-lookup"><span data-stu-id="21654-396">The following handler collects the result of the user voice input and calls the coroutine responsible for sending the message to the Web App Bot Service.</span></span>
+1. <span data-ttu-id="fc646-396">下列處理常式會收集使用者語音輸入的結果, 並呼叫負責將訊息傳送至 Web 應用程式 Bot 服務的協同程式。</span><span class="sxs-lookup"><span data-stu-id="fc646-396">The following handler collects the result of the user voice input and calls the coroutine responsible for sending the message to the Web App Bot Service.</span></span>
 
     ```csharp
         /// <summary>
@@ -904,7 +904,7 @@ ms.locfileid: "59597078"
         }     
     ```
 
-10. <span data-ttu-id="21654-397">下列的協同程式會呼叫來開始交談與機器人。</span><span class="sxs-lookup"><span data-stu-id="21654-397">The following coroutine is called to begin a conversation with the Bot.</span></span> <span data-ttu-id="21654-398">您會注意到交談呼叫完成之後，它會呼叫**SendMessageToCoroutine()** 藉由傳遞一系列會設定傳送到 Bot Service 與空的訊息活動的參數。</span><span class="sxs-lookup"><span data-stu-id="21654-398">You will notice that once the conversation call is complete, it will call the **SendMessageToCoroutine()** by passing a series of parameters that will set the activity to be sent to the Bot Service as an empty message.</span></span> <span data-ttu-id="21654-399">這是為了提示 Bot 服務，才能起始對話。</span><span class="sxs-lookup"><span data-stu-id="21654-399">This is done to prompt the Bot Service to initiate the dialogue.</span></span>
+10. <span data-ttu-id="fc646-397">會呼叫下列協同程式來開始與 Bot 的對話。</span><span class="sxs-lookup"><span data-stu-id="fc646-397">The following coroutine is called to begin a conversation with the Bot.</span></span> <span data-ttu-id="fc646-398">您會注意到, 一旦交談呼叫完成, 它就會藉由傳遞一系列的參數來呼叫**SendMessageToCoroutine ()** , 以將活動設定為傳送至 Bot 服務作為空白訊息。</span><span class="sxs-lookup"><span data-stu-id="fc646-398">You will notice that once the conversation call is complete, it will call the **SendMessageToCoroutine()** by passing a series of parameters that will set the activity to be sent to the Bot Service as an empty message.</span></span> <span data-ttu-id="fc646-399">這麼做是為了提示 Bot 服務起始對話。</span><span class="sxs-lookup"><span data-stu-id="fc646-399">This is done to prompt the Bot Service to initiate the dialogue.</span></span>
 
     ```csharp
         /// <summary>
@@ -935,7 +935,7 @@ ms.locfileid: "59597078"
         }    
     ```
 
-11. <span data-ttu-id="21654-400">下列的協同程式會呼叫來建置要傳送到 Bot 服務的活動。</span><span class="sxs-lookup"><span data-stu-id="21654-400">The following coroutine is called to build the activity to be sent to the Bot Service.</span></span> 
+11. <span data-ttu-id="fc646-400">會呼叫下列協同程式來建立要傳送至 Bot 服務的活動。</span><span class="sxs-lookup"><span data-stu-id="fc646-400">The following coroutine is called to build the activity to be sent to the Bot Service.</span></span> 
 
     ```csharp
         /// <summary>
@@ -984,7 +984,7 @@ ms.locfileid: "59597078"
         }
     ```
 
-12. <span data-ttu-id="21654-401">下列的協同程式會呼叫來要求傳送到 Bot 服務的活動之後的回應。</span><span class="sxs-lookup"><span data-stu-id="21654-401">The following coroutine is called to request a response after sending an activity to the Bot Service.</span></span> 
+12. <span data-ttu-id="fc646-401">將活動傳送至 Bot 服務之後, 會呼叫下列協同程式來要求回應。</span><span class="sxs-lookup"><span data-stu-id="fc646-401">The following coroutine is called to request a response after sending an activity to the Bot Service.</span></span> 
 
     ```csharp
         /// <summary>
@@ -1018,7 +1018,7 @@ ms.locfileid: "59597078"
         } 
     ```
 
-13. <span data-ttu-id="21654-402">要加入至這個類別的最後一個方法，才能在場景中顯示訊息：</span><span class="sxs-lookup"><span data-stu-id="21654-402">The last method to be added to this class, is required to display the message in the scene:</span></span>
+13. <span data-ttu-id="fc646-402">要新增至這個類別的最後一個方法, 是在場景中顯示訊息的必要項:</span><span class="sxs-lookup"><span data-stu-id="fc646-402">The last method to be added to this class, is required to display the message in the scene:</span></span>
 
     ```csharp
         /// <summary>
@@ -1031,24 +1031,24 @@ ms.locfileid: "59597078"
     ```
 
     > [!NOTE] 
-    > <span data-ttu-id="21654-403">您可能會看到在 Unity 編輯器] 主控台的 [關於遺漏錯誤**SceneOrganiser**類別。</span><span class="sxs-lookup"><span data-stu-id="21654-403">You may see an error within the Unity Editor Console, about missing the **SceneOrganiser** class.</span></span> <span data-ttu-id="21654-404">當您將會稍後在本教學課程中建立這個類別，請忽略此訊息中。</span><span class="sxs-lookup"><span data-stu-id="21654-404">Disregard this message, as you will create this class later in the tutorial.</span></span>
+    > <span data-ttu-id="fc646-403">您可能會在 Unity 編輯器主控台中看到錯誤, 關於遺漏**SceneOrganiser**類別。</span><span class="sxs-lookup"><span data-stu-id="fc646-403">You may see an error within the Unity Editor Console, about missing the **SceneOrganiser** class.</span></span> <span data-ttu-id="fc646-404">忽略此訊息, 因為您稍後會在本教學課程中建立此類別。</span><span class="sxs-lookup"><span data-stu-id="fc646-404">Disregard this message, as you will create this class later in the tutorial.</span></span>
 
-14.  <span data-ttu-id="21654-405">請務必儲存您的變更，在*Visual Studio* ，然後傳回給*Unity*。</span><span class="sxs-lookup"><span data-stu-id="21654-405">Be sure to save your changes in *Visual Studio* before returning to *Unity*.</span></span>
+14.  <span data-ttu-id="fc646-405">請務必先將您的變更儲存在*Visual Studio*中, 然後再返回*Unity*。</span><span class="sxs-lookup"><span data-stu-id="fc646-405">Be sure to save your changes in *Visual Studio* before returning to *Unity*.</span></span>
 
-## <a name="chapter-11--create-the-interactions-class"></a><span data-ttu-id="21654-406">第 11 章 – 建立互動類別</span><span class="sxs-lookup"><span data-stu-id="21654-406">Chapter 11 – Create the Interactions class</span></span>
+## <a name="chapter-11--create-the-interactions-class"></a><span data-ttu-id="fc646-406">第11章–建立互動類別</span><span class="sxs-lookup"><span data-stu-id="fc646-406">Chapter 11 – Create the Interactions class</span></span>
 
-<span data-ttu-id="21654-407">您即將建立的類別現在稱為**互動**。</span><span class="sxs-lookup"><span data-stu-id="21654-407">The class you are going to create now is called **Interactions**.</span></span> <span data-ttu-id="21654-408">這個類別用來偵測使用者的 HoloLens 點選輸入。</span><span class="sxs-lookup"><span data-stu-id="21654-408">This class is used to detect the HoloLens Tap Input from the user.</span></span> 
+<span data-ttu-id="fc646-407">您即將建立的類別稱為「**互動**」。</span><span class="sxs-lookup"><span data-stu-id="fc646-407">The class you are going to create now is called **Interactions**.</span></span> <span data-ttu-id="fc646-408">此類別可用來偵測使用者的 HoloLens 輸入。</span><span class="sxs-lookup"><span data-stu-id="fc646-408">This class is used to detect the HoloLens Tap Input from the user.</span></span> 
 
-<span data-ttu-id="21654-409">如果在使用者點選時查看*Bot* Bot 以及在場景中的物件已準備好接聽語音輸入、 Bot 物件會變更色彩**紅色**並開始接聽語音輸入。</span><span class="sxs-lookup"><span data-stu-id="21654-409">If the user taps while looking at the *Bot* object in the scene, and the Bot is ready to listen for voice inputs, the Bot object will change color to **red** and begin listening for voice inputs.</span></span> 
+<span data-ttu-id="fc646-409">如果使用者在查看場景中的*Bot*物件時按下, 而且 bot 已準備好接聽語音輸入, bot 物件將會將色彩變更為**紅色**, 並開始接聽語音輸入。</span><span class="sxs-lookup"><span data-stu-id="fc646-409">If the user taps while looking at the *Bot* object in the scene, and the Bot is ready to listen for voice inputs, the Bot object will change color to **red** and begin listening for voice inputs.</span></span> 
 
-<span data-ttu-id="21654-410">這個類別繼承自**GazeInput**類別，並因此可參考**start （)** 方法，並自該類別，表示所使用的變數**基底**。</span><span class="sxs-lookup"><span data-stu-id="21654-410">This class inherits from the **GazeInput** class, and so is able to reference the **Start()** method and variables from that class, denoted by the use of **base**.</span></span> 
+<span data-ttu-id="fc646-410">這個類別繼承自**GazeInput**類別, 因此可以參考**Start ()** 方法和該類別中的變數, 並使用**base**來表示。</span><span class="sxs-lookup"><span data-stu-id="fc646-410">This class inherits from the **GazeInput** class, and so is able to reference the **Start()** method and variables from that class, denoted by the use of **base**.</span></span> 
  
-<span data-ttu-id="21654-411">若要建立此類別：</span><span class="sxs-lookup"><span data-stu-id="21654-411">To create this class:</span></span>
+<span data-ttu-id="fc646-411">若要建立此類別:</span><span class="sxs-lookup"><span data-stu-id="fc646-411">To create this class:</span></span>
 
-1.  <span data-ttu-id="21654-412">按兩下**指令碼**資料夾，將它開啟。</span><span class="sxs-lookup"><span data-stu-id="21654-412">Double-click on the **Scripts** folder, to open it.</span></span> 
-2.  <span data-ttu-id="21654-413">以滑鼠右鍵按一下**指令碼**資料夾中，按一下**建立 >C#指令碼**。</span><span class="sxs-lookup"><span data-stu-id="21654-413">Right-click inside the **Scripts** folder, click **Create > C# Script**.</span></span> <span data-ttu-id="21654-414">指令碼命名**互動**。</span><span class="sxs-lookup"><span data-stu-id="21654-414">Name the script **Interactions**.</span></span> 
-3.  <span data-ttu-id="21654-415">按兩下新的指令碼，以使用 Visual Studio 中開啟它。</span><span class="sxs-lookup"><span data-stu-id="21654-415">Double-click on the new script to open it with Visual Studio.</span></span>
-4.  <span data-ttu-id="21654-416">更新命名空間和類別繼承，如下所示，頂端的相同**互動**類別：</span><span class="sxs-lookup"><span data-stu-id="21654-416">Update the namespaces and the class inheritance to be the same as the following, at the top of the **Interactions** class:</span></span>
+1.  <span data-ttu-id="fc646-412">按兩下 [**腳本**] 資料夾以開啟它。</span><span class="sxs-lookup"><span data-stu-id="fc646-412">Double-click on the **Scripts** folder, to open it.</span></span> 
+2.  <span data-ttu-id="fc646-413">在 [**腳本**] 資料夾內部按一下滑鼠右鍵, 然後按一下 [**建立 > C#腳本**]。</span><span class="sxs-lookup"><span data-stu-id="fc646-413">Right-click inside the **Scripts** folder, click **Create > C# Script**.</span></span> <span data-ttu-id="fc646-414">將腳本命名為**互動**。</span><span class="sxs-lookup"><span data-stu-id="fc646-414">Name the script **Interactions**.</span></span> 
+3.  <span data-ttu-id="fc646-415">按兩下新的腳本, 以 Visual Studio 開啟它。</span><span class="sxs-lookup"><span data-stu-id="fc646-415">Double-click on the new script to open it with Visual Studio.</span></span>
+4.  <span data-ttu-id="fc646-416">在**互動**類別的頂端, 更新命名空間和類別繼承, 以與下列內容相同:</span><span class="sxs-lookup"><span data-stu-id="fc646-416">Update the namespaces and the class inheritance to be the same as the following, at the top of the **Interactions** class:</span></span>
 
     ```csharp
     using UnityEngine.XR.WSA.Input;
@@ -1057,7 +1057,7 @@ ms.locfileid: "59597078"
     {
     ```
 
-5.  <span data-ttu-id="21654-417">內部**互動**類別新增下列變數：</span><span class="sxs-lookup"><span data-stu-id="21654-417">Inside the **Interactions** class add the following variable:</span></span>
+5.  <span data-ttu-id="fc646-417">在 [**互動**] 類別內, 新增下列變數:</span><span class="sxs-lookup"><span data-stu-id="fc646-417">Inside the **Interactions** class add the following variable:</span></span>
 
     ```csharp
         /// <summary>
@@ -1065,7 +1065,7 @@ ms.locfileid: "59597078"
         /// </summary>
         private GestureRecognizer _gestureRecognizer;
     ```
-6.  <span data-ttu-id="21654-418">然後新增**start （)** 方法：</span><span class="sxs-lookup"><span data-stu-id="21654-418">Then add the **Start()** method:</span></span>
+6.  <span data-ttu-id="fc646-418">然後, 新增**Start ()** 方法:</span><span class="sxs-lookup"><span data-stu-id="fc646-418">Then add the **Start()** method:</span></span>
 
     ```csharp
         /// <summary>
@@ -1083,7 +1083,7 @@ ms.locfileid: "59597078"
         }
     ```
 
-7.  <span data-ttu-id="21654-419">加入處理常式，將會在使用者執行前面 HoloLens 相機點選手勢時觸發</span><span class="sxs-lookup"><span data-stu-id="21654-419">Add the handler that will be triggered when the user performs the tap gesture in front of the HoloLens camera</span></span>
+7.  <span data-ttu-id="fc646-419">新增當使用者在 HoloLens 攝影機前方執行點按手勢時所觸發的處理常式</span><span class="sxs-lookup"><span data-stu-id="fc646-419">Add the handler that will be triggered when the user performs the tap gesture in front of the HoloLens camera</span></span>
 
     ```csharp
         /// <summary>
@@ -1113,18 +1113,18 @@ ms.locfileid: "59597078"
         }
     ```
 
-8. <span data-ttu-id="21654-420">請務必儲存您的變更，在*Visual Studio* ，然後傳回給*Unity*。</span><span class="sxs-lookup"><span data-stu-id="21654-420">Be sure to save your changes in *Visual Studio* before returning to *Unity*.</span></span>
+8. <span data-ttu-id="fc646-420">請務必先將您的變更儲存在*Visual Studio*中, 然後再返回*Unity*。</span><span class="sxs-lookup"><span data-stu-id="fc646-420">Be sure to save your changes in *Visual Studio* before returning to *Unity*.</span></span>
 
-## <a name="chapter-12--create-the-sceneorganiser-class"></a><span data-ttu-id="21654-421">第 12 章-建立 SceneOrganiser 類別</span><span class="sxs-lookup"><span data-stu-id="21654-421">Chapter 12 – Create the SceneOrganiser class</span></span>
+## <a name="chapter-12--create-the-sceneorganiser-class"></a><span data-ttu-id="fc646-421">第12章–建立 SceneOrganiser 類別</span><span class="sxs-lookup"><span data-stu-id="fc646-421">Chapter 12 – Create the SceneOrganiser class</span></span>
 
-<span data-ttu-id="21654-422">在這個實驗室中所需的最後一個類別會呼叫**SceneOrganiser**。</span><span class="sxs-lookup"><span data-stu-id="21654-422">The last class required in this Lab is called **SceneOrganiser**.</span></span> <span data-ttu-id="21654-423">這個類別會以程式設計方式設定場景，藉由將元件和指令碼新增至 Main Camera 中，並在場景中建立適當的物件。</span><span class="sxs-lookup"><span data-stu-id="21654-423">This class will setup the scene programmatically, by adding components and scripts to the Main Camera, and creating the appropriate objects in the scene.</span></span>
+<span data-ttu-id="fc646-422">這個實驗室所需的最後一個類別稱為**SceneOrganiser**。</span><span class="sxs-lookup"><span data-stu-id="fc646-422">The last class required in this Lab is called **SceneOrganiser**.</span></span> <span data-ttu-id="fc646-423">這個類別會以程式設計方式設定場景, 方法是將元件和腳本新增至主要攝影機, 然後在場景中建立適當的物件。</span><span class="sxs-lookup"><span data-stu-id="fc646-423">This class will setup the scene programmatically, by adding components and scripts to the Main Camera, and creating the appropriate objects in the scene.</span></span>
  
-<span data-ttu-id="21654-424">若要建立此類別：</span><span class="sxs-lookup"><span data-stu-id="21654-424">To create this class:</span></span>
+<span data-ttu-id="fc646-424">若要建立此類別:</span><span class="sxs-lookup"><span data-stu-id="fc646-424">To create this class:</span></span>
 
-1.  <span data-ttu-id="21654-425">按兩下**指令碼**資料夾，將它開啟。</span><span class="sxs-lookup"><span data-stu-id="21654-425">Double-click on the **Scripts** folder, to open it.</span></span> 
-2.  <span data-ttu-id="21654-426">以滑鼠右鍵按一下**指令碼**資料夾中，按一下**建立 >C#指令碼**。</span><span class="sxs-lookup"><span data-stu-id="21654-426">Right-click inside the **Scripts** folder, click **Create > C# Script**.</span></span> <span data-ttu-id="21654-427">指令碼命名**SceneOrganiser**。</span><span class="sxs-lookup"><span data-stu-id="21654-427">Name the script **SceneOrganiser**.</span></span> 
-3.  <span data-ttu-id="21654-428">按兩下新的指令碼，以使用 Visual Studio 中開啟它。</span><span class="sxs-lookup"><span data-stu-id="21654-428">Double-click on the new script to open it with Visual Studio.</span></span>
-4.  <span data-ttu-id="21654-429">內部**SceneOrganiser**類別新增下列變數：</span><span class="sxs-lookup"><span data-stu-id="21654-429">Inside the **SceneOrganiser** class add the following variables:</span></span>
+1.  <span data-ttu-id="fc646-425">按兩下 [**腳本**] 資料夾以開啟它。</span><span class="sxs-lookup"><span data-stu-id="fc646-425">Double-click on the **Scripts** folder, to open it.</span></span> 
+2.  <span data-ttu-id="fc646-426">在 [**腳本**] 資料夾內部按一下滑鼠右鍵, 然後按一下 [**建立 > C#腳本**]。</span><span class="sxs-lookup"><span data-stu-id="fc646-426">Right-click inside the **Scripts** folder, click **Create > C# Script**.</span></span> <span data-ttu-id="fc646-427">將腳本命名為**SceneOrganiser**。</span><span class="sxs-lookup"><span data-stu-id="fc646-427">Name the script **SceneOrganiser**.</span></span> 
+3.  <span data-ttu-id="fc646-428">按兩下新的腳本, 以 Visual Studio 開啟它。</span><span class="sxs-lookup"><span data-stu-id="fc646-428">Double-click on the new script to open it with Visual Studio.</span></span>
+4.  <span data-ttu-id="fc646-429">在**SceneOrganiser**類別內, 新增下列變數:</span><span class="sxs-lookup"><span data-stu-id="fc646-429">Inside the **SceneOrganiser** class add the following variables:</span></span>
 
     ```csharp
         /// <summary>
@@ -1138,7 +1138,7 @@ ms.locfileid: "59597078"
         internal TextMesh botResponseText;
     ```
 
-6.  <span data-ttu-id="21654-430">然後新增**Awake()** 並**start （)** 方法：</span><span class="sxs-lookup"><span data-stu-id="21654-430">Then add the **Awake()** and **Start()** methods:</span></span>
+6.  <span data-ttu-id="fc646-430">然後, 新增**喚醒 ()** 和**Start ()** 方法:</span><span class="sxs-lookup"><span data-stu-id="fc646-430">Then add the **Awake()** and **Start()** methods:</span></span>
 
     ```csharp
         /// <summary>
@@ -1165,7 +1165,7 @@ ms.locfileid: "59597078"
         }
     ```
 
-7.  <span data-ttu-id="21654-431">新增下列方法，負責在場景中建立 Bot 物件，並設定參數和元件：</span><span class="sxs-lookup"><span data-stu-id="21654-431">Add the following method, responsible for creating the Bot object in the scene and setting up the parameters and components:</span></span>
+7.  <span data-ttu-id="fc646-431">新增下列方法, 負責在場景中建立 Bot 物件, 並設定參數和元件:</span><span class="sxs-lookup"><span data-stu-id="fc646-431">Add the following method, responsible for creating the Bot object in the scene and setting up the parameters and components:</span></span>
 
     ```csharp
         /// <summary>
@@ -1192,7 +1192,7 @@ ms.locfileid: "59597078"
         }
     ```
 
-7.  <span data-ttu-id="21654-432">新增下列方法，負責建立場景，代表來自 Bot 的回應中的 UI 物件：</span><span class="sxs-lookup"><span data-stu-id="21654-432">Add the following method, responsible for creating the UI object in the scene, representing the responses from the Bot:</span></span>
+7.  <span data-ttu-id="fc646-432">新增下列方法, 負責在場景中建立 UI 物件, 代表來自 Bot 的回應:</span><span class="sxs-lookup"><span data-stu-id="fc646-432">Add the following method, responsible for creating the UI object in the scene, representing the responses from the Bot:</span></span>
 
     ```csharp
         /// <summary>
@@ -1219,73 +1219,73 @@ ms.locfileid: "59597078"
         }
     ```
 
-8.  <span data-ttu-id="21654-433">請務必儲存您的變更，在*Visual Studio* ，然後傳回給*Unity*。</span><span class="sxs-lookup"><span data-stu-id="21654-433">Be sure to save your changes in *Visual Studio* before returning to *Unity*.</span></span>
-9.  <span data-ttu-id="21654-434">在 Unity 編輯器中，拖曳**SceneOrganiser**到 Main Camera 從指令碼 資料夾的指令碼。</span><span class="sxs-lookup"><span data-stu-id="21654-434">In the Unity Editor, drag the **SceneOrganiser** script from the Scripts folder to the Main Camera.</span></span> <span data-ttu-id="21654-435">場景召集人元件現在應該會出現在 Main Camera 物件，如下圖所示。</span><span class="sxs-lookup"><span data-stu-id="21654-435">The Scene Organiser component should now appear on the Main Camera object, as shown in the image below.</span></span>
+8.  <span data-ttu-id="fc646-433">請務必先將您的變更儲存在*Visual Studio*中, 然後再返回*Unity*。</span><span class="sxs-lookup"><span data-stu-id="fc646-433">Be sure to save your changes in *Visual Studio* before returning to *Unity*.</span></span>
+9.  <span data-ttu-id="fc646-434">在 Unity 編輯器中, 將**SceneOrganiser**腳本從 [腳本] 資料夾拖曳到主要相機。</span><span class="sxs-lookup"><span data-stu-id="fc646-434">In the Unity Editor, drag the **SceneOrganiser** script from the Scripts folder to the Main Camera.</span></span> <span data-ttu-id="fc646-435">場景 Organiser 元件現在應該會出現在主要攝影機物件上, 如下圖所示。</span><span class="sxs-lookup"><span data-stu-id="fc646-435">The Scene Organiser component should now appear on the Main Camera object, as shown in the image below.</span></span>
 
     ![建立 Azure Bot 服務](images/AzureLabs-Lab312-37.png)
 
-## <a name="chapter-13--before-building"></a><span data-ttu-id="21654-437">第 13 章-建置前</span><span class="sxs-lookup"><span data-stu-id="21654-437">Chapter 13 – Before building</span></span>
+## <a name="chapter-13--before-building"></a><span data-ttu-id="fc646-437">第13章–建立前</span><span class="sxs-lookup"><span data-stu-id="fc646-437">Chapter 13 – Before building</span></span>
 
-<span data-ttu-id="21654-438">若要執行您的應用程式執行完整的測試必須側面載入它拖曳至您的 HoloLens。</span><span class="sxs-lookup"><span data-stu-id="21654-438">To perform a thorough test of your application you will need to sideload it onto your HoloLens.</span></span>
-<span data-ttu-id="21654-439">這麼做之前，請確認：</span><span class="sxs-lookup"><span data-stu-id="21654-439">Before you do, ensure that:</span></span>
+<span data-ttu-id="fc646-438">若要執行應用程式的徹底測試, 您必須將它側載到 HoloLens。</span><span class="sxs-lookup"><span data-stu-id="fc646-438">To perform a thorough test of your application you will need to sideload it onto your HoloLens.</span></span>
+<span data-ttu-id="fc646-439">在您執行之前, 請確定:</span><span class="sxs-lookup"><span data-stu-id="fc646-439">Before you do, ensure that:</span></span>
 
--   <span data-ttu-id="21654-440">中所述的所有設定[**第 4 章**](#Chapter-4-–-Set-up-the-unity-project)都已正確設定。</span><span class="sxs-lookup"><span data-stu-id="21654-440">All the settings mentioned in the [**Chapter 4**](#Chapter-4-–-Set-up-the-unity-project) are set correctly.</span></span> 
--   <span data-ttu-id="21654-441">指令碼**SceneOrganiser**附加至**Main Camera**物件。</span><span class="sxs-lookup"><span data-stu-id="21654-441">The script **SceneOrganiser** is attached to the **Main Camera** object.</span></span> 
--   <span data-ttu-id="21654-442">在  **Bot**類別中，請確定您已插入您**Bot 祕密金鑰**成**botSecret**變數。</span><span class="sxs-lookup"><span data-stu-id="21654-442">In the **Bot** class, make sure you have inserted your **Bot Secret Key** into the **botSecret** variable.</span></span>
+-   <span data-ttu-id="fc646-440">[**第4章**](#Chapter-4-–-Set-up-the-unity-project)所述的所有設定都已正確設定。</span><span class="sxs-lookup"><span data-stu-id="fc646-440">All the settings mentioned in the [**Chapter 4**](#Chapter-4-–-Set-up-the-unity-project) are set correctly.</span></span> 
+-   <span data-ttu-id="fc646-441">腳本**SceneOrganiser**會附加到**主要相機**物件。</span><span class="sxs-lookup"><span data-stu-id="fc646-441">The script **SceneOrganiser** is attached to the **Main Camera** object.</span></span> 
+-   <span data-ttu-id="fc646-442">在**bot**類別中, 請確定您已將**bot 秘密金鑰**插入**botSecret**變數中。</span><span class="sxs-lookup"><span data-stu-id="fc646-442">In the **Bot** class, make sure you have inserted your **Bot Secret Key** into the **botSecret** variable.</span></span>
 
-## <a name="chapter-14--build-and-sideload-to-the-hololens"></a><span data-ttu-id="21654-443">第 14 章-建置和側載到 HoloLens</span><span class="sxs-lookup"><span data-stu-id="21654-443">Chapter 14 – Build and Sideload to the HoloLens</span></span>
+## <a name="chapter-14--build-and-sideload-to-the-hololens"></a><span data-ttu-id="fc646-443">第14章–組建並側載至 HoloLens</span><span class="sxs-lookup"><span data-stu-id="fc646-443">Chapter 14 – Build and Sideload to the HoloLens</span></span>
 
-<span data-ttu-id="21654-444">此專案的 Unity 區段所需的所有項目現在已完成，所以該是時候建置從 Unity。</span><span class="sxs-lookup"><span data-stu-id="21654-444">Everything needed for the Unity section of this project has now been completed, so it is time to build it from Unity.</span></span>
+<span data-ttu-id="fc646-444">此專案的 Unity 區段所需的全部內容現在已經完成, 所以可以從 Unity 建立它。</span><span class="sxs-lookup"><span data-stu-id="fc646-444">Everything needed for the Unity section of this project has now been completed, so it is time to build it from Unity.</span></span>
 
-1.  <span data-ttu-id="21654-445">瀏覽至**組建設定**，**檔案 > 組建設定...**.</span><span class="sxs-lookup"><span data-stu-id="21654-445">Navigate to **Build Settings**, **File > Build Settings…**.</span></span>
-2.  <span data-ttu-id="21654-446">從**Build Settings**  視窗中，按一下**建置**。</span><span class="sxs-lookup"><span data-stu-id="21654-446">From the **Build Settings** window, click **Build**.</span></span>
+1.  <span data-ttu-id="fc646-445">流覽至 [**組建設定**]、[檔案 **> 組建設定**...]。</span><span class="sxs-lookup"><span data-stu-id="fc646-445">Navigate to **Build Settings**, **File > Build Settings…**.</span></span>
+2.  <span data-ttu-id="fc646-446">從 [**組建設定**] 視窗中, 按一下 [**建立**]。</span><span class="sxs-lookup"><span data-stu-id="fc646-446">From the **Build Settings** window, click **Build**.</span></span>
 
-    ![從 Unity 建置應用程式](images/AzureLabs-Lab312-38.png)
+    ![從 Unity 建立應用程式](images/AzureLabs-Lab312-38.png)
 
-3.  <span data-ttu-id="21654-448">如果您尚未，勾選**UnityC#專案**。</span><span class="sxs-lookup"><span data-stu-id="21654-448">If not already, tick **Unity C# Projects**.</span></span>
-4.  <span data-ttu-id="21654-449">按一下 [建置] 。</span><span class="sxs-lookup"><span data-stu-id="21654-449">Click **Build**.</span></span> <span data-ttu-id="21654-450">將會啟動 unity**檔案總管**視窗中，您要建立，然後選取 建置到應用程式的資料夾。</span><span class="sxs-lookup"><span data-stu-id="21654-450">Unity will launch a **File Explorer** window, where you need to create and then select a folder to build the app into.</span></span> <span data-ttu-id="21654-451">現在，建立該資料夾並將它命名**應用程式**。</span><span class="sxs-lookup"><span data-stu-id="21654-451">Create that folder now, and name it **App**.</span></span> <span data-ttu-id="21654-452">然後使用**應用程式**按一下 選取資料夾**選取資料夾**。</span><span class="sxs-lookup"><span data-stu-id="21654-452">Then with the **App** folder selected, click **Select Folder**.</span></span> 
-5.  <span data-ttu-id="21654-453">Unity 會開始建置您的專案**應用程式**資料夾。</span><span class="sxs-lookup"><span data-stu-id="21654-453">Unity will begin building your project to the **App** folder.</span></span> 
-6.  <span data-ttu-id="21654-454">一次 Unity 已完成的建置 （它可能需要一些時間），它將會開啟**檔案總管**視窗在您的組建位置 （檢查您的工作列中，因為它可能不一定會出現您的視窗上方會通知您加入的新視窗）。</span><span class="sxs-lookup"><span data-stu-id="21654-454">Once Unity has finished building (it might take some time), it will open a **File Explorer** window at the location of your build (check your task bar, as it may not always appear above your windows, but will notify you of the addition of a new window).</span></span>
+3.  <span data-ttu-id="fc646-448">如果尚未這麼做, 請先勾選**Unity C#專案**。</span><span class="sxs-lookup"><span data-stu-id="fc646-448">If not already, tick **Unity C# Projects**.</span></span>
+4.  <span data-ttu-id="fc646-449">按一下 [建置] 。</span><span class="sxs-lookup"><span data-stu-id="fc646-449">Click **Build**.</span></span> <span data-ttu-id="fc646-450">Unity 將會啟動 [檔案**瀏覽器**] 視窗, 您必須在其中建立並選取要建立應用程式的資料夾。</span><span class="sxs-lookup"><span data-stu-id="fc646-450">Unity will launch a **File Explorer** window, where you need to create and then select a folder to build the app into.</span></span> <span data-ttu-id="fc646-451">立即建立該資料夾, 並將它命名為**應用程式**。</span><span class="sxs-lookup"><span data-stu-id="fc646-451">Create that folder now, and name it **App**.</span></span> <span data-ttu-id="fc646-452">然後選取 [**應用程式**] 資料夾, 按一下 [**選取資料夾**]。</span><span class="sxs-lookup"><span data-stu-id="fc646-452">Then with the **App** folder selected, click **Select Folder**.</span></span> 
+5.  <span data-ttu-id="fc646-453">Unity 會開始將您的專案建立至**應用程式**資料夾。</span><span class="sxs-lookup"><span data-stu-id="fc646-453">Unity will begin building your project to the **App** folder.</span></span> 
+6.  <span data-ttu-id="fc646-454">Unity 完成建立之後 (可能需要一些時間), 它會在組建的位置開啟 [檔案**瀏覽器**] 視窗 (請檢查您的工作列, 因為它不一定會出現在視窗的上方, 但會通知您加入新的視窗)。</span><span class="sxs-lookup"><span data-stu-id="fc646-454">Once Unity has finished building (it might take some time), it will open a **File Explorer** window at the location of your build (check your task bar, as it may not always appear above your windows, but will notify you of the addition of a new window).</span></span>
 
-## <a name="chapter-15--deploy-to-hololens"></a><span data-ttu-id="21654-455">章 15 – 將部署到 HoloLens</span><span class="sxs-lookup"><span data-stu-id="21654-455">Chapter 15 – Deploy to HoloLens</span></span>
+## <a name="chapter-15--deploy-to-hololens"></a><span data-ttu-id="fc646-455">第15章-部署至 HoloLens</span><span class="sxs-lookup"><span data-stu-id="fc646-455">Chapter 15 – Deploy to HoloLens</span></span>
 
-<span data-ttu-id="21654-456">若要部署 HoloLens 上：</span><span class="sxs-lookup"><span data-stu-id="21654-456">To deploy on HoloLens:</span></span>
+<span data-ttu-id="fc646-456">若要在 HoloLens 上部署:</span><span class="sxs-lookup"><span data-stu-id="fc646-456">To deploy on HoloLens:</span></span>
 
-1.  <span data-ttu-id="21654-457">您將需要您 HoloLens IP 位址 （適用於遠端部署），並以確保您 HoloLens 處於**開發人員模式**。</span><span class="sxs-lookup"><span data-stu-id="21654-457">You will need the IP Address of your HoloLens (for Remote Deploy), and to ensure your HoloLens is in **Developer Mode**.</span></span> <span data-ttu-id="21654-458">請這樣做：</span><span class="sxs-lookup"><span data-stu-id="21654-458">To do this:</span></span>
+1.  <span data-ttu-id="fc646-457">您將需要 HoloLens 的 IP 位址 (用於遠端部署), 並確保 HoloLens 處於**開發人員模式**。</span><span class="sxs-lookup"><span data-stu-id="fc646-457">You will need the IP Address of your HoloLens (for Remote Deploy), and to ensure your HoloLens is in **Developer Mode**.</span></span> <span data-ttu-id="fc646-458">請這樣做：</span><span class="sxs-lookup"><span data-stu-id="fc646-458">To do this:</span></span>
 
-    1. <span data-ttu-id="21654-459">儘管穿著您 HoloLens，開啟**設定**。</span><span class="sxs-lookup"><span data-stu-id="21654-459">Whilst wearing your HoloLens, open the **Settings**.</span></span>
-    2. <span data-ttu-id="21654-460">移至**網路和網際網路 > Wi-fi > 進階選項**</span><span class="sxs-lookup"><span data-stu-id="21654-460">Go to **Network & Internet > Wi-Fi > Advanced Options**</span></span>
-    3. <span data-ttu-id="21654-461">附註**IPv4**位址。</span><span class="sxs-lookup"><span data-stu-id="21654-461">Note the **IPv4** address.</span></span>
-    4. <span data-ttu-id="21654-462">接下來，瀏覽回到**設定**，然後**更新與安全性 > 適用於開發人員**</span><span class="sxs-lookup"><span data-stu-id="21654-462">Next, navigate back to **Settings**, and then to **Update & Security > For Developers**</span></span> 
-    5. <span data-ttu-id="21654-463">設定開發人員模式。</span><span class="sxs-lookup"><span data-stu-id="21654-463">Set Developer Mode On.</span></span>
+    1. <span data-ttu-id="fc646-459">在戴 HoloLens 的同時, 請開啟**設定**。</span><span class="sxs-lookup"><span data-stu-id="fc646-459">Whilst wearing your HoloLens, open the **Settings**.</span></span>
+    2. <span data-ttu-id="fc646-460">前往**Network & Internet > wi-fi > Advanced Options**</span><span class="sxs-lookup"><span data-stu-id="fc646-460">Go to **Network & Internet > Wi-Fi > Advanced Options**</span></span>
+    3. <span data-ttu-id="fc646-461">記下**IPv4**位址。</span><span class="sxs-lookup"><span data-stu-id="fc646-461">Note the **IPv4** address.</span></span>
+    4. <span data-ttu-id="fc646-462">接下來, 流覽回到 [**設定**], 然後為**開發人員更新 & 的安全性 >**</span><span class="sxs-lookup"><span data-stu-id="fc646-462">Next, navigate back to **Settings**, and then to **Update & Security > For Developers**</span></span> 
+    5. <span data-ttu-id="fc646-463">將開發人員模式設定為 On。</span><span class="sxs-lookup"><span data-stu-id="fc646-463">Set Developer Mode On.</span></span>
 
-2.  <span data-ttu-id="21654-464">瀏覽至新的 Unity 組建 (**應用程式**資料夾)，並開啟方案檔**Visual Studio**。</span><span class="sxs-lookup"><span data-stu-id="21654-464">Navigate to your new Unity build (the **App** folder) and open the solution file with **Visual Studio**.</span></span>
-3.  <span data-ttu-id="21654-465">在 **方案組態**選取**偵錯**。</span><span class="sxs-lookup"><span data-stu-id="21654-465">In the **Solution Configuration** select **Debug**.</span></span>
-4.  <span data-ttu-id="21654-466">在 **的方案平台**，選取**x86**，**遠端機器**。</span><span class="sxs-lookup"><span data-stu-id="21654-466">In the **Solution Platform**, select **x86**, **Remote Machine**.</span></span> 
+2.  <span data-ttu-id="fc646-464">流覽至新的 Unity 組建 (**應用程式**資料夾), 然後使用**Visual Studio**開啟方案檔。</span><span class="sxs-lookup"><span data-stu-id="fc646-464">Navigate to your new Unity build (the **App** folder) and open the solution file with **Visual Studio**.</span></span>
+3.  <span data-ttu-id="fc646-465">在 [**解決方案**設定] 中, 選取 [ **Debug**]。</span><span class="sxs-lookup"><span data-stu-id="fc646-465">In the **Solution Configuration** select **Debug**.</span></span>
+4.  <span data-ttu-id="fc646-466">在**解決方案平臺**中, 選取 [ **x86**]、[**遠端電腦**]。</span><span class="sxs-lookup"><span data-stu-id="fc646-466">In the **Solution Platform**, select **x86**, **Remote Machine**.</span></span> 
 
-    ![將部署從 Visual Studio 方案。](images/AzureLabs-Lab312-39.png)
+    ![從 Visual Studio 部署解決方案。](images/AzureLabs-Lab312-39.png)
  
-5.  <span data-ttu-id="21654-468">移至**建置 功能表**，然後按一下**部署方案**，側載您 HoloLens 應用程式。</span><span class="sxs-lookup"><span data-stu-id="21654-468">Go to the **Build menu** and click on **Deploy Solution**, to sideload the application to your HoloLens.</span></span>
-6.  <span data-ttu-id="21654-469">您的應用程式現在應該會出現在清單中，準備好啟動您 HoloLens 上已安裝的應用程式 ！</span><span class="sxs-lookup"><span data-stu-id="21654-469">Your app should now appear in the list of installed apps on your HoloLens, ready to be launched!</span></span>
+5.  <span data-ttu-id="fc646-468">移至 [**建立] 功能表**, 然後按一下 [**部署方案**], 將應用程式側載至您的 HoloLens。</span><span class="sxs-lookup"><span data-stu-id="fc646-468">Go to the **Build menu** and click on **Deploy Solution**, to sideload the application to your HoloLens.</span></span>
+6.  <span data-ttu-id="fc646-469">您的應用程式現在應該會出現在 HoloLens 上已安裝的應用程式清單中, 準備好啟動!</span><span class="sxs-lookup"><span data-stu-id="fc646-469">Your app should now appear in the list of installed apps on your HoloLens, ready to be launched!</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="21654-470">若要將部署到擬真耳機，設定**的方案平台**來*本機電腦*，並設定**組態**至*偵錯*，使用*x86*作為**平台**。</span><span class="sxs-lookup"><span data-stu-id="21654-470">To deploy to immersive headset, set the **Solution Platform** to *Local Machine*, and set the **Configuration** to *Debug*, with *x86* as the **Platform**.</span></span> <span data-ttu-id="21654-471">然後部署到本機電腦，使用**建置 功能表**，並選取*部署方案*。</span><span class="sxs-lookup"><span data-stu-id="21654-471">Then deploy to the local machine, using the **Build menu**, selecting *Deploy Solution*.</span></span> 
+    > <span data-ttu-id="fc646-470">若要部署到沉浸式耳機, 請將**解決方案平臺**設定為 [*本機電腦*], 然後將 [設定] 設為 [  *Debug*], 並將*x86*作為**平臺**。</span><span class="sxs-lookup"><span data-stu-id="fc646-470">To deploy to immersive headset, set the **Solution Platform** to *Local Machine*, and set the **Configuration** to *Debug*, with *x86* as the **Platform**.</span></span> <span data-ttu-id="fc646-471">然後, 使用 [**建立] 功能表**, 選取 [*部署解決方案*], 部署至本機電腦。</span><span class="sxs-lookup"><span data-stu-id="fc646-471">Then deploy to the local machine, using the **Build menu**, selecting *Deploy Solution*.</span></span> 
 
-## <a name="chapter-16--using-the-application-on-the-hololens"></a><span data-ttu-id="21654-472">第 16 章 – HoloLens 上使用應用程式</span><span class="sxs-lookup"><span data-stu-id="21654-472">Chapter 16 – Using the application on the HoloLens</span></span>
+## <a name="chapter-16--using-the-application-on-the-hololens"></a><span data-ttu-id="fc646-472">第16章–在 HoloLens 上使用應用程式</span><span class="sxs-lookup"><span data-stu-id="fc646-472">Chapter 16 – Using the application on the HoloLens</span></span>
 
-- <span data-ttu-id="21654-473">一旦您已啟動的應用程式，您會看到您面前的藍色球體 Bot。</span><span class="sxs-lookup"><span data-stu-id="21654-473">Once you have launched the application, you will see the Bot as a blue sphere in front of you.</span></span>
+- <span data-ttu-id="fc646-473">一旦您啟動應用程式, 就會在您前方看到 Bot 做為藍色球體。</span><span class="sxs-lookup"><span data-stu-id="fc646-473">Once you have launched the application, you will see the Bot as a blue sphere in front of you.</span></span>
 
-- <span data-ttu-id="21654-474">使用**點選手勢**時您會在起始交談球體 gazing。</span><span class="sxs-lookup"><span data-stu-id="21654-474">Use the **Tap Gesture** while you are gazing at the sphere to initiate a conversation.</span></span> 
+- <span data-ttu-id="fc646-474">當您在球體上撥雲見日時, 請使用點一下**手勢**來起始交談。</span><span class="sxs-lookup"><span data-stu-id="fc646-474">Use the **Tap Gesture** while you are gazing at the sphere to initiate a conversation.</span></span> 
  
-- <span data-ttu-id="21654-475">等候啟動交談 （發生時，UI 會顯示一則訊息）。</span><span class="sxs-lookup"><span data-stu-id="21654-475">Wait for the conversation to start (The UI will display a message when it happens).</span></span> <span data-ttu-id="21654-476">一旦您入門的訊息接收的 Bot 時，點選一次 Bot 讓它將會變成紅色，並開始接聽您的聲音。</span><span class="sxs-lookup"><span data-stu-id="21654-476">Once you receive the introductory message from the Bot, tap again on the Bot so it will turn red and begin to listen to your voice.</span></span> 
+- <span data-ttu-id="fc646-475">等候交談啟動 (UI 將會在發生時顯示訊息)。</span><span class="sxs-lookup"><span data-stu-id="fc646-475">Wait for the conversation to start (The UI will display a message when it happens).</span></span> <span data-ttu-id="fc646-476">當您收到來自 Bot 的簡介訊息之後, 請在 Bot 上再次點一下, 讓它變成紅色並開始接聽您的聲音。</span><span class="sxs-lookup"><span data-stu-id="fc646-476">Once you receive the introductory message from the Bot, tap again on the Bot so it will turn red and begin to listen to your voice.</span></span> 
 
-- <span data-ttu-id="21654-477">當您停止交談時，您的應用程式會將您的訊息傳送到 Bot 和您會立即收到的回應，將會顯示在 UI 中。</span><span class="sxs-lookup"><span data-stu-id="21654-477">Once you stop talking, your application will send your message to the Bot and you will promptly receive a response that will be displayed in the UI.</span></span> 
+- <span data-ttu-id="fc646-477">停止交談之後, 您的應用程式會將您的訊息傳送至 Bot, 您很快就會收到會顯示在 UI 中的回應。</span><span class="sxs-lookup"><span data-stu-id="fc646-477">Once you stop talking, your application will send your message to the Bot and you will promptly receive a response that will be displayed in the UI.</span></span> 
 
-- <span data-ttu-id="21654-478">重複程序，將多個訊息傳送至您的 Bot （您必須點選每個您想要傳送訊息的時間）。</span><span class="sxs-lookup"><span data-stu-id="21654-478">Repeat the process to send more messages to your Bot (you have to tap each time you want to sen a message).</span></span>
+- <span data-ttu-id="fc646-478">重複此程式, 將更多訊息傳送至您的 Bot (您必須在每次想要 sen 訊息時點一下)。</span><span class="sxs-lookup"><span data-stu-id="fc646-478">Repeat the process to send more messages to your Bot (you have to tap each time you want to sen a message).</span></span>
 
-<span data-ttu-id="21654-479">這項交談會示範如何 Bot 可以保留資訊 （您的名稱），同時也提供已知的資訊 （例如所配備的項目）。</span><span class="sxs-lookup"><span data-stu-id="21654-479">This conversation demonstrates how the Bot can retain information (your name), whilst also providing known information (such as the items that are stocked).</span></span>
+<span data-ttu-id="fc646-479">此交談會示範 Bot 如何保留資訊 (您的名稱), 同時也會提供已知的資訊 (例如已儲存的專案)。</span><span class="sxs-lookup"><span data-stu-id="fc646-479">This conversation demonstrates how the Bot can retain information (your name), whilst also providing known information (such as the items that are stocked).</span></span>
 
-#### <a name="some-questions-to-ask-the-bot"></a><span data-ttu-id="21654-480">要求 Bot 一些問題：</span><span class="sxs-lookup"><span data-stu-id="21654-480">Some questions to ask the Bot:</span></span>
+#### <a name="some-questions-to-ask-the-bot"></a><span data-ttu-id="fc646-480">詢問 Bot 的一些問題:</span><span class="sxs-lookup"><span data-stu-id="fc646-480">Some questions to ask the Bot:</span></span>
 
 ```
 what do you sell? 
@@ -1295,18 +1295,18 @@ how much are umbrellas?
 how much are raincoats?
 ```
 
-## <a name="your-finished-web-app-bot-v4-application"></a><span data-ttu-id="21654-481">您已完成的 Web 應用程式 Bot (v4) 應用程式</span><span class="sxs-lookup"><span data-stu-id="21654-481">Your finished Web App Bot (v4) application</span></span>
+## <a name="your-finished-web-app-bot-v4-application"></a><span data-ttu-id="fc646-481">您完成的 Web 應用程式 Bot (v4) 應用程式</span><span class="sxs-lookup"><span data-stu-id="fc646-481">Your finished Web App Bot (v4) application</span></span>
 
-<span data-ttu-id="21654-482">恭喜，您建置會利用 Azure Web 應用程式 Bot、 Microsoft Bot Framework v4 mixed 的 reality 應用程式。</span><span class="sxs-lookup"><span data-stu-id="21654-482">Congratulations, you built a mixed reality app that leverages the Azure Web App Bot, Microsoft Bot Framework v4.</span></span>
+<span data-ttu-id="fc646-482">恭喜, 您建立了一個混合現實應用程式, 利用 Azure Web 應用程式 Bot (Microsoft Bot Framework v4)。</span><span class="sxs-lookup"><span data-stu-id="fc646-482">Congratulations, you built a mixed reality app that leverages the Azure Web App Bot, Microsoft Bot Framework v4.</span></span>
 
 ![最終產品](images/AzureLabs-Lab312-00.png)
 
-## <a name="bonus-exercises"></a><span data-ttu-id="21654-484">Bonus 練習</span><span class="sxs-lookup"><span data-stu-id="21654-484">Bonus exercises</span></span>
+## <a name="bonus-exercises"></a><span data-ttu-id="fc646-484">額外練習</span><span class="sxs-lookup"><span data-stu-id="fc646-484">Bonus exercises</span></span>
 
-### <a name="exercise-1"></a><span data-ttu-id="21654-485">練習 1</span><span class="sxs-lookup"><span data-stu-id="21654-485">Exercise 1</span></span>
+### <a name="exercise-1"></a><span data-ttu-id="fc646-485">練習1</span><span class="sxs-lookup"><span data-stu-id="fc646-485">Exercise 1</span></span>
 
-<span data-ttu-id="21654-486">在這個實驗室中的交談結構是非常基本。</span><span class="sxs-lookup"><span data-stu-id="21654-486">The conversation structure in this Lab is very basic.</span></span> <span data-ttu-id="21654-487">您可以使用 Microsoft LUIS，自然語言了解功能賦予機器人。</span><span class="sxs-lookup"><span data-stu-id="21654-487">Use Microsoft LUIS to give your bot natural language understanding capabilities.</span></span>
+<span data-ttu-id="fc646-486">這個實驗室中的交談結構非常基本。</span><span class="sxs-lookup"><span data-stu-id="fc646-486">The conversation structure in this Lab is very basic.</span></span> <span data-ttu-id="fc646-487">使用 Microsoft LUIS 為您的 bot 提供自然語言理解功能。</span><span class="sxs-lookup"><span data-stu-id="fc646-487">Use Microsoft LUIS to give your bot natural language understanding capabilities.</span></span>
 
-### <a name="exercise-2"></a><span data-ttu-id="21654-488">練習 2</span><span class="sxs-lookup"><span data-stu-id="21654-488">Exercise 2</span></span>
+### <a name="exercise-2"></a><span data-ttu-id="fc646-488">練習2</span><span class="sxs-lookup"><span data-stu-id="fc646-488">Exercise 2</span></span>
 
-<span data-ttu-id="21654-489">此範例不包含終止的交談，並重新啟動一個新。</span><span class="sxs-lookup"><span data-stu-id="21654-489">This example does not include terminating a conversation and restarting a new one.</span></span> <span data-ttu-id="21654-490">若要讓的 Bot 功能完成，請嘗試實作交談的結束。</span><span class="sxs-lookup"><span data-stu-id="21654-490">To make the Bot feature complete, try to implement closure to the conversation.</span></span>
+<span data-ttu-id="fc646-489">這個範例不包括終止交談, 以及重新開機新對話。</span><span class="sxs-lookup"><span data-stu-id="fc646-489">This example does not include terminating a conversation and restarting a new one.</span></span> <span data-ttu-id="fc646-490">若要讓 Bot 功能完成, 請嘗試在交談中執行「關閉」。</span><span class="sxs-lookup"><span data-stu-id="fc646-490">To make the Bot feature complete, try to implement closure to the conversation.</span></span>

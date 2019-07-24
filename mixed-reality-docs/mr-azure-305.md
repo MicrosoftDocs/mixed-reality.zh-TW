@@ -1,11 +1,11 @@
 ---
-title: MR 和 Azure 305-函式和儲存體
-description: 完成這個課程來了解如何在混合的實境應用程式中實作 Azure 儲存體和函式。
+title: MR 和 Azure 305-函數和儲存體
+description: 完成此課程, 以瞭解如何在混合現實應用程式中執行 Azure 儲存體和函式。
 author: drneil
 ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
-keywords: azure、 混合實境、 academy、 unity、 教學課程、 api、 函式、 儲存體、 hololens、 vr 沈浸式，
+keywords: azure, 混合現實, 學術, unity, 教學課程, api, 函式, 儲存體, hololens, 沉浸, vr
 ms.openlocfilehash: 5f3d0c6990249bc32e4c0f55c72dd884c4c2214e
 ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
 ms.translationtype: MT
@@ -14,197 +14,197 @@ ms.lasthandoff: 07/09/2019
 ms.locfileid: "67694551"
 ---
 >[!NOTE]
->混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
+>混合現實學術教學課程的設計是使用 HoloLens (第1代) 和混合現實的沉浸式耳機。  因此, 對於仍在尋找這些裝置開發指引的開發人員而言, 我們覺得這些教學課程很重要。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  系統會保留這些資訊, 以繼續在支援的裝置上運作。 未來將會有一系列新的教學課程, 將示範如何針對 HoloLens 2 進行開發。  此通知會在張貼時, 使用這些教學課程的連結進行更新。
 
 <br> 
 
-# <a name="mr-and-azure-305-functions-and-storage"></a>MR 和 Azure 305:函式和儲存體
+# <a name="mr-and-azure-305-functions-and-storage"></a>MR 和 Azure 305:函數和儲存體
 
 ![最終產品-開始](images/AzureLabs-Lab5-00.png)
 
-在此課程中，您將學習如何建立和使用 Azure Functions 及儲存與 Azure 儲存體資源，在混合的實境應用程式中的資料。
+在此課程中, 您將瞭解如何在混合的現實應用程式中, 建立和使用 Azure Functions, 並將資料儲存 Azure 儲存體資源。
 
-*Azure Functions*是 Microsoft 服務，可讓開發人員執行程式碼片段，'函式'，在 Azure 中。 這可用來將工作委派給雲端，而不是您本機的應用程式，可以有許多優點。 *Azure Functions*支援數種開發語言，包括 C\#，F\#、 Node.js、 Java 和 PHP。 如需詳細資訊，請瀏覽[Azure Functions 文件](https://docs.microsoft.com/azure/azure-functions/functions-overview)。
+*Azure Functions*是一項 Microsoft 服務, 可讓開發人員在 Azure 中執行一小段程式碼, 即「函式」。 這可讓您將工作委派給雲端, 而不是您的本機應用程式, 這可能有許多好處。 *Azure Functions*支援數種開發語言, 包括\#C、\#F、node.js、JAVA 和 PHP。 如需詳細資訊, 請造訪[Azure Functions 文章](https://docs.microsoft.com/azure/azure-functions/functions-overview)。
 
-*Azure 儲存體*是 Microsoft 雲端服務，可讓開發人員可以使用儲存資料，它會是高度可用、 安全、 持久、 可擴充和備援的保險。 這表示 Microsoft 會為您處理所有的維護，以及關鍵的問題。 如需詳細資訊，請瀏覽[Azure 儲存體文章](https://docs.microsoft.com/azure/storage/common/storage-introduction)。
+*Azure 儲存體*是一種 Microsoft 雲端服務, 可讓開發人員儲存資料, 並將其視為高可用性、安全、耐用、可調整且重複。 這表示 Microsoft 會為您處理所有維護工作和嚴重問題。 如需詳細資訊, 請造訪[Azure 儲存體文章](https://docs.microsoft.com/azure/storage/common/storage-introduction)。
 
-完成本課程之後，您必須能夠執行下列作業的混合的實境耳機沈浸式應用程式：
+完成此課程之後, 您將擁有一個混合現實的沉浸式耳機應用程式, 其將能夠執行下列動作:
 
-1.  允許使用者視線周圍的場景。
-2.  觸發程序繁衍 (sprawning) 物件時使用者 gazes 在 3D 'button'。
-3.  繁衍 （spawn） 的物件將會選擇 Azure 函式。
-4.  因為每個物件會繁衍，應用程式將會儲存中的物件型別*Azure 檔案*，位於*Azure 儲存體*。
-5.  在第二次， *Azure 檔案*會擷取此項目，與用來重新執行先前的執行個體的應用程式的繁衍動作的資料。
+1.  允許使用者注視場景。
+2.  當使用者在3D 「按鈕」上 gazes 時, 觸發物件的產生。
+3.  衍生的物件將由 Azure 函數選擇。
+4.  當產生每個物件時, 應用程式會將物件類型儲存在*Azure*檔案中, 該檔案位於*Azure 儲存體*。
+5.  第二次載入時, 將會抓取*Azure*檔案資料, 並用來重新執行先前應用程式實例的產生動作。
 
-在您的應用程式，則您對於如何將整合結果進行設計。 本課程旨在教導您如何將 Azure 服務整合與您的 Unity 專案。 它是您的作業，以使用您從這個課程，以增強您的混合的實境應用程式所獲得的知識。
+在您的應用程式中, 您可以決定如何將結果與您的設計整合。 本課程的設計目的是要告訴您如何將 Azure 服務與您的 Unity 專案整合。 您的工作是使用您從這個課程取得的知識, 來增強您的混合現實應用程式。
 
 ## <a name="device-support"></a>裝置支援
 
 <table>
 <tr>
-<th>課程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></th>
+<th>粗</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></th>
 </tr><tr>
-<td>MR 和 Azure 305:函式和儲存體</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
+<td>MR 和 Azure 305:函數和儲存體</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
 </table>
 
 > [!NOTE]
-> 雖然這堂課程主要著重於 Windows Mixed Reality 沈浸式 (VR) 耳機，您也可以套用到 Microsoft HoloLens 本課程中您學到什麼。 當您依照本課程中，您會看到便箋上的任何變更，您可能需要用來支援 HoloLens。
+> 雖然此課程主要著重于 Windows Mixed Reality 沉浸式 (VR) 耳機, 但您也可以將您在本課程中學習到的內容套用至 Microsoft HoloLens。 隨著課程的遵循, 您會看到您可能需要用來支援 HoloLens 的任何變更的附注。
 
 ## <a name="prerequisites"></a>先決條件
 
 > [!NOTE]
-> 本教學課程專為具有基礎經驗的 Unity 開發人員和C#。 請同時了解必要條件和書面的指示此文件中代表什麼已經過測試並驗證時寫入 (2018 年)。 中所示，您可以自由使用最新的軟體[安裝工具](install-the-tools.md)發行項，但它不應該假設，本課程中的資訊會完全符合您會發現在較新的軟體與以下所列內容.
+> 本教學課程是專為具備 Unity 和C#基本經驗的開發人員所設計。 也請注意, 本檔中的必要條件和書面指示, 代表在撰寫本文時已測試和驗證的內容 (5 月 2018)。 您可以免費使用 [[安裝工具](install-the-tools.md)] 文章中所列的最新軟體, 但不應假設本課程中的資訊完全符合您在較新軟體中找到的內容, 而不是如下所示。
 
-我們建議下列的硬體和軟體這堂課程：
+在此課程中, 我們建議您採用下列硬體和軟體:
 
-- 開發電腦，[相容於 Windows Mixed Reality](https://support.microsoft.com/help/4039260/windows-10-mixed-reality-pc-hardware-guidelines)沈浸式 (VR) 耳機開發
-- [Windows 10 Fall Creators Update （或更新版本） 啟用的開發人員模式](install-the-tools.md#installation-checklist)
+- [與 Windows Mixed Reality 相容](https://support.microsoft.com/help/4039260/windows-10-mixed-reality-pc-hardware-guidelines)的開發電腦, 可用於沉浸式 (VR) 耳機開發
+- [已啟用開發人員模式的 Windows 10 秋季建立者更新 (或更新版本)](install-the-tools.md#installation-checklist)
 - [最新的 Windows 10 SDK](install-the-tools.md#installation-checklist)
-- [Unity 2017.4](install-the-tools.md#installation-checklist)
+- [Unity 2017。4](install-the-tools.md#installation-checklist)
 - [Visual Studio 2017](install-the-tools.md#installation-checklist)
-- A [Windows Mixed Reality 沈浸式 (VR) 耳機](immersive-headset-hardware-details.md)或是[Microsoft HoloLens](hololens-hardware-details.md)啟用開發人員模式
-- 建立 Azure 資源的 Azure 帳戶的訂用帳戶
-- Azure 的安裝程式和資料擷取的網際網路存取
+- 已啟用開發人員模式的[Windows Mixed Reality 沉浸 (VR) 耳機](immersive-headset-hardware-details.md)或[Microsoft HoloLens](hololens-hardware-details.md)
+- 用來建立 Azure 資源的 Azure 帳戶訂閱
+- 適用于 Azure 設定和資料抓取的網際網路存取
 
 ## <a name="before-you-start"></a>開始之前
 
-若要避免發生建置此專案的問題，強烈建議您建立根或接近根資料夾中，本教學課程中所述的專案 （長的資料夾路徑可能會造成問題，在建置階段）。
+為避免在建立此專案時發生問題, 強烈建議您在根或接近根資料夾中建立本教學課程中所述的專案 (長資料夾路徑可能會在組建階段造成問題)。
 
-## <a name="chapter-1---the-azure-portal"></a>第 1 章-Azure 入口網站
+## <a name="chapter-1---the-azure-portal"></a>第1章-Azure 入口網站
 
-若要使用**Azure 儲存體服務**，您必須建立及設定**儲存體帳戶**在 Azure 入口網站中。
+若要使用**Azure 儲存體服務**, 您將需要在 Azure 入口網站中建立並設定**儲存體帳戶**。
 
 1.  登入[Azure 入口網站](https://portal.azure.com)。
 
     > [!NOTE]
-    > 如果您還沒有 Azure 帳戶，您必須建立一個。 如果您要遵循本教學課程中的教室或實驗室的情況下，要求您的講師或其中一個新帳戶的說明設定 proctors。
+    > 如果您還沒有 Azure 帳戶, 您將需要建立一個。 如果您是在課堂或實驗室的情況下進行本教學課程, 請洽詢您的講師或其中一個 proctors, 以協助設定您的新帳戶。
 
-2.  一旦您登入，按一下**新增**在左上角，，然後搜尋*儲存體帳戶*，然後按一下**Enter**。
+2.  登入之後, 按一下左上角的 [**新增**], 並搜尋 [*儲存體帳戶*], 然後按一下**Enter 鍵**。
 
     ![azure 儲存體搜尋](images/AzureLabs-Lab5-01.png)
 
     > [!NOTE]
-    > 單字**的新**可能已取代為**建立資源**，較新的入口網站中。
+    > 在較新的入口網站中,**新**的「可能」已取代為「**建立資源**」。
 
-3.  新的頁面將提供的描述*Azure 儲存體帳戶*服務。 在此提示，選取的左下方**建立**按鈕，以建立與此服務的關聯。
+3.  [新增] 頁面將會提供*Azure 儲存體帳戶*服務的描述。 在此提示的左下方, 選取 [**建立**] 按鈕, 以建立與此服務的關聯。
 
     ![建立服務](images/AzureLabs-Lab5-02.png)
 
 4.  一旦您按下 **建立** :
 
-    1.  插入*名稱*您的帳戶，請留意這個欄位只接受數字和小寫字母。
+    1.  插入您帳戶的*名稱*, 請注意此欄位只接受數位和小寫字母。
 
-    2.  針對*部署模型*，選取**Resource manager**。
+    2.  針對 [*部署模型*], 選取 [ **Resource manager**]。
 
-    3.  針對*帳戶種類*，選取**儲存體 (一般用途 v1)** 。
+    3.  針對 [*帳戶類型*], 選取 [**儲存體 (一般用途 v1)** ]。
 
-    4.  判斷*位置*資源群組 （如果您要建立新的資源群組）。 位置，在理想情況下會在應用程式會執行所在的區域。 在特定區域中，才可以使用一些 Azure 的資產。
+    4.  判斷資源群組的*位置*(如果您要建立新的資源群組)。 位置最好是在應用程式執行所在的區域中。 某些 Azure 資產僅適用于特定區域。
 
-    5.  針對*複寫*選取**讀取-存取-異地備援儲存體 (RA-GRS)** 。
+    5.  針對 [複寫], 選取 **[讀取權限-異地-多餘儲存體 (RA-GRS)** ]。
 
-    6.  針對*效能*，選取**標準**。
+    6.  針對 [*效能*], 選取 [**標準**]。
 
-    7.  離開*需要安全傳輸*作為**停用**。
+    7.  將 [*需要安全傳輸*] 保留為 [**停用**]。
 
-    8.  選取 *訂用帳戶*。
+    8.  選取*訂*用帳戶。
 
-    9. 選擇*資源群組*或建立新的帳戶。 資源群組可用來監視、 控制存取權，佈建及管理 Azure 資產的集合計費。 建議將常見的資源群組下 （例如例如這些實驗室中） 的單一專案相關聯的所有 Azure 服務）。 
+    9. 選擇*資源群組*或建立一個新的。 資源群組提供一種方式來監視、控制存取、布建及管理 Azure 資產集合的計費。 建議您將與單一專案相關聯的所有 Azure 服務 (例如這些實驗室) 都保留在通用資源群組底下)。 
 
-        > 如果您想要深入了解 Azure 資源群組，請[瀏覽資源群組文章](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)。
+        > 如果您想要深入瞭解 Azure 資源群組, 請[造訪資源群組一文](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)。
 
-    10. 您也必須確認您已了解這些條款和條件套用到此服務。
+    10. 您也必須確認您已瞭解適用于此服務的條款及條件。
 
-    11. 選取 [建立]  。
+    11. 選取 [建立]。
 
-        ![輸入的服務資訊](images/AzureLabs-Lab5-03.png)
+        ![輸入服務資訊](images/AzureLabs-Lab5-03.png)
 
-5.  一旦您按下**建立**，您必須建立服務，這可能需要一分鐘。
+5.  按一下 [**建立**] 之後, 您必須等候服務建立, 這可能需要一分鐘的時間。
 
-6.  通知會出現在入口網站中，一旦建立服務執行個體。
+6.  建立服務實例之後, 入口網站中會出現通知。
 
-    ![在 azure 入口網站中的新通知](images/AzureLabs-Lab5-04.png)
+    ![azure 入口網站中的新通知](images/AzureLabs-Lab5-04.png)
 
-7.  按一下通知，以探索新的服務執行個體。
+7.  按一下 [通知] 以探索新的服務實例。
 
     ![前往資源](images/AzureLabs-Lab5-05.png)
 
-8.  按一下 **移至資源**通知，以探索新的服務執行個體中的按鈕。 您將會被重新導向至新*儲存體帳戶*服務執行個體。
+8.  按一下通知中的 [**移至資源**] 按鈕, 探索新的服務實例。 您將會進入新的*儲存體帳戶*服務實例。
 
     ![存取金鑰](images/AzureLabs-Lab5-06.png)
 
-9.  按一下 *存取金鑰*，以顯示此雲端服務的端點。 使用 *記事本*或類似檔案，以供稍後使用其中一個金鑰複本。 另請注意*連接字串*值，因為您將會用於*所需的 AzureServices*類別，您將在稍後建立。
+9.  按一下 [*存取金鑰*], 以顯示此雲端服務的端點。 使用 [*記事本*] 或 [類似], 複製其中一個金鑰以供稍後使用。 此外, 請記下*連接字串*值, 因為它將用於*AzureServices*類別中, 稍後將會建立。
 
     ![複製連接字串](images/AzureLabs-Lab5-07.png)
 
-## <a name="chapter-2---setting-up-an-azure-function"></a>第 2 章-設定 Azure 函式
+## <a name="chapter-2---setting-up-an-azure-function"></a>第2章-設定 Azure 函數
 
-現在您將撰寫**Azure** **函式**的 Azure 服務。
+您現在將在 Azure 服務中撰寫**azure** 函式。
 
-您可以使用**Azure Function**執行幾乎任何項目，也就與傳統的函式在程式碼中，差異在於，此函式可以存取任何應用程式具有存取您的 Azure 帳戶的認證。
+您可以使用**Azure**函式來執行您在程式碼中使用傳統函數所做的幾乎任何動作, 其差異在於具有認證可存取您 Azure 帳戶的任何應用程式都可以存取此函式。
 
-若要建立 Azure 函式：
+若要建立 Azure 函數:
 
-1.  從您*Azure 入口網站*，按一下**新增**在左上角，，並搜尋*函式應用程式*，然後按一下**Enter**。
+1.  從您的*Azure 入口網站*中, 按一下左上角的 [**新增**], 並搜尋*函數應用程式*, 然後按一下**Enter 鍵**。
 
     ![建立函數應用程式](images/AzureLabs-Lab5-08.png)
 
     > [!NOTE]
-    > 單字**的新**可能已取代為**建立資源**，較新的入口網站中。
+    > 在較新的入口網站中,**新**的「可能」已取代為「**建立資源**」。
 
-2.  新的頁面將提供的描述*Azure 函數應用程式*服務。 在此提示，選取的左下方**建立**按鈕，以建立與此服務的關聯。
+2.  新頁面將會提供*Azure 函數應用程式*服務的描述。 在此提示的左下方, 選取 [**建立**] 按鈕, 以建立與此服務的關聯。
 
-    ![函式應用程式資訊](images/AzureLabs-Lab5-09.png)
+    ![函數應用程式資訊](images/AzureLabs-Lab5-09.png)
 
 3.  一旦您按下 **建立** :
 
-    1.  提供*應用程式名稱*。 字母和數字此處只能使用 （允許上限或下限的大小寫）。
+    1.  提供*應用程式名稱*。 這裡只能使用字母和數位 (大寫或小寫允許)。
 
-    2.  選取您偏好*訂用帳戶*。
+    2.  選取您慣用的*訂*用帳戶。
 
-    3. 選擇*資源群組*或建立新的帳戶。 資源群組可用來監視、 控制存取權，佈建及管理 Azure 資產的集合計費。 建議將常見的資源群組下 （例如例如這些實驗室中） 的單一專案相關聯的所有 Azure 服務）。 
+    3. 選擇*資源群組*或建立一個新的。 資源群組提供一種方式來監視、控制存取、布建及管理 Azure 資產集合的計費。 建議您將與單一專案相關聯的所有 Azure 服務 (例如這些實驗室) 都保留在通用資源群組底下)。 
 
-        > 如果您想要深入了解 Azure 資源群組，請[瀏覽資源群組文章](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)。
+        > 如果您想要深入瞭解 Azure 資源群組, 請[造訪資源群組一文](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)。
 
-    4.  針對此練習中，選取*Windows*為所選**OS**。
+    4.  針對此練習, 請選取 [ *Windows* ] 做為選擇的**作業系統**。
 
-    5.  選取 *耗用量計劃*for**主控方案**。
+    5.  選取**主控方案**的 [取用*方案*]。
 
-    6.  判斷*位置*資源群組 （如果您要建立新的資源群組）。 位置，在理想情況下會在應用程式會執行所在的區域。 在特定區域中，才可以使用一些 Azure 的資產。 為了達到最佳效能，選取 儲存體帳戶相同的區域。
+    6.  判斷資源群組的*位置*(如果您要建立新的資源群組)。 位置最好是在應用程式執行所在的區域中。 某些 Azure 資產僅適用于特定區域。 為了達到最佳效能, 請選取與儲存體帳戶相同的區域。
 
-    7.  針對*儲存體*，選取**使用現有**，然後使用下拉式功能表中，尋找您先前建立的儲存體。
+    7.  針對 [*儲存體*], 選取 [**使用現有**的], 然後使用下拉式功能表尋找您先前建立的儲存體。
 
-    8.  離開*Application Insights*關閉這項練習。
+    8.  針對此練習, 請離開*Application Insights* 。
 
-        ![輸入函式應用程式詳細資料](images/AzureLabs-Lab5-10.png)
+        ![輸入函數應用程式詳細資料](images/AzureLabs-Lab5-10.png)
 
-4.  按一下 [建立]  按鈕。
+4.  按一下 [建立] 按鈕。
 
-5.  一旦您按下**建立**，您必須建立服務，這可能需要一分鐘。
+5.  按一下 [**建立**] 之後, 您必須等候服務建立, 這可能需要一分鐘的時間。
 
-6.  通知會出現在入口網站中，一旦建立服務執行個體。
+6.  建立服務實例之後, 入口網站中會出現通知。
 
     ![新的 azure 入口網站通知](images/AzureLabs-Lab5-11.png)
 
-7.  按一下通知，以探索新的服務執行個體。 
+7.  按一下 [通知] 以探索新的服務實例。 
 
-    ![移至資源函式應用程式](images/AzureLabs-Lab5-12.png)
+    ![前往資源函數應用程式](images/AzureLabs-Lab5-12.png)
 
-8.  按一下 **移至資源**通知，以探索新的服務執行個體中的按鈕。 您將會被重新導向至新*函式應用程式*服務執行個體。
+8.  按一下通知中的 [**移至資源**] 按鈕, 探索新的服務實例。 您將會進入新的*函數應用程式*服務實例。
 
-9.  在上*函式應用程式*儀表板，將滑鼠移*函式*，在左側面板中找到，然後按一下 **+ （加號）** 符號。
+9.  在 [*函數應用程式*] 儀表板上, 將滑鼠游標暫留在左側面板中的 [函式] 上方, 然後按一下 **+ (加號)** 符號。
 
-    ![建立新的函式](images/AzureLabs-Lab5-13.png)
+    ![建立新函數](images/AzureLabs-Lab5-13.png)
 
-10. 在下一步 頁面上，確定**Webhook + API**已選取，至於*選擇的語言，* 選取**CSharp**，因為這是本教學課程中所使用的語言。 最後，按一下**建立此函式** 按鈕。
+10. 在下一個頁面上, 確定已選取 [ **Webhook + API** ], 並針對 *[選擇語言*] 選取 [ **CSharp**], 因為這會是本教學課程所使用的語言。 最後, 按一下 [**建立此函數**] 按鈕。
 
-    ![選取 web hook csharp](images/AzureLabs-Lab5-14.png)
+    ![選取 web 攔截 csharp](images/AzureLabs-Lab5-14.png)
 
-11. 您應該會進入程式碼頁面 (run.csx)，如果沒有，按一下左側面板中的 [函數] 清單中新建立的函式。
+11. 您應該會進入字碼頁 (.csx), 如果不是, 請在左側面板的 [函數] 清單中, 按一下新建立的函式。
 
-    ![開啟新的函式](images/AzureLabs-Lab5-15.png)
+    ![開啟新函數](images/AzureLabs-Lab5-15.png)
 
-12. 將下列程式碼複製到您的函式中。 此函式只會傳回隨機整數，介於 0 和 2 時呼叫。 請勿擔心現有的程式碼，歡迎您貼上至頂端。
+12. 將下列程式碼複製到您的函式。 呼叫時, 此函式只會傳回0到2之間的隨機整數。 不必擔心現有的程式碼, 您可以隨意貼到其頂端。
 
     ```csharp
         using System.Net;
@@ -223,162 +223,162 @@ ms.locfileid: "67694551"
         }
     ```
 
-13. 選取 \[儲存\]  。
+13. 選取 [儲存]。
 
-14. 結果看起來應該像下列映像。
+14. 結果看起來應該如下圖所示。
 
-15. 按一下 **取得函式 URL**並記*端點*顯示。 您必須將它插入*所需的 AzureServices*稍後在本課程中，您將建立的類別。
+15. 按一下 [**取得函數 URL** ], 並記下顯示的*端點*。 您必須將它插入您稍後將在本課程中建立的*AzureServices*類別。
 
     ![取得函式端點](images/AzureLabs-Lab5-16.png)
 
     ![取得函式端點](images/AzureLabs-Lab5-16-5.png)
 
-## <a name="chapter-3---setting-up-the-unity-project"></a>第 3 章-設定 Unity 專案
+## <a name="chapter-3---setting-up-the-unity-project"></a>第3章-設定 Unity 專案
 
-下列已啟動的一組典型混合實境，進行開發，且此情況下，是良好的其他專案範本。
+以下是使用混合現實進行開發的一般設定, 因此, 這是適用于其他專案的絕佳範本。
 
-設定並測試您的混合的實境沈浸式耳機。
+設定和測試混合現實的沉浸式耳機。
 
 > [!NOTE]
-> 您將會**不**本課程所需動作的控制器。 如果您需要支援沈浸式耳機的設定，請[瀏覽設定發行項的混合的實境](https://support.microsoft.com/en-au/help/4043101/windows-10-set-up-windows-mixed-reality)。
+> 在此課程中, 您將**不**需要有動作控制器。 如果您需要支援設定沉浸式耳機, 請[流覽混合現實設定一文](https://support.microsoft.com/en-au/help/4043101/windows-10-set-up-windows-mixed-reality)。
 
-1.  開啟 Unity，然後按一下**新增**。
+1.  開啟 Unity, 然後按一下 [**新增**]。
 
     ![建立新的 unity 專案](images/AzureLabs-Lab5-17.png)
 
-2.  您現在必須提供 Unity 專案名稱。 插入**MR_Azure_Functions**。 請確定專案類型設定為**3D**。 設定*位置*適用於您的某個位置 （請記住，使其更接近根目錄是較佳）。 然後，按一下**建立專案**。
+2.  現在您將需要提供 Unity 專案名稱。 插入**MR_Azure_Functions**。 請確定 [專案類型] 設定為 [ **3d**]。 將位置設定為適合您的*位置*(請記住, 接近根目錄較佳)。 然後, 按一下 [**建立專案**]。
 
-    ![指定新的 unity 專案的名稱](images/AzureLabs-Lab5-18.png)
+    ![提供新的 unity 專案名稱](images/AzureLabs-Lab5-18.png)
 
-3.  使用 Unity 開啟，就代表值得查看以預設值**指令碼編輯器**設為**Visual Studio**。 移至**編輯** > **喜好設定**並從新的視窗，然後瀏覽至**外部工具**。 變更**外部指令碼編輯器**要**Visual Studio 2017**。 關閉**喜好設定**視窗。
+3.  在 Unity 開啟的情況下, 值得檢查預設**腳本編輯器**是否設定為**Visual Studio**。 移至 [**編輯** > **喜好**設定], 然後在新視窗中, 流覽至 [**外部工具**]。 將**外部腳本編輯器**變更為**Visual Studio 2017**。 關閉 [**喜好**設定] 視窗。
 
-    ![設定 visual studio，為指令碼編輯器](images/AzureLabs-Lab5-19.png)
+    ![將 visual studio 設定為腳本編輯器](images/AzureLabs-Lab5-19.png)
 
-4.  接下來，移至**檔案** > **組建設定**，並切換至平台**通用 Windows 平台**，按一下**切換平台**  按鈕。
+4.  接下來, 移  > 至 [檔案] [**組建設定**], 然後按一下 [**切換平臺**] 按鈕, 將平臺切換至**通用 Windows 平臺**。
 
-    ![切換至 uwp 的平台](images/AzureLabs-Lab5-20.png)
+    ![將平臺切換至 uwp](images/AzureLabs-Lab5-20.png)
 
-5.  移至**檔案** > **組建設定**並確定：
+5.  移至  > [檔案] [**組建設定**], 並確認:
 
-    1. **裝置為目標**設定為**任何裝置**。
+    1. [**目標裝置**] 已設定為 [**任何裝置**]。
 
-        > 對於 Microsoft HoloLens，設定**目標裝置**要*HoloLens*。
+        > 若為 Microsoft HoloLens, 請將**目標裝置**設定為*HoloLens*。
 
-    2. **建置型別**設為**D3D**
+    2. **組建類型**設定為**D3D**
 
-    3. **SDK**設為**最新安裝**
+    3. **SDK**已設定為**最新安裝**
 
-    4. **Visual Studio 版本**設為**最新安裝**
+    4. **Visual Studio 版本**設定為 [**最新安裝**]
 
-    5. **建置並執行**設為**本機電腦**
+    5. **組建和執行**設定為**本機電腦**
 
-    6. 儲存場景，並將它新增至組建。
+    6. 儲存場景, 並將它加入至組建。
 
-        1.  做法是選取**加入開啟的場景**。 儲存視窗會出現。
+        1.  選取 [新增] [**開啟場景**] 來執行此動作。 [儲存] 視窗隨即出現。
 
-            ![將開啟的場景新增](images/AzureLabs-Lab5-21.png)
+            ![新增開啟的場景](images/AzureLabs-Lab5-21.png)
 
-        2.  建立新的資料夾，以及任何未來、 場景，然後選取**新的資料夾**按鈕，以建立新的資料夾，其命名**場景**。
+        2.  為此建立新的資料夾, 並在任何未來的場景中選取 [**新增資料夾**] 按鈕, 以建立新的資料夾, 將其命名為**場景**。
 
             ![建立場景資料夾](images/AzureLabs-Lab5-22.png)
 
-        3.  開啟您剛建立**場景**資料夾，然後在**檔案名稱：** 文字欄位中輸入**FunctionsScene**，然後按**儲存**。
+        3.  開啟新建立的 [**幕後**] 資料夾, 然後在 [**檔案名:** 文字] 欄位中輸入**FunctionsScene**, 然後按 [**儲存**]。
 
-            ![儲存函式場景](images/AzureLabs-Lab5-23.png)
+            ![儲存函數場景](images/AzureLabs-Lab5-23.png)
 
-6.  剩餘的設定，**組建設定**，應保持為預設值，現在。
+6.  [**組建設定**] 中的其餘設定, 現在應該保留為預設值。
 
-    ![儲存函式場景](images/AzureLabs-Lab5-24.png)
+    ![儲存函數場景](images/AzureLabs-Lab5-24.png)
 
-7.  中*組建設定*視窗中，按一下**播放程式設定** 按鈕，這會開啟 相關 面板中的空間位置*Inspector*所在。
+7.  在 [*組建設定*] 視窗中, 按一下 [ **Player 設定**] 按鈕, 這會在偵測*器*所在的空間中開啟相關的面板。
 
-    ![偵測器中的播放程式設定](images/AzureLabs-Lab5-25.png)
+    ![inspector 中的 player 設定](images/AzureLabs-Lab5-25.png)
 
-8.  在此窗格中，少數設定需要驗證：
+8.  在此面板中, 需要驗證幾項設定:
 
-    1.  在 [**其他設定**] 索引標籤：
+    1.  在 [**其他設定**] 索引標籤中:
 
-        1.  **指令碼執行階段版本**應該**實驗性**（.NET 4.6 對等），這會觸發程序需要重新啟動編輯器。
-        2.  **指令碼後端**應該是 **.NET**
-        3.  **API 相容性層級**應該是 **.NET 4.6**
+        1.  **腳本執行階段版本**應該是**實驗**性 (.net 4.6 對等用法), 這將會觸發重新開機編輯器的需求。
+        2.  **腳本後端**應該是 **.net**
+        3.  **API 相容性層級**應該是 **.net 4.6**
 
-    2.  內**發佈設定**索引標籤之下**功能**，檢查：
+    2.  在 [**發行設定**] 索引標籤的 [**功能**] 底下, 檢查:
         
         -  **InternetClient**
 
             ![設定功能](images/AzureLabs-Lab5-26.png)
 
-    3.  在下方窗格中， **XR 設定**(參閱下方**發佈設定**)，刻度**虛擬實境支援**，請確定**Windows Mixed RealitySDK**加入。
+    3.  在面板中, 于 [ **XR 設定**] (在 [**發佈設定**] 下找到) 中, 支援 [勾選**虛擬實境**], 並確定已新增 [ **Windows Mixed Reality SDK** ]。
 
         ![設定 XR 設定](images/AzureLabs-Lab5-27.png)
 
-9.  回到*Build Settings* *UnityC#專案*不再呈現灰色，這旁邊的核取方塊。
+9.  回到*組建設定* *Unity C#專案*已不再呈現灰色;勾選 [] 旁的核取方塊。
 
-    ![刻度 c# 專案](images/AzureLabs-Lab5-28.png)
+    ![計時 c # 專案](images/AzureLabs-Lab5-28.png)
 
-10.  關閉 [建立設定] 視窗。
+10.  關閉 [組建設定] 視窗。
 
-11. 儲存您的場景和專案 (**檔案** > **儲存場景檔案** > **儲存專案**)。
+11. 儲存場景和專案 ([  > 檔案] [**儲存場景]/**  > [檔案] [**儲存專案**])。
 
-## <a name="chapter-4---setup-main-camera"></a>第 4 章-安裝主攝影機
+## <a name="chapter-4---setup-main-camera"></a>第4章-設定主要攝影機
 
 > [!IMPORTANT]
-> 如果您想要跳過*Unity 設定*元件的課程，並直接在程式碼中繼續進行，請放心[下載此.unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20305%20-%20Functions%20and%20storage/Azure-MR-305.unitypackage)，然後匯入您的專案做為[自訂封裝](https://docs.unity3d.com/Manual/AssetPackages.html)。 這也會包含從下一章中的 Dll。 匯入之後，從繼續[第 7 章](#chapter-7---create-the-azureservices-class)。 
+> 如果您想要略過*Unity 設定*本課程的元件, 並直接繼續執行程式碼, 您可以[下載 unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20305%20-%20Functions%20and%20storage/Azure-MR-305.unitypackage), 並將它匯入到您的專案中做為[自訂套件](https://docs.unity3d.com/Manual/AssetPackages.html)。 這也會包含下一章中的 Dll。 匯入之後, 請從[第7章](#chapter-7---create-the-azureservices-class)繼續進行。 
 
-1.  在 *階層面板*，您會發現呼叫物件**Main Camera**，這個物件代表您的 「 主要 」 觀點來看，當您 「 內部 」 您的應用程式。
+1.  在 [階層]*面板*中, 您會找到稱為「**主要攝影機**」的物件, 此物件代表您在應用程式內「內部」時的「前端」觀點。
 
-2.  您面前的 Unity 儀表板中，選取**主攝影機 GameObject**。 您將會發現*偵測器 面板*（通常是到右方時，儀表板中找到） 將會顯示各種元件的*GameObject*，使用*轉換*在頂端，後面接著*相機*，和一些其他元件。 您必須重設主攝影機的轉換，以便正確地定位。
+2.  在您前方的 Unity 儀表板中, 選取**主要相機 GameObject**。 您會注意到, [*檢查面板*] (通常是在儀表板中找到) 會顯示該*GameObject*的各種元件, 並在頂端使用 [*轉換*], 然後按 [*相機*] 和一些其他元件。 您將需要重設主要攝影機的轉換, 使其正確定位。
 
-3.  若要這樣做，請選取**齒輪**相機的旁邊的圖示*轉換*元件，然後選取**重設**。
+3.  若要這麼做, 請選取相機的*轉換*元件旁的**齒輪**圖示, 然後選取 [**重設**]。
 
     ![重設轉換](images/AzureLabs-Lab5-29.png)
 
-4.  然後更新**轉換**元件如下：
+4.  然後更新 [**轉換**] 元件, 如下所示:
 
     |         |    轉換-位置   |       |
     | :-----: | :-----------------------: | :----:|
     | **X**   | **Y**                     | **Z** |
     | 0       | 1                         | 0     |    
 
-    |       | 轉換的旋轉 |       |
+    |       | 轉換-旋轉 |       |
     | :---: | :------------------: | :----:|
     | **X** | **Y**                | **Z** |
     | 0     | 0                    | 0     |
 
-    |       | 轉換為小數位數 |       |
+    |       | 轉換-調整規模 |       |
     | :---: | :---------------: | :---: |
     | **X** | **Y**             | **Z** |
     | 1     | 1                 | 1     |
 
-    ![設定觀景窗轉換](images/AzureLabs-Lab5-30.png)
+    ![設定相機轉換](images/AzureLabs-Lab5-30.png)
 
-## <a name="chapter-5---setting-up-the-unity-scene"></a>第 5 章-設定 Unity 場景
+## <a name="chapter-5---setting-up-the-unity-scene"></a>第5章-設定 Unity 場景
 
-1.  中的空白區域上按一下滑鼠右鍵*階層面板*下方**3D 物件**，加入**平面**。
+1.  以滑鼠右鍵按一下 [階層]*面板*的空白區域, 然後在 [ **3d 物件**] 下加入**平面**。
 
-    ![建立新的平面](images/AzureLabs-Lab5-31.png)
+    ![建立新平面](images/AzureLabs-Lab5-31.png)
 
-2.  具有**平面**物件選取、 變更中的下列參數*Inspector 面板*:
+2.  選取 [**平面**] 物件後, 變更 [*檢查] 面板*中的下列參數:
 
     |       | 轉換-位置 |       |
     | :---: | :------------------: | :---: |
     | **X** | **Y**                | **Z** |
     | 0     | 0                    | 4     |
 
-    |       | 轉換為小數位數 |       |
+    |       | 轉換-調整規模 |       |
     | :---: | :---------------: | :---: |
     | **X** | **Y**             | **Z** |
     | 10    | 1                 | 10    |
 
-    ![設定平面位置和比例](images/AzureLabs-Lab5-32.png)
+    ![設定平面位置和尺規](images/AzureLabs-Lab5-32.png)
 
-    ![平面的場景檢視](images/AzureLabs-Lab5-33.png)
+    ![平面的場景視圖](images/AzureLabs-Lab5-33.png)
 
-3.  中的空白區域上按一下滑鼠右鍵*階層面板*下方**3D 物件**，加入**Cube**。
+3.  以滑鼠右鍵按一下 [階層]*面板*的空白區域, 然後在 [ **3d 物件**] 下加入**Cube**。
 
-    1.  重新命名 Cube **GazeButton** （與所選取的 Cube，請按 'F2'）。
+    1.  將 Cube 重新命名為**GazeButton** (已選取 cube, 請按 ' F2 ')。
 
-    2.  變更中的下列參數*Inspector 面板*:
+    2.  變更 [偵測*器] 面板*中的下列參數:
 
         |       | 轉換-位置 |       |
         | :---: | :------------------: |:-----:|
@@ -386,152 +386,152 @@ ms.locfileid: "67694551"
         | 0     | 3                    | 5     |
 
 
-        ![設定視線按鈕轉換](images/AzureLabs-Lab5-34.png)
+        ![設定注視按鈕轉換](images/AzureLabs-Lab5-34.png)
 
-        ![視線按鈕場景檢視](images/AzureLabs-Lab5-35.png)
+        ![注視按鈕場景視圖](images/AzureLabs-Lab5-35.png)
 
-    3.  按一下 **標記**下拉式按鈕，然後按一下 **新增標記**以開啟*標記和圖層 窗格*。
+    3.  按一下 [**標記**] 下拉按鈕, 然後按一下 [**新增標記**] 以開啟 [標籤 *& 圖層] 窗格*。
 
         ![加入新的標記](images/AzureLabs-Lab5-36.png)
 
         ![選取加號](images/AzureLabs-Lab5-37.png)
 
-    4.  選取 [ **+ （加號）** ] 按鈕，然後在*新的標記名稱*欄位中，輸入**GazeButton**，然後按**儲存**。
+    4.  選取 [ **+ (加號)** ] 按鈕, 然後在 [*新增標記名稱*] 欄位中, 輸入**GazeButton**, 然後按 [**儲存**]。
 
-        ![名稱的新標記](images/AzureLabs-Lab5-38.png)
+        ![命名新標記](images/AzureLabs-Lab5-38.png)
 
-    5.  按一下 [ **GazeButton**物件中*階層面板*，然後在*偵測器] 面板*，指派新建立**GazeButton**標記。
+    5.  按一下 [階層]*面板*中的 [ **GazeButton** ] 物件, 然後在 [偵測*器] 面板*中, 指派新建立的**GazeButton**標記。
 
-        ![將新的標籤指定視線按鈕](images/AzureLabs-Lab5-39.png)
+        ![指派新標記的注視按鈕](images/AzureLabs-Lab5-39.png)
 
-4.  以滑鼠右鍵按一下**GazeButton**物件，在*階層面板*，並新增**空 GameObject** (這將會新增為*子*物件）。
+4.  以滑鼠右鍵按一下 [階層]*面板*中的 [ **GazeButton** ] 物件, 然後新增**空的 GameObject** (將新增為*子*物件)。
 
-5.  選取新的物件，然後將它重新命名**ShapeSpawnPoint**。
+5.  選取新的物件, 並將它重新命名為**ShapeSpawnPoint**。
 
-    1.  變更中的下列參數*Inspector 面板*:
+    1.  變更 [偵測*器] 面板*中的下列參數:
 
         |       | 轉換-位置 |       |
         | :---: | :------------------: |:----: |
         | **X** |**Y**                 | **Z** |
         | 0     | -1                   | 0     |
 
-        ![更新圖案繁衍點轉換](images/AzureLabs-Lab5-40.png)
+        ![更新圖形衍生點轉換](images/AzureLabs-Lab5-40.png)
 
-        ![圖形繁衍點場景檢視](images/AzureLabs-Lab5-41.png)
+        ![成形衍生點場景視圖](images/AzureLabs-Lab5-41.png)
 
-6.  接下來，您會建立**3D 文字**来提供意見反應對 Azure 服務之狀態物件。
+6.  接下來, 您將建立**3D 文字**物件, 以提供 Azure 服務狀態的意見反應。
 
-    以滑鼠右鍵按一下**GazeButton**階層中面板 一次，並新增**3D 物件** > **3D 文字**物件當做*子*。
+    再次以滑鼠右鍵按一下 [階層] 面板中的 [ **GazeButton** ], 並新增**3d 物件** >  **3d 文字**物件做為*子*系。
 
-    ![建立新的 3D 文字物件](images/AzureLabs-Lab5-42.png)
+    ![建立新的3D 文字物件](images/AzureLabs-Lab5-42.png)
 
-7.  重新命名**3D 文字**物件**AzureStatusText**。
+7.  將**3D 文字**物件重新命名為**AzureStatusText**。
 
-8.  變更**AzureStatusText**物件轉換，如下所示：
+8.  變更**AzureStatusText**物件轉換, 如下所示:
 
     |       | 轉換-位置 |       |
     | :---: | :------------------: | :---: |
     | **X** | **Y**                | **Z** |
-    | 0     | 0                    | -0.6  |
+    | 0     | 0                    | -0。6  |
 
-    |       | 轉換為小數位數 |       |
+    |       | 轉換-調整規模 |       |
     | :---: | :---------------: | :---: |
     | **X** | **Y**             | **Z** |
-    | 0.1   | 0.1               | 0.1   |
+    | 0。1   | 0。1               | 0。1   |
 
 
     > [!NOTE]
-    > 請勿擔心，如果它似乎是關閉中心，因為這將會修正當下方文字 Mesh 更新元件。
+    > 如果它看起來不在中心, 請不要擔心, 因為當下列文本網格元件更新時, 將會修正此問題。
 
-9.  變更**文字 Mesh**來比對的元件如下：
+9.  變更**文本網格**元件以符合下列內容:
 
-    ![設定文字網狀結構元件](images/AzureLabs-Lab5-43.png)
+    ![設定文本網格元件](images/AzureLabs-Lab5-43.png)
 
     > [!TIP]
-    > 選取的色彩是十六進位色彩：**000000FF**，但是請放心選擇自己，只要確定它是可讀取。
+    > 此處選取的色彩是十六進位色彩:**000000FF**, 不過您可以自由選擇自己的程式, 只是要確保它可讀取。
 
-10. 您的階層面板結構現在看起來應該像這樣：
+10. 階層式面板的結構現在看起來應該像這樣:
 
-    ![mesh 場景檢視中的文字](images/AzureLabs-Lab5-43b.png)
+    ![場景視圖中的文本網格](images/AzureLabs-Lab5-43b.png)
 
-10. 場景現在看起來應該像這樣：
+10. 您的場景現在看起來應該像這樣:
 
-    ![mesh 場景檢視中的文字](images/AzureLabs-Lab5-44.png)
+    ![場景視圖中的文本網格](images/AzureLabs-Lab5-44.png)
 
 
-## <a name="chapter-6---import-azure-storage-for-unity"></a>第 6 章-匯入 Unity 的 Azure 儲存體
+## <a name="chapter-6---import-azure-storage-for-unity"></a>第6章-匯入 Unity Azure 儲存體
 
-您將針對 Unity 使用 Azure 儲存體 （而其本身會利用.Net SDK for Azure）。 您可以深入了解這在[Unity 文件的 Azure 儲存體](https://docs.microsoft.com/sandbox/gamedev/unity/azure-storage-unity)。
+您將使用適用于 Unity 的 Azure 儲存體 (其本身會利用 .Net SDK for Azure)。 您可以在[Unity 的 Azure 儲存體](https://docs.microsoft.com/sandbox/gamedev/unity/azure-storage-unity)中閱讀更多有關此專案的資訊。
 
-這需要匯入之後重新設定外掛程式的 Unity 中目前沒有已知的問題。 這些步驟 (4-在這一節中的 7) 將不再需要解決的 bug 之後。
+Unity 中目前有一個已知問題, 需要在匯入後重新設定外掛程式。 解決錯誤之後, 將不再需要這些步驟 (本節中的 4-7)。
 
-若要 SDK 匯入您自己的專案，請確定您已下載最新[從 GitHub '.unitypackage](https://aka.ms/azstorage-unitysdk)。 然後，執行下列作業：
+若要將 SDK 匯入您自己的專案, 請確定您已從 GitHub 下載最新的['. unitypackage '](https://aka.ms/azstorage-unitysdk)。 然後, 執行下列動作:
 
-1.  新增 **.unitypackage** unity 所使用的檔案**資產** > **匯入封裝** > **自訂封裝**功能表選項。
+1.  使用 [**資產** > ] [匯**入套件** > ] [**自訂套件**] 功能表選項, 將**unitypackage**檔案新增至 Unity。
 
-2.  在 **匯入 Unity 封裝**方塊，顯示，您可以選取下方的所有內容**外掛程式** > **儲存體**。 取消選取所有項目不需要這堂課程。
+2.  在彈出的 [匯**入 Unity 封裝**] 方塊中, 您可以選取 [**外掛程式** > ] [**儲存體**] 底下的所有專案。 取消核取其他所有專案, 因為這個課程並不需要。
 
-    ![匯入封裝](images/AzureLabs-Lab5-45.png)
+    ![匯入至封裝](images/AzureLabs-Lab5-45.png)
 
-3.  按一下 **匯入**按鈕以新增至您的專案項目。
+3.  按一下 [匯**入**] 按鈕, 將專案新增至您的專案。
 
-4.  移至*儲存體*下方的資料夾*外掛程式*，接著在專案檢視 中，選取下列外掛程式*只*:
+4.  移至 [*外掛程式*] 底下的 [*儲存體*] 資料夾, 然後在 [專案] 視圖中選取下列外掛程式:
 
     -   Microsoft.Data.Edm
     -   Microsoft.Data.OData
-    -   Microsoft.WindowsAzure.Storage
+    -   Windowsazure.storage 儲存體
     -   Newtonsoft.Json
     -   System.Spatial
 
-        ![取消選取任何平台](images/AzureLabs-Lab5-46.png)
+        ![取消核取任何平臺](images/AzureLabs-Lab5-46.png)
 
-5.  具有*這些特定的外掛程式*選取，**取消核取***任何平台*並**取消核取** *WSAPlayer*然後按一下**套用**。
+5.  選取*這些特定外掛程式*後,**取消**核取*任何平臺*並**取消**核取 [ *WSAPlayer* ], 然後按一下 [套用]。
 
-    ![適用於平台的 dll](images/AzureLabs-Lab5-47.png)
-
-    > [!NOTE]
-    > 我們會將標示要僅適用於在 Unity 編輯器中的這些特定外掛程式。 這是因為有不同版本的專案會匯出從 Unity 後要使用 WSA 資料夾中的同一個外掛程式。
-
-6.  在 *儲存體*外掛程式資料夾中，只選取：
-
-    -   Microsoft.Data.Services.Client
-
-        ![dll 不會處理集合](images/AzureLabs-Lab5-48.png)
-
-7.  請檢查**不處理程序**下方*平台設定*，按一下 **套用**。
-
-    ![適用於任何處理](images/AzureLabs-Lab5-49.png)
+    ![套用平臺 dll](images/AzureLabs-Lab5-47.png)
 
     > [!NOTE]
-    > 我們會將標示此外掛程式 」 不會處理 」 的 Unity 組件修補程式發生無法處理此外掛程式。 即使它不會處理此外掛程式仍然可以運作。
+    > 我們會將這些特定外掛程式標示為僅在 Unity 編輯器中使用。 這是因為在從 Unity 匯出專案之後, 將會使用 [WSA] 資料夾中相同外掛程式的不同版本。
 
-## <a name="chapter-7---create-the-azureservices-class"></a>第 7-建立所需的 AzureServices 類別
+6.  在 [*儲存體*外掛程式] 資料夾中, 只選取:
 
-您即將建立的第一個類別是*所需的 AzureServices*類別。
+    -   Microsoft. Data. 用戶端
 
-*所需的 AzureServices*類別會負責：
+        ![dll 的 set 不處理](images/AzureLabs-Lab5-48.png)
 
--   儲存 Azure 帳戶認證。
+7.  勾選 [*平臺設定*] 底下的 [**不處理**] 方塊, 然後按一下 [套用]。
 
--   呼叫您的 Azure 應用程式函式。
+    ![不套用任何處理](images/AzureLabs-Lab5-49.png)
 
--   上傳和下載資料檔案，您的 Azure 雲端儲存體中。
+    > [!NOTE]
+    > 因為 Unity assembly patcher 在處理此外掛程式時發生困難, 所以我們將此外掛程式標示為「不處理」。 外掛程式仍然可以正常執行, 即使尚未處理也一樣。
 
-若要建立此類別：
+## <a name="chapter-7---create-the-azureservices-class"></a>第7章-建立 AzureServices 類別
 
-1.  以滑鼠右鍵按一下*Asset*資料夾，位於 [專案] 面板**建立** > **資料夾**。 將資料夾命名**指令碼**。
+您即將建立的第一個類別是*AzureServices*類別。
+
+*AzureServices*類別會負責:
+
+-   儲存 Azure 帳號憑證。
+
+-   呼叫您的 Azure App 函數。
+
+-   上傳和下載 Azure 雲端儲存體中的資料檔案。
+
+若要建立此類別:
+
+1.  以滑鼠右鍵按一下 [*資產*] 資料夾, 位於 [專案] 面板中的 [**建立** > **資料夾**]。 將資料夾命名為**Scripts**。
 
     ![建立新資料夾](images/AzureLabs-Lab5-50.png)
 
-    ![呼叫資料夾-指令碼](images/AzureLabs-Lab5-51.png)
+    ![呼叫資料夾-腳本](images/AzureLabs-Lab5-51.png)
 
-2.  按兩下剛才建立開啟的資料夾。
+2.  按兩下剛才建立的資料夾, 將它開啟。
 
-3.  在資料夾中，以滑鼠右鍵按一下**Create**  >   **C#指令碼**。 呼叫指令碼*所需的 AzureServices*。
+3.  以滑鼠右鍵按一下資料夾內的 [**建立** >   **C#腳本**]。 呼叫腳本*AzureServices*。
 
-4.  按兩下新*所需的 AzureServices*類別，以開啟它*Visual Studio*。
+4.  按兩下新的*AzureServices*類別, 以*Visual Studio*開啟它。
 
-5.  將下列命名空間加入至頂端*所需的 AzureServices*:
+5.  將下列命名空間新增至*AzureServices*的頂端:
 
     ```csharp
         using System;
@@ -543,7 +543,7 @@ ms.locfileid: "67694551"
         using System.Net;
     ```
 
-6.  加入下列 Inspector 欄位內*所需的 AzureServices*類別：
+6.  在*AzureServices*類別內新增下列 Inspector 欄位:
 
     ```csharp
         /// <summary>
@@ -557,7 +557,7 @@ ms.locfileid: "67694551"
         public TextMesh azureStatusText;
     ```
 
-7.  然後新增下列成員變數內*所需的 AzureServices*類別：
+7.  然後, 在*AzureServices*類別內新增下列成員變數:
 
     ```csharp
         /// <summary>
@@ -610,9 +610,9 @@ ms.locfileid: "67694551"
     ```
 
     > [!IMPORTANT]
-    > 請確定您取代*端點*並*連接字串*在 Azure 入口網站中找到的值與您的 Azure 儲存體、 值
+    > 請務必將*端點*和*連接字串*值取代為 azure 儲存體中的值 (可在 azure 入口網站中找到)
 
-8.  程式碼*Awake()* 並*start （)* 方法現在需要加入。 在類別初始化時，就會呼叫這些方法：
+8.  現在必須加入*喚醒 ()* 和*Start ()* 方法的程式碼。 當類別初始化時, 將會呼叫這些方法:
 
     ```csharp
         private void Awake()
@@ -637,38 +637,38 @@ ms.locfileid: "67694551"
     ```
 
     > [!IMPORTANT]
-    > 我們將會填入的程式碼*CallAzureFunctionForNextShape()* 中[未來一章](#chapter-10---completing-the-azureservices-class)。
+    > 我們將在[未來的章節](#chapter-10---completing-the-azureservices-class)中填入*CallAzureFunctionForNextShape ()* 的程式碼。
 
-9.  刪除*update （)* 方法，因為這個類別不會使用它。
+9.  刪除*Update ()* 方法, 因為這個類別不會使用它。
 
-10. 在 Visual Studio 中，儲存您的變更，然後返回 Unity。
+10. 將您的變更儲存在 Visual Studio 中, 然後返回 Unity。
 
-11. 按一下並拖曳*所需的 AzureServices*指令碼 資料夾中的 Main Camera 物件的類別*階層面板*。
+11. 按一下 [腳本] 資料夾中的 [ *AzureServices* ] 類別, 並將其拖曳至 [階層]*面板*中的主要相機物件。
 
-12. 選取 Main Camera，接著要抓取**AzureStatusText**從下方的子物件**GazeButton**物件，並放在**AzureStatusText**參考目標欄位中，以*Inspector*，以提供參考*所需的 AzureServices*指令碼。
+12. 選取主要相機, 然後從**GazeButton**物件下方抓取**AzureStatusText**子物件, 並將它放在 [ **AzureStatusText**參考目標] 欄位的 [偵測*器*] 中, 以提供*對AzureServices*腳本。
 
-    ![指派 azure 狀態文字參考目標](images/AzureLabs-Lab5-52.png)
+    ![指派 azure 狀態文字參照目標](images/AzureLabs-Lab5-52.png)
 
-## <a name="chapter-8---create-the-shapefactory-class"></a>第 8-建立 ShapeFactory 類別
+## <a name="chapter-8---create-the-shapefactory-class"></a>第8章-建立 ShapeFactory 類別
 
-若要建立下, 一步 的指令碼*ShapeFactory*類別。 此類別的角色是要求時，建立新的圖形，並保留歷程記錄中建立的圖案*圖形歷程記錄清單*。 每次建立圖形時，*圖形歷程記錄清單*中更新*AzureService*類別，並且會儲存您*Azure 儲存體*。 應用程式啟動時，如果儲存的檔案位於您*Azure 儲存體*，則*圖形的歷程記錄清單*擷取和重新執行，使用**3D 文字**物件，提供產生的圖形是否從儲存體，或新的。
+下一個要建立的腳本是*ShapeFactory*類別。 此類別的角色是在要求時建立新的圖形, 並保留在 [*圖形歷程記錄] 清單*中建立之圖形的歷程記錄。 每次建立圖形時, 會在*get-azureservice*類別中更新*圖形歷程記錄清單*, 然後儲存在您的*Azure 儲存體*中。 當應用程式啟動時, 如果在您的*Azure 儲存體*中找到已儲存的檔案, 則會抓取並重新執行*圖形歷程記錄清單*, 其中包含的**3d 文字**物件會提供所產生的圖形是來自儲存體, 或是新的。
 
-若要建立此類別：
+若要建立此類別:
 
-1.  移至**指令碼**您先前建立的資料夾。
+1.  移至您先前建立的**腳本**資料夾。
 
-2.  在資料夾中，以滑鼠右鍵按一下**Create**  >   **C#指令碼**。 呼叫指令碼*ShapeFactory*。
+2.  以滑鼠右鍵按一下資料夾內的 [**建立** >   **C#腳本**]。 呼叫腳本*ShapeFactory*。
 
-3.  按兩下新*ShapeFactory*指令碼，以開啟它*Visual Studio*。
+3.  按兩下新的*ShapeFactory*腳本, 以*Visual Studio*開啟它。
 
-4.  請確定*ShapeFactory*類別包含下列命名空間：
+4.  請確定*ShapeFactory*類別包含下列命名空間:
 
     ```csharp
         using System.Collections.Generic;
         using UnityEngine;
     ```
 
-5.  新增至如下所示的變數*ShapeFactory*類別，並取代*start （)* 並*Awake()* 與下列函式：
+5.  將下方顯示的變數新增至*ShapeFactory*類別, 並將*Start ()* 和*喚醒 ()* 函式取代為下列這些函式:
 
     ```csharp
         /// <summary>
@@ -705,7 +705,7 @@ ms.locfileid: "67694551"
         }
     ```
 
-6.  *CreateShape()* 方法會產生基本的圖形，根據所提供*整數*參數。 布林值參數是用來指定目前建立的圖形是從儲存體，或是新。 將下列程式碼，在您*ShapeFactory*類別，先前的方法如下：
+6.  *CreateShape ()* 方法會根據所提供的*整數*參數, 產生基本圖形。 布林值參數是用來指定目前建立的圖形是來自儲存體還是新的。 在您的*ShapeFactory*類別中, 將下列程式碼放在先前的方法下方:
 
     ```csharp
         /// <summary>
@@ -749,35 +749,35 @@ ms.locfileid: "67694551"
         }
     ```
 
-7.  請務必在 Visual Studio 中儲存您的變更，然後再回到 Unity。
+7.  請務必先將您的變更儲存在 Visual Studio 中, 然後再返回 Unity。
 
-8.  傳回在 Unity 編輯器中，按一下並拖曳*ShapeFactory*從類別**指令碼**資料夾**Main Camera**物件*階層面板*.
+8.  回到 Unity 編輯器中, 按一下 [**腳本**] 資料夾中的 [ *ShapeFactory* ] 類別, 並將其拖曳至 [階層]*面板*中的**主要相機**物件。
 
-9. 您會發現與選取的 Main Camera *ShapeFactory*遺漏指令碼元件*繁衍點*參考。 若要修正此問題，拖曳**ShapeSpawnPoint**物件*階層面板*來**繁衍點**參考目標。
+9. 選取主攝影機之後, 您會注意到*ShapeFactory*腳本元件缺少產生*點*參考。 若要修正此問題, 請將**ShapeSpawnPoint**物件從 [階層]*面板*拖曳至 [**衍生點**參考目標]。
 
-    ![集合圖形 factory 參考目標](images/AzureLabs-Lab5-53.png)
+    ![設定圖形 factory 參考目標](images/AzureLabs-Lab5-53.png)
 
-## <a name="chapter-9---create-the-gaze-class"></a>第 9-建立視線類別
+## <a name="chapter-9---create-the-gaze-class"></a>第9章-建立注視課程
 
-您需要建立的最後一個指令碼*視線*類別。
+您需要建立的最後一個腳本是*注視*類別。
 
-這個類別會負責建立**Raycast** ，從主攝影機，來偵測使用者查看哪些物件會向前投影。 在此情況下，進而識別是否有使用者查看需要 Raycast **GazeButton**場景中物件，並會觸發的行為。
+此類別負責建立將從主要相機向前投射的**Raycast** , 以偵測使用者正在查看的物件。 在此情況下, Raycast 將需要識別使用者是否正在查看場景中的**GazeButton**物件, 並觸發行為。
 
-若要建立此類別：
+若要建立此類別:
 
-1.  移至**指令碼**您先前建立的資料夾。
+1.  移至您先前建立的**腳本**資料夾。
 
-2.  在 [專案] 面板中，以滑鼠右鍵按一下**建立** >   **C#指令碼**。 呼叫指令碼*視線*。
+2.  以滑鼠右鍵按一下 [專案] 面板中的 [**建立** >   **C#腳本**]。 呼叫腳本*注視*。
 
-3.  按兩下新*視線*指令碼，以開啟它*Visual Studio。*
+3.  按兩下新的*注視*腳本, 以 Visual Studio 加以開啟 *。*
 
-4.  請確定下列命名空間包含在指令碼的頂端：
+4.  請確定腳本頂端包含下列命名空間:
 
     ```csharp
         using UnityEngine;
     ```
 
-5.  然後新增下列變數內*視線*類別：
+5.  然後在*注視*類別內新增下列變數:
 
     ```csharp
         /// <summary>
@@ -863,9 +863,9 @@ ms.locfileid: "67694551"
     ```
 
 > [!IMPORTANT]
-> 這些變數的一些能夠在中編輯*編輯器*。
+> 其中有些變數可以在*編輯器*中編輯。
 
-6.  程式碼*Awake()* 並*start （)* 方法現在需要加入。
+6.  現在必須加入*喚醒 ()* 和*Start ()* 方法的程式碼。
 
     ```csharp
         /// <summary>
@@ -887,7 +887,7 @@ ms.locfileid: "67694551"
         }
     ```
 
-7.  新增下列程式碼會建立一個資料指標物件開頭的情況下，連同*update （)* 方法，將會執行 Raycast 方法，以及切換 GazeEnabled 布林值的位置：
+7.  新增下列程式碼, 這會在 start 建立 cursor 物件, 以及使用*Update ()* 方法來執行 Raycast 方法, 並在其中切換 GazeEnabled 布林值:
 
     ```csharp
         /// <summary>
@@ -931,7 +931,7 @@ ms.locfileid: "67694551"
         }
     ```
 
-8. 接下來新增*UpdateRaycast()* 方法，它將專案 Raycast 並偵測叫用的目標。
+8. 接下來, 新增*UpdateRaycast ()* 方法, 它會投影 Raycast 並偵測點擊的目標。
 
     ```csharp
         private void UpdateRaycast()
@@ -1004,7 +1004,7 @@ ms.locfileid: "67694551"
         }
     ```
 
-9. 最後，新增*ResetFocusedObject()* 方法，它會切換 GazeButton 物件目前的色彩，表示它要建立新的形狀與否。
+9. 最後, 加入*ResetFocusedObject ()* 方法, 這會切換 GazeButton 物件目前的色彩, 指出是否正在建立新的圖形。
 
     ```csharp
         /// <summary>
@@ -1025,21 +1025,21 @@ ms.locfileid: "67694551"
         }
     ```
 
-10.  在 Visual Studio 中儲存的變更，然後再回到 Unity。
+10.  請先儲存 Visual Studio 中的變更, 再返回 Unity。
 
-11.  按一下並拖曳*視線*類別的指令碼資料夾**Main Camera**物件*階層面板*。
+11.  按一下 [腳本] 資料夾中的 [*注視*] 類別, 並將其拖曳至 [階層]*面板*中的**主要相機**物件。
 
-## <a name="chapter-10---completing-the-azureservices-class"></a>第 10 章-完成所需的 AzureServices 類別
+## <a name="chapter-10---completing-the-azureservices-class"></a>第10章-完成 AzureServices 類別
 
-與其他指令碼中的地方，它現在便能夠*完整* *所需的 AzureServices*類別。 這會透過來達成：
+與其他指令碼中的地方，它現在便能夠*完整* *所需的 AzureServices*類別。 這將透過下列途徑達成:
 
-1.  新增名為的新方法*CreateCloudIdentityAsync()* ，若要設定驗證所需的變數來與 Azure 進行通訊。
+1.  新增名為*CreateCloudIdentityAsync ()* 的新方法, 以設定與 Azure 通訊所需的驗證變數。
 
-    > 這個方法也會檢查先前儲存的檔案，包含 [圖形] 清單中存在。
+    > 這個方法也會檢查先前儲存的檔案是否存在, 其中包含圖形清單。
     >
-    > **如果找到的檔案**，它會停用使用者*視線*，和形狀建立圖形，根據觸發程序，因為儲存在**Azure 儲存體檔案**。 使用者可以確認這一點，作為**文字 Mesh**會提供顯示 'Storage' 或 'New'，根據圖形原點。
+    > **如果找到**檔案, 就會根據圖形的模式 (儲存在**Azure 儲存體**檔案中), 停用使用者*注視*並觸發圖形建立。 使用者可以看到這種情況, 因為**文字網格**會提供顯示「儲存」或「新」, 視圖形的來源而定。
     >
-    > **如果不找到任何檔案**，它會讓*視線*，讓使用者能夠查看時，建立圖形**GazeButton**場景中的物件。
+    > **如果找不到任何**檔案, 它會啟用*注視*, 讓使用者在查看場景中的**GazeButton**物件時建立圖形。
 
     ```csharp
         /// <summary>
@@ -1088,7 +1088,7 @@ ms.locfileid: "67694551"
         }
     ```
 
-2.  下一步 的程式碼片段是從*start （)* 方法，其中的呼叫將會對*CreateCloudIdentityAsync()* 方法。 歡迎您目前透過複製*start （)* 方法，與下面：
+2.  下一個程式碼片段位於*Start ()* 方法內;其中會對*CreateCloudIdentityAsync ()* 方法進行呼叫。 請隨意複製您目前的*Start ()* 方法, 如下所示:
 
     ```csharp
         private void Start()
@@ -1106,7 +1106,7 @@ ms.locfileid: "67694551"
         }
     ```
 
-3.  方法的程式碼中填滿*CallAzureFunctionForNextShape()* 。 您將使用先前建立*Azure 函數應用程式*要求形狀索引。 一旦收到新的形狀時，這個方法會將傳送圖形，以*ShapeFactory*場景中建立新的形狀的類別。 若要完成本文中使用下列程式碼*CallAzureFunctionForNextShape()* 。
+3.  填入*CallAzureFunctionForNextShape ()* 方法的程式碼。 您將使用先前建立的*Azure 函數應用程式*來要求圖形索引。 一旦收到新的圖形, 這個方法就會將圖形傳送至*ShapeFactory*類別, 以便在場景中建立新的圖形。 使用下列程式碼來完成 CallAzureFunctionForNextShape 的主體 *()* 。
 
     ```csharp
         /// <summary>
@@ -1142,7 +1142,7 @@ ms.locfileid: "67694551"
         }
     ```
 
-4.  新增方法以建立字串，串連的整數儲存圖形的歷程記錄清單，並將它儲存在您*Azure 儲存體檔案*。
+4.  藉由串連儲存在 [圖形歷程記錄] 清單中的整數, 並將它儲存在您的*Azure 儲存體*檔案中, 來新增方法來建立字串。
 
     ```csharp
         /// <summary>
@@ -1157,9 +1157,9 @@ ms.locfileid: "67694551"
         }
     ```
 
-5.  新增方法以擷取儲存在檔案位於您*Azure 儲存體檔案*並*還原序列化*到清單。
+5.  新增方法來抓取儲存在*Azure 儲存體*檔案中的檔案中的文字, 並將它還原序列化為清單。
 
-6.  完成此程序之後，此方法會重新啟用視線，讓使用者可以將多個圖形新增至場景。
+6.  完成此程式之後, 方法會重新啟用注視, 讓使用者可以將更多圖形加入場景中。
 
     ```csharp
         ///<summary>
@@ -1191,54 +1191,54 @@ ms.locfileid: "67694551"
         }
     ```
 
-7.  在 Visual Studio 中儲存的變更，然後再回到 Unity。
+7.  請先儲存 Visual Studio 中的變更, 再返回 Unity。
 
-## <a name="chapter-11---build-the-uwp-solution"></a>第 11 章-建置 UWP 方案
+## <a name="chapter-11---build-the-uwp-solution"></a>第11章-建立 UWP 解決方案
 
-若要開始建置程序：
+若要開始建立程式:
 
-1.  移至**檔案** > **組建設定**。
+1.  移至  > [檔案] [**組建設定**]。
 
-    ![建置應用程式](images/AzureLabs-Lab5-54.png)
+    ![建立應用程式](images/AzureLabs-Lab5-54.png)
 
-2.  按一下 [建置]  。 將會啟動 unity*檔案總管*視窗中，您要建立，然後選取 建置到應用程式的資料夾。 現在，建立該資料夾並將它命名*應用程式*。 然後使用*應用程式*資料夾選取，請按下**選取資料夾**。
+2.  按一下 [建置] 。 Unity 將會啟動 [檔案*瀏覽器*] 視窗, 您必須在其中建立並選取要建立應用程式的資料夾。 立即建立該資料夾, 並將它命名為*應用程式*。 然後選取 [*應用程式*] 資料夾, 按 [**選取資料夾**]。
 
-3.  Unity 會開始建置您的專案*應用程式*資料夾。
+3.  Unity 會開始將您的專案建立至*應用程式*資料夾。
 
-4.  一次 Unity 已完成的建置 （它可能需要一些時間），它將會開啟*檔案總管*視窗在您的組建位置 （檢查您的工作列中，因為它可能不一定會出現您的視窗上方會通知您加入的新視窗）。
+4.  Unity 完成建立之後 (可能需要一些時間), 它會在組建的位置開啟 [檔案*瀏覽器*] 視窗 (請檢查您的工作列, 因為它不一定會出現在視窗的上方, 但會通知您加入新的視窗)。
 
-## <a name="chapter-12---deploying-your-application"></a>第 12 章-部署應用程式
+## <a name="chapter-12---deploying-your-application"></a>第12章-部署您的應用程式
 
-若要部署您的應用程式：
+若要部署您的應用程式:
 
-1.  瀏覽至*應用程式*中所建立的資料夾[最後一章](#chapter-11---build-the-uwp-solution)。 您會看到您的應用程式名稱，與 '.sln' 擴充功能，您應該連按兩下檔案，因此以內開啟它*Visual Studio*。
+1.  流覽至在[上一章](#chapter-11---build-the-uwp-solution)中建立的*應用程式*資料夾。 您會看到一個檔案, 其中包含您的應用程式名稱, 副檔名為 ' .sln ', 您應該按兩下此檔案, 以便在*Visual Studio*中開啟它。
 
-2.  在 **的方案平台**，選取**x86，本機電腦**。
+2.  在**解決方案平臺**中, 選取 [ **x86]、[本機電腦**]。
 
-3.  在 **方案組態**選取**偵錯**。
+3.  在 [**解決方案**設定] 中, 選取 [ **Debug**]。
 
-    > 針對 Microsoft HoloLens，您可能會發現它更輕鬆地將此設為*遠端機器*，如此一來，您不行動網卡到您的電腦。 不過，您必須也執行下列作業：
-    > - 了解**IP 位址**的您 HoloLens，位於**設定** > **網路和網際網路** >  **Wi-fi** > **進階選項**; IPv4 是您應該使用的位址。 
-    > - 請確定**開發人員模式**是**上**; 在找到**設定** > **更新與安全性** >  **適用於開發人員**。
+    > 針對 Microsoft HoloLens, 您可能會發現將此設定為 [*遠端電腦*] 比較容易, 因此您不會行動網卡到電腦。 不過, 您也必須執行下列動作:
+    > - 知道您的 HoloLens 的**IP 位址**, 您可以在 [**設定** > ] [ **&**  > 網路] [**wi-fi**  > ] [**Advanced] 選項**中找到, IPv4 是您應該使用的位址。 
+    > - 請確定**開發人員模式**已**開啟**;在 [**設定** > ] [更新] [**為開發人員** **& 安全性** > ] 中找到。
 
     ![部署解決方案](images/AzureLabs-Lab5-55.png)
 
-4.  移至**建置**功能表，然後按一下 **部署方案**側載應用程式到您的電腦。
+4.  移至 [**建立**] 功能表, 然後按一下 [**部署方案**], 將應用程式側載至您的電腦。
 
-5.  您的應用程式現在應該會出現在清單中的已安裝的應用程式，即可啟動並測試 ！
+5.  您的應用程式現在應該會出現在已安裝的應用程式清單中, 準備好啟動並測試!
 
-## <a name="your-finished-azure-functions-and-storage-application"></a>您已完成 Azure Functions 和儲存體應用程式
+## <a name="your-finished-azure-functions-and-storage-application"></a>您完成的 Azure Functions 和儲存體應用程式
 
-恭喜，您所建立的混合的實境應用程式，運用 Azure Functions 和 Azure 儲存體服務。 您的應用程式將能夠依據儲存的資料，並提供該資料為基礎的動作。
+恭喜, 您建立了一個混合現實應用程式, 利用 Azure Functions 和 Azure 儲存體服務。 您的應用程式可以在儲存的資料上繪製, 並根據該資料提供動作。
 
-![最終產品-結束](images/AzureLabs-Lab5-00.png)
+![最終產品結束](images/AzureLabs-Lab5-00.png)
 
-## <a name="bonus-exercises"></a>Bonus 練習
+## <a name="bonus-exercises"></a>額外練習
 
-### <a name="exercise-1"></a>練習 1
+### <a name="exercise-1"></a>練習1
 
-建立第二個繁衍，點和記錄點已建立物件，從繁衍 （spawn）。 當您載入資料檔案時，重新執行正在繁衍從原先建立的位置的圖形。
+建立第二個產生點, 並記錄建立物件的衍生點。 當您載入資料檔案時, 會從原先建立的位置重新執行所產生的圖形。
 
-### <a name="exercise-2"></a>練習 2
+### <a name="exercise-2"></a>練習2
 
-建立應用程式，而不必重新開啟它每次重新啟動的方式。 **正在載入場景**是很好的位置，以啟動。 之後，若要清除的預存的清單中的方式來建立*Azure 儲存體*，如此一來，它可以輕鬆地重設您的應用程式。 
+建立重新開機應用程式的方法, 而不是每次都必須重新開啟它。 **載入場景**是很好的起點。 這麼做之後, 請建立一個方法來清除*Azure 儲存體*中的已儲存清單, 讓您可以輕鬆地從應用程式重設它。 

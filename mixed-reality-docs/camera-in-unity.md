@@ -1,108 +1,95 @@
 ---
-title: 在 Unity 中的相機
-description: 如何使用 Unity 的主攝影機的 Windows Mixed Reality 開發進行全像攝影版的轉譯
+title: Unity 中的相機
+description: 如何使用 Unity 的主要攝影機進行 Windows Mixed Reality 開發以進行全像轉譯
 author: keveleigh
 ms.author: kurtie
 ms.date: 03/21/2018
 ms.topic: article
-keywords: holotoolkit、 mixedrealitytoolkit、 mixedrealitytoolkit unity、 全像攝影版的轉譯、 全像攝影版的沉浸式鶗懘、 深度緩衝區、 方向、 位置、 不透明且透明的剪輯
-ms.openlocfilehash: 8ea5a1f53351faab1b2863a0afac74e958b4b1a0
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+keywords: holotoolkit、mixedrealitytoolkit、mixedrealitytoolkit-unity、全像攝影、全像投影、沉浸式、焦點、深度緩衝區、僅限方向、位置、不透明、透明、裁剪
+ms.openlocfilehash: 3a9846242dd1709bcaf927d8ffae33862e96ecc8
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591174"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63522387"
 ---
-# <a name="camera-in-unity"></a>在 Unity 中的相機
+# <a name="camera-in-unity"></a>Unity 中的相機
 
-當您穿上混合的實境耳機時，它會變成您全像攝影版的世界的中心。 Unity[相機](http://docs.unity3d.com/Manual/class-Camera.html)元件會自動處理立體視覺呈現，並將您的前端的移動和旋轉時遵循您的專案具有 「 虛擬實境支援 」 與 「 Windows Mixed Reality"選取 （以裝置為[其他設定] 區段的 [Windows 市集的播放程式設定）。 這可能會列為 「 Windows 全像 」 在較舊版本的 Unity。
+當您磨損混合現實耳機時, 它會成為您的全像攝影世界的中心。 Unity[攝影機](http://docs.unity3d.com/Manual/class-Camera.html)元件會自動處理 stereoscopic 轉譯, 並在您的專案已選取 [Windows Mixed reality] 做為裝置 (在其他設定中) 時, 遵循您的 head 移動和旋轉區段中的 [Windows Store Player 設定])。 在舊版 Unity 中, 這可能會列為「Windows 全像」。
 
-不過，若要完全最佳化視覺品質並[闀穩定性](hologram-stability.md)，您應該設定如下所述的觀景窗設定。
+不過, 若要完全優化視覺品質和全息圖形的[穩定性](hologram-stability.md), 您應該設定以下所述的相機設定。
 
 >[!NOTE]
->要套用至您的應用程式的每個場景中的相機，需要這些設定。
+>這些設定必須套用至您應用程式的每個場景中的相機。
 >
->根據預設，當您在 Unity 中，建立新的場景時它就會包含包括相機元件，但沒有正確套用下方設定階層中的 Main 相機 GameObject。
+>根據預設, 當您在 Unity 中建立新場景時, 它會在階層中包含主要相機 GameObject, 其中包含相機元件, 但未正確套用下列設定。
 
-## <a name="holographic-vs-immersive-headsets"></a>沈浸式的耳機與全像攝影版
+## <a name="automatic-scene-and-camera-setup-with-mixed-reality-toolkit-v2"></a>使用混合現實工具組 v2 進行自動場景和相機設定。 
 
-Unity 數位相機元件上的預設設定適用於傳統的 3D 應用程式需要類似天空盒的背景，因為它們沒有真實的世界。
-* 在上執行時**[沈浸式耳機](immersive-headset-hardware-details.md)** 您要轉譯的使用者所見的所有項目，因此您可能會想要保留的天空盒。
-* 不過，在上執行時**全像攝影版的耳機**像[HoloLens](hololens-hardware-details.md)，現實世界裡應該會出現背後的所有項目相機轉譯。 若要這樣做，請設定 相機背景透明 （的 HoloLens，為透明的黑色呈現) 而不是天空盒材質：
-    1. 在 階層 面板中選取 Main Camera
-    2. 在 [偵測器] 面板中，找不到相機元件，並從天空盒中變更清除旗標的下拉式清單中，為純色
-    3. 選取 背景色彩選擇器，並將 RGBA 值變更為 （0，0，0，0）
+遵循[逐步](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)指南, 將混合現實工具組 v2 新增至您的 Unity 專案, 它會自動設定您的專案。
 
-您可以使用指令碼在執行階段判斷耳機藉由檢查是否為沈浸式或全像攝影版[HolographicSettings.IsDisplayOpaque](https://docs.unity3d.com/ScriptReference/XR.WSA.HolographicSettings.IsDisplayOpaque.html)。
+您也可以使用下一節中的指南, 手動設定專案, 而不 MRTK。 
+
+## <a name="holographic-vs-immersive-headsets"></a>全像沉浸式耳機
+
+Unity 攝影機元件上的預設設定適用于傳統3D 應用程式, 需要 skybox 的背景, 因為它們沒有真實世界。
+* 在 **[沉浸式耳機](immersive-headset-hardware-details.md)** 上執行時, 您會轉譯使用者看到的所有內容, 因此您可能會想要保留 skybox。
+* 不過, 在[HoloLens](hololens-hardware-details.md)這類全像的**耳機**上執行時, 真實世界應該會出現在相機呈現的所有內容背後。 若要這麼做, 請將相機背景設定為透明 (在 HoloLens 中, 黑色呈現為透明), 而不是 Skybox 材質:
+    1. 在 [階層] 面板中選取主要相機
+    2. 在 [偵測器] 面板中, 尋找相機元件, 並將 [清除旗標] 下拉式清單從 Skybox 變更為純色
+    3. 選取背景色彩選擇器, 並將 RGBA 值變更為 (0, 0, 0, 0)
+
+您可以使用腳本, 在執行時間判斷耳機是否為沉浸式或全像攝影, 方法是檢查[HolographicSettings. IsDisplayOpaque](https://docs.unity3d.com/ScriptReference/XR.WSA.HolographicSettings.IsDisplayOpaque.html)。
 
 
-## <a name="positioning-the-camera"></a>定位觀景窗
+## <a name="positioning-the-camera"></a>定位相機
 
-它能夠更輕鬆地配置您的應用程式，如果您能想像為 （x： 使用者的開始位置0，Y:0，Z:0). 由於 Main Camera 正在追蹤使用者的標頭的移動，就可以設定使用者的開始位置設定 Main Camera 的開始位置。
-1. 在 階層 面板中選取 Main Camera
-2. 在 [偵測器] 面板中，找不到的轉換元件，並變更的位置 （x:0，Y:1，z:-10） 到 （x:0，Y:0，Z:0)
+如果您將使用者的開始位置想像為 (X:, 則可以更輕鬆地配置您的應用程式)。0、Y:0, Z:0)。 由於主要攝影機是追蹤使用者頭部的移動, 因此可以藉由設定主要攝影機的開始位置來設定使用者的開始位置。
+1. 在 [階層] 面板中選取主要相機
+2. 在 偵測器 面板中, 尋找 轉換 元件, 並將位置從 (X:0、Y:1, Z:-10) 至 (X:0、Y:0, Z:0
 
-   ![在 Unity 中的 [偵測器] 窗格中的相機](images/maincamera-350px.png)<br>
-   *在 Unity 中的 [偵測器] 窗格中的相機*
+   ![Unity 中的 [偵測器] 窗格中的相機](images/maincamera-350px.png)<br>
+   *Unity 中的 [偵測器] 窗格中的相機*
 
-## <a name="clip-planes"></a>裁剪平面
+## <a name="clip-planes"></a>剪輯平面
 
-呈現內容太關閉，使用者可以是只要不在混合實境中的。 您可以調整[近乎並遠裁剪平面](hologram-stability.md#hologram-render-distances)相機元件上。
-1. 在 階層 面板中選取 Main Camera
-2. 在 [偵測器] 面板中，尋找相機元件裁剪平面並將變更幾近文字方塊從 0.3.85。 呈現更接近內容可能會導致使用者 discomfort，應該予以避免每次[呈現距離指導方針](hologram-stability.md#hologram-render-distances)。
+太接近使用者的轉譯內容可能會令人混淆。 您可以調整相機元件上的[近距離剪輯平面](hologram-stability.md#hologram-render-distances)。
+1. 在 [階層] 面板中選取主要相機
+2. 在 [偵測器] 面板中, 尋找相機元件裁剪平面, 並將近端 textbox 從0.3 變更為85。 呈現更接近的內容可能會導致使用者 discomfort, 而且應該根據轉譯[距離方針](hologram-stability.md#hologram-render-distances)來避免。
 
 ## <a name="multiple-cameras"></a>多個相機
 
-當場景中有多個相機的元件時，Unity 知道哪些攝影機使用立體視覺呈現，並藉由檢查哪些 GameObject 前端追蹤具有 MainCamera 標記。
+當場景中有多個相機元件時, Unity 會藉由檢查哪個 GameObject 具有 MainCamera 標籤, 來知道要使用哪一個相機來 stereoscopic 轉譯和 head 追蹤。
 
-## <a name="recentering-a-seated-experience"></a>Recentering 安置的體驗
+## <a name="recentering-a-seated-experience"></a>Recentering 上一位經驗
 
-如果您正在建置[安插擴展經驗](coordinate-systems.md)，您可以藉由呼叫的使用者的目前位置前端 recenter Unity 的全局原點**[XR。InputTracking.Recenter](https://docs.unity3d.com/ScriptReference/XR.InputTracking.Recenter.html)** 方法。
+如果您要建立[大規模的經驗](coordinate-systems.md), 您可以呼叫 XR, 在使用者目前的前端位置 recenter Unity 的世界原點 **[。InputTracking. Recenter](https://docs.unity3d.com/ScriptReference/XR.InputTracking.Recenter.html)** 方法。
 
 ## <a name="reprojection-modes"></a>Reprojection 模式
 
-HoloLens 和沈浸式耳機將 reproject 您的應用程式呈現，以便調整使用者的實際標頭位置的任何 misprediction 時 photons 所發出的每個畫面格。
+HoloLens 和沉浸式耳機都會 reproject 應用程式轉譯的每個畫面格, 以便在發出光子時, 針對使用者的實際標頭位置 misprediction 進行調整。
 
-預設值：
+預設:
 
-* **沈浸式耳機**會執行位置 reprojection，調整您的位置和方向，misprediction 全像投影，如果應用程式提供深度緩衝區的指定範圍內。  如果未提供深度緩衝區，系統將只會修正 mispredictions 方向。
-* **全像攝影版的耳機**像 HoloLens 會執行位置 reprojection 是否與否，應用程式會提供其深度緩衝區。  轉譯通常就是疏鬆具有穩定的背景提供真實世界，位置 reprojection 是一定要有 HoloLens 上的深度緩衝區。
+* 如果應用程式提供特定框架的深度緩衝區, 則**沉浸式耳機**會執行位置 reprojection、調整您的全像位置和方向 misprediction 的全息影像。  如果未提供深度緩衝區, 系統只會在方向更正 mispredictions。
+* 如 HoloLens 這類全像的**耳機**將會執行位置 reprojection, 不論應用程式是否提供其深度緩衝區。  在 HoloLens 上可能沒有深度緩衝區, 因為轉譯通常是以真實世界提供的穩定背景來進行稀疏。
 
-如果您知道您要建置[僅限方向的經驗](coordinate-systems-in-unity.md#building-an-orientation-only-or-seated-scale-experience)嚴格的主體鎖定內容 （例如 360 度的視訊內容），您可以明確設定 reprojection režim fullgeneration 方向只是藉由設定[HolographicSettings.ReprojectionMode](https://docs.unity3d.com/ScriptReference/XR.WSA.HolographicSettings.ReprojectionMode.html)要[HolographicReprojectionMode.OrientationOnly](https://docs.unity3d.com/ScriptReference/XR.WSA.HolographicSettings.HolographicReprojectionMode.html)。
+如果您知道您要使用嚴格的主體鎖定內容來建立[僅限方向的體驗](coordinate-systems-in-unity.md#building-an-orientation-only-or-seated-scale-experience)(例如, 360 度的影片內容), 您可以將 reprojection 模式明確設定為僅透過設定[的方向。HolographicSettings. ReprojectionMode](https://docs.unity3d.com/ScriptReference/XR.WSA.HolographicSettings.ReprojectionMode.html) To [HolographicReprojectionMode. OrientationOnly](https://docs.unity3d.com/ScriptReference/XR.WSA.HolographicSettings.HolographicReprojectionMode.html)。
 
-## <a name="sharing-your-depth-buffers-with-windows"></a>與 Windows 共用您的深度緩衝區
+## <a name="sharing-your-depth-buffers-with-windows"></a>與 Windows 共用深度緩衝區
 
-共用您的應用程式深度緩衝區，以每個畫面格會提供您的應用程式的兩個提升其中一個全像穩定性，耳機的型別為基礎的 Windows 您要轉譯為：
-* **沈浸式耳機**可以執行位置 reprojection，提供深度緩衝區時，調整您的位置和方向的 misprediction 全像投影。
-* **全像攝影版的耳機**像會自動選取 HoloLens[專注點](focus-point-in-unity.md)提供深度緩衝區時，最佳化全像穩定性沿著相交最內容的平面。
+將應用程式的深度緩衝區與 Windows 共用, 每個畫面格都會根據您要轉譯的頭戴式裝置類型, 為您的應用程式提供兩種影像的其中一種提升:
+* 當提供深度緩衝區時,**沉浸式耳機**可以執行位置 reprojection, 調整您的全像位置和方向 misprediction 的全息影像。
+* 在提供深度緩衝區時, 像是 HoloLens 這類全像攝影的**耳機**會自動選取[焦點](focus-point-in-unity.md), 並在與大部分內容相交的平面上優化全息影像的穩定性。
 
-若要設定您的 Unity 應用程式會提供給 Windows 的深度緩衝區是否：
-1. 移至**編輯** > **專案設定** > **Player** > **通用 Windows 平台 索引標籤**  >  **XR 設定**。
-2. 依序展開**Windows Mixed Reality SDK**項目。
-3. 選取或取消選取**啟用深度緩衝區共用**核取方塊。  這將會檢查所建立，因為這項功能新增至 Unity，以及將會取消選取的新專案中預設會針對較舊的專案已升級的預設值。
+若要設定您的 Unity 應用程式是否會提供深度緩衝區給 Windows:
+1. 移至 **[編輯** > **專案設定** > ] [**播放** > **通用 Windows 平臺]**  > 索引標籤**XR 設定**。
+2. 展開 [ **Windows Mixed REALITY SDK** ] 專案。
+3. 勾選或取消核取 [**啟用深度緩衝區共用**] 核取方塊。  預設會在建立的新專案中核取此功能, 因為這項功能已新增至 Unity, 而且預設會針對已升級的舊版專案取消選取。
 
-為 Windows 提供的深度緩衝區可以改善視覺品質，只要 Windows 可以精確地對應深度緩衝區中的正規化每個像素深度值回距離，以公尺為單位，使用您已設定在 Unity 中主攝影機遠近平面。  如果您轉譯通過控點深度值以一般方式，通常應該就可以在這裡，雖然半透明呈現傳遞，以寫入至深度緩衝區時透過現有的顯示色彩像素造成混淆 reprojection。  如果您知道轉譯階段會讓您最終的深度像素為單位的許多有不正確的深度值，您可能會以取得更佳的視覺品質，藉由取消選取 [啟用深度緩衝區共用]。
+只要 Windows 能夠精確地將深度緩衝區中正規化的每圖元深度值對應到量表中的距離, 並使用您在主攝影機上的 Unity 中所設定的近和遠平面, 就能為 Windows 提供深度緩衝區來改善視覺品質。  如果您的轉譯行程以一般方式處理深度值, 您通常應該會在這裡正常運作, 但在顯示到現有的色彩圖元時, 寫入深度緩衝區的半透明轉譯傳遞可能會使 reprojection 混淆。  如果您知道您的轉譯行程會讓許多最後深度的圖元變得不正確, 您可能會取消核取 [啟用深度緩衝區共用], 以取得更佳的視覺品質。
 
-## <a name="mixed-reality-toolkits-automatic-scenesetup"></a>混合的實境工具組的自動場景安裝程式
-當您匯入[MRTK 發行 Unity 套件](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases)或從專案複製[GitHub 存放庫](https://github.com/Microsoft/MixedRealityToolkit-Unity)，您要在 Unity 中尋找新的功能表 ' 混合實境 Toolkit'。 在 [設定] 功能表上，您會看到功能表 [適用於混合實境場景設定]。 當您按一下它時，它會移除預設相機，並新增基本元件- [InputManager](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit/Input/Prefabs/InputManager.prefab)， [MixedRealityCameraParent](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit/Input/Prefabs/MixedRealityCameraParent.prefab)，並[DefaultCursor](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit/Input/Prefabs/Cursor/DefaultCursor.prefab)。
-
-![MRTK 場景設定功能表](images/MRTK_Input_Menu.png)<br>
-*MRTK 場景設定功能表*
-
-![自動的場景中 MRTK 的安裝程式](images/MRTK_HowTo_Input1.png)<br>
-*自動的場景中 MRTK 的安裝程式*
-
-## <a name="mixedrealitycamera-prefab"></a>MixedRealityCamera prefab
-您可以手動新增這些從 [專案] 面板。 您可以找到 prefabs 這些元件。 當您搜尋**MixedRealityCamera**，您將能夠看到兩個不同的數位相機 prefabs。 差別在於**MixedRealityCamera**才相機 prefab 而**MixedRealityCameraParent**包含沈浸式耳機，例如屏障，動作的其他元件控制器和，界限。
-
-![在 MRTK 相機 prefabs](images/MRTK_HowTo_Input2.png)<br>
-*在 MRTK 相機 prefabs*
-
-**MixedRealtyCamera**支援 HoloLens 和沈浸式耳機。 它會偵測到的裝置類型，並最佳化清除旗標和天空盒等屬性。 以下您可以找到一些有用的屬性，您可以自訂游標，移動控制器模型，例如自訂和樓層。
-
-![屬性的動作控制站中，資料指標和樓層](images/MRTK_HowTo_Input3.png)<br>
-*屬性的動作控制站中，資料指標和樓層*
 
 ## <a name="see-also"></a>另請參閱
-* [全像穩定性](hologram-stability.md)
-* [MixedRealityToolkit Main Camera.prefab](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit/Input/Prefabs)
+* [全像投影穩定性](hologram-stability.md)
+* [MixedRealityToolkit 主要攝影機 prefab](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit/Input/Prefabs)

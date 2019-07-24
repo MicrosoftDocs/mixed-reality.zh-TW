@@ -1,11 +1,11 @@
 ---
-title: 新增全像攝影版的遠端處理
-description: 說明如何使用全像攝影版的遠端處理，透過網路呈現 HoloLens 全像投影。
+title: 新增全像攝影遠端
+description: 說明如何使用全像攝影遠端, 透過網路將全息影像轉譯成 HoloLens。
 author: MikeRiches
 ms.author: mriches
 ms.date: 05/24/2019
 ms.topic: article
-keywords: Windows Mixed Reality，全像投影、 全像攝影版的遠端執行功能、 遠端轉譯、 轉譯、 HoloLens、 遠端全像投影的網路
+keywords: Windows Mixed Reality, 全息影像, 全像攝影遠端, 遠端呈現, 網路轉譯, HoloLens, 遠端全息
 ms.openlocfilehash: 8d645f634ff0fc820893f5554fd602aa3a2f38e3
 ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
@@ -13,39 +13,39 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 06/11/2019
 ms.locfileid: "66829617"
 ---
-# <a name="add-holographic-remoting"></a>新增全像攝影版的遠端處理
+# <a name="add-holographic-remoting"></a>新增全像攝影遠端
 
 ## <a name="hololens-2"></a>HoloLens 2
 
 > [!NOTE]
-> HoloLens 2 的特定的詳細指引[即將推出](index.md#news-and-notes)。
+> [即將推出](index.md#news-and-notes)更多 HoloLens 2 特定指引。
 
-使用全像攝影版的遠端處理的 HoloLens 開發人員必須更新他們的應用程式，使其與 HoloLens 2 相容。  這將需要全像攝影版的遠端處理 NuGet 封裝尚未公開可用的新版本。  如果連接到全像攝影版 HoloLens 2 上的遠端播放程式嘗試使用 HoloLens NuGet 套件的應用程式，連接將會失敗。  HoloLens 2 NuGet 套件可供使用之後，請觀看此頁面的更新。
+使用全像攝影遠端的 HoloLens 開發人員必須更新其應用程式, 使其與 HoloLens 2 相容。  這將需要新版本的全像攝影遠端 NuGet 套件, 但尚未公開提供。  如果使用 HoloLens NuGet 套件的應用程式嘗試連線到 HoloLens 2 上的全像攝影版遠端播放機, 連接將會失敗。  一旦有 HoloLens 2 NuGet 套件可供使用, 請觀看此頁面以取得更新。
 
-## <a name="add-holographic-remoting-to-your-desktop-or-uwp-app"></a>將全像攝影版的遠端執行功能新增至您的桌面或 UWP 應用程式
+## <a name="add-holographic-remoting-to-your-desktop-or-uwp-app"></a>在您的桌上型電腦或 UWP 應用程式中新增全像的遠端功能
 
-此頁面說明如何新增全像攝影版的遠端桌面或 UWP 應用程式。
+此頁面說明如何在桌上型電腦或 UWP 應用程式中新增全像攝影遠端功能。
 
-全像攝影版的遠端處理可讓您的應用程式以裝載桌上型 PC 或 Xbox One，允許更多系統資源的存取，並讓您可以整合遠端例如 UWP 裝置上的全像攝影版內容設為目標的 HoloLens[沈浸式檢視](app-views.md)至現有的桌面電腦軟體。 遠端主機應用程式收到 HoloLens 的輸入的資料流、 呈現內容，在虛擬的沈浸式檢視中，及資料流的內容框架返回 HoloLens。 連線是使用標準的 Wi-fi。 若要使用遠端執行功能，您會將全像攝影版的遠端執行功能新增至您的桌面或 UWP 應用程式，使用 NuGet 套件，並撰寫程式碼來處理連接，並在沉浸式檢視中轉譯。 協助程式庫會包含在程式碼範例，可簡化處理裝置連線的工作。
+全像攝影遠端可讓您的應用程式以桌上型電腦或 UWP 裝置 (例如 Xbox One) 上裝載的全像攝影內容為 HoloLens, 讓您可以存取更多的系統資源, 並讓您能夠將遠端[沉浸式視圖](app-views.md)整合到現有的桌上型電腦軟體。 遠端主機應用程式會從 HoloLens 接收輸入資料流程、在虛擬沉浸式視圖中轉譯內容, 以及將內容框架串流回 HoloLens。 連接是使用標準 Wi-fi 建立的。 若要使用遠端處理, 您將使用 NuGet 套件將全像的遠端處理新增至桌面或 UWP 應用程式, 並撰寫程式碼來處理連接並在沉浸式視圖中轉譯。 Helper 程式庫包含在程式碼範例中, 可簡化處理裝置連線的工作。
 
-必須為 50 毫秒的延遲低的典型的遠端連線。 播放器應用程式可以報告在即時的延遲。
+一般遠端連線的延遲時間會降到50毫秒。 Player 應用程式可以即時報告延遲。
 
 >[!NOTE]
->目前在這篇文章中的程式碼片段示範如何使用C++/CX 而不是 C + + 17 相容C++中所使用的 /WinRT [ C++全像攝影版的專案範本](creating-a-holographic-directx-project.md)。  概念是相等的C++/WinRT 專案，但您必須將轉譯程式碼。
+>本文中的程式碼片段目前示範如何使用C++/cx, C++ [ C++ ](creating-a-holographic-directx-project.md)而不是 C + 17 相容的/WinRT, 如全像攝影專案範本中所使用。  概念相當於C++/WinRT 專案, 但您必須轉譯程式碼。
 
-### <a name="get-the-remoting-nuget-packages"></a>取得遠端處理 NuGet 套件
+### <a name="get-the-remoting-nuget-packages"></a>取得遠端 NuGet 套件
 
-請遵循下列步驟，針對全像攝影版的遠端執行功能，讓 NuGet 套件，並從您的專案中加入的參考：
-1. 請移至您在 Visual Studio 中的專案。
-2. 以滑鼠右鍵按一下專案節點，然後選取**管理 NuGet 套件...**
-3. 在出現的窗格中，按一下**瀏覽**，然後搜尋 「 全像攝影版的遠端執行功能 >。
-4. 選取  **Microsoft.Holographic.Remoting**然後按一下**安裝**。
-5. 如果**Preview**  對話方塊出現時，按一下**確定**。
-6. 下一個出現的對話方塊是 「 授權合約 」。 按一下 **我接受**接受授權合約。
+請遵循下列步驟來取得適用于全像攝影遠端的 NuGet 套件, 並從您的專案新增參考:
+1. 前往 Visual Studio 中的專案。
+2. 以滑鼠右鍵按一下專案節點, 然後選取 [**管理 NuGet 套件 ...** ]
+3. 在出現的面板中, 按一下 **[流覽]** , 然後搜尋「全像遠端處理」。
+4. 選取 [ **Microsoft 全息**], 然後按一下 [**安裝**]。
+5. 如果出現 [**預覽**] 對話方塊, 請按一下 **[確定]** 。
+6. 下一個出現的對話方塊是授權合約。 按一下 [**我接受**] 以接受授權合約。
 
 ### <a name="create-the-holographicstreamerhelpers"></a>建立 HolographicStreamerHelpers
 
-首先，我們需要 HolographicStreamerHelpers 的執行個體。 加入這將會處理遠端服務的類別。
+首先, 我們需要 HolographicStreamerHelpers 的實例。 將此加入至將會處理遠端的類別。
 
 ```
 #include <HolographicStreamerHelpers.h>
@@ -54,7 +54,7 @@ ms.locfileid: "66829617"
        Microsoft::Holographic::HolographicStreamerHelpers^ m_streamerHelpers;
 ```
 
-您也必須追蹤連線狀態。 如果您想要呈現的預覽，您需要有要將它複製到的材質。 您也需要一些像是連線狀態鎖定，而儲存 HoloLens，IP 位址的某種方式等等。
+您也必須追蹤連接狀態。 如果您想要轉譯預覽, 則需要有材質, 才能將它複製到其中。 您也需要一些東西, 像是線上狀態鎖定, 還有一些儲存 HoloLens IP 位址的方法, 依此類推。
 
 ```
 private:
@@ -71,9 +71,9 @@ private:
        Microsoft::WRL::ComPtr<ID3D11Texture2D>             m_spTexture;
 ```
 
-### <a name="initialize-holographicstreamerhelpers-and-connect-to-hololens"></a>初始化 HolographicStreamerHelpers 並連接到 HoloLens
+### <a name="initialize-holographicstreamerhelpers-and-connect-to-hololens"></a>將 HolographicStreamerHelpers 初始化並聯機至 HoloLens
 
-若要連接到 HoloLens 裝置，建立 HolographicStreamerHelpers 的執行個體並連線至目標 IP 位址。 您必須設定視訊畫面格大小以符合 HoloLens 顯示寬度和高度，因為全像攝影版的遠端處理程式庫預期編碼器和解碼器完全相符的解決方法。
+若要連線至 HoloLens 裝置, 請建立 HolographicStreamerHelpers 的實例, 並連接到目標 IP 位址。 您必須設定影片畫面大小, 使其符合 HoloLens 的顯示寬度和高度, 因為全像攝影遠端程式庫會預期編碼器和解碼器解析度完全相符。
 
 ```
 m_streamerHelpers = ref new HolographicStreamerHelpers();
@@ -94,9 +94,9 @@ m_streamerHelpers = ref new HolographicStreamerHelpers();
        }
 ```
 
-裝置連線是非同步的。 您的應用程式必須提供事件處理常式的連接，中斷連線，及框架傳送事件。
+裝置連接是非同步。 您的應用程式必須提供連接、中斷連線和框架傳送事件的事件處理常式。
 
-OnConnected 事件可以更新 UI，開始轉譯，等等。 在桌面程式碼範例中，我們會更新視窗標題的 「 連線 」 的訊息。
+OnConnected 事件可以更新 UI、開始呈現等等。 在我們的桌面程式碼範例中, 我們會使用「已連線」訊息來更新視窗標題。
 
 ```
 m_streamerHelpers->OnConnected += ref new ConnectedEvent(
@@ -106,7 +106,7 @@ m_streamerHelpers->OnConnected += ref new ConnectedEvent(
            });
 ```
 
-OnDisconnected 事件可以處理重新連線、 UI 更新等等。 在此範例中，我們重新連接發生暫時性失敗時。
+OnDisconnected 事件可以處理重新連接、UI 更新等等。 在此範例中, 如果發生暫時性失敗, 我們會重新連線。
 
 ```
 Platform::WeakReference streamerHelpersWeakRef = Platform::WeakReference(m_streamerHelpers);
@@ -146,7 +146,7 @@ Platform::WeakReference streamerHelpersWeakRef = Platform::WeakReference(m_strea
            });
 ```
 
-Remoting 元件準備好要傳送在範圍內時，您的應用程式提供一份在 SendFrameEvent 的機會。 在這裡，我們將複製的框架到交換鏈結，讓我們可以將它顯示在預覽視窗中。
+當遠端處理元件準備好要傳送框架時, 您的應用程式會有機會在 SendFrameEvent 中建立複本。 在這裡, 我們會將畫面複製到交換鏈, 讓我們可以將它顯示在預覽視窗中。
 
 ```
 m_streamerHelpers->OnSendFrame += ref new SendFrameEvent(
@@ -174,17 +174,17 @@ m_streamerHelpers->OnSendFrame += ref new SendFrameEvent(
            });
 ```
 
-### <a name="render-holographic-content"></a>呈現全像攝影版的內容
+### <a name="render-holographic-content"></a>呈現全像攝影內容
 
-要呈現的內容使用遠端執行功能，您設定您的桌面或 UWP 應用程式中的虛擬 IFrameworkView 並處理全像攝影版的畫面格，從遠端處理。 所有的 Windows 全像攝影版 api 都是的使用相同的方式，此檢視中，但是它的設定方式稍有不同。
+若要使用遠端處理來轉譯內容, 您可以在桌面或 UWP 應用程式內設定虛擬 IFrameworkView, 並處理來自遠端的全息框架。 所有的 Windows 全像攝影應用程式開發介面都是以相同的方式來使用, 但其設定方式稍有不同。
 
-而不用建立他們自己的全像攝影版的空間和語音元件來自 HolographicRemotingHelpers 類別：
+「全像攝影空間」和「語音」元件不會自行建立, 而是來自您的 HolographicRemotingHelpers 類別:
 
 ```
 m_appView->Initialize(m_streamerHelpers->HolographicSpace, m_streamerHelpers->RemoteSpeech);
 ```
 
-而不是使用執行方法內更新迴圈，您可以提供從桌面或 UWP 應用程式的主迴圈的刻度更新。 這可讓您的桌面或保留在訊息處理的控制項中的 UWP 應用程式。
+您不需要在 Run 方法內使用 update 迴圈, 而是從桌面或 UWP 應用程式的主要迴圈提供滴答更新。 這可讓您的桌面或 UWP 應用程式繼續控制訊息處理。
 
 ```
 void DesktopWindow::Tick()
@@ -196,7 +196,7 @@ void DesktopWindow::Tick()
    }
 ```
 
-全像攝影版的應用程式檢視的 Tick() 方法完成一次更新、 繪製時，出現迴圈的反覆運算。
+全像攝影應用程式視圖的 Tick () 方法會完成更新、繪製、呈現迴圈的一個反復專案。
 
 ```
 void AppView::Tick()
@@ -216,11 +216,11 @@ void AppView::Tick()
    }
 ```
 
-全像攝影版的應用程式檢視更新、 轉譯，並出現迴圈是完全相同，即 HoloLens-上執行時不同之處在於您在桌面的電腦上有更大的系統資源的存取。 您可以呈現多更多的三角形，有多個繪圖的階段，詳細物理條件，並使用 x64 處理序載入需要的內容超過 2 GB 的 RAM。
+全像攝影應用程式視圖的更新、轉譯和呈現迴圈, 與在 HoloLens 上執行時完全相同, 不同之處在于您可以存取桌上型電腦上的系統資源數量更大。 您可以轉譯多個三角形、擁有更多的繪製行程、執行更多物理, 以及使用 x64 進程來載入需要超過 2 GB RAM 的內容。
 
-### <a name="disconnect-and-end-the-remote-session"></a>中斷連線，然後結束遠端工作階段
+### <a name="disconnect-and-end-the-remote-session"></a>中斷連線並結束遠端會話
 
-若要中斷連線-例如，當使用者按一下 中斷連接-U 按鈕呼叫 Disconnect() 上 HolographicStreamerHelpers，並再釋放物件。
+中斷連線-例如, 當使用者按一下 UI 按鈕以中斷連接 HolographicStreamerHelpers 上的呼叫中斷連接 (), 然後放開物件。
 
 ```
 void DesktopWindow::DisconnectFromRemoteDevice()
@@ -238,13 +238,13 @@ void DesktopWindow::DisconnectFromRemoteDevice()
    }
 ```
 
-## <a name="get-the-remoting-player"></a>取得遠端處理播放程式
+## <a name="get-the-remoting-player"></a>取得遠端播放機
 
-Windows 全像攝影版的遠端播放程式會為端點連線至遠端主機應用程式，提供 Windows 應用程式存放區中。 若要取得 Windows 全像攝影版的遠端播放程式，請從您的 HoloLens 搜尋針對遠端執行功能，瀏覽 Windows app store 並下載應用程式。 遠端處理播放程式會包含偵錯遠端裝載應用程式時很有用的功能，畫面上，顯示統計資料。
+Windows app store 中提供的 Windows 全像遠端處理播放程式, 是遠端主機應用程式連接的端點。 若要取得 Windows 全像遠端播放程式, 請從 HoloLens 流覽 Windows app store、搜尋遠端處理, 然後下載應用程式。 「遠端播放程式」包含在螢幕上顯示統計資料的功能, 在對遠端處理主機應用程式進行調試時, 這會很有用。
 
-## <a name="notes-and-resources"></a>資訊與資源
+## <a name="notes-and-resources"></a>記事和資源
 
-全像攝影版的應用程式檢視必須有辦法提供您的應用程式與 Direct3D 裝置，必須用來初始化全像攝影版的空間。 您的應用程式應該使用 Direct3D 裝置複製，並顯示在預覽畫面格。
+全像攝影應用程式視圖需要一種方式, 讓您的應用程式能夠使用 Direct3D 裝置, 這必須用來初始化全像攝影空間。 您的應用程式應該使用此 Direct3D 裝置來複製和顯示預覽畫面。
 
 ```
 internal:
@@ -254,7 +254,7 @@ internal:
        }
 ```
 
-**程式碼範例：** 完整的全像攝影版的遠端程式碼範例已使用，其中包含適用於遠端處理與遠端桌面的 Win32、 UWP DirectX 和 XAML 使用 UWP 的主應用程式專案的全像攝影版的應用程式檢視。 若要取得它，請前往：
-* [針對遠端執行功能的 Windows 全像攝影版的程式碼範例](https://github.com/Microsoft/HoloLensCompanionKit/)
+**程式碼範例:** 提供完整的全像攝影版遠端處理常式代碼範例, 其中包含與使用 XAML 的桌面 Win32、UWP DirectX 和 UWP 的遠端處理和遠端處理主項目目相容的全像攝影應用程式視圖。 若要取得它, 請移至這裡:
+* [遠端處理的 Windows 全像程式碼範例](https://github.com/Microsoft/HoloLensCompanionKit/)
 
-**偵錯的附註：** 全像攝影版的遠端處理程式庫可能會擲回第一個可能發生例外狀況。 這些例外狀況可能會出現在偵錯工作階段，根據當時是作用中的 Visual Studio 的例外狀況設定。 這些例外狀況會在內部攔截到全像攝影版的遠端處理程式庫，您可以忽略。
+**調試注意事項:** 全像攝影遠端程式庫可能會擲回第一個可能發生的例外狀況。 根據當時作用中的 Visual Studio 例外狀況設定, 這些例外狀況可能會顯示在偵錯工具會話中。 「全像」遠端程式庫會在內部攔截這些例外狀況, 而且可以忽略。

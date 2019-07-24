@@ -1,11 +1,11 @@
 ---
 title: 新增自訂的家庭環境
-description: 除了我們所提供的 Windows Mixed Reality 家用的環境，您可以實驗建立和使用您自己。
+description: 除了我們提供的 Windows Mixed Reality 家庭環境之外, 您還可以試驗自己的建立和使用。
 author: thmignon
 ms.author: thmignon
 ms.date: 04/30/2018
 ms.topic: article
-keywords: Windows Mixed Reality、 混合實境，虛擬實境、 VR、 MR、 首頁、 自訂環境、 位置、 cliff 房子、 skyloft、 使用者，建立
+keywords: Windows Mixed Reality, 混合現實, 虛擬實境, VR, MR, Home, 自訂環境, 地點, cliff 房屋, skyloft, 使用者, 建立
 ms.openlocfilehash: d0cdb878f1994cb5f898f06b98d74dee3dd4fdf1
 ms.sourcegitcommit: 150d258a23130026c8792da383a3993657841fb4
 ms.translationtype: MT
@@ -16,11 +16,11 @@ ms.locfileid: "67024537"
 # <a name="add-custom-home-environments"></a>新增自訂的家庭環境
 
 >[!NOTE]
->這是實驗性功能。 不妨試試樂趣，但請不要感到驚訝，如果所有項目未完全如預期運作。 我們計劃要評估的可行性，此功能與感興趣，因此使用它，請告訴我們您的經驗 （和任何您已發現的 bug） 中[開發人員論壇](https://forums.hololens.com/categories/custom-home-environments)。
+>這是實驗性的功能。 試試看吧!, 如果所有東西都不會如預期般運作, 則不會驚訝。 我們正在評估這項功能的可用性, 並對其使用感興趣, 因此請在[開發人員論壇](https://forums.hololens.com/categories/custom-home-environments)中告訴我們您的經驗 (以及您發現的任何錯誤)。
 
-開頭[Windows 10 April 2018 update](#release-notes-april-2018.md)，啟用了實驗性功能，可讓您將加入 （在 [開始] 功能表中） 的位置選擇器的自訂環境，以做為[Windows Mixed Reality 家用](#navigating-the-windows-mixed-reality-home.md). Windows Mixed Reality 有兩個預設環境，Cliff 房屋和 Skyloft，您可以選擇為您的首頁。 建立自訂的環境，可讓您擴充該清單與您自己的創作。 我們會提供此處於早期評估從建立者和開發人員感興趣，請參閱何種世界您建立，，和了解如何使用不同的撰寫工具的狀態。
+從[windows 10 2018 年4月更新](#release-notes-april-2018.md)開始, 我們已啟用實驗性功能, 可讓您將自訂環境新增至 [位置] 選擇器 (在 [開始] 功能表上), 以做為[Windows Mixed Reality 首頁](#navigating-the-windows-mixed-reality-home.md)。 Windows Mixed Reality 有兩個預設環境: Cliff 房子和 Skyloft, 您可以選擇做為首頁。 建立自訂環境可讓您使用自己的建立來擴充該清單。 我們會使這項功能在早期的狀態下提供, 以評估建立者和開發人員的興趣、查看您所建立的各種類型, 以及瞭解如何使用不同的撰寫工具。
 
-時使用的自訂環境，您會發現該 teleporting，互動的應用程式，並將放置全像投影的運作方式就像它會以 Skyloft 與 Cliff 房子。 您可以瀏覽網頁的幻想架構中或未來的縣 （市） 填入全像投影-有無限的可能性 ！
+使用自訂環境時, 您會注意到 teleporting、與應用程式互動, 以及放置全息影像的運作方式, 就像在 Cliff 房子和 Skyloft 中一樣。 您可以在幻想的橫向流覽 web, 或使用全像幻想式道具的城市填補, 這可能是無限的!
 
 ## <a name="device-support"></a>裝置支援
 
@@ -36,70 +36,70 @@ ms.locfileid: "67024537"
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
     </tr>
      <tr>
-        <td>自訂的家庭環境</td>
+        <td>自訂家庭環境</td>
         <td>❌</td>
         <td>✔️</td>
     </tr>
 </table>
 
-## <a name="trying-a-sample-environment"></a>嘗試的範例環境
+## <a name="trying-a-sample-environment"></a>嘗試範例環境
 
-我們已建立範例環境中，將展示一些自訂的家庭環境的創意的可能性。 請遵循下列步驟來試試看：
-1. [下載我們的範例幻想島環境](https://download.microsoft.com/download/B/2/5/B25C1AEF-40CD-4B03-A596-4BCA3D33035A/Fantasy_Island.exe)（自動解壓縮可執行檔的連結點為單位）。
+我們建立了一個範例環境, 其中顯示一些自訂家庭環境的創意可能性。 請遵循下列步驟來試用:
+1. [下載我們的範例幻想島環境](https://download.microsoft.com/download/B/2/5/B25C1AEF-40CD-4B03-A596-4BCA3D33035A/Fantasy_Island.exe)(連結點到自動解壓縮的可執行檔)。
 
     ![幻想島範例環境](images/FantasyLand.jpg)<br>
     *幻想島範例環境*<br>
 
-2. 執行**Fantasy_Island.exe**剛才下載的檔案。
+2. 執行您剛才下載的**Fantasy_Island**檔案。
 
     > [!NOTE]
-    > 嘗試執行.exe 檔案 （例如這個） 網站下載，您可能會遇到 「 Windows 受保護您的電腦 」 快顯視窗。 若要從這個快顯視窗中執行 Fantasy_Island.exe，請選取**進一歩**，然後**仍要執行**。 此安全性設定為了保護您免於下載的檔案，您不一定要信任，因此當您信任的來源檔案時請只選擇此選項。
+    > 當您嘗試執行從 web 下載的 .exe 檔案時 (例如此檔案), 您可能會遇到「Windows 受保護的電腦」快顯視窗。 若要從此快顯視窗執行 Fantasy_Island, 請選取 [**詳細資訊**], 然後 [**仍要執行**]。 此安全性設定的目的是為了保護您無法下載您不想要信任的檔案, 因此請只在信任檔案來源時選擇此選項。
 
-3. 開啟**檔案總管**並瀏覽至 [環境] 資料夾，藉由在 [網址] 列中貼上下列： `%LOCALAPPDATA%\Packages\EnvironmentsApp_cw5n1h2txyewy\LocalState`。
-4. 將您下載的範例環境複製到這個資料夾中。
-5. 重新啟動**混合實境入口網站**。 這會重新整理在位置選擇器中的環境清單。
-6. 置於耳機。 一旦您在家中，開啟 **[開始] 功能表**使用 Windows 按鈕您的控制器。
-7. 選取 **上的芳鄰**選擇家庭環境的已釘選應用程式清單上方的圖示。
-8. 您會發現您在清單中的位置中下載的幻想島環境。 選取 **幻想島**輸入在新的自訂家庭環境 ！
+3. 開啟 [檔案**瀏覽器**], 然後在網址列中貼上下列內容, 以`%LOCALAPPDATA%\Packages\EnvironmentsApp_cw5n1h2txyewy\LocalState`流覽至 [環境] 資料夾:。
+4. 將您下載的範例環境複製到此資料夾中。
+5. 重新開機**混合現實入口網站**。 這會重新整理位置選擇器中的環境清單。
+6. 放在您的耳機上。 在首頁之後, 使用 [Windows] 按鈕控制器開啟 [**開始] 功能表**。
+7. 選取釘選的應用程式清單上方的 [**位置**] 圖示, 以選擇家庭環境。
+8. 您會在您的地點清單中找到您所下載的「幻想島」環境。 選取 [**幻想島**] 以輸入新的自訂家庭環境!
 
 ## <a name="creating-your-own-custom-environment"></a>建立您自己的自訂環境
 
-除了使用我們的範例環境，您可以匯出您自己自訂的環境，使用您最愛的 3D 編輯軟體。 
+除了使用我們的範例環境之外, 您還可以使用您最愛的3D 編輯軟體, 匯出自己的自訂環境。 
 
-### <a name="modeling-guidelines"></a>模型化的指導方針
+### <a name="modeling-guidelines"></a>模型化方針
 
-當模型化您的環境，請注意下列建議。 這有助於確保以正確的方向 believably 大小的世界中的使用者會產生：
+在模型化您的環境時, 請記住下列建議。 這可協助確保使用者在 believably 大小的世界中, 以正確的方向產生:
 
-1. 使用者會繁衍 0,0,0 因此中心所需的繁衍您的位置原點為中心。
-2. 工作單位應該設定以公尺為單位，以便可以撰寫全球規模的資產。
-3. 總軸應該設定為"Y"。
-4. 資產應該面臨"forward"朝向正 Z 軸。
-5. 所有的網格不需要合併，但建議如果您的目標資源受限的裝置。
+1. 使用者將會產生 0, 0, 0, 將您所需的衍生位置置在原點周圍。
+2. 工作單位應設定為計量, 以便可在世界各地撰寫資產。
+3. 向上軸應該設定為 "Y"。
+4. 資產應該朝正 Z 軸「順向」。
+5. 所有的網格都不需要合併, 但如果您的目標是受資源限制的裝置, 則建議使用此選項。
 
 ### <a name="exporting-your-environment"></a>匯出您的環境
 
-Windows Mixed Reality 依賴二進位 glTF (.glb) 做為資產的傳遞格式的環境。 glTF 是獲微軟授權使用 3D 資產傳遞 Khronos 群組所維護的免費開放標準。 隨著 glTF 發展為一種業界標準的可互通的 3D 內容，因此會 Microsoft 的支援格式會在 Windows 應用程式和體驗。
+Windows Mixed Reality 依賴二進位 glTF (. glb) 作為環境的資產傳遞格式。 glTF 是由 Khronos 群組維護之3D 資產傳遞的免費開放標準。 隨著 glTF 發展成可互通3D 內容的業界標準, Microsoft 也會支援跨 Windows 應用程式和體驗的格式。
 
-匯出資產，以用作自訂家庭環境的第一個步驟產生 glTF 2.0 模型。 GlTF 工作群組會維護[份支援匯出工具和轉換器](https://github.com/KhronosGroup/glTF/blob/master/README.md#converters-and-exporters)建立 glTF 2.0 模型。 若要開始，使用本頁列出的程式來建立和匯出 glTF 2.0 模型，或轉換現有的模型使用其中一個支援的轉換器。
+匯出資產以作為自訂家庭環境的第一個步驟是產生 glTF 2.0 模型。 GlTF 工作群組會維護一份[支援的匯出工具和轉換器清單](https://github.com/KhronosGroup/glTF/blob/master/README.md#converters-and-exporters), 以建立 glTF 2.0 模型。 若要開始, 請使用此頁面上所列的其中一個程式來建立和匯出 glTF 2.0 模型, 或使用其中一個支援的轉換器來轉換現有的模型。
 
-此外，請參閱[很有幫助本文](https://www.khronos.org/blog/art-pipeline-for-gltf)這提供封面流程概觀匯出 glTF 模型從 「 blender 」 和 3DS Max 直接。 
+此外, 請參閱[這篇實用的文章](https://www.khronos.org/blog/art-pipeline-for-gltf), 其中提供了直接從 BLENDER 和 3DS Max 匯出 glTF 模型的藝術工作流程總覽。 
 
-### <a name="environment-limits"></a>環境的限制
+### <a name="environment-limits"></a>環境限制
 
-所有的環境必須是 < 256 mb。 大於 256 mb 為單位的環境將無法載入，並改為使用空的世界就預設天空盒周圍的使用者使用。 建立您的模型時，請記住此檔案的大小限制。 此外，如果您打算使用 WindowsMRAssetConverter，如下所述進行環境最佳化，是 cognizant 紋理大小，將會增加，因為最佳化工具會建立紋理，具有較大的檔案大小，但更快載入。 
+所有環境都必須 < 256 mb。 大於 256 mb 的環境將無法載入並切換回空白的世界, 只有使用者周圍的預設 skybox。 建立模型時, 請記住此檔案大小限制。 此外, 如果您打算使用 WindowsMRAssetConverter 來優化您的環境, 如下所述, 請 cognizant 紋理大小會隨著優化工具建立具有較大檔案大小的材質而增加, 但載入速度更快。 
 
-### <a name="optimizing-your-environment"></a>將您的環境最佳化
+### <a name="optimizing-your-environment"></a>將您的環境優化
 
-Windows Mixed Reality 支援許多選用的最佳化功能，可大幅縮短載入時間，您的環境。 這可能會對大部分的紋理，環境來說尤其重要，因為他們有時會在載入時的逾時時間。 一般情況下，我們建議此步驟中的所有資產，不過，較小的環境，以幾個或低解析度的紋理不一定需要它。 
+Windows Mixed Reality 支援數個選擇性的優化, 可大幅減少您環境的載入時間。 對於具有許多材質的環境而言, 這可能特別重要, 因為它們有時會在載入時超時。 一般來說, 我們建議所有資產使用此步驟, 不過, 只有少數或低解析度紋理的小型環境不一定會要求它。 
 
-為了簡化此程序，我們建立了[Windows 混合實境資產轉換子 （可在 GitHub 上）](https://github.com/Microsoft/glTF-Toolkit/releases)來執行您的最佳化。 此工具會執行其他紋理封裝、 壓縮和解決方式向下調整，最佳化任何標準 2.0 glTF 或.glb 使用一組 Microsoft glTF 工具組中可用的公用程式。 
+為了簡化此程式, 我們已建立[Windows Mixed Reality 資產轉換器 (可在 GitHub 上取得)](https://github.com/Microsoft/glTF-Toolkit/releases)來執行您的優化。 這項工具會使用 Microsoft glTF 工具組中提供的一組公用程式, 藉由執行額外的材質封裝、壓縮和解析度向下延展來優化任何標準 2.0 glTF 或 glb。 
 
-這個轉換子目前支援數目來調整最佳化的確切行為的旗標。 我們建議您執行下列的旗標，為獲得最佳結果：
+轉換器目前支援多個旗標, 以調整優化的確切行為。 我們建議使用下列旗標來執行, 以取得最佳結果:
 
 Flag|建議的值|描述
 ---|---|---
--max-texture-size|1024 或 2048| 調整此選項可改善紋理的品質，預設值是 512 x 512。 請注意，較大的值會大幅影響環境的檔案大小因此牢記在心 256 mb 的限制
--min-version|1803|舊版 windows 上才支援自訂的環境 > = 1803年。 這個旗標將會移除較舊版本的紋理，並減少檔案大小的最終的資產
+-最大-材質-大小|1024或2048| 調整此項以改善材質的品質, 預設值為512x512。 請注意, 較大的值會大幅影響環境的檔案大小, 因此請記住 256 mb 的限制
+-最小-版本|1803|只有 windows > = 1803 版本才支援自訂環境。 此旗標會移除較舊版本的材質, 並減少最終資產的檔案大小
 
 例如:
 
@@ -109,46 +109,46 @@ WindowsMRAssetConverter FileToConvert.gltf -max-texture-size 1024 -min-version 1
 
 ### <a name="testing-your-environment"></a>測試您的環境
 
-您最終.glb 環境之後您即可耳機中測試它。 步驟 2 中開始[「 嘗試的範例環境 」](#trying-a-sample-environment)家用混合實境中作為您的自訂環境的一節。 
+當您擁有最後的 glb 環境之後, 就可以開始在耳機中進行測試。 從「[試用範例環境](#trying-a-sample-environment)」一節的步驟2開始, 使用您的自訂環境作為混合現實首頁。 
 
 ## <a name="feedback"></a>意見反應
 
-雖然我們會評估此實驗性功能，我們想要了解您如何使用自訂環境、 任何您可能會遇到，有關的錯誤，且您要的功能的方式。 請分享建立和使用自訂的家庭環境中的所有意見反應[開發人員論壇](https://forums.hololens.com/categories/custom-home-environments)。
+雖然我們正在評估這項實驗性功能, 但我們想要瞭解您使用自訂環境的方式、您可能遇到的任何 bug, 以及您喜歡這項功能的方式。 請在[開發人員論壇](https://forums.hololens.com/categories/custom-home-environments)中分享建立和使用自訂家庭環境的任何意見反應。
 
 ## <a name="troubleshooting-and-tips"></a>疑難排解與秘訣
 
-### <a name="how-do-i-change-the-name-of-the-environment"></a>如何變更環境的名稱？
+### <a name="how-do-i-change-the-name-of-the-environment"></a>如何? 變更環境的名稱嗎？
 
-[環境] 資料夾中的檔案名稱將用於在位置選擇器中。 若要變更您的環境名稱只是重新命名環境檔案名稱，並重新混合實境入口網站。
+[環境] 資料夾中的檔案名將用於 [位置] 選擇器。 若要變更您的環境名稱, 只需重新命名環境檔案名, 然後重新開機混合現實入口網站。
 
-### <a name="how-do-i-remove-custom-environments-from-my-places-picker"></a>如何從我的位置選擇器中移除自訂環境？
+### <a name="how-do-i-remove-custom-environments-from-my-places-picker"></a>如何? 從我的地點選擇器中移除自訂環境嗎？
 
-若要移除的自訂環境，請開啟 在您的電腦上的 環境 資料夾 (`%LOCALAPPDATA%\Packages\EnvironmentsApp_cw5n1h2txyewy\LocalState`) 和刪除環境。 一旦您重新啟動混合實境入口網站，此環境不會再出現在位置選擇器中。 
+若要移除自訂環境, 請在您的電腦上開啟`%LOCALAPPDATA%\Packages\EnvironmentsApp_cw5n1h2txyewy\LocalState`[環境] 資料夾 (), 然後刪除環境。 一旦您重新開機混合現實入口網站, 這個環境就不會再出現在 [位置] 選擇器中。 
 
-### <a name="how-do-i-default-to-my-favorite-custom-environment"></a>如何 default 我最愛的自訂環境？
+### <a name="how-do-i-default-to-my-favorite-custom-environment"></a>如何? 預設為我最愛的自訂環境嗎？
 
-您目前無法變更預設環境。 每次您重新啟動混合實境入口網站中，您會返回 Cliff 房屋環境。 
+您目前無法變更預設環境。 每次您重新開機混合現實入口網站時, 將會回到 Cliff 房屋環境。 
 
-### <a name="i-spawn-into-a-blank-space"></a>我繁衍 （spawn) 至空白空間
+### <a name="i-spawn-into-a-blank-space"></a>我會產生一個空格
 
-Windows Mixed Reality[不支援超過 256 mb 的環境](#environment-limits)。 當環境超出此限制時，您將登陸在空白的天空方塊中，不具有模型。
+Windows Mixed Reality[不支援超過 256 mb 的環境](#environment-limits)。 當環境超出此限制時, 您會進入空的天空方塊, 而不會有任何型號。
 
-### <a name="it-takes-a-long-time-to-load-my-environment"></a>花費很長的時間，以載入我的環境
+### <a name="it-takes-a-long-time-to-load-my-environment"></a>載入我的環境需要很長的時間
 
-您可以新增選用的最佳化您的環境，讓它更快載入。 請參閱[< 最佳化您的環境 >](#optimizing-your-environment)如需詳細資訊。
+您可以在您的環境中新增選擇性的優化, 使其更快載入。 如需詳細資訊, 請參閱「[優化您的環境](#optimizing-your-environment)」。
 
-### <a name="the-scale-of-my-environment-is-incorrect"></a>我的環境的縮放比例不正確
+### <a name="the-scale-of-my-environment-is-incorrect"></a>我的環境規模不正確
 
-載入環境時，Windows Mixed Reality 將轉譯 glTF 單位，以 1 公尺。 如果您的環境載入非預期的小數位數，再次檢查您的匯出工具，以確保您正在建立模型 1 公尺的縮放比例。 
+Windows Mixed Reality 會在載入環境時將 glTF 單位轉譯為1計量。 如果您的環境載入非預期的規模, 請再次檢查您的匯出工具, 以確定您是以1個計量規模進行模型化。 
 
-### <a name="the-spawn-location-in-my-environment-is-incorrect"></a>在 我的環境中繁衍位置不正確
+### <a name="the-spawn-location-in-my-environment-is-incorrect"></a>我的環境中的衍生位置不正確
 
-預設繁衍位置位於 0,0,0 在環境中。 其目前無法自訂這個位置，因此您必須修改繁衍點位於所需的繁衍點的來源匯出您的環境。
+預設的產生位置位於環境中的 0, 0, 0。 目前無法自訂此位置, 因此您必須藉由將您的環境匯出至所需的衍生點, 以修改產生點。
 
-### <a name="the-audio-doesnt-sound-correct-in-the-environment"></a>聲音聽起來不正確的環境中
+### <a name="the-audio-doesnt-sound-correct-in-the-environment"></a>在環境中音訊的音效不正確
 
-當您建立您的自訂環境時，它會使用不符合您所建立的實體空間樂器轉譯模擬。 音效可能來自錯誤的指示，並聽 muffled。 
+當您建立自訂環境時, 它會使用不符合您所建立之實體空間的聲場呈現模擬。 音效可能來自錯誤的方向, 而且可能聽起來 muffled。 
 
 ## <a name="see-also"></a>另請參閱
-* [混合實境資產轉換子 （於 GitHub) 的 Windows](https://github.com/Microsoft/glTF-Toolkit/releases)
+* [Windows Mixed Reality 資產轉換器 (位於 GitHub)](https://github.com/Microsoft/glTF-Toolkit/releases)
 

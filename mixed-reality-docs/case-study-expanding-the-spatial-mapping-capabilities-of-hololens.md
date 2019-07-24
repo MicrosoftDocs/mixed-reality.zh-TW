@@ -1,21 +1,21 @@
 ---
-title: 案例研究-擴展 HoloLens 空間對應功能
-description: 當建立我們的第一個應用程式的 Microsoft HoloLens，我們想要看到我們可以就遠推送空間對應的界限在裝置上。
+title: 案例研究-擴充 HoloLens 的空間對應功能
+description: 建立 Microsoft HoloLens 的第一個應用程式時, 我們正積極看到我們可以在裝置上推送空間對應界限的程度。
 author: jevertt
 ms.author: jevertt
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Windows Mixed Reality，HoloLens，空間對應
+keywords: Windows Mixed Reality、HoloLens、空間對應
 ms.openlocfilehash: 602b629afa5900ff34c28b3a3a32725af06590b7
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59595755"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63522684"
 ---
-# <a name="case-study---expanding-the-spatial-mapping-capabilities-of-hololens"></a>案例研究-擴展 HoloLens 空間對應功能
+# <a name="case-study---expanding-the-spatial-mapping-capabilities-of-hololens"></a>案例研究-擴充 HoloLens 的空間對應功能
 
-當建立我們的第一個應用程式的 Microsoft HoloLens，我們想要看到我們可以就遠推送空間對應的界限在裝置上。 Jeff Evertt，Microsoft Studios 的軟體工程師會說明如何從需要更充分掌控全像投影會放在使用者的實際操作環境的方式開發新的技術。
+建立 Microsoft HoloLens 的第一個應用程式時, 我們正積極看到我們可以在裝置上推送空間對應界限的程度。 Jeff Evertt 是 Microsoft 工作室的軟體工程師, 說明如何開發新的技術, 以更充分掌控在使用者的真實世界環境中如何放置全息影像。
 
 ## <a name="watch-the-video"></a>觀看影片
 
@@ -23,59 +23,59 @@ ms.locfileid: "59595755"
 
 ## <a name="beyond-spatial-mapping"></a>超出空間對應
 
-雖然我們已努力[片段](https://www.microsoft.com/p/fragments/9nblggh5ggm8)並[Young Conker](https://www.microsoft.com/p/young-conker/9nblggh5ggk1)、 兩個 HoloLens 的第一個遊戲，我們發現當我們的全像投影在真實世界的程序位置，我們需要更高的層級了解使用者的環境。 每個遊戲都有它自己的特定位置需求：片段，比方說，我們想要能夠區分不同的介面 — 例如最低限度值或資料表，將相關的位置中的線索。 我們也想要能夠識別介面，例如沙發或椅子，坐 life-size 全像攝影版的字元。 在 Young Conker 我們想 Conker 和他的對手，若要能夠在玩家的房間內引發的介面作為平台。
+雖然我們正在處理[片段](https://www.microsoft.com/p/fragments/9nblggh5ggm8)和[年輕 Conker](https://www.microsoft.com/p/young-conker/9nblggh5ggk1), 但我們發現 HoloLens 的第一場遊戲, 在實際執行的是在實體世界中進行全息的程式化時, 我們需要更深入瞭解使用者的環境. 每個遊戲都有自己的特定位置需求:例如, 在片段中, 我們想要能夠區別不同的表面 (例如樓層或資料表), 以將線索放在相關的位置。 我們也想要能夠找出生活大小的全像是沙發或椅子的表面。 在年輕的 Conker 中, 我們希望 Conker 和他的對手能夠在玩家的房間中, 以平臺的形式使用凸起的表面。
 
-[Asobo Studios](http://www.asobostudio.com/index.html)，適用於這些遊戲中，我們開發的合作夥伴來解決標題面臨這個問題，並建立擴充的 HoloLens 空間的對應功能的技術。 使用這種情況，我們就可以分析玩家的空間，並識別介面，例如牆壁、 資料表、 椅子和樓層。 它也讓我們能夠最佳化對一組條件約束，來判斷最佳放置全像攝影版的物件。
+[Asobo 工作室](http://www.asobostudio.com/index.html)是適用于這些遊戲的開發合作夥伴, 面對這個問題所在, 並建立了一項技術來擴充 HoloLens 的空間對應功能。 使用這種方式, 我們可以分析玩家的房間, 並找出牆、表格、椅子和樓層等表面。 它也讓我們能夠優化一組條件約束, 以判斷全像攝影物件的最佳位置。
 
-## <a name="the-spatial-understanding-code"></a>空間的了解程式碼
+## <a name="the-spatial-understanding-code"></a>空間理解程式碼
 
-我們花了 Asobo 的原始程式碼，並建立封裝這項技術的文件庫。 Microsoft Asobo 現在開放原始碼這段程式碼，以及擁有上開放[MixedRealityToolkit](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit/SpatialMapping)供您使用您自己的專案中。 所有的原始程式碼，會包含可讓您根據您的需求進行自訂，並與社群分享您的增強功能。 程式碼C++已經包裝成 UWP DLL 並公開至 Unity 中使用求解[掉落 prefab 內含 MixedRealityToolkit](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Examples/SpatialUnderstanding)。
+我們採用 Asobo 的原始程式碼, 並建立封裝這項技術的程式庫。 Microsoft 和 Asobo 現已開放原始碼, 並將其提供給[MixedRealityToolkit](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit/SpatialMapping) , 供您在自己的專案中使用。 包含所有原始程式碼, 讓您可以依據自己的需求進行自訂, 並與您的社區分享您的改進。 此C++規劃求解的程式碼已包裝成 UWP DLL, 並使用[包含在 MixedRealityToolkit 內的下拉式 Prefab](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Examples/SpatialUnderstanding)公開至 Unity。
 
-有許多有用的查詢包含在 Unity 範例可讓您尋找在牆上的空白空間，將物件放上或在地板上的大型空間上，找出的字元坐著和各種其他空間的了解查詢的位置。
+Unity 範例中包含許多有用的查詢, 可讓您在牆上尋找空的空間、將物件放在最上方或較大的空間上、找出要放置的字元位置, 以及其他許多空間理解查詢。
 
-雖然 HoloLens 所提供的空間對應解決方案設計為泛型程度足以符合完整的問題空間一系列的需求，以支援的兩個特定的遊戲需要建置空間的了解模組。 因此，其解決方案被圍繞的特定處理程序和假設組：
-* **固定大小 playspace**:使用者初始呼叫中指定的最大 playspace 大小。
-* **單次掃描處理序**:此程序需要離散掃描的階段的使用者將周圍的引導，定義 playspace。 掃描已完成之後，查詢函數將不會運作之前。
-* **使用者導向 playspace"繪圖"**:在掃描階段中，使用者會移動，並尋找周圍 playspace，有效地繪製應該包含的區域。 產生的網狀結構，務必在這個階段期間提供使用者意見反應。
-* **室內住家或辦公室安裝**:查詢函式被專為一般的介面及背景牆直角。 這是軟性限制。 不過，在掃描階段中，主座標軸分析會完成最佳化網狀結構鑲嵌式主要和次要軸。
+雖然 HoloLens 提供的空間對應解決方案的設計是為了符合整個範圍問題空間的需求, 但空間理解模組是為了支援兩個特定遊戲的需求而打造。 因此, 其解決方案的結構是以特定的程式和假設的集合為根據:
+* **固定大小 playspace**:使用者會指定 init 呼叫中的最大 playspace 大小。
+* **一次性掃描程式**:此程式需要一個獨立的掃描階段, 使用者會在此逐步解說, 定義 playspace。 在完成掃描之後, 查詢函數才會運作。
+* **使用者導向的 playspace 「繪製**」:在掃描階段, 使用者會移動並尋找 playspace, 有效地繪製應該包含的區域。 產生的網格非常重要, 可在此階段提供使用者意見反應。
+* **室內家用或 office 安裝程式**:查詢函式是以適當角度針對平面和牆而設計的。 這是一項軟性限制。 不過, 在掃描階段, 主要軸分析會完成, 以優化主要和次要軸的網格鑲嵌。
 
-### <a name="room-scanning-process"></a>聊天室掃描程序
+### <a name="room-scanning-process"></a>房間掃描程式
 
-當您載入的空間的了解模組時，您將會的先掃描您的空間，因此，所有可用的介面 — 例如 floor、 ceiling 和牆，識別出並標示為。 在掃描過程中，您看一下您的會議室和 「 小畫家 ' 應該在掃描中包含的區域。
+當您載入空間理解模組時, 您要做的第一件事就是掃描您的空間, 如此一來, 所有可用的表面 (例如樓層、上限和牆) 都會被識別和標示。 在掃描過程中, 您會尋找您的聊天室, 並「繪製」應該包含在掃描中的區域。
 
-在這個階段期間看到網格就是聊天室的一項重要的視覺回饋，可讓使用者知道正被掃描的哪些部分。 空間的了解模組 DLL 在內部儲存 playspace，以調整大小的 8 cm voxel cube 的方格。 在掃描的初始部分，主要元件分析完成來決定座標軸的聊天室。 就內部而言，它會儲存這些軸對齊其 voxel 空間。 網格會產生大約每秒擷取 isosurface voxel 磁碟區。
+在這個階段中看到的網格是一項很重要的視覺化意見反應, 可讓使用者知道房間的哪些部分正在進行掃描。 空間理解模組的 DLL 會在內部將 playspace 儲存為8cm 大小體素 cube 的方格。 在掃描的初始部分期間, 主要元件分析會完成以判斷房間的軸。 就內部而言, 它會儲存其對應至這些座標軸的體素空間。 從體素磁片區解壓縮 isosurface, 大約每秒會產生一次網格。
 
-![空間對應以白色的網狀結構和了解 playspace mesh 中綠色](images/spatial-mapping-500px.png)
+![空間對應網格 (白色) 和瞭解 playspace 網格 (綠色)](images/spatial-mapping-500px.png)
 
-空間對應以白色的網狀結構和了解 playspace mesh 中綠色
+空間對應網格 (白色) 和瞭解 playspace 網格 (綠色)
 
 
 
-包含的 SpatialUnderstanding.cs 檔案管理掃描階段的程序。 它會呼叫下列函數：
-* **SpatialUnderstanding_Init**:在開始時，請呼叫一次。
-* **GeneratePlayspace_InitScan**:指出應該開始掃描階段。
-* **GeneratePlayspace_UpdateScan_DynamicScan**:每個畫面呼叫來更新掃描程序。 鏡頭位置和方向傳遞，且用於 playspace 繪製程序，上面所述。
-* **GeneratePlayspace_RequestFinish**:呼叫以完成 playspace。 這將使用 「 繪製 「 掃描階段期間的區域，以定義並鎖定 playspace。 應用程式可以查詢統計資料期間掃描階段，以及查詢自訂的網狀結構，提供使用者意見反應。
-* **Import_UnderstandingMesh**:在掃描期間， **SpatialUnderstandingCustomMesh**模組所提供，並放在了解 prefab 的行為會定期查詢自訂處理序所產生的網格。 此外，這是一次之後掃描已完成。
+內含的 SpatialUnderstanding.cs 檔案會管理掃描階段程式。 它會呼叫下列函數:
+* **SpatialUnderstanding_Init**:在開始時呼叫一次。
+* **GeneratePlayspace_InitScan**:表示掃描階段應開始。
+* **GeneratePlayspace_UpdateScan_DynamicScan**:呼叫每個畫面格, 以更新掃描程式。 相機位置和方向會傳入, 並用於 playspace 繪製進程, 如上所述。
+* **GeneratePlayspace_RequestFinish**:呼叫以完成 playspace。 這會使用掃描階段期間「已繪製」的區域來定義和鎖定 playspace。 應用程式可以在掃描階段查詢統計資料, 以及查詢自訂網格以提供使用者意見反應。
+* **Import_UnderstandingMesh**:在掃描期間, 模組所提供並放在「瞭解」 prefab 的**SpatialUnderstandingCustomMesh**行為, 會定期查詢進程所產生的自訂網格。 此外, 這項作業會在完成掃描之後再進行一次。
 
-掃描流程，由驅動**SpatialUnderstanding**行為會呼叫**InitScan**，然後**UpdateScan**每個畫面格。 當統計資料的查詢報告合理的涵蓋範圍時，使用者可以呼叫 airtap **RequestFinish**表示 「 掃描 」 階段的結束。 **UpdateScan**呼叫傳回之前會繼續值會指出 DLL 已完成處理。
+**SpatialUnderstanding**行為所驅動的掃描流程會呼叫**InitScan**, 然後**UpdateScan**每個畫面格。 當統計資料查詢報告合理的涵蓋範圍時, 使用者可以 airtap 呼叫**RequestFinish**來表示掃描階段結束。 **UpdateScan**會繼續呼叫, 直到它的傳回值指出 DLL 已完成處理。
 
 ## <a name="the-queries"></a>查詢
 
-掃描完成之後，您將能夠存取的介面中查詢的三種不同類型：
-* **拓撲查詢**:這些是房間的快速掃描的拓撲為基礎的查詢。
-* **圖形查詢**:這些會利用拓撲查詢來尋找水平的介面，會以您定義的自訂圖形完全相符的結果。
-* **物件放置查詢**:這些是更複雜的查詢尋找一組規則和條件約束的物件為基礎的自動調整的位置。
+掃描完成之後, 您將能夠在介面中存取三種不同類型的查詢:
+* **拓撲查詢**:這些是以掃描室的拓撲為基礎的快速查詢。
+* **圖形查詢**:這些會利用拓撲查詢的結果來尋找與您定義的自訂圖形非常相符的水準表面。
+* **物件放置查詢**:這些是更複雜的查詢, 可根據物件的一組規則和條件約束, 尋找最適合的位置。
 
-除了三個主要的查詢，raycasting 介面可用來擷取已加上標記的介面型別和自訂 watertight 聊天室網格可以複製出來。
+除了三個主要查詢以外, 還有一個 raycasting 介面可用來取出標記的表面類型, 而自訂的防水室網格則可以複製出來。
 
-### <a name="topology-queries"></a>查詢拓撲
+### <a name="topology-queries"></a>拓撲查詢
 
-Dll 拓樸管理員會處理環境的標記。 如先前所述，大部分的資料會儲存在 surfels，內含 voxel 磁碟區。 颾魤 ㄛ **PlaySpaceInfos**結構用來儲存 playspace，包括 world 對齊 （下文詳細資料）、 floor、 ceiling 高度與相關資訊。
+在 DLL 中, 拓撲管理員會處理環境的標籤。 如先前所述, 大部分的資料會儲存在 surfels 中, 並包含在體素磁片區中。 此外, **PlaySpaceInfos**結構是用來儲存 playspace 的相關資訊, 包括世界對齊 (更多詳細資料, 如下所示)、樓層和上限高度。
 
-啟發學習法用於決定 floor、 ceiling 和牆。 比方說，有超過 1 m2 介面區的最大值與最低的水平的介面會被視為最低限度值。 請注意，在掃描程序期間的相機路徑也會在此程序。
+啟發學習法是用來決定樓層、上限和牆。 例如, 具有大於1個 m2 介面區的最大和最低水準表面會視為樓層。 請注意, 在掃描過程中的相機路徑也會在此程式中使用。
 
-子集拓樸管理員所公開的查詢會透過 DLL 公開出。 公開的拓樸查詢如下所示：
+拓撲管理員所公開的查詢子集會透過 DLL 公開。 公開的拓撲查詢如下所示:
 * QueryTopology_FindPositionsOnWalls
 * QueryTopology_FindLargePositionsOnWalls
 * QueryTopology_FindLargestWall
@@ -83,7 +83,7 @@ Dll 拓樸管理員會處理環境的標記。 如先前所述，大部分的資
 * QueryTopology_FindLargestPositionsOnFloor
 * QueryTopology_FindPositionsSittable
 
-每個查詢都有特定查詢型別參數組。 在下列範例中，使用者會指定最小高度和寬度所需的磁碟區、 樓層、 窗格和前面的磁碟區的許可的最小數量的最小的放置高度。 所有度量均是以公尺為單位。
+每個查詢都有一組參數, 特定于查詢類型。 在下列範例中, 使用者會指定所需磁片區的最小高度 & 寬度、樓層上方的最小放置高度, 以及該磁片區前方的最小間隙量。 所有的測量單位都是計量。
 
 
 
@@ -98,9 +98,9 @@ EXTERN_C __declspec(dllexport) int QueryTopology_FindPositionsOnWalls(
           _Inout_ Dll_Interface::TopologyResult* locationData)
 ```
 
-這些查詢會取得預先配置的陣列**TopologyResult**結構。 **LocationCount**參數會指定傳入之陣列的長度。 傳回值會報告傳回的位置數目。 這個數字絕不會大於傳入**locationCount**參數。
+這些查詢都會接受預先配置的**TopologyResult**結構陣列。 **LocationCount**參數會指定傳入陣列的長度。 傳回值會報告傳回位置的數目。 這個數位絕不會大於傳入的**locationCount**參數。
 
-**TopologyResult**包含傳回的磁碟區、 面向的方向 （也就是一般） 和維度的找到空間的中心位置。
+**TopologyResult**包含所傳回之磁片區的中心位置、面向的方向 (也就是一般), 以及所找到空間的尺寸。
 
 
 
@@ -115,15 +115,15 @@ struct TopologyResult
      };
 ```
 
-請注意，在 Unity 範例中，這些查詢連結至虛擬 UI 面板中的按鈕。 硬碟的範例程式碼參數，這些查詢能夠合理值的每個。 請參閱*SpaceVisualizer.cs*範例程式碼，如需其他範例。
+請注意, 在 Unity 範例中, 每個查詢都會連結到虛擬 UI 面板中的按鈕。 範例會將這些查詢的參數硬編碼成合理的值。 如需更多範例, 請參閱範例程式碼中的*SpaceVisualizer.cs* 。
 
 ### <a name="shape-queries"></a>圖形查詢
 
-DLL 時，圖形分析器內 (**ShapeAnalyzer_W**) 要比對由使用者定義的自訂圖形會使用拓撲分析器。 Unity 範例有一組預先定義的圖形查詢 功能表的 圖形 索引標籤上所示。
+在 DLL 內, 圖形分析器 (**ShapeAnalyzer_W**) 會使用拓撲分析器來比對使用者所定義的自訂圖形。 Unity 範例具有一組預先定義的圖形, 會顯示在 [圖形] 索引標籤上的 [查詢] 功能表中。
 
-請注意，水平介面僅適用於圖形分析。 沙發上，比方說，是由一般基座介面和一般頂端的沙發上一步的定義。 Shape 查詢會尋找的特定大小、 頁高及長寬範圍，以對齊，且已連線的兩個介面的兩個介面。 使用 Api 術語，沙發車座和沙發背面的頂端是圖案元件與需求的對齊圖形元件的限制。
+請注意, 圖形分析僅適用于水準表面。 例如, 沙發是由平面上表面和沙發的平面上方所定義。 圖形查詢會尋找指定大小、高度和外觀範圍的兩個表面, 並對齊並連接兩個表面。 使用 Api 詞彙, 沙發基座和沙發背面是圖形元件, 而對齊需求是圖形元件條件約束。
 
-Unity 範例中定義的範例查詢 (**ShapeDefinition.cs**)、 「 sittable"物件如下所示：
+在 Unity 範例 (**ShapeDefinition.cs**) 中定義的範例查詢, 適用于 "sittable" 物件, 如下所示:
 
 
 
@@ -142,9 +142,9 @@ shapeComponents = new List<ShapeComponent>()
      AddShape("Sittable", shapeComponents);
 ```
 
-每個圖形查詢是由一組圖形元件，各有一組元件條件約束和一組列出元件之間的相依性圖形的條件約束的定義。 此範例包含三個條件約束的單一元件定義及元件之間沒有任何圖形條件約束 （因為只有一個元件）。
+每個形狀查詢都是由一組圖形元件所定義, 每個都有一組元件條件約束和一組圖形條件約束, 以列出元件之間的相依性。 這個範例包含單一元件定義中的三個條件約束, 而且元件之間沒有任何圖形條件約束 (因為只有一個元件)。
 
-相反地，沙發圖形有兩個圖形的元件和四個圖形的條件約束。 請注意，（0 到 1，在此範例中），使用者的元件清單中的其索引所識別的元件。
+相反地, 「沙發」圖形有兩個「圖形」元件和四個「形狀」條件約束。 請注意, 元件是由使用者的元件清單中的索引所識別 (在此範例中為0和 1)。
 
 
 
@@ -159,19 +159,19 @@ shapeConstraints = new List<ShapeConstraint>()
         };
 ```
 
-在 Unity 模組提供包裝函式函數，讓您輕鬆建立自訂圖形定義。 元件和圖形的條件約束的完整清單可在**SpatialUnderstandingDll.cs**內**ShapeComponentConstraint**並**ShapeConstraint**結構。
+Unity 模組中提供了包裝函式, 可讓您輕鬆地建立自訂圖形定義。 元件和圖形條件約束的完整清單可在**ShapeComponentConstraint**和**ShapeConstraint**結構內的**SpatialUnderstandingDll.cs**中找到。
 
-![藍色矩形反白顯示椅子 shape 查詢的結果。](images/chair-shape-query-500px.png)
+![藍色矩形會反白顯示「椅子圖形」查詢的結果。](images/chair-shape-query-500px.png)
 
-藍色矩形反白顯示椅子 shape 查詢的結果。
+藍色矩形會反白顯示「椅子圖形」查詢的結果。
 
 
 
 ### <a name="object-placement-solver"></a>物件放置規劃求解
 
-物件放置查詢可用來識別要放置您的物件的實體空間中的理想位置。 求解器將會尋找指定物件的規則和條件約束的自動調整的位置。 此外，物件查詢會一直保存到該物件中已移除**Solver_RemoveObject**或是**Solver_RemoveAllObjects**呼叫，允許限制多的物件位置。
+物件放置查詢可以用來識別實體空間中的理想位置, 以放置您的物件。 在指定物件規則和條件約束的情況下, 此規劃求解會尋找最適合的位置。 此外, 物件查詢會持續存在, 直到使用**Solver_RemoveObject**或**Solver_RemoveAllObjects**呼叫移除物件為止, 允許受限制的多物件放置。
 
-物件放置查詢是由三個部分所組成： 參數、 一份規則與條件約束清單的位置類型。 若要執行查詢時，使用下列 API:
+物件放置查詢包含三個部分: 具有參數的放置類型、規則清單和條件約束清單。 若要執行查詢, 請使用下列 API:
 
 
 
@@ -186,7 +186,7 @@ public static int Solver_PlaceObject(
                 [In] IntPtr placementConstraints,   // ObjectPlacementConstraint
                 [Out] IntPtr placementResult)
 ```
-此函數會接受物件名稱、 位置定義和規則和條件約束的清單。 C#包裝函式提供的建構可讓您輕鬆的規則和條件約束建構的 helper 函式。 放置定義包含查詢型別 — 也就是下列其中之一：
+此函式會接受物件名稱、位置定義, 以及規則和條件約束的清單。 包裝C#函式提供了結構協助程式函式, 讓規則和條件約束結構更輕鬆。 放置定義包含查詢類型, 也就是下列其中一項:
 
 
 
@@ -206,14 +206,14 @@ public enum PlacementType
                 };
 ```
 
-每個位置型別具有一組唯一類型的參數。 **ObjectPlacementDefinition**結構包含一組靜態的 helper 函式來建立這些定義。 例如，若要尋找之處，將物件放在地板上，您可以使用下列函式： 
+每個放置類型都具有類型特有的一組參數。 **ObjectPlacementDefinition**結構包含一組用來建立這些定義的靜態 helper 函式。 例如, 若要尋找將物件放在樓層的位置, 您可以使用下列函數: 
 
 
 ```
 public static ObjectPlacementDefinition Create_OnFloor(Vector3 halfDims)
 ```
 
-除了放置型別中，您可以提供一組規則和條件約束。 不能違反規則。 選取最佳的放置位置的條件約束的集合針對最適合然後滿足的類型與規則的可能的放置位置。 每個規則和條件約束可以提供靜態建立函式所建立。 如下所示的範例規則和條件約束建構函式。
+除了放置類型之外, 您還可以提供一組規則和條件約束。 無法違反規則。 接著, 符合類型和規則的可能位置位置會根據條件約束的集合進行優化, 以選取最佳的放置位置。 每個規則和條件約束都可以由提供的靜態建立函式來建立。 以下提供範例規則和條件約束結構函數。
 
 
 
@@ -225,7 +225,7 @@ public static ObjectPlacementRule Create_AwayFromPosition(
                     Vector3 position, float minDistance = 0.0f, float maxDistance = 0.0f)
 ```
 
-下列物件放置查詢會尋找放介面的邊緣，一半的計量 cube、 遠離其他先前放置物件及附近的聊天室中央的地方。
+下面的物件放置查詢會尋找一個位置, 將半計量 cube 放在表面的邊緣, 而不是從其他先前放置的物件, 靠近房間的中心。
 
 
 
@@ -253,20 +253,20 @@ List<ObjectPlacementRule> rules =
           UnderstandingDLL.GetStaticObjectPlacementResultPtr());
 ```
 
-如果成功， **ObjectPlacementResult**傳回結構，包含放置位置、 維度和方向。 此外，位置會加入 DLL 的內部放置的物件清單。 後續的放置查詢會將此物件納入考量。 **LevelSolver.cs** Unity 範例中的檔案包含更多的範例查詢。
+如果成功, 則會傳回包含放置位置、維度和方向的**ObjectPlacementResult**結構。 此外, 放置會加入至 DLL 的已放置物件的內部清單。 後續的放置查詢將會將此物件列入考慮。 Unity 範例中的**LevelSolver.cs**檔案包含更多範例查詢。
 
-![藍色方塊會顯示 立即從觀景窗位置 」 規則的三個位置上 Floor 查詢的結果。](images/away-from-camera-position-500px.png)
+![藍色方塊會顯示三個位置查詢的結果, 其中包含「遠離相機位置」規則。](images/away-from-camera-position-500px.png)
 
-藍色方塊會顯示 立即從觀景窗位置 」 規則的三個位置上 Floor 查詢的結果。
+藍色方塊會顯示三個位置查詢的結果, 其中包含「遠離相機位置」規則。
 
 
-**秘訣：**
-* 解決層級或應用程式的案例所需的多個物件的放置位置，先解決不可或缺和大型物件，來最大化的空間，您可以找到的機率。
-* 放置順序非常重要。 如果找不到物件的位置，請嘗試較不受條件約束的組態。 後援設定一組非常重要跨許多空間組態支援的功能。
+**各種**
+* 解決層級或應用程式案例所需之多個物件的放置位置時, 首先要解決不可或缺和大型的物件, 以最大化找出空間的機率。
+* 放置順序很重要。 如果找不到物件位置, 請嘗試較不受限制的設定。 具有一組回溯設定對於跨多個房間設定支援功能非常重要。
 
-### <a name="ray-casting"></a>光跡轉型
+### <a name="ray-casting"></a>光線轉換
 
-除了三個主要的查詢，光跡轉型介面可以用來擷取已加上標記的介面型別，而且可以複製自訂 watertight playspace 網狀結構出聊天室已進行掃描而且已完成之後, 標籤內部產生介面之類的floor、 ceiling，以及背景牆。 **PlayspaceRaycast**函式會採用無限遠的光線，並傳回如果光線衝突與已知的介面，而且如果是的話，該介面的表單中的相關資訊**RaycastResult**。 
+除了三個主要查詢以外, 光線轉型介面可以用來抓取已標記的表面型別, 而自訂的防水 playspace 網格可以在掃描完房間之後複製出來, 而標籤則會在內部為表面產生, 如下圖所示:樓層、上限和牆。 **PlayspaceRaycast**函式會採用光線, 並在光線與已知表面衝突時傳回, 如果是, 則會傳回該介面的相關資訊 (以**RaycastResult**的形式呈現)。 
 
 
 ```
@@ -295,24 +295,24 @@ struct RaycastResult
      };
 ```
 
-就內部而言，raycast 會計算針對 playspace 計算立方的 8 cm voxel 表示法。 每個 voxel 包含一組已處理的拓撲資料 (也稱為 surfels) 的介面項目。 比較交集的 voxel 資料格內所含 surfels 和最符合項目用來查閱拓撲資訊。 此拓撲的資料包含標記的形式傳回**SurfaceTypes**列舉，以及在交集的介面的介面區。
+就內部而言, 會針對 playspace 的計算8cm 立方體素標記法來計算 raycast。 每個體素都包含一組具有已處理拓撲資料的 surface 元素 (也稱為 surfels)。 交集的體素資料格內所包含的 surfels 會進行比較, 並使用最符合的方式來查閱拓撲資訊。 此拓撲資料包含以**SurfaceTypes**列舉的形式傳回的標籤, 以及交集資料表面的介面區。
 
-在 Unity 範例中，資料指標會轉換每個畫面格無限遠的光線。 首先，針對 Unity colliders;第二，針對了解模組的世界表示法;而最後，針對 UI 項目。 在此應用程式中，UI 會取得優先權，了解結果，然後最後，Unity colliders。 **SurfaceType**回報為游標後面的文字。
+在 Unity 範例中, 游標會將光線轉換成每個畫面格。 首先, 針對 Unity 的 colliders;第二, 針對瞭解模組的世界標記法;最後, 針對 UI 元素。 在此應用程式中, UI 會取得優先順序, 然後是瞭解結果, 最後是 Unity 的 colliders。 **SurfaceType**會回報為游標旁的文字。
 
-![Raycast 結果報告使用最低限度值的交集。](images/raycast-result-500px.jpg)
+![Raycast 與樓層的結果報告交集。](images/raycast-result-500px.jpg)
 
-Raycast 結果報告使用最低限度值的交集。
+Raycast 與樓層的結果報告交集。
 
 
 ## <a name="get-the-code"></a>取得程式碼
 
-開放原始碼程式碼位於[MixedRealityToolkit](https://github.com/Microsoft/MixedRealityToolkit-Unity)。 讓我們知道[HoloLens 的開發人員論壇](https://forums.hololens.com/)如果您的專案中使用的程式碼。 期待看看您如何使用它 ！
+[MixedRealityToolkit](https://github.com/Microsoft/MixedRealityToolkit-Unity)中提供開放原始碼程式碼。 如果您使用專案中的程式碼, 請在[HoloLens 開發人員論壇](https://forums.hololens.com/)上讓我們知道。 我們無法等您瞭解如何處理!
 
 ## <a name="about-the-author"></a>關於作者
 
 <table style="border:0;width:800px">
 <tr>
-<td style="border:0"> <img alt="Jeff Evertt, Software Engineering Lead at Microsoft" width="200" height="205" src="images/jeff-evertt-200px.jpg" /></td><td style="border:0"> <b>Jeff Evertt</b>是軟體工程潛在客戶曾 HoloLens 上早期以來，從 incubation 體驗開發。 HoloLens 之前, 他曾在 Xbox Kinect 上和在遊戲產業中，在各種不同的平台和遊戲。 Jeff 是熱衷於機器人、 圖形及亮色移嗶聲的號誌的事。 他喜歡學習新事物，並使用軟體，硬體，而且特別是在兩個相交所在的空間。</td>
+<td style="border:0"> <img alt="Jeff Evertt, Software Engineering Lead at Microsoft" width="200" height="205" src="images/jeff-evertt-200px.jpg" /></td><td style="border:0"> <b>Jeff Evertt</b>是一家從 incubation 到經驗開發以來, 曾經開始使用 HoloLens 的軟體工程組長。 在 HoloLens 之前, 他曾在各種平臺和遊戲的 Xbox Kinect 和遊戲產業中工作。 Jeff 的熱衷於是關於機器人、圖形和亮色燈的問題。 他喜歡學習新事物, 以及處理軟體、硬體, 尤其是在這兩個交集的空間中。</td>
 </tr>
 </table>
 
@@ -321,6 +321,6 @@ Raycast 結果報告使用最低限度值的交集。
 ## <a name="see-also"></a>另請參閱
 * [空間對應](spatial-mapping.md)
 * [空間對應設計](spatial-mapping-design.md)
-* [聊天室掃描視覺效果](room-scan-visualization.md)
+* [空間位置掃描視覺效果](room-scan-visualization.md)
 * [MixedRealityToolkit-Unity](https://github.com/Microsoft/MixedRealityToolkit-Unity)
-* [Asobo Studio:從 HoloLens 開發的 frontline 課程](http://www.gamesindustry.biz/articles/2016-05-12-asobo-lessons-from-the-frontline-of-ar-development)
+* [Asobo Studio:HoloLens 開發第一線的課程](http://www.gamesindustry.biz/articles/2016-05-12-asobo-lessons-from-the-frontline-of-ar-development)

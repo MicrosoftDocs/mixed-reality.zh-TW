@@ -1,21 +1,21 @@
 ---
-title: 案例研究-片段中建立沉浸式體驗
-description: 片段是 Microsoft Hololens，您用來依照來解決真實世界空間中的發生是個謎線索的互動式 crime drama。
+title: 個案研究-在片段中建立沉浸式體驗
+description: 片段是適用于 Microsoft Hololens 的互動式犯罪戲劇, 您可以在其中追蹤線索, 以解決在實際空間中發生的謎。
 author: mattzmsft
 ms.author: miharnis
 ms.date: 03/21/2018
 ms.topic: article
-keywords: 混合實境的片段，HoloLens，Windows
+keywords: 片段、HoloLens、Windows Mixed Reality
 ms.openlocfilehash: 90879ac914a76c61cf87a70f91c204e7f7b243c2
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59596974"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63516788"
 ---
-# <a name="case-study---creating-an-immersive-experience-in-fragments"></a>案例研究-片段中建立沉浸式體驗
+# <a name="case-study---creating-an-immersive-experience-in-fragments"></a>個案研究-在片段中建立沉浸式體驗
 
-片段是 Microsoft Hololens，您用來依照來解決真實世界空間中的發生是個謎線索的互動式 crime drama。 了解片段開發小組如何使用 HoloLens 的獨特功能將可享有玩家在動作中，將它們放到本文的中央。
+片段是適用于 Microsoft Hololens 的互動式犯罪戲劇, 您可以在其中追蹤線索, 以解決在實際空間中發生的謎。 瞭解片段開發小組如何使用 HoloLens 的獨特功能來 immerse 動作中的玩家, 並將它們直接放在故事的中心。
 
 
 

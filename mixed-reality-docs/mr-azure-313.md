@@ -1,11 +1,11 @@
 ---
 title: MR 和 Azure 313-IoT 中樞服務
-description: 完成這個課程來了解如何實作在執行 Ubuntu 16.4 的虛擬機器上的 Azure IoT 中樞服務，並使用 Microsoft HoloLens 或沈浸式的 (VR) 耳機的訊息資料以視覺化方式檢視。
+description: 完成此課程以瞭解如何在執行 Ubuntu 16.4 的虛擬機器上實施 Azure IoT 中樞服務, 然後使用 Microsoft HoloLens 或沉浸式 (VR) 耳機將訊息資料視覺化。
 author: drneil
 ms.author: jemccull
 ms.date: 07/11/2018
 ms.topic: article
-keywords: azure、 混合實境、 academy、 edge、 iot edge、 教學課程、 api、 通知、 函數、 資料表、 沈浸式 hololens、 vr、 iot、 虛擬機器、 ubuntu、 python
+keywords: azure, 混合現實, 學術, 邊緣, iot edge, 教學課程, api, 通知, 函數, 資料表, hololens, 沉浸, vr, iot, 虛擬機器, ubuntu, python
 ms.openlocfilehash: 93f7dc64426360d2e02b0ee0a9b1796fc8f2b469
 ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
 ms.translationtype: MT
@@ -14,42 +14,42 @@ ms.lasthandoff: 07/09/2019
 ms.locfileid: "67694594"
 ---
 >[!NOTE]
->混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
+>混合現實學術教學課程的設計是使用 HoloLens (第1代) 和混合現實的沉浸式耳機。  因此, 對於仍在尋找這些裝置開發指引的開發人員而言, 我們覺得這些教學課程很重要。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  系統會保留這些資訊, 以繼續在支援的裝置上運作。 未來將會有一系列新的教學課程, 將示範如何針對 HoloLens 2 進行開發。  此通知會在張貼時, 使用這些教學課程的連結進行更新。
 
 # <a name="mr-and-azure-313-iot-hub-service"></a>MR 和 Azure 313:IoT 中樞服務
 
 ![課程結果](images/AzureLabs-Lab313-00.png)
 
-在此課程中，您將了解如何實作**Azure IoT 中樞服務**的虛擬機器上執行 Ubuntu 16.4 的作業系統。 **Azure 函數應用程式**然後將用來從您的 Ubuntu VM，接收訊息，並內將結果儲存**Azure 表格服務**。 您接著可以檢視此資料使用**Power BI** Microsoft HoloLens 或沈浸式 (VR) 耳機。
+在此課程中, 您將瞭解如何在執行 Ubuntu 16.4 作業系統的虛擬機器上執行**Azure IoT 中樞服務**。 接著, 會使用**azure 函數應用程式**從您的 Ubuntu VM 接收訊息, 並將結果儲存在**Azure 表格服務**中。 然後您就可以使用 Microsoft HoloLens 或沉浸式 (VR) 頭戴式裝置上的**Power BI**來查看此資料。
 
-本課程的內容*適用於*到 IoT Edge 裝置，但為了本課程中，則會著重於在虛擬機器環境中，如此便不需要實體的 Edge 裝置的存取。
+本課程的內容*適用*于 IoT Edge 裝置, 不過基於本課程的目的, 焦點會在虛擬機器環境中, 因此不需要存取實體邊緣裝置。
 
-藉由完成本課程，您將學習：
+完成此課程之後, 您將瞭解如何:
 
-- 部署**IoT Edge 模組**至虛擬機器 (Ubuntu 16 OS)，即代表您的 IoT 裝置。
-- 新增**Azure 自訂視覺 Tensorflow 模型**到 Edge 模組，將會分析儲存在容器映像的程式碼。
-- 設定模組，將分析結果訊息傳送至您**IoT 中樞服務**。
-- 使用**Azure 函數應用程式**來儲存訊息內**Azure 資料表**。
-- 設定好**Power BI**收集預存的訊息，並建立報表。
-- 以視覺化方式檢視您的 IoT 訊息資料內**Power BI**。
+- 將**IoT Edge 模組**部署至虛擬機器 (UBUNTU 16 OS), 這會代表您的 IoT 裝置。
+- 將**Azure 自訂視覺 Tensorflow 模型**新增至 Edge 模組, 並使用程式碼來分析儲存在容器中的影像。
+- 設定模組, 以將分析結果訊息傳回給您的**IoT 中樞服務**。
+- 使用**azure 函數應用程式**將訊息儲存在**azure 資料表**中。
+- 設定**Power BI**來收集儲存的訊息並建立報表。
+- 將**Power BI**中的 IoT 訊息資料視覺化。
 
-您將使用的服務包括：
+您將使用的服務包括:
 
-- **Azure IoT 中樞**是 Microsoft Azure 服務可讓開發人員連接、 監視及管理 IoT 資產。 如需詳細資訊，請瀏覽[ **Azure IoT 中樞服務**頁面](https://azure.microsoft.com/en-au/services/iot-hub/)。
+- **Azure IoT 中樞**是一種 Microsoft Azure 服務, 可讓開發人員連接、監視和管理 IoT 資產。 如需詳細資訊, 請造訪[ **Azure IoT 中樞服務**頁面](https://azure.microsoft.com/en-au/services/iot-hub/)。
 
-- **Azure Container Registry**是讓開發人員能夠儲存各種類型的容器的容器映像，Microsoft Azure 服務。 如需詳細資訊，請瀏覽[ **Azure 容器登錄服務**頁面](https://azure.microsoft.com/en-au/services/container-registry/)。
+- **Azure Container Registry**是一項 Microsoft Azure 服務, 可讓開發人員針對各種類型的容器儲存容器映射。 如需詳細資訊, 請造訪[ **Azure Container Registry 服務**頁面](https://azure.microsoft.com/en-au/services/container-registry/)。
 
-- **Azure 函式應用程式**是為 Microsoft Azure 服務，可讓開發人員執行程式碼片段，'函式'，在 Azure 中。 這可用來將工作委派給雲端，而不是您本機的應用程式，可以有許多優點。 **Azure Functions**支援數種開發語言，包括 C\#，F\#、 Node.js、 Java 和 PHP。 如需詳細資訊，請瀏覽[ **Azure Functions**頁面](https://docs.microsoft.com/azure/azure-functions/functions-overview)。
+- **Azure 函數應用程式**是一項 Microsoft Azure 服務, 可讓開發人員在 Azure 中執行一小段程式碼, 即「函式」。 這可讓您將工作委派給雲端, 而不是您的本機應用程式, 這可能有許多好處。 **Azure Functions**支援數種開發語言, 包括\#C、\#F、node.js、JAVA 和 PHP。 如需詳細資訊, 請造訪[ **Azure Functions**頁面](https://docs.microsoft.com/azure/azure-functions/functions-overview)。
 
-- **Azure 儲存體：資料表**是 Microsoft Azure 服務，可讓開發人員儲存結構化，非 SQL、 在雲端中的資料進行更容易存取任何位置。 服務擁有許多的無結構描述設計中，如有需要讓資料表的進化的因此非常大的彈性。 如需詳細資訊，請瀏覽[ **Azure 資料表**頁面](https://docs.microsoft.com/azure/cosmos-db/table-storage-overview)
+- **Azure 儲存體:資料表**是一項 Microsoft Azure 服務, 可讓開發人員在雲端中儲存結構化的非 SQL 資料, 讓您可以輕鬆地在任何地方存取。 此服務具有無架構的設計, 可讓您視需要進行資料表的演進, 因此非常有彈性。 如需詳細資訊, 請造訪[ **Azure 資料表**頁面](https://docs.microsoft.com/azure/cosmos-db/table-storage-overview)
 
-本課程將教導您如何設定並使用 IoT 中樞服務，然後以視覺化方式檢視裝置所提供的回應。 它會決定要自訂的 IoT 中樞服務安裝程式，故您可能建置運用這些概念。
+本課程將告訴您如何設定及使用 IoT 中樞服務, 然後將裝置所提供的回應視覺化。 您可以將這些概念套用到您可能會建立的自訂 IoT 中樞服務安裝程式。
 
 ## <a name="device-support"></a>裝置支援
 
 <table>
 <tr>
-<th>課程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></th>
+<th>粗</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></th>
 </tr><tr>
 <td> MR 和 Azure 313:IoT 中樞服務</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
@@ -57,235 +57,235 @@ ms.locfileid: "67694594"
 
 ## <a name="prerequisites"></a>先決條件
 
-如與混合實境，包括 Microsoft HoloLens，開發最新的必要條件，請造訪[安裝工具](https://docs.microsoft.com/windows/mixed-reality/install-the-tools)文章。
+如需使用混合現實進行開發的最新必要條件, 包括 Microsoft HoloLens, 請造訪[安裝工具](https://docs.microsoft.com/windows/mixed-reality/install-the-tools)一文。
 
 > [!NOTE]
-> 本教學課程專為開發人員使用 Python 的基本經驗。 請同時了解必要條件和書面的指示此文件中代表什麼已經過測試，並在寫入 (第 2018 年 7 月) 的時間驗證。 中所示，您可以自由使用最新的軟體[安裝工具](install-the-tools.md)發行項，但它不應該假設，本課程中的資訊將會完全符合您會發現在較新的軟體，與下面列出的。
+> 本教學課程是專為具有 Python 基本經驗的開發人員所設計。 也請注意, 本檔中的必要條件和書面指示, 代表在撰寫本文時已測試和驗證的內容 (2018 年7月)。 您可以免費使用 [[安裝工具](install-the-tools.md)] 文章中所列的最新軟體, 但不應假設本課程中的資訊完全符合您在較新軟體中找到的內容, 而不是如下所示。
 
-下列的硬體和軟體是必要項目：
+需要下列硬體和軟體:
 
-- Windows 10 Fall Creators Update （或更新版本），**啟用開發人員模式**
+- Windows 10 秋季建立者更新 (或更新版本),**已啟用開發人員模式**
 
     > [!WARNING]
-    > 您無法執行使用只有 Windows 10 Home Edition 上的 HYPER-V 虛擬機器。
+    > 您無法在 Windows 10 Home Edition 上使用 Hyper-v 來執行虛擬機器。
 
-- Windows 10 SDK （最新版）
-- HoloLens，a**啟用開發人員模式**
-- Visual Studio 2017.15.4 （僅用來存取 Azure 的雲端總管）
-- Azure 和 IoT 中樞服務的網際網路存取。 如需詳細資訊，請遵循此[連結至 IoT 中樞服務頁面](https://azure.microsoft.com/en-au/services/iot-hub/)
-- 機器學習模型。 如果您不需要您自己的已備妥，可使用模型時，[您可以使用本課程提供的模型](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20313%20-%20IoT%20Hub%20Service/Custom%20Vision%20Model.zip)。
-- **HYPER-V**啟用 Windows 10 的開發電腦上的軟體。
-- 在您的開發電腦或者執行執行 Ubuntu （16.4 或 18.4） 的虛擬機器可以使用不同的電腦執行 Linux (Ubuntu 16.4 或 18.4)。 您可以找到更多有關如何在 Windows 上建立的 VM 使用中的 HYPER-V [」 開始之前 > 一章](#before-you-start)。 (https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine).  
+- Windows 10 SDK (最新版本)
+- **已啟用 HoloLens、開發人員模式**
+- Visual Studio 2017.15.4 (僅用於存取 Azure Cloud Explorer)
+- 適用于 Azure 的網際網路存取, 以及適用于 IoT 中樞服務的。 如需詳細資訊, 請遵循此[連結以 IoT 中樞服務 頁面](https://azure.microsoft.com/en-au/services/iot-hub/)
+- 機器學習模型。 如果您還沒有準備好使用模型,[您可以使用本課程所提供的模型](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20313%20-%20IoT%20Hub%20Service/Custom%20Vision%20Model.zip)。
+- 已在您的 Windows 10 開發電腦上啟用**hyper-v**軟體。
+- 執行 Ubuntu (16.4 或 18.4) 並在您的開發電腦上執行的虛擬機器, 或者您也可以使用執行 Linux 的個別電腦 (Ubuntu 16.4 或 18.4)。 您可以在[「開始之前」章節](#before-you-start)中, 找到如何使用 Hyper-v 在 Windows 上建立 VM 的詳細資訊。(https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine).  
 
 
 
 ### <a name="before-you-start"></a>開始之前
 
-1. 設定並測試您的 HoloLens。 如果您需要支援設定您的 HoloLens[請務必瀏覽 HoloLens 安裝文章](https://docs.microsoft.com/hololens/hololens-setup)。
-2. 它是個不錯的主意，執行**校正**並**感應器調整**開始開發新的 HoloLens 應用程式 （有時候它可以幫助每位使用者執行這些工作） 時。
+1. 設定並測試您的 HoloLens。 如果您需要支援設定 HoloLens,[請務必造訪 hololens 安裝程式一文](https://docs.microsoft.com/hololens/hololens-setup)。
+2. 開始開發新的 HoloLens 應用程式時, 最好先執行**校正**和**感應器微調**(有時候它有助於為每個使用者執行這些工作)。
 
-校正的說明，請遵循此[HoloLens 校正文章連結](calibration.md#hololens)。
+如需校正的說明, 請遵循此[HoloLens 校正文章的連結](calibration.md#hololens)。
 
-如需微調感應器的說明，請遵循此[HoloLens 感應器調整的文章連結](sensor-tuning.md)。
+如需感應器微調的說明, 請遵循此[HoloLens 感應器微調文章連結](sensor-tuning.md)。
 
-3. 設定您**Ubuntu 虛擬機器**使用**HYPER-V**。 下列資源將協助您進行程序。
-    1.  首先，請遵循下列連結來[下載 Ubuntu 16.04.4 LTS (Xenial Xerus) ISO](http://au.releases.ubuntu.com/16.04/)。 選取  **64 位元電腦 (AMD64) 桌面映像**。
-    2.  請確定**HYPER-V**啟用您的 Windows 10 電腦上。 您可以依照此連結以取得指導方針[安裝和啟用 Windows 10 上的 HYPER-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)。
-    3.  啟動 HYPER-V 並建立新的 Ubuntu VM。 您可以遵循此連結[如何使用 HYPER-V 建立的 VM 上的逐步解說指南](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/create-virtual-machine)。 若要要求時 **[從開機映像檔安裝作業系統]** ，選取**Ubuntu ISO**您稍早有下載。
+3. 使用**hyper-v**設定您的**Ubuntu 虛擬機器**。 下列資源將協助您處理此程式。
+    1.  首先, 請遵循此連結以[下載 Ubuntu 16.04.4 LTS (Xenial Xerus) ISO](http://au.releases.ubuntu.com/16.04/)。 選取**64 位電腦 (AMD64) 桌面映射**。
+    2.  請確定您的 Windows 10 電腦上已啟用**hyper-v** 。 您可以遵循此連結, 取得在[Windows 10 上安裝和啟用 hyper-v](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)的指引。
+    3.  啟動 Hyper-v, 並建立新的 Ubuntu VM。 您可以遵循此連結, 取得[如何使用 hyper-v 建立 VM 的逐步指南](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/create-virtual-machine)。 當要求「**從可開機的映射檔案安裝作業系統**」時, 請選取您稍早下載的**Ubuntu ISO** 。
 
     > [!NOTE]
-    > 使用**HYPER-V 快速建立**不建議進行。  
+    > 不建議使用**Hyper-v 快速建立**。  
 
-## <a name="chapter-1---retrieve-the-custom-vision-model"></a>第 1 章-擷取自訂視覺模型
+## <a name="chapter-1---retrieve-the-custom-vision-model"></a>第1章-取出自訂視覺模型
 
-本課程中，您將可以存取[預先建置的自訂視覺模型](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20313%20-%20IoT%20Hub%20Service/Custom%20Vision%20Model.zip)，偵測到鍵盤及滑鼠從映像。 如果您使用此功能，請繼續進行[第 2 章](#chapter-2---the-container-registry-service)。
+在此課程中, 您將可以存取[預先建立的自訂視覺模型](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20313%20-%20IoT%20Hub%20Service/Custom%20Vision%20Model.zip), 以偵測影像中的鍵盤和滑鼠。 如果您使用此, 請繼續進行[第2章](#chapter-2---the-container-registry-service)。
 
-不過，您可以遵循下列步驟，如果您想要使用您自己的自訂視覺模型：
+不過, 如果您想要使用自己的自訂視覺模型, 可以執行下列步驟:
 
-1. 在您**自訂視覺專案**前往**效能** 索引標籤。
+1. 在您的**自訂視覺專案**中, 移至 [**效能**] 索引標籤。
 
     > [!WARNING]
-    > 您的模型必須使用*compact*網域，將模型匯出。 您可以變更您模型的網域設定中，為您的專案。
+    > 您的模型必須使用*精簡*的網域, 才能匯出模型。 您可以在專案的 [設定] 中變更 [模型] 網域。
 
-    ![效能 索引標籤](images/AzureLabs-Lab313-01.png)
+    ![[效能] 索引標籤](images/AzureLabs-Lab313-01.png)
 
-2. 選取 **反覆項目**您想要匯出，然後按一下**匯出**。 刀鋒視窗會出現。
+2. 選取您要匯出的**反復**專案, 然後按一下 [**匯出**]。 分頁隨即出現。
 
-    ![匯出刀鋒視窗](images/AzureLabs-Lab313-02.png)
+    ![匯出分頁](images/AzureLabs-Lab313-02.png)
 
-3. 在刀鋒視窗中按一下**Docker 檔案**。
+3. 在分頁中, 按一下 [ **Docker**檔案]。
 
     ![選取 docker](images/AzureLabs-Lab313-03.png)
 
-4. 按一下  **Linux**中的下拉式選單，然後按一下 **下載**。
+4. 按一下下拉式功能表中的 [ **Linux** ], 然後按一下 [**下載**]。
 
     ![按一下 [下載]](images/AzureLabs-Lab313-04.png)
 
-5. 將解壓縮的內容。 您可以將在本課程後面。
+5. 將內容解壓縮。 稍後在本課程中將會用到。
 
-## <a name="chapter-2---the-container-registry-service"></a>第 2 章-容器登錄服務
+## <a name="chapter-2---the-container-registry-service"></a>第2章-Container Registry 服務
 
-**容器登錄服務**是用來裝載您的容器存放庫。
+**Container Registry 服務**是用來裝載容器的存放庫。
 
-**IoT 中樞服務**您會用來建置，並使用在這個課程中，是指**容器登錄服務**取得要在您的 Edge 裝置中部署的容器。
+您將在本課程中建立和使用的**IoT 中樞服務**, 是指**容器登錄服務**, 以取得要在 Edge 裝置中部署的容器。
 
-1. 首先，請依照這[Azure 入口網站連結](https://portal.azure.com/)，並使用您的認證登入。
+1. 首先, 遵循此[連結前往 Azure 入口網站](https://portal.azure.com/), 然後使用您的認證登入。
 
-2. 移至**建立資源**並尋找**Container Registry**。
+2. 移至 [**建立資源**], 然後尋找 [ **Container Registry**]。
 
-    ![容器登錄](images/AzureLabs-Lab313-05.png)
+    ![container registry](images/AzureLabs-Lab313-05.png)
 
-3. 按一下 **建立**。
+3. 按一下 [**建立**]。
 
     ![](images/AzureLabs-Lab313-06.png)
 
-4. 設定服務安裝程式參數：
+4. 設定服務安裝程式參數:
 
-    1. 在此範例中插入的名稱，為您的專案，其名**IoTCRegistry**。
+    1. 插入專案的名稱, 在此範例中稱為**IoTCRegistry**。
 
-    2. 選擇**資源群組**或建立新的帳戶。 資源群組可用來監視、 控制存取權，佈建及管理的 Azure 資產的集合計費。 建議將所有 Azure 服務在一般的資源群組相關聯 （例如例如這些課程中） 的單一專案保留）。
+    2. 選擇**資源群組**或建立一個新的。 資源群組提供一種方式來監視、控制存取、布建及管理 Azure 資產集合的費用。 建議您將與單一專案相關聯的所有 Azure 服務 (例如這些課程) 都保留在通用資源群組下)。
 
     3. 設定服務的位置。
 
-    4. 設定**系統管理員使用者**要**啟用**。
+    4. 將 [**管理使用者**] 設定為 [**啟用**]。
 
-    5. 設定**SKU**要**基本**。 
+    5. 將**SKU**設定為 [**基本**]。 
 
     ![](images/AzureLabs-Lab313-07.png)
 
-5. 按一下 **建立**並等候建立的服務。 
+5. 按一下 [**建立**], 並等候服務建立。 
 
-6. 當出現告知您成功建立通知*Container Registry*，按一下**移至資源**重新導向至您的服務頁面。
+6. 通知顯示成功建立*容器*登錄後, 請按一下 [**移至資源**] 以重新導向至您的服務頁面。
 
     ![](images/AzureLabs-Lab313-08.png)
 
-7. 在  *Container Registry*服務頁面上，按一下**存取金鑰**。
+7. 在 [ *Container Registry*服務] 頁面上, 按一下 [**存取金鑰**]。
 
-8. 記下 （您可以使用您在 [記事本]） 的下列參數：
-    1. **Login Server**
+8. 請注意下列參數 (您可以使用您的 [記事本]):
+    1. **登入伺服器**
     2. **使用者名稱**
     3. **密碼**
 
     ![](images/AzureLabs-Lab313-09.png)
 
-## <a name="chapter-3---the-iot-hub-service"></a>第 3 章-IoT 中樞服務
+## <a name="chapter-3---the-iot-hub-service"></a>第3章-IoT 中樞服務
 
-現在您將開始建立及安裝您**IoT 中樞服務**。
+現在您將開始建立和設定您的**IoT 中樞服務**。
 
-1. 如果您尚未登入，登入[Azure 入口網站](https://portal.azure.com)。
+1. 如果尚未登入, 請登入[Azure 入口網站](https://portal.azure.com)。
 
-2.  登入之後，按一下**建立資源**在左上角，，然後搜尋**IoT 中樞**，然後按一下**Enter**。
+2.  登入之後, 按一下左上角的 [**建立資源**], 並搜尋**IoT 中樞**, 然後按一下**Enter 鍵**。
 
  ![搜尋儲存體帳戶](images/AzureLabs-Lab313-10.png)
 
-3.  新的頁面將提供的描述**儲存體帳戶**服務。 在此提示的左下方，按一下**建立**按鈕，以建立這個執行個體服務。
+3.  新的頁面會提供**儲存體帳戶**服務的描述。 在此提示的左下方, 按一下 [**建立**] 按鈕, 以建立此服務的實例。
 
-    ![建立儲存體執行個體](images/AzureLabs-Lab313-11.png)
+    ![建立儲存體實例](images/AzureLabs-Lab313-11.png)
 
-4.  一旦您按下**建立**，面板會顯示：
+4.  當您按一下 [**建立**] 之後, 就會出現一個面板:
 
-    1. 選擇**資源群組**或建立新的帳戶。 資源群組可用來監視、 控制存取權，佈建及管理 Azure 資產的集合計費。 建議將所有 Azure 服務在一般的資源群組相關聯 （例如例如這些課程中） 的單一專案保留）。
+    1. 選擇**資源群組**或建立一個新的。 資源群組提供一種方式來監視、控制存取、布建及管理 Azure 資產集合的計費。 建議您將與單一專案相關聯的所有 Azure 服務 (例如這些課程) 都保留在通用資源群組下)。
 
-        > 如果您想要深入了解 Azure 資源群組，請遵循此[如何管理資源群組的連結](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)。
+        > 如果您想要深入瞭解 Azure 資源群組, 請遵循此[連結以瞭解如何管理資源群組](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)。
 
 
-    2. 選取適當**位置**（您在本課程中建立的所有服務上使用相同的位置）。
+    2. 選取適當的**位置**(在您于本課程中建立的所有服務上使用相同的位置)。
 
-    3. 插入您想要**名稱**此服務執行個體。    
+    3. 為此服務實例插入您想要的**名稱**。    
 
-5.  在頁面底部按一下**下一步:大小和縮放比例**。
+5.  在頁面底部, 按一下 **[下一步]:大小和縮放**比例。
 
-    ![建立儲存體執行個體](images/AzureLabs-Lab313-12.png)
+    ![建立儲存體實例](images/AzureLabs-Lab313-12.png)
 
-6.  在此頁面上，選取您**定價與級別層**（如果這是您第一個 IoT 中樞服務執行個體，免費層應該是您可以使用）。  
+6.  在此頁面中, 選取您的**定價和級別層**(如果這是您第一個 IoT 中樞服務實例, 則免費層應供您使用)。  
 
-7.  按一下 **檢閱 + 建立**。
+7.  按一下 [**審核] [+ 建立**]。
 
-    ![建立儲存體執行個體](images/AzureLabs-Lab313-13.png)
+    ![建立儲存體實例](images/AzureLabs-Lab313-13.png)
 
-8.  檢閱您的設定，然後按一下**建立**。
+8.  檢查您的設定, 然後按一下 [**建立**]。
 
-    ![建立儲存體執行個體](images/AzureLabs-Lab313-14.png)
+    ![建立儲存體實例](images/AzureLabs-Lab313-14.png)
 
-9. 當出現告知您成功建立通知*IoT 中樞*服務，按一下**移至資源**重新導向至您的服務頁面。
+9. 通知出現後, 會通知您成功建立*IoT 中樞*服務, 請按一下 [**前往資源**] 以重新導向至您的服務頁面。
 
-    ![建立儲存體執行個體](images/AzureLabs-Lab313-15.png)
+    ![建立儲存體實例](images/AzureLabs-Lab313-15.png)
 
-10. 捲動左側的側邊面板，直到您看到*自動的裝置管理*，按一下**IoT Edge**。
+10. 將左邊的側邊面板向左移動, 直到您看到 [*自動裝置管理*], 按一下 [ **IoT Edge**]。
 
-    ![建立儲存體執行個體](images/AzureLabs-Lab313-16.png)
+    ![建立儲存體實例](images/AzureLabs-Lab313-16.png)
 
-11. 在顯示於右側視窗中，按一下**加入 IoT Edge 裝置**。 刀鋒視窗會出現在右邊。
+11. 在顯示于右側的視窗中, 按一下 [**新增 IoT Edge 裝置**]。 分頁會出現在右側。
 
-12. 在刀鋒視窗中，提供您新的裝置**裝置識別碼**（您所選擇的名稱）。 然後，按一下**儲存**。 *主要*並*次要金鑰*會自動產生，如果您有**自動產生**勾選。
+12. 在分頁中, 為您的新裝置提供**裝置識別碼**(您所選擇的名稱)。 然後按一下 [**儲存**]。 如果您有**自動產生**核取,*主要*和*次要金鑰*會自動產生。
 
-    ![建立儲存體執行個體](images/AzureLabs-Lab313-17.png)
+    ![建立儲存體實例](images/AzureLabs-Lab313-17.png)
 
-13. 您會瀏覽回到*IoT Edge 裝置*區段中，其中會列出您的新裝置。 按一下 新裝置上 (在紅色外框的下列映像)。 
+13. 您將會流覽回 [ *IoT Edge 裝置*] 區段, 其中會列出您的新裝置。 按一下您的新裝置 (下圖中以紅色概述)。 
 
-    ![建立儲存體執行個體](images/AzureLabs-Lab313-18.png)
+    ![建立儲存體實例](images/AzureLabs-Lab313-18.png)
 
-14. 在 *裝置詳細資料*頁面隨即出現，需要一份**連接字串**（主索引鍵）。
+14. 在出現的 [*裝置詳細資料*] 頁面上, 複製 [**連接字串**(主要金鑰)]。
 
-    ![建立儲存體執行個體](images/AzureLabs-Lab313-19.png)
+    ![建立儲存體實例](images/AzureLabs-Lab313-19.png)
 
-15. 在左側面板請返回並按一下*共用存取原則*，以開啟它。 
+15. 返回左側的面板, 按一下 [*共用存取原則*] 加以開啟。 
 
-16. 在出現的頁面上，按一下**iothubowner**，和刀鋒視窗會出現在螢幕的右邊。 
+16. 在出現的頁面上, 按一下 [ **iothubowner**], 畫面右側就會出現一個分頁。 
 
-17. 請記下 （在您的 [記事本])**連接字串**（主索引鍵），供稍後使用設定時*連接字串*到您的裝置。
+17. 請注意 (在您的記事本)**連接字串**(主要金鑰), 以供稍後在將*連接字串*設定至您的裝置時使用。
 
-    ![建立儲存體執行個體](images/AzureLabs-Lab313-20.png)
+    ![建立儲存體實例](images/AzureLabs-Lab313-20.png)
 
-## <a name="chapter-4---setting-up-the-development-environment"></a>第 4 章-設定開發環境
+## <a name="chapter-4---setting-up-the-development-environment"></a>第4章-設定開發環境
 
-若要建立及部署適用於模組*IoT 中樞 Edge*，您將需要在執行 Windows 10 的開發電腦上安裝下列元件：
+若要建立和部署*IoT 中樞邊緣*的模組, 您需要在執行 Windows 10 的開發電腦上安裝下列元件:
 
-1.  [適用於 Windows 的 docker](https://store.docker.com/editions/community/docker-ce-desktop-windows)，它會要求您建立帳戶要能夠下載。 
+1.  [適用於 Windows 的 Docker](https://store.docker.com/editions/community/docker-ce-desktop-windows), 它會要求您建立能夠下載的帳戶。 
 
-    [![下載適用於 windows 的 docker](images/AzureLabs-Lab313-21.png)](https://store.docker.com/editions/community/docker-ce-desktop-windows)
+    [![下載適用于 windows 的 docker](images/AzureLabs-Lab313-21.png)](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
     > [!IMPORTANT]
-    > 需要 docker *Windows 10 PRO*， *Enterprise 14393*，或*Windows Server 2016 RTM*，以執行。 如果您正在執行其他版本的 Windows 10，您可以嘗試使用 Docker 安裝[Docker 工具箱](https://docs.docker.com/toolbox/toolbox_install_windows/)。
+    > Docker 需要*Windows 10 專業* *版、Enterprise 14393*或*windows Server 2016 RTM*才能執行。 如果您執行的是其他版本的 Windows 10, 您可以嘗試使用[Docker 工具箱](https://docs.docker.com/toolbox/toolbox_install_windows/)來安裝 docker。
 
 2.  [Python 3.6](https://www.python.org/downloads/)。
 
-    [![下載 python 3.6](images/AzureLabs-Lab313-22.png)](https://www.python.org/downloads/)
+    [![下載 python 3。6](images/AzureLabs-Lab313-22.png)](https://www.python.org/downloads/)
 
 3.  [Visual Studio Code (也稱為 VS Code)](https://code.visualstudio.com/download)。
 
     [![下載 VS Code](images/AzureLabs-Lab313-23.png)](https://code.visualstudio.com/download)
 
-安裝上述軟體之後，您必須重新啟動您的電腦。
+安裝上述軟體之後, 您將需要重新開機電腦。
 
-## <a name="chapter-5---setting-up-the-ubuntu-environment"></a>第 5 章-設定 Ubuntu 環境
+## <a name="chapter-5---setting-up-the-ubuntu-environment"></a>第5章-設定 Ubuntu 環境
 
-現在您可以移至您的裝置設定**執行 Ubuntu OS**。 請遵循下列步驟來安裝必要的軟體，您將容器部署在您的面板：
+現在您可以繼續設定執行**UBUNTU OS**的裝置。 請遵循下列步驟來安裝必要的軟體, 以在您的面板上部署您的容器:
 
 > [!IMPORTANT]
-> 您應該一律在完成將終端機命令**sudo**以系統管理員使用者身分執行。 也就是：
+> 您應該一律在具有**sudo**的終端機命令前面加上 [以系統管理員身分執行] 使用者。 亦即
 > 
 >   ```bash
 >   sudo docker \<option> \<command> \<argument>
 >   ```
 
-1.  開啟**Ubuntu 終端機**，並使用下列命令來安裝**pip**:
+1.  開啟**Ubuntu 終端**機, 然後使用下列命令來安裝**pip**:
 
-    > [!提示] 您可以開啟*終端機*非常輕鬆地透過使用鍵盤快速鍵：**Ctrl + Alt + T**。
+    > [!提示] 您可以使用鍵盤快速鍵非常輕鬆地開啟*終端*機:**Ctrl + Alt + T**。
 
     ```bash
         sudo apt-get install python-pip
     ```
 
-2.  在本章中，您可能會提示您，由*終端機*、 權限使用裝置儲存空間，以及供您輸入**y/n** （是或否），型別 **'y'** ，然後按下**Enter**金鑰，才能接受。
+2.  在本章中, 系統會提示您在*終端*機上使用您的裝置儲存體的許可權, 並讓您輸入**y/n** (yes 或 no)、輸入 **' y '** , 然後按**enter**鍵以接受。
 
-3.  該命令完成之後，使用下列命令來安裝**curl**:
+3.  該命令完成後, 請使用下列命令來安裝**捲曲**的:
 
     ```bash
         sudo apt install curl
     ```
 
-4.  一次**pip**並**curl**會安裝，請使用下列命令來安裝**IoT Edge 執行階段**，這是為了部署，並控制在面板上的模組：
+4.  安裝**pip**和**捲曲**之後, 請使用下列命令來安裝**IoT Edge 運行**時間, 這是在您的面板上部署和控制模組的必要項:
 
     ```bash
         curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list > ./microsoft-prod.list
@@ -307,60 +307,60 @@ ms.locfileid: "67694594"
         sudo apt-get install iotedge
     ```
 
-5. 此時系統會提示您開啟*執行階段組態檔*，以插入**裝置連接字串**，記下 （您在記事本中），建立時**IoT 中樞服務** ([在步驟 14 中的第 3 章](#chapter-3---the-iot-hub-service))。 在終端機中開啟該檔案執行下面這一行：
+5. 此時, 系統會提示您開啟*執行時間設定檔*, 以插入您在建立**IoT 中樞服務**時 (在 [記事本] 中) 所記下的**裝置連接字串**(在第[3 章的步驟 14](#chapter-3---the-iot-hub-service)中)。 在終端機上執行下列程式程式碼以開啟該檔案:
 
     ```bash
         sudo nano /etc/iotedge/config.yaml
     ```
 
-6. **Config.yaml**檔案將會顯示以供您編輯：
+6. 將會顯示**yaml**檔案, 並可供您編輯:
 
     > [!WARNING]
-    > 當此檔案開啟時，可能有些令人混淆。 您必須編輯此檔案，內的文字*終端機*本身。 
+    > 當此檔案開啟時, 可能會有點混淆。 您將會在*終端*機本身內編輯此檔案的文字。 
 
-    1.  使用鍵盤上的方向鍵來捲動的清單 （您必須捲動一些方式），到行包含":
+    1.  使用鍵盤上的方向鍵向下箭號 (您必須以一點方式向下滾動), 以到達包含 ":
 
-        「 **\<將裝置連接字串 >** "。
+        「**在此新增裝置連接字串>」。\<**
 
-    2. 替換成一行，**包括括號**，使用**Device Connection String**您稍早所。
+    2. 以您先前記下的**裝置連接字串**取代行,**包括括弧**。
 
-7. 您的連接字串中在鍵盤上的位置，然後按**CTRL-X**來儲存檔案的索引鍵。 它會要求您輸入確認**Y**。然後按**Enter**金鑰，來確認。 您會回到一般*終端機*。 
+7. 當您的連接字串備妥時, 請在鍵盤上按下**Ctrl X**鍵來儲存檔案。 它會要求您輸入**Y**來確認。然後, 按**enter**鍵以確認。 您會回到一般*終端*機。 
 
-8. 一旦所有成功地執行這些命令，您將安裝**IoT Edge 執行階段**。 初始化之後，執行階段會在其本身每次開啟裝置電源，啟動，並可以坐在背景中，從部署的模組正在等候**IoT 中樞服務**。
+8. 一旦這些命令全都順利執行, 您就會安裝**IoT Edge 運行**時間。 一旦初始化之後, 執行時間就會在每次裝置開機時自行啟動, 並且會進入背景, 等待模組從**IoT 中樞服務**部署。
 
-9.  執行下列命令列來初始化*IoT Edge 執行階段*:
+9.  執行下列命令列以初始化*IoT Edge 運行*時間:
 
     ```bash
         sudo systemctl restart iotedge
     ```
 
     > [!IMPORTANT]
-    > 如果您變更.yaml 檔案或上述的安裝程式時，您必須再次執行上述的重新啟動程式碼內*終端機*。
+    > 如果您對 yaml 檔案或上述設定進行變更, 就必須在*終端*機中再次執行上述重新開機行。
 
-10. 請檢查*IoT Edge 執行階段*藉由執行下列命令列的狀態。 執行階段應該會出現狀態**作用中 （執行）** 綠色文字。
+10. 執行下列命令列來檢查*IoT Edge 運行*時間狀態。 執行時間應該會以綠色文字顯示為作用中 (執行中 **)** 。
 
     ```bash
         sudo systemctl status iotedge
     ```
 
-11. 按下**Ctrl + C**索引鍵，結束 [狀態] 頁面。 您可以確認*IoT Edge 執行階段*提取容器正確輸入下列命令：
+11. 按下**Ctrl + C**鍵, 以結束 [狀態] 頁面。 您可以輸入下列命令, 確認*IoT Edge 運行*時間是否已正確提取容器:
 
     ```bash
         sudo docker ps
     ```
 
-12. 具有兩 （2） 容器的清單應該會出現。 這些是會自動建立 （edgeAgent 和 edgeHub） 時，IoT 中樞服務的預設模組。 一旦您建立及部署您自己的模組時，它們會出現在此清單中，預設的下方。
+12. 包含兩個 (2) 容器的清單應會出現。 這些是 IoT 中樞服務自動建立的預設模組 (edgeAgent 和 edgeHub)。 一旦您建立並部署自己的模組, 它們就會出現在此清單中的預設值之下。
 
-## <a name="chapter-6---install-the-extensions"></a>章節 6-安裝擴充功能
+## <a name="chapter-6---install-the-extensions"></a>第6章-安裝延伸模組
 
 > [!IMPORTANT]
-> 接下來的幾章 (6-9) 會在您的 Windows 10 電腦上執行。
+> 接下來的幾個章節 (6-9) 是在您的 Windows 10 電腦上執行。
 
 1. 開啟**VS Code**。
 
-2. 按一下 [**延伸模組**（正方形）] 按鈕在左側列的 VS Code 中，以開啟**擴充功能面板**。
+2. 按一下 VS Code 左邊列的 [**擴充**功能 (方形)] 按鈕, 以開啟 [擴充功能]**面板**。
 
-3. 搜尋並安裝，下列延伸模組 （如圖所示）：
+3. 搜尋並安裝下列延伸模組 (如下圖所示):
 
     1. Azure IoT Edge
     2. Azure IoT 工具組
@@ -368,68 +368,68 @@ ms.locfileid: "67694594"
 
     ![建立您的容器](images/AzureLabs-Lab313-24.png)
 
-4. 一旦安裝擴充功能之後，請關閉並重新開啟 VS Code。
+4. 安裝延伸模組之後, 請關閉再重新開啟 VS Code。
 
-5. VS Code 開啟一次，然後瀏覽至**檢視** > **整合式終端機**。
+5. 在 VS Code 開啟後, 流覽至 [ **View**  > **整合式終端**機]。
 
-6. 您現在將會安裝**Cookiecutter**。 在終端機中執行下列 bash 命令：
+6. 您現在將安裝**Cookiecutter**。 在終端機中, 執行下列 bash 命令:
 
     ```bash
         pip install --upgrade --user cookiecutter
     ```
 
-    > [!提示] 如果您無法使用此命令： 
-    >1. 重新啟動 VS Code 中，和/或您的電腦。
-    >2. 可能需要切換**VS Code 終端機**至您已安裝 Python，也就是使用一個**Powershell** （尤其是如果您的電腦上已安裝的 Python 環境）。 終端機開啟之後，您會發現終端機右邊的下拉式功能表。
+    > [!提示] 此命令的問題: 
+    >1. 重新開機 VS Code 和/或您的電腦。
+    >2. 您可能必須將**VS Code 終端**機切換至您用來安裝 Python 的電腦 (例如**Powershell** ) (特別是在您的機器上已安裝 python 環境的情況下)。 當終端機開啟時, 您會在終端機右側找到下拉式功能表。
      ![建立您的容器](images/AzureLabs-Lab313-24b.png) 
-    >3. 請確定**Python**安裝路徑新增為**環境變數**您的電腦上。 Cookiecutter 應該是相同的位置路徑的一部分。 請遵循此[環境變數的詳細資訊的連結](https://msdn.microsoft.com/library/windows/desktop/ms682653(v=vs.85).aspx)， 
+    >3. 請確定已在您的電腦上將**Python**安裝路徑新增為**環境變數**。 Cookiecutter 應該是相同位置路徑的一部分。 [如需環境變數的詳細資訊](https://msdn.microsoft.com/library/windows/desktop/ms682653(v=vs.85).aspx), 請遵循此連結。 
 
-7. 一次**Cookiecutter**已完成安裝，您應該重新啟動您的電腦，以便**Cookiecutter**可辨識的命令，您的系統環境中。
+7. **Cookiecutter**完成安裝之後, 您應該重新開機電腦, 以便在系統的環境中將**Cookiecutter**辨識為命令。
 
-## <a name="chapter-7---create-your-container-solution"></a>第 7-建立您的容器解決方案
+## <a name="chapter-7---create-your-container-solution"></a>第7章-建立您的容器解決方案
 
-此時，您需要建立容器，要推入的模組，與*Container Registry*。 一旦您已推送您的容器，您將使用*IoT 中樞 Edge*將其部署到您的裝置，正在執行的服務*IoT Edge 執行階段*。
+此時, 您需要使用模組來建立容器, 以推送至*容器*登錄。 推送容器之後, 您將使用*IoT 中樞 Edge*服務將它部署到您的裝置, 而您的裝置正在執行*IoT Edge 運行*時間。
 
-1. 從 VS Code 中，按一下**檢視** > **命令選擇區**。
+1. 從 VS Code 按一下 [**視圖** > ] [**命令**選擇區]。
 
-2. 在 選擇區中，搜尋並執行**Azure IoT Edge:新的 Iot Edge 方案**。
+2. 在 [色板] 中, 搜尋**並執行 Azure IoT Edge:新的 Iot Edge**解決方案。
 
-3. 瀏覽至您想要用來建立您的方案的位置。 按下**Enter**金鑰，才能接受位置。
+3. 流覽至您要建立解決方案的位置。 按**enter**鍵以接受位置。
 
-4. 為您的方案中的名稱。 按下**Enter**金鑰，來確認您提供的名稱。
+4. 為您的解決方案提供名稱。 按**enter**鍵, 確認您提供的名稱。
 
-5. 現在系統會提示您選擇您的解決方案範本架構。 按一下  **Python 模組**。 按下**Enter**金鑰，來確認這項選擇。
+5. 現在, 系統會提示您選擇解決方案的範本架構。 按一下 [ **Python 模組**]。 按**enter**鍵以確認此選擇。
 
-6. 為您的模組名稱。 按下**Enter**金鑰，來確認您的模組名稱。 請務必記下 （與您的 「 記事本 」） 的模組名稱，以便稍後使用。
+6. 提供您的模組名稱。 按**enter**鍵, 以確認您的模組名稱。 請務必記下模組名稱的附注 (含您的「記事本」), 因為它會在稍後使用。
 
-7. 您會發現預先建置*Docker 映像儲存機制*調色盤上，即可顯示位址。 它看起來像：
+7. 您會發現預先建立的*Docker 映射存放庫*位址會出現在色板上。 看起來會像這樣:
 
-    **localhost:5000 /-NAME 您模組-** 。 
+    **localhost: 5000/-模組的名稱-** 。 
 
-8. 刪除**localhost:5000**，並在其位置插入*Container Registry* **登入伺服器**位址，您已記下建立時**容器登錄服務**([在步驟 8，第 2 章](#chapter-2---the-container-registry-service))。 按下**Enter**金鑰，才能確認該位址。
+8. 刪除**localhost: 5000**, 並在其位置插入*容器***登錄登入伺服器**位址, 這是您在建立**container registry 服務**([在步驟8中, 第2章](#chapter-2---the-container-registry-service)) 時記下的。 按**enter**鍵以確認位址。
 
-9. 此時，會建立包含 Python 模組的範本的方案和其結構會顯示在**瀏覽 索引標籤**，VS Code 中，在畫面左側。 如果**瀏覽 索引標籤**是未開啟，您可以開啟它依序按一下左側列中的最上層的按鈕。
+9. 此時, 將會建立包含 Python 模組範本的解決方案, 而且其結構會顯示在畫面左側的 [**流覽]** 索引標籤中 VS Code。 如果 [**流覽]** 索引標籤未開啟, 您可以按一下左側列中最上方的按鈕來開啟它。
 
     ![建立您的容器](images/AzureLabs-Lab313-25.png)
 
-10. 本章中，最後一個步驟是按一下並開啟 **.env 檔案**，從**瀏覽 索引標籤**，並新增您*Container Registry* **的使用者名稱**並**密碼**。 Git 會忽略此檔案，但於建置容器，將設定認證以存取**容器登錄服務**。
+10. 本章的最後一個步驟是按一下並開啟**env**檔案, 從 [**探索]** 索引標籤中, 然後新增您的*容器*登錄使用者**名稱**和**密碼**。 Git 會忽略此檔案, 但是在建立容器時, 將會設定認證以存取**Container Registry 服務**。
 
     ![建立您的容器](images/AzureLabs-Lab313-26.png)
 
-## <a name="chapter-8---editing-your-container-solution"></a>第 8 章-編輯您的容器解決方案
+## <a name="chapter-8---editing-your-container-solution"></a>第8章-編輯您的容器解決方案
 
-您現在將完成容器解決方案，藉由更新下列檔案：
+您現在會藉由更新下列檔案來完成容器解決方案:
 
-- *主<span></span>.py* python 指令碼。
-- *requirements.txt*。
-- *deployment.template.json*。
-- *Dockerfile.amd64*
+- .py python 腳本。 *<span></span>*
+- *需求 .txt*。
+- *deployment. template. json*。
+- *Dockerfile. amd64*
 
-您接著會建立*映像*資料夾中，python 指令碼來檢查要比對的映像您*自訂視覺模型*。 最後，您將在其中加入*labels.txt*檔案，以協助讀取您的模型，而*model.pb*檔案，這是您的模型。
+接著, 您會建立 [ *images* ] 資料夾, 供 python 腳本用來檢查要與您的*自訂視覺模型*相符的影像。 最後, 您將新增*標籤 .txt*檔案, 以協助讀取您的模型, 以及*model. pb*檔案, 也就是您的模型。
 
-1. 使用 VS Code 開啟、 瀏覽至您的模組資料夾，並尋找呼叫的指令碼**主要<span></span>.py**。 按兩下以開啟它。
+1. 在 VS Code 開啟時, 流覽至您的模組資料夾, 然後尋找名 **<span></span>為 .py**的腳本。 按兩下以開啟它。
 
-2. 刪除之檔案的內容，並插入下列程式碼：
+2. 刪除檔案的內容, 並插入下列程式碼:
 
     ```python
     # Copyright (c) Microsoft. All rights reserved.
@@ -662,7 +662,7 @@ ms.locfileid: "67694594"
         main(PROTOCOL)
     ```
 
-3.  開啟檔案**requirements.txt**，並以其取代為下列內容：
+3.  開啟名為 [**需求 .txt**] 的檔案, 並以下列內容取代其內容:
 
     ```
     azure-iothub-device-client==1.4.0.0b3
@@ -671,20 +671,20 @@ ms.locfileid: "67694594"
     pillow==5.1.0
     ```
 
-4.  開啟檔案**deployment.template.json**，並以取代其內容的下列指導方針如下：
+4.  開啟名為**deployment**的檔案, 並遵循下列指導方針來取代其內容:
 
-    1. 因為您會有自己唯一的的 JSON 結構，您必須手動編輯 （而非複製範例）。 若要方便使用，請使用下列映像做為指南。
-    2. 看起來與您，不同的區域，但您**不應該變更為 反白顯示的黃色**。
-    3. **若要刪除，您需要的各節會反白顯示的紅色。**
-    4. 請務必刪除正確的括號，並移除逗號。
+    1. 因為您會有自己的唯一 JSON 結構, 所以您必須手動編輯它 (而不是複製範例)。 若要這麼做, 請使用下列影像做為指南。
+    2. 看起來會與您不同, 但您**不應該變更的區域會以黃色反白顯示**。
+    3. **您需要刪除的區段會反白顯示為紅色。**
+    4. 請小心刪除正確的方括弧, 同時移除逗號。
 
         ![建立您的容器](images/AzureLabs-Lab313-27.png)
 
-    5. 已完成的 JSON 看起來如下圖所示 (不過，使用唯一的差異：*名稱的使用者名稱/密碼/模組/模組參考*):
+    5. 完成的 JSON 看起來應該如下圖所示 (但唯一的差異如下: 使用者*名稱/密碼/模組名稱/模組參考*):
 
         ![建立您的容器](images/AzureLabs-Lab313-28.png)
 
-5.  開啟檔案**Dockerfile.amd64**，並以其取代為下列內容：
+5.  開啟名為**Dockerfile**的檔案, 並以下列內容取代其內容:
 
     ```
     FROM ubuntu:xenial
@@ -731,75 +731,75 @@ ms.locfileid: "67694594"
 
     ```
 
-6.  以滑鼠右鍵按一下下方的資料夾**模組**(會有您在先前; 所提供的名稱在範例中進一步向下，它會呼叫*pythonmodule*)，然後按一下 **新資料夾**. 將資料夾命名**映像**。
+6.  以滑鼠右鍵按一下 [**模組**] 底下的資料夾 (它會有您先前提供的名稱; 在此範例中, 它會被稱為 [ *pythonmodule*]), 然後按一下 [**新增資料夾**]。 將資料夾命名為**images**。
 
-7.  在資料夾中，新增一些映像包含滑鼠或鍵盤。 這些是將 Tensorflow 模型所分析的映像。
+7.  在資料夾內, 新增一些包含滑鼠或鍵盤的影像。 這些會是 Tensorflow 模型將分析的影像。
 
     > [!WARNING]
-    > 如果您使用您自己的模型，您必須變更以反映您自己的模型資料。
+    > 如果您要使用自己的模型, 則需要變更它以反映您自己的模型資料。
 
-8.  您現在需要擷取**labels.txt**並**model.pb**從 [模型] 資料夾，您先前下載的檔案 (或從您自己建立**Custom Vision Service**)，在[第 1 章](#chapter-1---retrieve-the-custom-vision-model)。 檔案之後，請將它們放在您的解決方案，以及其他檔案。 最後的結果看起來應該類似下面的影像：
+8.  您現在必須從[第1章](#chapter-1---retrieve-the-custom-vision-model)的「模型」資料夾中, 取出您先前下載 (或從您自己的**自訂視覺服務**建立) 的**標籤 .txt**和**model. pb**檔案。 當您擁有檔案之後, 請將它們放在您的方案中, 再加上其他檔案。 最後的結果看起來應該如下圖所示:
 
     ![建立您的容器](images/AzureLabs-Lab313-29.png)
 
-## <a name="chapter-9---package-the-solution-as-a-container"></a>第 9 章-封裝做為容器解決方案
+## <a name="chapter-9---package-the-solution-as-a-container"></a>第9章-將解決方案封裝為容器
 
-1.  您現在已準備好將檔案 「 套件 」 做為容器並將資料推送至您**Azure Container Registry**。 在 VS Code 中，開啟*整合式終端機*(**檢視** > **整合式終端機**或是**Ctrl** + **\`** )，並使用下列這一行加入登入**Docker** (取代之命令的認證值您**Azure Container Registry (ACR)** ):
+1.  您現在已準備好「封裝」您的檔案作為容器, 並將其推送至您的**Azure Container Registry**。 在 VS Code 中, 開啟*整合式終端*機 (**View**  > **整合式終端**機或**Ctrl** + **\`** ), 然後使用下列程式程式碼來登入**Docker** (將其值替換為命令與您的**Azure Container Registry (ACR)** 的認證:
 
     ```bash
         docker login -u <ACR username> -p <ACR password> <ACR login server>
     ```
 
-2. 檔案上按一下滑鼠右鍵**deployment.template.json**，然後按一下**建置 IoT Edge 方案**。 此建置程序需要一段時間 （取決於您的裝置），因此請準備好等候。 建置程序完成之後， **deployment.json**檔案將已建立新資料夾，稱為內**config**。
+2. 以滑鼠右鍵按一下 [檔案**部署**], 然後按一下 [**組建 IoT Edge 方案**]。 此組建程式需要相當長的時間 (視您的裝置而定), 因此請備妥等待。 在建立程式完成之後, 會在稱為**config**的新資料夾內建立**部署 json**檔案。
 
     ![建立部署](images/AzureLabs-Lab313-30.png)
 
-3. 開啟**命令調色盤**再次強調，並搜尋**Azure:登入**。 遵循提示使用您的 Azure 帳戶認證;VS Code 會為您提供的選項*複製並開啟*，這將會複製您很快就會需要並開啟預設網頁瀏覽器的裝置程式碼。 當系統詢問，貼上的裝置程式碼，來驗證您的電腦。
+3. 再次開啟**命令**選擇區, 然後搜尋**Azure:登入**。 遵循使用您的 Azure 帳號憑證的提示;VS Code 將提供您*複製和開啟*的選項, 它會複製您即將需要的裝置程式碼, 並開啟您的預設網頁瀏覽器。 當系統要求時, 貼上裝置程式碼, 以驗證您的電腦。
 
     ![複製並開啟](images/AzureLabs-Lab313-31.png)
 
-4. 一次簽署在您會注意到，在下方*瀏覽* 面板中，呼叫的新區段**Azure IoT 中樞裝置**。 按一下以展開此區段。
+4. 登入之後, 您會在 [*探索*] 面板的底部看到一個稱為 [ **Azure IoT 中樞裝置**] 的新區段。 按一下此區段以將它展開。
 
-    ![邊緣裝置](images/AzureLabs-Lab313-32.png)
+    ![edge 裝置](images/AzureLabs-Lab313-32.png)
 
-5. 如果您的裝置是不在這裡，您必須以滑鼠右鍵按一下*Azure IoT Hub Devices*，然後按一下**設定 IoT 中樞連接字串**。 然後您會看到所**命令調色盤**（在 VS Code 的頂端），將會提示您輸入您*連接字串*。 這是*連接字串*您記下的結尾[第 3 章](#chapter-3---the-iot-hub-service)。 按下**Enter**金鑰，當您複製中的字串。    
+5. 如果您的裝置不在這裡, 您將需要以滑鼠右鍵按一下 [ *Azure IoT 中樞裝置*], 然後按一下 [**設定 IoT 中樞連接字串**]。 您接著會看到 [**命令**選擇區] (位於 VS Code 頂端) 會提示您輸入*連接字串*。 這是您在[第3章](#chapter-3---the-iot-hub-service)結尾處記下的*連接字串*。 當您複製中的字串之後, 請按**enter**鍵。    
 
-6. 您的裝置應該載入，而且會出現。 裝置名稱上按一下滑鼠右鍵，然後按一下 **的單一裝置的 建立部署**。
+6. 您的裝置應該會載入並顯示。 以滑鼠右鍵按一下裝置名稱, 然後按一下 [**建立單一裝置的部署**]。
 
     ![建立部署](images/AzureLabs-Lab313-33b.png)
 
-7. 您會收到*檔案總管*提示字元中，您可以瀏覽至**config**資料夾，然後再選取**deployment.json**檔案。 選取該檔案中，按一下**選取 [Edge 部署資訊清單**] 按鈕。
+7. 您會看到 [檔案*瀏覽器*] 提示字元, 您可以在其中流覽至 [ **config** ] 資料夾, 然後選取 [**部署 json** ] 檔案。 選取該檔案後, 按一下 [**選取 Edge 部署資訊清單**] 按鈕。
 
     ![建立部署](images/AzureLabs-Lab313-34.png)
 
-8. 現在您已提供您**IoT 中樞服務**與資訊清單，才能部署為模組，您的容器，從您**Azure Container Registry**，以有效地將它部署至您的裝置。
+8. 此時, 您已為您的**IoT 中樞服務**提供資訊清單, 以將您的容器 (模組) 部署到您的**Azure Container Registry**, 並有效地將它部署到您的裝置。
 
-9. 若要檢視從您的裝置傳送到 IoT 中樞的訊息，再按一下滑鼠右鍵在您的裝置名稱，在**Azure IoT 中樞裝置**區段中**總管**] 面板，然後按一下 [**開始監視D2C 訊息**。 從您的裝置所傳送的訊息應該會出現在 VS 終端機中。 請耐心等候，因為這可能需要一些時間。 請參閱下一章中的偵錯，以及檢查部署是否成功。
+9. 若要查看從您的裝置傳送到 IoT 中樞的訊息, 請在 [ **Azure IoT 中樞裝置**] 區段的 [ **Explorer** ] 面板中, 以滑鼠右鍵按一下您的裝置名稱, 然後按一下 [**開始監視 D2C 訊息**]。 從您的裝置傳送的訊息應該會出現在 VS 終端機中。 請耐心等候, 因為這可能需要一些時間。 請參閱下一章的偵錯工具, 並檢查部署是否成功。
 
-此模組中的映像之間會現在逐一查看**映像**資料夾和分析系統，與每個反覆項目。 這是明顯只是示範如何取得基本的機器學習服務模型在 IoT Edge 裝置環境中工作。 
+此模組現在會逐一查看**images**資料夾中的影像, 並使用每個反復專案加以分析。 這顯然只是示範如何讓基本機器學習模型在 IoT Edge 的裝置環境中工作。 
 
-若要擴充此範例的功能，您可以繼續透過數種方式。 一種方法可以包括一些程式碼在容器中，會擷取從網路攝影機，連線到裝置，並將影像儲存映像資料夾中的相片。 
+若要擴充此範例的功能, 您可以透過數種方式繼續進行。 其中一種方式可能包括容器中的一些程式碼, 它會從連線到裝置的網路攝影機中捕捉相片, 並將影像儲存在 images 資料夾中。 
 
-另一種方式可能複製映像從 IoT 裝置加入至容器。 實用的方法是在 IoT 裝置 （如果您想要自動化程序，或許是小型的應用程式無法執行作業） 的終端機中執行下列命令。 您可以從您的檔案儲存所在的資料夾位置以手動方式執行來測試此命令：
+另一種方式可能是將影像從 IoT 裝置複製到容器中。 做法是在 IoT 裝置終端機中執行下列命令 (如果您想要將此程式自動化, 可能是小型應用程式可以執行此作業)。 您可以從儲存檔案的資料夾位置手動執行, 以測試此命令:
 
 ```bash
     sudo docker cp <filename> <modulename>:/app/images/<a name of your choice>
 ```
 
-## <a name="chapter-10---debugging-the-iot-edge-runtime"></a>第 10 章-偵錯 IoT Edge 執行階段
+## <a name="chapter-10---debugging-the-iot-edge-runtime"></a>第10章-調試 IoT Edge 執行時間
 
-以下是命令列和秘訣，可協助您監視和偵錯的傳訊活動的清單*IoT Edge 執行階段*，從您**Ubuntu 裝置**。 
+以下是命令列和秘訣的清單, 可協助您從**Ubuntu 裝置**監視和偵錯工具*IoT Edge 運行*時間的訊息活動。 
 
-- 請檢查*IoT Edge 執行階段*藉由執行下列命令列的狀態：
+- 執行下列命令列來檢查*IoT Edge 運行*時間狀態:
 
     ```bash
         sudo systemctl status iotedge
     ```
 
     > [!NOTE]
-    > 按下時，請記得**Ctrl + C**，以完成檢視狀態。
+    > 請記得按**Ctrl + C**來完成狀態的查看。
 
-- 列出目前已部署的容器。 如果*IoT 中樞服務*有容器成功部署，則會顯示藉由執行下列命令列：
+- 列出目前已部署的容器。 如果*IoT 中樞服務*已成功部署容器, 則會藉由執行下列命令列來顯示它們:
 
     ```bash
         sudo iotedge list
@@ -812,172 +812,172 @@ ms.locfileid: "67694594"
     ```
 
     > [!NOTE]
-    > 以上是檢查是否您的模組是否已成功部署，就會出現在清單中的好方法否則，您將**僅**請參閱*edgeHub*並*edgeAgent*。
+    > 上述是檢查模組是否已成功部署的好方法, 因為它會出現在清單中;否則, 您**只**會看到*edgeHub*和*edgeAgent*。
 
-- 若要顯示容器的程式碼記錄檔，請執行下列命令列：
+- 若要顯示容器的程式碼記錄, 請執行下列命令列:
 
     ```bash
         journalctl -u iotedge
     ```
 
-**用來管理 IoT Edge 執行階段的有用命令：**
+**管理 IoT Edge 執行時間的有用命令:**
 
--  若要刪除主應用程式中的所有容器：
+-  若要刪除主機中的所有容器:
 
     ```bash
         sudo docker rm -f $(sudo docker ps -aq)
     ```
 
--  若要停止*IoT Edge 執行階段*:
+-  若要停止*IoT Edge 運行*時間:
 
     ```bash
         sudo systemctl stop iotedge
     ```
 
-## <a name="chapter-11---create-table-service"></a>第 11-建立表格服務 
+## <a name="chapter-11---create-table-service"></a>第11章-建立資料表服務 
 
-瀏覽回到 Azure 入口網站，您將在其中建立儲存體資源建立 Azure 資料表服務。
+流覽回到您的 Azure 入口網站, 您將藉由建立儲存體資源來建立 Azure 資料表服務。
 
-1. 如果您尚未登入，登入[Azure 入口網站](https://portal.azure.com)。
+1. 如果尚未登入, 請登入[Azure 入口網站](https://portal.azure.com)。
 
-2. 登入之後，按一下**建立資源**，在左上角，並搜尋**儲存體帳戶**，然後按**Enter**金鑰，才能開始搜尋。
+2. 登入之後, 按一下左上角的 [**建立資源**], 並搜尋 [**儲存體帳戶**], 然後按下**enter**鍵以開始搜尋。
 
-3. 之後它會顯示，按一下 **儲存體帳戶-blob、 檔案、 資料表、 佇列**從清單中。
+3. 出現之後, 按一下清單中的 [**儲存體帳戶-blob、檔案、資料表、佇列**]。
 
     ![搜尋儲存體帳戶](images/AzureLabs-Lab313-35.png)
 
-4. 新的頁面將提供的描述**儲存體帳戶**服務。 在此提示的左下方，按一下**建立**按鈕，以建立這個執行個體服務。
+4. 新的頁面會提供**儲存體帳戶**服務的描述。 在此提示的左下方, 按一下 [**建立**] 按鈕, 以建立此服務的實例。
 
-    ![建立儲存體執行個體](images/AzureLabs-Lab313-36.png)
+    ![建立儲存體實例](images/AzureLabs-Lab313-36.png)
 
-5. 一旦您按下**建立**，面板會顯示：
+5. 當您按一下 [**建立**] 之後, 就會出現一個面板:
 
-    1. 插入您想要**名稱**此服務執行個體 (*必須全部小寫*)。
+    1. 為此服務實例插入您想要的**名稱**(*必須全部小寫*)。
 
-    2. 針對**部署模型**，按一下**Resource manager**。
+    2. 針對 [**部署模型**], 按一下 [ **Resource manager**]。
 
-    3. 針對**帳戶種類**，使用下拉式功能表中，按一下**儲存體 (一般用途 v1)** 。
+    3. 針對 [**帳戶種類**], 使用下拉式功能表, 按一下 [**儲存體 (一般用途 v1)** ]。
 
-    4. 按一下適當**位置**。
+    4. 按一下適當的**位置**。
     
-    5. 針對**複寫**下拉式功能表中，按一下**讀取-存取-異地備援儲存體 (RA-GRS)** 。
+    5. 針對 [ 複寫] 下拉式功能表, 按一下 [**讀取權限-異地-多餘儲存體 (RA-GRS)** ]。
 
-    6. 針對**效能**，按一下**標準**。
+    6. 針對 [**效能**], 請按一下 [**標準**]。
 
-    7. 內**需要安全傳輸**區段中，按一下**停用**。
+    7. 在 [**需要安全傳輸**] 區段中, 按一下 [**停用**]。
 
-    8. 從**訂用帳戶**下拉式功能表中，按一下適當的訂用帳戶。
+    8. 從 [**訂**用帳戶] 下拉式功能表中, 按一下適當的訂用帳戶。
 
-    9. 選擇**資源群組**或建立新的帳戶。 資源群組可用來監視、 控制存取權，佈建及管理的 Azure 資產的集合計費。 建議將所有 Azure 服務在一般的資源群組相關聯 （例如例如這些課程中） 的單一專案保留）。
+    9. 選擇**資源群組**或建立一個新的。 資源群組提供一種方式來監視、控制存取、布建及管理 Azure 資產集合的費用。 建議您將與單一專案相關聯的所有 Azure 服務 (例如這些課程) 都保留在通用資源群組下)。
 
-        > 如果您想要深入了解 Azure 資源群組，請遵循此[如何管理資源群組的連結](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)。
+        > 如果您想要深入瞭解 Azure 資源群組, 請遵循此[連結以瞭解如何管理資源群組](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)。
 
-    10. 離開**虛擬網路**作為**停用**，如果這是您的選項。
+    10. 如果這是您的選項, 請將 [**虛擬網路**] 保留為 [**停用**]。
 
-    11. 按一下 [建立]  。
+    11. 按一下 [建立] 。
 
         ![填入儲存體詳細資料](images/AzureLabs-Lab313-37.png)
 
-6. 一旦您按下**建立**，您必須建立服務，這可能需要一分鐘。
+6. 按一下 [**建立**] 之後, 您必須等候服務建立, 這可能需要一分鐘的時間。
 
-7. 通知會出現在入口網站中，一旦建立服務執行個體。 按一下通知，以探索新的服務執行個體。
+7. 建立服務實例之後, 入口網站中會出現通知。 按一下 [通知] 以探索新的服務實例。
 
     ![新的儲存體通知](images/AzureLabs-Lab313-38.png)
 
-8. 按一下 [**移至資源**按鈕，在該通知上方，而且您將會進入您新的儲存體服務執行個體概觀] 頁面。
+8. 按一下通知中的 [**移至資源**] 按鈕, 您將會進入新的儲存體服務實例的 [總覽] 頁面。
 
     ![前往資源](images/AzureLabs-Lab313-39.png)
 
-9. 從 [概觀] 頁面的右手邊的側邊，按一下**資料表**。
+9. 從 [總覽] 頁面, 按一下右側的 [**資料表]** 。
     
-    ![資料表](images/AzureLabs-Lab313-40.png)
+    ![tables](images/AzureLabs-Lab313-40.png)
 
-10. 在右側面板會變更以顯示**表格服務**資訊，您要在其中加入新的資料表。 依序按一下 **+ 資料表**左上角的按鈕。
+10. 右側面板會變更以顯示**資料表服務**資訊, 您必須在其中加入新的資料表。 若要這麼做, 請按一下左上角的 [ **+ 資料表**] 按鈕。
 
     ![開啟資料表](images/AzureLabs-Lab313-41.png)
 
-11. 新的頁面將會顯示，您要在其中輸入**資料表名稱**。 這是您用來在您的應用程式，在後續的章節 （建立函數應用程式和 Power BI） 中的資料所參考的名稱。 插入**IoTMessages**做為名稱 （您也可以選擇自己的圖片，只要記住它稍後在本文件中使用時），按一下 **確定**。 
+11. 將會顯示新的頁面, 您必須在其中輸入**資料表名稱**。 這是您稍後章節中用來參考應用程式中資料的名稱 (建立函數應用程式, Power BI)。 將**IoTMessages**插入為名稱 (您可以自行選擇, 並在本檔稍後使用時記住), 然後按一下 **[確定]** 。 
 
-12. 一旦建立新的資料表，您將能夠看到它內**表格服務**頁面 （位於底部）。
+12. 建立新的資料表之後, 您就可以在 [**資料表服務**] 頁面 (底部) 中看到它。
 
-    ![建立新資料表](images/AzureLabs-Lab313-42.png)  
+    ![已建立新資料表](images/AzureLabs-Lab313-42.png)  
 
-13. 現在，按一下**存取金鑰**並採取一份**儲存體帳戶名稱**並**金鑰**（使用您在 [記事本]），您將使用這些值稍後在本課程中，建立時**Azure 函數應用程式**。
+13. 現在, 按一下 [**存取金鑰**] 並取得**儲存體帳戶名稱**和**金鑰**的複本 (使用您的 [記事本]), 稍後在本課程中建立**Azure 函數應用程式**時, 將會用到這些值。
 
-    ![建立新資料表](images/AzureLabs-Lab313-43.png) 
+    ![已建立新資料表](images/AzureLabs-Lab313-43.png) 
 
-14. 同樣地，使用左邊的面板捲動到 *表格服務*區段，然後按一下**資料表**(或**瀏覽資料表**，在較新的入口網站中)，並採取一份**資料表 URL** （使用您在 記事本）。 連結資料表時，您會稍後在本課程中，使用此值您**Power BI**應用程式。
+14. 再次使用左側的面板, 流覽至 [*資料表服務*] 區段, 然後按一下 [**資料表**] (或 **[流覽資料表]** , 在較新的入口網站中), 並複製**資料表 URL** (使用您的 [記事本])。 當您將資料表連結到**Power BI**應用程式時, 將會在本課程稍後使用此值。
 
-    ![建立新資料表](images/AzureLabs-Lab313-44.png)
+    ![已建立新資料表](images/AzureLabs-Lab313-44.png)
 
-## <a name="chapter-12---completing-the-azure-table"></a>第 12 章-完成 Azure 資料表
+## <a name="chapter-12---completing-the-azure-table"></a>第12章-完成 Azure 資料表
 
-既然您**表格服務**儲存體帳戶是否已設定，就可以開始將資料加入至它，將會用來儲存和擷取資訊。 編輯您的資料表可透過**Visual Studio**。
+既然您已設定**資料表服務**儲存體帳戶, 就可以在其中加入資料, 這將用來儲存和抓取資訊。 您可以透過**Visual Studio**來編輯您的資料表。
 
 1. 開啟**Visual Studio** (**不**Visual Studio Code)。
 
-2. 從功能表中，按一下**檢視** > **Cloud Explorer**。
+2. 從功能表中, 按一下 [ **View**  >  **Cloud Explorer**]。
 
     ![開啟 cloud explorer](images/AzureLabs-Lab313-45.png)
 
-3. **Cloud Explorer**會開啟為停駐項目 （耐心等候，因為載入可能會花費的時間）。
+3. **Cloud Explorer**將會開啟為停駐的專案 (請耐心等候, 因為載入可能需要一些時間)。
 
     > [!WARNING] 
-    > 如果您用來建立訂用帳戶您*儲存體帳戶*不可見，請確定您已： 
-    > - 與您在 Azure 入口網站使用相同的帳戶登入。
-    > - 從 （您可能需要從您的帳戶設定套用篩選） 的 [帳戶管理] 頁面中選取您的訂用帳戶：  
+    > 如果看不到您用來建立*儲存體帳戶*的訂用帳戶, 請確定您有: 
+    > - 登入與您用於 Azure 入口網站的帳戶相同。
+    > - 從 [帳戶管理] 頁面選取您的訂用帳戶 (您可能需要從您的帳戶設定套用篩選):  
     >
     >   ![尋找訂用帳戶](images/AzureLabs-Lab313-46.png)
 
-4. Azure 雲端服務將會顯示。 尋找**儲存體帳戶**按一下箭號左側，展開您的帳戶。
+4. 將會顯示您的 Azure 雲端服務。 尋找 [**儲存體帳戶**], 然後按一下該左側的箭號以展開您的帳戶。
 
     ![開啟儲存體帳戶](images/AzureLabs-Lab313-47.png)
 
-5. 一旦展開時，您新建立**儲存體帳戶**應該可用。 按一下您的儲存體中，左邊的箭號之後，會展開，然後尋找**資料表**，按一下，以顯示旁的箭號**資料表**在最後一章中所建立。 按兩下您**資料表**。
+5. 擴充之後, 應該就可以使用新建立的**儲存體帳戶**。 按一下儲存體左邊的箭號, 然後展開 [尋找**資料表**], 再按一下該按鈕旁邊的箭號, 以顯示您在上一章中建立的**資料表**。 按兩下您的**資料表**。
 
-6. 您的資料表將會開啟您的 Visual Studio 視窗中央。 按一下 [資料表] 圖示，以 **+** （加上） 在其上。
+6. 您的資料表將會在 Visual Studio 視窗的中央開啟。 按一下 [資料表] 圖示，以 **+** （加上） 在其上。
 
     ![加入新的資料表](images/AzureLabs-Lab313-48.png)
 
-7. 接著會出現視窗提示要*新增實體*。 雖然會有三個屬性，您將建立一個的實體。 您將會發現*PartitionKey*並*RowKey*已提供，這些資料表所用來尋找您的資料。 
+7. 隨即會出現一個視窗, 提示您*加入實體*。 您只會建立一個實體, 但它會有三個屬性。 您會發現*PartitionKey*和*RowKey*已提供, 因為資料表會使用這些來尋找您的資料。 
 
     ![資料分割和資料列索引鍵](images/AzureLabs-Lab313-49.png)
 
-8. 更新下列值：
+8. 更新下列值:
 
-    - 名稱：**PartitionKey**，值：**PK_IoTMessages** 
+    - 名稱：**PartitionKey**, 值:**PK_IoTMessages** 
 
-    - 名稱：**RowKey**，值：**RK_1_IoTMessages** 
+    - 名稱：**RowKey**, 值:**RK_1_IoTMessages** 
 
-9. 然後，按一下 **將屬性加入**(至左下方的*加入實體*視窗)，並新增下列屬性：
+9. 然後, 按一下 [**新增屬性**] (在 [*新增實體*] 視窗的左下方), 然後加入下列屬性:
 
-    - **MessageContent**，作為*字串*，將值保留為空白。
+    - 以*字串*的形式**MessageContent**, 將此值保留空白。
 
-10. 您的資料表應符合下面的影像中的一個：
+10. 您的資料表應符合下圖中的其中一個:
 
-    ![加入正確的值](images/AzureLabs-Lab313-50.png)
+    ![新增正確的值](images/AzureLabs-Lab313-50.png)
 
     > [!NOTE] 
-    > 實體包含資料列索引鍵中的數字 1 的原因的原因是因為您可能想要新增更多的訊息，您想要實驗應該使用本課程。
+    > 實體在資料列索引鍵中的數位為1的原因, 是因為您可能想要加入更多的訊息, 而您希望進一步試驗此課程。
 
-11. 按一下 **確定**完畢時。 現在準備好可供您的資料表。
+11. 完成後, 請按一下 **[確定]** 。 您的資料表現在已準備好可供使用。
 
-## <a name="chapter-13---create-an-azure-function-app"></a>第 13-建立 Azure 函式應用程式 
+## <a name="chapter-13---create-an-azure-function-app"></a>第13章-建立 Azure 函數應用程式 
 
-就可以立即開始建立*Azure 函數應用程式*，則會藉由呼叫*IoT 中樞服務*儲存*IoT Edge*裝置中的訊息**資料表**服務，您在上一章中建立。
+現在您可以建立*Azure 函數應用程式*, *IoT 中樞服務*會呼叫這項資訊, 將*IoT Edge*的裝置訊息儲存在您在上一章中建立的**表格**服務。
 
-首先，您必須建立一個檔案，可讓您的 Azure 函式，將您所需的程式庫。
+首先, 您必須建立可讓您的 Azure 函式載入所需程式庫的檔案。
 
-1.  開啟**記事本**(按下*Windows 鍵*，和型別*記事本*)。
+1.  開啟 [**記事本**] (按*Windows 鍵*, 然後輸入 [*記事本*])。
 
     ![開啟 [記事本]](images/AzureLabs-Lab313-51.png)
 
-2.  使用 「 記事本 」 開啟，在其中插入以下的 JSON 結構。 完成後，會將它儲存為您的桌面上**project.json**。 此檔案會定義您的函式會使用的程式庫。 如果您已使用 NuGet，它看起來會類似。
+2.  在 [記事本] 開啟的情況下, 將下面的 JSON 結構插入其中。 完成之後, 請將它儲存在您的桌上型電腦上做為**專案 json**。 此檔案會定義您的函式將使用的程式庫。 如果您已使用 NuGet, 它看起來會很熟悉。
     
     > [!WARNING]
-    > 請務必確認名稱正確;請確定它並未**沒有.txt**副檔名。 如需參考，請參閱以下內容：
+    > 請務必正確地命名;請確定它**的副檔名不是 .txt** 。 請參閱下文以取得參考:
     >
-    > ![儲存的 JSON](images/AzureLabs-Lab313-52.png)
+    > ![JSON 儲存](images/AzureLabs-Lab313-52.png)
 
     ```json
     {
@@ -993,81 +993,81 @@ ms.locfileid: "67694594"
 
 3.  登入[Azure 入口網站](https://portal.azure.com)。
 
-4.  一旦您登入，按一下**建立資源**在左上角，，然後搜尋**函式應用程式**，然後按**Enter**来搜尋的索引鍵。 按一下 *函式應用程式*從結果中，若要開啟新的面板。
+4.  登入之後, 請按一下左上角的 [**建立資源**], 並搜尋**函數應用程式**, 然後按**enter**鍵以進行搜尋。 按一下結果中的 [*函數應用程式*] 以開啟新的面板。
 
-    ![搜尋函式應用程式](images/AzureLabs-Lab313-53.png)
+    ![搜尋函數應用程式](images/AzureLabs-Lab313-53.png)
 
-5.  新的面板會提供的描述**函式應用程式**服務。 在此面板的左下方，按一下**建立**按鈕，以建立與這個關聯服務。
+5.  新的面板會提供**函數應用程式**服務的描述。 在此面板的左下方, 按一下 [**建立**] 按鈕, 以建立與此服務的關聯。
 
-    ![函式應用程式執行個體](images/AzureLabs-Lab313-54.png)
+    ![函數應用程式實例](images/AzureLabs-Lab313-54.png)
 
-6.  一旦您按下**建立**，填入下列：
+6.  當您按一下 [**建立**] 之後, 請填寫下列內容:
 
-    1. 針對**應用程式名稱**，插入您想要的名稱，此服務執行個體。
+    1. 針對 [**應用程式名稱**], 插入您想要的此服務實例名稱。
 
-    2. 選取 **訂用帳戶**。
+    2. 選取**訂**用帳戶。
 
-    3. 選取定價層適合您，如果這是第一次建立**函式應用程式服務**，免費層應該是您可以使用。
+    3. 選取適合您的定價層, 如果這是您第一次建立**函數應用程式服務**, 免費層應可供您使用。
 
-    4. 選擇**資源群組**或建立新的帳戶。 資源群組可用來監視、 控制存取權，佈建及管理的 Azure 資產的集合計費。 建議將所有 Azure 服務在一般的資源群組相關聯 （例如例如這些課程中） 的單一專案保留）。
+    4. 選擇**資源群組**或建立一個新的。 資源群組提供一種方式來監視、控制存取、布建及管理 Azure 資產集合的費用。 建議您將與單一專案相關聯的所有 Azure 服務 (例如這些課程) 都保留在通用資源群組下)。
 
-        > 如果您想要深入了解 Azure 資源群組，請遵循此[如何管理資源群組的連結](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)。
+        > 如果您想要深入瞭解 Azure 資源群組, 請遵循此[連結以瞭解如何管理資源群組](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)。
 
-    5. 針對**OS**，按一下 Windows，因為這是預期的平台。
+    5. 針對 [**作業系統**], 按一下 [Windows], 因為這是所需的平臺。
 
-    6. 選取 **主控方案**(使用本教學課程**取用方案**。
+    6. 選取**主控方案**(本教學課程使用的是取用**方案**)。
 
-    7. 選取 **位置**（上一個步驟中選擇您已建立的儲存體相同的位置）
+    7. 選取**位置**(選擇與您在上一個步驟中建立的儲存體相同的位置)
 
-    8. 針對**儲存體**一節**您必須選取您在上一個步驟中建立的儲存體服務**。
+    8. 針對 [**儲存體**] 區段,**您必須選取您在上一個步驟中建立的儲存體服務**。
 
-    9. 您不需要*Application Insights*在此應用程式，因此您將它保留**關閉**。
+    9. 您不需要在此應用程式中*Application Insights* , 因此請隨意保留。
 
-    10. 按一下 [建立]  。
+    10. 按一下 [建立] 。
 
-        ![建立新的執行個體](images/AzureLabs-Lab313-55.png)
+        ![建立新的實例](images/AzureLabs-Lab313-55.png)
 
-7.  一旦您按下**建立**，您必須建立服務，這可能需要一分鐘。
+7.  按一下 [**建立**] 之後, 您必須等候服務建立, 這可能需要一分鐘的時間。
 
-8.  通知會出現在入口網站中，一旦建立服務執行個體。
+8.  建立服務實例之後, 入口網站中會出現通知。
 
-    ![新的通知](images/AzureLabs-Lab313-56.png)
+    ![新通知](images/AzureLabs-Lab313-56.png)
 
-9.  部署成功之後，按一下 通知 （完成）。
+9.  一旦部署成功 (已完成), 請按一下通知。
 
-10. 按一下 **移至資源**通知，以探索新的服務執行個體中的按鈕。 
+10. 按一下通知中的 [**移至資源**] 按鈕, 探索新的服務實例。 
 
     ![前往資源](images/AzureLabs-Lab313-57.png)
 
 11. 在新的面板的左側，按一下 **+** （加號） 旁的圖示*函式*，以建立新的函式。
 
-    ![新增新的函式](images/AzureLabs-Lab313-58.png)
+    ![加入新函數](images/AzureLabs-Lab313-58.png)
 
-12. 在中央窗格中，**函式**建立視窗會出現。 此外，向下捲動，然後按一下**自訂函式**。
+12. 在中央面板中, 將會出現 [**函數**建立] 視窗。 進一步向下流覽, 然後按一下 [**自訂函數**]。
 
-    ![自訂函式](images/AzureLabs-Lab313-59.png)
+    ![自訂函數](images/AzureLabs-Lab313-59.png)
 
-13. 下一步 頁面上，直到您找到捲動**IoT 中樞 （事件中樞）** ，然後按一下它。
+13. 在下一個頁面上向下流覽, 直到您找到**IoT 中樞 (事件中樞)** , 然後按一下它。
 
-    ![自訂函式](images/AzureLabs-Lab313-60.png)
+    ![自訂函數](images/AzureLabs-Lab313-60.png)
 
-14. 在  **IoT 中樞 （事件中樞）** 刀鋒視窗中，將**語言**來**C#** ，然後按一下**新**。
+14. 在 [ **IoT 中樞 (事件中樞)** ] 分頁中, 將語言**C#** 設定為, 然後按一下 [**新增**]。
 
-    ![自訂函式](images/AzureLabs-Lab313-61.png)
+    ![自訂函數](images/AzureLabs-Lab313-61.png)
 
-15. 在視窗中會出現，請確定**IoT 中樞**已選取和名稱*IoT 中樞*欄位對應的名稱取代您*IoT 中樞服務*您具有先前所建立 ([在步驟 8，第 3 章](#chapter-3---the-iot-hub-service))。 然後按一下**選取** 按鈕。
+15. 在隨即出現的視窗中, 確定已選取 [ **IoT 中樞**], 而且 [ *IoT 中樞*] 欄位的名稱與您先前建立的*IoT 中樞服務*名稱 ([在第3章的步驟8中](#chapter-3---the-iot-hub-service)) 對應。 然後按一下 [**選取**] 按鈕。
 
-    ![自訂函式](images/AzureLabs-Lab313-62.png)
+    ![自訂函數](images/AzureLabs-Lab313-62.png)
 
-16. 回到**IoT 中樞 （事件中樞）** 刀鋒視窗中，按一下**建立**。
+16. 回到 [ **IoT 中樞 (事件中樞)** ] 分頁, 按一下 [**建立**]。
 
-    ![自訂函式](images/AzureLabs-Lab313-63.png)
+    ![自訂函數](images/AzureLabs-Lab313-63.png)
 
-17. 您將會重新導向至函式編輯器。
+17. 系統會將您重新導向至函數編輯器。
 
-    ![自訂函式](images/AzureLabs-Lab313-64.png)
+    ![自訂函數](images/AzureLabs-Lab313-64.png)
 
-18. 刪除所有程式碼，並將它取代為下列：
+18. 刪除其中的所有程式碼, 並取代為下列內容:
 
     ```csharp
     #r "Microsoft.WindowsAzure.Storage"
@@ -1132,101 +1132,101 @@ ms.locfileid: "67694594"
     }
     ```
 
-19. 變更下列變數，讓它們對應至適當的值 (**表格**並**儲存體**的值，從[步驟 11 日及 13 日分別第 11 章](#chapter-11---create-table-service))，您會在中找到您**儲存體帳戶**:
+19. 變更下列變數, 使其對應至您在**儲存體帳戶**中可找到的適當值 (**資料表**和**儲存體**值,[分別是步驟11和 13, 第11章](#chapter-11---create-table-service)):
 
-    - **tableName**，名稱與您**表格**位於您**儲存體帳戶**。
-    - **tableURL**，使用的 URL 您**表格**位於您**儲存體帳戶**。
-    - **storageAccountName**，對應的名稱值的名稱與您**儲存體帳戶**名稱。
-    - **storageAccountKey**，您已取得您先前建立的儲存體服務中的金鑰。
+    - **tableName**, 並以您的**資料表**名稱放置在您的**儲存體帳戶**中。
+    - **tableURL**, 使用您的**儲存體帳戶**中的**資料表**URL。
+    - **storageAccountName**, 其值的名稱會對應至您的**儲存體帳戶**名稱名稱。
+    - **storageAccountKey**, 其中包含您先前建立的儲存體服務中取得的金鑰。
 
-    ![自訂函式](images/AzureLabs-Lab313-65.png)
+    ![自訂函數](images/AzureLabs-Lab313-65.png)
 
-20. 中位置的程式碼，請按一下**儲存**。
+20. 備妥程式碼後, 按一下 [**儲存**]。
 
 21. 接下來，按一下 **\<** （箭頭） 圖示，在頁面的右手邊。
 
-    ![自訂函式](images/AzureLabs-Lab313-66.png)
+    ![自訂函數](images/AzureLabs-Lab313-66.png)
 
-22. 從右邊的窗格中將投影片。 在該面板中，按一下**上傳**，以及*檔案瀏覽器*會出現。
+22. 面板會從右邊滑入。 在該面板中, 按一下 **[上傳**], 檔案*瀏覽器*隨即出現。
 
-23. 瀏覽至，然後按一下 []， **project.json**中建立的檔案**記事本**之前，然後按一下 [**開啟**] 按鈕。 此檔案會定義您的函式會使用的程式庫。
+23. 流覽至, 然後按一下 [您先前在**記事本**中建立的**專案. json**檔案], 再按一下 [**開啟**] 按鈕。 此檔案會定義您的函式將使用的程式庫。
 
-    ![自訂函式](images/AzureLabs-Lab313-67.png)
+    ![自訂函數](images/AzureLabs-Lab313-67.png)
 
-24. 檔案已上傳時，它會出現在右側面板。 按一下將內開啟它**函式**編輯器。 它必須看起來**完全**與下圖相同。
+24. 檔案上傳之後, 它就會出現在右邊的面板中。 按一下它會在**函數**編輯器中開啟它。 其外觀必須與下一個影像**完全**相同。
 
-    ![自訂函式](images/AzureLabs-Lab313-68.png)
+    ![自訂函數](images/AzureLabs-Lab313-68.png)
 
-25. 此時就很好測試您的函式的功能，將訊息儲存在您*資料表*。 在右上方的 [] 視窗中，按一下**測試**。
+25. 此時, 測試函式的功能以將訊息儲存在您的*資料表*上是很好的做法。 在視窗的右上方, 按一下 [**測試**]。
 
-    ![自訂函式](images/AzureLabs-Lab313-69.png)
+    ![自訂函數](images/AzureLabs-Lab313-69.png)
 
-26. 將訊息插入上**要求本文**，如上顯示的影像上方，然後按一下**執行**。 
+26. 在**要求主體**上插入訊息, 如上圖所示, 然後按一下 [**執行**]。 
 
-27. 此函式會執行，顯示的結果狀態 (您會注意到綠色**狀態 202 已接受**上面*輸出*視窗中，這表示它已成功的呼叫):
+27. 函式將會執行, 並顯示結果狀態 (您會在 [*輸出*] 視窗上方看到 [已**接受綠色狀態 202**], 這表示它是成功的呼叫):
 
     ![輸出結果](images/AzureLabs-Lab313-70.png)
 
-## <a name="chapter-14---view-active-messages"></a>第 14 章-檢視作用中的訊息
+## <a name="chapter-14---view-active-messages"></a>第14章-查看活動訊息
 
-如果您現在可以開啟 Visual Studio (**未**Visual Studio Code)，您可以將視覺化您測試訊息的結果，因為它會儲存在*MessageContent*區域的字串。
+如果您現在開啟 Visual Studio (**而不**是 Visual Studio Code), 您可以將測試訊息結果視覺化, 因為它會儲存在*MessageContent*字串區域中。
 
-![自訂函式](images/AzureLabs-Lab313-71.png)
+![自訂函數](images/AzureLabs-Lab313-71.png)
 
-表格服務和函式應用程式就地，Ubuntu 裝置上的訊息會出現在您*IoTMessages*資料表。 如果尚未執行，同樣地，啟動您的裝置，您將能夠看到結果訊息，從您的裝置和您的資料表內的模組，使用 Visual Studio *Cloud Explorer*。
+當資料表服務和函數應用程式就緒時, 您的 Ubuntu 裝置訊息會出現在*IoTMessages*資料表中。 如果尚未執行, 請重新開機您的裝置, 您就可以使用 Visual Studio *Cloud Explorer*, 在資料表中查看來自您裝置和模組的結果訊息。
 
 ![將資料視覺化](images/AzureLabs-Lab313-72.png)
 
 
-## <a name="chapter-15---power-bi-setup"></a>第 15 章-Power BI 設定
+## <a name="chapter-15---power-bi-setup"></a>第15章-Power BI 設定
 
-若要從您的 IOT 裝置會設定將資料視覺化**Power BI** （桌面版），要從中收集資料*資料表*您剛才建立的服務。 *HoloLens*版本的 Power BI 會接著使用該資料以視覺化方式檢視結果。
+若要將您的 IOT 裝置中的資料視覺化, 您會設定**Power BI** (桌上出版本), 以從您剛建立的*資料表*服務收集資料。 然後, Power BI 的*HoloLens*版本將會使用該資料將結果視覺化。
 
-1.  開啟 Windows 10 上的 Microsoft Store 並搜尋**Power BI Desktop**。
+1.  開啟 Windows 10 上的 Microsoft Store, 然後搜尋**Power BI Desktop**。
 
     ![Power BI](images/AzureLabs-Lab313-73.png)
 
-2.  下載應用程式。 一旦下載完成，請開啟它。
+2.  下載應用程式。 完成下載之後, 請將它開啟。
 
-3.  登入*Power BI*與您**Microsoft 365 帳戶**。 您可能會重新導向至瀏覽器中，登入。 一旦您已註冊，返回 Power BI 應用程式，並再次登入。
+3.  使用您的**Microsoft 365 帳戶**登入*Power BI* 。 您可能會被重新導向至瀏覽器以進行註冊。 註冊之後, 請返回 Power BI 應用程式, 然後再次登入。
 
-4.  按一下 **取得資料**，然後按一下**更多...** .
+4.  按一下 [**取得資料**], 然後按一下 [**其他 ...** ]。
 
     ![Power BI](images/AzureLabs-Lab313-74.png)
 
-5.  按一下  **Azure**， **Azure 資料表儲存體**，然後按一下**Connect**。
+5.  按一下 [ **Azure**]、[ **azure 表格儲存體**], 然後按一下 **[連線]** 。
 
     ![Power BI](images/AzureLabs-Lab313-75.png)
 
-6.  系統會提示您插入**adresa URL Tabulky**稍早收集到的 ([在步驟 13 小時，共 11 章](#chapter-11---create-table-service))，建立您的資料表服務時。 在插入 URL 之後, 刪除路徑參考到資料表"子資料夾 」 （這是 IoTMessages，本課程中） 的一部分。 最後的結果應該如下圖所示。 然後按一下**確定**。
+6.  建立表格服務時, 系統會提示您插入稍早收集的**資料表 URL** ([在第11章的步驟13中](#chapter-11---create-table-service))。 插入 URL 之後, 請刪除參考「子資料夾」資料表的路徑部分 (在此課程中為 IoTMessages)。 最後的結果應該如下圖所示。 然後按一下 **[確定]** 。
 
     ![Power BI](images/AzureLabs-Lab313-76.png)
 
-7.  系統會提示您插入**儲存體金鑰**您記下 ([的步驟 11 第 11 章](#chapter-11---create-table-service)) 先前在建立您的資料表儲存體。 然後按一下**Connect**。
+7.  建立表格儲存體時, 系統會提示您插入先前記下的**儲存體金鑰**([在第11章的步驟11中](#chapter-11---create-table-service))。 然後按一下 **[連線]** 。
 
     ![Power BI](images/AzureLabs-Lab313-77.png)  
 
-8. A**導覽器 面板**將會顯示，勾選您表旁邊的方塊，然後按一下**負載**。
+8. [導覽**器] 面板**隨即顯示, 並勾選您資料表旁的方塊, 然後按一下 [**載入**]。
 
     ![Power BI](images/AzureLabs-Lab313-78.png)  
 
-9. Power BI 中，現在已載入您的資料表，但需要的查詢，以在其中顯示的值。 若要這樣做，請以滑鼠右鍵按一下資料表名稱，其位於**欄位面板**螢幕的右上方。 然後按一下**編輯查詢**。
+9. 您的資料表現在已載入 Power BI, 但它需要查詢來顯示其中的值。 若要這麼做, 請在畫面右側的 [**欄位] 面板**中, 以滑鼠右鍵按一下資料表名稱。 然後按一下 [**編輯查詢**]。
 
     ![Power BI](images/AzureLabs-Lab313-79.png) 
 
-10. A **Power Query 編輯器**會開啟新視窗，顯示您的資料表。 按一下 上一字**記錄**內*內容*資料表資料行，以視覺化方式檢視您儲存的內容。
+10. **Power Query 編輯器**會開啟為新視窗, 並顯示您的資料表。 按一下資料表的 [*內容*] 資料行中的 [文字**記錄**], 將儲存的內容視覺化。
 
     ![Power BI](images/AzureLabs-Lab313-80.png)    
 
-11. 按一下  **Into 資料表**，在視窗的左上方。 
+11. 按一下視窗左上角的 [移**至資料表**]。 
 
     ![Power BI](images/AzureLabs-Lab313-81.png)
 
-12. 按一下 **關閉並套用**。
+12. 按一下 [**關閉 &** 套用]。
 
     ![Power BI](images/AzureLabs-Lab313-82.png)
 
-13. 在載入此查詢中，完成後**欄位面板**，在畫面的右側，勾選 參數對應的方塊**名稱**並**值**至以視覺化方式檢視**MessageContent**資料行內容。
+13. 完成載入查詢後, 在 [**欄位] 面板**的右側畫面中, 勾選對應于參數**名稱**和**值**的方塊, 以將**MessageContent**的資料行內容視覺化。
 
     ![Power BI](images/AzureLabs-Lab313-83.png)
 
@@ -1234,45 +1234,45 @@ ms.locfileid: "67694594"
 
     ![Power BI](images/AzureLabs-Lab313-84.png)
 
-15. 您現在可以按一下 [發行] 按鈕上, 傳至您的工作區的資料表。 出現提示時，按一下**我的工作區**然後按一下*選取*。 等候它顯示在提交的成功的結果。
+15. 您現在可以按一下 [發佈] 按鈕, 將您的資料表上傳至您的工作區。 出現提示時, 按一下 [**我的工作區**] 並按一下 [*選取*]。 等候它顯示提交成功的結果。
 
     ![Power BI](images/AzureLabs-Lab313-85.png)
 
     ![Power BI](images/AzureLabs-Lab313-86.png)
 
 > [!WARNING]
-> 下一個章節是特定的 HoloLens。 Power BI 目前不提供為沈浸式應用程式，不過您可以在 Windows 混合實境入口網站 （也稱為 Cliff 房屋） 來執行桌面版本透過桌面應用程式。
+> 下一章是 HoloLens 特有的。 Power BI 目前無法做為沉浸式應用程式使用, 但是您可以透過桌面應用程式, 在 Windows Mixed Reality 入口網站 (也稱為 Cliff 房子) 中執行桌上出版本。
 
-## <a name="chapter-16---display-power-bi-data-on-hololens"></a>第 16 章-HoloLens 上顯示 Power BI 資料
+## <a name="chapter-16---display-power-bi-data-on-hololens"></a>第16章-在 HoloLens 上顯示 Power BI 資料
 
-1. 在您的 HoloLens 上登入**Microsoft Store**，依序點選應用程式清單中的圖示。
+1. 在您的 HoloLens 上, 藉由在應用程式清單中的圖示上點擊, 登入**Microsoft Store**。
 
     ![Power BI HL](images/AzureLabs-Lab313-87.png)
 
-2. 搜尋，然後下載**Power BI**應用程式。
+2. 搜尋, 然後下載**Power BI**應用程式。
 
     ![Power BI HL](images/AzureLabs-Lab313-88.png)
 
-3. 開始**Power BI**從您的應用程式清單。 
+3. 從您的應用程式清單啟動**Power BI** 。 
 
-4. **Power BI**可能會要求您登入您**Microsoft 365 帳戶**。
+4. **Power BI**可能會要求您登入您的**Microsoft 365 帳戶**。
 
-5. 一次，應用程式內的工作區應該預設會顯示在下圖所示。 如果，不會發生，只要按一下視窗左邊的工作區圖示。
+5. 在應用程式內, 預設應該會顯示工作區, 如下圖所示。 如果沒有發生這種情況, 只要按一下視窗左側的工作區圖示即可。
 
     ![Power BI HL](images/AzureLabs-Lab313-89.png)
 
-## <a name="your-finished-your-iot-hub-application"></a>您已完成您的 IoT 中樞應用程式
+## <a name="your-finished-your-iot-hub-application"></a>您已完成 IoT 中樞應用程式
 
-恭喜，您已成功建立 IoT 中樞服務，以模擬的虛擬機器的 Edge 裝置。 您的裝置可以進行通訊的機器學習模型到 Azure 資料表服務，透過 Azure 函式應用程式，這是讀取到 Power BI，並以視覺化方式檢視內 Microsoft HoloLens 的結果。
+恭喜, 您已成功建立具有模擬虛擬機器 Edge 裝置的 IoT 中樞服務。 您的裝置可以將機器學習模型的結果傳達給 Azure 資料表服務, 這會被讀入 Power BI, 並在 Microsoft HoloLens 中視覺化的 Azure 函數應用程式。
  
 ![Power BI](images/AzureLabs-Lab313-00.png)
 
-## <a name="bonus-exercises"></a>Bonus 練習
+## <a name="bonus-exercises"></a>額外練習
 
-### <a name="exercise-1"></a>練習 1
+### <a name="exercise-1"></a>練習1
 
-展開 儲存在資料表中的訊息結構，則會顯示為圖形。 您可能想要收集更多資料，並將它儲存在相同資料表中，稍後再顯示。
+展開儲存在資料表中的訊息結構, 並將其顯示為圖表。 您可能想要收集更多資料, 並將它儲存在相同的資料表中, 以供稍後顯示。
 
-### <a name="exercise-2"></a>練習 2
+### <a name="exercise-2"></a>練習2
 
-建立其他 IoT 面板，以便它可以透過分析攝影機擷取映像部署至 「 相機擷取 」 模組。
+建立要在 IoT 面板上部署的其他「相機捕捉」模組, 使其可以透過相機進行分析來捕獲影像。

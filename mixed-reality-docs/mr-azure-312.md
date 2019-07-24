@@ -1,112 +1,112 @@
 ---
 title: MR 和 Azure 312-Bot 整合
-description: 完成此課程來了解如何建立及部署 bot，使用 Microsoft Bot Framework v4，並與其通訊的混合的實境應用程式中。
+description: 完成此課程以瞭解如何使用 Microsoft Bot Framework v4 來建立和部署 bot, 並在混合現實應用程式中與其通訊。
 author: drneil
 ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
-keywords: azure、 混合實境、 academy、 unity、 教學課程、 api、 電腦視景、 hololens、 沉浸式 vr microsoft bot framework v4、 web 應用程式 bot、 bot framework、 microsoft bot
+keywords: azure, 混合現實, 學術, unity, 教學課程, api, 電腦視覺, hololens, 沉浸, vr, microsoft bot framework v4, web 應用程式 bot, bot framework, microsoft bot
 ms.openlocfilehash: b828aa4415103d280459bd2c666004c994b3e59d
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597078"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63542858"
 ---
 >[!NOTE]
->混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
+>混合現實學術教學課程的設計是使用 HoloLens (第1代) 和混合現實的沉浸式耳機。  因此, 對於仍在尋找這些裝置開發指引的開發人員而言, 我們覺得這些教學課程很重要。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  系統會保留這些資訊, 以繼續在支援的裝置上運作。 未來將會有一系列新的教學課程, 將示範如何針對 HoloLens 2 進行開發。  此通知會在張貼時, 使用這些教學課程的連結進行更新。
 
 # <a name="mr-and-azure-312-bot-integration"></a>MR 和 Azure 312:Bot 整合
 
-在此課程中，您將學習如何建立並部署使用 Microsoft Bot Framework V4 bot，並透過 Windows Mixed Reality 應用程式與其通訊。 
+在此課程中, 您將瞭解如何使用 Microsoft Bot Framework V4 來建立和部署 bot, 並透過 Windows Mixed Reality 應用程式與它進行通訊。 
 
 ![](images/AzureLabs-Lab312-00.png)
 
-**Microsoft Bot Framework V4**是一組 Api 可提供開發人員工具來建置可擴充且可調整的 bot 應用程式。 如需詳細資訊，請瀏覽[Microsoft Bot Framework 頁面](https://dev.botframework.com/)或[V4 Git 存放庫](https://github.com/Microsoft/botbuilder-dotnet/wiki)。
+**Microsoft Bot Framework V4**是一組 api, 專為開發人員提供工具來建立可擴充且可擴充的 Bot 應用程式。 如需詳細資訊, 請造訪[Microsoft Bot Framework 頁面](https://dev.botframework.com/)或[V4 Git 存放庫](https://github.com/Microsoft/botbuilder-dotnet/wiki)。
 
-完成本課程之後，您就會建置的 Windows Mixed Reality 應用程式，可以執行下列作業：
+完成此課程之後, 您將會建立一個 Windows Mixed Reality 應用程式, 它將能夠執行下列動作:
 
-1. 使用**點選手勢**開始接聽使用者語音 bot。
-2. 當使用者說過的項目 bot 會嘗試提供回應。
-3. Bot 回覆文字顯示，bot，Unity 場景中靠近定位。
+1. 使用點按**手勢**來啟動接聽使用者語音的 bot。
+2. 當使用者說過某個專案時, bot 會嘗試提供回應。
+3. 在 Unity 場景中, 將 bot 回復顯示為文字, 位於 bot 附近。
 
-在您的應用程式，則您對於如何將整合結果進行設計。 本課程旨在教導您如何將 Azure 服務整合與您的 Unity 專案。 它是您的作業，以使用您從這個課程，以增強您的混合的實境應用程式所獲得的知識。
+在您的應用程式中, 您可以決定如何將結果與您的設計整合。 本課程的設計目的是要告訴您如何將 Azure 服務與您的 Unity 專案整合。 您的工作是使用您從這個課程取得的知識, 來增強您的混合現實應用程式。
 
 ## <a name="device-support"></a>裝置支援
 
 <table>
 <tr>
-<th>課程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
+<th>粗</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></th>
 </tr><tr>
 <td> MR 和 Azure 312:Bot 整合</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
 </table>
 
 > [!NOTE]
-> 雖然這堂課程主要著重於 HoloLens，您也可以套用您在此課程 Windows Mixed Reality 沈浸式 (VR) 耳機來了解。 因為沈浸式 (VR) 耳機並沒有可存取的相機，您必須連線到您的 PC 外部相機。 當您遵循本課程中，您會看到 備忘稿上用來支援沈浸式 (VR) 耳機時，您可能需要的任何變更。
+> 雖然此課程主要著重于 HoloLens, 但您也可以將在本課程中學習到的內容套用至 Windows Mixed Reality 沉浸式 (VR) 耳機。 因為沉浸式 (VR) 耳機沒有可存取的相機, 所以您需要連接到電腦的外部相機。 隨著課程的遵循, 您將會看到支援沉浸式 (VR) 耳機時, 您可能需要採取的任何變更的附注。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 > [!NOTE]
-> 本教學課程專為具有基礎經驗的 Unity 開發人員和C#。 請同時了解必要條件和書面的指示此文件中代表什麼已經過測試，並在寫入 (第 2018 年 7 月) 的時間驗證。 中所示，您可以自由使用最新的軟體[安裝工具](install-the-tools.md)發行項，但它不應該假設，本課程中的資訊將會完全符合您會發現在較新的軟體，比所列下面。
+> 本教學課程是專為具備 Unity 和C#基本經驗的開發人員所設計。 也請注意, 本檔中的必要條件和書面指示, 代表在撰寫本文時已測試和驗證的內容 (2018 年7月)。 您可以免費使用 [[安裝工具](install-the-tools.md)] 文章中所列的最新軟體, 但不應假設本課程中的資訊完全符合您在較新軟體中找到的內容, 而不是如下所示。
 
-我們建議下列的硬體和軟體這堂課程：
+在此課程中, 我們建議您採用下列硬體和軟體:
 
-- 開發電腦，[相容於 Windows Mixed Reality](https://support.microsoft.com/help/4039260/windows-10-mixed-reality-pc-hardware-guidelines)沈浸式 (VR) 耳機開發
-- [Windows 10 Fall Creators Update （或更新版本） 啟用的開發人員模式](install-the-tools.md#installation-checklist)
+- [與 Windows Mixed Reality 相容](https://support.microsoft.com/help/4039260/windows-10-mixed-reality-pc-hardware-guidelines)的開發電腦, 可用於沉浸式 (VR) 耳機開發
+- [已啟用開發人員模式的 Windows 10 秋季建立者更新 (或更新版本)](install-the-tools.md#installation-checklist)
 - [最新的 Windows 10 SDK](install-the-tools.md#installation-checklist)
-- [Unity 2017.4](install-the-tools.md#installation-checklist)
+- [Unity 2017。4](install-the-tools.md#installation-checklist)
 - [Visual Studio 2017](install-the-tools.md#installation-checklist)
-- A [Windows Mixed Reality 沈浸式 (VR) 耳機](immersive-headset-hardware-details.md)或是[Microsoft HoloLens](hololens-hardware-details.md)啟用開發人員模式
-- Azure 和 Azure Bot 擷取的網際網路存取。 如需詳細資訊，[請遵循此連結](https://dev.botframework.com/)。
+- 已啟用開發人員模式的[Windows Mixed Reality 沉浸 (VR) 耳機](immersive-headset-hardware-details.md)或[Microsoft HoloLens](hololens-hardware-details.md)
+- 適用于 Azure 的網際網路存取, 以及適用于 Azure Bot 的抓取。 如需詳細資訊,[請遵循此連結](https://dev.botframework.com/)。
 
 ### <a name="before-you-start"></a>開始之前
 
-1.  若要避免發生建置此專案的問題，強烈建議您建立根或接近根資料夾中，本教學課程中所述的專案 （長的資料夾路徑可能會造成問題，在建置階段）。
-2.  設定並測試您的 HoloLens。 如果您需要支援設定您的 HoloLens[請務必瀏覽 HoloLens 安裝文章](https://docs.microsoft.com/hololens/hololens-setup)。 
-3.  它是個不錯的主意，若要開始開發新的 HoloLens 應用程式 （有時候它可以幫助每位使用者執行這些工作） 時執行校正和感應器調整。 
+1.  為避免在建立此專案時發生問題, 強烈建議您在根或接近根資料夾中建立本教學課程中所述的專案 (長資料夾路徑可能會在組建階段造成問題)。
+2.  設定並測試您的 HoloLens。 如果您需要支援設定 HoloLens,[請務必造訪 hololens 安裝程式一文](https://docs.microsoft.com/hololens/hololens-setup)。 
+3.  開始開發新的 HoloLens 應用程式時, 最好先執行校正和感應器微調 (有時候它有助於為每個使用者執行這些工作)。 
 
-校正的說明，請遵循此[HoloLens 校正文章連結](calibration.md#hololens)。
+如需校正的說明, 請遵循此[HoloLens 校正文章的連結](calibration.md#hololens)。
 
-如需微調感應器的說明，請遵循此[HoloLens 感應器調整的文章連結](sensor-tuning.md)。
+如需感應器微調的說明, 請遵循此[HoloLens 感應器微調文章連結](sensor-tuning.md)。
 
-## <a name="chapter-1--create-the-bot-application"></a>第 1 章-建立機器人應用程式
+## <a name="chapter-1--create-the-bot-application"></a>第1章–建立 Bot 應用程式
 
-第一個步驟是建立您的機器人，做為本機的 ASP.Net Core Web 應用程式。 一旦您完成並測試它，將會發行至 Azure 入口網站。
+第一個步驟是將您的 bot 建立為本機 ASP.Net 核心 Web 應用程式。 完成並測試之後, 您會將它發佈至 Azure 入口網站。
 
-1.  開啟 Visual Studio。 建立新專案，選取**ASP NET Core Web 應用程式**做為專案類型 （您會發現它在.NET Core 的小節），並稱之為**MyBot**。 按一下 [確定] 。
+1.  開啟 Visual Studio。 建立新的專案, 選取 [ **ASP NET Core Web 應用程式**] 做為 [專案類型] (您會在 [.net Core] 子區段下找到), 並將它命名為**MyBot**。 按一下 [確定] 。
 
-2.  在視窗中會出現選取**空**。 也請確定目標設為**ASP NET Core 2.0**並驗證已設為**不需要驗證**。 按一下 [確定] 。  
+2.  在將出現的視窗中, 選取 [**空白**]。 此外, 請確定 [目標] 設定為 [ **ASP NET Core 2.0** ], 並將 [驗證] 設定為 [**無驗證**]。 按一下 [確定 **Deploying Office Solutions**]。  
 
-    ![建立機器人應用程式](images/AzureLabs-Lab312-01.png)
+    ![建立 bot 應用程式](images/AzureLabs-Lab312-01.png)
 
-3.  現在將會開啟解決方案。 以滑鼠右鍵按一下方案**Mybot**中**方案總管**，然後按一下**管理方案的 NuGet 套件**。 
+3.  解決方案隨即開啟。 以滑鼠右鍵按一下**方案總管**中的 [方案**Mybot** ], 然後按一下 [**管理方案的 NuGet 套件**]。 
 
-    ![建立機器人應用程式](images/AzureLabs-Lab312-02.png)
+    ![建立 Bot 應用程式](images/AzureLabs-Lab312-02.png)
 
-4.  在 **瀏覽**索引標籤上，搜尋**Microsoft.Bot.Builder.Integration.AspNet.Core** (請確定您已**包含發行前版本**檢查)。 選取的套件版本**4.0.1**，和勾選的 [專案] 方塊。 然後按一下**安裝**。 現在您已安裝所需的程式庫**Bot Framework v4**。 關閉 [NuGet] 頁面。
+4.  在 [**流覽**] 索引標籤中, 搜尋 [ **Microsoft. Bot. Core** ] (請確定您已核取 [**包含發行前版本**])。 選取套件版本**4.0.1-preview**, 然後勾選 [專案] 方塊。 然後按一下 [**安裝**]。 您現在已安裝**Bot Framework v4**所需的程式庫。 關閉 [NuGet] 頁面。
 
-    ![建立機器人應用程式](images/AzureLabs-Lab312-03.png)
+    ![建立 bot 應用程式](images/AzureLabs-Lab312-03.png)
 
 5.  以滑鼠右鍵按一下您*專案*， **MyBot**，請在**方案總管 中**，然後按一下 **新增** **|** **類別**。
 
-    ![建立機器人應用程式](images/AzureLabs-Lab312-04.png)
+    ![建立 Bot 應用程式](images/AzureLabs-Lab312-04.png)
 
-6.  將類別命名為**MyBot** ，然後按一下**新增**。
+6.  將類別命名為**MyBot** , 然後按一下 [**新增**]。
 
-    ![建立機器人應用程式](images/AzureLabs-Lab312-05.png)
+    ![建立 bot 應用程式](images/AzureLabs-Lab312-05.png)
 
-7.  重複前一個點，來建立名為另一個類別**ConversationContext**。 
+7.  重複上一個點, 以建立名為**ConversationCoNtext**的另一個類別。 
 
-8.  以滑鼠右鍵按一下**wwwroot**中**方案總管**，然後按一下**新增** **|** **新項目**. 選取  **HTML 網頁**（您會發現它在 Web 子區段下）。 將檔案命名**default.html**。 按一下 **\[新增\]**。
+8.  以滑鼠右鍵按一下**方案總管**中的 [ **wwwroot** ], 然後按一下 [**加入** **|** **新專案**]。 選取 [ **HTML 網頁**] (您會在子區段網站底下找到)。 將檔案命名為 **.html**。 按一下 **\[新增\]** 。
 
-    ![建立機器人應用程式](images/AzureLabs-Lab312-06.png)
+    ![建立 bot 應用程式](images/AzureLabs-Lab312-06.png)
 
-9.  類別的清單中的物件 /**方案總管 中**看起來應該像下列映像。
+9.  **方案總管**中的類別/物件清單看起來應該如下圖所示。
 
-    ![建立機器人應用程式](images/AzureLabs-Lab312-07.png)
+    ![建立 bot 應用程式](images/AzureLabs-Lab312-07.png)
 
-10. 按兩下**ConversationContext**類別。 這個類別是對話的負責保存用來維護內容機器人的變數。 因為，將會維護此類別的執行個體中的這些交談內容值的任何執行個體**MyBot**類別將會重新整理每個活動接收的時間。 將下列程式碼新增至類別：
+10. 按兩下 [ **ConversationCoNtext** ] 類別。 此類別負責保存 bot 用來維護交談內容的變數。 這些交談內容值會保留在這個類別的實例中, 因為每次接收到活動時, **MyBot**類別的任何實例都會重新整理。 將下列程式碼新增至類別:
 
     ```csharp
     namespace MyBot
@@ -120,7 +120,7 @@ ms.locfileid: "59597078"
     }
     ```
 
-11. 按兩下**MyBot**類別。 這個類別會裝載任何連入的活動所呼叫，從客戶的處理常式。 此類別中，您將加入的程式碼，用來建置 bot 和客戶之間的對話。 如先前所述，此類別的執行個體被初始化每一個接收活動的時間。 將下列程式碼新增至此類別：
+11. 按兩下 [ **MyBot** ] 類別。 這個類別會裝載客戶所呼叫的處理常式。 在此類別中, 您將新增用來建立 bot 與客戶之間交談的程式碼。 如先前所述, 每次接收到活動時, 就會初始化這個類別的實例。 將下列程式碼新增至此類別:
 
     ```csharp
     using Microsoft.Bot;
@@ -174,7 +174,7 @@ ms.locfileid: "59597078"
     }
     ```
 
-12. 按兩下**啟動**類別。 這個類別會初始化 bot。 將下列程式碼新增至類別：
+12. 按兩下 [**啟動**] 類別。 此類別將會初始化 bot。 將下列程式碼新增至類別:
 
     ```csharp
     using Microsoft.AspNetCore.Builder;
@@ -226,7 +226,7 @@ ms.locfileid: "59597078"
     }
     ```
 
-13. 開啟**程式**類別檔案，並確認它的程式碼如下所示相同：
+13. 開啟 Program 類別檔案, 並確認其中的**程式**代碼與下列內容相同:
 
     ```csharp
     using Microsoft.AspNetCore;
@@ -249,252 +249,252 @@ ms.locfileid: "59597078"
     }
     ```
 
-14. 請務必儲存您的變更，若要這樣做，請移至**檔案** > **全部儲存**，從頂端的 Visual Studio 工具列。
+14. 請記得儲存您的變更, 若要這麼做,   > 請從 Visual Studio 頂端的工具列移至 [檔案] [**全部儲存**]。
 
-## <a name="chapter-2---create-the-azure-bot-service"></a>第 2-建立 Azure Bot 服務
+## <a name="chapter-2---create-the-azure-bot-service"></a>第2章-建立 Azure Bot 服務
 
-既然您已針對您的 bot 建立程式碼，您必須將它發行到的執行個體*Web 應用程式 Bot*服務，在 Azure 入口網站上的。 本章將說明如何建立並設定在 Azure 上的機器人服務，然後再將您的程式碼發佈到它。
+既然您已建立 bot 的程式碼, 您必須將它發佈至 Azure 入口網站上的*Web 應用程式 bot*服務實例。 本章將示範如何在 Azure 上建立和設定 Bot 服務, 然後將您的程式碼發佈至其中。
 
-1.  首先，登入 Azure 入口網站 (https://portal.azure.com)。 
+1.  首先, 登入 Azure 入口網站 (https://portal.azure.com) 。 
 
-    1. 如果您還沒有 Azure 帳戶，您必須建立一個。 如果您要遵循本教學課程中的教室或實驗室的情況下，要求您的講師或其中一個新帳戶的說明設定 proctors。
+    1. 如果您還沒有 Azure 帳戶, 您將需要建立一個。 如果您是在課堂或實驗室的情況下進行本教學課程, 請洽詢您的講師或其中一個 proctors, 以協助設定您的新帳戶。
 
-2.  一旦您登入，按一下**建立資源**在左上角，，然後搜尋*Web 應用程式 bot*，然後按一下**Enter**。
+2.  登入之後, 按一下左上角的 [**建立資源**], 然後搜尋*Web 應用程式 bot*, 再按**Enter 鍵**。
 
     ![建立 Azure Bot 服務](images/AzureLabs-Lab312-08.png)
  
-3.  新的頁面將提供的描述*Web 應用程式 Bot*服務。 在左下方的這個頁面上，選取**建立**按鈕，以建立與這個關聯服務。
+3.  新頁面將會提供*Web 應用程式 Bot*服務的描述。 在此頁面的左下方, 選取 [**建立**] 按鈕, 以建立與此服務的關聯。
 
     ![建立 Azure Bot 服務](images/AzureLabs-Lab312-09.png)
  
-4.  一旦您按下**建立**:
+4.  一旦您按下 **建立** :
 
-    1. 插入您想要**名稱**此服務執行個體。
-    2. 選取 **訂用帳戶**。
-    3. 選擇**資源群組**或建立新的帳戶。 資源群組可用來監視、 控制存取權，佈建及管理 Azure 資產的集合計費。 建議將所有 Azure 服務在一般的資源群組相關聯 （例如例如這些課程中） 的單一專案保留）。
+    1. 為此服務實例插入您想要的**名稱**。
+    2. 選取**訂**用帳戶。
+    3. 選擇**資源群組**或建立一個新的。 資源群組提供一種方式來監視、控制存取、布建及管理 Azure 資產集合的計費。 建議您將與單一專案相關聯的所有 Azure 服務 (例如這些課程) 都保留在通用資源群組下)。
 
-        > 如果您想要深入了解 Azure 資源群組，[請遵循此連結](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)
+        > 如果您想要深入瞭解 Azure 資源群組,[請遵循此連結](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)
 
-    4. （如果您要建立新的資源群組），請判斷您的資源群組的位置。 位置，在理想情況下會在應用程式會執行所在的區域。 在特定區域中，才可以使用一些 Azure 的資產。
-    5. 選取 **定價層**適合您，如果這是第一個時間來建立*Web 應用程式 Bot*服務，免費層 （名為 F0） 應該是您可以使用
-    6. **應用程式名稱**可以只保留相同*Bot 名稱*。 
-    7. 離開*Bot 範本*作為**基本 (C#)**。
-    8. *App service 方案/位置*應該已自動填入您的帳戶。
-    9. 設定**Azure 儲存體**您想要用來裝載您的機器人。 如果您還沒有，您可以在此建立。
-    10. 您也必須確認您已了解這些條款和條件套用到此服務。
+    4. 判斷資源群組的位置 (如果您要建立新的資源群組)。 位置最好是在應用程式執行所在的區域中。 某些 Azure 資產僅適用于特定區域。
+    5. 選取適合您的**定價層**, 如果這是您第一次建立*Web 應用程式 Bot*服務, 則應該提供免費層 (名為 F0)
+    6. **應用程式名稱**可以與*Bot 名稱*保持一致。 
+    7. 將*Bot 範本*保留為 [**基本C#] ()** 。
+    8. *應用程式服務方案/位置*應該已自動填入您的帳戶。
+    9. 設定您想要用來裝載 Bot 的**Azure 儲存體**。 如果您還沒有帳戶, 可以在這裡建立。
+    10. 您也必須確認您已瞭解適用于此服務的條款及條件。
     11. 按一下 [建立]。
  
         ![建立 Azure Bot 服務](images/AzureLabs-Lab312-10.png)
 
-5.  一旦您按下**建立**，您必須建立服務，這可能需要一分鐘。
+5.  按一下 [**建立**] 之後, 您必須等候服務建立, 這可能需要一分鐘的時間。
 
-6.  通知會出現在入口網站中，一旦建立服務執行個體。
+6.  建立服務實例之後, 入口網站中會出現通知。
 
     ![建立 Azure Bot 服務](images/AzureLabs-Lab312-11.png) 
  
-7.  按一下通知，以探索新的服務執行個體。 
+7.  按一下通知以探索新的服務實例。 
 
     ![建立 Azure Bot 服務](images/AzureLabs-Lab312-12.png)
  
-8. 按一下 **移至資源**通知，以探索新的服務執行個體中的按鈕。 您會前往新的 Azure 服務執行個體。 
+8. 按一下通知中的 [**移至資源**] 按鈕, 探索新的服務實例。 您將會進入新的 Azure 服務實例。 
 
     ![建立 Azure Bot 服務](images/AzureLabs-Lab312-13.png)
  
-9.  此時您需要設定稱為功能**直線**以允許用戶端應用程式與此 Bot 服務進行通訊。 按一下 **通道**，然後在**新增精選的頻道**區段中，按一下**設定直接線路通道**。
+9.  此時, 您必須設定稱為**Direct Line**的功能, 以允許您的用戶端應用程式與此 Bot 服務進行通訊。 按一下 [**通道**], 然後在 [**新增精選頻道**] 區段中, 按一下 [**設定 Direct Line 通道**]。
 
     ![建立 Azure Bot 服務](images/AzureLabs-Lab312-14.png)
 
-10. 在此頁面中，您會發現**祕密金鑰**，可讓您的用戶端應用程式與機器人進行驗證。 按一下 **顯示**按鈕並複製的其中一個顯示的金鑰，因為您將需要這稍後會在您的專案。 
+10. 在此頁面中, 您會找到可讓您的用戶端應用程式向 bot 驗證的**秘密金鑰**。 按一下 [**顯示**] 按鈕, 並複製其中一個顯示的索引鍵, 因為您稍後會在專案中需要此資訊。 
 
     ![建立 Azure Bot 服務](images/AzureLabs-Lab312-15.png)
 
-## <a name="chapter-3--publish-the-bot-to-the-azure-web-app-bot-service"></a>第 3-將 Bot 發行至 Azure Web 應用程式 Bot 服務
+## <a name="chapter-3--publish-the-bot-to-the-azure-web-app-bot-service"></a>第3章-將 Bot 發佈至 Azure Web 應用程式 Bot 服務
 
-現在，您的服務已準備就緒，您需要將您的 Bot 程式碼，您建置之前，您新建立的 Web 應用程式 Bot 服務的發佈。
+現在, 您的服務已就緒, 您必須將先前建立的 Bot 程式碼發佈至新建立的 Web App Bot 服務。
 
 > [!NOTE] 
-> 您必須將您的 Bot 發行至 Azure 服務，每次您變更 Bot 解決方案 / c o d。
+> 您每次對 Bot 解決方案/程式碼進行變更時, 都必須將 Bot 發佈至 Azure 服務。
 
-1.  回到您先前建立的 Visual Studio 方案。 
-2.  以滑鼠右鍵按一下您**MyBot**專案中，在**方案總管**，然後按一下**發行**。
+1.  回到您先前建立的 Visual Studio 解決方案。 
+2.  在 **方案總管**中, 以滑鼠右鍵按一下您的**MyBot**專案, 然後按一下 **發行**。
 
-    ![將 Bot 發行至 Azure Web 應用程式 Bot 服務](images/AzureLabs-Lab312-16.png)
+    ![將 Bot 發佈至 Azure Web 應用程式 Bot 服務](images/AzureLabs-Lab312-16.png)
 
-3.  在上*挑選發行目標*頁面上，按一下**App Service**，然後**選取現有**，最後按一下**建立設定檔**（您可能需要按一下旁邊的下拉式箭號*發佈*按鈕，如果這是不可見)。
+3.  在 [*挑選發佈目標*] 頁面上, 按一下 [ **App Service**], 然後**選取 [現有**], 最後按一下 [**建立設定檔**] (如果看不到, 您可能需要按一下 [*發行*] 按鈕旁的下拉式箭號)。
 
-    ![將 Bot 發行至 Azure Web 應用程式 Bot 服務](images/AzureLabs-Lab312-17.png)
+    ![將 Bot 發佈至 Azure Web 應用程式 Bot 服務](images/AzureLabs-Lab312-17.png)
 
-4. 如果您尚未登入到您的 Microsoft 帳戶，您必須在此處進行。
-5. 在上**發佈**您會發現您需要設定相同的頁面**訂用帳戶**用於*Web 應用程式 Bot*建立服務。 然後設定**檢視**作為**資源群組**，然後在下拉式清單的資料夾結構中，選取**資源群組**您先前建立。 按一下 [確定] 。 
+4. 如果您尚未登入您的 Microsoft 帳戶, 您必須在這裡執行此動作。
+5. 在 [**發佈**] 頁面上, 您會發現您必須設定用來建立*Web 應用程式 Bot*服務的相同**訂**用帳戶。 然後將 [ **View** ] 設定為 [**資源群組**], 然後在 [下拉式資料夾結構] 中, 選取您先前建立的**資源群組**。 按一下 [確定] 。 
 
-    ![將 Bot 發行至 Azure Web 應用程式 Bot 服務](images/AzureLabs-Lab312-18.png)
+    ![將 Bot 發佈至 Azure Web 應用程式 Bot 服務](images/AzureLabs-Lab312-18.png)
 
-6.  現在，按一下**發佈**按鈕，並等候 Bot 發行 （可能需要幾分鐘的時間）。
+6.  現在, 按一下 [**發佈**] 按鈕, 並等候 Bot 發佈 (可能需要幾分鐘的時間)。
 
-    ![將 Bot 發行至 Azure Web 應用程式 Bot 服務](images/AzureLabs-Lab312-19.png)
+    ![將 Bot 發佈至 Azure Web 應用程式 Bot 服務](images/AzureLabs-Lab312-19.png)
 
 
-## <a name="chapter-4--set-up-the-unity-project"></a>第 4 章-設定 Unity 專案
+## <a name="chapter-4--set-up-the-unity-project"></a>第4章–設定 Unity 專案
 
-下列已啟動的一組典型混合實境，進行開發，且此情況下，是良好的其他專案範本。
+以下是使用混合現實進行開發的一般設定, 因此, 這是適用于其他專案的絕佳範本。
 
-1.  開啟*Unity*然後按一下**新增**。 
+1.  開啟*Unity* , 然後按一下 [**新增**]。 
 
     ![設定 Unity 專案](images/AzureLabs-Lab312-20.png)
 
-2.  您現在必須提供 Unity 專案名稱。 插入**Hololens Bot**。 請確定已設定的專案範本**3D**。 設定**位置**適用於您的某個位置 （請記住，使其更接近根目錄是較佳）。 然後，按一下**建立專案**。
+2.  現在您將需要提供 Unity 專案名稱。 插入**Hololens Bot**。 請確定專案範本已設定為 [ **3d**]。 將位置設定為適合您的**位置**(請記住, 接近根目錄較佳)。 然後, 按一下 [**建立專案**]。
 
     ![設定 Unity 專案](images/AzureLabs-Lab312-21.png)
 
-3.  使用 Unity 開啟，就代表值得查看以預設值**指令碼編輯器**設為**Visual Studio**。 移至**編輯 > 偏好**，然後在新視窗中，瀏覽**外部工具**。 變更**外部指令碼編輯器**要**Visual Studio 2017**。 關閉**喜好設定**視窗。
+3.  在 Unity 開啟的情況下, 值得檢查預設**腳本編輯器**是否設定為**Visual Studio**。 移至 **編輯 > 喜好**設定, 然後在新視窗中, 流覽至 **外部工具**。 將**外部腳本編輯器**變更為**Visual Studio 2017**。 關閉 [**喜好**設定] 視窗。
 
     ![設定 Unity 專案](images/AzureLabs-Lab312-22.png)
 
-4.  接下來，移至**檔案 > 組建設定**，然後選取**通用 Windows 平台**，然後按一下**切換平台**按鈕以套用您的選擇。
+4.  接下來, 移至 [檔案] **> [組建設定**], 並選取 [**通用 Windows 平臺**], 然後按一下 [**切換平臺**] 按鈕以套用您的選取專案。
 
     ![設定 Unity 專案](images/AzureLabs-Lab312-23.png)
 
-5.  當您依然在**檔案 > 組建設定**並確定：
+5.  仍在 檔案 **> 組建設定**, 並確認:
 
-    1.  **裝置為目標**設為**Hololens**
+    1.  **目標裝置**設定為**Hololens**
 
-        > 針對擬真耳機，設定**目標裝置**要*任何裝置*。
+        > 針對沉浸式耳機, 將 [**目標裝置**] 設定為 [*任何裝置*]。
 
-    2.  **建置型別**設為**D3D**
+    2.  **組建類型**設定為**D3D**
 
-    3.  **SDK**設為**最新安裝**
+    3.  **SDK**已設定為**最新安裝**
 
-    4.  **Visual Studio 版本**設為**最新安裝**
+    4.  **Visual Studio 版本**設定為 [**最新安裝**]
 
-    5.  **建置並執行**設為**本機電腦**
+    5.  **組建和執行**設定為**本機電腦**
 
-    6.  儲存場景，並將它新增至組建。 
+    6.  儲存場景, 並將它加入至組建。 
 
-        1. 做法是選取**加入開啟的場景**。 儲存視窗會出現。
+        1. 選取 [新增] [**開啟場景**] 來執行此動作。 [儲存] 視窗隨即出現。
         
             ![設定 Unity 專案](images/AzureLabs-Lab312-24.png)
 
-        2. 建立新的資料夾，以及任何未來、 場景，然後選取**新的資料夾**按鈕，以建立新的資料夾，其命名**場景**。
+        2. 為此建立新的資料夾, 並在任何未來的場景中選取 [**新增資料夾**] 按鈕, 以建立新的資料夾, 將其命名為**場景**。
 
              ![設定 Unity 專案](images/AzureLabs-Lab312-25.png)
 
-        3. 開啟您剛建立**場景**資料夾，然後在*檔名*： 文字欄位中，輸入**BotScene**，然後按一下**儲存**。
+        3. 開啟新建立的 [**幕後**] 資料夾, 然後在 [*檔案名*: 文字] 欄位中, 輸入**BotScene**, 然後按一下 [**儲存**]。
 
             ![設定 Unity 專案](images/AzureLabs-Lab312-26.png)
 
-    7. 剩餘的設定，**組建設定**，應保持為預設值，現在。
+    7. [**組建設定**] 中的其餘設定, 現在應該保留為預設值。
 
-6. 中*組建設定*視窗中，按一下**播放程式設定** 按鈕，這會開啟 相關 面板中的空間位置*Inspector*所在。 
+6. 在 [*組建設定*] 視窗中, 按一下 [ **Player 設定**] 按鈕, 這會在偵測*器*所在的空間中開啟相關的面板。 
 
     ![設定 Unity 專案](images/AzureLabs-Lab312-27.png)
 
-7. 在此窗格中，少數設定需要驗證：
+7. 在此面板中, 需要驗證幾項設定:
 
-    1. 在 [**其他設定**] 索引標籤：
+    1. 在 [**其他設定**] 索引標籤中:
 
-        1. **指令碼執行階段版本**應該 **（.NET 4.6 對等） 的實驗性**; 變更這項需要重新啟動的編輯器。
-        2. **指令碼後端**應該是 **.NET**
-        3. **API 相容性層級**應該是 **.NET 4.6**
+        1. **腳本執行階段版本**應該是**實驗性 (NET 4.6 對等)** ;變更此項將需要重新開機編輯器。
+        2. **腳本後端**應該是 **.net**
+        3. **API 相容性層級**應該是 **.net 4.6**
 
             ![設定 Unity 專案](images/AzureLabs-Lab312-28.png)
       
-    2. 內**發佈設定**索引標籤之下**功能**，檢查：
+    2. 在 [**發行設定**] 索引標籤的 [**功能**] 底下, 檢查:
 
         - **InternetClient**
-        - **Microphone**
+        - **十分**
 
             ![設定 Unity 專案](images/AzureLabs-Lab312-29.png)
 
-    3. 在下方窗格中， **XR 設定**(參閱下方**發佈設定**)，刻度**虛擬實境支援**，請確定**Windows Mixed Reality SDK**加入。
+    3. 在面板中, 于 [ **XR 設定**] (在 [**發佈設定**] 下方找到) 中, 支援 [勾選**虛擬實境**], 並確定已新增 [ **Windows Mixed Reality SDK** ]。
 
         ![設定 Unity 專案](images/AzureLabs-Lab312-30.png)
 
-8.  回到*Build Settings* _Unity C#_ 專案不再呈現灰色，這旁邊的核取方塊。 
-9.  關閉 [建立設定] 視窗。
-10. 儲存您的場景和專案 (**檔案 > 儲存場景檔案 > 儲存專案**)。
+8.  回到*組建設定* _Unity C#_ 專案已不再呈現灰色;勾選 [] 旁的核取方塊。 
+9.  關閉 [組建設定] 視窗。
+10. 儲存場景和專案 (**file > 儲存場景/檔案 > 儲存專案**)。
 
 
-## <a name="chapter-5--camera-setup"></a>第 5 章-觀景窗設定
+## <a name="chapter-5--camera-setup"></a>第5章–相機設定
 
 > [!IMPORTANT]
-> 如果您想要跳過*Unity 設定*元件的課程，並繼續直接進入程式碼，請自由下載此[Azure MR-312 Package.unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20312%20-%20Bot%20integration/Azure-MR-312.unitypackage)，它匯入到您的專案，作為[**自訂封裝**](https://docs.unity3d.com/Manual/AssetPackages.html)，然後繼續從[第 7 章](#chapter-7-–-create-the-botobjects-class)。
+> 如果您想要略過此課程的*Unity 設定*元件, 並直接繼續閱讀程式碼, 您可以免費下載此[Azure-MR-312-unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20312%20-%20Bot%20integration/Azure-MR-312.unitypackage), 將它匯入您的專案中做為[**自訂套件**](https://docs.unity3d.com/Manual/AssetPackages.html), 然後繼續進行[第7章](#chapter-7-–-create-the-botobjects-class)。
 
-1.  在 *階層面板*，選取**Main Camera**。 
-2.  選取之後，您將能夠看到所有的元件**Main Camera**中*Inspector 面板*。
+1.  在 [階層]*面板*中, 選取**主要相機**。 
+2.  選取之後, 您就可以在 [偵測*器] 面板*中看到**主要攝影機**的所有元件。
 
-    1. **相機物件**必須命名為**Main Camera** （請注意拼字檢查）
-    2. Main Camera**標記**必須設為**MainCamera** （請注意拼字檢查）
-    3. 請確定**轉換的位置**設定為**0，0，0**
-    4. 設定**清除旗標**要**單色**。
-    5. 設定**背景**相機元件以色彩**黑色，0 的 Alpha (十六進位的程式碼: #00000000)**
+    1. **相機物件**必須命名為**主要攝影機**(請注意拼寫)
+    2. 主要相機**標記**必須設定為**MainCamera** (請注意拼寫)
+    3. 請確定**轉換位置**設定為**0, 0, 0**
+    4. 將 [**清除旗標**] 設定為**純色**。
+    5. 將相機元件的**背景**色彩設定為**黑色, Alpha 0 (十六進位碼: #00000000)**
 
-    ![照相機設定](images/AzureLabs-Lab312-31.png)
+    ![相機設定](images/AzureLabs-Lab312-31.png)
  
 
-## <a name="chapter-6--import-the-newtonsoft-library"></a>第 6 章-匯入 Newtonsoft 程式庫
+## <a name="chapter-6--import-the-newtonsoft-library"></a>第6章–匯入 Newtonsoft 程式庫
 
-若要可協助您還原序列化和序列化物件接收和傳送到 Bot 服務，您需要下載**Newtonsoft**程式庫。 您會發現[相容的版本已經組織使用的正確 Unity 資料夾結構這裡](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20312%20-%20Bot%20integration/NewtonsoftDLL.unitypackage)。 
+若要協助您還原序列化並將接收和傳送至 Bot 服務的物件序列化, 您需要下載**Newtonsoft**程式庫。 您會在[這裡找到已使用正確 Unity 資料夾結構組織的相容版本](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20312%20-%20Bot%20integration/NewtonsoftDLL.unitypackage)。 
 
-若要 Newtonsoft 程式庫匯入專案中，使用 Unity 套件所附的這堂課程。
+若要將 Newtonsoft 程式庫匯入您的專案, 請使用本課程隨附的 Unity 套件。
 
-1.  新增 *.unitypackage*若要使用的 Unity**資產** > **匯入封裝** > **自訂封裝**功能表選項。
+1.  使用 [**資產** > ] [匯**入套件** > ] [**自訂套件**] 功能表選項, 將*unitypackage*新增至 Unity。
 
     ![匯入 Newtonsoft 程式庫](images/AzureLabs-Lab312-34.png)
 
-2.  在 **匯入 Unity 封裝**方塊會顯示。 請確認所有項目底下 （而且包括）**外掛程式**已選取。
+2.  在快顯的 [匯**入 Unity 封裝**] 方塊中, 確定已選取 (和包含)**外掛程式**底下的所有專案。
 
     ![匯入 Newtonsoft 程式庫](images/AzureLabs-Lab312-35.png)
 
-3.  按一下 **匯入**按鈕以新增至您的專案項目。
+3.  按一下 [匯**入**] 按鈕, 將專案新增至您的專案。
 
-4.  移至**Newtonsoft**下方的資料夾**外掛程式**專案檢視，然後選取 Newtonsoft 外掛程式中。
+4.  移至 [專案] 視圖中 [**外掛程式**] 底下的 [ **Newtonsoft** ] 資料夾, 然後選取 [Newtonsoft] 外掛程式。
 
     ![](images/AzureLabs-Lab312-35b.png)
 
-5.  使用選取 Newtonsoft 外掛程式，請確認**任何平台**是**取消核取**，然後確定**WSAPlayer**也是**未核取**，然後按一下**套用**。 這只是要確認已正確設定檔案。
+5.  選取 Newtonsoft 外掛程式後, 請確認已**取消**核取**任何平臺**, 然後確定**WSAPlayer**也已**取消**核取, 然後按一下 [套用]。 這只是為了確認檔案已正確設定。
 
     ![](images/AzureLabs-Lab312-35c.png)
 
     > [!NOTE]
-    > 標示這些外掛程式會設定它們僅適用於在 Unity 編輯器中。 有一組不同的專案會匯出從 Unity 後要使用 WSA 資料夾中。
+    > 標記這些外掛程式會將它們設定為僅在 Unity 編輯器中使用。 在 [WSA] 資料夾中有一組不同的集合, 將在從 Unity 匯出專案之後使用。
 
-6.  接下來，您必須開啟**WSA**資料夾內**Newtonsoft**資料夾。 您會看到您剛才設定的相同檔案的複本。 選取檔案，並在偵測器中，確定該
-    -   **任何平台**是**unchecked** 
-    -   **只有** **WSAPlayer**是**檢查**
-    -   **不會處理**是**檢查**
+6.  接下來, 您需要在**Newtonsoft**資料夾中開啟 [ **WSA** ] 資料夾。 您會看到您剛才設定的相同檔案的複本。 選取檔案, 然後在偵測器中, 確定
+    -   未核取 **任何平臺** 
+    -   **僅限**已**核**取**WSAPlayer**
+    -   未**選取** **進程**
 
     ![](images/AzureLabs-Lab312-35d.png)
 
-## <a name="chapter-7--create-the-bottag"></a>第 7 – 建立 BotTag
+## <a name="chapter-7--create-the-bottag"></a>第7章–建立 BotTag
 
-1.  建立新**標記**呼叫的物件**BotTag**。 您可以選取 Main Camera 在場景中。 按一下標記下拉式功能表偵測器 面板中。 按一下 **新增標記**。
+1.  建立名為**BotTag**的新**標記**物件。 選取場景中的主要攝影機。 按一下 [偵測器] 面板中的 [標記] 下拉式功能表。 按一下 [**新增標記**]。
 
-    ![照相機設定](images/AzureLabs-Lab312-32.png)
+    ![相機設定](images/AzureLabs-Lab312-32.png)
  
-2.  按一下  **+** 符號。 指定新**標記**作為**BotTag**，*儲存*。
+2.  **+** 按一下符號。 將新**標記**命名為**BotTag**,*儲存*。
 
-    ![照相機設定](images/AzureLabs-Lab312-33.png)
+    ![相機設定](images/AzureLabs-Lab312-33.png)
 
 > [!WARNING] 
-> **不這麼做**套用**BotTag**到 Main Camera。 如果您不小心這麼做，請務必變更標記回到 Main Camera *MainCamera*。
+> **請勿**將**BotTag**套用到主要相機。 如果您不小心這麼做, 請務必將主要攝影機標記變更回*MainCamera*。
 
-## <a name="chapter-8--create-the-botobjects-class"></a>第 8 章-建立 BotObjects 類別
+## <a name="chapter-8--create-the-botobjects-class"></a>第8章–建立 BotObjects 類別
 
-您必須建立第一個指令碼**BotObjects**類別，這是空的類別建立，因此一系列的其他類別的物件可儲存在相同的指令碼，並在場景中其他指令碼存取。
+您需要建立的第一個腳本是**BotObjects**類別, 這是一個已建立的空白類別, 可將一系列的其他類別物件儲存在相同的腳本中, 並由場景中的其他腳本存取。
 
-建立這個類別是純粹的架構的選擇，這些物件可以改為裝載於稍後在本課程中，您將建立 Bot 指令碼。
+建立此類別純粹是架構選擇, 這些物件可以改為裝載于您稍後將在本課程中建立的 Bot 腳本。
 
-若要建立此類別： 
+若要建立此類別: 
 
-1.  以滑鼠右鍵按一下 *[專案] 面板*，然後**建立 > 資料夾**。 將資料夾命名**指令碼**。 
+1.  在 *專案 面板*中按一下滑鼠右鍵, 然後**建立 > 資料夾**。 將資料夾命名為**Scripts**。 
 
-    ![建立指令碼 資料夾。](images/AzureLabs-Lab312-36.png)
+    ![建立腳本資料夾。](images/AzureLabs-Lab312-36.png)
 
-2.  按兩下**指令碼**資料夾將它開啟。 然後在該資料夾，然後按一下滑鼠右鍵，並選取**建立 >C#指令碼**。 指令碼命名**BotObjects**。 
+2.  按兩下 [**腳本**] 資料夾以開啟它。 然後在該資料夾中, 以滑鼠右鍵按一下, 然後選取 [**建立 > C#腳本**]。 將腳本命名為**BotObjects**。 
 
-3.  按兩下新**BotObjects**指令碼，以開啟它**Visual Studio**。
+3.  按兩下新的**BotObjects**腳本, 以**Visual Studio**開啟它。
 
-4.  刪除指令碼的內容，並取代為下列程式碼：
+4.  刪除腳本的內容, 並將它取代為下列程式碼:
 
     ```csharp
     using System;
@@ -552,21 +552,21 @@ ms.locfileid: "59597078"
     }
     ```
 
-6.  請務必儲存您的變更，在*Visual Studio* ，然後傳回給*Unity*。
+6.  請務必先將您的變更儲存在*Visual Studio*中, 然後再返回*Unity*。
 
-## <a name="chapter-9--create-the-gazeinput-class"></a>第 9 章 – 建立 GazeInput 類別
+## <a name="chapter-9--create-the-gazeinput-class"></a>第9章–建立 GazeInput 類別
 
-下一步要建立的類別是**GazeInput**類別。 這個類別會負責：
+下一個您即將建立的類別是**GazeInput**類別。 此類別負責:
 
-- 建立資料指標，代表*視線*播放程式。
-- 偵測物件叫用的視線，播放程式，並保存至偵測到的物件的參考。
+- 建立代表播放程式外觀的游標 。
+- 偵測播放程式的注視所叫用的物件, 並保留偵測到之物件的參考。
 
-若要建立此類別： 
+若要建立此類別: 
 
-1.  移至**指令碼**您先前建立的資料夾。 
-2.  在資料夾中，以滑鼠右鍵按一下**建立 >C#指令碼**。 呼叫指令碼**GazeInput**。 
-3.  按兩下新**GazeInput**指令碼，以開啟它**Visual Studio**。
-4.  插入下面這一行的類別名稱的頂端：
+1.  移至您先前建立的**腳本**資料夾。 
+2.  以滑鼠右鍵按一下資料夾內的 [**建立C# > 腳本**]。 呼叫腳本**GazeInput**。 
+3.  按兩下新的**GazeInput**腳本, 以**Visual Studio**開啟它。
+4.  在類別名稱的頂端插入下列一行:
 
     ```csharp
     /// <summary>
@@ -576,7 +576,7 @@ ms.locfileid: "59597078"
     public class GazeInput : MonoBehaviour
     ```
 
-5.  然後新增下列變數內**GazeInput**類別，上述**start （)** 方法：
+5.  然後, 在**GazeInput**類別內的**Start ()** 方法上方新增下列變數:
 
     ```csharp
         [Tooltip("Used to compare whether an object is to be interacted with.")]
@@ -612,7 +612,7 @@ ms.locfileid: "59597078"
         private Vector3 _gazeDirection;
     ```
 
-6.  程式碼**start （)** 應該加入方法。 在類別初始化時，這將會呼叫：
+6.  應該加入**Start ()** 方法的程式碼。 當類別初始化時, 會呼叫此:
 
     ```csharp
         /// <summary>
@@ -625,7 +625,7 @@ ms.locfileid: "59597078"
         }
     ```
 
-7.  實作的方法，將會具現化，並設定視線資料指標： 
+7.  執行將會具現化並設定注視游標的方法: 
 
     ```csharp
         /// <summary>
@@ -647,7 +647,7 @@ ms.locfileid: "59597078"
         }
     ```
 
-8.  實作的方法，將設定從 Main Camera Raycast 並追蹤的目前具有焦點的物件。
+8.  執行將從主要攝影機設定 Raycast 的方法, 並將追蹤目前的焦點物件。
 
     ```csharp
         /// <summary>
@@ -745,25 +745,25 @@ ms.locfileid: "59597078"
         }
     ```
  
-9.  請務必儲存您的變更，在*Visual Studio* ，然後傳回給*Unity*。
+9.  請務必先將您的變更儲存在*Visual Studio*中, 然後再返回*Unity*。
 
-## <a name="chapter-10--create-the-bot-class"></a>第 10 章 – 建立 Bot 類別
+## <a name="chapter-10--create-the-bot-class"></a>第10章–建立 Bot 類別
 
-現在會呼叫您要建立指令碼**Bot**。 這是您的應用程式的核心類別，它會儲存： 
+您即將建立的腳本稱為**Bot**。 這是您應用程式的核心類別, 它會儲存: 
 
 - 您的 Web 應用程式 Bot 認證
-- 收集使用者語音命令方法
-- 必要起始交談的 Web 應用程式 Bot 方法 
-- 為了將訊息傳送至您的 Web 應用程式 Bot 方法 
+- 收集使用者語音命令的方法
+- 起始與 Web 應用程式 Bot 交談的必要方法 
+- 將訊息傳送至 Web 應用程式 Bot 所需的方法 
 
-若要將訊息傳送到 Bot 服務時， **SendMessageToBot()** 協同程式將會建置的活動，這是使用者所傳送的資料 Bot Framework 可辨識的物件。 
+為了將訊息傳送至 Bot 服務, **SendMessageToBot ()** 協同程式會建立活動, 此為 bot Framework 識別為使用者傳送之資料的物件。 
  
-若要建立此類別： 
+若要建立此類別: 
 
-1. 按兩下**指令碼**資料夾，將它開啟。 
-2. 以滑鼠右鍵按一下**指令碼**資料夾中，按一下**建立 >C#指令碼**。 指令碼命名**Bot**。 
-3. 按兩下新的指令碼，以使用 Visual Studio 中開啟它。
-4. 更新命名空間相同，如下所示，在頂端**Bot**類別：
+1. 按兩下 [**腳本**] 資料夾以開啟它。 
+2. 在 [**腳本**] 資料夾內部按一下滑鼠右鍵, 然後按一下 [**建立 > C#腳本**]。 將腳本命名為**Bot**。 
+3. 按兩下新的腳本, 以 Visual Studio 開啟它。
+4. 在**Bot**類別的頂端, 將命名空間更新為與下列相同:
 
     ```csharp
     using Newtonsoft.Json;
@@ -774,7 +774,7 @@ ms.locfileid: "59597078"
     using UnityEngine.Windows.Speech;
     ```
  
-5. 內部**Bot**類別新增下列變數：
+5. 在**Bot**類別內, 新增下列變數:
 
     ```csharp
         /// <summary>
@@ -836,9 +836,9 @@ ms.locfileid: "59597078"
     ```
 
     > [!NOTE] 
-    > 請確定您插入您**Bot 祕密金鑰**成**botSecret**變數。 您將已記下您 **Bot 祕密金鑰** 在開始本課程中，在 **[第 2 章](#chapter-2---create-the-azure-bot-service)，步驟 10** 。
+    > 請務必將您的**Bot 秘密金鑰**插入**botSecret**變數中。 您將已記下您 **Bot 祕密金鑰** 在開始本課程中，在 **[第 2 章](#chapter-2---create-the-azure-bot-service)，步驟 10** 。
 
-7. 程式碼**Awake()** 並**start （)** 現在需要加入。 
+7. 現在必須加入**喚醒 ()** 和**Start ()** 的程式碼。 
 
     ```csharp
         /// <summary>
@@ -858,7 +858,7 @@ ms.locfileid: "59597078"
         }
     ```
 
-8. 新增語音擷取開始及結束時，會呼叫由語音程式庫的兩個處理常式。 *DictationRecognizer*將會自動停止擷取使用者的心聲，當使用者停止讀出。
+8. 加入語音媒體櫃開始和結束時所呼叫的兩個處理常式。 當使用者停止說話時, *DictationRecognizer*將會自動停止捕捉使用者心聲。
 
     ```csharp
         /// <summary>
@@ -887,7 +887,7 @@ ms.locfileid: "59597078"
         
     ```
 
-1. 下列處理常式會收集使用者的語音輸入的結果，並呼叫協同程式負責將訊息傳送至 Web 應用程式 Bot Service。
+1. 下列處理常式會收集使用者語音輸入的結果, 並呼叫負責將訊息傳送至 Web 應用程式 Bot 服務的協同程式。
 
     ```csharp
         /// <summary>
@@ -904,7 +904,7 @@ ms.locfileid: "59597078"
         }     
     ```
 
-10. 下列的協同程式會呼叫來開始交談與機器人。 您會注意到交談呼叫完成之後，它會呼叫**SendMessageToCoroutine()** 藉由傳遞一系列會設定傳送到 Bot Service 與空的訊息活動的參數。 這是為了提示 Bot 服務，才能起始對話。
+10. 會呼叫下列協同程式來開始與 Bot 的對話。 您會注意到, 一旦交談呼叫完成, 它就會藉由傳遞一系列的參數來呼叫**SendMessageToCoroutine ()** , 以將活動設定為傳送至 Bot 服務作為空白訊息。 這麼做是為了提示 Bot 服務起始對話。
 
     ```csharp
         /// <summary>
@@ -935,7 +935,7 @@ ms.locfileid: "59597078"
         }    
     ```
 
-11. 下列的協同程式會呼叫來建置要傳送到 Bot 服務的活動。 
+11. 會呼叫下列協同程式來建立要傳送至 Bot 服務的活動。 
 
     ```csharp
         /// <summary>
@@ -984,7 +984,7 @@ ms.locfileid: "59597078"
         }
     ```
 
-12. 下列的協同程式會呼叫來要求傳送到 Bot 服務的活動之後的回應。 
+12. 將活動傳送至 Bot 服務之後, 會呼叫下列協同程式來要求回應。 
 
     ```csharp
         /// <summary>
@@ -1018,7 +1018,7 @@ ms.locfileid: "59597078"
         } 
     ```
 
-13. 要加入至這個類別的最後一個方法，才能在場景中顯示訊息：
+13. 要新增至這個類別的最後一個方法, 是在場景中顯示訊息的必要項:
 
     ```csharp
         /// <summary>
@@ -1031,24 +1031,24 @@ ms.locfileid: "59597078"
     ```
 
     > [!NOTE] 
-    > 您可能會看到在 Unity 編輯器] 主控台的 [關於遺漏錯誤**SceneOrganiser**類別。 當您將會稍後在本教學課程中建立這個類別，請忽略此訊息中。
+    > 您可能會在 Unity 編輯器主控台中看到錯誤, 關於遺漏**SceneOrganiser**類別。 忽略此訊息, 因為您稍後會在本教學課程中建立此類別。
 
-14.  請務必儲存您的變更，在*Visual Studio* ，然後傳回給*Unity*。
+14.  請務必先將您的變更儲存在*Visual Studio*中, 然後再返回*Unity*。
 
-## <a name="chapter-11--create-the-interactions-class"></a>第 11 章 – 建立互動類別
+## <a name="chapter-11--create-the-interactions-class"></a>第11章–建立互動類別
 
-您即將建立的類別現在稱為**互動**。 這個類別用來偵測使用者的 HoloLens 點選輸入。 
+您即將建立的類別稱為「**互動**」。 此類別可用來偵測使用者的 HoloLens 輸入。 
 
-如果在使用者點選時查看*Bot* Bot 以及在場景中的物件已準備好接聽語音輸入、 Bot 物件會變更色彩**紅色**並開始接聽語音輸入。 
+如果使用者在查看場景中的*Bot*物件時按下, 而且 bot 已準備好接聽語音輸入, bot 物件將會將色彩變更為**紅色**, 並開始接聽語音輸入。 
 
-這個類別繼承自**GazeInput**類別，並因此可參考**start （)** 方法，並自該類別，表示所使用的變數**基底**。 
+這個類別繼承自**GazeInput**類別, 因此可以參考**Start ()** 方法和該類別中的變數, 並使用**base**來表示。 
  
-若要建立此類別：
+若要建立此類別:
 
-1.  按兩下**指令碼**資料夾，將它開啟。 
-2.  以滑鼠右鍵按一下**指令碼**資料夾中，按一下**建立 >C#指令碼**。 指令碼命名**互動**。 
-3.  按兩下新的指令碼，以使用 Visual Studio 中開啟它。
-4.  更新命名空間和類別繼承，如下所示，頂端的相同**互動**類別：
+1.  按兩下 [**腳本**] 資料夾以開啟它。 
+2.  在 [**腳本**] 資料夾內部按一下滑鼠右鍵, 然後按一下 [**建立 > C#腳本**]。 將腳本命名為**互動**。 
+3.  按兩下新的腳本, 以 Visual Studio 開啟它。
+4.  在**互動**類別的頂端, 更新命名空間和類別繼承, 以與下列內容相同:
 
     ```csharp
     using UnityEngine.XR.WSA.Input;
@@ -1057,7 +1057,7 @@ ms.locfileid: "59597078"
     {
     ```
 
-5.  內部**互動**類別新增下列變數：
+5.  在 [**互動**] 類別內, 新增下列變數:
 
     ```csharp
         /// <summary>
@@ -1065,7 +1065,7 @@ ms.locfileid: "59597078"
         /// </summary>
         private GestureRecognizer _gestureRecognizer;
     ```
-6.  然後新增**start （)** 方法：
+6.  然後, 新增**Start ()** 方法:
 
     ```csharp
         /// <summary>
@@ -1083,7 +1083,7 @@ ms.locfileid: "59597078"
         }
     ```
 
-7.  加入處理常式，將會在使用者執行前面 HoloLens 相機點選手勢時觸發
+7.  新增當使用者在 HoloLens 攝影機前方執行點按手勢時所觸發的處理常式
 
     ```csharp
         /// <summary>
@@ -1113,18 +1113,18 @@ ms.locfileid: "59597078"
         }
     ```
 
-8. 請務必儲存您的變更，在*Visual Studio* ，然後傳回給*Unity*。
+8. 請務必先將您的變更儲存在*Visual Studio*中, 然後再返回*Unity*。
 
-## <a name="chapter-12--create-the-sceneorganiser-class"></a>第 12 章-建立 SceneOrganiser 類別
+## <a name="chapter-12--create-the-sceneorganiser-class"></a>第12章–建立 SceneOrganiser 類別
 
-在這個實驗室中所需的最後一個類別會呼叫**SceneOrganiser**。 這個類別會以程式設計方式設定場景，藉由將元件和指令碼新增至 Main Camera 中，並在場景中建立適當的物件。
+這個實驗室所需的最後一個類別稱為**SceneOrganiser**。 這個類別會以程式設計方式設定場景, 方法是將元件和腳本新增至主要攝影機, 然後在場景中建立適當的物件。
  
-若要建立此類別：
+若要建立此類別:
 
-1.  按兩下**指令碼**資料夾，將它開啟。 
-2.  以滑鼠右鍵按一下**指令碼**資料夾中，按一下**建立 >C#指令碼**。 指令碼命名**SceneOrganiser**。 
-3.  按兩下新的指令碼，以使用 Visual Studio 中開啟它。
-4.  內部**SceneOrganiser**類別新增下列變數：
+1.  按兩下 [**腳本**] 資料夾以開啟它。 
+2.  在 [**腳本**] 資料夾內部按一下滑鼠右鍵, 然後按一下 [**建立 > C#腳本**]。 將腳本命名為**SceneOrganiser**。 
+3.  按兩下新的腳本, 以 Visual Studio 開啟它。
+4.  在**SceneOrganiser**類別內, 新增下列變數:
 
     ```csharp
         /// <summary>
@@ -1138,7 +1138,7 @@ ms.locfileid: "59597078"
         internal TextMesh botResponseText;
     ```
 
-6.  然後新增**Awake()** 並**start （)** 方法：
+6.  然後, 新增**喚醒 ()** 和**Start ()** 方法:
 
     ```csharp
         /// <summary>
@@ -1165,7 +1165,7 @@ ms.locfileid: "59597078"
         }
     ```
 
-7.  新增下列方法，負責在場景中建立 Bot 物件，並設定參數和元件：
+7.  新增下列方法, 負責在場景中建立 Bot 物件, 並設定參數和元件:
 
     ```csharp
         /// <summary>
@@ -1192,7 +1192,7 @@ ms.locfileid: "59597078"
         }
     ```
 
-7.  新增下列方法，負責建立場景，代表來自 Bot 的回應中的 UI 物件：
+7.  新增下列方法, 負責在場景中建立 UI 物件, 代表來自 Bot 的回應:
 
     ```csharp
         /// <summary>
@@ -1219,73 +1219,73 @@ ms.locfileid: "59597078"
         }
     ```
 
-8.  請務必儲存您的變更，在*Visual Studio* ，然後傳回給*Unity*。
-9.  在 Unity 編輯器中，拖曳**SceneOrganiser**到 Main Camera 從指令碼 資料夾的指令碼。 場景召集人元件現在應該會出現在 Main Camera 物件，如下圖所示。
+8.  請務必先將您的變更儲存在*Visual Studio*中, 然後再返回*Unity*。
+9.  在 Unity 編輯器中, 將**SceneOrganiser**腳本從 [腳本] 資料夾拖曳到主要相機。 場景 Organiser 元件現在應該會出現在主要攝影機物件上, 如下圖所示。
 
     ![建立 Azure Bot 服務](images/AzureLabs-Lab312-37.png)
 
-## <a name="chapter-13--before-building"></a>第 13 章-建置前
+## <a name="chapter-13--before-building"></a>第13章–建立前
 
-若要執行您的應用程式執行完整的測試必須側面載入它拖曳至您的 HoloLens。
-這麼做之前，請確認：
+若要執行應用程式的徹底測試, 您必須將它側載到 HoloLens。
+在您執行之前, 請確定:
 
--   中所述的所有設定[**第 4 章**](#Chapter-4-–-Set-up-the-unity-project)都已正確設定。 
--   指令碼**SceneOrganiser**附加至**Main Camera**物件。 
--   在  **Bot**類別中，請確定您已插入您**Bot 祕密金鑰**成**botSecret**變數。
+-   [**第4章**](#Chapter-4-–-Set-up-the-unity-project)所述的所有設定都已正確設定。 
+-   腳本**SceneOrganiser**會附加到**主要相機**物件。 
+-   在**bot**類別中, 請確定您已將**bot 秘密金鑰**插入**botSecret**變數中。
 
-## <a name="chapter-14--build-and-sideload-to-the-hololens"></a>第 14 章-建置和側載到 HoloLens
+## <a name="chapter-14--build-and-sideload-to-the-hololens"></a>第14章–組建並側載至 HoloLens
 
-此專案的 Unity 區段所需的所有項目現在已完成，所以該是時候建置從 Unity。
+此專案的 Unity 區段所需的全部內容現在已經完成, 所以可以從 Unity 建立它。
 
-1.  瀏覽至**組建設定**，**檔案 > 組建設定...**.
-2.  從**Build Settings**  視窗中，按一下**建置**。
+1.  流覽至 [**組建設定**]、[檔案 **> 組建設定**...]。
+2.  從 [**組建設定**] 視窗中, 按一下 [**建立**]。
 
-    ![從 Unity 建置應用程式](images/AzureLabs-Lab312-38.png)
+    ![從 Unity 建立應用程式](images/AzureLabs-Lab312-38.png)
 
-3.  如果您尚未，勾選**UnityC#專案**。
-4.  按一下 [建置] 。 將會啟動 unity**檔案總管**視窗中，您要建立，然後選取 建置到應用程式的資料夾。 現在，建立該資料夾並將它命名**應用程式**。 然後使用**應用程式**按一下 選取資料夾**選取資料夾**。 
-5.  Unity 會開始建置您的專案**應用程式**資料夾。 
-6.  一次 Unity 已完成的建置 （它可能需要一些時間），它將會開啟**檔案總管**視窗在您的組建位置 （檢查您的工作列中，因為它可能不一定會出現您的視窗上方會通知您加入的新視窗）。
+3.  如果尚未這麼做, 請先勾選**Unity C#專案**。
+4.  按一下 [建置] 。 Unity 將會啟動 [檔案**瀏覽器**] 視窗, 您必須在其中建立並選取要建立應用程式的資料夾。 立即建立該資料夾, 並將它命名為**應用程式**。 然後選取 [**應用程式**] 資料夾, 按一下 [**選取資料夾**]。 
+5.  Unity 會開始將您的專案建立至**應用程式**資料夾。 
+6.  Unity 完成建立之後 (可能需要一些時間), 它會在組建的位置開啟 [檔案**瀏覽器**] 視窗 (請檢查您的工作列, 因為它不一定會出現在視窗的上方, 但會通知您加入新的視窗)。
 
-## <a name="chapter-15--deploy-to-hololens"></a>章 15 – 將部署到 HoloLens
+## <a name="chapter-15--deploy-to-hololens"></a>第15章-部署至 HoloLens
 
-若要部署 HoloLens 上：
+若要在 HoloLens 上部署:
 
-1.  您將需要您 HoloLens IP 位址 （適用於遠端部署），並以確保您 HoloLens 處於**開發人員模式**。 請這樣做：
+1.  您將需要 HoloLens 的 IP 位址 (用於遠端部署), 並確保 HoloLens 處於**開發人員模式**。 請這樣做：
 
-    1. 儘管穿著您 HoloLens，開啟**設定**。
-    2. 移至**網路和網際網路 > Wi-fi > 進階選項**
-    3. 附註**IPv4**位址。
-    4. 接下來，瀏覽回到**設定**，然後**更新與安全性 > 適用於開發人員** 
-    5. 設定開發人員模式。
+    1. 在戴 HoloLens 的同時, 請開啟**設定**。
+    2. 前往**Network & Internet > wi-fi > Advanced Options**
+    3. 記下**IPv4**位址。
+    4. 接下來, 流覽回到 [**設定**], 然後為**開發人員更新 & 的安全性 >** 
+    5. 將開發人員模式設定為 On。
 
-2.  瀏覽至新的 Unity 組建 (**應用程式**資料夾)，並開啟方案檔**Visual Studio**。
-3.  在 **方案組態**選取**偵錯**。
-4.  在 **的方案平台**，選取**x86**，**遠端機器**。 
+2.  流覽至新的 Unity 組建 (**應用程式**資料夾), 然後使用**Visual Studio**開啟方案檔。
+3.  在 [**解決方案**設定] 中, 選取 [ **Debug**]。
+4.  在**解決方案平臺**中, 選取 [ **x86**]、[**遠端電腦**]。 
 
-    ![將部署從 Visual Studio 方案。](images/AzureLabs-Lab312-39.png)
+    ![從 Visual Studio 部署解決方案。](images/AzureLabs-Lab312-39.png)
  
-5.  移至**建置 功能表**，然後按一下**部署方案**，側載您 HoloLens 應用程式。
-6.  您的應用程式現在應該會出現在清單中，準備好啟動您 HoloLens 上已安裝的應用程式 ！
+5.  移至 [**建立] 功能表**, 然後按一下 [**部署方案**], 將應用程式側載至您的 HoloLens。
+6.  您的應用程式現在應該會出現在 HoloLens 上已安裝的應用程式清單中, 準備好啟動!
 
     > [!NOTE]
-    > 若要將部署到擬真耳機，設定**的方案平台**來*本機電腦*，並設定**組態**至*偵錯*，使用*x86*作為**平台**。 然後部署到本機電腦，使用**建置 功能表**，並選取*部署方案*。 
+    > 若要部署到沉浸式耳機, 請將**解決方案平臺**設定為 [*本機電腦*], 然後將 [設定] 設為 [  *Debug*], 並將*x86*作為**平臺**。 然後, 使用 [**建立] 功能表**, 選取 [*部署解決方案*], 部署至本機電腦。 
 
-## <a name="chapter-16--using-the-application-on-the-hololens"></a>第 16 章 – HoloLens 上使用應用程式
+## <a name="chapter-16--using-the-application-on-the-hololens"></a>第16章–在 HoloLens 上使用應用程式
 
-- 一旦您已啟動的應用程式，您會看到您面前的藍色球體 Bot。
+- 一旦您啟動應用程式, 就會在您前方看到 Bot 做為藍色球體。
 
-- 使用**點選手勢**時您會在起始交談球體 gazing。 
+- 當您在球體上撥雲見日時, 請使用點一下**手勢**來起始交談。 
  
-- 等候啟動交談 （發生時，UI 會顯示一則訊息）。 一旦您入門的訊息接收的 Bot 時，點選一次 Bot 讓它將會變成紅色，並開始接聽您的聲音。 
+- 等候交談啟動 (UI 將會在發生時顯示訊息)。 當您收到來自 Bot 的簡介訊息之後, 請在 Bot 上再次點一下, 讓它變成紅色並開始接聽您的聲音。 
 
-- 當您停止交談時，您的應用程式會將您的訊息傳送到 Bot 和您會立即收到的回應，將會顯示在 UI 中。 
+- 停止交談之後, 您的應用程式會將您的訊息傳送至 Bot, 您很快就會收到會顯示在 UI 中的回應。 
 
-- 重複程序，將多個訊息傳送至您的 Bot （您必須點選每個您想要傳送訊息的時間）。
+- 重複此程式, 將更多訊息傳送至您的 Bot (您必須在每次想要 sen 訊息時點一下)。
 
-這項交談會示範如何 Bot 可以保留資訊 （您的名稱），同時也提供已知的資訊 （例如所配備的項目）。
+此交談會示範 Bot 如何保留資訊 (您的名稱), 同時也會提供已知的資訊 (例如已儲存的專案)。
 
-#### <a name="some-questions-to-ask-the-bot"></a>要求 Bot 一些問題：
+#### <a name="some-questions-to-ask-the-bot"></a>詢問 Bot 的一些問題:
 
 ```
 what do you sell? 
@@ -1295,18 +1295,18 @@ how much are umbrellas?
 how much are raincoats?
 ```
 
-## <a name="your-finished-web-app-bot-v4-application"></a>您已完成的 Web 應用程式 Bot (v4) 應用程式
+## <a name="your-finished-web-app-bot-v4-application"></a>您完成的 Web 應用程式 Bot (v4) 應用程式
 
-恭喜，您建置會利用 Azure Web 應用程式 Bot、 Microsoft Bot Framework v4 mixed 的 reality 應用程式。
+恭喜, 您建立了一個混合現實應用程式, 利用 Azure Web 應用程式 Bot (Microsoft Bot Framework v4)。
 
 ![最終產品](images/AzureLabs-Lab312-00.png)
 
-## <a name="bonus-exercises"></a>Bonus 練習
+## <a name="bonus-exercises"></a>額外練習
 
-### <a name="exercise-1"></a>練習 1
+### <a name="exercise-1"></a>練習1
 
-在這個實驗室中的交談結構是非常基本。 您可以使用 Microsoft LUIS，自然語言了解功能賦予機器人。
+這個實驗室中的交談結構非常基本。 使用 Microsoft LUIS 為您的 bot 提供自然語言理解功能。
 
-### <a name="exercise-2"></a>練習 2
+### <a name="exercise-2"></a>練習2
 
-此範例不包含終止的交談，並重新啟動一個新。 若要讓的 Bot 功能完成，請嘗試實作交談的結束。
+這個範例不包括終止交談, 以及重新開機新對話。 若要讓 Bot 功能完成, 請嘗試在交談中執行「關閉」。

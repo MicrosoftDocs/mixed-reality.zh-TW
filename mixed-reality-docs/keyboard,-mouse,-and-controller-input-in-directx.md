@@ -1,34 +1,34 @@
 ---
-title: 鍵盤、 滑鼠及 DirectX 中的控制站輸入
-description: 說明如何建立會使用鍵盤、 滑鼠及遊戲控制器的 Windows Mixed Reality 應用程式。
+title: DirectX 中的鍵盤、滑鼠和控制器輸入
+description: 說明如何為使用鍵盤、滑鼠和遊戲控制器的 Windows Mixed Reality 建立應用程式。
 author: MikeRiches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Windows Mixed Reality、 鍵盤、 滑鼠、 遊戲控制器、 xbox 控制器、 HoloLens、 桌面、 逐步解說、 範例程式碼
+keywords: Windows Mixed Reality, 鍵盤, 滑鼠, 遊戲控制器, xbox controller, HoloLens, 桌面, 逐步解說, 範例程式碼
 ms.openlocfilehash: 1e61cb50a561492fdc6849b5b231e97fab1bb6cf
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59597119"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63551005"
 ---
-# <a name="keyboard-mouse-and-controller-input-in-directx"></a>鍵盤、 滑鼠及 DirectX 中的控制站輸入
+# <a name="keyboard-mouse-and-controller-input-in-directx"></a>DirectX 中的鍵盤、滑鼠和控制器輸入
 
-鍵盤、 滑鼠及遊戲控制器都可以很有用的形式的 Windows Mixed Reality 裝置的輸入。 藍芽鍵盤和滑鼠都支援 HoloLens，用於偵錯您的應用程式，或是做為替代形式的輸入。 Windows Mixed Reality 也支援連接至 Pc-其中滑鼠、 鍵盤及遊戲控制器一直以來的範數的沈浸式耳機。
+鍵盤、滑鼠和遊戲控制器對於 Windows Mixed Reality 裝置而言, 都是很有用的輸入形式。 HoloLens 支援藍牙鍵盤和滑鼠, 可用於對您的應用程式進行偵測, 或做為替代形式的輸入。 Windows Mixed Reality 也支援連接到電腦的沉浸式耳機, 其中滑鼠、鍵盤和遊戲控制器的過去都是標準。
 
-若要使用鍵盤輸入上 HoloLens，對您的裝置到藍芽鍵盤或透過 Windows Device Portal 虛擬輸入。 若要使用鍵盤輸入穿著 Windows Mixed Reality 沈浸式耳機時，將輸入的焦點指派給混合實境，藉由將放在裝置上，或使用 Windows 鍵 + Y 鍵盤組合。 請記住供 HoloLens 的應用程式必須提供的功能，而不需要這些連接的裝置。
+若要在 HoloLens 上使用鍵盤輸入, 請將藍牙鍵盤與您的裝置配對, 或透過 Windows 裝置入口網站使用虛擬輸入。 若要在戴上 Windows Mixed Reality 沉浸式耳機時使用鍵盤輸入, 請將輸入焦點放在裝置上, 或使用 Windows 鍵 + Y 鍵盤組合, 將其指派給混合式。 請記住, 適用于 HoloLens 的應用程式必須提供未連接這些裝置的功能。
 
 >[!NOTE]
->目前在這篇文章中的程式碼片段示範如何使用C++/CX 而不是 C + + 17 相容C++中所使用的 /WinRT [ C++全像攝影版的專案範本](creating-a-holographic-directx-project.md)。  概念是相等的C++/WinRT 專案，但您必須將轉譯程式碼。
+>本文中的程式碼片段目前示範如何使用C++/cx, C++ [ C++ ](creating-a-holographic-directx-project.md)而不是 C + 17 相容的/WinRT, 如全像攝影專案範本中所使用。  概念相當於C++/WinRT 專案, 但您必須轉譯程式碼。
 
-## <a name="subscribe-for-corewindow-input-events"></a>Corewindow，否則輸入事件訂閱
+## <a name="subscribe-for-corewindow-input-events"></a>訂閱 CoreWindow 輸入事件
 
 ### <a name="keyboard-input"></a>鍵盤輸入
 
-在 Windows 全像攝影版的應用程式範本中，我們包含了鍵盤輸入，就像任何其他的 UWP 應用程式的事件處理常式。 您的應用程式會使用鍵盤輸入的資料相同的方式，在 Windows Mixed Reality。
+在 Windows 全像攝影應用程式範本中, 我們包含鍵盤輸入的事件處理常式, 就像任何其他 UWP 應用程式一樣。 您的應用程式使用鍵盤輸入資料的方式, 與 Windows Mixed Reality 相同。
 
-從 AppView.cpp:
+從 AppView:
 
 ```
 // Register for keypress notifications.
@@ -47,25 +47,25 @@ ms.locfileid: "59597119"
    }
 ```
 
-### <a name="virtual-keyboard-input"></a>虛擬的鍵盤輸入
-沉浸式桌面耳機，您也可以支援虛擬鍵盤，呈現 Windows 透過沉浸式檢視。 若要支援此功能，您的應用程式可以實作**CoreTextEditContext**。 這可讓 Windows 了解您的應用程式轉譯文字方塊的狀態，以便虛擬鍵盤可以正確地參與那里的文字。
+### <a name="virtual-keyboard-input"></a>虛擬鍵盤輸入
+對於沉浸式桌面耳機, 您也可以透過沉浸式視圖支援 Windows 所呈現的虛擬鍵盤。 為了支援這種情況, 您的應用程式可以執行**CoreTextEditCoNtext**。 這可讓 Windows 瞭解您自己的應用程式轉譯文字方塊的狀態, 讓虛擬鍵盤能夠正確地參與該處的文字。
 
-如需有關如何實作 CoreTextEditContext 支援的詳細資訊，請參閱[CoreTextEditContext 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl)。
+如需有關如何執行 CoreTextEditCoNtext 支援的詳細資訊, 請參閱[CoreTextEditCoNtext 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl)。
 
 ### <a name="mouse-input"></a>滑鼠輸入
 
-您也可以使用滑鼠輸入，再透過 UWP CoreWindow 輸入的事件處理常式。 以下是如何修改 Windows 全像攝影版的應用程式範本，以支援在相同的方式為已按下動作的滑鼠點按。 之後進行這個修改之後，按一下滑鼠時頭戴耳機沈浸式裝置將會重新調整 cube。
+您也可以透過 UWP CoreWindow 輸入事件處理常式, 再次使用滑鼠輸入。 以下說明如何修改 Windows 全像投影應用程式範本, 以支援滑鼠點按動作, 就像按下手勢一樣。 進行此修改之後, 在戴上沉浸式耳機裝置時按一下滑鼠, 會重新調整 cube 的位置。
 
-請注意，UWP 應用程式也可以取得滑鼠的未經處理的 xy 圖資料使用[MouseDevice](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseDevice) API。
+請注意, UWP 應用程式也可以使用[MouseDevice](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseDevice) API 取得滑鼠的原始 XY 資料。
 
-開始先宣告新的處理常式 OnPointerPressed AppView.h 中：
+一開始先在 AppView 中宣告新的 OnPointerPressed 處理常式:
 
 ```
 protected:
        void OnPointerPressed(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::PointerEventArgs^ args);
 ```
 
-在 AppView.cpp，請先 SetWindow 中加入此程式碼：
+在 AppView 中, 將下列程式碼新增至 SetWindow:
 
 ```
 // Register for pointer pressed notifications.
@@ -73,7 +73,7 @@ protected:
        ref new TypedEventHandler<CoreWindow^, PointerEventArgs^>(this, &AppView::OnPointerPressed);
 ```
 
-然後在檔案底部將 OnPointerPressed 此定義：
+然後將 OnPointerPressed 的這個定義放在檔案的底部:
 
 ```
 void AppView::OnPointerPressed(CoreWindow^ sender, PointerEventArgs^ args)
@@ -86,21 +86,21 @@ void AppView::OnPointerPressed(CoreWindow^ sender, PointerEventArgs^ args)
    }
 ```
 
-我們剛才加入的事件處理常式是傳遞至範本的主要類別。 讓我們修改主要的類別，以支援這個傳遞。 這個公用方法，將宣告加入至標頭檔：
+我們剛才加入的事件處理常式是範本主要類別的傳遞。 讓我們修改主要類別以支援此傳遞。 將這個公用方法宣告加入標頭檔中:
 
 ```
 // Handle mouse input.
        void OnPointerPressed();
 ```
 
-您將需要此私用成員變數，以及：
+您也需要此私用成員變數, 如下所示:
 
 ```
 // Keep track of mouse input.
        bool m_pointerPressed = false;
 ```
 
-最後，我們將更新新的邏輯，以支援滑鼠點按的主要類別。 將此事件處理常式來開始。 請務必更新的類別名稱：
+最後, 我們將使用新的邏輯來更新主要類別, 以支援滑鼠點擊。 從加入此事件處理常式開始。 請務必更新類別名稱:
 
 ```
 void MyHolographicAppMain::OnPointerPressed()
@@ -109,7 +109,7 @@ void MyHolographicAppMain::OnPointerPressed()
    }
 ```
 
-現在，在更新方法中，將現有的邏輯，以取得與這個指標姿勢：
+現在, 在 Update 方法中, 將用來取得指標的現有邏輯取代為:
 
 ```
 SpatialInteractionSourceState^ pointerState = m_spatialInputHandler->CheckForInput();
@@ -125,13 +125,13 @@ SpatialInteractionSourceState^ pointerState = m_spatialInputHandler->CheckForInp
    m_pointerPressed = false;
 ```
 
-重新編譯並重新部署。 您應該注意到，按一下滑鼠將會現在重新調整 cube 中您的沈浸式耳機-或 HoloLens 與附加的藍芽滑鼠。
+重新編譯和重新部署。 您應該會注意到按一下滑鼠後, 就會將 cube 重新放置在您的沉浸式耳機-或 HoloLens 中, 並連接藍牙滑鼠。
 
 ### <a name="game-controller-support"></a>遊戲控制器支援
 
-遊戲控制器可以有趣且允許使用者便利的方式來控制 Windows Mixed Reality 沉浸式體驗。
+遊戲控制器是一種有趣且方便的方式, 可讓使用者控制沉浸式 Windows Mixed Reality 體驗。
 
-將遊戲控制器的支援新增至 Windows 全像攝影版的應用程式範本，第一個步驟是將下列的私用成員宣告新增至您的主要檔案的標頭類別：
+將遊戲控制器的支援新增至 Windows 全像攝影應用程式範本的第一個步驟, 是將下列私用成員宣告新增至主要檔案的標頭類別:
 
 ```
 // Recognize gamepads that are plugged in after the app starts.
@@ -158,7 +158,7 @@ Windows::Foundation::EventRegistrationToken                     m_gamepadAddedEv
        std::vector<GamepadWithButtonState>                             m_gamepads;
 ```
 
-初始化遊樂器事件，與任何遊戲台目前連接，您的主要類別的建構函式：
+在您的主要類別的函式中, 初始化遊戲程式事件, 以及目前附加的任何遊戲台:
 
 ```
 // If connected, a game controller can also be used for input.
@@ -182,7 +182,7 @@ for (auto const& gamepad : Gamepad::Gamepads)
    }
 ```
 
-這些事件處理常式加入您的主要類別。 請務必更新的類別名稱：
+將這些事件處理常式新增至您的主要類別。 請務必更新類別名稱:
 
 ```
 void MyHolographicAppMain::OnGamepadAdded(Object^, Gamepad^ args)
@@ -211,7 +211,7 @@ void MyHolographicAppMain::OnGamepadRemoved(Object^, Gamepad^ args)
    }
 ```
 
-最後，更新輸入的邏輯，以識別變更控制器狀態。 在這裡，我們會使用相同的 m_pointerPressed 變數加入滑鼠事件前一節所述。 將下列加入更新方法之前它會檢查用 SpatialPointerPose 的,：
+最後, 更新輸入邏輯以辨識控制器狀態中的變更。 在這裡, 我們會使用上一節中所討論的相同 m_pointerPressed 變數來加入滑鼠事件。 將此檔案新增至 Update 方法, 就在其檢查 SpatialPointerPose 之前:
 
 ```
 // Check for new input state since the last frame.
@@ -241,7 +241,7 @@ void MyHolographicAppMain::OnGamepadRemoved(Object^, Gamepad^ args)
    m_pointerPressed = false;
 ```
 
-別忘了取消註冊事件時清除 主要類別：
+清除主要類別時, 別忘了取消註冊事件:
 
 ```
 if (m_gamepadAddedEventToken.Value != 0)
@@ -254,16 +254,16 @@ if (m_gamepadAddedEventToken.Value != 0)
    }
 ```
 
-重新編譯，並重新部署。 您現在可以附加，或配對，遊戲控制器和使用它來重新定位的旋轉立方體。
+重新編譯, 然後重新部署。 您現在可以連接或配對遊戲控制器, 並用它來重新調整旋轉 cube 的位置。
 
-## <a name="important-guidelines-for-keyboard-and-mouse-input"></a>鍵盤和滑鼠輸入的重要方針
+## <a name="important-guidelines-for-keyboard-and-mouse-input"></a>鍵盤和滑鼠輸入的重要指導方針
 
-有一些主要的差異，在這段程式碼如何使用 Microsoft HoloLens – 也就是主要是依賴自然的使用者輸入 – 與 Windows Mixed Reality 啟用的電腦上可用的裝置上。
-* 您不能依賴鍵盤或滑鼠輸入必須存在。 所有功能，您的應用程式必須使用視線、 手勢和語音輸入。
-* 當附加藍芽鍵盤時，很有幫助啟用您的應用程式可能會要求的任何文字的鍵盤輸入。 這可以是很好的補充資訊，如語音輸入，例如。
-* 談到設計您的應用程式時，不要依賴 （舉例來說） WASD 和滑鼠會尋求您的遊戲中的控制項。 HoloLens 專為引導房間周圍的使用者。 在此情況下，使用者控制相機直接。 推動觀景窗移動/外觀的控制項與房間周圍的介面不會提供相同的體驗。
-* 鍵盤輸入可以控制您的應用程式或遊戲引擎，偵錯的層面，特別是當使用者將不需要使用鍵盤的絕佳方式。 因為您還可使用與 corewindow，否則事件 Api 串聯起都相同。 在此案例中，您可能會選擇實作設定您的應用程式，將鍵盤事件路由傳送至 「 偵錯僅輸入 」 的模式在您偵錯工作階段期間的方法。
-* 藍牙控制器正常運作。
+此程式碼在 Microsoft HoloLens 上的使用方式有一些主要差異–這是主要依賴自然使用者輸入的裝置–與 Windows Mixed Reality 啟用的電腦上所提供的相同。
+* 您不能依賴鍵盤或滑鼠輸入來呈現。 您所有的應用程式功能都必須使用「注視」、「手勢」和「語音輸入」。
+* 連接 Bluetooth 鍵盤時, 針對您的應用程式可能會要求的任何文字啟用鍵盤輸入可能會很有説明。 例如, 這可能是聽寫的絕佳補充。
+* 在設計您的應用程式時, 請不要依賴您遊戲的 WASD 和滑鼠外觀控制項 (例如)。 HoloLens 的設計目的是要讓使用者在房間附近。 在此情況下, 使用者會直接控制相機。 使用移動/外觀控制來驅動房間相機的介面, 將不會提供相同的體驗。
+* 鍵盤輸入是控制應用程式或遊戲引擎之調試層面的絕佳方式, 尤其是因為使用者不需要使用鍵盤。 連接的方式與使用 CoreWindow 事件 Api 時相同。 在此案例中, 您可以選擇執行方法, 將您的應用程式設定為在您的 debug 會話期間將鍵盤事件路由至「僅限偵錯工具輸入」模式。
+* Bluetooth 控制器也會運作。
 
 ## <a name="see-also"></a>另請參閱
-* [硬體附屬應用程式](hardware-accessories.md)
+* [硬體配件](hardware-accessories.md)

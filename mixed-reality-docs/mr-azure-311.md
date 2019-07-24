@@ -1,11 +1,11 @@
 ---
 title: MR 和 Azure 311-Microsoft Graph
-description: 完成這個課程來了解如何使用 Microsoft Graph，並連接驅動生產力，在混合的實境應用程式中的資料。
+description: 完成此課程, 以瞭解如何運用 Microsoft Graph, 並連接到在混合現實應用程式中驅動生產力的資料。
 author: drneil
 ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
-keywords: azure、 混合實境、 academy、 unity、 教學課程、 api、 microsoft graph、 hololens、 沉浸式 vr
+keywords: azure, mixed reality, 學術, unity, 教學課程, api, microsoft graph, hololens, 沉浸, vr
 ms.openlocfilehash: 04c72a7ef7724cfcc27867f7f003c171a6f7851f
 ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
 ms.translationtype: MT
@@ -14,277 +14,277 @@ ms.lasthandoff: 07/09/2019
 ms.locfileid: "67694530"
 ---
 >[!NOTE]
->混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
+>混合現實學術教學課程的設計是使用 HoloLens (第1代) 和混合現實的沉浸式耳機。  因此, 對於仍在尋找這些裝置開發指引的開發人員而言, 我們覺得這些教學課程很重要。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  系統會保留這些資訊, 以繼續在支援的裝置上運作。 未來將會有一系列新的教學課程, 將示範如何針對 HoloLens 2 進行開發。  此通知會在張貼時, 使用這些教學課程的連結進行更新。
 
 # <a name="mr-and-azure-311---microsoft-graph"></a>MR 和 Azure 311-Microsoft Graph
 
-在此課程中，您將了解如何使用*Microsoft Graph*登入您使用安全的驗證，在混合的實境應用程式中的 Microsoft 帳戶。 您接著擷取並顯示應用程式介面中的已排程的會議。
+在此課程中, 您將瞭解如何使用*Microsoft Graph* , 以在混合現實應用程式中使用安全驗證來登入您的 Microsoft 帳戶。 接著, 您將會在應用程式介面中抓取和顯示已排程的會議。
 
 ![](images/AzureLabs-Lab311-00.png)
 
-*Microsoft Graph*是一組設計來啟用對許多 Microsoft 服務存取的 Api。 Microsoft 說明 Microsoft Graph 為連線的關聯性，資源的矩陣，這表示它可讓應用程式存取各式各樣的已連線的使用者資料。 如需詳細資訊，請瀏覽[Microsoft Graph 頁面](https://developer.microsoft.com/graph)。
+*Microsoft Graph*是一組 api, 其設計目的是要讓您能夠存取許多 Microsoft 服務。 Microsoft 將 Microsoft Graph 描述為以關聯性連線的資源矩陣, 這表示它允許應用程式存取各種已連線的使用者資料。 如需詳細資訊, 請造訪[Microsoft Graph 頁面](https://developer.microsoft.com/graph)。
 
-開發將包含建立使用者以注視，然後點選 球體，將會提示使用者安全地登入 Microsoft 帳戶的指示，應用程式。 一旦登入其帳戶，使用者將能夠看到一份排程一天的會議。
+開發過程中將會建立應用程式, 其中會指示使用者注視並按一下球體, 這會提示使用者安全地登入 Microsoft 帳戶。 登入其帳戶之後, 使用者就能夠看到一天排定的會議清單。
 
-完成本課程之後，您會有混合的實境 HoloLens 應用程式，可以執行下列作業：
+完成此課程之後, 您將擁有一個混合現實 HoloLens 應用程式, 其將能夠執行下列作業:
 
-1.  點選 使用點選手勢，將會提示使用者登入 Microsoft 帳戶 （移出登入，然後再移回至應用程式的應用程式） 的物件。
-2.  檢視排程一天的會議的清單。 
+1.  使用 [點按手勢], 並按一下物件, 這會提示使用者登入 Microsoft 帳戶 (移出應用程式以登入, 然後再次回到應用程式)。
+2.  查看每天排定的會議清單。 
 
-在您的應用程式，則您對於如何將整合結果進行設計。 本課程旨在教導您如何將 Azure 服務整合與您的 Unity 專案。 它是您的作業，以使用您從這個課程，以增強您的混合的實境應用程式所獲得的知識。
+在您的應用程式中, 您可以決定如何將結果與您的設計整合。 本課程的設計目的是要告訴您如何將 Azure 服務與您的 Unity 專案整合。 您的工作是使用您從這個課程取得的知識, 來增強您的混合現實應用程式。
 
 ## <a name="device-support"></a>裝置支援
 
 <table>
 <tr>
-<th>課程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></th>
+<th>粗</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></th>
 </tr><tr>
 <td> MR 和 Azure 311:Microsoft Graph</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> </td>
 </tr>
 </table>
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 > [!NOTE]
-> 本教學課程專為具有基礎經驗的 Unity 開發人員和C#。 請同時了解必要條件和書面的指示此文件中代表什麼已經過測試，並在寫入 (第 2018 年 7 月) 的時間驗證。 中所示，您可以自由使用最新的軟體[安裝工具](install-the-tools.md)發行項，但它不應該假設，本課程中的資訊將會完全符合您會發現在較新的軟體，比所列下面。
+> 本教學課程是專為具備 Unity 和C#基本經驗的開發人員所設計。 也請注意, 本檔中的必要條件和書面指示, 代表在撰寫本文時已測試和驗證的內容 (2018 年7月)。 您可以免費使用 [[安裝工具](install-the-tools.md)] 文章中所列的最新軟體, 但不應假設本課程中的資訊完全符合您在較新軟體中找到的內容, 而不是如下所示。
 
-我們建議下列的硬體和軟體這堂課程：
+在此課程中, 我們建議您採用下列硬體和軟體:
 
 - 開發電腦
-- [Windows 10 Fall Creators Update （或更新版本） 啟用的開發人員模式](install-the-tools.md#installation-checklist)
+- [已啟用開發人員模式的 Windows 10 秋季建立者更新 (或更新版本)](install-the-tools.md#installation-checklist)
 - [最新的 Windows 10 SDK](install-the-tools.md#installation-checklist)
-- [Unity 2017.4](install-the-tools.md#installation-checklist)
+- [Unity 2017。4](install-the-tools.md#installation-checklist)
 - [Visual Studio 2017](install-the-tools.md#installation-checklist)
-- A [Microsoft HoloLens](hololens-hardware-details.md)啟用開發人員模式
-- Azure 的安裝程式和 Microsoft Graph 資料擷取的網際網路存取
-- 有效**的 Microsoft 帳戶**（個人或公司/學校）
-- 一些會議排定為目前日期，使用相同的 Microsoft 帳戶
+- 已啟用開發人員模式的[Microsoft HoloLens](hololens-hardware-details.md)
+- 適用于 Azure 設定和 Microsoft Graph 資料抓取的網際網路存取
+- 有效的**Microsoft 帳戶**(個人或公司/學校)
+- 使用相同的 Microsoft 帳戶排定當天的幾個會議
 
 ### <a name="before-you-start"></a>開始之前
 
-1.  若要避免發生建置此專案的問題，強烈建議您建立根或接近根資料夾中，本教學課程中所述的專案 （長的資料夾路徑可能會造成問題，在建置階段）。
-2.  設定並測試您的 HoloLens。 如果您需要支援設定您的 HoloLens[請務必瀏覽 HoloLens 安裝文章](https://docs.microsoft.com/hololens/hololens-setup)。 
-3.  它是個不錯的主意，若要開始開發新的 HoloLens 應用程式 （有時候它可以幫助每位使用者執行這些工作） 時執行校正和感應器調整。 
+1.  為避免在建立此專案時發生問題, 強烈建議您在根或接近根資料夾中建立本教學課程中所述的專案 (長資料夾路徑可能會在組建階段造成問題)。
+2.  設定並測試您的 HoloLens。 如果您需要支援設定 HoloLens,[請務必造訪 hololens 安裝程式一文](https://docs.microsoft.com/hololens/hololens-setup)。 
+3.  開始開發新的 HoloLens 應用程式時, 最好先執行校正和感應器微調 (有時候它有助於為每個使用者執行這些工作)。 
 
-校正的說明，請遵循此[HoloLens 校正文章連結](calibration.md#hololens)。
+如需校正的說明, 請遵循此[HoloLens 校正文章的連結](calibration.md#hololens)。
 
-如需微調感應器的說明，請遵循此[HoloLens 感應器調整的文章連結](sensor-tuning.md)。
+如需感應器微調的說明, 請遵循此[HoloLens 感應器微調文章連結](sensor-tuning.md)。
 
-## <a name="chapter-1---create-your-app-in-the-application-registration-portal"></a>第 1 層應用程式註冊入口網站中建立您的應用程式
+## <a name="chapter-1---create-your-app-in-the-application-registration-portal"></a>第1章-在應用程式註冊入口網站中建立您的應用程式
 
-一開始，您必須建立並註冊您的應用程式**應用程式註冊入口網站**。
+一開始, 您必須在**應用程式註冊入口網站**中建立並註冊您的應用程式。
 
-您也會在這一章中找到服務金鑰，可讓您對進行呼叫*Microsoft Graph*來存取您帳戶的內容。
+在本章中, 您也會找到可讓您呼叫*Microsoft Graph*以存取帳戶內容的服務金鑰。
 
-1.  瀏覽至[Microsoft 應用程式註冊入口網站](https://apps.dev.microsoft.com)並使用您的 Microsoft 帳戶登入。 一旦您已登入，您將會重新導向至**應用程式註冊入口網站**。
+1.  流覽至[Microsoft 應用程式註冊入口網站](https://apps.dev.microsoft.com), 並使用您的 Microsoft 帳戶登入。 登入之後, 系統會將您重新導向至**應用程式註冊入口網站**。
 
-2.  在 **我的應用程式**區段中，按一下按鈕**新增應用程式**。
+2.  在 [**我的應用程式**] 區段中, 按一下 [**新增應用程式**] 按鈕。
 
     ![](images/AzureLabs-Lab311-01.png)![](images/AzureLabs-Lab311-02.png)
 
     > [!IMPORTANT]
-    > **應用程式註冊入口網站**可以看起來不同，取決於是否您先前用過*Microsoft Graph*。 以下螢幕擷取畫面顯示這些不同的版本。
+    > **應用程式註冊入口網站**看起來可能會不同, 取決於您先前是否使用過*Microsoft Graph*。 下列螢幕擷取畫面顯示這些不同的版本。
 
-3.  針對您的應用程式，然後按一下 新增名稱**建立**。
+3.  新增應用程式的名稱, 然後按一下 [**建立**]。
 
     ![](images/AzureLabs-Lab311-03.png)
 
-4.  一旦建立應用程式，您將重新導向到的應用程式的主頁面。 複製**應用程式識別碼**請務必記下此值為安全的地方，您將使用它很快就在您的程式碼。
+4.  建立應用程式之後, 系統會將您重新導向至應用程式的主頁面。 複製 [**應用程式識別碼**], 並確定在安全的地方記下此值, 您很快就會在程式碼中使用它。
 
     ![](images/AzureLabs-Lab311-04.png)
 
-5.  在 **平台**區段中，請確定**原生應用程式**隨即出現。 如果*未*上按一下**新增平台**，然後選取**原生應用程式**。
+5.  在 [**平臺**] 區段中, 確認已顯示 [**原生應用程式**]。 如果*沒有*, 請按一下 [**新增平臺**], 然後選取 [**原生應用程式**]。
 
     ![](images/AzureLabs-Lab311-05.png)
 
-6.  在相同的頁面和稱為區段，向下捲動**Microsoft Graph 權限**您必須新增應用程式的其他權限。 按一下 **新增**旁**委派的權限**。
+6.  在同一個頁面中, 或在稱為**Microsoft Graph 許可權**的區段中向下滾動, 您必須為應用程式新增額外的許可權。 按一下 [**委派的許可權**] 旁的 [**新增**]。
 
     ![](images/AzureLabs-Lab311-06.png)
 
-7.  由於您希望您的應用程式存取使用者的行事曆，核取方塊稱為**Calendars.Read**然後按一下**確定**。
+7.  因為您想要讓應用程式存取使用者的行事曆, 請核取 [行事曆] 方塊 **。閱讀**, 然後按一下 **[確定]** 。
 
     ![](images/AzureLabs-Lab311-07.png)
 
-8.  捲動到底部，按一下**儲存** 按鈕。
+8.  向下流覽至底部, 然後按一下 [**儲存**] 按鈕。
 
     ![](images/AzureLabs-Lab311-08.png)
 
-9.  會確認您的儲存，以及您可以登出**應用程式註冊入口網站**。
+9.  將會確認您的儲存, 並可從**應用程式註冊入口網站**登出。
 
-## <a name="chapter-2---set-up-the-unity-project"></a>第 2 章-設定 Unity 專案
+## <a name="chapter-2---set-up-the-unity-project"></a>第2章-設定 Unity 專案
 
-下列已啟動的一組典型混合實境，進行開發，且此情況下，是良好的其他專案範本。
+以下是使用混合現實進行開發的一般設定, 因此, 這是適用于其他專案的絕佳範本。
 
-1.  開啟*Unity*然後按一下**新增**。
+1.  開啟*Unity* , 然後按一下 [**新增**]。
 
     ![](images/AzureLabs-Lab311-09.png)
 
-2.  您需要提供 Unity 專案名稱。 插入**MSGraphMR**。 請確定已設定的專案範本**3D**。 設定**位置**適用於您的某個位置 （請記住，使其更接近根目錄是較佳）。 然後，按一下**建立專案**。
+2.  您必須提供 Unity 專案名稱。 插入**MSGraphMR**。 請確定專案範本已設定為 [ **3d**]。 將位置設定為適合您的**位置**(請記住, 接近根目錄較佳)。 然後, 按一下 [**建立專案**]。
 
     ![](images/AzureLabs-Lab311-10.png)
 
-3.  使用 Unity 開啟，就代表值得查看以預設值**指令碼編輯器**設為**Visual Studio**。 移至**編輯** > **喜好設定**並從新的視窗，然後瀏覽至**外部工具**。 變更**外部指令碼編輯器**要**Visual Studio 2017**。 關閉**喜好設定**視窗。
+3.  在 Unity 開啟的情況下, 值得檢查預設**腳本編輯器**是否設定為**Visual Studio**。 移至 [**編輯** > **喜好**設定], 然後在新視窗中, 流覽至 [**外部工具**]。 將**外部腳本編輯器**變更為**Visual Studio 2017**。 關閉 [**喜好**設定] 視窗。
 
     ![](images/AzureLabs-Lab311-11.png)
 
-4.  移至**檔案** > **組建設定**，然後選取**通用 Windows 平台**，然後按一下**切換平台**按鈕，以套用您的選擇。
+4.  移至  > [檔案] [**組建設定**] 並選取 [**通用 Windows 平臺**], 然後按一下 [**切換平臺**] 按鈕以套用您的選取專案。
 
     ![](images/AzureLabs-Lab311-12.png)
 
-5.  當您依然在**檔案** > **組建設定**，請確定：
+5.  仍在 [   > 檔案**組建] 設定**中, 請確定:
 
-    1. **裝置為目標**設為**HoloLens**
-    2. **建置型別**設為**D3D**
-    3. **SDK**設為**最新安裝**
-    4. **Visual Studio 版本**設為**最新安裝**
-    5. **建置並執行**設為**本機電腦**
-    6. 儲存場景，並將它新增至組建。
+    1. **目標裝置**設定為**HoloLens**
+    2. **組建類型**設定為**D3D**
+    3. **SDK**已設定為**最新安裝**
+    4. **Visual Studio 版本**設定為 [**最新安裝**]
+    5. **組建和執行**設定為**本機電腦**
+    6. 儲存場景, 並將它加入至組建。
 
-        1. 做法是選取**加入開啟的場景**。 儲存視窗會出現。
+        1. 選取 [新增] [**開啟場景**] 來執行此動作。 [儲存] 視窗隨即出現。
 
             ![](images/AzureLabs-Lab311-13.png)
 
-        2. 這與任何未來、 場景中建立新的資料夾。 選取 **新的資料夾**按鈕，以建立新的資料夾，其命名**場景**。
+        2. 為此和任何未來的場景建立新的資料夾。 選取 [**新增資料夾**] 按鈕, 若要建立新的資料夾, 請將其命名為**場景**。
 
             ![](images/AzureLabs-Lab311-14.png)
 
-        3. 開啟您剛建立**場景**資料夾，然後在*檔名*： 文字欄位中輸入**MR_ComputerVisionScene**，然後按一下**儲存**.
+        3. 開啟新建立的 [**幕後**] 資料夾, 然後在 [*檔案名*: 文字] 欄位中, 輸入**MR_ComputerVisionScene**, 然後按一下 [**儲存**]。
 
             ![](images/AzureLabs-Lab311-15.png)
 
             > [!IMPORTANT] 
-            > 請注意，您必須先儲存您的 Unity 場景中*資產*資料夾，因為它們必須是與 Unity 專案相關聯。 建立場景資料夾 （和其他類似的資料夾） 是建構的 Unity 專案的典型方式。
+            > 請注意, 您必須將 Unity 場景儲存在 [*資產*] 資料夾中, 因為它們必須與 Unity 專案相關聯。 建立幕後資料夾 (和其他類似的資料夾) 是結構化 Unity 專案的典型方式。
 
-    7.  剩餘的設定，*組建設定*，應保持為預設值，現在。
+    7.  [*組建設定*] 中的其餘設定, 現在應該保留為預設值。
 
-6.  中*組建設定*視窗中，按一下**播放程式設定** 按鈕，這會開啟 相關 面板中的空間位置*Inspector*所在。 
+6.  在 [*組建設定*] 視窗中, 按一下 [ **Player 設定**] 按鈕, 這會在偵測*器*所在的空間中開啟相關的面板。 
 
     ![](images/AzureLabs-Lab311-16.png)
 
-7. 在此窗格中，少數設定需要驗證：
+7. 在此面板中, 需要驗證幾項設定:
 
-    1. 在 [**其他設定**] 索引標籤：
+    1. 在 [**其他設定**] 索引標籤中:
 
         1.  **指令碼** **執行階段版本**應該**實驗性**（.NET 4.6 對等），這會觸發程序需要重新啟動編輯器。
 
-        2. **指令碼後端**應該是 **.NET**
+        2. **腳本後端**應該是 **.net**
 
-        3. **API 相容性層級**應該是 **.NET 4.6**
+        3. **API 相容性層級**應該是 **.net 4.6**
 
             ![](images/AzureLabs-Lab311-17.png)
 
-    2.  內**發佈設定**索引標籤之下**功能**，檢查：
+    2.  在 [**發行設定**] 索引標籤的 [**功能**] 底下, 檢查:
 
         - **InternetClient**
 
             ![](images/AzureLabs-Lab311-18.png)
 
-    3.  在下方窗格中， **XR 設定**(參閱下方**發佈設定**)，檢查**虛擬實境支援**，請確定**Windows Mixed RealitySDK**加入。
+    3.  在面板的正下方, 于 [ **XR 設定**] (在 [**發佈設定**] 下方找到) 中, 勾選 [**支援的虛擬實境**], 並確定已新增**Windows Mixed Reality SDK** 。
 
         ![](images/AzureLabs-Lab311-19.png)
 
-8.  回到*Build Settings*， *UnityC#專案*不再呈現灰色，要檢查這旁邊的核取方塊。
+8.  回到 [*組建設定*] *, C# Unity 專案*不再呈現灰色;核取 [此] 旁的核取方塊。
 
-9.  關閉*組建設定*視窗。
+9.  關閉 [*組建設定*] 視窗。
 
-10.  儲存您的場景和專案 (**檔案** > **儲存場景檔案** > **儲存專案**)。
+10.  儲存場景和專案 ([  > 檔案] [**儲存場景]/**  > [檔案] [**儲存專案**])。
 
-## <a name="chapter-3---import-libraries-in-unity"></a>第 3 章-在 Unity 中的匯入程式庫
+## <a name="chapter-3---import-libraries-in-unity"></a>第3章-Unity 中的匯入程式庫
 
 > [!IMPORTANT]
-> 如果您想要跳過*Unity 設定*元件的課程，並繼續直接進入程式碼，請自由下載此[Azure-MR-311.unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20311%20-%20Microsoft%20Graph/Azure-MR-311.unitypackage)，它匯入到您的專案做為[**自訂封裝**](https://docs.unity3d.com/Manual/AssetPackages.html)，然後繼續從[第 5 章](#chapter-5---create-meetingsui-class)。
+> 如果您想要略過此課程的*Unity 設定*元件, 並直接繼續執行程式碼, 您可以免費下載此[unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20311%20-%20Microsoft%20Graph/Azure-MR-311.unitypackage), 將其匯入至您的專案做為[**自訂套件**](https://docs.unity3d.com/Manual/AssetPackages.html), 然後繼續進行[第5章](#chapter-5---create-meetingsui-class).
 
-若要使用*Microsoft Graph*您需要進行的 Unity 中使用的**Microsoft.Identity.Client** DLL。 您可使用 Microsoft Graph SDK，不過，它就需要加入的 NuGet 套件之後建置 Unity 專案 （亦即編輯專案建置後）。 會被視為直接將 Unity 匯入必要的 Dll 的工作變得更容易。
+若要在 Unity 中使用*Microsoft Graph* , 您必須利用**Microsoft. Identity. Client** DLL。 您可以使用 Microsoft Graph SDK, 不過, 在您建立 Unity 專案之後 (也就是編輯專案後置), 它將需要新增 NuGet 套件。 將所需的 Dll 直接匯入 Unity, 會將它視為較簡單的方式。
 
 > [!NOTE]
-> 這需要匯入之後重新設定外掛程式的 Unity 中目前沒有已知的問題。 這些步驟 (4-在這一節中的 7) 將不再需要解決的 bug 之後。
+> Unity 中目前有一個已知問題, 需要在匯入後重新設定外掛程式。 解決錯誤之後, 將不再需要這些步驟 (本節中的 4-7)。
 
-若要匯入*Microsoft Graph*到您自己的專案[MSGraph_LabPlugins.zip 檔案下載](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20311%20-%20Microsoft%20Graph/MSGraph_LabPlugins.unitypackage)。 此套件已建立版本測試過的程式庫使用。
+若要將*Microsoft Graph*匯入至您自己的專案, 請[下載 MSGraph_LabPlugins。](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20311%20-%20Microsoft%20Graph/MSGraph_LabPlugins.unitypackage) 已使用已測試過的程式庫版本來建立此套件。
 
-如果您想要深入了解如何將自訂 Dll 新增至您的 Unity 專案[請依循下列連結](https://docs.unity3d.com/Manual/UsingDLL.html)。
+如果您想要深入瞭解如何將自訂 Dll 新增至 Unity 專案, 請[遵循此連結](https://docs.unity3d.com/Manual/UsingDLL.html)。
 
-若要匯入套件：
+若要匯入封裝:
 
-1.  使用將 Unity 套件新增至 Unity**資產** > **匯入封裝** > **自訂封裝**功能表選項。 選取您剛才下載的封裝。
+1.  使用 [**資產** > ] [匯**入套件** > ] [**自訂套件**] 功能表選項, 將 unity 封裝加入 unity。 選取您剛才下載的套件。
 
-2.  在 **匯入 Unity 封裝**方塊會顯示。 請確認所有項目底下 （而且包括）**外掛程式**已選取。
+2.  在快顯的 [匯**入 Unity 封裝**] 方塊中, 確定已選取 (和包含)**外掛程式**底下的所有專案。
 
     ![](images/AzureLabs-Lab311-20.png)
 
-3.  按一下 **匯入**按鈕以新增至您的專案項目。
+3.  按一下 [匯**入**] 按鈕, 將專案新增至您的專案。
 
-4.  移至**MSGraph**下的資料夾**外掛程式**中*專案] 面板*，然後選取 [外掛程式呼叫**Microsoft.Identity.Client**。
+4.  移至 [*專案] 面板*中 [**外掛程式**] 底下的 [ **MSGraph** ] 資料夾, 然後選取名為 [ **Microsoft 身分識別用戶端**] 的外掛程式。
 
     ![](images/AzureLabs-Lab311-21.png)
 
-5.  具有*外掛程式*選取，請確認**任何平台**未核取，則確定**WSAPlayer**也是未選取，然後按一下 **套用**. 這只是要確認已正確設定檔案。
+5.  選取此*外掛程式*之後, 請確認已取消核取**任何平臺**, 然後確定**WSAPlayer**也未核取, 然後按一下 [套用]。 這只是為了確認檔案已正確設定。
 
     ![](images/AzureLabs-Lab311-22.png)
 
     > [!NOTE] 
-    > 標示這些外掛程式會設定它們僅適用於在 Unity 編輯器中。 有一組不同的專案會匯出從 Unity 做為通用 Windows 應用程式後要使用 WSA 資料夾中的 Dll。
+    > 標記這些外掛程式會將它們設定為僅在 Unity 編輯器中使用。 [WSA] 資料夾中有一組不同的 Dll, 會在專案從 Unity 匯出為通用 Windows 應用程式之後使用。
 
-6.  接下來，您必須開啟**WSA**資料夾內**MSGraph**資料夾。 您會看到您剛才設定的相同檔案的複本。 選取檔案，然後在偵測器：
+6.  接下來, 您需要在**MSGraph**資料夾中開啟 [ **WSA** ] 資料夾。 您會看到您剛才設定的相同檔案的複本。 選取檔案, 然後在 偵測器:
 
-    -   請確認**任何平台**是**取消核取**，且**只** **WSAPlayer**是**檢查**。
+    -   請確定未**選取** **任何平臺**, 而且**只**會**核**取 [ **WSAPlayer** ]。
 
-    -   請確定**SDK**設為**UWP**，並**指令碼的後端**設為**Dot Net**
+    -   確定**SDK**已設定為**UWP**, 而且**腳本後端**已設定為**點 Net**
 
-    -   請確認**不會處理**是**檢查**。
+    -   確定**已核**取 [**不處理**]。
 
         ![](images/AzureLabs-Lab311-23.png)
 
 7.  按一下 **[套用]** 。
 
-## <a name="chapter-4---camera-setup"></a>第 4 章-觀景窗設定
+## <a name="chapter-4---camera-setup"></a>第4章-數位相機設定
 
-在這一章期間您將設定場景的 Main Camera:
+在本章中, 您將設定場景的主要攝影機:
 
-1.  在 *階層面板*，選取**Main Camera**。
+1.  在 [階層]*面板*中, 選取**主要相機**。
 
-2.  選取之後，您將能夠看到所有的元件**Main Camera**中*Inspector*面板。
+2.  選取之後, 您就可以在 [偵測*器*] 面板中看到**主要攝影機**的所有元件。
 
-    1.  **相機物件**必須命名為**Main Camera** （請注意拼字 ！）
+    1.  **相機物件**必須命名為「**主攝影機**」 (請注意拼寫的!)
 
-    2.  Main Camera**標記**必須設為**MainCamera** （請注意拼字 ！）
+    2.  主要相機**標記**必須設定為**MainCamera** (請注意拼寫!)
 
-    3.  請確定**轉換的位置**設定為**0，0，0**
+    3.  請確定**轉換位置**設定為**0, 0, 0**
 
-    4.  設定**清除旗標**到**純色**
+    4.  將**清除旗標**設定為**純色**
 
-    5.  設定**背景色彩**要相機元件**黑色，0 的 Alpha** **(十六進位的程式碼: #00000000)**
+    5.  將相機元件的**背景色彩**設定為**黑色, Alpha 0** **(十六進位碼: #00000000)**
 
         ![](images/AzureLabs-Lab311-24.png)
 
-3.  中的最終物件結構*階層面板*應該類似下面的影像中所示：
+3.  [階層]*面板*中的最終物件結構應如下圖所示:
 
     ![](images/AzureLabs-Lab311-25.png)
 
-## <a name="chapter-5---create-meetingsui-class"></a>第 5 章-建立 MeetingsUI 類別
+## <a name="chapter-5---create-meetingsui-class"></a>第5章-建立 MeetingsUI 類別
 
-您必須建立第一個指令碼**MeetingsUI**，它會負責裝載，並填入 （歡迎訊息、 指示和會議詳細資料） 的應用程式的 UI。
+您需要建立的第一個腳本是**MeetingsUI**, 它負責裝載和填入應用程式的 UI (歡迎訊息、指示和會議詳細資料)。
 
-若要建立此類別：
+若要建立此類別:
 
-1.  以滑鼠右鍵按一下**資產**中的資料夾 *[專案] 面板*，然後選取**建立** > **資料夾**。 將資料夾命名**指令碼**。
+1.  以滑鼠右鍵按一下 [*專案] 面板*中的 [**資產**] 資料夾, 然後選取 [**建立** > **資料夾**]。 將資料夾命名為**Scripts**。
 
     ![](images/AzureLabs-Lab311-26.png)
     ![](images/AzureLabs-Lab311-27.png)
 
-2.  開啟**指令碼**資料夾，在該資料夾中，按一下滑鼠右鍵，**建立** >   **C#指令碼**。 指令碼命名**MeetingsUI。**
+2.  開啟 [**腳本**] 資料夾, 然後在該資料夾中, 以滑鼠右鍵按一下 [**建立** >   **C#腳本**]。 將腳本命名為**MeetingsUI。**
 
     ![](images/AzureLabs-Lab311-28.png)
 
-3.  按兩下新**MeetingsUI**指令碼，以開啟它*Visual Studio*。
+3.  按兩下新的**MeetingsUI**腳本, 以*Visual Studio*開啟它。
 
-4.  插入下列命名空間：
+4.  插入下列命名空間:
 
     ```csharp
     using System;
     using UnityEngine;
     ```
 
-5.  類別內插入下列變數：
+5.  在類別內插入下列變數:
 
     ```csharp    
         /// <summary>
@@ -298,7 +298,7 @@ ms.locfileid: "67694530"
         private TextMesh _meetingDisplayTextMesh;
     ```
 
-6.  然後取代**start （)** 方法，並新增**Awake()** 方法。 在類別初始化時，這些將會呼叫：
+6.  然後取代**Start ()** 方法, 並加入一個**喚醒 ()** 方法。 當類別初始化時, 將會呼叫這些:
 
     ```csharp    
         /// <summary>
@@ -319,7 +319,7 @@ ms.locfileid: "67694530"
         }
     ```
 
-7.  加入負責建立方法*會議 UI*並填入目前的會議時要求：
+7.  新增負責建立*會議 UI*的方法, 並在要求時, 將目前的會議填入其中:
 
     ```csharp    
         /// <summary>
@@ -367,21 +367,21 @@ ms.locfileid: "67694530"
         }
     ```
 
-8. **刪除** **update （)** 方法，以及**儲存您的變更**傳回給 Unity 之前的 Visual Studio 中。 
+8. **刪除** **Update ()** 方法, 並**將您的變更儲存**在 Visual Studio 中, 然後再返回 Unity。 
 
-## <a name="chapter-6---create-the-graph-class"></a>章節 6-建立圖形類別
+## <a name="chapter-6---create-the-graph-class"></a>第6章-建立圖形類別
 
-下一步 以建立指令碼**Graph**指令碼。 此指令碼是負責驗證使用者，並擷取目前的日期，從使用者的行事曆排定的會議的呼叫。
+下一個要建立的腳本是**圖形**腳本。 此腳本會負責進行呼叫以驗證使用者, 並從使用者的行事曆抓取當天的排程會議。
 
-若要建立此類別：
+若要建立此類別:
 
-1.  按兩下**指令碼**資料夾，將它開啟。
+1.  按兩下 [**腳本**] 資料夾以開啟它。
 
-2.  以滑鼠右鍵按一下**指令碼**資料夾中，按一下**建立** >   **C#指令碼**。 指令碼命名**Graph**。
+2.  在 [**腳本**] 資料夾內部按一下滑鼠右鍵, 然後按一下 [**建立** >   **C#腳本**]。 將腳本命名為**Graph**。
 
-3.  按兩下要使用 Visual Studio 中開啟它的指令碼。
+3.  按兩下腳本, 以 Visual Studio 開啟它。
 
-4.  插入下列命名空間：
+4.  插入下列命名空間:
 
     ```csharp
     using System.Collections.Generic;
@@ -398,11 +398,11 @@ ms.locfileid: "67694530"
     ```
 
     > [!IMPORTANT]
-    > 您會注意到此指令碼中的程式碼的部分包裝著[先行編譯指示詞](https://docs.unity3d.com/Manual/PlatformDependentCompilation.html)，這是為了避免與程式庫的問題，當建置 Visual Studio 方案。
+    > 您會發現, 此腳本中的部分程式碼會包裝在預先[編譯](https://docs.unity3d.com/Manual/PlatformDependentCompilation.html)指示詞周圍, 這是為了避免在建立 Visual Studio 解決方案時程式庫發生問題。
 
-5.  刪除**start （)** 並**update （)** 方法，因為它們不會使用。
+5.  刪除**Start ()** 和**Update ()** 方法, 因為它們將不會使用。
 
-6.  Outside **Graph**類別中，插入所需的還原序列化 JSON 物件，表示每日排定的會議的下列物件：
+6.  在**Graph**類別外, 插入下列物件, 這是將代表每日排程會議的 JSON 物件還原序列化所需的物件:
 
     ```csharp
     /// <summary>
@@ -449,7 +449,7 @@ ms.locfileid: "67694530"
     }
     ```
 
-7.  內部**Graph**類別中，新增下列變數：
+7.  在**Graph**類別內, 新增下列變數:
 
     ```csharp    
         /// <summary>
@@ -475,9 +475,9 @@ ms.locfileid: "67694530"
     ```
 
     > [!NOTE]
-    > 變更 **appId** 值，成為 **應用程式識別碼** 您記下在 **[第 1 章](#chapter-1---create-your-app-in-the-application-registration-portal)，步驟 4** 。 這個值應該是顯示在相同**應用程式註冊入口網站，** 在您的應用程式註冊頁面中。
+    > 變更 **appId** 值，成為 **應用程式識別碼** 您記下在 **[第 1 章](#chapter-1---create-your-app-in-the-application-registration-portal)，步驟 4** 。 這個值應該與應用程式註冊**入口網站**中的應用程式註冊頁面中所顯示的值相同。
 
-8.  內**Graph**類別中，將方法加入**SignInAsync()** 並**AquireTokenAsync()** ，，會提示使用者插入的登入認證。
+8.  在**Graph**類別中, 加入**SignInAsync ()** 和**AquireTokenAsync ()** 方法, 這會提示使用者插入登入認證。
 
     ```csharp
         /// <summary>
@@ -546,11 +546,11 @@ ms.locfileid: "67694530"
         }
     ```
 
-9.  新增下列兩種方法：
+9.  新增下列兩個方法:
 
-    1.  **BuildTodayCalendarEndpoint()** ，哪些組建會指定日期和時間範圍內，已排程的會議中擷取的 URI。
+    1.  **BuildTodayCalendarEndpoint ()** , 它會建立 URI, 指定要在其中抓取排程會議的日期和時間範圍。
 
-    2.  **ListMeetingsAsync()** ，會要求從已排程的會議*Microsoft Graph*。
+    2.  **ListMeetingsAsync ()** , 它會向*Microsoft Graph*要求已排定的會議。
 
     ```csharp
         /// <summary>
@@ -614,21 +614,21 @@ ms.locfileid: "67694530"
         }
     ```
 
-10. 您現在已完成**Graph**指令碼。 **儲存您的變更**傳回給 Unity 之前的 Visual Studio 中。
+10. 您現在已完成**圖形**腳本。 請先儲存 Visual Studio 中的**變更**, 再返回 Unity。
 
-## <a name="chapter-7---create-the-gazeinput-script"></a>第 7-建立 GazeInput 指令碼
+## <a name="chapter-7---create-the-gazeinput-script"></a>第7章-建立 GazeInput 腳本
 
-您現在會建立**GazeInput**。 這個類別會處理並追蹤使用者的視線，使用**Raycast**來自**Main Camera**，向前投影。
+您現在會建立**GazeInput**。 此類別會處理並追蹤使用者的注視, 並使用來自**主要攝影機**的**Raycast** , 並向前投射。
 
-若要建立指令碼：
+若要建立腳本:
 
-1.  按兩下**指令碼**資料夾，將它開啟。
+1.  按兩下 [**腳本**] 資料夾以開啟它。
 
-2.  以滑鼠右鍵按一下**指令碼**資料夾中，按一下**建立** >   **C#指令碼**。 指令碼命名**GazeInput**。
+2.  在 [**腳本**] 資料夾內部按一下滑鼠右鍵, 然後按一下 [**建立** >   **C#腳本**]。 將腳本命名為**GazeInput**。
 
-3.  按兩下要使用 Visual Studio 中開啟它的指令碼。
+3.  按兩下腳本, 以 Visual Studio 開啟它。
 
-4.  變更命名空間程式碼，以符合下面其中一個，以及新增 ' **\[System.Serializable\]** ' 上述標記您**GazeInput**類別，以便它可以序列化：
+4.  變更命名空間程式碼, 使其符合下列各項, 並在您的**GazeInput**類別上方加入 ' **\[ \]system.object**' 標記, 以便將它序列化:
 
     ```csharp
     using UnityEngine;
@@ -641,7 +641,7 @@ ms.locfileid: "67694530"
     {
     ```
 
-5.  內部**GazeInput**類別中，新增下列變數：
+5.  在**GazeInput**類別中, 新增下列變數:
 
     ```csharp    
         [Tooltip("Used to compare whether an object is to be interacted with.")]
@@ -677,7 +677,7 @@ ms.locfileid: "67694530"
         private Vector3 _gazeDirection;
     ```
 
-6.  新增**CreateCursor()** 方法來建立場景中的 HoloLens 資料指標，並呼叫方法，從**start （)** 方法：
+6.  新增**CreateCursor ()** 方法來建立場景中的 HoloLens 游標, 並從**Start ()** 方法呼叫方法:
 
     ```csharp    
         /// <summary>
@@ -708,7 +708,7 @@ ms.locfileid: "67694530"
         }
     ```
 
-7.  下列方法啟用視線 Raycast 和追蹤的焦點的物件。
+7.  下列方法可啟用注視 Raycast, 並持續追蹤焦點物件。
 
     ```csharp
     /// <summary>
@@ -804,40 +804,40 @@ ms.locfileid: "67694530"
         }
     ```
 
-8.  **儲存您的變更**傳回給 Unity 之前的 Visual Studio 中。
+8.  請先儲存 Visual Studio 中的**變更**, 再返回 Unity。
 
-## <a name="chapter-8---create-the-interactions-class"></a>第 8-建立互動類別
+## <a name="chapter-8---create-the-interactions-class"></a>第8章-建立互動類別
 
-您現在必須建立**互動**指令碼，也就是負責：
+您現在必須建立**互動**腳本, 其負責:
 
--   處理**點選**互動並**相機視線**，這可讓使用者互動的記錄檔中在場景中的 「 按鈕 」。
+-   處理點一下互動和**攝影機注視**, 讓使用者能夠與場景中的「按鈕」的記錄互動。
 
--   建立記錄檔中的使用者互動，場景中的 「 按鈕 」 物件。
+-   在場景中建立登入「按鈕」物件, 讓使用者與之互動。
 
-若要建立指令碼：
+若要建立腳本:
 
-1.  按兩下**指令碼**資料夾，將它開啟。
+1.  按兩下 [**腳本**] 資料夾以開啟它。
 
-2.  以滑鼠右鍵按一下**指令碼**資料夾中，按一下**建立** >   **C#指令碼**。 指令碼命名**互動**。
+2.  在 [**腳本**] 資料夾內部按一下滑鼠右鍵, 然後按一下 [**建立** >   **C#腳本**]。 將腳本命名為**互動**。
 
-3.  按兩下要使用 Visual Studio 中開啟它的指令碼。
+3.  按兩下腳本, 以 Visual Studio 開啟它。
 
-4.  插入下列命名空間：
+4.  插入下列命名空間:
 
     ```csharp
     using UnityEngine;
     using UnityEngine.XR.WSA.Input;
     ```
 
-5.  變更的繼承**互動**從類別*MonoBehaviour*來**GazeInput**。
+5.  將**互動**類別的繼承從*MonoBehaviour*變更為**GazeInput**。
 
-    ~~公用類別互動：MonoBehaviour~~
+    ~~公用類別互動:MonoBehaviour~~
 
     ```csharp
     public class Interactions : GazeInput
     ```
 
-6.  內部**互動**類別插入下列變數：
+6.  在**互動**類別內, 插入下列變數:
 
     ```csharp
         /// <summary>
@@ -846,7 +846,7 @@ ms.locfileid: "67694530"
         private GestureRecognizer _gestureRecognizer;
     ```
 
-7.  取代**啟動**方法; 請注意，它會覆寫方法，它會呼叫的 'base' 視線類別方法。 **Start （)** 類別初始化時，輸入辨識向註冊，並建立登入將會呼叫 *按鈕* 場景中：
+7.  取代**Start**方法。請注意, 它是一個覆寫方法, 它會呼叫「基底」注視類別方法。 **Start （)** 類別初始化時，輸入辨識向註冊，並建立登入將會呼叫 *按鈕* 場景中：
 
     ```csharp    
         /// <summary>
@@ -889,7 +889,7 @@ ms.locfileid: "67694530"
         }
     ```
 
-9.  新增**GestureRecognizer_Tapped()** 方法，這是回應*點選*使用者事件。
+9.  加入**GestureRecognizer_Tapped ()** 方法, 它會回應*攻分*點使用者事件。
 
     ```csharp   
         /// <summary>
@@ -905,25 +905,25 @@ ms.locfileid: "67694530"
         }
     ```
 
-10. **刪除** **update （)** 方法，然後**儲存您的變更**傳回給 Unity 之前的 Visual Studio 中。
+10. **刪除** **Update ()** 方法, 然後**將您的變更儲存**在 Visual Studio 中, 然後再返回 Unity。
 
-## <a name="chapter-9---set-up-the-script-references"></a>第 9 章-設定指令碼參考
+## <a name="chapter-9---set-up-the-script-references"></a>第9章-設定腳本參考
 
-您必須將放在本章**互動**拖曳至指令碼**Main Camera**。 該指令碼會接著處理放置其他指令碼能所需的位置。
+在本章中, 您必須將**互動**腳本放到**主要相機**上。 接著, 該腳本會處理將其他腳本放在需要的位置。
 
--  從**指令碼**資料夾中的 *[專案] 面板*，將指令碼**互動**至**Main Camera**物件，請參閱下圖。
+-  從 [*專案] 面板*的 [**腳本**] 資料夾中, 將腳本**互動**拖曳到**主要相機**物件, 如下圖所示。
 
     ![](images/AzureLabs-Lab311-29.png)
 
-## <a name="chapter-10---setting-up-the-tag"></a>第 10 章-設定標記
+## <a name="chapter-10---setting-up-the-tag"></a>第10章-設定標記
 
-處理視線的程式碼，將使用的標記**SignInButton**若要識別哪些物件使用者將互動登入*Microsoft Graph*。
+處理注視的程式碼會使用標記**SignInButton**來識別使用者將與其互動以登入*Microsoft Graph*的物件。
 
-若要建立的標記：
+若要建立標記:
 
-1.  在 Unity 編輯器中按一下**Main Camera**中*階層面板*。
+1.  在 Unity 編輯器中, 按一下 [階層]*面板*中的**主要攝影機**。
 
-2.  在 [*偵測器] 面板*上按一下**MainCamera** *標記*開啟下拉式清單。 按一下**新增標記...**
+2.  在 [偵測*器] 面板*中, 按一下 [ **MainCamera** ]*標記*以開啟下拉式清單。 按一下 [**新增標記 ...** ]
 
     ![](images/AzureLabs-Lab311-30.png)
 
@@ -931,68 +931,68 @@ ms.locfileid: "67694530"
 
     ![](images/AzureLabs-Lab311-31.png)
 
-4.  寫入的標記名稱，作為**SignInButton**並按一下 [儲存]。
+4.  將標記名稱撰寫為**SignInButton** , 然後按一下 [儲存]。
 
     ![](images/AzureLabs-Lab311-32.png)
 
-## <a name="chapter-11---build-the-unity-project-to-uwp"></a>第 11 章-建置 Unity 專案至 UWP
+## <a name="chapter-11---build-the-unity-project-to-uwp"></a>第11章-將 Unity 專案建立至 UWP
 
-此專案的 Unity 區段所需的所有項目現在已完成，所以該是時候建置從 Unity。
+此專案的 Unity 區段所需的全部內容現在已經完成, 所以可以從 Unity 建立它。
 
 1.  瀏覽至 *組建設定* (**檔案*>*建置設定**)。
 
     ![](images/AzureLabs-Lab311-33.png)
 
-2.  如果您尚未，勾選**Unity C\#專案**。
+2.  如果還沒這麼做, 請對 **\# Unity C 專案**進行滴答。
 
-3.  按一下 [建置] 。 將會啟動 unity**檔案總管**視窗中，您要建立，然後選取 建置到應用程式的資料夾。 現在，建立該資料夾並將它命名**應用程式**。 然後使用**應用程式**按一下 選取資料夾**選取資料夾**。
+3.  按一下 [建置] 。 Unity 將會啟動 [檔案**瀏覽器**] 視窗, 您必須在其中建立並選取要建立應用程式的資料夾。 立即建立該資料夾, 並將它命名為**應用程式**。 然後選取 [**應用程式**] 資料夾, 按一下 [**選取資料夾**]。
 
-4.  Unity 會開始建置您的專案**應用程式**資料夾。
+4.  Unity 會開始將您的專案建立至**應用程式**資料夾。
 
-5.  一次 Unity 已完成的建置 （它可能需要一些時間），它將會開啟**檔案總管**視窗在您的組建位置 （檢查您的工作列中，因為它可能不一定會出現您的視窗上方會通知您加入的新視窗）。
+5.  Unity 完成建立之後 (可能需要一些時間), 它會在組建的位置開啟 [檔案**瀏覽器**] 視窗 (請檢查您的工作列, 因為它不一定會出現在視窗的上方, 但會通知您加入新的視窗)。
 
-## <a name="chapter-12---deploy-to-hololens"></a>第 12-部署到 HoloLens
+## <a name="chapter-12---deploy-to-hololens"></a>第12章-部署至 HoloLens
 
-若要部署 HoloLens 上：
+若要在 HoloLens 上部署:
 
-1.  您將需要您 HoloLens IP 位址 （適用於遠端部署），並以確保您 HoloLens 處於**開發人員模式。** 請這樣做：
+1.  您將需要 HoloLens 的 IP 位址 (用於遠端部署), 並確保 HoloLens 處於**開發人員模式。** 請這樣做：
 
-    1.  儘管穿著您 HoloLens，開啟**設定**。
+    1.  在戴 HoloLens 的同時, 請開啟**設定**。
 
-    2.  移至**網路和網際網路** > **Wi-fi** > **進階選項**
+    2.  前往**Network & Internet**  >  **wi-fi**  >  **Advanced Options**
 
-    3.  附註**IPv4**位址。
+    3.  記下**IPv4**位址。
 
-    4.  接下來，瀏覽回到**設定**，然後**更新與安全性** > **適用於開發人員**
+    4.  接下來, 流覽回到 [**設定**], 然後為**開發人員** **更新 & 安全性** > 
 
-    5.  設定**上的開發人員模式**。
+    5.  將**開發人員模式**設定為 On。
 
-2.  瀏覽至新的 Unity 組建 (**應用程式**資料夾)，並開啟方案檔**Visual Studio**。
+2.  流覽至新的 Unity 組建 (**應用程式**資料夾), 然後使用**Visual Studio**開啟方案檔。
 
-3.  在 **方案組態**選取**偵錯**。
+3.  在 [**解決方案**設定] 中, 選取 [ **Debug**]。
 
-4.  在 **的方案平台**，選取**x86，遠端機器**。 系統會提示您插入**IP 位址**的遠端裝置 (HoloLens，在此情況下，記下)。
+4.  在**解決方案平臺**中, 選取 [ **x86]、[遠端電腦**]。 系統會提示您插入遠端裝置的**IP 位址**(在此案例中, 這是您記下的 HoloLens)。
 
     ![](images/AzureLabs-Lab311-34.png)
 
-5.  移至**建置**功能表，然後按一下 **部署方案**側載您 HoloLens 應用程式。
+5.  移至 [**建立**] 功能表, 然後按一下 [**部署方案**], 將應用程式側載至您的 HoloLens。
 
-6.  您的應用程式現在應該會出現在清單中，準備好啟動您 HoloLens 上已安裝的應用程式 ！
+6.  您的應用程式現在應該會出現在 HoloLens 上已安裝的應用程式清單中, 準備好啟動!
 
 ## <a name="your-microsoft-graph-hololens-application"></a>您的 Microsoft Graph HoloLens 應用程式
 
-恭喜，您所建立的混合的實境應用程式，利用 Microsoft Graph，來讀取和顯示使用者的行事曆資料。
+恭喜, 您建立了一個混合現實應用程式, 利用 Microsoft Graph 來讀取和顯示使用者行事歷數據。
 
 ![](images/AzureLabs-Lab311-00.png)
 
-## <a name="bonus-exercises"></a>Bonus 練習
+## <a name="bonus-exercises"></a>額外練習
 
-### <a name="exercise-1"></a>練習 1
+### <a name="exercise-1"></a>練習1
 
-使用 Microsoft Graph，以顯示使用者的其他資訊
+使用 Microsoft Graph 顯示使用者的其他相關資訊
 
--   使用者電子郵件 / 電話號碼] / [設定檔圖片
+-   使用者電子郵件/電話號碼/設定檔圖片
 
-### <a name="exercise-1"></a>練習 1
+### <a name="exercise-1"></a>練習1
 
-實作語音控制瀏覽 Microsoft 的圖形使用者介面。
+執行語音控制以流覽 Microsoft Graph UI。

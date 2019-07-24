@@ -1,27 +1,32 @@
 ---
-title: HoloLens 與 Unity 應用程式使用的 Windows 命名空間
-description: 說明如何使用 Unity 專案中的 HoloLens WinRT Api。
+title: 搭配適用于 HoloLens 的 Unity 應用程式使用 Windows 命名空間
+description: 說明如何在適用于 HoloLens 的 Unity 專案中使用 WinRT Api。
 author: MikeRiches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Unity WinRT，windows 混合的實境，API，逐步解說
-ms.openlocfilehash: ed65b5995d74c54057a49b878c1206d0f06394ca
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+keywords: Unity, WinRT, windows mixed reality, API, 逐步解說
+ms.openlocfilehash: fd25548de8eeb3c8157a3f9de283dc5004ed1180
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591760"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63548729"
 ---
-# <a name="using-the-windows-namespace-with-unity-apps-for-hololens"></a>HoloLens 與 Unity 應用程式使用的 Windows 命名空間
+# <a name="using-the-windows-namespace-with-unity-apps-for-hololens"></a>搭配適用于 HoloLens 的 Unity 應用程式使用 Windows 命名空間
 
-此頁面說明如何使用 Unity 專案中的 HoloLens WinRT Api。
+此頁面說明如何在適用于 HoloLens 的 Unity 專案中使用 WinRT Api。
 
 ## <a name="conditionally-include-winrt-api-calls"></a>有條件地包含 WinRT API 呼叫
 
-WinRT Api 只用於在 Windows 8、 Windows 8.1 通用 Windows 平台為目標的 Unity 專案組建中任何您撰寫程式碼中 Unity 指令碼為目標的 WinRT Api 必須有條件地包含只有這些組建。 這是使用 NETFX_CORE 或 WINDOWS_UWP 前置處理器定義。 此規則適用於使用陳述式，以及其他程式碼。
+WinRT Api 可用於針對通用 Windows 平臺和 Xbox One 平臺所建立的 Unity 專案;在以 WinRT Api 為目標的 Unity 腳本中撰寫的任何程式碼, 都必須有條件地包含在這些組建中。 
 
-下列程式碼片段會從 Unity 手冊頁面，針對[通用 Windows 平台：中的 WinRT APIC#指令碼](http://docs.unity3d.com/Manual/windowsstore-scripts.html)。 在此範例中，廣告識別碼會傳回，但只能在 Windows 8.0 或更新版本的目標組建：
+這可以透過 Unity 中的兩個步驟來完成:
+1) 在播放 [設定] 中, API 相容性層級必須設定為 [ **.net 4.6** ] 或 [ **.NET Standard 2.0** ]
+    - **編輯**  **專案設定**播放的 > Api**相容性層級**至 .net 4.6 或 **.NET Standard 2.0**  >   >   > 
+2) 預處理器指示詞**ENABLE_WINMD_SUPPORT**必須包裝在任何 WinRT 運用的程式碼周圍
+
+下列程式碼片段來自[通用 Windows 平臺的 Unity 手冊頁面:腳本](http://docs.unity3d.com/Manual/windowsstore-scripts.html)中的C# WinRT API。 在此範例中, 會傳回廣告識別碼, 但僅適用于 UWP 和 Xbox One 組建:
 
 ```
 using UnityEngine;
@@ -32,7 +37,7 @@ public class WinRTAPI : MonoBehaviour {
     }
 
     string GetAdvertisingId() {
-        #if NETFX_CORE
+        #if ENABLE_WINMD_SUPPORT
             return Windows.System.UserProfile.AdvertisingManager.AdvertisingId;
         #else
             return "";
@@ -41,11 +46,10 @@ public class WinRTAPI : MonoBehaviour {
 }
 ```
 
-## <a name="edit-your-scripts-in-a-unity-c-project"></a>編輯您在 Unity 中的指令碼C#專案
+## <a name="edit-your-scripts-in-a-unity-c-project"></a>在 Unity C#專案中編輯您的腳本
 
-當您按兩下 Unity editor 中的指令碼時，它會依預設啟動您的指令碼編輯器專案中。 WinRT Api 會出現為未知原因有二：NETFX_CORE 未定義在此環境中，且專案不會參考 Windows 執行階段。 如果您使用[建議使用匯出和建置設定](exporting-and-building-a-unity-visual-studio-solution.md)，並改為編輯該專案中的指令碼，它會定義 NETFX_CORE 並也包含在位置的 參考至 Windows 執行階段; 此設定，WinRT Api 會適用於 IntelliSense。
-
-請注意，您的 UnityC#專案也可用來透過您的指令碼使用遠端偵錯在 Visual Studio 中的 F5 偵錯。 如果您看不見工作第一次您開啟您的 Unity 的 IntelliSenseC#專案、 關閉專案，並重新開啟它。 IntelliSense 應該開始使用。
+當您按兩下 Unity 編輯器中的腳本時, 預設會在編輯器專案中啟動您的腳本。 WinRT Api 會顯示為未知, 因為 Visual Studio 專案未參考 Windows 執行階段。 此外, **ENALBE_WINMD_SUPPORT**指示詞將會是未定義的, 而且除非您將專案建立到 UWP Visual Studio 解決方案, 否則會忽略任何 *#if*包裝的程式碼。
 
 ## <a name="see-also"></a>另請參閱
-* [匯出和建置 Unity Visual Studio 方案](exporting-and-building-a-unity-visual-studio-solution.md)
+* [匯出和建置 Unity Visual Studio 解決方案](exporting-and-building-a-unity-visual-studio-solution.md)
+* [Windows 執行階段支援 Unity](https://docs.unity3d.com/Manual/IL2CPP-WindowsRuntimeSupport.html)

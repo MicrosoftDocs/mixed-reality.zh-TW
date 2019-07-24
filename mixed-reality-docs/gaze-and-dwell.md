@@ -5,14 +5,13 @@ author: liamartinez
 ms.author: liamar
 ms.date: 05/13/2019
 ms.topic: article
-ms.localizationpriority: high
 keywords: Mixed Reality, 注視, 佇留, 互動, 設計
-ms.openlocfilehash: 70b25949380679d2edc81b07ab54f24fa20e3f3d
-ms.sourcegitcommit: 9b6949d7cd2e67e6bde9b32aebeaeea325baa6c4
-ms.translationtype: HT
+ms.openlocfilehash: d522ca3a6f36995959e8e6e87482279d05bf0aa3
+ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66516009"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68387536"
 ---
 # <a name="head-gaze-and-dwell"></a>頭部注視並佇留
 
@@ -90,7 +89,8 @@ ms.locfileid: "66516009"
 ## <a name="ui-patterns"></a>UI 模式
 
 ### <a name="high-frequency-buttons"></a>高頻率按鈕
-![Microsoft Dynamics 365 Guides 下一頁按鈕](images/GuideNextButton.png "Microsoft Dynamics 365 Guides 下一步按鈕") 高頻率按鈕就是常用於整個應用程式的按鈕。 Microsoft Dynamics 365 Guides 中的下一頁和上一頁按鈕都是不錯的範例。
+![Microsoft Dynamics 365 指南 [下一步] 按鈕](images/GuideNextButton.png "Microsoft Dynamics 365 指南 [下一步] 按鈕")<br>
+*高頻率按鈕是常用於整個應用程式的按鈕。Microsoft Dynamics 365 指南中的下一個和上一頁按鈕就是其中一個很好的例子。*
 
 高頻率按鈕應該...
 * 是較大的按鈕，可輕易以頭部注視方式點擊
@@ -114,7 +114,8 @@ ms.locfileid: "66516009"
 切換按鈕需要一些微妙的邏輯，才能正常運作。 當人員佇留在切換按鈕並啟動它時，他們需要結束按鈕，然後回頭重新啟動佇留邏輯。 切換按鈕會有清楚的作用與非作用中狀態很重要。 
 
 ### <a name="list-views"></a>清單檢視
-![Microsoft Dynamics 365 Guides 確認對話方塊](images/GuidesListView.png "Microsoft Dynamics 365 Guides 確認對話方塊")清單檢視呈現「頭部注視並佇留」輸入的特定挑戰。 人們需要能夠掃描內容，而不覺得必須偷偷摸摸地環顧佇留目標。 
+![Microsoft Dynamics 365 Guides 確認對話方塊](images/GuidesListView.png "Microsoft Dynamics 365 Guides 確認對話方塊")<br>
+*清單視圖會針對 head 注視和停留輸入呈現特定挑戰。人們必須要能夠掃描內容, 而不覺得必須 tiptoe 在停留目標附近。*
 
 設計清單檢視的一些秘訣：
 * 使用頭部注視時整列醒目提示，但不會開始佇留，除非頭部注視位於特定佇留目標上。
@@ -123,7 +124,7 @@ ms.locfileid: "66516009"
 * 不要一次顯示所有佇留目標，以避免重複的 UI
 * 盡可能重新使用相同的模式以便熟悉 UX
  
- ## <a name="see-also"></a>請參閱
+ ## <a name="see-also"></a>另請參閱
 * [手部直接操作](direct-manipulation.md)
 * [手部指向和行動](point-and-commit.md)
 * [本能互動](interaction-fundamentals.md)

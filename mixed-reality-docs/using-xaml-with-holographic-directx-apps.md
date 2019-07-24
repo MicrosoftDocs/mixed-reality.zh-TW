@@ -1,36 +1,36 @@
 ---
-title: 使用全像攝影版的 DirectX 應用程式中的 XAML
-description: 說明 2D XAML 檢視與您的 DirectX 應用程式，以及如何有效率地使用 [XAML] 檢視和沈浸式檢視中的沈浸式檢視之間切換的影響。
+title: 將 XAML 與全像的 DirectX 應用程式搭配使用
+description: 說明在 2D XAML 視圖和 DirectX 應用程式中的沉浸式視圖之間切換的影響, 以及如何有效率地使用 XAML 視圖和沉浸式視圖。
 author: MikeRiches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
-keywords: windows mixed 的 reality，UWP 應用程式檢視管理、 xaml、 鍵盤、 逐步解說中，DirectX
+keywords: windows mixed reality, UWP, 應用程式視圖管理, xaml, 鍵盤, 逐步解說, DirectX
 ms.openlocfilehash: 32b2feea0cb6b8aba972c1772451ca7b5b9946d5
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591355"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63548708"
 ---
-# <a name="using-xaml-with-holographic-directx-apps"></a>使用全像攝影版的 DirectX 應用程式中的 XAML
+# <a name="using-xaml-with-holographic-directx-apps"></a>將 XAML 與全像的 DirectX 應用程式搭配使用
 
-本主題說明切換的影響[2D 的 XAML 檢視和沈浸式檢視](app-views.md)DirectX 應用程式，以及如何有效率地使用 [XAML] 檢視和沈浸式檢視。
+本主題說明在 DirectX 應用程式中切換[2D XAML 視圖和沉浸式](app-views.md)流覽的影響, 以及如何有效率地使用 XAML 視圖和沉浸式視圖。
 
-## <a name="xaml-view-switching-overview"></a>XAML 檢視切換概觀
+## <a name="xaml-view-switching-overview"></a>XAML 視圖切換總覽
 
-在 HoloLens，必須先初始化該 XAML 檢視更新的版本可能會顯示 2D 的 XAML 檢視通常沈浸式應用程式，並將其從該處立即切換的沈浸式檢視中。 這表示您的應用程式可以執行任何動作之前，會載入 XAML。 如此一來，會有少量增加您的啟動時間，以及 XAML 會繼續佔用您的應用程式處理序中的記憶體空間，而它位於背景;啟動延遲時間和使用方式取決於您的應用程式會使用 XAML 之前切換到原生檢視的記憶體數量。 如果您在程式碼一開始啟動您的沈浸式檢視，只不過您 XAML 開始執行任何動作，影響應該很小。 此外，因為您全像攝影版的轉譯直接為了沈浸式檢視，您可避免該轉譯任何 XAML 相關限制。
+在 HoloLens 上, 通常會顯示 2D XAML 視圖的一般沉浸式應用程式必須先初始化該 XAML 視圖, 然後立即從該處切換到沉浸式視圖。 這表示在您的應用程式可以執行任何動作之前, 會載入 XAML。 如此一來, 啟動時間會變小, 而且 XAML 會在應用程式進程位於背景時繼續佔用記憶體空間;啟動延遲和記憶體使用量的數量取決於您的應用程式在切換到原生視圖之前, 會如何處理 XAML。 如果您沒有在 XAML 中執行任何動作, 請先啟動程式碼, 除非開始您的沉浸式視圖, 否則影回應該很小。 此外, 由於您的全像攝影轉譯是直接對沉浸式視圖進行, 因此您可以避免任何有關該呈現的 XAML 相關限制。
 
-請注意，CPU 和 GPU 計算的記憶體使用量。 Direct3D 11 是能夠交換虛擬圖形記憶體，它可能無法空出部分或所有 XAML GPU 的資源，但可能會有明顯的效能衝擊。 無論如何，未載入任何 XAML 功能不需要將保留更多空間給您的應用程式，並提供更好的體驗。
+請注意, 記憶體使用量會計入 CPU 和 GPU。 Direct3D 11 可以交換虛擬圖形記憶體, 但它可能無法交換部分或所有的 XAML GPU 資源, 而且可能會有明顯的效能影響。 不論是哪一種方式, 都不會載入您的應用程式所需的任何 XAML 功能, 並提供更好的體驗。
 
-## <a name="xaml-view-switching-workflow"></a>切換工作流程的 XAML 檢視
+## <a name="xaml-view-switching-workflow"></a>XAML 視圖切換工作流程
 
-工作流程的應用程式當機時會直接從 XAML 至沈浸式模式，就像這樣：
-* 應用程式會啟動在 2D 的 [XAML] 檢視中。
-* 應用程式的 XAML 啟動順序偵測到目前的系統是否支援全像攝影版的轉譯：
-* 若是如此，應用程式建立的沈浸式檢視，並立即將它帶到前景。 XAML 載入 Windows Mixed Reality 在裝置上，包括任何呈現類別和載入 XAML 檢視中的資產會略過不必要的項目。 如果應用程式使用 XAML 的鍵盤輸入，則應該仍會建立該輸入的頁面。
-* 如果沒有，則 [XAML] 檢視可以像往常一樣繼續與企業。
+直接從 XAML 進入沉浸式模式之應用程式的工作流程, 如下所示:
+* 應用程式會在 2D XAML 視圖中啟動。
+* 應用程式的 XAML 啟動順序會偵測目前的系統是否支援全像攝影轉譯:
+* 若是如此, 應用程式會建立沉浸式視圖, 並立即將其帶到前景。 Windows Mixed Reality 裝置上不需要的任何專案都會略過 XAML 載入, 包括 XAML 視圖中的任何轉譯類別和資產載入。 如果應用程式使用 XAML 來進行鍵盤輸入, 則仍應建立該輸入頁面。
+* 如果沒有, XAML 視圖可以照常繼續業務。
 
-## <a name="tip-for-rendering-graphics-across-both-views"></a>在這兩個檢視提示轉譯圖形
+## <a name="tip-for-rendering-graphics-across-both-views"></a>跨兩個視圖呈現圖形的秘訣
 
-如果您的應用程式需要在 DirectX 中實作一定程度，XAML 檢視中 Windows Mixed Reality，最好是轉譯的建立一個可以使用這兩個檢視的轉譯器。 轉譯器應該是您可以從這兩個檢視中，存取的一個執行個體，它應該能夠轉譯 2D 和全像攝影版之間切換。 如此一來 GPU 資產只能載入一次-這會減少載入時間、 記憶體衝擊，以及切換檢視時要交換的資源數量。
+如果您的應用程式需要在 DirectX 中為 Windows Mixed Reality 的 XAML 視圖實行某種程度的轉譯, 最好的做法是建立一個可與這兩個視圖搭配使用的轉譯器。 轉譯器應該是一個可以從兩個視圖存取的實例, 而且應該能夠在2D 和全像攝影轉譯之間切換。 如此一來, 就只會載入一次 GPU 資產, 這可減少載入時間、記憶體影響, 以及切換視圖時要交換的資源量。

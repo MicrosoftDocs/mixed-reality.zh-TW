@@ -1,37 +1,37 @@
 ---
-title: 在 Unity 中的焦點
-description: 以手動方式設定焦點調整在 Unity 的全像穩定性
+title: Unity 中的焦點點
+description: 藉由設定焦點點, 手動調整 Unity 中的全息影像穩定性
 author: thetuvix
 ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Unity、 焦點、 焦點平面、 穩定平面、 穩定點、 reprojection、 LSR、 深度緩衝區
+keywords: Unity, 焦點點, 焦點平面, 穩定平面, 穩定點, reprojection, LSR, 深度緩衝區
 ms.openlocfilehash: 0f43c37df66ecada86dcb309fcd58d822f0f3481
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597038"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63525466"
 ---
-# <a name="focus-point-in-unity"></a>在 Unity 中的焦點
+# <a name="focus-point-in-unity"></a>Unity 中的焦點點
 
 **命名空間：**  *UnityEngine.XR.WSA*<br>
 **類型**：*HolographicSettings*
 
-[專注點](hologram-stability.md#stabilization-plane)可以設為提供 HoloLens 有關如何以最適合目前在全像投影執行穩定的提示所顯示。
+您可以將[焦點](hologram-stability.md#stabilization-plane)設定為提供 HoloLens 提示, 告訴您如何在目前顯示的全息影像上, 最佳執行穩定。
 
-如果您想要將焦點設定在 Unity 中，它必須設定使用每框架*HolographicSettings.SetFocusPointForFrame()*。 如果未設定焦點的框架，將會使用預設穩定平面。
+如果您想要在 Unity 中設定焦點, 則必須使用*HolographicSettings. SetFocusPointForFrame ()* 來設定每個畫面格。 如果沒有為框架設定焦點, 則會使用預設的穩定平面。
 
 > [!NOTE]
-> 根據預設，新的 Unity 專案已設定的 [啟用深度緩衝區共用] 選項。  使用此選項，在沉浸式桌面耳機或執行 Windows 的 HoloLens 上執行的 Unity 應用程式 10 April 2018 Update (RS4) 或更新版本會送出您的深度緩衝區，以自動將最佳化全像穩定性，而您的應用程式指定的 Windows焦點：
-> * 在沉浸式桌面耳機，這可讓每一像素深度型 reprojection。
-> * HoloLens 上執行 Windows 10 April 2018 Update 或更新版本中，這將會分析自動挑選最佳的穩定平面深度緩衝區。
+> 根據預設, 新的 Unity 專案會設定 [啟用深度緩衝區共用] 選項。  使用此選項時, 在沉浸式桌面耳機上執行的 Unity 應用程式或執行 Windows 10 四月份2018更新 (RS4) 或更新版本的 HoloLens 會將您的深度緩衝區提交至 Windows, 以自動將您的「影像」穩定性優化, 而不需要您的應用程式指定焦點點:
+> * 在沉浸式桌面耳機上, 這會啟用以圖元為基礎的深度 reprojection。
+> * 在執行 Windows 10 2018 年4月更新 (含) 以後版本的 HoloLens 上, 這會分析深度緩衝區, 以自動挑選最佳穩定平面。
 >
-> 兩種方法應該提供更好的影像品質，而不需要明確的工作由您的應用程式，以選取婧鎏鶗懘每個畫面格。  請注意，如果您以手動方式提供婧鎏鶗懘，將會覆寫自動上面所述的行為，通常會減少闀穩定性。  一般而言，您才應該指定手動鶗懘尚未更新至 Windows HoloLens 上執行您的應用程式時 10 April 2018 Update。
+> 這兩種方法都應該提供更好的影像品質, 而不需要由您的應用程式進行明確的工作, 就能選取每個畫面  請注意, 如果您手動提供焦點, 這會覆寫上述的自動行為, 而且通常會減少全息影像的穩定性。  一般而言, 當您的應用程式在尚未更新為 Windows 10 2018 年4月更新的 HoloLens 上執行時, 您應該只指定手動焦點點。
 
 ### <a name="example"></a>範例
 
-有許多方法可設定焦點，所提供的多載建議*SetFocusPointForFrame*靜態函式。 下列是將焦點平面設定所提供的物件為每個畫面的簡單範例：
+有許多方式可設定焦點, 如*SetFocusPointForFrame*靜態函式上提供的多載所建議。 以下是簡單的範例, 可將焦點平面設定為每個框架所提供的物件:
 
 ```cs
 public GameObject focusedObject;
@@ -48,7 +48,7 @@ void Update()
 }
 ```
 
-請注意，上述的簡單程式碼可能會得到減少闀穩定性，如果具有焦點的物件最後背後的使用者。  這就是為什麼一般來說，您應該設定 「 啟用深度緩衝區共用 」 而不是以手動方式指定婧鎏鶗懘。
+請注意, 上述的簡單程式碼可能會在焦點物件最後出現在使用者後方時, 減少全息影像的穩定性。  這就是為什麼您通常應該設定「啟用深度緩衝區共用」, 而不是手動指定焦點。
 
 ### <a name="see-also"></a>另請參閱
 * [穩定平面](hologram-stability.md#stabilization-plane)

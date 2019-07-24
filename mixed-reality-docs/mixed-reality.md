@@ -1,11 +1,11 @@
 ---
-title: 什麼被混合實境？
-description: 本文定義混合的實境，並示範簡單的 AR 及 VR 裝置，以及 Windows Mixed Reality 裝置，例如 Microsoft HoloLens 和 Windows Mixed Reality 沈浸式耳機，以及混合的實境頻譜位於其中。
+title: 什麼是混合現實？
+description: 本文會定義混合的事實, 並示範簡單的 AR 和 VR 裝置, 以及 Windows Mixed Reality 裝置 (例如 Microsoft HoloLens 和 Windows Mixed Reality 沉浸式耳機), 並配合混合現實頻譜。
 author: BrandonBray
 ms.author: branbray
 ms.date: 03/21/2018
 ms.topic: article
-keywords: 混合的實境，全像攝影版、 ar、 vr、 mr、 xr、 擴增的實境、 虛擬實境、 說明
+keywords: mixed reality, 全像, ar, vr, mr, xr, 增強的現實, 虛擬實境, 說明
 ms.openlocfilehash: fbac8176b36cf28673dd9633cc059e5856a50296
 ms.sourcegitcommit: 30246ab9b9be44a3c707061753e53d4bf401eb6b
 ms.translationtype: MT
@@ -13,70 +13,70 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 06/22/2019
 ms.locfileid: "67326307"
 ---
-# <a name="what-is-mixed-reality"></a>什麼被混合實境？
+# <a name="what-is-mixed-reality"></a>什麼是混合現實？
 
-混合的實境是混合現實與數位世界的結果。 混合的實境是下一代演進，人類看得、 電腦和環境的互動，並解除鎖定，之前只有我們 imaginations 的可能性。 它可大幅提升，在電腦視覺、 圖形化的處理能力、 顯示技術和輸入的系統。 詞彙*混合實境*由 Paul Milgram 和 Fumio Kishino 原本引入 1994年 （英文） 中"[分類的混合實境視覺顯示](http://etclab.mie.utoronto.ca/people/paul_dir/IEICE94/ieice.html)。 」 其紙張導入的概念*virtuality 連續體*，並著重於套用至的分類法分類的顯示方式。 從那時起，應用程式的混合實境超越顯示。 它也包含環境的輸入、 空間音效和位置。
+混合現實是將實體世界與數位世界相結合的結果。 混合的現實是人們、電腦和環境互動的下一次演進, 而且現在僅限於我們的 imaginations。 這是藉由電腦視覺、圖形處理能力、顯示器技術和輸入系統的進展而達成的。 「*混合現實*」一詞原本是由 Paul Milgram 和 Fumio Kishino 「[混合現實視覺效果的分類法](http://etclab.mie.utoronto.ca/people/paul_dir/IEICE94/ieice.html)」所引進的1994論文。 其論文引進了*virtuality continuum*的概念, 並著重于如何套用分類法的分類。 從那時起, 混合現實的應用程式會超出顯示範圍。 它也包含環境輸入、空間音效和位置。
 
-## <a name="environmental-input-and-perception"></a>環境的輸入和感覺
+## <a name="environmental-input-and-perception"></a>環境輸入和認知
 
-![Venn 圖表，顯示電腦、 人類和環境之間的互動](images/mixed-reality-venn-diagram-300px.png)<br> 
+![顯示電腦、人類和環境之間互動的卞氏圖表](images/mixed-reality-venn-diagram-300px.png)<br> 
 
-過去的幾個數十年來，人類與輸入的電腦之間的關聯性已也探索了。 甚至還有稱為廣泛研究專業領域*人工電腦互動*或 HCI。 輸入會透過各種方式，包括鍵盤、 滑鼠、 touch、 筆墨、 語音及甚至 Kinect 骨架追蹤。
+過去幾年來, 人類與電腦輸入之間的關聯性已經過充分的探索。 它甚至已經過廣泛研究的專業領域, 稱為*人類電腦互動*或 HCI。 人類輸入會透過各種不同的方式進行, 包括鍵盤、滑鼠、觸控、筆墨、語音, 甚至是 Kinect 的框架追蹤。
 
-在感應器與處理方面的改進，讓上升的電腦輸入新的區域從環境。 電腦和環境之間的互動是有效的環境了解或*perception*。 因此稱為顯示環境的資訊的 Windows 中的 API 名稱[perception Api](https://docs.microsoft.com/uwp/api/Windows.Perception)。 環境的輸入擷取之類的世界中的個人位置 (例如[前端追蹤](coordinate-systems.md))，介面和界限 (例如[空間對應](spatial-mapping.md)和[空間了解](case-study-expanding-the-spatial-mapping-capabilities-of-hololens.md))，環境光源、 環境的音效、 物件辨識和位置。
+在感應器和處理方面的改進, 是從環境逐漸增加到電腦輸入的新區域。 電腦與環境之間的互動是有效的環境理解或*認知*。 因此, Windows 中顯示環境資訊的 API 名稱稱為「[認知 api](https://docs.microsoft.com/uwp/api/Windows.Perception)」。 環境輸入會在世界中 (例如, [head 追蹤](coordinate-systems.md))、表面和邊界 (例如[空間對應](spatial-mapping.md)和[空間理解](case-study-expanding-the-spatial-mapping-capabilities-of-hololens.md))、環境光源、環境音效、物件等專案中, 捕捉到人員的職位辨識和位置。
 
-現在，所有三個-電腦處理的組合，人性化的輸入和環境的輸入-設定建立，則為 true 的混合的實境體驗的機會。 透過真實世界的移動可以轉譯為數位世界中移動。 在真實世界的界限可能會影響應用程式體驗，例如遊戲，數位世界中。 不需要環境的輸入經驗無法 blend 之間實體與數位現況。
+現在, 所有三種電腦處理、人類輸入和環境輸入的組合, 都能為您創造出真正的混合現實體驗。 透過實體世界的移動可以轉譯成數位世界中的移動。 實體世界的界限可能會影響數位世界中的應用程式體驗, 例如遊戲播放。 如果沒有環境輸入, 體驗就無法在實體和數位現實之間混合。
 
-## <a name="the-mixed-reality-spectrum"></a>混合的實境範圍
+## <a name="the-mixed-reality-spectrum"></a>混合現實頻譜
 
-混合的實境兼具實體與數位世界，因為這些兩個的現實情況會定義稱為 virtuality 連續體的範圍極座標圖的結尾。 為了簡單起見，我們將它作為*混合的實境頻譜*。 在左手邊有實體實際上以人類的我們存在;在右手邊，我們會有相對應的數位現實。
+因為混合現實會混合實體和數位世界, 所以這兩個現實會定義一系列稱為 virtuality continuum 的極座標。 為了簡單起見, 我們將此稱為「*混合現實」頻譜*。 在左側, 我們有實際的現實, 也就是我們的存在;在右手邊, 我們有對應的數位現實。
 
 <br>
 
 >[!VIDEO https://www.youtube.com/embed/_xpI0JosYUk]
 
-現今市場上大部分的行動電話都有一些不到環境了解功能。 因此，它們提供的體驗不能混用實體與數位現況之間。 重疊的真實世界的視訊資料流上的圖形體驗*擴增實境*。 Occlude 呈現的數位體驗您的檢視體驗*虛擬實境*。 如您所見，這兩項極端之間啟用體驗已*混合實境*:
-* 從開始真實世界中，放置在數位的物件，例如雷射，如同它是真的有。
-* 開頭為真實世界中，另一個人-數位表示顯示圖片，顯示它們已在其中釐離開資訊時的位置。 換句話說，體驗表示非同步的共同作業在不同時間點的時間。
-* 從開始數位世界，實體界限從真實世界中，例如牆壁和 furniture，就會出現數位內體驗，可協助使用者避免實體的物件。
+現今市場上大部分的行動電話幾乎都沒有環境理解功能。 因此, 他們所提供的體驗無法在實體和數位現實之間混合。 在實體世界的影片串流上重迭圖形的體驗, 會有更豐富的*現實*。 遮蔽您的觀點來呈現數位體驗的經驗, 就是*虛擬實境*。 如您所見, 在這兩個極端之間啟用的經驗, 是*混合現實*的:
+* 從實體世界開始, 將數位物件 (例如全息的影像) 放在真正的處。
+* 從實體世界開始, 另一個人的數位標記法--[頭像]--顯示離開便箋時的位置。 換句話說, 在不同時間點表示非同步共同作業的經驗。
+* 從數位世界開始, 實體世界 (例如牆和傢俱) 的實體界限會以數位方式出現在體驗中, 以協助使用者避免實體物件。
 
-![混合的實境範圍](images/mixed-reality-spectrum-550px.png)
+![混合現實頻譜](images/mixed-reality-spectrum-550px.png)
 
-最擴增的實境和虛擬實境供應項目可立即代表這個範圍非常小的一部分。 是，不過，較大的混合的實境範圍子集。 Windows 10 使用納入考量，廣泛所建置，並允許透明混色的人員、 地點及項目與真實世界的數位表示法。
+現今提供的大部分增強的現實和虛擬實境產品, 都代表此頻譜的一小部分。 不過, 它們也是較大混合現實頻譜的子集。 Windows 10 以整個頻譜為基礎, 並可讓人、地點和事物的數位代表與真實世界混合。
 
-![混合的實境範圍中的裝置類型](images/mixed-reality-spectrum-device-types-550px.png)
+![混合現實頻譜中的裝置類型](images/mixed-reality-spectrum-device-types-550px.png)
 
-有兩種類型的裝置可提供 Windows Mixed Reality 體驗：
-1. **全像攝影版的裝置。** 這些特性會放置在真實世界的數位內容，就好像真的有裝置的能力。
-2. **沈浸式裝置。** 這些會以裝置的能力，以建立的 「 目前 」-隱藏真實世界中，並取代的數位體驗。
+有兩種主要的裝置類型可提供 Windows Mixed Reality 體驗:
+1. **全像攝影裝置。** 這些特性是由裝置將數位內容放在真實世界中的功能來表示, 就像真正的一樣。
+2. **沉浸式裝置。** 這些特性是由裝置建立「目前狀態」的能力所組成--隱藏實體世界, 並以數位體驗取代。
 
 <table>
 <tr>
-<th width="20%"> 特性</th><th width="40%"> 全像攝影版的裝置</th><th width="40%"> 沈浸式裝置</th>
+<th width="20%"> 特性</th><th width="40%"> 全像攝影裝置</th><th width="40%"> 沉浸式裝置</th>
 </tr><tr>
-<td> 範例裝置</td><td> Microsoft HoloLens<br /> <img alt="Microsoft HoloLens image" width="300" height="169" src="images/mshololens-hero1-whitbg-rgb-300px.png" /></td><td> Acer Windows 混合實境 Development 版<br /> <img alt="Acer Windows Mixed Reality Development Edition image" width="300" height="169" src="images/acer-windows-mixed-reality-development-edition-headset-300px.jpg" /></td>
+<td> 範例裝置</td><td> Microsoft HoloLens<br /> <img alt="Microsoft HoloLens image" width="300" height="169" src="images/mshololens-hero1-whitbg-rgb-300px.png" /></td><td> Acer Windows Mixed Reality 開發版<br /> <img alt="Acer Windows Mixed Reality Development Edition image" width="300" height="169" src="images/acer-windows-mixed-reality-development-edition-headset-300px.jpg" /></td>
 </tr><tr>
-<td> 顯示器</td><td> <i>透明顯示。</i> 可讓使用者看到同時頭戴耳機的實體環境。</td><td> <i>不透明的顯示。</i> 實體環境，同時頭戴耳機的區塊。</td>
+<td> 顯示器</td><td> <i>查看顯示。</i> 可讓使用者在戴頭戴式裝置時查看實體環境。</td><td> <i>不透明的顯示。</i> 在戴頭戴式裝置時封鎖實體環境。</td>
 </tr><tr>
-<td> 移動</td><td> 完整的六個--的-自由度的資料移動、 旋轉和平移。</td><td> 完整的六個--的-自由度的資料移動、 旋轉和平移。</td>
+<td> 引起</td><td> 完整的六度自由移動, 包括旋轉和轉譯。</td><td> 完整的六度自由移動, 包括旋轉和轉譯。</td>
 </tr>
 </table>
 
-請注意，裝置是否連線到或行動網卡 （透過 USB 纜線或 Wi-fi） 不同的電腦或獨立的 (untethered) 會反映裝置是全像攝影版或沈浸式。 當然，可提升行動力功能會導致更佳的體驗，而無法行動網卡或 untethered 全像攝影版和沈浸式裝置。
+請注意, 無論裝置是連線到其他電腦或行動網卡到另一部電腦 (透過 USB 纜線或 Wi-fi) 或是獨立的 (非網路共用), 都不會反映裝置是否為全像攝影或沉浸式。 當然, 改善行動性的功能會導致更好的體驗, 而且全像攝影和沉浸式裝置都可能是行動網卡或非網路共用。
 
 ## <a name="devices-and-experiences"></a>裝置和體驗
 
-技術演進是已啟用混合的實境體驗的內容。 沒有任何裝置現在可以執行跨整個範圍的體驗。 不過，Windows 10 提供通用的混合的實境平台為裝置製造商和開發人員。 裝置目前可支援混合的實境範圍內的特定範圍。 經過一段時間，新的裝置將會展開該範圍內。 在未來，全像攝影版的裝置會變成更沈浸式，而且沈浸式裝置會變成更全像攝影版。
+技術進步是已啟用混合現實體驗的功能。 目前沒有任何可在整個頻譜中執行體驗的裝置。 不過, Windows 10 為裝置製造商和開發人員提供通用的混合現實平臺。 現今的裝置可以支援混合現實頻譜內的特定範圍。 經過一段時間後, 新的裝置將會擴充該範圍。 未來, 全像攝影的裝置會變得更沉浸, 而沉浸式裝置會變得更好。
 
-![裝置上混合的實境範圍配置的位置](images/mixed-reality-spectrum-device-placement-550px.png)
+![裝置在混合現實範圍上的版面配置](images/mixed-reality-spectrum-device-placement-550px.png)
 
-通常，最好考慮何種體驗的應用程式或遊戲的開發人員想要建立。 特定點或範圍上的組件，通常會以目標的體驗。 然後，開發人員應該考慮他們想要為目標的裝置的功能。 比方說，真實世界所依賴的體驗將會執行最佳 HoloLens 上。
-* **往左 （靠近實體實際上）。** 使用者仍然會在其實體環境中存在，且永遠不會認為它們已離開該環境。
-* **在中間的 （完全混合實境） 中。** 這些經驗 blend 真實世界與數位世界。 看過的電影的檢視器[Jumanji](https://en.wikipedia.org/wiki/Jumanji)可以協調的房子劇本發生的所在的實體結構混合對叢林環境的方式。
-* **針對 （靠近數位實境） 的權限。** 使用者體驗完全數位的環境中，並不知道其周圍的實體環境中發生的事件。
+通常, 最好考慮應用程式或遊戲開發人員想要建立哪種類型的經驗。 這些體驗通常會以特定點或元件為目標。 然後, 開發人員應該考慮他們想要作為目標的裝置功能。 比方說, 依賴實體世界的經驗在 HoloLens 上的效果最佳。
+* **朝左邊 (接近實體現實)。** 使用者仍然存在於其實體環境中, 而且永遠不會相信他們已離開該環境。
+* **中間 (完全混合的事實)。** 這些體驗 blend 了真實世界與數位世界。 看過電影[Jumanji](https://en.wikipedia.org/wiki/Jumanji)的觀看者, 可以協調出故事所在的房屋實體結構與蛙鳴環境的混合方式。
+* **向右 (接近數位現實)。** 使用者會遇到完全數位的環境, 而且不會察覺實體環境中發生的情況。
 
 
 ## <a name="see-also"></a>另請參閱
-* [API 參考：Windows.Perception](https://docs.microsoft.com/uwp/api/Windows.Perception)
-* [API 參考：Windows.Perception.Spatial](https://docs.microsoft.com/uwp/api/Windows.Perception.Spatial)
-* [API 參考：Windows.Perception.Spatial.Surfaces](https://docs.microsoft.com/uwp/api/Windows.Perception.Spatial.Surfaces)
+* [API 參考:Windows。認知](https://docs.microsoft.com/uwp/api/Windows.Perception)
+* [API 參考:Windows 感知空間](https://docs.microsoft.com/uwp/api/Windows.Perception.Spatial)
+* [API 參考:Windows 感知。表面](https://docs.microsoft.com/uwp/api/Windows.Perception.Spatial.Surfaces)

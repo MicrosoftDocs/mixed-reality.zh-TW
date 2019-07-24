@@ -1,11 +1,11 @@
 ---
 title: 為 Windows Mixed Reality 設定新的 Unity 專案
-description: 設定無 MRTK 的 Unity 專案
+description: 在不 MRTK 的情況下設定 Unity 專案
 author: yoyoz
 ms.author: Yoyoz
 ms.date: 04/15/2018
 ms.topic: article
-keywords: Unity，混合實境，開發、 開始，新的專案
+keywords: Unity, 混合現實, 開發, 快速入門, 新專案
 ms.openlocfilehash: 68dded9d0fc9e861bdda56c4954d72ddafafa686
 ms.sourcegitcommit: 30246ab9b9be44a3c707061753e53d4bf401eb6b
 ms.translationtype: MT
@@ -15,68 +15,68 @@ ms.locfileid: "67326097"
 ---
 # <a name="configure-a-new-unity-project-for-windows-mixed-reality"></a>為 Windows Mixed Reality 設定新的 Unity 專案 
 
-（如果您已經為您的 Unity 專案匯入 MRTK v2 略過）
+(如果您已將 MRTK v2 匯入 Unity 專案, 請略過)
 
-如果您想要建立新的 Unity 專案，但不匯入混合實境工具組，有較少的 Unity 設定，您必須手動變更 Windows Mixed Reality，分成兩個類別： 每個專案和每個場景。
+如果您想要建立新的 Unity 專案, 但未匯入 Mixed Reality 工具組, 則需要針對 Windows Mixed Reality 手動變更的一小組 Unity 設定, 分成兩個類別: 每個專案和每個場景。
 
-## <a name="per-project-settings"></a>每個專案設定
+## <a name="per-project-settings"></a>每個專案的設定
 
-若要目標 Windows Mixed Reality，必須先設定您的 Unity 專案，以匯出為通用 Windows 平台應用程式： 
-1. 選取**檔案 > 組建設定...**
-2. 選取 **通用 Windows 平台**平台清單，然後按一下**切換平台**
-3. 設定**SDK**到**通用 10**
-4. 設定**目標裝置**要**任何裝置**支援沈浸式耳機或切換至**HoloLens**
-5. 設定**建置型別**到**D3D**
-6. 設定**UWP SDK**到**最新安裝**
+若要以 Windows Mixed Reality 為目標, 您必須先將 Unity 專案設定為匯出為通用 Windows 平臺應用程式: 
+1. 選取 [檔案 **> 組建設定**...]
+2. 在 [平臺] 清單中選取**通用 Windows 平臺**, 然後按一下 [**切換平臺**]
+3. 將**SDK**設定為**通用 10**
+4. 將 [**目標裝置**] 設定為 [**任何裝置**] 以支援沉浸式耳機或切換至**HoloLens**
+5. 將**組建類型**設定為**D3D**
+6. 將**UWP SDK**設定為**最新安裝**
 
-我們再需要讓知道我們嘗試匯出的應用程式應該建立 Unity[沈浸式檢視](app-views.md)而不是 2D 檢視。 我們的做法是啟用 「 虛擬實境支援 」:
-1. 從**組建設定...** 視窗中，開啟**播放程式設定...**
-2. 選取 [**通用 Windows 平台設定**] 索引標籤
-3. 依序展開**XR 設定**群組
-4. 在  **XR 設定**區段中，按一下**受支援的虛擬實境**核取方塊以新增**虛擬實境裝置**清單。
-5. 在  **XR 設定**群組中，確認 **「 Windows Mixed Reality"** 列為支援的裝置。 （這可能會顯示為 「 Windows 全像 」 在較舊版本的 Unity）
+接著, 我們需要讓 Unity 知道, 我們嘗試匯出的應用程式應該建立[沉浸式視圖](app-views.md), 而不是2d 視圖。 我們藉由啟用「支援虛擬實境」來執行此動作:
+1. 從 [**組建設定 ...** ] 視窗中, 開啟 [**播放者設定**]。
+2. 選取 [**通用 Windows 平臺**] 索引標籤的設定
+3. 展開 [ **XR 設定**] 群組
+4. 在 [ **XR 設定**] 區段中, 勾選 [**支援虛擬實境**] 核取方塊以新增**虛擬實境裝置**清單。
+5. 在 [ **XR 設定**] 群組中, 確認 **[Windows Mixed Reality]** 已列為支援的裝置。 (在舊版 Unity 中, 這可能會顯示為「Windows 全像」)
 
-![Unity 的品質設定](images/getting-started-unity-quality-settings.jpg)<br>
+![Unity 品質設定](images/getting-started-unity-quality-settings.jpg)<br>
 *Unity xr 設定*
 
-您的應用程式現在可以進行基本全像攝影版的轉譯和空間的輸入。 若要更進一步，並利用特定功能，您的應用程式必須宣告適當的功能資訊清單中。 可以在 Unity 中進行資訊清單宣告，因此它們會包含在每個後續的專案匯入。 設定位於**Player 設定 > 適用於通用 Windows 平台的設定 > 發行設定 > 功能**。 啟用常用 Unity Api for Mixed Reality 適用的功能如下：
+您的應用程式現在可以執行基本的全像攝影轉譯和空間輸入。 若要進一步瞭解並利用特定功能, 您的應用程式必須在其資訊清單中宣告適當的功能。 資訊清單宣告可在 Unity 中進行, 使其包含在每個後續的專案匯出中。 **通用 Windows 平臺 > 發佈設定 > 功能的 [播放程式設定] > 設定**中, 可以找到此設定。 針對混合式現實啟用常用 Unity Api 的適用功能包括:
 
 |  功能  |  需要功能的 Api | 
 |----------|----------|
-|  SpatialPerception  |  SurfaceObserver (存取權[空間的對應](spatial-mapping.md)網狀結構 HoloLens 上)&mdash;*沒有一般的耳機空間追蹤您所需的功能* | 
-|  WebCam  |  PhotoCapture 和 VideoCapture | 
-|  PicturesLibrary / VideosLibrary  |  PhotoCapture 或 VideoCapture，分別 （儲存時所擷取的內容） | 
-|  麥克風  |  VideoCapture （當擷取音訊）、 DictationRecognizer、 GrammarRecognizer 和 KeywordRecognizer | 
-|  InternetClient  |  DictationRecognizer （以及使用 Unity Profiler） | 
+|  SpatialPerception  |  SurfaceObserver (在 HoloLens 上存取[空間對應](spatial-mapping.md)網格)&mdash;*沒有頭戴式耳機的一般空間追蹤所需的功能* | 
+|  網路  |  PhotoCapture 和 VideoCapture | 
+|  PicturesLibrary/VideosLibrary  |  PhotoCapture 或 VideoCapture, 分別是 (儲存已捕獲的內容時) | 
+|  麥克風  |  VideoCapture (在捕獲音訊時)、DictationRecognizer、GrammarRecognizer 和 KeywordRecognizer | 
+|  InternetClient  |  DictationRecognizer (並使用 Unity Profiler) | 
 
-**Unity 的品質設定**
+**Unity 品質設定**
 
-![Unity 的品質設定](images/getting-started-unity-quality-settings.jpg)<br>
-*Unity 的品質設定*
+![Unity 品質設定](images/getting-started-unity-quality-settings.jpg)<br>
+*Unity 品質設定*
 
-HoloLens 有 mobile 類別的 GPU。 如果您的應用程式的目標 HoloLens，您會想的品質設定為最快的效能微調請確定我們會保留完整的畫面播放速率：
-1. 選取**編輯 > 專案設定 > 品質**
-2. 選取 **下拉式清單**下方**Windows 市集**標誌，然後選取**非常低**。 您知道設定正確時套用的 Windows 市集的資料行中的方塊並**非常低**資料列是綠色。
+HoloLens 具有行動類別 GPU。 如果您的應用程式是以 HoloLens 為目標, 您會想要調整品質設定以取得最快的效能, 以確保我們維持完整的畫面播放速率:
+1. 選取 [**編輯] > 專案設定 > 品質**
+2. 選取 [ **Windows Store** ] 標誌底下的**下拉式清單**, 然後選取 [**非常低**]。 當 [Windows Store] 資料行中的方塊和**非常低**的資料列都是綠色時, 您會知道設定已正確套用。
 
-## <a name="per-scene-settings"></a>每個場景設定
+## <a name="per-scene-settings"></a>每場景設定
 
-**Unity 觀景窗設定**
+**Unity 攝影機設定**
 
-![Unity 觀景窗設定](images/Unitycamerasettings.png)<br>
-*Unity 觀景窗設定*
+![Unity 攝影機設定](images/Unitycamerasettings.png)<br>
+*Unity 攝影機設定*
 
-一旦您啟用 「 虛擬實境支援 」 核取方塊[Unity 數位相機](camera-in-unity.md)元件控制代碼[前端追蹤和立體視覺呈現](rendering.md)。 就不需要將它取代自訂的數位相機，若要這樣做。
+一旦您啟用 [支援虛擬實境] 核取方塊, [Unity 攝影機](camera-in-unity.md)元件就會處理[head 追蹤和 stereoscopic](rendering.md)轉譯。 您不需要將它取代為自訂相機來執行此動作。
 
-如果您的應用程式的目標 HoloLens 具體來說，有一些需要變更以最佳化裝置透明的顯示畫面，讓您的應用程式就會直接透過真實世界的設定：
-1. 在 **階層**，選取**Main Camera**
-2. 在**Inspector**  面板中，設定轉換**位置**來**0，0，0**讓使用者標頭的位置啟動 Unity 世界原始位置。
-3. 變更**清除旗標**要**單色**。
-4. 變更**背景**色彩**RGBA 0,0,0,0**。 黑色呈現為透明的 HoloLens。
-5. 變更**接近裁剪平面-** 要[HoloLens 建議](camera-in-unity.md#clip-planes)0.85 （公尺）。
+如果您的應用程式特別以 HoloLens 為目標, 則需要變更幾個設定, 以優化裝置的透明顯示, 讓您的應用程式會向實體世界顯示:
+1. 在階層中, 選取**主要相機**
+2. 在 [偵測**器**] 面板中, 將 [轉換**位置**] 設定為**0, 0, 0,** 讓使用者標頭的位置從 Unity world 來源開始。
+3. 將 [**清除旗標**] 變更為**純色**。
+4. 將**背景**色彩變更為**RGBA 0, 0, 0**, 0。 在 HoloLens 中, 黑色呈現為透明。
+5. 變更**裁剪平面-接近** [HoloLens 建議](camera-in-unity.md#clip-planes)0.85 (計量)。
 
-如果您刪除，然後建立新的相機，請確定您的相機**標籤**作為**MainCamera**。
+如果您刪除並建立新的相機, 請確定您的相機已**標記**為**MainCamera**。
 
 
 ## <a name="see-also"></a>另請參閱
-* [混合實境 Toolkit v2](mrtk-getting-started.md)
-* [Unity 開發概觀](unity-development-overview.md)
+* [混合現實工具組 v2](mrtk-getting-started.md)
+* [Unity 開發總覽](unity-development-overview.md)

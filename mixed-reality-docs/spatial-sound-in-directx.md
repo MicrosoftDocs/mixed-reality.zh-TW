@@ -1,66 +1,66 @@
 ---
 title: DirectX 中的空間音效
-description: 加入使用 XAudio2 和 xAPO 音訊程式庫，根據 DirectX 的 Windows Mixed Reality 應用程式空間的聲音。
+description: 使用 XAudio2 和 xAPO 音訊程式庫, 將空間音效新增至以 DirectX 為基礎的 Windows Mixed Reality 應用程式。
 author: MikeRiches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Windows 混合實境，空間的聲音，應用程式，XAudio2，最低層級，xAPO、 音效的程式庫、 逐步解說中，DirectX
+keywords: Windows mixed reality, 空間音效, 應用程式, XAudio2, 低層級, xAPO, 音訊庫, 逐步解說, DirectX
 ms.openlocfilehash: 04d8c43ab400eed4cec5cbd848af5b888cb66e4b
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59597142"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63550438"
 ---
 # <a name="spatial-sound-in-directx"></a>DirectX 中的空間音效
 
-加入以使用 DirectX 的 Windows Mixed Reality 應用程式空間的聲音[XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049.aspx)並[xAPO](https://msdn.microsoft.com/library/windows/desktop/ee415735.aspx)音訊程式庫。
+使用[XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049.aspx)和[xAPO](https://msdn.microsoft.com/library/windows/desktop/ee415735.aspx)音訊程式庫, 將空間音效新增至以 DirectX 為基礎的 Windows Mixed Reality 應用程式。
 
-本主題使用 HolographicHRTFAudioSample 範例程式碼。
+本主題使用來自 HolographicHRTFAudioSample 的範例程式碼。
 
 >[!NOTE]
->目前在這篇文章中的程式碼片段示範如何使用C++/CX 而不是 C + + 17 相容C++中所使用的 /WinRT [ C++全像攝影版的專案範本](creating-a-holographic-directx-project.md)。  概念是相等的C++/WinRT 專案，但您必須將轉譯程式碼。
+>本文中的程式碼片段目前示範如何使用C++/cx, C++ [ C++ ](creating-a-holographic-directx-project.md)而不是 C + 17 相容的/WinRT, 如全像攝影專案範本中所使用。  概念相當於C++/WinRT 專案, 但您必須轉譯程式碼。
 
-## <a name="overview-of-head-relative-spatial-sound"></a>標頭相對空間音效的概觀
+## <a name="overview-of-head-relative-spatial-sound"></a>前端相對空間音效的總覽
 
-空間的聲音會實作成**音效處理物件 (APO)** 使用**標頭相關的傳送函式 (HRTF)** 篩選*spatialize*一般的音訊資料流。
+空間音效會實作為**音訊處理物件 (APO)** , 其使用**head 相關的傳送函式 (HRTF)** 篩選器來*spatialize*一般的音訊串流。
 
-若要存取 Api 的音訊的 pch.h 中包括這些標頭檔：
-* XAudio2.h
-* xapo.h
-* hrtfapoapi.h
+在 pch 中包含這些標頭檔以存取音訊 Api:
+* XAudio2。h
+* xapo。h
+* hrtfapoapi。h
 
-若要設定空間音效：
-1. 呼叫[CreateHrtfApo](https://msdn.microsoft.com/library/windows/desktop/mt186596.aspx)來初始化新的 APO HRTF 音訊。
-2. 指派[HRTF 參數](https://msdn.microsoft.com/library/windows/desktop/mt186608.aspx)並[HRTF 環境](https://msdn.microsoft.com/library/windows/desktop/mt186604.aspx)定義空間的聲音 APO 柔和式特性。
+若要設定空間音效:
+1. 呼叫[CreateHrtfApo](https://msdn.microsoft.com/library/windows/desktop/mt186596.aspx)以初始化 HRTF 音訊的新 APO。
+2. 指派[HRTF 參數](https://msdn.microsoft.com/library/windows/desktop/mt186608.aspx)和[HRTF 環境](https://msdn.microsoft.com/library/windows/desktop/mt186604.aspx), 以定義空間音效 APO 的聲場特性。
 3. 設定 XAudio2 引擎進行 HRTF 處理。
-4. 建立[IXAudio2SourceVoice](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.ixaudio2sourcevoice.ixaudio2sourcevoice.aspx)物件，然後呼叫[開始](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.ixaudio2sourcevoice.ixaudio2sourcevoice.start.aspx)。
+4. 建立[IXAudio2SourceVoice](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.ixaudio2sourcevoice.ixaudio2sourcevoice.aspx)物件, 並呼叫[Start](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.ixaudio2sourcevoice.ixaudio2sourcevoice.start.aspx)。
 
-## <a name="implementing-hrtf-and-spatial-sound-in-your-directx-app"></a>在 DirectX 應用程式中實作 HRTF 和空間的音效
+## <a name="implementing-hrtf-and-spatial-sound-in-your-directx-app"></a>在 DirectX 應用程式中執行 HRTF 和空間音效
 
-您可以藉由使用不同的參數和環境設定 HRTF APO 達成各種不同的效果。 您可以使用下列程式碼來探索各種可能性。 從這裡下載通用 Windows 平台程式碼範例：[Spatial 音效的範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpatialSound)
+您可以使用不同的參數和環境來設定 HRTF APO, 以達到各種效果。 使用下列程式碼來探索可能性。 從這裡下載通用 Windows 平臺程式碼範例:[空間音效範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpatialSound)
 
-協助程式類型可在這些檔案中：
-* [AudioFileReader.cpp](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpatialSound/cpp/AudioFileReader.cpp):使用媒體基礎載入音訊檔和[IMFSourceReader 介面](https://msdn.microsoft.com/library/windows/desktop/dd374655.aspx)。
-* [XAudio2Helpers.h](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpatialSound/cpp/XAudio2Helpers.h):Implements **SetupXAudio2**函式來初始化 XAudio2 HRTF 處理。
+下列檔案提供 Helper 類型:
+* [AudioFileReader .cpp](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpatialSound/cpp/AudioFileReader.cpp):使用媒體基礎和[IMFSourceReader 介面](https://msdn.microsoft.com/library/windows/desktop/dd374655.aspx)載入音訊檔案。
+* [XAudio2Helpers .h](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpatialSound/cpp/XAudio2Helpers.h):執行**SetupXAudio2**函式, 以初始化 XAudio2 以進行 HRTF 處理。
 
-### <a name="add-spatial-sound-for-an-omnidirectional-source"></a>新增空間聲音 omnidirectional 來源
+### <a name="add-spatial-sound-for-an-omnidirectional-source"></a>新增全方向來源的空間音效
 
-某些使用者的周圍環境中全像投影發出音效同樣往所有方向。 下列程式碼示範如何初始化 APO 發出 omnidirectional 音效。 在此範例中，我們套用於這個概念的旋轉立方體從 Windows 全像攝影版的應用程式範本。 如需完整的程式碼清單，請參閱[OmnidirectionalSound.cpp](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpatialSound/cpp/OmnidirectionalSound.cpp)。
+使用者周圍的某些全息影像會以同樣的方向發出音效。 下列程式碼示範如何初始化 APO 以發出全方向音效。 在此範例中, 我們會從 Windows 全像應用程式範本將此概念套用到旋轉的 cube。 如需完整的程式代碼清單, 請參閱[OmnidirectionalSound。](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpatialSound/cpp/OmnidirectionalSound.cpp)
 
-**視窗的空間音效引擎只支援 48 k samplerate 播放。大部分的中介軟體程式，例如 Unity 會自動將音效檔轉換成所需的格式，但如果您啟動較低層級中音訊的系統，或進行您自己試幾次，這是一定要記住來防止損毀或不想要的行為，例如HRTF 系統失敗。**
+**視窗的空間音效引擎僅支援播放的 48k samplerate。大部分的中介軟體程式 (例如 Unity) 都會自動將音效檔轉換成所需的格式, 但如果您在音訊系統中的較低層級開始開始進行或自行製作, 這點非常重要, 請務必避免損毀或不想要的行為, 例如HRTF 系統失敗。**
 
-首先，我們需要初始化 APO。 在我們全像攝影版的範例應用程式中，我們選擇這樣做，一旦**HolographicSpace**。
+首先, 我們需要初始化 APO。 在我們的全像攝影範例應用程式中, 我們選擇在**HolographicSpace**之後執行這項操作。
 
-From *HolographicHrtfAudioSampleMain::SetHolographicSpace()*:
+From *HolographicHrtfAudioSampleMain:: SetHolographicSpace ()* :
 
 ```
 // Spatial sound
 auto hr = m_omnidirectionalSound.Initialize(L"assets//MonoSound.wav");
 ```
 
-實作的初始化，從*OmnidirectionalSound.cpp*:
+Initialize 的執行, 從*OmnidirectionalSound*:
 
 ```
 // Initializes an APO that emits sound equally in all directions.
@@ -113,9 +113,9 @@ HRESULT OmnidirectionalSound::Initialize( LPCWSTR filename )
 }
 ```
 
-APO 已針對 HRTF 之後，您呼叫[啟動](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.ixaudio2sourcevoice.ixaudio2sourcevoice.start.aspx)上播放音訊來源語音。 在我們的範例應用程式，我們選擇將它放在迴圈中，以便您可以繼續聽到的聲音，來自該 cube。
+設定 APO 以進行 HRTF 之後, 您可以呼叫來源語音上的[Start](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.ixaudio2sourcevoice.ixaudio2sourcevoice.start.aspx)來播放音訊。 在我們的範例應用程式中, 我們選擇將它放在迴圈中, 讓您可以繼續聆聽來自 cube 的音效。
 
-From *HolographicHrtfAudioSampleMain::SetHolographicSpace()*:
+From *HolographicHrtfAudioSampleMain:: SetHolographicSpace ()* :
 
 ```
 if (SUCCEEDED(hr))
@@ -126,7 +126,7 @@ if (SUCCEEDED(hr))
 }
 ```
 
-從*OmnidirectionalSound.cpp*:
+從*OmnidirectionalSound*:
 
 ```
 HRESULT OmnidirectionalSound::Start()
@@ -136,11 +136,11 @@ HRESULT OmnidirectionalSound::Start()
 }
 ```
 
-現在，每當我們更新畫面格時，我們需要更新全像的位置，相對於裝置本身。 這是因為 HRTF 位置一律以相對於使用者的大腦，包括前端的位置和方向。
+現在, 當我們更新框架時, 我們需要更新與裝置本身相關的全息影像位置。 這是因為 HRTF 位置一律會以相對於使用者的標頭表示, 包括標頭位置和方向。
 
-若要在 HolographicSpace 這樣做，我們需要建構從我們 SpatialStationaryFrameOfReference 座標系統轉換矩陣，以固定為裝置本身的座標系統。
+若要在 HolographicSpace 中執行此動作, 我們必須將 SpatialStationaryFrameOfReference 座標系統中的轉換矩陣, 建立到固定到裝置本身的座標系統。
 
-從*HolographicHrtfAudioSampleMain::Update()*:
+From *HolographicHrtfAudioSampleMain:: Update ()* :
 
 ```
 m_spinningCubeRenderer->Update(m_timer);
@@ -213,9 +213,9 @@ if (currentPose != nullptr)
 }
 ```
 
-HRTF 位置會直接套用至音效 APO OmnidirectionalSound 協助程式類別。
+HRTF 位置會直接套用至 OmnidirectionalSound helper 類別所 APO 的音效。
 
-從*OmnidirectionalSound::OnUpdate*:
+From *OmnidirectionalSound:: OnUpdate*:
 
 ```
 HRESULT OmnidirectionalSound::OnUpdate(_In_ Numerics::float3 position)
@@ -225,13 +225,13 @@ HRESULT OmnidirectionalSound::OnUpdate(_In_ Numerics::float3 position)
 }
 ```
 
-就這麼容易！ 繼續閱讀以深入了解您可以使用 HRTF 音訊 」 和 「 Windows 全像攝影版執行。
+就這麼容易！ 繼續閱讀, 以深入瞭解您可以使用 HRTF 音訊和 Windows 全像攝影的功能。
 
-### <a name="initialize-spatial-sound-for-a-directional-source"></a>初始化方向性的來源空間音效
+### <a name="initialize-spatial-sound-for-a-directional-source"></a>初始化方向性來源的空間音效
 
-某些使用者的周圍環境中全像投影發出音效大部分是以單一方向。 此音效的模式稱為*cardioid*因為它看起來像卡通核心。 下列程式碼會示範如何初始化發出方向性 APO 音效。 如需完整的程式碼清單，請參閱[CardioidSound.cpp](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpatialSound/cpp/CardioidSound.cpp) 。
+使用者周圍的某些全息影像大部分都是以單向方式發出音效。 這個音效模式的名稱是*cardioid* , 因為它看起來像是卡通的心。 下列程式碼示範如何初始化 APO 以發出方向音效。 如需完整的程式代碼清單, 請參閱[CardioidSound。](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpatialSound/cpp/CardioidSound.cpp)
 
-APO 已針對 HRTF 之後，請呼叫[啟動](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.ixaudio2sourcevoice.ixaudio2sourcevoice.start.aspx)上播放音訊來源語音。
+設定 APO 以進行 HRTF 之後, 請呼叫來源語音上的 [[開始](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.ixaudio2sourcevoice.ixaudio2sourcevoice.start.aspx)] 來播放音訊。
 
 ```
 // Initializes an APO that emits directional sound.
@@ -303,11 +303,11 @@ HRESULT CardioidSound::ConfigureApo( float scaling, float order )
 }
 ```
 
-### <a name="implement-custom-decay"></a>實作自訂的衰退
+### <a name="implement-custom-decay"></a>執行自訂衰減
 
-您可以覆寫的空間音效的減少距離和/或哪些距離它突然停止完全的速率。 若要實作自訂衰減行為上的空間的音效，填入[HrtfDistanceDecay 結構](https://msdn.microsoft.com/library/windows/desktop/mt186602.aspx)將其指派給**distanceDecay**欄位中[HrtfApoInit 結構](https://msdn.microsoft.com/library/windows/desktop/mt186597.aspx)再傳遞給[CreateHrtfApo](https://msdn.microsoft.com/library/windows/desktop/mt186596.aspx)函式。
+您可以覆寫空間音效在距離和 (或) 完全截斷的距離之間的速率。 若要在空間音效上執行自訂衰減行為, 請填入[HrtfDistanceDecay 結構](https://msdn.microsoft.com/library/windows/desktop/mt186602.aspx), 並將它指派給[HrtfApoInit 結構](https://msdn.microsoft.com/library/windows/desktop/mt186597.aspx)中的**distanceDecay**欄位, 然後再將它傳遞給[CreateHrtfApo](https://msdn.microsoft.com/library/windows/desktop/mt186596.aspx)函數。
 
-將下列程式碼加入**初始化**先前所示，若要指定自訂的 decay 行為的方法。 如需完整的程式碼清單，請參閱[CustomDecay.cpp](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpatialSound/cpp/CustomDecay.cpp)。
+將下列程式碼新增至先前所示的**Initialize**方法, 以指定自訂衰減行為。 如需完整的程式代碼清單, 請參閱[CustomDecay。](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpatialSound/cpp/CustomDecay.cpp)
 
 ```
 HRESULT CustomDecaySound::Initialize( LPCWSTR filename )

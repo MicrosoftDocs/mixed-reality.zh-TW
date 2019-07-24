@@ -1,78 +1,78 @@
 ---
-title: HoloLens 進行疑難排解
+title: HoloLens 疑難排解
 description: Microsoft HoloLens 的疑難排解步驟。
 author: mattzmsft
 ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
-keywords: 問題、 bug、 疑難排解、 修正、 協助支援，HoloLens
+keywords: 問題、錯誤、疑難排解、修正、說明、支援、HoloLens
 ms.openlocfilehash: 7b7a32a9a358ff75b2675d265445d9ef1acc1b9e
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591133"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63550888"
 ---
-# <a name="hololens-troubleshooting"></a>HoloLens 進行疑難排解
+# <a name="hololens-troubleshooting"></a>HoloLens 疑難排解
 
-## <a name="my-hololens-is-unresponsive-or-wont-boot"></a>我的 HoloLens 沒有回應，或將不會開機
+## <a name="my-hololens-is-unresponsive-or-wont-boot"></a>我的 HoloLens 沒有回應或無法開機
 
-如果您的 HoloLens 不開機：
-* 如果不淺的 Led，由 [電源] 按鈕，或只有 1 會簡短地閃爍 LED，您可能需要向您 HoloLens 收取費用。
-* 如果 Led 亮起時按下電源按鈕，但您無法看到任何項目在顯示器上，，保留 [電源] 按鈕，直到全部 5 份由 [電源] 按鈕的 Led 將關閉。
+如果您的 HoloLens 無法開機:
+* 如果 [電源] 按鈕的 Led 不亮, 或只有1個 LED 短暫閃爍, 您可能需要向 HoloLens 收費。
+* 當您按下電源按鈕但看不到顯示器上的任何專案時, 如果 Led 亮起, 請按住 [電源] 按鈕, 直到電源按鈕關閉為止的所有5個 Led。
 
-如果已凍結或沒有回應，則會變成您 HoloLens:
-* 關閉您 HoloLens 藉由按下電源按鈕，直到全部 5 份由 [電源] 按鈕的 Led 本身，開啟或關閉 10 秒的時間如果 Led 沒有回應。 按下電源按鈕開機。
+如果您的 HoloLens 已凍結或沒有回應:
+* 關閉您的 HoloLens, 方法是按下 [電源] 按鈕的所有5個 Led, 直到電源按鈕變成 [關閉], 或如果 Led 沒有回應, 則為10秒。 再按一次 [電源] 按鈕以開機。
 
-如果這些步驟沒有作用：
+如果這些步驟無法正常執行:
 * 您可以嘗試[復原您的裝置](reset-or-recover-your-hololens.md)。
 
-## <a name="holograms-dont-look-good-or-are-moving-around"></a>全像投影的效果不好或已移動。
+## <a name="holograms-dont-look-good-or-are-moving-around"></a>全息影像外觀不佳或四處移動。
 
-如果您全像投影不穩定、 跳動，或是看起來不正確，請嘗試這些修正程式的其中一個：
-* 清除裝置上面，並確定不會阻礙感應器。
-* 請確定您的聊天室中沒有足夠的光線。
-* 請嘗試四處跑，並查看鳥瞰因此 HoloLens 就能掃描它們更完整。
-* 請嘗試執行校正應用程式。 它會校準適合眼睛您 HoloLens。 移至**設定** > **System** > **公用程式**。 在 [校正] 中，選取**開啟校正**。
-* 如果您仍然無法執行校正應用程式之後，使用感應器調整應用程式來微調您的裝置感應器。 移至**設定** > **System** > **公用程式**。 在微調感應器，選取**開啟感應器調整**。
+如果您的全息影像不穩定、跳動或看起來不正確, 請嘗試下列其中一個修正:
+* 清除您的裝置面板, 並確定沒有任何阻礙感應器。
+* 請確定您的房間內有足夠的光線。
+* 試著流覽並查看您的環境, 讓 HoloLens 可以更完整地掃描。
+* 試著執行校正應用程式。 它會校正您的 HoloLens 以最適合您的眼睛。 移至 [**設定** > ] [**系統** > **公用程式**]。 在 [校正] 底下, 選取 [**開啟校正**]。
+* 如果您在執行校正應用程式之後仍然遇到問題, 請使用感應器微調應用程式來調整您的裝置感應器。 移至 [**設定** > ] [**系統** > **公用程式**]。 在 [感應器微調] 底下, 選取 [**開啟感應器微調**]。
 
-## <a name="hololens-doesnt-respond-to-my-gestures"></a>HoloLens 我筆勢不會回應。
+## <a name="hololens-doesnt-respond-to-my-gestures"></a>HoloLens 不會回應我的手勢。
 
-若要確定 HoloLens 可以看到您的筆勢，保留您的手在軌跡框架中，以擴充您的任一邊的英呎數。 當 HoloLens 可以看到您的手時，游標會變成從一個點的環形。 進一步了解如何[筆勢](gestures.md)。
+若要確保 HoloLens 能夠看到您的手勢, 請將手放在手勢框架中, 這會在您的任一邊延伸幾英尺。 當 HoloLens 可以看到您的手時, 游標會從點變更為環形。 深入瞭解如何使用[手勢](gestures.md)。
 
-如果您的環境是否太深，可能不會看到您的手，因此請確定沒有足夠的光線 HoloLens。
+如果您的環境太暗, HoloLens 可能看不到您的手, 因此請確定有足夠的光線。
 
-如果您上面有指紋或模糊，請使用清除隨附輕輕清除您上面 HoloLens 的清潔 microfiber。
+如果您的面板具有指紋或塗抹, 請使用 HoloLens 隨附的 microfiber 清潔抹布來輕輕清理您的面板。
 
-## <a name="hololens-doesnt-respond-to-my-voice-commands"></a>HoloLens 不會回應我語音命令。
+## <a name="hololens-doesnt-respond-to-my-voice-commands"></a>HoloLens 不會回應我的語音命令。
 
-如果 Cortana 沒有回應您的語音命令，請確定已開啟 Cortana。 在所有的應用程式清單中，選取 [Cortana >] 功能表 > Notebook > 來變更設定。 若要深入了解您可以說，請參閱使用語音來控制 HoloLens。
+如果 Cortana 沒有回應您的語音命令, 請確定 Cortana 已開啟。 在 所有應用程式 清單中, 選取 Cortana > 功能表 > 筆記本 > 設定 以進行變更。 若要深入瞭解您可以說的內容, 請參閱使用您的語音來控制 HoloLens。
 
-## <a name="i-cant-place-holograms-or-see-holograms-i-previously-placed"></a>我無法將全像投影，或請參閱先前放置全像投影。
+## <a name="i-cant-place-holograms-or-see-holograms-i-previously-placed"></a>我無法放置全息影像或查看我先前放置的全息影像。
 
-如果 HoloLens 無法對應，或載入您的空間，它會進入受限制的模式，並無法將全像投影，或請參閱您放入全像投影。 您可以嘗試以下方法：
-* 請確定有足夠光您的環境中讓 HoloLens 可以看到，並將對應的空間。
-* 請確定您已連接到 Wi-fi 網路。 如果您未連線至 Wi-fi，HoloLens 無法識別，並載入已知的空間。
-* 如果您需要建立新的空間，連接到 Wi-fi，然後重新啟動您的 HoloLens。
-* 若要查看正確的空間是否作用中，或手動載入的空間，請前往**設定** > **System** > **空間**。
-* 如果在載入正確的空間，您仍遇到問題，空間可能已損毀。 若要修正此問題，選取的磁碟空間，然後選取 [移除]。 一旦移除空間時，會開始對應鳥瞰 HoloLens，並建立新的空間。
+如果 HoloLens 無法對應或載入您的空間, 它會進入有限的模式, 而且您將無法放置全息影像或看到您所放置的全息影像。 您可以嘗試以下方法：
+* 請確定您的環境中有足夠的光線, 讓 HoloLens 能夠看到並對應空間。
+* 請確定您已連線到 Wi-fi 網路。 如果您未連線到 Wi-fi, HoloLens 就無法識別並載入已知的空間。
+* 如果您需要建立新的空間, 請連接到 Wi-fi, 然後重新開機 HoloLens。
+* 若要查看正確的空間是否為作用中, 或若要手動載入空間, 請移至 [**設定** > ] [**系統** > **空間**]。
+* 如果載入正確的空間, 但您仍然遇到問題, 則空間可能已損毀。 若要修正此問題, 請選取空間, 然後選取 [移除]。 一旦移除空間之後, HoloLens 就會開始對應您的環境, 並建立新的空間。
 
-## <a name="my-hololens-frequently-enters-limited-mode-or-shows-a-tracking-lost-message"></a>我 HoloLens 經常會進入 Limited 模式下，或顯示 「 追蹤遺失 」 訊息。
+## <a name="my-hololens-frequently-enters-limited-mode-or-shows-a-tracking-lost-message"></a>我的 HoloLens 經常進入有限的模式, 或顯示「追蹤遺失」的訊息。
 
-如果您的裝置通常會顯示 「 有限的模式 」 或 「 追蹤遺失 」 訊息，請嘗試從建議[My 全像投影的效果不好或已移動](#holograms-dont-look-good-or-are-moving-around)。
+如果您的裝置通常會顯示「受限模式」或「追蹤遺失」訊息, 請嘗試我的全息影像中的建議[不佳, 或正四處移動](#holograms-dont-look-good-or-are-moving-around)。
 
-## <a name="my-hololens-cant-tell-what-space-im-in"></a>我的 HoloLens 無法分辨我所在的空間。
+## <a name="my-hololens-cant-tell-what-space-im-in"></a>我的 HoloLens 無法分辨我的空間。
 
-如果您的 HoloLens 無法自動識別並載入您的空間，請確定您已連線至 Wi-fi、 還有很多 light 中的空間，而且尚未恍神進行重大變更。 您也可以手動載入的空間，或管理您的空間，方法是前往**設定** > **System** > **空間**。
+如果您的 HoloLens 無法自動識別並載入您所在的空間, 請確定您已連接到 Wi-fi、房間內有足夠的光線, 而且對等互連尚未進行任何重大變更。 您也可以手動載入空間, 或前往 [**設定** > ] [**系統** > **空間**] 管理您的空間。
 
-## <a name="im-getting-a-low-disk-space-error"></a>我收到 「 磁碟空間不足 」 錯誤。
+## <a name="im-getting-a-low-disk-space-error"></a>我收到「磁碟空間不足」錯誤。
 
-您必須釋出一些儲存空間藉由一或多個項目：
-* 刪除一些未使用的空格。 移至**設定** > **System** > **空間**，選取您不再需要，然後選取的空間**移除**.
-* 請移除一些放入全像投影。
-* 請刪除一些圖片和影片，相片應用程式中。
-* 解除安裝某些應用程式，以從您的 HoloLens。 在所有的應用程式清單中，按住您要解除安裝，然後選取 應用程式**解除安裝**。
+您必須執行下列一或多項作業來釋放一些儲存空間:
+* 刪除一些未使用的空間。 移至 [**設定** > ] [**系統** > **空間**], 選取不再需要的空間, 然後選取 [**移除**]。
+* 移除您所放置的部分全息影像。
+* 刪除相片應用程式中的某些圖片和影片。
+* 從 HoloLens 卸載一些應用程式。 在 [所有應用程式] 清單中, 按住您要卸載的應用程式, 然後選取 [**卸載**]。
 
 ## <a name="my-hololens-cant-create-a-new-space"></a>我的 HoloLens 無法建立新的空間。
 
-最可能的問題是，您要儲存體空間不足。 請嘗試[上述的祕訣](#im-getting-a-low-disk-space-error)以釋放一些磁碟空間。
+最有可能的問題是您的儲存空間不足。 請嘗試上面的其中一個[提示](#im-getting-a-low-disk-space-error)來釋放一些磁碟空間。

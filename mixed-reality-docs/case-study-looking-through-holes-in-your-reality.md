@@ -1,11 +1,11 @@
 ---
-title: 案例研究-仔細檢查您實際上的漏洞
-description: 此案例研究將說明如何實作 HoloLens，讓使用者看到背後牆、 樓層、 下，並在其實際環境中的虛擬網站上的 「 magic 視窗 」 效果。
+title: 個案研究-查看您現實中的漏洞
+description: 此案例研究會說明如何在 HoloLens 上執行「魔術 window」的效果, 讓使用者可以在背景牆後方、樓層下, 以及在其實際環境內的虛擬空缺中查看。
 author: EricRehmeyer
 ms.author: ericrehm
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Windows Mixed Reality，HoloLens magic 的視窗中，視差
+keywords: Windows Mixed Reality、HoloLens、魔術 window、視差
 ms.openlocfilehash: 945a09614fbc77400825b524f4e0b591bf7b1f6b
 ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
 ms.translationtype: MT
@@ -13,63 +13,63 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 04/29/2019
 ms.locfileid: "64873931"
 ---
-# <a name="case-study---looking-through-holes-in-your-reality"></a>案例研究-仔細檢查您實際上的漏洞
+# <a name="case-study---looking-through-holes-in-your-reality"></a>個案研究-查看您現實中的漏洞
 
-當人們考慮混合的實境，以及他們可以如何使用 Microsoft HoloLens 時，它們通常是堅持問題像是 「 哪些物件新增至我的房間 」？ 或者 「 什麼可以我在我的空間上嗎？ 」 我想要反白顯示您可以考慮的另一個區域 — 基本上是一個神奇的技巧，來查詢或透過真實的實體物件都使用相同的技術。
+當人們思考混合現實以及他們可以如何處理 Microsoft HoloLens 時, 他們通常會問到「我可以將哪些物件新增到我的房間？」之類的問題。 或是「我可以在我的空間上分層？」 我想要強調另一個您可以考慮的地方—基本上是一種神奇的技巧, 也就是使用相同的技術來查詢您的實際實體物件。
 
 ## <a name="the-tech"></a>技術
 
-如果您已得力外星人，因為它們可能會中斷在您壁 **[RoboRaid](https://www.youtube.com/watch?v=Hf9qkURqtbM)**，解除鎖定在安全的背景牆 **[片段](case-study-creating-an-immersive-experience-in-fragments.md)**，或已幸運若要查看在 UNSC 無限大機庫 **[E3 2015 Halo 5 體驗](https://www.youtube.com/watch?v=QDw5QjDtFy8)**，則您已了解正是我要討論。 根據您的想像力，此 visual 的技巧可以用在您泥中放入暫存的漏洞，或隱藏在鬆散的 floorboard 的世界。
+如果您已得力外星人，因為它們可能會中斷在您壁 **[RoboRaid](https://www.youtube.com/watch?v=Hf9qkURqtbM)** ，解除鎖定在安全的背景牆 **[片段](case-study-creating-an-immersive-experience-in-fragments.md)** ，或已幸運若要查看在 UNSC 無限大機庫 **[E3 2015 Halo 5 體驗](https://www.youtube.com/watch?v=QDw5QjDtFy8)** ，則您已了解正是我要討論。 根據您的想像, 這個視覺技巧可以用來在您的飾面上放置暫時的洞, 或在鬆散的 floorboard 下隱藏世界。
 
-![RoboRaid 加入三維的管道和後置您的背景牆，只能透過建立為 invaders 突破的漏洞來顯示其他結構。](images/roboraid-640px.png)
+![RoboRaid 會在您的牆後方新增三維管道和其他結構, 只會透過太空入侵者中斷時所建立的漏洞來顯示。](images/roboraid-640px.png)
 
-RoboRaid 加入三維的管道和後置您的背景牆，只能透過建立為 invaders 突破的漏洞來顯示其他結構。
+RoboRaid 會在您的牆後方新增三維管道和其他結構, 只會透過太空入侵者中斷時所建立的漏洞來顯示。
 
-您可以使用其中一個這些唯一全像投影 HoloLens 上，應用程式可以提供深度的內容，您的背景牆後方，或透過您 floor 方式相同，但實際上會透過實際的視窗。 自行保留，移動，您可以看到任何位於右邊。 越來越接近，以及您可以看到更多的所有項目。 主要差異是，實際的漏洞可讓您透過，而您 floor stubbornly 不會讓您透過爬該神奇的全像攝影版內容。 （我會將工作加入待處理項目）。
+使用 HoloLens 上的其中一種獨特的全息影像, 應用程式可以在您的牆後方或透過您的樓層提供內容的夢想, 其方式與實際的視窗相同。 將自己往左移動, 您可以看到右側有哪些內容。 深入瞭解, 您可以看到更多專案。 主要的差別在於, 真正的漏洞讓您能夠通過, 而 floor 即時則不會讓您順向神奇全像攝影內容。 (我會在待處理專案中加入工作)。
 
 ## <a name="behind-the-scenes"></a>幕後
 
-這個訣竅是兩個效果的組合。 首先，全像攝影版的內容已釘選到全球使用 「 空間錨點 」。 若要讓該內容 「 世界鎖定 」 使用錨點表示，您要尋找在不以視覺化方式漂移離開實體的物件附近，即使在您移動或基礎的空間的對應系統更新您的聊天室其 3D 模型。
+這個技巧是兩種效果的組合。 首先, 使用「空間錨點」將全像攝影內容釘選到世界。 使用錨點讓該內容成為「世界鎖定」, 表示您所要查看的不會以視覺化方式偏離其附近的實體物件, 即使您移動或基礎空間對應系統更新其您房間的3D 模型。
 
-其次，該全像攝影版的內容會以視覺化方式限制非常特定的空間，讓您可以只看到透過漏洞，您實際上。 該阻擋是為了需要仔細檢查邏輯漏洞、 視窗或門口，銷售的技巧。 沒有什麼東西可以封鎖大部分的檢視，裂縫祕密的侏維度空間中，可能只是看起來像不當放置的恐龍。
+其次, 這種全像攝影內容會以視覺化方式限制在非常特定的空間, 因此您只能在現實中看到整個洞。 這遮蔽是需要查看邏輯洞、視窗或閘口, 以銷售訣竅的必要。 如果沒有封鎖大部分視圖的專案, 密碼 Jurassic 維度的空間破解可能就會像是不良放置的恐龍。
 
-![這不是實際的螢幕擷取畫面，但舉例說明如何在 HoloLens 從 MR 基本概念 101 祕密地底世界的樣子。 黑色的機箱未顯示，但您可以看到透過虛擬的洞裡的內容。 （透過實際的裝置時，最低限度值似乎因為眼睛的重點放在進一步的距離，如果找不到甚至更會消失。）](images/origamiholecomposited-640px.png)
+![這不是實際的螢幕擷取畫面, 而是從 MR 基本 101 underworld 密碼的說明如何查看 HoloLens。 黑色主機殼不會顯示, 但您可以透過虛擬洞來查看內容。 (當您查看實際裝置時, 地面似乎會消失, 因為您的眼睛焦點會與其他距離一樣)。](images/origamiholecomposited-640px.png)
 
-這不是實際的螢幕擷取畫面，而圖如何從祕密地底世界[MR 基本概念 101](holograms-101.md) HoloLens 上看起來。 黑色的機箱未顯示，但您可以看到透過虛擬的洞裡的內容。 （透過實際的裝置時，最低限度值似乎因為眼睛的重點放在進一步的距離，如果找不到甚至更會消失。）
+這不是實際的螢幕擷取畫面, 而是從[MR 基本 101](holograms-101.md) underworld 密碼的說明如何查看 HoloLens。 黑色主機殼不會顯示, 但您可以透過虛擬洞來查看內容。 (當您查看實際裝置時, 地面似乎會消失, 因為您的眼睛焦點會與其他距離一樣)。
 
-### <a name="world-locking-holographic-content"></a>世界鎖定全像攝影版的內容
+### <a name="world-locking-holographic-content"></a>世界-鎖定全像攝影內容
 
-在 Unity 中，造成保持世界鎖定全像攝影版的內容是簡單，只要新增 WorldAnchor 元件：
+在 Unity 中, 使全像攝影內容保持世界鎖定狀態, 就像新增 WorldAnchor 元件一樣簡單:
 
 ```
 myObject.AddComponent<WorldAnchor>();
 ```
 
-WorldAnchor 元件將會調整的位置和輪替其 GameObject （和任何其他在該階層中的物件項目） 保持穩定，相對於實體物件附近。 當製作您的內容，則會建立物件的 [根] 樞紐，在這個虛擬漏洞置中對齊的方式。 （牆上的深度，物件的樞紐分析時，其位置和旋轉的稍微調整會更明顯，而且漏洞不可能看起來非常穩定）。
+WorldAnchor 元件會持續調整其 GameObject 的位置和旋轉 (也就是階層中該物件下的任何其他專案), 使其相對於鄰近的實體物件保持穩定。 撰寫您的內容時, 請以您物件的根 pivot 在此虛擬洞置中的方式建立。 (如果物件的樞紐分析表在牆中是深度的, 其位置和旋轉的輕微調整會更明顯, 而且洞的外觀可能不穩定)。
 
-### <a name="occluding-everything-but-the-virtual-hole"></a>Occluding 以外的虛擬的漏洞
+### <a name="occluding-everything-but-the-virtual-hole"></a>Occluding 虛擬洞以外的所有專案
 
-有各種不同的方式，選擇性地封鎖項目是隱藏在您的背景牆檢視。 最簡單的一個利用 HoloLens 使用加法類的顯示，這表示全黑的物件會顯示不可見的事實。 您可以在 Unity 中而不進行任何特殊的著色器或材質的訣竅，只要建立黑色的資料，並將它指派給您的內容中的物件。 如果您不想要執行 3D 模型，只要使用少數幾個四組數字的預設物件，並稍微重疊它們。 有一些缺點，這種作法是最快的方法來取得完全運作，但取得低精確度的使用概念證明很棒，，即使您懷疑您可能想要稍後再加以重構。
+有多種方式可以選擇性地封鎖您的牆中隱藏的視圖。 最簡單的方法是讓 HoloLens 使用加法顯示, 這表示完全黑色的物件看起來不可見。 您可以在 Unity 中執行這項操作, 而不需要進行任何特殊的著色器或材質訣竅, 只要建立黑色材質, 並將其指派給內容中的物件即可。 如果您不喜歡進行3D 模型化, 只要使用幾個預設的四個物件, 並稍微重迭它們就可以了。 這種方法有幾個缺點, 但它是讓工作正常運作的最快方式, 而且即使您懷疑稍後可能會想要重構, 也是很好的概念證明。
 
-上述的 「 黑箱 」 方法的一大缺點是不好拍攝。 效果看起來的 HoloLens 顯示透過完美的您採取任何螢幕擷取畫面會顯示黑色的大型物件，而非剩下的塗鴉牆或樓層。 原因是，但實際上與實體硬體和螢幕擷取畫面複合全像投影以不同的方式。 讓我們到一些假的數學繞道一下...
+上述「黑色箱」方法的一個主要缺點是, 它不會有很好的相片。 雖然您的效果可能會透過 HoloLens 的顯示結果, 但您所採取的任何螢幕擷取畫面都會顯示大型黑色物件, 而不是剩餘的牆或樓層。 這是因為實體硬體和螢幕擷取畫面會以不同的方式來複合全息影像和現實。 讓我們繞道一下一些假的數學運算 。
 
-*假的數學警示 ！這些數字和公式是為了說明的點，不為任何類型的精確的公制 ！*
+*假的數學警示!這些數位和公式的目的是要說明一點, 而不是任何精確的度量!*
 
-您看到透過 HoloLens:
+您可以透過 HoloLens 看到的內容:
 
 ```
 ( Reality * darkening_amount ) + Holograms
 ```
 
-您看到螢幕擷取畫面和影片中：
+您在螢幕擷取畫面和影片中看到的內容:
 
 ```
 ( Reality * ( 1 - hologram_alpha ) ) + Holograms * hologram_alpha
 ```
 
-以英文：您透過 HoloLens 所看到的內容是簡單的組合變暗的事實 （如同透過太陽眼鏡） 和任何應用程式想要顯示全像投影。 但當您的螢幕擷取畫面，相機的映像會與應用程式的全像投影的每一像素透明度值根據混合。
+英文版:您透過 HoloLens 看到的內容, 是簡單的事實 (例如透過太陽眼鏡), 以及應用程式想要顯示的任何全息影像。 但是當您拍攝螢幕擷取畫面時, 相機的影像會根據每個圖元的透明度值, 與應用程式的全息片混合。
 
-若要解決這個問題的一個方式是變更，只寫入深度緩衝區，並與所有其他不透明資料排序的 「 黑箱作業 」 資料。 如這個範例，請參閱[MixedRealityToolkit 在 GitHub 上的 WindowOcclusion.shader 檔案](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit/Common/Shaders/WindowOcclusion.shader)。 這裡複製相關的行：
+解決這個情況的方法之一, 就是將「黑色方塊」材質改成隻寫入深度緩衝區, 然後再以所有其他不透明的資料進行排序。 如需這種情況的範例, 請查看[GitHub 上 MixedRealityToolkit 中的 WindowOcclusion。](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit/Common/Shaders/WindowOcclusion.shader) 相關行會複製到此處:
 
 ```
 "RenderType" = "Opaque"
@@ -77,34 +77,34 @@ WorldAnchor 元件將會調整的位置和輪替其 GameObject （和任何其�
 ColorMask 0
 ```
 
-(請注意 「 位移 50，100"一行是應付不相關的問題，因此它可能有道理，省略。)
+(請注意, 「Offset 50, 100」這一行是用來處理不相關的問題, 因此可能有道理)。
 
-實作不可見的阻擋物材料，可讓您繪製的方塊，看起來是正確和混合實境螢幕擷取畫面中顯示的應用程式。 變本加厲，您可以試著改善效能的進一步延伸該方塊 clever 凡事繪製更少看不見的像素，但可以講一下檢討，通常不是必要。
+執行類似的不可見遮蔽資料, 可讓您的應用程式繪製在顯示器和混合現實螢幕擷取畫面中看起來正確的方塊。 對於額外的點數, 您可以試著改善該方塊的效能, 方法是執行聰明的作業來繪製較少的不可見圖元, 但這實際上可以進入直搗黃龍, 而且通常不是必要的。
 
-![以下是從 MR 基本概念 101 祕密地底世界，因為 Unity 繪製它，除了 occluding 方塊的外部組件。 請注意，底世界的樞紐中央的方塊中，可協助保留漏洞相對於實際的 floor，盡可能穩定。](images/underworld-occluded-640px.png)
+![以下是來自 MR 基本101的秘密 underworld, 因為 Unity 會進行繪製, 但 [occluding] 方塊的外部部分除外。 請注意, underworld 的 pivot 位於方塊的中央, 這有助於讓孔相對於您實際的樓層保持穩定。](images/underworld-occluded-640px.png)
 
-以下是從祕密地底世界[MR 基本概念 101](holograms-101.md)如 Unity 繪製它，除了 occluding 方塊的外部組件。 請注意，底世界的樞紐中央的方塊中，可協助保留漏洞相對於實際的 floor，盡可能穩定。
+以下是來自[MR 基本 101](holograms-101.md)的秘密 underworld, 因為 Unity 會進行繪製, 但 [occluding] 方塊的外部部分除外。 請注意, underworld 的 pivot 位於方塊的中央, 這有助於讓孔相對於您實際的樓層保持穩定。
 
-## <a name="do-it-yourself"></a>自行進行此作業
+## <a name="do-it-yourself"></a>自行執行
 
-有 HoloLens 和想要自行試用效果？ 您可以執行 （不需要撰寫程式碼） 的最簡單件事是要安裝免費的 3D 檢視器應用程式，然後載入[我提供了在 GitHub 的下載 the.fbx 檔案](https://github.com/Microsoft/HolographicAcademy/tree/CaseStudy-MagicWindow/MagicWindow)檢視花卉 pot 模型，在您的房間。 HoloLens，將其載入，您可以看到工作的假象。 當您準備模型之前時，您只能看到到小的漏洞，其他所有項目不會察覺。 查看模型，從任何另一端，它完全消失。 使用移動、 旋轉和調整控制項的 3D 檢視器來放置虛擬洞，針對任何垂直的介面，您可以將產生一些想法 ！
+有 HoloLens, 想要自行嘗試效果嗎？ 最簡單的方法就是安裝免費的3D 檢視器應用程式, 然後載入[我在 GitHub 上提供的 fbx](https://github.com/Microsoft/HolographicAcademy/tree/CaseStudy-MagicWindow/MagicWindow)檔案, 以在您的房間內查看花卉模型。 在 HoloLens 上載入它, 您就可以查看工作中的假像。 當您在模型前方時, 您只會看到小洞, 其他所有專案則不可見。 從任何其他端查看模型, 它會完全消失。 使用3D 檢視器的 [移動]、[旋轉] 和 [調整] 控制項, 將虛擬洞放在您可以想要產生一些想法的任何垂直表面上!
 
-![在 Unity 編輯器中檢視此模型會顯示圍繞 flowerpot 大型黑色方塊。 HoloLens，在方塊就會消失，讓 magic 視窗效果的方法。](images/magicwindowflowerpotineditor.png)
+![在 Unity 編輯器中查看此模型會在 flowerpot 周圍顯示一個大型的黑色方塊。 在 HoloLens 上, 此方塊會消失, 使其成為魔術視窗效果的方式。](images/magicwindowflowerpotineditor.png)
 
-在 Unity 編輯器中檢視此模型會顯示圍繞 flowerpot 大型黑色方塊。 HoloLens，在方塊就會消失，讓 magic 視窗效果的方法。
+在 Unity 編輯器中查看此模型會在 flowerpot 周圍顯示一個大型的黑色方塊。 在 HoloLens 上, 此方塊會消失, 使其成為魔術視窗效果的方式。
 
-如果您想要建置使用這項技術的應用程式，請參閱[MR 基本概念 101 教學課程](holograms-101.md)中[混合實境教學課程](tutorials.md)。 第 7 章結尾中會顯示隱藏的底世界 （如上面圖所示） 您 floor 遽增。 誰說教學課程必須無聊？
+如果您想要建立使用這項技術的應用程式, 請參閱[混合現實教學](tutorials.md)課程中的[MR 基本概念101教學](holograms-101.md)課程。 第7章結束于您的樓層中, 會顯示隱藏的 underworld (如上圖所示)。 誰說過教學課程必須是乏味的？
 
-以下是一些概念的您可以採取這個想法下一步:
-* 將可讓內容內的虛擬的洞裡互動式方法。 讓使用者有一些影響超過其牆真的能夠改進難怪這個技巧可提供的意義。
-* 將方法可以查看透過回到已知的區域物件。 比方說，可以將全像攝影版的洞裡放在您的咖啡資料表及檢視的方式下的您 floor 嗎？
+以下是您在下一步可以採取此想法的一些概念:
+* 將虛擬洞內的內容視為互動的方式。 讓您的使用者在其背景上有一些影響, 實際上可以改善這項技巧可以提供的意義。
+* 想辦法將物件查看到已知區域。 例如, 您要如何在咖啡表中放入全像平面, 並查看其底下的樓層？
 
 ## <a name="about-the-author"></a>關於作者
 
 <table style="border-collapse:collapse">
 <tr>
 <td style="border-style: none" width="60px"><img alt="Picture of Eric Rehmeyer" width="60" height="60" src="images/genericusertile.jpg"></td>
-<td style="border-style: none"><b>Eric Rehmeyer</b><br>資深軟體工程師 @Microsoft</td>
+<td style="border-style: none"><b>Eric Rehmeyer</b><br>資深軟體工程師@Microsoft</td>
 </tr>
 </table>
 

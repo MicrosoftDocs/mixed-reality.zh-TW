@@ -1,46 +1,46 @@
 ---
-title: 在 Unity 中的語音輸入
-description: Unity 會公開三種方式可以新增至您的 Windows Mixed Reality 應用程式的語音輸入。
+title: Unity 中的語音輸入
+description: Unity 公開三種方式, 可將語音輸入新增至您的 Windows Mixed Reality 應用程式。
 author: thetuvix
 ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
-keywords: 輸入的語音、 KeywordRecognizer、 GrammarRecognizer、 麥克風、 聽寫、 語音
+keywords: 語音輸入、KeywordRecognizer、GrammarRecognizer、麥克風、聽寫、語音
 ms.openlocfilehash: ef8114a1c877fe9b858122e0c64628d4b71a69cd
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597011"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63548688"
 ---
-# <a name="voice-input-in-unity"></a>在 Unity 中的語音輸入
+# <a name="voice-input-in-unity"></a>Unity 中的語音輸入
 
-Unity 會公開三種方式可以新增[語音輸入](voice-input.md)您的 Unity 應用程式。
+Unity 會公開三種將[語音輸入](voice-input.md)新增至 Unity 應用程式的方式。
 
-KeywordRecognizer （其中兩種類型的 PhraseRecognizers），與您的應用程式可以指定字串的命令，以接聽的陣列。 GrammarRecognizer （另一種 PhraseRecognizer） 中，使用您的應用程式可以提供定義要接聽的特定文法 SRGS 檔案。 使用 DictationRecognizer，應用程式可以接聽的任何文字，及使用者提供任何提示或其他顯示其語音。
+使用 KeywordRecognizer (PhraseRecognizers 的兩種類型之一) 時, 您的應用程式可以指定要接聽的字串命令陣列。 使用 GrammarRecognizer (PhraseRecognizer 的其他類型) 時, 您的應用程式可以指定一個 SRGS 檔案, 以定義要接聽的特定文法。 透過 DictationRecognizer, 您的應用程式可以接聽任何單字, 並為使用者提供其語音的附注或其他顯示。
 
 >[!NOTE]
->只有聽寫或片語辨識可以一次處理。 這表示如果 GrammarRecognizer 或 KeywordRecognizer 作用中時，不可為 DictationRecognizer active，反之亦然。
+>只能一次處理聽寫或片語辨識。 這表示, 如果 GrammarRecognizer 或 KeywordRecognizer 作用中, DictationRecognizer 就無法作用, 反之亦然。
 
 ## <a name="enabling-the-capability-for-voice"></a>啟用語音功能
 
-**麥克風**必須宣告功能，讓應用程式利用語音輸入。
-1. 瀏覽至 「 編輯 > 專案設定 > 播放程式 」 在 Unity 編輯器中，請移至播放程式設定
+必須為應用程式宣告**麥克風**功能, 才能利用語音輸入。
+1. 在 Unity 編輯器中, 流覽至 [編輯 > 專案設定 > Player], 移至播放程式設定
 2. 按一下 [Windows Store] 索引標籤
-3. 在 「 發行的設定 > 功能 」 區段中，檢查**麥克風**功能
+3. 在 [發佈設定 > 功能] 區段中, 檢查**麥克風**功能
 
 ## <a name="phrase-recognition"></a>片語辨識
 
-若要啟用您的應用程式接聽特定片語，然後說出使用者採取某些動作，您需要：
-1. 指定的片語，以接聽使用 KeywordRecognizer 或 GrammarRecognizer
-2. 處理 OnPhraseRecognized 事件並採取動作對應至片語辨識
+若要讓您的應用程式接聽使用者所說的特定片語, 請採取一些動作, 您必須:
+1. 使用 KeywordRecognizer 或 GrammarRecognizer 指定要接聽的片語
+2. 處理 OnPhraseRecognized 事件, 並採取對應至已辨識片語的動作
 
 ### <a name="keywordrecognizer"></a>KeywordRecognizer
 
-**命名空間：** *UnityEngine.Windows.Speech*<br>
-**類型：** *KeywordRecognizer*， *PhraseRecognizedEventArgs*， *SpeechError*， *SpeechSystemStatus*
+**命名空間：** *UnityEngine 語音*<br>
+**類型：** *KeywordRecognizer*、 *PhraseRecognizedEventArgs*、 *SpeechError*、 *SpeechSystemStatus*
 
-我們需要一些儲存某些按鍵 using 陳述式：
+我們需要幾個 using 語句來儲存一些按鍵:
 
 ```
 using UnityEngine.Windows.Speech;
@@ -48,14 +48,14 @@ using System.Collections.Generic;
 using System.Linq;
 ```
 
-然後我們要加上幾個欄位至您的類別，以儲存辨識器和關鍵字]-> [動作字典：
+接著, 讓我們將幾個欄位新增至您的類別, 以儲存辨識器和關鍵字 > 動作字典:
 
 ```
 KeywordRecognizer keywordRecognizer;
 Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
 ```
 
-現在加入到字典中 （例如 start （） 方法） 內的關鍵字。 我們在此範例中新增的 [啟用] 的關鍵字：
+現在將關鍵字新增至字典 (例如, 在 Start () 方法內)。 我們要在此範例中新增 "activate" 關鍵字:
 
 ```
 //Create keywords for keyword recognizer
@@ -65,19 +65,19 @@ keywords.Add("activate", () =>
 });
 ```
 
-建立關鍵字辨識器，並告訴它哪些我們要用來識別：
+建立關鍵字辨識器並告訴它我們要辨識的內容:
 
 ```
 keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
 ```
 
-現在註冊 OnPhraseRecognized 事件
+立即註冊 OnPhraseRecognized 事件
 
 ```
 keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
 ```
 
-範例處理常式是：
+範例處理常式如下:
 
 ```
 private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
@@ -91,7 +91,7 @@ private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args
 }
 ```
 
-最後，啟動辨識 ！
+最後, 開始辨識!
 
 ```
 keywordRecognizer.Start();
@@ -99,31 +99,31 @@ keywordRecognizer.Start();
 
 ### <a name="grammarrecognizer"></a>GrammarRecognizer
 
-**命名空間：** *UnityEngine.Windows.Speech*<br>
-**型別**:*GrammarRecognizer*， *PhraseRecognizedEventArgs*， *SpeechError*， *SpeechSystemStatus*
+**命名空間：** *UnityEngine 語音*<br>
+**類型**:*GrammarRecognizer*、 *PhraseRecognizedEventArgs*、 *SpeechError*、 *SpeechSystemStatus*
 
-如果您指定使用 SRGS 您辨識文法，會使用 GrammarRecognizer。 應用程式有多個只是幾個關鍵字，如果您想要辨識更複雜的片語，或如果您想要輕鬆地開啟和關閉一組命令，這非常有用。 請參閱：[建立使用 SRGS XML 文法](https://msdn.microsoft.com/library/hh378349(v=office.14).aspx)檔案格式資訊。
+如果您要使用 SRGS 來指定辨識文法, 則會使用 GrammarRecognizer。 如果您的應用程式有多個關鍵字, 如果您想要辨識較複雜的片語, 或如果您想要輕鬆地開啟和關閉命令集, 這項功能就很有用。 請參閱：[使用 SRGS XML](https://msdn.microsoft.com/library/hh378349(v=office.14).aspx)為檔案格式資訊建立文法。
 
-一旦您 SRGS 文法中，而且它是在您專案中[StreamingAssets 資料夾](http://docs.unity3d.com/Manual/StreamingAssets.html):
+一旦您有了 SRGS 文法, 它就會在您的專案中[StreamingAssets 資料夾](http://docs.unity3d.com/Manual/StreamingAssets.html)內:
 
 ```
 <PROJECT_ROOT>/Assets/StreamingAssets/SRGS/myGrammar.xml
 ```
 
-建立 GrammarRecognizer，並將 SRGS 檔案的路徑傳遞它：
+建立 GrammarRecognizer, 並將路徑傳遞至您的 SRGS 檔案:
 
 ```
 private GrammarRecognizer grammarRecognizer;
 grammarRecognizer = new GrammarRecognizer(Application.streamingDataPath + "/SRGS/myGrammar.xml");
 ```
 
-現在註冊 OnPhraseRecognized 事件
+立即註冊 OnPhraseRecognized 事件
 
 ```
 grammarRecognizer.OnPhraseRecognized += grammarRecognizer_OnPhraseRecognized;
 ```
 
-您會收到回呼，其中包含您可以適當地處理您 SRGS 文法中指定的資訊。 將 semanticMeanings 陣列中提供的大部分重要的資訊。
+您會取得一個回呼, 其中包含您可以適當處理的 [SRGS 文法] 中所指定的資訊。 大部分的重要資訊將會在 semanticMeanings 陣列中提供。
 
 ```
 private void Grammar_OnPhraseRecognized(PhraseRecognizedEventArgs args)
@@ -133,7 +133,7 @@ private void Grammar_OnPhraseRecognized(PhraseRecognizedEventArgs args)
 }
 ```
 
-最後，啟動辨識 ！
+最後, 開始辨識!
 
 ```
 grammarRecognizer.Start();
@@ -141,32 +141,32 @@ grammarRecognizer.Start();
 
 ## <a name="dictation"></a>聽寫
 
-**命名空間：** *UnityEngine.Windows.Speech*<br>
-**型別**:*DictationRecognizer*， *SpeechError*， *SpeechSystemStatus*
+**命名空間：** *UnityEngine 語音*<br>
+**類型**:*DictationRecognizer*、 *SpeechError*、 *SpeechSystemStatus*
 
-您可以使用 DictationRecognizer 使用者的語音轉換文字。 會公開 DictationRecognizer[聽寫](voice-input.md#dictation)功能和支援註冊與接聽假設和片語完成事件，讓它們說話時，您可以為這兩個您使用者提供意見反應，之後。 Start （） 和了 stop （） 方法分別啟用和停用段聽寫辨識。 完成後，辨識器，它應該處置使用 dispose （） 方法來釋放它所使用的資源。 它會釋出這些資源自動記憶體回收期間的其他效能成本如果它們不會釋放，在這之前。
+使用 DictationRecognizer 將使用者的語音轉換成文字。 DictationRecognizer 會公開[聽寫](voice-input.md#dictation)功能, 並支援註冊和接聽假設和片語完成的事件, 讓您可以在使用者說話和之後, 提供意見反應給您的使用者。 Start () 和 Stop () 方法分別啟用和停用聽寫辨識。 完成辨識器之後, 應該使用 Dispose () 方法來釋放它所使用的資源。 它會在垃圾收集期間以額外的效能成本自動釋放這些資源 (如果之前未釋放)。
 
-有若要開始使用語音輸入所需的只有幾個步驟：
+開始使用聽寫只需要幾個步驟:
 1. 建立新的 DictationRecognizer
-2. 處理語音輸入事件
+2. 處理聽寫事件
 3. 啟動 DictationRecognizer
 
-### <a name="enabling-the-capability-for-dictation"></a>啟用語音輸入的功能
+### <a name="enabling-the-capability-for-dictation"></a>啟用聽寫功能
 
-「 網際網路用戶端 」 功能，除了上面所提的 「 麥克風 」 功能必須宣告應用程式利用語音輸入。
-1. 瀏覽至"編輯 > 專案設定 > Player"頁面在 Unity 編輯器中，請移至播放程式設定
+除了上面提到的「麥克風」功能以外, 您必須為應用程式宣告「網際網路用戶端」功能, 才能利用聽寫。
+1. 在 Unity 編輯器中, 流覽至 [編輯 > 專案設定 > Player] 頁面, 移至播放程式設定
 2. 按一下 [Windows Store] 索引標籤
-3. 在 「 發行的設定 > 功能 」 區段中，檢查**InternetClient**功能
+3. 在 [發佈設定 > 功能] 區段中, 檢查**InternetClient**功能
 
 ### <a name="dictationrecognizer"></a>DictationRecognizer
 
-建立 DictationRecognizer 就像這樣：
+建立 DictationRecognizer, 如下所示:
 
 ```
 dictationRecognizer = new DictationRecognizer();
 ```
 
-有四個可以訂閱和處理來實作語音輸入行為的聽寫事件。
+有四個聽寫事件可供訂閱並處理來執行聽寫行為。
 1. DictationResult
 2. DictationComplete
 3. DictationHypothesis
@@ -174,15 +174,15 @@ dictationRecognizer = new DictationRecognizer();
 
 **DictationResult**
 
-使用者之後引發此事件，通常會在暫停句子的結尾。 完整辨識這裡傳回的字串。
+這個事件會在使用者暫停之後引發, 通常是在句子的結尾。 這裡會傳回完整辨識的字串。
 
-首先，訂閱 DictationResult 事件：
+首先, 訂閱 DictationResult 事件:
 
 ```
 dictationRecognizer.DictationResult += DictationRecognizer_DictationResult;
 ```
 
-然後處理 DictationResult 回呼：
+然後處理 DictationResult 回呼:
 
 ```
 private void DictationRecognizer_DictationResult(string text, ConfidenceLevel confidence)
@@ -193,15 +193,15 @@ private void DictationRecognizer_DictationResult(string text, ConfidenceLevel co
 
 **DictationHypothesis**
 
-只有在使用者進行通訊時，持續，則會引發此事件。 辨識器接聽，因為它會提供之內容的文字聽過為止。
+當使用者在交談時, 會持續引發此事件。 當辨識器接聽時, 它會提供目前為止聽到的文字。
 
-首先，訂閱 DictationHypothesis 事件：
+首先, 訂閱 DictationHypothesis 事件:
 
 ```
 dictationRecognizer.DictationHypothesis += DictationRecognizer_DictationHypothesis;
 ```
 
-然後處理 DictationHypothesis 回呼：
+然後處理 DictationHypothesis 回呼:
 
 ```
 private void DictationRecognizer_DictationHypothesis(string text)
@@ -212,15 +212,15 @@ private void DictationRecognizer_DictationHypothesis(string text)
 
 **DictationComplete**
 
-引發此事件是當辨識器停止時，不論是從了 stop （） 呼叫，發生逾時或其他某些錯誤。
+當辨識器停止時, 不論是從呼叫停止 (), 還是發生超時, 或某個其他錯誤, 都會引發此事件。
 
-首先，訂閱 DictationComplete 事件：
+首先, 訂閱 DictationComplete 事件:
 
 ```
 dictationRecognizer.DictationComplete += DictationRecognizer_DictationComplete;
 ```
 
-然後處理 DictationComplete 回呼：
+然後處理 DictationComplete 回呼:
 
 ```
 private void DictationRecognizer_DictationComplete(DictationCompletionCause cause)
@@ -231,15 +231,15 @@ private void DictationRecognizer_DictationComplete(DictationCompletionCause caus
 
 **DictationError**
 
-發生錯誤時，會引發此事件。
+發生錯誤時, 就會引發此事件。
 
-首先，訂閱 DictationError 事件：
+首先, 訂閱 DictationError 事件:
 
 ```
 dictationRecognizer.DictationError += DictationRecognizer_DictationError;
 ```
 
-然後處理 DictationError 回呼：
+然後處理 DictationError 回呼:
 
 ```
 private void DictationRecognizer_DictationError(string error, int hresult)
@@ -248,13 +248,13 @@ private void DictationRecognizer_DictationError(string error, int hresult)
 }
 ```
 
-一旦您有訂閱，並處理您關心的語音輸入事件，請啟動 聽寫辨識器，若要開始接收事件。
+當您訂閱並處理您關心的聽寫事件之後, 請啟動聽寫辨識器以開始接收事件。
 
 ```
 dictationRecognizer.Start();
 ```
 
-如果您不再想要保留周圍 DictationRecognizer，您要取消訂閱事件，並處置 DictationRecognizer。
+如果您不想再讓 DictationRecognizer 保持不變, 您必須取消訂閱事件並處置 DictationRecognizer。
 
 ```
 dictationRecognizer.DictationResult -= DictationRecognizer_DictationResult;
@@ -264,36 +264,36 @@ dictationRecognizer.DictationError -= DictationRecognizer_DictationError ;
 dictationRecognizer.Dispose();
 ```
 
-**祕訣**
-* Start （） 和了 stop （） 方法分別啟用和停用段聽寫辨識。
-* 完成後，辨識器，它必須處置使用 dispose （） 方法來釋放它所使用的資源。 它會釋出這些資源自動記憶體回收期間的其他效能成本如果它們不會釋放，在這之前。
-* 在一段時間之後，就會發生逾時。 您可以檢查這些 DictationComplete 事件中的逾時。 有兩個逾時，要注意的：
-   1. 如果辨識器啟動，且聽任何音訊第五秒，它就會逾時。
-   2. 如果辨識器已提供結果，但然後聽到 20 秒的無回應，它就會逾時。
+**各種**
+* Start () 和 Stop () 方法分別啟用和停用聽寫辨識。
+* 完成辨識器之後, 必須使用 Dispose () 方法來處置它, 以釋放它所使用的資源。 它會在垃圾收集期間以額外的效能成本自動釋放這些資源 (如果之前未釋放)。
+* 在設定的一段時間後發生超時。 您可以在 DictationComplete 事件中檢查這些超時。 有兩個要注意的超時:
+   1. 如果辨識器啟動且未在前五秒聽到任何音訊, 則會超時。
+   2. 如果辨識器已指定結果, 但接著會聽到24秒的無聲, 則會超時。
 
-## <a name="using-both-phrase-recognition-and-dictation"></a>使用片語辨識和語音輸入
+## <a name="using-both-phrase-recognition-and-dictation"></a>同時使用片語辨識和聽寫
 
-如果您想要使用應用程式中的片語辨識和語音輸入時，您必須完全關閉其中一個其他開始之前。 如果您有多個 KeywordRecognizers 執行時，您可以關閉它們全部一次使用：
+如果您想要在您的應用程式中同時使用片語辨識和聽寫, 您必須完全關閉其中一項, 然後才能啟動另一個。 如果您有多個 KeywordRecognizers 正在執行, 您可以一次將它們全部關閉, 方法是:
 
 ```
 PhraseRecognitionSystem.Shutdown();
 ```
 
-若要還原至先前的狀態，所有的辨識器，DictationRecognizer 停止後，您可以呼叫：
+為了將所有辨識器還原成先前的狀態, 在 DictationRecognizer 停止之後, 您可以呼叫:
 
 ```
 PhraseRecognitionSystem.Restart();
 ```
 
-您也可以開始 KeywordRecognizer，將會重新啟動 PhraseRecognitionSystem 以及。
+您也可以直接啟動 KeywordRecognizer, 這也會重新開機 PhraseRecognitionSystem。
 
-## <a name="using-the-microphone-helper"></a>使用麥克風 helper
+## <a name="using-the-microphone-helper"></a>使用麥克風協助程式
 
-混合實境 Toolkit GitHub 上包含麥克風 helper 類別，可在開發人員提示，如果系統上沒有可用的麥克風。 它的其中一種用法是其中一個想要檢查是否有麥克風系統上的應用程式中顯示任何語音互動提示之前。
+GitHub 上的混合現實工具組包含麥克風協助程式類別, 可在系統上有可用的麥克風時, 在開發人員提示。 其中一個用途是在應用程式中顯示任何語音互動提示之前, 要檢查系統上是否有麥克風。
 
-麥克風協助程式指令碼可在[公用程式的輸入/指令碼資料夾](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit/Input/Scripts/Utilities/MicrophoneHelper.cs)。 GitHub 存放庫也包含[少量樣本](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/Input/Scripts/MicrophoneHelperSample.cs)示範如何使用協助程式。
+您可以在 [[輸入/腳本/公用程式] 資料夾](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit/Input/Scripts/Utilities/MicrophoneHelper.cs)中找到麥克風協助程式腳本。 GitHub 存放庫也包含示範如何使用 helper 的[小型範例](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/Input/Scripts/MicrophoneHelperSample.cs)。
 
-## <a name="voice-input-in-mixed-reality-toolkit"></a>混合實境工具組中的語音輸入
-您可以在此場景中找到的語音輸入的範例。
+## <a name="voice-input-in-mixed-reality-toolkit"></a>混合現實工具組中的語音輸入
+您可以在此場景中找到語音輸入的範例。
 
-- [HoloToolkit-Examples/Input/Scenes/SpeechInputSource.unity](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/Input/Scenes/SpeechInputSource.unity)
+- [HoloToolkit-Examples/Input/場景/SpeechInputSource unity](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/Input/Scenes/SpeechInputSource.unity)

@@ -1,68 +1,68 @@
 ---
 title: DirectX 中的空間對應
-description: 說明如何在 DirectX 應用程式中實作空間的對應。 這包括通用 Windows 平台 SDK 隨附的空間的對應範例應用程式的詳細的說明。
+description: 說明如何在 DirectX 應用程式中執行空間對應。 這包括通用 Windows 平臺 SDK 隨附之空間對應範例應用程式的詳細說明。
 author: MikeRiches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Windows 混合實境、 空間的對應、 環境、 互動、 directx、 winrt、 api、 範例程式碼，UWP，SDK，逐步解說
+keywords: Windows mixed reality, 空間對應, 環境, 互動, directx, winrt, api, 範例程式碼, UWP, SDK, 逐步解說
 ms.openlocfilehash: db3f1464158c04127e456cadd5fb633336909344
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59597139"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63550699"
 ---
 # <a name="spatial-mapping-in-directx"></a>DirectX 中的空間對應
 
-本主題描述如何實作[空間對應](spatial-mapping.md)DirectX 應用程式中。 這包括通用 Windows 平台 SDK 隨附的空間的對應範例應用程式的詳細的說明。
+本主題說明如何在您的 DirectX 應用程式中執行[空間對應](spatial-mapping.md)。 這包括通用 Windows 平臺 SDK 隨附之空間對應範例應用程式的詳細說明。
 
-本主題使用的程式碼[HolographicSpatialMapping](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicSpatialMapping) UWP 程式碼範例。
+本主題使用來自[HolographicSpatialMapping](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicSpatialMapping) UWP 程式碼範例的程式碼。
 
 >[!NOTE]
->目前在這篇文章中的程式碼片段示範如何使用C++/CX 而不是 C + + 17 相容C++中所使用的 /WinRT [ C++全像攝影版的專案範本](creating-a-holographic-directx-project.md)。  概念是相等的C++/WinRT 專案，但您必須將轉譯程式碼。
+>本文中的程式碼片段目前示範如何使用C++/cx, C++ [ C++ ](creating-a-holographic-directx-project.md)而不是 C + 17 相容的/WinRT, 如全像攝影專案範本中所使用。  概念相當於C++/WinRT 專案, 但您必須轉譯程式碼。
 
-## <a name="directx-development-overview"></a>DirectX 開發概觀
+## <a name="directx-development-overview"></a>DirectX 開發總覽
 
-空間對應的原生應用程式開發使用的 Api 之下[Windows.Perception.Spatial](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.aspx)命名空間。 這些 Api 提供的空間的對應功能，直接對空間的對應所公開的 Api 類似的方式 完全控制[Unity](spatial-mapping-in-unity.md)。
+適用于空間對應的原生應用程式開發會使用[Windows 感知.](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.aspx)空間命名空間下的 api。 這些 Api 提供空間對應功能的完整控制權, 其方式與[Unity](spatial-mapping-in-unity.md)所公開的空間對應 api 直接類似。
 
-### <a name="perception-apis"></a>Perception Api
+### <a name="perception-apis"></a>認知 Api
 
-空間對應開發所提供的主要類型如下所示：
-* [SpatialSurfaceObserver](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfaceobserver.aspx)提供應用程式指定區域中的空間接近 SpatialSurfaceInfo 物件形式的使用者介面的相關資訊。
-* [SpatialSurfaceInfo](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfaceinfo.aspx)描述單一現有空間的介面，包括唯一識別碼、 磁碟區和上次變更時間的週框。 它會提供 SpatialSurfaceMesh 收到要求時以非同步的方式。
-* [SpatialSurfaceMeshOptions](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfacemeshoptions.aspx)包含用於自訂要求從 SpatialSurfaceInfo SpatialSurfaceMesh 物件的參數。
-* [SpatialSurfaceMesh](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfacemesh.aspx)表示單一的空間表面的網格資料。 頂點位置、 頂點法線和三角形索引的資料被包含成員 SpatialSurfaceMeshBuffer 物件中。
-* [SpatialSurfaceMeshBuffer](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfacemeshbuffer.aspx)包裝網狀結構資料單一類型。
+為空間對應開發提供的主要類型如下所示:
+* [SpatialSurfaceObserver](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfaceobserver.aspx)會以 SpatialSurfaceInfo 物件的形式, 提供應用程式在使用者附近空間的指定區域中的表面相關資訊。
+* [SpatialSurfaceInfo](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfaceinfo.aspx)描述單一否則空間介面, 包括唯一的識別碼、界限磁片區和上次變更的時間。 它會在要求時以非同步方式提供 SpatialSurfaceMesh。
+* [SpatialSurfaceMeshOptions](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfacemeshoptions.aspx)包含用來自訂 SpatialSurfaceInfo 所要求之 SpatialSurfaceMesh 物件的參數。
+* [SpatialSurfaceMesh](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfacemesh.aspx)代表單一空間表面的網格資料。 頂點位置、頂點法線和三角形索引的資料會包含在成員 SpatialSurfaceMeshBuffer 物件中。
+* [SpatialSurfaceMeshBuffer](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfacemeshbuffer.aspx)會包裝單一類型的網格資料。
 
-在開發時使用這些 Api 的應用程式，您的基本程式流程看起來像這樣 （如以下所述的應用程式範例所示）：
-- **設定您 SpatialSurfaceObserver**
-  - 呼叫[RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfaceobserver.requestaccessasync.aspx)，以確保使用者已獲得應用程式以使用裝置的空間的對應功能的權限。
+使用這些 Api 開發應用程式時, 您的基本程式流程看起來會像這樣 (如以下所述的範例應用程式所示):
+- **設定您的 SpatialSurfaceObserver**
+  - 呼叫[RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfaceobserver.requestaccessasync.aspx), 以確保使用者已取得應用程式的許可權, 以使用裝置的空間對應功能。
   - 具現化 SpatialSurfaceObserver 物件。
-  - 呼叫[SetBoundingVolumes](https://msdn.microsoft.com/library/windows/apps/mt592747.aspx)來指定您想要空間介面的相關資訊的區域。 您可能只再次呼叫此函式來修改這些區域在未來。 使用指定每個區域[SpatialBoundingVolume](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialboundingvolume.aspx)。
-  - 報名[ObservedSurfacesChanged](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfaceobserver.observedsurfaceschanged.aspx)可用空間，您所指定的區域中的空間介面的相關新資訊時，會引發的事件。
-- **處理序 ObservedSurfacesChanged 事件**
-  - 在您的事件處理常式，呼叫[GetObservedSurfaces](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfaceobserver.getobservedsurfaces.aspx)接收 SpatialSurfaceInfo 物件的對應。 使用此對應，您可以更新您記錄的空間表面[存在於使用者的環境](spatial-mapping.md#mesh-caching)。
-  - 每個 SpatialSurfaceInfo 物件，您可能會查詢[TryGetBounds](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfaceinfo.trygetbounds.aspx)來判斷介面上的空間範圍，以表示[空間座標系統](coordinate-systems.md)您選擇。
-  - 如果您決定要求網格空間的介面，呼叫[TryComputeLatestMeshAsync](https://msdn.microsoft.com/library/windows/apps/mt592715.aspx)。 您可能會提供指定所需的三角形，密度和傳回的網狀結構資料格式的選項。
+  - 呼叫[SetBoundingVolumes](https://msdn.microsoft.com/library/windows/apps/mt592747.aspx)來指定您要在其中顯示空間表面相關資訊的區域。 只要再次呼叫此函式, 您就可以在未來修改這些區域。 每個區域都是使用[SpatialBoundingVolume](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialboundingvolume.aspx)所指定。
+  - 註冊[ObservedSurfacesChanged](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfaceobserver.observedsurfaceschanged.aspx)事件, 這會在您所指定空間區域中的空間表面有新資訊可用時引發。
+- **處理 ObservedSurfacesChanged 事件**
+  - 在您的事件處理常式中, 呼叫[GetObservedSurfaces](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfaceobserver.getobservedsurfaces.aspx)以接收 SpatialSurfaceInfo 物件的對應。 使用此地圖, 您可以更新[使用者環境中有](spatial-mapping.md#mesh-caching)哪些空間表面的記錄。
+  - 針對每個 SpatialSurfaceInfo 物件, 您可以查詢[TryGetBounds](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfaceinfo.trygetbounds.aspx)來判斷介面的空間範圍 (以您選擇的[空間座標系統](coordinate-systems.md)表示)。
+  - 如果您決定要求網格空間介面, 請呼叫[TryComputeLatestMeshAsync](https://msdn.microsoft.com/library/windows/apps/mt592715.aspx)。 您可以提供選項來指定所需的三角形密度, 以及所傳回網格資料的格式。
 - **接收和處理網格**
-  - TryComputeLatestMeshAsync 將 aysnchronously 每次呼叫會傳回一個 SpatialSurfaceMesh 物件。
-  - 您可以從這個物件存取包含的 SpatialSurfaceMeshBuffer 物件才能存取的三角形索引、 頂點位置 （如有要求） 和網格的頂點法線。 這項資料會在與直接相容的格式[Direct3D 11 Api](https://msdn.microsoft.com/library/windows/desktop/ff476501(v=vs.85).aspx)用於呈現網格。
-  - 從這裡您的應用程式可以選擇性地執行分析或[處理](spatial-mapping.md#mesh-processing)網狀結構資料，並將其用於[轉譯](spatial-mapping.md#rendering)物及物理學[raycasting 和衝突](spatial-mapping.md#raycasting-and-collision)。
-  - 請注意一個重要的詳細資料是，您必須套用擴展至網狀結構頂點位置 （例如在端點著色器，用於呈現網格），將數值轉換在其中儲存在緩衝區中，為最佳化的整數單位測量。 您可以呼叫來擷取這個標尺[VertexPositionScale](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfacemesh.vertexpositionscale.aspx)。
+  - TryComputeLatestMeshAsync 的每個呼叫都會 aysnchronously 傳回一個 SpatialSurfaceMesh 物件。
+  - 您可以從這個物件存取包含的 SpatialSurfaceMeshBuffer 物件, 以便存取三角形索引、頂點位置以及網格的 (如果要求) 頂點法線。 此資料的格式會與用來轉譯網格的[Direct3D 11 api](https://msdn.microsoft.com/library/windows/desktop/ff476501(v=vs.85).aspx)直接相容。
+  - 從這裡, 您的應用程式可以選擇性地執行網格資料的分析或[處理](spatial-mapping.md#mesh-processing), 並使用它來[呈現](spatial-mapping.md#rendering)和物理[raycasting 和衝突](spatial-mapping.md#raycasting-and-collision)。
+  - 要注意的一個重要詳細資料, 就是您必須將縮放比例套用至網格頂點位置 (例如, 在用來轉譯網格的頂點著色器中), 將它們從儲存在緩衝區中的優化整數單位轉換成計量。 您可以藉由呼叫[VertexPositionScale](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfacemesh.vertexpositionscale.aspx)來取得這項調整。
 
 ### <a name="troubleshooting"></a>疑難排解
-* 別忘了向網狀結構中端點著色器，使用所傳回的標尺的頂點位置[SpatialSurfaceMesh.VertexPositionScale](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfacemesh.vertexpositionscale.aspx)
+* 別忘了使用 SpatialSurfaceMesh 所傳回的小數值, 來調整頂點著色器中的網格頂點位置[。 VertexPositionScale](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfacemesh.vertexpositionscale.aspx)
 
-## <a name="spatial-mapping-code-sample-walkthrough"></a>空間對應的程式碼範例逐步解說
+## <a name="spatial-mapping-code-sample-walkthrough"></a>空間對應程式碼範例逐步解說
 
-[全像攝影版的空間對應](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicSpatialMapping)程式碼範例包含程式碼，可用來開始介面網格載入您的應用程式，包括基礎結構來管理及轉譯介面網狀結構。
+「全像[空間對應](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicSpatialMapping)」程式碼範例包含您可以用來開始將 surface 網格載入應用程式的程式碼, 包括用於管理和呈現 surface 網格的基礎結構。
 
-現在，我們逐步解說如何將介面的對應功能新增至您的 DirectX 應用程式。 您可以新增下列程式碼您[Windows 全像攝影版的應用程式範本](creating-a-holographic-directx-project.md)專案，或您可以跟著瀏覽先前所述的程式碼範例。 此程式碼範例根據 Windows 全像攝影版的應用程式範本。
+現在, 我們將逐步解說如何將介面對應功能新增至您的 DirectX 應用程式。 您可以將此程式碼新增至您的 Windows 全像攝影[應用程式範本](creating-a-holographic-directx-project.md)專案, 或透過流覽上述的程式碼範例來追蹤。 這個程式碼範例是以 Windows 全像應用程式範本為基礎。
 
-### <a name="set-up-your-app-to-use-the-spatialperception-capability"></a>將您的應用程式設定為使用 spatialPerception 功能
+### <a name="set-up-your-app-to-use-the-spatialperception-capability"></a>設定應用程式以使用 spatialPerception 功能
 
-您的應用程式必須能夠使用空間的對應功能。 這是環境的必要的因為空間的網格是環境的使用者，可能會被視為私用資料的表示法。 宣告您的應用程式的 package.appxmanifest 檔案中的這項功能。 以下為範例：
+您的應用程式必須能夠使用空間對應功能。 這是必要的, 因為空間網格表示使用者的環境, 這可能會被視為私用資料。 在您應用程式的 package.appxmanifest.xml 檔案中宣告這項功能。 以下為範例：
 
 ```xml
 <Capabilities>
@@ -70,7 +70,7 @@ ms.locfileid: "59597139"
 </Capabilities>
 ```
 
-功能是來自**uap2**命名空間。 若要存取此命名空間資訊清單中，將它包含*xlmns*屬性中&lt;封裝 > 項目。 以下為範例：
+這項功能來自**uap2**命名空間。 若要在資訊清單中取得這個命名空間的存取權, 請將它當做&lt;xlmns 屬性包含在封裝 > 元素中。 以下為範例：
 
 ```xml
 <Package
@@ -82,13 +82,13 @@ ms.locfileid: "59597139"
     >
 ```
 
-### <a name="check-for-spatial-mapping-feature-support"></a>檢查有空間的對應功能的支援
+### <a name="check-for-spatial-mapping-feature-support"></a>檢查空間對應功能支援
 
-Windows Mixed Reality 支援各種不同的裝置，包括裝置不支援空間對應。 如果您的應用程式可以使用空間的對應，或必須使用空間的對應，以提供的功能，它應該檢查以確定嘗試使用它之前，都支援空間對應。 比方說，如果您的混合的實境應用程式需要空間對應時，它應該先顯示一則訊息，如果使用者嘗試在沒有空間對應的裝置上執行它。 或者，您的應用程式可能能夠轉譯自己的虛擬環境來取代使用者的環境中，提供類似於可用空間的對應一樣，會發生什麼情況的體驗。 在任何情況下，此 API 可讓您的應用程式，要注意的是當它不會取得空間對應的資料和適當的方式回應。
+Windows Mixed Reality 支援各式各樣的裝置, 包括不支援空間對應的裝置。 如果您的應用程式可以使用空間對應, 或必須使用空間對應來提供功能, 則應該先檢查以確定是否支援空間對應, 再嘗試使用它。 例如, 如果您的混合現實應用程式需要空間對應, 當使用者嘗試在沒有空間對應的裝置上執行它時, 應該會顯示訊息。 或者, 您的應用程式可能可以呈現自己的虛擬環境來取代使用者的環境, 提供的體驗類似于可用空間對應時所發生的情況。 在任何事件中, 此 API 可讓您的應用程式知道何時不會取得空間對應資料, 並以適當的方式回應。
 
-若要檢查目前的裝置空間的對應支援，請先確定 UWP 合約位於層級等於或大於 4，然後呼叫 SpatialSurfaceObserver::IsSupported()。 以下是如何執行這項操作的內容中[全像攝影版的空間對應](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicSpatialMapping)程式碼範例。 支援會檢查之前要求存取權。
+若要檢查目前的裝置是否有空間對應支援, 請先確定 UWP 合約位於層級4或更高, 然後呼叫 SpatialSurfaceObserver:: IsSupported ()。 以下是如何在「全像攝影[空間對應](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicSpatialMapping)」程式碼範例的內容中執行這項操作的方法。 只有在要求存取權之前, 才會檢查支援。
 
-可用以啟動 SDK 版本 15063 SpatialSurfaceObserver::IsSupported() API。 如有必要，設定目標平台版本 15063 專案，以使用此 API 之前。
+從 SDK 15063 版開始, 提供 SpatialSurfaceObserver:: IsSupported () API。 如有需要, 請在使用此 API 之前, 將專案的目標重定為平臺版本15063。
 
 ```cpp
 if (m_surfaceObserver == nullptr)
@@ -110,11 +110,11 @@ if (m_surfaceObserver == nullptr)
            /// etc ...
 ```
 
-請注意，當 UWP 合約層級 4，應用程式應該繼續如同裝置可以執行空間對應。
+請注意, 當 UWP 合約小於層級4時, 應用程式應該繼續執行, 就像裝置能夠執行空間對應一樣。
 
-### <a name="request-access-to-spatial-mapping-data"></a>要求存取空間的對應資料
+### <a name="request-access-to-spatial-mapping-data"></a>要求存取空間對應資料
 
-您的應用程式必須要求存取空間對應的資料，然後再嘗試建立任何介面的觀察者的權限。 詳細資訊，請在稍後提供此頁面，根據我們介面對應的程式碼範例，範例如下：
+您的應用程式必須先要求許可權才能存取空間對應資料, 然後再嘗試建立任何 surface 觀察者。 以下是以我們的表面對應程式碼範例為基礎的範例, 此頁面稍後會提供更多詳細資料:
 
 ```cpp
 auto initSurfaceObserverTask = create_task(SpatialSurfaceObserver::RequestAccessAsync());
@@ -131,11 +131,11 @@ initSurfaceObserverTask.then([this, coordinateSystem](Windows::Perception::Spati
 }
 ```
 
-### <a name="create-a-surface-observer"></a>建立介面的觀察者
+### <a name="create-a-surface-observer"></a>建立 surface 觀察者
 
-**Windows::Perception::Spatial::Surfaces**命名空間包含[SpatialSurfaceObserver](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfaceobserver.aspx)類別，會遵守您在中指定的一或多個磁碟區[SpatialCoordinateSystem](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialcoordinatesystem.aspx)。 使用[SpatialSurfaceObserver](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfaceobserver.aspx)即時存取介面的網格資料的執行個體。
+**Windows::P erception:: namespace::** surface 命名空間包含[SpatialSurfaceObserver](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfaceobserver.aspx)類別, 它會觀察您在[SpatialCoordinateSystem](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialcoordinatesystem.aspx)中指定的一或多個磁片區。 使用[SpatialSurfaceObserver](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfaceobserver.aspx)實例即時存取 surface 網格資料。
 
-從**AppMain.h**:
+從**AppMain**:
 
 ```cpp
 // Obtains surface mapping data from the device in real time.
@@ -143,7 +143,7 @@ Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver^     m_surfaceObs
 Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshOptions^  m_surfaceMeshOptions;
 ```
 
-上一節所述，您必須先要求空間的對應資料的存取權，您的應用程式才能使用它。 此存取權授與自動 HoloLens。
+如上一節所述, 您必須先要求存取空間對應資料, 您的應用程式才能使用它。 此存取權會在 HoloLens 上自動授與。
 
 ```cpp
 // The surface mapping API reads information about the user's environment. The user must
@@ -157,7 +157,7 @@ initSurfaceObserverTask.then([this, coordinateSystem](Windows::Perception::Spati
         m_surfaceObserver = ref new SpatialSurfaceObserver();
 ```
 
-接下來，您需要設定介面的觀察者来觀察特定的週框磁碟區。 在這裡，我們觀察到 20 x 20 x 5 公尺，座標系統的原點在置中的方塊。
+接下來, 您必須設定介面觀察器以觀察特定的周框磁片區。 在這裡, 我們觀察到一個20x20x5 計量的方塊, 以座標系統的原點為中心。
 
 ```cpp
 // The surface observer can now be configured as needed.
@@ -175,17 +175,17 @@ initSurfaceObserverTask.then([this, coordinateSystem](Windows::Perception::Spati
         m_surfaceObserver->SetBoundingVolume(bounds);
 ```
 
-請注意，您可以設定多個週框的磁碟區。
+請注意, 您可以改為設定多個界限磁片區。
 
-*這是虛擬程式碼：*
+*這是虛擬代碼:*
 
 ```cpp
 m_surfaceObserver->SetBoundingVolumes(/* iterable collection of bounding volumes*/);
 ```
 
-您也可使用其他的週框圖案-例如檢視範圍，或不是軸的週框方塊對齊。
+您也可以使用其他的周框形狀 (例如, 視圖截圖), 或不對齊軸的周框方塊。
 
-*這是虛擬程式碼：*
+*這是虛擬代碼:*
 
 ```cpp
 m_surfaceObserver->SetBoundingVolume(
@@ -193,11 +193,11 @@ m_surfaceObserver->SetBoundingVolume(
             );
 ```
 
-如果您的應用程式需要執行一些不同介面的對應資料尚未可用時，您可以撰寫程式碼來回應的大小寫所在[SpatialPerceptionAccessStatus](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialperceptionaccessstatus.aspx)不是**允許**-例如，它將不被允許在電腦上的連接，因為這些裝置沒有可用的空間對應的硬體的沈浸式裝置。 對於這些裝置，您應該改為依賴使用者的環境和裝置組態資訊的空間階段。
+如果您的應用程式在表面對應資料無法使用時, 需要以不同的方式執行任何動作, 您可以撰寫程式碼來回應不**允許** [SpatialPerceptionAccessStatus](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialperceptionaccessstatus.aspx)的情況, 例如, 不允許在具有沉浸式的電腦上使用。已連接的裝置, 因為這些裝置沒有空間對應的硬體。 針對這些裝置, 您應該改為依賴空間階段, 以取得使用者環境和裝置設定的相關資訊。
 
-### <a name="initialize-and-update-the-surface-mesh-collection"></a>初始化並更新介面網狀結構集合
+### <a name="initialize-and-update-the-surface-mesh-collection"></a>初始化和更新 surface 網狀集合
 
-如果介面的觀察者已成功建立，我們可以繼續進行初始化我們介面網狀結構的集合。 在這裡，我們會立即取得目前的觀察到的介面集使用提取模型 API:
+如果表面觀察器建立成功, 我們可以繼續初始化 surface 網狀集合。 在這裡, 我們會使用提取模型 API 立即取得目前觀察到的表面集:
 
 ```cpp
 auto mapContainingSurfaceCollection = m_surfaceObserver->GetObservedSurfaces();
@@ -210,9 +210,9 @@ auto mapContainingSurfaceCollection = m_surfaceObserver->GetObservedSurfaces();
         }
 ```
 
-另外還有可用來取得介面的網格資料推入模型。 您可以自由地設計您的應用程式使用提取模型，如果您選擇時，在此情況下您會進行資料輪詢不時-說車架-每一次，或在特定期間內，例如遊戲安裝程式期間。 如果是，上述程式碼會為您的需要。
+也有可用來取得 surface 網格資料的推播模型。 如果您選擇, 您可以自由地將應用程式設計成隻使用提取模型, 在這種情況下, 您會每隔一段時間 (例如, 每個畫面格) 或特定期間 (如遊戲設定期間) 輪詢資料。 若是如此, 您需要的就是上述程式碼。
 
-在程式碼範例中，我們選擇示範這兩種模型用於教學用途。 在這裡，我們訂閱事件，以接收最新的 surface 網狀結構資料，每當系統能辨識的變更。
+在我們的程式碼範例中, 我們選擇示範這兩種模型的使用方式, 以供 pedagogical 之用。 在此, 我們會訂閱事件, 以便在系統辨識變更時接收最新的介面網格資料。
 
 ```cpp
 m_surfaceObserver->ObservedSurfacesChanged += ref new TypedEventHandler<SpatialSurfaceObserver^, Platform::Object^>(
@@ -220,17 +220,17 @@ m_surfaceObserver->ObservedSurfacesChanged += ref new TypedEventHandler<SpatialS
             );
 ```
 
-我們的程式碼範例也會設定為回應這些事件中。 讓我們逐步操作方式。
+我們的程式碼範例也設定為回應這些事件。 讓我們逐步解說如何執行此動作。
 
-**注意：** 這可能不是最有效率的方式來處理網狀結構資料的應用程式。 此程式碼會寫入為了清楚起見，而不最佳化。
+**注意：** 這可能不是您的應用程式處理網格資料最有效率的方式。 這段程式碼是為了清楚起見而撰寫的, 並不會進行優化。
 
-介面的網格中提供的資料存放區的唯讀對應[SpatialSurfaceInfo](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfaceinfo.aspx)物件，使用[Platform::Guids](https://msdn.microsoft.com/library/windows/desktop/aa373931.aspx)做為索引鍵的值。
+Surface 網格資料是在唯讀對應中提供, 會使用[Platform:: guid](https://msdn.microsoft.com/library/windows/desktop/aa373931.aspx)作為索引鍵值來儲存[SpatialSurfaceInfo](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfaceinfo.aspx)物件。
 
 ```cpp
 IMapView<Guid, SpatialSurfaceInfo^>^ const& surfaceCollection = sender->GetObservedSurfaces();
 ```
 
-若要處理這項資料，我們不存在於集合中的索引鍵值的第一次。 本主題稍後會看到如何將資料儲存在我們的範例應用程式的詳細資訊。
+若要處理這項資料, 我們會先找出不在集合中的索引鍵值。 本主題稍後會介紹如何將資料儲存在我們的範例應用程式中的詳細資訊。
 
 ```cpp
 // Process surface adds and updates.
@@ -252,15 +252,15 @@ for (const auto& pair : surfaceCollection)
 }
 ```
 
-我們也必須移除介面網格介面網狀結構集合，但未再系統集合中。 若要這樣做，我們要做什麼我們剛剛展示的新增和更新網格; 相對於類似的項目我們在我們的應用程式集合，並檢查看看如果迴圈**Guid**我們會在系統集合中。 如果不是系統集合中，我們從我們移除它。
+我們也必須移除表面網格集合中的表面網格, 但這不在系統集合中。 若要這麼做, 我們需要執行類似于我們剛才示範的內容, 以新增和更新網格;我們會在應用程式的集合上迴圈, 並檢查我們的**Guid**是否在系統集合中。 如果不在系統集合中, 我們會將它從我們移除。
 
-從我們 AppMain.cpp 中的事件處理常式：
+從 AppMain 中的事件處理常式:
 
 ```cpp
 m_meshCollection->PruneMeshCollection(surfaceCollection);
 ```
 
-網狀結構剪除 RealtimeSurfaceMeshRenderer.cpp 中的實作：
+在 RealtimeSurfaceMeshRenderer 中執行網格剪除:
 
 ```cpp
 void RealtimeSurfaceMeshRenderer::PruneMeshCollection(IMapView<Guid, SpatialSurfaceInfo^>^ const& surfaceCollection)
@@ -285,15 +285,15 @@ void RealtimeSurfaceMeshRenderer::PruneMeshCollection(IMapView<Guid, SpatialSurf
 }
 ```
 
-### <a name="acquire-and-use-surface-mesh-data-buffers"></a>取得和使用介面的網格資料緩衝區
+### <a name="acquire-and-use-surface-mesh-data-buffers"></a>取得和使用 surface 網格資料緩衝區
 
-取得介面的網狀結構資訊已與提取資料收集和處理該集合更新一樣容易。 現在，我們會詳細說明如何使用資料。
+取得 surface 網格資訊就像提取資料收集和處理該集合的更新一樣簡單。 現在, 我們將詳細說明您可以如何使用資料。
 
-在程式碼範例中，我們選擇使用介面的網格轉譯。 這是真實世界介面背後 occluding 全像投影的常見案例。 您也可以轉譯網格，或呈現處理過的版本，其中，便要向使用者顯示的哪些地方開始提供應用程式或遊戲的功能之前，會掃描聊天室。
+在我們的程式碼範例中, 我們選擇使用 surface 網格來呈現。 這是在真實世界表面 occluding 全息影像的常見案例。 您也可以轉譯網格, 或轉譯其已處理的版本, 以便在您開始提供應用程式或遊戲功能之前, 向使用者顯示要掃描的房間區域。
 
-我們在上一節中所述的事件處理常式從接收介面網狀結構更新時，程式碼範例會啟動程序。 在此函式的程式碼的重要一行是呼叫更新介面*mesh*： 我們已將網狀結構資訊中，處理此時，我們即將使用取得的端點和索引的資料，依照我們。
+程式碼範例會在從上一節所述的事件處理常式接收 surface 網格更新時啟動進程。 此函式中的重要程式程式碼是更新 surface*網格*的呼叫: 這次我們已經處理過網格資訊, 而我們即將取得要使用的頂點和索引資料, 如我們所見。
 
-From RealtimeSurfaceMeshRenderer.cpp:
+從 RealtimeSurfaceMeshRenderer:
 
 ```cpp
 void RealtimeSurfaceMeshRenderer::AddOrUpdateSurface(Guid id, SpatialSurfaceInfo^ newSurface)
@@ -313,9 +313,9 @@ void RealtimeSurfaceMeshRenderer::AddOrUpdateSurface(Guid id, SpatialSurfaceInfo
 }
 ```
 
-我們的範例程式碼設計使資料類別**SurfaceMesh**、 處理和轉譯的控制代碼的網格資料。 這些網格是什麼**RealtimeSurfaceMeshRenderer**實際上會保留的對應。 每個的來源，SpatialSurfaceMesh 的參考，我們用它任何時候，我們需要存取網格的頂點或索引緩衝區，或取得網狀結構中的轉換。 現在，我們的旗標為需要更新網狀結構。
+我們的範例程式碼的設計, 是為了讓資料類別 ( **SurfaceMesh**) 處理網格資料處理和呈現。 這些網格是**RealtimeSurfaceMeshRenderer**實際上會保留對應的內容。 每一個都有其來源 SpatialSurfaceMesh 的參考, 而我們會在需要存取網格頂點或索引緩衝區時使用它, 或取得網格的轉換。 目前, 我們會將網格標示為需要更新。
 
-從 SurfaceMesh.cpp:
+從 SurfaceMesh:
 
 ```cpp
 void SurfaceMesh::UpdateSurface(SpatialSurfaceMesh^ surfaceMesh)
@@ -325,7 +325,7 @@ void SurfaceMesh::UpdateSurface(SpatialSurfaceMesh^ surfaceMesh)
 }
 ```
 
-下一次，系統會要求網格繪製本身，它會檢查此旗標第一次。 如果需要更新時，將會在 GPU 上更新端點和索引緩衝區。
+下一次要求網格繪製其本身時, 它會先檢查旗標。 如果需要更新, 則會在 GPU 上更新頂點和索引緩衝區。
 
 ```cpp
 void SurfaceMesh::CreateDeviceDependentResources(ID3D11Device* device)
@@ -338,7 +338,7 @@ void SurfaceMesh::CreateDeviceDependentResources(ID3D11Device* device)
     }
 ```
 
-首先，我們會取得未經處理資料緩衝區：
+首先, 我們會取得原始資料緩衝區:
 
 ```cpp
 Windows::Storage::Streams::IBuffer^ positions = m_surfaceMesh->VertexPositions->Data;
@@ -346,7 +346,7 @@ Windows::Storage::Streams::IBuffer^ positions = m_surfaceMesh->VertexPositions->
     Windows::Storage::Streams::IBuffer^ indices   = m_surfaceMesh->TriangleIndices->Data;
 ```
 
-接著，我們會建立 Direct3D 裝置緩衝區 HoloLens 所提供的網狀結構資料：
+然後, 我們會使用 HoloLens 所提供的網格資料來建立 Direct3D 裝置緩衝區:
 
 ```cpp
 CreateDirectXBuffer(device, D3D11_BIND_VERTEX_BUFFER, positions, m_vertexPositions.GetAddressOf());
@@ -367,11 +367,11 @@ CreateDirectXBuffer(device, D3D11_BIND_VERTEX_BUFFER, positions, m_vertexPositio
 }
 ```
 
-**注意：** CreateDirectXBuffer helper 函式，使用在先前的程式碼片段，請參閱介面對應的程式碼範例：SurfaceMesh.cpp GetDataFromIBuffer.h。 現在裝置資源建立完成，且網格會被視為可載入並準備好進行更新，並呈現。
+**注意：** 如需上一個程式碼片段中使用的 CreateDirectXBuffer helper 函式, 請參閱介面對應程式碼範例:SurfaceMesh .cpp, GetDataFromIBuffer. h。 現在裝置資源建立已完成, 且網格已被視為已載入, 並可供更新和呈現。
 
-### <a name="update-and-render-surface-meshes"></a>更新並呈現表面的網格
+### <a name="update-and-render-surface-meshes"></a>更新和呈現 surface 網格
 
-我們 SurfaceMesh 類別具有特製化的 update 函式。 每個[SpatialSurfaceMesh](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfacemesh.aspx)有它自己的轉換，和我們的範例會使用目前座標系統為我們**SpatialStationaryReferenceFrame**取得轉換。 然後，它會更新模型常數緩衝區在 GPU 上。
+我們的 SurfaceMesh 類別具有特製化的更新函數。 每個[SpatialSurfaceMesh](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfacemesh.aspx)都有自己的轉換, 而我們的範例會使用目前的座標系統, 讓我們的**SpatialStationaryReferenceFrame**取得轉換。 然後, 它會更新 GPU 上的模型常數緩衝區。
 
 ```cpp
 void SurfaceMesh::UpdateTransform(
@@ -428,9 +428,9 @@ void SurfaceMesh::UpdateTransform(
 }
 ```
 
-呈現表面的網格時，我們會進行一些準備工作，然後才轉譯集合。 我們設定著色器管線。 目前的轉譯設定，以及我們設定的輸入組譯工具階段。 請注意，全像攝影版的相機協助程式類別**CameraResources.cpp**已經有設定檢視/投影常數緩衝區到目前為止。
+當轉譯 surface 網格時, 我們會先執行一些準備工作, 再轉譯集合。 我們為目前的轉譯設定設定了著色器管線, 並設定了輸入組合語言階段。 請注意, 全像攝影攝影機協助程式類別**CameraResources**現在已經設定了 view/投射常數緩衝區。
 
-從**RealtimeSurfaceMeshRenderer::Render**:
+從**RealtimeSurfaceMeshRenderer:: Render**:
 
 ```cpp
 auto context = m_deviceResources->GetD3DDeviceContext();
@@ -474,7 +474,7 @@ else
 }
 ```
 
-完成之後，我們會循環播放，在我們的網格上，並告知每個繪製本身。 **注意：** 此範例程式碼不會最佳化來使用任何類型的範圍剔除，但您應該將這項功能納入您的應用程式。
+完成這項作業之後, 我們會在我們的網格上迴圈, 並告訴每一個都要自行繪製。 **注意：** 此範例程式碼未優化, 無法使用任何類型的截量剔除, 但您應該在應用程式中包含這項功能。
 
 ```cpp
 std::lock_guard<std::mutex> guard(m_meshCollectionLock);
@@ -491,9 +491,9 @@ for (auto& pair : m_meshCollection)
 }
 ```
 
-個別的網格會負責設定端點和索引緩衝區、 stride 和模型轉換常數緩衝區。 如同 Windows 全像攝影版的應用程式範本中的旋轉立方體，我們會轉譯為 stereoscopic 緩衝區使用執行個體。
+個別的網格會負責設定頂點和索引緩衝區、stride 和模型轉換常數緩衝區。 如同 Windows 全像攝影應用程式範本中的旋轉 cube, 我們使用實例轉譯為 stereoscopic 緩衝區。
 
-從**SurfaceMesh::Draw**:
+從**SurfaceMesh::D raw**:
 
 ```cpp
 // The vertices are provided in {vertex, normal} format
@@ -551,21 +551,21 @@ context->DrawIndexedInstanced(
     );
 ```
 
-### <a name="rendering-choices-with-surface-mapping"></a>具有介面對應的轉譯選項
+### <a name="rendering-choices-with-surface-mapping"></a>使用表面對應呈現選擇
 
-介面對應的程式碼範例提供介面的網狀結構的資料，僅會受阻擋的轉譯和螢幕上呈現表面的網狀結構資料的程式碼。 您選擇的路徑或兩者都仰賴您的應用程式。 我們將詳細說明這兩個組態，在這份文件中。
+「介面對應」程式碼範例提供僅限遮蔽呈現 surface 網格資料的程式碼, 以及用於呈現 surface 網格資料的螢幕。 您選擇的路徑-或兩者-取決於您的應用程式。 我們將在本檔中逐步解說這兩項設定。
 
-**全像攝影版的效果的轉譯會受阻擋緩衝區**
+**呈現全像攝影效果的遮蔽緩衝區**
 
-一開始先清除目前的虛擬觀景窗的呈現目標檢視。
+從清除目前虛擬攝影機的呈現目標視圖開始。
 
-從 AppMain.cpp:
+從 AppMain:
 
 ```cpp
 context->ClearRenderTargetView(pCameraResources->GetBackBufferRenderTargetView(), DirectX::Colors::Transparent);
 ```
 
-這是 「 預先轉譯 」 階段。 此處，我們會要求網格轉譯器，來呈現只深度建立阻擋緩衝區。 在此組態中，我們不附加的轉譯目標檢視，和網格轉譯器會將像素著色器階段設定為**nullptr**以便 GPU 不麻煩繪製像素。 幾何會進行智慧型光柵化深度緩衝區中，與圖形管線會那里停止。
+這是「預先呈現」階段。 在這裡, 我們會要求網格轉譯器只呈現深度, 藉以建立遮蔽緩衝區。 在此設定中, 我們不會附加轉譯目標視圖, 而網格轉譯器會將圖元著色器階段設定為**nullptr** , 讓 GPU 不會干擾繪製圖元。 幾何會柵格化至深度緩衝區, 而圖形管線會在該處停止。
 
 ```cpp
 // Pre-pass rendering: Create occlusion buffer from Surface Mapping data.
@@ -580,9 +580,9 @@ context->OMSetRenderTargets(0, nullptr, pCameraResources->GetSurfaceOcclusionDep
 m_meshCollection->Render(pCameraResources->IsRenderingStereoscopic(), true);
 ```
 
-我們可以與額外的深度測試的介面對應的阻擋物緩衝區對繪製全像投影。 在此程式碼範例中，我們在 cube 上的像素不同的色彩如果轉譯其位於介面。
+我們可以在表面對應遮蔽緩衝區中, 以額外的深度測試來繪製全息影像。 在此程式碼範例中, 我們會以不同的色彩呈現 cube 上的圖元 (如果它們位於表面後面)。
 
-從 AppMain.cpp:
+從 AppMain:
 
 ```cpp
 // Hologram rendering pass: Draw holographic content.
@@ -603,7 +603,7 @@ m_xrayCubeRenderer->Render(
     );
 ```
 
-根據從 SpecialEffectPixelShader.hlsl 的程式碼：
+以 SpecialEffectPixelShader 的程式碼為基礎。 hlsl:
 
 ```cpp
 // Draw boundaries
@@ -629,13 +629,13 @@ else
 }
 ```
 
-**注意：** 如我們**GatherDepthLess**常式，請參閱介面對應的程式碼範例：SpecialEffectPixelShader.hlsl。
+**注意：** 針對我們的**GatherDepthLess**常式, 請參閱表面對應程式碼範例:SpecialEffectPixelShader. hlsl。
 
-**呈現表面的網狀結構資料的顯示**
+**將 surface 網格資料轉譯為顯示**
 
-我們也可以繪製表面的網格是立體聲顯示緩衝區。 我們選擇要繪製的光線，與完整的臉部，但您可以隨意繪製框線、 處理網格轉譯之前，套用材質貼圖，等等。
+我們也可以只將 surface 網格繪製到身歷聲顯示器緩衝區。 我們選擇以光源繪製完整的臉部, 但是您可以自由繪製線框、在轉譯前處理網格、套用材質圖等等。
 
-在這裡，我們的程式碼範例會告知網格轉譯器繪製集合。 這次我們不指定僅限深度的階段，因此它會附加像素著色器，並完成轉譯管線使用目前的虛擬觀景窗我們指定的目標。
+在這裡, 我們的程式碼範例會指示網格轉譯器繪製集合。 這次我們不指定深度專用的階段, 因此它會附加圖元著色器, 並使用我們為目前虛擬攝影機指定的目標來完成轉譯管線。
 
 ```cpp
 // SR mesh rendering pass: Draw SR mesh over the world.
@@ -651,5 +651,5 @@ m_meshCollection->Render(pCameraResources->IsRenderingStereoscopic(), false);
 ```
 
 ## <a name="see-also"></a>另請參閱
-* [建立全像攝影版的 DirectX 專案](creating-a-holographic-directx-project.md)
-* [Windows.Perception.Spatial API](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.aspx)
+* [建立全像攝影 DirectX 專案](creating-a-holographic-directx-project.md)
+* [Windows 感知空間 API](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.aspx)

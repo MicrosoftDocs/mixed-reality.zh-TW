@@ -1,11 +1,11 @@
 ---
-title: Unity 開發概觀
-description: 取得開始的建置混合實境應用程式，在 Unity 中。
+title: Unity 開發總覽
+description: 開始在 Unity 中建立混合現實應用程式。
 author: thetuvix
 ms.author: Yoyoz
 ms.date: 04/15/2018
 ms.topic: article
-keywords: Unity，混合實境、 開發、 開始、 新的專案、 移植、 功能、 相機、 模擬、 模擬、 文件
+keywords: Unity, 混合現實, 開發, 快速入門, 新專案, 移植, 功能, 攝影機, 模擬, 模擬, 檔
 ms.openlocfilehash: 24217b4c61bf2d438ebc1c4114bc9dc20dc62f64
 ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
@@ -13,74 +13,74 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 06/27/2019
 ms.locfileid: "67414518"
 ---
-# <a name="unity-development-overview"></a>Unity 開發概觀
+# <a name="unity-development-overview"></a>Unity 開發總覽
 
-建置的最快路徑[mixed 的 reality 應用程式](app-views.md)是具有[Unity](http://aka.ms/HoloLensUnity)。 我們建議您花時間探索[Unity 教學課程](https://unity3d.com/learn/tutorials)。 如果您需要的資產，Unity 的全方位[Asset Store](https://www.assetstore.unity3d.com/)。 一旦您已經建立基本的了解的 Unity，您可以瀏覽[教學課程](tutorials.md)若要了解使用 Unity 的混合的實境開發的詳細資訊。 請造訪[Unity 混合實境論壇](http://forum.unity3d.com/forums/hololens.102/)來參與社群建置 Unity 中的混合的實境應用程式的其餘部分，並尋找您可能會遇到的問題。
+建立[混合現實應用程式](app-views.md)的最快速路徑是使用[Unity](http://aka.ms/HoloLensUnity)。 我們建議您花一些時間來探索[Unity 教學](https://unity3d.com/learn/tutorials)課程。 如果您需要資產, Unity 具有完整的[資產存放區](https://www.assetstore.unity3d.com/)。 建立 Unity 的基本瞭解之後, 您可以造訪[教學](tutorials.md)課程, 以瞭解使用 unity 進行混合現實開發的細節。 請務必造訪[Unity Mixed Reality 論壇](http://forum.unity3d.com/forums/hololens.102/), 以與在 unity 中建立混合現實應用程式的其餘部分互動, 並找出您可能遇到之問題的解決方案。
 
 
-若要開始建置使用 Unity 的混合的實境應用程式第一次[安裝工具](install-the-tools.md)。 
+若要開始使用 Unity 建立混合現實應用程式, 請先[安裝工具](install-the-tools.md)。 
 
-## <a name="new-unity-project-with-mixed-reality-toolkit"></a>新的 Unity 專案的混合的實境工具組 
+## <a name="new-unity-project-with-mixed-reality-toolkit"></a>使用混合式現實工具組的新 Unity 專案 
 
-在 Unity 所開發的最簡單方式是混合實境工具組的協助。 它會自動執行，協助您設定專案，並提供一組，加速開發您的混合的實境功能。 請查看[混合實境 Toolkit v2](mrtk-getting-started.md)來進一步了解並開始使用。 
+在 Unity 中開發最簡單的方式, 就是使用混合現實工具組的協助。 它可協助您自動設定 project, 並提供一組混合現實功能來加速您的開發。 請參閱[混合現實工具組 v2](mrtk-getting-started.md)以深入瞭解並開始使用。 
 
-## <a name="porting-an-existing-unity-app-to-windows-mixed-reality"></a>移植到 Windows 混和實境現有的 Unity 應用程式
+## <a name="porting-an-existing-unity-app-to-windows-mixed-reality"></a>將現有的 Unity 應用程式移植到 Windows Mixed Reality
 
-如果您有現有的 Unity 專案，您要移植到 Windows 混和實境，遵循[Unity 移植指南](porting-guides.md)開始著手。
+如果您有現有的 Unity 專案是要移植到 Windows Mixed Reality, 請遵循[Unity 移植指南](porting-guides.md)以開始使用。
 
-## <a name="configuring-new-unity-project-for-windows-mixed-reality"></a>設定新的 Unity 專案的 Windows Mixed Reality
+## <a name="configuring-new-unity-project-for-windows-mixed-reality"></a>為 Windows Mixed Reality 設定新的 Unity 專案
 
-如果您想要建立新的 Unity 專案，但不匯入混合實境工具組，但有較少的 Unity 設定，您必須手動變更 Windows Mixed Reality。 這些可分成兩大類： 每個專案和每個場景。 請參閱以下的逐步解說指南[設定新 Unity 專案的 Windows Mixed Reality](Configure-Unity-Project.md)
+如果您想要建立新的 Unity 專案, 但未匯入 Mixed Reality 工具組, 則您需要手動變更 Windows Mixed Reality 的一小組 Unity 設定。 這些會分成兩個類別: 每個專案和每個場景。 如需為[Windows Mixed Reality 設定新 Unity 專案](Configure-Unity-Project.md)的逐步指南, 請參閱這裡
 
-## <a name="adding-mixed-reality-capabilities-and-inputs"></a>新增混合的實境功能和輸入
+## <a name="adding-mixed-reality-capabilities-and-inputs"></a>新增混合現實功能和輸入
 
-一旦您已安裝 MRTK V2 與您的專案，或如上面所述，設定您的專案時，標準的 Unity 遊戲物件 （例如數位相機） 則受到立即的**安插擴展經驗**，具有相機的位置更新自動為使用者通過其標頭的世界。
+當您設定好 MRTK V2 與您的專案, 或如上面所述設定專案之後, 標準 Unity 遊戲物件 (例如相機) 會立即亮起以進行**固定規模的體驗**, 而相機的位置會自動更新為使用者會將其標頭移至世界。
 
-新增支援 Windows Mixed Reality 功能，例如[空間階段](coordinate-systems.md#spatial-coordinate-systems)，[筆勢，移動控制器](gestures-and-motion-controllers-in-unity.md)或是[語音輸入](voice-input-in-unity.md)利用直接內建的 Api 來達成Unity。 
+新增 Windows Mixed Reality 功能的支援, 例如[空間階段](coordinate-systems.md#spatial-coordinate-systems)、[筆勢、動作控制器](gestures-and-motion-controllers-in-unity.md)或[語音輸入](voice-input-in-unity.md), 是使用直接內建于 Unity 的 api 來達成。 
 
-首先，請檢閱[體驗標尺](coordinate-systems.md)您 applicatioin 可對象：
-* 如果您想要建置**方向專用**或**插入擴充槽擴展經驗**，您將需要設定 Unity 的追蹤要空間型別[「 定態](coordinate-systems-in-unity.md#building-an-orientation-only-or-seated-scale-experience)。
-* 如果您想要建置**常設級別**或**聊天室擴展經驗**，您必須確保 Unity 的追蹤空間型別已成功設定為[RoomScale](coordinate-systems-in-unity.md#building-an-orientation-only-or-seated-scale-experience)。
-* 如果您想要建置**全球級別**體驗可讓使用者在漫遊超過 5 公尺的 HoloLens，在您需要使用[WorldAnchor](coordinate-systems-in-unity.md#building-a-world-scale-experience)元件。
+首先, 請檢查您的 applicatioin 可設為目標的[經驗調整](coordinate-systems.md):
+* 如果您想要建立**僅限方向**或**大規模的經驗**, 您必須將 Unity 的追蹤空間類型設定為 [[固定](coordinate-systems-in-unity.md#building-an-orientation-only-or-seated-scale-experience)]。
+* 如果您想要建立**大規模**或**會議室規模的體驗**, 您必須確定 Unity 的追蹤空間類型已成功設定為[RoomScale](coordinate-systems-in-unity.md#building-an-orientation-only-or-seated-scale-experience)。
+* 如果您想要在 HoloLens 上建立**全球**化體驗, 讓使用者漫遊超過5計量, 您必須使用[WorldAnchor](coordinate-systems-in-unity.md#building-a-world-scale-experience)元件。
 
-所有的核心建置組塊，混合的實境應用程式會公開在與其他的 Unity Api 一致的方式。 它們也可透過混合實境工具組。
+混合現實應用程式的所有核心建立區塊都會以與其他 Unity Api 一致的方式公開。 也可以透過混合式現實工具組來取得。
 * [相機](camera-in-unity.md)
 * [座標系統](coordinate-systems-in-unity.md)
 * [目光](gaze-in-unity.md)
-* [筆勢和動作控制站](gestures-and-motion-controllers-in-unity.md)
+* [筆勢和運動控制器](gestures-and-motion-controllers-in-unity.md)
 * [語音輸入](voice-input-in-unity.md)
-* [持續性](persistence-in-unity.md)
+* [暫](persistence-in-unity.md)
 * [空間音效](spatial-sound-in-unity.md)
 * [空間對應](spatial-mapping-in-unity.md)
 
-還有其他重要功能，許多混合的實境應用程式會想要使用，也會公開給 Unity 應用程式：
-* [共用的體驗](shared-experiences-in-unity.md)
+還有許多混合現實應用程式會想要使用的重要功能, 也會公開至 Unity 應用程式:
+* [共用體驗](shared-experiences-in-unity.md)
 * [定位相機](locatable-camera-in-unity.md)
-* [焦點](focus-point-in-unity.md)
+* [焦點點](focus-point-in-unity.md)
 * [追蹤遺失](tracking-loss-in-unity.md)
 * [鍵盤](keyboard-input-in-unity.md)
 
-## <a name="running-your-unity-project-on-a-real-or-simulated-device"></a>真實或模擬裝置上執行您的 Unity 專案
+## <a name="running-your-unity-project-on-a-real-or-simulated-device"></a>在真實或模擬的裝置上執行 Unity 專案
 
-您有全像攝影版的 Unity 專案準備好進行測試，您下一步是要[匯出和建置 Unity Visual Studio 解決方案](exporting-and-building-a-unity-visual-studio-solution.md)。
+當您的全像攝影 Unity 專案準備好進行測試之後, 下一步就是[匯出並建立 Unity Visual Studio 解決方案](exporting-and-building-a-unity-visual-studio-solution.md)。
 
-之後，在 VS 方案，您可以再執行您的應用程式其中一種方式，使用真實或模擬的裝置：
-* [將部署到實際的 HoloLens 或 Windows Mixed Reality 沈浸式耳機](using-visual-studio.md)
+有了該 VS 解決方案, 您就可以使用真實或模擬裝置, 以三種方式的其中一種來執行應用程式:
+* [部署到真實的 HoloLens 或 Windows Mixed Reality 沉浸式頭戴式裝置](using-visual-studio.md)
 * [部署至 HoloLens 模擬器](using-the-hololens-emulator.md)
-* [將部署到 Windows Mixed Reality 沈浸式耳機模擬器](using-the-windows-mixed-reality-simulator.md)
+* [部署到 Windows Mixed Reality 沉浸式耳機模擬器](using-the-windows-mixed-reality-simulator.md)
 
-## <a name="unity-documentation"></a>Unity 文件
+## <a name="unity-documentation"></a>Unity 檔
 
-除了本文件中可以使用 Windows 開發人員中心上，Unity 會安裝 Windows Mixed Reality 功能與 Unity Editor 中的文件。 Unity 提供文件包含兩個不同的區段：
-1. **Unity 指令碼參考**
-    * 本節的文件包含 Unity 所提供的指令碼 api 的詳細資料。
-    * 可透過從 Unity 編輯器**協助 > 指令碼參考**
-2. **Unity manual**
-    * 本手冊可協助您了解如何使用 Unity 中，從基本到進階技術。
-    * 可透過從 Unity 編輯器**協助 > 手動**
+除了 Windows 開發人員中心提供的這項檔之外, Unity 還會同時安裝 Windows Mixed Reality 功能的檔與 Unity 編輯器。 Unity 提供的檔包含兩個不同的區段:
+1. **Unity 腳本參考**
+    * 檔集的這一節包含 Unity 提供的腳本 API 的詳細資料。
+    * 透過說明 **> 腳本參考來**存取 Unity Editor
+2. **Unity 手冊**
+    * 本手冊的設計目的是協助您瞭解如何使用 Unity, 從基本到先進的技術。
+    * 可從 Unity 編輯器透過 [說明] **> 手動來**存取
 
 ## <a name="see-also"></a>另請參閱
-* [混合實境 Toolkit v2](mrtk-getting-started.md)
+* [混合現實工具組 v2](mrtk-getting-started.md)
 * [MR Basics 100：開始使用 Unity](holograms-100.md)
 * [Unity 的建議設定](recommended-settings-for-unity.md)
 * [對 Unity 的效能建議](performance-recommendations-for-unity.md)

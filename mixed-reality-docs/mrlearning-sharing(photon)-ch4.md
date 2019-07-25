@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 3e4be00ddeab6d91dbbc8226bfa3dc543cded095
-ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
+ms.openlocfilehash: 529a888dfa00180ca908fbc7f4c62f9a9086c661
+ms.sourcegitcommit: c7c7e3c836373b65e319609b4e8389dea6b081de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293693"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68460323"
 ---
 # <a name="4-sharing-object-movements-with-multiple-users"></a>4.與多個使用者共用物件移動
 
@@ -50,7 +50,7 @@ ms.locfileid: "68293693"
 
 ![module3chapter4updatestep6](images/module3chapter4updatestep6.png)
 
-7. 在 專案 視圖中, 流覽至 資產-> 資源-> Prefabs。 首先, 將資料表 prefab 拖放到 PhotonRoom 類別上的 Tableprefab 位置。 接下來, 將 LunarModule prefab 拖放到 PhotonRoom 類別上的模組 Prefab 位置。
+7. 在 專案 視圖中, 流覽至 資產-> 資源-> Prefabs。 首先, 將資料表 prefab 拖放到 PhotonRoom 類別上的 Tableprefab 位置。 接下來, 將 RocketLauncherCompleteVariantprefab 拖放到 PhotonRoom 類別上的模組 Prefab 位置。
 
 ![module3chapter4updatestep7](images/module3chapter4updatestep7.png)
 
@@ -67,10 +67,6 @@ ms.locfileid: "68293693"
 10. 在您的階層中選取新的物件後, 請在 [偵測器] 面板中將物件的名稱變更為 TableAnchor。 此外, 按一下 [新增元件], 然後搜尋 TableAnchor 元件。 選取它, 並將它新增至物件。 
 
 ![Module3Chapter4step6im](images/module3chapter4step7im.PNG)
-
-> 注意:將定位設定為 x = 1、y =-0.55 和 z = 2。 此外, 請將旋轉設定為 y = 90。 
->
-> ![Module3Chapter4step6im](images/module3chapter4noteim.PNG)
 
 11. 現在, 從 [Prefabs] 資料夾的 [專案] 面板中, 將資料表 prefab 拖曳至您剛才建立的 "TableAnchor" 子物件。
 

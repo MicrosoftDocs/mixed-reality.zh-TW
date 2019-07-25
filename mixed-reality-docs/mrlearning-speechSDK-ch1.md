@@ -1,96 +1,172 @@
-# <a name="speech-sdk-learning-module"></a>語音 SDK 學習模組
+---
+title: MR 學習 Speechsdk.quickstart 模組-語音辨識與轉譯
+description: 完成此課程, 以瞭解如何在混合現實應用程式中執行 Azure 語音 SDK。
+author: jessemcculloch
+ms.author: jemccull
+ms.date: 02/26/2019
+ms.topic: article
+keywords: 混合實境, unity, 教學課程, hololens
+ms.openlocfilehash: c1ca44ffcaa8dced988b829d9875ebe304f14a12
+ms.sourcegitcommit: c7c7e3c836373b65e319609b4e8389dea6b081de
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68460350"
+---
+# <a name="1-integrating-and-using-speech-recognition-and-transcription"></a>1.整合和使用語音辨識與轉譯
 
-在本教學課程中，您將建立的混合實境應用程式，探索如何使用 Azure 認知服務語音 SDK 與 HoloLens 2。 完成本教學課程系列，您將能夠使用您的裝置的麥克風 ip-pbx 語音轉換文字即時、 將您的語音翻譯成其他語言中，並利用語音 SDK 的意圖功能，以了解使用語音命令人工智慧。
+本教學課程會建立一個混合現實應用程式, 以探索 Azure 認知服務 Speech SDK 與 HoloLens 2 的搭配使用。 完成本教學課程系列之後, 您將能夠使用裝置的麥克風即時轉譯語音轉換文字、將語音翻譯成其他語言, 以及利用語音 SDK 的意圖功能來瞭解語音命令, 方法是使用人工智慧。
 
-目標：
+## <a name="objectives"></a>目標
 
-- 了解如何將 Azure 語音 SDK 整合到 HoloLens 2 應用程式
-- 了解如何使用語音命令
-- 了解如何使用語音轉換文字功能
+- 瞭解如何將 Azure 語音 SDK 整合至 HoloLens 2 應用程式
+- 瞭解如何使用語音命令
+- 瞭解如何使用語音轉換文字功能
 
 ## <a name="instructions"></a>指示
 
 ### <a name="getting-started"></a>開始使用
 
-1. 啟動 Unity 並建立新的專案。 輸入專案名稱 「 語音 SDK 學習模組 」。 選擇要儲存專案的位置。 然後按一下 [建立專案]。
+1. 啟動 Unity, 並建立新的專案。 輸入專案名稱 [語音 SDK 學習模組]。 選擇要儲存專案的位置。 然後按一下 [建立專案]。
 
 ![Module2Chapter3step1im](images/module4chapter1step1im.PNG)
 
-> 注意:請確定範本設為 「 3D 」，如上圖所示。
+> 注意:請確定範本已設定為 3D, 如上圖所示。
 
-2. 下載[混合實境 Toolkit](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.0.0-RC2/Microsoft.MixedReality.Toolkit.Unity.Foundation-v2.0.0-RC2.unitypackage) Unity 套件，並將它儲存在您的電腦上的資料夾。 匯入 Unity 專案的封裝。 如需如何執行這項操作的詳細指示，請參閱[第 1 課的基本模組](mrlearning-base-ch1.md)。 
+2. 下載[Mixed Reality 工具](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.0.0-RC2/Microsoft.MixedReality.Toolkit.Unity.Foundation-v2.0.0-RC2.unitypackage)組 Unity 套件, 並將它儲存到您電腦上的資料夾。 將套件匯入至您的 Unity 專案。 如需如何執行此動作的詳細指示, 請參閱[基底模組第1課](mrlearning-base-ch1.md)。 
 
-3. 下載並匯入 Azure[語音 SDK](https://aka.ms/csspeech/unitypackage) Unity 資產套件。 「 資產 」 選取 [匯入封裝] 然後選取 [自訂封裝]。 按一下以匯入語音 SDK 套件 尋找先前下載的語音 SDK 套件，並開啟它，以開始匯入程序。 
+3. 下載並匯入 Unity 資產套件的 Azure[語音 SDK](https://aka.ms/csspeech/unitypackage) 。 按一下 [資產], 選取 [匯入套件], 然後選取 [自訂套件], 以匯入語音 SDK 套件。 尋找稍早下載的語音 SDK 套件, 然後開啟以開始匯入程式。 
+
+![Module4Chapter1step3ima](images/module4chapter1step3ima.PNG)
 
 ![Module4Chapter1step3im](images/module4chapter1step3im.PNG)
 
-4. 在下一步] 快顯視窗中，按一下 [開始匯入的語音 SDK 套件的 「 匯入 」。 請確定選取所有項目，如下圖所示。
+4. 在下一個快顯視窗中, 按一下 [匯入] 開始匯入語音 SDK 套件。 請確定已核取所有專案, 如下圖所示。
 
 ![Module4Chapter1step4im](images/module4chapter1step4im.PNG)
 
+5. 按一下[此連結](https://github.com/microsoft/MixedRealityLearning/releases/tag/Speech_2), 以下載語音 SDK 模組資產套件, 也就是 Lunarcom 套件。 Lunarcom 資產套件是針對此課程系列所開發的資產和腳本集合, 以展示 Azure 語音 SDK 的實際使用。 它是語音命令終端機, 最終會與[基本模組教學](mrlearning-base-ch6.md)課程中開發的陰曆模組元件體驗互動。
 
-5. 下載[Lunarcom](https://github.com/levilais/Speech-SDK-Module/raw/master/Speech SDK Module/Lunarcom.unitypackage)資產套件。 Lunarcom 資產封裝是資產和這一課一系列開發的指令碼，展示 Azure 的語音 SDK 的實際用途的集合。 它是語音命令終端機中，最後將介面中所開發的組件農曆模組體驗[基底模組的教學課程。](mrlearning-base-ch6.md)
-6. 匯入 Unity 專案的 Lunarcom 資產封裝，依照類似的步驟，您用來匯入的混合實境工具組和語音 SDK。
-7. 設定混合的實境工具組 (MRTK)。 若要這樣做，《 混合實境 Toolkit 》 中的面板頂端的 程式 視窗中，按一下，然後按 加入至場景，然後設定。
+6. 遵循匯入混合現實工具組和語音 SDK 所需的類似步驟, 將 Lunarcom 資產封裝匯入 Unity 專案。
+7. 設定混合現實工具組 (MRTK)。 若要這麼做, 請按一下視窗頂端的 [混合現實工具組] 面板, 然後選取 [新增至場景並設定]。
 
 ![Module4Chapter1step7im](images/module4chapter1step7im.PNG)
 
-8. 場景會現在有數個新的項目從 MRTK。 儲存在不同的名稱，按一下 [檔案] 下場景，然後 「 另存為"和"SpeechScene"命名您的場景。 
+![module4Chapter1step9ima](images/module4chapter1step9ima.PNG)
 
-   > 注意:如果 MRTK 加入您的專案，並將不會進入 「 播放 」 模式之後，您可以按在場景的 [播放] 按鈕，您可能需要重新啟動 Unity。 
+![module4Chapter1step9imb](images/module4chapter1step9imb.PNG)
 
-9. 「 MixedRealityToolkit 「 選取的物件階層中，「 複製和自訂 」 窗格中按一下 偵測器。
+8. 您的場景現在在 MRTK 中有數個新專案。 依序按一下 [檔案] 和 [另存新檔], 並命名您的場景 SpeechScene, 以不同的名稱儲存場景。 
+
+> 注意:如果您在將 MRTK 新增至專案後按下場景上的 [播放], 而它不進入 [播放] 模式, 您可能需要重新開機 Unity。 
+
+9. 在您的階層中選取 MixedRealityToolkit 物件後, 按一下 [檢查] 面板中的 [複製並自訂]。
 
 ![Module4Chapter1step9im](images/module4chapter1step9im.PNG)
 
-10. 也在偵測器窗格中 （包含在您階層中選取 「 MixedRealityToolkit 」 物件），來停用診斷系統取消核取方塊右邊的 「 啟用診斷系統。 」
+10. 此外, 在 [偵測器] 面板中 (已選取階層中的 [MixedRealityToolkit] 物件), 取消核取 [啟用診斷系統] 右邊的方塊來停用診斷系統。
 
-![Module4Chapter1step10im](images/module4chapter1step10im.PNG)
+![Module4Chapter1step9imd](images/module4chapter1step9imd.PNG)
 
-11. 在 [專案] 面板中，展開 「 Lunarcom"資料夾，「 Lunarcom_Base"prefab 拖曳至您的階層。
+11. 若要啟用語音命令, 請選取新建立的 MRTK 設定檔以進行自訂。 在本教學課程中, 我們會使用語音辨識和轉譯的輸入語音命令。 讓我們複製輸入設定檔, 以變更語音設定。
+
+![Module4Chapter1step11imb](images/module4chapter1step11imb.PNG)
+
+![Module4Chapter1step11imd](images/module4chapter1step11imd.PNG)
+
+12. 複製輸入設定檔之後, 請移至 [語音命令] 並複製語音命令。
+
+![Module4Chapter1step12imb](images/module4chapter1step12imb.PNG)
+
+![Module4Chapter1step12imc](images/module4chapter1step12imc.PNG)
+
+13. 現在, 在 [語音命令] 底下, 移至 [一般設定], 並將 [啟動行為] 設定為 [手動啟動]
+
+![Module4Chapter1step13imb](images/module4chapter1step13imb.PNG)
+
+14. 在 [專案] 面板中, 展開 [Lunarcom] 資料夾, 然後將 Lunarcom_Base prefab 拖曳到您的階層中。
 
 ![Module4Chapter1step11im](images/module4chapter1step11im.PNG)
 
-12. 選取階層中的"Lunarcom_Base 」 物件，並確定位置設為 x = 0，y = 0，且 z = 0，以及旋轉設為 x = 0，y = 0，且 z = 0。 設定要讀取的縮放比例 x = $0.008，y = $0.008，且 z = 0.01。
+15. 選取階層中的 [Lunarcom_Base] 物件, 並確定 [位置] 設定為 x = 0、y = 0、z = 0, 而且旋轉設定為 x = 0、y = 0 和 z = 0。 將縮放比例設定為 read x = 0.008、y = 0.008 和 z = 0.01。
 
 ![Module4Chapter1step12im](images/module4chapter1step12im.PNG)
 
-13. 按一下 [新增元件]，然後搜尋並選取 「 LunarcomController。 」 此指令碼會包含在您匯入在步驟 6 中 Lunarcom 資產套件。
+16. 按一下 [新增元件], 然後搜尋並選取 [LunarcomController]。 此腳本包含在您于步驟6匯入的 Lunarcom 資產套件中。
 
 ![Module4Chapter1step13im](images/module4chapter1step13im.PNG)
 
-14. 我們的應用程式連線至 Azure 認知服務，您必須輸入 「 訂用帳戶金鑰 」 也稱為 「 API 金鑰 」 的語音服務。 請遵循指示[此連結](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/get-started)取得免費訂用帳戶金鑰。 一旦您取得訂用帳戶金鑰時，它的欄位中輸入 「 語音服務 API 金鑰 」"LunarcomController 」 中元件的偵測器 面板中，如下圖所示。
+17. 若要將我們的應用程式連線到 Azure 認知服務, 您必須為語音服務輸入訂用帳戶金鑰 (也稱為 API 金鑰)。 請遵循[這裡](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/get-started)的指示來取得免費的訂用帳戶金鑰。 一旦您取得訂用帳戶金鑰, 請在 [偵測器] 面板的 [LunarcomController] 元件的 [語音服務 API 金鑰] 欄位中輸入, 如下圖所示。
 
-15. 請輸入您註冊時選擇您的訂用帳戶金鑰"LunarcomController 」 元件，在 [偵測器] 面板的 [語音服務區域] 欄位中的區域。
+18. 輸入當您在 [偵測器] 面板中, 于 LunarcomController 元件的 [語音服務區域] 欄位中註冊訂用帳戶金鑰時, 所選擇的區域。 例如, 針對「美國西部」區域, 請輸入 "westus"
 
 ![Module4Chapter1step15im](images/module4chapter1step15im.PNG)
 
-16. 在您階層中，展開 「 Lunarcom_Base 」 物件，左邊的箭號，即可然後執行它的子物件，「 終端機 」，在下圖所示相同的動作。
+19. 在您的階層中, 按一下其左邊的箭號來展開 [Lunarcom_Base] 物件。 然後對其子物件「Terminal」執行相同的動作, 如下圖所示。
 
-17. 選取 「 Lunarcom_Base"時，請按一下並拖曳 」 Lunarcom 文字"從階層至 「 輸出文字 「 位置 」 LunarcomController 」 元件中在偵測器窗格中，如下圖所示。
-18. 現在執行相同的動作，與 「 終端機 」 物件的 「 終端機 」 的位置和 「 連線指示燈控制器 」 位置的 「 連線 Light"物件。
+20. 選取 [Lunarcom_Base] 時, 按一下階層中的 [Lunarcom 文字], 並將其從階層拖曳至 [偵測器] 面板中 [LunarcomController] 元件的輸出文字位置, 如下圖所示。
+
+21. 對終端機物件執行相同的動作, 並將連接光源控制到連接光源控制器插槽。
 
 ![Module4Chapter1step18im](images/module4chapter1step18im.PNG)
 
-19. 按一下"LunarcomController 」 指令碼，在 [偵測器] 面板中的"Lunarcom 按鈕 」 區段旁的箭號和將大小變更為 3，在鍵盤上按 Enter 或 Return 鍵。 這會導致三個新的 「 項目 」 欄位會出現。
+22. 在 [偵測器] 面板中, 按一下 LunarcomController 腳本的 [Lunarcom 按鈕] 區段旁邊的箭號, 然後將 [大小] 變更為3。 按 Enter 或 Return。 這會導致三個新的元素欄位出現。
 
 ![Module4Chapter1step19im](images/module4chapter1step19im.PNG)
 
-20. 展開"Lunarcom 按鈕 」，即可在您的階層旁的箭號，並使用與上述相同的程序，將拖曳至 0、 1 和 2 的項目參考中的"LunarcomController 」 元件中分別 Mic、 衛星和 Rocket gameobject偵測器 面板中。 
+23. 按一下階層中其旁邊的箭號以展開 [Lunarcom] 按鈕, 並使用上述相同的程式, 分別將 Mic、衛星和 Rocket gameobject 拖曳至專案0、1和2的參考, 其位於 [LunarcomController] 元件的偵測器面板。 
 
 ![Module4Chapter1step18im](images/module4chapter1step20im.PNG)
 
-21. 在您階層中選取 「 Lunarcom_Base 」 物件。 在 [偵測器] 面板中按一下 [新增元件] 然後搜尋並選取 「 LunarcomWakeWordRecognizer。 」
+24. 選取階層中的 [Lunarcom_Base] 物件。 按一下 [偵測器] 面板中的 [新增元件], 然後搜尋並選取 [LunarcomWakeWordRecognizer]。
 
 ![Module4Chapter1step18im](images/module4chapter1step21im.PNG)
 
-22. 在 「 線上醒機的字 」 位置中，輸入 「 啟動終端機。 」 此外，在 「 關閉 Word 」 介面槽中，輸入 「 解除終端機。 」
+25. 在 [喚醒文字位置] 中, 輸入「啟用終端機」。 在 [解除斷字位置] 中, 輸入「關閉終端機」。
 
 ![Module4Chapter1step18im](images/module4chapter1step22im.PNG)
 
+### <a name="build-your-application-to-your-device"></a>對您的裝置建置應用程式
+
+1. 前往 [檔案] > [組建設定], 再次開啟 [組建設定] 視窗。
+
+![Tut1-lesson1-step3 Chapter5 步驟1](images/Lesson1Chapter5Step1.JPG)
+
+2. 藉由按一下 [加入開啟場景] 按鈕，來確定您想要嘗試的場景有在 [建置中的場景] 清單中。
+
+3. 按下 [建置] 按鈕，開始建置程序。
+
+![Tut1-lesson1-step3 Chapter5 步驟3](images/Lesson1Chapter5Step3.JPG)
+
+4. 為您的應用程式建立並命名新資料夾。 在下圖中，已建立名為 “App” 的資料夾來包含應用程式。 按一下 [選取資料夾]，即可開始對新建立的資料夾進行建置。 建置完成之後，您可以關閉 Unity 中的 [建置設定] 視窗。 
+
+![Tut1-lesson1-step3 Chapter5 步驟4](images/Lesson1Chapter5Step4.JPG)
+
+> 注意：如果建置失敗，請再試一次，或重新啟動 Unity，然後重新建置。 如果您看到錯誤，例如「錯誤：CS0246 = 找不到名為 "XX" 的類型或命名空間名稱 (您是否遺漏 using 指示詞或組件參考？)」，則您可能需要安裝 [Windows 10 SDK (10.0.18362.0)](<https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk>)
+
+5. 在建置完成之後，開啟新建立的資料夾，其中包含您新建置的應用程式檔案。 按兩下 ".sln" 方案檔, 以在 Visual Studio 中開啟方案檔。
+
+> 注意:請務必開啟新建立的資料夾 (如果您遵循先前步驟中的命名慣例，此資料夾為 "App" 資料夾)，因為該資料夾外會有名稱類似的 .sln 檔案，不應與建置資料夾中的 .sln 檔案混淆。 
+
+![Lesson1 Chapter5 Step5](images/Lesson1Chapter5Step5.JPG)
+
+> 注意:如果 Visual Studio 要求您安裝新元件，請花一點時間確認是否已安裝所有必要元件，如同 [[安裝工具] 頁面](install-the-tools.md)中所指定
+
+6. 使用 USB 纜線，將 HoloLens 2 插入您的電腦。 雖然這些課程指示假設您會以 HoloLens 2 裝置部署測試，但您也可以選擇部署到 [HoloLens 2 模擬器](using-the-hololens-emulator.md)或選擇建立[用於側載的應用程式套件](<https://docs.microsoft.com/en-us/windows/uwp/packaging/packaging-uwp-apps>)
+
+7. 對您的裝置進行建置之前，請確定裝置處於開發人員模式。 如果這是您第一次部署到 HoloLens 2，Visual Studio 可能會要求您使用 pin 碼來與 HoloLens 2 配對。 若要啟用開發人員模式，或與 Visual Studio 配對，請遵循[這些指示](https://docs.microsoft.com/en-us/windows/mixed-reality/using-visual-studio)。
+
+8. 若要設定 Visual Studio 來對 HoloLens 2 進行建置，請選取 [發行] 組態和 [ARM] 架構。
+
+![Tut1-lesson1-step3 Chapter5 Step8](images/Lesson1Chapter5Step8.JPG)
+
+9. 最後一個步驟是選取 [偵錯] > [啟動但不偵錯] 來對您的裝置進行建置。 選取 [啟動但不偵錯] 會讓裝置上的應用程式在建置成功時立即啟動，但 Visual Studio 中不會出現偵錯資訊。 這也表示，當您的應用程式在 HoloLens 2 上執行時，您可以在不需要停止應用程式的情況下拔掉 USB 纜線。 您也可以選取 [建置] > [部署解決方案]，在不自動啟動應用程式的情況下，對您的裝置進行部署。
+
+![Tut1-lesson1-step3 Chapter5 Step9](images/Lesson1Chapter5Step9.JPG)
+
 ## <a name="congratulations"></a>恭喜！
 
-您已設定您的應用程式中，然後再由 Azure 中的語音辨識 ！ 執行應用程式，以確保所有函式都能正常運作。 開始說喚醒 smokey 您在步驟 22，「 啟動終端機。 」 然後，選取 麥克風 按鈕，啟動 語音辨識，並開始說話。 您會看到您說話的時候謄寫終端機中的文字。 按第二次的麥克風按鈕，以停止語音辨識。 說 「 關閉終端機 」 來隱藏 Lunarcom 終端機。 在下一個課程中，我們將了解如何使用開啟裝置電源的語音辨識，其中 Azure 的語音 SDK 因為無法使用離線 HoloLens 2 的情況下動態切換。
+您已在應用程式中設定語音辨識 (由 Azure 提供技術支援)。 執行應用程式, 以確保所有功能和功能都能正常運作。 從說出您在步驟22中輸入的喚醒字, 啟用終端機。 選取 [麥克風] 按鈕以開始語音辨識。 開始說話。 您會在說話時看到您在終端機中轉譯的單字。 第二次按下 [麥克風] 按鈕, 以停止語音辨識。 假設 [關閉終端機] 以隱藏 Lunarcom 終端機。 在下一課中, 我們將瞭解如何在因為 HoloLens 2 離線而無法使用 Azure 語音 SDK 的情況下, 以動態方式切換至使用裝置供電的語音辨識。
 
-[下一課：語音 SDK 第 2 課](mrlearning-speechSDK-ch2.md)
+[下一個教學課程:2.新增本機語音轉換文字翻譯離線模式](mrlearning-speechSDK-ch2.md)
 

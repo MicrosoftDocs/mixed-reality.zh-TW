@@ -6,16 +6,18 @@ ms.author: jemccull
 ms.date: 06/27/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: e8dc5da5a089079ba38a26969df6070af8bc6200
-ms.sourcegitcommit: c7c7e3c836373b65e319609b4e8389dea6b081de
+ms.openlocfilehash: b13b22fcdce2e7fa1319d241302b764f457aabba
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68460308"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485597"
 ---
 # <a name="2----adding-an-offline-mode-for-local-speech-to-text-translation"></a>2.  新增用於本機語音轉換文字翻譯的離線模式
 
 在本教學課程中, 我們將新增離線模式, 讓您在無法連線到 Azure 服務時執行本機語音轉換文字翻譯。 我們也會*模擬*中斷連線的狀態。
+
+## <a name="instructions"></a>指示
 
 1. 選取階層中的 [Lunarcom_Base] 物件, 然後按一下 [偵測器] 面板中的 [新增元件]。 搜尋並選取 [Lunarcom 離線識別]。
 

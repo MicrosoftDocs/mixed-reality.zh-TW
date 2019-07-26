@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 51cfc123f7da8d25a53eecfb730f60cf10fe7377
-ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.openlocfilehash: e79c3ea719a71d6df8ffd9e2be009d14a846a16a
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387790"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485726"
 ---
 # <a name="2-initializing-your-project-and-first-application"></a>2.初始化您的專案和第一個應用程式
 
@@ -112,4 +112,4 @@ ms.locfileid: "68387790"
 
 >注意:您也將在[第 5 課](mrlearning-base-ch5.md)中了解如何使用語音命令切換畫面播放速率計數器
 
-[下一課：使用者介面、手部追蹤及混合實境工具組組態](mrlearning-base-ch2.md)
+[下一課：3.建立使用者介面和設定混合現實工具組](mrlearning-base-ch2.md)

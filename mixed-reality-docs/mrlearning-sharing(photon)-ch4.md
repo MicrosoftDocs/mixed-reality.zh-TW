@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 529a888dfa00180ca908fbc7f4c62f9a9086c661
-ms.sourcegitcommit: c7c7e3c836373b65e319609b4e8389dea6b081de
+ms.openlocfilehash: 77ae779b4bb32dd66a722c9793d1b83c4a64ae2e
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68460323"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485669"
 ---
 # <a name="4-sharing-object-movements-with-multiple-users"></a>4.與多個使用者共用物件移動
 
@@ -23,7 +23,7 @@ ms.locfileid: "68460323"
 - 將您的專案設定為共用3D 模型的移動。
 - 瞭解如何建立基本的多使用者協同作業應用程式
 
-### <a name="instructions"></a>指示
+## <a name="instructions"></a>指示
 
 
 1. 從上一課 (Control + S) 儲存場景。 您可以將它命名為 HLSharedProjectMainPart4, 以便在需要時更容易找到。
@@ -85,5 +85,5 @@ ms.locfileid: "68460323"
 
 在繼續進行下一課之前, 我們必須先完成 ASA 學習課程模組, 其中涵蓋 ASA 基本概念、Azure 帳戶和資源建立, 以及其他所需的基本建築物組塊, 才可將其整合到我們的共用體驗。
 
-[下一課：共用 (Photon) 第5課](mrlearning-sharing(photon)-ch5.md)
+[下一課：5.將 Azure Spatial Anchors 整合到共用體驗](mrlearning-sharing(photon)-ch5.md)
 

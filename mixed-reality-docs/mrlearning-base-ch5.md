@@ -6,14 +6,14 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: f9da038fe917e9e45b386de54049d6aa312ecfba
-ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.openlocfilehash: d7ef68d1a1e64ca85d76b11376d0916b2693e8e1
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387773"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485715"
 ---
-# <a name="6exploring-advanced-input-options"></a>6. 探索 advanced 輸入選項
+# <a name="6-exploring-advanced-input-options"></a>6.探索先進的輸入選項
 
 在本教學課程中, 我們會探索 HoloLens 2 的幾個先進的輸入選項, 包括使用語音命令、移動流覽手勢和眼睛追蹤。 
 
@@ -198,8 +198,9 @@ ms.locfileid: "68387773"
 6. 在建置 HoloLens 2 之前，請確定已正確設定眼球追蹤功能。 在撰寫本文時, Unity 尚未能夠設定眼追蹤功能的注視輸入。 需要設定這項功能, 眼睛追蹤才能在 HoloLens 2 中工作。 請遵循混合實境工具組文件中的這些指示，啟用注視輸入功能： https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html#testing-your-unity-app-on-a-hololens-2 
 
 
-### <a name="congratulations"></a>恭喜您！ 
+## <a name="congratulations"></a>恭喜！
+
 您已成功將基本眼追蹤功能新增至您的應用程式。 這些動作只是眼球追蹤功能無限可能性的開端。 本章也會在第5課結束, 我們已瞭解先進的輸入功能, 例如語音命令、移動流覽手勢和眼追蹤。 
 
-[下一課：登月艙組件範例體驗](mrlearning-base-ch6.md)
+[下一課：7.建立月球模組應用程式範例](mrlearning-base-ch6.md)
 

@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 4baee7ba8643f5bb80e0456eb97d915405431654
-ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.openlocfilehash: 401c667ef80042da9182b7f4e065dfd6884cf061
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387703"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485694"
 ---
 # <a name="4-placing-dynamic-content-and-using-solvers"></a>4.放置動態內容並使用解析器
 
@@ -74,8 +74,8 @@ ms.locfileid: "68387703"
 
 ![Lesson3 Chapter3 Step5im](images/Lesson3_chapter3_step5im.PNG)
 
-### <a name="congratulations"></a>恭喜！
+## <a name="congratulations"></a>恭喜！
 在本教學課程中, 您已瞭解如何使用 MRTK 的解析器, 讓 UI 直覺地跟隨使用者。 您也已了解如何將解算器連結到遊戲物件 (例如立方體)，以跟隨追蹤的使用者手部。 若要深入了解 MRTK 隨附的這些解算器和其他解算器，歡迎您瀏覽 [MRTK 解算器文件頁面](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html)。
 
-[下一課：3D 物件互動](mrlearning-base-ch4.md)
+[下一課：5.  與 3D 物件互動](mrlearning-base-ch4.md)
 

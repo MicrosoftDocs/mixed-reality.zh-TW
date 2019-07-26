@@ -6,18 +6,18 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: e40cd50f75ca509c601d215cb865161ea3596565
-ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
+ms.openlocfilehash: 46c32abaf45623b7ccba90f257959e4ef4f8e1b5
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293649"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485645"
 ---
-#  <a name="setting-up-photon-unity-networking"></a>設定 Photon Unity 網路功能
+#  <a name="1-setting-up-photon-unity-networking"></a>1.設定 Photon Unity 網路功能
 
 在本教學課程中, 我們將瞭解如何藉由將 Photon Unity 網路 (雙關語) 匯入 Unity 專案, 來準備建立共用體驗。 Photon 是可讓混合現實開發人員建立共用體驗的幾個網路功能選項之一。 我們將學習如何建立 Photon 帳戶、匯入 Photon, 以及建立選用的本機伺服器
 
-目標
+## <a name="objectives"></a>目標
 
 * 瞭解如何建立 Photon 帳戶
 
@@ -27,7 +27,7 @@ ms.locfileid: "68293649"
 
   
 
-### <a name="setting-up-photon"></a>設定 Photon
+## <a name="setting-up-photon"></a>設定 Photon
 
 1. 設定[Photon](https://dashboard.photonengine.com/en-US/Account/SignUp)帳戶。 按一下[此連結](https://dashboard.photonengine.com/en-US/Account/SignUp), 流覽至 Photon 註冊頁面。 遵循註冊頁面上的指示來建立帳戶。 
    
@@ -69,5 +69,5 @@ ms.locfileid: "68293649"
 
 您已成功建立 Photon 帳戶、設定本機 Photon 伺服器, 並將雙關語匯入 Unity。 下一個步驟是設定專案, 然後允許與其他使用者進行連線, 讓多個使用者可以看到您的工作。 
 
-[下一個教學課程:準備 Unity 以進行開發](mrlearning-sharing(photon)-ch2.md)
+[下一個教學課程:2.準備 Unity 以進行開發](mrlearning-sharing(photon)-ch2.md)
 

@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 5275e862d2dec78c98510f754162961c80e9e4b8
-ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.openlocfilehash: 6257b5a4b42127a7f15b235dbdd6b44967684fcb
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387722"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485750"
 ---
 # <a name="3-creating-user-interface-and-configure-mixed-reality-toolkit"></a>3.建立使用者介面和設定混合現實工具組 
 
@@ -167,8 +167,8 @@ Grid 物件集合元件可讓您在整齊的資料列、資料行或方格中組
 
 ![Lesson2 Chapter4 Step5](images/Lesson2_Chapter4_Step5.JPG)
 
-### <a name="congratulations"></a>恭喜您
+## <a name="congratulations"></a>恭喜您
 在這一堂課中，您已了解如何複製、自訂和設定 MRTK 設定檔設定 (亦即，空間感知網格的顯示)。您也已經了解如何在 HoloLens 2 上使用追蹤的手部來與按鈕互動以觸發事件。 最後，您已了解如何使用 Unity 的 Text Mesh Pro 和 MRTK 的方格物件集合元件來建立簡單的 UI 介面。
 
-[下一課：動態內容放置和解算器](mrlearning-base-ch3.md)
+[下一課：4.放置動態內容並使用解算器](mrlearning-base-ch3.md)
 

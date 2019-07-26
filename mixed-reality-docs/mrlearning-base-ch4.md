@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 05/02/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: d47f2940ad741cb436322a824a67f54bb6376c55
-ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.openlocfilehash: 314af3e1e38e1698943f07dc32f5e1e3e2f36d4f
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387699"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485698"
 ---
 # <a name="5-interacting-with-3d-objects"></a>5.與3D 物件互動
 
@@ -202,8 +202,8 @@ ms.locfileid: "68387699"
 
 ![Lesson4 Chapter4 Step3 5 Noteim](images/Lesson4_chapter4_step3-5-noteim.PNG)
 
-### <a name="congratulations"></a>恭喜！ 
+## <a name="congratulations"></a>恭喜！ 
 在本教學課程中, 您已學到如何在方格集合中組織3D 物件, 以及如何使用近距離互動 (直接抓取手) 和即時互動 (使用注視光線或手片) 來操作3D 物件 (縮放、旋轉和移動)。 您也學到如何將周框方塊放在3D 物件周圍, 學習如何使用和自訂周框方塊上的 gizmos。 最後，您學習到觸控物件時如何觸發事件。
 
-[下一課：進階輸入](mrlearning-base-ch5.md)
+[下一課：6.探索進階的輸入選項](mrlearning-base-ch5.md)
 

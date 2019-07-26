@@ -6,14 +6,14 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 0cffb9ac8f61f77b77fc5925264b95ba57d94ece
-ms.sourcegitcommit: c7c7e3c836373b65e319609b4e8389dea6b081de
+ms.openlocfilehash: b434b9c79a702067a9c3db6fb25b0f75cdc6030d
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68460341"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485781"
 ---
-# <a name="speech-sdk-learning-module---intent-and-natural-language-understanding"></a>語音 SDK 學習模組-意圖和自然 Language Understanding
+# <a name="4-setting-up-intent-and-natural-language-understanding"></a>4.設定意圖和自然語言理解
 
 在這一課, 我們將探索 Azure 語音服務的意圖功能。 「意圖」功能可讓我們使用 AI 提供的語音命令來提供應用程式, 使用者可以在其中說出非特定的語音命令, 並仍然讓系統瞭解其意圖。 在此課程中, 我們將設定 Azure LUIS 入口網站、設定我們的意圖/實體/語句、發佈意圖資源、將 Unity 應用程式連接至意圖資源, 以及進行我們的第一個意圖 API 呼叫。
 

@@ -1,4 +1,4 @@
-### <a name="getting-unity-ready-for-development"></a>讓 Unity 準備好進行開發 
+# <a name="2-getting-unity-ready-for-development"></a>2.讓 Unity 準備好進行開發 
 
 
 在本教學課程中, 我們將瞭解如何為應用程式開發準備和設定 Unity, 包括匯入混合現實工具組、設定組建設定, 以及準備我們的場景。
@@ -11,7 +11,7 @@
 
 - 準備您的專案場景
 
-### <a name="instructions"></a>指示
+## <a name="instructions"></a>指示
 
 1. 按一下這裡, 下載並儲存混合現實工具組 unity 封裝[。](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.0.0-RC2.1/Microsoft.MixedReality.Toolkit.Unity.Foundation-v2.0.0-RC2.1.unitypackage)
 
@@ -76,5 +76,5 @@
 
 您的 Unity 專案現在已準備好進行 Photon。 在接下來的教學課程中, 我們將以這個場景和 Unity 專案為完整的共用體驗來建立。
 
-[下一個教學課程:連線多個使用者](mrlearning-sharing(photon)-ch3.md)
+[下一個教學課程:3.連線多個使用者](mrlearning-sharing(photon)-ch3.md)
 

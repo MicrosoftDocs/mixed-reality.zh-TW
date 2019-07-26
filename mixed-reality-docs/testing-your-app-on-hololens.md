@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: HoloLens, 測試
-ms.openlocfilehash: 35e8eff230cdcd719952ad2633ec610c9a9a26a0
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: b8c8e7ea8f90633cbb3b2aa01764398ef9a5c12a
+ms.sourcegitcommit: 76a7aa6e64e114b63ace058dd6d6d662b3c9f09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63549044"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68507904"
 ---
 # <a name="testing-your-app-on-hololens"></a>在 HoloLens 上測試您的應用程式
 
@@ -71,7 +71,11 @@ ms.locfileid: "63549044"
 
 ### <a name="battery"></a>電池
 
-在未連線電源的情況下測試您的應用程式, 以瞭解耗盡電池的速度。 您可以藉由查看電源 LED 讀數, 輕鬆瞭解電池狀態。 ![指出電池電源的 LED 狀態](images/batterypowerledindication-500px.png)
+在未連線電源的情況下測試您的應用程式, 以瞭解耗盡電池的速度。 您可以藉由查看電源 LED 讀數, 輕鬆瞭解電池狀態。 
+
+![指出電池電源的 LED 狀態](images/batterypowerledindication-500px.png)<br>
+
+*指出電池電源的 LED 狀態*
 
 ### <a name="power-state-transitions"></a>電源狀態轉換
 

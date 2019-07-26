@@ -6,12 +6,12 @@ ms.author: shengkait
 ms.date: 04/26/2019
 ms.topic: article
 keywords: Mixed Reality, 實習, 運動控制器, 互動, 設計
-ms.openlocfilehash: d0e54c71ab42a09f2f9c6063a85441b98e729af1
-ms.sourcegitcommit: 8d6e5723283c03f984f1fafef81afa5aab5d04bc
+ms.openlocfilehash: b6efb0a9651cad8eee9b80bb130aa1a85b9a9941
+ms.sourcegitcommit: 76a7aa6e64e114b63ace058dd6d6d662b3c9f09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66039171"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68507863"
 ---
 # <a name="hands-and-motion-controllers"></a>實習和運動控制器
 ## <a name="scenarios"></a>案例
@@ -32,9 +32,11 @@ ms.locfileid: "66039171"
 這種方式可讓使用者在某個距離內與全息影像互動。 它可讓使用者充分利用周圍的環境。 使用者可以將全息影像放在任何位置, 而且仍然可以從任何距離進行存取。 控制和操作2D 和3D 全像投影的心理模型和手勢, 與直接操作的程式高度同步。
 
 ### <a name="motion-controllersmotion-controllersmd"></a>[運動控制器](motion-controllers.md)
-「動作控制器」是一種工具, 藉由在使用一或兩個手間的精確互動, 來擴充使用者的實體功能。 這些硬體配件提供許多常用互動的快捷方式, 並提供 surefooted、觸覺各種動作的意見反應。 目前, 動作控制器僅適用于 WMR 案例。 
+「動作控制器」是一種工具, 藉由在大量距離之間提供精確的互動, 同時使用一或兩個手來擴充使用者的實體功能。 這些硬體配件提供許多常用互動的快捷方式, 並提供 surefooted、觸覺各種動作的意見反應。 目前, 動作控制器僅適用于 Windows Mixed Reality (WMR) 案例。 
 
-![](images/Hands-and-controllers-720px.jpg)<br>
+![實習與運動控制器形式的比較](images/Hands-and-controllers-720px.jpg)<br>
+
+*實習與運動控制器形式的比較*
 
 ## <a name="see-also"></a>另請參閱
 * [頭部目光和行動](gaze-and-commit.md)

@@ -6,14 +6,14 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 92bea1f3130f67645c10e36fe40cd4bc6f8b9151
-ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
+ms.openlocfilehash: 53519d7bb2832fe8ce500f1ee146c91488b09366
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293659"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485663"
 ---
-# <a name="connecting-multiple-users"></a>連接多個使用者
+# <a name="3-connecting-multiple-users"></a>3.連接多個使用者
 
 在這一課, 我們將瞭解如何在即時共用體驗中連接多個使用者。 在本課程結束時, 您將能夠在多個裝置上開啟應用程式, 並查看每個聯結人員的標記法, 以球體表示。 
 
@@ -23,7 +23,7 @@ ms.locfileid: "68293659"
 - 設定播放者
 - 瞭解如何在共用體驗中連接多個使用者
 
-### <a name="instructions"></a>指示
+## <a name="instructions"></a>指示
 
 1. 在 [資產-> 資源]-[專案] 面板的 [> Prefabs] 資料夾中, 將 NetworkLobby prefab 拖放到階層中, 如下圖所示。
 
@@ -72,5 +72,5 @@ ms.locfileid: "68293659"
 
 完成上述所有步驟之後, 建立程式也會完成, 請按下 [播放] 按鈕並連接您的 HoloLens 2。 當您移動 head 時, 您應該會看到一個球體四處移動。 這會針對加入 Unity 專案的任何使用者顯示!
 
-[下一課：共用 (Photon) 第4課](mrlearning-sharing(photon)-ch4.md)
+[下一課：4.與多個使用者共用物件移動](mrlearning-sharing(photon)-ch4.md)
 

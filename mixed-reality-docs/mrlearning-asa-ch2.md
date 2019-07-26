@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 80367ed818168c1d642fadbd7316d3d6481dd2a9
-ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
+ms.openlocfilehash: b263d30905c5a1ba81bfb59ba6a49c7710c43869
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293792"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485746"
 ---
 # <a name="2-saving-retrieving-and-sharing-azure-spatial-anchors"></a>2.儲存、抓取和共用 Azure 空間錨點
 
@@ -81,5 +81,5 @@ ms.locfileid: "68293792"
 
 在下一課中, 我們將學習如何提供使用者即時意見反應。 此意見反應將包含有關錨點建立、環境理解品質和 Azure 會話狀態的資訊。 如果沒有任何意見反應, 使用者可能不知道錨點是否已成功上傳至 Azure、環境的品質是否足以進行錨點建立, 或目前的狀態。
 
-[下一課：ASA 教學課程3](mrlearning-asa-ch3.md)
+[下一課：3.顯示 Azure 空間錨點意見反應](mrlearning-asa-ch3.md)
 

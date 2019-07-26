@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 690ece3a02aeefd598db18baa66de3ddabfa43eb
-ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
+ms.openlocfilehash: 391e797ad9cc8933b057366ab47a3f453c68723e
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293813"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485768"
 ---
 # <a name="1-getting-started-with-azure-spatial-anchors"></a>1.開始使用 Azure 空間錨點
 
@@ -199,5 +199,5 @@ ms.locfileid: "68293813"
 ## <a name="congratulations"></a>恭喜！
 在本教學課程中, 您已瞭解 Azure 空間錨點的基本概念。 此 esson 為您提供數個按鈕, 可讓您探索啟動和停止 Azure 會話所需的各種步驟, 以及在單一裝置上建立、上傳和下載 azure 錨點。 在下一課中, 我們將瞭解如何將 Azure 錨點識別碼儲存至 HoloLens 2 進行抓取, 即使在應用程式重新開機之後也一樣。 在此系列中, 您也將瞭解如何在多個裝置之間傳輸錨點識別碼, 以達成空間對齊, 並瞭解多使用者共用會話, 即將推出做為共用教學課程的一部分。
 
-[下一課：ASA 第2課](mrlearning-asa-ch2.md)
+[下一課：2.儲存、擷取和共用 Azure Spatial Anchors](mrlearning-asa-ch2.md)
 

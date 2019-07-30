@@ -4,28 +4,36 @@ title: 教學課程和範例應用程式
 description: 提供有關混合現實開發的程式碼範例和教學課程。
 author: keveleigh
 ms.author: kurtie
-ms.date: 03/21/2018
+ms.date: 03/26/2019
 ms.topic: article
 keywords: holotoolkit、mixedrealitytoolkit、mixedrealitytoolkit-unity、學院、教學課程
-ms.openlocfilehash: 4f1402cb9b91e0d0619c0516de9120302323b799
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: 862cf8726df6143ece0d87a135a8e9cc6101948b
+ms.sourcegitcommit: 23e172664c2ee1220fe3b4468c104b37ef3ceda9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67415402"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68601616"
 ---
 # <a name="tutorials-and-sample-apps"></a>教學課程和範例應用程式
 
 目前我們的所有教學課程和範例應用程式都是以 Unity 為基礎。  當我們開發其他引擎和平臺的內容時, 您會在目錄中的相關標題底下找到它們。
 
-## <a name="mr-learning-modules"></a>MR 學習模組
+## <a name="hololens-2-tutorials"></a>HoloLens 2 教學課程
 
-MR 學習課程模組的設計, 是為了協助開發人員瞭解開發混合現實應用程式的技術和最佳作法。  初始模組適用于 HoloLens 2, 並實行混合現實工具組 2.0 (MRTK 2.0)。
-* 基底模組旨在向開發人員說明如何使用 MRTK 來設定其專案, 以及如何執行 UI、空間對應, 以及基本和先進的互動
+HoloLens 2 教學課程的設計目的是協助開發人員瞭解開發混合現實應用程式的技術和最佳作法。  這些教學課程是以[混合現實工具組 2.0 (MRTK 2.0)](https://github.com/microsoft/MixedRealityToolkit-Unity)為基礎。
+
+* 快速入門教學課程- [7 個總覽和目標的1個](mrlearning-base.md)
+* Azure 空間錨點教學課程- [1/3 開始使用 Azure 空間錨點](mrlearning-asa-ch1.md)
+* Azure 語音服務教學課程- [1/4 整合和使用語音辨識與](mrlearning-speechSDK-ch1.md)轉譯
+* 多使用者功能教學課程-[設定 Photon Unity 網路的第 1](mrlearning-sharing(photon)-ch1.md)部
 
 ## <a name="open-source-sample-apps"></a>開放原始碼範例應用程式
 
 開放原始碼範例應用程式是由我們的小組所建立, 我們提供了原始程式碼, 讓開發人員可以從我們的專案中查看並學習。
+
+* [元素週期表](periodic-table-of-the-elements.md)
+* [月球模組](lunar-module.md)
+* [星系探險](galaxy-explorer.md)
 
 ## <a name="mixed-reality-academy-tutorials"></a>混合現實學院教學課程
 

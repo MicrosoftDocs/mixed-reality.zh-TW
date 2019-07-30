@@ -37,7 +37,7 @@ DirectX 11 全像攝影版 UWP 應用程式範本與 DirectX 11 UWP 應用程式
 
 若要建立新的專案:
 1. 啟動**Visual Studio**。
-2. 從 [ 檔案] 功能表, 指向 [**新增**], 然後從內容功能表中選取 [**專案**]。 [**新增專案**] 對話方塊隨即開啟。
+2. 從 [檔案] 功能表, 指向 [**新增**], 然後從內容功能表中選取 [**專案**]。 [**新增專案**] 對話方塊隨即開啟。
 3. 展開左側的 [**已安裝**], 然後展開 [**視覺效果C++** 語言] 節點。
 4. 流覽至 [ **Windows 通用 >** 全像攝影] 節點, 然後選取 [全像**C++/WinRT] [DirectX 11 應用程式 (通用 Windows)** ]。
    ![Visual Studio 中的全像「 C++DirectX 11/WinRT UWP 應用程式」專案範本的螢幕擷取畫面](images/holographic-directx-app-cpp-new-project.png)<br>
@@ -153,7 +153,7 @@ int APIENTRY wWinMain(
 
 您的混合現實應用程式會在遊戲迴圈中更新, 預設會在的**Update**方法`AppMain.cpp`中執行。 **Update**方法會更新場景物件 (例如旋轉的 cube), 並傳回用來取得最新的視圖和投影矩陣並呈現交換鏈的<a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe" target="_blank">HolographicFrame</a>物件。
 
-中 `AppMain.cpp`的 Render 方法會採用<a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe" target="_blank">HolographicFrame</a> , 並根據目前的應用程式和空間定位狀態, 將目前的框架轉譯為每個全像攝影攝影機。
+中  `AppMain.cpp`的 Render 方法會採用<a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe" target="_blank">HolographicFrame</a> , 並根據目前的應用程式和空間定位狀態, 將目前的框架轉譯為每個全像攝影攝影機。
 
 ## <a name="see-also"></a>另請參閱
 * [取得 HolographicSpace](getting-a-holographicspace.md)

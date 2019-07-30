@@ -32,9 +32,9 @@ ms.locfileid: "68387732"
 1. 開啟 HoloLens 並放在裝置上。
 2. 做出[盛開](gestures.md#bloom)手勢來啟動主功能表。
 3. 注視 [**設定**] 圖格, 然後執行 [[空中](gestures.md#air-tap)] 手勢。 做出第二次的空中點選，來將 App 放置於您的環境中。 當您放置 [設定] App 之後，該 App 便會啟動。
-4. 選取 [更新] 功能表項目。
-5. 選取 [適用於開發人員] 功能表項目。
-6. 啟用 [開發人員模式]。 這可讓您將[應用程式從 Visual Studio 部署](using-visual-studio.md)到 HoloLens。
+4. 選取 [更新]  功能表項目。
+5. 選取 [適用於開發人員]  功能表項目。
+6. 啟用 [開發人員模式]  。 這可讓您將[應用程式從 Visual Studio 部署](using-visual-studio.md)到 HoloLens。
 7. 選擇性：向下滾動, 同時啟用 [**裝置入口網站**]。 這也可讓您從網頁瀏覽器連接到 HoloLens 上的[Windows 裝置入口網站](using-the-windows-device-portal.md)。
 
 ### <a name="windows-pc"></a>Windows 電腦
@@ -46,8 +46,8 @@ ms.locfileid: "68387732"
 4. 啟用**開發人員模式**, 閱讀您所選設定的免責聲明, 然後按一下 [是] 以接受變更。
 
 ## <a name="deploying-an-app-over-wi-fi---hololens-1st-gen"></a>透過 Wi-fi-HoloLens 部署應用程式 (第1代)
-1. 在 Visual Studio 中, 為您的應用![程式 x86 組建設定選取 x86 組建設定](images/x86setting.png)
-2. 在 [部署目標] 下拉式功能表![中選取 [遠端電腦], Visual Studio 中的 [遠端電腦部署目標]](images/remotemachinesetting.png)
+1. 在 Visual Studio中, 為您的應用![程式 x86 組建設定選取 x86 組建設定](images/x86setting.png)
+2. 在  [部署目標] 下拉式功能表![中選取 [遠端電腦], Visual Studio 中的 [遠端電腦部署目標]](images/remotemachinesetting.png)
 3. 針對C++和 JavaScript 專案, 移至 **專案 > 屬性 > 設定屬性 > 調試**程式。 針對C#專案, 對話方塊會自動快顯以設定您的連接。
   a. 在 [**位址**] 或 [**電腦名稱稱**] 欄位中, 輸入您裝置的 IP 位址。 在 [設定] 底下的 [ **> 網路 & 網際網路] > [Advanced Options**] 底下尋找您 HOLOLENS 的 ip 位址, 或者您可以詢問 Cortana 「我的 IP 位址是什麼？」
   b. 將 [驗證模式 Visual Studio] 設定為 **[通用 (未加密的通訊協定)** ![] [遠端連線] 對話方塊](images/remotedeploy.png)
@@ -57,8 +57,8 @@ ms.locfileid: "68387732"
 如果您的 HoloLens IP 位址變更, 您可以前往 [**專案] >** [內容] > [設定] [屬性], 以變更目的電腦的 ip 位址 >
 
 ## <a name="deploying-an-app-over-usb---hololens-1st-gen"></a>透過 USB 部署應用程式-HoloLens (第1代)
-1. 在 Visual Studio 中, 為您的應用![程式 x86 組建設定選取 x86 組建設定](images/x86setting.png)
-2. 在 [部署目標] 下拉式功能表![中, 選取 [裝置部署] 中的 [裝置] Visual Studio](images/buildsettingsusbdeploy.png)
+1. 在 Visual Studio中, 為您的應用![程式 x86 組建設定選取 x86 組建設定](images/x86setting.png)
+2. 在  [部署目標] 下拉式功能表![中, 選取 [裝置部署] 中的 [裝置] Visual Studio](images/buildsettingsusbdeploy.png)
 3. 選取 [ **Debug > 開始進行調試**程式] 以部署您![的應用程式, 並開始在不進行任何偵測的 Visual Studio](images/deploynodebugging.png)
 4. 當您第一次從電腦將應用程式部署到 HoloLens 時, 系統會提示您輸入 PIN 碼。 遵循下列**配對您的裝置**指示。
 

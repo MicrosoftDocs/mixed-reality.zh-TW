@@ -47,7 +47,7 @@ HoloLens 2 讓開發人員能夠使用使用者所查看的資訊, 在全像攝�
 ### <a name="user-intent"></a>使用者意圖    
 使用者查看位置和內容的相關資訊, 可**為其他輸入**(例如語音、手和控制器) 提供強大的內容。
 這可以運用在各種不同的工作上。
-例如, 只要查看全像投影, 並說「選取」 (也請參閱[列印頭和認可](gaze-and-commit.md)), 或說出「put this ...」, 然後查看使用者想要放置的位置, 就可以在整個場景中快速且輕鬆地**設定**範圍:全息圖, 然後說「.。。其中有「。 您可以在[混合實境工具組 - 視線導向目標選取](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_TargetSelection.html)和[混合實境工具組 - 視線導向目標定位](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_Positioning.html)中找到相關範例。
+例如, 只要查看全像投影, 並說「選取」 (也請參閱[列印頭和認可](gaze-and-commit.md)), 或說出「put this ...」, 然後查看使用者想要放置的位置, 就可以在整個場景中快速且輕鬆地**設定**範圍:全息圖, 然後說「...其中有「。 您可以在[混合實境工具組 - 視線導向目標選取](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_TargetSelection.html)和[混合實境工具組 - 視線導向目標定位](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_Positioning.html)中找到相關範例。
 
 此外, 使用者意圖的範例可能包括使用使用者查看的相關資訊, 以強化與虛擬代理程式和互動式全息式的資料的互動。 比方說, 虛擬代理程式可能會根據目前所看到的內容, 調整可用的選項及其行為。 
 

@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 391e797ad9cc8933b057366ab47a3f453c68723e
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: 9f830bc4ead35fd308108051617c61c65d98d451
+ms.sourcegitcommit: c0d5c19b756b8e6ff95ea26a4d8d2b3a53878c2e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485768"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671961"
 ---
 # <a name="1-getting-started-with-azure-spatial-anchors"></a>1.開始使用 Azure 空間錨點
 
@@ -28,13 +28,13 @@ ms.locfileid: "68485768"
 ### <a name="downloading-and-importing-assets"></a>下載和匯入資產
 開始之前, 請先下載並匯入下列資產:
 
-[Azure Spatial Anchors](https://github.com/azure/azure-spatial-anchors-samples/releases)
+[Azure 空間錨點 v 1.1。0](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v1.1.0/AzureSpatialAnchors.unitypackage)
 
-[MR 基底模組資產套件](https://github.com/microsoft/MixedRealityLearning/releases/tag/1.2)
+[MR 基底模組資產套件1.2 版](https://github.com/microsoft/MixedRealityLearning/releases/download/1.2/BaseModuleAssets-1.2.unitypackage)
 
-[ASA 模組資產套件](https://github.com/microsoft/MixedRealityLearning/releases/tag/ASA_1.1)
+[ASA 模組資產套件 v1。0](https://github.com/microsoft/MixedRealityLearning/releases/download/v1/ASAModuleAssets_1.unitypackage)
 
-[混合實境工具組](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/)
+[混合現實工具組 2.0.0 RC1](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.0.0-RC1-Refresh/Microsoft.MixedReality.Toolkit.Unity.Foundation-v2.0.0-RC1-Refresh.unitypackage)
 
 > 注意:如需有關如何匯入 Azure 空間錨點的特定指示, 請參閱步驟 5: 在 MR 基底模組資產套件上進行特定指示的步驟 6, 以及步驟3到 4, 以瞭解混合現實工具組 (MRKT) 上的特定指示。
 

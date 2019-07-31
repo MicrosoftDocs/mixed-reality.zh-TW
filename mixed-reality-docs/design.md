@@ -1,25 +1,27 @@
 ---
 layout: LandingPage
 title: 設計
-description: 本指南是以 Microsoft 設計工具、開發人員、程式經理和研究人員所撰寫，其工作橫跨全像攝影裝置) 例如 HoloLens) 和沈浸式裝置 (例如 Acer 和 HP Windows Mixed Reality 頭戴式裝置)。 因此，請將此工作視為「如何設計 Windows 頭戴式顯示器」的一組主題。
+description: 本指南是以 Microsoft 設計工具、開發人員、程式經理和研究人員所撰寫，其工作橫跨全像攝影裝置 (例如 HoloLens) 和沈浸式裝置 (例如 Acer 和 HP Windows Mixed Reality 頭戴式裝置)。 因此，請將此工作視為「如何設計 Windows 頭戴式顯示器」的一組主題。
 author: rwinj
 ms.author: randyw
 ms.date: 03/21/2018
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality, 設計, 互動, 樣式, 色彩, 應用程式模式, 控制項, 範例應用程式, 混合實境工具組, MRTK
-ms.openlocfilehash: 88de9008dbea6cce3b980bbbe3d0f45b7818e7c9
-ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
+ms.openlocfilehash: 6601f4c2dd75e6e555dd79bc92abcccc15eb1ab4
+ms.sourcegitcommit: 30246ab9b9be44a3c707061753e53d4bf401eb6b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66039204"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67326194"
 ---
 # <a name="design-for-mixed-reality"></a>混合實境設計
 
 ![混合實境設計](images/Bicycle-Leschi10.gif)
 
-本指南是以 Microsoft 設計工具、開發人員、程式經理和研究人員所撰寫，其工作橫跨全像攝影裝置) 例如 HoloLens) 和沈浸式裝置 (例如 Acer 和 HP Windows Mixed Reality 頭戴式裝置)。 因此，請將此工作視為「如何設計 Windows 頭戴式顯示器」的一組主題。
+
+本指南是由 Microsoft 設計人員、開發人員、程式經理和研究人員所撰寫，其工作橫跨全像攝影裝置 (例如 HoloLens) 和沈浸式裝置 (例如 Acer 和 HP Windows Mixed Reality 頭戴式裝置)。 因此，請將此工作視為「如何設計 Windows 頭戴式顯示器」的一組主題。
+
 
 ## <a name="article-categories"></a>文章類別
 
@@ -166,7 +168,7 @@ ms.locfileid: "66039204"
                             <a href="progress.md">顯示進度</a>
                         </p>
                         <p>
-                            <a href="app-bar-and-bounding-box.md">應用程式列和週框方塊</a>
+                            <a href="app-bar-and-bounding-box.md">週框方塊和應用程式列</a>
                         </p>
                     </div>
                 </div>
@@ -213,7 +215,7 @@ ms.locfileid: "66039204"
                         </div>
                         <div class="cardText">
                             <h3>月球模組</h3>
-                            <p>了解如何透過雙手追蹤和 Xbox 控制器輸入來擴充 HoloLens 基本手勢。</p>
+                            <p>了解如何透過雙手追蹤和 Xbox 控制器輸入來擴充 HoloLens 基本。 手勢。</p>
                         </div>
                     </div>
                 </div>
@@ -231,7 +233,7 @@ ms.locfileid: "66039204"
                             </div>
                         </div>
                         <div class="cardText">
-                            <h3>星系探險</h3>
+                            <h3>Galaxy Explorer</h3>
                             <p>Galaxy Explorer 專案已準備就緒。 您與社群分享了您的想法，選擇應用程式，觀看小組建置它，並可立即取得原始程式碼。</p>
                         </div>
                     </div>
@@ -248,7 +250,7 @@ ms.locfileid: "66039204"
 
 <ul id="cardtypes-D" class="cardsD panelContent" style="display: flex; margin-top: 0px;">
     <li>
-    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity" title="混合實境工具組 - Unity" data-linktype="absolute-path">
+    <a href="https://microsoft.github.io/MixedRealityToolkit-Unity/README.html#ui-and-interaction-building-blocks" title="混合實境工具組 - Unity" data-linktype="absolute-path">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -284,26 +286,7 @@ ms.locfileid: "66039204"
             </div>
         </div>
       </a>  
-    </li>   
-        <li>
-    <a href="case-study-building-holosketch,-a-spatial-layout-and-ux-sketching-app-for-hololens.md" title="HoloSketch" data-linktype="absolute-path">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="images/HoloSketch.png" alt="HoloSketch">
-                        </div>
-                    </div>                    
-            <div class="cardText">
-                        <h3>HoloSketch</h3>
-                        <p> </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </a>  
-    </li>   
+    </li>       
             <li>
     <a href="https://www.simplygon.com" title="Simplygon" data-linktype="absolute-path">
         <div class="cardSize">

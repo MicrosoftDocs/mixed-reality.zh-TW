@@ -8,12 +8,12 @@ ms.date: 02/12/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境, 開發, 開發, HoloLens, unity, directx
-ms.openlocfilehash: 8833d2d692f2082c939bcfc3bb55e5d159e8c9ac
-ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
+ms.openlocfilehash: b2bd9c4d81e5c7156ad753859a299209bad70c44
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "65974816"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414436"
 ---
 # <a name="development-launchpad"></a>開發啟動列
 
@@ -114,7 +114,7 @@ ms.locfileid: "65974816"
                             <a href="directx-development-overview.md">自訂引擎 (DirectX)</a>
                         </p>
                         <p>
-Unreal - 即將推出！
+                            <a href="https://www.unrealengine.com/en-US/blog/unreal-engine-4-support-for-hololens-2-released-in-early-access">Unreal</a>
                         </p>                
                     </div>
                 </div>
@@ -175,7 +175,7 @@ Unreal - 即將推出！
 
 ## <a name="overview"></a>概觀
 
-混合實境應用程式會透過[通用 Windows 平台](https://dev.windows.com/getstarted)建置。 所有混合實境應用程式都是通用 Windows 應用程式，而且所有通用 Windows 應用程式都可Windows Mixed Reality 裝置上執行。 透過 Windows 10 和您熟悉的 Unity 等中介軟體工具，您就可以立即開始建置混合實境體驗。
+混合實境應用程式可透過[通用 Windows 平台](https://dev.windows.com/getstarted) (UWP) 建置。 所有混合實境應用程式都是 UWP 應用程式。 所有 UWP 應用程式都可在 Windows Mixed Reality 裝置上執行。 透過 Windows 10 和您熟悉的中介軟體工具 (例如 Unity)，您可以立即開始建置混合實境體驗。
 
 <br>
 
@@ -183,7 +183,7 @@ Unreal - 即將推出！
 
 ## <a name="basics-of-mixed-reality-development"></a>混合實境開發的基本概念
 
-[混合實境](mixed-reality.md)體驗可透過用於環境感知的 Windows 新功能啟用。 這些體驗可讓開發人員將[全像投影](hologram.md)放在真實世界中，並可讓使用者藉由實際走動的方式在數位世界中移動。 
+[混合實境](mixed-reality.md)體驗可透過用於環境感知的 Windows 新功能啟用。 這些功能可讓開發人員將[全像投影](hologram.md)放入真實世界中，並可讓使用者藉由實際走動的方式在數位世界中移動。 
 
 以下是混合實境開發的核心基本要素：
 
@@ -219,16 +219,16 @@ Unreal - 即將推出！
 
 [HoloLens](hololens-hardware-details.md) 的基本互動模型是[視線](gaze.md)、[手勢](gestures.md)及[語音](voice-input.md)，有時稱為 "GGV"  。 [Windows Mixed Reality 沉浸式頭戴裝置](immersive-headset-hardware-details.md)也使用視線和語音，但以[動作控制器](motion-controllers.md)取代手勢。
 
-所有混合實境裝置皆受益於 Windows 上可用的輸入生態系統，包括滑鼠、鍵盤、遊戲台等更多功能。 使用 HoloLens 時，您可以透過藍牙連接[硬體配件](hardware-accessories.md)。 使用沉浸式頭戴裝置時，您可以透過藍牙、USB 和其他支援的通訊協定，將配件連接到主機電腦。
+所有混合實境裝置皆受益於 Windows 中可用的輸入生態系統，包括滑鼠、鍵盤、遊戲台等更多功能。 使用 HoloLens 時，您可以透過藍牙連接[硬體配件](hardware-accessories.md)。 使用沉浸式頭戴裝置時，您可以透過藍牙、USB 和其他支援的通訊協定，將配件連接到主機電腦。
 
-環境感知功能 (例如[座標](coordinate-systems.md)、[空間音效](spatial-sound.md)和[空間對應](spatial-mapping.md)) 能為混合實境提供必要功能。 空間對應是 HoloLens 特有的功能，可讓全像投影與使用者和其周圍的實體世界互動。 座標系統可讓使用者的移動影響到數位世界中的移動。
+環境感知功能 (例如[座標](coordinate-systems.md)、[空間音效](spatial-sound.md)和[空間對應](spatial-mapping.md)) 可提供混合實境所需的功能。 空間對應是 HoloLens 特有的功能，可讓全像投影與使用者和其周圍的實體世界互動。 座標系統可讓使用者的移動影響到數位世界中的移動。
 
-全像投影由依賴[轉譯](rendering.md)的光線和音效所組成。 如 [Windows Mixed Reality 首頁](navigating-the-windows-mixed-reality-home.md) (有時稱為「殼層」) 所述，了解放置和持續性的體驗是為您建立使用者體驗基礎的絕佳方式。
+全像投影由依賴[轉譯](rendering.md)的光線和音效所組成。 如 [Windows Mixed Reality 首頁](navigating-the-windows-mixed-reality-home.md) (亦稱為「殼層」) 所述，了解放置和持續性的體驗是您建立使用者體驗基礎的絕佳方式。
 
-## <a name="tools-for-developing-for-mixed-reality"></a>混合實境的開發工具
+## <a name="tools-for-developing-mixed-reality"></a>混合實境的開發工具
 
 您所使用的工具取決於您要建置的[應用程式風格](app-views.md)。
-* [搭配 2D 檢視的應用程式](building-2d-apps.md)會運用工具來建置適用於 Windows Phone、電腦和平板電腦等環境的通用 Windows 平台應用程式。 這些應用程式會放在 Windows Mixed Reality 首頁中作為 2D 投影體驗，而且可以作用於多個裝置類型 (包括手機及電腦)。
+* [搭配 2D 檢視的應用程式](building-2d-apps.md)會運用工具來建置適用於 Windows Phone、電腦和平板電腦等環境的UWP 應用程式。 這些應用程式會放在 Windows Mixed Reality 首頁中作為 2D 投影體驗，而且可以作用於多個裝置類型，包括手機及電腦。
 * 沈浸式和全像攝影應用程式需要可利用 Windows Mixed Reality API 的工具。 我們[建議使用 Unity](unity-development-overview.md) 來建置混合實境應用程式。 想要建置自有引擎的開發人員可以[使用 DirectX 和其他 Windows API](directx-development-overview.md)。
 
 不論您要建置何種應用程式類型，這些工具都能為您的應用程式開發經驗提供協助：

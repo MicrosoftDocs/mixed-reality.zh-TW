@@ -7,12 +7,12 @@ ms.date: 04/11/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境, 注視, 注視定向, 互動, 設計, hololens, MMR, 多樣式
-ms.openlocfilehash: 7b04141c832597be4bb58447629e0ef6e248dc2b
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: 3ba1a2fc46aa88c856e4cc9531382c479b3fb17a
+ms.sourcegitcommit: 76a7aa6e64e114b63ace058dd6d6d662b3c9f09e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67415249"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68507901"
 ---
 # <a name="introducing-instinctual-interactions"></a>本能互動簡介
 
@@ -62,7 +62,7 @@ ms.locfileid: "67415249"
         <td>HoloLens 2<br>HoloLens (第 1 代)<br>沉浸式頭戴裝置</td>
     </tr>
     <tr>
-        <td><a href="gaze-and-commit.md">頭部注視並認可</a></td>
+        <td><a href="gaze-and-commit.md">頭部目光和行動</a></td>
         <td>點選體驗，例如 3D 簡報、示範。</td>
         <td>需要 HMD 訓練，但不是在行動裝置上。 最適合用於可存取的控制器。 最適合用於 HoloLens (第 1 代)。</td>
         <td>HoloLens 2<br>HoloLens (第 1 代)<br>沉浸式頭戴裝置<br>行動 AR</td>
@@ -115,13 +115,13 @@ ms.locfileid: "67415249"
     <tr>
         <td><a href="hands-and-tools.md">手部和運動控制器</a></td>
         <td>我看到手狀網格，我看到指尖能供性或手部/控制器光線。</td>
-        <td>我看到當我的手部靠近時會出現可握住的把手或週框方塊。</td>
+        <td>我看到當我的手部靠近物件時會出現可握住的把手或週框方塊。</td>
         <td>我會在握住和放開時聽到聽得見的音調並看到動畫。</td>
     </tr>
     <tr>
-        <td><a href="gaze-and-commit.md">頭部注視並認可</a></td>
+        <td><a href="gaze-and-commit.md">頭部目光和行動</a></td>
         <td>我在視野中央看到一個游標。</td>
-        <td>頭部注視游標會在掃過某些物件時變更狀態。</td>
+        <td>頭部注視游標會在其掃過某些物件時變更狀態。</td>
         <td>當我採取動作時，我會看到/聽到看得見和聽得見的確認。</td>
     </tr>   
     <tr>
@@ -133,7 +133,7 @@ ms.locfileid: "67415249"
     <tr>
         <td><a href="hands-free.md">免持式 (語音命令)</a></td>
         <td>我看到接聽指示器以及可顯示系統所聽內容的字幕。</td>
-        <td>我取得語音提示。 當我說：「我可以說什麼？」時， 我看到回饋。</td>
+        <td>我取得語音提示。 當我說：「我可以說什麼？」 我看到回饋。</td>
         <td>當我發出命令時，我會看到/聽到看得見和聽得見的確認，或在必要時取得去除混淆 UX。</a></td>
     </tr>
 </table>
@@ -178,7 +178,7 @@ ms.locfileid: "67415249"
  
 
 ## <a name="see-also"></a>請參閱
-* [頭部注視並認可](gaze-and-commit.md)
+* [頭部目光和行動](gaze-and-commit.md)
 * [頭部目光和停駐](gaze-and-dwell.md)
 * [手部直接操作](direct-manipulation.md)
 * [手部指向和行動](point-and-commit.md)

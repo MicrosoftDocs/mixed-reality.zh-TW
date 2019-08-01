@@ -7,12 +7,12 @@ ms.date: 04/12/19
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality, 測試, MRTK, MRTK 第 2 版, HoloLens 2
-ms.openlocfilehash: d0d406c6963866995164c9c004e51283df8d9382
-ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.openlocfilehash: ccf2bb9de1e69cfe306fe9fa8f7d3b80158348d4
+ms.sourcegitcommit: 23e172664c2ee1220fe3b4468c104b37ef3ceda9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387625"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68601615"
 ---
 # <a name="getting-your-existing-application-ready-for-hololens-2"></a>讓現有應用程式做好使用 HoloLens 2 的準備
 
@@ -106,15 +106,15 @@ HoloLens (第 1 代) 會在 x86 處理器上執行應用程式，HoloLens 2 則�
 
 現在，MRTK 第 2 版 (自 [RC1](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases/tag/v2.0.0-RC1) 起) 中已經有提供 HoloLens 2 元件與功能，您可以直接在 Unity 中模擬手部互動，並對新的 API 開發手部互動和眼球追蹤。 必須要有 HoloLens 2 裝置，才能建立令人滿意的使用者體驗。 建議您開始研究相關文件和工具以進一步了解。 [MRTK v2](https://github.com/microsoft/MixedRealityToolkit-Unity) 支援在 HoloLens (第 1 代) 上進行開發，且傳統的輸入模型 (例如，透過空中點選來進行選取) 仍可在 HoloLens (第 1 代) 裝置上進行測試。 
 
-## <a name="updating-interaction-model-for-hololens-2"></a>更新 HoloLens 2 的互動模型
+## <a name="updating-your-interaction-model-for-hololens-2"></a>更新 HoloLens 2 的互動模型
 
 移植應用程式並讓其做好使用 HoloLens 2 的準備之後，您就可以開始考慮更新互動模型和全像投影設計/位置。
-在 HoloLens (第 1 代) 中，您應用程式的注視並認可互動模型所使用的全像投影可能太遠而無法融入視野。
+在 HoloLens (第 1 代) 中，應用程式的注視並認可互動模型所使用的全像投影可能太遠而無法融入視野。
 
 下列步驟可更新您的應用程式設計，使其適用於 HoloLens 2：
 1.  MRTK 元件：根據事前工作，如果您已新增 [MRTK v2](https://github.com/microsoft/MixedRealityToolkit-Unity)，則其中會有各種已針對 HoloLens 2 來設計及最佳化的元件/指令碼可供運用。
 
-2.  互動模型：請考慮更新互動模型。 大部分情況下，建議您從注視並認可切換至手部。 一般來說，全像投影會在比手臂可及範圍還遠的地方，因此切換為手部會讓互動指標光線和抓取手勢變遠。
+2.  互動模型：請考慮更新互動模型。 大部分情況下，建議您從注視和認可切換至手部。 一般來說，全像投影會在比手臂可及範圍還遠的地方，因此切換為手部會讓互動指標光線和抓取手勢變遠。
 
 3.  全像投影位置：切換到手部互動模型之後，請考慮使用近距離互動抓取手勢將某些全像投影移得近一些，以便讓手部直接與全像投影互動。 建議可移得近一些以便能直接抓取或互動的全像投影類型包括，可在抓取和檢查全像投影時融入到 HoloLens 2 視野內的小型目標功能表、控制項、按鈕和較小型的全像投影。
 <br>

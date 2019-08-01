@@ -1,41 +1,56 @@
-# <a name="2-getting-unity-ready-for-development"></a><span data-ttu-id="7109c-101">2.讓 Unity 準備好進行開發</span><span class="sxs-lookup"><span data-stu-id="7109c-101">2. Getting Unity ready for development</span></span> 
+---
+title: 多使用者功能教學課程-2。 讓 Unity 準備好進行開發
+description: 完成此課程, 以瞭解如何在 HoloLens 2 應用程式中執行多使用者共用體驗。
+author: jessemcculloch
+ms.author: jemccull
+ms.date: 02/26/2019
+ms.topic: article
+keywords: 混合實境, unity, 教學課程, hololens
+ms.openlocfilehash: 9d42811157db108baad51eab3f367a06a11b7f7b
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701982"
+---
+# <a name="2-getting-unity-ready-for-development"></a><span data-ttu-id="d3c85-105">2.讓 Unity 準備好進行開發</span><span class="sxs-lookup"><span data-stu-id="d3c85-105">2. Getting Unity ready for development</span></span> 
 
 
-<span data-ttu-id="7109c-102">在本教學課程中, 我們將瞭解如何為應用程式開發準備和設定 Unity, 包括匯入混合現實工具組、設定組建設定, 以及準備我們的場景。</span><span class="sxs-lookup"><span data-stu-id="7109c-102">In this tutorial, we learn how to prepare and configure Unity for application development, including importing the Mixed Reality Toolkit, configuring build settings, and preparing our scene.</span></span>
+<span data-ttu-id="d3c85-106">在本教學課程中, 我們將瞭解如何為應用程式開發準備和設定 Unity, 包括匯入混合現實工具組、設定組建設定, 以及準備我們的場景。</span><span class="sxs-lookup"><span data-stu-id="d3c85-106">In this tutorial, we learn how to prepare and configure Unity for application development, including importing the Mixed Reality Toolkit, configuring build settings, and preparing our scene.</span></span>
 
-## <a name="objectives"></a><span data-ttu-id="7109c-103">目標</span><span class="sxs-lookup"><span data-stu-id="7109c-103">Objectives</span></span>
+## <a name="objectives"></a><span data-ttu-id="d3c85-107">目標</span><span class="sxs-lookup"><span data-stu-id="d3c85-107">Objectives</span></span>
 
-- <span data-ttu-id="7109c-104">設定 Unity 以進行應用程式開發</span><span class="sxs-lookup"><span data-stu-id="7109c-104">Configure Unity for application development</span></span>
+- <span data-ttu-id="d3c85-108">設定 Unity 以進行應用程式開發</span><span class="sxs-lookup"><span data-stu-id="d3c85-108">Configure Unity for application development</span></span>
 
-- <span data-ttu-id="7109c-105">匯入混合實境工具組</span><span class="sxs-lookup"><span data-stu-id="7109c-105">Import the Mixed Reality Toolkit</span></span>
+- <span data-ttu-id="d3c85-109">匯入混合實境工具組</span><span class="sxs-lookup"><span data-stu-id="d3c85-109">Import the Mixed Reality Toolkit</span></span>
 
-- <span data-ttu-id="7109c-106">準備您的專案場景</span><span class="sxs-lookup"><span data-stu-id="7109c-106">Prepare your project scene</span></span>
+- <span data-ttu-id="d3c85-110">準備您的專案場景</span><span class="sxs-lookup"><span data-stu-id="d3c85-110">Prepare your project scene</span></span>
 
-## <a name="instructions"></a><span data-ttu-id="7109c-107">指示</span><span class="sxs-lookup"><span data-stu-id="7109c-107">Instructions</span></span>
+## <a name="instructions"></a><span data-ttu-id="d3c85-111">指示</span><span class="sxs-lookup"><span data-stu-id="d3c85-111">Instructions</span></span>
 
-1. <span data-ttu-id="7109c-108">按一下這裡, 下載並儲存混合現實工具組 unity 封裝[。](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.0.0-RC2.1/Microsoft.MixedReality.Toolkit.Unity.Foundation-v2.0.0-RC2.1.unitypackage)</span><span class="sxs-lookup"><span data-stu-id="7109c-108">Download and save the Mixed Reality Toolkit unity package by clicking [here.](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.0.0-RC2.1/Microsoft.MixedReality.Toolkit.Unity.Foundation-v2.0.0-RC2.1.unitypackage)</span></span>
+1. <span data-ttu-id="d3c85-112">按一下這裡, 下載並儲存混合現實工具組 unity 封裝[。](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.0.0-RC2.1/Microsoft.MixedReality.Toolkit.Unity.Foundation-v2.0.0-RC2.1.unitypackage)</span><span class="sxs-lookup"><span data-stu-id="d3c85-112">Download and save the Mixed Reality Toolkit unity package by clicking [here.](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.0.0-RC2.1/Microsoft.MixedReality.Toolkit.Unity.Foundation-v2.0.0-RC2.1.unitypackage)</span></span>
 
-2. <span data-ttu-id="7109c-109">在 Unity 中, 按一下 [資產] 功能表並選取 [匯入套件], 然後按一下 [自訂套件]。</span><span class="sxs-lookup"><span data-stu-id="7109c-109">In Unity, click on the assets menu and select Import Package, then click on Custom Package.</span></span>
+2. <span data-ttu-id="d3c85-113">在 Unity 中, 按一下 [資產] 功能表並選取 [匯入套件], 然後按一下 [自訂套件]。</span><span class="sxs-lookup"><span data-stu-id="d3c85-113">In Unity, click on the assets menu and select Import Package, then click on Custom Package.</span></span>
 
 ![Module3Chapter2step2im](images/module3chapter2step2im.PNG)
 
-3. <span data-ttu-id="7109c-111">從步驟1所提供的連結中, 選取您剛才下載的 Unity 套件。</span><span class="sxs-lookup"><span data-stu-id="7109c-111">Select the Unity package you just downloaded from the link provided in step 1.</span></span> <span data-ttu-id="7109c-112">在 Unity 中出現 [匯入] 快顯視窗後, 按一下 [匯入] 按鈕以開始匯入。</span><span class="sxs-lookup"><span data-stu-id="7109c-112">Once the import pop-up window appears in Unity, click the Import button to begin importing.</span></span> <span data-ttu-id="7109c-113">匯入 MRTK 可能需要幾分鐘的時間。</span><span class="sxs-lookup"><span data-stu-id="7109c-113">Importing the MRTK may take several minutes.</span></span>
+3. <span data-ttu-id="d3c85-115">從步驟1所提供的連結中, 選取您剛才下載的 Unity 套件。</span><span class="sxs-lookup"><span data-stu-id="d3c85-115">Select the Unity package you just downloaded from the link provided in step 1.</span></span> <span data-ttu-id="d3c85-116">在 Unity 中出現 [匯入] 快顯視窗後, 按一下 [匯入] 按鈕以開始匯入。</span><span class="sxs-lookup"><span data-stu-id="d3c85-116">Once the import pop-up window appears in Unity, click the Import button to begin importing.</span></span> <span data-ttu-id="d3c85-117">匯入 MRTK 可能需要幾分鐘的時間。</span><span class="sxs-lookup"><span data-stu-id="d3c85-117">Importing the MRTK may take several minutes.</span></span>
 
 ![Module3Chapter2step3im](images/module3chapter2step3im.PNG)
 
-> <span data-ttu-id="7109c-115">注意:下載的套件位於您已儲存檔案的本機資料夾中。</span><span class="sxs-lookup"><span data-stu-id="7109c-115">Note: The downloaded package is in your local folder where you have saved the file.</span></span> <span data-ttu-id="7109c-116">上圖不會說明您會在何處找到封裝。</span><span class="sxs-lookup"><span data-stu-id="7109c-116">The image above does not portray where you will find the package.</span></span>
+> <span data-ttu-id="d3c85-119">注意:下載的套件位於您已儲存檔案的本機資料夾中。</span><span class="sxs-lookup"><span data-stu-id="d3c85-119">Note: The downloaded package is in your local folder where you have saved the file.</span></span> <span data-ttu-id="d3c85-120">上圖不會說明您會在何處找到封裝。</span><span class="sxs-lookup"><span data-stu-id="d3c85-120">The image above does not portray where you will find the package.</span></span>
 
-4. <span data-ttu-id="7109c-117">建立新場景。</span><span class="sxs-lookup"><span data-stu-id="7109c-117">Create a new scene.</span></span> <span data-ttu-id="7109c-118">這可以藉由按一下 [檔案], 然後選取 [新增場景]) 來完成。</span><span class="sxs-lookup"><span data-stu-id="7109c-118">This can be done by clicking File, and selecting New Scene").</span></span> <span data-ttu-id="7109c-119">將場景儲存為 HLSharedProjectMain。</span><span class="sxs-lookup"><span data-stu-id="7109c-119">Save the scene as HLSharedProjectMain.</span></span>
+4. <span data-ttu-id="d3c85-121">建立新場景。</span><span class="sxs-lookup"><span data-stu-id="d3c85-121">Create a new scene.</span></span> <span data-ttu-id="d3c85-122">這可以藉由按一下 [檔案], 然後選取 [新增場景]) 來完成。</span><span class="sxs-lookup"><span data-stu-id="d3c85-122">This can be done by clicking File, and selecting New Scene").</span></span> <span data-ttu-id="d3c85-123">將場景儲存為 HLSharedProjectMain。</span><span class="sxs-lookup"><span data-stu-id="d3c85-123">Save the scene as HLSharedProjectMain.</span></span>
 
-> <span data-ttu-id="7109c-120">注意: 您可能會收到類似下圖的快顯視窗。</span><span class="sxs-lookup"><span data-stu-id="7109c-120">Note: you may receive a pop-up that looks similar to the image below.</span></span> <span data-ttu-id="7109c-121">現在, 請按一下 [否]。</span><span class="sxs-lookup"><span data-stu-id="7109c-121">For now, click No.</span></span>
+> <span data-ttu-id="d3c85-124">注意: 您可能會收到類似下圖的快顯視窗。</span><span class="sxs-lookup"><span data-stu-id="d3c85-124">Note: you may receive a pop-up that looks similar to the image below.</span></span> <span data-ttu-id="d3c85-125">現在, 請按一下 [否]。</span><span class="sxs-lookup"><span data-stu-id="d3c85-125">For now, click No.</span></span>
 >
 > ![Module3Chapter2note1im](images/module3chapter2note1im.PNG)
 
-5. <span data-ttu-id="7109c-123">在 [混合式現實工具組] 底下, 按一下 [新增至場景] 並設定。</span><span class="sxs-lookup"><span data-stu-id="7109c-123">Under Mixed Reality Toolkit, click on Add to Scene and Configure.</span></span>
+5. <span data-ttu-id="d3c85-127">在 [混合式現實工具組] 底下, 按一下 [新增至場景] 並設定。</span><span class="sxs-lookup"><span data-stu-id="d3c85-127">Under Mixed Reality Toolkit, click on Add to Scene and Configure.</span></span>
 
 ![Module3Chapter2step5im](images/module3chapter2step5im.PNG)
 
-6. <span data-ttu-id="7109c-125">完成之後, 就會出現新的設定檔案, 讓您選擇自訂設定檔。</span><span class="sxs-lookup"><span data-stu-id="7109c-125">Once that is complete, a new configuration file appears, giving you the choice to customize the profile.</span></span> <span data-ttu-id="7109c-126">按一下 [複製並自訂]。</span><span class="sxs-lookup"><span data-stu-id="7109c-126">Click Copy and Customize.</span></span>
+6. <span data-ttu-id="d3c85-129">完成之後, 就會出現新的設定檔案, 讓您選擇自訂設定檔。</span><span class="sxs-lookup"><span data-stu-id="d3c85-129">Once that is complete, a new configuration file appears, giving you the choice to customize the profile.</span></span> <span data-ttu-id="d3c85-130">按一下 [複製並自訂]。</span><span class="sxs-lookup"><span data-stu-id="d3c85-130">Click Copy and Customize.</span></span>
 
 ![Module3Chapter2step6ima](images/module3chapter2step6ima.PNG)
 
@@ -43,38 +58,38 @@
 
 ![Module3Chapter2step6imc](images/module3chapter2step6imc.PNG)
 
-7. <span data-ttu-id="7109c-130">如果您想要隱藏 [診斷] 視窗, 請向下選取並取消核取 [啟用診斷系統]。</span><span class="sxs-lookup"><span data-stu-id="7109c-130">Scroll down and uncheck Enable Diagnostics system if you want to hide the diagnostics window.</span></span> <span data-ttu-id="7109c-131">建議您在應用程式開發期間讓診斷視窗保持啟用狀態, 以監視效能, 並在生產或應用程式示範期間將它停用。</span><span class="sxs-lookup"><span data-stu-id="7109c-131">We recommend keeping the diagnostics window enabled during application development to monitor performance, and disabling it during production or application demonstrations.</span></span> 
+7. <span data-ttu-id="d3c85-134">如果您想要隱藏 [診斷] 視窗, 請向下選取並取消核取 [啟用診斷系統]。</span><span class="sxs-lookup"><span data-stu-id="d3c85-134">Scroll down and uncheck Enable Diagnostics system if you want to hide the diagnostics window.</span></span> <span data-ttu-id="d3c85-135">建議您在應用程式開發期間讓診斷視窗保持啟用狀態, 以監視效能, 並在生產或應用程式示範期間將它停用。</span><span class="sxs-lookup"><span data-stu-id="d3c85-135">We recommend keeping the diagnostics window enabled during application development to monitor performance, and disabling it during production or application demonstrations.</span></span> 
 
 ![Module3Chapter2step7ima](images/module3chapter2step7ima.PNG)
 
-8. <span data-ttu-id="7109c-133">按 ctrl + shift + B, 或移至 [檔案-> 組建設定], 以開啟組建設定。</span><span class="sxs-lookup"><span data-stu-id="7109c-133">Open the build settings by pressing control+shift+B or going to File->Build Settings.</span></span> <span data-ttu-id="7109c-134">請注意, 程式目前是在電腦、Mac 和 Linux 獨立平臺下設定。</span><span class="sxs-lookup"><span data-stu-id="7109c-134">Notice that the program is currently set under the PC, Mac and Linux standalone platform.</span></span> <span data-ttu-id="7109c-135">若是 HoloLens 2 開發, 請將平臺設定為通用 Windows 平臺。</span><span class="sxs-lookup"><span data-stu-id="7109c-135">For HoloLens 2 development, set the platform to be Universal Windows Platform.</span></span> <span data-ttu-id="7109c-136">選取該檔案, 然後按一下 [切換平臺]。</span><span class="sxs-lookup"><span data-stu-id="7109c-136">Select it and click Switch Platform.</span></span>
+8. <span data-ttu-id="d3c85-137">按 ctrl + shift + B, 或移至 [檔案-> 組建設定], 以開啟組建設定。</span><span class="sxs-lookup"><span data-stu-id="d3c85-137">Open the build settings by pressing control+shift+B or going to File->Build Settings.</span></span> <span data-ttu-id="d3c85-138">請注意, 程式目前是在電腦、Mac 和 Linux 獨立平臺下設定。</span><span class="sxs-lookup"><span data-stu-id="d3c85-138">Notice that the program is currently set under the PC, Mac and Linux standalone platform.</span></span> <span data-ttu-id="d3c85-139">若是 HoloLens 2 開發, 請將平臺設定為通用 Windows 平臺。</span><span class="sxs-lookup"><span data-stu-id="d3c85-139">For HoloLens 2 development, set the platform to be Universal Windows Platform.</span></span> <span data-ttu-id="d3c85-140">選取該檔案, 然後按一下 [切換平臺]。</span><span class="sxs-lookup"><span data-stu-id="d3c85-140">Select it and click Switch Platform.</span></span>
 
 ![Module3Chapter2step8im](images/module3chapter2step8im.PNG)
 
-9. <span data-ttu-id="7109c-138">完成後, 請按一下顯示 [新增開啟場景] 的方塊。</span><span class="sxs-lookup"><span data-stu-id="7109c-138">Once complete, click the box that says Add Open Scenes.</span></span> <span data-ttu-id="7109c-139">現在, 移至 [偵測器] 面板, 並確定已核取 [支援的虛擬實境] 右邊的核取方塊 (如下圖所示)。</span><span class="sxs-lookup"><span data-stu-id="7109c-139">Now go to the Inspector panel, and ensure that the check box to the right of Virtual Reality Supported (as shown in the image below) is checked.</span></span> <span data-ttu-id="7109c-140">此外, 也請確定 [場景/HLSharedProjectMain] 旁的核取方塊也已核取, 如下圖所示。</span><span class="sxs-lookup"><span data-stu-id="7109c-140">Also ensure that the check box next to scenes/HLSharedProjectMain is also checked as shown in the image below.</span></span>
+9. <span data-ttu-id="d3c85-142">完成後, 請按一下顯示 [新增開啟場景] 的方塊。</span><span class="sxs-lookup"><span data-stu-id="d3c85-142">Once complete, click the box that says Add Open Scenes.</span></span> <span data-ttu-id="d3c85-143">現在, 移至 [偵測器] 面板, 並確定已核取 [支援的虛擬實境] 右邊的核取方塊 (如下圖所示)。</span><span class="sxs-lookup"><span data-stu-id="d3c85-143">Now go to the Inspector panel, and ensure that the check box to the right of Virtual Reality Supported (as shown in the image below) is checked.</span></span> <span data-ttu-id="d3c85-144">此外, 也請確定 [場景/HLSharedProjectMain] 旁的核取方塊也已核取, 如下圖所示。</span><span class="sxs-lookup"><span data-stu-id="d3c85-144">Also ensure that the check box next to scenes/HLSharedProjectMain is also checked as shown in the image below.</span></span>
 
 ![Module3Chapter2step9im](images/module3chapter2step9im.PNG)
 
-10. <span data-ttu-id="7109c-142">在 [偵測器] 面板的 [發行設定] 區段下, 向下流覽至 [功能], 並確定已將下列核取方塊標記為:</span><span class="sxs-lookup"><span data-stu-id="7109c-142">Under the Publishing Settings section in the Inspector panel, scroll down to Capabilities, and ensure the following check boxes are marked:</span></span>
+10. <span data-ttu-id="d3c85-146">在 [偵測器] 面板的 [發行設定] 區段下, 向下流覽至 [功能], 並確定已將下列核取方塊標記為:</span><span class="sxs-lookup"><span data-stu-id="d3c85-146">Under the Publishing Settings section in the Inspector panel, scroll down to Capabilities, and ensure the following check boxes are marked:</span></span>
 
 ![Module3Chapter2step9imb](images/module3chapter2step9imb.PNG)
 
-11. <span data-ttu-id="7109c-144">匯入名為 SharingAssetCollection 的自訂套件, 您可以在[這裡下載。](https://github.com/microsoft/MixedRealityLearning/releases/tag/development)</span><span class="sxs-lookup"><span data-stu-id="7109c-144">Import the custom package called SharingAssetCollection which can be downloaded [here.](https://github.com/microsoft/MixedRealityLearning/releases/tag/development)</span></span>
+11. <span data-ttu-id="d3c85-148">匯入名為 SharingAssetCollection 的自訂套件, 您可以在[這裡下載。](https://github.com/microsoft/MixedRealityLearning/releases/tag/development)</span><span class="sxs-lookup"><span data-stu-id="d3c85-148">Import the custom package called SharingAssetCollection which can be downloaded [here.](https://github.com/microsoft/MixedRealityLearning/releases/tag/development)</span></span>
 
 ![Module3Chapter2step12im](images/module3chapter2step11im.PNG)
 
-12. <span data-ttu-id="7109c-146">在 [專案] 面板中, 移至 [Prefabs] 資料夾。</span><span class="sxs-lookup"><span data-stu-id="7109c-146">In the Project panel, go to the Prefabs folder.</span></span> <span data-ttu-id="7109c-147">在接下來的幾個步驟中, 您會對場景執行幾個 prefabs。</span><span class="sxs-lookup"><span data-stu-id="7109c-147">In next few steps you implement a few prefabs into the scene.</span></span> <span data-ttu-id="7109c-148">在 [Prefabs] 資料夾中, 按一下 [prefab]、[Debug] 視窗並拖曳至階層中。</span><span class="sxs-lookup"><span data-stu-id="7109c-148">In the Prefabs folder, click and drag the prefab, Debug Window into the hierarchy.</span></span> <span data-ttu-id="7109c-149">完成後, 依序按一下 [檔案] 和 [儲存] 或按 Ctrl + S 來儲存專案。</span><span class="sxs-lookup"><span data-stu-id="7109c-149">Once finished, save the project by clicking File, then Save or press Control+S.</span></span>
+12. <span data-ttu-id="d3c85-150">在 [專案] 面板中, 移至 [Prefabs] 資料夾。</span><span class="sxs-lookup"><span data-stu-id="d3c85-150">In the Project panel, go to the Prefabs folder.</span></span> <span data-ttu-id="d3c85-151">在接下來的幾個步驟中, 您會對場景執行幾個 prefabs。</span><span class="sxs-lookup"><span data-stu-id="d3c85-151">In next few steps you implement a few prefabs into the scene.</span></span> <span data-ttu-id="d3c85-152">在 [Prefabs] 資料夾中, 按一下 [prefab]、[Debug] 視窗並拖曳至階層中。</span><span class="sxs-lookup"><span data-stu-id="d3c85-152">In the Prefabs folder, click and drag the prefab, Debug Window into the hierarchy.</span></span> <span data-ttu-id="d3c85-153">完成後, 依序按一下 [檔案] 和 [儲存] 或按 Ctrl + S 來儲存專案。</span><span class="sxs-lookup"><span data-stu-id="d3c85-153">Once finished, save the project by clicking File, then Save or press Control+S.</span></span>
 
 ![Module3Chapter2step12im](images/module3chapter2step12im.PNG)
 
-   > <span data-ttu-id="7109c-151">注意:您可能會注意到當您按一下 prefab 時, 快顯視窗會詢問您有關 TMP Essentials 的資訊。</span><span class="sxs-lookup"><span data-stu-id="7109c-151">Note: You may notice a pop-up appear as you click on the prefab, asking you about TMP Essentials.</span></span> <span data-ttu-id="7109c-152">視需要按一下 [匯入 TMP Essentials]。</span><span class="sxs-lookup"><span data-stu-id="7109c-152">Click Import TMP Essentials as they are needed.</span></span> <span data-ttu-id="7109c-153">如果出現這個快顯視窗, 您可能需要從階層中刪除 prefab, 然後將它重新拖曳到您的階層中, 以避免潛在的文字相關錯誤。</span><span class="sxs-lookup"><span data-stu-id="7109c-153">If this pop-up appears, you might need to delete the prefab from your hierarchy and re-drag it into your hierarchy to avoid potential text-related errors.</span></span>
+   > <span data-ttu-id="d3c85-155">注意:您可能會注意到當您按一下 prefab 時, 快顯視窗會詢問您有關 TMP Essentials 的資訊。</span><span class="sxs-lookup"><span data-stu-id="d3c85-155">Note: You may notice a pop-up appear as you click on the prefab, asking you about TMP Essentials.</span></span> <span data-ttu-id="d3c85-156">視需要按一下 [匯入 TMP Essentials]。</span><span class="sxs-lookup"><span data-stu-id="d3c85-156">Click Import TMP Essentials as they are needed.</span></span> <span data-ttu-id="d3c85-157">如果出現這個快顯視窗, 您可能需要從階層中刪除 prefab, 然後將它重新拖曳到您的階層中, 以避免潛在的文字相關錯誤。</span><span class="sxs-lookup"><span data-stu-id="d3c85-157">If this pop-up appears, you might need to delete the prefab from your hierarchy and re-drag it into your hierarchy to avoid potential text-related errors.</span></span>
    >
 >![Module3Chapter2note2im](images/module3chapter2note2im.PNG)
 
 
-## <a name="congratulations"></a><span data-ttu-id="7109c-155">恭喜！</span><span class="sxs-lookup"><span data-stu-id="7109c-155">Congratulations</span></span>
+## <a name="congratulations"></a><span data-ttu-id="d3c85-159">恭喜！</span><span class="sxs-lookup"><span data-stu-id="d3c85-159">Congratulations</span></span>
 
-<span data-ttu-id="7109c-156">您的 Unity 專案現在已準備好進行 Photon。</span><span class="sxs-lookup"><span data-stu-id="7109c-156">Your Unity Project is now ready for Photon.</span></span> <span data-ttu-id="7109c-157">在接下來的教學課程中, 我們將以這個場景和 Unity 專案為完整的共用體驗來建立。</span><span class="sxs-lookup"><span data-stu-id="7109c-157">In the coming tutorials, we'll build upon this scene and our Unity project towards a full shared experience.</span></span>
+<span data-ttu-id="d3c85-160">您的 Unity 專案現在已準備好進行 Photon。</span><span class="sxs-lookup"><span data-stu-id="d3c85-160">Your Unity Project is now ready for Photon.</span></span> <span data-ttu-id="d3c85-161">在接下來的教學課程中, 我們將以這個場景和 Unity 專案為完整的共用體驗來建立。</span><span class="sxs-lookup"><span data-stu-id="d3c85-161">In the coming tutorials, we'll build upon this scene and our Unity project towards a full shared experience.</span></span>
 
-<span data-ttu-id="7109c-158">[下一個教學課程:3.連線多個使用者](mrlearning-sharing(photon)-ch3.md)</span><span class="sxs-lookup"><span data-stu-id="7109c-158">[Next tutorial: 3. Connecting multiple users](mrlearning-sharing(photon)-ch3.md)</span></span>
+<span data-ttu-id="d3c85-162">[下一個教學課程:3.連線多個使用者](mrlearning-sharing(photon)-ch3.md)</span><span class="sxs-lookup"><span data-stu-id="d3c85-162">[Next tutorial: 3. Connecting multiple users](mrlearning-sharing(photon)-ch3.md)</span></span>
 

@@ -1,17 +1,17 @@
 ---
-title: MR 學習基本模組 - 專案初始化和第一個應用程式
+title: 快速入門教學課程-2。 初始化您的專案和第一個應用程式
 description: 完成此課程以了解如何在混合實境應用程式中實作 Azure 臉部辨識。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: e79c3ea719a71d6df8ffd9e2be009d14a846a16a
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: f003bebf51859122b679162f41797bff1becd3fb
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485726"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68702055"
 ---
 # <a name="2-initializing-your-project-and-first-application"></a>2.初始化您的專案和第一個應用程式
 
@@ -28,7 +28,7 @@ ms.locfileid: "68485726"
 ### <a name="create-new-unity-project"></a>建立新的 Unity 專案
 
 1. 啟動 Unity。
-2. 選取 [新增]。
+2. 選取 [新增]  。
 ![Lesson1 Chapter1 Step2](images/Lesson1Chapter1Step2.JPG)
 3. 輸入專案名稱 (例如："MixedRealityBase")。
 ![Lesson1 Chapter1 Step3](images/Lesson1Chapter1Step3.JPG)
@@ -36,7 +36,7 @@ ms.locfileid: "68485726"
 ![Lesson1 Chapter1 Step4](images/Lesson1Chapter1Step4.JPG)
 5. 確定專案已設定為 **3D**。
 ![Lesson1 Chapter1 Step5](images/Lesson1Chapter1Step5.JPG)
-6. 按一下 [建立專案]。
+6. 按一下 [建立專案]  。
 ![Lesson1 Chapter1 Step6](images/Lesson1Chapter1Step6.JPG)
 
 ### <a name="configure-the-unity-project-for-windows-mixed-reality"></a>設定適用於 Windows Mixed Reality 的 Unity 專案

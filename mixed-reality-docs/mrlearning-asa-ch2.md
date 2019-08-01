@@ -1,17 +1,17 @@
 ---
-title: MR Learning ASA 模組 Azure 空間錨點 on HoloLens 2
+title: Azure 空間錨點教學課程-2。 儲存、抓取和共用 Azure 空間錨點
 description: 完成此課程以了解如何在混合實境應用程式中實作 Azure 臉部辨識。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: b263d30905c5a1ba81bfb59ba6a49c7710c43869
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: 4e60ed844e64d736c268dd3ec8453c6c2cb7ad75
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485746"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68702051"
 ---
 # <a name="2-saving-retrieving-and-sharing-azure-spatial-anchors"></a>2.儲存、抓取和共用 Azure 空間錨點
 
@@ -81,5 +81,5 @@ ms.locfileid: "68485746"
 
 在下一課中, 我們將學習如何提供使用者即時意見反應。 此意見反應將包含有關錨點建立、環境理解品質和 Azure 會話狀態的資訊。 如果沒有任何意見反應, 使用者可能不知道錨點是否已成功上傳至 Azure、環境的品質是否足以進行錨點建立, 或目前的狀態。
 
-[下一課：3.顯示 Azure 空間錨點意見反應](mrlearning-asa-ch3.md)
+[下一課：3.顯示 Azure Spatial Anchor 意見反應](mrlearning-asa-ch3.md)
 

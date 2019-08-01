@@ -1,17 +1,17 @@
 ---
-title: HoloLens 2 的 MR 學習共用模組
+title: 多使用者功能教學課程-1。 設定 Photon Unity 網路功能
 description: 完成此課程, 以瞭解如何在 HoloLens 2 應用程式中執行多使用者共用體驗。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 46c32abaf45623b7ccba90f257959e4ef4f8e1b5
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: acb6966ace81180e95e6a0fe447d350572f7c0dd
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485645"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701964"
 ---
 #  <a name="1-setting-up-photon-unity-networking"></a>1.設定 Photon Unity 網路功能
 

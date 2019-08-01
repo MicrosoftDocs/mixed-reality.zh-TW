@@ -1,17 +1,17 @@
 ---
-title: MR 學習基本模組 - 使用者介面、手部追蹤及混合實境工具組設定
+title: 快速入門教學課程-3。 建立使用者介面和設定混合現實工具組
 description: 完成此課程以了解如何在混合實境應用程式中實作 Azure 臉部辨識。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 6257b5a4b42127a7f15b235dbdd6b44967684fcb
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: 925ab825c2716a847726ac763dc6800914d87c6b
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485750"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68702040"
 ---
 # <a name="3-creating-user-interface-and-configure-mixed-reality-toolkit"></a>3.建立使用者介面和設定混合現實工具組 
 

@@ -1,17 +1,17 @@
 ---
-title: MR Learning ASA 模組 Azure 空間錨點 on HoloLens 2
+title: Azure 空間錨點教學課程-3。 顯示 Azure 空間錨點意見反應
 description: 完成此課程以了解如何在混合實境應用程式中實作 Azure 臉部辨識。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: cfd6ac9997a8a5d962603922f473bd6fc5d708ed
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: 45a71cada97dff4a2fb32f2eaf7700816f2e0d42
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485729"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68702032"
 ---
 # <a name="3-displaying-azure-spatial-anchor-feedback"></a>3.顯示 Azure 空間錨點意見反應
 

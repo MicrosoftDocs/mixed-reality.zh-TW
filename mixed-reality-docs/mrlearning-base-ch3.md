@@ -1,17 +1,17 @@
 ---
-title: MR 學習基本模組 - 動態內容放置和解算器
+title: 使用者入門教學課程-4。 放置動態內容並使用解析器
 description: 完成此課程以了解如何在混合實境應用程式中實作 Azure 臉部辨識。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 401c667ef80042da9182b7f4e065dfd6884cf061
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: a73be40180e582058ae3e9bbaeffebe462042fbb
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485694"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701994"
 ---
 # <a name="4-placing-dynamic-content-and-using-solvers"></a>4.放置動態內容並使用解析器
 

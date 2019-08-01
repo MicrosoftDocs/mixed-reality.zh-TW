@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 06/03/2019
 ms.topic: article
 keywords: Windows Mixed Reality, 設計, 控制項, 字型, 印刷樣式, ui, ux
-ms.openlocfilehash: f57b04c7d57219b7426793879004ef010d2b1ea8
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: 739dee36ffcbaa92fad705d1b0e58506801c9a4d
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67415422"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701904"
 ---
 # <a name="text-in-unity"></a>Unity 中的文字
 
@@ -20,7 +20,7 @@ ms.locfileid: "67415422"
 ![如何取得清晰且美觀的文字](images/hug-text-02-640px.png)<br>
 *Unity 中的模糊預設文字*
 
-## <a name="working-with-unitys-3d-texttext-mesh-and-ui-text"></a>使用 Unity 的3D 文字 (文本網格) 和 UI 文字
+## <a name="working-with-unitys-3d-text-text-mesh-and-ui-text"></a>使用 Unity 的3D 文字 (文本網格) 和 UI 文字
 
 Unity 假設所有新增至場景的新專案都是大小的1個 Unity 單位, 或 100% 的轉換規模, 這會轉譯為 HoloLens 上約1個計量。 在字型的案例中, 3D TextMesh 的周框方塊預設會出現在最高1計量的高度。
 
@@ -32,6 +32,8 @@ Unity 假設所有新增至場景的新專案都是大小的1個 Unity 單位, �
 
 ![具有不同字型大小的 Unity 3D 文本網格](images/Text_In_Unity_Measurements1.png)<br>
 *調整 Unity 3D 文字和 UI 文字的值*
+
+<br>
 
 ![具有不同字型大小的 Unity 3D 文本網格](images/hug-text-05-1000px.png)<br>
 *具有優化值的 Unity 3D 文本網格*
@@ -49,7 +51,7 @@ Unity 假設所有新增至場景的新專案都是大小的1個 Unity 單位, �
 
 ## <a name="working-with-text-mesh-pro"></a>使用文本網格 Pro
 
-使用 Unity 的文本網格 Pro, 您可以保護文字轉譯品質。 不論使用 [ [.sdf (帶正負號距離] 欄位)](https://steamcdn-a.akamaihd.net/apps/valve/2007/SIGGRAPH2007_AlphaTestedMagnification.pdf)技術的距離為何, 它都支援簡潔的文字外框。 使用上述用於3D 文字網格和 UI 文字的相同計算方法, 我們可以尋找適當的縮放值來使用傳統的印刷樣式點。 由於預設的3D 文字網格 Pro 字型 (大小為 36) 顯示 2.5 Unity Unit (2.5 m) 的周框, 因此我們可以使用調整值0.005 來使用點大小。 UI 功能表底下的文本網格 Pro 具有25個 Unity 單位 (25m) 的預設周框大小。 這可為我們提供0.0005 的調整值。
+使用 Unity 的文本網格 Pro, 您可以保護文字轉譯品質。 不論使用 [[帶正負號距離] 欄位 (.sdf)](https://steamcdn-a.akamaihd.net/apps/valve/2007/SIGGRAPH2007_AlphaTestedMagnification.pdf)技術的距離為何, 它都支援簡潔的文字外框。 針對3D 文字網格和 UI 文字, 使用我們先前使用的相同計算方法, 我們可以尋找適當的縮放值以搭配傳統的印刷點使用。 由於預設的3D 文字網格 Pro 字型 (大小為 36) 的周框大小為 2.5 Unity 單位 (2.5 m), 因此我們可以使用調整值0.005 來取得點大小。 UI 功能表底下的文本網格 Pro 具有25個 Unity 單位 (25m) 的預設周框大小。 這可為我們提供0.0005 的調整值。
 
 ![具有不同字型大小的 Unity 3D 文本網格](images/Text_In_Unity_Measurements2.png)<br>
 *調整 Unity 3D 文字和 UI 文字的值*

@@ -1,3 +1,18 @@
+---
+title: 多使用者功能教學課程-2。 讓 Unity 準備好進行開發
+description: 完成此課程, 以瞭解如何在 HoloLens 2 應用程式中執行多使用者共用體驗。
+author: jessemcculloch
+ms.author: jemccull
+ms.date: 02/26/2019
+ms.topic: article
+keywords: 混合實境, unity, 教學課程, hololens
+ms.openlocfilehash: 9d42811157db108baad51eab3f367a06a11b7f7b
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701982"
+---
 # <a name="2-getting-unity-ready-for-development"></a>2.讓 Unity 準備好進行開發 
 
 

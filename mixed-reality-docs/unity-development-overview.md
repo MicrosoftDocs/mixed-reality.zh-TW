@@ -6,17 +6,16 @@ ms.author: Yoyoz
 ms.date: 04/15/2018
 ms.topic: article
 keywords: Unity, 混合現實, 開發, 快速入門, 新專案, 移植, 功能, 攝影機, 模擬, 模擬, 檔
-ms.openlocfilehash: 24217b4c61bf2d438ebc1c4114bc9dc20dc62f64
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: b1384e886a2b4d0b3ed9f8008fca6af6ad4b78d5
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414518"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701786"
 ---
 # <a name="unity-development-overview"></a>Unity 開發總覽
 
 建立[混合現實應用程式](app-views.md)的最快速路徑是使用[Unity](http://aka.ms/HoloLensUnity)。 我們建議您花一些時間來探索[Unity 教學](https://unity3d.com/learn/tutorials)課程。 如果您需要資產, Unity 具有完整的[資產存放區](https://www.assetstore.unity3d.com/)。 建立 Unity 的基本瞭解之後, 您可以造訪[教學](tutorials.md)課程, 以瞭解使用 unity 進行混合現實開發的細節。 請務必造訪[Unity Mixed Reality 論壇](http://forum.unity3d.com/forums/hololens.102/), 以與在 unity 中建立混合現實應用程式的其餘部分互動, 並找出您可能遇到之問題的解決方案。
-
 
 若要開始使用 Unity 建立混合現實應用程式, 請先[安裝工具](install-the-tools.md)。 
 
@@ -71,7 +70,7 @@ ms.locfileid: "67414518"
 
 ## <a name="unity-documentation"></a>Unity 檔
 
-除了 Windows 開發人員中心提供的這項檔之外, Unity 還會同時安裝 Windows Mixed Reality 功能的檔與 Unity 編輯器。 Unity 提供的檔包含兩個不同的區段:
+除了 docs.microsoft.com 上提供的這項檔之外, Unity 還會同時安裝 Windows Mixed Reality 功能的檔與 Unity Editor。 Unity 提供的檔包含兩個不同的區段:
 1. **Unity 腳本參考**
     * 檔集的這一節包含 Unity 提供的腳本 API 的詳細資料。
     * 透過說明 **> 腳本參考來**存取 Unity Editor

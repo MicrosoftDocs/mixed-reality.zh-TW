@@ -1,19 +1,19 @@
 ---
-title: MR 學習 Speechsdk.quickstart 模組-語音辨識與轉譯
+title: Azure 語音服務教學課程-2。 新增用於本機語音轉換文字翻譯的離線模式
 description: 完成此課程, 以瞭解如何在混合現實應用程式中執行 Azure 語音 SDK。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 06/27/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: b13b22fcdce2e7fa1319d241302b764f457aabba
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: 1dd6c01768ddf5dda954f50e0f7507022bd59c3b
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485597"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701854"
 ---
-# <a name="2----adding-an-offline-mode-for-local-speech-to-text-translation"></a>2.  新增用於本機語音轉換文字翻譯的離線模式
+# <a name="2-adding-an-offline-mode-for-local-speech-to-text-translation"></a>2.新增用於本機語音轉換文字翻譯的離線模式
 
 在本教學課程中, 我們將新增離線模式, 讓您在無法連線到 Azure 服務時執行本機語音轉換文字翻譯。 我們也會*模擬*中斷連線的狀態。
 

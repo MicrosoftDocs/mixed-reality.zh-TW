@@ -1,17 +1,17 @@
 ---
-title: MR 學習基本模組 - 3D 物件互動
+title: 快速入門教學課程-5。 與3D 物件互動
 description: ''
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 05/02/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 314af3e1e38e1698943f07dc32f5e1e3e2f36d4f
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: 29a31f794cbcda4f0c77b4e6e2d0e3c2c91dcb8c
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485698"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68702019"
 ---
 # <a name="5-interacting-with-3d-objects"></a>5.與3D 物件互動
 

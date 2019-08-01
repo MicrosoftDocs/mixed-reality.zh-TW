@@ -1,17 +1,17 @@
 ---
-title: MR 學習 Speechsdk.quickstart 模組-語音辨識與轉譯
+title: Azure 語音服務教學課程-1。 整合和使用語音辨識與轉譯
 description: 完成此課程, 以瞭解如何在混合現實應用程式中執行 Azure 語音 SDK。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: c1ca44ffcaa8dced988b829d9875ebe304f14a12
-ms.sourcegitcommit: c7c7e3c836373b65e319609b4e8389dea6b081de
+ms.openlocfilehash: 501e8bc2e70248a4ca8a79f90d74d30129830701
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68460350"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701956"
 ---
 # <a name="1-integrating-and-using-speech-recognition-and-transcription"></a>1.整合和使用語音辨識與轉譯
 

@@ -1,17 +1,17 @@
 ---
-title: MR 學習 Speechsdk.quickstart 模組-語音辨識與轉譯
+title: Azure 語音服務教學課程-4。 設定意圖和自然語言理解
 description: 完成此課程, 以瞭解如何在混合現實應用程式中執行 Azure 語音 SDK。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: b434b9c79a702067a9c3db6fb25b0f75cdc6030d
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: 5ca2df56eee3ae41d97de4e8b1e88a39d4d36718
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485781"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701952"
 ---
 # <a name="4-setting-up-intent-and-natural-language-understanding"></a>4.設定意圖和自然語言理解
 

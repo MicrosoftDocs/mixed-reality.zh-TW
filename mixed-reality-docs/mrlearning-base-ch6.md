@@ -1,17 +1,17 @@
 ---
-title: MR 學習基本模組 - 登月小艇組立範例體驗
+title: 使用者入門教學課程-7。 建立農曆模組範例應用程式
 description: 在本課程中，我們將會結合從先前課程中所學習到的多個概念，以建立獨特的範例體驗。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 79f2d3a4a3224533761ea2e4a7e73dc3d4d5e53e
-ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.openlocfilehash: 97dd8fce1ebe53efc37cb48cde7dc9e207be9a42
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387692"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701985"
 ---
 # <a name="7-creating-a-lunar-module-sample-application"></a>7.建立農曆模組範例應用程式
 

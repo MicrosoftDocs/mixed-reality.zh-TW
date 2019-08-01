@@ -22,7 +22,6 @@
 #### [重設或復原您的 HoloLens](reset-or-recover-your-hololens.md)
 #### [儲存並尋找您的檔案](saving-and-finding-your-files.md)
 #### [查看您的相片](see-your-photos.md)
-#### [感應器調整](sensor-tuning.md)
 #### [更新 HoloLens](updating-hololens.md)
 #### [裝置共用](device-sharing.md)
 #### [HoloLens 示範調整與清理指南](hololens-demo-guide.md)

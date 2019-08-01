@@ -8,12 +8,12 @@ ms.date: 02/12/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境, 開發, 開發, HoloLens, unity, directx
-ms.openlocfilehash: b2bd9c4d81e5c7156ad753859a299209bad70c44
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: bf80b676d03fce9011f5952af476dcaa5e2b4eb2
+ms.sourcegitcommit: 76a7aa6e64e114b63ace058dd6d6d662b3c9f09e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414436"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68507921"
 ---
 # <a name="development-launchpad"></a>開發啟動列
 
@@ -164,7 +164,7 @@ ms.locfileid: "67414436"
                             <a href="rendering.md">全像攝影的呈現</a>
                         </p>
                          <p>
-                            <a href="testing-your-app-on-hololens.md">測試</a>
+                            <a href="testing-your-app-on-hololens.md">測試您的應用程式</a>
                         </p>                    
                     </div>
                 </div>

@@ -3,23 +3,26 @@ title: 全像攝影遠端播放
 description: 全像攝影遠端播放程式是一種隨附的應用程式, 可連接到支援全像攝影遠端的電腦應用程式和遊戲。 全像攝影遠端處理會使用 Wi-fi 連線, 即時將全像個人電腦的內容串流至您的 Microsoft HoloLens。
 author: JonMLyons
 ms.author: jlyons
-ms.date: 03/21/2018
+ms.date: 08/01/2019
 ms.topic: article
 keywords: HoloLens、遠端、全像攝影遠端
-ms.openlocfilehash: b8354295f9752e73cc9b34c1769254e49808b63f
-ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
+ms.openlocfilehash: fe26092ec8f5895652d17f88bf3be15cb116e482
+ms.sourcegitcommit: ca949efe0279995a376750d89e23d7123eb44846
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66813716"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68712669"
 ---
 # <a name="holographic-remoting-player"></a>全像攝影遠端播放
+
+>[!IMPORTANT]
+>HoloLens 2 的全像攝影遠端功能是主要的版本變更。 [ **Hololens 1**的主機應用程式](add-holographic-remoting.md)必須使用 NuGet 套件 1.x 版, 而[ **hololens 2**的主機應用程式](holographic-remoting-create-host.md)必須使用 2.x. x. x。 這表示針對 HoloLens 2 所撰寫的主機應用程式與 HoloLens 1 不相容, 反之亦然。
 
 全像攝影遠端播放程式是一種隨附的應用程式, 可連接到支援全像攝影遠端的電腦應用程式和遊戲。 全像攝影遠端處理會使用 Wi-fi 連線, 即時將全像個人電腦的內容串流至您的 Microsoft HoloLens。
 
 全像攝影遠端播放程式只能用於專為支援全像攝影遠端功能而設計的電腦應用程式。
 
-全像是 HoloLens 和 HoloLens 2 都提供全像攝影遠端播放程式。  使用 HoloLens 支援全像攝影遠端功能的電腦應用程式必須更新, 以支援使用 HoloLens 2 的全像 Remtoing。  如果您對支援的版本有任何疑問, 請洽詢您的應用程式提供者。
+全像是 HoloLens 和 HoloLens 2 都提供全像攝影遠端播放程式。  支援使用 HoloLens 進行全像攝影遠端功能的電腦應用程式必須更新, 以支援使用 HoloLens 2 的全像攝影遠端功能。 如果您對支援的版本有任何疑問, 請洽詢您的應用程式提供者。
 
 ## <a name="connecting-to-the-holographic-remoting-player"></a>連接到全像攝影遠端播放播放機
 
@@ -40,9 +43,30 @@ ms.locfileid: "66813716"
 
 ## <a name="diagnostics"></a>診斷
 
-若要測量連線的品質, 請在全像攝影遠端播放程式的主畫面上說「**啟用診斷**」。 啟用診斷時, 應用程式會顯示:
+若要測量連線的品質, 請在全像攝影遠端播放程式的主畫面上說「**啟用診斷**」。 啟用診斷時, 應用程式會在**HoloLens 1**顯示:
+
 * **FPS** -遠端播放者每秒接收和轉譯的轉譯框架平均數目。 理想的情況是 60 FPS。
 * **延遲**-框架從您的電腦移至 HoloLens 所需的平均時間量。 越低越好。 這主要取決於您的 Wi-fi 網路。
+
+在**HoloLens 2**上, 應用程式會顯示:
+
+![全像攝影遠端播放程式診斷](images/holographicremotingplayer-diag.png)
+
+* **Render** -在上一秒中, 遠端播放玩家呈現的畫面格數目。 請注意, 這與透過網路抵達的畫面格數目無關 (請參閱**影片畫面**)。 此外, 會顯示呈現的框架之間最後一秒的平均/最大轉譯差異時間 (以毫秒為單位)。
+
+* **影片畫面**格-第一個顯示的數位會略過影片畫面, 第二個是重複使用的影片畫面, 而第三個是收到的影片畫面。 所有數位代表上一秒的計數。
+    * ```Received frames```這是上一秒抵達的影片畫面格數目。 在正常情況下, 這應該是 60, 但如果不是, 則表示可能因為網路問題而捨棄框架, 或遠端/主機端不會產生具有預期速率的畫面格。
+    * ```Reused frames```這是在上一秒內使用超過一次的影片畫面格計數。 比方說, 如果影片框架遲到, 播放程式的轉譯迴圈仍會呈現框架, 但必須*重複*使用它已經用於上一個畫面格的影片畫面。
+    * ```Skipped frames```這是播放程式轉譯迴圈尚未使用的影片畫面計數。 比方說, 網路抖動的效果可能會使影片框架抵達的結果不會再平均分佈, 例如有些延遲, 而其他人則會在執行于60Hz 時, 其時間不會再有16.66 毫秒的差異。 這麼做的原因可能是有一個以上的框架抵達播放程式轉譯迴圈的兩個刻度。 在此情況下, 播放程式會*略過*一個或多個畫面, 因為它應該會顯示 [一律是最新收到的影片] 畫面格。
+
+    >[!NOTE]
+    >當面對的網路抖動通常會略過, 且重複使用的框架會是相同的。 相反地, 如果您只看到略過的畫面, 這就是播放程式未達到其目標畫面播放速率的指標。 在此情況下, 您應該留意診斷問題時的轉譯差異時間上限。
+
+* **影片畫面差異**-過去一秒內接收的影片畫面之間的最小/最大差異。 如果網路抖動所造成的問題, 此數目通常會與略過/重複使用的框架相互關聯。
+* **延遲**-上一秒的平均週期 (以毫秒為單位)。 在此內容中, 這表示從 HoloLens 傳送姿勢/感應器資料到遠端/主機端的時間, 直到顯示 HoloLens 顯示器上該姿勢/遙測資料的影片畫面為止。
+* 已**捨棄的影片框架**-上一秒已捨棄的影片畫面數, 以及自從建立連接後的數目。 捨棄之影片畫面格的主要原因是影片畫面格未按順序抵達, 因此必須捨棄, 因為已經有較新的版本。 這類似于已*捨棄的框架*, 但原因是在遠端堆疊中較低的層級。 只有在網路狀況不佳的情況下, 才需要捨棄的影片畫面。
+
+
 
 在主畫面上, 您可以說「**停用診斷**」來關閉診斷。
 
@@ -52,5 +76,7 @@ ms.locfileid: "66813716"
 * 我們建議您透過 ethernet 將電腦連線到您的網路, 以減少無線躍點的數目。
 
 ## <a name="see-also"></a>另請參閱
+* [HoloLens 1:新增全像攝影遠端](add-holographic-remoting.md)
+* [HoloLens 2:撰寫全像的遠端主機應用程式](holographic-remoting-create-host.md)
 * [全像攝影遠端軟體授權條款](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
 * [Microsoft 隱私權聲明](https://go.microsoft.com/fwlink/?LinkId=521839)

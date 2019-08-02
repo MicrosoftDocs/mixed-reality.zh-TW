@@ -6,21 +6,25 @@ ms.author: mriches
 ms.date: 05/24/2019
 ms.topic: article
 keywords: Windows Mixed Reality, 全息影像, 全像攝影遠端, 遠端呈現, 網路轉譯, HoloLens, 遠端全息
-ms.openlocfilehash: 8d645f634ff0fc820893f5554fd602aa3a2f38e3
-ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
+ms.openlocfilehash: 71a763b0660867bf910c0dcecb5fba921f19d068
+ms.sourcegitcommit: ca949efe0279995a376750d89e23d7123eb44846
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66829617"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68712425"
 ---
-# <a name="add-holographic-remoting"></a>新增全像攝影遠端
+# <a name="add-holographic-remoting-hololens-1"></a>新增全像攝影遠端 (HoloLens 1)
+
+>[!IMPORTANT]
+>本檔說明如何建立 HoloLens 1 的主應用程式。 **HoloLens 1**的主應用程式必須使用 NuGet 套件1.x 版。 這表示針對 HoloLens 1 所撰寫的主機應用程式與 HoloLens 2 不相容, 反之亦然。
 
 ## <a name="hololens-2"></a>HoloLens 2
 
-> [!NOTE]
-> [即將推出](index.md#news-and-notes)更多 HoloLens 2 特定指引。
+使用全像攝影遠端的 HoloLens 開發人員必須更新其應用程式, 使其與 HoloLens 2 相容。 這需要新版本的全像攝影遠端 NuGet 套件。 如果應用程式使用的全像是在版本號碼小於2.0.0.0 的「全像攝影」 NuGet 套件嘗試連接到 HoloLens 2 上的全像「遠端播放」, 連線將會失敗。
 
-使用全像攝影遠端的 HoloLens 開發人員必須更新其應用程式, 使其與 HoloLens 2 相容。  這將需要新版本的全像攝影遠端 NuGet 套件, 但尚未公開提供。  如果使用 HoloLens NuGet 套件的應用程式嘗試連線到 HoloLens 2 上的全像攝影版遠端播放機, 連接將會失敗。  一旦有 HoloLens 2 NuGet 套件可供使用, 請觀看此頁面以取得更新。
+>[!NOTE]
+>您可以在[這裡](holographic-remoting-create-host.md)找到 HoloLens 2 的特定指引。
+
 
 ## <a name="add-holographic-remoting-to-your-desktop-or-uwp-app"></a>在您的桌上型電腦或 UWP 應用程式中新增全像的遠端功能
 
@@ -47,7 +51,7 @@ ms.locfileid: "66829617"
 
 首先, 我們需要 HolographicStreamerHelpers 的實例。 將此加入至將會處理遠端的類別。
 
-```
+```cpp
 #include <HolographicStreamerHelpers.h>
 
    private:
@@ -56,7 +60,7 @@ ms.locfileid: "66829617"
 
 您也必須追蹤連接狀態。 如果您想要轉譯預覽, 則需要有材質, 才能將它複製到其中。 您也需要一些東西, 像是線上狀態鎖定, 還有一些儲存 HoloLens IP 位址的方法, 依此類推。
 
-```
+```cpp
 private:
        Microsoft::Holographic::HolographicStreamerHelpers^ m_streamerHelpers;
 
@@ -75,7 +79,7 @@ private:
 
 若要連線至 HoloLens 裝置, 請建立 HolographicStreamerHelpers 的實例, 並連接到目標 IP 位址。 您必須設定影片畫面大小, 使其符合 HoloLens 的顯示寬度和高度, 因為全像攝影遠端程式庫會預期編碼器和解碼器解析度完全相符。
 
-```
+```cpp
 m_streamerHelpers = ref new HolographicStreamerHelpers();
        m_streamerHelpers->CreateStreamer(m_d3dDevice);
 
@@ -98,7 +102,7 @@ m_streamerHelpers = ref new HolographicStreamerHelpers();
 
 OnConnected 事件可以更新 UI、開始呈現等等。 在我們的桌面程式碼範例中, 我們會使用「已連線」訊息來更新視窗標題。
 
-```
+```cpp
 m_streamerHelpers->OnConnected += ref new ConnectedEvent(
            [this]()
            {
@@ -108,7 +112,7 @@ m_streamerHelpers->OnConnected += ref new ConnectedEvent(
 
 OnDisconnected 事件可以處理重新連接、UI 更新等等。 在此範例中, 如果發生暫時性失敗, 我們會重新連線。
 
-```
+```cpp
 Platform::WeakReference streamerHelpersWeakRef = Platform::WeakReference(m_streamerHelpers);
        m_streamerHelpers->OnDisconnected += ref new DisconnectedEvent(
            [this, streamerHelpersWeakRef](_In_ HolographicStreamerConnectionFailureReason failureReason)
@@ -148,7 +152,7 @@ Platform::WeakReference streamerHelpersWeakRef = Platform::WeakReference(m_strea
 
 當遠端處理元件準備好要傳送框架時, 您的應用程式會有機會在 SendFrameEvent 中建立複本。 在這裡, 我們會將畫面複製到交換鏈, 讓我們可以將它顯示在預覽視窗中。
 
-```
+```cpp
 m_streamerHelpers->OnSendFrame += ref new SendFrameEvent(
            [this](_In_ const ComPtr<ID3D11Texture2D>& spTexture, _In_ FrameMetadata metadata)
            {
@@ -180,13 +184,13 @@ m_streamerHelpers->OnSendFrame += ref new SendFrameEvent(
 
 「全像攝影空間」和「語音」元件不會自行建立, 而是來自您的 HolographicRemotingHelpers 類別:
 
-```
+```cpp
 m_appView->Initialize(m_streamerHelpers->HolographicSpace, m_streamerHelpers->RemoteSpeech);
 ```
 
 您不需要在 Run 方法內使用 update 迴圈, 而是從桌面或 UWP 應用程式的主要迴圈提供滴答更新。 這可讓您的桌面或 UWP 應用程式繼續控制訊息處理。
 
-```
+```cpp
 void DesktopWindow::Tick()
    {
        auto lock = m_deviceLock.Lock();
@@ -198,7 +202,7 @@ void DesktopWindow::Tick()
 
 全像攝影應用程式視圖的 Tick () 方法會完成更新、繪製、呈現迴圈的一個反復專案。
 
-```
+```cpp
 void AppView::Tick()
    {
        if (m_main)
@@ -222,7 +226,7 @@ void AppView::Tick()
 
 中斷連線-例如, 當使用者按一下 UI 按鈕以中斷連接 HolographicStreamerHelpers 上的呼叫中斷連接 (), 然後放開物件。
 
-```
+```cpp
 void DesktopWindow::DisconnectFromRemoteDevice()
    {
        // Disconnecting from the remote device can change the connection state.
@@ -246,7 +250,7 @@ Windows app store 中提供的 Windows 全像遠端處理播放程式, 是遠端
 
 全像攝影應用程式視圖需要一種方式, 讓您的應用程式能夠使用 Direct3D 裝置, 這必須用來初始化全像攝影空間。 您的應用程式應該使用此 Direct3D 裝置來複製和顯示預覽畫面。
 
-```
+```cpp
 internal:
        const std::shared_ptr<DX::DeviceResources>& GetDeviceResources()
        {

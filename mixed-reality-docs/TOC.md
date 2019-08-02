@@ -134,8 +134,6 @@
 ## [開發啟動列](development.md)
 ## 混合實境雲端服務
 ### [Azure Spatial Anchors](https://docs.microsoft.com/azure/spatial-anchors)
-### [全像攝影遠端播放程式](holographic-remoting-player.md)
-### [全像攝影遠端軟體授權條款](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
 ## Unity
 ### [Unity 開發概觀](unity-development-overview.md)
 ### 開始使用
@@ -188,7 +186,6 @@
 #### [DirectX 中的鍵盤、滑鼠及控制器輸入](keyboard,-mouse,-and-controller-input-in-directx.md)
 ### 進階主題
 #### [使用全像攝影 DirectX 應用程式中的 XAML](using-xaml-with-holographic-directx-apps.md)
-#### [新增全像攝影遠端處理](add-holographic-remoting.md)
 ### [OpenXR](openxr.md)
 ## WebVR
 ### [在 Edge 中使用 Windows Mixed Reality 的 WebVR](using-webvr-in-edge-with-windows-mixed-reality.md)
@@ -289,7 +286,16 @@
 ## 遠端和研究工具
 ### [使用 Windows 裝置入口網站](using-the-windows-device-portal.md)
 ### [裝置入口網站 API 參照](device-portal-api-reference.md)
+## 全像攝影遠端處理
 ### [全像攝影遠端播放程式](holographic-remoting-player.md)
+### [撰寫全像攝影遠端主機應用程式](holographic-remoting-create-host.md)
+### [撰寫自訂全像攝影遠端播放程式](holographic-remoting-create-player.md)
+### [自訂全像攝影遠端資料通道](holographic-remoting-custom-data-channels.md)
+### [保護全像攝影遠端連線的安全](holographic-remoting-secure-connection.md)
+### [疑難排解和限制](holographic-remoting-troubleshooting.md)
+### [全像攝影遠端軟體授權條款](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
+### HoloLens 1 的全像攝影遠端
+#### [新增全像攝影遠端處理](add-holographic-remoting.md)
 ## 其他
 ### [QR 代碼追蹤](qr-code-tracking.md)
 ### [混合實境中的共用體驗](shared-experiences-in-mixed-reality.md)

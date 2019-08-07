@@ -8,12 +8,12 @@ ms.date: 02/24/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境、探索、散佈、索引、登陸頁面、設計、開發、教學課程、範例應用程式、基本概念、案例研究、資源、HoloLens 操作說明、開放原始碼專案
-ms.openlocfilehash: cf513cebbbf4f05721811cb82d584f9039e378b7
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: c39a5f2f31dc962758456f743e17aaf37fd4ed64
+ms.sourcegitcommit: 6a3b7d489c2aa3451b1c88c5e9542fbe1472c826
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67415390"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817355"
 ---
 # <a name="mixed-reality-documentation"></a>混合實境文件
 

@@ -252,7 +252,7 @@ namespace ConsoleApplication1
 
 ## <a name="api-reference"></a>API 參考資料
 
-### <a name="microsoftperceptionsimulationsimulateddevicetype"></a>PerceptionSimulation. SimulatedDeviceType
+### <a name="microsoftperceptionsimulationsimulateddevicetype"></a>Microsoft.PerceptionSimulation.SimulatedDeviceType
 
 描述模擬裝置類型
 
@@ -263,11 +263,11 @@ public enum SimulatedDeviceType
 }
 ```
 
-**PerceptionSimulation. SimulatedDeviceType. Reference**
+**Microsoft.PerceptionSimulation.SimulatedDeviceType.Reference**
 
 虛構的參考設備, 這是 PerceptionSimulationManager 的預設值
 
-### <a name="microsoftperceptionsimulationheadtrackermode"></a>PerceptionSimulation. HeadTrackerMode
+### <a name="microsoftperceptionsimulationheadtrackermode"></a>Microsoft.PerceptionSimulation.HeadTrackerMode
 
 描述 head 追蹤器模式
 
@@ -280,19 +280,19 @@ public enum HeadTrackerMode
 }
 ```
 
-**PerceptionSimulation. HeadTrackerMode. Default**
+**Microsoft.PerceptionSimulation.HeadTrackerMode.Default**
 
 預設的標頭追蹤。 這表示系統可能會根據執行時間條件來選取最佳的標頭追蹤模式。
 
-**PerceptionSimulation. HeadTrackerMode. 取向**
+**Microsoft.PerceptionSimulation.HeadTrackerMode.取向**
 
 僅限方向的頭追蹤。 這表示追蹤的位置可能不可靠, 而且某些相依于 head 位置的功能可能無法使用。
 
-**PerceptionSimulation. HeadTrackerMode. Position**
+**Microsoft.PerceptionSimulation.HeadTrackerMode.Position**
 
 位置標頭追蹤。 這表示追蹤的標頭位置和方向都是可靠的
 
-### <a name="microsoftperceptionsimulationsimulatedgesture"></a>PerceptionSimulation. SimulatedGesture
+### <a name="microsoftperceptionsimulationsimulatedgesture"></a>Microsoft.PerceptionSimulation.SimulatedGesture
 
 描述模擬的手勢
 
@@ -307,27 +307,27 @@ public enum SimulatedGesture
 }
 ```
 
-**PerceptionSimulation. SimulatedGesture. None**
+**Microsoft.PerceptionSimulation.SimulatedGesture.None**
 
 用來表示沒有手勢的 sentinel 值。
 
-**PerceptionSimulation. SimulatedGesture. FingerPressed**
+**Microsoft.PerceptionSimulation.SimulatedGesture.FingerPressed**
 
 按手指的手勢。
 
-**PerceptionSimulation. SimulatedGesture. FingerReleased**
+**Microsoft.PerceptionSimulation.SimulatedGesture.FingerReleased**
 
 手指已釋放手勢。
 
-**PerceptionSimulation. SimulatedGesture 首頁**
+**Microsoft.PerceptionSimulation. SimulatedGesture 首頁**
 
 Home/system 手勢。
 
-**PerceptionSimulation. SimulatedGesture. Max**
+**Microsoft.PerceptionSimulation.SimulatedGesture.Max**
 
 有效手勢的最大值。
 
-### <a name="microsoftperceptionsimulationsimulatedsixdofcontrollerstatus"></a>PerceptionSimulation. SimulatedSixDofControllerStatus
+### <a name="microsoftperceptionsimulationsimulatedsixdofcontrollerstatus"></a>Microsoft.PerceptionSimulation.SimulatedSixDofControllerStatus
 
 模擬的 6 DOF 控制器的可能狀態。
 
@@ -340,19 +340,19 @@ public enum SimulatedSixDofControllerStatus
 }
 ```
 
-**PerceptionSimulation. SimulatedSixDofControllerStatus. Off**
+**Microsoft.PerceptionSimulation.SimulatedSixDofControllerStatus.Off**
 
 6 DOF 控制器已關閉。
 
-**PerceptionSimulation. SimulatedSixDofControllerStatus. Active**
+**Microsoft.PerceptionSimulation.SimulatedSixDofControllerStatus.Active**
 
 已開啟並追蹤 6 DOF 控制器。
 
-**PerceptionSimulation. SimulatedSixDofControllerStatus. TrackingLost**
+**Microsoft.PerceptionSimulation.SimulatedSixDofControllerStatus.TrackingLost**
 
 已開啟6個 DOF 控制器, 但無法加以追蹤。
 
-### <a name="microsoftperceptionsimulationsimulatedsixdofcontrollerbutton"></a>PerceptionSimulation. SimulatedSixDofControllerButton
+### <a name="microsoftperceptionsimulationsimulatedsixdofcontrollerbutton"></a>Microsoft.PerceptionSimulation.SimulatedSixDofControllerButton
 
 模擬的 6 DOF 控制器上支援的按鈕。
 
@@ -371,39 +371,39 @@ public enum SimulatedSixDofControllerButton
 }
 ```
 
-**PerceptionSimulation. SimulatedSixDofControllerButton. None**
+**Microsoft.PerceptionSimulation.SimulatedSixDofControllerButton.None**
 
 用來表示沒有按鈕的 sentinel 值。
 
-**PerceptionSimulation. SimulatedSixDofControllerButton 首頁**
+**Microsoft.PerceptionSimulation.SimulatedSixDofControllerButton.Home**
 
 [首頁] 按鈕已按下。
 
-**PerceptionSimulation. SimulatedSixDofControllerButton. 功能表**
+**Microsoft.PerceptionSimulation. SimulatedSixDofControllerButton. 功能表**
 
 [功能表] 按鈕已按下。
 
-**PerceptionSimulation. SimulatedSixDofControllerButton. 抓握**
+**Microsoft.PerceptionSimulation.SimulatedSixDofControllerButton.Grip**
 
 [抓握] 按鈕已按下。
 
-**PerceptionSimulation. SimulatedSixDofControllerButton. TouchpadPress**
+**Microsoft.PerceptionSimulation.SimulatedSixDofControllerButton.TouchpadPress**
 
 觸控板已按下。
 
-**PerceptionSimulation. SimulatedSixDofControllerButton. Select**
+**Microsoft.PerceptionSimulation.SimulatedSixDofControllerButton.Select**
 
 [選取] 按鈕已按下。
 
-**PerceptionSimulation. SimulatedSixDofControllerButton. TouchpadTouch**
+**Microsoft.PerceptionSimulation.SimulatedSixDofControllerButton.TouchpadTouch**
 
 觸控板觸及。
 
-**PerceptionSimulation. SimulatedSixDofControllerButton. 操縱杆**
+**Microsoft.PerceptionSimulation. SimulatedSixDofControllerButton. 操縱杆**
 
 操縱杆已按下。
 
-**PerceptionSimulation. SimulatedSixDofControllerButton. Max**
+**Microsoft.PerceptionSimulation.SimulatedSixDofControllerButton.Max**
 
 有效的最大按鈕。
 
@@ -422,23 +422,23 @@ public enum SimulatedGesture
 }
 ```
 
-**PerceptionSimulation. SimulatedEyesCalibrationState. 無法使用**
+**Microsoft.PerceptionSimulation. SimulatedEyesCalibrationState. 無法使用**
 
 眼睛校正無法使用。
 
-**PerceptionSimulation. SimulatedEyesCalibrationState. Ready**
+**Microsoft.PerceptionSimulation.SimulatedEyesCalibrationState.Ready**
 
 眼睛已校正。  這是預設值。
 
-**PerceptionSimulation. SimulatedEyesCalibrationState. 設定**
+**Microsoft.PerceptionSimulation. SimulatedEyesCalibrationState. 設定**
 
 正在校正眼睛。
 
-**PerceptionSimulation. SimulatedEyesCalibrationState. UserCalibrationNeeded**
+**Microsoft.PerceptionSimulation.SimulatedEyesCalibrationState.UserCalibrationNeeded**
 
 眼睛必須經過校正。
 
-### <a name="microsoftperceptionsimulationsimulatedhandjointtrackingaccuracy"></a>PerceptionSimulation. SimulatedHandJointTrackingAccuracy
+### <a name="microsoftperceptionsimulationsimulatedhandjointtrackingaccuracy"></a>Microsoft.PerceptionSimulation.SimulatedHandJointTrackingAccuracy
 
 手的接點追蹤精確度。
 
@@ -451,19 +451,19 @@ public enum SimulatedHandJointTrackingAccuracy
 }
 ```
 
-**PerceptionSimulation. SimulatedHandJointTrackingAccuracy. 無法使用**
+**Microsoft.PerceptionSimulation. SimulatedHandJointTrackingAccuracy. 無法使用**
 
 不會追蹤聯合。
 
-**PerceptionSimulation. SimulatedHandJointTrackingAccuracy. 近似值**
+**Microsoft.PerceptionSimulation. SimulatedHandJointTrackingAccuracy. 近似值**
 
 會推斷聯合位置。
 
-**PerceptionSimulation. SimulatedHandJointTrackingAccuracy. Visible**
+**Microsoft.PerceptionSimulation. SimulatedHandJointTrackingAccuracy. Visible**
 
 聯合會受到完整追蹤。
 
-### <a name="microsoftperceptionsimulationsimulatedhandpose"></a>PerceptionSimulation. SimulatedHandPose
+### <a name="microsoftperceptionsimulationsimulatedhandpose"></a>Microsoft.PerceptionSimulation.SimulatedHandPose
 
 手的接點追蹤精確度。
 

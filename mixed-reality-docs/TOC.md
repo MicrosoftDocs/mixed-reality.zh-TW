@@ -182,7 +182,6 @@
 #### [DirectX 中的空間對應](spatial-mapping-in-directx.md)
 ### 其他重要功能
 #### [DirectX 中的共用空間錨點](shared-spatial-anchors-in-directx.md)
-#### [DirectX 中的定位相機](locatable-camera-in-directx.md)
 #### [DirectX 中的鍵盤、滑鼠及控制器輸入](keyboard,-mouse,-and-controller-input-in-directx.md)
 ### 進階主題
 #### [使用全像攝影 DirectX 應用程式中的 XAML](using-xaml-with-holographic-directx-apps.md)

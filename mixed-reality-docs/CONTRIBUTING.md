@@ -5,12 +5,12 @@ author: mattwojo
 ms.author: mattwoj
 ms.date: 03/21/2018
 ms.topic: article
-ms.openlocfilehash: c110b549603f42ec03fd6c0dc8df7bf70ba5ba9f
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: a6c2574a35ec1240c573532dabfdc6cec1696947
+ms.sourcegitcommit: 4ac761fed7a9570977f6d031ba4f870585d6630a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63516173"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861711"
 ---
 # <a name="contributing-to-windows-mixed-reality-developer-documentation"></a>參與 Windows Mixed Reality 開發人員檔
 
@@ -57,6 +57,28 @@ Windows Mixed Reality 檔現在位於 docs.microsoft.com 平臺上, 其使用 Gi
 5. 當您完成文章編輯後, 請向下卷, 然後按一下 [**提議檔案變更**] 按鈕。
 6. 在下一個頁面上, 按一下 [**建立提取要求**], 將自動建立的分支合併至 [master]。
 7. 針對您想要編輯的下一篇文章, 重複上述步驟。
+
+## <a name="renaming-or-deleting-an-existing-article"></a>重新命名或刪除現有的文章
+
+如果您的變更將會重新命名或刪除現有的文章, 請務必新增重新導向。 如此一來, 具有現有文章連結的任何人, 仍然會在正確的位置結束。 重新導向是由存放庫根目錄中的 openpublishing 所管理。
+
+若要新增重新導向至 openpublishing, 請將專案新增至`redirections`陣列:
+
+```json
+{
+    "redirections": [
+        {
+            "source_path": "mixed-reality-docs/old-article.md",
+            "redirect_url": "new-article#section-about-old-topic",
+            "redirect_document_id": false
+        },
+```
+
+- `source_path`是您要移除之舊發行項的相對存放庫路徑。 請確定路徑開頭為`mixed-reality-docs` , 且結尾為。 `.md`
+- `redirect_url`是從舊發行項到新發行項的相對公用 URL。 請確定此 URL 不包含或`.md`, `mixed-reality-docs`因為它參考的是公用 URL, 而不是存放庫路徑。 允許使用`#section`連結至新發行項內的區段。 如有必要, 您也可以在此處使用其他網站的絕對路徑。
+- `redirect_document_id`指出您是否要保留先前檔案中的檔識別碼。 預設為 `false`。 如果`true`您想要保留重新導向`ms.documentid`之發行項的屬性值, 請使用。 如果您保留檔識別碼, 資料 (例如頁面流覽和排名) 將會傳送至目標發行項。 如果重新導向主要是重新命名, 而不是指向僅涵蓋部分相同內容的不同發行項的指標, 請執行此動作。
+
+如果您新增重新導向, 也請務必刪除舊的檔案。
 
 ## <a name="creating-a-new-article"></a>建立新的文章
 

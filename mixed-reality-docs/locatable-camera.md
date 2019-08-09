@@ -6,12 +6,12 @@ ms.author: wguyman, cdedmonds
 ms.date: 06/12/2019
 ms.topic: article
 keywords: 相機, hololens, 彩色攝影機, 正面, hololens 2, cv, 電腦視覺, 基準, 標記, qr 代碼, qr, 相片, 影片
-ms.openlocfilehash: b80e201723f8f499a6d35008b9d308f93b925b1c
-ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.openlocfilehash: 368943dd70c721a41ca7c265a19ecb7c394db312
+ms.sourcegitcommit: 4ac761fed7a9570977f6d031ba4f870585d6630a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67694531"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861728"
 ---
 # <a name="locatable-camera"></a>定位相機
 
@@ -84,11 +84,13 @@ HoloLens 檔中其他地方的「相機」可能是指「虛擬遊戲攝影機�
 
 [Unity 中的定位相機](locatable-camera-in-unity.md):CameraToWorldMatrix 是由 PhotoCaptureFrame 類別自動提供 (因此您不需要擔心 CameraCoordinateSystem 轉換)。
 
-[DirectX 中的攝影機相機](locatable-camera-in-directx.md):顯示在相機座標系統與您自己的應用程式座標系統之間查詢轉換時, 相當直接的方法。
+[DirectX 中的攝影機相機](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicFaceTracking):「全像臉部追蹤」範例顯示在相機座標系統與您自己的應用程式座標系統之間查詢轉換的簡單方式。
 
 ### <a name="distortion-error"></a>失真錯誤
 
-在 HoloLens 上, 影片和靜止影像串流會在系統的影像處理管線中 undistorted, 然後才能讓應用程式使用框架 (預覽串流包含原始的失真框架)。 由於只有 CameraIntrinsics 可供使用, 因此應用程式必須假設影像框架代表完美的 pinhole 攝影機, 不過影像處理器中的 undistortion 函式在 HoloLens (第一代) 上可能仍會保留最多10圖元的錯誤使用框架中繼資料中的 CameraIntrinsics 時。 在許多使用案例中, 此錯誤並不重要, 但如果您要將全息影像對齊真實世界的海報/標記, 而且您注意到 < 10px 位移 (大約是 11mm, 表示有2米的全息影像), 此失真錯誤可能是原因。 
+在 HoloLens 上, 影片和靜止影像串流會在系統的影像處理管線中 undistorted, 然後才能讓應用程式使用框架 (預覽串流包含原始的失真框架)。 因為只有 CameraIntrinsics 可供使用, 所以應用程式必須假設影像框架代表完美的 pinhole 攝影機。
+
+在 HoloLens (第一代) 上, 映射處理器中的 undistortion 函式在使用框架中繼資料中的 CameraIntrinsics 時, 可能仍然會保留最多10圖元的錯誤。 在許多使用案例中, 此錯誤並不重要, 但如果您要將全息影像對齊真實世界的海報/標記, 而且您注意到 < 10px 位移 (大約是 11mm, 表示有2米的全息影像), 此失真錯誤可能是原因。 
 
 ## <a name="locatable-camera-usage-scenarios"></a>定位相機使用案例
 
@@ -170,7 +172,7 @@ public static Vector3 ClosestPointBetweenRays(
 * 識別和辨識房間中的人員 (例如, 將全像攝影的連絡人卡片放在臉部)
 
 ## <a name="see-also"></a>另請參閱
-* [DirectX 中的定位相機](locatable-camera-in-directx.md)
+* [定位相機範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicFaceTracking)
 * [Unity 中的定位相機](locatable-camera-in-unity.md)
 * [混合實境擷取](mixed-reality-capture.md)
 * [適用於開發人員的混合實境擷取](mixed-reality-capture-for-developers.md)

@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 空間對應, HoloLens, 混合現實, 表面重建, 網格, sr
-ms.openlocfilehash: 31abeca624512f1d5e721dbe879ca2243cf41345
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 4914cf5b7864ecb2430a39af73729eb6dfc0e2bd
+ms.sourcegitcommit: c4c293971bb3205a82121bbfb40d1ac52b5cb38e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63550495"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68937063"
 ---
 # <a name="spatial-mapping"></a>空間對應
 
@@ -220,4 +220,5 @@ ms.locfileid: "63550495"
 * [DirectX 中的空間對應](spatial-mapping-in-directx.md)
 * [Unity 中的空間對應](spatial-mapping-in-unity.md)
 * [空間對應設計](spatial-mapping-design.md)
+* [場景理解](scene-understanding.md)
 * [案例研究 - 在實境中的的透視技術](case-study-looking-through-holes-in-your-reality.md)

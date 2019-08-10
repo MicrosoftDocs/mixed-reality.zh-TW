@@ -6,16 +6,17 @@ ms.author: mazeller
 ms.date: 02/24/2019
 ms.topic: article
 keywords: mrc、相片、影片、capture、攝影機
-ms.openlocfilehash: d1675d2d6c74c6d15ca245a66719e00f2a7c2111
-ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.openlocfilehash: 740b02dd1714679028541a888d721ae74e8e1f32
+ms.sourcegitcommit: c4c293971bb3205a82121bbfb40d1ac52b5cb38e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67694367"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68937079"
 ---
 # <a name="mixed-reality-capture-for-developers"></a>開發人員的混合現實 capture
 
-> [注意!]如需 HoloLens 2 新 MRC 功能的指引, 請參閱下列[PV 攝影機](#render-from-the-pv-camera-opt-in)的轉譯。
+> [!NOTE]
+> 如需 HoloLens 2 新 MRC 功能的指引, 請參閱下列[PV 攝影機](#render-from-the-pv-camera-opt-in)的轉譯。
 
 由於使用者可以隨時採取[混合現實 capture](mixed-reality-capture.md) (MRC) 相片或影片, 因此在開發應用程式時, 您應該記住幾件事。 這包括 MRC 視覺品質的最佳做法, 並在 MRCs 時回應系統變更。
 

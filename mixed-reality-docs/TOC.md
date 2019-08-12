@@ -36,6 +36,7 @@
 ### [運動控制器](motion-controllers.md)
 ### [語音輸入](voice-input.md)
 ### [空間對應](spatial-mapping.md)
+### [場景理解](scene-understanding.md)
 ### [空間音效](spatial-sound.md)
 ### [座標系統](coordinate-systems.md)
 ### [空間錨點](spatial-anchors.md)

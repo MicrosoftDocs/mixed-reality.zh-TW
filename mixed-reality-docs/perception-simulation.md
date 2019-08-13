@@ -408,7 +408,7 @@ public enum SimulatedSixDofControllerButton
 有效的最大按鈕。
 
 
-### <a name="microsoftperceptionsimulationsimulatedeyescalibrationstate"></a>PerceptionSimulation. SimulatedEyesCalibrationState
+### <a name="microsoftperceptionsimulationsimulatedeyescalibrationstate"></a>Microsoft.PerceptionSimulation.SimulatedEyesCalibrationState
 
 模擬眼睛的校正狀態
 
@@ -478,28 +478,28 @@ public enum SimulatedHandPose
 }
 ```
 
-**PerceptionSimulation. SimulatedHandPose. 已關閉**
+**Microsoft.PerceptionSimulation. SimulatedHandPose. 已關閉**
 
 手的手指接點設定為反映封閉式姿勢。
 
-**PerceptionSimulation. SimulatedHandPose. Open**
+**Microsoft.PerceptionSimulation.SimulatedHandPose.Open**
 
 手中的手指接點設定為反映開放式姿勢。
 
-**PerceptionSimulation. SimulatedHandPose Point**
+**Microsoft.PerceptionSimulation.SimulatedHandPose.Point**
 
 手的手指接點設定為反映指標姿勢。
 
-**PerceptionSimulation. SimulatedHandPose**
+**Microsoft.PerceptionSimulation.SimulatedHandPose.Pinch**
 
 手中的手指接點設定為反映捏合姿勢。
 
-**PerceptionSimulation. SimulatedHandPose. Max**
+**Microsoft.PerceptionSimulation.SimulatedHandPose.Max**
 
 SimulatedHandPose 的最大有效值。
 
 
-### <a name="microsoftperceptionsimulationplaybackstate"></a>PerceptionSimulation. PlaybackState
+### <a name="microsoftperceptionsimulationplaybackstate"></a>Microsoft.PerceptionSimulation.PlaybackState
 
 描述播放的狀態。
 
@@ -513,23 +513,23 @@ public enum PlaybackState
 }
 ```
 
-**PerceptionSimulation. PlaybackState. 已停止**
+**Microsoft.PerceptionSimulation. PlaybackState. 已停止**
 
 錄製目前已停止, 並已準備好進行播放。
 
-**PerceptionSimulation. PlaybackState. 播放**
+**Microsoft.PerceptionSimulation. PlaybackState. 播放**
 
 目前現正播放錄製。
 
-**PerceptionSimulation. PlaybackState. 已暫停**
+**Microsoft.PerceptionSimulation. PlaybackState. 已暫停**
 
 錄製目前已暫停。
 
-**PerceptionSimulation. PlaybackState. 結束**
+**Microsoft.PerceptionSimulation. PlaybackState. 結束**
 
 錄音已到達結尾。
 
-### <a name="microsoftperceptionsimulationvector3"></a>PerceptionSimulation. Vector3
+### <a name="microsoftperceptionsimulationvector3"></a>Microsoft.PerceptionSimulation.Vector3
 
 描述3個元件向量, 這可能會描述3D 空間中的點或向量。
 
@@ -543,19 +543,19 @@ public struct Vector3
 }
 ```
 
-**PerceptionSimulation. Vector3. X**
+**Microsoft.PerceptionSimulation.Vector3.X**
 
 向量的 X 元件。
 
-**PerceptionSimulation. Vector3. Y**
+**Microsoft.PerceptionSimulation.Vector3.Y**
 
 向量的 Y 元件。
 
-**PerceptionSimulation. Vector3. Z**
+**Microsoft.PerceptionSimulation.Vector3.Z**
 
 向量的 Z 元件。
 
-**PerceptionSimulation. Vector3. #ctor (System.web, system.object, system.string)**
+**Microsoft.PerceptionSimulation.Vector3.#ctor(System.Single,System.Single,System.Single)**
 
 建立新的 Vector3。
 
@@ -564,7 +564,7 @@ public struct Vector3
 * y-向量的 y 元件。
 * z-向量的 z 元件。
 
-### <a name="microsoftperceptionsimulationrotation3"></a>PerceptionSimulation. Rotation3
+### <a name="microsoftperceptionsimulationrotation3"></a>Microsoft.PerceptionSimulation.Rotation3
 
 描述3個元件旋轉。
 
@@ -578,19 +578,19 @@ public struct Rotation3
 }
 ```
 
-**PerceptionSimulation. Rotation3. 音調**
+**Microsoft.PerceptionSimulation.Rotation3.Pitch**
 
 旋轉的螺距元件, 沿著 X 軸向下移動。
 
-**PerceptionSimulation. Rotation3. 偏擺**
+**Microsoft.PerceptionSimulation.Rotation3.Yaw**
 
 旋轉的偏擺元件, 右側為 Y 軸。
 
-**PerceptionSimulation. Rotation3. 滾動**
+**Microsoft.PerceptionSimulation. Rotation3. 滾動**
 
 旋轉的變換元件, 以 Z 軸為左右。
 
-**PerceptionSimulation. Rotation3. #ctor (System.web, system.object, system.string)**
+**Microsoft.PerceptionSimulation. Rotation3. #ctor (System.web, system.object, system.string)**
 
 建立新的 Rotation3。
 
@@ -599,7 +599,7 @@ public struct Rotation3
 * 偏擺-旋轉的偏擺元件。
 * 變換: 旋轉的滾動部分。
 
-### <a name="microsoftperceptionsimulationsimulatedhandjointconfiguration"></a>PerceptionSimulation. SimulatedHandJointConfiguration
+### <a name="microsoftperceptionsimulationsimulatedhandjointconfiguration"></a>Microsoft.PerceptionSimulation.SimulatedHandJointConfiguration
 
 描述模擬手上的聯合設定。
 
@@ -612,20 +612,20 @@ public struct SimulatedHandJointConfiguration
 }
 ```
 
-**PerceptionSimulation. SimulatedHandJointConfiguration. Position**
+**Microsoft.PerceptionSimulation.SimulatedHandJointConfiguration.Position**
 
 聯合的位置。
 
-**PerceptionSimulation. SimulatedHandJointConfiguration. 旋轉**
+**Microsoft.PerceptionSimulation. SimulatedHandJointConfiguration. 旋轉**
 
 聯合的旋轉。
 
-**PerceptionSimulation. SimulatedHandJointConfiguration. TrackingAccuracy**
+**Microsoft.PerceptionSimulation.SimulatedHandJointConfiguration.TrackingAccuracy**
 
 聯合的追蹤精確度。
 
 
-### <a name="microsoftperceptionsimulationfrustum"></a>PerceptionSimulation。
+### <a name="microsoftperceptionsimulationfrustum"></a>Microsoft.PerceptionSimulation.Frustum
 
 描述相機通常使用的視圖截圖。
 
@@ -639,23 +639,23 @@ public struct Frustum
 }
 ```
 
-**PerceptionSimulation。 Near**
+**Microsoft.PerceptionSimulation.Frustum.Near**
 
 以截距包含的最小距離。
 
-**PerceptionSimulation....。**
+**Microsoft.PerceptionSimulation.Frustum.Far**
 
 以截距包含的最大距離。
 
-**PerceptionSimulation. FieldOfView**
+**Microsoft.PerceptionSimulation.Frustum.FieldOfView**
 
 截量的水準欄位, 以弧度為單位 (小於 PI)。
 
-**PerceptionSimulation. AspectRatio**
+**Microsoft.PerceptionSimulation.Frustum.AspectRatio**
 
 水準欄位和視圖垂直欄位的比例。
 
-### <a name="microsoftperceptionsimulationiperceptionsimulationmanager"></a>PerceptionSimulation. IPerceptionSimulationManager
+### <a name="microsoftperceptionsimulationiperceptionsimulationmanager"></a>Microsoft.PerceptionSimulation.IPerceptionSimulationManager
 
 用於產生用於控制裝置之封包的根目錄。
 
@@ -668,19 +668,19 @@ public interface IPerceptionSimulationManager
 }
 ```
 
-**PerceptionSimulation. IPerceptionSimulationManager. 裝置**
+**Microsoft.PerceptionSimulation. IPerceptionSimulationManager. 裝置**
 
 取出模擬的裝置物件, 以解讀模擬的人和模擬世界。
 
-**PerceptionSimulation. IPerceptionSimulationManager. 人類**
+**Microsoft.PerceptionSimulation. IPerceptionSimulationManager. 人類**
 
 取得控制模擬人類的物件。
 
-**PerceptionSimulation. IPerceptionSimulationManager. 重設**
+**Microsoft.PerceptionSimulation. IPerceptionSimulationManager. 重設**
 
 將模擬重設為其預設狀態。
 
-### <a name="microsoftperceptionsimulationisimulateddevice"></a>PerceptionSimulation. ISimulatedDevice
+### <a name="microsoftperceptionsimulationisimulateddevice"></a>Microsoft.PerceptionSimulation.ISimulatedDevice
 
 描述裝置的介面, 其會解讀模擬世界和模擬的人類
 
@@ -693,22 +693,22 @@ public interface ISimulatedDevice
 }
 ```
 
-**PerceptionSimulation. ISimulatedDevice. HeadTracker**
+**Microsoft.PerceptionSimulation.ISimulatedDevice.HeadTracker**
 
 從模擬裝置取出 Head 追蹤器。
 
-**PerceptionSimulation. ISimulatedDevice. HandTracker**
+**Microsoft.PerceptionSimulation.ISimulatedDevice.HandTracker**
 
 從模擬的裝置抓取手追蹤器。
 
-**PerceptionSimulation. ISimulatedDevice. SetSimulatedDeviceType (Microsoft PerceptionSimulation. SimulatedDeviceType)**
+**Microsoft.PerceptionSimulation.ISimulatedDevice.SetSimulatedDeviceType(Microsoft.PerceptionSimulation.SimulatedDeviceType)**
 
 設定模擬裝置的屬性, 以符合提供的裝置類型。
 
 參數
 * 類型-模擬裝置的新類型
 
-### <a name="microsoftperceptionsimulationisimulatedheadtracker"></a>PerceptionSimulation. ISimulatedHeadTracker
+### <a name="microsoftperceptionsimulationisimulatedheadtracker"></a>Microsoft.PerceptionSimulation.ISimulatedHeadTracker
 
 描述模擬裝置之部分的介面, 它會追蹤模擬人類的標頭。
 
@@ -719,11 +719,11 @@ public interface ISimulatedHeadTracker
 };
 ```
 
-**PerceptionSimulation. ISimulatedHeadTracker. HeadTrackerMode**
+**Microsoft.PerceptionSimulation.ISimulatedHeadTracker.HeadTrackerMode**
 
 抓取和設定目前的標頭追蹤器模式。
 
-### <a name="microsoftperceptionsimulationisimulatedhandtracker"></a>PerceptionSimulation. ISimulatedHandTracker
+### <a name="microsoftperceptionsimulationisimulatedhandtracker"></a>Microsoft.PerceptionSimulation. ISimulatedHandTracker
 
 描述模擬裝置之部分的介面, 可追蹤模擬人類的手
 
@@ -738,27 +738,27 @@ public interface ISimulatedHandTracker
 }
 ```
 
-**PerceptionSimulation. ISimulatedHandTracker. WorldPosition**
+**Microsoft.PerceptionSimulation.ISimulatedHandTracker.WorldPosition**
 
 以量表為單位, 抓取節點與世界的相對位置。
 
-**PerceptionSimulation. ISimulatedHandTracker. Position**
+**Microsoft.PerceptionSimulation.ISimulatedHandTracker.Position**
 
 抓取和設定模擬的手勢追蹤器的位置 (相對於 head 的中心)。
 
-**PerceptionSimulation. ISimulatedHandTracker. 音調**
+**Microsoft.PerceptionSimulation. ISimulatedHandTracker. 音調**
 
 取出並設定模擬的手勢追蹤器的下音調。
 
-**PerceptionSimulation. ISimulatedHandTracker. FrustumIgnored**
+**Microsoft.PerceptionSimulation. ISimulatedHandTracker. FrustumIgnored**
 
 抓取和設定是否忽略模擬的手勢追蹤器的錐狀。 忽略時, 一律會顯示這兩個手。 [未略過] (預設值) 只會在手上的 [指標追蹤器] 中出現時才會顯示。
 
-**PerceptionSimulation. ISimulatedHandTracker。**
+**Microsoft.PerceptionSimulation.ISimulatedHandTracker.Frustum**
 
 抓取和設定用來判斷模擬的手追蹤器是否可以看見手的「截錐」屬性。
 
-### <a name="microsoftperceptionsimulationisimulatedhuman"></a>PerceptionSimulation. ISimulatedHuman
+### <a name="microsoftperceptionsimulationisimulatedhuman"></a>Microsoft.PerceptionSimulation.ISimulatedHuman
 
 控制模擬人類的最上層介面。
 
@@ -776,45 +776,45 @@ public interface ISimulatedHuman
 }
 ```
 
-**PerceptionSimulation. ISimulatedHuman. WorldPosition**
+**Microsoft.PerceptionSimulation.ISimulatedHuman.WorldPosition**
 
 抓取和設定與世界相關的節點位置 (以量為單位)。 這個位置會對應到位於人類腳中心的點。
 
-**PerceptionSimulation. ISimulatedHuman. 方向**
+**Microsoft.PerceptionSimulation. ISimulatedHuman. 方向**
 
 取得並設定世界中模擬的人臉方向。 0弧度會向下到負 Z 軸。 正弧度會順時針旋轉 Y 軸。
 
-**PerceptionSimulation. ISimulatedHuman. Height**
+**Microsoft.PerceptionSimulation.ISimulatedHuman.Height**
 
 抓取和設定模擬人的高度 (以計量為單位)。
 
-**PerceptionSimulation. ISimulatedHuman. LeftHand**
+**Microsoft.PerceptionSimulation.ISimulatedHuman.LeftHand**
 
 取出模擬人類的左邊。
 
-**PerceptionSimulation. ISimulatedHuman. RightHand**
+**Microsoft.PerceptionSimulation.ISimulatedHuman.RightHand**
 
 取得模擬人類的右手邊。
 
-**PerceptionSimulation. ISimulatedHuman. Head**
+**Microsoft.PerceptionSimulation.ISimulatedHuman.Head**
 
 抓取模擬人類的標頭。
 
-**PerceptionSimulation. ISimulatedHuman. Move (PerceptionSimulation. Vector3)**
+**Microsoft.PerceptionSimulation.ISimulatedHuman.Move(Microsoft.PerceptionSimulation.Vector3)**
 
 將模擬人相對於其目前位置 (以計量為單位)。
 
 參數
 * 轉譯-要移動的轉譯, 相對於目前的位置。
 
-**PerceptionSimulation. ISimulatedHuman. 旋轉 (System.web)**
+**Microsoft.PerceptionSimulation. ISimulatedHuman. 旋轉 (System.web)**
 
 以順時針方向針對 Y 軸, 將模擬的人類旋轉相對於其目前方向
 
 參數
 * 弧度-要繞著 Y 軸旋轉的數量。
 
-### <a name="microsoftperceptionsimulationisimulatedhuman2"></a>PerceptionSimulation. ISimulatedHuman2
+### <a name="microsoftperceptionsimulationisimulatedhuman2"></a>Microsoft.PerceptionSimulation.ISimulatedHuman2
 
 藉由將 ISimulatedHuman 轉型為 ISimulatedHuman2, 可以使用其他屬性。
 
@@ -827,16 +827,16 @@ public interface ISimulatedHuman2
 }
 ```
 
-**PerceptionSimulation. ISimulatedHuman2. LeftController**
+**Microsoft.PerceptionSimulation.ISimulatedHuman2.LeftController**
 
 取出左邊的 6 DOF 控制器。
 
-**PerceptionSimulation. ISimulatedHuman2. RightController**
+**Microsoft.PerceptionSimulation.ISimulatedHuman2.RightController**
 
 取出右6個 DOF 的控制器。
 
 
-### <a name="microsoftperceptionsimulationisimulatedhand"></a>PerceptionSimulation. ISimulatedHand
+### <a name="microsoftperceptionsimulationisimulatedhand"></a>Microsoft.PerceptionSimulation. ISimulatedHand
 
 描述模擬人類之手的介面
 
@@ -853,41 +853,41 @@ public interface ISimulatedHand
 }
 ```
 
-**PerceptionSimulation. ISimulatedHand. WorldPosition**
+**Microsoft.PerceptionSimulation.ISimulatedHand.WorldPosition**
 
 以量表為單位, 抓取節點與世界的相對位置。
 
-**PerceptionSimulation. ISimulatedHand. Position**
+**Microsoft.PerceptionSimulation.ISimulatedHand.Position**
 
 抓取和設定相對於人類 (以量為單位) 的模擬手勢位置。
 
-**PerceptionSimulation. ISimulatedHand. 已啟用**
+**Microsoft.PerceptionSimulation. ISimulatedHand. 已啟用**
 
 抓取並設定是否目前已啟用手。
 
-**PerceptionSimulation. ISimulatedHand. Visible**
+**Microsoft.PerceptionSimulation.ISimulatedHand.Visible**
 
 抓取 SimulatedDevice 的目前是否可見 (也就是它是否位於 HandTracker 所偵測到的位置)。
 
-**PerceptionSimulation. ISimulatedHand. EnsureVisible**
+**Microsoft.PerceptionSimulation.ISimulatedHand.EnsureVisible**
 
 移動手, 讓 SimulatedDevice 可以看到它。
 
-**PerceptionSimulation. ISimulatedHand. Move (PerceptionSimulation. Vector3)**
+**Microsoft.PerceptionSimulation.ISimulatedHand.Move(Microsoft.PerceptionSimulation.Vector3)**
 
 移動模擬手相對於其目前位置的位置 (以量為單位)。
 
 參數
 * 轉譯-要轉譯模擬手的數量。
 
-**PerceptionSimulation. ISimulatedHand. PerformGesture (Microsoft PerceptionSimulation. SimulatedGesture)**
+**Microsoft.PerceptionSimulation.ISimulatedHand.PerformGesture(Microsoft.PerceptionSimulation.SimulatedGesture)**
 
 使用模擬的手執行手勢。  只有在已啟用手時, 系統才會偵測到此檔案。
 
 參數
 * 手勢-要執行的手勢。
 
-### <a name="microsoftperceptionsimulationisimulatedhand2"></a>PerceptionSimulation. ISimulatedHand2
+### <a name="microsoftperceptionsimulationisimulatedhand2"></a>Microsoft.PerceptionSimulation.ISimulatedHand2
 
 將 ISimulatedHand 轉換為 ISimulatedHand2 可使用其他屬性。
 ```
@@ -898,11 +898,11 @@ public interface ISimulatedHand2
 }
 ```
 
-**PerceptionSimulation. ISimulatedHand2. 取向**
+**Microsoft.PerceptionSimulation. ISimulatedHand2. 取向**
 
 取出或設定模擬手的旋轉。  正弧度在沿著軸進行檢查時, 順時針旋轉。
 
-### <a name="microsoftperceptionsimulationisimulatedhand3"></a>PerceptionSimulation. ISimulatedHand3
+### <a name="microsoftperceptionsimulationisimulatedhand3"></a>Microsoft.PerceptionSimulation.ISimulatedHand3
 
 將 ISimulatedHand 轉換為 ISimulatedHand3 可使用其他屬性
 ```
@@ -915,20 +915,20 @@ public interface ISimulatedHand3
 }
 ```
 
-**PerceptionSimulation. ISimulatedHand3. GetJointConfiguration**
+**Microsoft.PerceptionSimulation.ISimulatedHand3.GetJointConfiguration**
 
 取得所指定聯合的聯合設定。
 
-**PerceptionSimulation. ISimulatedHand3. SetJointConfiguration**
+**Microsoft.PerceptionSimulation.ISimulatedHand3.SetJointConfiguration**
 
 設定所指定聯合的聯合設定。
 
-**PerceptionSimulation. ISimulatedHand3. SetHandPose**
+**Microsoft.PerceptionSimulation.ISimulatedHand3.SetHandPose**
 
 將手設定為已知的姿勢, 並使用選擇性的旗標來製作動畫。  注意: 動畫不會導致直接反映其最終的聯合設定。
 
 
-### <a name="microsoftperceptionsimulationisimulatedhead"></a>PerceptionSimulation. ISimulatedHead
+### <a name="microsoftperceptionsimulationisimulatedhead"></a>Microsoft.PerceptionSimulation.ISimulatedHead
 
 描述模擬人的頭的介面。
 
@@ -942,26 +942,26 @@ public interface ISimulatedHead
 }
 ```
 
-**PerceptionSimulation. ISimulatedHead. WorldPosition**
+**Microsoft.PerceptionSimulation.ISimulatedHead.WorldPosition**
 
 以量表為單位, 抓取節點與世界的相對位置。
 
-**PerceptionSimulation. ISimulatedHead. 旋轉**
+**Microsoft.PerceptionSimulation. ISimulatedHead. 旋轉**
 
 取出模擬標頭的旋轉。 正弧度在沿著軸進行檢查時, 順時針旋轉。
 
-**PerceptionSimulation. ISimulatedHead. 直徑**
+**Microsoft.PerceptionSimulation. ISimulatedHead. 直徑**
 
 取出模擬的標頭直徑。 這個值是用來判斷 head 的中心 (旋轉點)。
 
-**PerceptionSimulation. ISimulatedHead. 旋轉 (PerceptionSimulation. Rotation3)**
+**Microsoft.PerceptionSimulation. ISimulatedHead. 旋轉 (PerceptionSimulation. Rotation3)**
 
 將模擬的標頭旋轉成相對於目前的旋轉。 正弧度在沿著軸進行檢查時, 順時針旋轉。
 
 參數
 * 旋轉-要旋轉的數量。
 
-### <a name="microsoftperceptionsimulationisimulatedhead2"></a>PerceptionSimulation. ISimulatedHead2
+### <a name="microsoftperceptionsimulationisimulatedhead2"></a>Microsoft.PerceptionSimulation. ISimulatedHead2
 
 將 ISimulatedHead 轉換為 ISimulatedHead2 可使用其他屬性
 
@@ -973,11 +973,11 @@ public interface ISimulatedHead2
 }
 ```
 
-**PerceptionSimulation. ISimulatedHead2 眼**
+**Microsoft.PerceptionSimulation. ISimulatedHead2 眼**
 
 取出模擬人類的眼睛。
 
-### <a name="microsoftperceptionsimulationisimulatedsixdofcontroller"></a>PerceptionSimulation. ISimulatedSixDofController
+### <a name="microsoftperceptionsimulationisimulatedsixdofcontroller"></a>Microsoft.PerceptionSimulation. ISimulatedSixDofController
 
 描述與模擬人類相關聯之 6 DOF 控制器的介面。
 
@@ -996,44 +996,44 @@ public interface ISimulatedSixDofController
 }
 ```
 
-**PerceptionSimulation. ISimulatedSixDofController. WorldPosition**
+**Microsoft.PerceptionSimulation. ISimulatedSixDofController. WorldPosition**
 
 以量表為單位, 抓取節點與世界的相對位置。
 
-**PerceptionSimulation. ISimulatedSixDofController. 狀態**
+**Microsoft.PerceptionSimulation. ISimulatedSixDofController. 狀態**
 
 取得或設定控制器的目前狀態。  控制器狀態必須設定為 [關閉] 以外的值, 才能進行移動、旋轉或按下按鈕的任何呼叫。
 
-**PerceptionSimulation. ISimulatedSixDofController. Position**
+**Microsoft.PerceptionSimulation. ISimulatedSixDofController. Position**
 
 抓取或設定模擬控制器相對於人類的位置 (以計量為單位)。
 
-**PerceptionSimulation. ISimulatedSixDofController. 取向**
+**Microsoft.PerceptionSimulation. ISimulatedSixDofController. 取向**
 
 取得或設定模擬控制器的方向。
 
-**PerceptionSimulation. ISimulatedSixDofController. Move (PerceptionSimulation. Vector3)**
+**Microsoft.PerceptionSimulation. ISimulatedSixDofController. Move (PerceptionSimulation. Vector3)**
 
 移動模擬控制器相對於其目前位置的位置 (以計量為單位)。
 
 參數
 * 轉譯-要轉譯模擬控制器的數量。
 
-**PerceptionSimulation. ISimulatedSixDofController. PressButton (SimulatedSixDofControllerButton)**
+**Microsoft.PerceptionSimulation. ISimulatedSixDofController. PressButton (SimulatedSixDofControllerButton)**
 
 在模擬控制器上按下按鈕。  只有在已啟用控制器的情況下, 系統才會偵測到它。
 
 參數
 * 按鈕-要按的按鈕。
 
-**PerceptionSimulation. ISimulatedSixDofController. ReleaseButton (SimulatedSixDofControllerButton)**
+**Microsoft.PerceptionSimulation. ISimulatedSixDofController. ReleaseButton (SimulatedSixDofControllerButton)**
 
 釋放模擬控制器上的按鈕。  只有在已啟用控制器的情況下, 系統才會偵測到它。
 
 參數
 * 按鈕-要發行的按鈕。
 
-**PerceptionSimulation. ISimulatedSixDofController. GetTouchpadPosition (out float, out float)**
+**Microsoft.PerceptionSimulation. ISimulatedSixDofController. GetTouchpadPosition (out float, out float)**
 
 取得模擬控制器的觸控板上的模擬手指位置。
 
@@ -1041,7 +1041,7 @@ public interface ISimulatedSixDofController
 * x-手指的水準位置。
 * y-手指的垂直位置。
 
-**PerceptionSimulation. ISimulatedSixDofController. SetTouchpadPosition (float, float)**
+**Microsoft.PerceptionSimulation. ISimulatedSixDofController. SetTouchpadPosition (float, float)**
 
 將模擬手指的位置設定在模擬控制器的觸控板上。
 
@@ -1049,7 +1049,7 @@ public interface ISimulatedSixDofController
 * x-手指的水準位置。
 * y-手指的垂直位置。
 
-### <a name="microsoftperceptionsimulationisimulatedsixdofcontroller2"></a>PerceptionSimulation. ISimulatedSixDofController2
+### <a name="microsoftperceptionsimulationisimulatedsixdofcontroller2"></a>Microsoft.PerceptionSimulation. ISimulatedSixDofController2
 
 將 ISimulatedSixDofController 轉換為 ISimulatedSixDofController2 可使用其他屬性和方法
 
@@ -1063,7 +1063,7 @@ public interface ISimulatedSixDofController2
 }
 ```
 
-**PerceptionSimulation. ISimulatedSixDofController2. GetThumbstickPosition (out float, out float)**
+**Microsoft.PerceptionSimulation. ISimulatedSixDofController2. GetThumbstickPosition (out float, out float)**
 
 取得模擬控制站上模擬的操縱杆位置。
 
@@ -1071,7 +1071,7 @@ public interface ISimulatedSixDofController2
 * x-操縱杆的水準位置。
 * y-操縱杆的垂直位置。
 
-**PerceptionSimulation. ISimulatedSixDofController2. SetThumbstickPosition (float, float)**
+**Microsoft.PerceptionSimulation. ISimulatedSixDofController2. SetThumbstickPosition (float, float)**
 
 在模擬的控制器上設定模擬的操縱杆位置。
 
@@ -1079,12 +1079,12 @@ public interface ISimulatedSixDofController2
 * x-操縱杆的水準位置。
 * y-操縱杆的垂直位置。
 
-**PerceptionSimulation. ISimulatedSixDofController2. BatteryLevel**
+**Microsoft.PerceptionSimulation. ISimulatedSixDofController2.BatteryLevel**
 
 取出或設定模擬控制器的電池計量。  此值必須大於0.0 且小於或等於100.0。
 
 
-### <a name="microsoftperceptionsimulationisimulatedeyes"></a>PerceptionSimulation. ISimulatedEyes
+### <a name="microsoftperceptionsimulationisimulatedeyes"></a>Microsoft.PerceptionSimulation.ISimulatedEyes
 
 描述模擬人眼的介面。
 
@@ -1098,11 +1098,11 @@ public interface ISimulatedEyes
 }
 ```
 
-**PerceptionSimulation. ISimulatedEyes. 旋轉**
+**Microsoft.PerceptionSimulation.ISimulatedEyes.旋轉**
 
 取出模擬眼睛的旋轉。 正弧度在沿著軸進行檢查時, 順時針旋轉。
 
-**PerceptionSimulation. ISimulatedEyes. 旋轉 (PerceptionSimulation. Rotation3)**
+**Microsoft.PerceptionSimulation.ISimulatedEyes.旋轉(PerceptionSimulation. Rotation3)**
 
 旋轉模擬的眼睛, 相對於其目前的旋轉。 正弧度在沿著軸進行檢查時, 順時針旋轉。
 
@@ -1113,12 +1113,12 @@ public interface ISimulatedEyes
 
 抓取或設定模擬眼睛的校正狀態。
 
-**PerceptionSimulation. ISimulatedEyes. WorldPosition**
+**Microsoft.PerceptionSimulation.ISimulatedEyes.WorldPosition**
 
 以量表為單位, 抓取節點與世界的相對位置。
 
 
-### <a name="microsoftperceptionsimulationisimulationrecording"></a>PerceptionSimulation. ISimulationRecording
+### <a name="microsoftperceptionsimulationisimulationrecording"></a>Microsoft.PerceptionSimulation.ISimulationRecording
 
 介面, 用於與已載入播放的單一錄製進行互動。
 
@@ -1134,34 +1134,34 @@ public interface ISimulationRecording
 };
 ```
 
-**PerceptionSimulation. ISimulationRecording 資料類型**
+**Microsoft.PerceptionSimulation.ISimulationRecording.資料類型**
 
 抓取記錄中的資料類型清單。
 
-**PerceptionSimulation. ISimulationRecording. 州/省**
+**Microsoft.PerceptionSimulation. ISimulationRecording. 州/省**
 
 抓取錄影的目前狀態。
 
-**PerceptionSimulation. ISimulationRecording. Play**
+**Microsoft.PerceptionSimulation. ISimulationRecording. Play**
 
 開始播放。 如果記錄已暫停, 播放將會從暫停的位置繼續執行;如果已停止, 播放會從一開始開始。 如果已經在播放, 則會忽略此呼叫。
 
-**PerceptionSimulation. ISimulationRecording. Pause**
+**Microsoft.PerceptionSimulation. ISimulationRecording. Pause**
 
 暫停播放目前的位置。 如果記錄已停止, 則會忽略呼叫。
 
-**PerceptionSimulation. ISimulationRecording. Seek (System.object)**
+**Microsoft.PerceptionSimulation. ISimulationRecording. Seek (System.object)**
 
 將記錄搜尋到指定的時間 (從一開始的100毫微秒間隔), 並在該位置暫停。 如果時間超過錄製的結尾, 則會在最後一個畫面上暫停。
 
 參數
 * 刻度-要搜尋的時間。
 
-**PerceptionSimulation. ISimulationRecording. Stop**
+**Microsoft.PerceptionSimulation. ISimulationRecording. Stop**
 
 停止播放, 並將位置重設為開頭。
 
-### <a name="microsoftperceptionsimulationisimulationrecordingcallback"></a>PerceptionSimulation. ISimulationRecordingCallback
+### <a name="microsoftperceptionsimulationisimulationrecordingcallback"></a>Microsoft.PerceptionSimulation. ISimulationRecordingCallback
 
 用於在播放期間接收狀態變更的介面。
 
@@ -1172,14 +1172,14 @@ public interface ISimulationRecordingCallback
 };
 ```
 
-**PerceptionSimulation. ISimulationRecordingCallback. PlaybackStateChanged (Microsoft PerceptionSimulation. PlaybackState)**
+**Microsoft.PerceptionSimulation. ISimulationRecordingCallback. PlaybackStateChanged (Microsoft PerceptionSimulation. PlaybackState)**
 
 當 ISimulationRecording 的播放狀態變更時呼叫。
 
 參數
 * newState-記錄的新狀態。
 
-### <a name="microsoftperceptionsimulationperceptionsimulationmanager"></a>PerceptionSimulation. PerceptionSimulationManager
+### <a name="microsoftperceptionsimulationperceptionsimulationmanager"></a>Microsoft.PerceptionSimulation. PerceptionSimulationManager
 
 用來建立認知模擬物件的根物件。
 
@@ -1192,7 +1192,7 @@ public static class PerceptionSimulationManager
     public static ISimulationRecording LoadPerceptionSimulationRecording(string path, ISimulationStreamSinkFactory factory, ISimulationRecordingCallback callback);
 ```
 
-**PerceptionSimulation. PerceptionSimulationManager. CreatePerceptionSimulationManager (Microsoft PerceptionSimulation. ISimulationStreamSink)**
+**Microsoft.PerceptionSimulation. PerceptionSimulationManager. CreatePerceptionSimulationManager (Microsoft PerceptionSimulation. ISimulationStreamSink)**
 
 在物件上建立以產生模擬封包, 並將它們傳遞至提供的接收。
 
@@ -1203,7 +1203,7 @@ public static class PerceptionSimulationManager
 
 建立的管理員。
 
-**PerceptionSimulation. PerceptionSimulationManager. CreatePerceptionSimulationRecording (System.string)**
+**Microsoft.PerceptionSimulation. PerceptionSimulationManager. CreatePerceptionSimulationRecording (System.string)**
 
 建立接收, 將所有接收的封包儲存在檔案中的指定路徑。
 
@@ -1214,7 +1214,7 @@ public static class PerceptionSimulationManager
 
 建立的接收。
 
-**PerceptionSimulation. PerceptionSimulationManager. LoadPerceptionSimulationRecording (System.string, Microsoft. PerceptionSimulation. ISimulationStreamSinkFactory)**
+**Microsoft.PerceptionSimulation. PerceptionSimulationManager. LoadPerceptionSimulationRecording (System.string, Microsoft. PerceptionSimulation. ISimulationStreamSinkFactory)**
 
 從指定的檔案載入記錄。
 
@@ -1226,7 +1226,7 @@ public static class PerceptionSimulationManager
 
 載入的記錄。
 
-**PerceptionSimulation. PerceptionSimulationManager. LoadPerceptionSimulationRecording (System.string, Microsoft PerceptionSimulation. ISimulationStreamSinkFactory,PerceptionSimulation. ISimulationRecordingCallback)**
+**Microsoft.PerceptionSimulation. PerceptionSimulationManager. LoadPerceptionSimulationRecording (System.string, Microsoft PerceptionSimulation. ISimulationStreamSinkFactory,PerceptionSimulation. ISimulationRecordingCallback)**
 
 從指定的檔案載入記錄。
 
@@ -1239,7 +1239,7 @@ public static class PerceptionSimulationManager
 
 載入的記錄。
 
-### <a name="microsoftperceptionsimulationstreamdatatypes"></a>PerceptionSimulation. StreamDataTypes
+### <a name="microsoftperceptionsimulationstreamdatatypes"></a>Microsoft.PerceptionSimulation. StreamDataTypes
 
 描述不同類型的資料流程資料。
 
@@ -1256,35 +1256,35 @@ public enum StreamDataTypes
 }
 ```
 
-**PerceptionSimulation. StreamDataTypes. None**
+**Microsoft.PerceptionSimulation. StreamDataTypes. None**
 
 用來表示沒有資料流程資料類型的 sentinel 值。
 
-**PerceptionSimulation. StreamDataTypes. Head**
+**Microsoft.PerceptionSimulation. StreamDataTypes. Head**
 
 關於 head 位置和方向的資料流程。
 
-**PerceptionSimulation. StreamDataTypes**
+**Microsoft.PerceptionSimulation. StreamDataTypes**
 
 關於手的位置和手勢的資料流程。
 
-**PerceptionSimulation. StreamDataTypes. SpatialMapping**
+**Microsoft.PerceptionSimulation. StreamDataTypes. SpatialMapping**
 
 關於環境的空間對應的資料流程。
 
-**PerceptionSimulation. StreamDataTypes. 校正**
+**Microsoft.PerceptionSimulation. StreamDataTypes. 校正**
 
 關於裝置校正的資料流程。 只有在遠端模式中的系統才會接受校正封包。
 
-**PerceptionSimulation. StreamDataTypes. 環境**
+**Microsoft.PerceptionSimulation. StreamDataTypes. 環境**
 
 關於裝置環境的資料流程。
 
-**PerceptionSimulation. StreamDataTypes. 全部**
+**Microsoft.PerceptionSimulation. StreamDataTypes. 全部**
 
 用來表示所有記錄資料類型的 sentinel 值。
 
-### <a name="microsoftperceptionsimulationisimulationstreamsink"></a>PerceptionSimulation. ISimulationStreamSink
+### <a name="microsoftperceptionsimulationisimulationstreamsink"></a>Microsoft.PerceptionSimulation. ISimulationStreamSink
 
 物件, 接收來自模擬資料流程的資料封包。
 
@@ -1295,7 +1295,7 @@ public interface ISimulationStreamSink
 }
 ```
 
-**PerceptionSimulation. ISimulationStreamSink. OnPacketReceived (uint length, byte [] 封包)**
+**Microsoft.PerceptionSimulation. ISimulationStreamSink. OnPacketReceived (uint length, byte [] 封包)**
 
 接收單一封包, 其為內部輸入和版本設定。
 
@@ -1303,7 +1303,7 @@ public interface ISimulationStreamSink
 * length-封包的長度。
 * 封包-封包的資料。
 
-### <a name="microsoftperceptionsimulationisimulationstreamsinkfactory"></a>PerceptionSimulation. ISimulationStreamSinkFactory
+### <a name="microsoftperceptionsimulationisimulationstreamsinkfactory"></a>Microsoft.PerceptionSimulation. ISimulationStreamSinkFactory
 
 建立 ISimulationStreamSink 的物件。
 
@@ -1314,7 +1314,7 @@ public interface ISimulationStreamSinkFactory
 }
 ```
 
-**PerceptionSimulation. ISimulationStreamSinkFactory. CreateSimulationStreamSink ()**
+**Microsoft.PerceptionSimulation. ISimulationStreamSinkFactory. CreateSimulationStreamSink ()**
 
 建立 ISimulationStreamSink 的單一實例。
 

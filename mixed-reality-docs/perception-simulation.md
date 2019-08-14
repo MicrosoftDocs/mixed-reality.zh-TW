@@ -1109,7 +1109,7 @@ public interface ISimulatedEyes
 參數
 * 旋轉-要旋轉的數量。
 
-**PerceptionSimulation. ISimulatedEyes. CalibrationState**
+**Microsoft.PerceptionSimulation.ISimulatedEyes.CalibrationState**
 
 抓取或設定模擬眼睛的校正狀態。
 

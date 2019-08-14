@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 501e8bc2e70248a4ca8a79f90d74d30129830701
-ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.openlocfilehash: a6367a1be1bcaeab911b925641dbb3a66998c2dc
+ms.sourcegitcommit: 599bbdd861ce6ff11b6cfb345a0a995f8b7bf85b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701956"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68977986"
 ---
 # <a name="1-integrating-and-using-speech-recognition-and-transcription"></a>1.整合和使用語音辨識與轉譯
 
@@ -133,18 +133,19 @@ ms.locfileid: "68701956"
 ![Tut1-lesson1-step3 Chapter5 步驟1](images/Lesson1Chapter5Step1.JPG)
 
 2. 藉由按一下 [加入開啟場景] 按鈕，來確定您想要嘗試的場景有在 [建置中的場景] 清單中。
-
-3. 按下 [建置] 按鈕，開始建置程序。
+3. 按 [Player 設定] 按鈕, 然後移至 [發佈設定]。 在 [功能] 底下, 啟用:網際網路, 網際網路用戶端伺服器, 私人網路用戶端伺服器, 麥克風和空間感知。
+4. 在相同的播放人員設定中, 移至 [XR 設定], 然後選取支援的虛擬實境。
+5. 按下 [建置] 按鈕，開始建置程序。
 
 ![Tut1-lesson1-step3 Chapter5 步驟3](images/Lesson1Chapter5Step3.JPG)
 
-4. 為您的應用程式建立並命名新資料夾。 在下圖中，已建立名為 “App” 的資料夾來包含應用程式。 按一下 [選取資料夾]，即可開始對新建立的資料夾進行建置。 建置完成之後，您可以關閉 Unity 中的 [建置設定] 視窗。 
+6. 為您的應用程式建立並命名新資料夾。 在下圖中，已建立名為 “App” 的資料夾來包含應用程式。 按一下 [選取資料夾]，即可開始對新建立的資料夾進行建置。 建置完成之後，您可以關閉 Unity 中的 [建置設定] 視窗。 
 
 ![Tut1-lesson1-step3 Chapter5 步驟4](images/Lesson1Chapter5Step4.JPG)
 
 > 注意：如果建置失敗，請再試一次，或重新啟動 Unity，然後重新建置。 如果您看到錯誤，例如「錯誤：CS0246 = 找不到名為 "XX" 的類型或命名空間名稱 (您是否遺漏 using 指示詞或組件參考？)」，則您可能需要安裝 [Windows 10 SDK (10.0.18362.0)](<https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk>)
 
-5. 在建置完成之後，開啟新建立的資料夾，其中包含您新建置的應用程式檔案。 按兩下 ".sln" 方案檔, 以在 Visual Studio 中開啟方案檔。
+7. 在建置完成之後，開啟新建立的資料夾，其中包含您新建置的應用程式檔案。 按兩下 ".sln" 方案檔, 以在 Visual Studio 中開啟方案檔。
 
 > 注意:請務必開啟新建立的資料夾 (如果您遵循先前步驟中的命名慣例，此資料夾為 "App" 資料夾)，因為該資料夾外會有名稱類似的 .sln 檔案，不應與建置資料夾中的 .sln 檔案混淆。 
 
@@ -152,15 +153,14 @@ ms.locfileid: "68701956"
 
 > 注意:如果 Visual Studio 要求您安裝新元件，請花一點時間確認是否已安裝所有必要元件，如同 [[安裝工具] 頁面](install-the-tools.md)中所指定
 
-6. 使用 USB 纜線，將 HoloLens 2 插入您的電腦。 雖然這些課程指示假設您會以 HoloLens 2 裝置部署測試，但您也可以選擇部署到 [HoloLens 2 模擬器](using-the-hololens-emulator.md)或選擇建立[用於側載的應用程式套件](<https://docs.microsoft.com/en-us/windows/uwp/packaging/packaging-uwp-apps>)
+8. 使用 USB 纜線，將 HoloLens 2 插入您的電腦。 雖然這些課程指示假設您會以 HoloLens 2 裝置部署測試，但您也可以選擇部署到 [HoloLens 2 模擬器](using-the-hololens-emulator.md)或選擇建立[用於側載的應用程式套件](<https://docs.microsoft.com/en-us/windows/uwp/packaging/packaging-uwp-apps>)
+9. 對您的裝置進行建置之前，請確定裝置處於開發人員模式。 如果這是您第一次部署到 HoloLens 2，Visual Studio 可能會要求您使用 pin 碼來與 HoloLens 2 配對。 若要啟用開發人員模式，或與 Visual Studio 配對，請遵循[這些指示](https://docs.microsoft.com/en-us/windows/mixed-reality/using-visual-studio)。
 
-7. 對您的裝置進行建置之前，請確定裝置處於開發人員模式。 如果這是您第一次部署到 HoloLens 2，Visual Studio 可能會要求您使用 pin 碼來與 HoloLens 2 配對。 若要啟用開發人員模式，或與 Visual Studio 配對，請遵循[這些指示](https://docs.microsoft.com/en-us/windows/mixed-reality/using-visual-studio)。
-
-8. 若要設定 Visual Studio 來對 HoloLens 2 進行建置，請選取 [發行] 組態和 [ARM] 架構。
+10. 若要設定 Visual Studio 來對 HoloLens 2 進行建置，請選取 [發行] 組態和 [ARM] 架構。
 
 ![Tut1-lesson1-step3 Chapter5 Step8](images/Lesson1Chapter5Step8.JPG)
 
-9. 最後一個步驟是選取 [偵錯] > [啟動但不偵錯] 來對您的裝置進行建置。 選取 [啟動但不偵錯] 會讓裝置上的應用程式在建置成功時立即啟動，但 Visual Studio 中不會出現偵錯資訊。 這也表示，當您的應用程式在 HoloLens 2 上執行時，您可以在不需要停止應用程式的情況下拔掉 USB 纜線。 您也可以選取 [建置] > [部署解決方案]，在不自動啟動應用程式的情況下，對您的裝置進行部署。
+11. 最後一個步驟是選取 [偵錯] > [啟動但不偵錯] 來對您的裝置進行建置。 選取 [啟動但不偵錯] 會讓裝置上的應用程式在建置成功時立即啟動，但 Visual Studio 中不會出現偵錯資訊。 這也表示，當您的應用程式在 HoloLens 2 上執行時，您可以在不需要停止應用程式的情況下拔掉 USB 纜線。 您也可以選取 [建置] > [部署解決方案]，在不自動啟動應用程式的情況下，對您的裝置進行部署。
 
 ![Tut1-lesson1-step3 Chapter5 Step9](images/Lesson1Chapter5Step9.JPG)
 

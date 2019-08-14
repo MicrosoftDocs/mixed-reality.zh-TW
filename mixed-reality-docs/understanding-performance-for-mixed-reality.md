@@ -83,7 +83,7 @@ ms.locfileid: "63548833"
 
 - **記憶體頻寬**是 GPU 可以從記憶體執行的讀取和寫入速率
     - 若要找出頻寬限制, 請降低材質品質, 並檢查是否已改善畫面播放速率。
-    - 在 Unity 中, 您可以在 [**編輯** > **專案設定** >  **[品質] 設定](https://docs.unity3d.com/Manual/class-QualitySettings.html)** 中變更**材質品質**來完成這項作業。
+    - 在 Unity 中, 您可以在 [**編輯** > **專案設定** >  **[品質] 設定](https://docs.unity3d.com/Manual/class-QualitySettings.html)** 中變更 **材質品質** 來完成這項作業。
 - [**填滿速率**] 是指 GPU 每秒可繪製的轉譯圖元輸送量。
     - 若要識別填滿率限制, 請減少顯示器解析度, 並檢查是否已改善畫面播放速率。 
     - 在 Unity 中，這可以透過 *[XRSettings.renderViewportScale](https://docs.unity3d.com/ScriptReference/XR.XRSettings-renderViewportScale.html)* 屬性

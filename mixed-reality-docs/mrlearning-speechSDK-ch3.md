@@ -6,16 +6,16 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 27742702f7a274b3212cdf12c77d8acfa0a29834
-ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.openlocfilehash: c7cbdca3c22253042a9be44a194fca8925f0f446
+ms.sourcegitcommit: 599bbdd861ce6ff11b6cfb345a0a995f8b7bf85b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701831"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68977957"
 ---
 # <a name="3-adding-the-azure-cognitive-services-speech-translation-component"></a>3.新增 Azure 認知服務語音翻譯元件
 
-在本教學課程中, 我們將瞭解如何 aabout 專案中的 Azure 認知服務語音翻譯元件, 並轉譯成三種不同的語言。 
+在本教學課程中, 我們將瞭解專案中的 Azure 認知服務語音翻譯元件, 並轉譯成三種不同的語言。 
 
 ## <a name="instructions"></a>指示
 

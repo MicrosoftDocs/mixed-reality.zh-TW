@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 4e60ed844e64d736c268dd3ec8453c6c2cb7ad75
-ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.openlocfilehash: 70f84c1ec03919a15bed486ffa51fb57db39deec
+ms.sourcegitcommit: 599bbdd861ce6ff11b6cfb345a0a995f8b7bf85b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68702051"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68977975"
 ---
 # <a name="2-saving-retrieving-and-sharing-azure-spatial-anchors"></a>2.儲存、抓取和共用 Azure 空間錨點
 
@@ -46,13 +46,13 @@ ms.locfileid: "68702051"
 
    - 針對名為 GetFromDisk 的按鈕, 在 [已按下的事件觸發程式] 和 [On Click] 事件觸發程式底下, 建立新的事件。 將 ParentAnchor 物件拖曳至空白欄位, 然後從 ParentAnchor 物件的 ASAmoduleScript 元件指派 LoadAzureAnchorIDsFromDisk () 方法。
 
-3. 遵循 Tutoiral 1 的指示, 將更新的應用程式建立至您的裝置。 依照您在上一課所做的操作, 按下 [建立 Azure 錨點] 按鈕之後, 您現在可以按 [儲存至磁片] 按鈕, 將 Azure 錨點識別碼儲存至磁片。
+3. 依照教學課程1中的指示, 將更新的應用程式建立至您的裝置。 依照您在上一課所做的操作, 按下 [建立 Azure 錨點] 按鈕之後, 您現在可以按 [儲存至磁片] 按鈕, 將 Azure 錨點識別碼儲存至磁片。
 
 4. 重新開機應用程式, 啟動 Azure 會話, 按 [載入錨點識別碼], 然後按 [尋找 Azure 錨點], 找出與我們儲存到磁片的識別碼相關聯的錨點。 整個場景現在應該會在您先前儲存錨點的位置貼齊位置!
 
 ### <a name="share-azure-anchors-between-multiple-devices"></a>在多個裝置之間共用 Azure 錨點
 
-在本節中, 我們將瞭解如何在多個裝置之間共用 Azure 錨點識別碼。 這可讓多個裝置查詢 Azure 是否有相同的錨點識別碼, 讓我們的錨定的全息影像和場景能夠以空間對齊。 空間對齊 (在多個裝置之間的相同實體位置中看到相同的全息影像) 是 HoloLens 2 中本機共用體驗的關鍵。 有許多方式可以傳輸裝置之間有關 azure 識別碼的資訊, 包括 Azure 空間錨點共用體驗教學課程 (TODO: 新增連結) 中所述的方法。這個範例會使用簡單的 web 服務, 在裝置之間上傳和下載錨點識別碼。
+在本節中, 我們將瞭解如何在多個裝置之間共用 Azure 錨點識別碼。 這可讓多個裝置查詢 Azure 是否有相同的錨點識別碼, 讓我們的錨定的全息影像和場景能夠以空間對齊。 空間對齊 (在多個裝置之間的相同實體位置中看到相同的全息影像) 是 HoloLens 2 中本機共用體驗的關鍵。 有許多方式可以傳輸裝置之間有關 azure 識別碼的資訊, 包括 Azure 空間錨點共用體驗教學課程[教學](mrlearning-sharing(photon)-ch1.md)課程中所述的方法。 這個範例會使用簡單的 web 服務, 在裝置之間上傳和下載錨點識別碼。
 
 1. 將 ShareAnchor prefab 新增至您的階層。 此 prefab 會將兩個新按鈕新增至您的場景;一個用來上傳錨點識別碼資訊, 另一個用於下載錨點識別碼資訊。 
 

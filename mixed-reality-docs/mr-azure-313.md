@@ -406,7 +406,7 @@ ms.locfileid: "67694594"
 
     **localhost: 5000/-模組的名稱-** 。 
 
-8. 刪除**localhost: 5000**, 並在其位置插入*容器***登錄登入伺服器**位址, 這是您在建立**container registry 服務**([在步驟8中, 第2章](#chapter-2---the-container-registry-service)) 時記下的。 按**enter**鍵以確認位址。
+8. 刪除**localhost: 5000**, 並在其位置插入 *容器* **登錄登入伺服器**位址, 這是您在建立**container registry 服務**([在步驟8中, 第2章](#chapter-2---the-container-registry-service)) 時記下的。 按**enter**鍵以確認位址。
 
 9. 此時, 將會建立包含 Python 模組範本的解決方案, 而且其結構會顯示在畫面左側的 [**流覽]** 索引標籤中 VS Code。 如果 [**流覽]** 索引標籤未開啟, 您可以按一下左側列中最上方的按鈕來開啟它。
 

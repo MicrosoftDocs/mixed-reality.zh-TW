@@ -47,7 +47,7 @@ DirectX 11 全像攝影版 UWP 應用程式範本與 DirectX 11 UWP 應用程式
 5. 填寫 [**名稱**] 和 [**位置**] 文字方塊, 然後按一下或點擊 **[確定]** 。 會建立全像攝影應用程式專案。
 6. 針對僅以 HoloLens 2 為目標的開發, 請確定 [**目標版本**] 和 [**最低版本**] 設定為 [ **Windows 10, 版本 1903**]。  如果您也以 HoloLens (第1代) 或桌面 Windows Mixed Reality 耳機為目標, 則可以改為將**最低版本**設定為**windows 10 版本 1809** , 但在使用 new 時, 您的程式碼中需要一些版本調適型<a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code" target="_blank">檢查</a>HoloLens 2 的功能。
    ![將 Windows 10 (版本 1903) 設為目標和最低版本的螢幕擷取畫面](images/new-uwp-project.png)<br>
-   *將**Windows 10 (版本 1903)** 設定為目標和最低版本*
+   *將 **Windows 10 (版本 1903)** 設定為目標和最低版本*
    >[!IMPORTANT]
    >如果您沒有看到 [ **windows 10, 版本 1903** ] 選項, 則不會安裝最新的 WINDOWS 10 SDK。  若要讓此選項出現, 請<a href="https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk" target="_blank">安裝 Windows 10 SDK 的版本10.0.18362.0 或更新版本</a>。
 
@@ -153,7 +153,7 @@ int APIENTRY wWinMain(
 
 您的混合現實應用程式會在遊戲迴圈中更新, 預設會在的**Update**方法`AppMain.cpp`中執行。 **Update**方法會更新場景物件 (例如旋轉的 cube), 並傳回用來取得最新的視圖和投影矩陣並呈現交換鏈的<a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe" target="_blank">HolographicFrame</a>物件。
 
-中  `AppMain.cpp`的 Render 方法會採用<a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe" target="_blank">HolographicFrame</a> , 並根據目前的應用程式和空間定位狀態, 將目前的框架轉譯為每個全像攝影攝影機。
+中 `AppMain.cpp`的 Render 方法會採用<a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe" target="_blank">HolographicFrame</a> , 並根據目前的應用程式和空間定位狀態, 將目前的框架轉譯為每個全像攝影攝影機。
 
 ## <a name="see-also"></a>另請參閱
 * [取得 HolographicSpace](getting-a-holographicspace.md)

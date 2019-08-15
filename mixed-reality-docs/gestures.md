@@ -6,16 +6,16 @@ ms.author: cmeekhof
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 混合現實、手勢、互動、設計
-ms.openlocfilehash: 8094caaf8a5d805606e9dac11ece56bc50122e5d
-ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
+ms.openlocfilehash: 70b03c6fa327bd987a681bba59abb725c3ddc6b4
+ms.sourcegitcommit: e5b677f92ac4b1dff9aad6c329345a5aca4fcef5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66829767"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020216"
 ---
 # <a name="gestures"></a>手勢
 
-右手手勢可讓使用者在混合現實中採取動作。 互動是以 [ 目標] 和 [**手勢**] 或 [**聲音**] 為基礎, 以根據任何專案的目標來採取動作。 右手手勢並不會在空間中提供精確的位置, 但是放入 HoloLens 並立即與內容互動的簡單, 可讓使用者在沒有任何其他配件的情況下工作。
+手勢可讓使用者在混合現實中採取動作。 互動是以 [目標] 和 [**手勢**] 或 [**聲音**] 為基礎, 以根據任何專案的目標來採取動作。 右手手勢並不會在空間中提供精確的位置, 但是放入 HoloLens 並立即與內容互動的簡單, 可讓使用者在沒有任何其他配件的情況下工作。
 
 <br>
 

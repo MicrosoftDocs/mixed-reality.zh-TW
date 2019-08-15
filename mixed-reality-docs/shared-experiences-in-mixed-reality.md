@@ -6,12 +6,12 @@ ms.author: grbury
 ms.date: 02/10/2019
 ms.topic: article
 keywords: 共用體驗, 混合現實, 全息影像, 空間錨點, 多使用者, 多個
-ms.openlocfilehash: b27da1e73c927a26e33746cd2db08e67c6f70acc
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: fbc636a5d65e605ae9e9f9655eb15550ff8de7b7
+ms.sourcegitcommit: e5b677f92ac4b1dff9aad6c329345a5aca4fcef5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63518509"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020201"
 ---
 # <a name="shared-experiences-in-mixed-reality"></a>混合現實中的共用體驗
 
@@ -118,7 +118,7 @@ OnSight 之類的體驗會帶來新的共同作業機會。 從實體的角度�
 
 直覺的共同作業是指交談的探源, 並瞭解如何將此直覺套用到混合現實的複雜性很重要。 如果我們不能只重新建立混合現實中的共用體驗, 但強化它們, 就會成為未來工作的架構轉變。 混合現實中的共用體驗設計是嶄新又棒的空間, 我們只是一開始就了。
 
-## <a name="get-started-sharing-experiences"></a>開始共用體驗
+## <a name="get-started-building-shared-experiences"></a>開始建立共用體驗
 
 視您的應用程式和案例而定, 會有各種需求來達到您想要的體驗。 其中一些包括
 * 符合-制訂:能夠建立會話、公告會話, 以及探索和邀請特定人員 (在本機和遠端) 來加入您的會話。
@@ -135,6 +135,32 @@ OnSight 之類的體驗會帶來新的共同作業機會。 從實體的角度�
 
 使用共用空間錨點, 每個裝置上的應用程式現在都有共同的座標系統, 可以在其中放置內容。 現在, 應用程式可以確保在相同位置放置和定位全息影像。
 在 HoloLens 裝置上, 您也可以從一個裝置離線共用錨點到另一個裝置。  使用下列連結來決定最適合您應用程式的內容。
+
+
+## <a name="evaluating-tech-options"></a>評估技術選項:
+有各種服務和技術選項可協助您建立多使用者的混合現實體驗。  選擇路徑可能會很難, 因此, 請以案例為主的觀點來看, 以下是一些選項的詳細說明。
+
+## <a name="shared-static-holograms-no-interactions"></a>共用靜態全息影像 (無互動):
+在您的應用程式中運用<a href="https://docs.microsoft.com/azure/spatial-anchors/" target="_blank">Azure 空間錨點</a>。  在裝置上啟用和共用空間錨點, 可讓您建立一個應用程式, 使用者會在同一時間看到全像位置的全息影像。  需要跨裝置進行額外的同步處理, 讓使用者能夠與全息影像互動, 以及查看全息影像的移動或狀態更新。
+
+## <a name="share-1st-person-perspective"></a>分享第一個人的觀點:
+當您擁有支援的 Miracast 接收器 (如電腦或電視) 時, 請將內建的 Miracast 支援運用於本機使用者, 而不需要額外的應用程式代碼。
+
+在您的應用程式中、遠端使用者或您想要共用的非 Miracast 裝置上, 運用<a href="https://github.com/microsoft/mixedreality-webrtc" target="_blank">MixedReality WebRTC</a> 。  啟用 WebRTC 連線可讓使用者之間的1:1 音訊/影片串流, 以及跨裝置進行訊息的資料通道。  混合現實實行會針對 HoloLens 進行優化, 方法是提供 HoloLens 使用者觀看的混合現實影片串流給其他人。  如果您想要將影片串流擴充到多個遠端用戶端, 通常會使用<a href="https://webrtcglossary.com/mcu/" target="_blank">MCU 服務提供者</a>(Multipoint 會議單位), 例如 SignalWire。  您可以透過<a href="https://github.com/andywolk/azure-freeswitch-gpu-windows" target="_blank">Freeswitch</a>取得對 Azure 的單鍵 SignalWire 部署。  請注意, 這是付費服務, SignalWire 並不是 Microsoft 所擁有/附屬關係。
+
+## <a name="presenter-spectator-applications-and-demos"></a>展示者-Spectator 應用程式和示範:
+在您的應用程式中運用<a href="https://github.com/microsoft/MixedReality-SpectatorView" target="_blank">MixedReality SpectatorView</a> 。  啟用其他裝置 (HL、Android、iOS 和攝影機), 以查看 HoloLens 在相同位置的不同觀點所看到的內容, 以及接收與全息影像互動之主機 HoloLens 使用者互動的更新。  觀賞、拍攝圖片 *, 並錄製影片, 讓主機從您自己的空間觀點來看, 在應用程式中的全像投影, 以及相同應用程式的 spectator 附屬。
+
+*注意事項：相片會透過 iOS/Android 裝置上的螢幕擷取畫面來取得。
+
+## <a name="multi-user-collaborative-experience"></a>多使用者共同作業體驗:
+從我們的[多使用者學習教學課程](mrlearning-sharing(photon)-ch1.md)開始, 它會利用本機使用者的<a href="https://docs.microsoft.com/azure/spatial-anchors/" target="_blank">Azure 空間錨點</a>和<a href="https://www.photonengine.com/PUN" target="_blank">Photon SDK</a>來同步處理場景中的內容/狀態。  建立在本機共同作業的應用程式, 讓每位使用者在場景中的全息影像上有自己的觀點, 而且每一個都可以完全與全息影像互動。  在所有裝置上提供更新, 而互動衝突管理則是由 Photon 處理。  請注意, Photon 是非 Microsoft 產品, 因此可能需要與 Photon 的計費關係, 才能 productize 和調整以提供更高的使用量。
+
+## <a name="future-work"></a>未來工作:
+元件功能和介面可協助在各種案例和基礎技術上提供通用一致性和健全的支援。  在那之前, 請選擇與您嘗試在應用程式中達成的案例相符的最佳路徑。
+
+不同的案例, 或想要使用不同的技術/服務？  
+請在此頁面底部的對應存放庫中提供意見反應作為 GitHub 問題, 或<a href="https://holodevelopers.slack.com/">HoloDevelopers 的時差</a>。
 
 
 ## <a name="see-also"></a>另請參閱

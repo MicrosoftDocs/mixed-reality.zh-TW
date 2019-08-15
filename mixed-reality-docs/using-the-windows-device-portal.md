@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: Windows 裝置入口網站、HoloLens
-ms.openlocfilehash: 79a4a1f99125028fcaf71e185eb00093aa8c742f
-ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.openlocfilehash: 5a2440c07ade1a9c41f3c28c332748e0c97cd3ed
+ms.sourcegitcommit: e5b677f92ac4b1dff9aad6c329345a5aca4fcef5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67694587"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020223"
 ---
 # <a name="using-the-windows-device-portal"></a>使用 Windows 裝置入口網站
 
@@ -52,7 +52,7 @@ ms.locfileid: "67694587"
 
 1. [安裝工具](install-the-tools.md), 以確定您已在電腦上安裝 Windows 10 開發人員工具來執行 Visual Studio Update 1。 這將能啟用 USB 連線能力。
 2. 透過 Micro-USB 纜線將您的 HoloLens 與電腦連接。
-3. 從您電腦上的網頁瀏覽器，移至 http://127.0.0.1:10080 。
+3. 從您電腦上的網頁瀏覽器, 移[http://127.0.0.1:10080](http://127.0.0.1:10080)至。
 
 ## <a name="connecting-to-an-emulator"></a>連接到模擬器
 

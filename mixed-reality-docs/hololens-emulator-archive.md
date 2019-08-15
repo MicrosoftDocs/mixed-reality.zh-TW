@@ -3,15 +3,15 @@ title: HoloLens 模擬器封存
 description: Microsoft HoloLens 模擬器的已發行組建清單。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 4/25/2019
+ms.date: 8/14/2019
 ms.topic: article
 keywords: HoloLens、模擬器、組建、版本
-ms.openlocfilehash: b209e444c223c3183d2680976f68c33a3b6ed79b
-ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.openlocfilehash: 548e8fb72af137e53c10c4507c56f29c8bd6a4ca
+ms.sourcegitcommit: 06c27acdac24c845952f9c1d3611770756f25820
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67694421"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69030151"
 ---
 HoloLens 模擬器 (第1代) 和 HoloLens 2 模擬器組建會並存安裝。 我們通常建議使用最新的可用組建, 但您可能會想要或需要針對舊的模擬器測試應用程式。 此頁面包含已發行版本本的連結。
 
@@ -21,7 +21,8 @@ HoloLens 模擬器 (第1代) 和 HoloLens 2 模擬器組建會並存安裝。 �
 
 |  組建 |  發行日期 |  注意 | 
 |----------|----------|----------|
-|  [HoloLens 2 模擬器組建10.0.18362.1021](https://go.microsoft.com/fwlink/?linkid=2098508) | 2019年7月8日 | 最新的 HoloLens 2 組建。  解決 DiskStream 的簽署問題 |
+|  [HoloLens 2 模擬器組建10.0.18362.1028](https://go.microsoft.com/fwlink/?linkid=2101019) | 2019年8月14日 | 2019年8月2日組建。  已不再包含全像攝影應用程式範本, 但從2019年9月開始, Visual Studio Marketplace 中提供。  模擬器現在可以在 Sdk 安裝到自訂位置時正常執行。 |
+|  [HoloLens 2 模擬器組建10.0.18362.1021](https://go.microsoft.com/fwlink/?linkid=2098508) | 2019年7月8日 | 解決 DiskStream 的簽署問題 |
 |  [HoloLens 2 模擬器組建10.0.18362.1019](https://go.microsoft.com/fwlink/?linkid=2095316) | 2019年6月11日 | 不再需要以系統管理員身分執行。  已加入 [開始] 功能表快捷方式。 |
 |  [HoloLens 2 模擬器組建10.0.18362.1005](https://go.microsoft.com/fwlink/?linkid=2087187) | 2019年4月16日 |  |
 

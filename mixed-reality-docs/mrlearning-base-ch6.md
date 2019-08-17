@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 97dd8fce1ebe53efc37cb48cde7dc9e207be9a42
-ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.openlocfilehash: f45aa7e2f07a8a67cd56f0aae140de3a68afc918
+ms.sourcegitcommit: e9a55528965048ce34f8247ef6e544f9f432ee37
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701985"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69559896"
 ---
 # <a name="7-creating-a-lunar-module-sample-application"></a>7.建立農曆模組範例應用程式
 
@@ -51,7 +51,7 @@ ms.locfileid: "68701985"
 
 > 注意:您在基底場景階層中看到的遊戲物件名稱, 並不會對應到場景中的物件名稱。
 
-步驟 2：將音訊來源加入至登月小艇。 請確定已在您的基底場景階層中選取 [陰曆] 模組, 然後按一下 [新增元件]。 搜尋 [音訊來源], 並將它新增至物件。 暫時將它保留空白。 我們稍後將會用它來播放發射音效。
+步驟 2:將音訊來源加入至登月小艇。 請確定已在您的基底場景階層中選取 [陰曆] 模組, 然後按一下 [新增元件]。 搜尋 [音訊來源], 並將它新增至物件。 現在請將其保留為空白, 但請務必按一下 [Spatialize] 核取方塊以啟用空間音訊。 我們稍後將會用它來播放發射音效。
 
  ![第6課 Chapter1.txt Step2im](images/Lesson6_Chapter1_step2im.PNG)  
 步驟 3：新增腳本, 切換放置提示。 按一下 [新增元件], 然後搜尋 [切換位置提示]。 這是自訂腳本, 可讓您開啟和關閉稍早所述的半透明提示 (具有 x 光線材質的物件)。  
@@ -115,7 +115,7 @@ ms.locfileid: "68701985"
 
 其目標是設定按鈕, 讓每次使用者按下 [放置提示] 按鈕時, 都會切換半透明放置提示的可見度。 
 
-步驟 1：將 [陰曆] 模組移至 [偵測器] 面板中的 [僅限空白執行時間] 插槽, 同時在您的基底場景階層中選取放置提示物件。 
+步驟 1:將 [陰曆] 模組移至 [偵測器] 面板中的 [僅限空白執行時間] 插槽, 同時在您的基底場景階層中選取放置提示物件。 
  ![Lesson6 Chapter3 Step1im](images/Lesson6_Chapter3_step1im.PNG) 步驟 2：現在, 按一下 [沒有函數] 下拉式清單。 移至 [TogglePlacementHints], 然後在該功能表下選取 [ToggleGameObjects ()]。 ToggleGameObjects () 會開啟和關閉放置提示, 使其在每次按下按鈕時都可見或隱藏。  
  ![Lesson6 Chapter3 Step2im](images/Lesson6_Chapter3_step2im.PNG)
 
@@ -123,9 +123,9 @@ ms.locfileid: "68701985"
 
 在某些情況下, 使用者會犯錯誤, 或意外地擲回物件, 或只是想要重設體驗。 [重設] 按鈕會新增重新開機體驗的功能。 
 
-步驟 1：選取 [重設] 按鈕。 在基底場景中, 其名稱為 ResetRoundButton。 
+步驟 1:選取 [重設] 按鈕。 在基底場景中, 其名稱為 ResetRoundButton。 
 
-步驟 2：將 [陰曆] 模組從 [基底場景] 階層拖曳至 [按鈕] 底下的空白插槽中, 按下 [檢查] 面板
+步驟 2:將 [陰曆] 模組從 [基底場景] 階層拖曳至 [按鈕] 底下的空白插槽中, 按下 [檢查] 面板
  ![Lesson6 Chapter4 Step2im](images/Lesson6_Chapter4_step2im.PNG)
 
 步驟 3：選取 [沒有函式] 下拉式功能表, 並將滑鼠停留在 [LaunchLunarModule] 上, 選取 [resetModule ()]。
@@ -137,7 +137,7 @@ ms.locfileid: "68701985"
 ### <a name="launching-the-lunar-module"></a>啟動農曆模組
 本節 explaings 如何設定 [啟動] 按鈕。 這可讓使用者按下按鈕, 並將陰曆模組啟動到空間。
 
-步驟 1：選取 [啟動] 按鈕。 在基底場景中, 其名為 LaunchRoundButton。 將 [陰曆] 模組拖曳至 [偵測器] 面板中 [Touch End] 底下的空插槽。
+步驟 1:選取 [啟動] 按鈕。 在基底場景中, 其名為 LaunchRoundButton。 將 [陰曆] 模組拖曳至 [偵測器] 面板中 [Touch End] 底下的空插槽。
  ![Lesson6 Chapter5 Step1im](images/Lesson6_Chapter5_step1im.PNG) 步驟 2：選取 [沒有函式] 下拉式功能表, 將滑鼠停留在 [LaunchLunarModule] 上, 然後選取 [StopThruster ()]。 這會控制使用者想要提供給陰曆模組的天生量。 
  ![第6課 Chapter5 Step2im](images/Lesson6_Chapter5_step2im.PNG)  
 步驟 3：在 [ButtonPressed ()] 底下, 將 [農曆] 模組 (按一下、按住和拖曳) 新增至空白位置。 

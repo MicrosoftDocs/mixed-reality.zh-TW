@@ -22,6 +22,7 @@
 #### [儲存並尋找您的檔案](saving-and-finding-your-files.md)
 #### [查看您的相片](see-your-photos.md)
 #### [更新 HoloLens](updating-hololens.md)
+#### [使用新空間中的 HoloLens](use-hololens-in-new-spaces.md)
 #### [裝置共用](device-sharing.md)
 #### [HoloLens 示範調整與清理指南](hololens-demo-guide.md)
 ### 沉浸式頭戴裝置

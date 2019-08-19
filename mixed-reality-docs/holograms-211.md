@@ -6,12 +6,12 @@ ms.author: kurtie
 ms.date: 03/21/2018
 ms.topic: article
 keywords: holotoolkit、mixedrealitytoolkit、mixedrealitytoolkit-unity、學院、教學課程、手勢
-ms.openlocfilehash: 76d2b4c0ac3d0a3783b091f7dc8c39548a18b548
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
-ms.translationtype: HT
+ms.openlocfilehash: 694f51f1b56588e100d6d2676a8194d7e9936133
+ms.sourcegitcommit: e9a55528965048ce34f8247ef6e544f9f432ee37
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63522469"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69559883"
 ---
 >[!NOTE]
 >混合現實學術教學課程的設計是使用 HoloLens (第1代) 和混合現實的沉浸式耳機。  因此, 對於仍在尋找這些裝置開發指引的開發人員而言, 我們覺得這些教學課程很重要。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  系統會保留這些資訊, 以繼續在支援的裝置上運作。 未來將會有一系列新的教學課程, 將示範如何針對 HoloLens 2 進行開發。  此通知會在張貼時, 使用這些教學課程的連結進行更新。
@@ -46,7 +46,7 @@ ms.locfileid: "63522469"
 
 ## <a name="before-you-start"></a>開始之前
 
-### <a name="prerequisites"></a>先決條件
+### <a name="prerequisites"></a>必要條件
 
 * [已安裝正確工具](install-the-tools.md)的 WINDOWS 10 電腦。
 * 一些基本C#的程式設計能力。
@@ -120,6 +120,9 @@ ms.locfileid: "63522469"
 
 * 訂閱手寫追蹤事件。
 * 使用游標意見反應, 在追蹤手時顯示使用者。
+
+>[!NOTE]
+>在 HoloLens 2 上, 只要看到手 (而不只是指手指的狀態) 時, 就會引發實習偵測。
 
 ### <a name="instructions"></a>指示
 

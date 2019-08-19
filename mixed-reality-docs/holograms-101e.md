@@ -1,147 +1,147 @@
 ---
-title: MR 基本概念 101E-模擬器使用完整的專案
-description: 遵循此程式碼逐步解說如何使用 Unity、 Visual Studio 和 HoloLens 模擬器，以了解全像攝影版的應用程式的基本概念。
+title: MR 基本概念 101E-使用模擬器完成專案
+description: 遵循使用 Unity、Visual Studio 和 HoloLens 模擬器的編碼逐步解說, 學習全像攝影應用程式的基本概念。
 author: keveleigh
 ms.author: kurtie
 ms.date: 03/21/2018
 ms.topic: article
-keywords: 混合的實境，Windows Mixed Reality、 HoloLens、 全像圖 academy，教學課程中，模擬器
+keywords: 混合現實、Windows Mixed Reality、HoloLens、全息裡、學院、教學課程、模擬器
 ms.openlocfilehash: 77f7d497396937bf471a69fa514cef84ab0b699d
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591575"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63522329"
 ---
 >[!NOTE]
->混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
+>混合現實學術教學課程的設計是使用 HoloLens (第1代) 和混合現實的沉浸式耳機。  因此, 對於仍在尋找這些裝置開發指引的開發人員而言, 我們覺得這些教學課程很重要。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  系統會保留這些資訊, 以繼續在支援的裝置上運作。 未來將會有一系列新的教學課程, 將示範如何針對 HoloLens 2 進行開發。  此通知會在張貼時, 使用這些教學課程的連結進行更新。
 
 <br>
 
-# <a name="mr-basics-101e-complete-project-with-emulator"></a>MR 基本概念 101E:模擬器使用完整的專案
+# <a name="mr-basics-101e-complete-project-with-emulator"></a>MR 基本概念 101E:使用模擬器完成專案
 
  >[!VIDEO https://www.youtube.com/embed/Xzm8_s05mm8]
 
-本教學課程將逐步引導您完成的專案，建置在 Unity 中，示範核心 Windows Mixed Reality 功能，包括 HoloLens[視線](gaze.md)，[筆勢](gestures.md)，[語音輸入](voice-input.md)，[空間音效](spatial-sound.md)並[空間對應](spatial-mapping.md)。 本教學課程需要大約 1 小時才能完成。
+本教學課程將逐步引導您完成以 Unity 為基礎的完整專案, 其中示範 HoloLens 上的核心 Windows Mixed Reality 功能, 包括[注視](gaze.md)、[手勢](gestures.md)、[語音輸入](voice-input.md)、[空間音效](spatial-sound.md)和[空間對應](spatial-mapping.md). 本教學課程需要大約1小時才能完成。
 
 ## <a name="device-support"></a>裝置支援
 
 <table>
 <tr>
-<th>課程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
+<th>粗</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></th>
 </tr><tr>
-<td>MR 基本概念 101E:模擬器使用完整的專案</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> </td>
+<td>MR 基本概念 101E:使用模擬器完成專案</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> </td>
 </tr>
 </table>
 
 ## <a name="before-you-start"></a>開始之前
 
-### <a name="prerequisites"></a>必要條件
+### <a name="prerequisites"></a>先決條件
 
-* Windows 10 電腦的正確設定[安裝工具](install-the-tools.md)。
+* [已安裝正確工具](install-the-tools.md)的 WINDOWS 10 電腦。
 
-### <a name="project-files"></a>專案檔
+### <a name="project-files"></a>專案檔案
 
-* 下載[檔案](https://github.com/Microsoft/HolographicAcademy/archive/Holograms-101.zip)專案所需。 需要 Unity 2017.2 或更新版本。
-  * 如果您仍然需要 Unity 5.6 的支援，請使用[本版](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.6-101.zip)。
-  * 如果您仍然需要 Unity 5.5 的支援，請使用[本版](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.5-101.zip)。
-  * 如果您仍然需要 Unity 5.4 的支援，請使用[本版](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.4-101.zip)。
-* 取消封存您的桌面或其他您輕鬆地連線到位置的檔案。 保留的資料夾名稱，作為**Origami**。
+* 下載專案所需的[檔案](https://github.com/Microsoft/HolographicAcademy/archive/Holograms-101.zip)。 需要 Unity 2017.2 或更新版本。
+  * 如果您仍然需要 Unity 5.6 支援, 請使用[此版本](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.6-101.zip)。
+  * 如果您仍然需要 Unity 5.5 支援, 請使用[此版本](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.5-101.zip)。
+  * 如果您仍然需要 Unity 5.4 支援, 請使用[此版本](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.4-101.zip)。
+* 將檔案取消封存至您的桌面或其他容易到達的位置。 將資料夾名稱保留為 [**折紙**]。
 
 >[!NOTE]
->如果您想要查看原始程式碼，在下載之前，它有[可在 GitHub 上](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-101)。
+>如果您想要在下載之前查看原始程式碼, 可以[在 GitHub 上](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-101)取得。
 
-## <a name="chapter-1---holo-world"></a>第 1 章-「 Holo"world
+## <a name="chapter-1---holo-world"></a>第1章-「Hololens」世界
 
 >[!VIDEO https://www.youtube.com/embed/qotpUpIQxVU]
 
-在本章中，我們將安裝程式，我們的第一個 Unity 專案並逐步執行組建和部署程序。
+在本章中, 我們將設定第一個 Unity 專案, 並逐步執行組建和部署流程。
 
 ### <a name="objectives"></a>目標
 
-* 設定全像攝影版的開發環境 Unity。
-* 請全像圖。
-* 請參閱您所做的雷射。
+* 設定 Unity 以進行全像攝影開發。
+* 建立全息影像。
+* 查看您製作的全息影像。
 
 ### <a name="instructions"></a>指示
 
 * 啟動 Unity。
-* 選取 **開啟**。
-* 輸入與位置**Origami**資料夾您先前未封存。
-* 選取  **Origami**然後按一下**選取資料夾**。
-* 儲存新的場景：**檔案** / **儲存為場景**。
-* 命名場景**Origami**然後按**儲存** 按鈕。
+* 選取 [**開啟**]。
+* 輸入 [位置] 做為您先前未封存的 [**折紙**] 資料夾。
+* 選取 [**折紙**], 然後按一下 [**選取資料夾**]。
+* 儲存新場景:將場景**另存為。**  / 
+* 將場景命名為「**折紙**」, 然後按 [**儲存**] 按鈕。
 
-#### <a name="setup-the-main-camera"></a>設定主攝影機
+#### <a name="setup-the-main-camera"></a>設定主要攝影機
 
-* 在 **階層面板**，選取**Main Camera**。
-* 在  **Inspector**將其轉換位置設為**0,0,0**。
-* 尋找**清除旗標**屬性，並將變更從下拉式清單中**天空盒**來**單色**。
-* 按一下 **背景**欄位，以開啟色彩選擇器。
-* 設定**R、 G、 B 和 A**要**0**。
+* 在 [階層]**面板**中, 選取 [**主要相機**]。
+* 在偵測**器**中, 將其轉換位置設為**0, 0, 0**。
+* 尋找 [**清除旗標**] 屬性, 並將下拉式清單從 [ **Skybox** ] 變更為 [**單色**]。
+* 按一下 [**背景**] 欄位, 以開啟色彩選擇器。
+* 將**R、G、B 和 A**設定為**0**。
 
 #### <a name="setup-the-scene"></a>設定場景
 
-* 在**階層面板**，按一下**建立**並**建立空**。
-* 以滑鼠右鍵按一下 新**GameObject**並選取 重新命名。 重新命名以 GameObject **OrigamiCollection**。
-* 從**全像投影**中的資料夾 **[專案] 面板**:
-  * 拖曳**階段**置於階層是子系**OrigamiCollection**。
-  * 拖曳**Sphere1**置於階層是子系**OrigamiCollection**。
-  * 拖曳**Sphere2**置於階層是子系**OrigamiCollection**。
-* 以滑鼠右鍵按一下**定向光線**物件中**階層面板**，然後選取**刪除**。
-* 從**全像投影**資料夾中，拖曳**燈**的根目錄**階層面板**。
-* 在 **階層**，選取**OrigamiCollection**。
-* 在  **Inspector**，將轉換的位置設為**0，-0.5，2.0**。
-* 按下**播放**預覽您全像投影的 Unity 中的按鈕。
-* 您應該會看到 [預覽] 視窗中的 Origami 物件。
-* 按下**播放**第二次停止 [預覽] 模式。
+* 在 [階層]**面板**中, 按一下 [**建立**] 並**建立空**的。
+* 以滑鼠右鍵按一下新的**GameObject** , 然後選取 [重新命名]。 將 GameObject 重新命名為**OrigamiCollection**。
+* 從 [**專案] 面板**中的 [**全息影像**] 資料夾:
+  * 將**階段**拖曳到階層中, 成為**OrigamiCollection**的子系。
+  * 將**Sphere1**拖曳到階層中, 成為**OrigamiCollection**的子系。
+  * 將**Sphere2**拖曳到階層中, 成為**OrigamiCollection**的子系。
+* 以滑鼠右鍵按一下 [階層]**面板**中的 [**方向光源**] 物件, 然後選取 [**刪除**]。
+* 從 [**全息影像**] 資料夾, 將 [**燈光**] 拖曳至 [階層]**面板**的根目錄。
+* 在階層中, 選取 [ **OrigamiCollection**]。
+* 在偵測**器**中, 將轉換位置設定為**0,-0.5, 2.0**。
+* 按下 Unity 中的 [**播放**] 按鈕, 以預覽您的全息影像。
+* 您應該會在預覽視窗中看到 [折紙] 物件。
+* 按第二次 [**播放**] 以停止預覽模式。
 
-#### <a name="export-the-project-from-unity-to-visual-studio"></a>匯出從 Unity 專案，Visual studio
+#### <a name="export-the-project-from-unity-to-visual-studio"></a>將專案從 Unity 匯出至 Visual Studio
 
-* 在 Unity 中，選取**檔案 > 組建設定**。
-* 選取  **Windows 市集**中**平台**清單，然後按一下**切換平台**。
-* 設定**SDK**來**通用 10**並**建置型別**至**D3D**。
-* 請檢查**UnityC#專案**。
-* 按一下 **加入開啟的場景**加入場景。
-* 按一下 **播放程式設定...**.
-* 在偵測器窗格中選取**Windows 市集標誌**。 然後選取**發佈設定**。
-* 在 **能力**區段中，選取**麥克風**並**SpatialPerception**功能。
-* 在 [組建設定] 視窗中，按一下**建置**。
-* 建立**新的資料夾**名為 「 應用程式 」。
-* 只要按一下**應用程式資料夾**。
-* 按下**選取資料夾**。
-* Unity 完成時，會出現檔案總管 視窗。
+* 在 Unity 中, 選取 檔案 **> 組建設定**。
+* 在 [**平臺**] 清單中選取 [ **Windows 儲存區**], 然後按一下 [**切換平臺**]。
+* 將 [ **SDK** ] 設定為 [**通用 10** ], 將 [**組建類型**] 設為**D3D**
+* 檢查**Unity C#專案**。
+* 按一下 [新增] [**開啟場景**] 以加入場景。
+* 按一下 [**玩家設定**]。
+* 在 [偵測器] 面板中, 選取 [ **Windows Store] 標誌**。 然後選取 [**發行設定**]。
+* 在 [**功能**] 區段中, 選取 [**麥克風**] 和 [ **SpatialPerception** ] 功能。
+* 回到 [組建設定] 視窗, 按一下 [**建立**]。
+* 建立名為 "App" 的**新資料夾**。
+* 按一下 [**應用程式] 資料夾**。
+* 按 [**選取資料夾**]。
+* 當 Unity 完成時, 將會出現 [檔案瀏覽器] 視窗。
 * 開啟**應用程式**資料夾。
-* 開啟**Origami Visual Studio 方案**。
-* 使用頂端的工具列，在 Visual Studio 中，從 偵錯，若要變更目標**Release**進出至 ARM **X86**。
-  * 按一下 [裝置] 按鈕旁邊的箭號，然後選取**HoloLens 模擬器**。
-  * 按一下 **偵錯-> 啟動但不偵錯**或按**Ctrl + F5**。
-  * 稍後 Origami 專案會啟動模擬器。 當您第一次啟動時[模擬器](using-the-hololens-emulator.md)，可能需要長達 15 分鐘啟動模擬器。 它會啟動一次，不會將它關閉。
+* 開啟 [**日式 Visual Studio] 解決方案**。
+* 使用 Visual Studio 中的頂端工具列, 將目標從 [調試] 變更為 [**發行**], 將 [從 ARM] 變更為**X86**。
+  * 按一下 [裝置] 按鈕旁邊的箭號, 然後選取 [ **HoloLens 模擬器**]。
+  * 按一下 [ **Debug-> 啟動但不進行調試**] 或按**Ctrl + F5**。
+  * 經過一段時間之後, 模擬器就會以折紙專案開始。 第一次啟動[模擬器](using-the-hololens-emulator.md)時, 啟動模擬器可能需要15分鐘的時間。 啟動之後, 請勿將它關閉。
 
-## <a name="chapter-2---gaze"></a>第 2 章-視線
+## <a name="chapter-2---gaze"></a>第2章-注視
 
 >[!VIDEO https://www.youtube.com/embed/BPWTbAC210k]
 
-在本章中，我們即將引入互動的三種方法的第一個與您全像投影-[視線](gaze.md)。
+在本章中, 我們將引進三種與您的全息影像互動的第一種方式:[注視](gaze.md)。
 
 ### <a name="objectives"></a>目標
 
-* 以視覺化方式檢視您的視線使用全球鎖定的資料指標。
+* 使用世界鎖定的游標來視覺化您的注視。
 
 ### <a name="instructions"></a>指示
 
-* 返回您的 Unity 專案，並關閉 [建立設定] 視窗，它是否仍保持開啟。
-* 選取 **全像投影**中的資料夾**專案 面板**。
-* 拖曳**游標**物件插入**階層面板**根層級。
-* 按兩下**游標**才會仔細看看它的物件。
-* 以滑鼠右鍵按一下**指令碼**專案 面板中的資料夾。
-* 按一下 **建立**子功能表。
-* 選取   **C#指令碼**。
-* 指令碼命名**WorldCursor**。 注意：此名稱區分大小寫。 您不需要將.cs 副檔名。
-* 選取 **游標**物件中**階層面板**。
-* 將拖放**WorldCursor**編寫成指令碼**Inspector 面板**。
-* 按兩下**WorldCursor**指令碼，以在 Visual Studio 中開啟它。
-* 複製並貼上此程式碼**WorldCursor.cs**並**全部儲存**。
+* 回到您的 Unity 專案, 並關閉 [組建設定] 視窗 (如果仍處於開啟狀態)。
+* 在 [**專案] 面板**中選取 [**全息影像**] 資料夾。
+* 將**游標**物件拖曳至根層級的 [階層]**面板**。
+* 按兩下**游標**物件以深入瞭解它。
+* 以滑鼠右鍵按一下 [專案] 面板中的 [**腳本**] 資料夾。
+* 按一下 [**建立**] 子功能表。
+* 選取 **C# [腳本**]。
+* 將腳本命名為**WorldCursor**。 注意:此名稱區分大小寫。 您不需要新增 .cs 副檔名。
+* 在 [階層]**面板**中選取**游標**物件。
+* 將**WorldCursor**腳本拖放到 [偵測**器] 面板**中。
+* 按兩下 [ **WorldCursor** ] 腳本, 在 Visual Studio 中開啟它。
+* 將此程式碼複製並貼到**WorldCursor.cs**中, 並**全部儲存**。
 
 ```cs
 using UnityEngine;
@@ -188,29 +188,29 @@ public class WorldCursor : MonoBehaviour
 }
 ```
 
-* 重建的應用程式**檔案 > 組建設定**。
-* 返回 Visual Studio 方案先前用來部署至模擬器。
-* 選取 [重新載入全部] 出現提示時。
-* 按一下 **偵錯-> 啟動但不偵錯**或按**Ctrl + F5**。
-* 您可以使用 Xbox 控制器場景看一下。 請注意，資料指標的形狀之物件的互動方式。
+* 從 [檔案] **> 組建設定**重建應用程式。
+* 回到先前用來部署至模擬器的 Visual Studio 方案。
+* 出現提示時, 選取 [全部重載]。
+* 按一下 [ **Debug-> 啟動但不進行調試**] 或按**Ctrl + F5**。
+* 使用 Xbox 控制器來尋找場景。 請注意游標如何與物件的形狀互動。
 
-## <a name="chapter-3---gestures"></a>第 3 章-筆勢
+## <a name="chapter-3---gestures"></a>第3章-手勢
 
 >[!VIDEO https://www.youtube.com/embed/6d-0RHeKHq4]
 
-在本章中，我們將新增的支援[筆勢](gestures.md)。 當使用者選取的紙張球體時，我們要藉由開啟重力使用 Unity 的物理條件引擎落球體。
+在本章中, 我們將新增[手勢](gestures.md)的支援。 當使用者選取紙球體時, 我們會使用 Unity 的物理引擎來開啟重心, 讓球體變得更容易。
 
 ### <a name="objectives"></a>目標
 
-* 控制您全像投影與選取的筆勢。
+* 使用選取手勢控制您的全息影像。
 
 ### <a name="instructions"></a>指示
 
-我們先建立指令碼，比可以偵測到選取的筆勢。
+我們將從建立腳本開始, 而不會偵測到選取手勢。
 
-* 在 **指令碼**資料夾中，建立名為指令碼**GazeGestureManager**。
-* 拖曳**GazeGestureManager**拖曳至指令碼**OrigamiCollection**階層中的物件。
-* 開啟**GazeGestureManager**指令碼在 Visual Studio 中，並新增下列程式碼：
+* 在 [**腳本**] 資料夾中, 建立名為**GazeGestureManager**的腳本。
+* 將**GazeGestureManager**腳本拖曳至階層中的**OrigamiCollection**物件。
+* 在 Visual Studio 中開啟**GazeGestureManager**腳本, 並新增下列程式碼:
 
 ```cs
 using UnityEngine;
@@ -277,11 +277,11 @@ public class GazeGestureManager : MonoBehaviour
 }
 ```
 
-* 建立另一個指令碼，在 [指令碼] 資料夾中，這次是名為**SphereCommands**。
-* 依序展開**OrigamiCollection**階層檢視中的物件。
-* 拖曳**SphereCommands**拖曳至指令碼**Sphere1**在階層窗格中的物件。
-* 拖曳**SphereCommands**拖曳至指令碼**Sphere2**在階層窗格中的物件。
-* 在 Visual Studio 中開啟指令碼進行編輯，並以此取代預設的程式碼：
+* 在 Scripts 資料夾中建立另一個腳本, 這次名為**SphereCommands**。
+* 在 [階層] 視圖中展開 [ **OrigamiCollection** ] 物件。
+* 將**SphereCommands**腳本拖曳至 [階層] 面板中的**Sphere1**物件。
+* 將**SphereCommands**腳本拖曳至 [階層] 面板中的**Sphere2**物件。
+* 在 Visual Studio 中開啟腳本進行編輯, 並將預設程式碼取代為:
 
 ```cs
 using UnityEngine;
@@ -301,27 +301,27 @@ public class SphereCommands : MonoBehaviour
 }
 ```
 
-* 匯出、 建置及部署應用程式到 HoloLens 模擬器。
-* 場景，請看一下，球體看起來的其中一個上置中對齊。
-* 按下**A** Xbox 控制器按鈕或按下空格鍵來模擬選取的筆勢。
+* 匯出、建立應用程式, 並將其部署至 HoloLens 模擬器。
+* 查看場景, 並將中心放在其中一個球體。
+* 按下 Xbox 控制器上的**一個**按鈕, 或按空格鍵以模擬選取手勢。
 
-## <a name="chapter-4---voice"></a>第 4 章-語音
+## <a name="chapter-4---voice"></a>第4章-語音
 
 >[!VIDEO https://www.youtube.com/embed/LxbOhnd2_GM]
 
-在本章中，我們將新增兩個支援[語音命令](voice-input.md):「 重設的 world 」 來傳回的已卸除到其原始位置，不過這個觀念與 「 卸除 sphere 」 進行切換的球體。
+在本章中, 我們將新增兩個[語音命令](voice-input.md)的支援:「重設世界」以將捨棄的球面傳回其原始位置, 而「卸載球體」則讓球體落在一起。
 
 ### <a name="objectives"></a>目標
 
-* 在背景中新增 alwayson 接聽的語音命令。
-* 建立回應語音命令全像圖。
+* 新增一律在背景中接聽的語音命令。
+* 建立可回應語音命令的全息影像。
 
 ### <a name="instructions"></a>指示
 
-* 在 **指令碼**資料夾中，建立名為指令碼**SpeechManager**。
-* 拖曳**SpeechManager**拖曳至指令碼**OrigamiCollection**階層中的物件
-* 開啟**SpeechManager** Visual Studio 中的指令碼。
-* 複製並貼上此程式碼**SpeechManager.cs**並**全部儲存**:
+* 在 [**腳本**] 資料夾中, 建立名為**SpeechManager**的腳本。
+* 將**SpeechManager**腳本拖曳至階層中的**OrigamiCollection**物件
+* 在 Visual Studio 中開啟**SpeechManager**腳本。
+* 將此程式碼複製並貼到**SpeechManager.cs**中, 並**全部儲存**:
 
 ```cs
 using System.Collections.Generic;
@@ -372,8 +372,8 @@ public class SpeechManager : MonoBehaviour
 }
 ```
 
-* 開啟**SphereCommands** Visual Studio 中的指令碼。
-* 更新指令碼來讀取，如下所示：
+* 在 Visual Studio 中開啟**SphereCommands**腳本。
+* 更新腳本以進行讀取, 如下所示:
 
 ```cs
 using UnityEngine;
@@ -424,36 +424,36 @@ public class SphereCommands : MonoBehaviour
 }
 ```
 
-* 匯出、 建置及部署應用程式到 HoloLens 模擬器。
-* 模擬器會支援您的電腦的麥克風及語音回應： 調整檢視，使資料指標是其中一個球體看起來，並假設 「 卸除 Sphere 」。
-* 說出 「**重設的世界**「 若要將它們回復到其初始位置。
+* 匯出、建立應用程式, 並將其部署至 HoloLens 模擬器。
+* 模擬器會支援您電腦的麥克風並回應您的聲音: 調整視圖, 使游標位於球體的其中一個, 並說出「卸載球體」。
+* 請說「**重設世界**」, 使其回到其初始位置。
 
-## <a name="chapter-5---spatial-sound"></a>第 5 章-空間的音效
+## <a name="chapter-5---spatial-sound"></a>第5章-空間音效
 
 >[!VIDEO https://www.youtube.com/embed/Xc3C4VA10w4]
 
-在本章中，我們會將音樂新增至應用程式，並接著觸發特定動作的音效。 我們將使用[空間音效](spatial-sound.md)讓音效在 3D 空間中的特定位置。
+在本章中, 我們會將音樂新增至應用程式, 然後觸發對特定動作的音效效果。 我們會使用[空間音效](spatial-sound.md), 在3d 空間中提供特定位置的聲音。
 
 ### <a name="objectives"></a>目標
 
-* 聽聽您的世界中全像投影。
+* 聆聽您世界中的全息影像。
 
 ### <a name="instructions"></a>指示
 
-* 在頂端功能表中 Unity 選取**編輯 > 專案設定 > 音訊**
-* 尋找**空間外掛程式**設定，然後選取**MS HRTF 空間**。
-* 從**全像投影**資料夾中，拖曳**環境**物件拖曳至**OrigamiCollection**在階層窗格中的物件。
-* 選取  **OrigamiCollection**並尋找**音訊來源**元件。 變更這些屬性：
-  * 請檢查**Spatialize**屬性。
-  * 請檢查**甦醒狀態上播放**。
-  * 變更**空間 Blend**要**3D**拖曳到最右邊的滑桿。
-  * 請檢查**迴圈**屬性。
-  * 依序展開**3D 音效設定**，並輸入**0.1** for **Doppler 層級**。
-  * 設定**磁碟區捲繞**要**對數捲繞**。
-  * 設定**最大距離**要**20**。
-* 在 **指令碼**資料夾中，建立名為指令碼**SphereSounds**。
-* 拖曳**SphereSounds**要**Sphere1**並**Sphere2**階層中的物件。
-* 開啟**SphereSounds**在 Visual Studio 中，更新下列程式碼並**全部儲存**。
+* 在 Unity 中, 從頂端功能表中選取 [**編輯] > 專案設定 > 音訊**
+* 尋找**空間定位器外掛程式**設定, 然後選取 [ **MS HRTF 空間定位器**]。
+* 從 [**全息影像**] 資料夾, 將 [**環境**] 物件拖曳至 [階層] 面板中的 [ **OrigamiCollection** ] 物件。
+* 選取 [ **OrigamiCollection** ], 然後尋找 [**音訊來源**] 元件。 變更這些屬性:
+  * 檢查**Spatialize**屬性。
+  * 勾選 [**在喚醒時播放**]。
+  * 將 [**空間 Blend** ] 變更為 [ **3d** ], 方法是將滑杆向右拖曳。
+  * 檢查 [**迴圈**] 屬性。
+  * 展開 [ **3D 音效設定**], 然後針對 [ **Doppler 層級**] 輸入**0.1** 。
+  * 將 [**磁片區 Rolloff** ] 設定為 [**對數 Rolloff**]。
+  * 將 [**最大距離**] 設定為**20**。
+* 在 [**腳本**] 資料夾中, 建立名為**SphereSounds**的腳本。
+* 將 [ **SphereSounds** ] 拖曳至階層中的**Sphere1**和**Sphere2**物件。
+* 在 Visual Studio 中開啟**SphereSounds** , 更新下列程式碼並**全部儲存**。
 
 ```cs
 using UnityEngine;
@@ -533,39 +533,39 @@ public class SphereSounds : MonoBehaviour
 }
 ```
 
-* 儲存指令碼，並返回到 Unity。
-* 匯出、 建置及部署應用程式到 HoloLens 模擬器。
-* 戴上耳機來取得完整的效果，並移動以及接近更聽到任何聲音變更的階段。
+* 儲存腳本, 並返回 Unity。
+* 匯出、建立應用程式, 並將其部署至 HoloLens 模擬器。
+* 戴耳機以獲得完整的效果, 並從階段中更靠近或更深入地收聽音效變更。
 
-## <a name="chapter-6---spatial-mapping"></a>第 6 章-空間對應
+## <a name="chapter-6---spatial-mapping"></a>第6章-空間對應
 
 >[!VIDEO https://www.youtube.com/embed/S-517Y63Cnk]
 
-現在我們將使用[空間對應](spatial-mapping.md)放置在真實世界的真實物件上的遊戲面板。
+現在我們要使用[空間對應](spatial-mapping.md), 將遊戲面板放在真實世界中的實際物件上。
 
 ### <a name="objectives"></a>目標
 
-* 虛擬世界中帶入您真實的世界。
-* 將您全像投影，在您最感興趣。
+* 將您的真實世界帶入虛擬世界。
+* 將您的全息影像放在對您最重要的地方。
 
 ### <a name="instructions"></a>指示
 
-* 按一下 [**全像投影**專案] 面板中的資料夾。
-* 拖曳**空間的對應**資產的根目錄**階層**。
-* 按一下 **空間對應**階層中的物件。
-* 在  **Inspector 面板**，變更下列屬性：
-  * 請檢查**繪製視覺網狀結構** 方塊中。
-  * 找出**繪製的材質**按一下右側的圓形。 類型"**線框**」 到頂端的 [搜尋] 欄位。 按一下結果，然後關閉視窗。
-* 匯出、 建置及部署應用程式到 HoloLens 模擬器。
-* 應用程式執行時，框線會呈現先前掃描的真實世界客廳的網狀結構。
-* 觀看如何輪流球體會切換關閉階段，並送至最低限度值 ！
+* 按一下 [專案] 面板中的 [**全息影像**] 資料夾。
+* 將**空間對應**資產拖曳至階層的根目錄。
+* 按一下階層中的 [**空間對應**] 物件。
+* 在 [偵測**器] 面板**中, 變更下列屬性:
+  * 勾選 [**繪製視覺網格**] 方塊。
+  * 找出 [**繪製材質**], 然後按一下右側的圓形。 在頂端的搜尋欄位中輸入「**線框**」。 按一下結果, 然後關閉視窗。
+* 匯出、建立應用程式, 並將其部署至 HoloLens 模擬器。
+* 當應用程式執行時, 系統會以線框呈現先前掃描的實際生活空間網格。
+* 觀賞輪流球體如何落在舞臺上, 以及在地面上!
 
-現在要教您如何將 OrigamiCollection 移至新的位置：
+現在, 我們將示範如何將 OrigamiCollection 移到新的位置:
 
-* 在 **指令碼**資料夾中，建立名為指令碼**TapToPlaceParent**。
-* 在 **階層**，展開**OrigamiCollection** ，然後選取**階段**物件。
-* 拖曳**TapToPlaceParent**階段物件的指令碼。
-* 開啟**TapToPlaceParent**指令碼在 Visual Studio 中，並將它有下列更新：
+* 在 [**腳本**] 資料夾中, 建立名為**TapToPlaceParent**的腳本。
+* 在階層中, 展開 [ **OrigamiCollection** ], 然後選取 [**階段**] 物件。
+* 將**TapToPlaceParent**腳本拖曳至階段物件。
+* 在 Visual Studio 中開啟**TapToPlaceParent**腳本, 並將它更新為下列內容:
 
 ```cs
 using UnityEngine;
@@ -623,26 +623,26 @@ public class TapToPlaceParent : MonoBehaviour
 }
 ```
 
-* 匯出、 建置和部署應用程式。
-* 您現在應該能夠在它 gazing 將遊戲置於特定位置，現在使用選取的動作 (**A**或空格鍵)，移至新的位置，然後再次使用選取的筆勢。
+* 匯出、建立及部署應用程式。
+* 現在您應該可以使用選取手勢 (**a**或空格鍵) 然後移至新位置, 然後再次使用 [選取] 手勢, 將遊戲放在特定位置。
 
 ## <a name="the-end"></a>結束
 
-而且，本教學課程結束 ！
+這就是本教學課程的結尾!
 
-您已了解：
+您已瞭解:
 
-* 如何建立在 Unity 的全像攝影版的應用程式。
-* 如何使用凝視、 手勢、 語音、 音效及空間對應。
-* 如何建置和部署使用 Visual Studio 的應用程式。
+* 如何在 Unity 中建立全像攝影應用程式。
+* 如何使用 [注視]、[手勢]、[聲音]、[音效] 和 [空間對應]。
+* 如何使用 Visual Studio 建立及部署應用程式。
 
-您現在已準備好要開始建立您自己全像攝影版的應用程式 ！
+您現在已準備好開始建立自己的全像攝影應用程式!
 
 ## <a name="see-also"></a>另請參閱
 
-* [MR 101 基本知識：完整的專案，與裝置](holograms-101.md)
-* [Gaze](gaze.md)
+* [MR Basics 101：使用裝置完成專案](holograms-101.md)
+* [目光](gaze.md)
 * [筆勢](gestures.md)
 * [語音輸入](voice-input.md)
-* [空間的音效](spatial-sound.md)
+* [空間音效](spatial-sound.md)
 * [空間對應](spatial-mapping.md)

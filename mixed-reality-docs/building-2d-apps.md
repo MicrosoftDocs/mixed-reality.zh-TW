@@ -1,11 +1,11 @@
 ---
-title: 更新混合實境的 2D UWP 應用的程式
-description: 本文章概述更新您現有 2D 通用 Windows 平台應用程式上執行 HoloLens 與 Windows Mixed Reality 沈浸式耳機。
+title: 更新適用于混合現實的 2D UWP 應用程式
+description: 本文概述如何更新您現有的2D 通用 Windows 平臺應用程式, 以在 HoloLens 和 Windows Mixed Reality 沉浸式耳機上執行。
 author: mattzmsft
 ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
-keywords: 2D 應用程式，UWP，一般應用程式、 HoloLens、 沈浸式耳機，應用程式模型後按鈕、 應用程式列、 dpi、 解析，小數位數
+keywords: 2D 應用程式, UWP, 一般應用程式, HoloLens, 沉浸式耳機, 應用程式型號, 上一頁按鈕, 應用程式行, DPI, 解析度, 調整
 ms.openlocfilehash: f9792a7e5fd9729bf9f5f632c699c74c58c10ddf
 ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
@@ -13,172 +13,172 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 06/27/2019
 ms.locfileid: "67414226"
 ---
-# <a name="updating-2d-uwp-apps-for-mixed-reality"></a>更新混合實境的 2D UWP 應用的程式
+# <a name="updating-2d-uwp-apps-for-mixed-reality"></a>更新適用于混合現實的 2D UWP 應用程式
 
-Windows Mixed Reality 可讓使用者查看全像投影，如同它們是右周圍，在您的實體或數位世界。 基本上，HoloLens 和附加沈浸式耳機附屬應用程式，可在桌面電腦是 Windows 10 裝置;這表示您能夠為 2D 應用程式存放區中執行幾乎所有的通用 Windows 平台 (UWP) 應用程式。
+Windows Mixed Reality 可讓使用者在您的實體或數位世界中, 看到像是您一樣的全息影像。 在其核心中, HoloLens 和您附加了沉浸式耳機配件的桌上型電腦都是 Windows 10 裝置;這表示您可以在存放區中執行幾乎所有的通用 Windows 平臺 (UWP) 應用程式, 做為2D 應用程式。
 
-## <a name="creating-a-2d-uwp-app-for-mixed-reality"></a>建立混合實境的 2D UWP 應用程式
+## <a name="creating-a-2d-uwp-app-for-mixed-reality"></a>建立適用于混合現實的 2D UWP 應用程式
 
-2D 應用程式帶入混合的實境耳機的第一個步驟是取得您以標準 2D 應用程式在桌面的監視器上執行的應用程式。
+將2D 應用程式帶入混合現實耳機的第一個步驟, 是讓您的應用程式在桌面監視器上以標準2D 應用程式的形式執行。
 
 ### <a name="building-a-new-2d-uwp-app"></a>建立新的 2D UWP 應用程式
 
-若要建立新的混合實境 2D 應用程式，您只需建置標準的 2D 通用 Windows 平台 (UWP) 應用程式。 接著再執行在混合實境中的 靜態圖像為該應用程式需要任何其他應用程式變更不。
+若要建立混合現實的新2D 應用程式, 您只需要建立標準2D 通用 Windows 平臺 (UWP) 應用程式。 該應用程式不需要進行任何其他應用程式變更, 就能在混合現實中以平板電腦的形式執行。
 
-若要開始建置 2D 的 UWP 應用程式，請參閱[建立第一個應用程式](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)文章。
+若要開始建立 2D UWP 應用程式, 請參閱[建立您的第一個應用程式一](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)文。
 
-### <a name="bringing-an-existing-2d-store-app-to-uwp"></a>將現有的 2D 市集應用程式帶到 UWP
+### <a name="bringing-an-existing-2d-store-app-to-uwp"></a>將現有的2D 存放區應用程式帶入 UWP
 
-如果您已經有 2D 的 Windows 應用程式存放區中，您必須先確定它設為目標 Windows 10 通用 Windows 平台 (UWP)。 以下是所有可能起始點您可能與您的市集應用程式立即：
+如果您在存放區中已經有 2D Windows 應用程式, 您必須先確定它是以 Windows 10 通用 Windows 平臺 (UWP) 為目標。 以下是您目前的商店應用程式可能會遇到的所有潛在起點:
 <br>
 
-|  起點  |  AppX 資訊清單平台目標  |  若要使此通用如何？ | 
+|  起始點  |  AppX 資訊清單平臺目標  |  如何讓此通用？ | 
 |----------|----------|----------|
-|  Windows Phone (Silverlight)  |  Silverlight 應用程式資訊清單 |  [將移轉到 WinRT](https://msdn.microsoft.com/library/windows/apps/dn642486(v=vs.105).aspx) | 
-|  Windows Phone 8.1 通用  |  8.1 AppX 資訊清單不包含平台目標  |  [將您的應用程式移轉至通用 Windows 平台](https://msdn.microsoft.com/library/mt148501.aspx) | 
-|  Windows 市集 8  |  8 AppX 資訊清單不包含平台目標  |  [將您的應用程式移轉至通用 Windows 平台](https://msdn.microsoft.com/library/mt148501.aspx) | 
-|  Windows 市集 8.1 通用  |  8.1 AppX 資訊清單不包含平台目標  |  [將您的應用程式移轉至通用 Windows 平台](https://msdn.microsoft.com/library/mt148501.aspx) | 
+|  Windows Phone (Silverlight)  |  Silverlight 應用程式資訊清單 |  [遷移至 WinRT](https://msdn.microsoft.com/library/windows/apps/dn642486(v=vs.105).aspx) | 
+|  Windows Phone 8.1 通用  |  8.1 AppX 資訊清單, 不包含平臺目標  |  [將您的應用程式遷移至通用 Windows 平臺](https://msdn.microsoft.com/library/mt148501.aspx) | 
+|  Windows Store 8  |  8個不包含平臺目標的 AppX 資訊清單  |  [將您的應用程式遷移至通用 Windows 平臺](https://msdn.microsoft.com/library/mt148501.aspx) | 
+|  Windows Store 8.1 通用  |  8.1 AppX 資訊清單, 不包含平臺目標  |  [將您的應用程式遷移至通用 Windows 平臺](https://msdn.microsoft.com/library/mt148501.aspx) | 
 
-如果您有立即建置 Win32 應用程式 （"PC、 Mac 和 Linux 單機版 」 組建目標） 為 2D Unity 應用程式時，您可以針對混合的實境，改為切換到 「 通用 Windows 平台 」 建置目標的 Unity。
+如果您目前已將 2D Unity 應用程式建立為 Win32 應用程式 (「電腦、Mac & Linux 獨立」組建目標), 您可以改為將 Unity 切換為 "通用 Windows 平臺" 組建目標, 以混合現實的目標。
 
-我們將討論方式，您可以限制您的應用程式是專為使用 Windows.Holographic 裝置家族的 HoloLens[以下](#publish-and-maintain-your-universal-app)。
+我們將討論您可以使用[下面](#publish-and-maintain-your-universal-app)的 Windows 全像攝影裝置系列, 將您的應用程式明確地限制在 HoloLens 上的方式。
 
-### <a name="run-your-2d-app-in-a-windows-mixed-reality-immersive-headset"></a>執行 Windows Mixed Reality 沈浸式耳機 2D 應用程式
+### <a name="run-your-2d-app-in-a-windows-mixed-reality-immersive-headset"></a>在 Windows Mixed Reality 沉浸式耳機中執行2D 應用程式
 
-如果您正在開發並試用您的監視器上桌上型電腦部署了 2D 應用程式之後，您已經準備好要試試看在沉浸式桌面耳機 ！
+如果您已將2D 應用程式部署到您正在開發的桌上型電腦, 並在您的監視器上嘗試它, 您就已經準備好在沉浸式桌面耳機中試用!
 
-只要移至混合的實境耳機內的 [開始] 功能表，然後啟動應用程式，從該處。 桌面殼層和全像攝影版的殼層都共用相同一組的 UWP 應用程式，並因此應用程式應該會出現，一旦您從 Visual Studio 部署。
+只要移至混合現實耳機內的 [開始] 功能表, 即可從該處啟動應用程式。 桌面 shell 和全像攝影介面皆共用相同的 UWP 應用程式集, 因此當您從 Visual Studio 部署之後, 應用程式應該已經存在。
 
-## <a name="targeting-both-immersive-headsets-and-hololens"></a>為目標的沈浸式耳機和 HoloLens
+## <a name="targeting-both-immersive-headsets-and-hololens"></a>以沉浸式耳機和 HoloLens 為目標
 
-恭喜您！ 您的應用程式正在使用 Windows 10 通用 Windows 平台 (UWP)。
+恭喜您！ 您的應用程式現在正在使用 Windows 10 通用 Windows 平臺 (UWP)。
 
-現在能在現今的 Windows 裝置，例如桌面、 行動、 Windows Mixed Reality 沈浸式耳機的 Xbox 和 HoloLens，以及為未來的 Windows 裝置上執行您的應用程式。 不過，若要實際目標的所有這些裝置，您必須確保您的應用程式的目標 Windows.Universal 裝置系列。
+您的應用程式現在能夠在現今的 Windows 裝置上執行, 例如桌上型電腦、行動裝置、Xbox、Windows Mixed Reality 沉浸式耳機和 HoloLens, 以及未來的 Windows 裝置。 不過, 若要實際以這些裝置為目標, 您必須確定應用程式的目標為 Windows 通用裝置系列。
 
-### <a name="change-your-device-family-to-windowsuniversal"></a>將您的裝置系列變更為 Windows.Universal
+### <a name="change-your-device-family-to-windowsuniversal"></a>將您的裝置系列變更為 Windows. 通用
 
-現在讓我們跳到您的 AppX 資訊清單，以確保您的 Windows 10 UWP 應用程式可以執行 HoloLens 上：
-* 開啟您的應用程式使用的方案檔**Visual Studio**並瀏覽至應用程式封裝資訊清單
-* 以滑鼠右鍵按一下**Package.appxmanifest**檔案中您的解決方案，並移至**檢視程式碼**<br>
-  ![在 [方案總管] 中的 package.appxmanifest](images/openappxmanifest-500px.png)<br>
-* 請確定您的目標平台 Windows.Universal 相依性一節
+現在, 讓我們跳到您的 AppX 資訊清單, 以確保您的 Windows 10 UWP 應用程式可以在 HoloLens 上執行:
+* 使用**Visual Studio**開啟應用程式的方案檔, 然後流覽至應用程式套件資訊清單
+* 以滑鼠右鍵按一下方案中的**package.appxmanifest.xml**檔案, 然後移至 [**查看程式碼**]<br>
+  ![方案總管中的 package.appxmanifest.xml](images/openappxmanifest-500px.png)<br>
+* 確定您的目標平臺是 [相依性] 區段中的 [通用]
   ```
   <Dependencies>
     <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.10240.0" MaxVersionTested="10.0.10586.0" />
   </Dependencies>
   ```
-* 儲存 ！
+* 另!
 
-如果您不使用 Visual Studio 開發環境，您可以開啟**AppXManifest.xml**在您的選擇，以確保您設為目標的文字編輯器**Windows.Universal** *TargetDeviceFamily*。
+如果您未在開發環境中使用 Visual Studio, 您可以在您選擇的文字編輯器中開啟**package.appxmanifest.xml** , 以確保您的目標是**Windows. 通用** *y*。
 
-### <a name="run-in-the-hololens-emulator"></a>HoloLens 模擬器中執行
+### <a name="run-in-the-hololens-emulator"></a>在 HoloLens 模擬器中執行
 
-現在，您的 UWP 應用程式目標設為"Windows.Universal"，讓我們來建置您的應用程式，並在執行[HoloLens 模擬器](using-the-hololens-emulator.md)。
+現在, 您的 UWP 應用程式以 "Windows. 通用" 為目標, 讓我們建立您的應用程式, 並在[HoloLens 模擬器](using-the-hololens-emulator.md)中執行。
 * 請確定您已[安裝 HoloLens 模擬器](install-the-tools.md)。
-* 在 Visual Studio 中，選取**x86**建置您的應用程式的組態
+* 在 Visual Studio 中, 選取您應用程式的**x86**組建設定
 
-  ![x86 建置在 Visual Studio 中的組態](images/x86setting.png)<br>
-* 選取  **HoloLens 模擬器**部署目標下拉式選單中
+  ![Visual Studio 中的 x86 組建設定](images/x86setting.png)<br>
+* 在 [部署目標] 下拉式功能表中選取 [ **HoloLens 模擬器**]
 
   ![部署目標清單中的 HoloLens 模擬器](images/deployemulator-500px.png)<br>
-* 選取 **偵錯 > 啟動偵錯**來部署您的應用程式，並開始偵錯。
-* 模擬器會啟動，並執行您的應用程式。
-* 使用鍵盤、 滑鼠及/或 Xbox 控制器，會將您應用程式世界各地的啟動它。
+* 選取 [ **Debug > 開始進行調試**程式] 以部署您的應用程式並開始進行偵錯工具。
+* 模擬器會啟動並執行您的應用程式。
+* 使用鍵盤、滑鼠和/或 Xbox controller, 將您的應用程式放在世界中以啟動它。
 
-  ![HoloLens 模擬器載入 UWP 範例](images/hololensemulatorwithuwpsample-800px.png)<br>
+  ![已載入 UWP 範例的 HoloLens 模擬器](images/hololensemulatorwithuwpsample-800px.png)<br>
 
 ### <a name="next-steps"></a>後續步驟
 
-此時，會發生下列其中一種：
-1. 您的應用程式會顯示其開頭顯示畫面，並啟動之後它會放在模擬器中執行 ！ 好極了 ！
-2. 或者，您會看到如 2D 全像載入的動畫後，載入將會停止，而且您將只會看到您的應用程式在其啟動顯示畫面。 這表示發生錯誤，而且需要更多的調查，以了解如何在混合實境中實現您的應用程式。
+此時, 可能會發生下列其中一種情況:
+1. 您的應用程式會在放置於模擬器之後, 顯示其啟動狀態並開始執行! 絕佳!
+2. 或者, 在您看到2D 全息式的載入動畫之後, 載入將會停止, 而您只會在其啟動顯示畫面中看到您的應用程式。 這表示發生錯誤, 而且會進行更多調查, 以瞭解如何讓您的應用程式在混合現實中運作。
 
-若要取得的功能可能會導致您的 UWP 應用程式底部不 HoloLens 上啟動，您必須偵錯。
+若要取得可能導致 UWP 應用程式無法在 HoloLens 上啟動的原因, 您必須進行 debug。
 
-### <a name="running-your-uwp-app-in-the-debugger"></a>在 偵錯工具中執行您的 UWP 應用程式
+### <a name="running-your-uwp-app-in-the-debugger"></a>在偵錯工具中執行 UWP 應用程式
 
-這些步驟將引導您使用 Visual Studio 偵錯工具的 UWP 應用程式進行偵錯。
-* 如果您尚未這麼做，請在 Visual Studio 中開啟的方案。 變更目標，以便**HoloLens 模擬器**和 組建組態設為**x86**。
-* 選取 **偵錯 > 啟動偵錯**來部署您的應用程式，並開始偵錯。
-* 使用您的滑鼠、 鍵盤或 Xbox 控制器世界中的應用程式的地方。
-* Visual Studio 現在應該在應用程式程式碼中某處中斷。
-  - 如果您的應用程式不會立即損毀，或偵錯工具中斷，因為發生未處理的錯誤，然後瀏覽您的應用程式，以確定一切都運作和功能的核心功能測試。 您可能會看到錯誤，例如圖 （內部例外狀況處理）。 若要確保您千萬別錯過影響您的應用程式體驗的內部錯誤，執行您的自動化的測試和單元測試，藉此確定一切如預期般運作。
+這些步驟將逐步引導您使用 Visual Studio 偵錯工具來偵測 UWP 應用程式。
+* 如果您尚未這麼做, 請在 Visual Studio 中開啟您的方案。 將目標變更為**HoloLens 模擬器**和組建設定為**x86**。
+* 選取 [ **Debug > 開始進行調試**程式] 以部署您的應用程式並開始進行偵錯工具。
+* 使用您的滑鼠、鍵盤或 Xbox 控制器將應用程式放在世界各地。
+* Visual Studio 現在應該會在應用程式程式碼中的某處中斷。
+  - 如果您的應用程式不會因為發生未處理的錯誤而立即損毀或中斷偵錯工具, 請執行應用程式核心功能的測試階段, 以確定所有專案都在執行中且正常運作。 您可能會看到如下圖所示的錯誤 (正在處理的內部例外狀況)。 為確保您不會錯過會影響應用程式體驗的內部錯誤, 請執行自動化測試和單元測試, 以確定所有專案都會如預期般運作。
 
-![HoloLens 模擬器載入 UWP 範例顯示系統例外狀況](images/hololensemulatorwithuwpsampleexception-800px.png)
+![已載入具有 UWP 範例的 HoloLens 模擬器, 顯示系統例外狀況](images/hololensemulatorwithuwpsampleexception-800px.png)
 
 ## <a name="update-your-ui"></a>更新您的 UI
 
-現在，您的 UWP 應用程式沈浸式耳機和/或為 2D 雷射 HoloLens 上執行，接下來我們要確定它看起來美觀。 以下是一些考量事項：
-* Windows Mixed Reality 會在固定的解析度和 DPI，等同於執行所有的 2D 應用程式以 853 x 480 有效的像素。 請考慮您的設計是否需要以這個規模調整，並檢閱設計指導方針，以改善您 HoloLens 和沈浸式耳機的體驗。
-* Windows Mixed Reality[不支援](app-model.md)2D 的動態磚。 如果您的核心功能顯示之動態磚的相關資訊，請考慮將該資訊移回至應用程式，或瀏覽[3D 應用程式啟動器](3d-app-launcher-design-guidance.md)。
+現在, 您的 UWP 應用程式是以2D 全息式的耳機和/或 HoloLens 的形式執行, 接下來我們要確定它看起來美觀。 以下是一些要考慮的事項:
+* Windows Mixed Reality 會以固定解析度和 DPI (等同于853x480 有效圖元) 來執行所有2D 應用程式。 請考慮您的設計是否需要調整規模, 並回顧下面的設計指引, 以改善 HoloLens 和沉浸式耳機的體驗。
+* Windows Mixed Reality 不[支援](app-model.md)2d 動態磚。 如果您的核心功能顯示動態磚上的資訊, 請考慮將該資訊移回您的應用程式, 或探索[3d 應用程式啟動器](3d-app-launcher-design-guidance.md)。
 
-### <a name="2d-app-view-resolution-and-scale-factor"></a>2D 應用程式檢視解析度和比例因素
+### <a name="2d-app-view-resolution-and-scale-factor"></a>2D 應用程式視圖解析度和縮放比例
 
-![從 回應式設計](images/scale-500px.png)
+![從回應式設計](images/scale-500px.png)
 
-Windows 10 從實際螢幕像素為單位來移動所有視覺效果的設計**有效的像素**。 這表示，開發人員設計的 Windows 10 人性化介面指導方針的有效的像素為單位，其 UI 和 Windows 調整這些有效的像素是正確的大小可確保裝置、 裝置解析度、 DPI、 使用性等等。請參閱此[MSDN 上的絕佳讀取](https://msdn.microsoft.com/library/windows/apps/Dn958435.aspx)若要了解更多，以及這[組建簡報](http://video.ch9.ms/sessions/build/2015/2-63_Build_2015_Windows_Scaling.pptx)。
+Windows 10 會將所有視覺化設計從真實的螢幕圖元移到**有效的圖元**。 這表示, 開發人員會遵循 Windows 10 人力介面指導方針來設計其 UI 以取得有效的圖元, 而 Windows 調整可確保這些有效圖元的大小適合跨裝置、解析度、DPI 等的可用性。如需深入瞭解和此[組建簡報](http://video.ch9.ms/sessions/build/2015/2-63_Build_2015_Windows_Scaling.pptx), 請參閱[MSDN 上的這篇絕佳的閱讀](https://msdn.microsoft.com/library/windows/apps/Dn958435.aspx)。
 
-即使有獨特的功能的應用程式放在您的世界裡，在一連串的距離，以產生最佳的可讀性和視線/手勢互動建議電視類似檢視的距離。 因此，混合實境在家中的虛擬 slate 將會顯示您在一般的 UWP 檢視：
+即使是將應用程式放在世界各地的獨特功能, 也建議使用類似電視的視圖距離, 以產生最佳的可讀性, 並與注視/手勢互動。 因此, 混合現實家中的虛擬平板電腦會顯示您的一般 UWP 視圖, 網址為:
 
-**1280 x 720，150 %dpi** （853 x 480 有效的像素）
+**1280x720, 150% DPI**(853x480 有效圖元)
 
-這個解決方案有下列優點：
-* 此配置命名為有效的像素會有相關的平板電腦或小型的桌面為相同的資訊密度。
-* 它符合固定的 DPI 和 Xbox One 上，啟用順暢的體驗，在裝置上執行的 UWP 應用程式的有效像素。
-* 此大小看起來沒問題，當我們的營運的世界中的應用程式的距離範圍擴及相應的。
+此解決方案有幾個優點:
+* 這種有效的圖元版面配置與平板電腦或小型桌面的資訊密度相同。
+* 它會比對在 Xbox One 上執行之 UWP 應用程式的固定 DPI 和有效圖元, 讓裝置之間的順暢體驗。
+* 在世界各地應用程式的營運距離範圍內調整時, 此大小看起來很好。
 
-### <a name="2d-app-view-interface-design-best-practices"></a>2D 應用程式檢視介面設計最佳作法
+### <a name="2d-app-view-interface-design-best-practices"></a>2D 應用程式視圖介面設計最佳做法
 
-**執行動作：**
-* 請遵循[Windows 10 人性化介面指導方針 (HIG)](https://dev.windows.com/design)樣式、 字型大小和按鈕大小。 HoloLens 會執行工作，以確保您的應用程式會有相容的應用程式模式，可讀取的文字大小，以及適當的叫用的目標調整大小。
-* 確保您的 UI 遵循的最佳作法[回應式設計](https://msdn.microsoft.com/library/windows/apps/dn958435.aspx)尋找最佳 HoloLen 的唯一的解析度和 DPI。
-* 從 Windows 使用的"light"色彩佈景主題的建議。
+**對**
+* 遵循[Windows 10 人力介面指導方針 (HIG)](https://dev.windows.com/design)以取得樣式、字型大小和按鈕大小。 HoloLens 會執行工作, 以確保您的應用程式會有相容的應用程式模式、可讀取的文字大小, 以及適當的點擊目標大小。
+* 請確定您的 UI 遵循最佳做法, 讓[回應式設計](https://msdn.microsoft.com/library/windows/apps/dn958435.aspx)在 HoloLen 的獨特解析度和 DPI 上的外觀最佳。
+* 使用 Windows 的「淺色」色彩主題建議。
 
-**沒有此項目：**
-* 在混合實境，以確保使用者擁有流入和流出耳機熟悉的體驗也大幅變更您的 UI。
+**不要：**
+* 在混合的現實中, 變更您的 UI 太大, 以確保使用者在耳機中有熟悉的體驗。
 
-### <a name="understand-the-app-model"></a>了解應用程式模型
+### <a name="understand-the-app-model"></a>瞭解應用程式模型
 
-[應用程式模型](app-model.md)的混合的實境旨在使用混合實境首頁，許多應用程式一起存放的位置。 把這個想成在桌面對混合的實境等項目在您執行許多的 2D 應用程式一次。 這會影響應用程式生命週期、 圖格和其他重要的功能，您的應用程式。
+混合式現實的[應用程式模型](app-model.md)是設計用來使用混合現實首頁, 其中許多應用程式都在一起運作。 請將此視為桌上型電腦的混合現實, 您可以在其中一次執行許多2D 應用程式。 這對應用程式的生命週期、磚和其他主要功能有一些影響。
 
-### <a name="app-bar-and-back-button"></a>應用程式列和上一步按鈕
+### <a name="app-bar-and-back-button"></a>[應用程式行] 和 [上一頁] 按鈕
 
-2D 檢視會附有應用程式列中，其內容上方。 應用程式列中有兩個點的應用程式專屬的個人化：
+2D 視圖會使用其內容上方的應用程式行裝飾。 應用程式行有兩個應用程式專屬個人化的點:
 
-**標題︰** 會顯示*displayname*應用程式執行個體相關聯的圖格
+**標題:** 顯示與應用程式實例相關聯之磚的*displayname*
 
-**上一頁按鈕：** 引發 *[BackRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.backrequested.aspx)* 時按下的事件。 上一步 按鈕的可見性會受到 *[SystemNavigationManager.AppViewBackButtonVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.aspx)* 。
+**上一頁按鈕：** 引發 *[BackRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.backrequested.aspx)* 時按下的事件。 [上一頁] 按鈕可見度是由 *[SystemNavigationManager. AppViewBackButtonVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.aspx)* 所控制。
 
-![應用程式列在 2D 應用程式檢視中的 UI](images/12697297-10104100857470613-1470416918759008487-o-500px.jpg)<br>
-*應用程式列在 2D 應用程式檢視中的 UI*
+![2D 應用程式視圖中的應用程式行 UI](images/12697297-10104100857470613-1470416918759008487-o-500px.jpg)<br>
+*2D 應用程式視圖中的應用程式行 UI*
 
-### <a name="test-your-2d-apps-design"></a>測試 2D 應用程式的設計
+### <a name="test-your-2d-apps-design"></a>測試您的2D 應用程式設計
 
-請務必測試您的應用程式，請確定所讀取的文字、 按鈕會將目標設為，而且將整體應用程式看起來正確無誤。 您可以[測試](testing-your-app-on-hololens.md)桌面耳機、 HoloLens、 模擬器，或觸控裝置解析度設定為 1280 x 720 @150%。
+請務必測試您的應用程式, 以確定文字可供讀取、按鈕為目標設為, 且整體應用程式看起來是正確的。 您可以在桌面耳機、HoloLens、模擬器或將解析度設定為 1280x720 % 的觸控裝置上進行[測試](testing-your-app-on-hololens.md)。
 
-## <a name="new-input-possibilities"></a>新輸入的可能性
+## <a name="new-input-possibilities"></a>新的輸入可能性
 
-HoloLens 使用進階的深度感應器看到世界與使用者。 這可讓進階等手勢[bloom](gestures.md#bloom)並[空中點選](gestures.md#air-tap)。 功能強大的麥克風也可讓[語音體驗](voice-input.md)。
+HoloLens 使用先進的深度感應器來查看世界並查看使用者。 這可啟用先進的手勢, 例如[bloom](gestures.md#bloom)和[空中碰](gestures.md#air-tap)。 強大的麥克風也可以提供[語音體驗](voice-input.md)。
 
-桌面耳機，使用者可以使用動作控制站來指向應用程式，並採取行動。 他們也可以使用遊戲台，以其視線物件為目標。
+使用桌面耳機時, 使用者可以使用動作控制器來指向應用程式並採取動作。 他們也可以使用遊戲台, 以物件與其注視的目標。
 
-Windows 會負責針對 UWP 應用程式，此複雜度完全轉譯您[視線](gaze.md)，筆勢，語音和動作的輸入控制器[指標事件](https://msdn.microsoft.com/library/windows/apps/mt404610#pointer_events)，抽離輸入的機制。 例如，使用者可能已完成其手空中點選或提取動作控制站上的 選取的觸發程序但 2D 應用程式不需要知道其中輸入來自-他們只看到 2D 觸控按下時，如同觸控螢幕上的功能。
+Windows 會負責 UWP 應用程式的所有這項複雜性, 將您的[注視](gaze.md)、手勢、語音和動作控制器輸入, 轉譯為會抽象化輸入機制的[指標事件](https://msdn.microsoft.com/library/windows/apps/mt404610#pointer_events)。 例如, 使用者可能已在動作控制器上使用手或拉出選取觸發程式, 但2D 應用程式不需要知道輸入來自何處-它們只會看到2D 觸控按, 如同在觸控式螢幕上一樣。
 
-以下是高階概念/案例 HoloLens 將您的 UWP 應用程式時，您應該瞭解的輸入：
-* [視線](gaze.md)變成暫留時的事件，非預期地觸發功能表、 延伸顯示或只要 gazing 您應用程式周圍彈出其他使用者介面項目。
-* 視線不精確度可達滑鼠輸入。 使用適當地調整大小的 HoloLens，類似且方便觸控的行動裝置應用程式，叫用的目標。 應用程式的邊緣附近的小項目會特別難互動。
-* 使用者必須切換向下捲動到拖曳兩個手指移動瀏覽至從輸入的模式。 如果您的應用程式專為具備觸控輸入，請考慮確保任何重大的功能已被鎖定，後面兩個手指移動瀏覽。 如果是的話，請考慮讓替代的輸入的機制，例如可以初始化兩個手指移動瀏覽 按鈕。 比方說，對應應用程式可以使用兩個手指移動瀏覽顯示比例，但可以加號，減號，而且旋轉來模擬相同縮放互動單一按下滑鼠按鈕。
+以下是將 UWP 應用程式帶入 HoloLens 時, 您應該瞭解的高階概念/案例:
+* [看一下](gaze.md)暫留事件, 這可能會非預期地觸發功能表、flyouts 或其他使用者介面元素, 只要撥雲見日應用程式就能快顯。
+* 注視並不像滑鼠輸入一樣精確。 針對 HoloLens 使用適當大小的叫用目標, 類似于觸控式行動裝置應用程式。 接近應用程式邊緣的小型元素尤其難以與互動。
+* 使用者必須將輸入模式切換成從滾動拖曳至兩個手指移動。 如果您的應用程式是針對觸控輸入而設計, 請考慮確保不會在兩個手指移動後鎖定任何主要功能。 若是如此, 請考慮具有替代的輸入機制, 例如可以起始兩個手指移動的按鈕。 例如, 地圖應用程式可以使用兩個手指移動來縮放, 但有一個加號、減號和旋轉按鈕, 可透過按一下來模擬相同的縮放互動。
 
-[語音輸入](voice-input.md)是混合的實境體驗不可或缺的一部分。 我們已啟用所有的語音使用耳機時加強 Cortana 的 Windows 10 中的 Api。
+[語音輸入](voice-input.md)是混合現實體驗的重要部分。 我們已在使用耳機時, 啟用 Windows 10 中的所有語音 Api。
 
-## <a name="publish-and-maintain-your-universal-app"></a>發行及維護您的通用應用程式
+## <a name="publish-and-maintain-your-universal-app"></a>發行和維護您的通用應用程式
 
-您的應用程式啟動並執行之後，封裝您的應用程式[將它提交至 Microsoft Store](submitting-an-app-to-the-microsoft-store.md)。
+當您的應用程式啟動並執行之後, 請封裝您的應用程式, 將[它提交至 Microsoft Store](submitting-an-app-to-the-microsoft-store.md)。
 
 ## <a name="see-also"></a>另請參閱
 * [應用程式模型](app-model.md)
 * [目光](gaze.md)
-* [筆勢](gestures.md)
+* [#](gestures.md)
 * [運動控制器](motion-controllers.md)
 * [語音輸入](voice-input.md)
 * [將應用程式提交到 Microsoft Store](submitting-an-app-to-the-microsoft-store.md)

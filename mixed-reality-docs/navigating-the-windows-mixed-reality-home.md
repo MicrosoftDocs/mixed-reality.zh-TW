@@ -1,143 +1,143 @@
 ---
-title: 瀏覽家用的 Windows Mixed Reality
-description: HoloLens 與 Windows Mixed Reality 耳機共用用於啟動、 放置，以及管理應用程式和您的環境中的 3D 模型 （無論實體或數位） 的範例。 了解如何瀏覽首頁這兩種裝置類型上的 Windows Mixed Reality。
+title: 流覽 Windows Mixed Reality 首頁
+description: HoloLens 和 Windows Mixed Reality 耳機共用在您的環境中啟動、放置和操作應用程式和3D 模型的範例 (不論是實體或數位)。 瞭解如何在這兩種裝置類型上流覽 Windows Mixed Reality 首頁。
 author: mattzmsft
 ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
-keywords: 殼層、 作業系統、 平台、 cliff 房屋房子、 首頁、 環境、 啟動、 [開始] 功能表、 主功能表、 pin、 應用程式、 啟動的應用程式，將應用程式、 傳送、 移動、 瀏覽
+keywords: shell, os, 平臺, cliff 房屋, 房屋, 首頁, 環境, 開始, 開始功能表, 首頁功能表, pin, 應用程式, 啟動應用程式, 放置應用程式, 傳送, 移動, 流覽
 ms.openlocfilehash: 1ca6dd66506a64ad2e1c21870fee2725ddf20bd8
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597043"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63525181"
 ---
-# <a name="navigating-the-windows-mixed-reality-home"></a>瀏覽家用的 Windows Mixed Reality
+# <a name="navigating-the-windows-mixed-reality-home"></a>流覽 Windows Mixed Reality 首頁
 
-就像 Windows PC 體驗啟動與桌面時，Windows Mixed Reality，開始於首頁。 家用的 Windows Mixed Reality 運用我們對中炫耀都能夠了解，並瀏覽 3D 的地方。 HoloLens，您的首頁是您的實體空間。 沈浸式耳機，與您的首頁會是虛擬的位置。
+就像 Windows 電腦經驗從桌上型電腦開始, Windows Mixed Reality 從首頁開始。 Windows Mixed Reality home 會利用我們的固有功能來瞭解和流覽3D 位置。 使用 HoloLens 時, 您的家庭就是您的實體空間。 使用沉浸式耳機時, 您的家庭就是虛擬位置。
 
-您的首頁也是，您將使用 [開始] 功能表開啟，並將應用程式和內容。 您可以混合的實境內容中填入您的首頁和 multitask 同時使用多個應用程式。 您放置在您家中的項目留在那裡，即使您重新啟動您的裝置。
+您的家裡也會使用 [開始] 功能表來開啟和放置應用程式和內容。 您可以同時使用多個應用程式, 以混合現實內容和多重處理來填滿您的家庭。 即使您重新開機裝置, 您在家裡所放置的東西還是會保留在該處。
 
 ## <a name="start-menu"></a>開始功能表
 
-![在 Microsoft HoloLens 上的 [開始] 功能表](images/start-500px.png)
+![Microsoft HoloLens 上的 [開始] 功能表](images/start-500px.png)
 
-[開始] 功能表所組成：
-* 系統資訊 （網路狀態、 電池百分比、 目前時間和磁碟區）
-* Cortana （沈浸式耳機，啟動磚; 在 HoloLens，在頂端開始）
-* 已釘選的應用程式
-* 所有的應用程式按鈕 （加號）
-* 相片與視訊按鈕[混合實境擷取](mixed-reality-capture.md)
+[開始] 功能表包含:
+* 系統資訊 (網路狀態、電池百分比、目前時間和音量)
+* Cortana (在沉浸式耳機上, 開始磚, 在 HoloLens 上, 在 [開始] 上方)
+* 釘選的應用程式
+* [所有應用程式] 按鈕 (加號)
+* [混合現實 capture](mixed-reality-capture.md)的相片和影片按鈕
 
-已釘選的應用程式和檢視之間切換的所有應用程式藉由選取加號或減號按鈕。 若要開啟 HoloLens 上的 [開始] 功能表，請使用 bloom 筆勢。 在沉浸式耳機，按下控制器上的 [Windows] 按鈕。
+藉由選取加號或減號按鈕, 在 [釘選的應用程式] 和 [所有應用程式] 視圖之間切換。 若要開啟 HoloLens 上的 [開始] 功能表, 請使用 bloom 手勢。 在沉浸式耳機上, 按下控制器上的 [Windows] 按鈕。
 
 ## <a name="launching-apps"></a>啟動應用程式
 
-若要啟動應用程式，請在啟動時選取它。 [開始] 功能表便會消失，以及應用程式將會開啟在放置模式下，為 2D 視窗或[3D 模型](implementing-3d-app-launchers.md)。
+若要啟動應用程式, 請在 [啟動] 時加以選取。 [開始] 功能表將會消失, 而應用程式會以放置模式開啟, 做為2D 視窗或[3d 模型](implementing-3d-app-launchers.md)。
 
-若要執行應用程式，您必須再將它放在您家中：
-1. 使用您[視線](gaze.md)或控制站，以在您要應用程式的位置。 若要符合的放置位置的空間，就會自動調整 （在大小和位置）。
-2. 將使用空中點選 (HoloLens) 或 [選取] 按鈕 （沈浸式耳機） 應用程式。 若要取消並帶回 開始 功能表，請使用 bloom 筆勢 或 Windows 按鈕。
+若要執行應用程式, 您必須將它放在您的首頁:
+1. 使用您的[注視](gaze.md)或控制器將應用程式放在您想要的位置。 它會自動調整 (大小和位置) 以符合您放置它的空間。
+2. 使用 [空中] (HoloLens) 或 [選取] 按鈕 (沉浸式耳機) 來放置應用程式。 若要取消並帶回 [開始] 功能表, 請使用 bloom 手勢或 [Windows] 按鈕。
 
-[2D 應用程式](building-2d-apps.md)、 針對桌面、 行動裝置，建立或 Xbox 可以修改，以使用混合的實境沈浸式應用程式會以[HolographicSpace API](https://msdn.microsoft.com/library/windows/apps/windows.graphics.holographic.holographicspace.aspx)。 沈浸式應用程式會將使用者帶出首頁並進入沉浸式體驗。 使用者就可以傳回首頁與 bloom 筆勢 (HoloLens) 或其控制站 （沈浸式耳機） 上按 [Windows] 按鈕。
+針對桌面、行動裝置或 Xbox 建立的[2d 應用程式](building-2d-apps.md), 可以修改為使用[HolographicSpace API](https://msdn.microsoft.com/library/windows/apps/windows.graphics.holographic.holographicspace.aspx)以混合現實沉浸式應用程式的形式執行。 沉浸式應用程式會讓使用者離開家裡, 並成為沉浸式體驗。 使用者可以使用 bloom 手勢 (HoloLens) 或按下控制器上的 Windows 按鈕 (沉浸式耳機) 來傳回 home。
 
-透過應用程式-應用程式 API，或透過 Cortana，也可以啟動應用程式。
+應用程式也可以透過應用程式對應用程式 API 或 Cortana 來啟動。
 
-![在家用的 Windows Mixed Reality 應用程式](images/mixed-reality-home-500px.png)
+![Windows Mixed Reality 首頁中的應用程式](images/mixed-reality-home-500px.png)
 
 ## <a name="moving-and-adjusting-apps"></a>移動和調整應用程式
 
-選取 **調整**應用程式上顯示的列控制移轉，小數位數和旋轉的混合實境內容。 當您完成時，選取**完成**。
+選取應用程式行上的 [**調整**], 以顯示移動、調整和旋轉混合現實內容的控制項。 當您完成時, 請選取 [**完成**]。
 
-![調整模式 （藍色框架） 中存放區的候選影片。 請注意應用程式列 （上方） 已變更為包括 [完成] 和 [移除] 按鈕。](images/adjust-500px.png)
+![以調整模式 (藍色框架) 儲存的平板電腦。 請注意, 應用程式行 (上方) 已變更為包含 [完成] 和 [移除] 按鈕。](images/adjust-500px.png)
 
-不同的應用程式可能會有應用程式列上的其他選項。 例如，具有 Microsoft Edge*捲軸*，*拖曳*，和*縮放*選項。 
+不同的應用程式可能會在應用程式行上有其他選項。 例如, Microsoft Edge 有*滾動*條、*拖曳*和*縮放*選項。 
 
-![2D HoloLens 上執行的應用程式的應用程式列](images/holobar-500px.png)
+![在 HoloLens 上執行之2D 應用程式的應用程式行](images/holobar-500px.png)
 
-**回**按鈕導覽回到先前檢視的應用程式中的畫面。 當您到達 已顯示在應用程式，並不會瀏覽至其他應用程式體驗的開頭，它會停止。
+[**上一步**] 按鈕會流覽回到先前在應用程式中看到的畫面。 當您到達應用程式中顯示的體驗開始時, 將會停止, 而且不會流覽至其他應用程式。
 
-## <a name="getting-around-your-home"></a>瀏覽您的首頁
+## <a name="getting-around-your-home"></a>取得您的家庭
 
-具有**HoloLens**，您瀏覽實體空間，您的家中移動。
+透過**HoloLens**, 您可以在實際空間間移動, 以在家裡移動。
 
-具有**沈浸式耳機**，您可以同樣地啟動並在您以類似於虛擬世界的區域內移動 playspace 四處巡察。 在距離之間的移動，您可以使用搖桿控制器上從頭到尾參與幾乎"，"，或者您可以使用*屏障*立即跳較長的距離。
+有了**沉浸式耳機**, 您就可以像是在 playspace 中開始進行, 以在虛擬世界中的類似區域內移動。 若要在較長的距離之間移動, 您可以使用控制器上的操縱杆來進行幾乎「逐步執行」, 也可以使用*teleportation*立即跳躍較長的距離。
 
-![在家用的 Windows Mixed Reality 屏障](images/teleportation-500px.png)
+![Windows Mixed Reality 首頁中的 Teleportation](images/teleportation-500px.png)
 
-**若要傳送：**
-1. 顯示屏障 reticle。
-   * 使用[動作控制器](motion-controllers.md): 搖桿向前按住不放在該位置。
-   * 使用 Xbox 控制器： 左搖桿向前按住不放在該位置。
-   * 使用滑鼠： 按住滑鼠右鍵按一下滑鼠按鈕 (使用滾輪旋轉您想要面臨時的方向和您傳送)。
-2. 將 reticle 放在您想要用來傳送。
-   * 使用[動作控制器](motion-controllers.md)： 移動 reticle 傾斜擁有的控制站 （在其上您在搖桿轉寄）。
-   * 使用 Xbox 控制器： 使用您[視線](gaze.md)移動 reticle。
-   * 使用滑鼠： 移動滑鼠移動 reticle。
-3. 放開按鈕，即可傳送 reticle 放置的位置。
+**若要傳送:**
+1. 顯示 teleportation reticle。
+   * 使用[動作控制器](motion-controllers.md): 向前按下操縱杆, 並將它放在該位置。
+   * 使用 Xbox controller: 按向左的操縱杆, 並將其放在該位置。
+   * 使用滑鼠: 按住滑鼠右鍵鍵 (並使用滾輪來旋轉您在傳送時所要面對的方向)。
+2. 將 reticle 放在您想要傳送的位置。
+   * 使用 [[移動控制器](motion-controllers.md)]: 將控制器傾斜 (您要在其上保留操縱杆) 來移動 reticle。
+   * 使用 Xbox controller: 使用您的[注視](gaze.md)來移動 reticle。
+   * 使用滑鼠: 移動滑鼠來移動 reticle。
+3. 放開按鈕以在放置 reticle 的位置進行傳送。
 
-**若要幾乎 」 逐步: 」**
-* 使用[動作控制器](motion-controllers.md)： 按一下向下搖桿，然後按住不放，然後將搖桿移動的方向，您想要 「 前進 」。
-* 使用 Xbox 控制器： 按一下向下左搖桿，然後按住不放，然後將搖桿移動的方向，您想要 「 前進 」。
+**至虛擬「逐步解說:」**
+* 使用[動態控制器](motion-controllers.md): 按一下操縱杆上的 [向下] 並按住, 然後以您想要「逐步執行」的方向移動操縱杆。
+* 使用 Xbox 控制器: 按一下左側的操縱杆並按住, 然後以您想要「逐步執行」的方向移動操縱杆。
 
-## <a name="immersive-headset-input-support"></a>沈浸式耳機輸入的支援
+## <a name="immersive-headset-input-support"></a>沉浸式耳機輸入支援
 
-[Windows Mixed Reality 沈浸式耳機](immersive-headset-hardware-details.md)巡覽家用的 Windows Mixed Reality 支援多個輸入的類型。 HoloLens 不支援配件的輸入進行巡覽，因為您實際上四處巡察，請參閱您的環境。 不過，會 HoloLens[支援輸入](hardware-accessories.md)與應用程式互動。
+[Windows Mixed reality 沉浸式耳機](immersive-headset-hardware-details.md)支援多種輸入類型來流覽 Windows mixed reality 首頁。 HoloLens 不支援用於導覽的附件輸入, 因為您會實際四處流覽並查看您的環境。 不過, HoloLens 支援與應用程式互動的[輸入](hardware-accessories.md)。
 
-### <a name="motion-controllers"></a>動作控制站
+### <a name="motion-controllers"></a>運動控制器
 
-最佳的 Windows Mixed Reality 體驗將會使用 Windows Mixed Reality[動作控制器](motion-controllers.md)耳機-沒有外部的相機或需要的標記中使用的感應器，支援的自由 6 度-追蹤 ！
+Windows mixed reality 的最佳體驗, 就是使用您的耳機中的[感應器](motion-controllers.md)來支援6度自由的追蹤, 而不需要外部攝影機或標記!
 
-即將推出的巡覽命令。
+即將推出的導覽命令。
 
 ### <a name="gamepad"></a>遊戲台
-* **左搖桿：**
-  * 按住不放以顯示的正向左搖桿[屏障](navigating-the-windows-mixed-reality-home.md#getting-around-your-home)reticle。
-  * 點選 left、 right 搖桿或後要向左移動、 權限，或在小型增量備份。
-  * 按一下向下左搖桿，然後按住不放，則您想要的方向移動搖桿[幾乎上 「 前進。 」](navigating-the-windows-mixed-reality-home.md#getting-around-your-home)
-* 點選**右搖桿**左或向右旋轉 45 度，您所面臨的方向。
-* 按下**A**  按鈕會執行 select 和其作用就像[空中點選](gestures.md#air-tap)筆勢。
-* 按下**快速入門**按鈕會開啟[開始 功能表](navigating-the-windows-mixed-reality-home.md#start-menu)和其作用就像[bloom](gestures.md#bloom)筆勢。
-* 按下**左邊和右邊的觸發程序**可讓您縮放 2D 傳統型應用程式與在家中互動。
+* **左方控制杆:**
+  * 按住左側的操縱杆, 以帶出[teleportation](navigating-the-windows-mixed-reality-home.md#getting-around-your-home) reticle。
+  * 將操縱杆向左、靠右或向後移動, 以小增量向左、右或向後移動。
+  * 按一下左側的操縱杆並按住, 然後以您想要的方向, 將操縱杆移至 [[逐步解說]。](navigating-the-windows-mixed-reality-home.md#getting-around-your-home)
+* 向左或向右按一下**右側的操縱杆**, 以旋轉45度所面臨的方向。
+* 按下按鈕會執行 select, 並使用像是 [[空中](gestures.md#air-tap)] 手勢。
+* 按下 [**引導**] 按鈕會顯示 [[開始] 功能表](navigating-the-windows-mixed-reality-home.md#start-menu), 其作用就像[bloom](gestures.md#bloom)手勢。
+* 按**左右的觸發**程式, 可讓您放大和縮小要在家裡互動的2d 桌面應用程式。
 
 ### <a name="keyboard-and-mouse"></a>鍵盤和滑鼠
 
-**注意：** 使用**Windows 鍵 + Y**切換之間控制您的電腦桌面和家用的 Windows Mixed Reality 滑鼠。
+**注意：** 使用**Windows 鍵 + Y**在控制電腦的桌面和 Windows Mixed Reality 首頁之間切換滑鼠。
 
-在 Windows Mixed Reality 首頁：
-* 按下**按滑鼠左鍵**滑鼠按鈕執行 select 和其作用就像[空中點選](gestures.md#air-tap)筆勢。
-* 持有**上按一下滑鼠右鍵**滑鼠按鈕會開啟[屏障](navigating-the-windows-mixed-reality-home.md#getting-around-your-home)reticle。
-* 按下**Windows**鍵盤上的按鍵會顯示[開始 功能表](navigating-the-windows-mixed-reality-home.md#start-menu)和其作用就像[bloom](gestures.md#bloom)筆勢。
-* 時[gazing](gaze.md) 2D 的桌面應用程式，您可以**按滑鼠左鍵**若要選取，**以滑鼠右鍵按一下**開啟操作功能表，並使用**滾輪**捲動 （就如同您的電腦的桌面上）。
+在 Windows Mixed Reality 首頁中:
+* 按下滑鼠**左鍵**會執行選取, 且其作用就像是 [[空中](gestures.md#air-tap)] 手勢。
+* 按住滑鼠**右鍵**鍵會顯示[teleportation](navigating-the-windows-mixed-reality-home.md#getting-around-your-home) reticle。
+* 按下鍵盤上的**Windows**鍵會開啟 [[開始] 功能表](navigating-the-windows-mixed-reality-home.md#start-menu), 其作用就像[bloom](gestures.md#bloom)手勢。
+* 在2D 桌面應用程式中[撥雲見日](gaze.md)時, 您可以**按一下**滑鼠右鍵來選取、以**滑鼠右鍵按一下**以顯示操作功能表, 然後使用滾輪來進行滾動 (就像在您的電腦桌面上一樣)。
 
 ## <a name="cortana"></a>Cortana
 
-[Cortana](voice-input.md#hey-cortana)一樣是在 PC 和手機上的 Windows Mixed Reality，在您個人助理。 HoloLens 有內建的麥克風，但沈浸式耳機可能需要額外的硬體。 若要開啟應用程式、 重新啟動您的裝置，線上查閱項目使用 Cortana 和更多功能。 開發人員也可以選擇[整合 Cortana](https://dev.windows.com/cortana)至其經驗。
+[Cortana](voice-input.md#hey-cortana)是您在 Windows Mixed Reality 中的個人助理, 就像在 PC 和手機上一樣。 HoloLens 有內建的麥克風, 但沉浸式耳機可能需要額外的硬體。 使用 Cortana 開啟應用程式、重新開機您的裝置、線上查看專案等等。 開發人員也可以選擇將[Cortana 整合](https://dev.windows.com/cortana)到他們的經驗中。
 
-您也可以使用語音命令來解決您的首頁。 比方說，指向按鈕 (使用[視線](gaze.md)或控制站，視裝置而定)，並說 「 Select 」。 其他的語音命令包括 「 移至首頁 」，「 大 」，「 比較小，"「 關閉 」 和 「 面臨我 」。
+您也可以使用語音命令來取得家庭。 例如, 指向按鈕 (使用[注視](gaze.md)或控制器, 視裝置而定), 然後說「選取」。 其他語音命令包括「回家」、「大」、「小」、「近」和「臉部我」。
 
-## <a name="store-settings-and-system-apps"></a>存放區、 設定和系統的應用程式
+## <a name="store-settings-and-system-apps"></a>儲存、設定和系統應用程式
 
-Windows Mixed Reality 有許多內建的應用程式，例如：
-* **Microsoft Store**取得應用程式和遊戲
-* **意見反應中樞**提交意見反應的系統和系統應用程式
-* **設定**設定系統設定 ([包括網路](connecting-to-wi-fi-on-hololens.md)和系統更新)
-* **Microsoft Edge**瀏覽網站
-* **相片**來檢視和分享相片和視訊
-* **校正**(只有 HoloLens) 調整到目前使用者的 HoloLens 體驗
-* **了解筆勢**(HoloLens) 或**了解混合實境**（沈浸式耳機） 若要了解如何使用您的裝置
-* **3D 檢視器**來裝飾您面對混合的實境內容
-* **混合實境入口網站**（桌面） 設定和管理您的沈浸式耳機和串流您的檢視中供其他人查看耳機的即時預覽。
-* **電影和電視節目**360 影片的最新的電影和電視節目的檢視會顯示
-* **Cortana**讓所有虛擬助理必須
-* **桌面**（沈浸式耳機） 來檢視您在沉浸式耳機的桌上型監視器
-* **檔案總管**存取檔案和資料夾位於您的裝置
+Windows Mixed Reality 有數個內建應用程式, 例如:
+* 取得應用程式和遊戲的**Microsoft Store**
+* 提交有關系統和系統應用程式意見反應的**意見反應中樞**
+* **設定**系統設定的設定 ([包括網路](connecting-to-wi-fi-on-hololens.md)功能和系統更新)
+* 流覽網站的**Microsoft Edge**
+* 觀看及分享相片和影片的**相片**
+* **校正**(僅限 HoloLens) 以調整目前使用者的 HoloLens 體驗
+* **學習手勢**(HoloLens) 或**瞭解混合現實**(沉浸式耳機) 以瞭解如何使用您的裝置
+* 使用混合現實內容裝飾您世界的**3D 檢視器**
+* **混合現實入口網站**(桌面), 用於設定和管理您的沉浸式頭戴式裝置, 並在耳機中串流您觀看的即時預覽, 供其他人查看。
+* 觀看360影片和最新電影和電視節目的**電影和電視**節目
+* 所有虛擬助理需求的**Cortana**
+* **桌面**(沉浸式耳機), 可在沉浸式耳機中觀賞桌面監視器
+* 檔案**瀏覽器**存取位於您裝置上的檔案和資料夾
 
 ## <a name="see-also"></a>另請參閱
 * [應用程式檢視](app-views.md)
-* [動作控制站](motion-controllers.md)
-* [硬體附屬應用程式](hardware-accessories.md)
+* [運動控制器](motion-controllers.md)
+* [硬體配件](hardware-accessories.md)
 * [HoloLens 的環境考量](environment-considerations-for-hololens.md)
-* [實作的 3D 應用程式啟動器](implementing-3d-app-launchers.md)
-* [建立 3D 模型，使用 Windows Mixed Reality 在家中](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)
+* [執行3D 應用程式啟動器](implementing-3d-app-launchers.md)
+* [建立3D 模型以用於 Windows Mixed Reality 首頁](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)

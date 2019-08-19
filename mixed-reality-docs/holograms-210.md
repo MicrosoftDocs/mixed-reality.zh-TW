@@ -1,11 +1,11 @@
 ---
-title: MR 輸入 210-視線
-description: 遵循此程式碼逐步解說如何使用 Unity、 Visual Studio 和 HoloLens，若要了解視線概念的詳細資料。
+title: MR 輸入 210-注視
+description: 請遵循使用 Unity、Visual Studio 和 HoloLens 進行的編碼逐步解說, 以深入瞭解看看概念的詳細資料。
 author: keveleigh
 ms.author: kurtie
 ms.date: 03/21/2018
 ms.topic: article
-keywords: holotoolkit mixedrealitytoolkit、 mixedrealitytoolkit-academy，教學課程，視線 unity
+keywords: holotoolkit, mixedrealitytoolkit, mixedrealitytoolkit-unity, 學院, 教學課程, 注視
 ms.openlocfilehash: 076314389ec5ed70347c26d50c6a993f55da0758
 ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
 ms.translationtype: MT
@@ -14,30 +14,30 @@ ms.lasthandoff: 05/02/2019
 ms.locfileid: "64993549"
 ---
 >[!NOTE]
->混合實境 Academy 教學課程的設計與 HoloLens （第 1 代） 及混合實境沈浸式耳機記住。  因此，我們覺得很重要的開發人員仍會尋找針對這些裝置進行開發的指引，讓這些教學課程中留在原處。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  它們會繼續運作，支援的裝置上維護。 會有新教學課程系列，將會公佈在未來，將示範如何開發 HoloLens 2。  當他們回傳時，本聲明將會更新這些教學課程的連結。
+>混合現實學術教學課程的設計是使用 HoloLens (第1代) 和混合現實的沉浸式耳機。  因此, 對於仍在尋找這些裝置開發指引的開發人員而言, 我們覺得這些教學課程很重要。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  系統會保留這些資訊, 以繼續在支援的裝置上運作。 未來將會有一系列新的教學課程, 將示範如何針對 HoloLens 2 進行開發。  此通知會在張貼時, 使用這些教學課程的連結進行更新。
 
 # <a name="mr-input-210-gaze"></a>MR 輸入 210:注視
 
-[視線](gaze.md)是第一種形式的輸入，並會顯示使用者的意圖和感知。 MR 輸入 210 (也稱為專案總管) 是深入探討 Windows Mixed Reality 視線相關概念。 我們將新增內容感知到我們的資料指標和全像投影，充分利用您的應用程式知道使用者的視線有關。
+[注視](gaze.md)是第一種形式的輸入, 並顯示使用者的意圖和認知。 MR Input 210 (也稱為 Project Explorer) 是深入探討 Windows Mixed Reality 的注視相關概念。 我們將會對游標和全息影像新增內容感知, 並充分利用您的應用程式對使用者注視的認識。
 
 >[!VIDEO https://www.youtube.com/embed/yKAttGduVp0]
 
-我們必須易記太空人這裡幫助您了解視線概念。 在  [MR 基本概念 101](holograms-101.md)，我們只是後接您的視線簡單資料指標。 今天我們要移動的簡單資料指標的後續步驟：
+這裡有一個很好用的太空人, 可協助您瞭解一些概念。 在[MR 基本概念 101](holograms-101.md)中, 我們有一個簡單的游標, 只是看著您的注視。 今天, 我們要將一個步驟移到簡單的資料指標之外:
 
-* 我們將會讓資料指標而且我們全像投影視線注意： 同時會隨著使用者注視的位置-，或使用者所在*不*尋找。 這讓它們更能感知環境。
-* 我們會將我們的資料指標和全像投影至多個內容上所設定的目標是授與使用者意見反應。 此意見反應可以音訊和視覺化。
-* 我們將示範您目標的技術，可協助使用者點擊較小的目標。
-* 我們將示範如何強調使用者的您具有方向性指標全像投影。
-* 我們會教導您全像投影需要與使用者，因為她在您的世界中移動的技術。
+* 我們會讓游標和我們的全息影像看起來很清楚: 兩者都會根據使用者的外觀, 或使用者*不*在尋找的位置而變更。 這可讓他們瞭解內容。
+* 我們會將意見反應新增至游標和全息影像, 以提供使用者更多有關目標的內容。 此意見反應可以是音訊和視覺效果。
+* 我們將示範如何以協助使用者達到較小目標的技術為目標。
+* 我們將示範如何使用方向指標, 將使用者的注意力繪製到您的全息影像。
+* 我們會告訴您, 您可以在世界各地移動您的全息和使用者。
 
 >[!IMPORTANT]
->使用 Unity 及混合實境 toolkit 的推出較舊的版本記錄中的下列章節的每個內嵌的影片。 雖然的逐步指示是準確且即時的您可能會看到指令碼和對應已過期的影片中的視覺效果。 影片仍包含 posterity，和因為概念涵蓋仍然適用。
+>下列各章節所內嵌的影片, 都是使用舊版 Unity 和混合現實工具組錄製的。 雖然逐步指示是正確且最新的, 但您可能會在已過期的對應影片中看到腳本和視覺效果。 影片仍包含在 posterity 中, 因為涵蓋的概念仍適用。
 
 ## <a name="device-support"></a>裝置支援
 
 <table>
 <tr>
-<th>課程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沈浸式耳機</a></th>
+<th>粗</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></th>
 </tr><tr>
 <td>MR 輸入 210:注視</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
@@ -47,167 +47,167 @@ ms.locfileid: "64993549"
 
 ### <a name="prerequisites"></a>必要條件
 
-* Windows 10 電腦的正確設定[安裝工具](install-the-tools.md)。
-* 基本C#程式設計的能力。
+* [已安裝正確工具](install-the-tools.md)的 WINDOWS 10 電腦。
+* 一些基本C#的程式設計能力。
 * 您應已完成[MR 基本概念 101](holograms-101.md)。
-* HoloLens 裝置[開發設定的](using-visual-studio.md#enabling-developer-mode)。
+* [為開發設定](using-visual-studio.md#enabling-developer-mode)的 HoloLens 裝置。
 
-### <a name="project-files"></a>專案檔
+### <a name="project-files"></a>專案檔案
 
-* 下載[檔案](https://github.com/Microsoft/HolographicAcademy/archive/Holograms-210-Gaze.zip)專案所需。 需要 Unity 2017.2 或更新版本。
-* 取消封存您的桌面或其他您輕鬆地連線到位置的檔案。
+* 下載專案所需的[檔案](https://github.com/Microsoft/HolographicAcademy/archive/Holograms-210-Gaze.zip)。 需要 Unity 2017.2 或更新版本。
+* 將檔案取消封存至您的桌面或其他容易到達的位置。
 
 >[!NOTE]
->如果您想要查看原始程式碼，在下載之前，它有[可在 GitHub 上](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-210-Gaze)。
+>如果您想要在下載之前查看原始程式碼, 可以[在 GitHub 上](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-210-Gaze)取得。
 
-### <a name="errata-and-notes"></a>偵錯 errata 和附註
+### <a name="errata-and-notes"></a>勘誤和注意事項
 
-* 在 Visual Studio 中，Just My Code 必須是停用 （未核取） 在 工具-> 選項-> 若要在程式碼中設定中斷點的偵錯。
+* 在 Visual Studio 中, 必須停用 (取消核取) [工具-> 選項] 下 > 的 [Just My Code], 才能在程式碼中叫用中斷點。
 
-## <a name="chapter-1---unity-setup"></a>第 1 章-Unity 安裝
+## <a name="chapter-1---unity-setup"></a>第1章-Unity 設定
 
 >[!VIDEO https://www.youtube.com/embed/_Ccn6riQ6vU]
 
 ### <a name="objectives"></a>目標
 
-* 最佳化 HoloLens 開發 Unity。
-* 匯入資產，並設定場景。
-* 檢視太空人 HoloLens。
+* 最佳化 Unity 以用於 HoloLens 開發。
+* 匯入資產並設定場景。
+* 查看 HoloLens 中的太空人。
 
 ### <a name="instructions"></a>指示
 
 1. 啟動 Unity。
-2. 選取 **新的專案**。
+2. 選取 [**新增專案**]。
 3. 將專案命名為**ModelExplorer**。
-4. 輸入與位置**視線**資料夾您先前未封存。
-5. 請確定專案已設定為**3D**。
-6. 按一下 **建立專案**。
+4. 輸入 [位置] 作為您先前取消封存的 [**注視**] 資料夾。
+5. 確定專案已設定為 **3D**。
+6. 按一下 [建立專案]。
 
-### <a name="unity-settings-for-hololens"></a>HoloLens 的 unity 設定
+### <a name="unity-settings-for-hololens"></a>HoloLens 的 Unity 設定
 
-我們需要讓知道我們嘗試匯出的應用程式應該建立 Unity[沈浸式檢視](app-views.md)而不是 2D 檢視。 我們的做法是將做為虛擬實境裝置的 HoloLens。
+我們需要讓 Unity 知道, 我們嘗試匯出的應用程式應該建立[沉浸式視圖](app-views.md), 而不是2d 視圖。 我們的作法是將 HoloLens 新增為虛擬實境裝置。
 
-1. 移至**編輯 > 專案設定 > Player**。
-2. 在 [**偵測器] 面板**播放程式設定中，選取**Windows 市集**圖示。
-3. 依序展開**XR 設定**群組。
-4. 在 **轉譯**區段中，按一下**虛擬實境支援**核取方塊以加入新**虛擬實境 Sdk**清單。
-5. 確認**Windows Mixed Reality**出現在清單中。 如果沒有，請選取 **+** 按鈕在清單底部，然後選擇**Windows 全像攝影版**。
+1. 移至 **編輯 > 專案設定 > Player**。
+2. 在 [玩家設定] 的 [偵測**器] 面板**中, 選取 [ **Windows Store** ] 圖示。
+3. 展開 [ **XR 設定**] 群組。
+4. 在轉譯區段中, 勾選 [**支援虛擬實境**] 核取方塊, 以新增**虛擬實境 sdk**清單。
+5. 確認清單中出現**Windows Mixed Reality** 。 如果沒有，請選取 **+** 按鈕在清單底部，然後選擇**Windows 全像攝影版**。
 
-接下來，我們需要將我們指令碼的後端設定為.NET。
+接下來, 我們需要將腳本後端設定為 .NET。
 
-1. 移至**編輯 > 專案設定 > Player** （您可能仍有這在上一個步驟）。
-2. 在 [**偵測器] 面板**播放程式設定中，選取**Windows 市集**圖示。
-3. 在 **其他設定**組態區段中，請確定**指令碼的後端**設定為 **.NET**
+1. 移至 **編輯 > 專案設定 > 播放** (您在上一個步驟中可能還是會這麼做)。
+2. 在 [玩家設定] 的 [偵測**器] 面板**中, 選取 [ **Windows Store** ] 圖示。
+3. 在 [**其他設定**] 區段中, 確認 [**腳本後端**] 已設定為 [ **.net** ]
 
-最後，我們會更新我們的品質設定，以達到 HoloLens 上快速的效能。
+最後, 我們會更新我們的品質設定, 以在 HoloLens 上達到快速的效能。
 
-1. 移至**編輯 > 專案設定 > 品質**。
-2. 按一下向下鍵在**預設**在 Windows 市集圖示的資料列。
-3. 選取 **非常低**for **Windows 市集應用程式**。
+1. 移至 **編輯 > 專案設定 > 品質**。
+2. 在 Windows 市集中圖示底下的**預設**資料列中, 按一下向下箭號。
+3. 對於**Windows Store 應用程式**, 請選取 [**非常低**]。
 
 ### <a name="import-project-assets"></a>匯入專案資產
 
-1. 以滑鼠右鍵按一下**資產**中的資料夾**專案**面板。
-2. 按一下 **匯入封裝 > 自訂套件**。
-3. 瀏覽至您下載的專案檔案，然後按一下**ModelExplorer.unitypackage**。
-4. 按一下 [開啟] 。
-5. 封裝載入之後，請按一下**匯入** 按鈕。
+1. 在 [**專案**] 面板中, 以滑鼠右鍵按一下 [**資產**] 資料夾。
+2. 按一下 [匯**入封裝 > 自訂套件**]。
+3. 流覽至您所下載的專案檔, 然後按一下 [ **ModelExplorer unitypackage**]。
+4. 按一下 [開啟]。
+5. 封裝載入之後, 按一下 [匯**入**] 按鈕。
 
 ### <a name="setup-the-scene"></a>設定場景
 
-1. 在階層中，刪除**Main Camera**。
-2. 在  **HoloToolkit**資料夾中，開啟**輸入**資料夾，然後開啟**Prefabs**資料夾。
-3. 將拖放**MixedRealityCameraParent** prefab 來自**Prefabs**資料夾**階層**。
-4. 以滑鼠右鍵按一下**定向光線**階層，然後選取**刪除**。
-5. 在 **全像投影**資料夾中，拖放的根目錄中的下列資產**階層**:
+1. 在階層中, 刪除**主要相機**。
+2. 在**HoloToolkit**資料夾中, 開啟 [**輸入**] 資料夾, 然後開啟 [ **Prefabs** ] 資料夾。
+3. 將**MixedRealityCameraParent** Prefab 從**Prefabs**資料夾拖放到階層中。
+4. 以滑鼠右鍵按一下階層中的 [**方向光源**], 然後選取 [**刪除**]。
+5. 在 [**全息影像**] 資料夾中, 將下列資產拖放到階層的根目錄中:
     * **AstroMan**
-    * **號誌**
+    * **無**
     * **SpaceAudioSource**
     * **SpaceBackground**
-6. 開始**播放模式**檢視太空人 ▶。
-7. 按一下 **播放模式**▶ 一次，若要**停止**。
-8. 在 **全像投影**資料夾中，尋找**Fitbox**資產並將它拖曳到的根目錄**階層**。
-9. 選取  **Fitbox**中**階層**面板。
-10. 拖曳**AstroMan**從集合**階層**來**闀集合**屬性中 Fitbox **Inspector**面板。
+6. 啟動**播放模式**▶以觀看太空人。
+7. 再次按一下 [**播放模式]** ▶**停止**。
+8. 在 [**全息影像**] 資料夾中, 尋找**Fitbox**資產, 並將它拖曳到階層的根目錄。
+9. 在 [階層] 面板中選取**Fitbox** 。
+10. 從階層中, 將**AstroMan**集合拖曳至 [偵測**器**] 面板中 Fitbox 的 [ **全息影像集合**] 屬性。
 
 ### <a name="save-the-project"></a>儲存專案
 
-1. 儲存新的場景：**檔案 > 儲存為場景**。
-2. 按一下 **新的資料夾**並將資料夾命名**場景**。
-3. 將檔案命名為"**ModelExplorer**"並將它儲存在**場景**資料夾。
+1. 儲存新場景:檔案 **> 另存場景**。
+2. 按一下 [**新增資料夾**], 並將資料夾命名為**場景**。
+3. 將檔案命名為 "**ModelExplorer**", 並將它儲存在 [**幕後**] 資料夾中。
 
-### <a name="build-the-project"></a>建置專案
+### <a name="build-the-project"></a>建立專案
 
-1. 在 Unity 中，選取**檔案 > 組建設定**。
-2. 按一下 **加入開啟的場景**加入場景。
-3. 選取 **通用 Windows 平台**中**平台**清單，然後按一下**切換平台**。
-4. 如果您要特別開發的 HoloLens，設定**目標裝置**要**HoloLens**。 否則，將它保留在**任何裝置**。
-5. 確保**建置型別**設為**D3D**並**SDK**設定為**最新安裝**（這應該可以 16299 或更新版本的 SDK）。
-6. 按一下 [建置] 。
-7. 建立**新的資料夾**名為 「 應用程式 」。
-8. 只要按一下**應用程式**資料夾。
-9. 按下**選取資料夾**。
+1. 在 Unity 中, 選取 [檔案] **> [組建設定**]。
+2. 按一下 [新增] [**開啟場景**] 以加入場景。
+3. 在 [**平臺**] 清單中選取**通用 Windows 平臺**, 然後按一下 [**切換平臺**]。
+4. 如果您是特別針對 HoloLens 進行開發, 請將**目標裝置**設定為**hololens**。 否則, 請將它保留在**任何裝置**上。
+5. 確定 [**組建類型**] 設定為 [ **D3D** ], 並將 [ **sdk** ] 設定為 [**已安裝最新**版本] (應該是 SDK 16299 或更新版本)。
+6. 按一下 [建置]。
+7. 建立名為 "App" 的**新資料夾**。
+8. 按一下 [**應用程式**] 資料夾。
+9. 按 [**選取資料夾**]。
 
-Unity 完成時，會出現檔案總管 視窗。
+當 Unity 完成時, 將會出現 [檔案瀏覽器] 視窗。
 
 1. 開啟**應用程式**資料夾。
 2. 開啟**ModelExplorer Visual Studio 解決方案**。
 
-如果將部署到 HoloLens:
+如果部署至 HoloLens:
 
-1. 使用頂端的工具列，在 Visual Studio 中，從 偵錯，若要變更目標**Release**進出至 ARM **x86**。
-2. 按一下下拉式清單 [本機電腦] 按鈕旁邊的箭號，然後選取**遠端機器**。
-3. 請輸入**HoloLens 裝置的 IP 位址**並將驗證模式設定為**通用 （未加密的通訊協定）**。 按一下 **選取**。 如果您不知道您的裝置 IP 位址，查看**設定 > 網路和網際網路 > 進階選項**。
-4. 在頂端功能表列中，按一下**偵錯]-> [啟動但不偵錯**或按**Ctrl + F5**。 如果這是第一次部署到您的裝置，您必須[與 Visual Studio 中配對](using-visual-studio.md#pairing-your-device-hololens)。
-5. 當應用程式部署時，關閉**Fitbox**具有**選取 軌跡**。
+1. 使用 Visual Studio 中的頂端工具列, 將目標從 [調試] 變更為 [**發行**], 將 [從 ARM] 變更為**x86**。
+2. 按一下 [本機電腦] 按鈕旁的下拉式箭號, 然後選取 [**遠端電腦**]。
+3. 輸入**您的 HoloLens 裝置 IP 位址**, 並將驗證模式設定為 **[通用 (未加密的通訊協定)** ]。 按一下 [選取]。 如果您不知道您的裝置 IP 位址, 請查看 [設定] [ **> Network & Internet] > [Advanced Options**]。
+4. 在頂端功能表列中, 按一下 [ **Debug-> 啟動但不進行調試**] 或按**Ctrl + F5**。 如果這是您第一次部署至您的裝置, 您必須將[它與 Visual Studio 配對](using-visual-studio.md#pairing-your-device-hololens)。
+5. 應用程式部署完成後, 請使用**select 手勢**來關閉**Fitbox** 。
 
-如果將部署到擬真耳機：
+如果部署到沉浸式耳機:
 
-1. 使用頂端的工具列，在 Visual Studio 中，從 偵錯，若要變更目標**Release**進出至 ARM **x64**。
-2. 請確定部署目標設定為**本機電腦**。
-3. 在頂端功能表列中，按一下**偵錯]-> [啟動但不偵錯**或按**Ctrl + F5**。
-4. 當應用程式部署時，關閉**Fitbox**所提取的動作控制站上的觸發程序。
+1. 使用 Visual Studio 中的頂端工具列, 將目標從 [調試] 變更為 [**發行**], 將 [從 ARM] 變更為**x64**。
+2. 請確定 [部署目標] 設定為 [**本機電腦**]。
+3. 在頂端功能表列中, 按一下 [ **Debug-> 啟動但不進行調試**] 或按**Ctrl + F5**。
+4. 應用程式部署完成後, 請藉由在動作控制器上提取觸發程式來關閉**Fitbox** 。
 
-## <a name="chapter-2---cursor-and-target-feedback"></a>第 2 章-資料指標和目標的意見反應
+## <a name="chapter-2---cursor-and-target-feedback"></a>第2章-資料指標和目標意見反應
 
 >[!VIDEO https://www.youtube.com/embed/S24u0V_T7ZI]
 
 ### <a name="objectives"></a>目標
 
-* 資料指標的視覺化設計和行為。
-* 視線為基礎的資料指標的意見反應。
-* 視線型全像意見反應。
+* 游標視覺化設計和行為。
+* 注視游標的意見反應。
+* 以注視式的全息影像意見反應。
 
-我們將努力根據部分的資料指標設計原則，也就是：
+我們將根據一些資料指標設計原則來進行工作, 也就是:
 
-* 資料指標一律會出現。
-* 不要讓取得太小或最大的資料指標。
+* 資料指標一律存在。
+* 不要讓游標變得太小或太大。
 * 避免阻礙內容。
 
 ### <a name="instructions"></a>指示
 
-1. 在  **HoloToolkit\Input\Prefabs**資料夾中，尋找**InputManager**資產。
-2. 將拖放**InputManager**拖曳至**階層**。
-3. 在  **HoloToolkit\Input\Prefabs**資料夾中，尋找**游標**資產。
-4. 將拖放**游標**拖曳至**階層**。
-5. 選取  **InputManager**物件中**階層**。
-6. 拖曳**游標**物件**階層**到 InputManager **SimpleSinglePointerSelector**的**游標**欄位中，在底部**Inspector**。
+1. 在**HoloToolkit\Input\Prefabs**資料夾中, 尋找**InputManager**資產。
+2. 將**InputManager**拖放到階層上。
+3. 在**HoloToolkit\Input\Prefabs**資料夾中, 尋找資料**指標**資產。
+4. 將**游標**拖放到階層上。
+5. 選取階層中的 [ **InputManager** ] 物件。
+6. 將**游標**物件從階層拖曳至 InputManager 的**SimpleSinglePointerSelector**的資料**指標**欄位 (位於偵測**器**底部)。
 
-![簡單的單一指標選取器設定](images/holograms210-ssps.png)
+![簡單單一指標選取器設定](images/holograms210-ssps.png)
 
-### <a name="build-and-deploy"></a>建置和部署
+### <a name="build-and-deploy"></a>組建和部署
 
-1. 重建的應用程式**檔案 > 組建設定**。
+1. 從 [檔案] **> 組建設定**重建應用程式。
 2. 開啟**應用程式資料夾**。
 3. 開啟**ModelExplorer Visual Studio 解決方案**。
-4. 按一下 **偵錯-> 啟動但不偵錯**或按**Ctrl + F5**。
-5. 觀察資料指標的繪製方式及其如何變更外觀如果雷射筆碰觸。
+4. 按一下 [ **Debug-> 啟動但不進行調試**] 或按**Ctrl + F5**。
+5. 觀察游標的繪製方式, 以及它在觸及全息圖形時如何變更外觀。
 
 ### <a name="instructions"></a>指示
 
-1. 在 [**階層**] 面板中，展開**AstroMan**->**GEO_G**->**Back_Center**物件。
-2. 按兩下**Interactible.cs**在 Visual Studio 中開啟它。
-3. 中的行取消註解**IFocusable.OnFocusEnter()** 並**IFocusable.OnFocusExit()** 中的回呼**Interactible.cs**。 （或視線控制器指） 焦點進入和離開特定的 GameObject collider 時，這些是由混合實境工具組的 InputManager 進行呼叫。
+1. 在 [階層] 面板中, 展開**AstroMan** -> **GEO_G** -> **Back_Center**物件。
+2. 按兩下 [ **Interactible.cs** ], 在 Visual Studio 中開啟它。
+3. 取消批註**Interactible.cs**中**IFocusable. OnFocusEnter ()** 和**IFocusable OnFocusExit ()** 回呼中的行。 當焦點 (由注視或控制器指向) 進入並結束特定 GameObject 的碰撞器時, 混合現實工具組的 InputManager 會呼叫這些方法。
 
 ```cs
 /* TODO: DEVELOPER CODING EXERCISE 2.d */
@@ -232,101 +232,101 @@ void IFocusable.OnFocusExit()
 ```
 
 >[!NOTE]
->我們會使用`EnableKeyword`和`DisableKeyword`上方。 為了讓使用您自己的應用程式與工具組的標準著色器中，您必須遵循[Unity 指導方針，以存取透過指令碼的教材](https://docs.unity3d.com/Manual/MaterialsAccessingViaScript.html)。 在此情況下，我們已加入[反白顯示資料的三種變化](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-210-Gaze/Completed/ModelExplorer/Assets/Resources/Models/AstroMan/Materials)需要 （尋找反白顯示的名稱中使用的三個資料） 中的 [資源] 資料夾中。
+>我們使用`EnableKeyword`和`DisableKeyword`更新版本。 為了在您自己的應用程式中搭配使用工具組的標準著色器, 您必須遵循[Unity 指導方針, 透過腳本存取材質](https://docs.unity3d.com/Manual/MaterialsAccessingViaScript.html)。 在此情況下, 我們已包含 [資源] 資料夾中所需反[白顯示材質的三種](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-210-Gaze/Completed/ModelExplorer/Assets/Resources/Models/AstroMan/Materials)變化 (尋找名稱中有醒目提示的三個數據)。
 
-### <a name="build-and-deploy"></a>建置和部署
+### <a name="build-and-deploy"></a>組建和部署
 
-1. 同樣地，建置專案，並將部署到 HoloLens。
-2. 觀察視線旨在物件時，會發生什麼事並不是。
+1. 如先前所述, 建立專案並部署至 HoloLens。
+2. 觀察當注視物件導向時所發生的情況, 以及不是什麼時候。
 
-## <a name="chapter-3---targeting-techniques"></a>第 3 章-為目標的技術
+## <a name="chapter-3---targeting-techniques"></a>第3章-目標技術
 
 >[!VIDEO https://www.youtube.com/embed/TFnuLva4VJ0]
 
 ### <a name="objectives"></a>目標
 
-* 讓您更輕鬆地目標全像投影。
-* 穩固自然前端的移動。
+* 讓您更輕鬆地以全息影像為目標。
+* 穩定的自然 head 移動。
 
 ### <a name="instructions"></a>指示
 
-1. 在 **階層**面板中，選取**InputManager**物件。
-2. 在 [ **Inspector** ] 面板中，尋找**視線對**指令碼。 如果您想要看，請按一下以在 Visual Studio 中開啟。
-    * 此指令碼會逐一查看 Raycast 資料的範例，並協助穩定的有效位數為目標的使用者的視線。
-3. 在  **Inspector**，您可以編輯**儲存穩定性範例**值。 這個值表示對會逐一查看直到計算穩定的值的樣本數目。
+1. 在 [階層] 面板中, 選取 [ **InputManager** ] 物件。
+2. 在 [偵測**器**] 面板中, 尋找**注視的穩定**器腳本。 如果您想要查看, 請按一下該檔案以在 Visual Studio 中開啟。
+    * 此腳本會逐一查看 Raycast 資料的樣本, 並協助將使用者的注視變得穩定, 以達到精確目標。
+3. 在偵測**器**中, 您可以編輯**儲存的穩定性範例**值。 此值表示穩定程式會逐一查看以計算穩定值的樣本數。
 
-## <a name="chapter-4---directional-indicator"></a>第 4 章-方向性指標
+## <a name="chapter-4---directional-indicator"></a>第4章-方向指標
 
 >[!VIDEO https://www.youtube.com/embed/htVbJCMlj64]
 
 ### <a name="objectives"></a>目標
 
-* 新增資料指標以協助找出全像投影的方向性指標。
+* 在游標上新增方向指標, 以協助找出全息影像。
 
 ### <a name="instructions"></a>指示
 
-我們將使用**DirectionIndicator.cs**檔案將會：
+我們將使用**DirectionIndicator.cs**檔案, 它會:
 
-1. 如果使用者不會 gazing 在全像投影的情況下顯示方向性指標。
-2. 如果使用者 gazing 在全像投影，請隱藏方向性指標。
-3. 更新為指向全像投影的方向性指標。
+1. 如果未在全息影像中撥雲見日使用者, 則顯示方向指標。
+2. 如果在全息影像中撥雲見日使用者, 則隱藏方向指標。
+3. 更新方向指標以指向全息影像。
 
 那就開始吧。
 
-1. 按一下**AstroMan**物件中**階層**面板並**按一下箭號**加以展開。
-2. 在 **階層**面板中，選取**DirectionalIndicator**物件下**AstroMan**。
-3. 在  **Inspector**  面板中，按一下**新增元件** 按鈕。
-4. 在功能表中，輸入在搜尋方塊**方向指標**。 選取搜尋結果。
-5. 中**階層** 面板、 拖曳和卸除**游標**物件拖曳至**游標**中的屬性**Inspector**。
-6. 在 [**專案**] 面板的**全像投影**資料夾、 拖放**DirectionalIndicator**拖曳至資產**方向性指標**中的屬性**Inspector**。
-7. 建置及部署應用程式。
-8. 觀看方向性指標物件如何協助您找出太空人。
+1. 按一下 [階層] 面板中的 [ **AstroMan** ] 物件, 然後**按一下箭**號將它展開。
+2. 在 [階層] 面板中, 選取 [ **AstroMan**] 下的 [ **DirectionalIndicator** ] 物件。
+3. 在 [偵測**器**] 面板中, 按一下 [**新增元件**] 按鈕。
+4. 在功能表中, 于搜尋方塊**方向指標**上輸入。 選取搜尋結果。
+5. 在 [階層] 面板中, 將**游標**物件拖放至偵測**器**中的**cursor**屬性。
+6. 在 [**專案**] 面板的 [**全息影像**] 資料夾中, 將**DirectionalIndicator**資產拖放至偵測**器**中的**方向指標**屬性。
+7. 建立並部署應用程式。
+8. 觀看方向指標物件如何協助您尋找太空人。
 
-## <a name="chapter-5---billboarding"></a>第 5 章-告示板
+## <a name="chapter-5---billboarding"></a>第5章-Billboarding
 
 >[!VIDEO https://www.youtube.com/embed/qFiLr_LUACE]
 
 ### <a name="objectives"></a>目標
 
-* 使用告示板，讓全像投影一律面臨朝向您。
+* 使用 billboarding 讓全像投影永遠都能朝向您的臉。
 
-我們將使用**Billboard.cs**檔案以保留導向，使其面向使用者隨時 GameObject。
+我們將使用**Billboard.cs**檔案來保留 GameObject 導向, 使其隨時面向使用者。
 
-1. 在 **階層**面板中，選取**AstroMan**物件。
-2. 在  **Inspector**  面板中，按一下**新增元件** 按鈕。
-3. 在功能表中，輸入在搜尋方塊**告示板**。 選取搜尋結果。
-4. 在  **Inspector**設定**Pivot Axis**來**Y**。
-5. 試試看！ 建置並部署為應用程式之前。
-6. 請參閱如何告示板物件也會等您不論您如何變更觀點來看。
-7. 刪除從指令碼**AstroMan**現在。
+1. 在 [階層] 面板中, 選取 [ **AstroMan** ] 物件。
+2. 在 [偵測**器**] 面板中, 按一下 [**新增元件**] 按鈕。
+3. 在功能表中, 于搜尋方塊中輸入**佈告欄**。 選取搜尋結果。
+4. 在 [偵測**器**] 中, 將 [ **Pivot 軸**] 設定為**Y**。
+5. 試試看！ 如先前一樣, 建立和部署應用程式。
+6. 無論您如何改變觀點, 都能瞭解佈告欄物件的外觀。
+7. 立即從**AstroMan**刪除腳本。
 
-## <a name="chapter-6---tag-along"></a>第 6 章-Tag-Along
+## <a name="chapter-6---tag-along"></a>第6章-標記-沿著
 
 >[!VIDEO https://www.youtube.com/embed/Ct8ORZAX5JU]
 
 ### <a name="objectives"></a>目標
 
-* 您可以使用 Tag-Along，讓我們全像投影房間周圍關注我們。
+* 使用標籤-並讓我們的全息影像沿著我們的房間來追蹤。
 
-當我們處理此問題，我們將會引導您藉由下列的設計限制：
+當我們處理這個問題時, 我們會依照下列設計條件約束來引導我們:
 
-* 內容應該總是一目瞭然消失。
-* 內容不應方式。
-* Head 鎖定的內容時感到不舒服。
+* 內容應該一律一目了然。
+* 內容不應為該方式。
+* Head 鎖定內容不舒服。
 
-這裡使用的解決方案是使用 「 tag-along"的方法。
+此處使用的解決方案是使用「標記為一」的方法。
 
-Tag-along 物件永遠不會完整保留使用者的檢視。 您可以將 tag-along 視為物件附加至使用者的大腦拖放群組列。 當使用者移動，內容會維持內輕鬆瀏覽，而不需要完全離開滑動朝向檢視的邊緣。 當使用者 gazes 朝向 tag-along 物件時，它進入更完整檢視。
+標記物件永遠不會完全離開使用者的觀點。 您可以將一個標記視為一個物件, 並將它與使用者的標頭連接在一起。 當使用者移動時, 內容會透過滑動到視野的邊緣而不會完全離開, 而保持在簡單概覽。 當使用者 gazes 到標記物件時, 它會有更完整的視野。
 
-我們將使用**SimpleTagalong.cs**檔案將會：
+我們將使用**SimpleTagalong.cs**檔案, 它會:
 
-1. 判斷 Tag-Along 物件是否相機的範圍內。
-2. 如果沒有檢視範圍內的位置來 Tag-Along，部分在檢視範圍內。
-3. 從使用者的預設距離，否則為位置 Tag-Along。
+1. 判斷標記沿著的物件是否在相機界限內。
+2. 如果不在視圖的 [截位] 中, 請將標記放在視圖的 [截維] 內。
+3. 否則, 請將標記與使用者的預設距離放置在一起。
 
-若要這樣做，我們首先必須變更**Interactible.cs**指令碼來呼叫**TagalongAction**。
+若要這麼做, 我們必須先變更**Interactible.cs**腳本以呼叫**TagalongAction**。
 
-1. 編輯**Interactible.cs**完成程式碼撰寫練習 6.a （取消註解線條 84 到 87）。
+1. 完成程式碼撰寫練習 6. (取消批註行84到 87) 來編輯**Interactible.cs** 。
 
 ```cs
 /* TODO: DEVELOPER CODING EXERCISE 6.a */
@@ -337,27 +337,27 @@ if (interactibleAction != null)
 }
 ```
 
-**InteractibleAction.cs**指令碼，搭配**Interactible.cs**執行自訂動作，當您點選 全像投影。 在此情況下，我們將使用其中一個專為 tag-along。
+當您按一下全息影像時, 與**Interactible.cs**配對的**InteractibleAction.cs**腳本會執行自訂動作。 在此情況下, 我們會使用特別用於標記的一個。
 
-* 在 **指令碼**資料夾中的，按一下  **TagalongAction.cs**資產在 Visual Studio 中開啟。
-* 完成程式碼撰寫練習，或將其變更如下：
-  * 在頂端**階層**，在搜尋列中輸入**ChestButton_Center**和選取的結果。
-  * 在  **Inspector**  面板中，按一下**新增元件** 按鈕。
-  * 在功能表中，輸入在搜尋方塊**Tagalong 動作**。 選取搜尋結果。
-  * 在 [**全像投影**] 資料夾尋找**Tagalong**資產。
-  * 選取  **ChestButton_Center**物件中**階層**。 將拖放**TagAlong**物件**專案**面板拖曳至**Inspector**成**物件至 Tagalong**屬性。
-  * 拖曳**Tagalong 動作**物件**Inspector**成**Interactible 動作**欄位**Interactible**指令碼。
-* 按兩下**TagalongAction**指令碼，以在 Visual Studio 中開啟它。
+* 在 [**腳本**] 資料夾中, 按一下 [ **TagalongAction.cs**資產] 以在 Visual Studio 中開啟。
+* 完成程式碼撰寫練習, 或將它變更為:
+  * 在階層頂端的 [搜尋] 列中, 輸入**ChestButton_Center** , 然後選取結果。
+  * 在 [偵測**器**] 面板中, 按一下 [**新增元件**] 按鈕。
+  * 在功能表中, 于 [搜尋] 方塊中輸入**Tagalong 動作**。 選取搜尋結果。
+  * 在 [**全息影像**] 資料夾中, 尋找**Tagalong**資產。
+  * 選取階層中的 [ **ChestButton_Center** ] 物件。 從 [**專案**] 面板中, 將**TagAlong**物件拖放到 [**要 TagAlong 的物件**] 屬性中。
+  * 將 [ **Tagalong 動作**] 物件從 [偵測**器**] 拖曳至**Interactible**腳本上的 [ **Interactible 動作**] 欄位中。
+* 按兩下 [ **TagalongAction** ] 腳本, 在 Visual Studio 中開啟它。
 
 ![Interactible 設定](images/holograms210-interactible.png)
 
-我們需要加入下列程式碼：
+我們需要新增下列內容:
 
-* 將功能加入 PerformAction 函式 （繼承自 InteractibleAction） TagalongAction 指令碼中。
-* 告示板 gazed 基礎物件，加上 pivot axis 設 XY 散佈圖。
-* 然後新增至物件的簡單 Tag-Along。
+* 將功能新增至 TagalongAction 腳本中的 PerformAction 函數 (繼承自 InteractibleAction)。
+* 將 billboarding 新增至 gazed 物件, 並將 pivot 軸設定為 [XY]。
+* 然後將簡單的標記新增至物件。
 
-以下是我們的解決方案，從**TagalongAction.cs**:
+以下是來自**TagalongAction.cs**的解決方案:
 
 ```cs
 // Copyright (c) Microsoft Corporation. All rights reserved.
@@ -407,5 +407,5 @@ public class TagalongAction : InteractibleAction
 }
 ```
 
-* 試試看！ 建置及部署應用程式。
-* 觀看如何的內容會遵循中心的視線點，但不是持續，而不會封鎖它。
+* 試試看！ 建立並部署應用程式。
+* 監看內容在注視點的中心, 但不會持續且不會封鎖。

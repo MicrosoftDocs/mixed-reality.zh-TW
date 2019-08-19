@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: fc65dccfcbc181af0c0b321374c721797e120e5d
-ms.sourcegitcommit: c7c7e3c836373b65e319609b4e8389dea6b081de
+ms.openlocfilehash: 43a6f02eaf09fcf43775374fae4fbe2d0bc8c346
+ms.sourcegitcommit: 599bbdd861ce6ff11b6cfb345a0a995f8b7bf85b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68460331"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68977982"
 ---
 # <a name="speech-sdk-learning-module---rocket-launcher-control-using-speech-commands"></a>語音 SDK 學習模組-使用語音命令 Rocket 啟動器控制項
 
@@ -23,17 +23,17 @@ ms.locfileid: "68460331"
 - 瞭解如何使用語音意圖語音命令作為 rocket 控制輸入命令。
 
 ## <a name="instructions"></a>指示
-1. 在本教學課程中, 我們將使用「BaseModule」資產, 將 rocket 啟動器與語音命令整合。 為此, 我們需要將資產匯入到專案中。 您可以使用此連結 (附加連結) 來下載 "Rocket 啟動器" 資產。 
+1. 在本教學課程中, 我們將使用「BaseModule」資產, 將 rocket 啟動器與語音命令整合。 為此, 我們需要將資產匯入到專案中。 您可以使用此[連結](https://github.com/microsoft/MixedRealityLearning/releases/tag/1.2)來下載「Rocket 啟動器」資產。 
 
 2. 若要匯入資產, 請移至資產-> 匯入套件-> 自訂套件-> 流覽至下載的檔案, 然後按一下 [匯入]。
 
 ![module4chapter5step1](images/module4chapter5step1.PNG)
 
-3. 匯入 "Rocket 啟動器" 資產之後, 請在 "Rocket 啟動器" 資料夾內流覽-> Prefabs > 選取 [Rocket Launcher_Complete], 然後將它拖放到現有的場景階層中。
+3. 匯入「基本模組資產」資產之後, 流覽 [基底模組資產] 資料夾-> Prefabs-> 選取 [Rocket Launcher_Complete], 然後將它拖放到現有的場景階層中。
 
 ![module4chapter5step2](images/module4chapter5step2.PNG)
 
-4. 現在, 我們需要將我們的「Rocket 啟動器」與我們在上一課中使用的 LUIS 專案整合在一起 (lesson4 的連結)。 為此, 請展開階層中的 "Rocket Launcher_Complete" prefab, 並尋找 [LaunchRoundButton]、[ResetRoundButton] 和 [放置提示] 按鈕。
+4. 現在, 我們需要將我們的「Rocket 啟動器」與我們在上一課[課程](mrlearning-speechSDK-ch4.md)中工作的LUIS 專案整合。 為此, 請展開階層中的 "Rocket Launcher_Complete" prefab, 並尋找 [LaunchRoundButton]、[ResetRoundButton] 和 [放置提示] 按鈕。
 
 ![module4chapter5step3](images/module4chapter5step3.PNG)
 

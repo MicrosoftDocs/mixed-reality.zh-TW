@@ -3,16 +3,16 @@ title: 使用 HoloLens 模擬器
 description: HoloLens 模擬器可讓您在沒有實體 HoloLens 的電腦上測試混合實境應用程式。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 04/25/2019
+ms.date: 08/14/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: HoloLens, 模擬器
-ms.openlocfilehash: e675911e661ad6a4b1f05f2ecb3aa77994c3815c
-ms.sourcegitcommit: 36601a19306a05c826b91dea191b020f634912bf
+ms.openlocfilehash: 6c112b7706f1dfff7c4affbdb4ee7326f0e15c8a
+ms.sourcegitcommit: 06c27acdac24c845952f9c1d3611770756f25820
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650826"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69030172"
 ---
 # <a name="using-the-hololens-emulator"></a>使用 HoloLens 模擬器
 
@@ -22,10 +22,10 @@ HoloLens 模擬器可讓您在沒有實體 HoloLens 的電腦上測試全像攝�
 
 
 ## <a name="installing-the-hololens-emulator"></a>安裝 HoloLens 模擬器
-下載 HoloLens 模擬器和全像攝影專案範本。
+下載 HoloLens 模擬器。
 
 版本： 
-* [HoloLens 2 模擬器和全像攝影專案範本](https://go.microsoft.com/fwlink/?linkid=2098508)。
+* [HoloLens 2 模擬器](https://go.microsoft.com/fwlink/?linkid=2101019).
 * [HoloLens 模擬器 (第 1 代) 和全像攝影專案範本](https://go.microsoft.com/fwlink/?linkid=2065980)。
 
 您可以在 [HoloLens 模擬器封存](hololens-emulator-archive.md)頁面上找到 HoloLens 模擬器的舊版組建。
@@ -43,7 +43,7 @@ HoloLens 模擬器會使用 Hyper-V 與 RemoteFx (第 1 代模擬器) 或 GPU-PV
 * BIOS 必須[支援並啟用](http://blogs.technet.com/b/iftekhar/archive/2010/08/09/enable-hardware-settings-in-bios-to-run-hyper-v.aspx)下列功能：
    * 硬體協助虛擬化
    * 第二層位址轉譯 (SLAT)
-   * 硬體型資料執行防止 (DEP)
+   * 硬體型資料執行防止 (DEP)。
 * GPU 需求
    * DirectX 11.0 或更新版本
    * WDDM 1.2 圖形驅動程式或更新版本 (第 1 代)

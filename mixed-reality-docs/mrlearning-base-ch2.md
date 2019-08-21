@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 925ab825c2716a847726ac763dc6800914d87c6b
-ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.openlocfilehash: 45833ba22305acedb45bfdc9752c0b278a693190
+ms.sourcegitcommit: 9636573eabdc78db6875e831a9c894a2ff173a99
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68702040"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69629177"
 ---
 # <a name="3-creating-user-interface-and-configure-mixed-reality-toolkit"></a>3.建立使用者介面和設定混合現實工具組 
 
@@ -34,7 +34,7 @@ ms.locfileid: "68702040"
 
 >注意:根據預設，您無法編輯 MRTK 設定檔。 這些是您可以複製和自訂的預設設定檔範本。 有數個層級的自訂和設定檔。 因此, 在設定一個或多個設定時, 複製和自訂數個設定檔是標準作法。
 >
->若要深入瞭解 MRTK 設定檔及其架構, 請造訪[MRTK 檔](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Architecture/SpatialAwareness/SpatialAwarenessSystemArchitecture.html>)。
+>若要深入瞭解 MRTK 設定檔及其架構, 請造訪[MRTK 檔](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/MixedRealityConfigurationGuide.html>)。
 
 2. 建立一份預設設定檔來進行自訂。 若要複製預設設定檔, 請按一下 [複製] & 自訂 (請參閱影像)。 這會建立一份 MRTK 設定檔。 有了自己的 MRTK 設定檔後，您現在就能自訂此設定檔中的任何設定。 您也必須針對此設定檔下的任何其他設定檔, 重複複製並自訂步驟, 如後續步驟所述。
 

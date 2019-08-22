@@ -1,17 +1,17 @@
 ---
 title: 縮放比例
 description: 以全像攝影形式顯示實際內容的關鍵, 就是盡可能地模擬真實世界的視覺統計資料。
-author: mavitazk
-ms.author: mavitazk
+author: shengkait
+ms.author: shentan
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality, 樣式, 設計
-ms.openlocfilehash: f13414bff7d84692e8e87aa2abdcded15627346f
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 169665293e2cc612a546bbee5af14387855ae96b
+ms.sourcegitcommit: c4d0132ea755c861c504dad46957e791b9c705d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63524104"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896556"
 ---
 # <a name="scale"></a>縮放比例
 

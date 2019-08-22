@@ -6,12 +6,12 @@ ms.author: pinkb
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality, 設計, 色彩, 光線, 材質
-ms.openlocfilehash: 3f8ee8edfe4cbbaf8a55b3c4a9125f752823be9c
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: bef0c8b63c109baa536e4192ce94919eb888faf2
+ms.sourcegitcommit: c4d0132ea755c861c504dad46957e791b9c705d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63526501"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896512"
 ---
 # <a name="color-light-and-materials"></a>色彩、光線和材質
 
@@ -28,7 +28,7 @@ ms.locfileid: "63526501"
 ## <a name="fundamentals-of-rendering-on-holographic-devices"></a>在全像攝影裝置上呈現的基本概念
 * 全像攝影**裝置具有 [加法] 顯示器**–從真實世界將光線新增到光線來建立全像投影, 白色會顯示為明亮, 而黑色則會透明。
 * **色彩影響會因使用者的環境而異**–使用者的房間內有許多不同的光源狀況。 建立具有適當對比層級的內容, 以利清楚地協助。
-* **避免動態光源**–全像全像攝影的全像攝影, 最有效率。 使用 advanced, 動態光源可能會超過行動著色器的功能。
+* **避免動態光源**–全像全像攝影的全像攝影, 最有效率。 使用 advanced、dynamic 光源可能會超過行動裝置的功能。 需要動態光源時, 建議使用[混合現實工具組標準著色器](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_MRTKStandardShader.md)。 
 
 ## <a name="designing-with-color"></a>使用色彩進行設計
 

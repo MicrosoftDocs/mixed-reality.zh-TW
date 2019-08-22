@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 07/10/2019
 ms.topic: article
 keywords: 疑難排解, 已知問題, 協助
-ms.openlocfilehash: 9ec15957b75ca3ec51dd01f5b9b4bc7371912c5a
-ms.sourcegitcommit: a11999e92e4e87516a6dcceabc2c5ed7642f1fd9
+ms.openlocfilehash: f043164f21f20925a78b59057e14ac4607d0d3f1
+ms.sourcegitcommit: c4d0132ea755c861c504dad46957e791b9c705d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68887261"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896539"
 ---
 # <a name="hololens-known-issues"></a>HoloLens 的已知問題
 
@@ -127,6 +127,9 @@ Visual Studio 已發行 VS 2019 16.2 版, 其中包含此問題的修正。 我�
 在 OOBE & 設定期間, 有2分鐘的認證超時。 使用者名稱/密碼必須在2分鐘內輸入, 否則 [使用者名稱] 欄位將會自動清除。
 
 我們建議使用藍牙鍵盤來輸入長密碼。
+
+>[!NOTE]
+> 如果在 OOBE 期間選取了錯誤的網路, 裝置就必須完全重設。 您可以在這裡找到指示[。](https://docs.microsoft.com/en-us/windows/mixed-reality/reset-or-recover-your-hololens#perform-a-full-device-recovery) 
 
 ## <a name="device-update"></a>裝置更新
 * 在新的更新之後30秒, shell 可能會消失一次。 請執行**bloom**手勢來繼續您的會話。

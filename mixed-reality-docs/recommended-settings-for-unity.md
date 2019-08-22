@@ -6,12 +6,12 @@ ms.author: trferrel
 ms.date: 03/26/2019
 ms.topic: article
 keywords: unity, 設定, 混合現實
-ms.openlocfilehash: 8afcefb49a860d66a372ebd3d0c4bcdb43038813
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: 395363cb99fd7e9e61adbea8ebc341aab50755e0
+ms.sourcegitcommit: c4d0132ea755c861c504dad46957e791b9c705d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67415453"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896532"
 ---
 # <a name="recommended-settings-for-unity"></a>適用于 Unity 的建議設定
 
@@ -67,9 +67,9 @@ Unity 提供一組預設選項, 通常是所有平臺的平均案例。 不過, 
 
 為了讓 Windows Mixed Reality 平臺優化全息全像的穩定性, 它依賴深度緩衝區來精確, 並符合螢幕上任何轉譯的全息影像。 因此, 在上進行深度緩衝區共用時, 在轉譯色彩時也很重要, 也會呈現深度。 在 Unity 中, 大部分不透明或 TransparentCutout 的材質預設都會呈現深度, 但透明和文字物件通常不會呈現深度, 雖然這是著色器相依的等等。 
 
-如果使用混合現實工具組標準著色器來呈現透明物件的深度:
+如果使用[混合現實工具組標準著色器](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_MRTKStandardShader.md)來呈現透明物件的深度:
 1) 選取使用 MRTK 標準著色器的透明資料, 然後開啟 [偵測器編輯器] 視窗
-2) 將**轉譯模式**設定為 [**自訂**], 然後將模式設定為 [ **透明** **]** , 最後將**深度寫入**設定為
+2) 選取深度緩衝區共用警告中的 [**立即修正**] 按鈕。 這也可以手動執行, 方法是將轉譯**模式**設定為 [**自訂**], 然後將模式設定為 [**透明**], 最後將 [**深度寫入** **]** 設定為
 
 >[!NOTE]
 > 開發人員應該注意, 在變更這些值時, 以及相機的近/上平面設定時, 會有 Z 對抗。 當兩個 gameobject 嘗試轉譯為相同的圖元, 且由於深度緩衝區的精確度限制 (也就是 z 深度), Unity 無法分辨哪個物件位於另一個物件前面。 開發人員會注意到兩個遊戲物件之間的閃爍, 因為它們會*對抗*相同的 z 深度值。 這可以藉由切換為24位深度格式來解決, 因為每個物件會有更大範圍的值來計算其在相機中的 z 深度。

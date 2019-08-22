@@ -1,17 +1,17 @@
 ---
 title: 資產建立流程
 description: 建立混合現實體驗資產的指導方針。
-author: paseb
-ms.author: paseb
+author: shengkait
+ms.author: shentan
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 資產, 建立, 進程, 預算, 多邊形, 紋理, 著色器, 效能
-ms.openlocfilehash: 513a9856ac35e4229cfb7bc8bcb92d9d6a152980
-ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
+ms.openlocfilehash: f7bee55249764af37453ea0fab01730b43907569
+ms.sourcegitcommit: c4d0132ea755c861c504dad46957e791b9c705d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66692296"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896499"
 ---
 # <a name="asset-creation-process"></a>資產建立流程
 
@@ -60,7 +60,7 @@ Windows Mixed Reality 建基於 Microsoft 在 DirectX 中所做的數十年投�
 
 **資產的複雜性**
 * 有多少三角形/多邊形？
-* 著色器有多複雜？
+* 著色器有多複雜？ 使用混合現實工具組時, 建議使用[混合現實工具組標準著色器](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_MRTKStandardShader.md)來減少著色器的複雜度。
 
 開發人員和演出者都必須考慮裝置和圖形引擎的功能。 Microsoft HoloLens 具有內建于裝置的所有計算和圖形。 它會分享開發人員可在行動平臺上找到的功能。
 

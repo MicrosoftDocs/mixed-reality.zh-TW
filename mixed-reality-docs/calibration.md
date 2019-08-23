@@ -6,17 +6,58 @@ ms.author: xerxesb
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 校正, 舒適, 視覺效果, 品質, ipd
-ms.openlocfilehash: 5f8e6aef1df0efe4c64c807e627f69c7949363f2
-ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
+ms.openlocfilehash: 354d7eb74666471f24a6b5774e5772260b1e3570
+ms.sourcegitcommit: 5d3be2d7569d912011ea114c0a283bc3c635d5df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65974807"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69979485"
 ---
 # <a name="improve-visual-quality-and-comfort"></a>改善視覺品質和舒適
 HoloLens、HoloLens 2 和 Windows Mixed Reality 沉浸式耳機提供不同的方式來改善視覺效果的品質。 
 
-## <a name="hololens"></a>HoloLens
+## <a name="hololens-2"></a>Hololens 2
+
+### <a name="calibration"></a>效果
+
+Hololens 2 的設計目的是為客戶提供最高品質的視覺效果影像和緩和。 眼睛追蹤技術是用來改善在虛擬環境中查看和互動的使用者體驗。  
+在 HoloLens 2 上, 系統會提示您在裝置設定期間校準您的視覺效果。 系統會要求使用者查看 fixation 目標的集合。 這可讓裝置調整使用者的全像投影, 以確保正確定位的全息影像、舒適的3D 觀賞體驗, 以及改良的顯示品質。 所有調整會即時進行, 而不需要手動調整。 藉由使用眼睛做為地標, 每個使用者和視覺效果都會隨著頭戴式裝置在使用中稍微變換而調整。 系統會在內部使用眼睛追蹤, 而開發人員則不需要採取任何動作來運用這項功能。 開發人員無法使用此資訊。 在 Hololens 2 上, 執行校正也可以確保每個使用者都能精確地監看眼追蹤。 眼球追蹤可讓應用程式即時追蹤使用者的視線方向。 這是開發人員可以利用的主要功能, 在全像攝影體驗中啟用全新的內容、人類瞭解及互動。  
+校正會儲存在本機裝置上, 而且不會與任何帳戶資訊相關聯。 沒有任何已使用裝置而未進行校正的記錄。 這表示新的使用者第一次使用裝置時, 系統會提示他們校準視覺效果, 以及先前選擇不進行校正或校正未成功的使用者。 在 [**設定** > ] [**隱私權** > **監控**] 中, 您一律可以從裝置中刪除校正。 
+
+### <a name="calibration-failures"></a>校正失敗
+
+校正應該適用于大部分的使用者, 但在某些情況下, 使用者可能無法成功校準。  
+一些校正失敗的範例是因為:
+- 在校正體驗期間, 使用者有注意力且未遵循校正目標
+- 已變更或有劃痕的裝置面板或裝置面板未正確定位 
+- 中途或有劃痕的眼鏡
+- 某些類型的連絡人鏡頭和眼鏡 (彩色連絡人鏡頭, 部分 toric 連絡人鏡頭, IR 封鎖眼鏡, 一些高處方眼鏡, 太陽眼鏡等等)
+- 更明顯的構成, 部分 eyelash 擴充功能
+- 眼睛和/或裝置面板遮蔽 (頭髮、一些粗 eyeglass 的框架)
+- 眼睛生理學、特定的眼睛和 (或) 眼睛 (一些狹窄的眼睛、長 eyelashes、amblyopia、nystagmus、LASIK 或其他眼睛 surgeries 的一些案例等等)
+
+如果校正不成功, 請嘗試下列其中一個修正: 
+- 清理您的裝置面板
+- 清理您的眼鏡
+- 將您的裝置面板全部推送到
+- 請確定沒有任何阻礙感應器或您的眼睛 (例如頭髮) 
+- 請確定您的房間內有足夠的光線, 而且您不是在直接陽光下
+- 請確定您在校正期間仔細遵循目標
+
+如果您遵循所有方針和校正仍然失敗, 您可以在 [**設定** > ] [**系統** > **校正**] 中停用校準提示。 「當新人員使用此 Hololens 時, 會自動要求執行眼校正」。 請瞭解, 這可能會導致更糟的全息影像轉譯品質和 discomfort。
+
+### <a name="launching-the-calibration-app-from-settings"></a>從設定啟動校正應用程式
+1. 使用 [開始手勢] 來進入 [[開始] 功能表](navigating-the-windows-mixed-reality-home.md#start-menu)。
+2. 選取 [**所有應用程式**] 以查看**設定**未釘選到啟動時的所有應用程式。
+3. 啟動**設定**。
+4. 流覽至 [**系統** > **校正** > ] [**眼睛校正**], 然後選取 [**執行眼校正**]。
+
+### <a name="calibration-when-sharing-a-device--session"></a>共用裝置/會話時的校正
+
+Hololens 2 可以在人員之間共用, 而不需要每個人進行裝置設定。 如果使用者是裝置的新手, 則 Hololens 2 會在裝置放在前端時, 提示使用者校準視覺效果。 如果使用者先前已校正裝置上的視覺效果, 則會順暢地調整顯示品質, 並在使用者將裝置放在前端時, 取得舒適的觀賞體驗。 
+
+
+## <a name="hololens"></a>Hololens
 
 校準您的 IPD (interpupillary 距離) 可以改善視覺效果的品質。
 
@@ -53,21 +94,6 @@ HoloLens、HoloLens 2 和 Windows Mixed Reality 沉浸式耳機提供不同的�
 
 ![從設定應用程式啟動校正應用程式](images/calibration-settings-500px.jpg)
 
-## <a name="hololens-2"></a>HoloLens 2
-
-### <a name="calibration"></a>效果 
-
-在 HoloLens 2 上, 系統會提示您在裝置設定期間校準您的視覺效果。 系統會要求使用者查看 fixation 目標的集合。 這可讓裝置調整使用者的全像投影轉譯, 以確保正確定位的全息影像、更舒適的3D 觀賞體驗, 以及改良的顯示品質。 所有調整會即時進行, 而不需要手動調整。 
-
-### <a name="calibration-when-sharing-a-device"></a>共用裝置時的校正 
-
-Hololens 2 裝置可以在人員之間共用, 而不需要每個人完成裝置設定。 如果使用者是裝置的新手, 則 Hololens 2 會在裝置放在前端時, 提示使用者校準視覺效果。 如果使用者已校正裝置上的視覺效果, 則會在使用者將裝置放在前端時, 順暢地調整顯示品質並熟悉觀看體驗。  
-
-### <a name="launching-the-calibration-app-from-settings"></a>從設定啟動校正應用程式
-1. 使用 [開始手勢] 來進入 [開始] 功能表。
-2. 如果 **+** **設定**未釘選到 [啟動], 請選取此值來查看所有應用程式。
-3. 啟動**設定**。
-4. 流覽至 [**系統** > **公用程式**], 然後選取 [**開啟校正**]。
 
 ## <a name="immersive-headsets"></a>沉浸式頭戴裝置
 

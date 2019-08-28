@@ -6,12 +6,12 @@ ms.author: dobrown
 ms.date: 05/15/2019
 ms.topic: article
 keywords: vr, lbe, 以位置為基礎的娛樂, vr arcade, arcade, 沉浸, qr, qr 代碼, hololens2
-ms.openlocfilehash: d51da88aa7bff1dc5c6d3068cb31793891c71e61
-ms.sourcegitcommit: 60f73ca23023c17c1da833c83d2a02f4dcc4d17b
+ms.openlocfilehash: 736ab265db2145dd784c435e525059ed3a2fcbbb
+ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69565995"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047161"
 ---
 # <a name="qr-code-tracking"></a>QR 代碼追蹤
 
@@ -248,6 +248,9 @@ QR 偵測適用于一系列的角度 + = 45deg。 這是為了確保我們有適
 Windows Mixed Reality 裝置會偵測驅動程式中系統層級的 QR 代碼。 當裝置重新開機時, 偵測到的 QR 代碼將會消失, 並會在下一次重新偵測為新物件。
 
 建議您將應用程式設定為略過早于特定時間戳記的 QR 代碼。 目前, API 不支援清除 QR 代碼歷程記錄。
+
+### <a name="qr-code-placement-in-a-space"></a>QR 代碼在空間中的位置
+如需有關如何放置 QR 代碼的建議, 請參閱[HoloLens 的環境考慮](environment-considerations-for-hololens.md)。
 
 ## <a name="qr-api-reference"></a>QR API 參考
 

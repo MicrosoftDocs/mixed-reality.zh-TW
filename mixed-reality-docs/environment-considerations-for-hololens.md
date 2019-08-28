@@ -6,12 +6,12 @@ ms.author: dobrown
 ms.date: 04/22/2019
 ms.topic: article
 keywords: 全像攝影框架、視圖的欄位、fov、校正、空間、環境、如何
-ms.openlocfilehash: fd5c5020916b3fde6f91663135c3bc2b6c334b44
-ms.sourcegitcommit: 60f73ca23023c17c1da833c83d2a02f4dcc4d17b
+ms.openlocfilehash: cc856c42aaf4ddfca8365f63ab0c7df1a1a3b248
+ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69565994"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047083"
 ---
 # <a name="environment-considerations-for-hololens"></a>HoloLens 的環境考慮
 
@@ -37,7 +37,7 @@ Windows Mixed Reality 會使用視覺光線來追蹤使用者的位置。 當環
 #### <a name="types-of-lighting"></a>光源類型
 在空間中, 不同類型的光線也會影響追蹤。 透過 it 執行的 AC 電力燈泡脈衝-如果 AC 頻率是 50Hz, 則會在50Hz 的燈跳動。 若為人類, 則不會注意到這種觸發。 不過, HoloLens 的30fps 攝影機會看到這些變更-某些畫面格會很亮, 有些則會不佳, 有些則會在相機嘗試補償光線脈衝時過度公開。
 
-在美國, 電力頻率標準為 60Hz, 因此燈泡脈衝會與 HoloLens 的「畫面播放速率-60Hz 脈衝」配合 hololens ' 30 FPS 的畫面播放速率」進行協調。 不過, 許多國家 (地區) 的 AC 頻率標準為 50Hz, 這表示會在脈衝期間採取一些 Hololens 畫面, 而有些則不會。 特別是, 歐洲的螢光燈已經知道會造成問題。 
+在美國, 電力頻率標準為 60Hz, 因此燈泡脈衝會與 HoloLens 的「畫面播放速率-60Hz 脈衝」配合 hololens ' 30 FPS 的畫面播放速率」進行協調。 不過, 許多國家 (地區) 的 AC 頻率標準為 50Hz, 這表示會在脈衝期間採取一些 HoloLens 畫面, 而有些則不會。 特別是, 歐洲的螢光燈已經知道會造成問題。 
 
 有幾件事您可以嘗試解決閃爍的問題。 溫度、燈泡年齡和準備週期是螢光閃爍的常見原因, 而取代燈泡可能會有説明。 將燈泡擰緊, 並確定目前的繪圖是常數, 也有説明。 
 
@@ -46,7 +46,7 @@ HoloLens 使用獨特的環境地標 (也稱為*功能*), 在空間中尋找本�
 
 裝置幾乎不會在功能不佳的區域中進行追蹤, 因為裝置無法得知空間的所在位置。 將功能新增至空間的牆通常是改善追蹤的好方法。 海報、標貼至牆、植物、唯一物件或其他類似專案的符號都有説明。 「雜亂桌面」是一個很好的環境範例, 會導致良好的追蹤-單一區域中有許多不同的功能。 
 
-此外, 在相同的空間中使用獨特的功能。 例如, 相同的海報在牆上重複多次, 會導致裝置混淆, 因為 HoloLens 無法得知所查看的重複海報。 新增獨特功能的一種常見方式是使用幾行遮罩磁帶, 沿著牆和空間的地板建立唯一的 nonrepetitve 模式。 
+此外, 在相同的空間中使用獨特的功能。 例如, 相同的海報在牆上重複多次, 會導致裝置混淆, 因為 HoloLens 無法得知所查看的重複海報。 新增獨特功能的一種常見方式是使用幾行遮罩磁帶, 沿著牆和地板空間來建立唯一的非重複模式。 
 
 問自己的一個好問題是, 如果您只看到一小部分的場景, 您可以在空間中唯一找出自己的地方嗎？ 如果不是, 裝置可能也會發生問題追蹤。
 
@@ -54,6 +54,15 @@ HoloLens 使用獨特的環境地標 (也稱為*功能*), 在空間中尋找本�
 如果您有兩個看起來相同的區域或區域, 追蹤程式可能會認為它們是相同的。 這會導致裝置誘騙自己思考它的其他地方。 我們會呼叫這些類型的重複區域*wormholes*。 
 
 若要避免 wormholes, 請嘗試避免相同空間中的相同區域。 相同的區域有時候會包含 factory 工作站、windows 在大樓、伺服器機架或工作工作站上。 標示區域或將獨特的功能新增至每個類似外觀的區域, 有助於減輕 wormholes。
+
+### <a name="qr-codes-in-environments"></a>環境中的 QR 代碼。
+HoloLens 可以使用[QR 代碼](qr-code-tracking.md)的原因有很多, 例如將物件加上標籤, 或為環境提供其他內容, 但也可以用來改善追蹤品質。 HoloLens 會自動使用 QR 代碼來協助建立對應, 即使您不使用內嵌在代碼中的資料也一樣。
+
+如果您使用 QR 代碼協助追蹤, 您會想要在任何指定的欄位內顯示兩到三個代碼。 在許多情況下, 這會轉譯為每2-3 計量或6-9 英尺放置 QR 代碼。
+
+請確定 QR 代碼是平面的, 並且會牢固地連接到牆或其他表面。
+
+在[qr 代碼偵測的最佳作法](qr-code-tracking.md#best-practices-for-qr-code-detection)中, 可以找到產生和列印 QR 代碼的最佳作法。
  
 ### <a name="movement-in-a-space"></a>在空間中移動
 如果您的環境不斷轉移和變更, 則裝置沒有任何穩定的功能可以尋找。 
@@ -110,4 +119,4 @@ HoloLens 可以快速地配合這些變更, 但只有在裝置清楚顯示該區
 * [空間對應設計](spatial-mapping-design.md)
 * [全息](hologram.md)
 * [校正](calibration.md)
-* [使用新空間中的 Hololens](use-hololens-in-new-spaces.md)
+* [使用新空間中的 HoloLens](use-hololens-in-new-spaces.md)

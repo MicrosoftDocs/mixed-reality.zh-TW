@@ -6,12 +6,12 @@ ms.author: chriba
 ms.date: 02/11/2019
 ms.topic: article
 keywords: Spectator View、iPhone、iOS、iPad、OpenCV、攝影機、ARKit、HoloLens、Mixed Reality、MixedRealityToolkit、示範、記錄
-ms.openlocfilehash: 135a566456f1000669d2033edcf0d0b4649ccdf3
-ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.openlocfilehash: 708ed694af3769f16d5dce0595e026f9a348d754
+ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387663"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047169"
 ---
 # <a name="spectator-view-for-hololens-and-hololens-2"></a>HoloLens 和 HoloLens 2 的 Spectator 視圖
 
@@ -25,10 +25,8 @@ Spectator View 提供快速且實惠的方法, 讓您以行動裝置錄製 HD �
 ## <a name="key-resources"></a>重要資源
 
 * [**GitHub 上的 Spectator 視圖**](https://github.com/microsoft/MixedReality-SpectatorView)
-* [**結構**](https://github.com/microsoft/MixedReality-SpectatorView/blob/master/doc/SpectatorView.Architecture.md)
-* [**範例**](https://github.com/microsoft/MixedReality-SpectatorView/tree/master/samples)
-* [**行動設定指示**](https://github.com/microsoft/MixedReality-SpectatorView/blob/master/doc/SpectatorView.Setup.md)
-* [**攝影機設定指示**](https://github.com/microsoft/MixedReality-SpectatorView/blob/master/doc/SpectatorView.Setup.VideoCamera.md)
+* [**Spectator View 檔**](https://microsoft.github.io/MixedReality-SpectatorView/README.html)
+* [**Spectator View 範例**](https://github.com/microsoft/MixedReality-SpectatorView/tree/master/samples)
 
 ## <a name="use-cases"></a>使用案例
 * 您可以使用 iPhone 或 Android 裝置記錄混合現實體驗。 以全 HD 記錄, 並將消除鋸齒功能套用到全息影像, 甚至是陰影。 這是一種符合成本效益且快速的方式, 可讓您掌握全息影像的影片。

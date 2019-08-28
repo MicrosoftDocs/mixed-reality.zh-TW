@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure, mixed reality, 學術, unity, 教學課程, api, microsoft graph, hololens, 沉浸, vr
-ms.openlocfilehash: 04c72a7ef7724cfcc27867f7f003c171a6f7851f
-ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.openlocfilehash: 775971c4e4289d2dc963dfa2bf033192d9f3489e
+ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67694530"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047198"
 ---
 >[!NOTE]
 >混合現實學術教學課程的設計是使用 HoloLens (第1代) 和混合現實的沉浸式耳機。  因此, 對於仍在尋找這些裝置開發指引的開發人員而言, 我們覺得這些教學課程很重要。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  系統會保留這些資訊, 以繼續在支援的裝置上運作。 未來將會有一系列新的教學課程, 將示範如何針對 HoloLens 2 進行開發。  此通知會在張貼時, 使用這些教學課程的連結進行更新。
@@ -66,7 +66,7 @@ ms.locfileid: "67694530"
 2.  設定並測試您的 HoloLens。 如果您需要支援設定 HoloLens,[請務必造訪 hololens 安裝程式一文](https://docs.microsoft.com/hololens/hololens-setup)。 
 3.  開始開發新的 HoloLens 應用程式時, 最好先執行校正和感應器微調 (有時候它有助於為每個使用者執行這些工作)。 
 
-如需校正的說明, 請遵循此[HoloLens 校正文章的連結](calibration.md#hololens)。
+如需校正的說明, 請遵循此[HoloLens 校正文章的連結](calibration.md#hololens-2)。
 
 如需感應器微調的說明, 請遵循此[HoloLens 感應器微調文章連結](sensor-tuning.md)。
 
@@ -131,7 +131,7 @@ ms.locfileid: "67694530"
 
     ![](images/AzureLabs-Lab311-12.png)
 
-5.  仍在 [   > 檔案**組建] 設定**中, 請確定:
+5.  仍在 [  > 檔案**組建] 設定**中, 請確定:
 
     1. **目標裝置**設定為**HoloLens**
     2. **組建類型**設定為**D3D**
@@ -217,7 +217,7 @@ ms.locfileid: "67694530"
 
     ![](images/AzureLabs-Lab311-21.png)
 
-5.  選取此*外掛程式*之後, 請確認已取消核取**任何平臺**, 然後確定**WSAPlayer**也未核取, 然後按一下 [套用]。 這只是為了確認檔案已正確設定。
+5.  選取此*外掛程式*之後, 請確認已取消核取**任何平臺**, 然後確定**WSAPlayer**也未核取,然後按一下 [套用]。 這只是為了確認檔案已正確設定。
 
     ![](images/AzureLabs-Lab311-22.png)
 
@@ -945,7 +945,7 @@ ms.locfileid: "67694530"
 
 2.  如果還沒這麼做, 請對 **\# Unity C 專案**進行滴答。
 
-3.  按一下 [建置] 。 Unity 將會啟動 [檔案**瀏覽器**] 視窗, 您必須在其中建立並選取要建立應用程式的資料夾。 立即建立該資料夾, 並將它命名為**應用程式**。 然後選取 [**應用程式**] 資料夾, 按一下 [**選取資料夾**]。
+3.  按一下 [建置]。 Unity 將會啟動 [檔案**瀏覽器**] 視窗, 您必須在其中建立並選取要建立應用程式的資料夾。 立即建立該資料夾, 並將它命名為**應用程式**。 然後選取 [**應用程式**] 資料夾, 按一下 [**選取資料夾**]。
 
 4.  Unity 會開始將您的專案建立至**應用程式**資料夾。
 

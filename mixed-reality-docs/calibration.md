@@ -6,12 +6,12 @@ ms.author: xerxesb
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 校正, 舒適, 視覺效果, 品質, ipd
-ms.openlocfilehash: 354d7eb74666471f24a6b5774e5772260b1e3570
-ms.sourcegitcommit: 5d3be2d7569d912011ea114c0a283bc3c635d5df
+ms.openlocfilehash: 1fc3904f4b3e441a967616f20e4287dbc7f08835
+ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69979485"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047057"
 ---
 # <a name="improve-visual-quality-and-comfort"></a>改善視覺品質和舒適
 HoloLens、HoloLens 2 和 Windows Mixed Reality 沉浸式耳機提供不同的方式來改善視覺效果的品質。 
@@ -52,12 +52,12 @@ Hololens 2 的設計目的是為客戶提供最高品質的視覺效果影像和
 3. 啟動**設定**。
 4. 流覽至 [**系統** > **校正** > ] [**眼睛校正**], 然後選取 [**執行眼校正**]。
 
-### <a name="calibration-when-sharing-a-device--session"></a>共用裝置/會話時的校正
+### <a name="calibration-when-sharing-a-devicesession"></a>共用裝置/會話時的校正
 
 Hololens 2 可以在人員之間共用, 而不需要每個人進行裝置設定。 如果使用者是裝置的新手, 則 Hololens 2 會在裝置放在前端時, 提示使用者校準視覺效果。 如果使用者先前已校正裝置上的視覺效果, 則會順暢地調整顯示品質, 並在使用者將裝置放在前端時, 取得舒適的觀賞體驗。 
 
 
-## <a name="hololens"></a>Hololens
+## <a name="hololens-v1"></a>Hololens (v1)
 
 校準您的 IPD (interpupillary 距離) 可以改善視覺效果的品質。
 

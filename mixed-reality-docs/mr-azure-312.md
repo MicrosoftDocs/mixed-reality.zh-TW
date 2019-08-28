@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure, 混合現實, 學術, unity, 教學課程, api, 電腦視覺, hololens, 沉浸, vr, microsoft bot framework v4, web 應用程式 bot, bot framework, microsoft bot
-ms.openlocfilehash: b828aa4415103d280459bd2c666004c994b3e59d
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 481693b5af8c946e1cb45dda5144e78a175fa771
+ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63542858"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047234"
 ---
 >[!NOTE]
 >混合現實學術教學課程的設計是使用 HoloLens (第1代) 和混合現實的沉浸式耳機。  因此, 對於仍在尋找這些裝置開發指引的開發人員而言, 我們覺得這些教學課程很重要。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  系統會保留這些資訊, 以繼續在支援的裝置上運作。 未來將會有一系列新的教學課程, 將示範如何針對 HoloLens 2 進行開發。  此通知會在張貼時, 使用這些教學課程的連結進行更新。
@@ -45,7 +45,7 @@ ms.locfileid: "63542858"
 > [!NOTE]
 > 雖然此課程主要著重于 HoloLens, 但您也可以將在本課程中學習到的內容套用至 Windows Mixed Reality 沉浸式 (VR) 耳機。 因為沉浸式 (VR) 耳機沒有可存取的相機, 所以您需要連接到電腦的外部相機。 隨著課程的遵循, 您將會看到支援沉浸式 (VR) 耳機時, 您可能需要採取的任何變更的附注。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 > [!NOTE]
 > 本教學課程是專為具備 Unity 和C#基本經驗的開發人員所設計。 也請注意, 本檔中的必要條件和書面指示, 代表在撰寫本文時已測試和驗證的內容 (2018 年7月)。 您可以免費使用 [[安裝工具](install-the-tools.md)] 文章中所列的最新軟體, 但不應假設本課程中的資訊完全符合您在較新軟體中找到的內容, 而不是如下所示。
@@ -66,7 +66,7 @@ ms.locfileid: "63542858"
 2.  設定並測試您的 HoloLens。 如果您需要支援設定 HoloLens,[請務必造訪 hololens 安裝程式一文](https://docs.microsoft.com/hololens/hololens-setup)。 
 3.  開始開發新的 HoloLens 應用程式時, 最好先執行校正和感應器微調 (有時候它有助於為每個使用者執行這些工作)。 
 
-如需校正的說明, 請遵循此[HoloLens 校正文章的連結](calibration.md#hololens)。
+如需校正的說明, 請遵循此[HoloLens 校正文章的連結](calibration.md#hololens-2)。
 
 如需感應器微調的說明, 請遵循此[HoloLens 感應器微調文章連結](sensor-tuning.md)。
 
@@ -74,9 +74,9 @@ ms.locfileid: "63542858"
 
 第一個步驟是將您的 bot 建立為本機 ASP.Net 核心 Web 應用程式。 完成並測試之後, 您會將它發佈至 Azure 入口網站。
 
-1.  開啟 Visual Studio。 建立新的專案, 選取 [ **ASP NET Core Web 應用程式**] 做為 [專案類型] (您會在 [.net Core] 子區段下找到), 並將它命名為**MyBot**。 按一下 [確定] 。
+1.  開啟 Visual Studio。 建立新的專案, 選取 [ **ASP NET Core Web 應用程式**] 做為 [專案類型] (您會在 [.net Core] 子區段下找到), 並將它命名為**MyBot**。 按一下 [確定]。
 
-2.  在將出現的視窗中, 選取 [**空白**]。 此外, 請確定 [目標] 設定為 [ **ASP NET Core 2.0** ], 並將 [驗證] 設定為 [**無驗證**]。 按一下 [確定 **Deploying Office Solutions**]。  
+2.  在將出現的視窗中, 選取 [**空白**]。 此外, 請確定 [目標] 設定為 [ **ASP NET Core 2.0** ], 並將 [驗證] 設定為 [**無驗證**]。 按一下 [確定]。  
 
     ![建立 bot 應用程式](images/AzureLabs-Lab312-01.png)
 
@@ -98,7 +98,7 @@ ms.locfileid: "63542858"
 
 7.  重複上一個點, 以建立名為**ConversationCoNtext**的另一個類別。 
 
-8.  以滑鼠右鍵按一下**方案總管**中的 [ **wwwroot** ], 然後按一下 [**加入** **|** **新專案**]。 選取 [ **HTML 網頁**] (您會在子區段網站底下找到)。 將檔案命名為 **.html**。 按一下 **\[新增\]** 。
+8.  以滑鼠右鍵按一下**方案總管**中的 [ **wwwroot** ], 然後按一下 [**加入** **|** **新專案**]。 選取 [ **HTML 網頁**] (您會在子區段網站底下找到)。 將檔案命名為 **.html**。 按一下 [新增]。
 
     ![建立 bot 應用程式](images/AzureLabs-Lab312-06.png)
 
@@ -249,7 +249,7 @@ ms.locfileid: "63542858"
     }
     ```
 
-14. 請記得儲存您的變更, 若要這麼做,   > 請從 Visual Studio 頂端的工具列移至 [檔案] [**全部儲存**]。
+14. 請記得儲存您的變更, 若要這麼做,  > 請從 Visual Studio 頂端的工具列移至 [檔案] [**全部儲存**]。
 
 ## <a name="chapter-2---create-the-azure-bot-service"></a>第2章-建立 Azure Bot 服務
 
@@ -325,7 +325,7 @@ ms.locfileid: "63542858"
     ![將 Bot 發佈至 Azure Web 應用程式 Bot 服務](images/AzureLabs-Lab312-17.png)
 
 4. 如果您尚未登入您的 Microsoft 帳戶, 您必須在這裡執行此動作。
-5. 在 [**發佈**] 頁面上, 您會發現您必須設定用來建立*Web 應用程式 Bot*服務的相同**訂**用帳戶。 然後將 [ **View** ] 設定為 [**資源群組**], 然後在 [下拉式資料夾結構] 中, 選取您先前建立的**資源群組**。 按一下 [確定] 。 
+5. 在 [**發佈**] 頁面上, 您會發現您必須設定用來建立*Web 應用程式 Bot*服務的相同**訂**用帳戶。 然後將 [ **View** ] 設定為 [**資源群組**], 然後在 [下拉式資料夾結構] 中, 選取您先前建立的**資源群組**。 按一下 [確定]。 
 
     ![將 Bot 發佈至 Azure Web 應用程式 Bot 服務](images/AzureLabs-Lab312-18.png)
 
@@ -417,7 +417,7 @@ ms.locfileid: "63542858"
 ## <a name="chapter-5--camera-setup"></a>第5章–相機設定
 
 > [!IMPORTANT]
-> 如果您想要略過此課程的*Unity 設定*元件, 並直接繼續閱讀程式碼, 您可以免費下載此[Azure-MR-312-unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20312%20-%20Bot%20integration/Azure-MR-312.unitypackage), 將它匯入您的專案中做為[**自訂套件**](https://docs.unity3d.com/Manual/AssetPackages.html), 然後繼續進行[第7章](#chapter-7-–-create-the-botobjects-class)。
+> 如果您想要略過此課程的*Unity 設定*元件, 並直接繼續閱讀程式碼, 您可以免費下載此[Azure-MR-312-unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20312%20-%20Bot%20integration/Azure-MR-312.unitypackage), 將它匯入您的專案中做為[**自訂套件**](https://docs.unity3d.com/Manual/AssetPackages.html), 然後繼續進行[第7章](#chapter-8--create-the-botobjects-class)。
 
 1.  在 [階層]*面板*中, 選取**主要相機**。 
 2.  選取之後, 您就可以在 [偵測*器] 面板*中看到**主要攝影機**的所有元件。
@@ -1229,7 +1229,7 @@ ms.locfileid: "63542858"
 若要執行應用程式的徹底測試, 您必須將它側載到 HoloLens。
 在您執行之前, 請確定:
 
--   [**第4章**](#Chapter-4-–-Set-up-the-unity-project)所述的所有設定都已正確設定。 
+-   [**第4章**](#chapter-4--set-up-the-unity-project)所述的所有設定都已正確設定。 
 -   腳本**SceneOrganiser**會附加到**主要相機**物件。 
 -   在**bot**類別中, 請確定您已將**bot 秘密金鑰**插入**botSecret**變數中。
 
@@ -1243,7 +1243,7 @@ ms.locfileid: "63542858"
     ![從 Unity 建立應用程式](images/AzureLabs-Lab312-38.png)
 
 3.  如果尚未這麼做, 請先勾選**Unity C#專案**。
-4.  按一下 [建置] 。 Unity 將會啟動 [檔案**瀏覽器**] 視窗, 您必須在其中建立並選取要建立應用程式的資料夾。 立即建立該資料夾, 並將它命名為**應用程式**。 然後選取 [**應用程式**] 資料夾, 按一下 [**選取資料夾**]。 
+4.  按一下 [建置]。 Unity 將會啟動 [檔案**瀏覽器**] 視窗, 您必須在其中建立並選取要建立應用程式的資料夾。 立即建立該資料夾, 並將它命名為**應用程式**。 然後選取 [**應用程式**] 資料夾, 按一下 [**選取資料夾**]。 
 5.  Unity 會開始將您的專案建立至**應用程式**資料夾。 
 6.  Unity 完成建立之後 (可能需要一些時間), 它會在組建的位置開啟 [檔案**瀏覽器**] 視窗 (請檢查您的工作列, 因為它不一定會出現在視窗的上方, 但會通知您加入新的視窗)。
 
@@ -1269,7 +1269,7 @@ ms.locfileid: "63542858"
 6.  您的應用程式現在應該會出現在 HoloLens 上已安裝的應用程式清單中, 準備好啟動!
 
     > [!NOTE]
-    > 若要部署到沉浸式耳機, 請將**解決方案平臺**設定為 [*本機電腦*], 然後將 [設定] 設為 [  *Debug*], 並將*x86*作為**平臺**。 然後, 使用 [**建立] 功能表**, 選取 [*部署解決方案*], 部署至本機電腦。 
+    > 若要部署到沉浸式耳機, 請將**解決方案平臺**設定為 [*本機電腦*], 然後將 [設定] 設為 [ *Debug*], 並將*x86*作為**平臺**。 然後, 使用 [**建立] 功能表**, 選取 [*部署解決方案*], 部署至本機電腦。 
 
 ## <a name="chapter-16--using-the-application-on-the-hololens"></a>第16章–在 HoloLens 上使用應用程式
 

@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/11/2018
 ms.topic: article
 keywords: azure, 混合現實, 學術, 邊緣, iot edge, 教學課程, api, 通知, 函數, 資料表, hololens, 沉浸, vr, iot, 虛擬機器, ubuntu, python
-ms.openlocfilehash: 93f7dc64426360d2e02b0ee0a9b1796fc8f2b469
-ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.openlocfilehash: ec669b799e7c46a9a4ed87674ed78e50f816c9e9
+ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67694594"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047247"
 ---
 >[!NOTE]
 >混合現實學術教學課程的設計是使用 HoloLens (第1代) 和混合現實的沉浸式耳機。  因此, 對於仍在尋找這些裝置開發指引的開發人員而言, 我們覺得這些教學課程很重要。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  系統會保留這些資訊, 以繼續在支援的裝置上運作。 未來將會有一系列新的教學課程, 將示範如何針對 HoloLens 2 進行開發。  此通知會在張貼時, 使用這些教學課程的連結進行更新。
@@ -55,7 +55,7 @@ ms.locfileid: "67694594"
 </tr>
 </table>
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 如需使用混合現實進行開發的最新必要條件, 包括 Microsoft HoloLens, 請造訪[安裝工具](https://docs.microsoft.com/windows/mixed-reality/install-the-tools)一文。
 
@@ -84,7 +84,7 @@ ms.locfileid: "67694594"
 1. 設定並測試您的 HoloLens。 如果您需要支援設定 HoloLens,[請務必造訪 hololens 安裝程式一文](https://docs.microsoft.com/hololens/hololens-setup)。
 2. 開始開發新的 HoloLens 應用程式時, 最好先執行**校正**和**感應器微調**(有時候它有助於為每個使用者執行這些工作)。
 
-如需校正的說明, 請遵循此[HoloLens 校正文章的連結](calibration.md#hololens)。
+如需校正的說明, 請遵循此[HoloLens 校正文章的連結](calibration.md#hololens-2)。
 
 如需感應器微調的說明, 請遵循此[HoloLens 感應器微調文章連結](sensor-tuning.md)。
 

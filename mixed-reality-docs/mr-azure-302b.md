@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/03/2018
 ms.topic: article
 keywords: azure, 混合現實, 學術, unity, 教學課程, api, 自訂視覺, hololens, 沉浸, vr
-ms.openlocfilehash: e6e9782a8d559af660dc4765556f1e926c5360b1
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: b173648e2e829e94e47306277bd7814a19842cae
+ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63553906"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047215"
 ---
 >[!NOTE]
 >混合現實學術教學課程的設計是使用 HoloLens (第1代) 和混合現實的沉浸式耳機。  因此, 對於仍在尋找這些裝置開發指引的開發人員而言, 我們覺得這些教學課程很重要。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  系統會保留這些資訊, 以繼續在支援的裝置上運作。 未來將會有一系列新的教學課程, 將示範如何針對 HoloLens 2 進行開發。  此通知會在張貼時, 使用這些教學課程的連結進行更新。
@@ -72,7 +72,7 @@ Azure 自訂視覺是一種 Microsoft 認知服務, 可讓開發人員建立自�
 2.  設定並測試您的 HoloLens。 如果您需要支援設定 HoloLens,[請務必造訪 hololens 安裝程式一文](https://docs.microsoft.com/hololens/hololens-setup)。 
 3.  開始開發新的 HoloLens 應用程式時, 最好先執行校正和感應器微調 (有時候它有助於為每個使用者執行這些工作)。 
 
-如需校正的說明, 請遵循此[HoloLens 校正文章的連結](calibration.md#hololens)。
+如需校正的說明, 請遵循此[HoloLens 校正文章的連結](calibration.md#hololens-2)。
 
 如需感應器微調的說明, 請遵循此[HoloLens 感應器微調文章連結](sensor-tuning.md)。
 
@@ -781,7 +781,7 @@ Azure 自訂視覺是一種 Microsoft 認知服務, 可讓開發人員建立自�
     ```
 
     > [!IMPORTANT]
-    > 請確定您已新增您先前記下的**服務金鑰**(訓練金鑰) 值和**專案識別碼**值;這些是您稍[早在課程中從入口網站收集的值 (第2章, 步驟 10)](#chapter-2---training-your-custom-vision-oroject)。
+    > 請確定您已新增您先前記下的**服務金鑰**(訓練金鑰) 值和**專案識別碼**值;這些是您稍[早在課程中從入口網站收集的值 (第2章, 步驟 10)](#chapter-2---training-your-custom-vision-project)。
 
 5.  新增下列**Start ()** 和**喚醒 ()** 方法。 這些方法會在初始化時呼叫, 並包含設定 UI 的呼叫:
 
@@ -1651,7 +1651,7 @@ Azure 自訂視覺是一種 Microsoft 認知服務, 可讓開發人員建立自�
 
 2.  Tick **Unity C\#專案**。
 
-3.  按一下 [建置] 。 Unity 將會啟動 [檔案**瀏覽器**] 視窗, 您必須在其中建立並選取要建立應用程式的資料夾。 立即建立該資料夾, 並將它命名為**應用程式**。 然後選取 [**應用程式**] 資料夾, 按一下 [**選取資料夾**]。
+3.  按一下 [建置]。 Unity 將會啟動 [檔案**瀏覽器**] 視窗, 您必須在其中建立並選取要建立應用程式的資料夾。 立即建立該資料夾, 並將它命名為**應用程式**。 然後選取 [**應用程式**] 資料夾, 按一下 [**選取資料夾**]。
 
 4.  Unity 會開始將您的專案建立至**應用程式**資料夾。
 
@@ -1684,7 +1684,7 @@ Azure 自訂視覺是一種 Microsoft 認知服務, 可讓開發人員建立自�
 6. 您的應用程式現在應該會出現在 HoloLens 上已安裝的應用程式清單中, 準備好啟動!
 
 > [!NOTE]
-> 若要部署到沉浸式耳機, 請將**解決方案平臺**設定為 [*本機電腦*], 然後將 [設定] 設為 [  *Debug*], 並將*x86*作為**平臺**。 然後, 使用 [**建立**] 功能表項目選取 [*部署解決方案*], 部署至本機電腦。 
+> 若要部署到沉浸式耳機, 請將**解決方案平臺**設定為 [*本機電腦*], 然後將 [設定] 設為 [ *Debug*], 並將*x86*作為**平臺**。 然後, 使用 [**建立**] 功能表項目選取 [*部署解決方案*], 部署至本機電腦。 
 
 ## <a name="to-use-the-application"></a>若要使用應用程式:
 

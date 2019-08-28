@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure, 混合現實, 學術, unity, 教學課程, api, 臉部辨識, hololens, 沉浸, vr
-ms.openlocfilehash: 6330d3e5c51d6b2cbc43ea795a3f953a5b14d6f1
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 7cd2a6683c80279129934c619a9b9cb857badf67
+ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63554705"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047180"
 ---
 >[!NOTE]
 >混合現實學術教學課程的設計是使用 HoloLens (第1代) 和混合現實的沉浸式耳機。  因此, 對於仍在尋找這些裝置開發指引的開發人員而言, 我們覺得這些教學課程很重要。  這些教學課程會 **_不_** 使用最新的工具組或用於 HoloLens 2 的互動進行更新。  系統會保留這些資訊, 以繼續在支援的裝置上運作。 未來將會有一系列新的教學課程, 將示範如何針對 HoloLens 2 進行開發。  此通知會在張貼時, 使用這些教學課程的連結進行更新。
@@ -72,7 +72,7 @@ ms.locfileid: "63554705"
 2.  設定並測試您的 HoloLens。 如果您需要支援設定 HoloLens,[請務必造訪 hololens 安裝程式一文](https://docs.microsoft.com/hololens/hololens-setup)。 
 3.  開始開發新的 HoloLens 應用程式時, 最好先執行校正和感應器微調 (有時候它有助於為每個使用者執行這些工作)。 
 
-如需校正的說明, 請遵循此[HoloLens 校正文章的連結](calibration.md#hololens)。
+如需校正的說明, 請遵循此[HoloLens 校正文章的連結](calibration.md#hololens-2)。
 
 如需感應器微調的說明, 請遵循此[HoloLens 感應器微調文章連結](sensor-tuning.md)。
 
@@ -293,9 +293,9 @@ ms.locfileid: "63554705"
 ## <a name="chapter-4---main-camera-setup"></a>第4章-主要相機設定
 
 > [!IMPORTANT]
-> 如果您想要略過此課程的*Unity 設定*元件, 並直接繼續執行程式碼, 您可以[下載 unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20304%20-%20Face%20recognition/Azure-MR-304.unitypackage), 並將它匯入到您的專案中做為[自訂套件](https://docs.unity3d.com/Manual/AssetPackages.html)。 請注意, 此套件也包含匯入*NEWTONSOFT DLL*, 其涵蓋于[第5章](#chapter-5--import-the-newtonsoft.json-library)。 匯入此匯入之後, 您可以從[第6章](#chapter-6-create-the-faceanalysis-class)繼續進行。
+> 如果您想要略過此課程的*Unity 設定*元件, 並直接繼續執行程式碼, 您可以[下載 unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20304%20-%20Face%20recognition/Azure-MR-304.unitypackage), 並將它匯入到您的專案中做為[自訂套件](https://docs.unity3d.com/Manual/AssetPackages.html)。 請注意, 此套件也包含匯入*NEWTONSOFT DLL*, 其涵蓋于[第5章](#chapter-5--import-the-newtonsoftjson-library)。 匯入此匯入之後, 您可以從[第6章](#chapter-6---create-the-faceanalysis-class)繼續進行。
 
-1.  在 [ 階層] 面板中, 選取**主要相機**。
+1.  在 [階層] 面板中, 選取**主要相機**。
 
 2.  選取之後, 您就可以在 [偵測*器] 面板*中看到**主要攝影機**的所有元件。
 
@@ -314,7 +314,7 @@ ms.locfileid: "63554705"
 ## <a name="chapter-5--import-the-newtonsoftjson-library"></a>第5章–匯入 Newtonsoft Json 程式庫
 
 > [!IMPORTANT]
-> 如果您已匯入[上一章](#chapter-4--main-camera-setup)中的 '. unitypackage ', 您可以略過這一章。
+> 如果您已匯入[上一章](#chapter-4---main-camera-setup)中的 '. unitypackage ', 您可以略過這一章。
 
 若要協助您還原序列化並將已接收和傳送至 Bot 服務的物件序列化, 您需要下載*Newtonsoft*程式庫。 您會在此[unity 封裝](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20304%20-%20Face%20recognition/newtonsoftDLL.unitypackage)檔案中找到已使用正確 unity 資料夾結構組織的相容版本。 
 
@@ -834,7 +834,7 @@ FaceAnalysis 類別的用途是裝載與您的 Azure 臉部辨識服務通訊所
 6.  您的應用程式現在應該會出現在 HoloLens 上已安裝的應用程式清單中, 準備好啟動!
 
 > [!NOTE]
-> 若要部署到沉浸式耳機, 請將**解決方案平臺**設定為 [*本機電腦*], 然後將 [設定] 設為 [  *Debug*], 並將*x86*作為**平臺**。 然後, 使用 [**建立] 功能表**, 選取 [*部署解決方案*], 部署至本機電腦。 
+> 若要部署到沉浸式耳機, 請將**解決方案平臺**設定為 [*本機電腦*], 然後將 [設定] 設為 [ *Debug*], 並將*x86*作為**平臺**。 然後, 使用 [**建立] 功能表**, 選取 [*部署解決方案*], 部署至本機電腦。 
 
 
 ## <a name="chapter-10---using-the-application"></a>第10章-使用應用程式

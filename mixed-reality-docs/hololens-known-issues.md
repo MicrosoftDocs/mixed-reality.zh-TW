@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 07/10/2019
 ms.topic: article
 keywords: 疑難排解, 已知問題, 協助
-ms.openlocfilehash: f043164f21f20925a78b59057e14ac4607d0d3f1
-ms.sourcegitcommit: c4d0132ea755c861c504dad46957e791b9c705d5
+ms.openlocfilehash: 80bd7499c0075399e516648dd92b7515fdba753a
+ms.sourcegitcommit: ff330a7e36e5ff7ae0e9a08c0e99eb7f3f81361f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69896539"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70122135"
 ---
 # <a name="hololens-known-issues"></a>HoloLens 的已知問題
 
@@ -28,7 +28,7 @@ Visual Studio 已發行 VS 2019 16.2 版, 其中包含此問題的修正。 我�
  
 **因應措施**： 
 
-我們的團隊目前正在努力修正。 在此同時, 您可以使用下列步驟來解決問題, 並協助解除封鎖部署和調試:  
+雖然 Visual Studio 2019 16.2 中已修正此問題, 但選擇停留在舊版 Visual Studio 的開發人員可以使用下列步驟來解決問題, 並協助解除封鎖部署和調試:  
 1. 開啟 Visual Studio
 2. 檔案 > 新 > 專案
 3. Visual C# > Windows 桌面 > 主控台應用程式 (.NET Framework)
@@ -74,7 +74,6 @@ Visual Studio 已發行 VS 2019 16.2 版, 其中包含此問題的修正。 我�
  
 15. 一旦工具結束但沒有任何訊息 (這應該只需要幾秒鐘的時間), 您現在就可以從 Visual Studio 2017 或更新版本進行部署和偵錯工具。  不需要繼續使用此工具。
 
-我們將在提供進一步的更新。
 
 ## <a name="issues-launching-the-microsoft-store-and-apps-on-hololens"></a>在 HoloLens 上啟動 Microsoft Store 和應用程式的問題
 

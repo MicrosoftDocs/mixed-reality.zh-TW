@@ -6,17 +6,17 @@ ms.author: bethau
 ms.date: 08/01/2019
 ms.topic: article
 keywords: HoloLens、遠端、全像攝影遠端
-ms.openlocfilehash: 95cf98504f26e2362b3c4fd38e7d9228350798f3
-ms.sourcegitcommit: ca949efe0279995a376750d89e23d7123eb44846
+ms.openlocfilehash: 6b0f92fce1099ec98d87100e015de9442bff6bd2
+ms.sourcegitcommit: ff330a7e36e5ff7ae0e9a08c0e99eb7f3f81361f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68718062"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70122026"
 ---
 # <a name="writing-a-holographic-remoting-host-app"></a>撰寫全像的遠端主機應用程式
 
 >[!IMPORTANT]
->本檔說明如何建立 HoloLens 2 的主應用程式。 **HoloLens 1**的主應用程式必須使用 NuGet 套件1.x 版。 這表示針對 HoloLens 2 所撰寫的主機應用程式與 HoloLens 1 不相容, 反之亦然。 您可以在[這裡](add-holographic-remoting.md)找到 HoloLens 1 的檔。
+>本檔說明如何建立 HoloLens 2 的主應用程式。 **HoloLens (第1代)** 的主機應用程式必須使用 NuGet套件1.x 版。 這表示針對 HoloLens 2 所撰寫的主機應用程式與 HoloLens 1 不相容, 反之亦然。 您可以在[這裡](add-holographic-remoting.md)找到 HoloLens 1 的檔。
 
 藉由建立全像遠端主機應用程式, 您可以將在遠端電腦上呈現的遠端內容串流至 HoloLens 2。 本文說明如何達成此目的。 此頁面上的所有程式碼和工作專案都可以在全像的[遠端範例 github 存放庫](https://github.com/microsoft/MixedReality-HolographicRemoting-Samples)中找到。
 
@@ -24,7 +24,7 @@ ms.locfileid: "68718062"
 
 一般遠端連線的延遲時間會降到50毫秒。 Player 應用程式可以即時報告延遲。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 良好的起點是以 Windows Mixed Reality API 為目標的可運作 DirectX 型桌面或 UWP 應用程式。 如需詳細資訊, 請參閱[DirectX 開發總覽](directx-development-overview.md)。 全像攝影專案範本是不錯的起點。 [ C++ ](creating-a-holographic-directx-project.md)
 
@@ -44,7 +44,7 @@ ms.locfileid: "68718062"
 6. 下一個出現的對話方塊是授權合約。 按一下 [**我接受**] 以接受授權合約。
 
 >[!NOTE]
->1\.x版的 NuGet 套件仍然可供想要以 HoloLens 1 為目標的開發人員使用。 如需詳細資訊, 請參閱新增全像攝影[遠端 (HoloLens 1)](add-holographic-remoting.md)。
+>1\.x版的 NuGet 套件仍然可供想要以 HoloLens 1 為目標的開發人員使用。 如需詳細資訊, 請參閱新增全像攝影[遠端 (HoloLens (第1代))](add-holographic-remoting.md)。
 
 ## <a name="create-the-remote-context"></a>建立遠端內容
 

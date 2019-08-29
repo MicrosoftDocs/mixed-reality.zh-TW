@@ -6,17 +6,17 @@ ms.author: jlyons
 ms.date: 08/01/2019
 ms.topic: article
 keywords: HoloLens、遠端、全像攝影遠端
-ms.openlocfilehash: fe26092ec8f5895652d17f88bf3be15cb116e482
-ms.sourcegitcommit: ca949efe0279995a376750d89e23d7123eb44846
+ms.openlocfilehash: c3e31cdb5acf35ecc3101d3cf359e40771cc8cbd
+ms.sourcegitcommit: ff330a7e36e5ff7ae0e9a08c0e99eb7f3f81361f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68712669"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70122081"
 ---
 # <a name="holographic-remoting-player"></a>全像攝影遠端播放
 
 >[!IMPORTANT]
->HoloLens 2 的全像攝影遠端功能是主要的版本變更。 [ **Hololens 1**的主機應用程式](add-holographic-remoting.md)必須使用 NuGet 套件 1.x 版, 而[ **hololens 2**的主機應用程式](holographic-remoting-create-host.md)必須使用 2.x. x. x。 這表示針對 HoloLens 2 所撰寫的主機應用程式與 HoloLens 1 不相容, 反之亦然。
+>HoloLens 2 的全像攝影遠端功能是主要的版本變更。 [ **Hololens (第1代)** 的主機應用程式](add-holographic-remoting.md)必須使用 NuGet套件1.x 版, 而[ **hololens 2**的主機應用程式](holographic-remoting-create-host.md)必須使用2.x. x. x。 這表示針對 HoloLens 2 所撰寫的主機應用程式與 HoloLens 1 不相容, 反之亦然。
 
 全像攝影遠端播放程式是一種隨附的應用程式, 可連接到支援全像攝影遠端的電腦應用程式和遊戲。 全像攝影遠端處理會使用 Wi-fi 連線, 即時將全像個人電腦的內容串流至您的 Microsoft HoloLens。
 
@@ -43,7 +43,7 @@ ms.locfileid: "68712669"
 
 ## <a name="diagnostics"></a>診斷
 
-若要測量連線的品質, 請在全像攝影遠端播放程式的主畫面上說「**啟用診斷**」。 啟用診斷時, 應用程式會在**HoloLens 1**顯示:
+若要測量連線的品質, 請在全像攝影遠端播放程式的主畫面上說「**啟用診斷**」。 啟用診斷時, 在**HoloLens (第1代)** 上, 應用程式會顯示:
 
 * **FPS** -遠端播放者每秒接收和轉譯的轉譯框架平均數目。 理想的情況是 60 FPS。
 * **延遲**-框架從您的電腦移至 HoloLens 所需的平均時間量。 越低越好。 這主要取決於您的 Wi-fi 網路。
@@ -76,7 +76,7 @@ ms.locfileid: "68712669"
 * 我們建議您透過 ethernet 將電腦連線到您的網路, 以減少無線躍點的數目。
 
 ## <a name="see-also"></a>另請參閱
-* [HoloLens 1:新增全像攝影遠端](add-holographic-remoting.md)
+* [HoloLens (第1代):新增全像攝影遠端](add-holographic-remoting.md)
 * [HoloLens 2:撰寫全像的遠端主機應用程式](holographic-remoting-create-host.md)
 * [全像攝影遠端軟體授權條款](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
 * [Microsoft 隱私權聲明](https://go.microsoft.com/fwlink/?LinkId=521839)

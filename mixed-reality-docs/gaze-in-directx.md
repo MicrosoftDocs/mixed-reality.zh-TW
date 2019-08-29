@@ -5,28 +5,28 @@ author: caseymeekhof
 ms.author: cmeekhof
 ms.date: 05/09/2019
 ms.topic: article
-keywords: 注視, 列印頭, 頭追蹤, 眼睛追蹤, directx, 輸入, 全息影像
-ms.openlocfilehash: edf20a621178d76bfc97477f9f9b2eca200f1318
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+keywords: 眼睛眼, 列印頭, 頭追蹤, 眼睛追蹤, directx, 輸入, 全息影像
+ms.openlocfilehash: 2197f0ba3ecb77188d532d77ba29595c380a039d
+ms.sourcegitcommit: ff330a7e36e5ff7ae0e9a08c0e99eb7f3f81361f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414413"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70122052"
 ---
-# <a name="head-and-eye-gaze-input-in-directx"></a>DirectX 中的列印頭和眼睛輸入
+# <a name="head-gaze-and-eye-gaze-input-in-directx"></a>DirectX 中的列印頭和眼睛輸入
 
-在 Windows Mixed Reality 中, 眼睛和列印頭的輸入是用來判斷使用者正在查看的內容。 這可用來驅動主要的輸入模型 (例如[head 和 commit](gaze-and-commit.md)), 也可以提供互動類型的內容。 有兩種類型的注視向量可透過 API 取得: 列印頭注視和眼睛。  這兩者都是以具有原點和方向的三維光線形式提供。 然後, 應用程式可以 raycast 至其幕後或真實世界, 並判斷使用者的目標。
+在 Windows Mixed Reality 中, 眼睛和列印頭的輸入是用來判斷使用者正在查看的內容。 這可用來驅動主要輸入模型 (例如[head 和 commit](gaze-and-commit.md)), 也可以提供互動類型的內容。 有兩種類型的注視向量可透過 API 取得: 頭眼和眼睛。  這兩者都是以具有原點和方向的三維光線形式提供。 然後, 應用程式可以 raycast 至其幕後或真實世界, 並判斷使用者的目標。
 
-**Head 注視**代表使用者的前端方向。 請將此視為裝置本身的位置和正向方向, 其位置代表兩個顯示器之間的中心點。  所有混合現實裝置上都可使用 Head 注視。
+**Head** , 代表使用者的標頭指向的方向。 請將此視為裝置本身的位置和正向方向, 其位置代表兩個顯示器之間的中心點。 所有混合現實裝置上都可使用 Head 注視。
 
-**眼睛**代表使用者眼的方向。 原點位於使用者的眼睛之間。  其適用于包含眼睛追蹤系統的混合現實裝置。
+**眼睛**指的是使用者眼所期待的方向。 原點位於使用者的眼睛之間。  其適用于包含眼睛追蹤系統的混合現實裝置。
 
-Head 和眼睛眼的光線都可透過[SpatialPointerPose](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Input.Spatial.SpatialPointerPose) API 來存取。 只要呼叫[SpatialPointerPose:: TryGetAtTimestamp](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp) , 即可在指定的時間戳記和[座標系統](coordinate-systems-in-directx.md)上接收新的 SpatialPointerPose 物件。 這個 SpatialPointerPose 包含一個頭部注視原點和方向。 它也包含眼睛的原點和方向 (如果有眼睛追蹤可用的話)。
+Head 和眼睛光線都可透過[SpatialPointerPose](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Input.Spatial.SpatialPointerPose) API 來存取。 只要呼叫[SpatialPointerPose:: TryGetAtTimestamp](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp) , 即可在指定的時間戳記和[座標系統](coordinate-systems-in-directx.md)上接收新的 SpatialPointerPose 物件。 此 SpatialPointerPose 包含一個頭部的原點和方向。 它也包含眼睛的原點和方向 (如果有眼睛追蹤可用的話)。
 
 ## <a name="using-head-gaze"></a>使用頭部注視
 
-若要存取 head 注視, 請先呼叫[SpatialPointerPose:: TryGetAtTimestamp](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp)以接收新的 SpatialPointerPose 物件。 您必須傳遞下列參數。
- - [SpatialCoordinateSystem](https://docs.microsoft.com/en-us/uwp/api/windows.perception.spatial.spatialcoordinatesystem) , 表示頭部注視所需的座標系統。 這會由下列程式碼中的*coordinateSystem*變數表示。 如需詳細資訊, 請造訪我們的[座標系統](coordinate-systems-in-directx.md)開發人員指南。
+若要存取頭部, 請先呼叫[SpatialPointerPose:: TryGetAtTimestamp](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp)來接收新的 SpatialPointerPose 物件。 您必須傳遞下列參數。
+ - [SpatialCoordinateSystem](https://docs.microsoft.com/en-us/uwp/api/windows.perception.spatial.spatialcoordinatesystem) , 代表 head 的所需座標系統。 這會由下列程式碼中的*coordinateSystem*變數表示。 如需詳細資訊, 請造訪我們的[座標系統](coordinate-systems-in-directx.md)開發人員指南。
  - [時間戳記](https://docs.microsoft.com/en-us/uwp/api/windows.graphics.holographic.holographicframeprediction.timestamp#Windows_Graphics_Holographic_HolographicFramePrediction_Timestamp), 表示要求之 head 姿勢的確切時間。  通常您會使用時間戳, 其對應到目前畫面格的顯示時間。 您可以從[HolographicFramePrediction](https://docs.microsoft.com/en-us/uwp/api/Windows.Graphics.Holographic.HolographicFramePrediction)物件取得這個預測的顯示時間戳記, 這可透過目前的[HolographicFrame](https://docs.microsoft.com/en-us/uwp/api/windows.graphics.holographic.holographicframe)來存取。  這個 HolographicFramePrediction 物件是由下列程式碼中的*預測*變數表示。
 
  一旦您擁有有效的 SpatialPointerPose, 就可以存取標頭位置和正向方向作為屬性。  下列程式碼說明如何存取它們。
@@ -41,17 +41,17 @@ if (pointerPose)
     float3 headPosition = pointerPose.Head().Position();
     float3 headForwardDirection = pointerPose.Head().ForwardDirection();
 
-    // Do something with the head gaze
+    // Do something with the head-gaze
 }
 ```
 
 ## <a name="using-eye-gaze"></a>使用眼注視
 
-眼睛接近的 API 非常類似于列印頭。  它會使用相同的[SpatialPointerPose](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Input.Spatial.SpatialPointerPose) API, 它會提供您可以針對場景 raycast 的光線來源和方向。  唯一的差別在於, 您必須先明確啟用眼睛追蹤, 才能使用它。 為此, 您需要執行兩個步驟:
+眼睛的 API 非常類似于列印頭。  它會使用相同的[SpatialPointerPose](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Input.Spatial.SpatialPointerPose) API, 它會提供您可以針對場景 raycast 的光線來源和方向。  唯一的差別在於, 您必須先明確啟用眼睛追蹤, 才能使用它。 為此, 您需要執行兩個步驟:
 1. 要求使用者在您的應用程式中使用目視追蹤的許可權。
 2. 在您的套件資訊清單中啟用「注視輸入」功能。
 
-### <a name="requesting-access-to-gaze-input"></a>要求存取注視輸入
+### <a name="requesting-access-to-eye-gaze-input"></a>要求存取眼睛輸入
 當您的應用程式啟動時, 呼叫[EyesPose:: RequestAccessAsync](https://docs.microsoft.com/en-us/uwp/api/windows.perception.people.eyespose.requestaccessasync#Windows_Perception_People_EyesPose_RequestAccessAsync)以要求存取眼追蹤。 系統會視需要提示使用者, 並在授與存取權之後傳回[GazeInputAccessStatus:: 允許](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.gazeinputaccessstatus)。 這是非同步呼叫, 因此需要一些額外的管理。 下列範例會啟動中斷連結的 std:: thread 以等候結果, 並將其儲存至名為*m_isEyeTrackingEnabled*的成員變數。
 
 ```cpp
@@ -115,7 +115,8 @@ if (Windows::Perception::People::EyesPose::IsSupported() &&
 ```
 
 ### <a name="getting-the-eye-gaze-ray"></a>取得眼睛光線
-一旦您收到 ET 的存取權, 就可以自由地抓取每個畫面格的眼睛光線。  如同使用 head, 使用所需的時間戳記和座標系統呼叫[SpatialPointerPose:: TryGetAtTimestamp](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp) , 即可取得[SpatialPointerPose](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Input.Spatial.SpatialPointerPose) 。 SpatialPointerPose 會透過[眼睛](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose.eyes)屬性包含[EyesPose](https://docs.microsoft.com/en-us/uwp/api/windows.perception.people.eyespose)物件。 只有在已啟用眼睛追蹤時, 此值才會是 null。 從該處, 您可以藉由呼叫[EyesPose:: IsCalibrationValid](https://docs.microsoft.com/en-us/uwp/api/windows.perception.people.eyespose.iscalibrationvalid#Windows_Perception_People_EyesPose_IsCalibrationValid)來檢查裝置中的使用者是否具有眼睛追蹤校準。  接下來, 使用 [[注視](https://docs.microsoft.com/en-us/uwp/api/windows.perception.people.eyespose.gaze#Windows_Perception_People_EyesPose_Gaze)] 屬性來取得[SpatialRay](https://docs.microsoft.com/en-us/uwp/api/windows.perception.spatial.spatialray)寫入眼的位置和方向。 注視屬性有時可以是 null, 因此請務必檢查是否有此情況。 如果已校正的使用者暫時關閉其眼睛, 就可能發生這種情況。
+一旦您收到 ET 的存取權, 就可以自由地抓取每個畫面格的眼睛光線。
+就像使用 head, 使用所需的時間戳記和座標系統呼叫[SpatialPointerPose:: TryGetAtTimestamp](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp)來取得[SpatialPointerPose](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Input.Spatial.SpatialPointerPose) 。 SpatialPointerPose 會透過[眼睛](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose.eyes)屬性包含[EyesPose](https://docs.microsoft.com/en-us/uwp/api/windows.perception.people.eyespose)物件。 只有在已啟用眼睛追蹤時, 此值才會是 null。 從該處, 您可以藉由呼叫[EyesPose:: IsCalibrationValid](https://docs.microsoft.com/en-us/uwp/api/windows.perception.people.eyespose.iscalibrationvalid#Windows_Perception_People_EyesPose_IsCalibrationValid)來檢查裝置中的使用者是否具有眼睛追蹤校準。  接下來, 使用 [[注視](https://docs.microsoft.com/en-us/uwp/api/windows.perception.people.eyespose.gaze#Windows_Perception_People_EyesPose_Gaze)] 屬性來取得[SpatialRay](https://docs.microsoft.com/en-us/uwp/api/windows.perception.spatial.spatialray)寫入眼的位置和方向。 注視屬性有時可以是 null, 因此請務必檢查是否有此情況。 如果已校正的使用者暫時關閉其眼睛, 就可能發生這種情況。
 
 下列程式碼顯示如何存取眼睛光線。
 
@@ -134,7 +135,7 @@ if (pointerPose)
             float3 eyeGazeOrigin = spatialRay.Origin;
             float3 eyeGazeDirection = spatialRay.Direction;
             
-            // Do something with the eye gaze
+            // Do something with the eye-gaze
         }
     }
 }
@@ -150,6 +151,7 @@ if (pointerPose)
 ## <a name="see-also"></a>另請參閱
 * [頭部注視和認可輸入模型](gaze-and-commit.md)
 * [HoloLens 2 上的眼睛](eye-tracking.md)
+* [校正](calibration.md)
 * [DirectX 中的座標系統](coordinate-systems-in-directx.md)
 * [DirectX 中的語音輸入](voice-input-in-directx.md)
 * [DirectX 中的手部和運動控制器](hands-and-motion-controllers-in-directx.md)

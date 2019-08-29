@@ -104,8 +104,7 @@
 #### [語音命令](Voice-design.md)
 #### [頭部目光和停駐](Gaze-and-dwell.md)
 ### [頭部目光和行動](gaze-and-commit.md)
-### 補充互動
-#### [眼睛目光](eye-tracking.md)
+### [眼睛目光](eye-tracking.md)
 ## 樣式
 ### [色彩、光線和材質](color,-light-and-materials.md)
 ### [空間音效設計](spatial-sound-design.md)
@@ -267,7 +266,7 @@
 ## 應用程式品質與效能
 ### [應用程式品質準則](app-quality-criteria.md)
 ### [全像攝影的呈現](rendering.md)
-### [磁碟區呈現](volume-rendering.md)
+### [立體渲染](volume-rendering.md)
 ### [全像投影穩定性](hologram-stability.md)
 ### [了解混合實境的效能](understanding-performance-for-mixed-reality.md)
 ### [對 Unity 的效能建議](performance-recommendations-for-unity.md)
@@ -296,7 +295,7 @@
 ### [保護全像攝影遠端連線的安全](holographic-remoting-secure-connection.md)
 ### [疑難排解和限制](holographic-remoting-troubleshooting.md)
 ### [全像攝影遠端軟體授權條款](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
-### HoloLens 1 的全像攝影遠端
+### HoloLens 的全像攝影遠端處理 (第 1 代)
 #### [新增全像攝影遠端處理](add-holographic-remoting.md)
 ## 其他
 ### [QR 代碼追蹤](qr-code-tracking.md)

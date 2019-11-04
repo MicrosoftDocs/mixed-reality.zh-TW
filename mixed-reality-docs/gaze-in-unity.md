@@ -2,29 +2,29 @@
 title: Unity 中的注視
 description: 「注視」是一種主要的方式，可讓使用者以應用程式在混合現實中建立的全息影像為目標。
 author: thetuvix
-ms.author: yoyoz
+ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 眼睛眼，眼鏡，unity，全息影像，混合現實
-ms.openlocfilehash: 43e643bac00e3c889b14000331d2ed95014fdcc5
-ms.sourcegitcommit: ff330a7e36e5ff7ae0e9a08c0e99eb7f3f81361f
+ms.openlocfilehash: 8222a5199cc1ea35429f21e7490e1eff49fcd1bc
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70122033"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73435301"
 ---
 # <a name="head-gaze-in-unity"></a>Unity 中的頭注視
 
-「[注視](gaze.md)」是一種主要的方式，可讓使用者以應用程式在[混合現實](mixed-reality.md)中建立的[全息影像](hologram.md)為目標。
+「[注視](gaze-and-commit.md)」是一種主要的方式，可讓使用者以應用程式在[混合現實](mixed-reality.md)中建立的[全息影像](hologram.md)為目標。
 
 
 ## <a name="implementing-head-gaze"></a>實現頭部
 
-在概念[上，您](gaze.md)可以從使用者的頭部投射一個光線，而這是指耳機的正向，並決定該光線與哪一個衝突。 在 Unity 中，使用者的標頭位置和方向會透過 Unity 主要[攝影機](camera-in-unity.md)公開，特別是[UnityEngine](http://docs.unity3d.com/ScriptReference/Camera-main.html)。[轉換. 正向](http://docs.unity3d.com/ScriptReference/Transform-forward.html)和[UnityEngine](http://docs.unity3d.com/ScriptReference/Camera-main.html)。[轉換。位置](http://docs.unity3d.com/ScriptReference/Transform-position.html)。
+在概念[上，您](gaze-and-commit.md)可以從使用者的頭部投射一個光線，而這是指耳機的正向，並決定該光線與哪一個衝突。 在 Unity 中，使用者的標頭位置和方向會透過 Unity 主要[攝影機](camera-in-unity.md)公開，特別是[UnityEngine](https://docs.unity3d.com/ScriptReference/Camera-main.html)。[轉換. 正向](https://docs.unity3d.com/ScriptReference/Transform-forward.html)和[UnityEngine](https://docs.unity3d.com/ScriptReference/Camera-main.html)。[轉換。位置](https://docs.unity3d.com/ScriptReference/Transform-position.html)。
 
-呼叫[RayCast](http://docs.unity3d.com/ScriptReference/Physics.Raycast.html)會產生[RaycastHit](http://docs.unity3d.com/ScriptReference/RaycastHit.html)結構，其中包含衝突的相關資訊，包括發生衝突的3d 點，以及另一個 GameObject 的前端注視光線衝突。
+呼叫[RayCast](https://docs.unity3d.com/ScriptReference/Physics.Raycast.html)會產生[RaycastHit](https://docs.unity3d.com/ScriptReference/RaycastHit.html)結構，其中包含衝突的相關資訊，包括發生衝突的3d 點，以及另一個 GameObject 的前端注視光線衝突。
 
-### <a name="example-implement-head-gaze"></a>範例：執行頭部注視
+### <a name="example-implement-head-gaze"></a>範例：執行 head 注視
 
 ```cs
 void Update()
@@ -55,8 +55,7 @@ void Update()
 ## <a name="head-gaze-in-the-mixed-reality-toolkit-v2"></a>混合現實工具組 v2 中的頭部注視
 您可以從 MRTK v2 中的[輸入管理員](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Overview.html)存取 head 注視。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 * [相機](camera-in-unity.md)
 * [游標](cursors.md)
-* [注視輸入](gaze.md)
-* [目光目標](gaze-targeting.md)
+* [頭部目光和行動](gaze-and-commit.md)

@@ -6,44 +6,67 @@ ms.author: alreynol
 ms.date: 05/16/2019
 ms.topic: article
 keywords: lbe、MixedRealitySpatialDataPackager、MixedRealitySpatialDataPackager
-ms.openlocfilehash: 7ad1159af9eecd3ca3622dd25cc1f49fb0b1700a
-ms.sourcegitcommit: d565a69a9320e736304372b3f010af1a4d286a62
+ms.openlocfilehash: 52556e4028407086f943c4b765a8bcfad2744eac
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65942104"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73438472"
 ---
 # <a name="mixed-reality-spatial-data-packager-documentation"></a>混合現實空間資料封裝程式檔
 
 >[!NOTE]
-> 此工具和其作業是依自己提供。 如有任何變更, 恕不另行通知, 而且可能無法與未來的 Windows 或 Windows Mixed Reality HMD 版本相容。
+> 此工具和其作業是依自己提供。 如有任何變更，恕不另行通知，而且可能無法與未來的 Windows 或 Windows Mixed Reality HMD 版本相容。
 
-## <a name="download"></a>下載
- [在此下載 MixedRealitySpatialDataPackager](http://download.microsoft.com/download/A/1/2/A12B8A90-B3F7-4ED9-A4BB-D59DDCDAA125/MixedRealitySpatialDataPackager.zip)
+## <a name="download"></a>您剛才購買的產品旁的 [下載]
+ [在此下載 MixedRealitySpatialDataPackager](https://download.microsoft.com/download/A/1/2/A12B8A90-B3F7-4ED9-A4BB-D59DDCDAA125/MixedRealitySpatialDataPackager.zip)
+
+## <a name="device-support"></a>裝置支援
+
+<table>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><strong>特徵</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 代)</strong></a></td>
+        <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
+    </tr>
+     <tr>
+        <td>混合現實空間資料封裝工具</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>✔️</td>
+    </tr>
+</table>
 
 ## <a name="quickstart"></a>入門
 
-Mixed Reality 空間資料封裝工具會透過兩個步驟的匯出和匯入程式, 將目標應用程式的空間資料從一部電腦複製到另一部電腦。 此工具必須以系統管理員許可權執行, 並在匯入時刪除現有的空間資料。 匯出會讓現有的空間資料保持不變。
+Mixed Reality 空間資料封裝工具會透過兩個步驟的匯出和匯入程式，將目標應用程式的空間資料從一部電腦複製到另一部電腦。 此工具必須以系統管理員許可權執行，並在匯入時刪除現有的空間資料。 匯出會讓現有的空間資料保持不變。
 
-主要需求和限制:
+主要需求和限制：
 
 1. 工具必須以系統管理員許可權執行 
-2. 如果混合現實入口網站在執行此工具之後變得不穩定, 您可能必須重新開機電腦
-3. 當遇到空間資料版本不符或不相容時, 工具將不會執行
-4. 匯入時, 工具將會清除現有的空間資料
-5. 如果匯入程式失敗, 除非先前已匯出, 否則無法還原先前的資料
+2. 如果混合現實入口網站在執行此工具之後變得不穩定，您可能必須重新開機電腦
+3. 當遇到空間資料版本不符或不相容時，工具將不會執行
+4. 匯入時，工具將會清除現有的空間資料
+5. 如果匯入程式失敗，除非先前已匯出，否則無法還原先前的資料
 6. 空間對應資料之「唯讀」模式的匯入功能品質
 ***
 
 ## <a name="mapping-best-practices"></a>對應最佳作法
 
-1. 從 [控制台] 清除現有的對應 (設定-> 混合現實-> 環境-> 清除環境資料)
-2. 確保有足夠的光源來進行良好的追蹤, 而且如果執行鎖定的地圖模式嘗試維持相同的光源
-3. 可能的話, 您可以避免在深色、陰影區域旁邊的高光源區域, 讓光線動態範圍降低
-4. 最小化空白的 textureless 介面, 例如將各種不同的海報放在白色牆上
-5. 對應場景中沒有動態物件的空間, 例如移動人員
-6. 在匯入時鎖定對應 (可透過 Insider Preview 取得)
-7. 解除鎖定地圖並在追蹤品質降低和 (或) 環境中有變更時重新掃描環境 (物件版面配置中的光源或變更)
+1. 從 [控制台] 清除現有的對應（設定-> 混合現實-> 環境-> 清除環境資料）
+2. 確保有足夠的光源來進行良好的追蹤，而且如果執行鎖定的地圖模式嘗試維持相同的光源
+3. 可能的話，您可以避免在深色、陰影區域旁邊的高光源區域，讓光線動態範圍降低
+4. 最小化空白的 textureless 介面，例如將各種不同的海報放在白色牆上
+5. 對應場景中沒有動態物件的空間，例如移動人員
+6. 在匯入時鎖定對應（可透過 Insider Preview 取得）
+7. 解除鎖定地圖並在追蹤品質降低和（或）環境中有變更時重新掃描環境（物件版面配置中的光源或變更）
 ***
 
 ## <a name="running-mixed-reality-spatial-data-packager-with-companion-script"></a>使用隨附腳本執行混合現實空間資料封裝工具
@@ -51,7 +74,7 @@ Mixed Reality 空間資料封裝工具會透過兩個步驟的匯出和匯入程
 我們提供的 MRSpatialPackagerHelperScript 會執行地圖封裝工具。 
 
 
-腳本參數定義如下:
+腳本參數定義如下：
 
 ```
 -AppName <String>
@@ -118,18 +141,18 @@ IMPORT SUCCESS
 MixedRealitySpatialDataPackager.exe export <folderpath to mapx files> <source package family name>    
 ```
 
-將地圖服務匯出關閉裝置會產生兩個 mapx 檔案: het. mapx 和 sa. mapx。 在匯出過程中, 除了指定的應用程式和使用者建立的界限 (如果存在) 之外, 所有空間錨點都會移除。 來源套件系列名稱必須符合現有已安裝的應用程式, 否則 exe 將會失敗。
+將地圖服務匯出關閉裝置會產生兩個 mapx 檔案： het. mapx 和 sa. mapx。 在匯出過程中，除了指定的應用程式和使用者建立的界限（如果存在）之外，所有空間錨點都會移除。 來源套件系列名稱必須符合現有已安裝的應用程式，否則 exe 將會失敗。
 
 ### <a name="how-to-import-using-mixedrealitypackagerexe"></a>如何使用 MixedRealityPackager 匯入
 ```
 MixedRealitySpatialDataPackager.exe import <folderpath to mapx files> <target package family name> <user SID>
 ```
-[匯入] 會刪除現有的空間資料, 並將它取代為指定目錄中的資料。 應用程式名稱輸入會指定應匯入空間錨點的目標應用程式套件名稱, 而目標使用者 SID 則指定應該具有已匯入之空間錨點存取權的使用者。 目標套件系列名稱和使用者 Sid 必須符合電腦上的現有值, 否則 exe 將會失敗。
+[匯入] 會刪除現有的空間資料，並將它取代為指定目錄中的資料。 應用程式名稱輸入會指定應匯入空間錨點的目標應用程式套件名稱，而目標使用者 SID 則指定應該具有已匯入之空間錨點存取權的使用者。 目標套件系列名稱和使用者 Sid 必須符合電腦上的現有值，否則 exe 將會失敗。
 
 
 ***
 ## <a name="error-messages"></a>錯誤訊息
-此外, 下列錯誤訊息也會伴隨著 HRESULT
+此外，下列錯誤訊息也會伴隨著 HRESULT
 
 ### <a name="if-there-was-an-error-invalid-arguments"></a>如果發生錯誤不正確引數
 ```

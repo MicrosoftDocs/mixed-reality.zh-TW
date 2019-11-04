@@ -1,30 +1,31 @@
 ---
 title: 物件集合
-description: 「物件集合」是一種版面配置控制項, 可協助您以預先定義的3d 圖形設定物件陣列。
+description: 「物件集合」是一種版面配置控制項，可協助您以預先定義的3d 圖形設定物件陣列。
 author: cre8ivepark
 ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Windows Mixed Reality, 控制項, 設計
-ms.openlocfilehash: 7c3bbd82ec909b5a2e3c81f122366be564934f4d
-ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
+keywords: Windows Mixed Reality，控制項，設計
+ms.openlocfilehash: 8f3629c6d9465383efc901ed784a3719cd6fdfb2
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66813881"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73438184"
 ---
 # <a name="object-collection"></a>物件集合
 
-「物件集合」是一種版面配置控制項, 可協助您以預先定義的3d 圖形設定物件陣列。 它支援各種表面樣式-**平面、圓柱、球面**和**放射狀**。 您可以調整物件的半徑和大小, 以及它們之間的空間。 物件集合支援來自 Unity 的任何物件-2D 和3D。 在 **[混合的現實工具](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ObjectCollection.html)** 組中, 我們建立了 Unity 腳本和範例, 可協助您建立物件集合。
-
 ![在 Elements 應用程式的定期資料表中使用的物件集合](images/640px-objectcollection-hero-640px.jpg)<br>
-*使用物件集合的範例*
+
+
+「物件集合」是一種版面配置控制項，可協助您以預先定義的3d 圖形設定物件陣列。 它支援各種表面樣式-**平面、圓柱、球面**和**放射狀**。 您可以調整物件的半徑和大小，以及它們之間的空間。 物件集合支援來自 Unity 的任何物件-2D 和3D。 在 **[混合的現實工具](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ObjectCollection.html)** 組中，我們建立了 Unity 腳本和範例，可協助您建立物件集合。
+
 
 ## <a name="object-collection-examples"></a>物件集合範例
 
-[元素的定期資料表](periodic-table-of-the-elements.md)是範例應用程式, 可示範物件集合的運作方式。 它會使用物件集合來配置不同圖形中的3D 化學元素方塊。
+[元素的定期資料表](periodic-table-of-the-elements.md)是範例應用程式，可示範物件集合的運作方式。 它會使用物件集合來配置不同圖形中的3D 化學元素方塊。
 
-![元素應用程式的定期資料表中所顯示的物件集合範例](images/periodictable-collections-1000px.jpg)<br>
+專案應用程式的定期資料表中所顯示 ![物件集合範例](images/periodictable-collections-1000px.jpg)<br>
 *元素範例應用程式的定期資料表中所顯示的物件集合範例*
 
 ### <a name="3d-objects"></a>3D 物件
@@ -38,12 +39,12 @@ ms.locfileid: "66813881"
 
 您也可以使用2D 影像搭配物件集合。 下列範例會示範如何在方格中顯示2D 影像。
 
-![包含物件集合之2D 影像的範例](images/640px-layout-3dobjects-3.jpg)
+![包含物件集合之2D 影像的範例](images/940px-layout-3dobjects-3.jpg)
 
-![包含物件集合之2D 影像的範例](images/640px-layout-2dimages.jpg)<br>
+![具有物件集合之2D 影像的範例](images/940px-layout-2dimages.jpg)<br>
 *搭配2D 影像使用物件集合的範例*
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 * [GitHub 上混合現實工具組中物件集合的腳本和 prefabs](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_ObjectCollection.md)
 * [可互動的物件](interactable-object.md)
 * [周框方塊](app-bar-and-bounding-box.md)

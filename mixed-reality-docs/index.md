@@ -1,182 +1,212 @@
 ---
 layout: LandingPage
-title: 混合實境文件
-description: 學習為 HoloLens 和沈浸式頭戴式裝置構建混合實境的體驗。
-author: varnauld
-ms.author: vanesa
-ms.date: 02/24/2019
-ms.topic: article
+title: 開始使用混合實境
+description: 協助新手學習混合實境並了解其功能。
+author: grbury
+ms.author: grbury
+ms.date: 08/24/2019
+ms.topic: overview
 ms.localizationpriority: high
 keywords: 混合實境、探索、散佈、索引、登陸頁面、設計、開發、教學課程、範例應用程式、基本概念、案例研究、資源、HoloLens 操作說明、開放原始碼專案
-ms.openlocfilehash: c39a5f2f31dc962758456f743e17aaf37fd4ed64
-ms.sourcegitcommit: 6a3b7d489c2aa3451b1c88c5e9542fbe1472c826
+ms.openlocfilehash: 1a5e4fcbb7704db6df59db9d01bb72a5b153b576
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817355"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73438057"
 ---
-# <a name="mixed-reality-documentation"></a>混合實境文件
+# <a name="get-started-with-mixed-reality"></a>開始使用混合實境
 
-混合實境將現實世界和虛擬內容融合到混合環境中，讓實體和數位物件可以共存並加以互動。 學習為 Microsoft HoloLens 和 Windows Mixed Reality 沉浸式頭戴裝置 (VR) 建置混合實境體驗。
+## <a name="choose-your-track"></a>選擇適合您的主題
+
+
+:::row:::
+    :::column:::
+       [![我是混合實境的新手](images/Tile-New.jpg)](index.md#understand-the-basics)<br>
+        **[我是混合實境的新手](index.md#understand-the-basics)**<br>
+        了解基本概念
+    :::column-end:::
+    :::column:::
+       [![我是設計人員](images/Tile-Create.jpg)](design.md)<br>
+        **[我是設計人員](design.md)**<br>
+        開始設計並建立原型
+    :::column-end:::
+    :::column:::
+       [![我是開發人員](images/Tile-Develop.jpg)](development.md)<br>
+        **[我是開發人員](development.md)**<br>
+        了解工具和架構
+    :::column-end:::
+    :::column:::
+       [![開始使用 Unity 和 MRTK](images/Tile-JumpIn.jpg)](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)<br>
+        **[開始使用 Unity 和 MRTK](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)**<br>
+        最佳化 Unity 以用於 MR 開發
+    :::column-end:::
+:::row-end:::
+
 
 <br>
 
-<ul id="cardtypes-W" class="cardsW panelContent" style="display: flex; margin-top: 0px;">
-                            <li>
-                            <a href="design.md" title="設計登陸頁面" data-linktype="absolute-path">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter">
-                                                    <div class="cardImage">
-                                                        <img src="images/DesignIcon.png" alt="Design icon">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>設計</h3>
-                                                    <p>獲得設計指引、建置使用者介面，並學習如何互動和輸入。</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                               </a>
-                            </li>
-                            <li>
-                             <a href="development.md" title="開發登陸頁面" data-linktype="absolute-path">
-                              <div class="cardSize">
-                                  <div class="cardPadding">
-                                      <div class="card">
-                                          <div class="cardImageOuter">
-                                              <div class="cardImage">
-                                                  <img src="images/DevelopIcon.png" alt="Develop icon">
-                                              </div>
-                                          </div>
-                                          <div class="cardText">
-                                              <h3>開發</h3>
-                                              <p>獲得開發指南、學習技術並了解科學。</p>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                               </a>
-                            </li>
-                             <li>
-                              <a href="implementing-3d-app-launchers.md" title="散佈" data-linktype="absolute-path">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter">
-                                                    <div class="cardImage">
-                                                        <img src="images/DistributeIcon.png" alt="Distribute icon">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3 class="x-hidden-focus">散佈</h3>
-                                                  <p>準備好您的應用程式以供其他人使用，並考慮建立 3D 啟動器。</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
- </ul>
+---
 
-<h2>服務</h2>
+<br>
 
-<ul id="cardtypes-W" class="cardsW panelContent" style="display: flex; margin-top: 0px;">
-                            <li>
-                              <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank" title="Azure Spatial Anchors" data-linktype="absolute-path">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter">
-                                                    <div class="cardImage">
-                                                        <img src="images/AzureSpatialAnchors.jpg" alt="Azure Spatial Anchors image">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3 class="x-hidden-focus">Azure Spatial Anchors</h3>
-                                                  <p>空間錨點是一個跨平台開發人員服務，可讓您使用在一段時間內於裝置上保持其位置的物件，來建立混合實境體驗。</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </a>
-                            </li>
-                            <li>
-                              <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/" target="_blank" title="語音服務" data-linktype="absolute-path">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter">
-                                                    <div class="cardImage">
-                                                        <img src="images/speech.jpg" alt="Speech Services image">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3 class="x-hidden-focus">語音服務</h3>
-                                                  <p>探索及整合 Azure 提供的語音功能，例如語音轉換文字、說話者辨識或語音翻譯至您的應用程式。</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </a>
-                            </li>
-                             <li>
-                              <a href="https://docs.microsoft.com/azure/cognitive-services/computer-vision/" target="_blank" title="視覺服務" data-linktype="absolute-path">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter">
-                                                    <div class="cardImage">
-                                                        <img src="images/vision.jpg" alt="Vision Services image">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3 class="x-hidden-focus">視覺服務</h3>
-                                                  <p>使用視覺服務識別並分析您的影像或視訊內容，例如電腦視覺、臉部偵測、表情辨識或影片索引器。</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </a>
-                            </li>
-</ul>
+# <a name="understand-the-basics"></a>了解基本概念
 
-<h2>HoloLens 2 簡介</h2>
+如果您是混合實境的新手，將會學習什麼是混合實境並了解其功能。
 
-[![HoloLens 2](images/hololens2.jpg)](https://www.microsoft.com/hololens/hardware)
 
-[HoloLens 2](https://www.microsoft.com/hololens/hardware) 提供最舒適且身歷其境的沈浸式混合實境體驗，採用領先業界的解決方案，可在數分鐘內實現價值。 這些全都由於 Microsoft 雲端與 AI 服務的可靠性、安全性及可擴展性而得到增強。 [HoloLens 2 開發版](https://www.microsoft.com/en-us/hololens/developers)可透過將 HoloLens 2 與 Unity 軟體免費試用版和雲端服務的 Azure 點數合併的供應項目，協助您加速啟動混合實境計劃。
+![混合實境頻譜](images/RWtpZ1.jpeg)
 
-<h2>新聞與資訊</h2>
+## <a name="what-is-mixed-reality"></a>什麼是混合實境？
 
-<h3>2019 年 6 月</h3>
 
-如同我們的承諾，我們很高興能與您分享更多混合實境的優點！ 我們期待聽到您的意見反應，並誠摯地邀請您[參與討論](https://holodevelopersslack.azurewebsites.net/)，包含您想要看到我們提供的主題、想要聽的演講、需要的教學課程或操作方法... 您也可以透過 [Twitter](https://twitter.com/MxdRealityDev) 與我們聯繫，並[加入開發人員計劃](https://aka.ms/iwantmr)，直接更新新的文件、工具、事件等等。 敬請期待，我們即將推出更多功能！
+### <a name="mixed-reality-is-a-spectrummixed-realitymd"></a>[混合實境是一種頻譜](mixed-reality.md)
+混合實境是實體環境與數位世界混合的結果。 混合實境是人類、電腦和環境互動的全新演進，並且解放了迄今為止僅限於我們想像的可能性。
 
-<table>
-<tr>
-<th style="width: 400px; text-align:left;">內容</th><th style="width: 125px; text-align:left;">交付</th><th style="width: 125px; text-align:left;">即時實況！</th>
-</tr> 
-<tr>
-<td><b>移植指南</b> <br>1. HoloToolKit (HTK)/混合實境工具組 (MRTK) 至 MRTK 第 2 版
-<br>2. HoloLens (第 1 代) 至 HoloLens 2 (x86 至 ARM、互動和設計建議)
-</td></td><td>3 月 - 2019 年 5 月</td><td> <ul><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/mrtk-porting-guide>讓現有應用程式做好使用 HoloLens 2 的準備</a><li><a href=https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/HTKToMRTKPortingGuide.html>HoloToolKit 至 MRTK API</a></td>
-</tr>
-<tr>
-<td>每月開放原始碼開發人員模組 (教學課程/範例應用程式)</td><td>3 月 - 2019 年 6 月</td><td> <ul><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/mrlearning-base-ch1>MR 學習基本模組</a></td>
-</tr>
-<tr>
-<td>MRTK 中 HoloLens 2 的新功能預覽</td><td>2019 年 4 月</td><td> <ul><li><a href=https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html>MRTK 文件</a><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/mrtk-getting-started>開始使用 MRTK 第 2 版</a></td>
-</tr>
-<tr>
-<td>HoloLens 2 的設計和開發指引</td><td>2019 年 4 月</td><td> <ul><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools>安裝工具</a><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-hololens-emulator>HoloLens 2 模擬器</a><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/interaction-fundamentals>本能互動設計指引</a></td>
-</tr>
-<tr>
-  <td>Unreal 的詳細資訊</td><td>2019 年 5 月</td><td> <ul><li><a href=https://www.unrealengine.com/en-US/blog/unreal-engine-4-support-for-hololens-2-released-in-early-access>Unreal Engine 4 優先存取</a></td>
-</tr>
-</table>
+<br>
+
+
+### <a name="what-is-a-hologramhologrammd"></a>[什麼是全像投影？](hologram.md)
+HoloLens 可讓您建立全像投影，全像投影是出現在您周圍世界中由光線和音效組合的物件，就像是真正的物件一樣。 全像投影會回應您的注視、手勢和語音命令，並可與周圍的真實世界表面互動。 透過全像投影，您可以建立屬於自己世界的數位物件。
+
+<br>
+
+
+---
+
+<br>
+
+![您要使用混合實境執行什麼作業？](images/HLS19_remoteAssistHologram_001.jpg)
+
+## <a name="what-can-you-do-with-mixed-reality"></a>您要使用混合實境執行什麼作業？
+
+### <a name="a-new-vision-for-workhttpsdynamicsmicrosoftcommixed-realityoverview"></a>[工作的新願景](https://dynamics.microsoft.com//mixed-reality/overview/)
+我們將在 Microsoft 內部建立混合實境應用程式，以提升員工的能力並將作業最佳化。 Dynamics 365 團隊開發了展示各種可能性的一系列專案：遠端協助、版面配置和指南。
+
+<br>
+
+### <a name="the-pursuit-of-more-personal-computingcase-study-the-pursuit-of-more-personal-computingmd"></a>[追求更個人化的運算](case-study-the-pursuit-of-more-personal-computing.md)
+現在就建立產品以開發未來的商機。 這些產品提供的解決方案可讓您清楚掌握未來的必要條件。 有了混合實境，就更是如此：有意義的深入解析是來自實際工作的親身體驗，包括真實裝置、真實客戶和真正的問題。
+
+
+<br>
+
+
+
+## <a name="see-how-industry-partners-are-using-mixed-reality"></a>查看產業合作夥伴如何使用混合實境
+
+
+:::row:::
+    :::column:::
+       [![Bentley](images/Bentley-Synchro1.jpg)](https://binged.it/31AR3kP)
+    :::column-end:::
+    :::column span="2":::
+        ### <a name="view-complex-construction-projects-with-bentleys-digital-construction-softwarehttpsbingedit31ar3kp"></a>[透過 Bentley 的數位結構軟體檢閱複雜的結構專案](https://binged.it/31AR3kP)
+        Synchro 是一款數位結構軟體，可讓您在混合實境中檢閱複雜的結構專案。 其 4D 數位結構平台會即時結合傳統的甘特圖 CPM 排程與整合的4D 視覺效果功能。
+    :::column-end:::
+:::row-end:::
+
+---
+
+:::row:::
+    :::column:::
+       [![PTC 的 Vuforia Studio](images/PTC-Vuforia-Studio1.jpg)](https://binged.it/31ARrjh)
+    :::column-end:::
+    :::column span="2":::
+        ### <a name="ptcs-vuforia-studio-authoring-solution-promotes-workforce-productivity-and-safetyhttpsbingedit31arrjh"></a>[PTC 的 Vuforia Studio 編寫解決方案可提升員工生產力和安全性](https://binged.it/31ARrjh)
+        Vuforia Studio 的高效混合實境撰寫解決方案，會在工作者最需要的時機和地點傳遞資訊，以提升員工的生產力和安全性：在日常工作環境的真實世界中。
+    :::column-end:::
+:::row-end:::
+
+---
+
+:::row:::
+    :::column:::
+       [![Philips-Azurion](images/Philips-Azurion1.jpg)](https://binged.it/31B1RiR)
+    :::column-end:::
+    :::column span="2":::
+        ### <a name="philips-is-piloting-hololens-in-the-domain-of-image-guided-minimally-invasive-procedureshttpsbingedit31b1rir"></a>[Philips 正在試驗將 HoloLens 應用在影像導引微創程序領域](https://binged.it/31B1RiR)
+        Philips 正在試驗將 HoloLens 應用在影像導引微創程序領域，在這段期間，醫師倚賴現場 X 光線、超聲波和其他資訊來源，在患者內部「查看」並引導其採取動作。
+    :::column-end:::
+:::row-end:::
+
+<br>
+
+<br>
+
+---
+
+<br>
+
+![HoloLens 分解視圖](images/HoloLens2_ExplodedView_8k.png)
+
+## <a name="what-are-the-capabilities-of-hololens"></a>HoloLens 有哪些功能？
+
+### <a name="immersive-ergonomic-instinctual-and-untetheredhttpswwwmicrosoftcomhololenshardware"></a>[沉浸式、人體工學、直覺式和不受限制](https://www.microsoft.com//hololens/hardware)
+
+HoloLens 2 提供最舒適且身歷其境的沈浸式混合實境體驗，採用領先業界的解決方案，可在數分鐘內實現價值 - 這些都由於 Microsoft 雲端與 AI 服務的可靠性、安全性及可擴展性而得到增強。
+
+<br>
+
+---
+
+<br>
+
+![核心體驗](images/text_in_unity_viewingangle.jpg)
+
+## <a name="what-are-the-core-concepts-of-an-experience"></a>體驗有哪些核心概念？
+
+### <a name="keep-the-user-comfortable---comfortcomfortmd"></a>[讓使用者感到舒適 - (舒適)](comfort.md)
+為了確保頭戴顯示器的最大舒適度，設計人員和開發人員必須以模擬這些提示在自然世界中運行的方式來建立和呈現內容。
+
+<br>
+
+### <a name="how-the-user-sees-the-world---holographic-frameholographic-framemd"></a>[使用者如何看到世界 - (全像攝影框架)](holographic-frame.md)
+使用者透過其頭戴式裝置所提供的矩形視口，來看到混合實境的世界。 在 HoloLens 上，這個矩形區域稱為全像攝影框架，可讓使用者看到其周圍真實世界中的數位內容。
+
+<br>
+
+### <a name="making-holographic-objects-feel-real---spatial-mappingspatial-mappingmd"></a>[讓全像攝影物件感覺真實 - (空間對應)](spatial-mapping.md)
+空間對應可以讓使用者將物件放置在實際的表面上。 這有助於錨定使用者世界中的物件，並利用真實世界的深度提示。
+
+<br>
+
+### <a name="suggesting-the-scale-of-an-object---scalescalemd"></a>[建議物件的縮放比例 - (縮放比例)](scale.md)
+以全像攝影形式呈現看似逼真內容的關鍵，就是盡可能地模擬真實世界的視覺統計資料。 這表示我們可以盡可能地將多個視覺提示加以結合，協助我們 (在真實世界中) 了解物件的位置、大小以及其構成。
+
+
+<br>
+
+---
+
+## <a name="what-would-you-like-to-do-next"></a>接著要執行什麼作業？
+
+
+:::row:::
+    :::column:::
+       [![試試看](images/icon-hololensuser.jpg)](https://www.microsoft.com//windows/windows-mixed-reality?icid=SSM_Search_Promo_XCat_WindowsMixedReality_CTA1#storelocator)<br>
+        **[試用混合實境](https://www.microsoft.com//windows/windows-mixed-reality?icid=SSM_Search_Promo_XCat_WindowsMixedReality_CTA1#storelocator)**<br>
+        在本地 Microsoft Store 取得混合實境和 HoloLens 的示範。 
+    :::column-end:::
+    :::column:::
+        [![成為建立者](images/icon-design.jpg)](design.md)<br>
+        **[成為建立者](design.md)**<br>
+        學習所需的基本概念以開始設計並建立原型。
+    :::column-end:::
+    :::column:::
+        [![參加活動](images/icon-calendar.jpg)](sf-academy-events.md)<br>
+        **[參加活動](sf-academy-events.md)**<br>
+        參觀硬體並取得實際操作教學課程，製作您的第一個 HoloLens 2 應用程式。
+    :::column-end:::
+    :::column:::
+        [![開始進行開發](images/icon-developer.jpg)](development.md)<br>
+        **[開始進行開發](development.md)**<br>
+        根據您的技能層級、工作風格或感興趣的平台，選擇開發路徑。
+    :::column-end:::
+:::row-end:::
+
+
+<br>
 
 <br>
 

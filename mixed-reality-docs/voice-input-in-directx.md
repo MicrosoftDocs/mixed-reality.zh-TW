@@ -6,12 +6,12 @@ ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 逐步解說，語音命令，片語，辨識，語音，directx，平臺，cortana，windows mixed reality
-ms.openlocfilehash: be8c0e570a0e112e01b580ad571c06fe3482ff9f
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 0dcfaae13f763c9b8a06910f11558d2fd8e00276
+ms.sourcegitcommit: 2e54d0aff91dc31aa0020c865dada3ae57ae0ffc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437198"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73641082"
 ---
 # <a name="voice-input-in-directx"></a>DirectX 中的語音輸入
 
@@ -428,5 +428,4 @@ catch (Exception^ exception)
 
 ## <a name="see-also"></a>請參閱
 * [語音應用程式設計](https://msdn.microsoft.com/library/dn596121.aspx)
-* [DirectX 中的空間音效](spatial-sound-in-directx.md)
 * [SpeechRecognitionAndSynthesis 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)

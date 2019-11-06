@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
 keywords: DirectX，全像攝影轉譯，原生，原生應用程式，WinRT，WinRT 應用程式，平臺 Api，自訂引擎，中介軟體
-ms.openlocfilehash: 698ccb57a39189b9c0634c47ad6cbd6325c06caa
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: e77ee5053e69aef502481d18618e604c6bfb5939
+ms.sourcegitcommit: 2e54d0aff91dc31aa0020c865dada3ae57ae0ffc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435583"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73641096"
 ---
 # <a name="directx-development-overview"></a>DirectX 開發總覽
 
@@ -49,7 +49,7 @@ Windows Mixed Reality 支援[兩種類型的應用程式](app-views.md)：
 * [DirectX 中的頭部和眼睛目光](gaze-in-directx.md)
 * [DirectX 中的手部和運動控制器](hands-and-motion-controllers-in-directx.md)
 * [DirectX 中的語音輸入](voice-input-in-directx.md)
-* [DirectX 中的空間音效](spatial-sound-in-directx.md)
+* [空間音效](https://docs.microsoft.com/windows/win32/coreaudio/spatial-sound)
 * [DirectX 中的空間對應](spatial-mapping-in-directx.md)
 
 

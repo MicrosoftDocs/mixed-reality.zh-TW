@@ -1,23 +1,31 @@
 ---
-title: 空間音效
-description: 在混合現實應用程式中使用空間音效，可以讓您 convincingly 將音效放在3D 空間中。
-author: hak0n
-ms.author: hakons
-ms.date: 03/21/2018
+title: 混合現實中的音訊
+description: 混合現實中的音訊可以增加使用者對 UI 互動的信心，並 immerse 使用者體驗。
+author: kegodin
+ms.author: kegodin
+ms.date: 11/07/2019
 ms.topic: article
 keywords: 空間音效，環繞音效，3d 音訊，3d 音效，空間音訊
-ms.openlocfilehash: 31ec8f88a060127daab9bf3afc970457ec7c90a3
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 1930017903439aee3ac53b6c4be344fdc44c356f
+ms.sourcegitcommit: 2e54d0aff91dc31aa0020c865dada3ae57ae0ffc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437400"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73641110"
 ---
-# <a name="spatial-sound"></a>空間音效
+# <a name="audio-in-mixed-reality"></a>混合現實中的音訊
+音訊是混合現實中設計和生產力的重要部分，而且可以：
+* 提升使用者對筆勢和語音互動的信心
+* 引導使用者進行後續步驟
+* 有效率地結合虛擬物件與真實世界
 
-當物件不在我們的視線時，我們可以透過音效來觀察目前的狀況。 在 Windows Mixed Reality 中，音訊引擎會使用方向、距離和環境模擬來模擬3D 音效，以提供混合現實體驗的以聽覺方式元件。 在應用程式中使用空間音效，可以讓開發人員 convincingly 在使用者周圍，以3維空間（球體）來放置聲音。 這些聽起來好像是來自實際的實體物件，或是使用者周圍的混合現實全息。 由於[全息影像](hologram.md)是物件的光線，有時也是音效，因此音效元件可協助基礎的全像投影，使其更可信，並建立更有沉浸的體驗。
+混合現實耳機的低延遲標頭追蹤（包括 HoloLens）可讓您使用高品質的 HRTF 型 spatialization。 在您的應用程式中 Spatializing 音訊可以：
+* 呼叫視覺元素的注意力
+* 協助使用者維護其真實世界周圍的認知
 
-雖然全息影像只會以視覺化方式出現在使用者的眼睛指向何處，但您應用程式的音效可能來自所有方向;上方、下方、後面、到側邊等等。您可以使用這項功能，對可能目前不在使用者觀點中的物件繪製注意力。 使用者可以察覺從混合現實世界中的來源 mouseleave 的音效。 例如，當使用者接近物件，或物件接近其時，磁片區就會增加。 同樣地，當物件在使用者之間移動時，或相反的，空間音效會提供聲音直接來自物件的假像。
+新增聲場更深入地將全息連接到混合的世界，並且可以提供有關環境和物件狀態的提示。
+
+如需使用音訊進行設計的詳細範例，請參閱[音效設計](spatial-sound-design.md)。
 
 <br>
 
@@ -39,38 +47,52 @@ ms.locfileid: "73437400"
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
     </tr>
      <tr>
-        <td>空間音效</td>
+        <td>Spatialization</td>
         <td>✔️</td>
         <td>✔️</td>
-        <td>✔️（含耳機）</td>
+        <td>✔️</td>
+    </tr>
+     <tr>
+        <td>Spatialization 硬體加速</td>
+        <td>❌</td>
+        <td>✔️</td>
+        <td>❌</td>
     </tr>
 </table>
 
-## <a name="simulating-the-perceived-location-and-distance-of-sounds"></a>模擬聲音的認知位置和距離
+## <a name="using-sounds-in-mixed-reality"></a>在混合現實中使用音效
+[使用混合現實中](spatial-sound-design.md)的音效，可能需要與觸控和鍵盤和滑鼠應用程式不同的方法。 關鍵的設計決策包括要 spatialize 哪些聲音，以及要 sonify 哪些互動。 這些決策可能會對使用者的信心、生產力和學習曲線造成很大的影響。
 
-藉由分析音效如何達到我們的耳，我們的大腦會決定物件發出音效的距離和方向。 HRTF （或標頭相關的傳送函式）會藉由建立 spectral 回應的模型來模擬這項互動，以說明耳如何從空間的角度來接收音效。 空間音效引擎使用個人化的 Hrtf 來擴展混合現實體驗，並模擬來自各種方向和距離的聲音。
+### <a name="case-studies"></a>案例研究
+HoloTour 幾乎會讓使用者在世界各地旅遊和歷程記錄網站。 下列案例研究描述 HoloTour 的音效設計： HoloTour 的[音效設計](case-study-spatial-sound-design-for-holotour.md)。 用來捕捉主旨空間的特殊麥克風和轉譯設定。
+
+RoboRaid 是 HoloLens 的高能源射擊。 下列案例研究描述的設計選擇，是為了確保已使用空間音訊來發揮最大效果： [RoboRaid 的音效設計](case-study-using-spatial-sound-in-roboraid.md)。
+
+## <a name="spatialization"></a>Spatialization
+Spatialization 是空間音訊的方向元件。 使用7.1 家用劇院設定時，spatialization 就像是在音量喇叭間移動一樣簡單。 但是，在混合式現實中，使用以 HRTF 為基礎的技術，是很重要的。 Windows 提供以 HRTF 為基礎的 spatialization，而這種支援是 HoloLens 2 上的硬體加速。
 
 <br>
 
 <iframe width="940" height="530" src="https://www.youtube.com/embed/aB3TDjYklmo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-左或右音訊（azimuth）提示源自于每個耳的音效抵達時間差異。 向上和向下提示來自外部耳圖形（pinnae）所產生的 spectral 變更。 藉由指定音訊的來源，系統可以模擬在不同時間到達我們的耳的音效體驗。 請注意，在 HoloLens 上，當 azimuth spatialization 是個人化時，提高許可權的模擬是以一組平均的 anthropometrics 為基礎。 因此，提高許可權精確度可能會比 azimuth 精確度更不精確。
+### <a name="should-i-spatialize"></a>我應該 spatialize 嗎？
+混合現實應用程式中的許多音效都受益于 spatialization，這會從接聽程式的頭部取得音效，並將其放在世界各地。 如需在應用程式中最有效使用 spatialization 的建議，請參閱[空間音效設計](spatial-sound-design.md)。
 
-音效的特性也會根據其存在的環境而變更。 比方說，cave 中的 shouting 會讓您的聲音從牆、地面和上限中退出，並建立 echo 效果。 空間音效的房間模型設定會重現這些反射，以將聲音放在特定的音訊環境中。 您可以使用這項設定來比對使用者在該空間中模擬音效的實際位置，以建立更多沉浸的音訊體驗。
+### <a name="spatializer-personalization"></a>空間定位器個人化
+Hrtf 會操控各個頻率範圍內的各種層級和階段差異。 它們是根據實體模型以及人類 head、torso 和耳（pinnae）的度量。 我們的大腦會回應這些差異，以提供音效的方向。 
 
-## <a name="integrating-spatial-sound"></a>整合空間音效
+每個人都有獨特的 ear 圖形、標題大小和耳位置，因此最佳的 Hrtf 是符合您的選擇。 HoloLens 會使用您從頭戴式裝置顯示的 pupilary 距離（IPD）來增加 spatialization 的精確度，以調整您的前端大小 Hrtf。
 
-因為混合現實的一般原則是要在使用者的實體世界或虛擬環境中接地[全息影像](hologram.md)，所以大部分來自全息的聲音都應該 hrtf。 在 HoloLens 上，有自然的 CPU 和記憶體預算考慮，但是您可以在該處使用10-12 空間音效，同時使用低於 ~ 12% 的 CPU （70約四個核心的其中一個）。 適用于空間音效語音的建議用法包括：
-* 注視混合（反白顯示物件，特別是在外）。 當全息影像需要使用者注意時，請在該全息影像上播放音效（例如，有虛擬狗吠）。 這可協助使用者在未觀賞時尋找全息影像。
-* 音訊 Haptics （適用于 touchless 互動的被動音訊）。 例如，當使用者的手或運動控制器進入並結束手勢畫面時，播放音效。 或在使用者選取全息影像時播放音效。
-* 深度（使用者周圍的環境音效）。
+### <a name="spatializer-platform-support"></a>空間定位器平臺支援
+Windows 透過[ISPATIALAUDIOCLIENT API](https://docs.microsoft.com/windows/win32/coreaudio/spatial-sound)提供 spatialization，包括 hrtf。 此 API 會向應用程式公開 HoloLens 2 HRTF 硬體加速。
 
-也請務必注意，在混合標準身歷聲音效與空間音效時，可以有效地建立實際的環境，身歷聲音效應該相對無意義，以留出空間音效的細微部分，例如反射（距離提示），在雜訊的環境中可能很容易聽到。
+### <a name="spatializer-middleware-support"></a>空間定位器中介軟體支援
+Windows ' Hrtf 的支援適用于一些協力廠商音訊引擎：
+* [Unity 音訊引擎](spatial-sound-in-unity.md)外掛程式會呼叫 HRTF XAPO
+* [Wwise 音訊引擎外掛程式](https://www.audiokinetic.com/products/plug-ins/msspatial/)會呼叫 ISpatialAudioClient API
 
-Windows 的空間音效引擎僅支援播放的48k 取樣率。 大部分中介軟體（例如 Unity）都會自動將音效檔轉換成支援的格式，但當您直接使用 Windows 音訊 Api 時，請將內容格式與效果所支援的格式進行比對。
+## <a name="acoustics"></a>運轉
+空間音訊可能會超過方向。 其他維度（包括遮蔽、障礙物、回音、portalling 和來源模型）統稱為「聲場」。 如果沒有聲場，hrtf 聽起來就沒有觀察距離。
 
-## <a name="see-also"></a>請參閱
-* [MR 空間220](holograms-220.md)
-* [Unity 中的空間音效](spatial-sound-in-unity.md)
-* [DirectX 中的空間音效](spatial-sound-in-directx.md)
-* [空間音效設計](spatial-sound-design.md)
+聲場處理的範圍可以從簡單到非常複雜。 藉由使用任何音訊引擎所支援的簡單回音，您可以將 hrtf 推播到接聽程式周圍的環境中。 聲場系統（如[聲場專案](https://aka.ms/acoustics)）提供更豐富且更吸引人的聲場處理。 聲場專案可以在音效上建立牆、門和其他場景幾何的效果模型，這是在開發期間已知相關場景幾何的案例的有效選項。
+

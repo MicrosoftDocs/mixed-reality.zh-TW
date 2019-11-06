@@ -1,31 +1,25 @@
 ---
 title: 眼球追蹤
-description: HoloLens 2 將全像攝影體驗的內容和人類理解能力帶入了新境界；它讓開發人員能夠運用使用者視線方向的相關資訊。
+description: HoloLens 2 讓開發人員能夠使用使用者所查看之內容的相關資訊，在全像攝影體驗中提供新的內容層級和人類認知。
 author: sostel
 ms.author: sostel
 ms.date: 10/29/2019
 ms.topic: article
 keywords: 眼睛追蹤，混合現實，輸入，眼睛眼，校正
-ms.openlocfilehash: 60de5ceb9f55ca7e2f74856af9bd75567763e382
-ms.sourcegitcommit: a5dc182da237f63f0487d40a2e11894027208b6c
+ms.openlocfilehash: 63520ee8d7d3ce73405776fccc62290cbbadd0a8
+ms.sourcegitcommit: 2e54d0aff91dc31aa0020c865dada3ae57ae0ffc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73441114"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73641137"
 ---
 # <a name="eye-tracking-on-hololens-2"></a>HoloLens 2 的眼球追蹤
 
 ![MRTK 中的眼睛追蹤示範](images/mrtk_et_scenemenu.jpg)
 
-HoloLens 2 將全像攝影體驗的內容和人類理解能力帶入了新境界；它讓開發人員能夠運用使用者視線方向的相關資訊。 本頁概述開發人員和設計人員如何從各種使用案例和基本開發人員指引的眼睛追蹤中獲益的新功能。 
+HoloLens 2 讓開發人員能夠使用使用者所查看之內容的相關資訊，在全像攝影體驗中提供新的內容層級和人類認知。 本頁概述開發人員和設計人員如何從各種使用案例和基本開發人員指引的眼睛追蹤中獲益的新功能。 
 
-
-## <a name="calibration"></a>效果 
-為了讓眼追蹤能夠準確地工作，每位使用者都必須經歷[眼睛追蹤使用者校正](calibration.md)，使用者必須查看一組全像攝影目標。 這可讓裝置調整系統，讓使用者能夠更舒適且更高品質的觀賞體驗，並確保同時精確地追蹤。 眼睛追蹤應該適用于大部分的使用者，但在少數情況下，使用者可能無法成功校準。
-若要深入瞭解校正以及如何確保順暢的體驗，請查看我們的[眼睛追蹤使用者校準](calibration.md)頁面。
-
-
-## <a name="device-support"></a>裝置支援
+### <a name="device-support"></a>裝置支援
 <table>
 <colgroup>
     <col width="25%" />
@@ -47,13 +41,31 @@ HoloLens 2 將全像攝影體驗的內容和人類理解能力帶入了新境界
 </tr>
 </table>
 
+<br>
+
+## <a name="calibration"></a>效果 
+為了讓眼追蹤能夠準確地工作，每位使用者都必須經歷[眼睛追蹤使用者校正](calibration.md)，使用者必須查看一組全像攝影目標。 這可讓裝置調整系統，讓使用者能夠更舒適且更高品質的觀賞體驗，並確保同時精確地追蹤。 
+
+眼睛追蹤應該適用于大部分的使用者，但在少數情況下，使用者可能無法成功校準。 校正可能因各種原因而失敗，包括但不限於： 
+* 使用者先前退出宣告校正程式
+* 使用者有注意力，而未遵循校正目標
+* 使用者有特定類型的 contact 鏡頭和眼鏡，但系統尚未支援 
+* 使用者有特定的眼睛生理學、眼睛狀況或系統尚未支援的眼睛外科  
+* 外部因素抑制了可靠的眼睛追蹤，例如 HoloLens 面板或眼鏡上的塗抹、強烈的直接陽光與遮蔽，因為眼睛前方的頭髮
+
+開發人員應務必為可能無法使用眼追蹤資料的使用者提供適當的支援（無法成功校準）。 我們已在此頁面底部的一節中，提供回溯解決方案的建議。 
+
+若要深入瞭解校正以及如何確保順暢的體驗，請查看我們的[眼睛追蹤使用者校準](calibration.md)頁面。
+
+<br>
+
 ## <a name="available-eye-tracking-data"></a>可用的眼睛追蹤資料
 在深入瞭解眼睛輸入的特定使用案例之前，我們想要簡要指出 HoloLens 2[眼追蹤 API](https://docs.microsoft.com/uwp/api/windows.perception.people.eyespose)所提供的功能。 開發人員可以在大約_30 FPS （30 Hz）_ 的情況中，存取單一眼睛光線（注視原點和方向）。
 如需有關如何存取眼睛追蹤資料的詳細資訊，請參閱我們的開發人員指南，以瞭解如何使用[DirectX 中的眼睛](gaze-in-directx.md)和[Unity 中的眼睛](https://aka.ms/mrtk-eyes)。
 
 預測的眼睛大約是在實際目標周圍以視覺角度的1.5 度為單位（請參閱下圖）。 由於預期會有些許 imprecisions，因此開發人員應該規劃此下限值的某些邊界（例如，2.0-3.0 度可能會導致更舒適的體驗）。 我們將在下面詳細說明如何解決選取的小型目標。 為了讓眼球追蹤精準運作，每個使用者都必須接受眼球追蹤使用者校正。 
 
-![距離 2 公尺的最佳目標大小](images/gazetargeting-size-1000px.jpg)<br>
+![2 個計量表距離的最佳目標大小](images/gazetargeting-size-1000px.jpg)<br>
 *雙計量距離的最佳目標大小*
 
 <br>
@@ -66,7 +78,7 @@ HoloLens 2 將全像攝影體驗的內容和人類理解能力帶入了新境界
 ### <a name="user-intent"></a>使用者意圖    
 使用者查看位置和內容的相關資訊，可**為其他輸入**（例如語音、手和控制器）提供強大的內容。
 這可以運用在各種不同的工作上。
-例如，只要查看全像投影並說「*選取*」（也請參閱[注視和認可](gaze-and-commit.md)），或說出「 *put this ...* 」，然後查看使用者的位置，就可以在整個場景中快速且輕鬆地**設定其目標**。想要放置全息的影像，並說「 *。其中有*「。 您可以在[混合實境工具組 - 視線導向目標選取](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_TargetSelection.html)和[混合實境工具組 - 視線導向目標定位](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_Positioning.html)中找到相關範例。
+例如，只要查看全像投影並說「*選取*」（也請參閱[注視和認可](gaze-and-commit.md)），或說出「 *put this ...* 」，然後查看使用者的位置，就可以在整個場景中快速且輕鬆地**設定其目標**。想要放置全息的影像，並說「 *.。。其中有*「。 您可以在[混合實境工具組 - 視線導向目標選取](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_TargetSelection.html)和[混合實境工具組 - 視線導向目標定位](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_Positioning.html)中找到相關範例。
 
 此外，使用者意圖的範例可能包括使用使用者查看的相關資訊，以強化與虛擬代理程式和互動式全息式的資料的互動。 比方說，虛擬代理程式可能會根據目前所看到的內容，調整可用的選項及其行為。 
 
@@ -107,31 +119,29 @@ _隱含動作_的其他使用案例可能包括：
 
 <br>
  
-## <a name="dev-guidance-what-if-eye-tracking-is-not-available"></a>開發人員指導方針：如果無法使用眼睛追蹤，該怎麼辦？
-在某些情況下，您的應用程式可能不會因為各種原因而收到任何眼睛追蹤資料，包括但不限於：
-* 使用者已略過眼睛追蹤校準。
-* 使用者已校正，但決定不授與您的應用程式使用其眼追蹤資料的許可權。
-* 使用者具有獨特的眼鏡，或系統尚不支援的一些眼睛狀況。
-* 外部因素會抑制可靠的眼睛追蹤，例如 HoloLens 面板或眼鏡上的塗抹、強烈的直接陽光與遮蔽，因為眼睛前方的頭髮。
+## <a name="fallback-solutions-when-eye-tracking-is-not-available"></a>無法使用眼睛追蹤時的回溯解決方案
+在罕見的情況下，可能無法使用目視追蹤資料。
+這可能是因為以下列出最常見的不同原因：
+* 系統無法[校正使用者](calibration.md)。
+* 使用者已略過[校正](calibration.md)。   
+* 使用者已校正，但決定不授與您的應用程式使用其眼追蹤資料的許可權。    
+* 使用者具有獨特的眼鏡，或系統尚不支援的一些眼睛狀況。    
+* 外部因素會抑制可靠的眼睛追蹤，例如 HoloLens 面板或眼鏡上的塗抹、強烈的直接陽光與遮蔽，因為眼睛前方的頭髮。   
+因此，開發人員應該確保這些使用者有適當的回溯支援。 在 [ [DirectX 中](gaze-in-directx.md#fallback-when-eye-tracking-is-not-available)的監看追蹤] 頁面上，我們會說明偵測是否有可用的監看追蹤資料所需的 api。 
 
-身為應用程式開發人員，這表示您必須考慮如何支援可能無法使用眼追蹤資料的使用者。 我們會先說明如何偵測眼追蹤是否可用，以及如何解決不同應用程式無法使用的情況。
+如上所述，有幾個原因可能無法使用眼睛追蹤資料。   
+雖然有些使用者可能會基本思考模式決定撤銷其眼追蹤資料的存取權，而且可以將較差的使用者體驗取捨到不提供存取其眼追蹤資料的隱私權，在某些情況下，這可能是不慎的。  
+因此，如果您的應用程式使用眼追蹤，而且這是經驗的重要部分，我們建議您清楚地與使用者溝通。     
+請通知使用者，追蹤對您的應用程式很重要的原因（甚至是列出一些增強的功能），您的應用程式可能會有充分的潛能，協助使用者進一步瞭解所放棄的內容。    
+協助使用者識別眼睛追蹤可能無法運作的原因（根據上述檢查），並提供一些建議以快速疑難排解可能的問題。  
+例如，如果您可以偵測到系統支援監看追蹤，則使用者會經過校正，甚至也會獲得其許可權，但不會收到任何其他問題，例如一些其他問題，像是塗抹或 pixels occluded 的眼睛。    
+請注意，在少數情況下，使用者可能會無法正常執行眼追蹤。    
+因此，請重視，允許關閉或甚至停用提醒，以在應用程式中啟用眼睛追蹤。
 
-### <a name="1-how-to-detect-that-eye-tracking-is-available"></a>1. 如何偵測是否有可用的眼睛追蹤
-有幾個檢查可判斷是否可以使用眼睛追蹤資料。 檢查是否 。
-* ...系統完全支援眼追蹤。 呼叫下列*方法*： [EyesPose. IsSupported （）](https://docs.microsoft.com/uwp/api/windows.perception.people.eyespose.issupported#Windows_Perception_People_EyesPose_IsSupported)
-
-* ...使用者已校正。 呼叫下列*屬性*： [EyesPose. IsCalibrationValid](https://docs.microsoft.com/uwp/api/windows.perception.people.eyespose.iscalibrationvalid#Windows_Perception_People_EyesPose_IsCalibrationValid)
-
-* ...使用者已提供您的應用程式許可權來使用其眼追蹤資料：取出目前的 _' GazeInputAccessStatus '_ 。 如需如何執行此動作的範例，請前往[要求存取注視輸入](https://docs.microsoft.com/windows/mixed-reality/gaze-in-directX#requesting-access-to-gaze-input)。
-
-此外，您可能會想要藉由在收到的眼睛追蹤資料更新之間加上超時時間來檢查您的眼睛追蹤資料是否過時，如下所述。 
-
-如上所述，有幾個原因可能無法使用眼睛追蹤資料。 雖然有些使用者可能會基本思考模式決定撤銷其眼追蹤資料的存取權，而且可以將較差的使用者體驗取捨到不提供存取其眼追蹤資料的隱私權，在某些情況下，這可能是不慎的。 因此，如果您的應用程式使用眼追蹤，而且這是經驗的重要部分，我們建議您清楚地與使用者溝通。 請通知使用者，追蹤對您的應用程式很重要的原因（甚至是列出一些增強的功能），您的應用程式可能會有充分的潛能，協助使用者進一步瞭解所放棄的內容。 協助使用者識別眼睛追蹤可能無法運作的原因（根據上述檢查），並提供一些建議以快速疑難排解可能的問題。 例如，如果您可以偵測到系統支援監看追蹤，則使用者會經過校正，甚至也會獲得其許可權，但不會收到任何其他問題，例如一些其他問題，像是塗抹或 pixels occluded 的眼睛。 請注意，在少數情況下，使用者可能會無法正常執行眼追蹤。 因此，請重視，允許關閉或甚至停用提醒，以在應用程式中啟用眼睛追蹤。
-
-### <a name="2-fallback-for-apps-using-eye-gaze-as-a-primary-input-pointer"></a>2. 使用眼睛作為主要輸入指標的應用程式的 Fallback
+### <a name="fallback-for-apps-using-eye-gaze-as-a-primary-input-pointer"></a>使用眼睛作為主要輸入指標的應用程式的 Fallback
 如果您的應用程式使用眼睛眼做為指標輸入，以快速選取場景中的全像投影，但眼睛追蹤資料無法使用，建議您回到前端，並開始顯示列印頭游標。 我們建議使用 timeout （例如500–1500毫秒）來判斷是否要切換。 這是為了避免每次系統因快速監看或動畫快遞而短暫遺失追蹤時，都要清除游標。 如果您是 Unity 開發人員，則已在混合現實工具組中處理自動回復為頭部。 如果您是 DirectX 開發人員，您必須自行處理此交換器。
 
-### <a name="3-fallback-for-other-eye-tracking-specific-applications"></a>3. 針對其他眼睛追蹤特定應用程式的回退
+### <a name="fallback-for-other-eye-tracking-specific-applications"></a>其他眼睛追蹤特定應用程式的回退
 您的應用程式可能會以專為眼睛量身打造的獨特方式來使用眼睛，例如，用來製作圖片的外觀，或是以眼睛為基礎的注意熱度圖依賴視覺效果的精確資訊。 在此情況下，沒有任何明確的回溯。 如果無法使用眼睛追蹤，可能只需要停用這些功能。
 同樣地，我們建議您與不知道功能無法運作的使用者清楚溝通。
 

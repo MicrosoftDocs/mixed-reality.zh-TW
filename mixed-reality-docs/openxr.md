@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 7/29/2019
 ms.topic: article
 keywords: OpenXR，Khronos，BasicXRApp，Mixed Reality OpenXR 開發人員入口網站，DirectX，native，原生應用程式自訂引擎，中介軟體
-ms.openlocfilehash: cf8795e6fed7db9fd0743d0902ce1585d56fa5e0
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: d29b59d7dec19e5423c83ea6e61bb5625c8981dd
+ms.sourcegitcommit: 2e54d0aff91dc31aa0020c865dada3ae57ae0ffc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438146"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73641135"
 ---
 # <a name="openxr"></a>OpenXR
 
@@ -90,7 +90,7 @@ OpenXR 規格定義了擴充機制，可讓執行時間實施者公開超出<a h
 * [手形文字清晰度 + 手上網格](hands-and-tools.md)
 * [眼睛目光](eye-tracking.md)
 * [次要視圖設定（混合現實捕捉）](mixed-reality-capture-for-developers.md#render-from-the-pv-camera-opt-in)
-* [空間對應](spatial-mapping.md)
+* [場景理解](scene-understanding.md)
 * 與 Windows SDK Api 交互操作
 
 雖然其中一些延伸模組可能會以廠商專屬的 MSFT 延伸模組開頭，但 Microsoft 和其他 OpenXR 執行時間廠商會共同合作，為許多功能領域設計跨廠商的 EXT 或 KHR 延伸模組。  這可讓您針對這些功能所撰寫的程式碼在執行時間廠商之間具有可攜性，就像使用核心規格一樣。

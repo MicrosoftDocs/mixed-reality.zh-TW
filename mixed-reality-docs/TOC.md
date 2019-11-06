@@ -39,6 +39,7 @@
 ### [空間位置掃描視覺效果](room-scan-visualization.md)
 ### [場景理解](scene-understanding.md)
 ### [空間錨點](spatial-anchors.md)
+### [音效](spatial-sound.md)
 ### [空間對應](spatial-mapping.md)
 ### [系統手勢](system-gesture.md)
 ### [混合實境應用程式類型](types-of-mixed-reality-apps.md)
@@ -65,7 +66,6 @@
 ### 樣式
 #### [色彩、光線和材質](color,-light-and-materials.md)
 #### [縮放](scale.md)
-#### [空間音效](spatial-sound.md)
 #### [空間音效設計](spatial-sound-design.md)
 #### [印刷樣式](typography.md)
 ### 控制項和行為
@@ -193,7 +193,6 @@
 #### [頭部和眼部目光](gaze-in-directx.md)
 #### [手部和運動控制器](hands-and-motion-controllers-in-directx.md)
 #### [語音輸入](voice-input-in-directx.md)
-#### [空間音效](spatial-sound-in-directx.md)
 #### [空間對應](spatial-mapping-in-directx.md)
 #### [場景理解](scene-understanding-sdk.md)
 #### [共用 spatial anchors](shared-spatial-anchors-in-directx.md)

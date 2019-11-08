@@ -1,18 +1,18 @@
 ---
 title: 使用 HoloLens 模擬器
-description: HoloLens 模擬器可讓您在沒有實體 HoloLens 的電腦上測試混合實境應用程式。
+description: 使用 HoloLens 模擬器在沒有實體 HoloLens 的電腦上測試混合實境應用程式。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 08/14/2019
+ms.date: 09/11/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: HoloLens, 模擬器
-ms.openlocfilehash: 6c112b7706f1dfff7c4affbdb4ee7326f0e15c8a
-ms.sourcegitcommit: 06c27acdac24c845952f9c1d3611770756f25820
+ms.openlocfilehash: 455abfabede5bc1e646bd273afa09068feb886a1
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69030172"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437347"
 ---
 # <a name="using-the-hololens-emulator"></a>使用 HoloLens 模擬器
 
@@ -25,7 +25,7 @@ HoloLens 模擬器可讓您在沒有實體 HoloLens 的電腦上測試全像攝�
 下載 HoloLens 模擬器。
 
 版本： 
-* [HoloLens 2 模擬器](https://go.microsoft.com/fwlink/?linkid=2101019).
+* [HoloLens 2 模擬器 (2019 年 10 月更新)](https://go.microsoft.com/fwlink/?linkid=2106649)。
 * [HoloLens 模擬器 (第 1 代) 和全像攝影專案範本](https://go.microsoft.com/fwlink/?linkid=2065980)。
 
 您可以在 [HoloLens 模擬器封存](hololens-emulator-archive.md)頁面上找到 HoloLens 模擬器的舊版組建。
@@ -40,10 +40,10 @@ HoloLens 模擬器會使用 Hyper-V 與 RemoteFx (第 1 代模擬器) 或 GPU-PV
 * 64 位元 CPU
 * 4 核心 CPU (或有多個 CPU，且總共有 4 個核心)
 * 8 GB RAM 或更多
-* BIOS 必須[支援並啟用](http://blogs.technet.com/b/iftekhar/archive/2010/08/09/enable-hardware-settings-in-bios-to-run-hyper-v.aspx)下列功能：
+* BIOS 必須[支援並啟用](https://blogs.technet.com/b/iftekhar/archive/2010/08/09/enable-hardware-settings-in-bios-to-run-hyper-v.aspx)下列功能：
    * 硬體協助虛擬化
    * 第二層位址轉譯 (SLAT)
-   * 硬體型資料執行防止 (DEP)。
+   * 硬體型資料執行防止 (DEP)
 * GPU 需求
    * DirectX 11.0 或更新版本
    * WDDM 1.2 圖形驅動程式或更新版本 (第 1 代)
@@ -104,26 +104,62 @@ HoloLens (第 1 代) 上的游標會跟著頭部的移動和旋轉。 在 HoloLe
 * 將滑鼠停留在控制項或欄位上以顯示工具提示，其中包含適用的鍵盤、滑鼠和遊戲台控制項。
 * 若要顯示或隱藏手部，請切換左手或右手底下的適當開關。
 * 若要控制手部，請使用鍵盤上左邊或右邊的 Alt 鍵，或使用遊戲台上的 LB 鍵或 RB 鍵。
-* 若要將所有輸入引導至單手或雙手，請按一下切換開關底下的圖釘按鈕。  對於手部來說，這相當於按住 Alt 鍵。
+* 若要將所有輸入引導至單手或雙手，請按一下切換開關底下的圖釘按鈕。 對於手部來說，這相當於按住 Alt 鍵。
 * 若要控制眼睛注視方向，請按一下 [眼睛] 區段中的圖釘。 在鍵盤上，這相當於按住 Y 鍵。
 * 若要載入空間記錄，請按一下 [記錄] 區段中的 [載入] 按鈕。 如需詳細資訊，請參閱[模擬空間](#simulated-rooms)。
 * 若要調整模擬的人類或輸入裝置為回應鍵盤、滑鼠或遊戲台的輸入所做移動或旋轉的速度，請按一下 [輸入設定] 旁的齒輪圖示，然後調整滑桿。
-* 根據預設，鍵盤輸入會控制所模擬的人類和模擬輸入。 若要讓電腦的鍵盤輸入傳送至 HoloLens，請取消核取 [使用鍵盤來模擬]。  F4 是這項設定的快速鍵。
+* 根據預設，鍵盤輸入會控制所模擬的人類和模擬輸入。 若要讓電腦的鍵盤輸入傳送至 HoloLens，請取消核取 [使用鍵盤來模擬]。 F4 是這項設定的快速鍵。
 * 如果模擬控制台已顯示，則按 F8 鍵可將鍵盤焦點移至該控制台。
 * 若要從模擬器視窗卸除模擬控制台，請按一下控制台底部的按鈕，或在鍵盤上按 F9 鍵。  關閉視窗或再次按 F9 鍵會讓視窗返回模擬器。
 * 您可以用個別應用程式的形式來啟動模擬控制台，這可讓您藉由從 %ProgramFiles(x86)%\Windows Kits\10\Microsoft XDE\10.0.18362.0\ 執行 PerceptionSimulationInput.exe，來控制並連線至 HoloLens 2 模擬器、HoloLens 2 裝置或 Windows Mixed Reality 模擬。
 
-### <a name="account-tab"></a>[帳戶] 索引標籤
+### <a name="account-tab"></a>帳戶索引標籤
 
 [帳戶] 索引標籤可讓您將模擬器設定為使用 Microsoft 帳戶來登入。 這適用於會要求使用者使用帳戶進行登入的測試 API。 若要切換這個選項，您必須先完全關閉再重新啟動 HoloLens 模擬器，設定才會生效。 如果此選項啟用，後續在啟動模擬器時，系統就會要求您登入，就和使用者在首次啟動 HoloLens 時進行的程序一樣。 若要使用電腦的鍵盤輸入認證，請先關閉模擬控制台的 [使用鍵盤來模擬]，或按鍵盤上的 F4 將鍵盤設定切換為開啟或關閉。
 
-### <a name="optional-settings-tab"></a>[選擇性設定] 索引標籤
+### <a name="optional-settings-tab"></a>選擇性設定索引標籤
 
 [選擇性設定] 索引標籤會顯示用來啟用或停用硬體加速圖形的控制項。 依預設，如果電腦的圖形卡驅動程式支援硬體加速圖形，便會加以使用。 如果圖形卡的驅動程式不支援 GPU-PV，系統就不會顯示此選項。
 
-### <a name="diagnostics-tab"></a>[診斷] 索引標籤
+### <a name="diagnostics-tab"></a>診斷索引標籤
 
 [診斷] 索引標籤會顯示模擬器的 IP 位址 (以 Windows 裝置入口網站連結的形式) 以及虛擬 GPU 的狀態。
+
+### <a name="network-tab"></a>網路索引標籤
+
+[網路] 索引標籤會顯示模擬器的網路介面卡詳細資料，以及主機電腦的網路介面卡詳細資料。 請注意，若是使用 HoloLens 2 模擬器，只有在 Windows 10 2019 更新或更新版本上執行模擬器時，才會出現此索引標籤。
+
+### <a name="nat-configuration-tab"></a>NAT 設定索引標籤
+
+只有在 Windows 10 2019 更新或更新版本上執行模擬器時，才會出現此索引標籤。
+
+模擬器會使用您電腦的網路連線，並位於 NAT 後方。  此索引標籤可讓您將主機電腦的連接埠對應到模擬器，讓遠端裝置能夠連線到在模擬器中執行的應用程式和服務。
+
+例如，如果您想要從遠端電腦存取模擬器上的裝置入口網站：
+
+1. 按兩下資料表中的可用列，可新增內部連接埠 80 (裝置入口網站接聽的埠)。  針對其他應用程式，請輸入該應用程式接聽的埠號碼。
+2. 選擇任何可用的內部連接埠。  在此範例中，我們將使用埠 8080 做為外部連接埠。
+3. 選取通訊協定。  預設值是 TCP。  因為裝置入口網站使用 TCP，所以我們會保留預設值。
+4. 按一下 [套用變更] 以啟用對應。  [狀態] 將從 [擱置] 變更為 [啟動]。
+5. 在遠端電腦上，開啟瀏覽器並瀏覽至 (IP-of-the-PC-running-the-emulator):8080。  裝置入口網站介面隨即出現。  請注意，您用於遠端電腦的 IP 位址必須是執行模擬器之電腦的 IP 位址，而不是模擬器本身。  您可以透過各種方式來擷取 IP，例如電腦上 [網路 & 網際網路] 類別目錄中的 [設定] 應用程式、在命令提示字元使用 'ipconfig'、或是從 [模擬器工具] 對話方塊的 [網路] 索引標籤中尋找 [桌面介面卡] 來取得。
+
+另請注意，如果您新增裝置入口網站的連接埠對應，您可以使用模擬器安裝中包含的「感知模擬控制」工具來從遠端控制模擬器，或是透過連線到主機電腦的 IP 位址和裝置入口網站外部連接埠 (例如上述範例中的8080) 來使用感知模擬 API，以從遠端控制模擬器。  使用「感知模擬控制」來遠端連線並控制模擬器時，只要指定電腦的 IP 位址和設定的連接埠。  不要包括 'https://'。
+
+預設是沒有連接埠對應。  您設定的任何對應都會在 HoloLens 2 模擬器的啟動期間持續，而且當模擬器完全開機時將會自動啟用。
+
+使用 [匯出] 按鈕將您的對應儲存至檔案。  然後，您可以與其他可使用 [匯入] 按鈕自動設定相同對應的小組成員共用此檔案。
+
+![HoloLens 模擬器的 NAT 設定索引標籤](images/emulator-natconfig-500px.png)
+
+### <a name="updates-tab"></a>更新索引標籤
+
+只有在 Windows 10 2019 更新或更新版本上執行模擬器時，才會出現此索引標籤。
+
+模擬器會在啟動時檢查是否有新的版本。  如果有新版本，模擬器將會顯示提示，指出您擁有的版本以及可用的版本，並詢問您是否要更新。  如果您選取 [是]，便會下載新版本的安裝程式。
+
+[更新] 索引標籤可讓您控制模擬器是否檢查新版本，您只需在此索引標籤上切換 [自動檢查更新] 核取方塊。從 2019 年 9 月更新開始，也可讓您查看和下載其他可用的模擬器版本。  所有目前執行版本以外的版本皆會提供下載連結。  按一下此連結將會下載該版本的安裝程式。
+
+![HoloLens 模擬器的更新索引標籤](images/emulator-updates-500px.png)
 
 
 ## <a name="anatomy-of-the-hololens-1st-gen-emulator"></a>HoloLens (第 1 代) 模擬器的結構
@@ -151,7 +187,7 @@ HoloLens (第 1 代) 上的游標會跟著頭部的移動和旋轉。 在 HoloLe
 
 [其他工具]  窗格中的預設索引標籤是 [模擬]  索引標籤。
 
-![HoloLens 模擬器的 [其他工具] 窗格](images/emulator-simulation-500px.png)
+![HoloLens 模擬器的其他工具窗格](images/emulator-simulation-500px.png)
 
 [模擬] 索引標籤會顯示用來在模擬器中驅動 HoloLens OS 的模擬感應器目前是什麼狀態。 將滑鼠停留在 [模擬] 索引標籤中的任何值上方，會提供描述如何控制該值的工具提示。
 
@@ -163,7 +199,7 @@ HoloLens (第 1 代) 上的游標會跟著頭部的移動和旋轉。 在 HoloLe
 
 如需詳細資訊，請參閱[模擬空間](#simulated-rooms)。
 
-### <a name="account-tab"></a>[帳戶] 索引標籤
+### <a name="account-tab"></a>帳戶索引標籤
 
 [帳戶] 索引標籤可讓您將模擬器設定為使用 Microsoft 帳戶來登入。 這適用於會要求使用者使用帳戶來登入的測試 API。 在此頁面上核取該方塊後，後續在啟動模擬器時，系統就會要求您登入，就和使用者在首次啟動 HoloLens 時會進行的程序一樣。
 
@@ -182,7 +218,7 @@ HoloLens (第 1 代) 上的游標會跟著頭部的移動和旋轉。 在 HoloLe
 
 ## <a name="troubleshooting"></a>疑難排解
 
-您可能會在安裝模擬器時看到錯誤，內容指出您需要「Visual Studio 2015 Update 1 和 UWP 工具 1.2 版」  。 此錯誤有三個可能的原因：
+您可能會在安裝模擬器時看到錯誤訊息，內容指出您需要「Visual Studio 2015 Update 1 和 UWP 工具 1.2 版」  。 此錯誤有三個可能的原因：
 * 您的 Visual Studio 版本不夠新 (Visual Studio 2019、Visual Studio 2017 或 Visual Studio 2015 Update 1 或更新版本)。 若要修正此問題，請安裝最新版的 Visual Studio。
 * 您有最新版的 Visual Studio，但未安裝通用 Windows 平台 (UWP) 工具。 這是 Visual Studio 的選用功能。
 
@@ -191,7 +227,7 @@ HoloLens (第 1 代) 上的游標會跟著頭部的移動和旋轉。 在 HoloLe
 * 也請確定您的系統上已啟用 Hyper-V 功能。
 
 如果安裝順利完成，HoloLens 模擬器卻未成為部署和偵錯選項，請確認下列設定：
-* Visual Studio 專案設定已設定為 x86 (HoloLens 第 1 代) 或 x86 或 x64 (HoloLens 2 模擬器)。
+* Visual Studio 專案設定已設定為 x86 (HoloLens 第 1 代)、x86 或 x64 (HoloLens 2 模擬器)。
 * 如果使用 Visual Studio 2019，專案設定中的平台工具組已設定為 v142。
 
 如果安裝順利完成，但 Visual Studio 在嘗試啟動 HoloLens 模擬器時顯示錯誤，請嘗試下列動作：

@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
 keywords: DirectX，全像攝影轉譯，原生，原生應用程式，WinRT，WinRT 應用程式，平臺 Api，自訂引擎，中介軟體
-ms.openlocfilehash: e77ee5053e69aef502481d18618e604c6bfb5939
-ms.sourcegitcommit: 2e54d0aff91dc31aa0020c865dada3ae57ae0ffc
+ms.openlocfilehash: 0af73314c3c93d230ef87ed468f718f5b3e1813c
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73641096"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926624"
 ---
 # <a name="directx-development-overview"></a>DirectX 開發總覽
 
@@ -44,7 +44,7 @@ Windows Mixed Reality 支援[兩種類型的應用程式](app-views.md)：
 
 ## <a name="adding-mixed-reality-capabilities-and-inputs"></a>新增混合現實功能和輸入
 
-若要為您的沉浸式 appslication 使用者提供最佳的體驗，您會想要支援下列重要的建立區塊：
+若要為您的沉浸式應用程式使用者提供最佳的體驗，您會想要支援下列重要的建立區塊：
 
 * [DirectX 中的頭部和眼睛目光](gaze-in-directx.md)
 * [DirectX 中的手部和運動控制器](hands-and-motion-controllers-in-directx.md)

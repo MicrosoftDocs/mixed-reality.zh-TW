@@ -6,12 +6,12 @@ ms.author: thmignon
 ms.date: 07/12/2018
 ms.topic: article
 keywords: 3D，標誌，圖示，模型，啟動器，3D 啟動器，磚，即時 cube，深層連結，secondarytile，次要磚，UWP
-ms.openlocfilehash: be47b590e4fd1a847ac47d9cfbcbe824c544dd59
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 5d18f699792760c39df4f814bde470fb9f889db7
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438012"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926763"
 ---
 # <a name="implement-3d-app-launchers-uwp-apps"></a>執行3D 應用程式啟動器（UWP 應用程式）
 
@@ -164,7 +164,7 @@ await tile.RequestCreateAsync();
 > [!NOTE]
 > 這項功能將受到 Windows RS4 update 的支援。 如果您打算使用這項功能，請確定您的應用程式是以大於或等於10.0.17125 的 Windows SDK 版本為目標
 
-您可以定義 3D secondaryTile 的啟用行為，以控制當使用者選取它時的回應方式。 這可以用來將3D 物件放在 purley 資訊性或裝飾的混合現實首頁中。 支援下列啟用行為類型：
+您可以定義 3D secondaryTile 的啟用行為，以控制當使用者選取它時的回應方式。 這可以用來將3D 物件放在純粹是資訊性或裝飾的混合現實首頁中。 支援下列啟用行為類型：
 1. 預設值：當使用者選取 3D secondaryTile 時，應用程式就會啟用
 2. 無：當使用者選取 3D secondaryTile 時，不會發生任何事，也不會啟用應用程式。
 

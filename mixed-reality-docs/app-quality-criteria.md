@@ -6,12 +6,12 @@ ms.author: crderr
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 應用程式品質準則，混合現實，混合現實應用程式
-ms.openlocfilehash: f98111ebe9aacc30778e86501be41e6ac5f6d165
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: d167e141b536f9247d22e40afefa718ecc399f5a
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437045"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926592"
 ---
 # <a name="app-quality-criteria"></a>應用程式品質準則
 
@@ -124,7 +124,7 @@ ms.locfileid: "73437045"
 * 四處移動全息影像和環境，尋找像是 [泳道] 和 [jumpiness] 的行為。 這種動作可能是因為裝置未追蹤環境，或與空間錨點的距離所造成。
 * 如果框架中有大型或多個全息影像，請觀察各種深度的全息影像行為，同時將您的頭部位置從側邊移至一邊，如果 shakiness 出現，這可能是穩定平面所造成。
 
-### <a name="recomendations"></a>建議
+### <a name="recommendations"></a>建議事項
 
 * 在開發工作開始時新增 [畫面播放速率] 計數器。
 * 使用穩定平面。
@@ -188,7 +188,7 @@ ms.locfileid: "73437045"
 * 當不需要有效位數時，空間對應適用于將物件放在介面上。
 * 為了達到最佳精確度，請使用標記或海報來設定全息和 Xbox 控制器（或某種手動對齊機制），以進行最後的校正。
 * 請考慮將多大的全息影像分解成邏輯部分，並將每個部分對齊介面。
-* 不當設定的 interpupilary 距離（IPD）也會影響全息影像對齊。 請一律將 HoloLens 設定為使用者的 IPD。
+* 不當設定的 interpupillary 距離（IPD）也會影響全息影像對齊。 請一律將 HoloLens 設定為使用者的 IPD。
 
 ### <a name="resources"></a>資源
 
@@ -523,7 +523,7 @@ ms.locfileid: "73437045"
 ### <a name="how-to-measure"></a>如何測量
 
 * 應用程式會使用一致的[標準輸入方法。](interaction-fundamentals.md)
-* 如果應用程式有領域輸入，則會透過下列方式清楚地進行通訊：
+* 如果應用程式具有自訂輸入，則會透過下列方式清楚地進行通訊：
 * 首次執行體驗
 * 簡介畫面
 * 工具提示

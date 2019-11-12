@@ -6,18 +6,18 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: b83c7ac39d522fc2b799591fa02608d5fc5cc930
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 9d76d5323705c001dbafe4411a9334dd3403d0ca
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437564"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926234"
 ---
 # <a name="5-integrating-azure-spatial-anchors-into-a-shared-experience"></a>5. 將 Azure 空間錨點整合到共用體驗中
 
-在本課程中，我們將瞭解如何將 Azure 空間錨點（ASA）整合到我們的共用體驗中。 如果實體環境是錨定虛擬經驗，讓所有參與者在相同的實體位置中看到物件，則 ASA 允許多個共置的裝置擁有共同的參考。
+在這一課，您將瞭解如何將 Azure 空間錨點（ASA）整合到我們的共用體驗中。 如果實體環境是錨定虛擬經驗，讓所有參與者在相同的實體位置中看到物件，則 ASA 允許多個共置的裝置擁有共同的參考。
 
-繼續進行本課程之前，我們必須先完成 ASA 學習課程模組，其中將涵蓋 ASA 基本概念、Azure 帳戶和資源建立，以及在我們將 ASA 整合到我們的共用體驗之前所需的其他基本建築物組塊。
+繼續進行這一課之前，您必須先完成 ASA 學習課程模組，其中將涵蓋 ASA 基本概念、Azure 帳戶和資源建立，以及將 ASA 整合到我們的共用體驗之前所需的其他基本組建區塊。
 
 目標
 
@@ -37,11 +37,11 @@ ms.locfileid: "73437564"
 
 ![Module3hapter5step5im](images/module3chapter5step5im.PNG)
 
-4. 現在，在階層中選取 [ShareAzureAnchorButton]，並將您的注意力移至 [Inaspector] 面板。 向下卷到下圖所示的下拉式功能表，選取 [AnchorModuleScript]，然後按一下 [ShareAnchorNetework （）]。
+4. 現在，在階層中選取 [ShareAzureAnchorButton]，並將您的注意力移至 [偵測器] 面板。 向下卷到下圖所示的下拉式功能表，選取 [AnchorModuleScript]，然後按一下 [ShareAnchorNetwork （）]。
 
 ![Module3hapter5step6im](images/module3chapter5step6im.PNG)
 
-5. 選取 [GetAzureAnchorButton] （請參閱步驟4），並將您的注意力移回 [偵測器] 面板。 向下流覽至下圖所示的下拉式功能表，然後選取 [AnchorModuleScript]，再按一下 [GetSharedAnchorNetwork （）]，然後按一下 [儲存]。
+5. 選取 [GetAzureAnchorButton] （請參閱步驟4），並將您的注意力移回 [偵測器] 面板。 向下卷到下圖中顯示的下拉式功能表，選取 [AnchorModuleScript]，按一下 [GetSharedAnchorNetwork （）]，然後 [儲存]。
 
 ![Module3hapter5step7im](images/module3chapter5step7im.PNG)
 
@@ -53,7 +53,7 @@ ms.locfileid: "73437564"
 
    > 注意：在 [調試] 視窗中，會顯示個別按鈕上對應動作的所有詳細資料。
 
-## <a name="congratulations"></a>恭喜您
+## <a name="congratulations"></a>恭喜！
 
-在這一課，您已瞭解如何整合 Azure 強大的新空間錨點，以將共置的裝置對齊共用體驗！ 這也會結束共用模組。 我們已瞭解如何設定新的 Photon 帳戶、將 Photon 和雙關語整合到新的 Unity 應用程式、設定虛擬人偶和共用物件，最後使用 ASA 來對齊多個參與者。 
+在這一課，您已瞭解如何整合 Azure 的強大新空間錨點，以將共置的裝置對齊共用體驗！ 這也會結束共用模組。 我們已瞭解如何設定新的 Photon 帳戶、將 Photon 和雙關語整合到新的 Unity 應用程式、設定虛擬人偶和共用物件，最後使用 ASA 來對齊多個參與者。 
 

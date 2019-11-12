@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure，mixed reality，學術，unity，教學課程，api，媒體服務，串流影片，360，沉浸，vr
-ms.openlocfilehash: 6585aa731ff7ebb89beae67ab0b61ac5ef026e47
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: e0350d69eed9b922e174bc521107beac7d11b1bc
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438571"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926832"
 ---
 >[!NOTE]
 >混合現實學術教學課程的設計是使用 HoloLens （第1代）和混合現實的沉浸式耳機。  因此，對於仍在尋找這些裝置開發指引的開發人員而言，我們覺得這些教學課程很重要。  這些教學課程 **_不_** 會以最新的工具組或用於 HoloLens 2 的互動進行更新。  系統會保留這些資訊，以繼續在支援的裝置上運作。 未來將會有一系列新的教學課程，將示範如何針對 HoloLens 2 進行開發。  此通知會在張貼時，使用這些教學課程的連結進行更新。
@@ -619,7 +619,7 @@ ms.locfileid: "73438571"
 
 ## <a name="chapter-6---create-the-gaze-class"></a>第6章-建立注視課程
 
-此類別負責建立將從**主要相機**向前 Beprojected 的**Raycast** ，以偵測使用者正在查看的物件。 在此情況下， **Raycast**將需要識別使用者是否正在查看場景中的**GazeButton**物件，並觸發行為。
+此類別負責建立將從**主要相機**向前投射的**Raycast** ，以偵測使用者正在查看的物件。 在此情況下， **Raycast**將需要識別使用者是否正在查看場景中的**GazeButton**物件，並觸發行為。
 
 若要建立此類別：
 
@@ -828,7 +828,7 @@ ms.locfileid: "73438571"
 
 3.  移至 [檔案] **> [組建設定**]，按一下 [**組建**]。
 
-4.  系統會提示您選取要 buildthe 解決方案的資料夾。
+4.  系統會提示您選取要在其中建立解決方案的資料夾。
 
 5.  建立**組建**資料夾，並在該資料夾內建立另一個資料夾，並使用您選擇的適當名稱。
 

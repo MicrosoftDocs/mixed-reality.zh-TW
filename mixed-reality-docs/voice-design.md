@@ -6,16 +6,16 @@ ms.author: shentan
 ms.date: 04/21/2019
 ms.topic: article
 keywords: Windows Mixed Reality, 設計, 互動, 語音
-ms.openlocfilehash: bfcaef787b22f17da9627a53c92c43f5cb1e1d9b
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 350acfbe777869f150b7c90c93124e10e155168d
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437212"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926706"
 ---
 # <a name="voice-commanding"></a>語音命令
 
-使用語音命令時，一般會使用注視來作為鎖定機制，無論是要作為指標 (「選取」) 還是用來對應用程式指示命令 (「看到什麼就說什麼」)。 當然，有些語音命令完全不需要目標，例如「移至開始」或「嗨，Cortana」。
+使用語音命令時，注視通常用來作為目的機制，也就是指標（"select"），或是將您的命令導向應用程式（「看它，說它」）。 當然，有些語音命令完全不需要目標，例如「移至開始」或「嗨，Cortana」。
 
 
 ## <a name="device-support"></a>裝置支援

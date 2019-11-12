@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: 場景理解，空間對應，Windows Mixed Reality，Unity
-ms.openlocfilehash: e31c0b1c954516db2dbb025d849dba3e3203a04b
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: b7d4103697d94f5e59c77237b4948f62e4e4b621
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438295"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926909"
 ---
 # <a name="scene-understanding-sdk-overview"></a>場景理解 SDK 總覽
 
@@ -35,7 +35,7 @@ SceneUnderstanding 需要18362或更高版本 Windows SDK。
 
 ### <a name="the-scene"></a>場景
 
-您的混合現實裝置會持續整合其在您環境中所見到的資訊。 場景瞭解漏斗圖所有這些資料來源，並產生一個單一的統一抽象概念。 場景理解會產生場景，這是代表單一事物（例如牆/天花板/樓層）實例的[SceneObjects](scene-understanding-SDK.md#sceneobjects)組合。場景物件本身是[SceneComponents](scene-understanding-SDK.md#scenecomponents)的組合，代表組成此 SceneObject 的更細微部分。 元件的範例包括四邊形和網格，但未來可能會代表周框方塊、碰撞 mehses、中繼資料等。
+您的混合現實裝置會持續整合其在您環境中所見到的資訊。 場景瞭解漏斗圖所有這些資料來源，並產生一個單一的統一抽象概念。 場景理解會產生場景，這是代表單一事物（例如牆/天花板/樓層）實例的[SceneObjects](scene-understanding-SDK.md#sceneobjects)組合。場景物件本身是[SceneComponents](scene-understanding-SDK.md#scenecomponents)的組合，代表組成此 SceneObject 的更細微部分。 元件的範例包括四邊形和網格，但未來可能會代表周框方塊、碰撞網格、中繼資料等。
 
 將原始感應器資料轉換成場景的程式，是可能耗費資源的作業，可能需要幾秒鐘的時間，才會有非常大的空間（~ 50x50m），而不是由裝置所計算，因此不會有任何問題應用程式要求。 相反地，場景產生是由您的應用程式隨選觸發。 SceneObserver 類別具有可計算或還原序列化場景的靜態方法，您可以接著列舉/與之互動。 「計算」動作會隨選執行，並在 CPU 上執行，但在不同的進程（混合現實驅動程式）中執行。 不過，雖然我們會在另一個進程中計算，但產生的場景資料會儲存在應用程式的場景物件中並加以維護。 
 
@@ -43,7 +43,7 @@ SceneUnderstanding 需要18362或更高版本 Windows SDK。
 
 ![處理圖表](images/SU-ProcessFlow.png)
 
-左側是混合現實執行時間的圖表，它一律開啟並在自己的進程中執行。 此執行時間會負責執行裝置追蹤、空間對應，以及場景理解用來瞭解有關世界的原因的其他作業。 在圖表的右側，我們會顯示兩個理論上的應用程式，讓您使用場景理解。 第一個應用程式介面的 MRTK 會在內部使用場景理解 SDK，第二個應用程式會計算並使用兩個 sepereate 場景實例。 此圖表中的所有3個場景都會產生不同的場景實例，而驅動程式不會追蹤全域狀態，而在某個場景中的應用程式和場景物件之間，則不會在另一個場景中找到。 場景理解會提供一段時間的追蹤機制，但這是使用 SDK 和程式碼來執行，此追蹤是在 SDK 中的應用程式進程中執行。
+左側是混合現實執行時間的圖表，它一律開啟並在自己的進程中執行。 此執行時間會負責執行裝置追蹤、空間對應，以及場景理解用來瞭解有關世界的原因的其他作業。 在圖表的右側，我們會顯示兩個理論上的應用程式，讓您使用場景理解。 第一個應用程式介面的 MRTK 會在內部使用場景理解 SDK，第二個應用程式會計算並使用兩個不同的場景實例。 此圖表中的所有3個場景都會產生不同的場景實例，而驅動程式不會追蹤全域狀態，而在某個場景中的應用程式和場景物件之間，則不會在另一個場景中找到。 場景理解提供一段時間的追蹤機制，但這是使用 SDK 來完成的，而執行這項追蹤的程式碼則是在應用程式的 SDK 中執行。
 
 因為每個場景都會將它的資料儲存在您應用程式的記憶體空間中，所以您可以假設場景物件或其內部資料的所有函式一律會在應用程式的進程中執行。
 
@@ -95,7 +95,7 @@ SceneUnderstanding 需要18362或更高版本 Windows SDK。
 </tr>
 </table>
 
-下圖將重點放在場景的實體和邏輯版面配置之間的差異。 在右側，我們會看到您的應用程式在列舉場景時所看到之資料的階層式配置。 在左側，我們看到場景實際上是由12個不同的元件所組成，視需要個別存取。 在處理新場景時，我們預期應用程式會以邏輯方式將此階層引導，不過，在場景更新之間進行追蹤時，某些應用程式可能只會對以兩個場景之間共用的特定元件為目標感興趣。
+下圖將重點放在場景的實體和邏輯版面配置之間的差異。 在左側，我們會看到您的應用程式在列舉場景時所看到之資料的階層式配置。 在右側，我們看到場景實際上是由12個相異元件所組成，視需要個別存取。 在處理新場景時，我們預期應用程式會以邏輯方式將此階層引導，不過，在場景更新之間進行追蹤時，某些應用程式可能只會對以兩個場景之間共用的特定元件為目標感興趣。
 
 ## <a name="api-overview"></a>API 概觀
 
@@ -223,7 +223,7 @@ firstFloor = (SceneObject)myNextScene.FindComponent(firstFloor.Id);
 
 if (firstFloor != null)
 {
-    // We found it again, we can now update the transforms of all objects we attatched to this floor transform
+    // We found it again, we can now update the transforms of all objects we attached to this floor transform
 }
 ```
 
@@ -249,7 +249,7 @@ foreach (var mesh in firstFloor.Meshes)
 }
 ```
 
-請注意，它是具有相對於場景原點之轉換的 SceneObject。 這是因為 SceneObject 代表「事物」的實例，並且會在空間中定位，四邊形和網格代表相對於其父系的轉換幾何。 不同的 SceneObjects 可以參考相同的 SceneMesh/SceneQuad SceneComponewnts，也可能是 SceneObject 有一個以上的 SceneMesh/SceneQuad。
+請注意，它是具有相對於場景原點之轉換的 SceneObject。 這是因為 SceneObject 代表「事物」的實例，並且會在空間中定位，四邊形和網格代表相對於其父系的轉換幾何。 不同的 SceneObjects 可以參考相同的 SceneMesh/SceneQuad SceneComponents，也可能是 SceneObject 有一個以上的 SceneMesh/SceneQuad。
 
 ### <a name="dealing-with-transforms"></a>處理轉換
 
@@ -285,7 +285,7 @@ public class SceneRootComponent : MonoBehavior
 }
 ```
 
-每個 `SceneObject` 都有一個 `Position` 和 `Orientation` 的屬性，可以用來定位相對於包含 `Scene`之來源的對應內容。 例如，一個範例假設遊戲是場景根目錄的子系，並指派其本機位置和旋轉以配合指定的 `SceneObject`：
+每個 `SceneObject` 都有一個 `Position` 和 `Orientation` 的屬性，可以用來定位相對於包含 `Scene`之來源的對應內容。 例如，下列範例假設遊戲是場景根目錄的子系，並指派其本機位置和旋轉以配合指定的 `SceneObject`：
 
 ```cs
 void SetLocalTransformFromSceneObject(GameObject gameObject, SceneObject sceneObject)
@@ -324,14 +324,14 @@ foreach (var sceneObject in myScene.SceneObjects)
                 // Step 1: Create a new game object for the quad itself as a child of the scene root
                 // Step 2: Set the local transform from quads[0].Position and quads[0].Orientation
                 // Step 3: Create your hologram and set it as a child of the quad's game object
-                // Step 4: Set the hologram's local tranform to a translation (location.x, location.y, 0)
+                // Step 4: Set the hologram's local transform to a translation (location.x, location.y, 0)
             }
         }
     }
 }
 ```
 
-步驟1-4 高度相依于您的特定架構/執行，但主題應該類似。 請務必注意，四個部分只代表在空間中當地語系化的界限2D 平面。 藉由讓您的引擎/架構知道四個的位置，並將您的物件與四個相對應，您的全息影像將會正確地 repect 至真實世界。 如需詳細資訊，請參閱四邊形上的範例，其中會顯示特定的實作為。
+步驟1-4 高度相依于您的特定架構/執行，但主題應該類似。 請務必注意，四個部分只代表在空間中當地語系化的界限2D 平面。 藉由讓您的引擎/架構知道四個的位置，並將您的物件與四個相對應，您的全息影像將會正確地放在真實世界。 如需詳細資訊，請參閱四邊形上的範例，其中會顯示特定的實作為。
 
 ### <a name="mesh"></a>網格
 

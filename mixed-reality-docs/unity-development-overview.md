@@ -6,12 +6,12 @@ ms.author: kurtie
 ms.date: 10/25/2018
 ms.topic: article
 keywords: Unity，混合現實，開發，快速入門，新專案，移植，功能，攝影機，模擬，模擬，檔
-ms.openlocfilehash: b78afb0cf6557ec9b61a029e2d557debbd0b6b46
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: f9b314bfc7c58e72b11ecfd76fe7293ef2f6c11e
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437380"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926699"
 ---
 # <a name="unity-development-overview"></a>Unity 開發總覽
 
@@ -37,7 +37,7 @@ ms.locfileid: "73437380"
 
 新增 Windows Mixed Reality 功能的支援，例如[空間階段](coordinate-systems.md#spatial-coordinate-systems)、[筆勢、動作控制器](gestures-and-motion-controllers-in-unity.md)或[語音輸入](voice-input-in-unity.md)，是使用直接內建于 Unity 的 api 來達成。 
 
-首先，請檢查您的 applicatioin 可設為目標的[經驗調整](coordinate-systems.md)：
+首先，請檢查您的應用程式可設為目標的[經驗調整](coordinate-systems.md)：
 * 如果您想要建立**僅限方向**或**大規模的經驗**，您必須將 Unity 的追蹤空間類型設定為 [[固定](coordinate-systems-in-unity.md#building-an-orientation-only-or-seated-scale-experience)]。
 * 如果您想要建立**大規模**或**會議室規模的體驗**，您必須確定 Unity 的追蹤空間類型已成功設定為[RoomScale](coordinate-systems-in-unity.md#building-an-orientation-only-or-seated-scale-experience)。
 * 如果您想要在 HoloLens 上建立**全球**化體驗，讓使用者漫遊超過5計量，您必須使用[WorldAnchor](coordinate-systems-in-unity.md#building-a-world-scale-experience)元件。

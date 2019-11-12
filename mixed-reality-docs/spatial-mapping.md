@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 空間對應，HoloLens，混合現實，表面重建，網格
-ms.openlocfilehash: 2988056b5caf50a4428d39c725bfe5432867a9c0
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: c4e2f9e49cfe4df9cf875d18b19d62e25c200d76
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437452"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926741"
 ---
 # <a name="spatial-mapping"></a>空間對應
 
@@ -64,13 +64,13 @@ ms.locfileid: "73437452"
 
 當 HoloLens 收集有關環境的新資料，而且在環境發生變更時，空間表面會出現、消失和變更。
 
-## <a name="spatial-mapping-vs-scene-undesranding-worldmesh"></a>空間對應與場景 Undesranding WorldMesh
+## <a name="spatial-mapping-vs-scene-understanding-worldmesh"></a>空間對應與場景瞭解 WorldMesh
 對於 HoloLens 2，可以使用「[場景理解 SDK](scene-understanding-SDK.md) 」（EnableWorldMesh 設定）來查詢空間對應資料的靜態版本。 以下是存取空間對應資料的兩種方式之間的差異：
 * 空間對應 API：
    * 有限範圍：應用程式的空間對應資料可用於大小有限的快取使用者周圍的「冒泡」。
    * 透過 SurfacesChanged 事件提供已變更網格區域的低延遲更新。
    * 依每個立方計量參數的三角形所控制之詳細資料的變數層級。
-* 場景 undestanding SDK：
+* 場景理解 SDK：
    * 無限制的範圍-提供查詢半徑內所有已掃描的空間對應資料。
    * 提供空間對應資料的靜態快照集。 取得更新的空間對應資料需要針對整個網格執行新的查詢。
    * 依 RequestedMeshLevelOfDetail 設定所控制的一致詳細資料層級。
@@ -366,7 +366,7 @@ ms.locfileid: "73437452"
 * 最好是使用實際（而且在理想的指導）使用者來執行測試，因為他們可能無法使用 HoloLens 或您的應用程式，其方式與您的做法完全相同。 事實上，這可能會讓您感到驚訝，人們的行為、知識和假設有多容易！
 
 ## <a name="troubleshooting"></a>[疑難排解]
-* 為了讓 surface 網格能夠正確導向，每個 GameObject 都必須是作用中，然後才會將它傳送至 SurfaceObeserver，以將其網格結構化。 否則，網格會顯示在您的空間中，但會以怪度旋轉。
+* 為了讓 surface 網格能夠正確導向，每個 GameObject 都必須是作用中，然後才會將它傳送至 SurfaceObserver，以將其網格結構化。 否則，網格會顯示在您的空間中，但會以怪度旋轉。
 * 執行與 SurfaceObserver 通訊之腳本的 GameObject 必須設定為來源。 否則，您所建立並傳送至 SurfaceObserver 的所有 Gameobject，其網格都會與父遊戲物件的位移相等。 如此一來，您的網格就會顯示數個計量，讓您很難進行檢查的狀況。
 
 ## <a name="see-also"></a>請參閱

@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 部署、unity、visual studio、HoloLens、HoloLens 2、沉浸式耳機
-ms.openlocfilehash: f897c9280505b1e84f8e6342729f1598d4b2f559
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 88eaa69f1349e3303a93d9d634479d8265eb417c
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73436971"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926543"
 ---
 # <a name="best-practices-for-working-with-unity-and-visual-studio"></a>使用 Unity 和 Visual Studio 的最佳做法
 
@@ -45,7 +45,7 @@ Unity 中的 .NET 腳本後端支援已在 unity 2018 中淘汰，並于 Unity 2
 
 ## <a name="expose-c-class-variables-for-easy-tuning"></a>公開C#類別變數以方便微調
 
-有兩種方式可以公開類別變數。 建議的做法是將 [SerializeField] 屬性加入至您的私用變數。 這可讓他們從編輯器存取，但無法以程式設計方式公開。  另一個選項是讓類別C#變數成為公用，以便在編輯器 UI 中加以公開。 
+有兩種方式可以公開類別變數。 建議的做法是將 [SerializeField] 屬性加入至您的私用變數。 這可讓他們從編輯器存取，但不能以程式設計方式公開。  另一個選項是讓類別C#變數成為公用，以便在編輯器 UI 中加以公開。 
 
 這兩種方法都能讓您在編輯器中播放時輕鬆地調整變數。 這對於微調互動技師修理屬性特別有用。
 

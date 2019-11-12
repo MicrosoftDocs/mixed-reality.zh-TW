@@ -6,12 +6,12 @@ ms.author: trferrel
 ms.date: 03/26/2019
 ms.topic: article
 keywords: 圖形，cpu，gpu，轉譯，垃圾收集，hololens
-ms.openlocfilehash: 724ec24408e70360fda07c59a4ca2ffc30b49c1f
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: f3fdda94c417d9f8e8980a90e8928282789e3d0f
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438125"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926863"
 ---
 # <a name="performance-recommendations-for-unity"></a>Unity 的效能建議
 
@@ -273,7 +273,7 @@ Unity 能夠批次處理許多靜態物件，以減少對 GPU 的繪製呼叫。
 
 ### <a name="optimal-lighting-settings"></a>最佳光源設定
 
-Unity 中的[即時全域照明](https://docs.unity3d.com/Manual/GIIntro.html)可以提供1-12 的視覺效果，但牽涉到相當昂貴的光源計算。 建議您透過**Window** ** > 轉譯** > **光源設定**，停用每個 Unity 場景檔案的即時全域照明，> 取消核取**即時全域照明**。
+Unity 中的[即時全域照明](https://docs.unity3d.com/Manual/GIIntro.html)可以提供未完成的視覺效果結果，但牽涉到相當昂貴的光源計算。 建議您透過**Window** ** > 轉譯** > **光源設定**，停用每個 Unity 場景檔案的即時全域照明，> 取消核取**即時全域照明**。
 
 此外，建議您停用所有陰影轉換，因為這些也會在 Unity 場景上增加昂貴的 GPU 傳遞。 您可以針對每個光線停用陰影，但也可以透過品質設定來控制全面性地。
 
@@ -301,7 +301,7 @@ Unity 中的[即時全域照明](https://docs.unity3d.com/Manual/GIIntro.html)�
 
     ![Unity 標準著色器作業](images/unity-standard-shader-compilation.png)
 
-#### <a name="optmize-pixel-shaders"></a>優化圖元著色器
+#### <a name="optimize-pixel-shaders"></a>優化圖元著色器
 
 使用上述方法查看已編譯的統計資料結果，[片段著色器](https://en.wikipedia.org/wiki/Shader#Pixel_shaders)通常會比端點[著色器](https://en.wikipedia.org/wiki/Shader#Vertex_shaders)平均執行更多作業。 片段著色器（也稱為圖元著色器）會針對螢幕輸出上的每個圖元執行，而頂點著色器只會針對繪製到螢幕的所有網格的每個頂點來執行。 
 

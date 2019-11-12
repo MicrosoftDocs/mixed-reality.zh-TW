@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 77d639a88d8b4c71dc5fbe1c78565c4c3f91d36c
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 9f57cb9874aade2d6b19d0c061fd83eb04b9ef11
+ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438421"
+ms.lasthandoff: 11/11/2019
+ms.locfileid: "73914385"
 ---
 # <a name="3-displaying-azure-spatial-anchor-feedback"></a>3. 顯示 Azure 空間錨點的意見反應
 
@@ -45,28 +45,11 @@ ms.locfileid: "73438421"
 
 ![module2chapter3step4im](images/module2chapter3step4im.PNG)
 
-5. 在 [專案] 面板中，選取 [資產] 並按一下滑鼠右鍵，然後選取 [在 explorer 中顯示]。
-   
-
-![module2chapter3step4im](images/module2chapter3step5im.PNG)
-
-按一下[這裡](https://onedrive.live.com/?authkey=%21ABXEC8PvyQu8Qd8&id=5B7335C4342BCB0E%21395636&cid=5B7335C4342BCB0E)以下載接下來幾個步驟所需的檔案。
-
-6. 一旦開啟 Explorer，請選取 [資產] 資料夾，然後按一下 [ASAmodulesAssets] 資料夾，並將錨點回饋腳本和錨點模組腳本檔案複製到資料夾中。 
-
-![module2chapter3step5im](images/module2chapter3step6im.PNG)
-
-> 注意：如果您看到快顯視窗，詢問您是否要覆寫舊的或保留舊的訊息，請選取 [覆寫]。
-
-7. 返回 [資產] 資料夾。 然後，移至 "AzureSpatialAnchorsPlugin" 資料夾，後面接著 [範例] 資料夾，最後是 [腳本] 資料夾。 然後將 Azure 空間錨點示範包裝函式複製到該資料夾。 
-
-![module2chapter3step8im](images/module2chapter3step7im.PNG)
-
-8. 既然檔案已上傳，請確定已在 ASA_feedback 階層中選取 "feedbackpanel" 文字，按一下 [新增元件]，然後在出現後選取 [錨點意見反應] 腳本，藉以新增它。 
+5. 請確定已在 ASA_feedback 階層中選取 "feedbackpanel" 文字，按一下 [新增元件]，並藉由搜尋並在其出現後加以選取，來新增錨點意見反應腳本。 
 
 ![module2chapter3step8im](images/module2chapter3step8im.PNG)
 
-9. 將 "feedbackPanel" 文字物件從 ASA_Feedback 階層拖曳至腳本底下的空插槽中，如下圖所示。 
+6. 將 "feedbackPanel" 文字物件從 ASA_Feedback 階層拖曳至腳本底下的空插槽中，如下圖所示。 
 
 ![module2chapter3step9im](images/module2chapter3step9im.PNG)
 

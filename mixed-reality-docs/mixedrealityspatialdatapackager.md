@@ -6,12 +6,12 @@ ms.author: alreynol
 ms.date: 05/16/2019
 ms.topic: article
 keywords: lbe、MixedRealitySpatialDataPackager、MixedRealitySpatialDataPackager
-ms.openlocfilehash: 52556e4028407086f943c4b765a8bcfad2744eac
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 331fa6dc752c64eeaa5bc2e9d1dd6b2c15049a27
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438472"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926753"
 ---
 # <a name="mixed-reality-spatial-data-packager-documentation"></a>混合現實空間資料封裝程式檔
 
@@ -66,7 +66,7 @@ Mixed Reality 空間資料封裝工具會透過兩個步驟的匯出和匯入程
 4. 最小化空白的 textureless 介面，例如將各種不同的海報放在白色牆上
 5. 對應場景中沒有動態物件的空間，例如移動人員
 6. 在匯入時鎖定對應（可透過 Insider Preview 取得）
-7. 解除鎖定地圖並在追蹤品質降低和（或）環境中有變更時重新掃描環境（物件版面配置中的光源或變更）
+7. 解除鎖定對應，並在追蹤品質降低和（或）環境中有變更（光源或物件版面配置中的變更）時重新掃描環境
 ***
 
 ## <a name="running-mixed-reality-spatial-data-packager-with-companion-script"></a>使用隨附腳本執行混合現實空間資料封裝工具
@@ -107,7 +107,7 @@ Mixed Reality 空間資料封裝工具會透過兩個步驟的匯出和匯入程
 ```
 Package Family Name for holoshell: HoloShell_cw5n1h2txyewy
 User SID for Administrator: S-1-5-21-1279937937-3984375698-1043392598-499
-Lock map value succesfully set to 0
+Lock map value successfully set to 0
 
 Running: C:\bin\MixedRealitySpatialDataPackager.exe export D:\temp\ HoloShell_cw5n1h2txyewy S-1-5-21-1279937937-3984375698-1043392598-499
 
@@ -197,7 +197,7 @@ Failed to find local user for passed in user SID
 3. Unable to create directory at <PATH> for export
 ```
 
-### <a name="if-there-was-an-error-related-to-starting-and-stoping-spectrumsharedrealitysvc"></a>如果發生與啟動和 stoping 頻譜/SharedRealitySvc 相關的錯誤
+### <a name="if-there-was-an-error-related-to-starting-and-stopping-spectrumsharedrealitysvc"></a>如果發生與啟動和停止頻譜/SharedRealitySvc 相關的錯誤
 ```
 1. Unable to open service manager <SERVICE>
 2. Timed out trying to start/stop <SERVICE>

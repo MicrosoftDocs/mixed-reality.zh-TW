@@ -6,16 +6,16 @@ ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 轉譯、全息影像
-ms.openlocfilehash: a974b9d8a00713c28c27963a9f96379693db9b60
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 9c32d8ddf5a1fb9e9d991211756ba1306f4d3fa9
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437530"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926853"
 ---
 # <a name="rendering"></a>轉譯
 
-全像攝影轉譯可讓您的應用程式在世界各地的確切位置繪製全息圖形，無論是精確地放在實體世界中，或在您建立的虛擬領域中。 [全息影像](hologram.md)是由音效和光線所組成的物件。 呈現可讓您的 applicaition 新增光源。
+全像攝影轉譯可讓您的應用程式在世界各地的確切位置繪製全息圖形，無論是精確地放在實體世界中，或在您建立的虛擬領域中。 [全息影像](hologram.md)是由音效和光線所組成的物件。 呈現可讓您的應用程式新增光線。
 
 ## <a name="device-support"></a>裝置支援
 

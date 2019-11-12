@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 手勢，動作控制器，unity，注視，輸入
-ms.openlocfilehash: a7ca5a895015ba0458f0f64f1422612e797f5067
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: a85797bfb443f33147c116e90a02c88abda63c67
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435222"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926568"
 ---
 # <a name="gestures-and-motion-controllers-in-unity"></a>Unity 中的手勢和運動控制器
 
@@ -145,7 +145,7 @@ Unity 目前使用其一般*輸入 GetButton/GetAxis* api 來公開[Oculus go SD
 
 若要使用一般 Unity 輸入 Api，您通常會先將按鈕和軸連接到[Unity 輸入管理員](https://docs.unity3d.com/Manual/ConventionalGameInput.html)中的邏輯名稱，並將按鈕或軸識別碼系結至每個名稱。 接著，您可以撰寫參考該邏輯按鈕/軸名稱的程式碼。
 
-例如，若要將左側動作控制器的 [觸發程式] 按鈕對應至 [提交] 動作，請移至 [**編輯] > [專案設定] >** Unity 內的輸入，然後展開 [軸] 底下 [提交] 區段的屬性。 將 [**正整數] 按鈕**或**Alt 正按鈕**屬性變更為閱讀**搖桿按鈕 14**，如下所示：
+例如，若要將左側動作控制器的 [觸發程式] 按鈕對應至 [提交] 動作，請移至 [**編輯] > [專案設定] >** Unity 內的輸入，然後展開 [軸] 底下 [提交] 區段的屬性。 將**正按鈕**或**Alt 正按鈕**屬性變更為閱讀**搖桿按鈕 14**，如下所示：
 
 ![Unity 的 InputManager](images/unity-input-manager.png)<br>
 *Unity InputManager*
@@ -446,7 +446,7 @@ void Start()
 
 ### <a name="start-capturing-gestures"></a>開始捕獲手勢
 
-根據預設，在呼叫*StartCapturingGestures （）* 之前， *GestureRecognizer*不會監視輸入。 如果在處理*StopCapturingGestures （）* 的框架之前執行了輸入，則在呼叫*StopCapturingGestures （）* 之後，可能會產生手勢事件。 *GestureRecognizer*會記住，在實際發生手勢的 previou 畫面中，它是開啟還是關閉的，因此，根據這個畫面格的注視目標來啟動和停止手勢監視是很可靠的。
+根據預設，在呼叫*StartCapturingGestures （）* 之前， *GestureRecognizer*不會監視輸入。 如果在處理*StopCapturingGestures （）* 的框架之前執行了輸入，則在呼叫*StopCapturingGestures （）* 之後，可能會產生手勢事件。 *GestureRecognizer*會記住在上一段實際發生的情況下，它是開啟還是關閉的，因此，根據這個畫面格的注視目標來啟動和停止手勢監視是很可靠的。
 
 ```cs
 recognizer.StartCapturingGestures();

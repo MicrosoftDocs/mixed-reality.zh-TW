@@ -6,12 +6,12 @@ ms.author: cmeekhof
 ms.date: 05/09/2019
 ms.topic: article
 keywords: 眼睛眼，列印頭，頭追蹤，眼睛追蹤，directx，輸入，全息影像
-ms.openlocfilehash: 48188cc8c886b371847357701b42249f486bceac
-ms.sourcegitcommit: 2e54d0aff91dc31aa0020c865dada3ae57ae0ffc
+ms.openlocfilehash: 664657b9ab01530a608e31091823e828cc99d0cd
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73641124"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926553"
 ---
 # <a name="head-gaze-and-eye-gaze-input-in-directx"></a>DirectX 中的列印頭和眼睛輸入
 
@@ -144,7 +144,7 @@ if (Windows::Perception::People::EyesPose::IsSupported() &&
 
 ### <a name="getting-the-eye-gaze-ray"></a>取得眼睛光線
 一旦您收到 ET 的存取權，就可以自由地抓取每個畫面格的眼睛光線。
-就像使用 head，使用所需的時間戳記和座標系統呼叫[SpatialPointerPose：： TryGetAtTimestamp](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp)來取得[SpatialPointerPose](https://docs.microsoft.com//uwp/api/Windows.UI.Input.Spatial.SpatialPointerPose) 。 SpatialPointerPose 會透過[眼睛](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialpointerpose.eyes)屬性包含[EyesPose](https://docs.microsoft.com//uwp/api/windows.perception.people.eyespose)物件。 只有在已啟用眼睛追蹤時，此值才會是 null。 從該處，您可以藉由呼叫[EyesPose：： IsCalibrationValid](https://docs.microsoft.com//uwp/api/windows.perception.people.eyespose.iscalibrationvalid#Windows_Perception_People_EyesPose_IsCalibrationValid)來檢查裝置中的使用者是否具有眼睛追蹤校準。  接下來，使用 [[注視](https://docs.microsoft.com//uwp/api/windows.perception.people.eyespose.gaze#Windows_Perception_People_EyesPose_Gaze)] 屬性來取得[SpatialRay](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialray)寫入眼的位置和方向。 注視屬性有時可以是 null，因此請務必檢查是否有此情況。 如果已校正的使用者暫時關閉其眼睛，就可能發生這種情況。
+就像使用 head，使用所需的時間戳記和座標系統呼叫[SpatialPointerPose：： TryGetAtTimestamp](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp)來取得[SpatialPointerPose](https://docs.microsoft.com//uwp/api/Windows.UI.Input.Spatial.SpatialPointerPose) 。 SpatialPointerPose 會透過[眼睛](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialpointerpose.eyes)屬性包含[EyesPose](https://docs.microsoft.com//uwp/api/windows.perception.people.eyespose)物件。 只有在已啟用眼睛追蹤時，此值才會是 null。 從該處，您可以藉由呼叫[EyesPose：： IsCalibrationValid](https://docs.microsoft.com//uwp/api/windows.perception.people.eyespose.iscalibrationvalid#Windows_Perception_People_EyesPose_IsCalibrationValid)來檢查裝置中的使用者是否具有眼睛追蹤校準。  接下來，使用 [[注視](https://docs.microsoft.com//uwp/api/windows.perception.people.eyespose.gaze#Windows_Perception_People_EyesPose_Gaze)] 屬性來取得[SpatialRay](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialray) ，其中包含眼睛的位置和方向。 注視屬性有時可以是 null，因此請務必檢查是否有此情況。 如果已校正的使用者暫時關閉其眼睛，就可能發生這種情況。
 
 下列程式碼顯示如何存取眼睛光線。
 
@@ -193,7 +193,10 @@ if (pointerPose)
 <br>
 
 ## <a name="calibration"></a>效果
-為了讓眼追蹤能夠正確地工作，每個使用者都必須經歷[眼睛追蹤使用者校準](calibration.md)。 這可讓裝置調整系統，讓使用者能夠更舒適且更高品質的觀賞體驗，並確保同時精確地追蹤。 開發人員不需要在其端執行任何動作來管理使用者校正。 系統會在下列情況下，確保會提示使用者校準裝置： * 使用者第一次使用裝置 * 使用者先前退出宣告校正程式 * 此校正程式未成功完成使用者使用裝置的時間
+為了讓眼追蹤能夠正確地工作，每個使用者都必須經歷[眼睛追蹤使用者校準](calibration.md)。 這可讓裝置調整系統，讓使用者能夠更舒適且更高品質的觀賞體驗，並確保同時精確地追蹤。 開發人員不需要在其端執行任何動作來管理使用者校正。 系統會在下列情況下，確保會提示使用者校準裝置：
+* 使用者第一次使用裝置
+* 使用者先前退出宣告校正程式
+* 上次使用者使用裝置時，校準程式未成功
 
 開發人員應務必為可能無法使用眼追蹤資料的使用者提供適當的支援。 深入瞭解在[Hololens 2 上](eye-tracking.md)的監看式追蹤的 fallback 解決方案考慮。
 

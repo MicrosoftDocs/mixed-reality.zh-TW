@@ -6,12 +6,12 @@ ms.author: pbarnett
 ms.date: 04/26/2019
 ms.topic: article
 keywords: HoloLens、模擬器、模擬、Windows Mixed Reality
-ms.openlocfilehash: 01277e4b00dafaecdfd4e5205feccbf055e0caf5
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: c5601ae2caf235cb22248ce7c6bf7e29225ade2c
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437069"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926602"
 ---
 # <a name="advanced-hololens-emulator-and-mixed-reality-simulator-input"></a>先進的 HoloLens 模擬器和混合現實模擬器輸入
 
@@ -34,7 +34,7 @@ ms.locfileid: "73437069"
 * **動作**：這會模擬按下食指至 thumb 的動作，或在控制器上提取 [動作] 按鈕。 例如，您可以使用動作輸入來模擬點按手勢、滾動內容，以及按下-按住。
 * **[Bloom](system-gesture.md#bloom)/系統手勢或 Home**： HoloLens Bloom/系統手勢或控制器的 [首頁] 按鈕可用來返回 shell，並執行系統動作。
 
-在 HoloLens 2 中，手上有豐富的 reprresentation。  除了追蹤/未追蹤，以及可用於駕駛手勢的情況外，現在手上有一個明確的基本架構模型可供使用，並對開發人員公開。  這會在每一手勢引進26個追蹤點。  
+手在 HoloLens 2 中有豐富的標記法。  除了追蹤/未追蹤，以及可用於駕駛手勢的情況外，現在手上有一個明確的基本架構模型可供使用，並對開發人員公開。  這會在每一手勢引進26個追蹤點。  
 * **聯合**：指定之追蹤手的二十個追蹤位置的其中一個。 這會有一個與3d 空間相關聯的點。
 * **姿勢**：追蹤手中所有接點的完整集合。 這一次，這是26個接點的集合。 
 
@@ -76,11 +76,11 @@ ms.locfileid: "73437069"
 |  修訂 |  T 或 F3 |  |  X 按鈕 | 
 
 
-注意：控制器按鈕可以使用「右手」目標修飾詞，鎖定到一個手指/控制器或另一個。
+注意：控制器按鈕的目標可以是一個右手/控制器，另一個則是使用右手目標修飾詞。
 
 ## <a name="targeting"></a>目標預測 
 
-上述一些輸入概念會各自獨立。  [動作]、[Bloom]/[系統]、[重設] 和 [追蹤] 都是完整的概念，不需要且不會受到任何目標的其他修飾詞所影響。  不過，其餘的概念可以套用至多個目標的其中一個。 我們引進了一些方式，可讓您指定命令應套用至哪一個預定目標。  在所有情況下，您都可以透過 UI 或按鍵盤按鍵（要 targtet 的物件）來指定。  在某些情況下，您也可以直接使用 xbox 控制器來指定。 
+上述一些輸入概念會各自獨立。  [動作]、[Bloom]/[系統]、[重設] 和 [追蹤] 都是完整的概念，不需要且不會受到任何目標的其他修飾詞所影響。  不過，其餘的概念可以套用至多個目標的其中一個。 我們引進了一些方式，可讓您指定命令應套用至哪一個預定目標。  在所有情況下，都可以透過 UI 或透過鍵盤按下（要鎖定的物件）來指定。  在某些情況下，您也可以直接使用 xbox 控制器來指定。 
 
 下表描述目標的選項，以及啟用每一個專案的方式。
 

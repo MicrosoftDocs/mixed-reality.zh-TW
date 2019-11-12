@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 5d8194e9a51bdb0ce32f345b4adfbfaf408c5396
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 91935cb5b465e51d3948f68b818f93ba52b215f1
+ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438388"
+ms.lasthandoff: 11/11/2019
+ms.locfileid: "73914404"
 ---
 # <a name="2-getting-unity-ready-for-development"></a>2. 讓 Unity 準備好進行開發 
 
@@ -28,7 +28,7 @@ ms.locfileid: "73438388"
 
 ## <a name="instructions"></a>指示
 
-1. 按一下這裡，下載並儲存混合現實工具組 unity 封裝[。](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.0.0-RC2.1/Microsoft.MixedReality.Toolkit.Unity.Foundation-v2.0.0-RC2.1.unitypackage)
+1. 按一下這裡，下載並儲存 Mixed Reality 工具組 Foundation unity 封裝[。](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.1.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage)
 
 2. 在 Unity 中，按一下 [資產] 功能表並選取 [匯入套件]，然後按一下 [自訂套件]。
 
@@ -50,13 +50,15 @@ ms.locfileid: "73438388"
 
 ![Module3Chapter2step5im](images/module3chapter2step5im.PNG)
 
-6. 完成之後，就會出現新的設定檔案，讓您選擇自訂設定檔。 按一下 [複製並自訂]。
+6. 完成之後，就會出現新的設定檔案，讓您選擇自訂設定檔。 
 
-![Module3Chapter2step6ima](images/module3chapter2step6ima.PNG)
+![Module2Chapter1step4im](images/Module2Chapter1step4im.PNG)
 
-![Module3Chapter2step6imb](images/module3chapter2step6imb.PNG)
+7. 從階層中選取 [混合現實工具組（MRTK）]。 在 [偵測器] 面板中，尋找 Mixed Reality 工具組腳本，然後按下圖所示的 [複製 & 自訂] 按鈕。  這會出現一個 pop，然後在快顯功能表中選取 [複製] 選項。
 
 ![Module3Chapter2step6imc](images/module3chapter2step6imc.PNG)
+
+![Module3Chapter2step6imd](images/module3chapter2step6imd.PNG)
 
 7. 如果您想要隱藏 [診斷] 視窗，請向下選取並取消核取 [啟用診斷系統]。 建議您在應用程式開發期間讓診斷視窗保持啟用狀態，以監視效能，然後在生產或應用程式示範期間將它停用。 
 

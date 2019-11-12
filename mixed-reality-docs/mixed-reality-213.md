@@ -6,12 +6,12 @@ ms.author: kurtie
 ms.date: 10/22/2019
 ms.topic: article
 keywords: holotoolkit、mixedrealitytoolkit、mixedrealitytoolkit-unity、沉浸式、運動控制器、學院、教學課程
-ms.openlocfilehash: e2199c3afed21f9396ed84f71093a8b2fb3bb23b
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 273d1bf384d588ab24bfe29e30f299b7a41fe541
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438543"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926814"
 ---
 >[!NOTE]
 >混合現實學術教學課程的設計是使用 HoloLens （第1代）和混合現實的沉浸式耳機。  因此，對於仍在尋找這些裝置開發指引的開發人員而言，我們覺得這些教學課程很重要。  這些教學課程 **_不_** 會以最新的工具組或用於 HoloLens 2 的互動進行更新。  系統會保留這些資訊，以繼續在支援的裝置上運作。 HoloLens 2 已張貼[一系列新的教學](mrlearning-base.md)課程。
@@ -277,7 +277,7 @@ private void AttachElementToController(MotionControllerInfo newController)
 }
 ```
 
-使用**AttachToController**腳本最簡單的方式是從它繼承，如同我們在 ColorPickerWheel 的情況下所做的一樣 **。** 只要覆寫**OnAttachToController**和**OnDetatchFromController**函式，即可在偵測到或中斷連接控制器時執行您的設定/細目。
+使用**AttachToController**腳本最簡單的方式是從它繼承，如同我們在 ColorPickerWheel 的情況下所做的一樣 **。** 只要覆寫**OnAttachToController**和**OnDetachFromController**函式，即可在偵測到或中斷連接控制器時執行您的設定/細目。
 
 **螢幕**
 
@@ -294,7 +294,7 @@ private void AttachElementToController(MotionControllerInfo newController)
 
 ![ColorPickerWheel 腳本](images/mr213-attachtocontroller-300px.jpg)
 
-**ColorPickerWheel**會覆寫**OnAttachToController**和**OnDetatchFromController** ，以訂閱輸入事件，將在下一章使用觸控板輸入進行色彩選取。
+**ColorPickerWheel**會覆寫**OnAttachToController**和**OnDetachFromController** ，以訂閱輸入事件，將在下一章使用觸控板輸入進行色彩選取。
 
 ```cs
 public class ColorPickerWheel : AttachToController, IPointerTarget
@@ -346,7 +346,7 @@ private IEnumerator Start() {
 ### <a name="instructions"></a>指示
 
 * **在 [階層**] 面板中，按一下 [ **ColorPickerWheel** ]
-* 在 偵測**器** 面板的  **Animatior** 底下，按兩下  **ColorPickerWheelController**
+* 在 偵測**器** 面板的  **Animator** 底下，按兩下  **ColorPickerWheelController**
 * 您將能夠看到開啟的 [ **Animator** ] 索引標籤
 
 **使用 Unity 的動畫控制器顯示/隱藏 UI**
@@ -624,7 +624,7 @@ private void SpawnObject()
 {
     // Instantiate the spawned object
     GameObject newObject = Instantiate(displayObject.gameObject, spawnParent);
-    // Detatch the newly spawned object
+    // Detach the newly spawned object
     newObject.transform.parent = null;
     // Reset the scale transform to 1
     scaleParent.localScale = Vector3.one;
@@ -801,7 +801,7 @@ private void InteractionSourceUpdated(InteractionSourceUpdatedEventArgs obj)
 
 ## <a name="advanced-design---teleportation-and-locomotion"></a>Advanced design-Teleportation 和 locomotion
 
-如果您想要允許使用者使用操縱杆透過 teleportation 來移動場景，請使用**MixedRealityCameraParent**而不是**MixedRealityCamera**。 您也需要新增**InputManager**和**DefaultCusor**。 由於**MixedRealityCameraParent**已經將**MotionControllers**和**界限**包含為子元件，因此您應該移除現有的**MotionControllers**和**環境**prefab。
+如果您想要允許使用者使用操縱杆透過 teleportation 來移動場景，請使用**MixedRealityCameraParent**而不是**MixedRealityCamera**。 您也需要新增**InputManager**和**DefaultCursor**。 由於**MixedRealityCameraParent**已經將**MotionControllers**和**界限**包含為子元件，因此您應該移除現有的**MotionControllers**和**環境**prefab。
 
 ### <a name="instructions"></a>指示
 
@@ -834,7 +834,7 @@ private void InteractionSourceUpdated(InteractionSourceUpdatedEventArgs obj)
 ## <a name="completed-scenes"></a>完成場景
 
 * 在 Unity 的 [**專案**] 面板中，按一下 [**幕後**] 資料夾。
-* 您會發現兩個 Unity sceens **MixedReality213**和**MixedReality213Advanced**。
+* 您會發現兩個 Unity 場景**MixedReality213**和**MixedReality213Advanced**。
     * **MixedReality213**：具有單一筆刷的已完成場景
     * **MixedReality213Advanced**：具有多重筆刷的已完成場景，並具有選取按鈕的按量範例
 

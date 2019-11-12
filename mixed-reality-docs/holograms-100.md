@@ -6,12 +6,12 @@ ms.author: kurtie
 ms.date: 10/22/2019
 ms.topic: article
 keywords: 混合現實，Windows Mixed Reality，HoloLens，沉浸，vr，mr，開始使用，全息影像，學院，教學課程
-ms.openlocfilehash: 5e9a90af6b80333addbde2a2e11086372483b7c3
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 0600383b3cca3f580f014597217afc6ae78836dd
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73434780"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926635"
 ---
 >[!NOTE]
 >混合現實學術教學課程的設計是使用 HoloLens （第1代）和混合現實的沉浸式耳機。  因此，對於仍在尋找這些裝置開發指引的開發人員而言，我們覺得這些教學課程很重要。  這些教學課程 **_不_** 會以最新的工具組或用於 HoloLens 2 的互動進行更新。  系統會保留這些資訊，以繼續在支援的裝置上運作。 HoloLens 2 已張貼[一系列新的教學](mrlearning-base.md)課程。
@@ -156,7 +156,7 @@ Unity 主要攝影機會處理 head 追蹤和 stereoscopic 轉譯。 主要相�
 ### <a name="initial-setup"></a>初始設定
 
 1. 在開發電腦的 Unity 中，開啟 [檔案] **> [組建設定**] 視窗。
-2. 將**平臺**變更為**通用 Windows 平臺**，然後按一下 **切換平臺**
+2. 將**平臺**變更為**通用 Windows 平臺**，然後按一下 [**切換平臺**]
 
 ### <a name="for-hololens-use-unity-remoting"></a>若是 HoloLens，請使用 Unity Remoting
 

@@ -6,12 +6,12 @@ ms.author: nopohl
 ms.date: 10/21/2019
 ms.topic: article
 keywords: HoloLens、遠端、全像攝影遠端
-ms.openlocfilehash: 75e7c276560b4efbbdcbf2ea7579ed5ad7aadb4d
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 9ff6a5f7594eb67dd4c1c8690812ab724cac9012
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73439229"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926644"
 ---
 # <a name="holographic-remoting-version-history"></a>全像遠端版本歷程記錄
 
@@ -21,7 +21,7 @@ ms.locfileid: "73439229"
 ## 版本2.0.14 版（2019年10月26日）<a name="v2.0.14"></a>
 * 支援新的 PerceptionDevice Api （Windows 10 2019 年11月更新）。
 * 已修正導致 SpatialGestureRecognizer 無法觸發保存手勢事件的問題。
-* 已修正使用 SpatialSurfaceObserver. SetBoundingVolume 時的 theading 問題。
+* 已修正使用 SpatialSurfaceObserver. SetBoundingVolume 時的執行緒問題。
 
 ## 版本2.0.12 （2019年10月18日）<a name="v2.0.12"></a>
 * 已修正使用 NavigationRail （X/Y/Z）時的 SpatialGestureRecognizer 損毀。

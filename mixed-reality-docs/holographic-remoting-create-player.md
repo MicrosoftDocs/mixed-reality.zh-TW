@@ -6,12 +6,12 @@ ms.author: nopohl
 ms.date: 10/21/2019
 ms.topic: article
 keywords: HoloLens、遠端、全像攝影遠端
-ms.openlocfilehash: 982a3f42014d8f5eb9ba181247fee9825fb78371
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 1f8a0cbe0f6da88c0c5e5a695737d8694020635c
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73434316"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926659"
 ---
 # <a name="writing-a-custom-holographic-remoting-player-app"></a>撰寫自訂的全像遠端播放播放機應用程式
 
@@ -200,7 +200,7 @@ winrt::Microsoft::Holographic::AppRemoting::BlitResult result = m_playerContext.
 
 ## 選擇性：設定 BlitRemoteFrameTimeout<a name="BlitRemoteFrameTimeout"></a>
 >[!IMPORTANT]
-> 從版本[2.0.9](holographic-remoting-version-history.md#v2.0.9)開始支援 ```PlayerContext::BlitRemoteFrameTimout```。 
+> 從版本[2.0.9](holographic-remoting-version-history.md#v2.0.9)開始支援 ```PlayerContext::BlitRemoteFrameTimeout```。 
 
 如果沒有收到新的遠端框架，```PlayerContext::BlitRemoteFrameTimeout``` 屬性會指定遠端框架重複使用的時間量。 
 

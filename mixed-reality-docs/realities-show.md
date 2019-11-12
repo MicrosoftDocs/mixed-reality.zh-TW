@@ -6,12 +6,12 @@ ms.author: daescu
 ms.date: 04/06/2019
 ms.topic: article
 keywords: 現實、顯示、行事曆、學術、排程、sf、三藩市、reactor
-ms.openlocfilehash: ebecfa59d1c1b60ba7f3bf546816ed33b4910ad7
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: a7cecd4dcce63afb17c3f6d26596c138490f0181
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438328"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926849"
 ---
 # <a name="the-realities-show"></a>現實顯示
 ![混合實境設計](images/therealitiesshow.jpg)
@@ -31,11 +31,11 @@ ___
 
 ___
 ## <a name="world-understanding---coming-soon"></a>**全球瞭解**-即將推出
-智慧型邊緣裝置如何 leveredge 雲端的計算能力，以瞭解世界。 包括 HoloLens 2、電腦視覺、共用錨點服務、語義標示和 Azure Kinect DK。
+智慧型邊緣裝置如何運用雲端的計算能力來瞭解世界。 包括 HoloLens 2、電腦視覺、共用錨點服務、語義標示和 Azure Kinect DK。
 
 ___
 ## <a name="mixedrealitytoolkit---coming-soon"></a>**MixedRealityToolkit** -即將推出
-MixedRealityToolkit （MRTK）提供一組基礎元件和功能，可加速 MR 應用程式的開發。 最新版本的 MRTK-Unity （V2）支援 HoloLens/HoloLens 2、Windows Mixed Reality 和 OpenVR 平臺。讓我們深入探討其背後的 endineers 和設計工具。
+MixedRealityToolkit （MRTK）提供一組基礎元件和功能，可加速 MR 應用程式的開發。 最新版本的 MRTK-Unity （V2）支援 HoloLens/HoloLens 2、Windows Mixed Reality 和 OpenVR 平臺。讓我們深入探討其背後的工程師和設計人員。
 
 ___
 ## <a name="designing-for-hololens-2---coming-soon"></a>**HoloLens 2 的設計**-即將推出

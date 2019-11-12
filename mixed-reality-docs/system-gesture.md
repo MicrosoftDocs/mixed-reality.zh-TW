@@ -6,12 +6,12 @@ ms.author: cmeekhof
 ms.date: 10/22/2019
 ms.topic: article
 keywords: 混合現實、手勢、互動、設計
-ms.openlocfilehash: b46f642babb18387da2e76d5bdbb7631577c85de
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: ba543ffe0802d0b95cc539fb0e73c0b4e51fc186
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73439819"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926732"
 ---
 # <a name="system-gesture"></a>系統手勢
 
@@ -62,7 +62,7 @@ ms.locfileid: "73439819"
     :::column-end:::
     :::column:::
         ![Bloom 開啟](images/bloom-open.png)<br>
-        **步驟2：使用 [輕鬆 spreaded]**<br>
+        **步驟2：使用輕鬆散佈的 Palm**<br>
     :::column-end:::
 :::row-end:::
 

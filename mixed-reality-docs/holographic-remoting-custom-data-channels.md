@@ -6,12 +6,12 @@ ms.author: nopohl
 ms.date: 10/21/2019
 ms.topic: article
 keywords: HoloLens、遠端、全像攝影遠端
-ms.openlocfilehash: a862fa52695c7bfb94b58c6c0b85606a112835da
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 2861c780c5d7e516d5b7ddc757bbcba6da7e6559
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73434272"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926663"
 ---
 # <a name="custom-holographic-remoting-data-channels"></a>自訂全像攝影遠端資料通道
 
@@ -38,7 +38,7 @@ winrt::Microsoft::Holographic::AppRemoting::IDataChannel::OnDataReceived_revoker
 winrt::Microsoft::Holographic::AppRemoting::IDataChannel::OnClosed_revoker m_customChannelClosedEventRevoker;
 ```
 
-成功建立連接之後，就可以從主機端和（或）播放程式端起始新的資料通道建立。 RemoteCoNtext 和 PlayerCoNtext 都提供 ```CreateDataChannel()``` 方法來執行這項操作。 第一個參數是通道識別碼，用來識別 susequent 作業中的資料通道。 第二個參數是優先順序，指定此通道的資料傳輸到另一端的優先順序。 通道識別碼的有效範圍為0到（含），最多為主機端63，包括玩家端的127和64。 有效的優先順序為 ```Low```、```Medium``` 或 ```High``` （兩端）。
+成功建立連接之後，就可以從主機端和（或）播放程式端起始新的資料通道建立。 RemoteCoNtext 和 PlayerCoNtext 都提供 ```CreateDataChannel()``` 方法來執行這項操作。 第一個參數是通道識別碼，用來識別後續作業中的資料通道。 第二個參數是優先順序，指定此通道的資料傳輸到另一端的優先順序。 通道識別碼的有效範圍為0到（含），最多為主機端63，包括玩家端的127和64。 有效的優先順序為 ```Low```、```Medium``` 或 ```High``` （兩端）。
 
 若要起始在**主機**端建立資料通道：
 ```cpp
@@ -95,7 +95,7 @@ m_customChannelClosedEventRevoker = m_customDataChannel.OnClosed(winrt::auto_rev
 
 ## <a name="sending-data"></a>傳送資料
 
-若要透過自訂資料通道傳送資料，請使用 ```IDataChannel::SendData()``` 方法。 第一個參數是應該傳送之資料的 ```winrt::array_view<const uint8_t>```。 第二個參數指定指出應重新傳送資料，直到另一端認可接收為止。 
+若要透過自訂資料通道傳送資料，請使用 ```IDataChannel::SendData()``` 方法。 第一個參數是應該傳送之資料的 ```winrt::array_view<const uint8_t>```。 第二個參數指定應重新傳送資料的位置，直到另一端認可接收為止。 
 
 >[!IMPORTANT]
 >萬一發生網路狀況不佳的情況，相同的資料封包可能會抵達一次以上。 接收程式碼必須能夠處理這種情況。

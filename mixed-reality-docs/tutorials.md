@@ -7,12 +7,12 @@ ms.author: kurtie
 ms.date: 10/22/2019
 ms.topic: article
 keywords: holotoolkit、mixedrealitytoolkit、mixedrealitytoolkit-unity、學院、教學課程
-ms.openlocfilehash: 3ec675b6f32b734c846eb11221f2aa9c22dc36ff
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: cb5fee2b666def4e5733bd388f4b2f48c4abd282
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437423"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926714"
 ---
 # <a name="tutorials-and-sample-apps"></a>教學課程和範例應用程式
 

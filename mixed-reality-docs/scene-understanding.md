@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: 場景理解，空間對應，Windows Mixed Reality，Unity
-ms.openlocfilehash: 7ee0cf3af8012a053733896a8bf92192306b7f8b
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: fdfe40571ac8893dcb3a3ba8fe3bb12707c800e4
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437478"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926915"
 ---
 # <a name="scene-understanding"></a>場景理解
 
@@ -95,7 +95,7 @@ ms.locfileid: "73437478"
 
 ### <a name="visualization"></a>化
 
-雖然[空間對應視覺效果](spatial-mapping.md#visualization)可以用於環境的即時意見反應，但在許多情況下，平面和防水物件的簡單性可提供更高的效能或視覺品質。 如果投影在四邊形或平面防水網格所提供的平面表面上，使用空間對應所描述的陰影投射和接地技術可能會更滿意。 這特別適用于透過預先掃描不是最佳的環境/案例，因為場景會推斷，而完成環境和平面假設會將成品降至最低。
+雖然[空間對應視覺效果](spatial-mapping.md#visualization)可以用於環境的即時意見反應，但在許多情況下，平面和防水物件的簡單性可提供更高的效能或視覺品質。 如果投影在四邊形或平面防水網格所提供的平面表面上，使用空間對應所描述的陰影投射和接地技術可能會更滿意。 特別是在環境/案例中，因為場景將會推斷，而完整的預先掃描並不是最理想的情況，而完成的環境和平面假設會將成品降到最低。
 
 此外，空間對應所傳回的表面總數會受到內部空間快取的限制，而場景理解的空間對應網格版本則能夠存取未快取的空間對應資料。 因此，場景理解較適合用來針對視覺效果或進一步的網格處理來捕獲較大空間的網格標記法（例如，大於單一房間）。 以 EnableWorldMesh 傳回的世界網格會在整個中具有一致的詳細資料層級，如果轉譯為線框，這可能會產生更令人滿意的視覺效果。
 

@@ -6,12 +6,12 @@ ms.author: branbray
 ms.date: 03/21/2018
 ms.topic: article
 keywords: mixed reality，全像，ar，vr，mr，xr，增強的現實，虛擬實境，說明
-ms.openlocfilehash: 83beca8b6abad56fc37800ddfc9faad0d21859bf
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 601e42c03e827f0f531f9dcf937a0dd34b008dc3
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437908"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926778"
 ---
 # <a name="what-is-mixed-reality"></a>什麼是混合實境？
 
@@ -71,7 +71,7 @@ ms.locfileid: "73437908"
 <br>
 
 ![混合的現實頻譜](images/MixedRealitySpectrum.jpg)<br>
-*Mixed reality specturm*
+*混合現實頻譜*
 
 <br>
 
@@ -120,5 +120,5 @@ ms.locfileid: "73437908"
 * [什麼是全像投影？](hologram.md)
 * [瞭解混合現實的基本概念](index.md#understand-the-basics)
 * [開始建立和原型設計](design.md)
-* [瞭解工具和架構](development.md)
+* [了解工具和架構](development.md)
 

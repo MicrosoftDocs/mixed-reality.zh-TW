@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure，混合現實，學術，unity，教學課程，api，臉部辨識，hololens，沉浸，vr
-ms.openlocfilehash: ef75be5485f85538eb8b3db3eebec63b166f7aa3
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 23676684c2ec325f9d6f1924e7a0bad14d41f13e
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438501"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926786"
 ---
 >[!NOTE]
 >混合現實學術教學課程的設計是使用 HoloLens （第1代）和混合現實的沉浸式耳機。  因此，對於仍在尋找這些裝置開發指引的開發人員而言，我們覺得這些教學課程很重要。  這些教學課程 **_不_** 會以最新的工具組或用於 HoloLens 2 的互動進行更新。  系統會保留這些資訊，以繼續在支援的裝置上運作。 未來將會有一系列新的教學課程，將示範如何針對 HoloLens 2 進行開發。  此通知會在張貼時，使用這些教學課程的連結進行更新。
@@ -575,7 +575,7 @@ FaceAnalysis 類別的用途是裝載與您的 Azure 臉部辨識服務通訊所
             facesToIdentify.maxNumOfCandidatesReturned = 1;
             facesToIdentify.confidenceThreshold = 0.5;
 
-            // Serialise to Json format
+            // Serialize to Json format
             string facesToIdentifyJson = JsonConvert.SerializeObject(facesToIdentify);
             // Change the object into a bytes array
             byte[] facesData = Encoding.UTF8.GetBytes(facesToIdentifyJson);
@@ -769,7 +769,7 @@ FaceAnalysis 類別的用途是裝載與您的 Azure 臉部辨識服務通訊所
         }
 
         /// <summary>
-        /// Register the full execution of the Photo Capture. If successfull, it will begin the Image Analysis process.
+        /// Register the full execution of the Photo Capture. If successful, it will begin the Image Analysis process.
         /// </summary>
         void OnStoppedPhotoMode(PhotoCapture.PhotoCaptureResult result)
         {

@@ -6,12 +6,12 @@ ms.author: grbury
 ms.date: 02/10/2019
 ms.topic: article
 keywords: 共用體驗，混合現實，全息影像，空間錨點，多使用者，多個
-ms.openlocfilehash: 4e71bdefa32d2f6cf3b85b074c3d9fcbdb6aa909
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: c846bcd8c9c52f1f169d306df3afd4f982656078
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437465"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926923"
 ---
 # <a name="shared-experiences-in-mixed-reality"></a>混合現實中的共用體驗
 
@@ -166,7 +166,7 @@ OnSight 之類的體驗會帶來新的共同作業機會。 從實體的角度�
 
 ## <a name="presenter-spectator-applications-and-demos"></a>展示者-Spectator 應用程式和示範
 
-利用[MixedReality-SpectatorView](https://github.com/microsoft/MixedReality-SpectatorView)將[specator view 功能](spectator-view.md)帶入您的應用程式。  啟用其他裝置（HL、Android、iOS 和攝影機），以查看 HoloLens 在相同位置的不同觀點所看到的內容，以及接收與全息影像互動之主機 HoloLens 使用者互動的更新。  使用相同應用程式的 spectator 附屬，觀看、拍照，並錄製主機在應用程式中從您自己的空間中的全像投影所執行之工作的影片。
+利用[MixedReality-SpectatorView](https://github.com/microsoft/MixedReality-SpectatorView)將[spectator view 功能](spectator-view.md)帶入您的應用程式。  啟用其他裝置（HL、Android、iOS 和攝影機），以查看 HoloLens 在相同位置的不同觀點所看到的內容，以及接收與全息影像互動之主機 HoloLens 使用者互動的更新。  使用相同應用程式的 spectator 附屬，觀看、拍照，並錄製主機在應用程式中從您自己的空間中的全像投影所執行之工作的影片。
 
 **注意：** 相片會透過 iOS/Android 裝置上的螢幕擷取畫面來取得。
 

@@ -7,12 +7,12 @@ ms.date: 10/29/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 眼球追蹤, Mixed Reality, 輸入, 眼部注視, 眼部定向, HoloLens 2, 眼動式選取, 停駐
-ms.openlocfilehash: 5130fd3c1ecd551788f61f8abb8d02cdedeb4181
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 0ec5d5e3b7f56038c7be9930a4468d286b388a65
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437804"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926611"
 ---
 # <a name="eye-gaze-and-dwell"></a>眼部目光和停駐
 

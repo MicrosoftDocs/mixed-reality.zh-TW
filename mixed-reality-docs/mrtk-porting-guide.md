@@ -3,16 +3,16 @@ title: 讓現有應用程式做好使用 HoloLens 2 的準備
 description: 適用對象為擁有可在 HoloLens (第 1 代) 及/或較舊 MRTK 上運作的現有應用程式，並想要移植到 MRTK 第 2 版和 HoloLens 2 的開發人員。
 author: grbury
 ms.author: grbury
-ms.date: 10/14/19
+ms.date: 10/14/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality, 測試, MRTK, MRTK 第 2 版, HoloLens 2
-ms.openlocfilehash: e1256cfaf9253a31161a836f75a90c64d17cf093
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 41e6f8b3632a53663f237deb54a3144fb8ad79e8
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438352"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926205"
 ---
 # <a name="get-your-existing-app-ready-for-hololens-2"></a>讓現有應用程式做好使用 HoloLens 2 的準備
 
@@ -113,12 +113,12 @@ HoloLens (第 1 代) 會在 x86 處理器上執行應用程式，HoloLens 2 則�
 ## <a name="updating-your-interaction-model-for-hololens-2"></a>更新 HoloLens 2 的互動模型
 
 移植應用程式並讓其做好使用 HoloLens 2 的準備之後，您就可以開始考慮更新互動模型和全像投影設計/位置。
-在 HoloLens (第 1 代) 中，應用程式的目光和行動互動模型所使用的全像投影可能太遠而無法融入視野。
+在 HoloLens (第 1 代) 中，應用程式的注視並認可互動模型所使用的全像投影可能太遠而無法融入視野。
 
 下列步驟可更新您的應用程式設計，使其適用於 HoloLens 2：
 1.  MRTK 元件：根據事前工作，如果您已新增 [MRTK v2](https://github.com/microsoft/MixedRealityToolkit-Unity)，則其中會有各種已針對 HoloLens 2 來設計及最佳化的元件/指令碼可供運用。
 
-2.  互動模型：請考慮更新互動模型。 大部分情況下，建議您從目光和行動切換至手部。 一般來說，全像投影會在比手臂可及範圍還遠的地方，因此切換為手部會讓互動指標光線和抓取手勢變遠。
+2.  互動模型：請考慮更新互動模型。 大部分情況下，建議您從注視和認可切換至手部。 一般來說，全像投影會在比手臂可及範圍還遠的地方，因此切換為手部會讓互動指標光線和抓取手勢變遠。
 
 3.  全像投影位置：切換到手部互動模型之後，請考慮使用近距離互動抓取手勢用手將某些全像投影移得近一些，以便直接與全像投影互動。 建議可移得近一些以便能直接抓取或互動的全像投影類型包括，可在抓取和檢查全像投影時融入到 HoloLens 2 視野內的小型目標功能表、控制項、按鈕和較小型的全像投影。
 <br>

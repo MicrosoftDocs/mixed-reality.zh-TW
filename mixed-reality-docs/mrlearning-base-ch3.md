@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 32a77d6032335ab3ae769b85c5f947440658743f
-ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
+ms.openlocfilehash: ade7a839e03a306332bf18f1db49805f59c71429
+ms.sourcegitcommit: f2b7c6381006fab6d0472fcaa680ff7fb79954d6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2019
-ms.locfileid: "73913569"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74064262"
 ---
 # <a name="4-placing-dynamic-content-and-using-solvers"></a>4. 放置動態內容並使用解析器
 
@@ -72,7 +72,7 @@ ms.locfileid: "73913569"
 
     ![mrlearning-base-ch3-3-step2b .png](images/mrlearning-base-ch3-3-step2b.png)
 
-3. 將星形視圖的最大和最小距離設定為0，讓 cube 與使用者手腕之間不會有任何距離。 設定好之後，該立方體會完全配合手腕。 您也可以調整 [參考方向] 欄位來調整 cube 的導向行為，例如，如果您想要允許物件以使用者的手腕旋轉，請將參考方向設定為 [追蹤物件的方向]。
+3. 將星形視圖的最大和最小距離設定為0，讓 cube 與使用者手腕之間不會有任何距離。 設定好之後，該立方體會完全配合手腕。 您也可以調整 [參考方向] 欄位來調整 cube 的導向行為，例如，如果您想要允許物件透過將參考方向設定為物件導向來旋轉使用者的手腕。
 
     ![mrlearning-base-ch3-3-step3 .png](images/mrlearning-base-ch3-3-step3.png)
 

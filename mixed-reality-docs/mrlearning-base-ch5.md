@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 5599fe48f62a35d1dc02ce30fb7858fd74e87685
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: b740c463e3d73d5df9b996562e9ff0a1952703f0
+ms.sourcegitcommit: f2b7c6381006fab6d0472fcaa680ff7fb79954d6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926539"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74064294"
 ---
 # <a name="6-exploring-advanced-input-options"></a>6. 探索 advanced 輸入選項
 
@@ -110,7 +110,7 @@ ms.locfileid: "73926539"
 
 ### <a name="the-pan-gesture"></a>平移手勢
 
-在本節中，您將瞭解如何使用平移手勢。 這適用于使用手指或手來滾動內容的捲軸。 您也可以使用平移手勢來旋轉物件、迴圈流覽3D 物件的集合，甚至是滾動 2D UI。 <!--TMP You will also learn how to use the pan gesture to warp a texture, and how to move a collection of 3D objects.-->
+在本節中，您將瞭解如何使用平移手勢。 這適用于使用手指或手來滾動內容的捲軸。 您也可以使用平移手勢來旋轉物件、迴圈流覽3D 物件的集合，甚至是滾動 2D UI。
 
 1. 建立四邊形。 在 BaseScene 階層中，以滑鼠右鍵按一下 [3D 物件]，然後選取 [四]。
 
@@ -128,10 +128,7 @@ ms.locfileid: "73926539"
 4. 在 [專案] 面板的 [搜尋] 方塊中，輸入「pan 內容」。 將該材料拖曳到場景中的四個。
 
     >[!NOTE]
-    >MRTK 中不包含 Pan 內容材料，而是在先前課程中匯入此模組的資產套件中的資產。
-
-    >[!NOTE]
-    >當您新增平移內容時，看起來可能會很延伸。 您可以藉由調整四邊形大小的 x、y 和 z 值來解決此問題，直到您對它的外觀感到滿意為止。
+    >PanContent 材料不是 MRTK 的一部分，而是包含在上一課匯入的 BaseModuleAssets 資產中。
 
     若要使用平移手勢，您需要在物件上使用碰撞器。 您可能會看到四邊形已經有一個網格碰撞器。 然而，網格碰撞器並不理想，因為它非常薄並且難以選取。 我們建議用方塊碰撞器取代網格碰撞器。
 
@@ -157,26 +154,45 @@ ms.locfileid: "73926539"
 
     如此一來，您就有一個啟用 pan 的四個。
 
-    如您所見，「手互動」的「移動流覽縮放」元件有各種設定，做為選擇性的練習，您可以自由地玩。
+    如您所見，「手互動」的「流覽縮放腳本」元件具有各種設定，做為選擇性的練習，您可以自由地玩。
 
     ![mrlearning-base-ch5-2-step8b .png](images/mrlearning-base-ch5-2-step8b.png)
 
-<!--TMP
-   Next, we will learn how to pan 3D objects. 
+9. 接下來，我們將學習如何平移 3D 物件。
 
-10. Right-click the quad object, select 3D object and click Cube. Scale the cube so that it’s roughly x = 0.1, y = 0.1 and z = 0.1. Copy that cube three times by right-clicking the cube and pressing duplicate, or by pressing control/command D. Space them out evenly. Your scene should look similar to the image below.
+    在階層中，以滑鼠右鍵按一下 [四個物件]，以開啟關聯式快顯功能表，然後選取 [ **3D 物件** > **Cube** ]，將 cube 加入場景中。
 
-![Lesson5 Chapter2 Step10im](images/Lesson5_chapter2_step10im.PNG)
+    請確定 Cube 的**位置**設定為_0，0，0，_ 使其整齊地放在四個內。 將 Cube 相應縮小至_0.1、0.1、0.1_的**規模**。
 
-11. Select the quad again and under the hand interaction pan script, set the pan actions to each of the cubes. Under Pan Event Receivers, we want to specify the number of objects receiving the event. Since there are four cubes, type “4” and press Enter. Four empty fields should appear.
+    ![mrlearning-base-ch5-2-step9 .png](images/mrlearning-base-ch5-2-step9.png)
 
-![Lesson5 Chapter2 Step11im](images/Lesson5_chapter2_step11im.PNG)
+    將 Cube 複製三次，方法是以滑鼠右鍵按一下 Cube，開啟關聯式快顯功能表，然後選取 [**複製**]。
 
-12. Drag each of the cubes into each of the empty element slots.
-     ![Lesson5 Chapter2 Step12im](images/Lesson5_chapter2_step12im.PNG)
-    
-13. Add the Move with Pan script to all of the cubes by pressing and holding control/command and select each object. From the Inspector panel, click Add Component and search for “move with pan.” Click the script and it is added to each cube. Now the 3D objects will move with your pan gesture. If you remove the mesh render on your quad, you should now have an invisible quad where you can pan through a list of 3D objects.
--->
+    將 cube 平均隔開。 您的場景看起來應該如下圖所示。
+
+10. 按住 CTRL 鍵，同時選取 [階層] 面板中的每個**Cube**物件，以將 MoveWithPan 腳本新增至所有 cube。 在 [偵測器] 面板中，按一下 [加入元件]，然後搜尋並選取 [**使用平移腳本移動**]，將它新增至所有 cube。
+
+    ![mrlearning-base-ch5-2-step10a .png](images/mrlearning-base-ch5-2-step10a.png)
+
+    >[!NOTE]
+    >MoveWithPan 腳本不是 MRTK 的一部分，而是包含在上一課匯入的 BaseModuleAssets 資產中。
+
+    在仍選取 cube 的情況下，將**四**個物件從 [階層] 面板拖曳至 [**移動流覽**腳本] 元件的 [**平移輸入來源**] 欄位中。
+
+    ![mrlearning-base-ch5-2-step10b .png](images/mrlearning-base-ch5-2-step10b.png)
+
+    現在，cube 會隨著您的移動流覽手勢移動。
+
+    >[!TIP]
+    >每個 cube 上的 MoveWithPan 實例會接聽四個物件上的 HandInteractionPanZoom 實例所傳送的 PanUpdated 事件，我們已新增至每個 cube 上的 [移動流覽輸入來源] 欄位，並據以更新個別 cube 物件的位置。
+
+    在仍選取 cube 的情況下，將它們沿著 Z 軸向後移動，讓每個 cube 的網格都在**四**個方塊的**碰撞**器內，方法是將其**位置 Z**值變更為_0.7_。
+
+    ![mrlearning-base-ch5-2-step10c .png](images/mrlearning-base-ch5-2-step10c.png)
+
+    現在，如果您在 [偵測器] 面板中取消核取，以停用**四**個**網格**轉譯器元件，您將會有一個不可見的四個，您可以在其中流覽3d 物件清單。
+
+    ![mrlearning-base-ch5-2-step10d .png](images/mrlearning-base-ch5-2-step10d.png)
 
 ### <a name="eye-tracking"></a>眼球追蹤
 
@@ -197,13 +213,16 @@ ms.locfileid: "73926539"
 2. 將眼球追蹤目標元件新增至目標物件。 若要讓物件回應眼睛眼事件，我們必須在每個想要使用眼睛互動的物件上新增 EyeTrackingTarget 元件。 將此元件新增至作為方格集合一部分之九個 3D 物件中的每一個。
 
     >[!TIP]
-    >您可以使用 shift 和/或 ctrl 鍵選取場景階層中的多個專案，然後大量加入 EyeTrackingTarget 元件。
+    >您可以使用 Shift 和/或 CRTL 鍵選取階層中的多個專案，然後大量新增 EyeTrackingTarget 元件。
 
     ![Lesson5 Chapter3 步驟2](images/Lesson5Chapter3Step2.JPG)
 
-3. 接下來，我們會新增 EyeTrackingTutorialDemo 腳本來進行一些令人興奮的互動。 EyeTrackingTutorialDemo 腳本包含在本教學課程系列存放庫中。 預設不包含混合現實工具組。 針對方格集合中的每個3D 物件，藉由在 [加入元件] 功能表中搜尋元件來新增 EyeTrackingTutorialDemo 腳本。
+3. 接下來，我們會新增 EyeTrackingTutorialDemo 腳本來進行一些令人興奮的互動。 針對方格集合中的每個3D 物件，藉由在 [加入元件] 功能表中搜尋元件來新增 EyeTrackingTutorialDemo 腳本。
 
-   ![Lesson5 Chapter3 步驟3](images/Lesson5Chapter3Step3.JPG)
+    ![Lesson5 Chapter3 步驟3](images/Lesson5Chapter3Step3.JPG)
+
+    >[!NOTE]
+    >EyeTrackingTutorialDemo 腳本資料不是 MRTK 的一部分，而是包含在上一課匯入的 BaseModuleAssets 資產中。
 
 4. 在注視目標時旋轉物件。 我們想要設定我們的3D 物件，以在我們查看時旋轉。 若要這麼做，請在查看 EyeTrackingTarget 元件的 Target （）區段時，在中插入新的欄位，如下圖所示。
 

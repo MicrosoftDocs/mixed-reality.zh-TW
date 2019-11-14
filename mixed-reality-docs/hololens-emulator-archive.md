@@ -3,15 +3,15 @@ title: HoloLens 模擬器封存
 description: Microsoft HoloLens 模擬器的已發行組建清單。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 9/11/2019
+ms.date: 11/11/2019
 ms.topic: article
 keywords: HoloLens、模擬器、組建、版本
-ms.openlocfilehash: c2d0c8d9e81bae906c786a32f08d0e701638535e
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: f9ce72febfd07b7dc743b9ee202e8c4353f1de96
+ms.sourcegitcommit: f2b7c6381006fab6d0472fcaa680ff7fb79954d6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73434209"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74064229"
 ---
 # <a name="hololens-2-emulator-archive"></a>HoloLens 2 模擬器封存
 
@@ -19,6 +19,7 @@ HoloLens 模擬器（第1代）和 HoloLens 2 模擬器組建會並存安裝。 
 
 |  組建 |  發行日期 |  備註 | 
 |----------|----------|----------|
+|  [HoloLens 2 模擬器組建10.0.18362.1039](https://go.microsoft.com/fwlink/?linkid=2110553) | 2019年11月11日 | 2019年11月的 HoloLens 2 組建。 |
 |  [HoloLens 2 模擬器組建10.0.18362.1034](https://go.microsoft.com/fwlink/?linkid=2106649) | 2019年10月8日 | 2019年10月的 HoloLens 2 組建。  當執行的版本比最新版本還舊時，模擬器將會提示更新為新的版本。  在 Windows 10 2019 更新或更新版本上使用模擬器時，新的 [NAT 設定] 索引標籤可讓開發人員針對在不同裝置上執行的應用程式開啟埠，以連接到模擬器，而 [更新] 索引標籤會顯示可用的模擬器版本。  如需其他詳細資料，請參閱[HoloLens 模擬器檔](using-the-hololens-emulator.md)。 |
 |  [HoloLens 2 模擬器組建10.0.18362.1031](https://go.microsoft.com/fwlink/?linkid=2103724) | 2019年9月11日 | 2019年9月2日組建。  在 Windows 10 2019 更新或更新版本上執行模擬器時，[網路] 索引標籤會出現在 [模擬器工具] 視窗中。 |
 |  [HoloLens 2 模擬器組建10.0.18362.1028](https://go.microsoft.com/fwlink/?linkid=2101019) | 2019年8月14日 | 2019年8月2日組建。  全像攝影應用程式範本已不再包含，但可在 Visual Studio Marketplace 中使用。  模擬器現在可以在 Sdk 安裝到自訂位置時正常執行。 |

@@ -6,19 +6,16 @@ ms.author: adlinv
 ms.date: 06/07/2019
 ms.topic: article
 keywords: Windows Mixed Reality，應用程式行，周框方塊
-ms.openlocfilehash: f09187bc2a3969a8f844711052e15433f5449d6d
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 97afc0df02fd8460547e955d4fcf3e33a4e9f566
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437060"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105766"
 ---
 # <a name="bounding-box-and-app-bar"></a>周框方塊和應用程式行
-![周框是混合現實中物件操作的標準介面。](images/640px-boundingbox-hero.jpg)<br>
-
+![界限是混合現實中物件操作的標準介面。](images/640px-boundingbox-hero.jpg)<br>
 <br>
-
----
 
 ## <a name="what-is-the-bounding-box"></a>什麼是周框方塊？
 
@@ -95,15 +92,33 @@ ms.locfileid: "73437060"
 <br>
 
 
+## <a name="bounding-box-in-mrtkmixed-reality-toolkit-for-unity"></a>適用于 Unity 的 MRTK （混合現實工具組）中的周框方塊
+**[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 會針對周框方塊和應用程式行提供腳本和 prefabs。 只要將 BoundingBox.cs 腳本指派至任何物件，就可以新增周框方塊。
 
-**針對 Unity 應用程式開發，請參閱[混合現實工具組-Unity 中的應用程式行。](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_AppBar.html)**
+* [MRTK-周框方塊](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html)
+
 
 <br>
 
 ---
 
+
 ## <a name="see-also"></a>請參閱
+
+* [游標](cursors.md)
+* [手型光線](point-and-commit.md)
+* [Button](button.md)
 * [可互動的物件](interactable-object.md)
-* [Unity 中的文字](text-in-unity.md)
+* [週框方塊和應用程式列](app-bar-and-bounding-box.md)
+* [處理](direct-manipulation.md)
+* [手部功能表](hand-menu.md)
+* [近端功能表](near-menu.md)
 * [物件集合](object-collection.md)
+* [語音命令](voice-input.md)
+* [鍵盤](keyboard.md)
+* [並用](tooltip.md)
+* [石板](slate.md)
+* [滑桿](slider.md)
+* [佈告板和常駐標籤](billboarding-and-tag-along.md)
 * [顯示進度](progress.md)
+* [表面磁性](surface-magnetism.md)

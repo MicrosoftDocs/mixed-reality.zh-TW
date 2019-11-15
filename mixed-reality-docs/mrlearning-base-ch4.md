@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 05/02/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 07bcce2ab9ab3bda035f7f2b39a90753cf45358d
-ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
+ms.openlocfilehash: 8c60d8291ede123817c93458fff003891169840c
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2019
-ms.locfileid: "73913749"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105968"
 ---
 # <a name="5-interacting-with-3d-objects"></a>5. 與3D 物件互動
 
@@ -38,7 +38,7 @@ ms.locfileid: "73913749"
 
     ![mrlearning-base-ch4-1-step1 .png](images/mrlearning-base-ch4-1-step1.png)
 
-2. 下載 Unity package [BaseModuleAssets 1.2.1 版](https://github.com/Developer-OI/MixedRealityLearning/releases/download/1.2.1/BaseModuleAssets-1.2.1.unitypackage)，並使用相同的指示匯入[tut1-lesson1-step3](mrlearning-base-ch1.md)中所述的自訂套件。 此套件包含3D 模型和其他在本教學課程中使用的實用資產。
+2. 下載 Unity 套件[unity. HoloLens2. GettingStarted](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.0/Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage) ，並使用相同的指示匯入[tut1-lesson1-step3](mrlearning-base-ch1.md)中所述的自訂套件。 此套件包含3D 模型和其他在本教學課程中使用的實用資產。
 
 3. 在 專案 面板中，流覽至 資產 > BaseModuleAssets > 基本模組 Prefabs，並搜尋「未完成」，我們將使用其中一些 Prefabs。
 

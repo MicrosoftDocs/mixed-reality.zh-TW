@@ -6,16 +6,16 @@ ms.author: jennyk
 ms.date: 06/06/2019
 ms.topic: article
 keywords: 混合的現實、控制項、互動、ui、ux
-ms.openlocfilehash: 36ca1feeba0e3bf028c64fe7b559d263a8088b96
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 5305af97e9811134212fc6c730727962bb9e8353
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438732"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105790"
 ---
 # <a name="interactable-object"></a>可互動物件
 
-![Interactible 物件](images/InteractableExamples.png)
+![Interactible 物件](images/UX/UX_Hero_Interactable.jpg)
 
 一個按鈕很長的比喻，是用來觸發2D 抽象世界中的事件。 在三維混合現實世界中，我們不再需要局限于此抽象概念。 任何專案都可以是觸發事件的**可互動物件**。 可互動物件可以從資料表上的咖啡杯，呈現為以空中浮動的球形文字。 在某些情況下，我們仍會使用傳統按鈕，例如在對話方塊 UI 中。 按鈕的視覺表示方式取決於內容。
 
@@ -261,9 +261,9 @@ HoloLens 2 支援明確的手寫追蹤輸入，可讓您與物件互動。 如�
 ---
 
 
-## <a name="creating-interactable-object-with-mixed-reality-toolkit-mrtk"></a>使用混合現實工具組（MRTK）建立可互動物件
+## <a name="interactable-object-in-mrtkmixed-reality-toolkit-for-unit"></a>適用于 Unit 的 MRTK （混合現實工具組）中的可互動物件
 
-在 **[混合式現實工具](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 組中，您可以找到可協助您建立可互動物件的一系列 Unity 腳本和 prefabs。 您可以使用這些來讓物件回應各種類型的輸入互動狀態。
+在 **[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 中，您可以使用腳本[**可互動**](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Scripts)，讓物件回應各種類型的輸入互動狀態。 它支援各種類型的主題，可讓您藉由控制物件屬性（例如色彩、大小、材質和著色器）來定義視覺狀態。
 
 * [可互動](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Interactable.html)
 * [Button](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Button.html)
@@ -277,9 +277,23 @@ MixedRealityToolkit 的標準著色器提供各種選項，例如**近光源**�
 
 ---
 
+
 ## <a name="see-also"></a>請參閱
 
-* [周框方塊](app-bar-and-bounding-box.md)
+* [游標](cursors.md)
+* [手型光線](point-and-commit.md)
+* [Button](button.md)
+* [可互動的物件](interactable-object.md)
+* [週框方塊和應用程式列](app-bar-and-bounding-box.md)
+* [處理](direct-manipulation.md)
+* [手部功能表](hand-menu.md)
+* [近端功能表](near-menu.md)
 * [物件集合](object-collection.md)
+* [語音命令](voice-input.md)
+* [鍵盤](keyboard.md)
+* [並用](tooltip.md)
+* [石板](slate.md)
+* [滑桿](slider.md)
 * [佈告板和常駐標籤](billboarding-and-tag-along.md)
-* [語音輸入](voice-input.md)
+* [顯示進度](progress.md)
+* [表面磁性](surface-magnetism.md)

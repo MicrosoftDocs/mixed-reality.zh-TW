@@ -6,18 +6,18 @@ ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，設計，控制項，ui，ux
-ms.openlocfilehash: 43b4802e7c821c98c847509ace950f381da12f95
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: aafcd8eebbabfc5b53d09348d513f62def909da6
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437535"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105987"
 ---
-# <a name="displaying-progress"></a>顯示進度
+# <a name="progress-indicator"></a>進度列指示器
 
 <br>
 
-<img src="images/HoloLens2_Loader.gif" alt="Progress ring example in HoloLens" width="940px">
+<img src="images/UX/MRTK_ProgressIndicator.gif" alt="Progress ring example in HoloLens" width="940px">
 
 進度控制項為使用者提供回饋，告知正在進行長時間執行的操作。 根據所使用的指示器，它可以表示在進度指示器可見的時候，使用者無法與 App 互動，也可以指示可能需要等待多久的時間。
 
@@ -88,9 +88,32 @@ ms.locfileid: "73437535"
 
 ---
 
+## <a name="progress-indicator-in-mrtkmixed-reality-toolkit-for-unity"></a>適用于 Unity 的 MRTK （混合現實工具組）中的進度指標
+
+* [MRTK-進度指標 prefabs](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Prefabs/ProgressIndicators)
+* [MRTK-場景轉換服務](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Extensions/SceneTransitionService/SceneTransitionServiceOverview.html)
+
+
+<br>
+
+---
+
 ## <a name="see-also"></a>請參閱
-* [混合現實工具組上的進度腳本和 prefabs](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/Features/UX/Prefabs/Loader)
-* [周框方塊](app-bar-and-bounding-box.md)
+
+* [游標](cursors.md)
+* [手型光線](point-and-commit.md)
+* [Button](button.md)
 * [可互動的物件](interactable-object.md)
+* [週框方塊和應用程式列](app-bar-and-bounding-box.md)
+* [處理](direct-manipulation.md)
+* [手部功能表](hand-menu.md)
+* [近端功能表](near-menu.md)
 * [物件集合](object-collection.md)
+* [語音命令](voice-input.md)
+* [鍵盤](keyboard.md)
+* [並用](tooltip.md)
+* [石板](slate.md)
+* [滑桿](slider.md)
 * [佈告板和常駐標籤](billboarding-and-tag-along.md)
+* [顯示進度](progress.md)
+* [表面磁性](surface-magnetism.md)

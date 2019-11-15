@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: da485f167ef3902dd75adf8da8181504fbc6c6df
-ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
+ms.openlocfilehash: cf51505cab2db765325c2e7b78a52e4b790845c9
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2019
-ms.locfileid: "73913161"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105950"
 ---
 # <a name="speech-sdk-learning-module---rocket-launcher-control-using-speech-commands"></a>語音 SDK 學習模組-使用語音命令 Rocket 啟動器控制項
 
@@ -24,7 +24,7 @@ ms.locfileid: "73913161"
 
 ## <a name="instructions"></a>指示
 
-1. 在本教學課程中，我們將使用「BaseModule」資產，將 rocket 啟動器與語音命令整合。 為此，我們需要將資產匯入到專案中。 您可以使用此[連結](https://github.com/Developer-OI/MixedRealityLearning/releases/download/1.2.1/BaseModuleAssets-1.2.1.unitypackage)來下載「Rocket 啟動器」資產。
+1. 在本教學課程中，我們將使用「BaseModule」資產，將 rocket 啟動器與語音命令整合。 為此，我們需要將資產匯入到專案中。 您可以使用此[連結](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.0/Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage)來下載「Rocket 啟動器」資產。
 
 2. 若要匯入資產，請移至資產-> 匯入套件-> 自訂套件-> 流覽至下載的檔案，然後按一下 [匯入]。
 

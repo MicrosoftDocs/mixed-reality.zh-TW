@@ -6,16 +6,18 @@ ms.author: hakons
 ms.date: 10/03/2019
 ms.topic: article
 keywords: ggv、語音、cortana、語音、輸入
-ms.openlocfilehash: 1b0a57ad680b7f779201e99dea24bfe746820c44
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 7264b0b8882928f64860bc5a30b97683306cb19c
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437175"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105777"
 ---
 # <a name="voice-input"></a>語音輸入
 
-Voice 是 HoloLens 上輸入的其中一種主要形式。 它可讓您直接命令全息影像，而不需要使用[右手手勢](gaze-and-commit.md#composite-gestures)。 語音輸入可以是傳達您意圖的自然方式。 語音在遍歷複雜介面時特別有用，因為它可讓使用者使用一個命令來剪下嵌套的功能表。
+![語音輸入](images/UX/UX_Hero_VoiceCommand.jpg)
+
+語音是 HoloLens 輸入的其中一種主要形式。 它可讓您直接命令全息影像，而不需要使用[右手手勢](gaze-and-commit.md#composite-gestures)。 語音輸入是溝通意圖的一種自然方式。 語音在遍歷複雜介面時特別有用，因為它可讓使用者使用一個命令來剪下嵌套的功能表。
 
 語音輸入是由在所有其他_通用 Windows 應用程式_中支援語音的[相同引擎](https://msdn.microsoft.com/library/windows/apps/mt185615.aspx)提供技術支援。 在 HoloLens 上，語音辨識一律會以 [設定] 中設定的 Windows 顯示語言運作。 
 
@@ -290,8 +292,20 @@ HoloLens 2 也支援其他語言。 請記住，即使已安裝多個鍵盤，�
 
 對於 Windows Mixed Reality Developer Edition 版本2017，在初始 HMD 連線之後，音訊端點管理邏輯會正常執行（永遠）到電腦桌面。 在經過 WMR OOBE 之後，第一次登出/進入事件之前，使用者可能會遇到各種音訊功能問題，範圍從沒有音訊到音訊切換，這取決於第一次連線 HMD 之前設定系統的方式。
 
+<br>
+
+---
+
+## <a name="voice-input-in-mrtkmixed-reality-toolkit-for-unity"></a>適用于 Unity 的 MRTK （混合現實工具組）中的語音輸入
+有了 **[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** ，您就可以輕鬆地在任何物件上指派語音命令。 使用 MRTK 的**語音輸入設定檔**來定義您的關鍵字。 藉由指派**SpeechInputHandler**腳本，您可以讓任何物件回應語音輸入設定檔中所定義的關鍵字。 SpeechInputHandler 也提供語音確認標籤，以改善使用者的信心。
+
+* [MRTK-Voice 命令](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Speech.html)
+
+
+---
+
 ## <a name="see-also"></a>請參閱
-* [注視和認可](gaze-and-commit.md)
+* [目光和行動](gaze-and-commit.md)
 * [本能互動](interaction-fundamentals.md)
 * [MR 輸入212：語音](holograms-212.md)
 * [DirectX 中的語音輸入](voice-input-in-directx.md)

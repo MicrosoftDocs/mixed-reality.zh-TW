@@ -6,16 +6,16 @@ ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，控制項，設計
-ms.openlocfilehash: 8f3629c6d9465383efc901ed784a3719cd6fdfb2
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 98fec76558502658511faf3f18d623bfa5a49dc2
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438184"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105998"
 ---
 # <a name="object-collection"></a>物件集合
 
-![在 Elements 應用程式的定期資料表中使用的物件集合](images/640px-objectcollection-hero-640px.jpg)<br>
+![在 Elements 應用程式的定期資料表中使用的物件集合](images/UX/UX_Hero_ObjectCollection.jpg)<br>
 
 
 「物件集合」是一種版面配置控制項，可協助您以預先定義的3d 圖形設定物件陣列。 它支援各種表面樣式-**平面、圓柱、球面**和**放射狀**。 您可以調整物件的半徑和大小，以及它們之間的空間。 物件集合支援來自 Unity 的任何物件-2D 和3D。 在 **[混合的現實工具](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ObjectCollection.html)** 組中，我們建立了 Unity 腳本和範例，可協助您建立物件集合。
@@ -44,7 +44,36 @@ ms.locfileid: "73438184"
 ![具有物件集合之2D 影像的範例](images/940px-layout-2dimages.jpg)<br>
 *搭配2D 影像使用物件集合的範例*
 
+<br>
+
+---
+
+## <a name="object-collection-in-mrtkmixed-reality-toolkit-for-unity"></a>適用于 Unity 的 MRTK （混合現實工具組）中的物件集合
+
+* [MRTK-物件集合](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ObjectCollection.html)
+
+
+<br>
+
+---
+
+
 ## <a name="see-also"></a>請參閱
-* [GitHub 上混合現實工具組中物件集合的腳本和 prefabs](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_ObjectCollection.md)
+
+* [游標](cursors.md)
+* [手型光線](point-and-commit.md)
+* [Button](button.md)
 * [可互動的物件](interactable-object.md)
-* [周框方塊](app-bar-and-bounding-box.md)
+* [週框方塊和應用程式列](app-bar-and-bounding-box.md)
+* [處理](direct-manipulation.md)
+* [手部功能表](hand-menu.md)
+* [近端功能表](near-menu.md)
+* [物件集合](object-collection.md)
+* [語音命令](voice-input.md)
+* [鍵盤](keyboard.md)
+* [並用](tooltip.md)
+* [石板](slate.md)
+* [滑桿](slider.md)
+* [佈告板和常駐標籤](billboarding-and-tag-along.md)
+* [顯示進度](progress.md)
+* [表面磁性](surface-magnetism.md)

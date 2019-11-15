@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: ac345ecafee3a09e3b5ad58344310234e60354a1
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: fb7074849c5a07a95b370b5bfa75228fac36ba5b
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926873"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105965"
 ---
 # <a name="1-getting-started-with-azure-spatial-anchors"></a>1. 開始使用 Azure 空間錨點
 
@@ -30,9 +30,9 @@ ms.locfileid: "73926873"
 
 [Azure 空間錨點 v 1.1。0](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v1.1.0/AzureSpatialAnchors.unitypackage)
 
-[MR 基底模組資產套件1.2 版](https://github.com/microsoft/MixedRealityLearning/releases/download/1.2/BaseModuleAssets-1.2.unitypackage)
+[HoloLens2. GettingStarted 教學課程. 2.1.0.0. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.0/Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage)
 
-[ASA 模組資產套件 v 1.3。1](https://github.com/Developer-OI/MixedRealityLearning/releases/download/ASA_1.3/ASAModuleAssets_1.3.1.unitypackage)
+[HoloLens2. AzureSpatialAnchor 教學課程. 2.1.0.0. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/azure-spatial-anchor-v2.1.0.0/Unity.HoloLens2.AzureSpatialAnchor.Tutorials.Asset.2.1.0.0.unitypackage)
 
 [Mixed Reality 工具組基礎封裝2.1。0](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/tag/v2.1.0)
 
@@ -66,7 +66,7 @@ ms.locfileid: "73926873"
 
 > 注意：請耐心等候，匯入需要幾分鐘的時間。 
 
-6. 匯入[MR 基底模組資產套件](https://github.com/microsoft/MixedRealityLearning/releases/tag/1.2)下一步。 與步驟5非常類似，請回到 Unity，按一下 [資產]，然後將滑鼠停留在 [匯入套件] 上方。 按一下 [自訂套件 ...]您的電腦檔案將會再次出現。 移至您儲存基本模組資產套件的位置。 然後選取它。 按一下 [開啟]。
+6. 匯入[HoloLens2 GettingStarted。 2.1.0.0. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.0/Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage)下一步。 與步驟5非常類似，請回到 Unity，按一下 [資產]，然後將滑鼠停留在 [匯入套件] 上方。 按一下 [自訂套件 ...]您的電腦檔案將會再次出現。 移至您儲存基本模組資產套件的位置。 然後選取它。 按一下 [開啟]。
 
 ![module2chapter1step5bim](images/module2chapter1step5bim.PNG)
 

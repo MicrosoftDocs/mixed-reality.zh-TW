@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: b4713caf2c4d913fe8f5b01c08b3cd0152e32cd9
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 34b8165888c13b0c94be8951d5a4fdc07fab5308
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438363"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74106019"
 ---
 # <a name="4-sharing-object-movements-with-multiple-users"></a>4. 與多個使用者共用物件移動
 
@@ -62,11 +62,13 @@ ms.locfileid: "73438363"
 >注意：請確定主要相機和 SharedPlayground 位置都設定為0，0，0。
 >
 
-9. 建立新的遊戲物件集，做為 SharedPlayground 父物件的子物件，以建立新的物件。 以滑鼠右鍵按一下父物件，然後選取 [建立空的]。 
+9. 選取 [SharedPlayground] 物件，並以滑鼠右鍵按一下滑鼠，選擇 [建立空的] 選項，將空白遊戲物件建立為 "SharedPlayground" 遊戲物件的子系。
+
+   ![Module3chapter4step6im](images/module3chapter4step6im.PNG)
 
 10. 在您的階層中選取新的物件後，請在 [偵測器] 面板中將物件的名稱變更為 TableAnchor。 此外，按一下 [新增元件]，並搜尋 TableAnchor 元件。 選取它，並將它新增至物件。 
 
-![Module3Chapter4step6im](images/module3chapter4step7im.PNG)
+![Module3Chapter4step7im](images/module3chapter4step7im.PNG)
 
 11. 從 [Prefabs] 資料夾的 [專案] 面板中，將資料表 prefab 拖曳至您剛才建立的 "TableAnchor" 子物件。
 
@@ -79,9 +81,9 @@ ms.locfileid: "73438363"
 ## <a name="congratulations"></a>恭喜！
 
 
-完成後，加入 Unity 專案的所有使用者都可以移動陰曆啟動器。 所有的移動都會同步處理，讓每個使用者都可以看到彼此的互動。 這些概念可做為全功能、共用共同作業體驗的基本組建區塊。 
+完成後，請尋找以尋找陰曆課程模組。 在此之後，加入 Unity 專案的所有使用者都可以移動農曆啟動程式。  所有的移動都會同步處理，讓每個使用者都可以看到彼此的互動。 這些概念可做為全功能、共用共同作業體驗的基本組建區塊。 
 
-雖然所有使用者都是以共用體驗的一部分進行連線，而且可以查看物件的相對移動，但應用程式仍無法精確地對齊虛擬人偶和物件，讓本機使用者可以在實體中的相同位置看到彼此和物件成為. 為了錨定本機共用體驗，每個裝置都需要對實體環境有共同的瞭解。 在此課程模組中，我們將使用[Azure 空間錨點](<https://azure.microsoft.com//services/spatial-anchors/>)（ASA）來達成此目的，其將在下一課中實行。
+雖然所有使用者都是以共用體驗的一部分進行連線，而且可以查看物件的相對移動，但應用程式仍無法精確地對齊虛擬人偶和物件，讓本機使用者無法看到彼此和物件位於實體世界。 為了錨定本機共用體驗，每個裝置都需要對實體環境有共同的瞭解。 在此課程模組中，我們將使用[Azure 空間錨點](<https://azure.microsoft.com//services/spatial-anchors/>)（ASA）來達成此目的，其將在下一課中實行。
 
 在繼續進行下一課之前，我們必須先完成 ASA 學習課程模組，其中涵蓋 ASA 基本概念、Azure 帳戶和資源建立，以及我們在將此整合到我們的共用體驗之前所需的其他基本建築物組塊。
 

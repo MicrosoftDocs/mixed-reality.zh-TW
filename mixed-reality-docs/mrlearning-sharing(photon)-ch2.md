@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 91935cb5b465e51d3948f68b818f93ba52b215f1
-ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
+ms.openlocfilehash: 750161ff4c52a7ab71869b3cb0f97197d4ad09f2
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2019
-ms.locfileid: "73914404"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74106038"
 ---
 # <a name="2-getting-unity-ready-for-development"></a>2. 讓 Unity 準備好進行開發 
 
@@ -52,7 +52,7 @@ ms.locfileid: "73914404"
 
 6. 完成之後，就會出現新的設定檔案，讓您選擇自訂設定檔。 
 
-![Module2Chapter1step4im](images/Module2Chapter1step4im.PNG)
+![Module2Chapter1step4ima](images/Module2Chapter1step4ima.PNG)
 
 7. 從階層中選取 [混合現實工具組（MRTK）]。 在 [偵測器] 面板中，尋找 Mixed Reality 工具組腳本，然後按下圖所示的 [複製 & 自訂] 按鈕。  這會出現一個 pop，然後在快顯功能表中選取 [複製] 選項。
 
@@ -76,7 +76,14 @@ ms.locfileid: "73914404"
 
 ![Module3Chapter2step9imb](images/module3chapter2step9imb.PNG)
 
-11. 匯入名為 SharingAssetCollection 的自訂套件，您可以在[這裡下載。](https://github.com/microsoft/MixedRealityLearning/releases/tag/development)
+11. 匯入列出的自訂套件：
+
+    a. [HoloLens2. GettingStarted 教學課程. 2.1.0.0. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.0/Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage)
+
+    b。 [HoloLens2. MultiUserCapabilities 教學課程. 2.1.0.0. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/multi-user-capabilities-v2.1.0.0/Unity.HoloLens2.MultiUserCapabilities.Tutorials.Asset.2.1.0.0.unitypackage)
+
+    >[!TIP]
+    >如果您已完成開始使用[教學](mrlearning-base-ch1.md)課程，您的電腦上可能仍會有名為 GettingStarted 的 unity 套件。 _2.1.0.0. unitypackage_ 。 若是如此，您可以略過下載上述步驟中所列的資產。
 
 ![Module3Chapter2step12im](images/module3chapter2step11im.PNG)
 

@@ -6,16 +6,16 @@ ms.author: nobarr
 ms.date: 08/27/2019
 ms.topic: article
 keywords: 手形、功能表、按鈕、快速存取、版面配置
-ms.openlocfilehash: ee958806ac462535b33164bb4faa4bf1aa29e709
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: b4ea7411be22633e82a88d1c91b6b2b1edbea735
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73439249"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105645"
 ---
 # <a name="hand-menu"></a>手形功能表
 
-![Ulnar 端位置](images/MRTK_UX_HandMenu.png)
+![Ulnar 端位置](images/UX/UX_Hero_HandMenu.jpg)
 
 快顯功能表可讓使用者快速地為常用的函式帶出手動連接的 UI。 
 
@@ -127,9 +127,33 @@ ms.locfileid: "73439249"
 
 ---
 
+## <a name="hand-menu-in-mrtkmixed-reality-toolkit-for-unity"></a>適用于 Unity 的 MRTK （混合現實工具組）中的手形功能表
+**[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 提供快顯功能表的腳本和範例場景。 HandConstraintPalmUp 規劃求解腳本可讓您使用各種可設定的選項，輕鬆地將任何物件附加至手中。
+
+* [具有 HandConstraint 和 HandConstraintPalmUp 的 MRTK-手形功能表](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_Solver.md#hand-menu-with-handconstraint-and-handconstraintpalmup)
+
+
+<br>
+
+---
+
 
 ## <a name="see-also"></a>請參閱
 
+* [游標](cursors.md)
+* [手型光線](point-and-commit.md)
+* [Button](button.md)
 * [可互動的物件](interactable-object.md)
-* [手部直接操作](direct-manipulation.md)
-* [手部和運動控制器](hands-and-tools.md)
+* [週框方塊和應用程式列](app-bar-and-bounding-box.md)
+* [處理](direct-manipulation.md)
+* [手部功能表](hand-menu.md)
+* [近端功能表](near-menu.md)
+* [物件集合](object-collection.md)
+* [語音命令](voice-input.md)
+* [鍵盤](keyboard.md)
+* [並用](tooltip.md)
+* [石板](slate.md)
+* [滑桿](slider.md)
+* [佈告板和常駐標籤](billboarding-and-tag-along.md)
+* [顯示進度](progress.md)
+* [表面磁性](surface-magnetism.md)

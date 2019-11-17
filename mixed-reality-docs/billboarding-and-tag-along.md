@@ -6,12 +6,12 @@ ms.author: adlinv
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，billboarding，加上標記
-ms.openlocfilehash: 06cd1c6f67f8aa2dd94173d4089adbdbd0765211
-ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
+ms.openlocfilehash: ff2b1ce20174b1b9aecbb90b1d1dc3e8896b3761
+ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74105724"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74143135"
 ---
 # <a name="billboarding-and-tag-along"></a>Billboarding 和標記-沿著
 
@@ -73,6 +73,7 @@ Billboarding 是一種行為概念，可套用至混合現實中的物件。 具
 * [並用](tooltip.md)
 * [石板](slate.md)
 * [滑桿](slider.md)
+* [器](shader.md)
 * [佈告板和常駐標籤](billboarding-and-tag-along.md)
 * [顯示進度](progress.md)
 * [表面磁性](surface-magnetism.md)

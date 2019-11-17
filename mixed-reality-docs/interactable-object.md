@@ -6,12 +6,12 @@ ms.author: jennyk
 ms.date: 06/06/2019
 ms.topic: article
 keywords: 混合的現實、控制項、互動、ui、ux
-ms.openlocfilehash: 5305af97e9811134212fc6c730727962bb9e8353
-ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
+ms.openlocfilehash: 73c8a3ce9e01f580ecbae23f2178871642c4540e
+ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74105790"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74143263"
 ---
 # <a name="interactable-object"></a>可互動物件
 
@@ -294,6 +294,7 @@ MixedRealityToolkit 的標準著色器提供各種選項，例如**近光源**�
 * [並用](tooltip.md)
 * [石板](slate.md)
 * [滑桿](slider.md)
+* [器](shader.md)
 * [佈告板和常駐標籤](billboarding-and-tag-along.md)
 * [顯示進度](progress.md)
 * [表面磁性](surface-magnetism.md)

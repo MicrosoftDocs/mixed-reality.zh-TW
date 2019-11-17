@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 11/01/2019
 ms.topic: article
 keywords: 混合的現實、控制項、互動、ui、ux
-ms.openlocfilehash: 91046dd5bbf7bdc692e4ff26c19bda59af31876e
-ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
+ms.openlocfilehash: 901e0408071161a827c0f60a229a6f73a440ac2d
+ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74106187"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74143225"
 ---
 # <a name="slider"></a>滑桿
 
@@ -47,6 +47,7 @@ ms.locfileid: "74106187"
 * [並用](tooltip.md)
 * [石板](slate.md)
 * [滑桿](slider.md)
+* [器](shader.md)
 * [佈告板和常駐標籤](billboarding-and-tag-along.md)
 * [顯示進度](progress.md)
 * [表面磁性](surface-magnetism.md)

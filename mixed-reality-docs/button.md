@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 11/01/2019
 ms.topic: article
 keywords: 混合的現實、控制項、互動、ui、ux
-ms.openlocfilehash: f0fa69239ec1b20938b679a4a04549f8f8ef900a
-ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
+ms.openlocfilehash: c3fed3b7301c907a657796da7fc83bab146e2df1
+ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74106077"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74143164"
 ---
 # <a name="button"></a>按鈕
 
@@ -75,6 +75,7 @@ ms.locfileid: "74106077"
 * [並用](tooltip.md)
 * [石板](slate.md)
 * [滑桿](slider.md)
+* [器](shader.md)
 * [佈告板和常駐標籤](billboarding-and-tag-along.md)
 * [顯示進度](progress.md)
 * [表面磁性](surface-magnetism.md)

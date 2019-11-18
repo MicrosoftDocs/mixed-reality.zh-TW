@@ -84,6 +84,7 @@
 #### [工具提示](tooltip.md)
 #### [平板](slate.md)
 #### [滑桿](slider.md)
+#### [著色器](shader.md)
 #### [佈告板和常駐標籤](billboarding-and-tag-along.md)
 #### [顯示進度](progress.md)
 #### [表面磁性](surface-magnetism.md)

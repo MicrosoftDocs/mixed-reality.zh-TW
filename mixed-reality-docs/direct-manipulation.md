@@ -7,14 +7,17 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境, 注視, 定向注視, 互動, 設計, 手部接近, HoloLens
-ms.openlocfilehash: ed3b25fe9a7dd404d07073b578b8da13e1984cab
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: e0b0e6273917df071f49eb0108039ebe204bbc12
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435986"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105938"
 ---
 # <a name="direct-manipulation-with-hands"></a>手部直接操作
+
+![按鈕](images/UX/UX_Hero_Manipulation.jpg)
+
 直接操作是直接以雙手觸控全像投影的輸入模型。 這個概念背後的構想是要讓物件如同在真實環境中作動。 按鈕只要按下即可啟用、物件可藉由抓取來選取，2D 內容的行為則類似於虛擬觸控螢幕。 因此，直接操作很容易上手，而且很有趣。 我們將直接操作視為「近距離」輸入模型，因為它最適合用於伸手可及範圍內的內容互動。
 
 直接操作以能供性為基礎，這表示它很容易使用。 使用者不需學習任何象徵性的手勢。 所有互動都是以您可觸摸或抓取的視覺化元素為基礎。
@@ -36,9 +39,9 @@ ms.locfileid: "73435986"
 </tr>
 <tr>
      <td>手部直接操作</td>
-     <td> 未支援</td>
+     <td>❌ 未支援</td>
      <td>✔️ 建議使用</td>
-     <td>建議使用替代方案<a href="point-and-commit.md">手部指向和行動</a>。</td>
+     <td>➕ 建議使用替代方案<a href="point-and-commit.md">手部指向和行動</a>。</td>
     
 </tr>
 </table>
@@ -296,12 +299,6 @@ HoloLens 2 可讓使用者將週框方塊套用至每個 3D 物件，以便用�
 
 您可能已經注意到，AR 中的手勢與 VR 中的運動控制器在互動方式上有其相似之處。 這兩種輸入在其各自的環境中都可用來觸發直接操作。 在 HoloLens 2 中，近距離以手抓取並拖曳的效用，非常類似於 WMR 運動控制器上的抓取按鈕所能做到的。 這種相似性可讓使用者在兩種平台上都能採用熟悉的互動方式，且若您決定將應用程式移轉至另一個平台，這一點可能也有幫助。
 
-
-<br>
-
----
-
-
 <br>
 
 ---
@@ -324,6 +321,18 @@ HoloLens 2 可讓使用者將週框方塊套用至每個 3D 物件，以便用�
 * **目的地**：運用使用者在執行快速拋投手勢時看往何處的相關資訊。 抓取全像投影並約略拋向您要的目的地。  
 
     雖然這有時行得通，但快速執行手勢可能會導致目的地嚴重失準。 不過，同時運用眼球追蹤或可改善手勢的準確度。
+
+<br>
+
+---
+
+## <a name="manipulation-in-mrtkmixed-reality-toolkit-for-unity"></a>MRTK (混合實境工具組) 中適用於 Unity 的操作
+使用 **[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** ，您可以使用指令碼 **ManipulationHandler**.輕鬆執行常見的操作行為。 使用 ManipulationHandler，您可以直接用手或透過手部射線來抓取和移動物件。 它也支援雙手操作來縮放和旋轉物件。
+
+* [MRTK - 操作](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ManipulationHandler.html)
+
+
+---
 
 ## <a name="see-also"></a>請參閱
 

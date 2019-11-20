@@ -7,14 +7,16 @@ ms.date: 04/05/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境, 互動, 設計, HoloLens, 手部, 遠方, 指向和行動
-ms.openlocfilehash: e454b7f26b402d5c168323762865d10f7feb8a17
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 77c596f5250240d436529e879434a8f508b06732
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437705"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105994"
 ---
 # <a name="point-and-commit-with-hands"></a>手部指向和行動
+
+![游標](images/UX/UX_Hero_HandRay.jpg)
 
 手部指向和行動是輸入模型，可讓使用者鎖定目標、選取和操作可及範圍之外的 2D 內容與 3D 物件。 「遠方 (far)」互動技術是混合實境特有的技術，不是使用者與真實世界自然互動的方式。 例如，在超級英雄電影「X 戰警」  中，[萬磁王](https://en.wikipedia.org/wiki/Magneto_(comics))能夠使用他的手觸碰和操作遠方物件。 這不是人類在現實中可做到的事。 在 HoloLens (AR) 和混合實境 (MR) 中，我們會賦予使用者這個神奇的力量，來打破真實世界的實質限制，而且我們不只透過全像攝影來提供有趣的體驗，還會讓使用者互動變得更有效率。
 
@@ -35,7 +37,7 @@ ms.locfileid: "73437705"
 </tr>
 <tr>
      <td>手部指向和行動</td>
-     <td> 未支援</td>
+     <td>❌ 未支援</td>
      <td>✔️ 建議使用</td>
      <td>✔️ 建議使用</td>
 </tr>
@@ -195,6 +197,17 @@ ms.locfileid: "73437705"
 :::row-end:::
 
 <br>
+
+
+---
+
+## <a name="hand-ray-in-mrtkmixed-reality-toolkit-for-unity"></a>MRTK (混合實境工具組) 中適用於 Unity 的手部射線
+根據預設，MRTK 會提供一個手部射線 prefab([DefaultControllerPointer.prefab](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Prefabs/Pointers))，其與命令介面的系統手部射線具有相同視覺狀態。 它是在 MRTK 輸入設定檔的 [指標] 下進行指派。 在 Windows Mixed Reality 沉浸式頭戴裝置中，相同的光線也會用於運動控制器。
+
+* [MRTK - 指標設定檔](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/MixedRealityConfigurationGuide.html#pointer-configuration)
+* [MRTK - 輸入系統](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Overview.html)
+* [MRTK - 指標](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Pointers.html)
+
 
 ---
 

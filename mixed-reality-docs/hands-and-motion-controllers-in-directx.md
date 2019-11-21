@@ -6,12 +6,12 @@ ms.author: cmeekhof
 ms.date: 04/30/2019
 ms.topic: article
 keywords: 手、運動控制器、directx、輸入、全息影像
-ms.openlocfilehash: 7b8222e5e539eb95b07cc24d6b49106bd174b490
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 54eaacc3f0dccf728b5438c020a5efd7e0788251
+ms.sourcegitcommit: 4081dc2356fec0ea3625f1d989689cfbbb3fcf5f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435192"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74203334"
 ---
 # <a name="hands-and-motion-controllers-in-directx"></a>DirectX 中的實習和運動控制器
 
@@ -99,7 +99,7 @@ for (auto& sourceState : sourceStates)
 ## <a name="cross-device-input-properties"></a>跨裝置輸入屬性
 SpatialInteractionSource API 支援具有各種功能的控制器和手追蹤系統。 其中一些功能在裝置類型之間是共通的。 例如，「手追蹤」和「動作控制器」都提供「選取」動作和3D 位置。 API 盡可能將這些通用功能對應至 SpatialInteractionSource 上的相同屬性。  這可讓應用程式更輕鬆地支援廣泛的輸入類型。 下表描述支援的屬性，以及它們如何在輸入類型之間進行比較。
 
-| 屬性 | 說明 | HoloLens 手勢 | 運動控制器 | 清楚表達的手|
+| 屬性 | 描述 | HoloLens （第1代）手勢 | 運動控制器 | 清楚表達的手|
 |--- |--- |--- |--- |--- |
 | [SpatialInteractionSource：：**慣用手**](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialinteractionsource.handedness) | 向右或向左或控制器。 | 不支援 | 支援 | 支援 |
 | [SpatialInteractionSourceState：：**IsSelectPressed**](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialinteractionsourcestate.isselectpressed) | 主要按鈕的目前狀態。 | 空中碰 | 界限 | 寬鬆的點擊（直立縮小） |
@@ -122,7 +122,7 @@ Windows Mixed Reality 支援各種外型規格中的動作控制器。  它也�
 * **抓握方向的正向軸**：當您局部關閉手（如同按住控制器）時，會透過非拇指手指所形成的電子管「轉寄」光線。
 * **抓握方向的向上軸**：右邊和後向定義所隱含的向上軸。
 
-您可以透過[SpatialInteractionSourceState：:P 屬性 r)：： TryGetLocation （...）：： SourcePointerPose](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionsourcelocation#Windows_UI_Input_Spatial_SpatialInteractionSourceLocation_SourcePointerPose)或[SpatialInteractionSourceState：： TryGetPointerPose （...）：： TryGetInteractionSourcePose](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialpointerpose#Windows_UI_Input_Spatial_SpatialPointerPose_TryGetInteractionSourcePose_Windows_UI_Input_Spatial_SpatialInteractionSource_)來存取**指標姿勢**.
+您可以透過[SpatialInteractionSourceState：:P 屬性 r)：： TryGetLocation （...）：： SourcePointerPose](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionsourcelocation#Windows_UI_Input_Spatial_SpatialInteractionSourceLocation_SourcePointerPose)或[SpatialInteractionSourceState：： TryGetPointerPose （...）：： TryGetInteractionSourcePose](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialpointerpose#Windows_UI_Input_Spatial_SpatialPointerPose_TryGetInteractionSourcePose_Windows_UI_Input_Spatial_SpatialInteractionSource_)來存取**指標姿勢**。
 
 ## <a name="controller-specific-input-properties"></a>控制器特定的輸入屬性
 對於控制器而言，SpatialInteractionSource 具有具有額外功能的控制器屬性。
@@ -146,7 +146,7 @@ Windows Mixed Reality API 可完整支援已示範的追蹤，例如在 HoloLens
 
 每個聯合都會提供下列資訊：
 
-| 名稱 | 說明 |
+| 名稱 | 描述 |
 |--- |--- |
 |位置 | 聯合的3D 位置，適用于任何要求的座標系統。 |
 |Orientation | 骨骼的3D 方向，適用于任何要求的座標系統。 |

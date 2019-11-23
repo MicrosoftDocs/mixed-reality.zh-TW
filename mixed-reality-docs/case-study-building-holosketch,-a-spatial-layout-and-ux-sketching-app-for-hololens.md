@@ -77,7 +77,7 @@ HoloSketch 支援藍牙滑鼠/鍵盤、手勢和語音命令。
 
 我們認為這項工具可以讓設計師有機會在真正的3d 空間中探索解決方案，而不會停滯在2D 中。 他們不需要考慮為其 UI 建立3D 背景，因為在 HoloLens 案例中，背景是真實世界。 HoloSketch 開啟了一種方式，讓設計人員能夠輕鬆地探索 HoloLens 上的3D 設計。
 
-## <a name="get-started"></a>[開始]
+## <a name="get-started"></a>開始使用
 
 ### <a name="how-to-import-2d-images-jpgpng-into-holosketch"></a>如何將2D 影像（JPG/PNG）匯入 HoloSketch
 

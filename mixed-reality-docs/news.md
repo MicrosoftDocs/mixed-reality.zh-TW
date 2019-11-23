@@ -47,7 +47,7 @@ ms.locfileid: "73439899"
 <td>HoloLens 2 的設計和開發指引</td><td>2019年10月</td><td> <ul><li><a href=https://docs.microsoft.com/windows/mixed-reality/>Mixed reality 總覽</a><li><a href=https://docs.microsoft.com/windows/mixed-reality/design>設計和原型</a><li><a href=https://docs.microsoft.com/windows/mixed-reality/development>開發人員工具和架構</a></td>
 </tr>
 <tr>
-  <td>Unreal 上的新資訊</td><td>2019年10月</td><td> <ul><li><a href=https://docs.microsoft.com/windows/mixed-reality/unreal-development-overview>Unreal 開發總覽</a></td>
+  <td>Unreal 上的新資訊</td><td>2019年10月</td><td> <ul><li><a href=https://docs.microsoft.com/windows/mixed-reality/unreal-development-overview>Unreal 開發概觀</a></td>
 </tr>
 <tr>
   <td>Microsoft 流暢設計</td><td>2019年10月</td><td> <ul><li><a href=https://www.microsoft.com/design/fluent/>Mixed reality 設計頁面</a></td>

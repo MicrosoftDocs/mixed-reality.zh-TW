@@ -15,13 +15,13 @@ ms.locfileid: "73926568"
 ---
 # <a name="gestures-and-motion-controllers-in-unity"></a>Unity 中的手勢和運動控制器
 
-有兩個主要的方式可[對您的](gaze-in-unity.md)目光採取行動，包括 HoloLens 和沉浸式 HMD 中的[右手手勢](gaze-and-commit.md#composite-gestures)和[運動控制器](motion-controllers.md)。 您可以透過 Unity 中的相同 Api，存取這兩個空間輸入來源的資料。
+有兩個主要的方式可對您的[目光](gaze-in-unity.md)採取行動, 包括 HoloLens 和沉浸式 HMD 中的[右手手勢](gaze-and-commit.md#composite-gestures)和[運動控制器](motion-controllers.md)。 您可以透過 Unity 中的相同 Api，存取這兩個空間輸入來源的資料。
 
-Unity 提供兩種主要方式來存取適用于 Windows Mixed Reality 的空間輸入資料、共同的*GetButton/GetAxis* api，可跨多個 Unity XR sdk 執行，以及特定的*InteractionManager/GestureRecognizer* apiWindows Mixed Reality，會公開可用的完整空間輸入資料集。
+Unity 提供兩種主要方式來存取 Windows Mixed Reality 的空間輸入資料、可跨多個 Unity XR Sdk 運作的一般*GetButton/GetAxis* api，以及 Windows Mixed reality 特有的*InteractionManager/GestureRecognizer* api，會公開可用的完整空間輸入資料集。
 
 ## <a name="unity-buttonaxis-mapping-table"></a>Unity 按鈕/軸對應表
 
-在 Windows Mixed Reality 運動控制器的 Unity 輸入管理員中，透過*GetButton/GetAxis* api 支援下表中的按鈕和軸識別碼，而「windows MR-特定」資料行則是指可從下列位置取得的屬性：*InteractionSourceState*類型。 下列各節將詳細說明每個 Api。
+在 Windows Mixed Reality 運動控制器的 Unity 輸入管理員中，透過*GetButton/GetAxis* api 支援下表中的按鈕和軸識別碼，而「windows MR-特定」資料行則是指從*InteractionSourceState*類型提供的屬性。 下列各節將詳細說明每個 Api。
 
 Windows Mixed Reality 的按鈕/軸識別碼對應通常符合 Oculus go 按鈕/軸識別碼。
 
@@ -31,7 +31,7 @@ Windows Mixed Reality 的按鈕/軸識別碼對應與 OpenVR 的對應有兩種�
 
 <table>
 <tr>
-<th rowspan="2">Input </th><th colspan="2"><a href="gestures-and-motion-controllers-in-unity.md#common-unity-apis-inputgetbuttongetaxis">通用 Unity Api</a><br />（輸入. GetButton/GetAxis） </th><th rowspan="2"><a href="gestures-and-motion-controllers-in-unity.md#">Windows MR 特有的輸入 API</a><br />XR.WSA.源</th>
+<th rowspan="2">輸入 </th><th colspan="2"><a href="gestures-and-motion-controllers-in-unity.md#common-unity-apis-inputgetbuttongetaxis">通用 Unity Api</a><br />（輸入. GetButton/GetAxis） </th><th rowspan="2"><a href="gestures-and-motion-controllers-in-unity.md#">Windows MR 特有的輸入 API</a><br />XR.WSA.源</th>
 </tr><tr>
 <th> 左手 </th><th> 右手</th>
 </tr><tr>
@@ -118,9 +118,9 @@ Windows Mixed Reality 支援各種外型規格中的動作控制器，而每個�
 <tr>
 <th> 追蹤狀態 </th><th> SourceLossRisk </th><th> PositionAccuracy </th><th> TryGetPosition</th>
 </tr><tr>
-<td> <b>高準確度</b> </td><td style="background-color: green; color: white"> &lt; 1。0 </td><td style="background-color: green; color: white"> [高] </td><td style="background-color: green; color: white"> true</td>
+<td> <b>高準確度</b> </td><td style="background-color: green; color: white"> &lt; 1。0 </td><td style="background-color: green; color: white"> 高 </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
-<td> <b>高精確度（有遺失的風險）</b> </td><td style="background-color: orange"> = = 1。0 </td><td style="background-color: green; color: white"> [高] </td><td style="background-color: green; color: white"> true</td>
+<td> <b>高精確度（有遺失的風險）</b> </td><td style="background-color: orange"> = = 1。0 </td><td style="background-color: green; color: white"> 高 </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
 <td> <b>估計精確度</b> </td><td style="background-color: orange"> = = 1。0 </td><td style="background-color: orange"> 大約 </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
@@ -131,7 +131,7 @@ Windows Mixed Reality 支援各種外型規格中的動作控制器，而每個�
 這些動作控制器的追蹤狀態定義如下：
 * **高精確度：** 雖然動作控制器是在耳機的視野中，但它通常會根據視覺效果追蹤來提供高精確度的位置。 請注意，移動控制器會暫時離開此欄位，或從耳機感應器暫時遮蔽（例如，使用者的另一方面），會根據控制站的慣性追蹤，以較短的時間繼續傳回高準確度的姿勢直接.
 * **高精確度（有遺失的風險）：** 當使用者將動作控制器移到耳機的視野邊緣上方時，耳機很快就無法以視覺方式追蹤控制器的位置。 應用程式會透過看到**SourceLossRisk**觸達1.0，得知控制器已達到此 FOV 界限。 此時，應用程式可能會選擇暫停需要穩定串流高品質姿勢的控制器手勢。
-* **估計精確度：** 當控制器已夠長的視覺效果追蹤時，控制器的位置將會降到近似的精確度位置。 此時，系統會將控制器鎖定給使用者，並在移動時追蹤使用者的位置，同時仍然使用其內部方向感應器來公開控制器的真正方向。 許多使用控制器來指向並啟動 UI 元素的應用程式，都可以正常運作，而不會察覺到使用者注意到的精確度。 具有較**高**輸入需求的應用程式可能會選擇透過檢查**PositionAccuracy**屬性（例如，讓使用者在螢幕上的目標上有更大的 Hitbox），從高度準確度中瞭解這項下降**的準確度。** 在這段期間內。
+* **估計精確度：** 當控制器已夠長的視覺效果追蹤時，控制器的位置將會降到近似的精確度位置。 此時，系統會將控制器鎖定給使用者，並在移動時追蹤使用者的位置，同時仍然使用其內部方向感應器來公開控制器的真正方向。 許多使用控制器來指向並啟動 UI 元素的應用程式，都可以正常運作，而不會察覺到使用者注意到的精確度。 如果應用程式具有較大的輸入需求，則可透過檢查**PositionAccuracy**屬性，選擇是否要將這項從**高**準確度降到**近似**精確度，例如在這段期間，讓使用者更有更大的 hitbox 在螢幕上的目標上。
 * **沒有位置：** 雖然控制器可以在大概的精確度內正常運作，但有時系統會知道即使是主體鎖定的位置也不會有意義。 例如，剛開啟的控制器可能從未以視覺化方式觀察到，或使用者可能會關閉某個控制器，然後由其他人挑選。 在這些時間，系統不會提供任何位置給應用程式，而且*TryGetPosition*會傳回 false。
 
 ## <a name="common-unity-apis-inputgetbuttongetaxis"></a>通用 Unity Api （輸入. GetButton/GetAxis）

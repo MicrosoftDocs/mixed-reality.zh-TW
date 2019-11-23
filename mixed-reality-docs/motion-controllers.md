@@ -40,7 +40,7 @@ ms.locfileid: "73437846"
     <col width="25%" />
 </colgroup>
 <tr>
-     <td><strong>特徵</strong></td>
+     <td><strong>功能</strong></td>
      <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 代)</strong></a></td>
      <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
      <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
@@ -69,9 +69,9 @@ Windows Mixed Reality 運動控制器使用沉浸式頭戴式裝置中的感應�
 * 上下
 * 觸控板
 
-## <a name="setup"></a>[設定]
+## <a name="setup"></a>設定
 
-### <a name="before-you-begin"></a>在您開始前
+### <a name="before-you-begin"></a>開始之前
 
 **您將需要：**
 * 一組兩個動作控制器。
@@ -203,9 +203,9 @@ Windows Mixed Reality 支援各種外型規格中的動作控制器，而每個�
 <tr>
 <th> 追蹤狀態 </th><th> SourceLossRisk </th><th> PositionAccuracy </th><th> TryGetPosition</th>
 </tr><tr>
-<td> <b>高準確度</b> </td><td style="background-color: green; color: white"> &lt; 1。0 </td><td style="background-color: green; color: white"> [高] </td><td style="background-color: green; color: white"> true</td>
+<td> <b>高準確度</b> </td><td style="background-color: green; color: white"> &lt; 1。0 </td><td style="background-color: green; color: white"> 高 </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
-<td> <b>高精確度（有遺失的風險）</b> </td><td style="background-color: orange"> = = 1。0 </td><td style="background-color: green; color: white"> [高] </td><td style="background-color: green; color: white"> true</td>
+<td> <b>高精確度（有遺失的風險）</b> </td><td style="background-color: orange"> = = 1。0 </td><td style="background-color: green; color: white"> 高 </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
 <td> <b>估計精確度</b> </td><td style="background-color: orange"> = = 1。0 </td><td style="background-color: orange"> 大約 </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
@@ -218,7 +218,7 @@ Windows Mixed Reality 支援各種外型規格中的動作控制器，而每個�
 這些動作控制器的追蹤狀態定義如下：
 * **高精確度：** 雖然動作控制器是在耳機的視野中，但它通常會根據視覺效果追蹤來提供高精確度的位置。 請注意，移動控制器會暫時離開此欄位，或從耳機感應器暫時遮蔽（例如，使用者的另一方面），會根據控制站的慣性追蹤，以較短的時間繼續傳回高準確度的姿勢直接.
 * **高精確度（有遺失的風險）：** 當使用者將動作控制器移到耳機的視野邊緣上方時，耳機很快就無法以視覺方式追蹤控制器的位置。 應用程式會透過看到**SourceLossRisk**觸達1.0，得知控制器已達到此 FOV 界限。 此時，應用程式可能會選擇暫停需要穩定串流高品質姿勢的控制器手勢。
-* **估計精確度：** 當控制器已夠長的視覺效果追蹤時，控制器的位置將會降到近似的精確度位置。 此時，系統會將控制器鎖定給使用者，並在移動時追蹤使用者的位置，同時仍然使用其內部方向感應器來公開控制器的真正方向。 許多使用控制器來指向並啟動 UI 元素的應用程式，都可以正常運作，而不會察覺到使用者注意到的精確度。 具有較**高**輸入需求的應用程式可能會選擇透過檢查**PositionAccuracy**屬性（例如，讓使用者在螢幕上的目標上有更大的 Hitbox），從高度準確度中瞭解這項下降**的準確度。** 在這段期間內。
+* **估計精確度：** 當控制器已夠長的視覺效果追蹤時，控制器的位置將會降到近似的精確度位置。 此時，系統會將控制器鎖定給使用者，並在移動時追蹤使用者的位置，同時仍然使用其內部方向感應器來公開控制器的真正方向。 許多使用控制器來指向並啟動 UI 元素的應用程式，都可以正常運作，而不會察覺到使用者注意到的精確度。 如果應用程式具有較大的輸入需求，則可透過檢查**PositionAccuracy**屬性，選擇是否要將這項從**高**準確度降到**近似**精確度，例如在這段期間，讓使用者更有更大的 hitbox 在螢幕上的目標上。
 * **沒有位置：** 雖然控制器可以在大概的精確度內正常運作，但有時系統會知道即使是主體鎖定的位置也不會有意義。 例如，剛開啟的控制器可能從未以視覺化方式觀察到，或使用者可能會關閉某個控制器，然後由其他人挑選。 在這些時間，系統不會提供任何位置給應用程式，而且**TryGetPosition**會傳回 false。
 
 ## <a name="interactions-low-level-spatial-input"></a>互動：低層級空間輸入
@@ -269,7 +269,7 @@ Windows Mixed Reality 支援各種外型規格中的動作控制器，而每個�
 
 不適用於通用 Windows 應用程式。
 
-## <a name="troubleshooting"></a>[疑難排解]
+## <a name="troubleshooting"></a>疑難排解
 
 請參閱愛好者指南中的[動作控制器疑難排解](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/troubleshooting-windows-mixed-reality#motion-controllers)。
 

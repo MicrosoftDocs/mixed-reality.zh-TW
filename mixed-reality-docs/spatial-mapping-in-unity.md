@@ -33,7 +33,7 @@ Unity 包含空間對應的完整支援，這會以下列方式公開給開發�
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>特徵</strong></td>
+        <td><strong>功能</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 代)</strong></a></td>
         <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
@@ -470,7 +470,7 @@ Import_UnderstandingMesh –
 從體素磁片區產生的 ![產生的網格](images/su-custommesh.jpg)<br>
 *從體素磁片區產生的網格*
 
-## <a name="troubleshooting"></a>[疑難排解]
+## <a name="troubleshooting"></a>疑難排解
 * 請確定您已設定[SpatialPerception](#setting-the-spatialperception-capability)功能
 * 當追蹤遺失時，下一個 OnSurfaceChanged 事件將會移除所有的網格。
 

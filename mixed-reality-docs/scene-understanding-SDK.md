@@ -1,64 +1,64 @@
 ---
-title: 場景理解 SDK
-description: 場景理解 SDK 的程式設計指南
+title: Scene understanding SDK
+description: Programming guide to the Scene Understanding SDK
 author: szymons
 ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
-keywords: 場景理解，空間對應，Windows Mixed Reality，Unity
-ms.openlocfilehash: b7d4103697d94f5e59c77237b4948f62e4e4b621
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+keywords: Scene Understanding, Spatial Mapping, Windows Mixed Reality, Unity
+ms.openlocfilehash: f38145c4124a9f162e58188c6179dc29c22e864e
+ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926909"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74491126"
 ---
-# <a name="scene-understanding-sdk-overview"></a>場景理解 SDK 總覽
+# <a name="scene-understanding-sdk-overview"></a>Scene understanding SDK overview
 
-場景理解的目標是要轉換混合現實裝置所捕捉到的非結構化環境感應器資料，並將它轉換成可直覺且易於開發的功能強大但抽象化的標記法。 SDK 會作為應用程式與場景理解執行時間之間的通訊層。 其目的是要模擬現有的標準結構，例如3d 呈現的3d 場景圖形，以及2d 應用程式的2D 矩形/面板。 雖然結構的場景理解模擬會對應到您可能使用的具體架構，但在一般的 SceneUnderstanding 中，不會有架構中立，允許在與它互動的不同架構之間進行交互操作。 隨著場景的理解發展，SDK 的角色是為了確保新的標記法和功能會繼續在統一的架構中公開。 在本檔中，我們會先引進高階概念，協助您熟悉開發環境/使用方式，然後針對特定的類別和結構提供更詳細的檔。
+The goal of Scene understanding is to transform the un-structured environment sensor data that your Mixed Reality device captures and to convert it into a powerful but abstracted representation that is intuitive and easy to develop for. The SDK acts as the communication layer between your application and the Scene Understanding runtime. It's aimed to mimic existing standard constructs such as 3d scene graphs for 3d representations and 2D rectangles/panels for 2d applications. While the constructs Scene Understanding mimics will map to concrete frameworks you may use, in general SceneUnderstanding is framework agnostic allowing for interop between varied frameworks that interact with it. As Scene Understanding evolves the role of the SDK is to ensure new representations and capabilities continue to be exposed within a unified framework. In this document we will first introduce high level concepts that will help you get familiar with the development environment/usage and then provide more detailed documentation for specific classes and constructs.
 
-## <a name="where-do-i-get-the-sdk"></a>哪裡可以取得 SDK？
+## <a name="where-do-i-get-the-sdk"></a>Where do I get the SDK?
 
-SceneUnderstanding SDK 可透過 NuGet 下載。
+The SceneUnderstanding SDK is downloadable via NuGet.
 
 [SceneUnderstanding SDK](https://www.nuget.org/packages/Microsoft.MixedReality.SceneUnderstanding/)
 
-**注意：** 最新版本取決於預覽套件，而您必須啟用發行前版本套件才能看到它。
+**Note:** the latest release depends on preview packages and you will need to enable pre-release packages to see it.
 
-從版本 0.5.2022-rc，場景理解支援的C#語言投影，並C++允許應用程式開發適用于 Win32 或 UWP 平臺的應用程式。 在此版本中，SceneUnderstanding 支援使用 unity 的編輯器支援，而使 SceneObserver 僅用於與 HoloLens2 通訊。 
+As of version 0.5.2022-rc, Scene Understanding supports language projections for C# and C++ allowing applications to develop applications for Win32 or UWP platforms. As of this version, SceneUnderstanding supports unity in-editor support barring the SceneObserver which is used solely for communicating with HoloLens2. 
 
-SceneUnderstanding 需要18362或更高版本 Windows SDK。 
+SceneUnderstanding requires Windows SDK version 18362 or higher. 
 
-如果您在 Unity 專案中使用 SDK，請使用適用于[unity 的 NuGet](https://github.com/GlitchEnzo/NuGetForUnity)將套件安裝到您的專案中。
+If you are using the SDK in a Unity project, please use [NuGet for Unity](https://github.com/GlitchEnzo/NuGetForUnity) to install the package into your project.
 
-## <a name="conceptual-overview"></a>概念總覽
+## <a name="conceptual-overview"></a>Conceptual Overview
 
-### <a name="the-scene"></a>場景
+### <a name="the-scene"></a>The Scene
 
-您的混合現實裝置會持續整合其在您環境中所見到的資訊。 場景瞭解漏斗圖所有這些資料來源，並產生一個單一的統一抽象概念。 場景理解會產生場景，這是代表單一事物（例如牆/天花板/樓層）實例的[SceneObjects](scene-understanding-SDK.md#sceneobjects)組合。場景物件本身是[SceneComponents](scene-understanding-SDK.md#scenecomponents)的組合，代表組成此 SceneObject 的更細微部分。 元件的範例包括四邊形和網格，但未來可能會代表周框方塊、碰撞網格、中繼資料等。
+Your mixed reality device is constantly integrating information about what it sees in your environment. Scene Understanding funnels all of these data sources and produces one single cohesive abstraction. Scene Understanding generates Scenes which are a composition of [SceneObjects](scene-understanding-SDK.md#sceneobjects) that represent an instance of a single thing, (e.g. a wall/ceiling/floor.) Scene Objects themselves are a composition of [SceneComponents](scene-understanding-SDK.md#scenecomponents) which represent more granular pieces that make up this SceneObject. Examples of components are quads and meshes, but in the future could represent bounding boxes, collision meshes, metadata etc...
 
-將原始感應器資料轉換成場景的程式，是可能耗費資源的作業，可能需要幾秒鐘的時間，才會有非常大的空間（~ 50x50m），而不是由裝置所計算，因此不會有任何問題應用程式要求。 相反地，場景產生是由您的應用程式隨選觸發。 SceneObserver 類別具有可計算或還原序列化場景的靜態方法，您可以接著列舉/與之互動。 「計算」動作會隨選執行，並在 CPU 上執行，但在不同的進程（混合現實驅動程式）中執行。 不過，雖然我們會在另一個進程中計算，但產生的場景資料會儲存在應用程式的場景物件中並加以維護。 
+The process of converting the raw sensor data into a Scene is a potentially expensive operation that could take seconds for medium spaces (~10x10m) to minutes for very large spaces (~50x50m) and therefore it is not something that is being computed by the device without application request. Instead, Scene generation is triggered by your application on demand. The SceneObserver class has static methods that can Compute or Deserialize a scene, which you can then enumerate/interact with. The "Compute" action is executed on-demand and executes on the CPU but in a separate process (the Mixed Reality Driver). However, while we do compute in another process the resulting Scene data is stored and maintained in your application in the Scene object. 
 
-以下圖表說明此流程流程，並顯示兩個應用程式與場景理解執行時間互動的範例。 
+Below is a diagram that illustrates this process flow and shows examples of two applications interfacing with the Scene Understanding runtime. 
 
-![處理圖表](images/SU-ProcessFlow.png)
+![Process Diagram](images/SU-ProcessFlow.png)
 
-左側是混合現實執行時間的圖表，它一律開啟並在自己的進程中執行。 此執行時間會負責執行裝置追蹤、空間對應，以及場景理解用來瞭解有關世界的原因的其他作業。 在圖表的右側，我們會顯示兩個理論上的應用程式，讓您使用場景理解。 第一個應用程式介面的 MRTK 會在內部使用場景理解 SDK，第二個應用程式會計算並使用兩個不同的場景實例。 此圖表中的所有3個場景都會產生不同的場景實例，而驅動程式不會追蹤全域狀態，而在某個場景中的應用程式和場景物件之間，則不會在另一個場景中找到。 場景理解提供一段時間的追蹤機制，但這是使用 SDK 來完成的，而執行這項追蹤的程式碼則是在應用程式的 SDK 中執行。
+On the left hand side is a diagram of the mixed reality runtime which is always on and running in its own process. This runtime is responsible for performing device tracking, spatial mapping, and other operations that Scene Understanding uses to understand and reason about the world around you. On the right side of the diagram, we show two theoretical applications that make use of Scene Understanding. The first application interfaces with MRTK which uses the Scene Understanding SDK internally, the second app computes and uses two separate scene instances. All 3 Scenes in this diagram generate distinct instances of the scenes, the driver is not tracking global state that is shared between applications and Scene Objects in one scene are not found in another. Scene Understanding does provide a mechanism to track over time, but this is done using the SDK and the code that performs this tracking is running in the SDK in your app's process.
 
-因為每個場景都會將它的資料儲存在您應用程式的記憶體空間中，所以您可以假設場景物件或其內部資料的所有函式一律會在應用程式的進程中執行。
+Because each Scene stores it's data in your application's memory space, you can assume that all function of the Scene object or it's internal data is always executed in your application's process.
 
 ### <a name="layout"></a>配置
 
-若要使用場景理解，請務必瞭解並瞭解執行時間如何在邏輯上或實際地代表元件。 場景代表具有特定版面配置的資料，而該配置已選擇簡單，同時維持 pliable 以符合未來需求的基礎結構，而不需要主要的修訂。 此場景的運作方式是將所有元件（所有場景物件的建立區塊）儲存在一般清單中，並透過參考（其中特定元件會參考其他專案）來定義階層和組合。
+To work with Scene Understanding it may be valuable to know and understand how the runtime represents components logically and physically. The Scene represents data with a specific layout that was chosen to be simple while maintaining an underlying structure that is pliable to meet future requirements without needing major revisions. The Scene does this by storing all Components (building blocks for all Scene Objects) in a flat list and defining hierarchy and composition through references where specific components reference others.
 
-在下方，我們以其平面和邏輯形式呈現結構的範例。
+Below we present an example of a structure in both its flat and logical form.
 
 <table>
-<tr><th>邏輯版面配置</th><th>實體版面配置</th></tr>
+<tr><th>Logical Layout</th><th>Physical Layout</th></tr>
 <tr>
 <td>
 <ul>
-  切換
+  Scene
   <ul>
   <li>SceneObject_1
     <ul>
@@ -95,57 +95,67 @@ SceneUnderstanding 需要18362或更高版本 Windows SDK。
 </tr>
 </table>
 
-下圖將重點放在場景的實體和邏輯版面配置之間的差異。 在左側，我們會看到您的應用程式在列舉場景時所看到之資料的階層式配置。 在右側，我們看到場景實際上是由12個相異元件所組成，視需要個別存取。 在處理新場景時，我們預期應用程式會以邏輯方式將此階層引導，不過，在場景更新之間進行追蹤時，某些應用程式可能只會對以兩個場景之間共用的特定元件為目標感興趣。
+This illustration highlights the difference between the physical and logical layout of the Scene. On the left we see the hierarchical layout of the data that your application sees when enumerating the scene. On the right we see that the scene is actually comprised of 12 distinct components that are accessible individually if necessary. When processing a new scene, we expect applications to walk this hierarchy logically, however when tracking between scene updates, some applications may only be interested in targeting specific components that are shared between two scenes.
 
 ## <a name="api-overview"></a>API 概觀
 
-下一節提供場景理解中之結構的高階總覽。 閱讀本節可讓您瞭解場景的呈現方式，以及各種元件的用途/用途。 下一節將提供在此總覽中說明 mda 的具體程式碼範例和其他詳細資料。
+The following section provides a high-level overview of the constructs in Scene Understanding. Reading this section will give you an  understanding of how scenes are represented, and what the various components do/are used for. The next section will provide concrete code examples and additional details that are glossed over in this overview.
 
-下面所述的所有類型都位於 `Microsoft.MixedReality.SceneUnderstanding` 命名空間中。
+All of the types described below reside in the `Microsoft.MixedReality.SceneUnderstanding` namespace.
 
 ### <a name="scenecomponents"></a>SceneComponents
 
-現在您已瞭解幕後的邏輯版面配置，現在可以呈現 SceneComponents 的概念，以及如何使用它們來撰寫階層。 SceneComponents 是 SceneUnderstanding 中最細微的分解，代表單一核心的事物，例如網格或四個或周框方塊。 SceneComponents 是可以獨立更新並可由其他 SceneComponents 參考的專案，因此，它們有一個唯一識別碼的單一全域屬性，可允許這種類型的追蹤/參考機制。 識別碼用於場景階層的邏輯組合以及物件持續性（更新一個場景相對於另一個場景的動作）。 
+Now that you understand the logical layout of scenes we can now present the concept of SceneComponents and how they are used to compose hierarchy. SceneComponents are the most granular decompositions in SceneUnderstanding representing a single core thing, e.g. a mesh or a quad or a bounding box. SceneComponents are things that can update independently and can be referenced by other SceneComponents, hence they have a single global property a unique Id, that allow for this type of tracking/referencing mechanism. Ids are used for the logical composition of scene hierarchy as well as object persistence (the act of updating one scene relative to another.) 
 
-如果您將每個新計算的場景都視為相異，而且只要列舉其中的所有資料，則識別碼對您而言都是透明的。 不過，如果您打算追蹤多個更新的元件，您會使用識別碼來編制索引，並尋找場景物件之間的 SceneComponents。
+If you are treating every newly computed scene as being distinct, and simply enumerating all data within it then Ids are largely transparent to you. However, if you are planning to track components over several updates you will use the Ids to index and find SceneComponents between Scene objects.
 
 ### <a name="sceneobjects"></a>SceneObjects
 
-SceneObject 是一種 SceneComponent，代表「事物」的實例，例如牆、樓層、上限等等。以其 Kind 屬性工作表示。 SceneObjects 是幾何，因此具有在空間中代表其位置的函式和屬性，但不包含任何幾何或邏輯結構。 相反地，SceneObjects 參考其他 SceneComponents，特別是 SceneQuads 和 SceneMeshes，可提供系統支援的各種標記法。 計算新場景時，您的應用程式很可能會列舉場景的 SceneObjects 來處理其感興趣的內容。
+A SceneObject is a SceneComponent that represents an instance of a "thing" e.g. a wall, a floor, a ceiling, etc... expressed by their Kind property. SceneObjects are geometric, and therefore have functions and properties that represent their location in space, however they don't contain any geometric or logical structure. Instead, SceneObjects reference other SceneComponents, specifically SceneQuads and SceneMeshes which provide the varied representations that are supported by the system. When a new scene is computed, your application will most likely enumerate the Scene's SceneObjects to process what it's interested in.
 
-SceneObjects 可以有下列任何一項：
+SceneObjects can have any one of the following:
 
 <table>
 <tr>
 <th>SceneObjectKind</th> <th>說明</th>
 </tr>
-<tr><td>背景</td><td>已知 SceneObject<b>不</b>是其他可辨識類型的場景物件之一。 此類別不應與 [不明] 混淆，其中的背景已知不是牆/樓層/上限等等 .。。雖然不明尚未分類。</b></td></tr>
-<tr><td>內牆</td><td>實體牆。 牆會假設為 immovable 環境結構。</td></tr>
-<tr><td>車間</td><td>樓層是其中一個可以進行的任何表面。 注意：樓梯不是樓層。 另請注意，該樓層會假設任何 walkable 介面，因此不會明確假設為單一樓層。 多層結構、斜坡等等 .。。全都分類為樓層。</td></tr>
-<tr><td>向上</td><td>房間的上方表面。</td></tr>
-<tr><td>平台</td><td>您可以放置全息影像的大型平面。 這些通常會代表資料表、countertops 和其他大型水準表面。</td></tr>
-<tr><td>World</td><td>標記不可知之幾何資料的保留標籤。 藉由設定 EnableWorldMesh 更新旗標所產生的網格會分類為「世界」。</td></tr>
-<tr><td>Unknown</td><td>這個場景物件尚未分類並指派一種類型。 這不應該與背景混淆，因為此物件可能是任何專案，系統還不會為其提供強大的分類。</td></tr>
+<tr><td>背景</td><td>The SceneObject is known to be <b>not</b> one of the other recognized kinds of scene object. This class should not be confused with Unknown where Background is known not to be wall/floor/ceiling etc... while unknown is not yet categorized.</b></td></tr>
+<tr><td>Wall</td><td>A physical wall. Walls are assumed to be immovable environmental structures.</td></tr>
+<tr><td>Floor</td><td>Floors are any surfaces on which one can walk. Note: stairs are not floors. Also note, that floors assume any walkable surface and therefore there is no explicit assumption of a singular floor. Multi-level structures, ramps etc... should all classify as floor.</td></tr>
+<tr><td>Ceiling</td><td>The upper surface of a room.</td></tr>
+<tr><td>平台</td><td>A large flat surface on which you could place holograms. These tend to represent tables, countertops and other large horizontal surfaces.</td></tr>
+<tr><td>World</td><td>A reserved label for geometric data that is agnostic to labeling. The mesh generated by setting the EnableWorldMesh update flag would be classified as world.</td></tr>
+<tr><td>Unknown</td><td>This scene object has yet to be classified and assigned a kind. This should not be confused with Background, as this object could be anything, the system has just not come up with a strong enough classification for it yet.</td></tr>
 </tr>
 </table>
 
 ### <a name="scenemesh"></a>SceneMesh
 
-SceneMesh 是一種 SceneComponent，其使用三角形清單來接近任意幾何物件的幾何。 SceneMeshes 是用於數個不同的內容中，它們可以代表防水資料格結構的元件，或做為 WorldMesh，代表與場景相關聯的未系結空間對應網格。 每個網格所提供的索引和頂點資料，都會使用與用來在所有新式轉譯 Api 中呈現三角形網格的[頂點和索引緩衝區](https://msdn.microsoft.com/library/windows/desktop/bb147325%28v=vs.85%29.aspx)相同的熟悉配置。 請注意，在場景理解中，網格會使用32位索引，而且可能需要細分為特定轉譯引擎的區塊。
+A SceneMesh is a SceneComponent that approximates the geometry of arbitrary geometric objects using a triangle list. SceneMeshes are used in several different contexts, they can represent components of the watertight cell structure or as the WorldMesh which represents the unbounded spatial mapping mesh associated with the Scene. The index and vertex data provided with each mesh uses the same familiar layout as the [vertex and index buffers](https://msdn.microsoft.com/library/windows/desktop/bb147325%28v=vs.85%29.aspx) that are used for rendering triangle meshes in all modern rendering APIs. Note that in Scene Understanding, meshes use 32-bit indices and may need to be broken up into chunks for certain rendering engines.
+
+#### <a name="winding-order-and-coordinate-systems"></a>Winding Order and Coordinate Systems
+
+All meshes produced by Scene Understanding are expected to return meshes in a Right-Handed coordinate system using clockwise winding order. 
+
+Note: OS builds prior to .191105 may have a known bug where "World" meshes were returning in Counter-Clockwise winding order, which has subsequently been fixed.
 
 ### <a name="scenequad"></a>SceneQuad
 
-SceneQuad 是代表佔據3d 世界之2d 表面的 SceneComponent。 SceneQuads 的使用方式類似于 ARKit ARPlaneAnchor 或 ARCore 平面，但它們提供更高階的功能，做為一般應用程式或增強 UX 所使用的2d 畫布。 2D 特定 Api 是針對讓放置和版面配置便於使用的四邊形所提供，而使用四邊形的開發（除了轉譯外）應該比使用3d 網格更類似于2d 畫布。
+A SceneQuad is a SceneComponent that represents 2d surfaces that occupy the 3d world. SceneQuads can be used similarly to ARKit ARPlaneAnchor or ARCore Planes but they offer more high level functionality as 2d canvases to be used by flat apps, or augmented UX. 2D specific APIs are provided for quads that make placement and layout simple to use, and developing (with the exception of rendering) with quads should feel more akin to working with 2d canvases than 3d meshes.
 
-## <a name="scene-understanding-sdk-details-and-reference"></a>場景瞭解 SDK 詳細資料和參考
+#### <a name="scenequad-shape"></a>SceneQuad shape
 
-下一節將協助您熟悉 SceneUnderstanding 的基本概念。 這一節應該會提供您基本知識，此時您應該有足夠的內容可以流覽範例應用程式，以查看如何全面性地使用 SceneUnderstanding。
+SceneQuads define a bounded rectangular surface in 2d. However, SceneQuads are representing surfaces with arbitrary and potentially complex shapes (e.g. a donut shaped table.) To represent the complex shape of the surface of a quad you may use the GetSurfaceMask API to render the shape of the surface onto an image buffer you provide. If the SceneObject that has the quad also has a mesh, the mesh triangles should be equivalent to this rendered image, they both represent real geometry of the surface, just either in 2d or 3d coordinates.
+
+## <a name="scene-understanding-sdk-details-and-reference"></a>Scene understanding SDK details and reference
+
+The following section will help get you familiar with the basics of SceneUnderstanding. This section should provide you with the basics, at which point you should have enough context to browse through the sample applications to see how SceneUnderstanding is used holistically.
 
 ### <a name="initialization"></a>初始化
 
-使用 SceneUnderstanding 的第一個步驟是讓您的應用程式取得場景物件的參考。 這可以透過兩種方式的其中一種來完成，也可以由驅動程式來計算場景，或在過去計算的現有場景可以取消序列化。 後者特別適用于在開發期間使用 SceneUnderstanding，其中應用程式和體驗可以在沒有混合現實裝置的情況下快速建立原型。
+The first step to working with SceneUnderstanding is for your application to gain reference to a Scene object. This can be done in one of two ways, a Scene can either be computed by the driver, or an existing Scene that was computed in the past can be de-serialized. The latter is particularly useful for working with SceneUnderstanding during development, where applications and experiences can be prototyped quickly without a mixed reality device.
 
-場景會使用 SceneObserver 來計算。 在建立場景之前，您的應用程式應該查詢您的裝置，以確保它支援 SceneUnderstanding，以及要求使用者存取 SceneUnderstanding 所需的資訊。
+Scenes are computed using a SceneObserver. Before creating a Scene, your application should query your device to ensure that it supports SceneUnderstanding, as well as to request user access for information that SceneUnderstanding needs.
 
 ```cs
 if (SceneObserver.IsSupported())
@@ -157,7 +167,7 @@ if (SceneObserver.IsSupported())
 await SceneObserver.RequestAccessAsync();
 ```
 
-如果未呼叫 RequestAccessAsync （），則計算新場景將會失敗。 接下來，我們將計算一個以混合現實耳機為基礎的新場景，並具有10個計量半徑。
+If RequestAccessAsync() is not called, computing a new Scene will fail. Next we will compute a new scene that's rooted around the Mixed Reality headset and has a 10 meter radius.
 
 ```cs
 // Create Query settings for the scene update
@@ -173,9 +183,9 @@ querySettings.RequestedMeshLevelOfDetail = SceneMeshLevelOfDetail.Fine;         
 Scene myScene = SceneObserver.ComputeAsync(querySettings, 10.0f).GetAwaiter().GetResult();
 ```
 
-### <a name="initialization-from-data-aka-the-pc-path"></a>從資料初始化（也稱為 電腦路徑）
+### <a name="initialization-from-data-aka-the-pc-path"></a>Initialization from Data (aka. the PC Path)
 
-雖然可以針對直接耗用量來計算場景，但也可以使用序列化形式來計算，以供稍後使用。 這已證明在開發時非常有用，因為它可讓開發人員在不需要裝置的情況下工作並測試場景理解。 將場景序列化的動作和計算方式幾乎相同，資料會傳回到您的應用程式，而不是由 SDK 在本機進行還原序列化。 接著，您可以自行將其還原序列化，或儲存以供日後使用。
+While Scenes can be computed for direct consumption, they can also be computed in serialized form for later use. This has proven to be very useful for development as it allows developers to work in and test Scene Understanding without the need for a device. The act of serializing a scene is nearly identical to computing it, the data is returned to your application instead of being deserialized locally by the SDK. You may then deserialize it yourself or save it for future use.
 
 ```cs
 // Create Query settings for the scene update
@@ -192,9 +202,9 @@ Scene mySceneDeSerialized = Scene.Deserialize(newSceneData);
 // Save newSceneBlob for later
 ```
 
-### <a name="sceneobject-enumeration"></a>SceneObject 列舉
+### <a name="sceneobject-enumeration"></a>SceneObject Enumeration
 
-既然您的應用程式有一個場景，您的應用程式就會查看 SceneObjects 並與之互動。 這是藉由存取**SceneObjects**屬性來完成：
+Now that your application has a scene, your application will be looking at and interacting with SceneObjects. This is done by accessing the **SceneObjects** property:
 
 ```cs
 SceneObject firstFloor = null;
@@ -210,9 +220,9 @@ foreach (var sceneObject in myScene.SceneObjects)
 }
 ```
 
-### <a name="component-update-and-re-finding-components"></a>元件更新和重新尋找元件
+### <a name="component-update-and-re-finding-components"></a>Component update and re-finding components
 
-還有另一個函式可抓取場景中稱為***sys.application.findcomponent***的元件。 當更新追蹤物件，並在後續的幕後尋找時，此函式會很有用。 下列程式碼會計算相對於前一個場景的新場景，然後在新場景中尋找樓層。
+There is another function that retrieves components in the Scene called ***FindComponent***. This function is useful when updating tracking objects and finding them in subsequent scenes. The following code will compute a new scene relative to a previous scene and then find the floor in the new scene.
 
 ```cs
 // Compute a new scene, and tell the system that we want to compute relative to the previous scene
@@ -227,9 +237,9 @@ if (firstFloor != null)
 }
 ```
 
-## <a name="accessing-meshes-and-quads-from-scene-objects"></a>從場景物件存取網格和四邊形
+## <a name="accessing-meshes-and-quads-from-scene-objects"></a>Accessing Meshes and Quads from Scene Objects
 
-一旦找到 SceneObjects，您的應用程式很可能會想要存取包含在其所組成之四邊形/網格中的資料。 此資料會使用***四邊形***和***網格***屬性來存取。 下列程式碼將列舉 floor 物件的所有四邊形和網格。
+Once SceneObjects have been found your application will most likely want to access the data that is contained in the quads/meshes that it is comprised of. This data is accessed with the ***Quads*** and ***Meshes*** properties. The following code will enumerate all quads and meshes of our floor object.
 
 ```cs
 
@@ -249,13 +259,13 @@ foreach (var mesh in firstFloor.Meshes)
 }
 ```
 
-請注意，它是具有相對於場景原點之轉換的 SceneObject。 這是因為 SceneObject 代表「事物」的實例，並且會在空間中定位，四邊形和網格代表相對於其父系的轉換幾何。 不同的 SceneObjects 可以參考相同的 SceneMesh/SceneQuad SceneComponents，也可能是 SceneObject 有一個以上的 SceneMesh/SceneQuad。
+Notice that it is the SceneObject that has the transform that is relative to the Scene origin. This is because the SceneObject represents an instance of a "thing" and is locatable in space, the quads and meshes represent geometry that is transformed relative to their parent. It is possible for separate SceneObjects to reference the same SceneMesh/SceneQuad SceneComponents, and it is also possible that a SceneObject has more than one SceneMesh/SceneQuad.
 
-### <a name="dealing-with-transforms"></a>處理轉換
+### <a name="dealing-with-transforms"></a>Dealing with Transforms
 
-在處理轉換時，場景理解已刻意嘗試配合傳統的3D 場景標記法。 因此，每個場景會限制為單一座標系統，與最常見的3D 環境表示相同。 SceneObjects 每個都會提供其位置作為座標系統內的位置和方向。 如果您的應用程式正在處理的場景會延伸單一來源提供的限制，可以將 SceneObjects 錨定至 SpatialAnchors，或產生數個場景並將它們合併在一起，但為了簡單起見，我們假設防水場景存在於自己的由 OriginSpatialGraphNodeId 所定義之一個等位所當地語系化的原始來源。
+Scene Understanding has made a deliberate attempt to align with traditional 3D scene representations when dealing with transforms. Each Scene is therefore confined to a single coordinate system much like most common 3D environmental representations. SceneObjects each provide their location as a position and orientation within that coordinate system. If your application is dealing with Scenes that stretch the limit of what a single origin provides it can anchor SceneObjects to SpatialAnchors, or generate several scenes and merge them together, but for simplicity we assume that watertight scenes exist in their own origin that's localized by one NodeId defined by Scene.OriginSpatialGraphNodeId.
 
-例如，下列 Unity 程式碼示範如何使用 Windows 認知和 Unity Api，將座標系統對齊在一起。 如需有關取得對應至 Unity 之 SpatialCoordinateSystem 的詳細資訊，請參閱[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem)和[SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview) ，以取得有關 Windows 認知 api 的詳細資料，以及[unity 中的混合現實原生物件](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced)。世界原點，以及在 `System.Numerics.Matrix4x4` 和 `UnityEngine.Matrix4x4`之間轉換 `.ToUnity()` 擴充方法。
+The following Unity code, for example, shows how to use Windows Perception and Unity APIs to align coordinate systems together. See [SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem) and [SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview) for details on the Windows Perception APIs, and [Mixed Reality native objects in Unity](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced) for details on obtaining a SpatialCoordinateSystem that corresponds to Unity's world origin, as well as the `.ToUnity()` extension method for converting between `System.Numerics.Matrix4x4` and `UnityEngine.Matrix4x4`.
 
 ```cs
 public class SceneRootComponent : MonoBehavior
@@ -285,7 +295,7 @@ public class SceneRootComponent : MonoBehavior
 }
 ```
 
-每個 `SceneObject` 都有一個 `Position` 和 `Orientation` 的屬性，可以用來定位相對於包含 `Scene`之來源的對應內容。 例如，下列範例假設遊戲是場景根目錄的子系，並指派其本機位置和旋轉以配合指定的 `SceneObject`：
+Each `SceneObject` has a `Position` and `Orientation` property which can be used to position corresponding content relative to the origin of the containing `Scene`. For example, the following example assumes that the game is a child of the scene root, and assigns its local position and rotation to align to a given `SceneObject`:
 
 ```cs
 void SetLocalTransformFromSceneObject(GameObject gameObject, SceneObject sceneObject)
@@ -295,13 +305,13 @@ void SetLocalTransformFromSceneObject(GameObject gameObject, SceneObject sceneOb
 }
 ```
 
-### <a name="quad"></a>&
+### <a name="quad"></a>Quad
 
-四邊形的設計目的是為了加速2D 放置案例，而且應該將其視為2D 畫布 UX 元素的擴充。 雖然四邊形是 SceneObjects 的元件，而且可以在3D 中轉譯，但四個 Api 本身會假設四邊形是2D 結構。 它們提供一些資訊，例如範圍、圖形，以及提供放置的 Api。
+Quads were designed to facilitate 2D placement scenarios and should be thought of as extensions to 2D canvas UX elements. While Quads are components of SceneObjects and can be rendered in 3D, the Quad APIs themselves assume Quads are 2D structures. They offer information such as extent, shape, and provide APIs for placement.
 
-四邊形有矩形範圍，但它們代表任意形狀的2D 介面。 若要在這些2D 介面上啟用放置，這些介面會與3D 環境四邊形供應專案公用程式互動，以實現這種互動。 目前場景理解提供兩個這類函數： **FindCentermostPlacement**和**GetOcclusionMask**。 FindCentermostPlacement 是高階 API，它會找出可放置物件的四個位置，並嘗試尋找您的物件的最佳位置，以確保您提供的周框方塊會位於基礎介面上。
+Quads have rectangular extents, but they represent arbitrarily shaped 2D surfaces. To enable placement on these 2D surfaces that interact with the 3D environment quads offer utilities to make this interaction possible. Currently Scene Understanding provides two such functions, **FindCentermostPlacement** and **GetOcclusionMask**. FindCentermostPlacement is a high level API that locates a position on the quad where an object can be placed and will try to find the best location for your object guaranteeing that the bounding box you provide will reside on the underlying surface.
 
-下列範例顯示如何尋找 centermost 可放置位置，並將全息圖形錨定到四個。
+The following example shows how to find the centermost placeable location and anchor a hologram to the quad.
 
 ```cs
 // This code assumes you already have a "Root" object that attaches the Scene's Origin.
@@ -331,18 +341,18 @@ foreach (var sceneObject in myScene.SceneObjects)
 }
 ```
 
-步驟1-4 高度相依于您的特定架構/執行，但主題應該類似。 請務必注意，四個部分只代表在空間中當地語系化的界限2D 平面。 藉由讓您的引擎/架構知道四個的位置，並將您的物件與四個相對應，您的全息影像將會正確地放在真實世界。 如需詳細資訊，請參閱四邊形上的範例，其中會顯示特定的實作為。
+Steps 1-4 are highly dependent on your particular framework/implementation, but the themes should be similar. It is important to note that the Quad simply represents a bounded 2D plane that is localized in space. By having your engine/framework know where the quad is and rooting your objects relative to the quad, your holograms will be located correctly with respect to the real world. For more detailed information please see our samples on quads which show specific implementations.
 
-### <a name="mesh"></a>網格
+### <a name="mesh"></a>Mesh
 
-網格代表物件或環境的幾何標記法。 與[空間對應](spatial-mapping.md)一樣，每個空間 surface 網格提供的網格索引和頂點資料，都會使用與在所有新式轉譯 api 中用來呈現三角形網格的頂點和索引緩衝區相同的熟悉配置。 頂點位置會在 `Scene`的座標系統中提供。 用來參考此資料的特定 Api 如下所示：
+Meshes represent geometric representations of objects or environments. Much like [spatial mapping](spatial-mapping.md), mesh index and vertex data provided with each spatial surface mesh uses the same familiar layout as the vertex and index buffers that are used for rendering triangle meshes in all modern rendering APIs. Vertex positions are provided in the coordinate system of the `Scene`. The specific APIs used to reference this data are as follows:
 
 ```cs
 void GetTriangleIndices(int[] indices);
 void GetVertices(System.Numerics.Vector3[] vertices);
 ```
 
-下列程式碼提供從網格結構產生三角形清單的範例：
+The following code provides an example of generating a triangle list from the mesh structure:
 
 ```cs
 uint[] indices = new uint[mesh.TriangleIndexCount];
@@ -352,11 +362,11 @@ mesh.GetTriangleIndices(indices);
 mesh.GetVertexPositions(positions);
 ```
 
-索引/頂點緩衝區必須 > = 索引/頂點計數，否則可以任意調整大小，以便有效率地重複使用記憶體。
+The index/vertex buffers must be >= the index/vertex counts, but otherwise can be arbitrarily sized allowing for efficient memory re-use.
 
-## <a name="developing-with-scene-understandings"></a>使用場景稍微瞭解進行開發
+## <a name="developing-with-scene-understandings"></a>Developing with scene understandings
 
-此時，您應該瞭解場景瞭解執行時間和 SDK 的核心建立區塊。 大部分的威力和複雜度都是在存取模式中、與3D 架構的互動，以及可以在這些 Api 之上撰寫的工具，以執行更先進的工作，例如空間規劃、房間分析、流覽、物理等。我們希望能夠以適當的方式來捕捉這些範例，以讓您的案例更有説明。 如果有範例/案例未解決，請讓我們知道，我們會嘗試記錄/原型您需要的內容。
+At this point you should understand the core building blocks of the scene understanding runtime and SDK. The bulk of the power and complexity lies in access patterns, interaction with 3D frameworks, and tools that can be written on top of these APIs to perform more advanced tasks like spatial planning, room analysis, navigation, physics etc. We hope to capture these in samples that should hopefully guide you in the proper direction to make your scenarios shine. If there are samples/scenarios we are not addressing, please let us know and we will try to document/prototype what you need.
 
 ## <a name="see-also"></a>請參閱
 

@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 0595010a0b443d88e3f208b785903e3f6cc99295
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: f0a54bb591479dbe8ffa719cb5e6a9d846f67f9e
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926523"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539737"
 ---
 # <a name="3-creating-user-interface-and-configure-mixed-reality-toolkit"></a>3. 建立使用者介面和設定混合現實工具組
 
@@ -29,7 +29,7 @@ ms.locfileid: "73926523"
 
 在本節中，您將瞭解如何藉由調整空間感知網格的顯示選項來自訂和設定預設的 MRTK 設定檔。 您可以遵循下列和在調整 MRTK 設定檔中的任何設定或值時相同的原則。
 
-1. 從 BaseScene 階層中選取 [混合現實工具組（MRTK）]。 在 [偵測器] 面板中，尋找 Mixed Reality 工具組腳本，並選取使用中的設定檔，如下圖所示。 按兩下來加以開啟。
+1. 從 BaseScene 階層中選取 [混合現實工具組（MRTK）]。 在 [偵測器] 面板中，尋找 Mixed Reality 工具組腳本，並選取使用中的設定檔，如下圖所示。 按兩下以開啟它。
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step1.png)
 
@@ -46,7 +46,7 @@ ms.locfileid: "73926523"
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step2b.png)
 
-    按一下 [**複製**]，以建立 MRTK 設定檔的複本。 有了自己的 MRTK 設定檔後，您現在就能自訂此設定檔中的任何設定。 您也必須針對此設定檔下的任何其他設定檔，重複複製並自訂步驟，如後續步驟所述。
+    按一下 [**複製**]，以建立 MRTK 設定檔的複本。 您現在可以使用自己的 MRTK 設定檔複本，自訂此設定檔中的任何設定。 您也必須針對此設定檔下的任何其他設定檔，重複複製並自訂步驟，如後續步驟所述。
 
 3. 停用空間感知網格的顯示。 若要這樣做，請尋找空間感知系統設定，如下圖所示。 請確定已核取 [**啟用空間感知系統**] 選項。 按一下 [空間感知] 系統設定檔右邊的 [**複製**] 按鈕，以可自訂的複本取代預設設定檔。 在出現的快顯視窗中，按下 [**複製**] 按鈕，如下圖中的第二個影像所示。
 
@@ -99,9 +99,9 @@ ms.locfileid: "73926523"
     ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step6b.png)
 
     >[!NOTE]
-    >一般情況下，Unity 中的 1 個單位會大致等於真實世界的 1 公尺。 但有例外狀況，例如，當物件是所縮放物件的子系時。
+    >一般情況下，Unity 中的 1 個單位會大致等於真實世界的 1 公尺。 這有一些例外狀況;例如，當物件是縮放物件的子系時。
 
-5. 選取 [PressableButtonHoloLens2 遊戲] 物件後，在 [偵測器] 中向下滾動以尋找 [可互動（腳本）] 元件的 [事件] 區段。
+5. 選取 [PressableButtonHoloLens2 遊戲] 物件後，向下流覽至偵測器的底部，以尋找 [可互動（腳本）] 元件的 [事件] 區段。
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step4.png)
 
@@ -123,17 +123,17 @@ ms.locfileid: "73926523"
 
     此事件現在已設定好，因此在按下按鈕時，立方體便會根據您指定的材質變更色彩。 在此範例中，立方體會變更為青色。
 
-8. 接下來，您會設定放開動作，以便在放開時，按鈕會回復為其預設色彩。 重複上述的步驟7。 但這次使用 OnRelease 事件，而不是 OnPress MRTK_Standard_LightGray 材質，如下圖所示。
+8. 接下來，您將設定發行動作，以便在發行時，按鈕會回到其預設色彩。 重複上述的步驟7。 不過，這次使用 OnRelease 事件而非 OnPress MRTK_Standard_LightGray 材質，如下圖所示。
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step8.png)
 
-    現在當按下按鈕時，它會變更為新的色彩 [青色]。 釋放按鈕時，它會變更回您指定的預設色彩（例如淺灰色）。按下畫面頂端的 [播放] 按鈕，在編輯器中試用，或部署至您的 HoloLens 2 進行測試。 若要深入瞭解在編輯器中的模擬，包括手動模擬，請閱讀[MRTK 的模擬檔頁面](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/InputSimulation/InputSimulationService.html>)。
+    現在當按下按鈕時，它會變更為新的色彩。—. 釋放按鈕時，它會變更回您指定的預設色彩（例如淺灰色）。按下畫面頂端的 [播放] 按鈕，在編輯器中試用，或部署至 HoloLens 2 以進行測試。 若要深入瞭解在編輯器中的模擬，包括手動模擬，請閱讀[MRTK 的模擬檔頁面](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/InputSimulation/InputSimulationService.html>)。
 
 ### <a name="creating-a-panel-of-buttons-using-mrtks-grid-object-collection"></a>使用 MRTK 的方格物件集合來建立按鈕面板
 
 在本節中，您將瞭解如何使用 MRTK 的 GridObjectCollection 工具，將多個按鈕自動對齊整齊的使用者介面。
 
-1. 複製上一節中的按鈕，直到您有五個按鈕為止。 有幾種方式可以執行這項操作：以滑鼠右鍵按一下按鈕，然後按一下 [複製]。 然後移至按鈕下方，再以滑鼠右鍵按一下，再按一下 [貼上]。
+1. 複製上一節中的按鈕，直到您有五個按鈕為止。 執行此動作的方法有好幾種：-以滑鼠右鍵按一下按鈕，然後按一下 [複製]。 然後移至按鈕下方，再以滑鼠右鍵按一下，再按一下 [貼上]。
     -以滑鼠右鍵按一下按鈕，然後按一下 [複製]。
     -使用鍵盤命令，方法是按一下 cube，然後按下鍵盤上的 Ctrl D。
 
@@ -155,7 +155,7 @@ ms.locfileid: "73926523"
 
     Grid 物件集合元件可讓您在整齊的資料列、資料行或方格中組織按鈕或任何一組物件。 這是 MRTK 所提供的其中一個建立區塊，可讓您快速且輕鬆地建立吸引人的使用者介面。
 
-5. 設定方格物件集合。 若要確保所有按鈕都能面對使用者，請選取 [方向類型]。 然後選取 [臉部父系轉寄]，如下圖所示。 接下來，變更儲存格大小來設定按鈕間距。 針對儲存格寬度和儲存格高度，從0.05 個單位開始，以0.05 單元為單位，如下圖所示。 請確定 [距離] 設定為0，而 [資料列] 設定為1。 按一下 [更新集合]。 場景看起來會類似下圖。
+5. 設定方格物件集合。 若要確保所有按鈕都能面對使用者，請選取 [方向類型]。 然後選取 [臉部父系轉寄]，如下圖所示。 接下來，變更儲存格大小來設定按鈕間距。 針對儲存格寬度和儲存格高度，以0.05 個單位（依0.05 單位）開始，如下圖所示。 請確定 [距離] 設定為0，而 [資料列] 設定為1。 按一下 [更新集合]。 場景看起來會類似下圖。
 
     ![Mrlearning Base Ch2 3Step5im](images/mrlearning-base-ch2-3-step5.png)
 
@@ -164,9 +164,9 @@ ms.locfileid: "73926523"
 
 ### <a name="adding-text-into-your-scene"></a>在場景中新增文字
 
-在本節中，您會了解如何在混合實境體驗中新增和編輯文字。 請遵循[此處](https://docs.unity3d.com/Packages/com.unity.textmeshpro@2.0/manual/index.html#installation)的指示來確定您已在 Unity 中啟用 TextMeshPro (如果您還沒有這麼做)。
+在本節中，您會了解如何在混合實境體驗中新增和編輯文字。 如果您還沒有這麼做，請遵循[這裡](https://docs.unity3d.com/Packages/com.unity.textmeshpro@2.0/manual/index.html#installation)的指示，確定您已在 Unity 中啟用 TextMeshPro。
 
-1. 選取 [ButtonCollection] 父物件，然後以滑鼠右鍵按一下集合。 展開下拉式功能表中的 [3D 物件]。 然後選取 [TextMeshPro-Text]。 您應該會在按鈕集合底下看到 TextMeshPro 物件，如下圖所示。
+1. 選取 [ButtonCollection] 父物件，然後以滑鼠右鍵按一下集合。 在下拉式功能表中展開 [3D 物件]。 然後選取 [TextMeshPro-Text]。 您應該會在按鈕集合底下看到 TextMeshPro 物件，如下圖所示。
 
     ![第2課 Chapter4 Step1a](images/Lesson2_Chapter4_Step1a.JPG) ![第2課 Chapter4 Step1b](images/Lesson2_Chapter4_Step1b.JPG)
 
@@ -174,7 +174,7 @@ ms.locfileid: "73926523"
 
     ![第2課 Chapter4 步驟3](images/mrlearning-base-ch2-4-step3.png)
 
-3. 在 [偵測器] 面板的 [TextMeshPro] 元件的 [文字] 欄位中，輸入「按鈕集合文字」，然後將對齊屬性調整為置中和靠上，如下圖所示。
+3. 在 [偵測器] 面板的 [TextMeshPro] 元件的 [文字] 欄位中，輸入「按鈕集合文字」，然後將對齊屬性調整為置中和上方，如下圖所示。
 
     ![第2課 Chapter4 步驟4](images/mrlearning-base-ch2-4-step4.png)
 

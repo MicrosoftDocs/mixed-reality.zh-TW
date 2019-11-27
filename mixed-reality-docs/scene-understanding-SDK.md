@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: 場景理解，空間對應，Windows Mixed Reality，Unity
-ms.openlocfilehash: f38145c4124a9f162e58188c6179dc29c22e864e
-ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
-ms.translationtype: HT
+ms.openlocfilehash: f365b0444576e03acd8dba194d7f8f24175e7bee
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
+ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/26/2019
-ms.locfileid: "74491126"
+ms.locfileid: "74539518"
 ---
 # <a name="scene-understanding-sdk-overview"></a>場景理解 SDK 總覽
 
@@ -117,7 +117,7 @@ SceneObjects 可以有下列任何一項：
 
 <table>
 <tr>
-<th>SceneObjectKind</th> <th>描述</th>
+<th>SceneObjectKind</th> <th>說明</th>
 </tr>
 <tr><td>背景</td><td>已知 SceneObject<b>不</b>是其他可辨識類型的場景物件之一。 此類別不應與 [不明] 混淆，其中的背景已知不是牆/樓層/上限等等 .。。雖然不明尚未分類。</b></td></tr>
 <tr><td>內牆</td><td>實體牆。 牆會假設為 immovable 環境結構。</td></tr>
@@ -125,7 +125,7 @@ SceneObjects 可以有下列任何一項：
 <tr><td>向上</td><td>房間的上方表面。</td></tr>
 <tr><td>平台</td><td>您可以放置全息影像的大型平面。 這些通常會代表資料表、countertops 和其他大型水準表面。</td></tr>
 <tr><td>World</td><td>標記不可知之幾何資料的保留標籤。 藉由設定 EnableWorldMesh 更新旗標所產生的網格會分類為「世界」。</td></tr>
-<tr><td>不明</td><td>這個場景物件尚未分類並指派一種類型。 這不應該與背景混淆，因為此物件可能是任何專案，系統還不會為其提供強大的分類。</td></tr>
+<tr><td>Unknown</td><td>這個場景物件尚未分類並指派一種類型。 這不應該與背景混淆，因為此物件可能是任何專案，系統還不會為其提供強大的分類。</td></tr>
 </tr>
 </table>
 
@@ -265,7 +265,7 @@ foreach (var mesh in firstFloor.Meshes)
 
 在處理轉換時，場景理解已刻意嘗試配合傳統的3D 場景標記法。 因此，每個場景會限制為單一座標系統，與最常見的3D 環境表示相同。 SceneObjects 每個都會提供其位置作為座標系統內的位置和方向。 如果您的應用程式正在處理的場景會延伸單一來源提供的限制，可以將 SceneObjects 錨定至 SpatialAnchors，或產生數個場景並將它們合併在一起，但為了簡單起見，我們假設防水場景存在於自己的由 OriginSpatialGraphNodeId 所定義之一個等位所當地語系化的原始來源。
 
-例如，下列 Unity 程式碼示範如何使用 Windows 認知和 Unity Api，將座標系統對齊在一起。 如需有關如何取得對應于 Unity 世界原點的 SpatialCoordinateSystem，以及在 `System.Numerics.Matrix4x4` 和 `UnityEngine.Matrix4x4`之間轉換的 `.ToUnity()` 擴充方法，請參閱[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem)和[SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview)以取得 Windows 認知 api 的詳細資料，以及[Unity 中的混合現實原生物件](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced)。
+例如，下列 Unity 程式碼示範如何使用 Windows 認知和 Unity Api，將座標系統對齊在一起。 如需有關取得對應至 Unity 之 SpatialCoordinateSystem 的詳細資訊，請參閱[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem)和[SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview) ，以取得有關 Windows 認知 api 的詳細資料，以及[unity 中的混合現實原生物件](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced)。世界原點，以及在 `System.Numerics.Matrix4x4` 和 `UnityEngine.Matrix4x4`之間轉換 `.ToUnity()` 擴充方法。
 
 ```cs
 public class SceneRootComponent : MonoBehavior
@@ -368,7 +368,20 @@ mesh.GetVertexPositions(positions);
 
 此時，您應該瞭解場景瞭解執行時間和 SDK 的核心建立區塊。 大部分的威力和複雜度都是在存取模式中、與3D 架構的互動，以及可以在這些 Api 之上撰寫的工具，以執行更先進的工作，例如空間規劃、房間分析、流覽、物理等。我們希望能夠以適當的方式來捕捉這些範例，以讓您的案例更有説明。 如果有範例/案例未解決，請讓我們知道，我們會嘗試記錄/原型您需要的內容。
 
+### <a name="where-can-i-get-sample-code"></a>哪裡可以取得範例程式碼？
+
+您可以在我們的[Unity 範例頁面](https://github.com/sceneunderstanding-microsoft/unitysample)頁面上找到適用于 unity 的場景範例程式碼。 此應用程式可讓您與您的裝置通訊並轉譯各種場景物件，或者，它可讓您在電腦上載入序列化的場景，並讓您在不使用裝置的情況下體驗到場景的瞭解。
+
+### <a name="where-can-i-get-sample-scenes"></a>哪裡可以取得範例場景？
+
+如果您有 HoloLens2，可以將 ComputeSerializedAsync 的輸出儲存至檔案，並以您自己的便利性將它還原序列化，以儲存您所捕捉到的任何場景。 
+
+如果您沒有 HoloLens2 裝置，但想要使用場景理解來播放，您必須下載預先捕捉的場景。 場景理解範例目前隨附于序列化的幕後，可供您自行下載並使用。 您可以在這裡找到：
+
+[場景瞭解範例場景](https://github.com/sceneunderstanding-microsoft/unitysample/tree/master/Assets/Resources/SerializedScenesForPCPath)
+
 ## <a name="see-also"></a>請參閱
 
 * [空間對應](spatial-mapping.md)
 * [場景理解](scene-understanding.md)
+* [Unity 範例](https://github.com/sceneunderstanding-microsoft/unitysample)

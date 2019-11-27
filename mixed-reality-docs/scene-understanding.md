@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: 場景理解，空間對應，Windows Mixed Reality，Unity
-ms.openlocfilehash: fdfe40571ac8893dcb3a3ba8fe3bb12707c800e4
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: bacec5e6a9bfda49d4ad6d3dd849156c9cc09add
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926915"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539698"
 ---
 # <a name="scene-understanding"></a>場景理解
 
@@ -19,7 +19,29 @@ ms.locfileid: "73926915"
 
 ![空間對應網格，標示平面表面，防水網格](images/SUScenarios.png)
 
-本檔的目的是要提供案例總覽，並澄清場景瞭解和空間對應共用的關聯性。 如需場景理解如何運作以及如何為其進行開發的詳細資訊，請參閱[場景瞭解 SDK 總覽](scene-understanding-SDK.md)檔。
+本檔的目的是要提供案例總覽，並澄清場景瞭解和空間對應共用的關聯性。
+
+## <a name="developing-with-scene-understanding"></a>使用場景理解進行開發
+
+本文僅適用于介紹場景的瞭解執行時間和概念。 如果您要尋找有關如何使用場景理解進行開發的檔，您可能會對下列各項感興趣：
+
+[場景理解 SDK 總覽](scene-understanding-SDK.md)
+
+您可以從範例 GitHub 網站下載場景瞭解範例應用程式：
+
+[場景理解範例](https://github.com/sceneunderstanding-microsoft/unitysample)
+
+如果您沒有裝置，而且想要存取範例場景來嘗試進行場景瞭解，範例資產資料夾中會有場景：
+
+[場景瞭解範例場景](https://github.com/sceneunderstanding-microsoft/unitysample/tree/master/Assets/Resources/SerializedScenesForPCPath)
+
+### <a name="sdk"></a>SDK
+
+如果您要尋找如何針對場景 Understandiing 進行開發的特定詳細資料，請參閱[場景瞭解 SDK 總覽](scene-understanding-SDK.md)檔，以取得如何進行場景瞭解的詳細資訊，以及如何進行開發。
+
+
+### <a name="sample"></a>範例
+
 
 ## <a name="device-support"></a>裝置支援
 

@@ -6,14 +6,16 @@ ms.author: branbray
 ms.date: 03/21/2018
 ms.topic: article
 keywords: mixed reality，全像，ar，vr，mr，xr，增強的現實，虛擬實境，說明
-ms.openlocfilehash: 601e42c03e827f0f531f9dcf937a0dd34b008dc3
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 65588902565ee0c5a1710f823311ccdecc23230e
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926778"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539564"
 ---
 # <a name="what-is-mixed-reality"></a>什麼是混合實境？
+
+![在 HoloLens 2 上實際操作點和認可](images/02_MixedRealitySlashMixedReality.png)
 
 混合實境是實體環境與數位世界混合的結果。 混合的實境是人類、電腦和環境互動的全新演進，並且解放了以前僅限於我們想像的可能性。 這是藉由電腦視覺、圖形處理能力、顯示器技術和輸入系統的進展而達成的。 「*混合現實*」一詞原本是由 Paul Milgram 和 Fumio Kishino 「[混合現實視覺效果的分類法](https://etclab.mie.utoronto.ca/people/paul_dir/IEICE94/ieice.html)」所引進的1994論文。 其論文引進了*virtuality continuum*的概念，並著重于如何套用分類法的分類。 從那時起，混合現實的應用程式會超出顯示範圍。 它也包含環境輸入、空間音效和位置。
 

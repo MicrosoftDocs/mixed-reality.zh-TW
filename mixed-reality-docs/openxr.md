@@ -5,13 +5,13 @@ author: thetuvix
 ms.author: alexturn
 ms.date: 7/29/2019
 ms.topic: article
-keywords: OpenXR，Khronos，BasicXRApp，Mixed Reality OpenXR 開發人員入口網站，DirectX，native，原生應用程式自訂引擎，中介軟體
-ms.openlocfilehash: 67d2ab42a40aa04eb9dcd6881a4392a81c0f3b8f
-ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
+keywords: OpenXR，Khronos，BasicXRApp，Mixed Reality OpenXR 開發人員入口網站，DirectX，原生，原生應用程式，自訂引擎，中介軟體
+ms.openlocfilehash: aa91918e20b4276b7453bae1a05ad18df9d8ab0e
+ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2019
-ms.locfileid: "73914396"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74491129"
 ---
 # <a name="openxr"></a>OpenXR
 
@@ -74,6 +74,10 @@ OpenXR API 會使用載入器，將您的應用程式直接連接到頭戴式裝
 <a href="https://github.com/Microsoft/OpenXR-SDK-VisualStudio/tree/master/samples/BasicXrApp" target="_blank">BasicXrApp</a>專案示範一個簡單的 OpenXR 範例，其中包含兩個 Visual Studio 專案檔，一個用於 Win32 桌面應用程式，另一個用於 UWP HoloLens 2 應用程式。  因為解決方案包含 HoloLens UWP 專案，所以您需要安裝在 Visual Studio 中的[通用 Windows 平臺開發工作負載](install-the-tools.md#installation-checklist)，才能完全開啟它。
 
 請注意，雖然 Win32 和 UWP 專案檔因封裝和部署的差異而不同，但每個專案內的應用程式代碼都是100% 的相同！
+
+建立 OpenXR 的 Win32 桌面之後。EXE，不論是 Windows Mixed Reality 耳機或任何其他耳機，您都可以在任何支援 OpenXR 的 desktop VR 平臺上搭配使用 VR 頭戴式裝置。
+
+建立 OpenXR UWP 應用程式套件之後，您可以將[該套件部署](using-visual-studio.md)到 hololens 2 裝置或 Hololens 2 模擬器。
 
 ## <a name="openxr-app-best-practices-for-hololens-2"></a>適用于 HoloLens 2 的 OpenXR 應用程式最佳作法
 
@@ -189,7 +193,7 @@ OpenXR 規格定義了擴充機制，可讓執行時間實施者公開超出<a h
 
 雖然其中一些延伸模組可能會以廠商專屬的 MSFT 延伸模組開頭，但 Microsoft 和其他 OpenXR 執行時間廠商會共同合作，為許多功能領域設計跨廠商的 EXT 或 KHR 延伸模組。  這可讓您針對這些功能所撰寫的程式碼在執行時間廠商之間具有可攜性，就像使用核心規格一樣。
 
-## <a name="troubleshooting"></a>[疑難排解]
+## <a name="troubleshooting"></a>疑難排解
 
 以下是 Windows Mixed Reality OpenXR 執行時間的一些疑難排解秘訣。  如果您有任何關於<a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html" target="_blank">OpenXR 1.0 規格</a>的其他問題，請造訪<a href="https://community.khronos.org/c/openxr" target="_blank">Khronos OpenXR 論壇</a>或<a href="https://khr.io/slack" target="_blank">#openxr 頻道的時差</a>。
 

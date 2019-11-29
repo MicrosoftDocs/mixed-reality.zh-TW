@@ -7,14 +7,17 @@ ms.author: grbury
 ms.date: 10/02/2019
 ms.topic: overview
 keywords: Windows Mixed Reality，設計，應用程式模式，控制項，樣式，HoloLens，互動，UX 元素，行為，建立區塊
-ms.openlocfilehash: 5f5f97d3f4a34e0d88c781df494a4afc2ee0b992
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: d8f904183e51943246613e99a805bee1518523c8
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73439429"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539527"
 ---
 # <a name="core-concepts-overview"></a>核心概念總覽
+
+![手部直接操作](images/05_CoreConcepts.png)
+
 
 在深入探討您的經驗之前，先瞭解一些核心概念會很有説明。 下列每個主題都是一項基本因素，基本上會影響並提供您為使用者建立的混合現實體驗品質。 
 

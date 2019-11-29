@@ -7,16 +7,18 @@ ms.author: grbury
 ms.date: 11/15/2019
 ms.topic: overview
 keywords: Windows Mixed Reality，設計，應用程式模式，控制項，樣式，HoloLens，互動，UX 元素，行為，建立區塊
-ms.openlocfilehash: c454190cf376f39974efec1ea416afbdb9db1a10
-ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
+ms.openlocfilehash: 8dd90a555faea62f69750847ddd6e6df4d9d0314
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74143193"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539676"
 ---
 # <a name="ux-elements-overview"></a>UX 元素總覽
 
-## <a name="style"></a>樣式
+![HoloLens 2 使用者與全像攝影按鈕互動](images/06_AppPatterns.png)
+
+## <a name="style"></a>[樣式]
 
 :::row:::
     :::column:::

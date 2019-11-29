@@ -8,12 +8,12 @@ ms.date: 08/24/2019
 ms.topic: overview
 ms.localizationpriority: high
 keywords: 混合實境、探索、散佈、索引、登陸頁面、設計、開發、教學課程、範例應用程式、基本概念、案例研究、資源、HoloLens 操作說明、開放原始碼專案
-ms.openlocfilehash: 1a5e4fcbb7704db6df59db9d01bb72a5b153b576
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: f6f72df63628bba590ac7af098d0b405e6721cc2
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438057"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539623"
 ---
 # <a name="get-started-with-mixed-reality"></a>開始使用混合實境
 
@@ -55,7 +55,7 @@ ms.locfileid: "73438057"
 如果您是混合實境的新手，將會學習什麼是混合實境並了解其功能。
 
 
-![混合實境頻譜](images/RWtpZ1.jpeg)
+![虛擬的蜂鳥與手](images/01_MixedReality.png)
 
 ## <a name="what-is-mixed-reality"></a>什麼是混合實境？
 

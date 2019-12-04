@@ -7,14 +7,16 @@ ms.date: 04/11/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境, 注視, 注視定向, 互動, 設計, hololens, MMR, 多樣式
-ms.openlocfilehash: abd82947be08a2f6aecc4462abc34c4674abfb7a
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 6b54d6e844c1b501a0835fc3a48deb4932ba551d
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437980"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539724"
 ---
 # <a name="introducing-instinctual-interactions"></a>本能互動簡介
+
+![遠距手部操作](images/04_InteractionFundamentals.png)
 
 簡單、直覺式互動的原理貫穿整個混合實境 (MR) 平台。 我們採取了三個步驟，以確保應用程式設計人員和開發人員可為其客戶提供簡單且直覺式的互動。 
 
@@ -151,13 +153,13 @@ ms.locfileid: "73437980"
 答：「雙手和運動控制器」模型包含優質運動控制器體驗的所有指引。
  
 5.  Q:我的使用者是否使用協助工具控制器或通用藍牙控制器，例如 Clicker？<br><br>
-答：我們建議使用所有非追蹤式控制器都適用的「頭部目光和行動」模型。 其設計訴求是可讓使用者使用簡單的「定向和行動」經歷整個體驗。 
+答：我們建議使用所有非追蹤式控制器都適用的「頭部注視並認可」模型。 其設計訴求是可讓使用者使用簡單的「定向和行動」經歷整個體驗。 
  
 6.  Q:相對於瀏覽 UI 控制項的密集版面配置，我的使用者只是經由「點選」來進行體驗 (例如在類似 3D 投影片的環境中) 嗎？<br><br>
-答：如果使用者不需要控制大量 UI，則「頭部目光和行動」會提供學得會的選項，使用者就不必擔心如何定向。 
+答：如果使用者不需要控制大量 UI，則「頭部注視並認可」會提供學得會的選項，使用者就不必擔心如何定向。 
  
 7.  Q:我的使用者是否同時使用 HoloLens (第 1 代) 和 HoloLens 2/Windows Mixed Reality 沉浸式頭戴裝置 (VR)？<br><br>
-答：由於「頭部目光和行動」是 HoloLens (第 1 代) 適用的互動模型，我們建議支援 HoloLens (第 1 代) 的創作者將「頭部目光和行動」用於使用者在 HoloLens (第 1 代) 頭戴式裝置上所將體驗的任何功能或模式。 如需取得多代 HoloLens 絕佳體驗的詳細資訊，請參閱底下有關「轉換互動模型」  的一節。
+答：由於「頭部注視並認可」是 HoloLens (第 1 代) 適用的互動模型，我們建議支援 HoloLens (第 1 代) 的創作者將「頭部注視並認可」用於使用者在 HoloLens (第 1 代) 頭戴式裝置上所將體驗的任何功能或模式。 如需取得多代 HoloLens 絕佳體驗的詳細資訊，請參閱底下有關「轉換互動模型」  的一節。
  
 8.  Q:對於經常移動 (涵蓋大型空間或在空間之間移動) 的使用者，與傾向在單一空間工作的使用者而言，有何差別？<br><br>
 答：任何互動模型都適用於這些使用者。  

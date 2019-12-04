@@ -8,17 +8,17 @@ ms.date: 08/24/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境, 探索, 散佈, 索引, 登陸頁面, 設計, 開發, 教學課程, 範例應用程式, 基本概念, 案例研究, 資源, HoloLens 操作說明, 開放原始碼專案, 核心概念, 互動
-ms.openlocfilehash: 2bd2b3fef713bfe74f91714be100c7a02e46f8ac
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 92af4ddba96f659f0af812672599d4a90bf00224
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435719"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539589"
 ---
 # <a name="start-designing-and-prototyping"></a>開始設計並建立原型
 
 
-![核心概念](images/text_in_unity_viewingangle.jpg)
+![3D 網格圖案](images/03_Design.png)
 
 ## <a name="expand-your-design-processcase-study-expanding-the-design-process-for-mixed-realitymd"></a>[展開您的設計程序](case-study-expanding-the-design-process-for-mixed-reality.md)
 
@@ -80,7 +80,7 @@ ms.locfileid: "73435719"
 
 <br>
 
-### <a name="leveraging-the-users-eye-gazeeye-trackingmd"></a>[利用使用者的眼部目光](eye-tracking.md)
+### <a name="leveraging-the-users-eye-gazeeye-trackingmd"></a>[利用使用者的眼部注視](eye-tracking.md)
 HoloLens 2 將全像攝影體驗的內容和人類理解能力帶入了新境界；它讓開發人員能夠運用使用者視線方向的相關資訊。
 
 <br>
@@ -98,6 +98,10 @@ HoloLens 2 將全像攝影體驗的內容和人類理解能力帶入了新境界
 ### <a name="clear-and-readable-typographytypographymd"></a>[清楚易懂的印刷樣式](typography.md)
 就像2D 螢幕上的印刷樣式一樣，目標是要清楚易懂。 有了混合實境的三維外觀比例，就有機會以更佳的方式來影響文字和整體使用者體驗。
 
+<br>
+
+### <a name="ux-elements-for-the-mixed-realityapp-patterns-landingpagemd"></a>[混合實境的 UX 元素](app-patterns-landingpage.md)
+了解混合實境中空間互動和 UI 的建置元素。
 <br>
 
 

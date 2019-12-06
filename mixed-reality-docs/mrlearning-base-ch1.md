@@ -1,18 +1,18 @@
 ---
 title: 入門教學課程 - 2。 初始化您的專案和第一個應用程式
-description: 完成此課程以了解如何在混合實境應用程式中實作 Azure 臉部辨識。
+description: 完成此課程以學習在混合實境應用程式中實作 Azure 臉部辨識。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 11/01/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: d4e58e2c9236ba35b4394fd80cde3843edaa6f57
-ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
+ms.openlocfilehash: cae2398582d399f2bad56b354694f7e99ef8681c
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/26/2019
-ms.locfileid: "74491208"
+ms.locfileid: "74539693"
 ---
 # <a name="2-initializing-your-project-and-first-application"></a>2.初始化您的專案和第一個應用程式
 
@@ -61,7 +61,7 @@ ms.locfileid: "74491208"
 
 1. 下載[混合實境工具組](https://github.com/microsoft/MixedRealityToolkit-Unity/releases) Unity [基礎套件 2.1.0 版](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.1.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage)，並將其儲存在您電腦上的資料夾。
 
-2. 匯入您在上一個步驟中下載的「混合實境工具組」  套件。 從按一下 [資產]   >  [匯入]   >  [自訂套件]  開始，選取 [Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage]  ，然後將它開啟以便開始匯入程序。 請稍候幾分鐘讓匯入程序完成。
+2. 匯入您在上一個步驟中下載的「混合實境工具組」  套件。 從按一下 [資產]   >  [匯入]   >  [自訂套件]  開始，選取 [Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage]  ，然後將其開啟以便開始匯入程序。 稍候幾分鐘讓匯入程序完成。
     ![第 1 課第 3 節第 2a 步](images/mrlearning-base-ch1-3-step2a.JPG) ![第 1 課第 3 節第 2b 步](images/mrlearning-base-ch1-3-step2b.JPG)
 
 3. 在下一個快顯視窗中，按一下 [匯入]  ，開始將選取的套件匯入 Unity 專案。 請確定已核取所有項目，如圖所示。
@@ -74,7 +74,7 @@ ms.locfileid: "74491208"
 
 ### <a name="configure-the-mixed-reality-toolkit"></a>設定混合實境工具組
 
-1. 藉由選取 [混合實境工具組]   >  [新增至場景和設定..]  ，將 [混合實境工具組]  新增至您目前的場景。 從功能表列。 如果您在匯入混合實境工具組之後沒有看到此功能表項目，請重新啟動 Unity。
+1. 藉由選取 [混合實境工具組]   >  [新增至場景和設定..]  ，將 [混合實境工具組]  新增至您目前的場景。 從功能表列。 如果匯入混合實境工具組之後沒有看到此功能表項目，請重新啟動 Unity。
     ![第 1 課第 4 節第 1 步](images/mrlearning-base-ch1-4-step1.JPG)
 
     > [!NOTE]
@@ -97,14 +97,14 @@ ms.locfileid: "74491208"
     ![第 1 課第 5 節第 4 步](images/mrlearning-base-ch1-5-step4.JPG)
 
   > [!IMPORTANT]
-  > 如果建置失敗，請再試一次，或重新啟動 Unity，然後重新建置。 如果您看到錯誤，例如「錯誤：CS0246 = 找不到名為 "XX" 的類型或命名空間名稱 (您是否遺漏 using 指示詞或組件參考？)」。 若是如此，則您可能需要安裝 [Windows 10 SDK (10.0.18362.0)](https://developer.microsoft.com//windows/downloads/windows-10-sdk)
+  > 如果建置失敗，請再試一次，或重新啟動 Unity，然後重新建置。 如果您看到錯誤，例如「錯誤：CS0246 = 找不到名為 "XX" 的類型或命名空間名稱 (您是否遺漏 using 指示詞或組件參考？)」。 若是如此，您可能需要安裝 [Windows 10 SDK (10.0.18362.0)](https://developer.microsoft.com//windows/downloads/windows-10-sdk)
 
-5. 在建置完成之後，開啟新建立的資料夾，其中包含您新建置的應用程式檔案。 按兩下 [MixedRealityBase.sln]  解決方案 (或是相對應名稱，如果您為專案使用替代名稱的話)，以在 Visual Studio 中開啟解決方案檔案。
+5. 在建置完成之後，開啟新建立的資料夾，其中包含您新建置的應用程式檔案。 按兩下 [MixedRealityBase.sln]  解決方案或是相對應名稱 (如果您為專案使用替代名稱的話)，以在 Visual Studio 中開啟解決方案檔案。
 
     > [!NOTE]
     > 請務必開啟新建立的資料夾 (如果您遵循先前步驟中的命名慣例，此資料夾為 [App]  資料夾)，因為該資料夾外會有名稱類似的 .sln 檔案，不應與建置資料夾中的 .sln 檔案混淆。 資料夾結構看起來應該類似下圖。
     >
-    > 如果 Visual Studio 要求您安裝新元件，請花一點時間確認是否已安裝所有必要元件，如同 [[安裝工具] 頁面](install-the-tools.md)中所指定
+    > 如果 Visual Studio 要求您安裝新元件，請花一些時間確認是否已安裝所有必要元件，如同 [[安裝工具] 頁面](install-the-tools.md)中所指定
 
     ![第 1 課第 5 節第 5 步](images/mrlearning-base-ch1-5-step5.JPG)
 

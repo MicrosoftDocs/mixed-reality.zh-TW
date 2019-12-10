@@ -6,206 +6,277 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: b615f1135f5d2947f8f718e080ef45a3c1fcc576
-ms.sourcegitcommit: 05fa75193059a2dac4b580a9eef7b6c4bb64d8d7
+ms.openlocfilehash: 861c42f9449fcb3cf038258af91088fc927941e5
+ms.sourcegitcommit: f4812e1312c4751a22a2de56771c475b22a4ba24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74830841"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74940956"
 ---
 # <a name="1-getting-started-with-azure-spatial-anchors"></a>1. 開始使用 Azure 空間錨點
 
-歡迎使用 HoloLens 2 教學課程的第二個模組。 開始使用之前，請確定所有[必要條件](https://docs.microsoft.com//azure/spatial-anchors/quickstarts/get-started-unity-hololens)都已完成。 如果您尚未完成第一個[基本模組](mrlearning-base.md)，建議您先完成該課程模組。 如果您從新的 Unity 專案開始，請遵循[基底模組](mrlearning-base.md)中的新專案建立步驟。 
+## <a name="overview"></a>概觀
+
+歡迎使用第二系列的 HoloLens 2 教學課程。 在這三部分的教學課程系列中，您將瞭解 Azure 空間錨點的基本概念。
+
+在第一個教學課程中，[開始使用 Azure 空間錨點](mrlearning-asa-ch1.md)，您將探索啟動和停止 azure 會話，以及在單一裝置上建立、上傳和下載 azure 錨點所需的各種步驟。
+
+在第二個教學課程中，[儲存、抓取和共用 Azure 空間錨點](mrlearning-asa-ch2.md)，您將瞭解如何藉由將錨點資訊儲存至 HoloLens 2 的儲存體，來將 Azure 空間錨點儲存到多個應用程式會話，以及如何將此錨點資訊與其他裝置共用，以進行多重裝置錨定的對齊。
+
+在第三個教學課程中，[顯示 Azure 空間錨點意見](mrlearning-asa-ch3.md)反應，您將瞭解如何在使用 Azure 空間錨點時，為使用者提供錨點事件和狀態的相關意見反應。
 
 ## <a name="objectives"></a>目標
 
-* 瞭解使用 HoloLens 2 搭配 Azure 空間錨點進行開發的基本概念
-
+* 瞭解使用 HoloLens 2 的 Azure 空間錨點進行開發的基本概念
 * 建立、上傳及下載空間錨點
 
-## <a name="instructions"></a>指示
+## <a name="prerequisites"></a>必要條件
 
-### <a name="downloading-and-importing-assets"></a>下載和匯入資產
-開始之前，請先下載並匯入下列資產：
+* 符合[快速入門：建立使用 Azure 空間錨點的 Unity HoloLens 應用程式](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens)教學[課程的必要條件](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens#prerequisites)一節中所列的需求。
+* 完成[快速入門：建立使用 Azure 空間錨點的 Unity HoloLens 應用程式](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens)教學課程中的[建立空間錨點資源](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens#create-a-spatial-anchors-resource)一節。
+* 如果您尚未完成[快速入門教學](mrlearning-base.md)課程系列，建議您先完成這些教學課程。
 
-[Azure 空間錨點 v 1.1。0](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v1.1.0/AzureSpatialAnchors.unitypackage)
+## <a name="creating-the-unity-project"></a>建立 Unity 專案
 
-[HoloLens2. GettingStarted 教學課程. 2.1.0.0. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.0/Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage)
+在本節中，您將建立新的 Unity 專案，並針對 Windows Mixed Reality 進行設定。
 
-[HoloLens2. AzureSpatialAnchor 教學課程. 2.1.0.0. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/azure-spatial-anchor-v2.1.0.0/Unity.HoloLens2.AzureSpatialAnchor.Tutorials.Asset.2.1.0.0.unitypackage)
+1. 建立 Unity 專案，並為其提供適當的名稱，例如_Azure 空間錨點教學_課程。
 
-[Mixed Reality 工具組基礎封裝2.1。0](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/tag/v2.1.0)
+2. 設定適用于 Windows Mixed Reality 的 Unity 專案。
 
-1. 在您的專案中建立新的場景。 以滑鼠右鍵按一下場景資料夾，然後依序按一下 [建立]、[場景]。 將新場景命名為 "ASALearningModule"。
+    >[!TIP]
+    >如需有關如何建立 Unity 專案並針對 Windows Mixed Reality 進行設定的提醒，您可以參閱[初始化專案和第一個應用程式](https://docs.microsoft.com/windows/mixed-reality/mrlearning-base-ch1)教學課程中的[建立新的 Unity 專案](mrlearning-base-ch1.md#create-new-unity-project)和設定適用于[windows mixed reality 的 unity 專案](mrlearning-base-ch1.md#configure-the-unity-project-for-windows-mixed-reality)一節，這是使用者入門[教學](mrlearning-base.md)課程系列的一部分。
 
-![module2chapter1step1im](images/module2chapter1step1im.PNG)
+## <a name="adding-inbuilt-unity-packages"></a>新增內建 Unity 套件
 
-2. 按兩下 [ASALearningmodule] 場景，查看一些預先定義的專案與新場景一起出現。 
-3. 設定混合現實開發的場景。 
+在本節中，您將會新增要在專案中使用的工具組和 Sdk 所需的內建 Unity 資產和套件。
 
-![module2chapter1step3im](images/module2chapter1step3im.PNG)
+1. 匯入 TMP 基本資源。
 
-> 注意：您可能會看到一個快顯對話方塊，可供您選取[混合現實工具組的設定檔](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Profiles/Profiles.html)。 按兩下名為*DefaultHoloLens2ConfigurationProfile*的設定檔。
+    >[!NOTE]
+    >我們正在新增此封裝，因為它是混合現實工具組的必要項。
 
-4. 為 MRTK 選擇檔案時，請選取 [DefaultMixedRealityToolkitConfigurationProfile]。
+    在 Unity 功能表中，選取 [Window > **TextMeshPro** > 匯**入 TMP 基本資源** **]** 。
 
-> 注意：如果您有自己的設定設定檔，則可以隨意使用。
->
+    ![mrlearning-asa](images/mrlearning-asa-ch1-2-1.1.png)
 
-![module2chapter1step4im](images/module2chapter1step4im.PNG)
+    在 [匯入 Unity 封裝] 快顯視窗中，先確定已選取所有資產，方法是按一下 [**全部**] 按鈕，然後按一下 [匯**入**] 按鈕來匯入資產。
 
-現在場景已設定為混合現實。 請確定您儲存場景（以 control/command + S 執行此動作，或按一下 [檔案]，再按 [儲存]）。 
+    ![mrlearning-asa](images/mrlearning-asa-ch1-2-1.2.png)
 
-5. 匯入我們在步驟1中下載的[Azure 空間錨點 v 1.1.0](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v1.1.0/AzureSpatialAnchors.unitypackage) unity 封裝。 為此，按一下 [資產]，向下移至 [匯入套件]，然後按一下 [自訂套件 ...]您的電腦檔案將會開啟。 當他們這麼做時，請尋找您儲存 Azure 空間錨點套件的位置，並加以選取。 然後按一下 [開啟]。
+2. 安裝 AR Foundation。
 
-![module2chapter1step5bim](images/module2chapter1step5bim.PNG)
+    >[!NOTE]
+    >我們會新增此封裝，因為 Azure 空間錨點 SDK 需要此套件。
 
-快顯視窗隨即出現，並提供工具和設定的清單，並詢問您要匯入的內容。 選取***所有***可用的選項，然後按一下 [匯入]。
+    在 Unity 功能表中，選取 [Window > **封裝管理員** **]** 。
 
-![module2chapter1step5cim](images/module2chapter1step5cim.PNG)
+    ![mrlearning-asa](images/mrlearning-asa-ch1-2-2.1.png)
 
-> 注意：請耐心等候，匯入需要幾分鐘的時間。 
+    在 [套件管理員] 視窗中，選取 [ **AR Foundation** ]，然後按一下 [**安裝**] 按鈕來安裝封裝。
 
-6. 匯入[HoloLens2 GettingStarted。 2.1.0.0. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.0/Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage)下一步。 與步驟5非常類似，請回到 Unity，按一下 [資產]，然後將滑鼠停留在 [匯入套件] 上方。 按一下 [自訂套件 ...]您的電腦檔案將會再次出現。 移至您儲存基本模組資產套件的位置。 然後選取它。 按一下 [開啟]。
+    >[!IMPORTANT]
+    >這可能需要幾秒鐘的時間，AR Foundation 封裝才會出現在清單中。
 
-![module2chapter1step5bim](images/module2chapter1step5bim.PNG)
+    ![mrlearning-asa](images/mrlearning-asa-ch1-2-2.2.png)
 
-> 注意：此課程模組稍後可能需要更多資產。 請遵循下列步驟來匯入此處所提及的任何資產。 
+## <a name="importing-the-tutorial-assets"></a>匯入教學課程資產
 
-7. 匯入[ASA 模組套件 1.3.1](https://github.com/Developer-OI/MixedRealityLearning/releases/download/ASA_1.3/ASAModuleAssets_1.3.1.unitypackage)，使用與匯入先前封裝相同的步驟。
+在本節中，您將下載並匯入所有教學課程資產。
 
-### <a name="configuring-your-scene"></a>設定場景
+1. 下載資產。
 
-在本節中，我們將在場景中新增 prefabs 和腳本，以建立一系列的按鈕，以示範本機錨點和 Azure 空間錨點在應用程式中的行為。
+    * [AzureSpatialAnchors. unitypackage](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v2.0.0/AzureSpatialAnchors.unitypackage) （版本2.0.0）
+    * [MixedReality. 2.1.0. unitypackage。](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.1.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage)
+    * [MRTK.HoloLens2 GettingStarted. 2.1.0.1. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.1/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.1.0.1.unitypackage)
+    * [MRTK.HoloLens2 AzureSpatialAnchors. 2.1.0.1. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/azure-spatial-anchors-v2.1.0.1/MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpatialAnchors.2.1.0.1.unitypackage)
 
-8. 在 [專案] 索引標籤的 [資產] 資料夾底下，按一下 [ASAmoduleAssets]。 選取之後，您會看到兩個 prefabs： ButtonParent 和 ParentAnchor。
+2. 匯入資產。
 
-![module2chapter1step7im](images/module2chapter1step7im.PNG)
+    在 Unity 功能表中，選取 **資產** > 匯**入套件** > **自訂封裝**...。
 
-9. 將這兩個 prefabs 拖曳到場景中。 
+    ![mrlearning-asa](images/mrlearning-asa-ch1-3-2.1.png)
 
-![module2chapter1step8im](images/module2chapter1step8im.PNG)
+    在 [匯入套件 ...]快顯視窗中，選取 [ **AzureSpatialAnchors] unitypackage** ，然後按一下 [**開啟**] 按鈕。
 
-注意：將 ButtonParent 新增到場景之後，隨即出現快顯視窗，要求您匯入 TMP 資產。 匯入 "TMP Essentials"。 之後，如果您在場景中看到任何大字型文字，請刪除 ButtonParent 物件，然後再次從 ASAmoduleAssets 資料夾新增。
+    ![mrlearning-asa](images/mrlearning-asa-ch1-3-2.2.png)
 
-注意：如果您想要檢查 HoloLens 中的「調試記錄」，您可以將 DebugWindow prefab 從 ASAModuleAssets 資料夾拖放到場景中。 在 [DebugWindow 偵測器] 面板中附加 DebugWindowMessaging 腳本，並啟用 [啟用 Debug Window] 選項。 之後，將 DebugWindow prefab 拖放到 DebugText 空的欄位中。 您也可以隨時調整 DebugWindow 位置。
+    在 [匯入 Unity 封裝] 快顯視窗中，先確定已選取所有資產，方法是按一下 [**全部**] 按鈕，然後按一下 [匯**入**] 按鈕來匯入資產。
 
-10. 若要放大場景，請按兩下階層中的父錨點，並調整您的視圖，以視需要查看整個場景。 目前，ParentAnchor 是僅供示範用途使用的彩色 cube。 最後，我們將隱藏 cube，並將內容放在 ParentAnchor 的子系中。 
+    ![mrlearning-asa](images/mrlearning-asa-ch1-3-2.3.png)
 
-11. 現在讓我們設定用來操作場景的按鈕。 為此，請展開 [ButtonParent] prefab，您會看到數個加上標籤的按鈕，這些都是從 MRTK 的 PressableButton prefabs 所建立。 深入瞭解如何從[基底模組](mrlearning-base-ch2.md)建立 PressableButton。 若要讓這些按鈕運作，您必須新增事件，當使用者按下或選取個別按鈕時，就會觸發此事件。 
+    重複這些步驟來匯入其餘的資產套件。 完成後，您的 Unity 專案的 [**資產**] 資料夾應該會包含這些子資料夾。
 
-- 針對名為 StartAzureSession 的按鈕，在 [按下的事件觸發程式] 和 [On Click] 事件觸發程式底下建立新事件。 將 ParentAnchor 物件拖曳至空白欄位，並從 ParentAnchor 物件的 ASAmoduleScript 元件指派 StartAzureSession （）方法，如下列螢幕擷取畫面所示。
-- ![module2chapter1step10aim](images/module2chapter1step10aim.PNG)
+    ![mrlearning-asa](images/mrlearning-asa-ch1-3-2.4.png)
 
-![module2chapter1step10bim](images/module2chapter1step10bim.PNG)
+## <a name="creating-and-preparing-the-scene"></a>建立和準備場景
 
-![module2chapter1step10cim](images/module2chapter1step10fim.PNG)
+在本節中，您將藉由新增混合現實工具組和一些教學課程 prefabs 來建立和準備場景。
 
-- 針對名為 StopAzureSession 的按鈕，在 [按下的事件觸發程式] 和 [On Click] 事件觸發程式底下建立新事件。 將 ParentAnchor 物件拖曳至空白欄位，並從 ParentAnchor 物件的 ASAmoduleScript 元件指派 StopAzureSession （）方法。
+1. 建立新場景。
 
-- 針對名為 CreateAnchor 的按鈕，在 [按下的事件觸發程式] 和 [On Click] 事件觸發程式底下建立新事件。 將 ParentAnchor 物件拖曳至空白欄位，並從 ParentAnchor 物件的 ASAmoduleScript 元件指派 CreateAzureAnchor （）方法。  **之後，再次將 ParentAnchor 拖曳到下一個空白的「遊戲物件」欄位。**
+    在 Unity 功能表中 **，選取 [** 檔案] > [**新場景**]。
 
-- 針對名為 [開始尋找錨點] 的按鈕，在按鈕下按下 [事件觸發程式]，以及 [On Click] 事件觸發程式來建立新事件。 將 ParentAnchor 物件拖曳至空白欄位，並從 ParentAnchor 物件的 ASAmoduleScript 元件指派 FindAzureAnchor （）方法。
+    ![mrlearning-asa](images/mrlearning-asa-ch1-4-1.1.png)
 
-- 針對名為 DeleteAzureAnchor 的按鈕，在 [按下的事件觸發程式] 和 [On Click] 事件觸發程式底下建立新事件。 將 ParentAnchor 物件拖曳至空白欄位，並從 ParentAnchor 物件的 ASAmoduleScript 元件指派 DeleteAzureAnchor （）方法。  
+    在 Unity 功能表中 **，選取** 檔案 > **另存**新檔 ...。
 
-- 針對名為 [刪除本機錨點] 的按鈕，在 [已按下的事件觸發程式] 和 [On Click] 事件觸發程式底下建立新事件。 將 ParentAnchor 物件拖曳至空白欄位，並從 ParentAnchor 物件的 ASAmoduleScript 元件指派 RemoveLocalAnchor （）方法。 **之後，請將 ParentAnchor 物件再次拖曳到下一個空白的「遊戲物件」欄位。**
+    ![mrlearning-asa](images/mrlearning-asa-ch1-4-1.2.png)
 
-12. 若要設定 Azure 空間錨點，請移至 [資產] 資料夾中的 [AzureSpatialAnchorsPlugin] 資料夾，然後流覽至 [範例-> 資源-> AzureSpatialAnchorsDemoConfig 檔案]。 在 [偵測器] 面板中，新增您稍早建立的 Azure 帳戶識別碼和帳戶金鑰。 如果您尚未建立或沒有這些專案，請遵循[必要條件](https://docs.microsoft.com//azure/spatial-anchors/quickstarts/get-started-unity-hololens)。 
+    在 [儲存場景] 快顯視窗中，流覽至專案的 [**幕後**] 資料夾，為您的場景提供適當的名稱（例如_ASATutorialScene_），然後按一下 [**儲存**] 按鈕來儲存場景。
 
-  ![module2chapter1step13im](images/module2chapter1step13im.PNG)
+    ![mrlearning-asa](images/mrlearning-asa-ch1-4-1.3.png)
 
-### <a name="build-and-demonstrate-base-application"></a>建立並示範基本應用程式
+    >[!TIP]
+    >只要此場景位於專案的 [資產] 資料夾內，您就可以將它儲存在您喜歡的任何地方。 不過，若要讓您的專案組織，通常建議將它儲存在專案的 [場景] 資料夾中。
 
-既然您的場景已設定為示範 Azure 空間錨點的基本概念，我們將會建立並示範 Azure 空間錨點的基本行為。 
+2. 新增混合現實工具組。
 
-1. 前往 [檔案] > [組建設定]，再次開啟 [組建設定] 視窗。
-    ![mrlearning-asa-ch1-3-步驟 1](images/mrlearning-asa-ch1-3-step1.jpg)
-2. 按一下 [新增開啟的場景] 按鈕，以確定您想要嘗試的場景是在組建清單的場景中。
-3. 確認平臺已設定為 [通用 Windows 平臺]。 如果沒有，請將它設定為相同的。
-4. 按 [Player 設定] 按鈕，然後移至 [發佈設定]。 在 [功能] 底下，啟用：網際網路、網際網路用戶端伺服器、私人網路用戶端伺服器、卸除式存放裝置、網路攝影機、麥克風和空間感知。
-5. 在相同的播放人員設定中，移至 [XR 設定]，然後選取支援的虛擬實境。
-6. 按下 [建置] 按鈕，開始建置程序。
-   ![mrlearning-asa-ch1-3-步驟 6](images/mrlearning-asa-ch1-3-step6.jpg)
-7. 為您的應用程式建立並命名新資料夾。 在下圖中，已建立名為 App 的資料夾來包含應用程式。 按一下 [選取資料夾]，開始建立新建立的資料夾。 組建完成之後，您可以在 Unity 中關閉 [組建設定] 視窗。
+    在 Unity 功能表中，選取 **混合現實工具**組， > **新增至場景並設定 ...** 。
 
-    ![mrlearning-asa-ch1-3-step7](images/mrlearning-asa-ch1-3-step7.jpg)
+    ![mrlearning-asa](images/mrlearning-asa-ch1-4-2.1.png)
 
-    > 注意：如果組建失敗，請嘗試重新建立或重新開機 Unity，然後重新建立。 如果您看到錯誤，例如「錯誤： CS0246 = 類型或命名空間名稱 "XX" 找不到（您是否遺漏 using 指示詞或元件參考？），您可能需要安裝[Windows 10 SDK （10.0.18362.0）](<https://developer.microsoft.com//windows/downloads/windows-10-sdk>) 
+    在 [選取 MixedRealityToolkitConfigurationProfile] 快顯視窗中，按一下**DefaultHoloLens2ConfigurationProfile** ，將其設定為場景的 MRTK 設定檔。
 
+    ![mrlearning-asa](images/mrlearning-asa-ch1-4-2.2.png)
 
-8. 即使在成功組建之後，您可能會收到如下所示的一些錯誤，但如果組建成功，您可以忽略它們，並繼續進行後續步驟。
+    在 Unity 功能表中 **，選取** 檔案 > **儲存** 以儲存場景。
 
-    ![mrlearning-asa-ch1-3-step7B](images/mrlearning-asa-ch1-3-step7B.png)
+    ![mrlearning-asa](images/mrlearning-asa-ch1-4-2.3.png)
 
-    
+    >[!TIP]
+    >當您進行本教學課程時，您可以使用鍵盤快速鍵 CTRL + S （macOS 上的 command + S）來快速儲存場景。
 
-9. 在建置完成之後，開啟新建立的資料夾，其中包含您新建置的應用程式檔案。 如果您使用專案的替代名稱，在 Visual Studio 中開啟方案檔，請按兩下 [MixedRealityBase] 方案或對應的名稱。
+3. 新增教學課程 prefabs。
 
-    > 注意：如果遵循先前步驟中的命名慣例，請務必開啟新建立的資料夾（也就是應用程式資料夾），因為該資料夾外部會有類似的名稱 .sln 檔案，不會與組建資料夾內的 .sln 檔案混淆。
+    在 [專案] 面板中，流覽至 [**資產**] [ > **MRTK]。教學課程. AzureSpatialAnchors** > **Prefabs**資料夾。 按住 CTRL 鍵（macOS 上的命令）時，按一下 [ **ButtonParent**]、[ **DebugWindow**] 和 [ **ParentAnchor** ] 以選取三個 prefabs。
 
-    ![mrlearning-asa-ch1-3-step8](images/mrlearning-asa-ch1-3-step8.jpg)
+    ![mrlearning-asa](images/mrlearning-asa-ch1-4-3.1.png)
 
-    > 注意：如果 Visual Studio 要求安裝新元件，請確定在[[安裝工具] 頁面](install-the-tools.md)中，所有必要條件元件都已安裝為特定
+    在選取了三個 prefabs 的情況下，將它們拖曳到 [階層] 面板中，以將它們新增至場景。
 
+    ![mrlearning-asa](images/mrlearning-asa-ch1-4-3.2.png)
 
-9. 使用 USB 纜線，將 HoloLens 2 插入您的電腦。 雖然這些課程指示假設您將使用 HoloLens 2 裝置部署測試，但您也可以選擇部署至[hololens 2 模擬器](using-the-hololens-emulator.md)，或選擇建立用於側[載的應用程式套件](<https://docs.microsoft.com//windows/uwp/packaging/packaging-uwp-apps>)
+    若要將焦點放在場景中的物件上，您可以按兩下 [ParentAnchor] 物件，然後再稍微縮小一次。
 
-10. 在建立您的裝置之前，請確定其處於開發人員模式。 如果這是您第一次部署至 HoloLens 2，Visual Studio 可能會要求您將 HoloLens 2 與 PIN 配對。 如果您需要啟用開發人員模式或與 Visual Studio 配對，請遵循[這些指示](https://docs.microsoft.com//windows/mixed-reality/using-visual-studio)。
+    ![mrlearning-asa](images/mrlearning-asa-ch1-4-3.3.png)
 
-11. 藉由選取發行設定和 ARM 架構，設定用來建立 HoloLens 2 的 Visual Studio。
+    >[!TIP]
+    >比方說，如果您在場景中找到大圖示，例如，大框的 ' t ' 圖示會有干擾，您可以將<a href="https://docs.unity3d.com/2019.1/Documentation/Manual/GizmosMenu.html" target="_blank">Gizmos 切換</a>到 off 位置來隱藏它們。
 
-    ![mrlearning-asa-ch1-3-step11](images/mrlearning-asa-ch1-3-step11.jpg)
+## <a name="configuring-the-buttons-to-operate-the-scene"></a>設定按鈕以操作場景
 
+在本節中，您將在場景中新增 prefabs 和腳本，以建立一系列的按鈕，以示範本機錨點和 Azure 空間錨點在應用程式中的行為。
 
-12. 最後一個步驟是選取 [偵錯] > [啟動但不偵錯] 來對您的裝置進行建置。 選取 [啟動但不進行偵錯工具]，會在成功組建時立即在裝置上啟動，而不會出現在 Visual Studio 中的偵測資訊。 這也表示，當您的應用程式在 HoloLens 2 上執行時，您可以在不需要停止應用程式的情況下拔掉 USB 纜線。 您也可以選取 [組建 > 部署解決方案]，以部署至您的裝置，而不會自動啟動應用程式。
+1. 設定 Pressable 按鈕 Hololens 透鏡2（腳本）元件。
 
-    ![mrlearning-asa-ch1-3-step12](images/mrlearning-asa-ch1-3-step12.jpg)
+    在 [階層] 面板中，展開 [ **ButtonParent** ] 物件，並選取名為**StartAzureSession**的第一個子物件。
 
->注意： Azure 空間錨點會使用網際網路來儲存和載入錨定資料，因此請先確定您的裝置已連線到網際網路，然後再測試 ASA 應用程式。
+    ![mrlearning-asa](images/mrlearning-asa-ch1-5-1.1.png)
 
-13. 請依照指示進行。 
-    當應用程式在您的裝置上執行時，請遵循畫面上的指示。 按下與下列步驟對應的場景按鈕。 如果您已如先前步驟所述新增 [偵錯工具] 視窗，您可以看到個別按鈕按下的意見反應，以及與 Azure 空間錨點相關之個別作業的進度。
+    在 [偵測器] 面板中，向下**Pressable 按鈕 Hololens 透鏡2（腳本）** 元件，然後按一下 [ **+** ] 圖示，將新的事件接聽程式新增至**按下的按鈕（）** 事件。
 
-![module2chapter1step10eim](images/module2chapter1step10eim.PNG)
-    
-    1. 啟動空間錨點會話。
-    
-    2. 將 cube 移至不同的位置。
-    
-    3. 將 Azure 空間錨點儲存在 cube 的位置。
-    
-    4. 停止 Azure 空間錨點會話。
-    
-    5. 移除 cube 上的本機錨點，讓使用者可以移動 cube。
-    
-    6. 將 cube 移到其他地方。
-    
-    7. 啟動 Azure 空間錨點會話。
-    
-    8. 尋找 Azure 空間錨點。 
-    當您建立錨點時，應該回到原先放置的位置。
-    
-    9. 刪除 Azure 空間錨點。
-    
-    10. 停止 Azure 會話。
+    ![mrlearning-asa](images/mrlearning-asa-ch1-5-1.2.png)
 
-### <a name="anchoring-an-experience"></a>錨定體驗
+    在 [階層] 面板中仍選取 StartAzureSession 物件時，按一下-並將**ParentAnchor**物件從 [階層] 面板拖曳至您剛才加入之事件接聽程式的 [空的**無（物件）** ] 欄位中，讓 ParentAnchor 物件在此按鈕中聆聽已按下按鈕的事件。
 
-在前面幾節中，您已瞭解 Azure 空間錨點的基本概念。 我們已使用 cube 來呈現父遊戲物件，並將其視覺化為連結的錨點。 在本節中，您將瞭解如何藉由將它放為 ParentAnchor 物件的子系，來錨定整個體驗。 在此範例中，我們會使用在[基底模組第6課](mrlearning-base-ch6.md)期間所建立的陰曆模組元件示範應用程式。
+    ![mrlearning-asa](images/mrlearning-asa-ch1-5-1.3.png)
 
-1. 搜尋 "Rocket 啟動器 Complete" prefab，並將它拖曳到您的階層中做為物件的子系（請參閱下圖）。
+    按一下相同事件接聽程式的 [**無**函式] 下拉式清單，然後選取 [ **AnchorModuleScript** > **StartAzureSession （）** ]，將 StartAzureSession （）函數設定為從這個按鈕引發按鈕按下的事件時所觸發的動作。
 
-![module2chapter1step11](images/module2chapter1step11im.PNG)
+    ![mrlearning-asa](images/mrlearning-asa-ch1-5-1.4.png)
 
-2. 放置模組元件體驗，讓 cube 仍然公開，如下圖所示。 在應用程式中，使用者可以藉由移動 cube 來重新放置整個體驗。 
+2. 設定可互動（腳本）元件。
 
-![module2chapter1step12im](images/module2chapter1step12im.PNG)
+    在 [階層] 面板中仍然選取 StartAzureSession 物件時，請在 [偵測器] 面板中，向下流覽至 [**可互動（腳本）** ] 元件，然後針對**OnClick （）** 事件重複上述步驟1中的相同進程。
 
-> 注意：有各種不同的使用者體驗流程可用於重新置放體驗，包括使用按鈕來切換環繞體驗的周框方塊、使用重新置放的物件（例如在此步驟中使用的 cube）、使用位置和旋轉gizmos，還有更多。
+    ![mrlearning-asa](images/mrlearning-asa-ch1-5-2.1.png)
+
+3. 設定其餘按鈕
+
+    針對其餘的每個按鈕，完成上述步驟1和2中所述的程式，將函式指派給按下的按鈕（）和 OnClick （）事件，如下所示：
+
+    * 針對**StopAzureSession**物件，指派**StopAzureSession （）** 函數。
+    * 針對**CreateAnchor**物件，指派**CreateAzureAnchor （）** 函式，然後將**ParentAnchor**再次拖曳到空白的**None （遊戲物件）** 欄位中。
+    * 針對 [**開始尋找錨點**物件]，指派**FindAzureAnchor （）** 函數。
+    * 針對 [**刪除 Azure 錨點**] 物件，指派**DeleteAzureAnchor （）** 函數。
+    * 針對 [**刪除本機錨點**] 物件，指派**RemoveLocalAnchor （）** 函式，然後再次將**ParentAnchor**拖曳至 [空的**無（遊戲物件）** ] 欄位。
+
+4. 將場景連線至 Azure 資源
+
+    在 [階層] 面板中，選取 [ **ParentAnchor** ] 物件，然後在 [偵測器] 面板中，向下流覽至 [**空間錨點管理員（腳本）** ] 元件。
+
+    然後，在 [**認證**] 區段中，將您的空間錨點帳戶識別碼和金鑰貼入對應的 [**空間錨點帳戶識別碼**] 和 [**空間錨點帳戶金鑰**] 欄位。
+
+    >[!NOTE]
+    >您已在本教學[課程的必要條件](mrlearning-asa-ch1.md#prerequisites)中建立空間錨點帳戶識別碼和金鑰。
+
+    ![mrlearning-asa](images/mrlearning-asa-ch1-5-4.1.png)
+
+    >[!CAUTION]
+    >請確定您已儲存場景。
+
+## <a name="trying-the-basic-behaviors-of-azure-spatial-anchors"></a>嘗試 Azure 空間錨點的基本行為
+
+您的場景已設定為示範 Azure 空間錨點的基本概念，現在可以部署應用程式，以便體驗 Azure 空間錨點搶先它。
+
+1. 新增額外的必要功能。
+
+    在 Unity 功能表中，選取 **編輯** > **專案設定 ...**  以開啟 播放 設定面板。
+
+    ![mrlearning-asa](images/mrlearning-asa-ch1-6-1.1.png)
+
+    在 [Player 設定] 面板中，依序選取 [ **player** ] 和 [**發佈設定**]。
+
+    ![mrlearning-asa](images/mrlearning-asa-ch1-6-1.2.png)
+
+    在 [**發行設定**] 中，向下流覽至 [**功能**] 區段，然後再次檢查您在教學課程開頭建立專案時所啟用的**SpatialPerception**（已啟用）。 然後，啟用**InternetClient**、 **InternetClientServer**、 **PrivateNetworkClientServer**、 **RemovableStorage**、**網路**攝影機和**麥克風**等功能。
+
+    ![mrlearning-asa](images/mrlearning-asa-ch1-6-1.3.png)
+
+2. 將應用程式部署至 HoloLens 2。
+
+    >[!TIP]
+    >如需有關如何建立 Unity 專案並將其部署至 HoloLens 2 的提醒，您可以參閱[初始化專案和第一個應用程式](https://docs.microsoft.com/windows/mixed-reality/mrlearning-base-ch1)教學課程的「將[應用程式建立到您的裝置](mrlearning-base-ch1.md#build-your-application-to-your-device)」區段，這是使用者入門[教學](mrlearning-base.md)課程系列的一部分。
+
+3. 執行應用程式，並遵循應用程式內的指示。
+
+    >[!CAUTION]
+    >Azure 空間錨點會使用網際網路來儲存和載入錨定資料，因此請確定您的裝置已連線到網際網路。
+
+    當應用程式在您的裝置上執行時，請遵循**Azure 空間錨點模組指示**面板上顯示的螢幕指示。
+
+    ![mrlearning-asa](images/mrlearning-asa-ch1-6-3.1.png)
+
+## <a name="anchoring-an-experience"></a>錨定體驗
+
+在前面幾節中，您已瞭解 Azure 空間錨點的基本概念。 我們使用 cube 來呈現父遊戲物件，並使用連結的錨點將其視覺化。 在本節中，您將瞭解如何藉由將它放在 ParentAnchor 物件的子系，來錨定整個體驗。
+
+1. 新增 Rocket 啟動器體驗。
+
+    在 專案 面板中，流覽至 **資產**  > **MRTK。GettingStarted** > **Prefabs**  資料夾，然後選取**Rocket Launcher_Complete** prefab。
+
+    ![mrlearning-asa](images/mrlearning-asa-ch1-7-1.1.png)
+
+    在仍選取 [Rocket Launcher_Complete prefab] 的情況下，將其拖曳至 [階層] 面板中的 [ **ParentAnchor** ] 物件上方，使其成為 ParentAnchor 物件的子系。
+
+    ![mrlearning-asa](images/mrlearning-asa-ch1-7-1.2.png)
+
+2. 重新置放 Rocket 啟動器體驗。
+
+    移動模組**Rocket Launcher_Complete**物件，讓**ParentAnchor** （cube）仍然公開。
+
+    ![mrlearning-asa](images/mrlearning-asa-ch1-7-2.1.png)
+
+    在應用程式中，使用者現在可以藉由移動 cube 來重新放置整個 Rocket 啟動器的使用體驗。
+
+    >[!TIP]
+    >有各種不同的使用者體驗流程可進行重新置放的體驗，包括使用重新置放的物件（例如本教學課程中使用的 cube）、使用按鈕來切換環繞體驗的周框方塊、使用位置和旋轉gizmos，還有更多。
 
 ## <a name="congratulations"></a>恭喜！
-在本教學課程中，您已瞭解 Azure 空間錨點的基本概念。 這一課提供了數個按鈕，可讓您探索啟動和停止 Azure 會話，以及在單一裝置上建立、上傳和下載 azure 錨點所需的各種步驟。 在下一課中，您將瞭解如何將 Azure 錨點識別碼儲存至 HoloLens 2 進行抓取，即使在應用程式重新開機之後也一樣。 在此系列中，您也將瞭解如何在多個裝置之間傳輸錨點識別碼，以達成空間對齊，並瞭解多使用者共用會話，即將推出做為共用教學課程的一部分。
+
+在本教學課程中，您已瞭解 Azure 空間錨點的基本概念。 這一課提供了數個按鈕，可讓您探索啟動和停止 Azure 會話，以及在單一裝置上建立、上傳和下載 azure 錨點所需的各種步驟。
+
+在下一課中，您將瞭解如何將 Azure 錨點識別碼儲存至 HoloLens 2 進行抓取，即使在重新開機應用程式之後，以及如何在多個裝置之間傳輸錨點識別碼以達成空間對齊。
 
 [下一課： 2. 儲存、正在抓取和共用 Azure 空間錨點](mrlearning-asa-ch2.md)
-

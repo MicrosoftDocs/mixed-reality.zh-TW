@@ -6,206 +6,277 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: b615f1135f5d2947f8f718e080ef45a3c1fcc576
-ms.sourcegitcommit: 05fa75193059a2dac4b580a9eef7b6c4bb64d8d7
+ms.openlocfilehash: 861c42f9449fcb3cf038258af91088fc927941e5
+ms.sourcegitcommit: f4812e1312c4751a22a2de56771c475b22a4ba24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74830841"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74940956"
 ---
-# <a name="1-getting-started-with-azure-spatial-anchors"></a><span data-ttu-id="52b7c-105">1. 開始使用 Azure 空間錨點</span><span class="sxs-lookup"><span data-stu-id="52b7c-105">1. Getting started with Azure Spatial Anchors</span></span>
+# <a name="1-getting-started-with-azure-spatial-anchors"></a><span data-ttu-id="8417f-105">1. 開始使用 Azure 空間錨點</span><span class="sxs-lookup"><span data-stu-id="8417f-105">1. Getting started with Azure Spatial Anchors</span></span>
 
-<span data-ttu-id="52b7c-106">歡迎使用 HoloLens 2 教學課程的第二個模組。</span><span class="sxs-lookup"><span data-stu-id="52b7c-106">Welcome to the second module of the HoloLens 2 tutorials.</span></span> <span data-ttu-id="52b7c-107">開始使用之前，請確定所有[必要條件](https://docs.microsoft.com//azure/spatial-anchors/quickstarts/get-started-unity-hololens)都已完成。</span><span class="sxs-lookup"><span data-stu-id="52b7c-107">Before getting started, be sure that all of the [prerequisites](https://docs.microsoft.com//azure/spatial-anchors/quickstarts/get-started-unity-hololens) are completed.</span></span> <span data-ttu-id="52b7c-108">如果您尚未完成第一個[基本模組](mrlearning-base.md)，建議您先完成該課程模組。</span><span class="sxs-lookup"><span data-stu-id="52b7c-108">If you have not completed the first, [Base module](mrlearning-base.md) yet, it's recommended that you complete that module first.</span></span> <span data-ttu-id="52b7c-109">如果您從新的 Unity 專案開始，請遵循[基底模組](mrlearning-base.md)中的新專案建立步驟。</span><span class="sxs-lookup"><span data-stu-id="52b7c-109">If you are starting from a new Unity project, follow the new project creation steps in the [Base module](mrlearning-base.md).</span></span> 
+## <a name="overview"></a><span data-ttu-id="8417f-106">概觀</span><span class="sxs-lookup"><span data-stu-id="8417f-106">Overview</span></span>
 
-## <a name="objectives"></a><span data-ttu-id="52b7c-110">目標</span><span class="sxs-lookup"><span data-stu-id="52b7c-110">Objectives</span></span>
+<span data-ttu-id="8417f-107">歡迎使用第二系列的 HoloLens 2 教學課程。</span><span class="sxs-lookup"><span data-stu-id="8417f-107">Welcome to the second series of the HoloLens 2 tutorials.</span></span> <span data-ttu-id="8417f-108">在這三部分的教學課程系列中，您將瞭解 Azure 空間錨點的基本概念。</span><span class="sxs-lookup"><span data-stu-id="8417f-108">In this three-part tutorial series, you will learn the fundamentals of Azure Spatial Anchors.</span></span>
 
-* <span data-ttu-id="52b7c-111">瞭解使用 HoloLens 2 搭配 Azure 空間錨點進行開發的基本概念</span><span class="sxs-lookup"><span data-stu-id="52b7c-111">Learn the fundamentals of developing with Azure Spatial Anchors with HoloLens 2</span></span>
+<span data-ttu-id="8417f-109">在第一個教學課程中，[開始使用 Azure 空間錨點](mrlearning-asa-ch1.md)，您將探索啟動和停止 azure 會話，以及在單一裝置上建立、上傳和下載 azure 錨點所需的各種步驟。</span><span class="sxs-lookup"><span data-stu-id="8417f-109">In this first tutorial, [Getting started with Azure Spatial Anchors](mrlearning-asa-ch1.md), you will explore the various steps required to start and stop an Azure session and create, upload, and download Azure anchors on a single device.</span></span>
 
-* <span data-ttu-id="52b7c-112">建立、上傳及下載空間錨點</span><span class="sxs-lookup"><span data-stu-id="52b7c-112">Create, upload, and download spatial anchors</span></span>
+<span data-ttu-id="8417f-110">在第二個教學課程中，[儲存、抓取和共用 Azure 空間錨點](mrlearning-asa-ch2.md)，您將瞭解如何藉由將錨點資訊儲存至 HoloLens 2 的儲存體，來將 Azure 空間錨點儲存到多個應用程式會話，以及如何將此錨點資訊與其他裝置共用，以進行多重裝置錨定的對齊。</span><span class="sxs-lookup"><span data-stu-id="8417f-110">In the second tutorial, [Saving, retrieving, and sharing Azure Spatial Anchors](mrlearning-asa-ch2.md), you will learn how to save Azure Spatial Anchors across multiple app sessions by saving anchor information to the HoloLens 2's storage and how to share this anchor information to other devices for a multi-device anchor alignment.</span></span>
 
-## <a name="instructions"></a><span data-ttu-id="52b7c-113">指示</span><span class="sxs-lookup"><span data-stu-id="52b7c-113">Instructions</span></span>
+<span data-ttu-id="8417f-111">在第三個教學課程中，[顯示 Azure 空間錨點意見](mrlearning-asa-ch3.md)反應，您將瞭解如何在使用 Azure 空間錨點時，為使用者提供錨點事件和狀態的相關意見反應。</span><span class="sxs-lookup"><span data-stu-id="8417f-111">In the third tutorial, [Displaying Azure Spatial Anchor feedback](mrlearning-asa-ch3.md), you will learn how to provide users with feedback about anchor events and statuses when using Azure Spatial Anchors.</span></span>
 
-### <a name="downloading-and-importing-assets"></a><span data-ttu-id="52b7c-114">下載和匯入資產</span><span class="sxs-lookup"><span data-stu-id="52b7c-114">Downloading and importing assets</span></span>
-<span data-ttu-id="52b7c-115">開始之前，請先下載並匯入下列資產：</span><span class="sxs-lookup"><span data-stu-id="52b7c-115">Before beginning, download and import the following assets:</span></span>
+## <a name="objectives"></a><span data-ttu-id="8417f-112">目標</span><span class="sxs-lookup"><span data-stu-id="8417f-112">Objectives</span></span>
 
-[<span data-ttu-id="52b7c-116">Azure 空間錨點 v 1.1。0</span><span class="sxs-lookup"><span data-stu-id="52b7c-116">Azure Spatial Anchors v1.1.0</span></span>](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v1.1.0/AzureSpatialAnchors.unitypackage)
+* <span data-ttu-id="8417f-113">瞭解使用 HoloLens 2 的 Azure 空間錨點進行開發的基本概念</span><span class="sxs-lookup"><span data-stu-id="8417f-113">Learn the fundamentals of developing with Azure Spatial Anchors for HoloLens 2</span></span>
+* <span data-ttu-id="8417f-114">建立、上傳及下載空間錨點</span><span class="sxs-lookup"><span data-stu-id="8417f-114">Create, upload, and download spatial anchors</span></span>
 
-[<span data-ttu-id="52b7c-117">HoloLens2. GettingStarted 教學課程. 2.1.0.0. unitypackage</span><span class="sxs-lookup"><span data-stu-id="52b7c-117">Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage</span></span>](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.0/Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage)
+## <a name="prerequisites"></a><span data-ttu-id="8417f-115">必要條件</span><span class="sxs-lookup"><span data-stu-id="8417f-115">Prerequisites</span></span>
 
-[<span data-ttu-id="52b7c-118">HoloLens2. AzureSpatialAnchor 教學課程. 2.1.0.0. unitypackage</span><span class="sxs-lookup"><span data-stu-id="52b7c-118">Unity.HoloLens2.AzureSpatialAnchor.Tutorials.Asset.2.1.0.0.unitypackage</span></span>](https://github.com/microsoft/MixedRealityLearning/releases/download/azure-spatial-anchor-v2.1.0.0/Unity.HoloLens2.AzureSpatialAnchor.Tutorials.Asset.2.1.0.0.unitypackage)
+* <span data-ttu-id="8417f-116">符合[快速入門：建立使用 Azure 空間錨點的 Unity HoloLens 應用程式](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens)教學[課程的必要條件](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens#prerequisites)一節中所列的需求。</span><span class="sxs-lookup"><span data-stu-id="8417f-116">Meet the requirements listed in the [Prerequisites](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens#prerequisites) section of the  [Quickstart: Create a Unity HoloLens app that uses Azure Spatial Anchors](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens) tutorial.</span></span>
+* <span data-ttu-id="8417f-117">完成[快速入門：建立使用 Azure 空間錨點的 Unity HoloLens 應用程式](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens)教學課程中的[建立空間錨點資源](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens#create-a-spatial-anchors-resource)一節。</span><span class="sxs-lookup"><span data-stu-id="8417f-117">Complete the [Create a Spatial Anchors resource](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens#create-a-spatial-anchors-resource) section of the [Quickstart: Create a Unity HoloLens app that uses Azure Spatial Anchors](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens) tutorial.</span></span>
+* <span data-ttu-id="8417f-118">如果您尚未完成[快速入門教學](mrlearning-base.md)課程系列，建議您先完成這些教學課程。</span><span class="sxs-lookup"><span data-stu-id="8417f-118">If you have not completed the [Getting started tutorials](mrlearning-base.md) series yet, it's recommended that you complete those tutorials first.</span></span>
 
-[<span data-ttu-id="52b7c-119">Mixed Reality 工具組基礎封裝2.1。0</span><span class="sxs-lookup"><span data-stu-id="52b7c-119">Mixed Reality Toolkit  Foundation Package 2.1.0</span></span>](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/tag/v2.1.0)
+## <a name="creating-the-unity-project"></a><span data-ttu-id="8417f-119">建立 Unity 專案</span><span class="sxs-lookup"><span data-stu-id="8417f-119">Creating the Unity project</span></span>
 
-1. <span data-ttu-id="52b7c-120">在您的專案中建立新的場景。</span><span class="sxs-lookup"><span data-stu-id="52b7c-120">Create a new scene in your project.</span></span> <span data-ttu-id="52b7c-121">以滑鼠右鍵按一下場景資料夾，然後依序按一下 [建立]、[場景]。</span><span class="sxs-lookup"><span data-stu-id="52b7c-121">Right-click your Scene folder, click Create, then Scene.</span></span> <span data-ttu-id="52b7c-122">將新場景命名為 "ASALearningModule"。</span><span class="sxs-lookup"><span data-stu-id="52b7c-122">Name the new scene as "ASALearningModule".</span></span>
+<span data-ttu-id="8417f-120">在本節中，您將建立新的 Unity 專案，並針對 Windows Mixed Reality 進行設定。</span><span class="sxs-lookup"><span data-stu-id="8417f-120">In this section, you will create a new Unity project and configure it for Windows Mixed Reality.</span></span>
 
-![module2chapter1step1im](images/module2chapter1step1im.PNG)
+1. <span data-ttu-id="8417f-121">建立 Unity 專案，並為其提供適當的名稱，例如_Azure 空間錨點教學_課程。</span><span class="sxs-lookup"><span data-stu-id="8417f-121">Create a Unity project and give it a suitable name, for example, _Azure Spatial Anchors tutorial_.</span></span>
 
-2. <span data-ttu-id="52b7c-124">按兩下 [ASALearningmodule] 場景，查看一些預先定義的專案與新場景一起出現。</span><span class="sxs-lookup"><span data-stu-id="52b7c-124">Double-click "ASALearningmodule" scene to see some pre-defined items to appear along with the new scene.</span></span> 
-3. <span data-ttu-id="52b7c-125">設定混合現實開發的場景。</span><span class="sxs-lookup"><span data-stu-id="52b7c-125">Configure the scene for mixed reality development.</span></span> 
+2. <span data-ttu-id="8417f-122">設定適用于 Windows Mixed Reality 的 Unity 專案。</span><span class="sxs-lookup"><span data-stu-id="8417f-122">Configure the Unity project for Windows Mixed Reality.</span></span>
 
-![module2chapter1step3im](images/module2chapter1step3im.PNG)
+    >[!TIP]
+    ><span data-ttu-id="8417f-123">如需有關如何建立 Unity 專案並針對 Windows Mixed Reality 進行設定的提醒，您可以參閱[初始化專案和第一個應用程式](https://docs.microsoft.com/windows/mixed-reality/mrlearning-base-ch1)教學課程中的[建立新的 Unity 專案](mrlearning-base-ch1.md#create-new-unity-project)和設定適用于[windows mixed reality 的 unity 專案](mrlearning-base-ch1.md#configure-the-unity-project-for-windows-mixed-reality)一節，這是使用者入門[教學](mrlearning-base.md)課程系列的一部分。</span><span class="sxs-lookup"><span data-stu-id="8417f-123">For a reminder on how to create a Unity project and configure it for Windows Mixed Reality, you can refer to the [Create new Unity project](mrlearning-base-ch1.md#create-new-unity-project) and the [Configure the Unity project for Windows Mixed Reality](mrlearning-base-ch1.md#configure-the-unity-project-for-windows-mixed-reality) sections of the [Initializing your project and first application](https://docs.microsoft.com/windows/mixed-reality/mrlearning-base-ch1) tutorial which is part of the the [Getting started tutorials](mrlearning-base.md) series.</span></span>
 
-> <span data-ttu-id="52b7c-127">注意：您可能會看到一個快顯對話方塊，可供您選取[混合現實工具組的設定檔](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Profiles/Profiles.html)。</span><span class="sxs-lookup"><span data-stu-id="52b7c-127">Note: You may see a pop-up dialog box for selecting a [profile for the Mixed Reality Toolkit](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Profiles/Profiles.html).</span></span> <span data-ttu-id="52b7c-128">按兩下名為*DefaultHoloLens2ConfigurationProfile*的設定檔。</span><span class="sxs-lookup"><span data-stu-id="52b7c-128">Choose the profile named *DefaultHoloLens2ConfigurationProfile* by double-clicking it.</span></span>
+## <a name="adding-inbuilt-unity-packages"></a><span data-ttu-id="8417f-124">新增內建 Unity 套件</span><span class="sxs-lookup"><span data-stu-id="8417f-124">Adding inbuilt Unity packages</span></span>
 
-4. <span data-ttu-id="52b7c-129">為 MRTK 選擇檔案時，請選取 [DefaultMixedRealityToolkitConfigurationProfile]。</span><span class="sxs-lookup"><span data-stu-id="52b7c-129">When choosing a file for the MRTK, select DefaultMixedRealityToolkitConfigurationProfile.</span></span>
+<span data-ttu-id="8417f-125">在本節中，您將會新增要在專案中使用的工具組和 Sdk 所需的內建 Unity 資產和套件。</span><span class="sxs-lookup"><span data-stu-id="8417f-125">In this section, you will add inbuilt Unity assets and packages required by the toolkits and SDKs you will be using in the project.</span></span>
 
-> <span data-ttu-id="52b7c-130">注意：如果您有自己的設定設定檔，則可以隨意使用。</span><span class="sxs-lookup"><span data-stu-id="52b7c-130">Note: If you have your own configuration profile, feel free to use that instead.</span></span>
->
+1. <span data-ttu-id="8417f-126">匯入 TMP 基本資源。</span><span class="sxs-lookup"><span data-stu-id="8417f-126">Import TMP Essential Resources.</span></span>
 
-![module2chapter1step4im](images/module2chapter1step4im.PNG)
+    >[!NOTE]
+    ><span data-ttu-id="8417f-127">我們正在新增此封裝，因為它是混合現實工具組的必要項。</span><span class="sxs-lookup"><span data-stu-id="8417f-127">We are adding this package because it is required by the Mixed Reality Toolkit.</span></span>
 
-<span data-ttu-id="52b7c-132">現在場景已設定為混合現實。</span><span class="sxs-lookup"><span data-stu-id="52b7c-132">The scene is now configured for mixed reality.</span></span> <span data-ttu-id="52b7c-133">請確定您儲存場景（以 control/command + S 執行此動作，或按一下 [檔案]，再按 [儲存]）。</span><span class="sxs-lookup"><span data-stu-id="52b7c-133">Make sure you save your scene (do this with either control/command+S or click on file, followed by Save).</span></span> 
+    <span data-ttu-id="8417f-128">在 Unity 功能表中，選取 [Window > **TextMeshPro** > 匯**入 TMP 基本資源** **]** 。</span><span class="sxs-lookup"><span data-stu-id="8417f-128">In the Unity menu, select **Window** > **TextMeshPro** > **Import TMP Essential Resources**.</span></span>
 
-5. <span data-ttu-id="52b7c-134">匯入我們在步驟1中下載的[Azure 空間錨點 v 1.1.0](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v1.1.0/AzureSpatialAnchors.unitypackage) unity 封裝。</span><span class="sxs-lookup"><span data-stu-id="52b7c-134">Import the [Azure Spatial Anchors v1.1.0](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v1.1.0/AzureSpatialAnchors.unitypackage) unity package that we downloaded in step 1.</span></span> <span data-ttu-id="52b7c-135">為此，按一下 [資產]，向下移至 [匯入套件]，然後按一下 [自訂套件 ...]您的電腦檔案將會開啟。</span><span class="sxs-lookup"><span data-stu-id="52b7c-135">For that, click Assets, go down to Import Package and then click Custom Package... Your computer files will open.</span></span> <span data-ttu-id="52b7c-136">當他們這麼做時，請尋找您儲存 Azure 空間錨點套件的位置，並加以選取。</span><span class="sxs-lookup"><span data-stu-id="52b7c-136">When they do, find where you saved the Azure Spatial Anchors package, and select it.</span></span> <span data-ttu-id="52b7c-137">然後按一下 [開啟]。</span><span class="sxs-lookup"><span data-stu-id="52b7c-137">Then click Open.</span></span>
+    ![mrlearning-asa](images/mrlearning-asa-ch1-2-1.1.png)
 
-![module2chapter1step5bim](images/module2chapter1step5bim.PNG)
+    <span data-ttu-id="8417f-130">在 [匯入 Unity 封裝] 快顯視窗中，先確定已選取所有資產，方法是按一下 [**全部**] 按鈕，然後按一下 [匯**入**] 按鈕來匯入資產。</span><span class="sxs-lookup"><span data-stu-id="8417f-130">In the Import Unity Package pop-up window, first make sure all the assets are selected by clicking the **All** button, then import the assets by clicking the **Import** button.</span></span>
 
-<span data-ttu-id="52b7c-139">快顯視窗隨即出現，並提供工具和設定的清單，並詢問您要匯入的內容。</span><span class="sxs-lookup"><span data-stu-id="52b7c-139">A pop-up appears, providing a list of tools and settings and asking you what to import.</span></span> <span data-ttu-id="52b7c-140">選取***所有***可用的選項，然後按一下 [匯入]。</span><span class="sxs-lookup"><span data-stu-id="52b7c-140">Select ***all*** of the options available, then click Import.</span></span>
+    ![mrlearning-asa](images/mrlearning-asa-ch1-2-1.2.png)
 
-![module2chapter1step5cim](images/module2chapter1step5cim.PNG)
+2. <span data-ttu-id="8417f-132">安裝 AR Foundation。</span><span class="sxs-lookup"><span data-stu-id="8417f-132">Install AR Foundation.</span></span>
 
-> <span data-ttu-id="52b7c-142">注意：請耐心等候，匯入需要幾分鐘的時間。</span><span class="sxs-lookup"><span data-stu-id="52b7c-142">Note: Be patient, it will take a few minutes to import.</span></span> 
+    >[!NOTE]
+    ><span data-ttu-id="8417f-133">我們會新增此封裝，因為 Azure 空間錨點 SDK 需要此套件。</span><span class="sxs-lookup"><span data-stu-id="8417f-133">We are adding this package because it is required by the Azure Spatial Anchors SDK.</span></span>
 
-6. <span data-ttu-id="52b7c-143">匯入[HoloLens2 GettingStarted。 2.1.0.0. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.0/Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage)下一步。</span><span class="sxs-lookup"><span data-stu-id="52b7c-143">Import [Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.0/Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage) next.</span></span> <span data-ttu-id="52b7c-144">與步驟5非常類似，請回到 Unity，按一下 [資產]，然後將滑鼠停留在 [匯入套件] 上方。</span><span class="sxs-lookup"><span data-stu-id="52b7c-144">Much like Step 5, go back into Unity, click Assets, and hover over Import Package.</span></span> <span data-ttu-id="52b7c-145">按一下 [自訂套件 ...]您的電腦檔案將會再次出現。</span><span class="sxs-lookup"><span data-stu-id="52b7c-145">Click Custom Package... Your computer files will appear again.</span></span> <span data-ttu-id="52b7c-146">移至您儲存基本模組資產套件的位置。</span><span class="sxs-lookup"><span data-stu-id="52b7c-146">Go to where you stored the Base module Asset Pack.</span></span> <span data-ttu-id="52b7c-147">然後選取它。</span><span class="sxs-lookup"><span data-stu-id="52b7c-147">and select it.</span></span> <span data-ttu-id="52b7c-148">按一下 [開啟]。</span><span class="sxs-lookup"><span data-stu-id="52b7c-148">Click Open.</span></span>
+    <span data-ttu-id="8417f-134">在 Unity 功能表中，選取 [Window > **封裝管理員** **]** 。</span><span class="sxs-lookup"><span data-stu-id="8417f-134">In the Unity menu, select **Window** > **Package Manager**.</span></span>
 
-![module2chapter1step5bim](images/module2chapter1step5bim.PNG)
+    ![mrlearning-asa](images/mrlearning-asa-ch1-2-2.1.png)
 
-> <span data-ttu-id="52b7c-150">注意：此課程模組稍後可能需要更多資產。</span><span class="sxs-lookup"><span data-stu-id="52b7c-150">Note: There might be more assets needed later in this module.</span></span> <span data-ttu-id="52b7c-151">請遵循下列步驟來匯入此處所提及的任何資產。</span><span class="sxs-lookup"><span data-stu-id="52b7c-151">Follow these steps to import any assets mentioned from this point on.</span></span> 
+    <span data-ttu-id="8417f-136">在 [套件管理員] 視窗中，選取 [ **AR Foundation** ]，然後按一下 [**安裝**] 按鈕來安裝封裝。</span><span class="sxs-lookup"><span data-stu-id="8417f-136">In the Package Manager window, select **AR Foundation** and install the package by clicking the **Install** button.</span></span>
 
-7. <span data-ttu-id="52b7c-152">匯入[ASA 模組套件 1.3.1](https://github.com/Developer-OI/MixedRealityLearning/releases/download/ASA_1.3/ASAModuleAssets_1.3.1.unitypackage)，使用與匯入先前封裝相同的步驟。</span><span class="sxs-lookup"><span data-stu-id="52b7c-152">Import the [ASA module pack 1.3.1](https://github.com/Developer-OI/MixedRealityLearning/releases/download/ASA_1.3/ASAModuleAssets_1.3.1.unitypackage), using the same steps as importing the previous packages.</span></span>
+    >[!IMPORTANT]
+    ><span data-ttu-id="8417f-137">這可能需要幾秒鐘的時間，AR Foundation 封裝才會出現在清單中。</span><span class="sxs-lookup"><span data-stu-id="8417f-137">It might take a few seconds before the AR Foundation package appears in the list.</span></span>
 
-### <a name="configuring-your-scene"></a><span data-ttu-id="52b7c-153">設定場景</span><span class="sxs-lookup"><span data-stu-id="52b7c-153">Configuring your scene</span></span>
+    ![mrlearning-asa](images/mrlearning-asa-ch1-2-2.2.png)
 
-<span data-ttu-id="52b7c-154">在本節中，我們將在場景中新增 prefabs 和腳本，以建立一系列的按鈕，以示範本機錨點和 Azure 空間錨點在應用程式中的行為。</span><span class="sxs-lookup"><span data-stu-id="52b7c-154">In this section, we will add prefabs and scripts into the scene to create a series of buttons that demonstrate the fundamentals of how both local anchors and Azure Spatial Anchors behave in an application.</span></span>
+## <a name="importing-the-tutorial-assets"></a><span data-ttu-id="8417f-139">匯入教學課程資產</span><span class="sxs-lookup"><span data-stu-id="8417f-139">Importing the tutorial assets</span></span>
 
-8. <span data-ttu-id="52b7c-155">在 [專案] 索引標籤的 [資產] 資料夾底下，按一下 [ASAmoduleAssets]。</span><span class="sxs-lookup"><span data-stu-id="52b7c-155">In the Project tab, underneath the Assets folder, click on ASAmoduleAssets.</span></span> <span data-ttu-id="52b7c-156">選取之後，您會看到兩個 prefabs： ButtonParent 和 ParentAnchor。</span><span class="sxs-lookup"><span data-stu-id="52b7c-156">Once selected, you will see two prefabs: ButtonParent and ParentAnchor.</span></span>
+<span data-ttu-id="8417f-140">在本節中，您將下載並匯入所有教學課程資產。</span><span class="sxs-lookup"><span data-stu-id="8417f-140">In this section, you will download and import all the tutorial assets.</span></span>
 
-![module2chapter1step7im](images/module2chapter1step7im.PNG)
+1. <span data-ttu-id="8417f-141">下載資產。</span><span class="sxs-lookup"><span data-stu-id="8417f-141">Download the assets.</span></span>
 
-9. <span data-ttu-id="52b7c-158">將這兩個 prefabs 拖曳到場景中。</span><span class="sxs-lookup"><span data-stu-id="52b7c-158">Drag both prefabs into the scene.</span></span> 
+    * <span data-ttu-id="8417f-142">[AzureSpatialAnchors. unitypackage](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v2.0.0/AzureSpatialAnchors.unitypackage) （版本2.0.0）</span><span class="sxs-lookup"><span data-stu-id="8417f-142">[AzureSpatialAnchors.unitypackage](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v2.0.0/AzureSpatialAnchors.unitypackage) (version 2.0.0)</span></span>
+    * [<span data-ttu-id="8417f-143">MixedReality. 2.1.0. unitypackage。</span><span class="sxs-lookup"><span data-stu-id="8417f-143">Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage</span></span>](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.1.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage)
+    * [<span data-ttu-id="8417f-144">MRTK.HoloLens2 GettingStarted. 2.1.0.1. unitypackage</span><span class="sxs-lookup"><span data-stu-id="8417f-144">MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.1.0.1.unitypackage</span></span>](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.1/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.1.0.1.unitypackage)
+    * [<span data-ttu-id="8417f-145">MRTK.HoloLens2 AzureSpatialAnchors. 2.1.0.1. unitypackage</span><span class="sxs-lookup"><span data-stu-id="8417f-145">MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpatialAnchors.2.1.0.1.unitypackage</span></span>](https://github.com/microsoft/MixedRealityLearning/releases/download/azure-spatial-anchors-v2.1.0.1/MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpatialAnchors.2.1.0.1.unitypackage)
 
-![module2chapter1step8im](images/module2chapter1step8im.PNG)
+2. <span data-ttu-id="8417f-146">匯入資產。</span><span class="sxs-lookup"><span data-stu-id="8417f-146">Import the assets.</span></span>
 
-<span data-ttu-id="52b7c-160">注意：將 ButtonParent 新增到場景之後，隨即出現快顯視窗，要求您匯入 TMP 資產。</span><span class="sxs-lookup"><span data-stu-id="52b7c-160">Note: After adding the ButtonParent into the scene, a pop-up will appear asking you to import TMP assets.</span></span> <span data-ttu-id="52b7c-161">匯入 "TMP Essentials"。</span><span class="sxs-lookup"><span data-stu-id="52b7c-161">Import the "TMP Essentials".</span></span> <span data-ttu-id="52b7c-162">之後，如果您在場景中看到任何大字型文字，請刪除 ButtonParent 物件，然後再次從 ASAmoduleAssets 資料夾新增。</span><span class="sxs-lookup"><span data-stu-id="52b7c-162">After this, If you see any large font text in the scene, delete the ButtonParent object and add it again from the ASAmoduleAssets folder.</span></span>
+    <span data-ttu-id="8417f-147">在 Unity 功能表中，選取 **資產** > 匯**入套件** > **自訂封裝**...。</span><span class="sxs-lookup"><span data-stu-id="8417f-147">In the Unity menu, select **Assets** > **Import Package** > **Custom Package...**.</span></span>
 
-<span data-ttu-id="52b7c-163">注意：如果您想要檢查 HoloLens 中的「調試記錄」，您可以將 DebugWindow prefab 從 ASAModuleAssets 資料夾拖放到場景中。</span><span class="sxs-lookup"><span data-stu-id="52b7c-163">Note: If you want to check the debug logs in the HoloLens, you can drag and drop the DebugWindow prefab from ASAModuleAssets folder into the scene.</span></span> <span data-ttu-id="52b7c-164">在 [DebugWindow 偵測器] 面板中附加 DebugWindowMessaging 腳本，並啟用 [啟用 Debug Window] 選項。</span><span class="sxs-lookup"><span data-stu-id="52b7c-164">Attach the DebugWindowMessaging script in the DebugWindow inspector panel and enable the Debug Window Enabled option.</span></span> <span data-ttu-id="52b7c-165">之後，將 DebugWindow prefab 拖放到 DebugText 空的欄位中。</span><span class="sxs-lookup"><span data-stu-id="52b7c-165">After that, drag  and drop the DebugWindow prefab into the DebugText empty field.</span></span> <span data-ttu-id="52b7c-166">您也可以隨時調整 DebugWindow 位置。</span><span class="sxs-lookup"><span data-stu-id="52b7c-166">You can also adjust the DebugWindow position wherever appropriate for you.</span></span>
+    ![mrlearning-asa](images/mrlearning-asa-ch1-3-2.1.png)
 
-10. <span data-ttu-id="52b7c-167">若要放大場景，請按兩下階層中的父錨點，並調整您的視圖，以視需要查看整個場景。</span><span class="sxs-lookup"><span data-stu-id="52b7c-167">In order to zoom in to the scene, double-click the parent anchor in the hierarchy and adjust your view to see the entire scene as needed.</span></span> <span data-ttu-id="52b7c-168">目前，ParentAnchor 是僅供示範用途使用的彩色 cube。</span><span class="sxs-lookup"><span data-stu-id="52b7c-168">Currently, ParentAnchor is a colored cube used only for demonstration purposes.</span></span> <span data-ttu-id="52b7c-169">最後，我們將隱藏 cube，並將內容放在 ParentAnchor 的子系中。</span><span class="sxs-lookup"><span data-stu-id="52b7c-169">Eventually, we will hide the cube and place our content as a child of the ParentAnchor.</span></span> 
+    <span data-ttu-id="8417f-149">在 [匯入套件 ...]快顯視窗中，選取 [ **AzureSpatialAnchors] unitypackage** ，然後按一下 [**開啟**] 按鈕。</span><span class="sxs-lookup"><span data-stu-id="8417f-149">In the Import package... pop-up window, select the **AzureSpatialAnchors.unitypackage** and click the **Open** button.</span></span>
 
-11. <span data-ttu-id="52b7c-170">現在讓我們設定用來操作場景的按鈕。</span><span class="sxs-lookup"><span data-stu-id="52b7c-170">Now let's configure the buttons for operating the scene.</span></span> <span data-ttu-id="52b7c-171">為此，請展開 [ButtonParent] prefab，您會看到數個加上標籤的按鈕，這些都是從 MRTK 的 PressableButton prefabs 所建立。</span><span class="sxs-lookup"><span data-stu-id="52b7c-171">For that, expand the ButtonParent prefab and you'll notice several labeled buttons, which are created from the MRTK's PressableButton prefabs.</span></span> <span data-ttu-id="52b7c-172">深入瞭解如何從[基底模組](mrlearning-base-ch2.md)建立 PressableButton。</span><span class="sxs-lookup"><span data-stu-id="52b7c-172">Learn more about how to create PressableButton from the [Base module](mrlearning-base-ch2.md).</span></span> <span data-ttu-id="52b7c-173">若要讓這些按鈕運作，您必須新增事件，當使用者按下或選取個別按鈕時，就會觸發此事件。</span><span class="sxs-lookup"><span data-stu-id="52b7c-173">For these buttons to operate, you need to add an event which will be triggered when the user presses or selects the individual buttons.</span></span> 
+    ![mrlearning-asa](images/mrlearning-asa-ch1-3-2.2.png)
 
-- <span data-ttu-id="52b7c-174">針對名為 StartAzureSession 的按鈕，在 [按下的事件觸發程式] 和 [On Click] 事件觸發程式底下建立新事件。</span><span class="sxs-lookup"><span data-stu-id="52b7c-174">For the Button named StartAzureSession, create a new event under the Button Pressed event trigger, as well as the On Click event trigger.</span></span> <span data-ttu-id="52b7c-175">將 ParentAnchor 物件拖曳至空白欄位，並從 ParentAnchor 物件的 ASAmoduleScript 元件指派 StartAzureSession （）方法，如下列螢幕擷取畫面所示。</span><span class="sxs-lookup"><span data-stu-id="52b7c-175">Drag the ParentAnchor object into the empty field and assign the StartAzureSession() method from the ParentAnchor object's ASAmoduleScript component as shown in the below screenshot.</span></span>
-- ![module2chapter1step10aim](images/module2chapter1step10aim.PNG)
+    <span data-ttu-id="8417f-151">在 [匯入 Unity 封裝] 快顯視窗中，先確定已選取所有資產，方法是按一下 [**全部**] 按鈕，然後按一下 [匯**入**] 按鈕來匯入資產。</span><span class="sxs-lookup"><span data-stu-id="8417f-151">In the Import Unity Package pop-up window, first make sure all the assets are selected by clicking the **All** button, then import the assets by clicking the **Import** button.</span></span>
 
-![module2chapter1step10bim](images/module2chapter1step10bim.PNG)
+    ![mrlearning-asa](images/mrlearning-asa-ch1-3-2.3.png)
 
-![module2chapter1step10cim](images/module2chapter1step10fim.PNG)
+    <span data-ttu-id="8417f-153">重複這些步驟來匯入其餘的資產套件。</span><span class="sxs-lookup"><span data-stu-id="8417f-153">Repeat these steps to import the remaining asset packages.</span></span> <span data-ttu-id="8417f-154">完成後，您的 Unity 專案的 [**資產**] 資料夾應該會包含這些子資料夾。</span><span class="sxs-lookup"><span data-stu-id="8417f-154">Once complete, your Unity project's **Assets** folder should contain these sub-folders.</span></span>
 
-- <span data-ttu-id="52b7c-179">針對名為 StopAzureSession 的按鈕，在 [按下的事件觸發程式] 和 [On Click] 事件觸發程式底下建立新事件。</span><span class="sxs-lookup"><span data-stu-id="52b7c-179">For the Button named StopAzureSession, create a new event under the Button Pressed event trigger, as well as the On Click event trigger.</span></span> <span data-ttu-id="52b7c-180">將 ParentAnchor 物件拖曳至空白欄位，並從 ParentAnchor 物件的 ASAmoduleScript 元件指派 StopAzureSession （）方法。</span><span class="sxs-lookup"><span data-stu-id="52b7c-180">Drag the ParentAnchor object into the empty field and assign the StopAzureSession() method from the ParentAnchor object's ASAmoduleScript component.</span></span>
+    ![mrlearning-asa](images/mrlearning-asa-ch1-3-2.4.png)
 
-- <span data-ttu-id="52b7c-181">針對名為 CreateAnchor 的按鈕，在 [按下的事件觸發程式] 和 [On Click] 事件觸發程式底下建立新事件。</span><span class="sxs-lookup"><span data-stu-id="52b7c-181">For the Button named CreateAnchor, create a new event under the Button Pressed event trigger, as well as the On Click event trigger.</span></span> <span data-ttu-id="52b7c-182">將 ParentAnchor 物件拖曳至空白欄位，並從 ParentAnchor 物件的 ASAmoduleScript 元件指派 CreateAzureAnchor （）方法。</span><span class="sxs-lookup"><span data-stu-id="52b7c-182">Drag the ParentAnchor object into the empty field and assign the CreateAzureAnchor() method from the ParentAnchor object's ASAmoduleScript component.</span></span>  <span data-ttu-id="52b7c-183">**之後，再次將 ParentAnchor 拖曳到下一個空白的「遊戲物件」欄位。**</span><span class="sxs-lookup"><span data-stu-id="52b7c-183">**After this, drag the ParentAnchor again into the next empty "Game Object" field.**</span></span>
+## <a name="creating-and-preparing-the-scene"></a><span data-ttu-id="8417f-156">建立和準備場景</span><span class="sxs-lookup"><span data-stu-id="8417f-156">Creating and preparing the scene</span></span>
 
-- <span data-ttu-id="52b7c-184">針對名為 [開始尋找錨點] 的按鈕，在按鈕下按下 [事件觸發程式]，以及 [On Click] 事件觸發程式來建立新事件。</span><span class="sxs-lookup"><span data-stu-id="52b7c-184">For the Button named Start Looking For Anchor, create a new event under the Button Press" event trigger, as well as the On Click event trigger.</span></span> <span data-ttu-id="52b7c-185">將 ParentAnchor 物件拖曳至空白欄位，並從 ParentAnchor 物件的 ASAmoduleScript 元件指派 FindAzureAnchor （）方法。</span><span class="sxs-lookup"><span data-stu-id="52b7c-185">Drag the ParentAnchor object into the empty field and assign the FindAzureAnchor() method from the ParentAnchor Object's ASAmoduleScript component.</span></span>
+<span data-ttu-id="8417f-157">在本節中，您將藉由新增混合現實工具組和一些教學課程 prefabs 來建立和準備場景。</span><span class="sxs-lookup"><span data-stu-id="8417f-157">In this section, you will create and prepare the scene by adding the Mixed Reality Toolkit and some of the tutorial prefabs.</span></span>
 
-- <span data-ttu-id="52b7c-186">針對名為 DeleteAzureAnchor 的按鈕，在 [按下的事件觸發程式] 和 [On Click] 事件觸發程式底下建立新事件。</span><span class="sxs-lookup"><span data-stu-id="52b7c-186">For the Button named DeleteAzureAnchor, create a new event under the Button Pressed event trigger, as well as the On Click event trigger.</span></span> <span data-ttu-id="52b7c-187">將 ParentAnchor 物件拖曳至空白欄位，並從 ParentAnchor 物件的 ASAmoduleScript 元件指派 DeleteAzureAnchor （）方法。</span><span class="sxs-lookup"><span data-stu-id="52b7c-187">Drag the ParentAnchor object into the empty field and assign the DeleteAzureAnchor() method from the ParentAnchor object's ASAmoduleScript component.</span></span>  
+1. <span data-ttu-id="8417f-158">建立新場景。</span><span class="sxs-lookup"><span data-stu-id="8417f-158">Create a new scene.</span></span>
 
-- <span data-ttu-id="52b7c-188">針對名為 [刪除本機錨點] 的按鈕，在 [已按下的事件觸發程式] 和 [On Click] 事件觸發程式底下建立新事件。</span><span class="sxs-lookup"><span data-stu-id="52b7c-188">For the Button named Delete Local Anchor, create a new event under the Button Pressed event trigger, as well as the On Click event trigger.</span></span> <span data-ttu-id="52b7c-189">將 ParentAnchor 物件拖曳至空白欄位，並從 ParentAnchor 物件的 ASAmoduleScript 元件指派 RemoveLocalAnchor （）方法。</span><span class="sxs-lookup"><span data-stu-id="52b7c-189">Drag the ParentAnchor object into the empty field and assign the RemoveLocalAnchor() method from the ParentAnchor object's ASAmoduleScript component.</span></span> <span data-ttu-id="52b7c-190">**之後，請將 ParentAnchor 物件再次拖曳到下一個空白的「遊戲物件」欄位。**</span><span class="sxs-lookup"><span data-stu-id="52b7c-190">**After this, drag the ParentAnchor object again into the next empty "Game Object" field.**</span></span>
+    <span data-ttu-id="8417f-159">在 Unity 功能表中 **，選取 [** 檔案] > [**新場景**]。</span><span class="sxs-lookup"><span data-stu-id="8417f-159">In the Unity menu, select **File** > **New Scene**.</span></span>
 
-12. <span data-ttu-id="52b7c-191">若要設定 Azure 空間錨點，請移至 [資產] 資料夾中的 [AzureSpatialAnchorsPlugin] 資料夾，然後流覽至 [範例-> 資源-> AzureSpatialAnchorsDemoConfig 檔案]。</span><span class="sxs-lookup"><span data-stu-id="52b7c-191">To set up Azure spatial anchors, go to the AzureSpatialAnchorsPlugin folder in the assets folder and navigate to Examples -> Resources->AzureSpatialAnchorsDemoConfig file.</span></span> <span data-ttu-id="52b7c-192">在 [偵測器] 面板中，新增您稍早建立的 Azure 帳戶識別碼和帳戶金鑰。</span><span class="sxs-lookup"><span data-stu-id="52b7c-192">In the inspector panel, add the Azure Account ID and Account Key that you created earlier.</span></span> <span data-ttu-id="52b7c-193">如果您尚未建立或沒有這些專案，請遵循[必要條件](https://docs.microsoft.com//azure/spatial-anchors/quickstarts/get-started-unity-hololens)。</span><span class="sxs-lookup"><span data-stu-id="52b7c-193">If you haven't created them or don't have the them, please follow the [Prerequisites](https://docs.microsoft.com//azure/spatial-anchors/quickstarts/get-started-unity-hololens).</span></span> 
+    ![mrlearning-asa](images/mrlearning-asa-ch1-4-1.1.png)
 
-  ![module2chapter1step13im](images/module2chapter1step13im.PNG)
+    <span data-ttu-id="8417f-161">在 Unity 功能表中 **，選取** 檔案 > **另存**新檔 ...。</span><span class="sxs-lookup"><span data-stu-id="8417f-161">In the Unity menu, select **File** > **Save As...**.</span></span>
 
-### <a name="build-and-demonstrate-base-application"></a><span data-ttu-id="52b7c-195">建立並示範基本應用程式</span><span class="sxs-lookup"><span data-stu-id="52b7c-195">Build and demonstrate Base Application</span></span>
+    ![mrlearning-asa](images/mrlearning-asa-ch1-4-1.2.png)
 
-<span data-ttu-id="52b7c-196">既然您的場景已設定為示範 Azure 空間錨點的基本概念，我們將會建立並示範 Azure 空間錨點的基本行為。</span><span class="sxs-lookup"><span data-stu-id="52b7c-196">Now that your scene is configured to demonstrate the basics of Azure Spatial Anchors, we will build and demonstrate the basic behavior of Azure Spatial Anchors.</span></span> 
+    <span data-ttu-id="8417f-163">在 [儲存場景] 快顯視窗中，流覽至專案的 [**幕後**] 資料夾，為您的場景提供適當的名稱（例如_ASATutorialScene_），然後按一下 [**儲存**] 按鈕來儲存場景。</span><span class="sxs-lookup"><span data-stu-id="8417f-163">In the Save Scene pop-up window, navigate to your project's **Scenes** folder, give your scene a suitable name, for example, _ASATutorialScene_, and save the scene by clicking the **Save** button.</span></span>
 
-1. <span data-ttu-id="52b7c-197">前往 [檔案] > [組建設定]，再次開啟 [組建設定] 視窗。</span><span class="sxs-lookup"><span data-stu-id="52b7c-197">Open the build settings window again, by going to File>Build Settings.</span></span>
-    <span data-ttu-id="52b7c-198">![mrlearning-asa-ch1-3-步驟 1](images/mrlearning-asa-ch1-3-step1.jpg)</span><span class="sxs-lookup"><span data-stu-id="52b7c-198">![mrlearning-asa-ch1-3-step1](images/mrlearning-asa-ch1-3-step1.jpg)</span></span>
-2. <span data-ttu-id="52b7c-199">按一下 [新增開啟的場景] 按鈕，以確定您想要嘗試的場景是在組建清單的場景中。</span><span class="sxs-lookup"><span data-stu-id="52b7c-199">Ensure the scene you want to try is in the Scenes in the build list, by clicking on the Add Open Scenes button.</span></span>
-3. <span data-ttu-id="52b7c-200">確認平臺已設定為 [通用 Windows 平臺]。</span><span class="sxs-lookup"><span data-stu-id="52b7c-200">Verify the Platform is set to the Universal Windows Platform.</span></span> <span data-ttu-id="52b7c-201">如果沒有，請將它設定為相同的。</span><span class="sxs-lookup"><span data-stu-id="52b7c-201">If not, please set it to the same.</span></span>
-4. <span data-ttu-id="52b7c-202">按 [Player 設定] 按鈕，然後移至 [發佈設定]。</span><span class="sxs-lookup"><span data-stu-id="52b7c-202">Press the Player Settings button and go to Publishing Settings.</span></span> <span data-ttu-id="52b7c-203">在 [功能] 底下，啟用：網際網路、網際網路用戶端伺服器、私人網路用戶端伺服器、卸除式存放裝置、網路攝影機、麥克風和空間感知。</span><span class="sxs-lookup"><span data-stu-id="52b7c-203">Under Capabilities, enable: Internet, Internet Client Server, Private Network Client Server, Removable Storage, Webcam, Microphone and Spatial Perception.</span></span>
-5. <span data-ttu-id="52b7c-204">在相同的播放人員設定中，移至 [XR 設定]，然後選取支援的虛擬實境。</span><span class="sxs-lookup"><span data-stu-id="52b7c-204">In the same Player Settings, go to XR settings  and select the Virtual Reality Supported to ON.</span></span>
-6. <span data-ttu-id="52b7c-205">按下 [建置] 按鈕，開始建置程序。</span><span class="sxs-lookup"><span data-stu-id="52b7c-205">Press the Build button to begin the build process.</span></span>
-   <span data-ttu-id="52b7c-206">![mrlearning-asa-ch1-3-步驟 6](images/mrlearning-asa-ch1-3-step6.jpg)</span><span class="sxs-lookup"><span data-stu-id="52b7c-206">![mrlearning-asa-ch1-3-step6](images/mrlearning-asa-ch1-3-step6.jpg)</span></span>
-7. <span data-ttu-id="52b7c-207">為您的應用程式建立並命名新資料夾。</span><span class="sxs-lookup"><span data-stu-id="52b7c-207">Create and name a new folder for your application.</span></span> <span data-ttu-id="52b7c-208">在下圖中，已建立名為 App 的資料夾來包含應用程式。</span><span class="sxs-lookup"><span data-stu-id="52b7c-208">In the image below, a folder with the name App was created to contain the application.</span></span> <span data-ttu-id="52b7c-209">按一下 [選取資料夾]，開始建立新建立的資料夾。</span><span class="sxs-lookup"><span data-stu-id="52b7c-209">Click Select Folder to begin building to the newly created folder.</span></span> <span data-ttu-id="52b7c-210">組建完成之後，您可以在 Unity 中關閉 [組建設定] 視窗。</span><span class="sxs-lookup"><span data-stu-id="52b7c-210">After the build has completed, you may close the Build Setting" window in Unity.</span></span>
+    ![mrlearning-asa](images/mrlearning-asa-ch1-4-1.3.png)
 
-    ![mrlearning-asa-ch1-3-step7](images/mrlearning-asa-ch1-3-step7.jpg)
+    >[!TIP]
+    ><span data-ttu-id="8417f-165">只要此場景位於專案的 [資產] 資料夾內，您就可以將它儲存在您喜歡的任何地方。</span><span class="sxs-lookup"><span data-stu-id="8417f-165">You can save the scene anywhere you like as long as it is inside the project's Assets folder.</span></span> <span data-ttu-id="8417f-166">不過，若要讓您的專案組織，通常建議將它儲存在專案的 [場景] 資料夾中。</span><span class="sxs-lookup"><span data-stu-id="8417f-166">However, to keep your project organized, it's generally recommended to save it in the project's Scenes folder.</span></span>
 
-    > <span data-ttu-id="52b7c-212">注意：如果組建失敗，請嘗試重新建立或重新開機 Unity，然後重新建立。</span><span class="sxs-lookup"><span data-stu-id="52b7c-212">NOTE: If the build fails, try building again or restarting Unity and building again.</span></span> <span data-ttu-id="52b7c-213">如果您看到錯誤，例如「錯誤： CS0246 = 類型或命名空間名稱 "XX" 找不到（您是否遺漏 using 指示詞或元件參考？），您可能需要安裝[Windows 10 SDK （10.0.18362.0）](<https://developer.microsoft.com//windows/downloads/windows-10-sdk>)</span><span class="sxs-lookup"><span data-stu-id="52b7c-213">If you see an error such as "Error: CS0246 = The type or namespace name “XX” could not be found (are you missing a using directive or an assembly reference?), you might need to install [Windows 10 SDK (10.0.18362.0)](<https://developer.microsoft.com//windows/downloads/windows-10-sdk>)</span></span> 
+2. <span data-ttu-id="8417f-167">新增混合現實工具組。</span><span class="sxs-lookup"><span data-stu-id="8417f-167">Add the Mixed Reality Toolkit.</span></span>
 
+    <span data-ttu-id="8417f-168">在 Unity 功能表中，選取 **混合現實工具**組， > **新增至場景並設定 ...** 。</span><span class="sxs-lookup"><span data-stu-id="8417f-168">In the Unity menu, select **Mixed Reality Toolkit** > **Add to Scene and Configure...**.</span></span>
 
-8. <span data-ttu-id="52b7c-214">即使在成功組建之後，您可能會收到如下所示的一些錯誤，但如果組建成功，您可以忽略它們，並繼續進行後續步驟。</span><span class="sxs-lookup"><span data-stu-id="52b7c-214">Even after a successful build, you might get some errors as shown below, but if the build is successful you can ignore them and proceed with next steps.</span></span>
+    ![mrlearning-asa](images/mrlearning-asa-ch1-4-2.1.png)
 
-    ![mrlearning-asa-ch1-3-step7B](images/mrlearning-asa-ch1-3-step7B.png)
+    <span data-ttu-id="8417f-170">在 [選取 MixedRealityToolkitConfigurationProfile] 快顯視窗中，按一下**DefaultHoloLens2ConfigurationProfile** ，將其設定為場景的 MRTK 設定檔。</span><span class="sxs-lookup"><span data-stu-id="8417f-170">In the Select MixedRealityToolkitConfigurationProfile pop-up window, click the **DefaultHoloLens2ConfigurationProfile** to set it as the scene's MRTK configuration profile.</span></span>
 
-    
+    ![mrlearning-asa](images/mrlearning-asa-ch1-4-2.2.png)
 
-9. <span data-ttu-id="52b7c-216">在建置完成之後，開啟新建立的資料夾，其中包含您新建置的應用程式檔案。</span><span class="sxs-lookup"><span data-stu-id="52b7c-216">After the build is completed, open the newly created folder containing your newly built application files.</span></span> <span data-ttu-id="52b7c-217">如果您使用專案的替代名稱，在 Visual Studio 中開啟方案檔，請按兩下 [MixedRealityBase] 方案或對應的名稱。</span><span class="sxs-lookup"><span data-stu-id="52b7c-217">Double-click on the“MixedRealityBase.sln" solution or the corresponding name, if you used an alternative name for your project to open the solution file in Visual Studio.</span></span>
+    <span data-ttu-id="8417f-172">在 Unity 功能表中 **，選取** 檔案 > **儲存** 以儲存場景。</span><span class="sxs-lookup"><span data-stu-id="8417f-172">In the Unity menu, select **File** > **Save** to save the scene.</span></span>
 
-    > <span data-ttu-id="52b7c-218">注意：如果遵循先前步驟中的命名慣例，請務必開啟新建立的資料夾（也就是應用程式資料夾），因為該資料夾外部會有類似的名稱 .sln 檔案，不會與組建資料夾內的 .sln 檔案混淆。</span><span class="sxs-lookup"><span data-stu-id="52b7c-218">Note: Be sure to open the newly created folder (i.e., the App folder, if following the naming conventions from the previous steps, as there will be a similarly named .sln file outside of that folder that is not to be confused with the .sln file inside the build folder.</span></span>
+    ![mrlearning-asa](images/mrlearning-asa-ch1-4-2.3.png)
 
-    ![mrlearning-asa-ch1-3-step8](images/mrlearning-asa-ch1-3-step8.jpg)
+    >[!TIP]
+    ><span data-ttu-id="8417f-174">當您進行本教學課程時，您可以使用鍵盤快速鍵 CTRL + S （macOS 上的 command + S）來快速儲存場景。</span><span class="sxs-lookup"><span data-stu-id="8417f-174">You can use the keyboard shortcut CTRL+S (command + S on macOS) to quickly save your scene as you are working through this tutorial.</span></span>
 
-    > <span data-ttu-id="52b7c-220">注意：如果 Visual Studio 要求安裝新元件，請確定在[[安裝工具] 頁面](install-the-tools.md)中，所有必要條件元件都已安裝為特定</span><span class="sxs-lookup"><span data-stu-id="52b7c-220">Note: If Visual Studio asks to install new components, ensure that all prerequisite components are installed as specific in [the "Install the Tools" page](install-the-tools.md)</span></span>
+3. <span data-ttu-id="8417f-175">新增教學課程 prefabs。</span><span class="sxs-lookup"><span data-stu-id="8417f-175">Add the tutorial prefabs.</span></span>
 
+    <span data-ttu-id="8417f-176">在 [專案] 面板中，流覽至 [**資產**] [ > **MRTK]。教學課程. AzureSpatialAnchors** > **Prefabs**資料夾。</span><span class="sxs-lookup"><span data-stu-id="8417f-176">In the Project panel, navigate to **Assets** > **MRTK.Tutorials.AzureSpatialAnchors** > **Prefabs** folder.</span></span> <span data-ttu-id="8417f-177">按住 CTRL 鍵（macOS 上的命令）時，按一下 [ **ButtonParent**]、[ **DebugWindow**] 和 [ **ParentAnchor** ] 以選取三個 prefabs。</span><span class="sxs-lookup"><span data-stu-id="8417f-177">While holding down the CTRL button (command on macOS), click on **ButtonParent**, **DebugWindow**, and **ParentAnchor** to select the three prefabs.</span></span>
 
-9. <span data-ttu-id="52b7c-221">使用 USB 纜線，將 HoloLens 2 插入您的電腦。</span><span class="sxs-lookup"><span data-stu-id="52b7c-221">Plug your HoloLens 2 into your PC with the USB cable.</span></span> <span data-ttu-id="52b7c-222">雖然這些課程指示假設您將使用 HoloLens 2 裝置部署測試，但您也可以選擇部署至[hololens 2 模擬器](using-the-hololens-emulator.md)，或選擇建立用於側[載的應用程式套件](<https://docs.microsoft.com//windows/uwp/packaging/packaging-uwp-apps>)</span><span class="sxs-lookup"><span data-stu-id="52b7c-222">While these Lesson instructions assume you will be deploying a testing with a HoloLens 2 device, you may also choose to deploy to the [HoloLens 2 emulator](using-the-hololens-emulator.md) or choose to create an [app package for sideloading](<https://docs.microsoft.com//windows/uwp/packaging/packaging-uwp-apps>)</span></span>
+    ![mrlearning-asa](images/mrlearning-asa-ch1-4-3.1.png)
 
-10. <span data-ttu-id="52b7c-223">在建立您的裝置之前，請確定其處於開發人員模式。</span><span class="sxs-lookup"><span data-stu-id="52b7c-223">Before building to your device, ensure that it is in Developer Mode.</span></span> <span data-ttu-id="52b7c-224">如果這是您第一次部署至 HoloLens 2，Visual Studio 可能會要求您將 HoloLens 2 與 PIN 配對。</span><span class="sxs-lookup"><span data-stu-id="52b7c-224">If this is your first time deploying to the HoloLens 2, Visual Studio may ask you to pair your HoloLens 2 with a PIN.</span></span> <span data-ttu-id="52b7c-225">如果您需要啟用開發人員模式或與 Visual Studio 配對，請遵循[這些指示](https://docs.microsoft.com//windows/mixed-reality/using-visual-studio)。</span><span class="sxs-lookup"><span data-stu-id="52b7c-225">Follow [these instructions](https://docs.microsoft.com//windows/mixed-reality/using-visual-studio) if you need to enable developer mode or pair with Visual Studio.</span></span>
+    <span data-ttu-id="8417f-179">在選取了三個 prefabs 的情況下，將它們拖曳到 [階層] 面板中，以將它們新增至場景。</span><span class="sxs-lookup"><span data-stu-id="8417f-179">With the three prefabs still selected, drag them into the Hierarchy panel to add them to the scene.</span></span>
 
-11. <span data-ttu-id="52b7c-226">藉由選取發行設定和 ARM 架構，設定用來建立 HoloLens 2 的 Visual Studio。</span><span class="sxs-lookup"><span data-stu-id="52b7c-226">Configure Visual Studio for building to your HoloLens 2, by selecting the Release configuration as well as the ARM architecture.</span></span>
+    ![mrlearning-asa](images/mrlearning-asa-ch1-4-3.2.png)
 
-    ![mrlearning-asa-ch1-3-step11](images/mrlearning-asa-ch1-3-step11.jpg)
+    <span data-ttu-id="8417f-181">若要將焦點放在場景中的物件上，您可以按兩下 [ParentAnchor] 物件，然後再稍微縮小一次。</span><span class="sxs-lookup"><span data-stu-id="8417f-181">To focus in on the objects in the scene, you can double-click on the ParentAnchor object, and then zoom slightly out again.</span></span>
 
+    ![mrlearning-asa](images/mrlearning-asa-ch1-4-3.3.png)
 
-12. <span data-ttu-id="52b7c-228">最後一個步驟是選取 [偵錯] > [啟動但不偵錯] 來對您的裝置進行建置。</span><span class="sxs-lookup"><span data-stu-id="52b7c-228">The final step is to build to your device by selecting Debug>Start without Debugging.</span></span> <span data-ttu-id="52b7c-229">選取 [啟動但不進行偵錯工具]，會在成功組建時立即在裝置上啟動，而不會出現在 Visual Studio 中的偵測資訊。</span><span class="sxs-lookup"><span data-stu-id="52b7c-229">Selecting Start without Debugging causes the application to immediately start on your device upon a successful build without Debugging information appearing in Visual Studio.</span></span> <span data-ttu-id="52b7c-230">這也表示，當您的應用程式在 HoloLens 2 上執行時，您可以在不需要停止應用程式的情況下拔掉 USB 纜線。</span><span class="sxs-lookup"><span data-stu-id="52b7c-230">This also means that you can disconnect your USB cable while your application is running on your HoloLens 2 without stopping the application.</span></span> <span data-ttu-id="52b7c-231">您也可以選取 [組建 > 部署解決方案]，以部署至您的裝置，而不會自動啟動應用程式。</span><span class="sxs-lookup"><span data-stu-id="52b7c-231">You might also select Build>Deploy Solution to deploy to your device without having the application automatically start.</span></span>
+    >[!TIP]
+    ><span data-ttu-id="8417f-183">比方說，如果您在場景中找到大圖示，例如，大框的 ' t ' 圖示會有干擾，您可以將<a href="https://docs.unity3d.com/2019.1/Documentation/Manual/GizmosMenu.html" target="_blank">Gizmos 切換</a>到 off 位置來隱藏它們。</span><span class="sxs-lookup"><span data-stu-id="8417f-183">If you find the large icons in your scene, for example, the large framed 'T' icons distracting, you can hide these by <a href="https://docs.unity3d.com/2019.1/Documentation/Manual/GizmosMenu.html" target="_blank">toggling the Gizmos</a> to the off position.</span></span>
 
-    ![mrlearning-asa-ch1-3-step12](images/mrlearning-asa-ch1-3-step12.jpg)
+## <a name="configuring-the-buttons-to-operate-the-scene"></a><span data-ttu-id="8417f-184">設定按鈕以操作場景</span><span class="sxs-lookup"><span data-stu-id="8417f-184">Configuring the buttons to operate the scene</span></span>
 
-><span data-ttu-id="52b7c-233">注意： Azure 空間錨點會使用網際網路來儲存和載入錨定資料，因此請先確定您的裝置已連線到網際網路，然後再測試 ASA 應用程式。</span><span class="sxs-lookup"><span data-stu-id="52b7c-233">Note: The Azure spatial anchors uses the internet to save and load the anchor data so make sure your device is connected to the internet before testing the ASA app.</span></span>
+<span data-ttu-id="8417f-185">在本節中，您將在場景中新增 prefabs 和腳本，以建立一系列的按鈕，以示範本機錨點和 Azure 空間錨點在應用程式中的行為。</span><span class="sxs-lookup"><span data-stu-id="8417f-185">In this section, you will add prefabs and scripts into the scene to create a series of buttons that demonstrate the fundamentals of how both local anchors and Azure Spatial Anchors behave in an application.</span></span>
 
-13. <span data-ttu-id="52b7c-234">請依照指示進行。</span><span class="sxs-lookup"><span data-stu-id="52b7c-234">Follow the instructions.</span></span> 
-    <span data-ttu-id="52b7c-235">當應用程式在您的裝置上執行時，請遵循畫面上的指示。</span><span class="sxs-lookup"><span data-stu-id="52b7c-235">When the application is running on your device, follow the on-screen instructions.</span></span> <span data-ttu-id="52b7c-236">按下與下列步驟對應的場景按鈕。</span><span class="sxs-lookup"><span data-stu-id="52b7c-236">Press the Scene buttons corresponding to the Steps below.</span></span> <span data-ttu-id="52b7c-237">如果您已如先前步驟所述新增 [偵錯工具] 視窗，您可以看到個別按鈕按下的意見反應，以及與 Azure 空間錨點相關之個別作業的進度。</span><span class="sxs-lookup"><span data-stu-id="52b7c-237">If you added the debug window as mentioned in the previous steps, you can see the feedback for individual button press and the progress of individual operations related to Azure spatial anchors.</span></span>
+1. <span data-ttu-id="8417f-186">設定 Pressable 按鈕 Hololens 透鏡2（腳本）元件。</span><span class="sxs-lookup"><span data-stu-id="8417f-186">Configure the Pressable Button Holo Lens 2 (script) component.</span></span>
 
-![module2chapter1step10eim](images/module2chapter1step10eim.PNG)
-    
-    1. <span data-ttu-id="52b7c-239">啟動空間錨點會話。</span><span class="sxs-lookup"><span data-stu-id="52b7c-239">Start the spatial anchors session.</span></span>
-    
-    2. <span data-ttu-id="52b7c-240">將 cube 移至不同的位置。</span><span class="sxs-lookup"><span data-stu-id="52b7c-240">Move the cube to a different location.</span></span>
-    
-    3. <span data-ttu-id="52b7c-241">將 Azure 空間錨點儲存在 cube 的位置。</span><span class="sxs-lookup"><span data-stu-id="52b7c-241">Save the Azure spatial anchors at the location of the cube.</span></span>
-    
-    4. <span data-ttu-id="52b7c-242">停止 Azure 空間錨點會話。</span><span class="sxs-lookup"><span data-stu-id="52b7c-242">Stop the Azure spatial anchors session.</span></span>
-    
-    5. <span data-ttu-id="52b7c-243">移除 cube 上的本機錨點，讓使用者可以移動 cube。</span><span class="sxs-lookup"><span data-stu-id="52b7c-243">Remove the local anchor on the cube to allow the user to move the cube.</span></span>
-    
-    6. <span data-ttu-id="52b7c-244">將 cube 移到其他地方。</span><span class="sxs-lookup"><span data-stu-id="52b7c-244">Move the cube somewhere else.</span></span>
-    
-    7. <span data-ttu-id="52b7c-245">啟動 Azure 空間錨點會話。</span><span class="sxs-lookup"><span data-stu-id="52b7c-245">Start Azure spatial anchors session.</span></span>
-    
-    8. <span data-ttu-id="52b7c-246">尋找 Azure 空間錨點。</span><span class="sxs-lookup"><span data-stu-id="52b7c-246">Find Azure Spatial Anchors.</span></span> 
-    <span data-ttu-id="52b7c-247">當您建立錨點時，應該回到原先放置的位置。</span><span class="sxs-lookup"><span data-stu-id="52b7c-247">You should go back to the original place you put it when you created the anchor.</span></span>
-    
-    9. <span data-ttu-id="52b7c-248">刪除 Azure 空間錨點。</span><span class="sxs-lookup"><span data-stu-id="52b7c-248">Delete Azure spatial anchor.</span></span>
-    
-    10. <span data-ttu-id="52b7c-249">停止 Azure 會話。</span><span class="sxs-lookup"><span data-stu-id="52b7c-249">Stop Azure session.</span></span>
+    <span data-ttu-id="8417f-187">在 [階層] 面板中，展開 [ **ButtonParent** ] 物件，並選取名為**StartAzureSession**的第一個子物件。</span><span class="sxs-lookup"><span data-stu-id="8417f-187">In the Hierarchy panel, expand the **ButtonParent** object and select the first child object named **StartAzureSession**.</span></span>
 
-### <a name="anchoring-an-experience"></a><span data-ttu-id="52b7c-250">錨定體驗</span><span class="sxs-lookup"><span data-stu-id="52b7c-250">Anchoring an experience</span></span>
+    ![mrlearning-asa](images/mrlearning-asa-ch1-5-1.1.png)
 
-<span data-ttu-id="52b7c-251">在前面幾節中，您已瞭解 Azure 空間錨點的基本概念。</span><span class="sxs-lookup"><span data-stu-id="52b7c-251">In the previous sections, you learned the fundamentals of Azure Spatial Anchors.</span></span> <span data-ttu-id="52b7c-252">我們已使用 cube 來呈現父遊戲物件，並將其視覺化為連結的錨點。</span><span class="sxs-lookup"><span data-stu-id="52b7c-252">We've used a cube to represent and visualize the parent game object with the attached anchor.</span></span> <span data-ttu-id="52b7c-253">在本節中，您將瞭解如何藉由將它放為 ParentAnchor 物件的子系，來錨定整個體驗。</span><span class="sxs-lookup"><span data-stu-id="52b7c-253">In this section, you'll learn how to anchor an entire experience by placing it as a child of the ParentAnchor object.</span></span> <span data-ttu-id="52b7c-254">在此範例中，我們會使用在[基底模組第6課](mrlearning-base-ch6.md)期間所建立的陰曆模組元件示範應用程式。</span><span class="sxs-lookup"><span data-stu-id="52b7c-254">For this example, we use the lunar module Assembly demonstration application that was created during [Base module Lesson 6](mrlearning-base-ch6.md).</span></span>
+    <span data-ttu-id="8417f-189">在 [偵測器] 面板中，向下**Pressable 按鈕 Hololens 透鏡2（腳本）** 元件，然後按一下 [ **+** ] 圖示，將新的事件接聽程式新增至**按下的按鈕（）** 事件。</span><span class="sxs-lookup"><span data-stu-id="8417f-189">In the Inspector panel, scroll down to the **Pressable Button Holo Lens 2 (script)** component and add a new event listener to the **Button Pressed ()** event by clicking the **+** icon.</span></span>
 
-1. <span data-ttu-id="52b7c-255">搜尋 "Rocket 啟動器 Complete" prefab，並將它拖曳到您的階層中做為物件的子系（請參閱下圖）。</span><span class="sxs-lookup"><span data-stu-id="52b7c-255">Search for the "Rocket Launcher Complete" prefab and drag it into your hierarchy as a child of the object (see the image below).</span></span>
+    ![mrlearning-asa](images/mrlearning-asa-ch1-5-1.2.png)
 
-![module2chapter1step11](images/module2chapter1step11im.PNG)
+    <span data-ttu-id="8417f-191">在 [階層] 面板中仍選取 StartAzureSession 物件時，按一下-並將**ParentAnchor**物件從 [階層] 面板拖曳至您剛才加入之事件接聽程式的 [空的**無（物件）** ] 欄位中，讓 ParentAnchor 物件在此按鈕中聆聽已按下按鈕的事件。</span><span class="sxs-lookup"><span data-stu-id="8417f-191">With the StartAzureSession object still selected in the Hierarchy panel, click-and-drag the **ParentAnchor** object from the Hierarchy panel into the empty **None (Object)** field of the event listener you just added to make the ParentAnchor object listen for button pressed events from this button.</span></span>
 
-2. <span data-ttu-id="52b7c-257">放置模組元件體驗，讓 cube 仍然公開，如下圖所示。</span><span class="sxs-lookup"><span data-stu-id="52b7c-257">Position the module assembly experience so that the cube is still exposed, as shown in the image below.</span></span> <span data-ttu-id="52b7c-258">在應用程式中，使用者可以藉由移動 cube 來重新放置整個體驗。</span><span class="sxs-lookup"><span data-stu-id="52b7c-258">In the application, users may reposition the entire experience by moving the cube.</span></span> 
+    ![mrlearning-asa](images/mrlearning-asa-ch1-5-1.3.png)
 
-![module2chapter1step12im](images/module2chapter1step12im.PNG)
+    <span data-ttu-id="8417f-193">按一下相同事件接聽程式的 [**無**函式] 下拉式清單，然後選取 [ **AnchorModuleScript** > **StartAzureSession （）** ]，將 StartAzureSession （）函數設定為從這個按鈕引發按鈕按下的事件時所觸發的動作。</span><span class="sxs-lookup"><span data-stu-id="8417f-193">Click the **No Function** dropdown of the same event listener, then select **AnchorModuleScript** > **StartAzureSession ()** to set the StartAzureSession () function as the action that is triggered when the button pressed events is fired from this button.</span></span>
 
-> <span data-ttu-id="52b7c-260">注意：有各種不同的使用者體驗流程可用於重新置放體驗，包括使用按鈕來切換環繞體驗的周框方塊、使用重新置放的物件（例如在此步驟中使用的 cube）、使用位置和旋轉gizmos，還有更多。</span><span class="sxs-lookup"><span data-stu-id="52b7c-260">Note: There are a variety of user experience flows for repositioning experiences, including the use of a button to toggle a bounding box that surrounds the experience, use of a repositioning object (such as the cube used in this step), the use of position and rotation gizmos, and more.</span></span>
+    ![mrlearning-asa](images/mrlearning-asa-ch1-5-1.4.png)
 
-## <a name="congratulations"></a><span data-ttu-id="52b7c-261">恭喜！</span><span class="sxs-lookup"><span data-stu-id="52b7c-261">Congratulations</span></span>
-<span data-ttu-id="52b7c-262">在本教學課程中，您已瞭解 Azure 空間錨點的基本概念。</span><span class="sxs-lookup"><span data-stu-id="52b7c-262">In this tutorial, you learned the fundamentals of Azure Spatial Anchors.</span></span> <span data-ttu-id="52b7c-263">這一課提供了數個按鈕，可讓您探索啟動和停止 Azure 會話，以及在單一裝置上建立、上傳和下載 azure 錨點所需的各種步驟。</span><span class="sxs-lookup"><span data-stu-id="52b7c-263">This Lesson provided you with several buttons that let you  explore the various steps required to start and stop an Azure session and create, upload and download azure anchors on a single device.</span></span> <span data-ttu-id="52b7c-264">在下一課中，您將瞭解如何將 Azure 錨點識別碼儲存至 HoloLens 2 進行抓取，即使在應用程式重新開機之後也一樣。</span><span class="sxs-lookup"><span data-stu-id="52b7c-264">In the next lesson, you'll learn how to save Azure anchor IDs to your HoloLens 2 for retrieval, even after the application is restarted.</span></span> <span data-ttu-id="52b7c-265">在此系列中，您也將瞭解如何在多個裝置之間傳輸錨點識別碼，以達成空間對齊，並瞭解多使用者共用會話，即將推出做為共用教學課程的一部分。</span><span class="sxs-lookup"><span data-stu-id="52b7c-265">During the series, you will also learn how to transfer anchor IDs between multiple devices to achieve spatial alignment and learn about multi-user shared sessions, forthcoming as part of the Sharing tutorial.</span></span>
+2. <span data-ttu-id="8417f-195">設定可互動（腳本）元件。</span><span class="sxs-lookup"><span data-stu-id="8417f-195">Configure the Interactable (script) component.</span></span>
 
-[<span data-ttu-id="52b7c-266">下一課： 2. 儲存、正在抓取和共用 Azure 空間錨點</span><span class="sxs-lookup"><span data-stu-id="52b7c-266">Next Lesson: 2. Saving, retrieving and sharing Azure Spatial Anchors</span></span>](mrlearning-asa-ch2.md)
+    <span data-ttu-id="8417f-196">在 [階層] 面板中仍然選取 StartAzureSession 物件時，請在 [偵測器] 面板中，向下流覽至 [**可互動（腳本）** ] 元件，然後針對**OnClick （）** 事件重複上述步驟1中的相同進程。</span><span class="sxs-lookup"><span data-stu-id="8417f-196">With the StartAzureSession object still selected in the Hierarchy panel, in the Inspector panel, scroll down to the **Interactable (Script)** component and repeat the same process as in step 1 above for the **OnClick ()** event.</span></span>
 
+    ![mrlearning-asa](images/mrlearning-asa-ch1-5-2.1.png)
+
+3. <span data-ttu-id="8417f-198">設定其餘按鈕</span><span class="sxs-lookup"><span data-stu-id="8417f-198">Configure the remaining buttons</span></span>
+
+    <span data-ttu-id="8417f-199">針對其餘的每個按鈕，完成上述步驟1和2中所述的程式，將函式指派給按下的按鈕（）和 OnClick （）事件，如下所示：</span><span class="sxs-lookup"><span data-stu-id="8417f-199">For each of the remaining buttons, complete the process outlined in step 1 and 2 above to assign functions to both the Button Pressed () and OnClick () events following:</span></span>
+
+    * <span data-ttu-id="8417f-200">針對**StopAzureSession**物件，指派**StopAzureSession （）** 函數。</span><span class="sxs-lookup"><span data-stu-id="8417f-200">For the **StopAzureSession** object, assign the **StopAzureSession()** function.</span></span>
+    * <span data-ttu-id="8417f-201">針對**CreateAnchor**物件，指派**CreateAzureAnchor （）** 函式，然後將**ParentAnchor**再次拖曳到空白的**None （遊戲物件）** 欄位中。</span><span class="sxs-lookup"><span data-stu-id="8417f-201">For the **CreateAnchor** object, assign the **CreateAzureAnchor()** function, then drag the **ParentAnchor** again into the empty **None (Game Object)** field.</span></span>
+    * <span data-ttu-id="8417f-202">針對 [**開始尋找錨點**物件]，指派**FindAzureAnchor （）** 函數。</span><span class="sxs-lookup"><span data-stu-id="8417f-202">For the **Start Looking for Anchor** object, assign the **FindAzureAnchor()** function.</span></span>
+    * <span data-ttu-id="8417f-203">針對 [**刪除 Azure 錨點**] 物件，指派**DeleteAzureAnchor （）** 函數。</span><span class="sxs-lookup"><span data-stu-id="8417f-203">For the **Delete Azure Anchor** object, assign the **DeleteAzureAnchor()** function.</span></span>
+    * <span data-ttu-id="8417f-204">針對 [**刪除本機錨點**] 物件，指派**RemoveLocalAnchor （）** 函式，然後再次將**ParentAnchor**拖曳至 [空的**無（遊戲物件）** ] 欄位。</span><span class="sxs-lookup"><span data-stu-id="8417f-204">For the **Delete Local Anchor** object, assign the **RemoveLocalAnchor()** function, then drag the **ParentAnchor** again into the empty **None (Game Object)** field.</span></span>
+
+4. <span data-ttu-id="8417f-205">將場景連線至 Azure 資源</span><span class="sxs-lookup"><span data-stu-id="8417f-205">Connect the scene to the Azure resource</span></span>
+
+    <span data-ttu-id="8417f-206">在 [階層] 面板中，選取 [ **ParentAnchor** ] 物件，然後在 [偵測器] 面板中，向下流覽至 [**空間錨點管理員（腳本）** ] 元件。</span><span class="sxs-lookup"><span data-stu-id="8417f-206">In the Hierarchy panel, select the **ParentAnchor** object and in the Inspector panel, scroll down to the **Spatial Anchor Manager (Script)** component.</span></span>
+
+    <span data-ttu-id="8417f-207">然後，在 [**認證**] 區段中，將您的空間錨點帳戶識別碼和金鑰貼入對應的 [**空間錨點帳戶識別碼**] 和 [**空間錨點帳戶金鑰**] 欄位。</span><span class="sxs-lookup"><span data-stu-id="8417f-207">Then, in the **Credentials** section, paste your Spatial Anchors Account ID and Key into the corresponding **Spatial Anchors Account Id** and **Spatial Anchors Account Key** fields.</span></span>
+
+    >[!NOTE]
+    ><span data-ttu-id="8417f-208">您已在本教學[課程的必要條件](mrlearning-asa-ch1.md#prerequisites)中建立空間錨點帳戶識別碼和金鑰。</span><span class="sxs-lookup"><span data-stu-id="8417f-208">You created your Spatial Anchors Account Id and Key as part of this tutorial's [Prerequisites](mrlearning-asa-ch1.md#prerequisites).</span></span>
+
+    ![mrlearning-asa](images/mrlearning-asa-ch1-5-4.1.png)
+
+    >[!CAUTION]
+    ><span data-ttu-id="8417f-210">請確定您已儲存場景。</span><span class="sxs-lookup"><span data-stu-id="8417f-210">Make sure you save your scene.</span></span>
+
+## <a name="trying-the-basic-behaviors-of-azure-spatial-anchors"></a><span data-ttu-id="8417f-211">嘗試 Azure 空間錨點的基本行為</span><span class="sxs-lookup"><span data-stu-id="8417f-211">Trying the basic behaviors of Azure Spatial Anchors</span></span>
+
+<span data-ttu-id="8417f-212">您的場景已設定為示範 Azure 空間錨點的基本概念，現在可以部署應用程式，以便體驗 Azure 空間錨點搶先它。</span><span class="sxs-lookup"><span data-stu-id="8417f-212">Now that your scene is configured to demonstrate the basics of Azure Spatial Anchors, it is time to deploy the app so you can experience Azure Spatial Anchors firsthand.</span></span>
+
+1. <span data-ttu-id="8417f-213">新增額外的必要功能。</span><span class="sxs-lookup"><span data-stu-id="8417f-213">Add additional required capabilities.</span></span>
+
+    <span data-ttu-id="8417f-214">在 Unity 功能表中，選取 **編輯** > **專案設定 ...**  以開啟 播放 設定面板。</span><span class="sxs-lookup"><span data-stu-id="8417f-214">In the Unity menu, select **Edit** > **Project Settings...** to open the Player Settings panel.</span></span>
+
+    ![mrlearning-asa](images/mrlearning-asa-ch1-6-1.1.png)
+
+    <span data-ttu-id="8417f-216">在 [Player 設定] 面板中，依序選取 [ **player** ] 和 [**發佈設定**]。</span><span class="sxs-lookup"><span data-stu-id="8417f-216">In the Player Settings panel, select **Player** and then **Publishing Settings**.</span></span>
+
+    ![mrlearning-asa](images/mrlearning-asa-ch1-6-1.2.png)
+
+    <span data-ttu-id="8417f-218">在 [**發行設定**] 中，向下流覽至 [**功能**] 區段，然後再次檢查您在教學課程開頭建立專案時所啟用的**SpatialPerception**（已啟用）。</span><span class="sxs-lookup"><span data-stu-id="8417f-218">In the  **Publishing Settings**, scroll down to the **Capabilities** section and double-check that **SpatialPerception**, which you enabled when you created the project at the beginning of the tutorial, is enabled.</span></span> <span data-ttu-id="8417f-219">然後，啟用**InternetClient**、 **InternetClientServer**、 **PrivateNetworkClientServer**、 **RemovableStorage**、**網路**攝影機和**麥克風**等功能。</span><span class="sxs-lookup"><span data-stu-id="8417f-219">Then, enabled the **InternetClient**, **InternetClientServer**, **PrivateNetworkClientServer**, **RemovableStorage**, **Webcam**, and **Microphone** capabilities.</span></span>
+
+    ![mrlearning-asa](images/mrlearning-asa-ch1-6-1.3.png)
+
+2. <span data-ttu-id="8417f-221">將應用程式部署至 HoloLens 2。</span><span class="sxs-lookup"><span data-stu-id="8417f-221">Deploy the app to your HoloLens 2.</span></span>
+
+    >[!TIP]
+    ><span data-ttu-id="8417f-222">如需有關如何建立 Unity 專案並將其部署至 HoloLens 2 的提醒，您可以參閱[初始化專案和第一個應用程式](https://docs.microsoft.com/windows/mixed-reality/mrlearning-base-ch1)教學課程的「將[應用程式建立到您的裝置](mrlearning-base-ch1.md#build-your-application-to-your-device)」區段，這是使用者入門[教學](mrlearning-base.md)課程系列的一部分。</span><span class="sxs-lookup"><span data-stu-id="8417f-222">For a reminder on how to build and deploy your Unity project to HoloLens 2, you can refer to the [Build your application to your device](mrlearning-base-ch1.md#build-your-application-to-your-device) sections of the [Initializing your project and first application](https://docs.microsoft.com/windows/mixed-reality/mrlearning-base-ch1) tutorial which is part of the the [Getting started tutorials](mrlearning-base.md) series.</span></span>
+
+3. <span data-ttu-id="8417f-223">執行應用程式，並遵循應用程式內的指示。</span><span class="sxs-lookup"><span data-stu-id="8417f-223">Run the app and follow the in-app instructions.</span></span>
+
+    >[!CAUTION]
+    ><span data-ttu-id="8417f-224">Azure 空間錨點會使用網際網路來儲存和載入錨定資料，因此請確定您的裝置已連線到網際網路。</span><span class="sxs-lookup"><span data-stu-id="8417f-224">Azure Spatial Anchors uses the internet to save and load the anchor data so make sure your device is connected to the internet.</span></span>
+
+    <span data-ttu-id="8417f-225">當應用程式在您的裝置上執行時，請遵循**Azure 空間錨點模組指示**面板上顯示的螢幕指示。</span><span class="sxs-lookup"><span data-stu-id="8417f-225">When the application is running on your device, follow the on-screen instructions displayed on the **Azure Spatial Anchor Module Instructions** panel.</span></span>
+
+    ![mrlearning-asa](images/mrlearning-asa-ch1-6-3.1.png)
+
+## <a name="anchoring-an-experience"></a><span data-ttu-id="8417f-227">錨定體驗</span><span class="sxs-lookup"><span data-stu-id="8417f-227">Anchoring an experience</span></span>
+
+<span data-ttu-id="8417f-228">在前面幾節中，您已瞭解 Azure 空間錨點的基本概念。</span><span class="sxs-lookup"><span data-stu-id="8417f-228">In the previous sections, you learned the fundamentals of Azure Spatial Anchors.</span></span> <span data-ttu-id="8417f-229">我們使用 cube 來呈現父遊戲物件，並使用連結的錨點將其視覺化。</span><span class="sxs-lookup"><span data-stu-id="8417f-229">We used a cube to represent and visualize the parent game object with the attached anchor.</span></span> <span data-ttu-id="8417f-230">在本節中，您將瞭解如何藉由將它放在 ParentAnchor 物件的子系，來錨定整個體驗。</span><span class="sxs-lookup"><span data-stu-id="8417f-230">In this section, you will learn how to anchor an entire experience by placing it as a child of the ParentAnchor object.</span></span>
+
+1. <span data-ttu-id="8417f-231">新增 Rocket 啟動器體驗。</span><span class="sxs-lookup"><span data-stu-id="8417f-231">Add the Rocket Launcher experience.</span></span>
+
+    <span data-ttu-id="8417f-232">在 專案 面板中，流覽至 **資產**  > **MRTK。GettingStarted** > **Prefabs**  資料夾，然後選取**Rocket Launcher_Complete** prefab。</span><span class="sxs-lookup"><span data-stu-id="8417f-232">In the Project panel, navigate to **Assets** > **MRTK.Tutorials.GettingStarted** > **Prefabs** folder and select the **Rocket Launcher_Complete** prefab.</span></span>
+
+    ![mrlearning-asa](images/mrlearning-asa-ch1-7-1.1.png)
+
+    <span data-ttu-id="8417f-234">在仍選取 [Rocket Launcher_Complete prefab] 的情況下，將其拖曳至 [階層] 面板中的 [ **ParentAnchor** ] 物件上方，使其成為 ParentAnchor 物件的子系。</span><span class="sxs-lookup"><span data-stu-id="8417f-234">With the Rocket Launcher_Complete prefab still selected, drag it on top of the **ParentAnchor** object in the Hierarchy panel to make it a child of the ParentAnchor object.</span></span>
+
+    ![mrlearning-asa](images/mrlearning-asa-ch1-7-1.2.png)
+
+2. <span data-ttu-id="8417f-236">重新置放 Rocket 啟動器體驗。</span><span class="sxs-lookup"><span data-stu-id="8417f-236">Reposition the Rocket Launcher experience.</span></span>
+
+    <span data-ttu-id="8417f-237">移動模組**Rocket Launcher_Complete**物件，讓**ParentAnchor** （cube）仍然公開。</span><span class="sxs-lookup"><span data-stu-id="8417f-237">Move module **Rocket Launcher_Complete** object so that the **ParentAnchor** (the cube) is still exposed.</span></span>
+
+    ![mrlearning-asa](images/mrlearning-asa-ch1-7-2.1.png)
+
+    <span data-ttu-id="8417f-239">在應用程式中，使用者現在可以藉由移動 cube 來重新放置整個 Rocket 啟動器的使用體驗。</span><span class="sxs-lookup"><span data-stu-id="8417f-239">In the application, users may now reposition the entire Rocket Launcher experience by moving the cube.</span></span>
+
+    >[!TIP]
+    ><span data-ttu-id="8417f-240">有各種不同的使用者體驗流程可進行重新置放的體驗，包括使用重新置放的物件（例如本教學課程中使用的 cube）、使用按鈕來切換環繞體驗的周框方塊、使用位置和旋轉gizmos，還有更多。</span><span class="sxs-lookup"><span data-stu-id="8417f-240">There are a variety of user experience flows for repositioning experiences including the use of a repositioning object (such as the cube used in this tutorial), the use of a button to toggle a bounding box that surrounds the experience, the use of position and rotation gizmos, and more.</span></span>
+
+## <a name="congratulations"></a><span data-ttu-id="8417f-241">恭喜！</span><span class="sxs-lookup"><span data-stu-id="8417f-241">Congratulations</span></span>
+
+<span data-ttu-id="8417f-242">在本教學課程中，您已瞭解 Azure 空間錨點的基本概念。</span><span class="sxs-lookup"><span data-stu-id="8417f-242">In this tutorial, you learned the fundamentals of Azure Spatial Anchors.</span></span> <span data-ttu-id="8417f-243">這一課提供了數個按鈕，可讓您探索啟動和停止 Azure 會話，以及在單一裝置上建立、上傳和下載 azure 錨點所需的各種步驟。</span><span class="sxs-lookup"><span data-stu-id="8417f-243">This Lesson provided you with several buttons that let you  explore the various steps required to start and stop an Azure session and create, upload and download azure anchors on a single device.</span></span>
+
+<span data-ttu-id="8417f-244">在下一課中，您將瞭解如何將 Azure 錨點識別碼儲存至 HoloLens 2 進行抓取，即使在重新開機應用程式之後，以及如何在多個裝置之間傳輸錨點識別碼以達成空間對齊。</span><span class="sxs-lookup"><span data-stu-id="8417f-244">In the next lesson, you will learn how to save Azure anchor IDs to your HoloLens 2 for retrieval, even after the application is restarted, and how to transfer anchor IDs between multiple devices to achieve spatial alignment.</span></span>
+
+[<span data-ttu-id="8417f-245">下一課： 2. 儲存、正在抓取和共用 Azure 空間錨點</span><span class="sxs-lookup"><span data-stu-id="8417f-245">Next Lesson: 2. Saving, retrieving and sharing Azure Spatial Anchors</span></span>](mrlearning-asa-ch2.md)

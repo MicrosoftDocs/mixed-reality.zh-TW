@@ -5,17 +5,17 @@ author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
-keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 9235452d9dce38e9d849821a694a5d4c710d8e87
-ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
+keywords: mixed reality, unity, tutorial, hololens
+ms.openlocfilehash: e712fc2fd66b1add5b16b7dd8e6c37551aefe43a
+ms.sourcegitcommit: 9005b3fdfa87ac8fdc18a594a681e25c00ac5ce1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2019
-ms.locfileid: "73913281"
+ms.lasthandoff: 12/11/2019
+ms.locfileid: "75003207"
 ---
 # <a name="4-setting-up-intent-and-natural-language-understanding"></a>4. 設定意圖和自然語言理解
 
-在這一課，我們將探索 Azure 語音服務的意圖功能。 「意圖」功能可讓我們使用 AI 提供的語音命令來提供應用程式，使用者可以在其中說出非特定的語音命令，並仍然讓系統瞭解其意圖。 在此課程中，我們將設定 Azure LUIS 入口網站、設定我們的意圖/實體/語句、發佈意圖資源、將 Unity 應用程式連接至意圖資源，以及進行我們的第一個意圖 API 呼叫。
+在這一課，您將探索 Azure 語音服務的意圖功能。 「意圖」功能可讓您使用 AI 提供的語音命令來提供應用程式，使用者可以在其中說出非特定的語音命令，並仍然讓系統瞭解其意圖。 在此課程中，我們將設定 Azure LUIS 入口網站、設定我們的意圖/實體/語句、發佈意圖資源、將 Unity 應用程式連接至意圖資源，以及進行我們的第一個意圖 API 呼叫。
 
 ## <a name="objectives"></a>目標
 
@@ -25,7 +25,7 @@ ms.locfileid: "73913281"
 
 ## <a name="instructions"></a>指示
 
-1. 允許您的電腦啟用聽寫，若要這麼做，請移至 [Windows 設定]，選取 [隱私權]，然後選取 [語音]，最後是 [筆跡 & 輸入]，然後開啟 [語音服務] 並輸入建議。
+1. 允許您的電腦啟用聽寫。 若要這麼做，請移至 [Windows 設定]，選取 [隱私權]，然後依序按一下 [語音] 和 [筆跡 & 輸入]，然後開啟 [語音服務] 並輸入建議。
 
     ![Module4Chapter4step1aim](images/module4chapter4step1aim.PNG)
 
@@ -33,7 +33,7 @@ ms.locfileid: "73913281"
 
     ![Module4Chapter4step1cim](images/module4chapter4step1cim.PNG)
 
-2. 登入[Azure 入口網站](https://portal.azure.com/)。 登入之後，請按一下 [建立資源]，並搜尋 "Language Understanding"，然後按一下 enter。
+2. 登入 [Azure 入口網站](https://portal.azure.com/)。 登入之後，按一下 [建立資源]，搜尋 "Language Understanding"，然後按一下 Enter。
 
     ![mrlearning-speech-ch4-1-step2 .png](images/mrlearning-speech-ch4-1-step2.png)
 
@@ -45,7 +45,7 @@ ms.locfileid: "73913281"
 
     ![mrlearning-speech-ch4-1-step3b .png](images/mrlearning-speech-ch4-1-step3b.png)
 
-4. 選取您的**撰寫位置**和**執行時間位置**，基於本教學課程的目的，請使用 *（us）「美國西部*」。 然後選擇 [**撰寫] 定價層**和 [執行時間]**定價層**的 [ *F0 （每秒5個呼叫]、[每月*10，000個呼叫]）。 最後，按一下 [**建立**] 按鈕，以建立資源和新的資源群組。
+4. 選取您的**撰寫位置**和**執行時間位置**。 基於本教學課程的目的，請使用 *（美國）美國西部*，然後選擇 [**撰寫] 定價層**和 [執行時間]**定價層**的 [ *F0 （每秒5個呼叫]、[每月10k 個呼叫]）* 。 最後，按一下 [**建立**] 按鈕來建立資源，以及新的資源群組。
 
     ![mrlearning-speech-ch4-1-step4 .png](images/mrlearning-speech-ch4-1-step4.png)
 
@@ -59,7 +59,7 @@ ms.locfileid: "73913281"
 6. 使用相同的使用者帳戶，登入[Language Understanding 智慧型服務（LUIS）](https://www.luis.ai/)入口網站，選取您的國家/地區，並同意使用條款。
 
     >[!NOTE]
-    >到達 Language Understanding 入口網站時，您可能需要登入（如果您尚未這麼做），其認證與您的 Azure 入口網站相同。 如果這是您第一次使用 LUIS，您將需要向下滾動到歡迎頁面底部，以尋找並按一下 [建立 LUIS] 應用程式按鈕。
+    >到達 Language Understanding 入口網站時，您可能需要使用與您的 Azure 入口網站相同的認證，登入（如果您還沒有的話）。 如果這是您第一次使用 LUIS，您必須向下滾動到歡迎頁面底部，以尋找並按一下 [建立 LUIS] 應用程式按鈕。
 
 7. 登入之後，按一下 [我的應用程式] （如果您目前不在該區段中）。 然後，您可以按一下 [建立新的應用程式]。 將新的應用程式命名為「語音 SDK 學習模組」。 也將「語音 SDK 學習模組」新增至 [描述] 欄位。 然後按一下 [完成]。
 
@@ -82,11 +82,11 @@ ms.locfileid: "73913281"
     >[!NOTE]
     >您現在應該有兩個意圖-"PressButton" 和 "None"。
 
-10. 在左側的 [應用程式資產] 底下，選取 [實體]，然後按一下 [建立新實體]，並將其命名為「動作」，並將實體類型保留為「簡單」。
+10. 在左側的 [應用程式資產] 底下，選取 [實體]，按一下 [建立新實體]，將它命名為「動作」，並將實體類型保留為「簡單」。
 
     ![Module4Chapter4step11im](images/module4chapter4step11im.PNG)
 
-11. 再次按一下 [建立新實體]，並將它命名為 "Target"，並將實體類型保留為「簡單」。
+11. 再次按一下 [建立新實體]，並將它命名為「目標」。 將實體類型保留為「簡單」。
 
     ![Module4Chapter4step12im](images/module4chapter4step12im.PNG)
 
@@ -98,7 +98,7 @@ ms.locfileid: "73913281"
 
     ![Module4Chapter4step14aim](images/module4chapter4step14aim.PNG)
 
-    按一下 [輸入範例 ...] 工具箱. 然後，輸入下列語句：
+    按一下 [輸入範例 ...] . 然後，輸入下列語句：
 
     ![Module4Chapter4step14bim](images/module4chapter4step14bim.PNG)
 
@@ -121,11 +121,11 @@ ms.locfileid: "73913281"
     >
     > ![Module4Chapter4noteim](images/module4chapter4noteim.PNG)
 
-18. 現在，按一下右上方的 [發佈]。 確定下拉式清單顯示「生產環境」，然後按一下快顯上的 [發佈]。
+18. 按一下右上方的 [發佈]。 請確定下拉式清單顯示「生產」，並在快顯視窗中按一下 [發佈]。
 
     ![Module4Chapter4step19im](images/module4chapter4step19im.PNG)
 
-19. 發佈之後，頁面頂端應該會出現綠色橫條。  按一下要移至 [管理] 頁面的綠色橫條。
+19. 發佈之後，頁面頂端應該會出現綠色橫條。 按一下綠色橫條以查看 [管理] 頁面。
 
     ![Module4Chapter4step20im](images/module4chapter4step20im.PNG)
 
@@ -163,4 +163,4 @@ ms.locfileid: "73913281"
 
 ## <a name="congratulations"></a>恭喜！
 
-在本課程中，我們已瞭解如何新增 AI 驅動的語音命令！ 您的程式現在可以辨識使用者的意圖，即使他們沒有有些純粹是精確的語音命令也一樣。
+在這一課，您已瞭解如何新增 AI 驅動的語音命令。 現在，您的程式可以辨識使用者的意圖，即使他們沒有有些純粹是精確的語音命令也一樣！

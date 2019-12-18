@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 轉譯、全息影像
-ms.openlocfilehash: 9c32d8ddf5a1fb9e9d991211756ba1306f4d3fa9
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 8984a16d92ed2f2b72d99e103eaae81b8eba742b
+ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926853"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75182028"
 ---
 # <a name="rendering"></a>轉譯
 
@@ -27,7 +27,7 @@ ms.locfileid: "73926853"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>特徵</strong></td>
+        <td><strong>功能</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 代)</strong></a></td>
         <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
@@ -76,24 +76,28 @@ ms.locfileid: "73926853"
 
 Windows Mixed Reality 引進了全像**攝影攝影機**的概念。 全像攝影攝影機類似于3D 圖形文字中的傳統相機：它們會定義外建（位置和方向）和內建相機屬性。 （例如：，使用 view 欄位來觀看虛擬3D 場景）。不同于傳統3D 攝影機，應用程式不會控制相機的位置、方向和內建屬性。 而是由使用者的移動隱含控制全像攝影攝影機的位置和方向。 使用者的移動會透過「視圖」轉換，以框架逐一轉送至應用程式。 同樣地，相機的內建屬性是由裝置的校正光纖所定義，並透過投射轉換來逐畫面轉送。
 
-一般來說，您的應用程式將會針對單一身歷聲攝影機呈現。 不過，健全的轉譯迴圈將支援多個相機，而且將同時支援 mono 和身歷聲攝影機。 例如，系統可能會要求您的應用程式在使用者啟動[混合現實 capture](mixed-reality-capture.md) （MRC）之類的功能時，從替代的觀點呈現，視問題耳機的形狀而定。 可以支援多個相機的應用程式會[藉由選擇](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic.HolographicViewConfiguration#Windows_Graphics_Holographic_HolographicViewConfiguration)支援的相機[類型](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic.HolographicViewConfigurationKind#Windows_Graphics_Holographic_HolographicViewConfigurationKind)來取得它們。
+一般來說，您的應用程式將會針對單一身歷聲攝影機呈現。 不過，健全的轉譯迴圈將支援多個相機，而且將同時支援 mono 和身歷聲攝影機。 例如，系統可能會要求您的應用程式在使用者啟動[混合現實 capture](mixed-reality-capture.md) （MRC）之類的功能時，從替代的觀點呈現，視問題耳機的形狀而定。 可以支援多個相機的應用程式會藉由[選擇支援](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic.HolographicViewConfiguration#Windows_Graphics_Holographic_HolographicViewConfiguration)的相機[類型](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic.HolographicViewConfigurationKind#Windows_Graphics_Holographic_HolographicViewConfigurationKind)來取得它們。
 
 ## <a name="volume-rendering"></a>磁片區轉譯
 
 以3D 呈現醫學/Mri 或工程區時，通常會使用[大量](volume-rendering.md)轉譯技術。 這些技術在混合現實中特別有趣，而使用者可以從關鍵角度自然地查看這類磁片區，只要移動其標頭即可。
 
 ## <a name="supported-resolutions-on-hololens-1st-gen"></a>HoloLens 上支援的解決方法（第1代）
-> [!NOTE]
-> 即將推出更多更新。 [查看更新清單](release-notes-april-2018.md)
 
-* 目前和最大支援的解析度是[view](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic.HolographicViewConfiguration#Windows_Graphics_Holographic_HolographicViewConfiguration)設定的屬性。 HoloLens 預設會設定為最大解析度，也就是720p （1268x720）。
-* 支援的最小視口大小為50% 的720p，也就是360p （634x360）。 在 HoloLens 上，這是0.5 的 ViewportScaleFactor。
-* 由於視覺效果降低，因此**不建議**使用低於540p 的任何專案，但可以用來識別圖元填滿率的瓶 necks。
+* 最大的視口大小是[HolographicDisplay](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicdisplay)的屬性。 HoloLens 預設會設定為最大的視口大小，也就是720p （1268x720）。
+* 您可以藉由在 HolographicCamera 上設定 ViewportScaleFactor 來變更此區大小。 此縮放比例的範圍介於0到1之間。
+* HoloLens （第1代）上支援的最小視口大小為50% 的720p，也就是360p （634x360）。 這是0.5 的 ViewportScaleFactor。
+* 由於視覺效果降低，因此不建議使用低於540p 的任何專案，但可以用來識別圖元填滿率的瓶頸。
 
 ## <a name="supported-resolutions-on-hololens-2"></a>HoloLens 2 上支援的解決方式
 
-> [!NOTE]
-> [即將推出](news.md)更多 HoloLens 2 特定指引。
+* 目前和最大的支援轉譯目標大小是[view](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic.HolographicViewConfiguration#Windows_Graphics_Holographic_HolographicViewConfiguration)設定的屬性。 HoloLens 2 會設定為最大轉譯目標大小，預設為1440x936。
+* 應用程式可以藉由呼叫 RequestRenderTargetSize 方法來要求新的轉譯目標大小，藉以變更呈現目標緩衝區的大小。 將會選擇新的轉譯目標大小，以符合或超過要求的呈現目標大小。 此 API 會變更轉譯目標緩衝區的大小，這需要在 GPU 上重新配置記憶體。 這項工作的含意包括：轉譯目標大小可以縮小以減少 GPU 上的記憶體壓力，而且不應該以較高的頻率呼叫此方法。
+* 應用程式仍可透過與 HoloLens 1 相同的方式來變更視口大小。 這不會造成 GPU 上的記憶體重新配置，因此可以在較高的頻率變更，但無法用來減少 GPU 上的記憶體壓力。
+* HoloLens 2 上支援的最小視口大小是634x412。 這是在使用預設呈現目標大小時，大約0.44 的 ViewportScaleFactor。
+* 如果提供的呈現目標大小小於支援的最小視口大小，則會忽略此區縮放比例。
+* 由於視覺效果降低，因此不建議使用低於540p 的任何專案，但可以用來識別圖元填滿率的瓶頸。
+
 
 
 ## <a name="see-also"></a>請參閱

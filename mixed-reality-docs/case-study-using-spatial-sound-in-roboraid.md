@@ -6,16 +6,16 @@ ms.author: hakons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、HoloLens、RoboRaid、空間音效
-ms.openlocfilehash: 9be5c461c1546d241e559f6b2f874656a29b019a
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 1482c914d261cae698a1460873b217b0683cd16b
+ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73436495"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75181938"
 ---
 # <a name="case-study---using-spatial-sound-in-roboraid"></a>案例研究-在 RoboRaid 中使用空間音效
 
-Charles Sinex 是 Microsoft HoloLens Experience 小組的音訊領導人，討論他在建立[RoboRaid](https://www.microsoft.com/p/roboraid/9nblggh5fv3j)的音訊時所遇到的獨特挑戰，這是一位混合現實的第一員射擊。
+本文說明 Microsoft HoloLens 經驗小組在建立[RoboRaid](https://www.microsoft.com/p/roboraid/9nblggh5fv3j)的音訊時所遇到的獨特挑戰，這是一位混合現實的射擊。
 
 ## <a name="the-tech"></a>技術
 
@@ -35,7 +35,7 @@ Charles Sinex 是 Microsoft HoloLens Experience 小組的音訊領導人，討�
 
 躲過技師修理是 RoboRaid 中游戲的其中一個最重要的層面，也是我們覺得真正獨特的 HoloLens 經驗。 因此，我們想要讓 dodges 對玩家的成功率非常有益。 在開發過程中，我們 Doppler 「whizz」聽起來非常吸引人。 一開始，我的計畫是使用迴圈，並使用磁片區、音調和篩選來即時操作。 這項作業的實現非常詳盡，因此在認可資源以實際建立之前，我們使用具有 Doppler 效果內建的資產建立了成本較低的原型，只是為了瞭解它覺得 *。 我們的開發人員使其成為 it，讓這項 whizz 的資產在 projectile 將由玩家的耳傳遞之前，只會在0.7 秒內播放一筆，而結果則令人驚訝！ 不用說，我們 ditched 了更複雜的解決方案，並實作為原型。
 
-\* * （如果您想要使用內建的 Doppler 效果來建立音訊資產的詳細資訊，請參閱[在2分鐘內稱為 100 Whooshes](https://designingsound.org/2010/02/charles-deenen-special-100-whooshes-in-2-minutes/)的音效設計工具 Charles Deenan 一文。）*
+*（如需使用內建的 Doppler 效果建立音訊資產的詳細資訊，請參閱[2 分鐘內的 100 Whooshes](http://designingsound.org/2010/02/26/charles-deenen-special-100-whooshes-in-2-minutes/)）。*  
 <br>
 ![成功躲過敵人的 projectile 以滿足 whizz 的音效來獎勵玩家。](images/successful-dodge-roboraid-500px.jpg)
 
@@ -67,30 +67,23 @@ HoloLens 喇叭的小型和光線會符合裝置的需求，因此您不會聽�
 
 我希望音訊專業人員能夠在自己的應用程式上運作，因為我在 RoboRaid 上工作。 我看不到（聽過！） Microsoft 外部的人才會針對 HoloLens 提出哪些內容。
 
-## <a name="do-it-yourself"></a>自行執行
+## <a name="do-it-yourself"></a>親自完成
 
 我發現讓特定事件（例如爆炸）聽起來更大的一項技巧，像是填滿空間，就是為空間音效建立 mono 資產，並使用2D 身歷聲資產來重新播放3D。 它確實會進行一些微調，因為身歷聲內容中的資訊過多會降低 mono 資產的方向。 不過，取得平衡會產生很大的音效，讓玩家能夠以正確的方向來輪流列印頭。
 
 您可以使用下列音訊資產自行嘗試：
 
-**案例1**
+**案例 1**
 1. 下載[roboraid_enemy_explo_mono .wav](images/roboraid-enemy-explo-mono.wav)並將其設定為透過空間音效播放，並將其指派給事件。
 2. 下載[roboraid_enemy_explo_stereo .wav](images/roboraid-enemy-explo-stereo.wav)並設定為在2d 身歷聲中播放，然後指派給與上述相同的事件。 因為這些資產會正規化為 Unity，所以 attenuate 這兩個資產的數量，使其不會進行裁剪。
 3. 同時播放這兩個聲音。 四處移動您的頭部，感受它的外觀。
 
-**案例2**
+**案例 2**
 1. 下載[roboraid_enemy_explo_summed .wav](images/roboraid-enemy-explo-summed.wav) ，並將其設定為透過空間音效播放並指派給事件。
 2. 單獨播放此資產，然後與案例1中的事件進行比較。
 3. 嘗試不同的 mono 和身歷聲檔案平衡。
 
-## <a name="about-the-author"></a>關於作者
 
-<table style="border-collapse:collapse">
-<tr>
-<td style="border-style: none" width="60px"><img alt="Picture of Charles Sinex" width="60" height="60" src="images/genericusertile.jpg"></td>
-<td style="border-style: none"><b>Charles Sinex</b><br>音訊工程師 @Microsoft</td>
-</tr>
-</table>
 
 ## <a name="see-also"></a>請參閱
 * [空間音效](spatial-sound.md)

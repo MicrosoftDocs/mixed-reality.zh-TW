@@ -1,61 +1,64 @@
 ---
 title: Unity 中的空間音效
-description: 播放來自 Unity 場景內特定3D 點的空間音效。
+description: 從 Unity 場景內的特定3D 點播放空間音效。
 author: kegodin
 ms.author: kegodin
 ms.date: 11/07/2019
 ms.topic: article
 keywords: Unity、空間音效、HRTF、會議室大小
-ms.openlocfilehash: c96717d9df9b89fbb09f0b4466ee3a9bf5c8a149
-ms.sourcegitcommit: 2e54d0aff91dc31aa0020c865dada3ae57ae0ffc
+ms.openlocfilehash: 3e7d0ea231545d5112d182dffbc02f217ca4a4a7
+ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73641068"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75181988"
 ---
 # <a name="spatial-sound-in-unity"></a>Unity 中的空間音效
 
-此頁面會連結至資源，協助您在 Unity mixed reality 專案中使用及設計 Microsoft HRTF 空間定位器。
+此頁面會連結到 Unity 中的空間音效資源。
+
+## <a name="spatializer-options"></a>空間定位器選項
+混合現實應用程式的空間定位器選項包括：
+* *MS HRTF 空間定位器*。 Unity 提供此做為*Windows Mixed Reality*選用套件的一部分。
+  * 這會在較高成本的「單一來源」架構中，于 CPU 上執行。
+  * 這是針對與原始 HoloLens 應用程式的回溯相容性而提供的。
+* *Microsoft 空間定位器*。 這可從[Microsoft 空間定位器 GitHub 存放庫](https://github.com/microsoft/spatialaudio-unity)取得。
+  * 這會使用較低成本的「多來源」架構。
+  * 在 HoloLens 2 上，這會卸載至硬體加速器。
+
+針對新的應用程式，我們建議*Microsoft 空間定位器*。
 
 ## <a name="enable-spatialization"></a>啟用 spatialization
 
-在您專案的音訊設定中啟用**MS HRTF 空間定位器**。 如需詳細資訊，請參閱[Unity 的空間定位器檔](https://docs.unity3d.com/Manual/VRAudioSpatializer.html)。 
+使用[適用于 Unity 的 NuGet](https://github.com/GlitchEnzo/NuGetForUnity/releases/latest)來安裝_SpatialAudio 空間定位器 unity_ ，並在專案的音訊設定中選擇 [ **microsoft 空間定位器**]。 然後：
+* 將**音訊來源**連結至階層中的物件
+* 核取 [**啟用 spatialization** ] 核取方塊
+* 將**空間 Blend**滑杆移至 ' 1 '
 
-將**音訊來源**附加至階層中的物件，並藉由核取 [**啟用 spatialization** ] 核取方塊並將**空間 Blend**滑杆移至 [1] 來啟用 spatialization。 如需詳細資訊，請參閱[Unity 的音訊來原始檔案](https://docs.unity3d.com/2019.3/Documentation/Manual/class-AudioSource.html)。 
+如需詳細資訊，請參閱：
+* [Microsoft 空間定位器 GitHub 存放庫](https://github.com/microsoft/spatialaudio-unity)
+* [Microsoft 的空間定位器教學課程](unity-spatial-audio-ch1.md)
+* [Unity 的音訊來原始檔案](https://docs.unity3d.com/2019.3/Documentation/Manual/class-AudioSource.html)
+* [Unity 的空間定位器檔](https://docs.unity3d.com/Manual/VRAudioSpatializer.html)
 
-## <a name="design-with-spatialization"></a>使用 spatialization 設計
+## <a name="distance-based-attenuation"></a>距離型衰減
+以 Unity 的預設距離為基礎的衰減，其最小距離為1個計量，而最大距離為500計量，而對數 rolloff 為。 這些設定可能適用于您的案例，或者您可能會發現來源的 attenuate 速度太快或太慢。 如需詳細資訊，請參閱：
+* 針對建議的設定，[在混合現實中的音效設計](spatial-sound-design.md)。
+* [Unity 的音訊來原始檔案](https://docs.unity3d.com/2019.3/Documentation/Manual/class-AudioSource.html)，以取得有關設定這些曲線的指示。
 
-### <a name="distance-based-attenuation"></a>以距離為基礎的衰減
-以 Unity 的預設距離為基礎的衰減，其最小距離為1個計量，而最大距離為500計量，而對數 rolloff 為。 這可能適用于您的案例，或者您可能會發現來源的 attenuate 速度太快或太慢。 如需距離衰減曲線的建議設定，請參閱[混合現實中的音效設計](spatial-sound-design.md)，並參閱[unity 的音訊來原始檔案](https://docs.unity3d.com/2019.3/Documentation/Manual/class-AudioSource.html)，以取得在 Unity 中設定這些曲線的相關資訊。
+## <a name="reverb"></a>殘響
+根據預設， _Microsoft 空間定位器_會停用空間定位器後的效果。 若要啟用 hrtf 來源的回音和其他效果：
+* 將**房間效果傳送層級**元件附加到每個來源
+* 調整每個來源的傳送層級曲線，以控制送回給圖形以進行效果處理的音訊增益
 
-### <a name="environment"></a>環境
-**MS HRTF 空間定位器**包含一個房間回音元件，其中包含[四個回音設定](https://docs.microsoft.com/windows/win32/api/hrtfapoapi/ne-hrtfapoapi-hrtfenvironment)和預設值「小型」。 您可以藉由將下列C#腳本附加至 Unity 中具有 Hrtf 音訊來源的每個物件，以程式設計方式變更每個音訊來源的房間設定：
-
-```cs
-using UnityEngine;
-   using System.Collections;
-   public class SetHRTF : MonoBehaviour    {
-       public enum ROOMSIZE { Small, Medium, Large, None };
-       public ROOMSIZE room = ROOMSIZE.Small;  // Small is regarded as the "most average"
-       // defaults and docs from MSDN
-       // https://msdn.microsoft.com/library/windows/desktop/mt186602(v=vs.85).aspx
-       AudioSource audiosource;
-       void Awake()
-       {
-           audiosource = this.gameObject.GetComponent<AudioSource>();
-           if (audiosource == null)
-           {
-               print("SetHRTFParams needs an audio source to do anything.");
-               return;
-           }
-           audiosource.spatialize = 1; // we DO want spatialized audio
-           audiosource.spread = 0; // we dont want to reduce our angle of hearing
-           audiosource.spatialBlend = 1;   // we do want to hear spatialized audio
-           audiosource.SetSpatializerFloat(1, (float)room);    // 1 is the roomsize param
-       }
-   }
-```
+如需詳細資訊，請參閱[空間定位器教學課程的第5章](unity-spatial-audio-ch5.md)。
 
 ## <a name="unity-spatial-sound-examples"></a>Unity 空間音效範例
-Mixed Reality 工具組（MRTK）包含在混合現實中套用音訊效果的方式範例： [MRTK 示範](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.Examples/Demos/Audio)。
+如需 Unity 中的空間音效範例，請參閱：
+* [MRTK 示範](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.Examples/Demos/Audio)
+* [Microsoft 空間定位器範例專案](https://github.com/microsoft/spatialaudio-unity/tree/master/Samples/MicrosoftSpatializerSample)
+
+## <a name="next-steps"></a>後續步驟
+* [混合現實中的音效設計](spatial-sound-design.md)
+* [Microsoft 的空間定位器教學課程](unity-spatial-audio-ch1.md)
 

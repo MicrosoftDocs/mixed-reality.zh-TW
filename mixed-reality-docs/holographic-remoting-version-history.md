@@ -6,17 +6,26 @@ ms.author: nopohl
 ms.date: 10/21/2019
 ms.topic: article
 keywords: HoloLens、遠端、全像攝影遠端
-ms.openlocfilehash: 9ff6a5f7594eb67dd4c1c8690812ab724cac9012
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: f051dbf24cab550470a312933ffb99e1ba595257
+ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926644"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75181958"
 ---
 # <a name="holographic-remoting-version-history"></a>全像遠端版本歷程記錄
 
 > [!IMPORTANT]
 > 本指導方針專屬於 HoloLens 2 上的全像攝影遠端處理。
+
+## 版本2.0.18.0 （2019年12月17日）<a name="v2.0.18"></a>
+* 已新增對 HolographicViewConfiguration 的支援： https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicviewconfiguration
+* 已修正導致當機的各種錯誤。
+* 已修正 HolographicCamera 要接受並顯示為 HoloraphicFrame 中新增的相機所需的 HolographicSpace CameraAdded 回呼的 bug。
+
+## 版本2.0.16 （2019年11月11日）<a name="2.0.16"></a>
+* 已修正 QR 代碼追蹤中的鎖死。
+* 已修正 unhandeled 例外狀況，因為在主執行緒中封鎖等候。
 
 ## 版本2.0.14 版（2019年10月26日）<a name="v2.0.14"></a>
 * 支援新的 PerceptionDevice Api （Windows 10 2019 年11月更新）。

@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: Windows 裝置入口網站、HoloLens
-ms.openlocfilehash: 972fe2e828a0a054925a45b4f6965c668f6da078
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 9bb8116330d88c532b955ef497d29fe98c86fddb
+ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926749"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75182018"
 ---
 # <a name="using-the-windows-device-portal"></a>使用 Windows 裝置入口網站
 
@@ -30,10 +30,10 @@ ms.locfileid: "73926749"
 ## <a name="setting-up-hololens-to-use-windows-device-portal"></a>設定 HoloLens 以使用 Windows 裝置入口網站
 
 1. 開啟您的 HoloLens 並將裝置戴上。
-2. 做出[盛開](system-gesture.md#bloom)手勢來啟動主功能表。
-3. 注視 [**設定**] 圖格，然後執行 [[空中](gaze-and-commit.md#composite-gestures)] 手勢。 執行第二個按鍵，將應用程式放在您的環境中。 當您放置 [設定] App 之後，該 App 便會啟動。
-4. 選取 [更新] 功能表項目。
-5. 選取 [適用於開發人員] 功能表項目。
+2. 在 HoloLens （第1代）上執行 HoloLens2 或[Bloom](https://docs.microsoft.com/hololens/hololens1-basic-usage#open-the-start-menu-with-bloom)的[開始手勢](https://docs.microsoft.com/hololens/hololens2-basic-usage#start-gesture)，以啟動主功能表。 
+3. 看一下 [**設定**] 圖格，然後在 hololens （第1代）上執行 [[空中](https://docs.microsoft.com/hololens/hololens1-basic-usage#select-holograms-with-gaze-and-air-tap)操作] 手勢，或透過[觸碰或使用手光線](https://docs.microsoft.com/hololens/hololens2-basic-usage)在 hololens 2 上選取它。 
+4. 選取 **\[更新\]** 功能表項目。
+5. 選取 **\[適用於開發人員\]** 功能表項目。
 6. 啟用 **\[開發人員模式\]** 。
 7. [向下滾動](gaze-and-commit.md#composite-gestures)並啟用 [**裝置入口網站**]。
 8. 如果您要設定 Windows 裝置入口網站，讓您可以透過 USB 或 Wi-fi 將應用程式部署到此 HoloLens，請按一下 [**配對**] 以[產生配對 PIN](using-visual-studio.md)。 將 [設定] 應用程式保留在 [PIN] 快顯視窗中，直到您在第一次部署期間輸入 Visual Studio 的 PIN 為止。
@@ -170,7 +170,7 @@ ms.locfileid: "73926749"
 
 ### <a name="performance-tracing"></a>效能追蹤
 
-Microsoft HoloLens 上 Windows 裝置入口網站中的 ![效能追蹤] 頁面](images/windows-device-portal-performance-tracing-page-1000px.png)<br>
+Microsoft HoloLens 上 Windows 裝置入口網站中的 ![效能追蹤](images/windows-device-portal-performance-tracing-page-1000px.png) 頁面<br>
 *Microsoft HoloLens 上 Windows 裝置入口網站中的效能追蹤頁面*
 
 從 HoloLens 捕獲[Windows 效能錄製](https://msdn.microsoft.com/library/windows/hardware/hh448205.aspx)器（WPR）追蹤。
@@ -181,16 +181,18 @@ Microsoft HoloLens 上 Windows 裝置入口網站中的 ![效能追蹤] 頁面](
 
 擷取的 ETL 檔案可以在 [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/hardware/hh448170.aspx) 中開啟以進行分析。
 
-### <a name="processes"></a>處理序
+### <a name="processes"></a>處理程序
 
-Microsoft HoloLens 上 Windows 裝置入口網站中的 ![處理常式] 頁面](images/windows-device-portal-running-processes-page-1000px.png)<br>
+Microsoft HoloLens 上 Windows 裝置入口網站中的 ![處理常式](images/windows-device-portal-running-processes-page-1000px.png)
+ 頁面<br>
 *Microsoft HoloLens 上 Windows 裝置入口網站中的 [進程] 頁面*
 
 顯示有關目前正在執行之處理程序的詳細資訊。 這包括 App 與系統處理程序。
 
 ### <a name="system-performance"></a>系統效能
 
-Microsoft HoloLens 上 Windows 裝置入口網站中的 ![系統效能] 頁面](images/windows-device-portal-system-performance-page-1000px.png)<br>
+Microsoft HoloLens 上 Windows 裝置入口網站中的 ![系統效能](images/windows-device-portal-system-performance-page-1000px.png)
+ 頁面<br>
 *Microsoft HoloLens 上 Windows 裝置入口網站中的 [系統效能] 頁面*
 
 顯示系統診斷資訊的即時圖表，例如電源使用量、畫面播放速率與 CPU 負載。
@@ -205,9 +207,9 @@ Microsoft HoloLens 上 Windows 裝置入口網站中的 ![系統效能] 頁面](
 * **網路**︰已接收與已傳送
 * **記憶體**：總計、使用中、已認可、已分頁和未分頁
 
-### <a name="apps"></a>應用程式
+### <a name="apps"></a>[應用程式]
 
-Microsoft HoloLens 上 Windows 裝置入口網站中的 ![應用程式] 頁面](images/windows-device-portal-apps-page-1000px.png)<br>
+Microsoft HoloLens 上 Windows 裝置入口網站中的 ![應用程式](images/windows-device-portal-apps-page-1000px.png) 頁面<br>
 *Microsoft HoloLens 上 Windows 裝置入口網站中的應用程式頁面*
 
 管理安裝在 HoloLens 上的應用程式。
@@ -226,7 +228,7 @@ Microsoft HoloLens 上 Windows 裝置入口網站中的 ![應用程式損毀傾�
 
 ### <a name="file-explorer"></a>檔案總管
 
-Microsoft HoloLens 上 Windows 裝置入口網站中的 ![檔案瀏覽器] 頁面](images/fileexplorer-1000px.png)<br>
+Microsoft HoloLens 上 Windows 裝置入口網站中的 ![檔案瀏覽器](images/fileexplorer-1000px.png) 頁面<br>
 *Microsoft HoloLens 上 Windows 裝置入口網站中的檔案瀏覽器頁面*
 
 使用 [檔案瀏覽器] 流覽、上傳和下載檔案。 您可以針對從 Visual Studio 或裝置入口網站部署的應用程式，使用 [檔] 資料夾、[圖片] 資料夾和 [本機儲存體] 資料夾中的檔案。
@@ -265,7 +267,8 @@ Microsoft HoloLens 上 Windows 裝置入口網站中的 ![記錄頁面](images/w
 
 ### <a name="simulation"></a>模擬
 
-Microsoft HoloLens 上 Windows 裝置入口網站中的 ![模擬] 頁面](images/windows-device-portal-simulation-page-1000px.png)<br>
+Microsoft HoloLens 上 Windows 裝置入口網站中的 ![模擬](images/windows-device-portal-simulation-page-1000px.png)
+ 頁面<br>
 *Microsoft HoloLens 上 Windows 裝置入口網站中的模擬頁面*
 
 允許您記錄並播放輸入資料以進行測試。
@@ -274,9 +277,9 @@ Microsoft HoloLens 上 Windows 裝置入口網站中的 ![模擬] 頁面](images
 * **播放**：按一下或點擊 **[上傳記錄**]，從您的電腦選取 xef 檔案，並將資料傳送至 HoloLens。
 * **控制模式**：從下拉式清單中選取 [**預設**] 或 [**模擬**]，然後按一下或點擊 [**設定**] 按鈕，以選取 HoloLens 上的模式。 選擇 [模擬] 將會停用 HoloLens 上實際的感應器，並改為使用已上傳的模擬資料。 如果您切換到 [模擬]，您的 HoloLens 將不會對真實使用者做出回應，直到您切換回 [預設] 為止。
 
-### <a name="networking"></a>網路功能
+### <a name="networking"></a>網路
 
-Microsoft HoloLens 上 Windows 裝置入口網站中的 ![網路功能] 頁面](images/windows-device-portal-networking-page-1000px.png)<br>
+Microsoft HoloLens 上 Windows 裝置入口網站中的 ![網路功能](images/windows-device-portal-networking-page-1000px.png) 頁面<br>
 *Microsoft HoloLens 上 Windows 裝置入口網站中的網路功能頁面*
 
 管理 HoloLens 上的 Wi-fi 連線。

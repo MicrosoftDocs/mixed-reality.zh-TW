@@ -8,17 +8,17 @@ ms.date: 08/24/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境, 探索, 散佈, 索引, 登陸頁面, 設計, 開發, 教學課程, 範例應用程式, 基本概念, 案例研究, 資源, HoloLens 操作說明, 開放原始碼專案, 核心概念, 互動
-ms.openlocfilehash: 92af4ddba96f659f0af812672599d4a90bf00224
-ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
+ms.openlocfilehash: 9ef408e1551e9f6c52a6c5fcf7df3123cc099c8c
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539589"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334090"
 ---
 # <a name="start-designing-and-prototyping"></a>開始設計並建立原型
 
 
-![3D 網格圖案](images/03_Design.png)
+![混合實境設計抽象](images/03_Design.png)
 
 ## <a name="expand-your-design-processcase-study-expanding-the-design-process-for-mixed-realitymd"></a>[展開您的設計程序](case-study-expanding-the-design-process-for-mixed-reality.md)
 
@@ -111,22 +111,22 @@ HoloLens 2 將全像攝影體驗的內容和人類理解能力帶入了新境界
 
 :::row:::   
     :::column:::    
-       [![學習 Unity](images/unity_logo.png)](https://learn.unity.com/)<br>
+       [![學習 Unity](images/Final_unity_logo.png)](https://learn.unity.com/)<br>
         **[學習 Unity](https://learn.unity.com/)**<br>
         瞭解如何使用 Unity 建立互動式體驗。 邊做邊學，從開始到完成。
     :::column-end:::    
     :::column:::    
-        [![混合實境工具組 (MRTK)](images/MRTK-small_logo.png)](https://github.com/Microsoft/MixedRealityToolkit-Unity)<br>
+        [![混合實境工具組 (MRTK)](images/Final_mrtk-small_logo.png)](https://github.com/Microsoft/MixedRealityToolkit-Unity)<br>
         **[混合實境工具組 (MRTK)](https://github.com/Microsoft/MixedRealityToolkit-Unity)**<br>  
         透過混合實境工具組的空間互動和 UI 基本要素，您可以使用 Unity 快速進行混合實境的設計和開發。   
     :::column-end:::
     :::column:::    
-        [![混合實境設計實驗室](images/MRDL_logo.png)](https://github.com/Microsoft/MRDL_Unity_PeriodicTable)<br>
+        [![混合實境設計實驗室](images/Final_mrdl_logo.png)](https://github.com/Microsoft/MRDL_Unity_PeriodicTable)<br>
         **[混合實境設計實驗室](https://github.com/Microsoft/MRDL_Unity_PeriodicTable)**<br>  
         取得範例應用程式，示範如何使用 MRTK 的建置元素來建立美觀的混合實境體驗。
     :::column-end:::        
     :::column:::    
-        [![Microsoft Maquette](images/Maquette_logo.png)](https://www.maquette.ms/)<br>
+        [![Microsoft Maquette](images/Final_maquette_logo.png)](https://www.maquette.ms/)<br>
         **[Microsoft Maquette](https://www.maquette.ms/)**<br>  
         為 VR 而設計。 Microsoft Maquette 讓空間原型設計變得簡單、快速、身歷其境。 
     :::column-end:::    
@@ -142,7 +142,7 @@ HoloLens 2 將全像攝影體驗的內容和人類理解能力帶入了新境界
 
 :::row:::
     :::column:::
-       [![了解基本概念](images/icon-lightbulb.jpg)](index.md#understand-the-basics)<br>
+       [![了解基本概念](images/icon-lightbulb.png)](index.md#understand-the-basics)<br>
         **[了解基本概念](index.md#understand-the-basics)**<br>
         進一步瞭解混合實境的定義以及其使用方式。
     :::column-end:::

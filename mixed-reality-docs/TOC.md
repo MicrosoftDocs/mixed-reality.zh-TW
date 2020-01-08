@@ -1,16 +1,12 @@
-# 有何新功能？ 
+# 新功能 
 ## [最新消息](news.md)
 ## [準備好應用程式以使用 HL2](mrtk-porting-guide.md)
 ## [了解 Azure 服務](azure-services.md)
 ## 計畫和活動
-### [混合實境開發日](mr-dev-days.md)
-#### [混合實境開發日工作階段](mr-dev-days-sessions.md)
-#### [混合實境開發日常見問題集](mr-dev-days-faq.md)
 ### [San Francisco Reactor Academy 活動行事曆](sf-academy-events.md)
-### [CVPR 2018 HoloLens 研究模式工作階段](cvpr-2018.md)
-### [ECCV 2018 HoloLens 為電腦視覺研究工具](eccv-2018.md)
 ### [CVPR 2019 混合實境研討會](cvpr-2019.md)
 ## [目前的混合實境版本資訊](release-notes-may-2019.md)
+## [社群資源](community.md)
 ## [投稿至此文件](CONTRIBUTING.md)
 # 探索
 ## [開始使用混合實境](index.md)
@@ -24,6 +20,7 @@
 ### [瀏覽 Windows Mixed Reality 住家](navigating-the-windows-mixed-reality-home.md)
 ### [愛好者指南](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide)
 ### [實景娛樂](location-based-experiences.md)
+## [社群資源](community.md)
 # 設計
 ## [開始設計並建立原型](design.md)
 ## [關於本設計指南](about-this-design-guidance.md)
@@ -65,7 +62,7 @@
 ### [概觀](app-patterns-landingpage.md)
 ### 樣式
 #### [色彩、光線和材質](color-light-and-materials.md)
-#### [縮放](scale.md)
+#### [縮放比例](scale.md)
 #### [印刷樣式](typography.md)
 ### 空間音效
 #### [空間音效設計](spatial-sound-design.md)

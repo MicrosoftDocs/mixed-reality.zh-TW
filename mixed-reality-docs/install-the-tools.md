@@ -7,12 +7,12 @@ ms.date: 2/11/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 最新狀態, 工具, 開始使用, 基本概念, unity, visual studio, 工具組
-ms.openlocfilehash: 7687576eb0c786a12bd0e14fa81f66c9918653e7
-ms.sourcegitcommit: f4812e1312c4751a22a2de56771c475b22a4ba24
+ms.openlocfilehash: 7dde2e90a3e1057a0b5ac33be1ddeed70bf79788
+ms.sourcegitcommit: d0da0214fdd2bbac5a91a5d895bf0e87413b29b2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74940876"
+ms.lasthandoff: 01/01/2020
+ms.locfileid: "75597641"
 ---
 # <a name="install-the-tools"></a>安裝工具
 
@@ -32,12 +32,12 @@ ms.locfileid: "74940876"
 ## <a name="installation-checklist"></a>安裝檢查清單
 
 
-| 工具 | 描述 | 附註 |
+| 工具 | 說明 | 附註 |
 |---------|---------|---------|
-| ![Windows 標誌](images/Windows10_logo.png)<br><br><a href="https://www.microsoft.com/software-download/windows10" target="_blank">**Windows 10**<br>(手動安裝連結)</a> | 安裝最新版的 Windows 10，讓您電腦的作業系統符合您要建置混合實境應用程式的平台。 | **安裝 Windows 10** <br> <ul><li>您可以透過 [設定] 中的 Windows Update 或藉由建立安裝媒體 (使用左欄中的連結)，安裝最新版的 Windows 10。<li>請參閱[目前的版本資訊](release-notes-october-2018.md)，以取得每個 Windows 10 版本可用的最新混合實境功能。</ul> **在開發電腦上啟用開發人員模式** (在 [設定] > [更新與安全性] / [開發人員專用])。 <br><br> **企業和公司管理電腦的注意事項：** 如果您的電腦由組織的 IT 部門管理，您可能需要與其連絡以便更新。 <br><br> **Windows 的 'N' 版本：** Windows 的 'N' 版本不支援 Windows Mixed Reality 沈浸式 (VR) 頭戴裝置。 |
-| ![Visual Studio 標誌](images/visualstudio_logo.png)<br><br><a href="https://visualstudio.microsoft.com/downloads/" target="_blank">**Visual Studio 2019 (16.2 或更新版本)**<br>(安裝連結)</a> | Windows 等的全功能整合式開發環境 (IDE)。 您將使用 Visual Studio 來撰寫程式碼、偵錯、測試及部署。 | **要安裝的工作負載：** <ul><li>使用 C++ 的傳統型開發</li><li>通用 Windows 平台 (UWP) 開發</li></ul>**Unity 的注意事項：** 除非您刻意嘗試針對特定用途安裝更新 (非 LTS) 版本的 Unity，否則我們建議「不要」  在 Visual Studio 安裝過程中安裝 Unity 工作負載，並改為安裝 Unity 的 2018.4 LTS 資料流，如下所述。<br> <br>**注意：** Visual Studio 2019 16.0 版中的混合實境應用程式偵錯有一些已知問題。  請務必將 Visual Studio 2019 更新為 16.2 或更新版本。 |
-| ![Windows 標誌](images/Windows10_logo.png)<br><br><a href="https://developer.microsoft.com//windows/downloads/windows-10-sdk" target="_blank">**Windows 10 SDK (10.0.18362.0)**<br>(手動安裝連結)</a> | 提供用於在 HoloLens 2 上建置 Windows 10 應用程式的最新標頭、程式庫、中繼資料和工具。 | 若要建置 HoloLens 2 應用程式，您必須安裝 Windows SDK (組建 18362 或更新版本)。<br> <br> 如果只要針對傳統型 Windows Mixed Reality 頭戴式裝置或 HoloLens (第 1 代) 開發應用程式，您可以使用 Visual Studio 2017 所安裝的 Windows SDK。 |
-| ![Visual Studio 標誌](images/HoloLensIcon.jpg)<br><br><a href="https://go.microsoft.com/fwlink/?linkid=2112589" target="_blank">**HoloLens 2 模擬器 (2019 年 12 月更新)**<br>(安裝連結：10.0.18362.1042)</a><br> <br><a href="https://go.microsoft.com/fwlink/?linkid=2065980" target="_blank">**HoloLens (第 1 代) 模擬器**<br>(安裝連結：10.0.17763.134)</a> | HoloLens 模擬器可讓您在沒有實體 HoloLens 的 HoloLens 虛擬機器映像上執行應用程式。<br> <br> | 如需開始使用模擬器的詳細資訊，請參閱[使用 HoloLens 模擬器](using-the-hololens-emulator.md)。<br> <br> **您的系統必須支援 Hyper-V**，模擬器安裝才能成功。 請參考下面的「系統需求」一節以取得詳細資料。 <br>|
+| ![Windows 標誌](images/Windows10_logo.png)<br><br><a href="https://www.microsoft.com/software-download/windows10" target="_blank">**Windows 10** (手動安裝連結)</a> | 安裝最新版的 Windows 10，讓您電腦的作業系統符合您要建置混合實境應用程式的平台。 | **安裝 Windows 10** <br> <ul><li>您可以透過 [設定] 中的 Windows Update 或藉由建立安裝媒體 (使用左欄中的連結)，安裝最新版的 Windows 10。<li>請參閱[目前的版本資訊](release-notes-october-2018.md)，以取得每個 Windows 10 版本可用的最新混合實境功能。</ul> **在開發電腦上啟用開發人員模式** (在 [設定] > [更新與安全性] / [開發人員專用])。 <br><br> **企業和公司管理電腦的注意事項：** 如果您的電腦由組織的 IT 部門管理，您可能需要與其連絡以便更新。 <br><br> **Windows 的 'N' 版本：** Windows 的 'N' 版本不支援 Windows Mixed Reality 沈浸式 (VR) 頭戴裝置。 |
+| ![Visual Studio 標誌](images/visualstudio_logo.png)<br><br><a href="https://visualstudio.microsoft.com/downloads/" target="_blank">**Visual Studio 2019 (16.2 或更新版本)** (安裝連結)</a> | Windows 等的全功能整合式開發環境 (IDE)。 您將使用 Visual Studio 來撰寫程式碼、偵錯、測試及部署。 | **要安裝的工作負載：** <ul><li>使用 C++ 的傳統型開發</li><li>通用 Windows 平台 (UWP) 開發</li></ul>**Unity 的注意事項：** 除非您刻意嘗試針對特定用途安裝更新 (非 LTS) 版本的 Unity，否則我們建議「不要」  在 Visual Studio 安裝過程中安裝 Unity 工作負載，並改為安裝 Unity 的 2018.4 LTS 資料流，如下所述。<br> <br>**注意：** Visual Studio 2019 16.0 版中的混合實境應用程式偵錯有一些已知問題。  請務必將 Visual Studio 2019 更新為 16.2 或更新版本。 |
+| ![Windows 標誌](images/Windows10_logo.png)<br><br><a href="https://developer.microsoft.com//windows/downloads/windows-10-sdk" target="_blank">**Windows 10 SDK (10.0.18362.0)** (手動安裝連結)</a> | 提供用於在 HoloLens 2 上建置 Windows 10 應用程式的最新標頭、程式庫、中繼資料和工具。 | 若要建置 HoloLens 2 應用程式，您必須安裝 Windows SDK (組建 18362 或更新版本)。<br> <br> 如果只要針對傳統型 Windows Mixed Reality 頭戴式裝置或 HoloLens (第 1 代) 開發應用程式，您可以使用 Visual Studio 2017 所安裝的 Windows SDK。 |
+| ![Visual Studio 標誌](images/HoloLensIcon.jpg)<br><br><a href="https://go.microsoft.com/fwlink/?linkid=2112589" target="_blank">**HoloLens 2 模擬器 (2019 年 12 月更新)** (安裝連結：10.0.18362.1042)</a><br> <br><a href="https://go.microsoft.com/fwlink/?linkid=2065980" target="_blank">**HoloLens (第 1 代) 模擬器** (安裝連結：10.0.17763.134)</a> | HoloLens 模擬器可讓您在沒有實體 HoloLens 的 HoloLens 虛擬機器映像上執行應用程式。<br> <br> | 如需開始使用模擬器的詳細資訊，請參閱[使用 HoloLens 模擬器](using-the-hololens-emulator.md)。<br> <br> **您的系統必須支援 Hyper-V**，模擬器安裝才能成功。 請參考下面的「系統需求」一節以取得詳細資料。 <br>|
 
 ## <a name="choose-your-engine"></a>選擇您的引擎
 
@@ -94,7 +94,7 @@ Windows 10 SDK 最適合用於 Windows 10 作業系統。 Windows 8.1、Windows 
 
 <table>
 <tr>
-<th></th><th> 最低需求</th><th> 推薦項目</th>
+<th></th><th> 最低需求</th><th> 建議</th>
 </tr><tr>
 <td> 處理器</td><td> <b>筆記型電腦：</b>Intel Mobile Core i5 第 7 代 CPU、採用超執行緒技術的雙核心 <b>傳統型：</b>Intel Desktop i5 第 6 代 CPU、採用超執行緒技術的雙核心<b>或</b> AMD FX4350 4.2Ghz 四核心對等項目</td><td> <b>傳統型：</b>Intel Desktop i7 第 6 代 (6 核心) <b>或</b> AMD Ryzen 5 1600 (6 核心，12 個執行緒)</td>
 </tr><tr>
@@ -106,19 +106,19 @@ Windows 10 SDK 最適合用於 Windows 10 作業系統。 Windows 8.1、Windows 
 </tr><tr>
 <td> 圖形顯示連接埠</td><td colspan="2"> 適用於頭戴式裝置的 1x 可用圖形顯示連接埠 (適用於 60Hz 頭戴式裝置的 HDMI 1.4 或 DisplayPort 1.2，適用於 90Hz 頭戴式裝置的 HDMI 2.0 或 DisplayPort 1.2)</td>
 </tr><tr>
-<td> 顯示器解析度</td><td colspan="2"> 解決方式：SVGA (800 x 600) 或更大的位元深度：每像素 32 位元的色彩</td>
+<td> 顯示器解析度</td><td colspan="2"> 解決方法：SVGA (800 x 600) 或更大的位元深度：每像素 32 位元的色彩</td>
 </tr><tr>
-<td> 記憶體</td><td> 8&#160;GB RAM 或更大</td><td> 16 GB RAM 或更大</td>
+<td> Memory</td><td> 8&#160;GB RAM 或更大</td><td> 16 GB RAM 或更大</td>
 </tr><tr>
-<td> 儲存體</td><td colspan="2"> &gt;10 GB 額外可用空間</td>
+<td> 存放裝置</td><td colspan="2"> &gt;10 GB 額外可用空間</td>
 </tr><tr>
 <td> USB 連接埠</td><td colspan="2"> 適用於頭戴式裝置的 1x 可用 USB 連接埠 (USB 3.0 Type-A) <b>注意：USB 必須提供至少 900mA</b></td>
 </tr><tr>
-<td> 藍牙</td><td colspan="2"> Bluetooth 4.0 (適用於周邊連線)</td>
+<td> Bluetooth</td><td colspan="2"> Bluetooth 4.0 (適用於周邊連線)</td>
 </tr>
 </table>
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [開發概觀](development.md)
 * [使用 HoloLens 模擬器](using-the-hololens-emulator.md)

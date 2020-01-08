@@ -7,12 +7,12 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境, 注視, 定向注視, 互動, 設計, 手部接近, HoloLens
-ms.openlocfilehash: e0b0e6273917df071f49eb0108039ebe204bbc12
-ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
+ms.openlocfilehash: d263c84d306a2ece3783c2e7fb0e3f599dec49eb
+ms.sourcegitcommit: 270ca09ec61e1153a83cf44942d7ba3783ef1805
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74105938"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75694172"
 ---
 # <a name="direct-manipulation-with-hands"></a>手部直接操作
 
@@ -178,7 +178,7 @@ ms.locfileid: "74105938"
 
 ## <a name="2d-slate-interaction"></a>2D 平板互動
 
-2D 平板是裝載 2D 應用程式內容 (例如網頁瀏覽器) 的全像攝影容器。 透過直接操作與 2D 平板互動的設計概念，是運用與實體觸控螢幕互動的心智模型。
+2D [平板](slate.md)是用來裝載 2D 應用程式內容 (例如網頁瀏覽器) 的全像攝影容器。 透過直接操作與 2D 平板互動的設計概念，是運用與實體觸控螢幕互動的心智模型。
 
 ### <a name="to-interact-with-the-slate-contact"></a>與觸控平板互動
 
@@ -210,8 +210,8 @@ ms.locfileid: "74105938"
        將手靠近角落或邊緣時，可顯示最接近的操作能供性。 抓取 2D 平板上方的 holobar，可以移動整個平板。
     :::column-end:::
     :::column:::
-       ![縮放](images/manipulate-2d-slate-scale.jpg)<br>
-        **縮放**<br>
+       ![縮放比例](images/manipulate-2d-slate-scale.jpg)<br>
+        **縮放比例**<br>
         抓取操作能供性，並透過角落能供性執行統一尺寸調整。
     :::column-end:::
     :::column:::
@@ -246,8 +246,8 @@ HoloLens 2 可讓使用者將週框方塊套用至每個 3D 物件，以便用�
         使用者可以抓取邊緣能供性來進行旋轉。
     :::column-end:::
     :::column:::
-       ![縮放](images/3d-object-manipulation-scale.jpg)<br>
-       **縮放**<br>
+       ![縮放比例](images/3d-object-manipulation-scale.jpg)<br>
+       **縮放比例**<br>
        使用者可以抓取角落能供性來執行統一尺寸調整。
     :::column-end:::
 :::row-end:::
@@ -283,7 +283,7 @@ HoloLens 2 可讓使用者將週框方塊套用至每個 3D 物件，以便用�
         **中型物件**<br>
     :::column-end:::
     :::column:::
-       ![縮放](images/instinctual-gestures-largeobject.jpg)<br>
+       ![縮放比例](images/instinctual-gestures-largeobject.jpg)<br>
        **大型物件**<br>
     :::column-end:::
 :::row-end:::
@@ -334,7 +334,7 @@ HoloLens 2 可讓使用者將週框方塊套用至每個 3D 物件，以便用�
 
 ---
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [頭部目光和行動](gaze-and-commit.md)
 * [手部指向和行動](point-and-commit.md)

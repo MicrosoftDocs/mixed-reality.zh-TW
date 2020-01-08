@@ -6,12 +6,12 @@ ms.author: wguyman
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 6dof 控制器，動作控制器
-ms.openlocfilehash: 84ebc6c0d7c63e58346b6ee9e565811bc40571b5
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: e4b3946401bcc9abfcefeb3e33bb79f01526ba20
+ms.sourcegitcommit: d0da0214fdd2bbac5a91a5d895bf0e87413b29b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437846"
+ms.lasthandoff: 01/01/2020
+ms.locfileid: "75597671"
 ---
 # <a name="motion-controllers"></a>運動控制器
 
@@ -62,16 +62,16 @@ Windows Mixed Reality 運動控制器使用沉浸式頭戴式裝置中的感應�
 ![瞭解控制器](images/controllerimage-750px.png)<br>
 *瞭解您的控制器*
 
-**功能**
+**功能：**
 * 光學追蹤
-* 界限
+* 觸發程序
 * 抓取按鈕
 * 上下
 * 觸控板
 
-## <a name="setup"></a>設定
+## <a name="setup"></a>[設定]
 
-### <a name="before-you-begin"></a>開始之前
+### <a name="before-you-begin"></a>在您開始前
 
 **您將需要：**
 * 一組兩個動作控制器。
@@ -87,7 +87,7 @@ Windows Mixed Reality 運動控制器使用沉浸式頭戴式裝置中的感應�
 您可以使用像是任何其他 Bluetooth 裝置的 Windows 設定，將動作控制器與主機電腦進行相互綁定。
 
 1. 將 2 AA 電池插入控制器的背面。 立即讓電池蓋掉。
-2. 如果您使用的是外部 USB 藍牙介面卡，而不是內建的藍牙無線電，請先參閱[藍牙最佳作法](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/troubleshooting-windows-mixed-reality#bluetooth-best-practices)，再繼續進行。 針對具有內建收音機的桌面設定，請確定天線已連線。
+2. 如果您使用的是外部 USB 藍牙介面卡，而不是內建的藍牙無線電，請先參閱[藍牙最佳做法](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/troubleshooting-windows-mixed-reality#bluetooth-best-practices)，再繼續進行。 針對具有內建無線電的桌面設定，請確定天線已連線。
 3. 開啟  **Windows 設定** -> **裝置** -> **新增藍牙或其他裝置** -> **藍牙**，並移除任何先前的「動作控制器–右側」和「動作控制器–左側」的實例。 另請核取清單底部的 [其他裝置] 類別。
 4. 選取 [**新增藍牙或其他裝置**]，並查看其開始探索藍牙裝置。
 5. 按住控制器的 [Windows] 按鈕，在 buzzes 後開啟控制器。
@@ -112,7 +112,7 @@ Windows Mixed Reality 運動控制器使用沉浸式頭戴式裝置中的感應�
 
 :::row:::
     :::column:::
-        成功配對這兩個控制器之後，您的設定在 **[滑鼠、鍵盤、& 畫筆] 類別**之下看起來應該像這樣 <br>
+        成功配對這兩個控制器之後，您的設定看起來應該如下所示，在 **[滑鼠、鍵盤、& 畫筆] 類別**之下 <br>
         <br>
         *影像：已連線的運動控制器*
     :::column-end:::
@@ -121,7 +121,7 @@ Windows Mixed Reality 運動控制器使用沉浸式頭戴式裝置中的感應�
     :::column-end:::
 :::row-end:::
 
-如果控制器在配對後關閉，其狀態會顯示為 [已配對]。 如果控制器維持在 [其他裝置] 之下，則可能只有部分完成，而且需要再次執行才能讓控制器正常運作。
+如果控制器在配對後關閉，其狀態會顯示為 [已配對]。 如果控制器維持在 [其他裝置] 類別之下，則配對可能只有部分完成，而且需要再次執行才能讓控制器正常運作。
 
 ### <a name="updating-controller-firmware"></a>正在更新控制器固件
 
@@ -146,11 +146,11 @@ Windows Mixed Reality 運動控制器使用沉浸式頭戴式裝置中的感應�
 
 ## <a name="gazing-and-pointing"></a>撥雲見日和指向
 
-Windows Mixed Reality 支援兩種主要模型以進行互動、**注視和認可**，以及**點對認可**：
+Windows Mixed Reality 支援兩種主要模型以進行互動;**注視並認可**並**點**出並認可：
 * 在**注視和認可**的情況下，使用者會以其[注視](gaze-and-commit.md)的物件為目標，然後選取具有手中的物件、遊戲台、clicker 或聲音。
 * 有了**point 和 commit**，使用者就可以將具有點功能的運動控制器放在目標物件上，然後選取具有控制器觸發程式的物件。
 
-支援指向動作控制器的應用程式也應該在可能的情況下啟用駕駛間互動，讓使用者選擇他們所使用的輸入裝置。
+支援指向動作控制器的應用程式也應該在可能的情況下啟用駕駛間互動，讓使用者能夠選擇其使用的輸入裝置。
 
 ### <a name="managing-recoil-when-pointing"></a>在指向時管理 recoil
 
@@ -162,7 +162,7 @@ Windows Mixed Reality 支援兩種主要模型以進行互動、**注視和認�
 
 Windows Mixed Reality 支援各種外型規格中的動作控制器，而每個控制器的設計都不同于使用者的手位置與自然「正向」方向之間的關聯性，應用程式應該在呈現時使用指標控制器.
 
-為了更清楚地表示這些控制站，您可以針對每個互動來源來調查兩種類型的姿勢，**抓住姿勢**和**指標姿勢**。
+為了更清楚地表示這些控制器，您可以針對每個互動來源進行兩種類型的調查。**抓握姿勢**和**指標姿勢**。
 
 ### <a name="grip-pose"></a>抓握姿勢
 
@@ -203,9 +203,9 @@ Windows Mixed Reality 支援各種外型規格中的動作控制器，而每個�
 <tr>
 <th> 追蹤狀態 </th><th> SourceLossRisk </th><th> PositionAccuracy </th><th> TryGetPosition</th>
 </tr><tr>
-<td> <b>高準確度</b> </td><td style="background-color: green; color: white"> &lt; 1。0 </td><td style="background-color: green; color: white"> 高 </td><td style="background-color: green; color: white"> true</td>
+<td> <b>高準確度</b> </td><td style="background-color: green; color: white"> &lt; 1。0 </td><td style="background-color: green; color: white"> [高] </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
-<td> <b>高精確度（有遺失的風險）</b> </td><td style="background-color: orange"> = = 1。0 </td><td style="background-color: green; color: white"> 高 </td><td style="background-color: green; color: white"> true</td>
+<td> <b>高精確度（有遺失的風險）</b> </td><td style="background-color: orange"> = = 1。0 </td><td style="background-color: green; color: white"> [高] </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
 <td> <b>估計精確度</b> </td><td style="background-color: orange"> = = 1。0 </td><td style="background-color: orange"> 大約 </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
@@ -224,12 +224,12 @@ Windows Mixed Reality 支援各種外型規格中的動作控制器，而每個�
 ## <a name="interactions-low-level-spatial-input"></a>互動：低層級空間輸入
 
 跨手和運動控制器的核心互動包括**選取**、**功能表**、**抓住**、**觸控板**、**操縱杆**和**首頁**。
-* **選取**[是] 可啟動全息影像的主要互動，其中包含按下 [發行] 的一個。 針對 [動作控制器]，您可以使用控制器的觸發程式來執行選取 [按下]。 執行選取的其他方式是說[語音命令](voice-input.md)「選取」。 您可以在任何應用程式中使用相同的選取互動。 請將 Select 視為滑鼠點擊的對等，這是您一次學習的通用動作，然後套用到所有應用程式。
+* **選取**[是] 可啟動全息影像的主要互動，其中包含按下 [發行] 的一個。 針對 [動作控制器]，您可以使用控制器的觸發程式來執行選取 [按下]。 執行選取的其他方式是說[語音命令](voice-input.md)「選取」。 您可以在任何應用程式中使用相同的選取互動。 請將 Select 視為等同的滑鼠點擊;一種通用動作，然後在您的所有應用程式中套用。
 * **功能表**是在物件上作用的次要互動，用來提取內容功能表或採取其他次要動作。 有了「動作控制器」，您可以使用控制器的*功能表*按鈕來執行功能表動作。 （也就是它上有漢堡「功能表」圖示的按鈕）
 * 瞭解使用者可以如何直接對物件採取動作來操作。 有了「動作控制器」，您可以透過緊密地擠壓第一個來進行一項理解動作。 動作控制器可能會偵測到具有抓取按鈕、palm 觸發程式或其他感應器的。
 * **觸控板**可讓使用者在動作控制器的觸控板介面上調整兩個維度中的動作，並按一下觸控板上的 [向下] 來認可動作。 Touchpads 提供按下的狀態，觸及狀態和標準化的 XY 座標。 X 和 Y 的範圍是從-1 到1之間的圓形觸控板範圍，中間有（0，0）。 對於 X，-1 是在左邊，1位在右邊。 針對 Y，-1 位於底部，而1位在頂端。
 * 「**操縱杆**」可讓使用者在其迴圈範圍內移動動作控制器的操縱杆，以調整兩個維度中的動作，然後按一下操縱杆上的 [向下] 來認可動作。 Thumbsticks 也會提供已按下的狀態和正規化的 XY 座標。 X 和 Y 的範圍是從-1 到1之間的圓形觸控板範圍，中間有（0，0）。 對於 X，-1 是在左邊，1位在右邊。 針對 Y，-1 位於底部，而1位在頂端。
-* **Home**是特殊的系統動作，可用來返回 [開始] 功能表。 這類似于在鍵盤上按下 Windows 鍵，或在 Xbox 控制器上按 Xbox 按鈕。 您可以在動作控制器上按下 [Windows] 按鈕來前往首頁。 請注意，您也可以說「嗨，Cortana，Go Home」來開始。 應用程式無法特別針對家庭動作做出反應，因為這些是由系統處理。
+* **Home**是特殊的系統動作，可用來返回 [開始] 功能表。 這類似于在鍵盤上按下 Windows 鍵，或在 Xbox 控制器上按 Xbox 按鈕。 您可以在動作控制器上按下 [Windows] 按鈕來前往首頁。 請注意，您隨時都可以說「嗨，Cortana，Go Home」來返回。 應用程式無法特別針對家庭動作做出反應，因為這些是由系統處理。
 
 ## <a name="composite-gestures-high-level-spatial-input"></a>複合手勢：高層級空間輸入
 
@@ -259,7 +259,7 @@ Windows Mixed Reality 支援各種外型規格中的動作控制器，而每個�
 
 ### <a name="how-do-i-update-motion-controller-firmware"></a>如何? 更新動作控制器固件？
 
-動作控制器固件是耳機驅動程式的一部分，並會在必要時自動在連線時更新。 根據藍牙無線電和連結品質，固件更新通常需要1-2 分鐘的時間。 在罕見的情況下，控制器固件更新可能需要最多10分鐘的時間，這可能表示藍牙連線能力或無線電干擾不佳。 請參閱[愛好者指南中的藍牙最佳作法](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/troubleshooting-windows-mixed-reality#bluetooth-best-practices)，以針對連線問題進行疑難排解。 在固件更新之後，控制器將會重新開機並重新連線至主機電腦（您可能會注意到 Led 會使其變亮以進行追蹤）。 如果固件更新中斷（例如，控制器失去電源），則會在下一次控制器開機時再次嘗試。
+動作控制器固件是耳機驅動程式的一部分，並會在需要時自動在連線時更新。 根據藍牙無線電和連結品質，固件更新通常需要1-2 分鐘的時間。 在罕見的情況下，控制器固件更新可能需要最多10分鐘的時間，這可能表示藍牙連線能力或無線電干擾不佳。 請參閱[愛好者指南中的藍牙最佳作法](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/troubleshooting-windows-mixed-reality#bluetooth-best-practices)，針對連線問題進行疑難排解。 在固件更新之後，控制器將會重新開機，並重新連線到主機電腦（您可能會注意到 Led 較亮以進行追蹤）。 如果固件更新中斷（例如，控制器失去電源），則會在下一次控制器開機時再次嘗試。
 
 ### <a name="how-i-can-check-battery-level"></a>如何檢查電池等級？
 
@@ -269,7 +269,7 @@ Windows Mixed Reality 支援各種外型規格中的動作控制器，而每個�
 
 不適用於通用 Windows 應用程式。
 
-## <a name="troubleshooting"></a>疑難排解
+## <a name="troubleshooting"></a>[疑難排解]
 
 請參閱愛好者指南中的[動作控制器疑難排解](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/troubleshooting-windows-mixed-reality#motion-controllers)。
 

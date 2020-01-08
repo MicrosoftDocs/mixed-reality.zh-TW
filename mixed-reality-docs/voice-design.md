@@ -6,12 +6,12 @@ ms.author: shentan
 ms.date: 04/21/2019
 ms.topic: article
 keywords: Windows Mixed Reality, 設計, 互動, 語音
-ms.openlocfilehash: 350acfbe777869f150b7c90c93124e10e155168d
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 66afa24699ed22fb17ab36818ba67a526f4c5618
+ms.sourcegitcommit: 7e8b9de561cbc8483e84511f3e9cbd779f3a999f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926706"
+ms.lasthandoff: 12/27/2019
+ms.locfileid: "75502639"
 ---
 # <a name="voice-commanding"></a>語音命令
 
@@ -28,7 +28,7 @@ ms.locfileid: "73926706"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>特徵</strong></td>
+        <td><strong>功能</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 代)</strong></a></td>
         <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
@@ -45,7 +45,7 @@ ms.locfileid: "73926706"
 
 ## <a name="how-to-use-voice"></a>如何使用語音
 
-請考慮對您所建置的任何體驗新增語音命令。 語音是功能強大的方式，可方便您控制系統和應用程式。 因為使用者說話時的語調和口音各異，適當選擇語音關鍵字才能確保系統會分毫不差地解讀出使用者的命令。
+請考慮對您所建置的任何體驗新增語音命令。 Voice 是控制系統和應用程式的強大且方便的方式。 因為使用者說話時的語調和口音各異，適當選擇語音關鍵字才能確保系統會分毫不差地解讀出使用者的命令。
 
 ### <a name="best-practices"></a>最佳做法
 
@@ -65,7 +65,7 @@ ms.locfileid: "73926706"
 
 在任何時候說出 "Select"，都會啟用注視游標所指的目標。 
 
->注意：在 HoloLens 2 中，您必須先說出「select」這個字來叫用注視游標。 再次說出 "Select" 便能啟用。 若要隱藏注視游標，使用雙手就可以 - 空中點選或觸碰物件。 
+>注意：在 HoloLens 2 中，您必須先說出「select」這個字來叫用注視游標。 再次說出 [選取] 以啟用。 若要隱藏注視游標，只需使用您的手來 airtap 或觸控物件。 
 
 ### <a name="see-it-say-it"></a>看到什麼就說什麼
 
@@ -79,7 +79,7 @@ Windows Mixed Reality 採用「看到什麼就說什麼」語音模型，**按�
 
 ### <a name="voices-strengths"></a>語音的優點
 
-語音輸入是很自然的意圖溝通方式。 語音特別適合用於介面的**周遊**，因為這種方式可以幫助使用者跳過介面的多個步驟 (使用者可以在看網頁時說 "go back"，而不必上移再點擊應用程式中的 [上一頁] 按鈕)。 這種方式雖然只節省了一點時間，卻會對使用者感覺到的體驗產生**情感效應**，讓使用者獲得一點超能力。 當我們無法騰出雙手或是在執行**多工**處理時，使用語音也是很方便的輸入方法。 在不方便使用鍵盤來輸入的裝置上，**語音聽寫**會是很有效率的替代輸入方式。 最後，在某些注視和手勢的**精確範圍**不高的情況下，使用者可能只會信任語音輸入方法。
+語音輸入是很自然的意圖溝通方式。 語音在介面**周遊**上特別有用，因為它可以協助使用者剪下介面的多個步驟（使用者可能會在查看網頁時說「返回」，而不需要在應用程式中按一下 [上一頁] 按鈕）。 這項小型節省時間對於使用者對體驗的認知具有強大的**情緒效果**，並提供少量的增強。 當我們無法騰出雙手或是在執行**多工**處理時，使用語音也是很方便的輸入方法。 在輸入鍵盤的裝置上很容易，**語音聽寫**可以是一種有效率且替代的輸入方式。 最後，在某些情況下，當注視和手勢的**精確度範圍**有限時，語音可能是使用者唯一受信任的輸入方法。
 
 **使用語音如何讓使用者受益**
 * 減少時間 - 語音應該會讓最終目標更有效率。
@@ -90,7 +90,7 @@ Windows Mixed Reality 採用「看到什麼就說什麼」語音模型，**按�
 
 ### <a name="voices-weaknesses"></a>語音的缺點
 
-語音也有一些缺點。 缺點之一就是細微控制。 (例如，使用者可能會說：「大聲點」，但不會說出大多少。 「一點」是不容易量化的詞。 使用語音來移動或縮放物體也很困難 (語音不會提供控制項的細微性)。 語音也有缺陷。 有時候，語音系統會誤判命令，或無法聽到命令。 不管什麼介面都很難從這類錯誤改正回來。 最後，在公開場合中，使用者可能不方便發出聲音， 或者有一些不能或不應該說的話。 遇到這樣的困境時，語音就能發揮所長，無往不利。
+語音也有一些缺點。 缺點之一就是細微控制。 （例如，使用者可能會說「過多」，但無法說出多少。 「一點」是不容易量化的詞。 使用語音來移動或縮放物體也很困難 (語音不會提供控制項的細微性)。 語音也有缺陷。 有時候，語音系統會誤判命令，或無法聽到命令。 不管什麼介面都很難從這類錯誤改正回來。 最後，在公開場合中，使用者可能不方便發出聲音， 或者有一些不能或不應該說的話。 遇到這樣的困境時，語音就能發揮所長，無往不利。
 
 ### <a name="voice-feedback-states"></a>語音反饋狀態
 
@@ -102,7 +102,7 @@ Windows Mixed Reality 採用「看到什麼就說什麼」語音模型，**按�
 ## <a name="top-things-users-should-know-about-speech-in-mixed-reality"></a>針對混合實境中的「語音」，使用者最應該了解的事
 * 在鎖定按鈕時說出 **"Select"** (您可以在任何地方使用這個命令來按一下按鈕)。
 * 在某些應用程式中，您可以說出**應用程式列按鈕的標籤名稱**來採取動作。 例如，在查看應用程式的同時，使用者可以說出「Remove」命令來從該世界中移除應用程式 (這可省下必須用手按一下按鈕的時間)。
-* 您可以說 **「嗨 Cortana」** 讓 Cortana 開始聽取命令。 您可以向她問問題 (「嗨 Cortana，艾菲爾鐵塔有多高」)、請她開啟應用程式 (「嗨 Cortana，開啟 Netflix」)，或請她顯示 [開始] 功能表 (「嗨 Cortana，回到首頁」) 等等。
+* 您可以說 **「嗨 Cortana」** 讓 Cortana 開始聽取命令。 您可以詢問自己的問題（「嗨，Cortana，Eiffel 塔的高度如何？」），告訴她開啟應用程式（「嗨，Cortana，open Netflix」），或告訴她如何顯示 [開始] 功能表（"嗨 Cortana，take home"）等等。
 
 ## <a name="common-questions-and-concerns-users-have-about-voice"></a>使用者會有的語音相關常見問題和疑慮
 * 我可以說什麼？

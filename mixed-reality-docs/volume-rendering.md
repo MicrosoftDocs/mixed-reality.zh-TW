@@ -6,12 +6,12 @@ ms.author: kkennedy
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 體積型影像，磁片區轉譯，效能，混合現實
-ms.openlocfilehash: 1b3ec59adf4f6449ed3f12d7f98f329c4e963ea5
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 04931df5e4225225e4c11c3f6d72801e2d58f646
+ms.sourcegitcommit: 317653cd8500563c514464f0337c1f230a6f3653
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926682"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75503827"
 ---
 # <a name="volume-rendering"></a>磁片區轉譯
 
@@ -23,7 +23,7 @@ ms.locfileid: "73926682"
 3. 良好：剪下的子卷：只顯示磁片區的幾個圖層
 4. 良好：降低磁片區轉譯的解析度（請參閱「混合解析度場景呈現」）
 
-只有特定數量的資訊可以從應用程式傳輸到任何特定框架中的螢幕，這是總記憶體頻寬。 此外，轉換該資料以進行呈現所需的任何處理（或「陰影」）也需要時間。 執行磁片區轉譯時的主要考慮如下：
+只有特定的資訊數量可以從應用程式傳輸到任何特定畫面中的螢幕，這是總記憶體頻寬。 此外，轉換該資料以進行簡報所需的任何處理（或「陰影」）都需要時間。 執行磁片區轉譯時的主要考慮如下：
 * 螢幕寬度 * 螢幕-高度 * 螢幕計數 * 磁片區-每個畫面格-圖元數-每格樣本總數
 * 1028 * 720 * 2 * 256 = 378961920 （100%）（完整的 res 磁片區：樣本太多）
 * 1028 * 720 * 2 * 1 = 1480320 （完整的0.3%）（精簡配量：每圖元1個樣本，執行順暢）
@@ -87,7 +87,7 @@ float3 _VolBufferSize;
 
 ## <a name="shading-and-gradients"></a>網底和漸層
 
-如何針對有用的視覺效果，為磁片區加上陰影（例如 MRI）。 主要方法是有您想要在其中看到濃度的「濃度視窗」（最小和最大值），而只是調整到該空間以查看黑色和白色濃度。 然後，可以將「顏色斜坡」套用到該範圍內的值，並儲存為材質，讓濃度頻譜的不同部分可以著色不同的色彩：
+如何為磁片區加上陰影，例如 MRI，以取得有用的視覺效果。 主要方法是有您想要在其中看到濃度的「濃度視窗」（最小和最大值），而只是調整到該空間以查看黑色和白色濃度。 然後，可以將「顏色斜坡」套用到該範圍內的值，並儲存為材質，讓濃度頻譜的不同部分可以著色不同的色彩：
 
 ```
 float4 ShadeVol( float intensity ) {
@@ -98,7 +98,7 @@ float4 ShadeVol( float intensity ) {
    color.rgba = tex2d( ColorRampTexture, float2( unitIntensity, 0 ) );
 ```
 
-在許多我們的應用程式中，我們都會將原始強度值和「分割索引」（用來分割不同的部分，例如面板和骨骼，這些區段通常是由專門工具中的專家所建立）。 這可以結合上述方法來為每個區段索引放置不同的色彩，或甚至是不同的色彩斜坡：
+在我們的許多應用程式中，我們都會將原始強度值和「分割索引」（用來分隔不同的部分，例如面板和骨骼）儲存在磁片區中，這些區段通常是由專門工具中的專家所建立。 這可以結合上述方法來為每個區段索引放置不同的色彩，或甚至是不同的色彩斜坡：
 
 ```
 // Change color to match segment index (fade each segment towards black):
@@ -122,7 +122,7 @@ float4 ShadeVol( float intensity ) {
 
 ## <a name="volume-tracing-in-shaders"></a>著色器中的磁片區追蹤
 
-如何使用 GPU 來執行磁片區追蹤（逐步進行幾個體素，然後再將資料的層級從後到前）：
+如何使用 GPU 進行子磁片區追蹤（逐步執行幾個體素，然後將資料的層級從後到前）：
 
 ```
 float4 AlphaBlend(float4 dst, float4 src) {
@@ -166,7 +166,7 @@ float4 AlphaBlend(float4 dst, float4 src) {
 
 ## <a name="whole-volume-rendering"></a>整個磁片區轉譯
 
-修改上述的子磁片區程式碼，我們取得：
+修改上述的子磁片區程式碼，我們得到：
 
 ```
 float4 volTraceSubVolume(float3 objPosStart, float3 cameraPosVolSpace) {
@@ -181,11 +181,11 @@ float4 volTraceSubVolume(float3 objPosStart, float3 cameraPosVolSpace) {
 
 如何以低解析度呈現場景的一部分，並將其放回原處：
 1. 設定兩個非螢幕相機，一個用於每個更新每個畫面格的眼睛
-2. 設定兩個低解析度轉譯目標（例如200x200），相機會轉譯成
+2. 設定攝影機轉譯成的兩個低解析度轉譯目標（即200x200）
 3. 設定在使用者前方移動的四個
 
 每個畫面格：
 1. 以低解析度繪製每個眼睛的轉譯目標（磁片區資料、昂貴的著色器等）
 2. 將場景正常繪製為完整解析度（網格、UI 等）
-3. 在使用者前方、場景上繪製一個四顆，並將低度的專案轉譯為。
-4. 結果：具有低解析度但高密度磁片區資料的完整解析度元素的視覺化組合。
+3. 在使用者的前方、場景上繪製四個，並將低度的專案轉譯為
+4. 結果：具有低解析度但高密度磁片區資料的完整解析度元素的視覺化組合

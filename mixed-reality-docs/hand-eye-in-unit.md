@@ -6,16 +6,16 @@ ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 手勢，動作控制器，unity，注視，輸入
-ms.openlocfilehash: b83c4904031338fd6f3e8457238bb76f1c7e7eff
-ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
+ms.openlocfilehash: fc56436cbe71f958b91fec56c5f0f7d93926b2ac
+ms.sourcegitcommit: 317653cd8500563c514464f0337c1f230a6f3653
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75181948"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75503886"
 ---
 # <a name="articulated-hand-and-eye-tracking-in-unity"></a>Unity 中的清楚表達手勢和眼睛追蹤
 
-HoloLens 2 引進了一些嶄新的令人興奮的功能：明確表達的手和眼睛追蹤。
+HoloLens 2 引進了一些嶄新且令人興奮的功能，例如清楚的手勢和眼睛追蹤。
 
 利用 Unity 中的新功能，最簡單的方式是透過 MRTK v2。 還有一些範例場景可協助您開始著手。
 

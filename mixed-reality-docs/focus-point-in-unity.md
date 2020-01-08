@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Unity，焦點點，焦點平面，穩定平面，穩定點，reprojection，LSR，深度緩衝區
-ms.openlocfilehash: d48f6f1878a68a17be263f10b809229dc2705c58
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 9a7f30b552242b24a9a7b260b6574690a27d2c1d
+ms.sourcegitcommit: 7e8b9de561cbc8483e84511f3e9cbd779f3a999f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435420"
+ms.lasthandoff: 12/27/2019
+ms.locfileid: "75502619"
 ---
 # <a name="focus-point-in-unity"></a>Unity 中的焦點點
 
@@ -27,7 +27,7 @@ ms.locfileid: "73435420"
 > * 在沉浸式桌面耳機上，這會啟用以圖元為基礎的深度 reprojection。
 > * 在執行 Windows 10 2018 年4月更新（含）以後版本的 HoloLens 上，這會分析深度緩衝區，以自動挑選最佳穩定平面。
 >
-> 這兩種方法都應該提供更好的影像品質，而不需要由您的應用程式進行明確的工作，就能選取每個畫面  請注意，如果您手動提供焦點，這會覆寫上述的自動行為，而且通常會減少全息影像的穩定性。  一般而言，當您的應用程式在尚未更新為 Windows 10 2018 年4月更新的 HoloLens 上執行時，您應該只指定手動焦點點。
+> 無論您的應用程式為每個框架選取焦點點，這兩種方法都應該提供更佳的影像品質，而不需要明確的工作。  請注意，如果您手動提供焦點，這會覆寫上述的自動行為，而且通常會減少全息影像的穩定性。  一般而言，當您的應用程式在尚未更新為 Windows 10 2018 年4月更新的 HoloLens 上執行時，您應該只指定手動焦點點。
 
 ### <a name="example"></a>範例
 

@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 08/27/2019
 ms.topic: article
 keywords: HoloLens，MRTK，混合現實工具組，Windows Mixed Reality，設計，範例應用程式，控制項
-ms.openlocfilehash: 95c81442cc390da8ac7c9a8de218341cb5e7c948
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: ad9d2755522c2610ae051fa61f96605e49404d2d
+ms.sourcegitcommit: 5054f5c23965ce56599cb29ac9d9c6e48812dabd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73439649"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75623501"
 ---
 # <a name="mrtk-101-how-to-use-mixed-reality-toolkit-unity-for-basic-interactions-hololens-2-hololens-windows-mixed-reality-openvr"></a>MRTK 101：如何使用混合現實工具組 Unity 進行基本互動（HoloLens 2、HoloLens、Windows Mixed Reality、Open VR）
 
@@ -55,7 +55,7 @@ ManipulationHandler.cs 支援兩個右手的縮放/旋轉。 這適用于各種�
 <img alt="NearInteractionGrabbable and ManipulationHandler.cs assigned to an object" width="800" src="images/MRTK101/MRTK_ManipulationHandler.gif">
 
 ## <a name="how-to-move-or-rotate-an-object-with-precision"></a>如何以精確度移動或旋轉物件？
-將 BoundingBox.cs 指派給物件，以使用周框方塊，這是用來縮放和旋轉物件的介面。 根據預設，它會顯示 HoloLens 1 樣式藍色控點和電線。 若要使用 HoloLens 2 樣式的鄰近動畫控點，您必須指派 prefabs 和材質。 如需設定詳細資料，請參閱周框方塊檔和 BoundingBoxExamples 場景。
+將 BoundingBox.cs 指派給物件，以使用周框方塊，這是用來縮放和旋轉物件的介面。 根據預設，它會顯示 HoloLens 1 樣式藍色控點和電線。 若要使用 HoloLens 2 樣式的鄰近動畫控點，您必須指派 prefabs 和材質。 如需設定詳細資料，請參閱周[框方塊檔](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html)和 BoundingBoxExamples 場景。
 
 <img alt="BoundingBox.cs assigned to an object" width="800" src="images/MRTK101/MRTK_BoundingBox.png">
 

@@ -6,16 +6,16 @@ ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 部署、unity、visual studio、HoloLens、HoloLens 2、沉浸式耳機
-ms.openlocfilehash: 88eaa69f1349e3303a93d9d634479d8265eb417c
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 4d145568190ea43cf2ec43442a1c3d5ca4d92251
+ms.sourcegitcommit: 7e8b9de561cbc8483e84511f3e9cbd779f3a999f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926543"
+ms.lasthandoff: 12/27/2019
+ms.locfileid: "75502629"
 ---
 # <a name="best-practices-for-working-with-unity-and-visual-studio"></a>使用 Unity 和 Visual Studio 的最佳做法
 
-使用 Unity 建立混合現實應用程式的開發人員必須在 Unity 與 Visual Studio 之間切換，以建立部署至 HoloLens 和（或）沉浸式耳機的應用程式封裝。 預設需要 Visual Studio 的兩個實例（一個用來修改 Unity 腳本，另一個則是部署至裝置和 debug）。 下列程式可讓您使用單一 Visual Studio 實例進行開發、減少匯出 Unity 專案的頻率，以及改善偵錯工具體驗。
+使用 Unity 建立混合現實應用程式的開發人員必須在 Unity 與 Visual Studio 之間切換，以建立部署至 HoloLens 和（或）沉浸式耳機的應用程式封裝。 根據預設，需要 Visual Studio 的兩個實例（一個用來修改 Unity 腳本，另一個用來部署至裝置和 debug）。 下列程式可讓您使用單一 Visual Studio 實例進行開發、減少匯出 Unity 專案的頻率，以及改善偵錯工具體驗。
 
 ## <a name="improving-iteration-time"></a>改善反復專案時間
 
@@ -29,7 +29,7 @@ Unity 中的 .NET 腳本後端支援已在 unity 2018 中淘汰，並于 Unity 2
    - 按一下 [**新增排除**]，然後選取包含 Unity 專案程式碼和組建輸出的資料夾。
 3) 利用 SSD 來建立
 
-請閱讀[優化 IL2CPP 的組建時間](https://docs.unity3d.com/Manual/IL2CPP-OptimizingBuildTimes.html)以取得詳細資訊。 另請參閱[IL2CPP 腳本後端的調試](https://docs.unity3d.com/Manual/windowsstore-debugging-il2cpp.html)。
+請參閱[優化 IL2CPP 的組建時間](https://docs.unity3d.com/Manual/IL2CPP-OptimizingBuildTimes.html)以取得詳細資訊。 此外，請參閱[IL2CPP 腳本後端的調試](https://docs.unity3d.com/Manual/windowsstore-debugging-il2cpp.html)。
 
 此外，請考慮安裝[ *UnityScriptAnalyzer* Visual Studio 延伸](https://github.com/Microsoft/MixedRealityCompanionKit/tree/master/UnityScriptAnalyzer)模組。 這項工具會分析C#您的 Unity 腳本，找出能夠以更優化的方式撰寫的程式碼。
 
@@ -45,7 +45,7 @@ Unity 中的 .NET 腳本後端支援已在 unity 2018 中淘汰，並于 Unity 2
 
 ## <a name="expose-c-class-variables-for-easy-tuning"></a>公開C#類別變數以方便微調
 
-有兩種方式可以公開類別變數。 建議的做法是將 [SerializeField] 屬性加入至您的私用變數。 這可讓他們從編輯器存取，但不能以程式設計方式公開。  另一個選項是讓類別C#變數成為公用，以便在編輯器 UI 中加以公開。 
+有兩種方式可以公開類別變數。 建議的方式是將 [SerializeField] 屬性加入至您的私用變數。 這可讓他們從編輯器存取，但不能以程式設計方式公開。  另一個選項是讓類別C#變數成為公用，以便在編輯器 UI 中加以公開。 
 
 這兩種方法都能讓您在編輯器中播放時輕鬆地調整變數。 這對於微調互動技師修理屬性特別有用。
 

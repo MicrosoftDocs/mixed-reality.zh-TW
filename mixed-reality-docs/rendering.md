@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 轉譯、全息影像
-ms.openlocfilehash: 8984a16d92ed2f2b72d99e103eaae81b8eba742b
-ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
+ms.openlocfilehash: 544e43ced57309cfe2628cbea65d07e94563eb41
+ms.sourcegitcommit: 317653cd8500563c514464f0337c1f230a6f3653
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75182028"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75503816"
 ---
 # <a name="rendering"></a>轉譯
 
@@ -42,7 +42,7 @@ ms.locfileid: "75182028"
 
 ## <a name="holographic-rendering"></a>全像攝影
 
-全像攝影的轉譯，是要知道您是否要轉譯成可讓使用者同時看到實體世界和您的全息影像，或不透明的顯示，像是 Windows Mixed Reality 沉浸式耳機，這會封鎖世界。
+「全像攝影」轉譯的關鍵在於知道您是否要轉譯成可讓使用者同時看到實體世界和您的全息影像，或不透明的顯示，像是 Windows Mixed Reality 沉浸式耳機，這會封鎖成為.
 
 具有**查看顯示**的裝置（如[HoloLens](hololens-hardware-details.md)）會將光線新增至世界。 黑色圖元是完全透明的，而較亮的圖元則逐漸不透明。 因為顯示器的光線會從真實世界新增到光線中，所以白色圖元有點半透明。
 
@@ -74,7 +74,7 @@ ms.locfileid: "75182028"
 
 ## <a name="holographic-cameras"></a>全像攝影相機
 
-Windows Mixed Reality 引進了全像**攝影攝影機**的概念。 全像攝影攝影機類似于3D 圖形文字中的傳統相機：它們會定義外建（位置和方向）和內建相機屬性。 （例如：，使用 view 欄位來觀看虛擬3D 場景）。不同于傳統3D 攝影機，應用程式不會控制相機的位置、方向和內建屬性。 而是由使用者的移動隱含控制全像攝影攝影機的位置和方向。 使用者的移動會透過「視圖」轉換，以框架逐一轉送至應用程式。 同樣地，相機的內建屬性是由裝置的校正光纖所定義，並透過投射轉換來逐畫面轉送。
+Windows Mixed Reality 引進了全像**攝影攝影機**的概念。 全像攝影攝影機類似于3D 圖形文字中的傳統相機;它們會定義外部（位置和方向）和內建相機屬性。 （例如：，使用 view 欄位來觀看虛擬3D 場景）。不同于傳統3D 攝影機，應用程式不會控制相機的位置、方向和內建屬性。 而是由使用者的移動隱含控制全像攝影攝影機的位置和方向。 使用者的移動會透過「視圖」轉換，以框架逐一轉送至應用程式。 同樣地，相機的內建屬性是由裝置的校正光纖所定義，並透過投射轉換來逐畫面轉送。
 
 一般來說，您的應用程式將會針對單一身歷聲攝影機呈現。 不過，健全的轉譯迴圈將支援多個相機，而且將同時支援 mono 和身歷聲攝影機。 例如，系統可能會要求您的應用程式在使用者啟動[混合現實 capture](mixed-reality-capture.md) （MRC）之類的功能時，從替代的觀點呈現，視問題耳機的形狀而定。 可以支援多個相機的應用程式會藉由[選擇支援](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic.HolographicViewConfiguration#Windows_Graphics_Holographic_HolographicViewConfiguration)的相機[類型](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic.HolographicViewConfigurationKind#Windows_Graphics_Holographic_HolographicViewConfigurationKind)來取得它們。
 

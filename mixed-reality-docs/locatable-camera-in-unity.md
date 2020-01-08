@@ -6,42 +6,42 @@ ms.author: wguyman
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 相片、影片、hololens、攝影機、unity、定位
-ms.openlocfilehash: f0183400f55b1c6663a9a20ab4992befe5ad0718
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: b4a1a7e11a7606dab76b954c8d58a335d6bae0ab
+ms.sourcegitcommit: d0da0214fdd2bbac5a91a5d895bf0e87413b29b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63515445"
+ms.lasthandoff: 01/01/2020
+ms.locfileid: "75597611"
 ---
-# <a name="locatable-camera-in-unity"></a><span data-ttu-id="aa634-104">Unity 中的定位相機</span><span class="sxs-lookup"><span data-stu-id="aa634-104">Locatable camera in Unity</span></span>
+# <a name="locatable-camera-in-unity"></a><span data-ttu-id="52883-104">Unity 中的定位相機</span><span class="sxs-lookup"><span data-stu-id="52883-104">Locatable camera in Unity</span></span>
 
-## <a name="enabling-the-capability-for-photo-video-camera"></a><span data-ttu-id="aa634-105">啟用相片攝影機的功能</span><span class="sxs-lookup"><span data-stu-id="aa634-105">Enabling the capability for Photo Video Camera</span></span>
+## <a name="enabling-the-capability-for-photo-video-camera"></a><span data-ttu-id="52883-105">啟用相片攝影機的功能</span><span class="sxs-lookup"><span data-stu-id="52883-105">Enabling the capability for Photo Video Camera</span></span>
 
-<span data-ttu-id="aa634-106">必須為應用程式宣告「網路攝影機」功能, 才能使用[相機](locatable-camera.md)。</span><span class="sxs-lookup"><span data-stu-id="aa634-106">The "WebCam" capability must be declared for an app to use the [camera](locatable-camera.md).</span></span>
-1. <span data-ttu-id="aa634-107">在 Unity 編輯器中, 流覽至 [編輯 > 專案設定 > Player] 頁面, 移至播放程式設定</span><span class="sxs-lookup"><span data-stu-id="aa634-107">In the Unity Editor, go to the player settings by navigating to "Edit > Project Settings > Player" page</span></span>
-2. <span data-ttu-id="aa634-108">按一下 [Windows Store] 索引標籤</span><span class="sxs-lookup"><span data-stu-id="aa634-108">Click on the "Windows Store" tab</span></span>
-3. <span data-ttu-id="aa634-109">在 [發佈設定 > 功能] 區段中, 檢查**網路**攝影機和**麥克風**功能</span><span class="sxs-lookup"><span data-stu-id="aa634-109">In the "Publishing Settings > Capabilities" section, check the **WebCam** and **Microphone** capabilities</span></span>
+<span data-ttu-id="52883-106">必須為應用程式宣告「網路攝影機」功能，才能使用[相機](locatable-camera.md)。</span><span class="sxs-lookup"><span data-stu-id="52883-106">The "WebCam" capability must be declared for an app to use the [camera](locatable-camera.md).</span></span>
+1. <span data-ttu-id="52883-107">在 Unity 編輯器中，流覽至 [編輯 > 專案設定 > 播放機] 頁面，移至 [播放程式] 設定</span><span class="sxs-lookup"><span data-stu-id="52883-107">In the Unity Editor, go to the player settings by navigating to the "Edit > Project Settings > Player" page</span></span>
+2. <span data-ttu-id="52883-108">按一下 [Windows Store] 索引標籤</span><span class="sxs-lookup"><span data-stu-id="52883-108">Click the "Windows Store" tab</span></span>
+3. <span data-ttu-id="52883-109">在 [發佈設定 > 功能] 區段中，檢查**網路**攝影機和**麥克風**功能</span><span class="sxs-lookup"><span data-stu-id="52883-109">In the "Publishing Settings > Capabilities" section, check the **WebCam** and **Microphone** capabilities</span></span>
 
-<span data-ttu-id="aa634-110">相機一次只能發生單一作業。</span><span class="sxs-lookup"><span data-stu-id="aa634-110">Only a single operation can occur with the camera at a time.</span></span> <span data-ttu-id="aa634-111">若要判斷相機目前所在的模式 (相片、影片或無), 您可以檢查 UnityEngine XR。</span><span class="sxs-lookup"><span data-stu-id="aa634-111">To determine which mode (photo, video, or none) the camera is currently in, you can check UnityEngine.XR.WSA.WebCam.Mode.</span></span>
+<span data-ttu-id="52883-110">相機一次只能發生單一作業。</span><span class="sxs-lookup"><span data-stu-id="52883-110">Only a single operation can occur with the camera at a time.</span></span> <span data-ttu-id="52883-111">若要判斷相機目前所在的模式（相片、影片或無），您可以檢查 UnityEngine XR。</span><span class="sxs-lookup"><span data-stu-id="52883-111">To determine which mode (photo, video, or none) the camera is currently in, you can check UnityEngine.XR.WSA.WebCam.Mode.</span></span>
 
-## <a name="photo-capture"></a><span data-ttu-id="aa634-112">相片捕獲</span><span class="sxs-lookup"><span data-stu-id="aa634-112">Photo Capture</span></span>
+## <a name="photo-capture"></a><span data-ttu-id="52883-112">相片捕獲</span><span class="sxs-lookup"><span data-stu-id="52883-112">Photo Capture</span></span>
 
-<span data-ttu-id="aa634-113">**命名空間：** *UnityEngine. XR. WSA. 網路攝影機*</span><span class="sxs-lookup"><span data-stu-id="aa634-113">**Namespace:** *UnityEngine.XR.WSA.WebCam*</span></span><br>
-<span data-ttu-id="aa634-114">**類型：** *PhotoCapture*</span><span class="sxs-lookup"><span data-stu-id="aa634-114">**Type:** *PhotoCapture*</span></span>
+<span data-ttu-id="52883-113">**命名空間：** *UnityEngine. XR. WSA. 網路*攝影機</span><span class="sxs-lookup"><span data-stu-id="52883-113">**Namespace:** *UnityEngine.XR.WSA.WebCam*</span></span><br>
+<span data-ttu-id="52883-114">**類型：** *PhotoCapture*</span><span class="sxs-lookup"><span data-stu-id="52883-114">**Type:** *PhotoCapture*</span></span>
 
-<span data-ttu-id="aa634-115">*PhotoCapture*類型可讓您以相片攝影機拍照。</span><span class="sxs-lookup"><span data-stu-id="aa634-115">The *PhotoCapture* type allows you to take still photographs with the Photo Video Camera.</span></span> <span data-ttu-id="aa634-116">使用*PhotoCapture*拍攝相片的一般模式如下:</span><span class="sxs-lookup"><span data-stu-id="aa634-116">The general pattern for using *PhotoCapture* to take a photo is as follows:</span></span>
-1. <span data-ttu-id="aa634-117">建立*PhotoCapture*物件</span><span class="sxs-lookup"><span data-stu-id="aa634-117">Create a *PhotoCapture* object</span></span>
-2. <span data-ttu-id="aa634-118">使用我們想要的設定來建立*CameraParameters*物件</span><span class="sxs-lookup"><span data-stu-id="aa634-118">Create a *CameraParameters* object with the settings we want</span></span>
-3. <span data-ttu-id="aa634-119">透過*StartPhotoModeAsync*啟動相片模式</span><span class="sxs-lookup"><span data-stu-id="aa634-119">Start Photo Mode via *StartPhotoModeAsync*</span></span>
-4. <span data-ttu-id="aa634-120">採用所需的相片</span><span class="sxs-lookup"><span data-stu-id="aa634-120">Take the desired photo</span></span>
-    * <span data-ttu-id="aa634-121">選擇性與該圖片互動</span><span class="sxs-lookup"><span data-stu-id="aa634-121">(optional) Interact with that picture</span></span>
-5. <span data-ttu-id="aa634-122">停止相片模式並清除資源</span><span class="sxs-lookup"><span data-stu-id="aa634-122">Stop Photo Mode and clean up resources</span></span>
+<span data-ttu-id="52883-115">*PhotoCapture*類型可讓您以相片攝影機拍照。</span><span class="sxs-lookup"><span data-stu-id="52883-115">The *PhotoCapture* type allows you to take still photographs with the Photo Video Camera.</span></span> <span data-ttu-id="52883-116">使用*PhotoCapture*拍攝相片的一般模式如下：</span><span class="sxs-lookup"><span data-stu-id="52883-116">The general pattern for using *PhotoCapture* to take a photo is as follows:</span></span>
+1. <span data-ttu-id="52883-117">建立*PhotoCapture*物件</span><span class="sxs-lookup"><span data-stu-id="52883-117">Create a *PhotoCapture* object</span></span>
+2. <span data-ttu-id="52883-118">使用您想要的設定來建立*CameraParameters*物件</span><span class="sxs-lookup"><span data-stu-id="52883-118">Create a *CameraParameters* object with the settings you want</span></span>
+3. <span data-ttu-id="52883-119">透過*StartPhotoModeAsync*啟動相片模式</span><span class="sxs-lookup"><span data-stu-id="52883-119">Start Photo Mode via *StartPhotoModeAsync*</span></span>
+4. <span data-ttu-id="52883-120">採用所需的相片</span><span class="sxs-lookup"><span data-stu-id="52883-120">Take the desired photo</span></span>
+    * <span data-ttu-id="52883-121">選擇性與該圖片互動</span><span class="sxs-lookup"><span data-stu-id="52883-121">(optional) Interact with that picture</span></span>
+5. <span data-ttu-id="52883-122">停止相片模式並清除資源</span><span class="sxs-lookup"><span data-stu-id="52883-122">Stop Photo Mode and clean up resources</span></span>
 
-### <a name="common-set-up-for-photocapture"></a><span data-ttu-id="aa634-123">適用于 PhotoCapture 的一般設定</span><span class="sxs-lookup"><span data-stu-id="aa634-123">Common Set Up for PhotoCapture</span></span>
+### <a name="common-set-up-for-photocapture"></a><span data-ttu-id="52883-123">適用于 PhotoCapture 的一般設定</span><span class="sxs-lookup"><span data-stu-id="52883-123">Common Set Up for PhotoCapture</span></span>
 
-<span data-ttu-id="aa634-124">對於這三種用法, 我們從上述的前3個步驟開始</span><span class="sxs-lookup"><span data-stu-id="aa634-124">For all three uses, we start with the same first 3 steps above</span></span>
+<span data-ttu-id="52883-124">對於這三種用法，請從上述的前3個步驟開始</span><span class="sxs-lookup"><span data-stu-id="52883-124">For all three uses, start with the same first 3 steps above</span></span>
 
-<span data-ttu-id="aa634-125">我們一開始先建立*PhotoCapture*物件</span><span class="sxs-lookup"><span data-stu-id="aa634-125">We start by creating a *PhotoCapture* object</span></span>
+<span data-ttu-id="52883-125">從建立*PhotoCapture*物件開始</span><span class="sxs-lookup"><span data-stu-id="52883-125">Start by creating a *PhotoCapture* object</span></span>
 
 ```cs
 PhotoCapture photoCaptureObject = null;
@@ -51,7 +51,7 @@ PhotoCapture photoCaptureObject = null;
    }
 ```
 
-<span data-ttu-id="aa634-126">接下來, 我們要儲存物件、設定參數和啟動相片模式</span><span class="sxs-lookup"><span data-stu-id="aa634-126">Next we store our object, set our parameters, and start Photo Mode</span></span>
+<span data-ttu-id="52883-126">接下來，儲存您的物件、設定參數和啟動相片模式</span><span class="sxs-lookup"><span data-stu-id="52883-126">Next, store your object, set your parameters, and start Photo Mode</span></span>
 
 ```cs
 void OnPhotoCaptureCreated(PhotoCapture captureObject)
@@ -70,7 +70,7 @@ void OnPhotoCaptureCreated(PhotoCapture captureObject)
    }
 ```
 
-<span data-ttu-id="aa634-127">最後, 我們也會使用此處顯示的相同「清理」程式碼</span><span class="sxs-lookup"><span data-stu-id="aa634-127">In the end, we will also use the same clean up code presented here</span></span>
+<span data-ttu-id="52883-127">最後，您也會使用此處顯示的相同清除程式碼</span><span class="sxs-lookup"><span data-stu-id="52883-127">In the end, you will also use the same clean up code presented here</span></span>
 
 ```cs
 void OnStoppedPhotoMode(PhotoCapture.PhotoCaptureResult result)
@@ -80,13 +80,13 @@ void OnStoppedPhotoMode(PhotoCapture.PhotoCaptureResult result)
    }
 ```
 
-<span data-ttu-id="aa634-128">在這些步驟之後, 您可以選擇要捕獲的相片類型。</span><span class="sxs-lookup"><span data-stu-id="aa634-128">After these steps, you can choose which type of photo to capture.</span></span>
+<span data-ttu-id="52883-128">在這些步驟之後，您可以選擇要捕獲的相片類型。</span><span class="sxs-lookup"><span data-stu-id="52883-128">After these steps, you can choose which type of photo to capture.</span></span>
 
-### <a name="capture-a-photo-to-a-file"></a><span data-ttu-id="aa634-129">將相片捕獲至檔案</span><span class="sxs-lookup"><span data-stu-id="aa634-129">Capture a Photo to a File</span></span>
+### <a name="capture-a-photo-to-a-file"></a><span data-ttu-id="52883-129">將相片捕獲至檔案</span><span class="sxs-lookup"><span data-stu-id="52883-129">Capture a Photo to a File</span></span>
 
-<span data-ttu-id="aa634-130">最簡單的作業是直接將相片捕獲到檔案。</span><span class="sxs-lookup"><span data-stu-id="aa634-130">The simplest operation is to capture a photo directly to a file.</span></span> <span data-ttu-id="aa634-131">相片可以儲存為 JPG 或 PNG。</span><span class="sxs-lookup"><span data-stu-id="aa634-131">The photo can be saved as a JPG or a PNG.</span></span>
+<span data-ttu-id="52883-130">最簡單的作業是直接將相片捕獲到檔案。</span><span class="sxs-lookup"><span data-stu-id="52883-130">The simplest operation is to capture a photo directly to a file.</span></span> <span data-ttu-id="52883-131">相片可以儲存為 JPG 或 PNG。</span><span class="sxs-lookup"><span data-stu-id="52883-131">The photo can be saved as a JPG or a PNG.</span></span>
 
-<span data-ttu-id="aa634-132">如果我們已成功啟動相片模式, 我們現在會拍攝相片, 並將其儲存在磁片上</span><span class="sxs-lookup"><span data-stu-id="aa634-132">If we successfully started photo mode, we now will take a photo and store it on disk</span></span>
+<span data-ttu-id="52883-132">如果您已成功啟動相片模式，請拍攝相片並將它儲存在磁片上</span><span class="sxs-lookup"><span data-stu-id="52883-132">If you successfully started photo mode, take a photo and store it on disk</span></span>
 
 ```cs
 private void OnPhotoModeStarted(PhotoCapture.PhotoCaptureResult result)
@@ -105,7 +105,7 @@ private void OnPhotoModeStarted(PhotoCapture.PhotoCaptureResult result)
    }
 ```
 
-<span data-ttu-id="aa634-133">將相片捕獲到磁片之後, 我們會結束相片模式, 然後清除我們的物件</span><span class="sxs-lookup"><span data-stu-id="aa634-133">After capturing the photo to disk, we will exit photo mode and then clean up our objects</span></span>
+<span data-ttu-id="52883-133">將相片捕獲到磁片之後，結束相片模式，然後清除您的物件</span><span class="sxs-lookup"><span data-stu-id="52883-133">After capturing the photo to disk, exit photo mode and then clean up your objects</span></span>
 
 ```cs
 void OnCapturedPhotoToDisk(PhotoCapture.PhotoCaptureResult result)
@@ -122,13 +122,13 @@ void OnCapturedPhotoToDisk(PhotoCapture.PhotoCaptureResult result)
    }
 ```
 
-### <a name="capture-a-photo-to-a-texture2d"></a><span data-ttu-id="aa634-134">將相片捕獲到 Texture2D</span><span class="sxs-lookup"><span data-stu-id="aa634-134">Capture a Photo to a Texture2D</span></span>
+### <a name="capture-a-photo-to-a-texture2d"></a><span data-ttu-id="52883-134">將相片捕獲到 Texture2D</span><span class="sxs-lookup"><span data-stu-id="52883-134">Capture a Photo to a Texture2D</span></span>
 
-<span data-ttu-id="aa634-135">將資料捕獲到 Texture2D 時, 此程式非常類似于捕獲至磁片。</span><span class="sxs-lookup"><span data-stu-id="aa634-135">When capturing data to a Texture2D, the process is extremely similar to capturing to disk.</span></span>
+<span data-ttu-id="52883-135">將資料捕獲到 Texture2D 時，此程式非常類似于捕獲至磁片。</span><span class="sxs-lookup"><span data-stu-id="52883-135">When capturing data to a Texture2D, the process is extremely similar to capturing to disk.</span></span>
 
-<span data-ttu-id="aa634-136">我們將遵循上述的設定程式。</span><span class="sxs-lookup"><span data-stu-id="aa634-136">We will follow the set up process above.</span></span>
+<span data-ttu-id="52883-136">遵循上述的設定程式。</span><span class="sxs-lookup"><span data-stu-id="52883-136">Follow the set up process above.</span></span>
 
-<span data-ttu-id="aa634-137">在*OnPhotoModeStarted*中, 我們將會在記憶體中捕捉一個框架。</span><span class="sxs-lookup"><span data-stu-id="aa634-137">In *OnPhotoModeStarted*, we will capture a frame to memory.</span></span>
+<span data-ttu-id="52883-137">在*OnPhotoModeStarted*中，將框架捕捉至記憶體。</span><span class="sxs-lookup"><span data-stu-id="52883-137">In *OnPhotoModeStarted*, capture a frame to memory.</span></span>
 
 ```cs
 private void OnPhotoModeStarted(PhotoCapture.PhotoCaptureResult result)
@@ -144,7 +144,7 @@ private void OnPhotoModeStarted(PhotoCapture.PhotoCaptureResult result)
    }
 ```
 
-<span data-ttu-id="aa634-138">然後, 我們會將結果套用至材質, 並使用上述的一般清除程式碼。</span><span class="sxs-lookup"><span data-stu-id="aa634-138">We will then apply our result to a texture and use the common clean up code above.</span></span>
+<span data-ttu-id="52883-138">接著，您會將結果套用至材質，並使用上述的一般清除程式碼。</span><span class="sxs-lookup"><span data-stu-id="52883-138">You will then apply your result to a texture and use the common clean up code above.</span></span>
 
 ```cs
 void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptureFrame photoCaptureFrame)
@@ -163,11 +163,11 @@ void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptur
    }
 ```
 
-### <a name="capture-a-photo-and-interact-with-the-raw-bytes"></a><span data-ttu-id="aa634-139">捕捉相片並與原始位元組互動</span><span class="sxs-lookup"><span data-stu-id="aa634-139">Capture a Photo and Interact with the Raw bytes</span></span>
+### <a name="capture-a-photo-and-interact-with-the-raw-bytes"></a><span data-ttu-id="52883-139">捕捉相片並與原始位元組互動</span><span class="sxs-lookup"><span data-stu-id="52883-139">Capture a Photo and Interact with the Raw bytes</span></span>
 
-<span data-ttu-id="aa634-140">為了與記憶體內框架中的原始位元組互動, 我們將遵循與上述相同的設定步驟, 並*OnPhotoModeStarted*為將相片捕獲到 Texture2D。</span><span class="sxs-lookup"><span data-stu-id="aa634-140">To interact with the raw bytes of an in memory frame, we will follow the same set up steps as above and *OnPhotoModeStarted* as in capturing a photo to a Texture2D.</span></span> <span data-ttu-id="aa634-141">其差異在於*OnCapturedPhotoToMemory*中, 我們可以取得原始位元組並與其互動。</span><span class="sxs-lookup"><span data-stu-id="aa634-141">The difference is in *OnCapturedPhotoToMemory* where we can get the raw bytes and interact with them.</span></span>
+<span data-ttu-id="52883-140">若要與記憶體內框架中的原始位元組互動，請遵循上述的設定步驟，並*OnPhotoModeStarted*為將相片捕獲到 Texture2D。</span><span class="sxs-lookup"><span data-stu-id="52883-140">To interact with the raw bytes of an in memory frame, follow the same set up steps as above and *OnPhotoModeStarted* as in capturing a photo to a Texture2D.</span></span> <span data-ttu-id="52883-141">其差異在於*OnCapturedPhotoToMemory*中，您可以在其中取得原始位元組並與其互動。</span><span class="sxs-lookup"><span data-stu-id="52883-141">The difference is in *OnCapturedPhotoToMemory* where you can get the raw bytes and interact with them.</span></span>
 
-<span data-ttu-id="aa634-142">在此範例中, 我們將建立可透過*SetPixels ()* 進一步處理或套用至材質的 *<Color>清單*</span><span class="sxs-lookup"><span data-stu-id="aa634-142">In this example, we will create a *List<Color>* which could be further processed or applied to a texture via *SetPixels()*</span></span>
+<span data-ttu-id="52883-142">在此範例中，您將建立可透過*SetPixels （）* 進一步處理或套用至材質的*清單<Color>*</span><span class="sxs-lookup"><span data-stu-id="52883-142">In this example, you will create a *List<Color>* which could be further processed or applied to a texture via *SetPixels()*</span></span>
 
 ```cs
 void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptureFrame photoCaptureFrame)
@@ -200,20 +200,20 @@ void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptur
    }
 ```
 
-## <a name="video-capture"></a><span data-ttu-id="aa634-143">影片捕獲</span><span class="sxs-lookup"><span data-stu-id="aa634-143">Video Capture</span></span>
+## <a name="video-capture"></a><span data-ttu-id="52883-143">影片捕獲</span><span class="sxs-lookup"><span data-stu-id="52883-143">Video Capture</span></span>
 
-<span data-ttu-id="aa634-144">**命名空間：** *UnityEngine. XR. WSA. 網路攝影機*</span><span class="sxs-lookup"><span data-stu-id="aa634-144">**Namespace:** *UnityEngine.XR.WSA.WebCam*</span></span><br>
-<span data-ttu-id="aa634-145">**類型：** *VideoCapture*</span><span class="sxs-lookup"><span data-stu-id="aa634-145">**Type:** *VideoCapture*</span></span>
+<span data-ttu-id="52883-144">**命名空間：** *UnityEngine. XR. WSA. 網路*攝影機</span><span class="sxs-lookup"><span data-stu-id="52883-144">**Namespace:** *UnityEngine.XR.WSA.WebCam*</span></span><br>
+<span data-ttu-id="52883-145">**類型：** *VideoCapture*</span><span class="sxs-lookup"><span data-stu-id="52883-145">**Type:** *VideoCapture*</span></span>
 
-<span data-ttu-id="aa634-146">*VideoCapture*的功能非常類似*PhotoCapture*。</span><span class="sxs-lookup"><span data-stu-id="aa634-146">*VideoCapture* functions very similarly to *PhotoCapture*.</span></span> <span data-ttu-id="aa634-147">唯一的兩個差異在於, 您必須指定每秒一個畫面 (FPS) 值, 而且您只能將磁片直接儲存為一個檔案。</span><span class="sxs-lookup"><span data-stu-id="aa634-147">The only two differences are that you must specify a Frames Per Second (FPS) value and you can only save directly to disk as an .mp4 file.</span></span> <span data-ttu-id="aa634-148">使用*VideoCapture*的步驟如下所示:</span><span class="sxs-lookup"><span data-stu-id="aa634-148">The steps to use *VideoCapture* are as follows:</span></span>
-1. <span data-ttu-id="aa634-149">建立*VideoCapture*物件</span><span class="sxs-lookup"><span data-stu-id="aa634-149">Create a *VideoCapture* object</span></span>
-2. <span data-ttu-id="aa634-150">使用我們想要的設定來建立*CameraParameters*物件</span><span class="sxs-lookup"><span data-stu-id="aa634-150">Create a *CameraParameters* object with the settings we want</span></span>
-3. <span data-ttu-id="aa634-151">透過*StartVideoModeAsync*啟動影片模式</span><span class="sxs-lookup"><span data-stu-id="aa634-151">Start Video Mode via *StartVideoModeAsync*</span></span>
-4. <span data-ttu-id="aa634-152">開始錄製影片</span><span class="sxs-lookup"><span data-stu-id="aa634-152">Start recording video</span></span>
-5. <span data-ttu-id="aa634-153">停止錄製影片</span><span class="sxs-lookup"><span data-stu-id="aa634-153">Stop recording video</span></span>
-6. <span data-ttu-id="aa634-154">停止影片模式並清除資源</span><span class="sxs-lookup"><span data-stu-id="aa634-154">Stop Video Mode and clean up resources</span></span>
+<span data-ttu-id="52883-146">*VideoCapture*的功能非常類似*PhotoCapture*。</span><span class="sxs-lookup"><span data-stu-id="52883-146">*VideoCapture* functions very similarly to *PhotoCapture*.</span></span> <span data-ttu-id="52883-147">唯一的兩個差異在於，您必須指定每秒一個畫面（FPS）值，而且您只能將磁片直接儲存為一個檔案。</span><span class="sxs-lookup"><span data-stu-id="52883-147">The only two differences are that you must specify a Frames Per Second (FPS) value and you can only save directly to disk as an .mp4 file.</span></span> <span data-ttu-id="52883-148">使用*VideoCapture*的步驟如下所示：</span><span class="sxs-lookup"><span data-stu-id="52883-148">The steps to use *VideoCapture* are as follows:</span></span>
+1. <span data-ttu-id="52883-149">建立*VideoCapture*物件</span><span class="sxs-lookup"><span data-stu-id="52883-149">Create a *VideoCapture* object</span></span>
+2. <span data-ttu-id="52883-150">使用您想要的設定來建立*CameraParameters*物件</span><span class="sxs-lookup"><span data-stu-id="52883-150">Create a *CameraParameters* object with the settings you want</span></span>
+3. <span data-ttu-id="52883-151">透過*StartVideoModeAsync*啟動影片模式</span><span class="sxs-lookup"><span data-stu-id="52883-151">Start Video Mode via *StartVideoModeAsync*</span></span>
+4. <span data-ttu-id="52883-152">開始錄製影片</span><span class="sxs-lookup"><span data-stu-id="52883-152">Start recording video</span></span>
+5. <span data-ttu-id="52883-153">停止錄製影片</span><span class="sxs-lookup"><span data-stu-id="52883-153">Stop recording video</span></span>
+6. <span data-ttu-id="52883-154">停止影片模式並清除資源</span><span class="sxs-lookup"><span data-stu-id="52883-154">Stop Video Mode and clean up resources</span></span>
 
-<span data-ttu-id="aa634-155">我們一開始先建立*VideoCapture*物件*VideoCapture m_VideoCapture = null;*</span><span class="sxs-lookup"><span data-stu-id="aa634-155">We start by creating our *VideoCapture* object *VideoCapture m_VideoCapture = null;*</span></span>
+<span data-ttu-id="52883-155">從建立我們的*VideoCapture*物件*VideoCapture 開始，m_VideoCapture = null;*</span><span class="sxs-lookup"><span data-stu-id="52883-155">Start by creating our *VideoCapture* object *VideoCapture m_VideoCapture = null;*</span></span>
 
 ```cs
 void Start ()
@@ -222,7 +222,7 @@ void Start ()
    }
 ```
 
-<span data-ttu-id="aa634-156">然後, 我們會設定要用於錄製和啟動的參數。</span><span class="sxs-lookup"><span data-stu-id="aa634-156">We then will set up the parameters we will want for the recording and start.</span></span>
+<span data-ttu-id="52883-156">接下來，設定您要記錄和啟動的參數。</span><span class="sxs-lookup"><span data-stu-id="52883-156">Next, set up the parameters you will want for the recording and start.</span></span>
 
 ```cs
 void OnVideoCaptureCreated (VideoCapture videoCapture)
@@ -252,7 +252,7 @@ void OnVideoCaptureCreated (VideoCapture videoCapture)
    }
 ```
 
-<span data-ttu-id="aa634-157">開始之後, 我們將開始錄製</span><span class="sxs-lookup"><span data-stu-id="aa634-157">Once started, we will begin the recording</span></span>
+<span data-ttu-id="52883-157">啟動之後，開始錄製</span><span class="sxs-lookup"><span data-stu-id="52883-157">Once started, begin the recording</span></span>
 
 ```cs
 void OnStartedVideoCaptureMode(VideoCapture.VideoCaptureResult result)
@@ -267,7 +267,7 @@ void OnStartedVideoCaptureMode(VideoCapture.VideoCaptureResult result)
    }
 ```
 
-<span data-ttu-id="aa634-158">記錄開始之後, 您可以更新您的 UI 或行為以啟用停止。</span><span class="sxs-lookup"><span data-stu-id="aa634-158">After recording has started, you could update your UI or behaviors to enable stopping.</span></span> <span data-ttu-id="aa634-159">我們只要記錄</span><span class="sxs-lookup"><span data-stu-id="aa634-159">Here we just log</span></span>
+<span data-ttu-id="52883-158">記錄開始之後，您可以更新您的 UI 或行為以啟用停止。</span><span class="sxs-lookup"><span data-stu-id="52883-158">After recording has started, you could update your UI or behaviors to enable stopping.</span></span> <span data-ttu-id="52883-159">在這裡，您只需要記錄。</span><span class="sxs-lookup"><span data-stu-id="52883-159">Here you just log.</span></span>
 
 ```cs
 void OnStartedRecordingVideo(VideoCapture.VideoCaptureResult result)
@@ -277,7 +277,7 @@ void OnStartedRecordingVideo(VideoCapture.VideoCaptureResult result)
    }
 ```
 
-<span data-ttu-id="aa634-160">稍後, 我們會想要停止錄製。</span><span class="sxs-lookup"><span data-stu-id="aa634-160">At a later point, we will want to stop the recording.</span></span> <span data-ttu-id="aa634-161">例如, 計時器或使用者輸入可能會發生這種情況。</span><span class="sxs-lookup"><span data-stu-id="aa634-161">This could happen from a timer or user input, for instance.</span></span>
+<span data-ttu-id="52883-160">稍後，您會想要停止錄製。</span><span class="sxs-lookup"><span data-stu-id="52883-160">At a later point, you will want to stop the recording.</span></span> <span data-ttu-id="52883-161">例如，計時器或使用者輸入可能會發生這種情況。</span><span class="sxs-lookup"><span data-stu-id="52883-161">This could happen from a timer or user input, for instance.</span></span>
 
 ```cs
 // The user has indicated to stop recording
@@ -287,7 +287,7 @@ void OnStartedRecordingVideo(VideoCapture.VideoCaptureResult result)
    }
 ```
 
-<span data-ttu-id="aa634-162">記錄停止後, 我們會停止影片模式並清除我們的資源。</span><span class="sxs-lookup"><span data-stu-id="aa634-162">Once the recording has stopped, we will stop video mode and clean up our resources.</span></span>
+<span data-ttu-id="52883-162">記錄停止後，請停止影片模式並清除您的資源。</span><span class="sxs-lookup"><span data-stu-id="52883-162">Once the recording has stopped, stop video mode and clean up your resources.</span></span>
 
 ```cs
 void OnStoppedRecordingVideo(VideoCapture.VideoCaptureResult result)
@@ -303,9 +303,9 @@ void OnStoppedRecordingVideo(VideoCapture.VideoCaptureResult result)
    }
 ```
 
-## <a name="troubleshooting"></a><span data-ttu-id="aa634-163">疑難排解</span><span class="sxs-lookup"><span data-stu-id="aa634-163">Troubleshooting</span></span>
-* <span data-ttu-id="aa634-164">沒有任何可用的解決方案</span><span class="sxs-lookup"><span data-stu-id="aa634-164">No resolutions are available</span></span>
-    * <span data-ttu-id="aa634-165">請確定您的專案中已指定**網路**攝影機功能。</span><span class="sxs-lookup"><span data-stu-id="aa634-165">Ensure the **WebCam** capability is specified in your project.</span></span>
+## <a name="troubleshooting"></a><span data-ttu-id="52883-163">[疑難排解]</span><span class="sxs-lookup"><span data-stu-id="52883-163">Troubleshooting</span></span>
+* <span data-ttu-id="52883-164">沒有任何可用的解決方案</span><span class="sxs-lookup"><span data-stu-id="52883-164">No resolutions are available</span></span>
+    * <span data-ttu-id="52883-165">請確定您的專案中已指定**網路**攝影機功能。</span><span class="sxs-lookup"><span data-stu-id="52883-165">Ensure the **WebCam** capability is specified in your project.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="aa634-166">另請參閱</span><span class="sxs-lookup"><span data-stu-id="aa634-166">See Also</span></span>
-* [<span data-ttu-id="aa634-167">定位相機</span><span class="sxs-lookup"><span data-stu-id="aa634-167">Locatable camera</span></span>](locatable-camera.md)
+## <a name="see-also"></a><span data-ttu-id="52883-166">請參閱</span><span class="sxs-lookup"><span data-stu-id="52883-166">See Also</span></span>
+* [<span data-ttu-id="52883-167">定位相機</span><span class="sxs-lookup"><span data-stu-id="52883-167">Locatable camera</span></span>](locatable-camera.md)

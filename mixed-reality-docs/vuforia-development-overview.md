@@ -3,15 +3,15 @@ title: 搭配使用 Vuforia 與 Unity
 description: 利用 Vuforia 在 Unity 中建立 Windows Mixed Reality 應用程式。
 author: thetuvix
 ms.author: alexturn
-ms.date: 01/28/2019
+ms.date: 12/20/2019
 ms.topic: article
 keywords: Vuforia、標記、座標、參考框架、追蹤
-ms.openlocfilehash: bae5d0eb04ab9434dd3e72674686743779a8f70c
-ms.sourcegitcommit: 9005b3fdfa87ac8fdc18a594a681e25c00ac5ce1
+ms.openlocfilehash: 2d7cc27cd9a5fe9bb6502edaa6df0b7a80755049
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2019
-ms.locfileid: "75003187"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334473"
 ---
 # <a name="using-vuforia-engine-with-unity"></a>搭配使用 Vuforia 引擎與 Unity
 
@@ -80,7 +80,7 @@ Vuforia 引擎會自動 e-fuses 相機追蹤和 HoloLens 的空間追蹤的姿�
 因為程式會自動處理，所以開發人員不需要任何程式設計。
 
 
-**以下是發生的情況 ...**
+**以下是此程式的高階描述：**
 1. Vuforia 的目標追蹤器可識別目標
 2. 接著會初始化目標追蹤
 3. 系統會分析目標的位置和旋轉，為 HoloLens 提供健全的姿勢估計
@@ -105,11 +105,11 @@ Vuforia 引擎會自動 e-fuses 相機追蹤和 HoloLens 的空間追蹤的姿�
 
 
 ## <a name="see-also"></a>請參閱
-* [Instalación de las herramientas](install-the-tools.md)
-* [Sistemas de coordenadas](coordinate-systems.md)
-* [Asignación espacial](spatial-mapping.md)
-* [Cámara en Unity](camera-in-unity.md)
-* [Exportación y creación de una solución de Visual Studio para Unity](exporting-and-building-a-unity-visual-studio-solution.md)
+* [安裝工具](install-the-tools.md)
+* [座標系統](coordinate-systems.md)
+* [空間對應](spatial-mapping.md)
+* [Unity 中的相機](camera-in-unity.md)
+* [匯出和建置 Unity Visual Studio 解決方案](exporting-and-building-a-unity-visual-studio-solution.md)
 * [Vuforia 檔：在 Unity 中針對 Windows 10 進行開發](https://library.vuforia.com/articles/Solution/Developing-for-Windows-10-in-Unity)
 * [Vuforia 檔：如何安裝 Vuforia Unity 延伸模組](https://library.vuforia.com/articles/Solution/Installing-the-Unity-Extension)
 * [Vuforia 檔：使用 Unity 中的 HoloLens 範例](https://library.vuforia.com/articles/Solution/Working-with-the-HoloLens-sample-in-Unity)

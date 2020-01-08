@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 861c42f9449fcb3cf038258af91088fc927941e5
-ms.sourcegitcommit: f4812e1312c4751a22a2de56771c475b22a4ba24
+ms.openlocfilehash: e62d3626ec6f2dbf8b66378212afab7db2f56422
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74940956"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334456"
 ---
 # <a name="1-getting-started-with-azure-spatial-anchors"></a>1. 開始使用 Azure 空間錨點
 
@@ -30,11 +30,19 @@ ms.locfileid: "74940956"
 * 瞭解使用 HoloLens 2 的 Azure 空間錨點進行開發的基本概念
 * 建立、上傳及下載空間錨點
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
-* 符合[快速入門：建立使用 Azure 空間錨點的 Unity HoloLens 應用程式](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens)教學[課程的必要條件](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens#prerequisites)一節中所列的需求。
+>[!TIP]
+>如果您尚未完成[快速入門教學](mrlearning-base.md)課程系列，建議您先完成這些教學課程。
+
+* [已安裝正確工具](install-the-tools.md)的 WINDOWS 10 電腦
+* Windows 10 SDK 10.0.18362.0 或更新版本
+* 一些基本C#的程式設計能力
+* [為開發設定](using-visual-studio.md#enabling-developer-mode)的 HoloLens 2 裝置
 * 完成[快速入門：建立使用 Azure 空間錨點的 Unity HoloLens 應用程式](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens)教學課程中的[建立空間錨點資源](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens#create-a-spatial-anchors-resource)一節。
-* 如果您尚未完成[快速入門教學](mrlearning-base.md)課程系列，建議您先完成這些教學課程。
+
+>[!IMPORTANT]
+>本教學課程系列需要<a href="https://unity3d.com/get-unity/download/archive" target="_blank">unity 2019.1</a> ，而建議的版本是 unity 2019.1.14。 這會取代上述所連結之必要條件中所述的任何 Unity 版本需求或建議。
 
 ## <a name="creating-the-unity-project"></a>建立 Unity 專案
 
@@ -273,7 +281,7 @@ ms.locfileid: "74940956"
     >[!TIP]
     >有各種不同的使用者體驗流程可進行重新置放的體驗，包括使用重新置放的物件（例如本教學課程中使用的 cube）、使用按鈕來切換環繞體驗的周框方塊、使用位置和旋轉gizmos，還有更多。
 
-## <a name="congratulations"></a>恭喜！
+## <a name="congratulations"></a>恭喜您
 
 在本教學課程中，您已瞭解 Azure 空間錨點的基本概念。 這一課提供了數個按鈕，可讓您探索啟動和停止 Azure 會話，以及在單一裝置上建立、上傳和下載 azure 錨點所需的各種步驟。
 

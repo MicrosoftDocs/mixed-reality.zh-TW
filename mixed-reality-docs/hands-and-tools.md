@@ -6,12 +6,12 @@ ms.author: shentan
 ms.date: 04/26/2019
 ms.topic: article
 keywords: Mixed Reality，實習，運動控制器，互動，設計
-ms.openlocfilehash: 395862fe987244e2af70bb6794caa91e243cd076
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 27d13316bbc4b3b40a1e617d73dd5487c05cb347
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435180"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334444"
 ---
 # <a name="hands-and-motion-controllers"></a>實習和運動控制器
 ## <a name="scenarios"></a>案例
@@ -22,7 +22,7 @@ ms.locfileid: "73435180"
 * 提供 factory 元件線的第一行工作者教學課程和指南
 * 開發專業工具來協助及教育醫療專業人員  
 * 使用3D 虛擬物件裝飾真實世界或建立第二個世界 
-* 使用真實世界作為背景來建立位置服務和遊戲
+* 以真實世界作為背景來建立以位置為基礎的服務和遊戲
 
 <br>
 
@@ -39,7 +39,7 @@ ms.locfileid: "73435180"
     :::column:::
        [使用手的 ![點和認可](images/hands-and-controllers-point-and-commit.jpg)](point-and-commit.md)<br>
         ### <a name="point-and-commit-with-handspoint-and-commitmdbr"></a>[手部指向和行動](point-and-commit.md)<br>
-        這種方式可讓使用者在某個距離內與全息影像互動。 它可讓使用者充分利用周圍的環境。 使用者可以將全息影像放在任何位置，而且仍然可以從任何距離進行存取。 控制和操作2D 和3D 全像投影的心理模型和手勢，與直接操作的程式高度同步。
+        這種方式可讓使用者在某個距離內與全息影像互動。 它可讓使用者充分利用周圍的環境。 使用者可以將全息影像放在任何位置，並繼續從任何距離存取。 控制和操作2D 和3D 全像投影的心理模型和手勢，與直接操作的程式高度同步。
     :::column-end:::
     :::column:::
        [![動作控制器](images/hands-and-controllers-motion-controllers.jpg)](motion-controllers.md)<br>

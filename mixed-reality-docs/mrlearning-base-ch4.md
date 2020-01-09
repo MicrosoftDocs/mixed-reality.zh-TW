@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 05/02/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 8c60d8291ede123817c93458fff003891169840c
-ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
+ms.openlocfilehash: fe068d0cfcea369f10e6fa636eb73fecb3002fa7
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74105968"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334388"
 ---
 # <a name="5-interacting-with-3d-objects"></a>5. 與3D 物件互動
 
@@ -30,9 +30,7 @@ ms.locfileid: "74105968"
 * 探索遠近互動
 * 深入瞭解其他的右手邊追蹤手勢，例如「抓取」和「觸控」
 
-## <a name="instructions"></a>指示
-
-### <a name="organizing-3d-objects-in-a-collection"></a>組織集合中的 3D 物件
+## <a name="organizing-3d-objects-in-a-collection"></a>組織集合中的 3D 物件
 
 1. 以滑鼠右鍵按一下您的階層，然後選取 [建立空的] 以建立空白遊戲物件，將其重新命名為3DObjectCollection，並確定其位於 x = 0、y = 0 和 z = 0。
 
@@ -70,7 +68,7 @@ ms.locfileid: "74105968"
     >[!NOTE]
     >您可能會注意到有些物件是停在中心，例如上圖中的物件。 這是因為預製物件或物件可能具有未對齊的子物件。 隨意對物件位置或子物件位置進行必要的調整，以實現完善對齊的方格。
 
-### <a name="manipulating-3d-objects"></a>操作 3D 物件
+## <a name="manipulating-3d-objects"></a>操作 3D 物件
 
 1. 新增可操作立方體的功能。 若要新增操作3D 物件的功能，請執行下列動作：
     * 選取您想要在階層中操作的3D 物件（亦即您的其中一個 cube）。
@@ -132,7 +130,7 @@ ms.locfileid: "74105968"
     >[!NOTE]
     >此設定適用于案例，例如建立您可以擲回的球。 保持適當的速度和角度速度，以確保在球放開後，它會繼續在其發行的速度移動;類似于實體球的行為。
 
-### <a name="adding-bounding-boxes"></a>新增週框方塊
+## <a name="adding-bounding-boxes"></a>新增週框方塊
 
 周框方塊可讓您更輕鬆且更直覺地操作物件，以進行直接操作（近乎互動）和以光線為基礎的操作（遠比互動）。周框方塊提供的控制碼可用於在特定軸上縮放和旋轉物件。
 
@@ -180,7 +178,7 @@ ms.locfileid: "74105968"
     >[!NOTE]
     >只有當處於播放模式時，才會顯示周框方塊的視覺效果。
 
-### <a name="adding-touch-effects"></a>新增觸控效果
+## <a name="adding-touch-effects"></a>新增觸控效果
 
 在此範例中，當您用手觸控物件時，我們將播放音效。
 
@@ -222,7 +220,7 @@ ms.locfileid: "74105968"
 
    現在，當使用者到達並觸及顆 octa 物件時，就會播放音訊軌 MRTK_Gem。 觸碰互動觸控腳本也會在觸及時調整物件的色彩。
 
-## <a name="congratulations"></a>恭喜！
+## <a name="congratulations"></a>恭喜您
 
 在本教學課程中，您已瞭解如何在方格集合中組織3D 物件，以及如何使用近距離互動（直接抓取和旋轉）和即時互動（使用注視光線或手片）來操作這些物件（縮放、旋轉和移動）。 您也學到如何將周框方塊放在3D 物件周圍，學習如何使用和自訂周框方塊上的 gizmos。 最後，您學習到觸控物件時如何觸發事件。
 

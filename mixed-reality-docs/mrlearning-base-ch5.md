@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: b740c463e3d73d5df9b996562e9ff0a1952703f0
-ms.sourcegitcommit: f2b7c6381006fab6d0472fcaa680ff7fb79954d6
+ms.openlocfilehash: 75a14697953026474d8ca00e6473145d7b12a482
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74064294"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334352"
 ---
 # <a name="6-exploring-advanced-input-options"></a>6. 探索 advanced 輸入選項
 
@@ -23,9 +23,7 @@ ms.locfileid: "74064294"
 - 使用追蹤的手平移材質和3D 物件
 - 利用 HoloLens 2 眼追蹤功能來選取物件
 
-## <a name="instructions"></a>指示
-
-### <a name="enabling-voice-commands"></a>啟用語音命令
+## <a name="enabling-voice-commands"></a>啟用語音命令
 
 在本節中，會執行兩個語音命令。 首先，您可以藉由說「切換診斷」來引進切換畫面播放速率診斷面板的功能。 第二，會探索使用語音命令來播放音效的功能。 負責設定語音命令的 MRTK 設定檔和設定會先進行審核。
 
@@ -108,7 +106,7 @@ ms.locfileid: "74064294"
 
     ![Lesson5 Chapter1.txt Step16im](images/Lesson5_chapter1_step16im.PNG)
 
-### <a name="the-pan-gesture"></a>平移手勢
+## <a name="the-pan-gesture"></a>平移手勢
 
 在本節中，您將瞭解如何使用平移手勢。 這適用于使用手指或手來滾動內容的捲軸。 您也可以使用平移手勢來旋轉物件、迴圈流覽3D 物件的集合，甚至是滾動 2D UI。
 
@@ -194,7 +192,7 @@ ms.locfileid: "74064294"
 
     ![mrlearning-base-ch5-2-step10d .png](images/mrlearning-base-ch5-2-step10d.png)
 
-### <a name="eye-tracking"></a>眼球追蹤
+## <a name="eye-tracking"></a>眼球追蹤
 
 在本節中，我們將探討如何在我們的示範中啟用眼睛追蹤。 當您的眼睛 gazed 時，我們會慢慢旋轉3D 功能表項目。 當選取注視項目時，我們也會觸發有趣的效果。
 
@@ -238,7 +236,7 @@ ms.locfileid: "74064294"
 
 6. 在建置 HoloLens 2 之前，請確定已正確設定眼球追蹤功能。 在撰寫本文時，Unity 尚未能夠設定眼追蹤功能的注視輸入。 需要設定這項功能，眼睛追蹤才能在 HoloLens 2 中工作。 請遵循在[HoloLens 2 上測試 Unity 應用程式](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html#testing-your-unity-app-on-a-hololens-2)的指示，以啟用注視輸入功能。
 
-## <a name="congratulations"></a>恭喜！
+## <a name="congratulations"></a>恭喜您
 
 您已成功將基本眼追蹤功能新增至您的應用程式。 這些動作只是眼球追蹤功能無限可能性的開端。 本章也會在第5課結束，我們已瞭解先進的輸入功能，例如語音命令、移動流覽手勢和眼追蹤。
 

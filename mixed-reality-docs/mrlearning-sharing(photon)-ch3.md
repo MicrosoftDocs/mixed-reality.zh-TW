@@ -6,71 +6,70 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: a6d1a269f45b4aaf7cbd8fea948ddcbdf0bf18e2
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 9441cf7a9685b8a197bab1116202db4a9b026f2e
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437741"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334308"
 ---
 # <a name="3-connecting-multiple-users"></a>3. 連接多個使用者
 
-在這一課，我們將瞭解如何在即時共用體驗中連接多個使用者。 在本課程結束時，您將能夠在多個裝置上開啟應用程式，並查看每個聯結人員的一個球體所代表的頭像。 
+在這一課，我們將瞭解如何在即時共用體驗中連接多個使用者。 在本課程結束時，您將能夠在多個裝置上開啟應用程式，並查看每個聯結人員的一個球體所代表的頭像。
 
-目標
+## <a name="objectives"></a>目標
 
-- 在您的應用程式中設定雙關語
-- 設定播放者
-- 瞭解如何在共用體驗中連接多個使用者
+* 在您的應用程式中設定雙關語
+* 設定播放者
+* 瞭解如何在共用體驗中連接多個使用者
 
 ## <a name="instructions"></a>指示
 
 1. 在 [專案] 面板的 [資產-> 資源]-[> Prefabs] 資料夾中，將 NetworkLobby prefab 拖放到階層中，如下圖所示。
 
-![Module3Chapter3step1im](images/module3chapter3step1im.PNG)
+    ![Module3Chapter3step1im](images/module3chapter3step1im.PNG)
 
 2. 當您展開 [NetworkLobby] 時，您會看到名為 NetworkRoom 的子物件。 選取 NetworkRoom 後，進入 [檢查] 面板，然後按一下 [新增元件]。 搜尋 PhotonView 並新增元件。
 
-![Module3Chapter3tep2im](images/module3chapter3step2im.PNG)
+    ![Module3Chapter3tep2im](images/module3chapter3step2im.PNG)
 
 3. 在階層中建立新的空白遊戲物件。 以滑鼠右鍵按一下階層，然後從內容功能表中選取 [空白]。 請確定定位設定為 x = 0、y = 0、z = 0，並將物件命名為 PhotonUser。
 
-![Module3Chapter3step3im](images/module3chapter3step3im.PNG)
+    ![Module3Chapter3step3im](images/module3chapter3step3im.PNG)
 
-4. 按一下 [新增元件]，然後輸入一般 Net Sync。選取 [一般 Net Sync] 類別。 當類別出現時，按一下 [使用者] 核取方塊以將其開啟。 
+4. 按一下 [新增元件]，然後輸入一般 Net Sync。選取 [一般 Net Sync] 類別。 當類別出現時，按一下 [使用者] 核取方塊以將其開啟。
 
-![module3chapter3updateStep4im](images/module3chapter3updateStep4im.png)
+    ![module3chapter3updateStep4im](images/module3chapter3updateStep4im.png)
 
 5. 再次按一下 [新增元件]，然後輸入 Photon View。 選取出現在下拉式清單中的 [Photon] View 類別。
 
-![module3chapter3updateStep5im](images/module3chapter3updateStep5im.png)
+    ![module3chapter3updateStep5im](images/module3chapter3updateStep5im.png)
 
-6. 按一下 [一般 Net Sync] 類別的 [檔案] 圖示。 將它拖放到 [Photon] 視圖的 [觀察的元件] 欄位中。 
+6. 按一下 [一般 Net Sync] 類別的 [檔案] 圖示。 將它拖放到 [Photon] 視圖的 [觀察的元件] 欄位中。
 
-![module3chapter3updateStep6im .png](images/module3chapter3updateStep6im.png) 
+    ![module3chapter3updateStep6im .png](images/module3chapter3updateStep6im.png)
 
 7. 接下來，我們會建立球體來代表加入共用體驗的每個人。 在您剛才建立的 PhotonUser 物件上按一下滑鼠右鍵，並向下滾動至 [3D 物件]，然後按一下 [球體]。 這會將球體遊戲物件建立為 PhotonUser 物件的子系。
 
-![Module3Chapter3step4im](images/module3chapter3step4im.PNG)
+    ![Module3Chapter3step4im](images/module3chapter3step4im.PNG)
 
 8. 將球體向下調整為 x = 0.06、y = 0.06、ad z = 0.06。
 
-![Module3hapter3step5im](images/module3chapter3step5im.PNG)
+    ![Module3hapter3step5im](images/module3chapter3step5im.PNG)
 
 9. 將 [PhotonUser 遊戲] 物件拖曳至 [專案] 面板中的 [Prefabs] 資料夾，然後從場景中刪除它。 您現在已建立可在共用體驗中產生或具現化新播放機時使用的 prefab。
 
-![Module3Chapter3step6im](images/module3chapter3step6im.PNG)
+    ![Module3Chapter3step6im](images/module3chapter3step6im.PNG)
 
-> 注意：請確定遊戲物件已成功複製到 Prefabs 資料夾，然後才將它從您的階層中刪除。
+    >[!NOTE]
+    >請確定遊戲物件已成功複製到 Prefabs 資料夾，然後才將它從您的階層中刪除。
 
 10. 遵循步驟3中的指示，在階層中建立新的物件，並將其命名為 SharedPlayground。 然後，按一下 [新增元件]，並搜尋 [一般網路系統管理員]。  再次按一下以新增一般網路系統管理員元件。 將物件的位置變更為 x = 0、y = 0、z = 0。
 
-![Module3Chapter3step7im](images/module3chapter3step7im.PNG)
-
+    ![Module3Chapter3step7im](images/module3chapter3step7im.PNG)
 
 ## <a name="congratulations"></a>恭喜您
 
 完成上述所有步驟且組建程式也完成之後，請按下 [播放] 按鈕並連接您的 HoloLens 2。 當您移動 head 時，您應該會看到一個球體四處移動。 這會針對加入 Unity 專案的任何使用者顯示！
 
 [下一課： 4. 與多個使用者共用物件移動](mrlearning-sharing(photon)-ch4.md)
-

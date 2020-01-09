@@ -6,12 +6,12 @@ ms.author: branbray
 ms.date: 03/21/2018
 ms.topic: article
 keywords: mixed reality，全像，ar，vr，mr，xr，增強的現實，虛擬實境，說明
-ms.openlocfilehash: 65588902565ee0c5a1710f823311ccdecc23230e
-ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
+ms.openlocfilehash: e3205590ce46e0fc9113421e0dbaeb87fe6bc0c2
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539564"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334032"
 ---
 # <a name="what-is-mixed-reality"></a>什麼是混合實境？
 
@@ -19,8 +19,8 @@ ms.locfileid: "74539564"
 
 混合實境是實體環境與數位世界混合的結果。 混合的實境是人類、電腦和環境互動的全新演進，並且解放了以前僅限於我們想像的可能性。 這是藉由電腦視覺、圖形處理能力、顯示器技術和輸入系統的進展而達成的。 「*混合現實*」一詞原本是由 Paul Milgram 和 Fumio Kishino 「[混合現實視覺效果的分類法](https://etclab.mie.utoronto.ca/people/paul_dir/IEICE94/ieice.html)」所引進的1994論文。 其論文引進了*virtuality continuum*的概念，並著重于如何套用分類法的分類。 從那時起，混合現實的應用程式會超出顯示範圍。 它也包含環境輸入、空間音效和位置。
 
-![混合的現實頻譜](images/MixedRealitySpectrum-worlds.jpg)<br>
-*混合現實是將實體世界與數位世界相結合的結果。*
+![混合的現實頻譜](images/mixedrealityspectrum-worlds.png)<br>
+*影像：混合現實是將實體世界與數位世界混合的結果。*
 
 <br>
 
@@ -30,22 +30,16 @@ ms.locfileid: "74539564"
 
 過去幾年來，人類與電腦輸入之間的關聯性已經過充分的探索。 它甚至已經過廣泛研究的專業領域，稱為*人類電腦互動*或 HCI。 人類輸入會透過各種不同的方式進行，包括鍵盤、滑鼠、觸控、筆墨、語音，甚至是 Kinect 的框架追蹤。
 
-在感應器和處理方面的改進，是從環境逐漸增加到電腦輸入的新區域。 電腦與環境之間的互動是有效的環境理解或*認知*。 因此，Windows 中顯示環境資訊的 API 名稱稱為「[認知 api](https://docs.microsoft.com/uwp/api/Windows.Perception)」。 環境輸入會在世界中（例如， [head 追蹤](coordinate-systems.md)）、表面和邊界（例如[空間對應](spatial-mapping.md)和[場景理解](scene-understanding.md)）、環境光源、環境音效、物件辨識等專案中，捕捉到人員的位置。和位置。
+在感應器和處理方面的改進，是從環境逐漸增加到電腦輸入的新區域。 電腦與環境之間的互動是有效的環境理解或*認知*。 因此，Windows 中顯示環境資訊的 API 名稱稱為「[認知 api](https://docs.microsoft.com/uwp/api/Windows.Perception)」。 環境輸入會在世界中（例如， [head 追蹤](coordinate-systems.md)）、表面和邊界（例如[空間對應](spatial-mapping.md)和[場景理解](scene-understanding.md)）、環境光源、環境音效、物件辨識和位置等專案中，捕捉到人員的位置。
 
 <br>
 
+![卞氏圖表顯示電腦、人類和環境之間的互動](images/mixed-reality-venn-diagram-300px.png)<br> 
+*的影像：電腦、人類和環境之間的互動。*
 
+<br>
 
-:::row:::
-    :::column:::
-        現在，所有三種**電腦處理、人類輸入和環境輸入**的組合，都能為您創造出真正的混合現實體驗。 透過實體世界的移動可以轉譯成數位世界中的移動。 實體世界的界限可能會影響數位世界中的應用程式體驗，例如遊戲播放。 如果沒有環境輸入，體驗就無法在實體和數位現實之間混合。<br>
-        <br>
-        *影像：電腦、人類和環境之間的互動。*
-    :::column-end:::
-        :::column:::
-       ![顯示電腦、人類和環境之間互動的卞氏圖表](images/mixed-reality-venn-diagram-300px.png)<br> 
-    :::column-end:::
-:::row-end:::
+現在，所有三種**電腦處理、人類輸入和環境輸入**的組合，都能為您創造出真正的混合現實體驗。 透過實體世界的移動可以轉譯成數位世界中的移動。 實體世界的界限可能會影響數位世界中的應用程式體驗，例如遊戲播放。 如果沒有環境輸入，體驗就無法在實體和數位現實之間混合。<br>
 
 <br>
 
@@ -72,8 +66,8 @@ ms.locfileid: "74539564"
 
 <br>
 
-![混合的現實頻譜](images/MixedRealitySpectrum.jpg)<br>
-*混合現實頻譜*
+![混合的現實頻譜](images/mixedrealityspectrum.png)<br>
+*影像：混合現實頻譜*
 
 <br>
 
@@ -91,15 +85,17 @@ ms.locfileid: "74539564"
 
 <table>
 <tr>
-<th width="20%"> 特性</th><th width="40%"> 全像攝影裝置</th><th width="40%"> 沉浸式裝置</th>
+<th width="30%"> 特性</th><th width="35%"> 全像攝影裝置</th><th width="35%"> 沉浸式裝置</th>
 </tr><tr>
-<td> 範例裝置</td><td> Microsoft HoloLens<br /> <img alt="Microsoft HoloLens image" width="300" height="169" src="images/mshololens-hero1-whitbg-rgb-300px.png" /></td><td> Acer Windows Mixed Reality 開發版<br /> <img alt="Acer Windows Mixed Reality Development Edition image" width="300" height="169" src="images/acer-windows-mixed-reality-development-edition-headset-300px.jpg" /></td>
+<td><strong>範例裝置</strong></td><td> Microsoft HoloLens<br><br> <img alt="Microsoft HoloLens 2 image" width="300" height="169" src="images/HoloLens2.jpg" /></td><td> Samsung HMD 電影對白 +<br><br> <img alt="Samsung HMD Odyssey+ image" width="300" height="169" src="images/Samsung-HMD-Odyssey.jpg" /></td>
 </tr><tr>
-<td> 顯示器</td><td> <i>查看顯示。</i> 可讓使用者在戴頭戴式裝置時查看實體環境。</td><td> <i>不透明的顯示。</i> 在戴頭戴式裝置時封鎖實體環境。</td>
+<td><strong>顯示器</strong></td><td> 查看顯示。 可讓使用者在戴頭戴式裝置時查看實體環境。</td><td> 不透明的顯示。 在戴頭戴式裝置時封鎖實體環境。</td>
 </tr><tr>
-<td> 引起</td><td> 完整的六度自由移動，包括旋轉和轉譯。</td><td> 完整的六度自由移動，包括旋轉和轉譯。</td>
+<td><strong>引起</strong></td><td> 完整的六度自由移動，包括旋轉和轉譯。</td><td> 完整的六度自由移動，包括旋轉和轉譯。</td>
 </tr>
 </table>
+
+
 
 請注意，無論裝置是連線到其他電腦或行動網卡到另一部電腦（透過 USB 纜線或 Wi-fi）或是獨立的（非網路共用），都不會反映裝置是否為全像攝影或沉浸式。 當然，改善行動性的功能會導致更好的體驗，而且全像攝影和沉浸式裝置都可能是行動網卡或非網路共用。
 
@@ -108,8 +104,8 @@ ms.locfileid: "74539564"
 
 <br>
 
-混合現實頻譜中的 ![裝置類型](images/MixedRealitySpectrum-devices.jpg)<br>
-*其中的裝置存在於混合現實頻譜上*
+混合現實頻譜中的 ![裝置類型](images/Final_WhatIsMixedReality07.png)<br>
+*映射：裝置存在於混合現實頻譜上*
 
 通常，最好考慮應用程式或遊戲開發人員想要建立哪種類型的經驗。 這些體驗通常會以特定點或元件為目標。 然後，開發人員應該考慮他們想要作為目標的裝置功能。 比方說，依賴實體世界的經驗在 HoloLens 上的效果最佳。
 * **朝左邊（接近實體現實）。** 使用者仍然存在於其實體環境中，而且永遠不會相信他們已離開該環境。

@@ -1,20 +1,20 @@
 ---
 title: MR 和 Azure 307-機器學習服務
-description: 完成此課程，以瞭解如何在混合現實應用程式中執行 Azure Machine Learning Studio。
+description: 完成此課程，以瞭解如何在混合現實應用程式中執行 Azure Machine Learning Studio （傳統）。
 author: drneil
 ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure，混合現實，學術，unity，教學課程，api，機器學習，ml，machine learning studio，hololens，沉浸，vr
-ms.openlocfilehash: e302e287049cd746a436904c2af2bcc2b0835796
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: d1692faef825d0ee20be4cfc8d8333bcccd754e1
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926622"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75333824"
 ---
 >[!NOTE]
->混合現實學術教學課程的設計是使用 HoloLens （第1代）和混合現實的沉浸式耳機。  因此，對於仍在尋找這些裝置開發指引的開發人員而言，我們覺得這些教學課程很重要。  這些教學課程 **_不_** 會以最新的工具組或用於 HoloLens 2 的互動進行更新。  系統會保留這些資訊，以繼續在支援的裝置上運作。 未來將會有一系列新的教學課程，將示範如何針對 HoloLens 2 進行開發。  此通知會在張貼時，使用這些教學課程的連結進行更新。
+>混合實境學院教學課程的設計是以 HoloLens (第 1 代) 和混合實境沉浸式頭戴裝置為準。  因此，對於仍在尋找這些裝置開發指引的開發人員而言，我們覺得這些教學課程很重要。  這些教學課程 **_不會_** 使用用於 HoloLens 2 的最新工具組或互動進行更新。  系統會保留這些資訊，以繼續在支援的裝置上運作。 未來將會有一系列新的教學課程，將示範如何針對 HoloLens 2 進行開發。  此通知會在張貼時，使用這些教學課程的連結進行更新。
 
 <br>
 
@@ -22,13 +22,13 @@ ms.locfileid: "73926622"
 
 ![最終產品-開始](images/AzureLabs-Lab7-0.png)
 
-在此課程中，您將瞭解如何使用 Azure Machine Learning Studio，將 Machine Learning （ML）功能新增至混合現實應用程式。
+在此課程中，您將瞭解如何使用 Azure Machine Learning Studio （傳統）將 Machine Learning （ML）功能新增至混合現實應用程式。
 
-*Azure Machine Learning Studio*是一項 Microsoft 服務，可為開發人員提供大量的機器學習服務演算法，這有助於資料輸入、輸出、準備和視覺效果。 在這些元件中，您可以開發預測性分析實驗、逐一查看，並使用它來定型您的模型。 依照訓練，您可以讓模型在 Azure 雲端中運作，讓它可以對新資料進行評分。 如需詳細資訊，請造訪[Azure Machine Learning Studio 頁面](https://azure.microsoft.com/services/machine-learning-studio/)。
+*Azure Machine Learning Studio （傳統）* 是一項 Microsoft 服務，可為開發人員提供大量的機器學習服務演算法，這有助於資料輸入、輸出、準備和視覺效果。 在這些元件中，您可以開發預測性分析實驗、逐一查看，並使用它來定型您的模型。 依照訓練，您可以讓模型在 Azure 雲端中運作，讓它可以對新資料進行評分。 如需詳細資訊，請造訪[Azure Machine Learning Studio （傳統）頁面](https://azure.microsoft.com/services/machine-learning-studio/)。
 
 完成此課程之後，您將擁有一個混合現實的沉浸式耳機應用程式，並將學習如何執行下列作業：
 
-1.  將銷售資料的資料表提供給*Azure Machine Learning Studio*入口網站，並設計演算法來預測熱門專案的未來銷售。
+1.  將銷售資料的資料表提供給*Azure Machine Learning Studio （傳統）* 入口網站，並設計演算法來預測熱門專案的未來銷售。
 2.  建立**Unity 專案**，它可以接收並解讀來自 ML 服務的預測資料。
 3.  透過在貨位上提供最受歡迎的銷售專案，以視覺化方式在**Unity 專案**中顯示 predication 資料。
 
@@ -40,7 +40,7 @@ ms.locfileid: "73926622"
 
 <table>
 <tr>
-<th>粗</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></th>
+<th>課程：</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></th>
 </tr><tr>
 <td> MR 和 Azure 307：機器學習服務</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
@@ -49,7 +49,7 @@ ms.locfileid: "73926622"
 > [!NOTE]
 > 雖然此課程主要著重于 Windows Mixed Reality 沉浸式（VR）耳機，但您也可以將您在本課程中學習到的內容套用至 Microsoft HoloLens。 隨著課程的遵循，您會看到您可能需要用來支援 HoloLens 的任何變更的附注。 使用 HoloLens 時，您可能會在語音捕獲期間發現一些回應。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 > [!NOTE]
 > 本教學課程是專為具備 Unity 和C#基本經驗的開發人員所設計。 也請注意，本檔中的必要條件和書面指示，代表在撰寫本文時已測試和驗證的內容（5月2018）。 您可以免費使用 [[安裝工具] 文章](install-the-tools.md)中所列的最新軟體，但不應假設本課程中的資訊完全符合您在較新軟體中找到的內容，而不是如下所示。
@@ -92,10 +92,10 @@ ms.locfileid: "73926622"
     1.  插入您帳戶的**名稱**，請注意此欄位只接受數位和小寫字母。
     2.  針對 [**部署模型]，** 選取 [ **Resource manager**]。
     3.  針對 [**帳戶類型**]，選取 [**儲存體（一般用途 v1）** ]。
-    4.  針對 [**效能**]，選取 [**標準**]。
+    4.  針對 [效能]，請選取 [標準]。
     5.  針對 **[** 複寫]，選取 **[讀取權限-異地-多餘儲存體（RA-GRS）** ]。
     6.  將 [**需要安全傳輸**] 保留為 [**停用**]。
-    7.  選取**訂**用帳戶。
+    7.  選取 [訂用帳戶]。
     4. 選擇**資源群組**或建立一個新的。 資源群組提供一種方式來監視、控制存取、布建及管理 Azure 資產集合的計費。 建議您將與單一專案相關聯的所有 Azure 服務（例如這些實驗室）都保留在通用資源群組底下）。
 
         > 如果您想要深入瞭解 Azure 資源群組，請[造訪資源群組一文](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)。
@@ -112,13 +112,13 @@ ms.locfileid: "73926622"
 
     ![Azure 儲存體帳戶設定](images/AzureLabs-Lab7-4.png)
 
-## <a name="chapter-2---the-azure-machine-learning-studio"></a>第2章-Azure Machine Learning Studio
+## <a name="chapter-2---the-azure-machine-learning-studio--classic"></a>第2章-Azure Machine Learning Studio （傳統）
 
 若要使用*Azure Machine Learning*，您必須設定 Machine Learning 服務的實例，讓應用程式可以使用。
 
 1.  在 Azure 入口網站中，按一下左上角的 [**新增**]，然後搜尋**Machine Learning Studio 工作區**，按**enter**鍵。
 
-    ![Azure Machine Learning Studio](images/AzureLabs-Lab7-5.png)
+    ![Azure Machine Learning Studio （傳統）](images/AzureLabs-Lab7-5.png)
 
 2.  [新增] 頁面將會提供**Machine Learning Studio 工作區**服務的描述。 在此提示的左下方，按一下 [**建立**] 按鈕，以建立與此服務的關聯。
 
@@ -126,7 +126,7 @@ ms.locfileid: "73926622"
 
     1.  為此服務實例插入所需的**工作區名稱**。
 
-    2.  選取**訂**用帳戶。
+    2.  選取 [訂用帳戶]。
 
     3. 選擇**資源群組**或建立一個新的。 資源群組提供一種方式來監視、控制存取、布建及管理 Azure 資產集合的計費。 建議您將與單一專案相關聯的所有 Azure 服務（例如這些實驗室）都保留在通用資源群組底下）。 
 
@@ -146,30 +146,30 @@ ms.locfileid: "73926622"
 
     10. 按一下 \[建立\]。
 
-        ![Azure Machine Learning Studio](images/AzureLabs-Lab7-6.png)
+        ![Azure Machine Learning Studio （傳統）](images/AzureLabs-Lab7-6.png)
 
 4.  按一下 [**建立**] 之後，您必須等候服務建立，這可能需要一分鐘的時間。
 
 5.  建立服務實例之後，入口網站中會出現通知。
 
-    ![Azure Machine Learning Studio](images/AzureLabs-Lab7-7.png)
+    ![Azure Machine Learning Studio （傳統）](images/AzureLabs-Lab7-7.png)
 
 6.  按一下通知以探索新的服務實例。
 
-    ![Azure Machine Learning Studio](images/AzureLabs-Lab7-8.png)
+    ![Azure Machine Learning Studio （傳統）](images/AzureLabs-Lab7-8.png)
 
 7.  按一下通知中的 [**移至資源**] 按鈕，探索新的服務實例。
 
 8.  在顯示的頁面中，按一下 [**其他連結**] 區段下的 [**啟動 Machine Learning Studio**]，這會將您的瀏覽器導向**Machine Learning Studio**入口網站。
 
-    ![Azure Machine Learning Studio](images/AzureLabs-Lab7-9.png)
+    ![Azure Machine Learning Studio （傳統）](images/AzureLabs-Lab7-9.png)
 
-9.  使用位於右上方或中央的 [登**入**] 按鈕，登入您的 Machine Learning Studio。
+9.  使用位於右上方或中央的 [登**入**] 按鈕，登入您的 Machine Learning Studio （傳統）。
 
-    ![Azure Machine Learning Studio](images/AzureLabs-Lab7-10.png)
+    ![Azure Machine Learning Studio （傳統）](images/AzureLabs-Lab7-10.png)
 
 
-## <a name="chapter-3---the-machine-learning-studio-dataset-setup"></a>第3章-Machine Learning Studio：資料集設定
+## <a name="chapter-3---the-machine-learning-studio-classic-dataset-setup"></a>第3章-Machine Learning Studio （傳統）：資料集設定
 
 Machine Learning 演算法的工作方式之一是分析現有的資料，然後根據現有的資料集嘗試預測未來的結果。 這通常表示您擁有的資料愈多，演算法將在預測未來結果時愈好。
 
@@ -180,25 +180,25 @@ Machine Learning 演算法的工作方式之一是分析現有的資料，然後
 
 此範例資料集包含每一年2017之每小時的最佳銷售物件記錄。
         
-![Machine Learning Studio：資料集設定](images/AzureLabs-Lab7-11.png)
+![Machine Learning Studio （傳統）：資料集設定](images/AzureLabs-Lab7-11.png)
 
 例如，在2017的第1天，下午（小時13），最佳銷售專案是 salt 和辣椒。
 
 這個範例資料表包含9998專案。
 
-1.  返回**Machine Learning Studio**入口網站，並將此資料表新增為 ML 的**資料集**。 若要這麼做，請按一下畫面左下角的 [ **+ 新增**] 按鈕。
+1.  返回**Machine Learning Studio （傳統）** 入口網站，並新增此資料表做為 ML 的**資料集**。 若要這麼做，請按一下畫面左下角的 [ **+ 新增**] 按鈕。
 
-    ![Machine Learning Studio：資料集設定](images/AzureLabs-Lab7-12.png)
+    ![Machine Learning Studio （傳統）：資料集設定](images/AzureLabs-Lab7-12.png)
 
 2.  區段會從底部出現，並在左側有導覽面板。 **從 [本機**檔案]，按一下 [**資料集**]，然後從 [] 右邊。
 
-    ![Machine Learning Studio：資料集設定](images/AzureLabs-Lab7-13.png)
+    ![Machine Learning Studio （傳統）：資料集設定](images/AzureLabs-Lab7-13.png)
 
 3.  依照下列步驟來上傳新的**資料集**：
 
     1. [上傳] 視窗隨即出現，您可以在其中**流覽**硬碟以尋找新的資料集。
 
-        ![Machine Learning Studio：資料集設定](images/AzureLabs-Lab7-14.png)
+        ![Machine Learning Studio （傳統）：資料集設定](images/AzureLabs-Lab7-14.png)
 
     2.  選取之後，返回 [上傳] 視窗，將核取方塊保留為 [未核取]。
 
@@ -208,7 +208,7 @@ Machine Learning 演算法的工作方式之一是分析現有的資料，然後
 
     5.  按下 [上傳] 視窗右下方的 [滴答]，將會上傳您的**資料集**。
 
-## <a name="chapter-4---the-machine-learning-studio-the-experiment"></a>第4章-Machine Learning Studio：實驗
+## <a name="chapter-4---the-machine-learning-studio-classic-the-experiment"></a>第4章-Machine Learning Studio （傳統）：實驗
 
 建立機器學習系統之前，您必須先建立實驗，以驗證您對資料的理論。 有了結果，您就會知道您是否需要更多資料，或者資料與可能的結果之間沒有相互關聯。
 
@@ -216,39 +216,39 @@ Machine Learning 演算法的工作方式之一是分析現有的資料，然後
 
 1.  再次按一下頁面左下方的 [ **+ 新增**] 按鈕，然後按一下 [**實驗** > **空白實驗**]。
 
-    ![Machine Learning Studio：實驗](images/AzureLabs-Lab7-15.png)
+    ![Machine Learning Studio （傳統）：實驗](images/AzureLabs-Lab7-15.png)
 
 2.  新的頁面會顯示空白實驗：
 
 3.  從左側面板中，展開 [**已儲存的資料集**] > [**我的資料集**]，然後將**ProductsTableCSV**拖曳到**實驗畫布**上。
 
-    ![Machine Learning Studio：實驗](images/AzureLabs-Lab7-16.png)
+    ![Machine Learning Studio （傳統）：實驗](images/AzureLabs-Lab7-16.png)
 
 4.  在左側面板中，展開 [**資料轉換**] > **範例和 [分割**]。 然後將 [**分割資料**] 專案拖曳至**實驗畫布**。 分割資料項目會將資料集分割成兩個部分。 您將用來訓練機器學習服務演算法的其中一個部分。 第二個部分將用來評估產生之演算法的精確度。
 
-    ![Machine Learning Studio：實驗](images/AzureLabs-Lab7-17.png)
+    ![Machine Learning Studio （傳統）：實驗](images/AzureLabs-Lab7-17.png)
 
 5.  在右面板中（當選取畫布上的 [分割資料項目] 時），將**第一個輸出資料集中的資料列分數**編輯為**0.7**。 這會將資料分割成兩個部分，第一個部分將是70% 的資料，而第二個部分將是剩餘的30%。 若要確保資料會隨機分割，請確定 [**隨機分割**] 核取方塊保持核取狀態。
 
-    ![Machine Learning Studio：實驗](images/AzureLabs-Lab7-18.png)
+    ![Machine Learning Studio （傳統）：實驗](images/AzureLabs-Lab7-18.png)
 
 6.  將畫布上 [ **ProductsTableCSV** ] 專案基底的連接拖曳至 [分割] 資料項目的頂端。 這會連接專案，並將**ProductsTableCSV**資料集輸出（資料）傳送至分割資料輸入。  
 
-    ![Machine Learning Studio：實驗](images/AzureLabs-Lab7-19.png)
+    ![Machine Learning Studio （傳統）：實驗](images/AzureLabs-Lab7-19.png)
 
 7.  在左側的 **實驗** 面板中，展開  **Machine Learning**  > **訓練**。 將**訓練模型**專案向外拖曳至實驗畫布。 您的畫布看起來應該與下面相同。
 
-    ![Machine Learning Studio：實驗](images/AzureLabs-Lab7-20.png)
+    ![Machine Learning Studio （傳統）：實驗](images/AzureLabs-Lab7-20.png)
 
 8.  從 [**分割資料項目**] 的***左下方***，將 [連接] 拖曳至 [**定型模型**] 專案的**右上**角。 定型模型會使用從資料集分割的第一個70% 來定型演算法。
 
-    ![Machine Learning Studio：實驗](images/AzureLabs-Lab7-21.png)
+    ![Machine Learning Studio （傳統）：實驗](images/AzureLabs-Lab7-21.png)
 
 9.  選取畫布上的 [**定型模型**] 專案，然後在 [**屬性**] 面板（位於瀏覽器視窗右側）中，按一下 [**啟動資料行選取器**] 按鈕。
 
 10. 在文字方塊中輸入**product** ，然後按**enter**鍵， *product*將會設定為數據行來定型預測。 在此之後，按一下右下角的**滴答**，關閉選取對話方塊。
 
-    ![Machine Learning Studio：實驗](images/AzureLabs-Lab7-22.png)
+    ![Machine Learning Studio （傳統）：實驗](images/AzureLabs-Lab7-22.png)
 
 11. 您將訓練**多元羅吉斯回歸**演算法，根據一天中的一小時和日期來預測最銷售的**產品**。 這不在本檔的討論範圍內，以說明 Azure Machine Learning studio 所提供之不同演算法的詳細資料，但您可以從[Machine Learning 演算法](https://docs.microsoft.com/azure/machine-learning/studio/algorithm-cheat-sheet)功能提要中深入瞭解
 
@@ -256,7 +256,7 @@ Machine Learning 演算法的工作方式之一是分析現有的資料，然後
 
 13. 將輸出從**多元羅吉斯回歸**的底部，連接到**訓練模型**專案的左上角輸入。
 
-    ![Machine Learning Studio：實驗](images/AzureLabs-Lab7-23.png)
+    ![Machine Learning Studio （傳統）：實驗](images/AzureLabs-Lab7-23.png)
 
 14. 在左側面板中的實驗專案清單中，展開 [ **Machine Learning** ] > [**分數**]，然後將 [**評分模型**] 專案拖曳到畫布上。
 
@@ -264,60 +264,60 @@ Machine Learning 演算法的工作方式之一是分析現有的資料，然後
 
 16. 將 [**分割資料**] 的右下方輸出連接到 [**評分模型**] 專案的右上方輸入。
 
-    ![Machine Learning Studio：實驗](images/AzureLabs-Lab7-24.png)
+    ![Machine Learning Studio （傳統）：實驗](images/AzureLabs-Lab7-24.png)
 
 17. 在左側面板中的**實驗**專案清單中，展開  **Machine Learning**  > **評估**，然後將 **評估模型** 專案拖曳到畫布上。
 
 18. 將**評分模型**的輸出連接到**評估模型**的左上角輸入。
 
-    ![Machine Learning Studio：實驗](images/AzureLabs-Lab7-25.png)
+    ![Machine Learning Studio （傳統）：實驗](images/AzureLabs-Lab7-25.png)
 
 19. 您已經建立您的第一個 Machine Learning 實驗。 您現在可以儲存並執行實驗。 在頁面底部的功能表中，按一下 [**儲存**] 按鈕以儲存您的實驗，然後按一下 [**執行**] 以啟動實驗。
 
-    ![Machine Learning Studio：實驗](images/AzureLabs-Lab7-26.png)
+    ![Machine Learning Studio （傳統）：實驗](images/AzureLabs-Lab7-26.png)
 
 20. 您可以在畫布右上角查看實驗的**狀態**。 請稍候片刻，讓實驗完成。
 
     > 如果您有大型（實際）的資料集，可能是實驗需要數小時才會執行。
 
-    ![Machine Learning Studio：實驗](images/AzureLabs-Lab7-27.png)
+    ![Machine Learning Studio （傳統）：實驗](images/AzureLabs-Lab7-27.png)
 
 21. 以滑鼠右鍵按一下畫布中的 [**評估模型**] 專案，然後從內容功能表中，將滑鼠停留在 [**評估結果**] 上，然後選取 [**視覺化**]。
 
-    ![Machine Learning Studio：實驗](images/AzureLabs-Lab7-28.png)
+    ![Machine Learning Studio （傳統）：實驗](images/AzureLabs-Lab7-28.png)
 
 22. 將會顯示評估結果，顯示預測的結果與實際結果。 這會使用先前分割的原始資料集30% 來評估模型。 您可以看到結果並不大，在理想的情況下，每個資料列中的最大數目就是資料行中反白顯示的專案。
 
-    ![Machine Learning Studio：實驗](images/AzureLabs-Lab7-29.png)
+    ![Machine Learning Studio （傳統）：實驗](images/AzureLabs-Lab7-29.png)
 
 23. 關閉**結果**。
 
 24. 若要使用您剛定型的 Machine Learning 模型，您必須將它公開為**Web 服務**。 若要這樣做，請在頁面底部的功能表中按一下 [**設定 Web 服務**] 功能表項目，然後按一下 [預測性**Web 服務**]。
 
-    ![Machine Learning Studio：實驗](images/AzureLabs-Lab7-30.png)
+    ![Machine Learning Studio （傳統）：實驗](images/AzureLabs-Lab7-30.png)
 
 25. 將建立新的索引標籤，併合並定型模型來建立新的 web 服務。 
 
 26. 在頁面底部的功能表中，按一下 [**儲存**]，然後按一下 [**執行**]。 您會在實驗畫布右上角看到更新的狀態。
 
-    ![Machine Learning Studio：實驗](images/AzureLabs-Lab7-31.png)
+    ![Machine Learning Studio （傳統）：實驗](images/AzureLabs-Lab7-31.png)
 
 27. 完成執行後，[**部署 Web 服務**] 按鈕將會出現在頁面底部。 您已準備好部署 web 服務。 在頁面底部的功能表中，按一下 [**部署 Web 服務**（傳統）]。
 
-    ![Machine Learning Studio：實驗](images/AzureLabs-Lab7-32.png)
+    ![Machine Learning Studio （傳統）：實驗](images/AzureLabs-Lab7-32.png)
 
     > 您的瀏覽器可能會提示您允許快顯視窗，這是您應該**允許**的，但如果 [部署] 頁面未顯示，您可能需要再次按下 [**部署 Web 服務**]。 
 
 28. 建立實驗之後，您會被重新導向至**儀表板**頁面，其中會顯示您的**API 金鑰**。 將它複製到「記事本」，很快就會在您的程式碼中需要它。 記下 API 金鑰之後，請按一下金鑰底下 [**預設端點**] 區段中的 [**要求/回應**] 按鈕。
 
-    ![Machine Learning Studio：實驗](images/AzureLabs-Lab7-33.png)
+    ![Machine Learning Studio （傳統）：實驗](images/AzureLabs-Lab7-33.png)
 
     > [!NOTE] 
     > 如果您按一下此頁面中的 [測試]，您將能夠輸入輸入資料並查看輸出。 輸入 [**日**] 和 [**小時**]。 將 [**產品**] 專案保留空白。 然後按一下 [**確認**] 按鈕。 頁面底部的輸出會顯示 JSON，代表每個產品的可能性。
 
-29. 隨即會開啟新的網頁，並顯示有關 Machine Learning Studio 所需之要求結構的指示和一些範例。 將此頁面中顯示的**要求 URI**複製到您的 [記事本]。
+29. 隨即會開啟新的網頁，顯示有關 Machine Learning Studio （傳統）所需之要求結構的指示和一些範例。 將此頁面中顯示的**要求 URI**複製到您的 [記事本]。
 
-    ![Machine Learning Studio：實驗](images/AzureLabs-Lab7-34.png)
+    ![Machine Learning Studio （傳統）：實驗](images/AzureLabs-Lab7-34.png)
 
 您現在已建立機器學習系統，以根據歷程記錄購買資料，提供最有可能的產品銷售，並與一年中的一天和一天的時間產生關聯。
 
@@ -648,9 +648,9 @@ Machine Learning 演算法的工作方式之一是分析現有的資料，然後
     > [!IMPORTANT]
     > 請務必將 [**主要金鑰**] 和 [**要求-回應] 端點**從 Machine Learning 入口網站插入此處的變數。 下列影像顯示您從何處取得金鑰和端點。 
     >  
-    > ![Machine Learning Studio：實驗](images/AzureLabs-Lab7-53-1.png)
+    > ![Machine Learning Studio （傳統）：實驗](images/AzureLabs-Lab7-53-1.png)
     >
-    > ![Machine Learning Studio：實驗](images/AzureLabs-Lab7-53-2.png)
+    > ![Machine Learning Studio （傳統）：實驗](images/AzureLabs-Lab7-53-2.png)
 
 8.  將此程式碼插入**Start （）** 方法中。 當類別初始化時，會呼叫**Start （）** 方法：
 

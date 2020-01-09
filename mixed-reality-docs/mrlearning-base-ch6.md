@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: b033e4f9a379fb1778da3d94da70262e073d141b
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 3127ffceea08202fe9d978ad77f8fddb6fba60a3
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926513"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334371"
 ---
 # <a name="7-creating-a-lunar-module-sample-application"></a>7. 建立農曆模組範例應用程式
 
@@ -25,9 +25,7 @@ ms.locfileid: "73926513"
 - 使用 rigidbody 物理特性和力
 - 探索工具提示的使用
 
-## <a name="instructions"></a>指示
-
-### <a name="configuring-the-lunar-module"></a>設定登月小艇
+## <a name="configuring-the-lunar-module"></a>設定登月小艇
 
 在本節中，我們將介紹建立範例體驗所需的各種元件。
 
@@ -38,7 +36,7 @@ ms.locfileid: "73926513"
 
     ![Lesson6 Chapter1 Step1im](images/Lesson6_Chapter1_step1im.PNG)
 
-    如果您展開階層中的 [Rocket Launcher_Tutorial 遊戲] 物件，並進一步展開 [陰曆] 模組物件，您會發現有數個子物件具有稱為「x-光線」的材質。 「X 光線」材質允許使用稍微半透明的色彩，做為使用者的放置提示。 
+    如果您展開階層中的 [Rocket Launcher_Tutorial 遊戲] 物件，並進一步展開 [陰曆] 模組物件，您會發現有數個子物件具有稱為「x-光線」的材質。 「X 光線」材質允許使用稍微半透明的色彩，做為使用者的放置提示。
 
     ![第6課 Chapter1.txt Noteaim](images/Lesson6_Chapter1_noteaim.PNG)
 
@@ -81,7 +79,7 @@ ms.locfileid: "73926513"
 
     ![Lesson6 Chapter1 Step6im](images/Lesson6_Chapter1_step6im.PNG)
 
-### <a name="lunar-module-parts-overview"></a>陰曆模組元件總覽
+## <a name="lunar-module-parts-overview"></a>陰曆模組元件總覽
 
 陰曆模組元件父物件是使用者與之互動物件的集合。 下列清單會提供遊戲物件名稱，加上括弧中標示為名稱的場景：
 
@@ -106,7 +104,7 @@ ms.locfileid: "73926513"
 
 音訊來源會自動抓取。
 
-### <a name="configuring-the-placement-hints-button"></a>設定放置提示按鈕
+## <a name="configuring-the-placement-hints-button"></a>設定放置提示按鈕
 
 在[第2課](mrlearning-base-ch2.md)中，您已瞭解如何放置和設定按鈕來執行一些動作，例如變更專案的色彩，或讓它在推送時播放音效。 我們將會繼續使用那些原則來設定按鈕以切換放置提示。
 
@@ -120,7 +118,7 @@ ms.locfileid: "73926513"
 
     ![第6課 Chapter3 Step2im](images/Lesson6_Chapter3_step2im.PNG)
 
-### <a name="configuring-the-reset-button"></a>設定重設按鈕
+## <a name="configuring-the-reset-button"></a>設定重設按鈕
 
 在某些情況下，使用者會犯錯誤，不小心將物件擲回，或只是想要重設體驗。 [重設] 按鈕會新增重新開機體驗的功能。
 
@@ -137,7 +135,7 @@ ms.locfileid: "73926513"
     >[!NOTE]
     >請注意，根據預設，GameObject. BroadcastMessage 會設定為 ResetPlacement。 這會為 RocketLauncher_Tutorial 的每個子物件廣播名為 ResetPlacement 的訊息。 具有 ResetPlacement （）方法的任何物件，都會藉由重設其位置來回應該訊息。
 
-### <a name="configuring-the-launch-button"></a>設定 [啟動] 按鈕
+## <a name="configuring-the-launch-button"></a>設定 [啟動] 按鈕
 
 本節說明如何設定 [啟動] 按鈕，讓使用者按下按鈕，並將 [陰曆] 模組啟動到空間。
 
@@ -161,6 +159,6 @@ ms.locfileid: "73926513"
 
     ![第6課 Chapter5 Step6im](images/Lesson6_Chapter5_step6im.PNG)
 
-### <a name="congratulations"></a>恭喜！
+## <a name="congratulations"></a>恭喜您
 
 您已完全設定此應用程式。 現在，當您按下 [播放] 時，您可以完整組合陰曆模組、切換提示、啟動陰曆模組，然後將它重設為重新啟動。

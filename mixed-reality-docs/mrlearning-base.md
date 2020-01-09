@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 19456a9cc33dc86b1e31323547aa2685949d8044
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: a311fbe377e4a2654c8905276417cf1104fc4754
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438396"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334345"
 ---
 # <a name="1-overview-and-objectives"></a>1. 總覽和目標
 
@@ -40,11 +40,14 @@ ms.locfileid: "73438396"
 
 ## <a name="before-you-start"></a>開始之前
 
-### <a name="prerequisites"></a>必要條件
+### <a name="prerequisites"></a>先決條件
 
 * [已安裝正確工具](install-the-tools.md)的 WINDOWS 10 電腦
 * Windows 10 SDK 10.0.18362.0 或更新版本
 * 一些基本C#的程式設計能力
 * [為開發設定](using-visual-studio.md#enabling-developer-mode)的 HoloLens 2 裝置
+
+>[!IMPORTANT]
+>本教學課程系列需要<a href="https://unity3d.com/get-unity/download/archive" target="_blank">unity 2019.1</a> ，而建議的版本是 unity 2019.1.14。 這會取代上述所連結之必要條件中所述的任何 Unity 版本需求或建議。
 
 [下一課： 2. 初始化您的專案和第一個應用程式](mrlearning-base-ch1.md)

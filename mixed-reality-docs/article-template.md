@@ -6,12 +6,12 @@ ms.author: randyw
 ms.date: 10/22/2019
 ms.topic: article
 keywords: 無 (none)
-ms.openlocfilehash: b443e48f96b6fb978fdf487c6eea7e6c804c9e70
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 314d07292a679eefb22583d522ff9bd4182a0832
+ms.sourcegitcommit: 270ca09ec61e1153a83cf44942d7ba3783ef1805
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73439549"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75694012"
 ---
 # <a name="title-be-as-specific-as-possible-use-human-terms"></a>標題（盡可能明確，請使用人類詞彙） 
 
@@ -31,14 +31,14 @@ ms.locfileid: "73439549"
     <col width="22%" />
 </colgroup>
 <tr>
-     <td><strong>特徵</strong></td>
+     <td><strong>功能</strong></td>
      <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 代)</strong></a></td>
      <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
      <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
 </tr>
 <tr>
      <td>主題事項或文章標題</td>
-     <td>不支援 ❌</td>
+     <td>❌ 未支援</td>
      <td>✔️ 建議使用</td>
      <td>✔️ 建議使用</td>
 </tr>
@@ -92,7 +92,7 @@ ms.locfileid: "73439549"
 ---
 
 
-### <a name="3-columns"></a>3個數據行
+### <a name="3-columns"></a>3 欄
 
 Les nabis photorealism 動作繪製色彩欄位繪製 stuckism 國際 cloisonnism、remodernism socialist 逼真幾何抽象概念美工、secularism structuralism neo-minimalism mannerism。<br>
 
@@ -192,7 +192,7 @@ Les nabis photorealism 動作繪製色彩欄位繪製 stuckism 國際 cloisonnis
 
 Neo-異地 humanism structuralism 文章 impressionism 骰子 brücke existentialism superflat，Neo-dada idealism gründerzeit。
 
-| 長途電話 | 視角 | Size |
+| 距離 | 視角 | Size |
 |---------|---------|---------|
 | 45cm  | 不小於2° | 1.6 x 1.6 cm |
 
@@ -237,7 +237,4 @@ Neo-異地 humanism structuralism 文章 impressionism 骰子 brücke existentia
 
 * [相關文章1名稱](design.md)
 * [相關文章2名稱](design.md)
-* [相關文章3名稱](design.md)
-
-
-
+* [相關文章3名稱-特定區段的連結](design.md#what-are-the-core-concepts-of-an-experience)

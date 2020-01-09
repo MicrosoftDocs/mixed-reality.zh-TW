@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 7/29/2019
 ms.topic: article
 keywords: OpenXR，Khronos，BasicXRApp，Mixed Reality OpenXR 開發人員入口網站，DirectX，原生，原生應用程式，自訂引擎，中介軟體
-ms.openlocfilehash: aa91918e20b4276b7453bae1a05ad18df9d8ab0e
-ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
+ms.openlocfilehash: 8140b9d3a9e1f4d2d7a25b77a48b39cb765cf6d9
+ms.sourcegitcommit: 270ca09ec61e1153a83cf44942d7ba3783ef1805
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74491129"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75694132"
 ---
 # <a name="openxr"></a>OpenXR
 
@@ -83,7 +83,7 @@ OpenXR API 會使用載入器，將您的應用程式直接連接到頭戴式裝
 
 您可以在 BasicXrApp 的[OpenXRProgram .cpp](https://github.com/microsoft/OpenXR-SDK-VisualStudio/blob/master/samples/BasicXrApp/OpenXrProgram.cpp)檔案中查看下列最佳做法的範例。 開頭的 Run （）函式會從初始化到事件和轉譯迴圈，捕獲一般的 OpenXR 應用程式代碼流程。
 
-### <a name="select-a-pixel-format"></a>選取像素格式
+### <a name="select-a-swapchain-format"></a>選取 swapchain 格式
 
 一律使用 `xrEnumerateSwapchainFormats`列舉支援的像素格式，並從應用程式支援的執行時間選擇第一個色彩和深度像素格式，因為這是執行時間慣用的。 請注意，在 HoloLens 2 上，`DXGI_FORMAT_B8G8R8A8_UNORM_SRGB` 和 `DXGI_FORMAT_D16_UNORM` 通常是達到更佳轉譯效能的第一種選擇。 在桌上型電腦上執行的 VR 耳機上，此喜好設定可能會不同。  
   
@@ -148,9 +148,7 @@ HoloLens 2 的 GPU 電源有限，可讓應用程式轉譯內容和針對單一�
 ### <a name="support-mixed-reality-capture"></a>支援混合現實 capture
 
 雖然 HoloLens 2 的主要顯示器會使用加總的環境混合，當使用者起始[混合現實捕捉](mixed-reality-capture-for-developers.md)時，應用程式的轉譯內容會與環境影片串流進行 Alpha 混合。
-若要在混合現實 capture 影片中達到最佳的視覺品質，最好是在投影層的 `layerFlags`中設定 `XR_COMPOSITION_LAYER_BLEND_TEXTURE_SOURCE_ALPHA_BIT`。  
-
-**效能警告：** 省略單一預測層上的 `XR_COMPOSITION_LAYER_BLEND_TEXTURE_SOURCE_ALPHA_BIT` 旗標，將會導致執行時間後置處理，這會造成顯著的效能影響。
+若要在混合現實 capture 影片中達到最佳的視覺品質，最好是在投影層的 `layerFlags`中設定 `XR_COMPOSITION_LAYER_BLEND_TEXTURE_SOURCE_ALPHA_BIT`。
 
 ### <a name="avoid-quad-layers"></a>避免四層
 
@@ -163,8 +161,7 @@ HoloLens 2 的 GPU 電源有限，可讓應用程式轉譯內容和針對單一�
 在 HoloLens 2 上，有幾種方式可以透過 `xrEndFrame` 提交組合資料，而這會導致後續處理，因而影響效能。
 若要避免效能 penalities，請使用下列特性[提交單一 `XrCompositionProjectionLayer`](#use-a-single-projection-layer) ：
 * [使用材質陣列 swapchain](#render-with-texture-array-and-vprt)
-* [使用主要色彩 swapchain 格式](#select-a-pixel-format)
-* [設定材質-來源-Alpha 混合旗標](#support-mixed-reality-capture)
+* [使用主要色彩 swapchain 格式](#select-a-swapchain-format)
 * [使用建議的視圖維度](#render-with-recommended-rendering-parameters-and-frame-timing)
 * 請勿設定 `XR_COMPOSITION_LAYER_UNPREMULTIPLIED_ALPHA_BIT` 旗標
 * 將 `XrCompositionLayerDepthInfoKHR` `minDepth` 設定為 0.0 f，並將 `maxDepth` 為 1.0 f
@@ -193,7 +190,7 @@ OpenXR 規格定義了擴充機制，可讓執行時間實施者公開超出<a h
 
 雖然其中一些延伸模組可能會以廠商專屬的 MSFT 延伸模組開頭，但 Microsoft 和其他 OpenXR 執行時間廠商會共同合作，為許多功能領域設計跨廠商的 EXT 或 KHR 延伸模組。  這可讓您針對這些功能所撰寫的程式碼在執行時間廠商之間具有可攜性，就像使用核心規格一樣。
 
-## <a name="troubleshooting"></a>疑難排解
+## <a name="troubleshooting"></a>[疑難排解]
 
 以下是 Windows Mixed Reality OpenXR 執行時間的一些疑難排解秘訣。  如果您有任何關於<a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html" target="_blank">OpenXR 1.0 規格</a>的其他問題，請造訪<a href="https://community.khronos.org/c/openxr" target="_blank">Khronos OpenXR 論壇</a>或<a href="https://khr.io/slack" target="_blank">#openxr 頻道的時差</a>。
 

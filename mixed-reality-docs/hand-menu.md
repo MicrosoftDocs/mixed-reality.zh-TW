@@ -6,12 +6,12 @@ ms.author: nobarr
 ms.date: 08/27/2019
 ms.topic: article
 keywords: 手形、功能表、按鈕、快速存取、版面配置
-ms.openlocfilehash: c53fdc4ea6f3243cf906ee1916a9c234d0fce6ca
-ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
+ms.openlocfilehash: c0e1800be69a15706e17f40b1601fc79d05e5d75
+ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74143183"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75723257"
 ---
 # <a name="hand-menu"></a>手形功能表
 
@@ -26,15 +26,15 @@ ms.locfileid: "74143183"
 ---
 
 ## <a name="behavior-best-practices"></a>行為最佳做法
-**答：將按鈕數目保持**在最小的範圍 . 因為手鎖住的功能表和眼睛之間的距離，以及使用者傾向于隨時專注于相對較小的視覺區域（視覺的 attentional 錐形大約是10度），我們建議讓按鈕數目保持小。 根據我們的探索，即使使用者將其手移至 FOV 的中心，還有三個按鈕的資料行，都能妥善運作。 
+**答：將按鈕的數目保持**在最小的範圍 . 因為手鎖住的功能表和眼睛之間的距離很近，而且使用者傾向于隨時專注于相對較小的視覺區域（視覺效果的 attentional 錐形大約是10度），我們建議您將按鈕數目保持為小。 根據我們的探索，即使使用者將其手移至 FOV 的中心，還有三個按鈕的資料行，都能妥善運作。 
 
 **B. 利用快顯功能表進行快速動作：** 引發 arm 並維護位置，很容易就會造成 arm 疲勞。 針對需要短暫互動的功能表，使用手動鎖定的方法。 如果您的功能表很複雜，而且需要擴充的互動時間，請考慮改為使用世界鎖定或主體鎖定。 
 
-**C. 按鈕/面板角度：** 功能表應朝向相反的肩和中間點：這可讓自然手移動以相反的方式與功能表互動，並避免觸及時的任何笨拙或不舒服的位置。滑鼠鍵. 
+**C. 按鈕/面板的角度：** 功能表應該會以相反的肩和中間來表示：這可讓自然手移動與功能表進行互動，並在觸及按鈕時避免任何難以使用或不舒服的位置。 
 
 **D. 考慮支援一次性或無人參與**的作業：不假設這兩個使用者都一律可以使用。 當一或兩個手無法使用時，請考慮各種內容，並確定您的設計帳戶適用于這些情況。 若要支援單次功能表，您可以嘗試將功能表位置從 [手動鎖定] 轉換為 [世界鎖定] （當手翻轉時）。 針對無人參與的情況，請考慮使用語音命令來叫用快顯功能表按鈕。
 
-**E. 兩步驟的**叫用：如果您只使用 palm 作為事件來觸發快顯功能表，當您不需要時，可能會不小心出現這種情況，因為人們會刻意移動，以進行通訊和物件操作和不小心。 如果您的應用程式中遇到誤報，請考慮新增額外的步驟（除了 palm 事件以外），以叫用右手邊的功能表，例如完全開啟的手指。
+**E. 兩步驟的**叫用：如果您只使用 palm 作為事件來觸發快顯功能表，它可能不會在您不需要時意外出現（誤報），因為人們會刻意（用於通訊和物件操作）和無意地移動其手。 如果您的應用程式中遇到誤報，請考慮新增額外的步驟（除了 palm 事件以外），以叫用右手邊的功能表，例如完全開啟的手指。
 
 **F. 避免在手腕（系統首頁按鈕）附近新增按鈕：** 如果功能表按鈕太靠近 [首頁] 按鈕，則在與 [快顯功能表] 互動時，可能會意外觸發。
 
@@ -127,7 +127,7 @@ ms.locfileid: "74143183"
 
 ---
 
-## <a name="hand-menu-in-mrtkmixed-reality-toolkit-for-unity"></a>適用于 Unity 的 MRTK （混合現實工具組）中的手形功能表
+## <a name="hand-menu-in-mrtk-mixed-reality-toolkit-for-unity"></a>適用于 Unity 的 MRTK （混合現實工具組）中的手形功能表
 **[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 提供快顯功能表的腳本和範例場景。 HandConstraintPalmUp 規劃求解腳本可讓您使用各種可設定的選項，輕鬆地將任何物件附加至手中。
 
 * [具有 HandConstraint 和 HandConstraintPalmUp 的 MRTK-手形功能表](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_Solver.md#hand-menu-with-handconstraint-and-handconstraintpalmup)
@@ -141,20 +141,20 @@ ms.locfileid: "74143183"
 ## <a name="see-also"></a>請參閱
 
 * [游標](cursors.md)
-* [手型光線](point-and-commit.md)
+* [手部光線](point-and-commit.md)
 * [Button](button.md)
 * [可互動的物件](interactable-object.md)
 * [週框方塊和應用程式列](app-bar-and-bounding-box.md)
-* [處理](direct-manipulation.md)
+* [操作](direct-manipulation.md)
 * [手部功能表](hand-menu.md)
 * [近端功能表](near-menu.md)
 * [物件集合](object-collection.md)
 * [語音命令](voice-input.md)
 * [鍵盤](keyboard.md)
-* [並用](tooltip.md)
-* [石板](slate.md)
+* [工具提示](tooltip.md)
+* [平板](slate.md)
 * [滑桿](slider.md)
-* [器](shader.md)
+* [著色器](shader.md)
 * [佈告板和常駐標籤](billboarding-and-tag-along.md)
 * [顯示進度](progress.md)
 * [表面磁性](surface-magnetism.md)

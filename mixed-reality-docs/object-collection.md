@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，控制項，設計
-ms.openlocfilehash: 9a111fcbe4c49972cc5ef22fb647f89544188af5
-ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
+ms.openlocfilehash: ec41cfad77617a90d02e7b23a2334249aa430190
+ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74143151"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75723217"
 ---
 # <a name="object-collection"></a>物件集合
 
@@ -48,7 +48,7 @@ ms.locfileid: "74143151"
 
 ---
 
-## <a name="object-collection-in-mrtkmixed-reality-toolkit-for-unity"></a>適用于 Unity 的 MRTK （混合現實工具組）中的物件集合
+## <a name="object-collection-in-mrtk-mixed-reality-toolkit-for-unity"></a>適用于 Unity 的 MRTK （混合現實工具組）中的物件集合
 
 * [MRTK-物件集合](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ObjectCollection.html)
 
@@ -61,20 +61,20 @@ ms.locfileid: "74143151"
 ## <a name="see-also"></a>請參閱
 
 * [游標](cursors.md)
-* [手型光線](point-and-commit.md)
+* [手部光線](point-and-commit.md)
 * [Button](button.md)
 * [可互動的物件](interactable-object.md)
 * [週框方塊和應用程式列](app-bar-and-bounding-box.md)
-* [處理](direct-manipulation.md)
+* [操作](direct-manipulation.md)
 * [手部功能表](hand-menu.md)
 * [近端功能表](near-menu.md)
 * [物件集合](object-collection.md)
 * [語音命令](voice-input.md)
 * [鍵盤](keyboard.md)
-* [並用](tooltip.md)
-* [石板](slate.md)
+* [工具提示](tooltip.md)
+* [平板](slate.md)
 * [滑桿](slider.md)
-* [器](shader.md)
+* [著色器](shader.md)
 * [佈告板和常駐標籤](billboarding-and-tag-along.md)
 * [顯示進度](progress.md)
 * [表面磁性](surface-magnetism.md)

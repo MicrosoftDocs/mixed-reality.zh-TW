@@ -6,12 +6,12 @@ ms.author: adlinv
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，billboarding，加上標記
-ms.openlocfilehash: ff2b1ce20174b1b9aecbb90b1d1dc3e8896b3761
-ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
+ms.openlocfilehash: 24c4ca8bdc3c6ea1081311102204d4a7f5a95425
+ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74143135"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75723177"
 ---
 # <a name="billboarding-and-tag-along"></a>Billboarding 和標記-沿著
 
@@ -46,8 +46,8 @@ Billboarding 是一種行為概念，可套用至混合現實中的物件。 具
 
 ---
 
-## <a name="billboarding-and-tag-along-in-mrtkmixed-reality-toolkit-for-unity"></a>適用于 Unity 的 Billboarding 和標記-MRTK （混合現實工具組）
-**[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 提供 Billboarding 和標記的行為腳本。 只要將 Billboard.cs 腳本指派給任何物件，就可以加入 billboarding 行為，讓物件永遠都是您的臉。 若要加入標記的行為，請使用 RadialView.cs 腳本。 您可以調整各種選項，例如 lerping 時間、距離和程度。
+## <a name="billboarding-and-tag-along-in-mrtk-mixed-reality-toolkit-for-unity"></a>適用于 Unity 的 Billboarding 和標記-MRTK （混合現實工具組）
+**[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 提供 Billboarding 和標記的行為腳本。 只要將 Billboard.cs 腳本指派給任何物件，就可以加入 billboarding 行為，讓物件永遠都是您的臉。 若要新增標記和行為，請使用 RadialView.cs 腳本。 您可以調整各種選項，例如 lerping 時間、距離和程度。
 
 * [MRTK-星形視圖規劃求解](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html#radialview)
 * [MRTK-佈告欄腳本](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Scripts/Utilities/Billboard.cs)
@@ -60,20 +60,20 @@ Billboarding 是一種行為概念，可套用至混合現實中的物件。 具
 ## <a name="see-also"></a>請參閱
 
 * [游標](cursors.md)
-* [手型光線](point-and-commit.md)
+* [手部光線](point-and-commit.md)
 * [Button](button.md)
 * [可互動的物件](interactable-object.md)
 * [週框方塊和應用程式列](app-bar-and-bounding-box.md)
-* [處理](direct-manipulation.md)
+* [操作](direct-manipulation.md)
 * [手部功能表](hand-menu.md)
 * [近端功能表](near-menu.md)
 * [物件集合](object-collection.md)
 * [語音命令](voice-input.md)
 * [鍵盤](keyboard.md)
-* [並用](tooltip.md)
-* [石板](slate.md)
+* [工具提示](tooltip.md)
+* [平板](slate.md)
 * [滑桿](slider.md)
-* [器](shader.md)
+* [著色器](shader.md)
 * [佈告板和常駐標籤](billboarding-and-tag-along.md)
 * [顯示進度](progress.md)
 * [表面磁性](surface-magnetism.md)

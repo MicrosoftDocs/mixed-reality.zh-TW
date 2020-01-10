@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，設計，控制項，ui，ux
-ms.openlocfilehash: 4befaa6f55bff6a820c976db969fdad7b64a2214
-ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
+ms.openlocfilehash: d028b8717dae0e04a9a1104a8a4b7803023334ef
+ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74143255"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75723207"
 ---
 # <a name="progress-indicator"></a>進度列指示器
 
@@ -37,7 +37,7 @@ ms.locfileid: "74143255"
         *影像： HoloLens 中的進度列範例*
     :::column-end:::
         :::column:::
-        ![空間](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        HoloLens](images/640px-progressbar.jpg) 中 ![的進度列範例<br>
     :::column-end:::
 :::row-end:::
@@ -54,7 +54,7 @@ ms.locfileid: "74143255"
         *影像： HoloLens 中的進度環形範例*
     :::column-end:::
         :::column:::
-        ![空間](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        HoloLens 中 ![的進度環形範例](images/640px-progressring.jpg)<br>
     :::column-end:::
 :::row-end:::
@@ -71,7 +71,7 @@ ms.locfileid: "74143255"
         *影像：在 HoloLens 中使用自訂網格範例的進度*
     :::column-end:::
         :::column:::
-        ![空間](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        使用 HoloLens 中的自訂網格範例 ![進度](images/640px-progresscustom.jpg)<br>
     :::column-end:::
 :::row-end:::
@@ -88,7 +88,7 @@ ms.locfileid: "74143255"
 
 ---
 
-## <a name="progress-indicator-in-mrtkmixed-reality-toolkit-for-unity"></a>適用于 Unity 的 MRTK （混合現實工具組）中的進度指標
+## <a name="progress-indicator-in-mrtk-mixed-reality-toolkit-for-unity"></a>適用于 Unity 的 MRTK （混合現實工具組）中的進度指標
 
 * [MRTK-進度指標 prefabs](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Prefabs/ProgressIndicators)
 * [MRTK-場景轉換服務](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Extensions/SceneTransitionService/SceneTransitionServiceOverview.html)
@@ -101,20 +101,20 @@ ms.locfileid: "74143255"
 ## <a name="see-also"></a>請參閱
 
 * [游標](cursors.md)
-* [手型光線](point-and-commit.md)
+* [手部光線](point-and-commit.md)
 * [Button](button.md)
 * [可互動的物件](interactable-object.md)
 * [週框方塊和應用程式列](app-bar-and-bounding-box.md)
-* [處理](direct-manipulation.md)
+* [操作](direct-manipulation.md)
 * [手部功能表](hand-menu.md)
 * [近端功能表](near-menu.md)
 * [物件集合](object-collection.md)
 * [語音命令](voice-input.md)
 * [鍵盤](keyboard.md)
-* [並用](tooltip.md)
-* [石板](slate.md)
+* [工具提示](tooltip.md)
+* [平板](slate.md)
 * [滑桿](slider.md)
-* [器](shader.md)
+* [著色器](shader.md)
 * [佈告板和常駐標籤](billboarding-and-tag-along.md)
 * [顯示進度](progress.md)
 * [表面磁性](surface-magnetism.md)

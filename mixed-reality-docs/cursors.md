@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: HoloLens （第1代），HoloLens 2，混合現實，游標，目標，注視，手勢
-ms.openlocfilehash: 719e7a573e8c8bc682ec0f960d9f3c8f8c8e5a4a
-ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
+ms.openlocfilehash: 969906cb09e100dbdd289d78baba722a4bd32537
+ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74105745"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75723237"
 ---
 # <a name="cursors"></a>游標
 
@@ -34,7 +34,7 @@ ms.locfileid: "74105745"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>特徵</strong></td>
+        <td><strong>功能</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 代)</strong></a></td>
         <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
@@ -156,12 +156,12 @@ ms.locfileid: "74105745"
 
 ---
 
-## <a name="cursor-in-mrtkmixed-reality-toolkit-for-unity"></a>適用于 Unity 的 MRTK （混合現實工具組）中的游標
-根據預設， **[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 會提供游標 Prefab （[DefaultCursor. prefab](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Prefabs/Cursors)），其具有與 shell 的系統資料指標相同的視覺狀態。 它會在 MRTK 的輸入設定檔的 [指標] 底下指派。 您可以為您的經驗取代/自訂此資料指標。 針對眼睛追蹤輸入的經驗，MRTK 也提供 EyeGazeCursor，其中具有微妙的視覺效果可將干擾降至最低。
+## <a name="cursor-in-mrtk-mixed-reality-toolkit-for-unity"></a>適用于 Unity 的 MRTK （混合現實工具組）中的游標
+根據預設， [MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)會提供游標 Prefab （[DefaultCursor. prefab](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Prefabs/Cursors)），其具有與 shell 的系統資料指標相同的視覺狀態。 它是在 MRTK 輸入設定檔的 [指標] 下進行指派。 您可以為您的經驗取代/自訂此資料指標。 針對眼睛追蹤輸入的經驗，MRTK 也提供 EyeGazeCursor，其中具有微妙的視覺效果可將干擾降至最低。
 
-* [MRTK-指標設定檔](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/MixedRealityConfigurationGuide.html#pointer-configuration)
-* [MRTK-輸入系統](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Overview.html)
-* [MRTK-指標](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Pointers.html)
+* [MRTK - 指標設定檔](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/MixedRealityConfigurationGuide.html#pointer-configuration)
+* [MRTK - 輸入系統](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Overview.html)
+* [MRTK - 指標](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Pointers.html)
 
 
 ---

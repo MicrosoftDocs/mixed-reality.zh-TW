@@ -6,12 +6,12 @@ ms.author: hakons
 ms.date: 10/03/2019
 ms.topic: article
 keywords: ggv、語音、cortana、語音、輸入
-ms.openlocfilehash: 7264b0b8882928f64860bc5a30b97683306cb19c
-ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
+ms.openlocfilehash: f2ae18d4063c7c4a63346a1202cacaa7fbbdf959
+ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74105777"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75723187"
 ---
 # <a name="voice-input"></a>語音輸入
 
@@ -42,7 +42,7 @@ ms.locfileid: "74105777"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>特徵</strong></td>
+        <td><strong>功能</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 代)</strong></a></td>
         <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
@@ -121,7 +121,7 @@ ms.locfileid: "74105777"
         *影像：使用者可以在應用程式行中顯示 [調整] 命令，以調整應用程式的位置*
     :::column-end:::
         :::column:::
-        ![空間](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
         ![查看應用程式視窗或全息影像時，使用者可以說出他們在應用程式行中看到的「調整」命令，以調整應用程式在世界中的位置](images/microphone-600px.png)<br>
     :::column-end:::
 :::row-end:::
@@ -296,7 +296,7 @@ HoloLens 2 也支援其他語言。 請記住，即使已安裝多個鍵盤，�
 
 ---
 
-## <a name="voice-input-in-mrtkmixed-reality-toolkit-for-unity"></a>適用于 Unity 的 MRTK （混合現實工具組）中的語音輸入
+## <a name="voice-input-in-mrtk-mixed-reality-toolkit-for-unity"></a>適用于 Unity 的 MRTK （混合現實工具組）中的語音輸入
 有了 **[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** ，您就可以輕鬆地在任何物件上指派語音命令。 使用 MRTK 的**語音輸入設定檔**來定義您的關鍵字。 藉由指派**SpeechInputHandler**腳本，您可以讓任何物件回應語音輸入設定檔中所定義的關鍵字。 SpeechInputHandler 也提供語音確認標籤，以改善使用者的信心。
 
 * [MRTK-Voice 命令](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Speech.html)

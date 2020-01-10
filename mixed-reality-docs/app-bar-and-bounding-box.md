@@ -6,12 +6,12 @@ ms.author: adlinv
 ms.date: 06/07/2019
 ms.topic: article
 keywords: Windows Mixed Reality，應用程式行，周框方塊
-ms.openlocfilehash: e4f519cba459efac25f6c1370b07fcda4def30a1
-ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
+ms.openlocfilehash: dab41207c2558fe8bb3fe07fca666cb2668f4e45
+ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74143168"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75723197"
 ---
 # <a name="bounding-box-and-app-bar"></a>周框方塊和應用程式行
 ![界限是混合現實中物件操作的標準介面。](images/UX/UX_Hero_BoundingBox.jpg)<br>
@@ -29,7 +29,7 @@ ms.locfileid: "74143168"
         *影片迴圈：透過周框方塊縮放物件*
     :::column-end:::
         :::column:::
-        ![空間](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        ![HoloLens 透過周框方塊縮放物件的觀點](images/HoloLens2_BoundingBox.gif)<br>
     :::column-end:::
 :::row-end:::
@@ -44,7 +44,7 @@ ms.locfileid: "74143168"
         *影片迴圈：透過周框方塊旋轉物件*
     :::column-end:::
         :::column:::
-        ![空間](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        ![HoloLens 透過周框方塊旋轉物件](images/HoloLens2_BoundingBox_Rotate.gif)<br>
     :::column-end:::
 :::row-end:::
@@ -59,7 +59,7 @@ ms.locfileid: "74143168"
         *影片迴圈：根據距離周框方塊的視覺效果意見反應範例*
     :::column-end:::
         :::column:::
-        ![空間](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        ![視覺效果意見反應](images/HoloLens2_Proximity.gif)<br>
     :::column-end:::
 :::row-end:::
@@ -84,7 +84,7 @@ ms.locfileid: "74143168"
         *影片迴圈：四處流覽全像投影，應用程式行如下*
     :::column-end:::
         :::column:::
-        ![空間](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        ![四處流覽全像投影。 應用程式行如下。](images/HoloLens2_AppBarFollowing.gif)<br>
     :::column-end:::
 :::row-end:::
@@ -92,7 +92,7 @@ ms.locfileid: "74143168"
 <br>
 
 
-## <a name="bounding-box-in-mrtkmixed-reality-toolkit-for-unity"></a>適用于 Unity 的 MRTK （混合現實工具組）中的周框方塊
+## <a name="bounding-box-in-mrtk-mixed-reality-toolkit-for-unity"></a>適用于 Unity 的 MRTK （混合現實工具組）中的周框方塊
 **[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 會針對周框方塊和應用程式行提供腳本和 prefabs。 只要將 BoundingBox.cs 腳本指派至任何物件，就可以新增周框方塊。
 
 * [MRTK-周框方塊](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html)
@@ -106,20 +106,20 @@ ms.locfileid: "74143168"
 ## <a name="see-also"></a>請參閱
 
 * [游標](cursors.md)
-* [手型光線](point-and-commit.md)
+* [手部光線](point-and-commit.md)
 * [Button](button.md)
 * [可互動的物件](interactable-object.md)
 * [週框方塊和應用程式列](app-bar-and-bounding-box.md)
-* [處理](direct-manipulation.md)
+* [操作](direct-manipulation.md)
 * [手部功能表](hand-menu.md)
 * [近端功能表](near-menu.md)
 * [物件集合](object-collection.md)
 * [語音命令](voice-input.md)
 * [鍵盤](keyboard.md)
-* [並用](tooltip.md)
-* [石板](slate.md)
+* [工具提示](tooltip.md)
+* [平板](slate.md)
 * [滑桿](slider.md)
-* [器](shader.md)
+* [著色器](shader.md)
 * [佈告板和常駐標籤](billboarding-and-tag-along.md)
 * [顯示進度](progress.md)
 * [表面磁性](surface-magnetism.md)

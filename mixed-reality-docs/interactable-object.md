@@ -6,12 +6,12 @@ ms.author: jennyk
 ms.date: 06/06/2019
 ms.topic: article
 keywords: 混合的現實、控制項、互動、ui、ux
-ms.openlocfilehash: 73c8a3ce9e01f580ecbae23f2178871642c4540e
-ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
+ms.openlocfilehash: 87979d2d7b7de4a384b42b5059239e9b830a92e8
+ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74143263"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75723227"
 ---
 # <a name="interactable-object"></a>可互動物件
 
@@ -140,8 +140,8 @@ HoloLens 2 支援明確的手寫追蹤輸入，可讓您與物件互動。 如�
 
 :::row:::
     :::column:::
-        ![預設](images/640px-interactibleobject-pressablebutton-default.jpg)<br>
-        **預設**<br>
+        ![預設值](images/640px-interactibleobject-pressablebutton-default.jpg)<br>
+        **預設值**<br>
     :::column-end:::
     :::column:::
         ![滑鼠停留](images/640px-interactibleobject-pressablebutton-hover.jpg)<br>
@@ -157,8 +157,8 @@ HoloLens 2 支援明確的手寫追蹤輸入，可讓您與物件互動。 如�
         顯示 ripple 效果。
     :::column-end:::
     :::column:::
-        ![按](images/640px-interactibleobject-pressablebutton-press.jpg)<br>
-        **出版**<br>
+        ![按鍵](images/640px-interactibleobject-pressablebutton-press.jpg)<br>
+        **按鍵**<br>
         移動 front 盤子。
     :::column-end:::
 :::row-end:::
@@ -175,7 +175,7 @@ HoloLens 2 支援明確的手寫追蹤輸入，可讓您與物件互動。 如�
         *影片迴圈：根據距離周框方塊的視覺效果意見反應範例*
     :::column-end:::
         :::column:::
-        ![空間](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        ![視覺效果意見反應](images/HoloLens2_Proximity.gif)<br>
     :::column-end:::
 :::row-end:::
@@ -225,7 +225,7 @@ HoloLens 2 支援明確的手寫追蹤輸入，可讓您與物件互動。 如�
 
 ### <a name="target-size-for-direct-hand-interaction"></a>直接操作的目標大小
 
-| 長途電話 | 視角 | Size |
+| 距離 | 視角 | Size |
 |---------|---------|---------|
 | 45cm  | 不小於2° | 1.6 x 1.6 cm |
 
@@ -238,7 +238,7 @@ HoloLens 2 支援明確的手寫追蹤輸入，可讓您與物件互動。 如�
 
 建立直接互動的按鈕時，我們建議使用較大大小的最小值 3.2 x 3.2 cm，以確保有足夠的空間可包含圖示，而且可能會有一些文字。
 
-| 長途電話 | 最小大小 |
+| 距離 | 最小大小 |
 |---------|---------|
 | 45cm  | 3.2 x 3.2 cm |
 
@@ -248,7 +248,7 @@ HoloLens 2 支援明確的手寫追蹤輸入，可讓您與物件互動。 如�
 <br>
 
 ### <a name="target-size-for-hand-ray-or-gaze-interaction"></a>右手光線或注視互動的目標大小
-| 長途電話 | 視角 | Size |
+| 距離 | 視角 | Size |
 |---------|---------|---------|
 | 2m  | 不小於1° | 3.5 x 3.5 cm |
 
@@ -261,7 +261,7 @@ HoloLens 2 支援明確的手寫追蹤輸入，可讓您與物件互動。 如�
 ---
 
 
-## <a name="interactable-object-in-mrtkmixed-reality-toolkit-for-unit"></a>適用于 Unit 的 MRTK （混合現實工具組）中的可互動物件
+## <a name="interactable-object-in-mrtk-mixed-reality-toolkit-for-unity"></a>適用于 Unity 的 MRTK （混合現實工具組）中的可互動物件
 
 在 **[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 中，您可以使用腳本[**可互動**](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Scripts)，讓物件回應各種類型的輸入互動狀態。 它支援各種類型的主題，可讓您藉由控制物件屬性（例如色彩、大小、材質和著色器）來定義視覺狀態。
 
@@ -281,20 +281,20 @@ MixedRealityToolkit 的標準著色器提供各種選項，例如**近光源**�
 ## <a name="see-also"></a>請參閱
 
 * [游標](cursors.md)
-* [手型光線](point-and-commit.md)
+* [手部光線](point-and-commit.md)
 * [Button](button.md)
 * [可互動的物件](interactable-object.md)
 * [週框方塊和應用程式列](app-bar-and-bounding-box.md)
-* [處理](direct-manipulation.md)
+* [操作](direct-manipulation.md)
 * [手部功能表](hand-menu.md)
 * [近端功能表](near-menu.md)
 * [物件集合](object-collection.md)
 * [語音命令](voice-input.md)
 * [鍵盤](keyboard.md)
-* [並用](tooltip.md)
-* [石板](slate.md)
+* [工具提示](tooltip.md)
+* [平板](slate.md)
 * [滑桿](slider.md)
-* [器](shader.md)
+* [著色器](shader.md)
 * [佈告板和常駐標籤](billboarding-and-tag-along.md)
 * [顯示進度](progress.md)
 * [表面磁性](surface-magnetism.md)

@@ -1,23 +1,23 @@
 ---
 title: 器
-description: ''
+description: MRTK Standard 著色器提供各種類型的視覺效果，可與全息影像搭配使用。
 author: cre8ivepark
 ms.author: dongpark
 ms.date: 11/01/2019
 ms.topic: article
 keywords: 混合的現實、控制項、互動、ui、ux
-ms.openlocfilehash: 23371ae5d70e5e792415fd25c0d58def0a7cefbb
-ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
+ms.openlocfilehash: 4d95e335b3f7020766beae916423d0588ee66572
+ms.sourcegitcommit: 270ca09ec61e1153a83cf44942d7ba3783ef1805
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74143268"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75694162"
 ---
 # <a name="shader"></a>器
 
 ![器](images/UX/UX_Hero_StandardShader.jpg)
 
-因為全像攝影物件會與環境中的實體實體混合，所以在混合現實中提供視覺提示是很重要的。 MRTK 標準著色器提供各種類型的視覺效果，可與全息影像搭配使用。 MRTK 標準陰影系統利用單一、彈性的著色器，可達成類似 Unity 標準著色器的視覺效果、執行流暢的設計系統原則，並在混合現實裝置上保持高效能。
+因為全像攝影物件會與環境中的實體實體混合，所以在混合現實中提供視覺提示是很重要的。 MRTK Standard 著色器提供各種類型的視覺效果，可與全息影像搭配使用。 MRTK 標準陰影系統利用單一、彈性的著色器，其可達成類似 Unity 標準著色器的視覺效果、實行[流暢的設計系統原則](https://www.microsoft.com/design/fluent/#/)，並在混合現實裝置上保持高效能。
 <br>
 
 ## <a name="examples-of-visual-effects-using-mrtk-standard-shader"></a>使用 MRTK 標準著色器的視覺效果範例 
@@ -32,9 +32,11 @@ ms.locfileid: "74143268"
     :::column-end:::
 :::row-end:::
 
+<br>
+
 ---
 
-## <a name="mrtk-standard-shader-in-mrtkmixed-reality-toolkit-for-unity"></a>適用于 Unity 的 MRTK （混合現實工具組）中的 MRTK 標準著色器
+## <a name="mrtk-standard-shader-in-mrtk-mixed-reality-toolkit-for-unity"></a>適用于 Unity 的 MRTK （混合現實工具組）中的 MRTK 標準著色器
 
 * [MRTK-標準著色器](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_MRTKStandardShader.html)
 
@@ -43,21 +45,21 @@ ms.locfileid: "74143268"
 
 ---
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [游標](cursors.md)
-* [手型光線](point-and-commit.md)
+* [手部光線](point-and-commit.md)
 * [Button](button.md)
 * [可互動的物件](interactable-object.md)
 * [週框方塊和應用程式列](app-bar-and-bounding-box.md)
-* [處理](direct-manipulation.md)
+* [操作](direct-manipulation.md)
 * [手部功能表](hand-menu.md)
 * [近端功能表](near-menu.md)
 * [物件集合](object-collection.md)
 * [語音命令](voice-input.md)
 * [鍵盤](keyboard.md)
-* [並用](tooltip.md)
-* [石板](slate.md)
+* [工具提示](tooltip.md)
+* [平板](slate.md)
 * [滑桿](slider.md)
 * [佈告板和常駐標籤](billboarding-and-tag-along.md)
 * [顯示進度](progress.md)

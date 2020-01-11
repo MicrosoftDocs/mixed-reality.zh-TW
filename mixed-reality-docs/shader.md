@@ -6,18 +6,18 @@ ms.author: dongpark
 ms.date: 11/01/2019
 ms.topic: article
 keywords: 混合的現實、控制項、互動、ui、ux
-ms.openlocfilehash: 4d95e335b3f7020766beae916423d0588ee66572
-ms.sourcegitcommit: 270ca09ec61e1153a83cf44942d7ba3783ef1805
+ms.openlocfilehash: 8d0e01bb26347d95a80703884c4e9408653e03ed
+ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75694162"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901452"
 ---
 # <a name="shader"></a>器
 
 ![器](images/UX/UX_Hero_StandardShader.jpg)
 
-因為全像攝影物件會與環境中的實體實體混合，所以在混合現實中提供視覺提示是很重要的。 MRTK Standard 著色器提供各種類型的視覺效果，可與全息影像搭配使用。 MRTK 標準陰影系統利用單一、彈性的著色器，其可達成類似 Unity 標準著色器的視覺效果、實行[流暢的設計系統原則](https://www.microsoft.com/design/fluent/#/)，並在混合現實裝置上保持高效能。
+由於全息型物件與實際環境中的實體不同，因此請務必向使用者提供視覺提示。 MRTK Standard 著色器提供各種類型的視覺效果，可與全息影像搭配使用。 MRTK 標準陰影系統利用單一、彈性的著色器，可達成類似 Unity 標準著色器的視覺效果、實行[流暢的設計系統原則](https://www.microsoft.com/design/fluent/#/)，並在混合現實裝置上保持高效能。
 <br>
 
 ## <a name="examples-of-visual-effects-using-mrtk-standard-shader"></a>使用 MRTK 標準著色器的視覺效果範例 
@@ -45,7 +45,7 @@ ms.locfileid: "75694162"
 
 ---
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 * [游標](cursors.md)
 * [手部光線](point-and-commit.md)

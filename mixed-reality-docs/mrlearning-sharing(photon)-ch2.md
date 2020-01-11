@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 6840bcc583fe3e42dcaa6f42e71098f4dbe76f4c
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.openlocfilehash: 6abf4fa8fc87afc7007d6f7c76becfbd88ed7a12
+ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334311"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901509"
 ---
 # <a name="2-getting-unity-ready-for-development"></a>2. 讓 Unity 準備好進行開發
 
@@ -75,12 +75,16 @@ ms.locfileid: "75334311"
 
 12. 匯入列出的自訂套件：
 
-    a. [HoloLens2. GettingStarted 教學課程. 2.1.0.0. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.0/Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage)
+    a. [AzureSpatialAnchors. unitypackage](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v2.0.0/AzureSpatialAnchors.unitypackage) （版本2.0.0）
 
-    b。 [HoloLens2. MultiUserCapabilities 教學課程. 2.1.0.0. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/multi-user-capabilities-v2.1.0.0/Unity.HoloLens2.MultiUserCapabilities.Tutorials.Asset.2.1.0.0.unitypackage)
+    b。 [MRTK.HoloLens2 GettingStarted. 2.1.0.1. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.1/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.1.0.1.unitypackage)
+
+    c. [MRTK.HoloLens2 AzureSpatialAnchors. 2.1.0.1. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/azure-spatial-anchors-v2.1.0.1/MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpatialAnchors.2.1.0.1.unitypackage)
+
+    d. [MRTK.HoloLens2 MultiUserCapabilities. 2.1.0.1. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/multi-user-capabilities-v2.1.0.1/MRTK.HoloLens2.Unity.Tutorials.Assets.MultiUserCapabilities.2.1.0.1.unitypackage)
 
     >[!TIP]
-    >如果您已完成開始使用[教學](mrlearning-base-ch1.md)課程，您的電腦上可能仍會有名為 GettingStarted 的 unity 套件。 _2.1.0.0. unitypackage_ 。 若是如此，您可以略過下載上述步驟中所列的資產。
+    >如需有關如何為 Azure 空間錨點設定 Unity 專案的提醒，您可以參閱[azure](https://docs.microsoft.com/windows/mixed-reality/mrlearning-asa-ch1)空間錨點教學課程系列的「[開始使用 Azure 空間錨點](https://docs.microsoft.com/windows/mixed-reality/mrlearning-asa-ch1)」教學課程。
 
     ![Module3Chapter2step12im](images/module3chapter2step11im.PNG)
 

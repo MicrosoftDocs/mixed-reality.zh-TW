@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: Windows 裝置入口網站、HoloLens
-ms.openlocfilehash: 9bb8116330d88c532b955ef497d29fe98c86fddb
-ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
+ms.openlocfilehash: 17ed27653c8e3ec19c8c42b625fbd12cde2c5d84
+ms.sourcegitcommit: 5054f5c23965ce56599cb29ac9d9c6e48812dabd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75182018"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75623325"
 ---
 # <a name="using-the-windows-device-portal"></a>使用 Windows 裝置入口網站
 
@@ -75,7 +75,7 @@ ms.locfileid: "75182018"
 
 ## <a name="security-certificate"></a>安全性憑證
 
-如果您在瀏覽器中看見「憑證錯誤」，您可以透過和裝置建立信任關係來修正它。
+如果您在瀏覽器中看到「憑證錯誤」，您可以藉由建立與裝置的信任關係來修正此問題。
 
 每個 HoloLens 都會為其 SSL 連線產生唯一的自我簽署憑證。 根據預設，此憑證並不會受到您電腦的網頁瀏覽器信任，因此您可能會收到「憑證錯誤」。 藉由從您的 HoloLens 下載此憑證 (透過 USB 或您信任的 Wi-Fi 網路)，並在電腦上信任它，您便能安全地連線到您的裝置。
 1. **請確定您使用的是安全的網路（USB 或您信任的 Wi-fi 網路）。**
@@ -136,7 +136,7 @@ ms.locfileid: "75182018"
   * **顯示空間錨點**：顯示作用中應用程式的空間錨點。 您必須按一下 [更新] 按鈕，才能取得並重新整理錨點。
   * **顯示詳細資料**：隨著下列數據變更，即時顯示雙手位置、頭部旋轉四元數，以及裝置原點向量。
   * **全螢幕按鈕**：以全螢幕模式顯示 3D 檢視。 按下 ESC 以離開全螢幕檢視。
-* **表面重建**：按一下或點擊 [**更新**]，以顯示裝置的最新空間對應網格。 可能需要花費一些時間 (最多幾秒鐘) 才能完成完整作業。 網格不會在3D 視圖中自動更新，您必須手動按一下 [**更新**]，從裝置取得最新的網格。 按一下 [**儲存**]，將目前的空間對應網格儲存為電腦上的 obj 檔案。
+* **表面重建**：按一下或點擊 [**更新**]，以顯示裝置的最新空間對應網格。 完整階段可能需要一些時間才能完成（最多幾秒鐘）。 網格不會在3D 視圖中自動更新，您必須手動按一下 [**更新**]，從裝置取得最新的網格。 按一下 [**儲存**]，將目前的空間對應網格儲存為電腦上的 obj 檔案。
 * **空間錨點**：按一下 [更新] 以顯示或更新作用中應用程式的空間錨點。
 
 ### <a name="mixed-reality-capture"></a>混合實境擷取
@@ -170,7 +170,7 @@ ms.locfileid: "75182018"
 
 ### <a name="performance-tracing"></a>效能追蹤
 
-Microsoft HoloLens 上 Windows 裝置入口網站中的 ![效能追蹤](images/windows-device-portal-performance-tracing-page-1000px.png) 頁面<br>
+Microsoft HoloLens 上 Windows 裝置入口網站中的 ![效能追蹤] 頁面](images/windows-device-portal-performance-tracing-page-1000px.png)<br>
 *Microsoft HoloLens 上 Windows 裝置入口網站中的效能追蹤頁面*
 
 從 HoloLens 捕獲[Windows 效能錄製](https://msdn.microsoft.com/library/windows/hardware/hh448205.aspx)器（WPR）追蹤。
@@ -183,16 +183,14 @@ Microsoft HoloLens 上 Windows 裝置入口網站中的 ![效能追蹤](images/w
 
 ### <a name="processes"></a>處理程序
 
-Microsoft HoloLens 上 Windows 裝置入口網站中的 ![處理常式](images/windows-device-portal-running-processes-page-1000px.png)
- 頁面<br>
+Microsoft HoloLens 上 Windows 裝置入口網站中的 ![處理常式] 頁面](images/windows-device-portal-running-processes-page-1000px.png)<br>
 *Microsoft HoloLens 上 Windows 裝置入口網站中的 [進程] 頁面*
 
 顯示有關目前正在執行之處理程序的詳細資訊。 這包括 App 與系統處理程序。
 
 ### <a name="system-performance"></a>系統效能
 
-Microsoft HoloLens 上 Windows 裝置入口網站中的 ![系統效能](images/windows-device-portal-system-performance-page-1000px.png)
- 頁面<br>
+Microsoft HoloLens 上 Windows 裝置入口網站中的 ![系統效能] 頁面](images/windows-device-portal-system-performance-page-1000px.png)<br>
 *Microsoft HoloLens 上 Windows 裝置入口網站中的 [系統效能] 頁面*
 
 顯示系統診斷資訊的即時圖表，例如電源使用量、畫面播放速率與 CPU 負載。
@@ -209,7 +207,7 @@ Microsoft HoloLens 上 Windows 裝置入口網站中的 ![系統效能](images/w
 
 ### <a name="apps"></a>[應用程式]
 
-Microsoft HoloLens 上 Windows 裝置入口網站中的 ![應用程式](images/windows-device-portal-apps-page-1000px.png) 頁面<br>
+Microsoft HoloLens 上 Windows 裝置入口網站中的 ![應用程式] 頁面](images/windows-device-portal-apps-page-1000px.png)<br>
 *Microsoft HoloLens 上 Windows 裝置入口網站中的應用程式頁面*
 
 管理安裝在 HoloLens 上的應用程式。
@@ -228,7 +226,7 @@ Microsoft HoloLens 上 Windows 裝置入口網站中的 ![應用程式損毀傾�
 
 ### <a name="file-explorer"></a>檔案總管
 
-Microsoft HoloLens 上 Windows 裝置入口網站中的 ![檔案瀏覽器](images/fileexplorer-1000px.png) 頁面<br>
+Microsoft HoloLens 上 Windows 裝置入口網站中的 ![檔案瀏覽器] 頁面](images/fileexplorer-1000px.png)<br>
 *Microsoft HoloLens 上 Windows 裝置入口網站中的檔案瀏覽器頁面*
 
 使用 [檔案瀏覽器] 流覽、上傳和下載檔案。 您可以針對從 Visual Studio 或裝置入口網站部署的應用程式，使用 [檔] 資料夾、[圖片] 資料夾和 [本機儲存體] 資料夾中的檔案。
@@ -258,17 +256,16 @@ Microsoft HoloLens 上 Windows 裝置入口網站中的 ![記錄頁面](images/w
 * **自訂提供者**︰選取自訂 ETW 提供者與追蹤等級。 依 GUID 識別提供者。 不要在 GUID 中包含括號。
 * **啟用的提供者**：列出已啟用的提供者。 從下拉式清單選取提供者，然後按一下或點選 **\[停用\]** 以停止追蹤。 按一下或點選 **\[全部停止\]** 以暫停所有追蹤。
 * **提供者歷程記錄**︰顯示目前工作階段期間已啟用的 ETW 提供者。 按一下或點選 **\[啟用\]** 以啟用已停用的提供者。 按一下或點選 **\[清除\]** 以清除歷程記錄。
-* **事件**︰以表格格式列出所選提供者的 ETW 事件。 此表格會即時更新。 在資料表下方，按一下 [**清除**] 按鈕，以刪除資料表中的所有 ETW 事件。 這不會停用任何提供者。 您可以按一下 **\[儲存到檔案\]** ，將目前收集的 ETW 事件匯出到本機的 CSV 檔案。
+* **事件**︰以表格格式列出所選提供者的 ETW 事件。 此表格會即時更新。 在表格下方，按一下 **\[清除\]** 按鈕以刪除表格中的所有 ETW 事件。 這不會停用任何提供者。 您可以按一下 **\[儲存到檔案\]** ，將目前收集的 ETW 事件匯出到本機的 CSV 檔案。
 * **篩選**：可讓您篩選識別碼、關鍵字、層級、提供者名稱、工作名稱或文字所收集的 ETW 事件。 您可以將數個準則結合在一起：
-   1. 針對套用至相同屬性事件的準則，可以滿足其中任何一項準則。
-   2. 適用于套用至不同屬性事件的準則必須滿足所有條件
+   1. 針對套用至相同屬性的準則，會顯示可滿足任一準則的事件。
+   2. 針對套用至不同屬性的準則，事件必須滿足所有條件
 
 例如，您可以指定準則 *（[工作名稱] 包含 [Foo] 或 [橫條]）和（文字包含 [錯誤] 或 [警告]）*
 
 ### <a name="simulation"></a>模擬
 
-Microsoft HoloLens 上 Windows 裝置入口網站中的 ![模擬](images/windows-device-portal-simulation-page-1000px.png)
- 頁面<br>
+Microsoft HoloLens 上 Windows 裝置入口網站中的 ![模擬] 頁面](images/windows-device-portal-simulation-page-1000px.png)<br>
 *Microsoft HoloLens 上 Windows 裝置入口網站中的模擬頁面*
 
 允許您記錄並播放輸入資料以進行測試。
@@ -279,7 +276,7 @@ Microsoft HoloLens 上 Windows 裝置入口網站中的 ![模擬](images/windows
 
 ### <a name="networking"></a>網路
 
-Microsoft HoloLens 上 Windows 裝置入口網站中的 ![網路功能](images/windows-device-portal-networking-page-1000px.png) 頁面<br>
+Microsoft HoloLens 上 Windows 裝置入口網站中的 ![網路功能] 頁面](images/windows-device-portal-networking-page-1000px.png)<br>
 *Microsoft HoloLens 上 Windows 裝置入口網站中的網路功能頁面*
 
 管理 HoloLens 上的 Wi-fi 連線。

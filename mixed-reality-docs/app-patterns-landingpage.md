@@ -7,12 +7,12 @@ ms.author: grbury
 ms.date: 11/15/2019
 ms.topic: overview
 keywords: Windows Mixed Reality，設計，應用程式模式，控制項，樣式，HoloLens，互動，UX 元素，行為，建立區塊
-ms.openlocfilehash: 8dd90a555faea62f69750847ddd6e6df4d9d0314
-ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
+ms.openlocfilehash: 16a6c08230dbe16ebb04c39751cce306bbc57c2d
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539676"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334191"
 ---
 # <a name="ux-elements-overview"></a>UX 元素總覽
 
@@ -22,23 +22,19 @@ ms.locfileid: "74539676"
 
 :::row:::
     :::column:::
-       [![色彩、光線和材質](images/640px-fragments.jpg)](color,-light-and-materials.md) **[色彩、光線和材質](color,-light-and-materials.md)**
+       [![色彩、光線和材質](images/640px-fragments.png)](color,-light-and-materials.md) **[色彩、光線和材質](color,-light-and-materials.md)**
     :::column-end:::
     :::column:::
-       [![縮放](images/volvo-cars-microsoft-hololens-experience01-640px.jpg)](scale.md) **[比例](scale.md)**
-    :::column-end:::
-    :::column:::
-       [![空間音效](images/SpatialAudio.gif)](spatial-sound.md)聲音 **[空間音效](spatial-sound.md)**
+       [![縮放](images/volvo-cars-microsoft-hololens-experience01-640px.png)](scale.md) **[比例](scale.md)**
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-       [![印刷](images/text_in_unity_viewingangle.jpg)](typography.md)  **[](typography.md)樣式**
+       [![印刷](images/text_in_unity_viewingangle.png)](typography.md)  **[](typography.md)樣式**
     :::column-end:::
     :::column:::
-    :::column-end:::
-    :::column:::
+       [![聲](images/spatialaudio.png)](spatial-sound.md) **[音效](spatial-sound.md)**
     :::column-end:::
 :::row-end:::
 

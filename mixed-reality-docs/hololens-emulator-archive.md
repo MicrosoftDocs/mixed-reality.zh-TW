@@ -3,15 +3,15 @@ title: HoloLens 模擬器封存
 description: Microsoft HoloLens 模擬器的已發行組建清單。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 12/5/2019
+ms.date: 1/13/2020
 ms.topic: article
 keywords: HoloLens、模擬器、組建、版本
-ms.openlocfilehash: 3061c97e0e945bf9d829e2259533c7d32683d581
-ms.sourcegitcommit: f4812e1312c4751a22a2de56771c475b22a4ba24
+ms.openlocfilehash: 11fd763ec0832558a7a981dce34e0c6700d12a37
+ms.sourcegitcommit: 542a481b00b36d92633c64a6189ea989551bab3d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74940796"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76036329"
 ---
 # <a name="hololens-2-emulator-archive"></a>HoloLens 2 模擬器封存
 
@@ -19,6 +19,7 @@ HoloLens 模擬器（第1代）和 HoloLens 2 模擬器組建會並存安裝。 
 
 |  組建 |  發行日期 |  備註 | 
 |----------|----------|----------|
+|  [HoloLens 2 模擬器組建10.0.18362.1044](https://go.microsoft.com/fwlink/?linkid=2114824) | 2020年1月13日 | 2020年1月的 HoloLens 2 組建。  如需一般 HoloLens 2 版本資訊，請參閱 https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 模擬器組建10.0.18362.1042](https://go.microsoft.com/fwlink/?linkid=2112589) | 2019年12月6日 | 12月 2019 HoloLens 2 組建。  解決在顯示 [針腳] 面板時，在模擬器中執行的全像攝影應用程式不會意外暫停的問題。  使用認知模擬 API 或感知模擬控制應用程式時，可讓您連接到遠端模擬器。  如需一般 HoloLens 2 版本資訊，請參閱 https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 模擬器組建10.0.18362.1034](https://go.microsoft.com/fwlink/?linkid=2106649) | 2019 年 10 月 8 日 | 2019年10月的 HoloLens 2 組建。  當執行的版本比最新版本還舊時，模擬器將會提示更新為新的版本。  在 Windows 10 2019 更新或更新版本上使用模擬器時，新的 [NAT 設定] 索引標籤可讓開發人員針對在不同裝置上執行的應用程式開啟埠，以連接到模擬器，而 [更新] 索引標籤會顯示可用的模擬器版本。  如需其他詳細資料，請參閱[HoloLens 模擬器檔](using-the-hololens-emulator.md)。 |
 |  [HoloLens 2 模擬器組建10.0.18362.1031](https://go.microsoft.com/fwlink/?linkid=2103724) | 2019 年 9 月 11 日 | 2019年9月2日組建。  在 Windows 10 2019 更新或更新版本上執行模擬器時，[網路] 索引標籤會出現在 [模擬器工具] 視窗中。 |

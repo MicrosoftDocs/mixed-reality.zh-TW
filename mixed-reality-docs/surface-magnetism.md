@@ -6,18 +6,18 @@ ms.author: dongpark
 ms.date: 11/01/2019
 ms.topic: article
 keywords: 混合的現實、控制項、互動、ui、ux
-ms.openlocfilehash: bc9c8a36f110010270ca7dadbd8655f29af25f32
-ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
+ms.openlocfilehash: 9de4cc1a7a015f85be54b4b9ff6188a7e9d02e85
+ms.sourcegitcommit: 542a481b00b36d92633c64a6189ea989551bab3d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901440"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76036374"
 ---
 # <a name="surface-magnetism"></a>表面磁性
 
 ![表面磁性](images/UX/MRTK_SurfaceMagnetism.gif)
 
-使用 surface 磁性技術，您可以將全像攝影物件放在真實世界的實體表面上。 藉由將物件的方向與真實世界表面對齊，您就可以建立更多沉浸和自然的體驗。
+使用 surface 磁性技術，您可以將全像攝影物件放在真實世界的實體表面上。 藉由將物件的方向與真實世界表面對齊，您可以為使用者建立更多的沉浸式和自然體驗。
 
 <br>
 

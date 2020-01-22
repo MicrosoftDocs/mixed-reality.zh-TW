@@ -3,16 +3,16 @@ title: 使用 HoloLens 模擬器
 description: 使用 HoloLens 模擬器在沒有實體 HoloLens 的電腦上測試混合實境應用程式。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 12/5/2019
+ms.date: 1/13/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: HoloLens, 模擬器
-ms.openlocfilehash: 49b67530d46edda3c38efd74f03f730c2b2247bd
-ms.sourcegitcommit: f4812e1312c4751a22a2de56771c475b22a4ba24
+ms.openlocfilehash: 7cbddae7cc5088bc8be7187e8b2dff3249e9d265
+ms.sourcegitcommit: 542a481b00b36d92633c64a6189ea989551bab3d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74940886"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76036462"
 ---
 # <a name="using-the-hololens-emulator"></a>使用 HoloLens 模擬器
 
@@ -25,7 +25,7 @@ HoloLens 模擬器可讓您在沒有實體 HoloLens 的電腦上測試全像攝�
 下載 HoloLens 模擬器。
 
 版本： 
-* [HoloLens 2 模擬器 (2019 年 12 月更新)](https://go.microsoft.com/fwlink/?linkid=2112589)。
+* [HoloLens 2 模擬器 (2020 年 1 月更新)](https://go.microsoft.com/fwlink/?linkid=2114824)。
 * [HoloLens 模擬器 (第 1 代) 和全像攝影專案範本](https://go.microsoft.com/fwlink/?linkid=2065980)。
 
 您可以在 [HoloLens 模擬器封存](hololens-emulator-archive.md)頁面上找到版本資訊和 HoloLens 模擬器的舊版組建。
@@ -43,7 +43,7 @@ HoloLens 模擬器會使用 Hyper-V 與 RemoteFx (第 1 代模擬器) 或 GPU-PV
 * BIOS 必須[支援並啟用](https://blogs.technet.com/b/iftekhar/archive/2010/08/09/enable-hardware-settings-in-bios-to-run-hyper-v.aspx)下列功能：
    * 硬體協助虛擬化
    * 第二層位址轉譯 (SLAT)
-   * 硬體型資料執行防止 (DEP)。
+   * 硬體型資料執行防止 (DEP)
 * GPU 需求
    * DirectX 11.0 或更新版本
    * WDDM 1.2 圖形驅動程式或更新版本 (第 1 代)
@@ -87,10 +87,10 @@ HoloLens (第 1 代) 上的游標會跟著頭部的移動和旋轉。 在 HoloLe
 在主視窗右邊，找出模擬器工具列。 工具列包含下列按鈕：
 * ![關閉圖示](images/emulator-close.png) **關閉**：關閉模擬器。
 * ![最小化圖示](images/emulator-minimize.png) **最小化**：將模擬器視窗最小化。
-* ![Simulation_icon](images/emulator-simulation-panel.png) **模擬控制台**：顯示或隱藏用來設定和控制[模擬器輸入](#basic-emulator-input)的[模擬控制台](#simulation-control-panel)。
+* ![模擬圖示](images/emulator-simulation-panel.png) **模擬控制台**：顯示或隱藏用來設定和控制[模擬器輸入](#basic-emulator-input)的[模擬控制台](#simulation-control-panel)。
 * ![全螢幕圖示](images/emulator-fit.png) **全螢幕**：讓模擬器變成全螢幕大小。
 * ![縮放圖示](images/emulator-zoom.png) **縮放**：讓模擬器放大和縮小。
-* ![説明圖示](images/emulator-help.png)**説明**：開啟模擬器的說明。
+* ![說明圖示](images/emulator-help.png) **說明**：開啟模擬器的說明。
 * ![開啟裝置入口網站圖示](images/emulator-deviceportal.png) **開啟裝置入口網站**：在模擬器中開啟 HoloLens OS 的 Windows 裝置入口網站。
 * ![工具圖示](images/emulator-tools.png) **工具**：開啟 [其他工具]  窗格。
 
@@ -179,7 +179,7 @@ HoloLens (第 1 代) 上的游標會跟著頭部的移動和旋轉。 在 HoloLe
 * ![鍵盤和滑鼠輸入圖示](images/emulator-input.png) **鍵盤和滑鼠輸入**：鍵盤和滑鼠輸入會直接以鍵盤和滑鼠事件的形式傳遞到 HoloLens OS，彷彿您是與藍牙鍵盤和滑鼠連線。
 * ![全螢幕圖示](images/emulator-fit.png) **全螢幕**：讓模擬器變成全螢幕大小。
 * ![縮放圖示](images/emulator-zoom.png) **縮放**：讓模擬器放大和縮小。
-* ![説明圖示](images/emulator-help.png)**説明**：開啟模擬器的說明。
+* ![說明圖示](images/emulator-help.png) **說明**：開啟模擬器的說明。
 * ![開啟裝置入口網站圖示](images/emulator-deviceportal.png) **開啟裝置入口網站**：在模擬器中開啟 HoloLens OS 的 Windows 裝置入口網站。
 * ![工具圖示](images/emulator-tools.png) **工具**：開啟 [其他工具]  窗格。
 
@@ -243,7 +243,7 @@ HoloLens (第 1 代) 上的游標會跟著頭部的移動和旋轉。 在 HoloLe
 如果系統在模擬器啟動時停止回應，請停用模擬器圖形的硬體加速。
 * 在 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\XDE\10.0 建立名為 "DisableGPU" 的登錄 DWORD 值，並將其值設定為 1。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [進階 HoloLens 模擬器和混合實境模擬器輸入](advanced-hololens-emulator-and-mixed-reality-simulator-input.md)
 * [HoloLens 模擬器軟體的歷程記錄](hololens-emulator-archive.md)
 * [Unity 中的空間對應](spatial-mapping-in-unity.md)

@@ -7,12 +7,12 @@ ms.date: 1/13/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: HoloLens, 模擬器
-ms.openlocfilehash: 7cbddae7cc5088bc8be7187e8b2dff3249e9d265
-ms.sourcegitcommit: 542a481b00b36d92633c64a6189ea989551bab3d
+ms.openlocfilehash: 3d358cf72e8481d27ca41784bbc059c45e0da7ff
+ms.sourcegitcommit: cf3b662cfcf3fb05a554c302e595eb018f01abf2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76036462"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76521679"
 ---
 # <a name="using-the-hololens-emulator"></a>使用 HoloLens 模擬器
 
@@ -220,7 +220,7 @@ HoloLens (第 1 代) 上的游標會跟著頭部的移動和旋轉。 在 HoloLe
 
 您可能會在安裝模擬器時看到錯誤訊息，內容指出您需要「Visual Studio 2015 Update 1 和 UWP 工具 1.2 版」  。 此錯誤有三個可能的原因：
 * 您的 Visual Studio 版本不夠新 (Visual Studio 2019、Visual Studio 2017 或 Visual Studio 2015 Update 1 或更新版本)。 若要修正此問題，請安裝最新版的 Visual Studio。
-* 您有最新版的 Visual Studio，但未安裝通用 Windows 平台 (UWP) 工具。 這是 Visual Studio 的選用功能。
+* 您有最新版的 Visual Studio，但未安裝通用 Windows 平台 (UWP) 工具。 這是 Visual Studio 的選用功能。 若是 HoloLens (第 1 代)，您需要適用於 Visual Studio 2015 或 Visual Studio 2017 的 UWP 工具。
 
 在非專業版/企業版/教育版 SKU 的 Windows 上安裝模擬器時，或如果您尚未啟用 Hyper-V 功能，則可能也會看到錯誤。
 * 如需整組需求，請閱讀上面的[系統需求](#hololens-emulator-system-requirements)一節。

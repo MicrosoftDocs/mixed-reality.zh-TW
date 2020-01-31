@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: f1bcbbd368635c25207127142f21ff50f26a7b58
-ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
+ms.openlocfilehash: 56f7c767323285453cbeea9034f97a7c14e92359
+ms.sourcegitcommit: d73d9012941fa1b13eb7d2f45ccc481d6365827a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901484"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885632"
 ---
 # <a name="4-sharing-object-movements-with-multiple-users"></a>4. 與多個使用者共用物件移動
 
@@ -74,6 +74,12 @@ ms.locfileid: "75901484"
 11. 從 [Prefabs] 資料夾的 [專案] 面板中，將資料表 prefab 拖曳至您剛才建立的 "TableAnchor" 子物件。
 
     ![Module3Chapter4step8im](images/module3chapter4step8im.PNG)
+   
+12. 從 [資產]-[> 資源-> Prefabs] 開啟 [Rocket Launcher_Complete Variant] prefab。
+
+13. 選取 "LunarModule" GameObject，並新增下列兩個元件： "Photon Transform View" 和 "Photon View"。
+
+14. 在仍選取 "LunarModule" GameObject 的情況下，將「Photon 轉換視圖」元件拖曳至「Photon View」元件中的「觀察到的元件」位置。
 
 ## <a name="congratulations"></a>恭喜您
 

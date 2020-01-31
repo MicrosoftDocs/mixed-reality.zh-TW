@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 01/15/2020
 ms.topic: article
 keywords: edge、new、沉浸式 web、microsoft edge、browser、vr
-ms.openlocfilehash: e38cd83cef274281f0d36ae8714ea82aac5f0c65
-ms.sourcegitcommit: e9e4e722f4b607888ce69185f8bda9549ad526ad
+ms.openlocfilehash: 2576762786c9234377308f226036c830e01d9133
+ms.sourcegitcommit: d73d9012941fa1b13eb7d2f45ccc481d6365827a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76040995"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885617"
 ---
 # <a name="windows-mixed-reality-and-the-new-microsoft-edge"></a>Windows Mixed Reality 和新的 Microsoft Edge
 
@@ -50,7 +50,7 @@ Windows Mixed Reality VR 耳機客戶若想要在混合現實首頁中使用新�
 
 -   在混合現實入口網站關閉的情況下，在 Windows Mixed Reality 中開啟的網站將會遺失，但 Microsoft Edge Windows 仍會保留在混合現實首頁中的位置。
 -   未 hrtf 來自 Microsoft Edge windows 的音訊。
--   在 Windows Mixed Reality 中從 YouTube 開啟360影片可能會導致影片在耳機中失真。 重新整理 YouTube 影片的頁面並重新執行360影片*可能會*修正此問題，但我們也聽說過問題可能會持續發生的意見反應。
+-   **修正360檢視器延伸模組版本 2.3.8**：在 Windows Mixed Reality 中從 YouTube 開啟360影片可能會導致影片在耳機中失真。 重新開機邊緣應以不可見的程式更新360檢視器延伸模組，以解決此問題。 您可以在網址列中輸入 `edge://system/`，然後選取 [擴充功能] 旁的**展開**按鈕，以確認您擁有的延伸模組版本。
 -   在 Windows Mixed Reality 會話期間，虛擬監視器會在 [設定] 中顯示為一般實體監視器 > 系統 > 顯示。
 
 

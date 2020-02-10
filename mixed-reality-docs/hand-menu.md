@@ -6,12 +6,12 @@ ms.author: nobarr
 ms.date: 08/27/2019
 ms.topic: article
 keywords: 手形、功能表、按鈕、快速存取、版面配置
-ms.openlocfilehash: c0e1800be69a15706e17f40b1601fc79d05e5d75
-ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
+ms.openlocfilehash: 41a936d6041438c1cf1d8e4d4cc8cc30a5167491
+ms.sourcegitcommit: 40b37104b0aec4554502dcc7dc430e340a6fa46a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75723257"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77092052"
 ---
 # <a name="hand-menu"></a>手形功能表
 
@@ -26,7 +26,7 @@ ms.locfileid: "75723257"
 ---
 
 ## <a name="behavior-best-practices"></a>行為最佳做法
-**答：將按鈕的數目保持**在最小的範圍 . 因為手鎖住的功能表和眼睛之間的距離很近，而且使用者傾向于隨時專注于相對較小的視覺區域（視覺效果的 attentional 錐形大約是10度），我們建議您將按鈕數目保持為小。 根據我們的探索，即使使用者將其手移至 FOV 的中心，還有三個按鈕的資料行，都能妥善運作。 
+**答：將按鈕的數目保持**在最小的範圍 . 因為手鎖住的功能表和眼睛之間的距離很近，而且使用者傾向于隨時專注于相對較小的視覺區域（視覺效果的 attentional 錐形大約是10度），我們建議您將按鈕數目保持為小。 根據我們的探索，有三個按鈕的資料行，即使在使用者將其手移至 FOV 的中心時，也會將所有內容都保存在視野中（FOV）。 
 
 **B. 利用快顯功能表進行快速動作：** 引發 arm 並維護位置，很容易就會造成 arm 疲勞。 針對需要短暫互動的功能表，使用手動鎖定的方法。 如果您的功能表很複雜，而且需要擴充的互動時間，請考慮改為使用世界鎖定或主體鎖定。 
 
@@ -88,8 +88,8 @@ ms.locfileid: "75723257"
     :::column:::
         ![以上的手指](images/AboveFingers.gif)<br>
         **上手指**<br>
-        1-疲勞，因為有長時間的手中<br>
-        2-追蹤索引和中間接頭的問題
+        1-手疲勞，因為有長時間保留手<br>
+        2-追蹤索引和中間手指的問題
     :::column-end:::
 :::row-end:::
 
@@ -105,7 +105,7 @@ ms.locfileid: "75723257"
     :::column:::
         ![Top Fingertip](images/TopFingerTip.gif)**熱門 Fingertip**<br>
         1-手追蹤問題<br>
-        2-手疲勞保持在正常狀態<br>
+        2-從保持在正常狀態的手中疲勞<br>
         3-因手指之間的空間有限而導致按下其他手指的按鈕時發生問題
     :::column-end:::
 :::row-end:::
@@ -117,7 +117,7 @@ ms.locfileid: "75723257"
         ![Arm](images/BackOfTheArm.gif) 的背面<br>
         **Arm 背面**<br>
         1-不小心可以觸發 [首頁] 按鈕<br>
-        2-不是使用者的自然或舒適位置
+        2-不是自然或舒適的位置
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -138,7 +138,7 @@ ms.locfileid: "75723257"
 ---
 
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [游標](cursors.md)
 * [手部光線](point-and-commit.md)

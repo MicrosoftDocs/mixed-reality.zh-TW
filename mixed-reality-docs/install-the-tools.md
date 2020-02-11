@@ -7,12 +7,12 @@ ms.date: 2/11/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 最新狀態, 工具, 開始使用, 基本概念, unity, visual studio, 工具組
-ms.openlocfilehash: beed8b79ec5f157b7dfa7d55a5965daae8a83f03
-ms.sourcegitcommit: 542a481b00b36d92633c64a6189ea989551bab3d
+ms.openlocfilehash: d2b9a3718845e755a5cd8d9866ec9716ee0c0609
+ms.sourcegitcommit: 40b37104b0aec4554502dcc7dc430e340a6fa46a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76036378"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77092042"
 ---
 # <a name="install-the-tools"></a>安裝工具
 
@@ -45,7 +45,8 @@ ms.locfileid: "76036378"
     :::column:::
        [![Unity](images/unity_logo.png)](https://unity3d.com/unity/qa/lts-releases?version=2018.4)<br>
         **[Unity](https://unity3d.com/unity/qa/lts-releases?version=2018.4)**<br>
-        通常建議 Unity LTS (長期支援) 資料流作為用來啟動新專案的最佳版本，並更新為其最新修訂版本，以挑選最新穩定的修正程式。<br> <br>目前建議使用 **Unity 2018.4.x**，這是下方 MRTK v2 所需的 LTS 組建。<br> <br>有些開發人員可能想要針對特定理由使用不同的 Unity 版本。 針對這些情況，Unity 會支援不同版本的並排安裝。<br><br>[![MRTK](images/MRTKIcon.jpg)](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases)<br>**[混合實境工具組 (MRTK)](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases)**<br>適用於 Unity 的混合實境工具組 (MRTK) v2 是混合實境應用程式的開放原始碼跨平台開發套件。<br><br> MRTK v2 主要用於加速開發以 Microsoft HoloLens、Windows Mixed Reality 沈浸式 (VR) 頭戴裝置和 OpenVR 平台為目標的應用程式。 此專案的目標是減少建立混合實境應用程式的進入障礙，並且隨著進展回饋社群。
+        通常建議 Unity LTS (長期支援) 資料流作為用來啟動新專案的最佳版本，並更新為其最新修訂版本，以挑選最新穩定的修正程式。<br> <br>目前建議使用 **Unity 2018.4.x**，這是下方 MRTK v2 所需的 LTS 組建。<br> <br>有些開發人員可能想要針對特定理由使用不同的 Unity 版本。 針對這些情況，Unity 會支援不同版本的並排安裝。<br><br>
+        [![MRTK](images/final_mrtk-small_logo.png)](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases)<br>**[混合實境工具組 (MRTK)](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases)**<br>適用於 Unity 的混合實境工具組 (MRTK) v2 是混合實境應用程式的開放原始碼跨平台開發套件。<br><br> MRTK v2 主要用於加速開發以 Microsoft HoloLens、Windows Mixed Reality 沈浸式 (VR) 頭戴裝置和 OpenVR 平台為目標的應用程式。 此專案的目標是減少建立混合實境應用程式的進入障礙，並且隨著進展回饋社群。
     :::column-end:::
     :::column:::
         [![Unreal](images/Unreal_logo.png)](https://docs.unrealengine.com//GettingStarted/Installation/index.html)<br>
@@ -53,7 +54,7 @@ ms.locfileid: "76036378"
         Unreal Engine 4 是功能強大的開放原始碼建立引擎，具備對 C++ 和 Blueprints 混合實境的完整支援。<br> <br>HoloLens 對 Unreal Engine 4.23 的支援目前為搶鮮版。
     :::column-end:::
     :::column:::
-        [![DirectX 應用程式範本](images/DirectX_logo.png)](https://marketplace.visualstudio.com/items?itemName=WindowsMixedRealityteam.WindowsMixedRealityAppTemplatesVSIX)<br>
+        [![DirectX 應用程式範本](images/visualstudio-small_logo.png)](https://marketplace.visualstudio.com/items?itemName=WindowsMixedRealityteam.WindowsMixedRealityAppTemplatesVSIX)<br>
         **[DirectX](https://marketplace.visualstudio.com/items?itemName=WindowsMixedRealityteam.WindowsMixedRealityAppTemplatesVSIX)**<br>
         Windows Mixed Reality 應用程式範本提供了使用 DirectX 搭配原生 API 開始撰寫混合實境應用程式所需的所有基本知識。 包括轉譯迴圈 (或「遊戲迴圈」)、DeviceResources 協助程式類別，用來管理 Direct3D 裝置和內容，以及簡單的範例全像投影轉譯器。 適用於 Direct3D 11 和 Direct3D 12。
     :::column-end:::

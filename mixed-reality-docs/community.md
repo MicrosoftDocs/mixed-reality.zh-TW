@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 12/27/2019
 ms.topic: article
 keywords: 混合現實、社區、mvp、聚會
-ms.openlocfilehash: 486a099cb38a99975171cb7ec4a6754b1c0b682f
-ms.sourcegitcommit: 40b37104b0aec4554502dcc7dc430e340a6fa46a
-ms.translationtype: MT
+ms.openlocfilehash: 1b140fffdda91fca0a73ae6d4309c518efd6660c
+ms.sourcegitcommit: 567bcb7019820ac933834087d77b01d684b5cc7b
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77092065"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125191"
 ---
 # <a name="mixed-reality-community"></a>混合現實社區
 
@@ -19,7 +19,7 @@ ms.locfileid: "77092065"
 
 ## <a name="online-communities"></a>線上社區
 
-|群體名稱  |Link  |描述  |
+|群體名稱  |連結  |描述  |
 |---------|---------|---------|
 |**HoloDevelopers 時差**|[加入此處](https://aka.ms/holodevelopers)|HoloDevelopers 的時差一開始是建立成一個位置，讓開發人員探索 HoloLens 以深入瞭解、形成 friendships、建立信任，並取得彼此的協助。  它已成長為蓬勃發展的社區，但仍著重于這些，但發生的交談涵蓋了許多平臺、裝置和公司之間的混合現實。|
 |**Stack Overflow**|[MR 問題](https://stackoverflow.com/questions/tagged/windows-mixed-reality)||
@@ -31,11 +31,11 @@ ms.locfileid: "77092065"
 ## <a name="local-communities"></a>當地社區
 如果您執行的是您想要包含在此頁面上的社區，請在這裡傳送包含詳細資料的[電子郵件](mailto:jemccull@microsoft.com)
 
-|群體名稱|Country|城市|Link|
+|群體名稱|Country|城市|連結|
 |---------|---------|---------|---------|
 |**芝加哥 AWE Nite**|A|芝加哥|[連結](https://www.meetup.com/AWENiteChicago/)|
-<!-- 
-|Row2     |         |         |         |
+|**VR 菲律賓**|Philoppines|N/A|[連結](https://www.facebook.com/vrphilippines/)|
+<!--
 |Row3     |         |         |         |
 |Row4     |         |         |         |
 |Row5     |         |         |         |
@@ -90,6 +90,7 @@ Microsoft 最有價值專家（或 Mvp）是努力與社區分享其知識的技
 |---------|---------|---------|
 |![Aleksandr Kudishov](images/BiographyImages/aleksandr_kudishov_270_270.png)</br>**Aleksandr Kudishov**</br>*俄羅斯*|MVP 著重于遊戲開發 & Windows 開發、VR/AR/MR。 遊戲製造者、技術推廣人員、全像攝影開發人員、遊戲開發的 MSP 領導。|[電子郵件](mailto:draconifore@gmail.com)|
 |![Alexander Meijers](images/BiographyImages/AlexanderMeijers_270x270.png)</br>**Alexander Meijers**</br>*荷蘭、Rijswijk*|一位專業人員，激發、應採用及教授企業如何運用新興技術，利用虛擬、增強和混合的方式，在數位創新的旅程之下。 他在 SharePoint、Office 365 和 Microsoft Azure 上具有強大的背景，而且正在使用機器學習、人工智慧和認知服務。</br></br>其目標主要著重于製造、建築、產業、物流和 maritime/海外，其目標是要協助企業使用服務、應用程式和裝置（例如適用于 Azure 的 HoloLens 和 Kinect）來建立、改善、smartening 和縮短商務流程。|[電子郵件](mailto:alexander@appzinside.com)|
+|![Bronwen Zande](images/BiographyImages/BronwenZande_270x270.png)</br>**Bronwen Zande**</br>*布里斯班，澳大利亞*|Bronwen Zande 是靈魂解決方案的總監，將她的生活花費在開發人員以外的時間。</br></br>她是長期的 Microsoft 最有價值專家（MVP），已獲得 Windows 開發、新興體驗、Kinect、Bing 地圖服務及 Live Services 的 MVP 狀態。</br></br>Bronwen 是一項活躍的社區成員，其中涉及將它升階為參與 Imagine Cup，年輕人的流覽程式和技術會帶您到任何地方。 Bronwen 是布里斯班女孩萬能技客 Dinners、developer、Developer、developer 布里斯班（現在是 DDD 布里斯班）和多年澳大利亞啟動程式（適用于 SheEO）所成立的成員。</br></br>她是一個 avid 的旅行，而不在相機的鏡頭後方，通常可以在旅行時，在本機聚會或使用者群組中找到。|[電子郵件](mailto:bronwen@soulsolutions.com.au)
 |![Bruno Anjos](images/BiographyImages/BrunoAnjos_270x270.jpg)</br>**Bruno Anjos**</br>*巴西*|創新管理員，在數位頁面創新專案的管理和架構上工作，並提供 XR 增強的現實、混合和虛擬實境平臺的專業知識。 混合現實2020-2021 中的 Microsoft MVP，我是開發和規劃混合現實解決方案的專家，著重于 Microsoft HoloLens。 體驗遊戲和應用程式開發，以及資產建立與多媒體內容。|[電子郵件](mailto:brunof.anjos@outlook.com)|
 |![Clemente Giorio](images/BiographyImages/ClementeGiorio_270x270.png)</br>**Clemente Giorio**</br>*Torino、Italia*|「駭客，萬能技客，maker，研究員，創新者，講師，開發人員 。</br>讓科學和技術成為他的工作。</br>遵循許多社區，而且通常會積極地參與作為說話者和事件召集人，特別是：撰寫 Gym、DotNetPodcast、FabLabNapoli、DotNetCampania 和 HoloLens 開發人員的程式碼。</br>他的簽章內容不在火中，而是：人工智慧、電腦視覺、物聯網、自然使用者介面和混合現實。</br>Microsoft MVP 和 Intel 軟體創新者，可做為 Deltatre 的資深研究 & 開發工程師，他會在其中開發軟體原型。|[電子郵件](mailto:tinuxnet@hotmail.com)|
 |![Dave Smits](images/BiographyImages/DaveSmits_270x270.jpg)</br>**Dave Smits**</br>*Amersfoort，荷蘭*|自2014起，Dave Smits 會 Microsoft MVP，並在第一版啟動後使用 HoloLens。 為客戶提供數個專案，從簡單模型開始，到包含要用於全息影像之動作追蹤感應器的應用程式。|[電子郵件](mailto:dave@familie-smits.com)|
@@ -106,3 +107,5 @@ Microsoft 最有價值專家（或 Mvp）是努力與社區分享其知識的技
 |![Takahiro Miyaura](images/BiographyImages/TakahiroMiyaura_270x270.jpg)</br>**Takahiro Miyaura**</br>*Nara，日本*|我正以軟體工程師和 IT 產業的開發人員身分運作。 特別是，我已經進行 research XR （VR/AR/MR 等等）。 ）技術，以及可利用 XR 的各種技術（AI、IoT 等 ...）。|[電子郵件](mailto:cafe.kobe@gmail.com)|
 |![Tamás Deme](images/BiographyImages/tamasdeme_270.png)</br>**Tamás Deme**</br>*布達佩斯，匈牙利*|Tamás 是一種在以亞特蘭大為基礎的 VIM 上工作的混合現實工程師，他將從伺服器到耳機的裝置開發解決方案，以顯示您的全息影像。 他是 Windows 開發的5倍 Microsoft MVP，對開放原始碼專案、教學和指導感興趣。 您可以在[https://twitter.com/tomzorz_](https://twitter.com/tomzorz_)的[https://tomzorz.me](https://tomzorz.me)或 twitter 上找到他的線上。|[電子郵件](mailto:mixedreality@tomzorz.me)|
 |![Tatsuro Ueda](images/BiographyImages/TatsuroUeda_270x270.png)</br>**Tatsuro Ueda**</br>*Mie，日本*|5個國家（地區）中物理的 MR 教育者（包括 Afrika）、「感覺」物理|[電子郵件](mailto:tatsuro.ueda@feel-physics.jp)|
+|![聖文森特 Guigui](images/BiographyImages/VincentGuigui_270x270.jpg)</br>**聖文森特 Guigui**</br>*巴黎，法國*|我在 OCTO 技術上負責創新的互動部門，協助我們的客戶開發人類與數位世界之間的新互動。</br></br>我是創新和自然使用者介面的講師主題，討論沉浸式體驗（VR/AR/MR）、交談介面（Bot）和潛在的使用者介面未來 。</br></br>自2013起，Microsoft 已將其做為 Kinect、自然使用者介面和 HoloLens （最有價值的專業獎）的其中一位歐洲頂尖專家所授予。|[電子郵件](mailto:vincent@guigui.fr)|
+

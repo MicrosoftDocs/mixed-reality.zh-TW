@@ -6,159 +6,211 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 3127ffceea08202fe9d978ad77f8fddb6fba60a3
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.openlocfilehash: b5b1bd0115822449bd6098f78cfc94d909169737
+ms.sourcegitcommit: cc61f7ac08f9ac2f2f04e8525c3260ea073e04a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334371"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77129399"
 ---
-# <a name="7-creating-a-lunar-module-sample-application"></a><span data-ttu-id="1dbc2-105">7. 建立農曆模組範例應用程式</span><span class="sxs-lookup"><span data-stu-id="1dbc2-105">7. Creating a Lunar Module sample application</span></span>
+# <a name="7-creating-a-lunar-module-sample-application"></a><span data-ttu-id="1e50a-105">7. 建立農曆模組範例應用程式</span><span class="sxs-lookup"><span data-stu-id="1e50a-105">7. Creating a Lunar Module sample application</span></span>
+<!-- TODO: Rename to 'Creating a Rocket Launcher sample application' -->
 
-<span data-ttu-id="1dbc2-106">在本教學課程中，會將多個概念與前一課結合，以建立獨特的範例體驗。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-106">In this tutorial, multiple concepts are combined from previous lessons to create a unique sample experience.</span></span> <span data-ttu-id="1dbc2-107">您將瞭解如何建立一個陰曆模組元件應用程式，讓使用者必須使用追蹤的手來挑選陰曆模組零件，並嘗試組合陰曆模組。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-107">You will learn how to create a lunar module assembly application whereby a user needs to use tracked hands to pick up lunar module parts and attempt to assemble a lunar module.</span></span> <span data-ttu-id="1dbc2-108">我們會使用 [pressable] 按鈕來切換放置提示、重設我們的體驗，以及啟動我們的陰曆模組來進行空間！</span><span class="sxs-lookup"><span data-stu-id="1dbc2-108">We use pressable buttons to toggle placement hints, to reset our experience, and to launch our lunar module into space!</span></span> <span data-ttu-id="1dbc2-109">在未來的教學課程中，我們將繼續以這項體驗為基礎，其中包含強大的多使用者使用案例，可運用 Azure 空間錨點來進行空間對齊。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-109">In future tutorials, we will continue to build upon this experience, which includes powerful multi-user use cases that leverage Azure Spatial Anchors for spatial alignment.</span></span>
+<span data-ttu-id="1e50a-106">在本教學課程中，會將多個概念與前一課結合，以建立獨特的範例體驗。</span><span class="sxs-lookup"><span data-stu-id="1e50a-106">In this tutorial, multiple concepts are combined from previous lessons to create a unique sample experience.</span></span> <span data-ttu-id="1e50a-107">您將瞭解如何建立元件元件應用程式，讓使用者必須使用追蹤的手來挑選元件，並嘗試組合陰曆模組。</span><span class="sxs-lookup"><span data-stu-id="1e50a-107">You will learn how to create a part assembly application whereby a user needs to use tracked hands to pick up parts and attempt to assemble a lunar module.</span></span> <span data-ttu-id="1e50a-108">您將使用 [pressable] 按鈕來開啟和關閉放置提示、重設體驗，以及啟動農曆模組到空間中！</span><span class="sxs-lookup"><span data-stu-id="1e50a-108">You will use pressable buttons to toggle placement hints on and off, to reset the experience, and to launch the lunar module into space!</span></span>
 
-## <a name="objectives"></a><span data-ttu-id="1dbc2-110">目標</span><span class="sxs-lookup"><span data-stu-id="1dbc2-110">Objectives</span></span>
+<span data-ttu-id="1e50a-109">在未來的教學課程中，您將繼續以這項體驗為基礎，其中包含強大的多使用者使用案例，可運用 Azure 空間錨點進行空間對齊。</span><span class="sxs-lookup"><span data-stu-id="1e50a-109">In future tutorials, you will continue to build upon this experience, which includes powerful multi-user use cases that leverage Azure Spatial Anchors for spatial alignment.</span></span>
 
-- <span data-ttu-id="1dbc2-111">結合來自先前課程的多個概念以建立獨特體驗</span><span class="sxs-lookup"><span data-stu-id="1dbc2-111">Combine multiple concepts from previous lessons to create a unique experience</span></span>
-- <span data-ttu-id="1dbc2-112">了解如何切換物件</span><span class="sxs-lookup"><span data-stu-id="1dbc2-112">Learn how to toggle objects</span></span>
-- <span data-ttu-id="1dbc2-113">使用可點按的按鈕來觸發複雜事件</span><span class="sxs-lookup"><span data-stu-id="1dbc2-113">Trigger complex events using pressable buttons</span></span>
-- <span data-ttu-id="1dbc2-114">使用 rigidbody 物理特性和力</span><span class="sxs-lookup"><span data-stu-id="1dbc2-114">Use rigidbody physics and forces</span></span>
-- <span data-ttu-id="1dbc2-115">探索工具提示的使用</span><span class="sxs-lookup"><span data-stu-id="1dbc2-115">Explore the use of tool tips</span></span>
+## <a name="objectives"></a><span data-ttu-id="1e50a-110">目標</span><span class="sxs-lookup"><span data-stu-id="1e50a-110">Objectives</span></span>
 
-## <a name="configuring-the-lunar-module"></a><span data-ttu-id="1dbc2-116">設定登月小艇</span><span class="sxs-lookup"><span data-stu-id="1dbc2-116">Configuring the Lunar Module</span></span>
+* <span data-ttu-id="1e50a-111">結合來自先前課程的多個概念以建立獨特體驗</span><span class="sxs-lookup"><span data-stu-id="1e50a-111">Combine multiple concepts from previous lessons to create a unique experience</span></span>
+* <span data-ttu-id="1e50a-112">了解如何切換物件</span><span class="sxs-lookup"><span data-stu-id="1e50a-112">Learn how to toggle objects</span></span>
+* <span data-ttu-id="1e50a-113">使用可點按的按鈕來觸發複雜事件</span><span class="sxs-lookup"><span data-stu-id="1e50a-113">Trigger complex events using pressable buttons</span></span>
+* <span data-ttu-id="1e50a-114">使用 rigidbody 物理特性和力</span><span class="sxs-lookup"><span data-stu-id="1e50a-114">Use rigidbody physics and forces</span></span>
+* <span data-ttu-id="1e50a-115">探索工具提示的使用</span><span class="sxs-lookup"><span data-stu-id="1e50a-115">Explore the use of tool tips</span></span>
 
-<span data-ttu-id="1dbc2-117">在本節中，我們將介紹建立範例體驗所需的各種元件。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-117">In this section, we introduce the various components needed to create our sample experience.</span></span>
+## <a name="lunar-module-parts-overview"></a><span data-ttu-id="1e50a-116">陰曆模組元件總覽</span><span class="sxs-lookup"><span data-stu-id="1e50a-116">Lunar Module Parts overview</span></span>
+<!-- TODO: Rename to 'Implementing the part assembly functionality' -->
 
-1. <span data-ttu-id="1dbc2-118">將 [農曆模組元件] prefab 新增至您的基礎場景。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-118">Add the Lunar Module Assembly prefab to your base scene.</span></span> <span data-ttu-id="1dbc2-119">若要這麼做，請在 [專案] 索引標籤中，流覽至 [資產] > BaseModuleAssets > Prefabs。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-119">To do this, in the Project tab navigate to Assets > BaseModuleAssets > Prefabs.</span></span> <span data-ttu-id="1dbc2-120">您會看到兩個 rocket 啟動器 prefabs，將 Rocket Launcher_Tutorial prefab 拖曳到您的場景中，並依您想要的位置。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-120">You will see two rocket launcher prefabs, drag the Rocket Launcher_Tutorial prefab into your scene, and position as you wish.</span></span>
+<span data-ttu-id="1e50a-117">在本節中，您將建立一個簡單的部分元件挑戰，使用者的目標是要將在該資料表上散佈的五個部分放在農曆模組的正確位置。</span><span class="sxs-lookup"><span data-stu-id="1e50a-117">In this section, you will create a simple part assembly challenge where the user's goal is to place five parts that are spread out on the table at the correct location on the Lunar Module.</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="1dbc2-121">Rocket Launcher_Complete prefab 是已完成的啟動器，提供供參考之用。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-121">The Rocket Launcher_Complete prefab is the completed launcher, provided for reference.</span></span>
+<span data-ttu-id="1e50a-118">達成此目標所需採取的主要步驟如下：</span><span class="sxs-lookup"><span data-stu-id="1e50a-118">The main steps you will take to achieve this are:</span></span>
 
-    ![Lesson6 Chapter1 Step1im](images/Lesson6_Chapter1_step1im.PNG)
+1. <span data-ttu-id="1e50a-119">將 Rocket 啟動器 prefab 新增至場景</span><span class="sxs-lookup"><span data-stu-id="1e50a-119">Add the Rocket Launcher prefab to the scene</span></span>
+2. <span data-ttu-id="1e50a-120">啟用所有元件的物件操作</span><span class="sxs-lookup"><span data-stu-id="1e50a-120">Enable object manipulation for all the parts</span></span>
+3. <span data-ttu-id="1e50a-121">新增和設定元件元件示範（腳本）元件</span><span class="sxs-lookup"><span data-stu-id="1e50a-121">Add and configure the Part Assembly Demo (Script) component</span></span>
 
-    <span data-ttu-id="1dbc2-123">如果您展開階層中的 [Rocket Launcher_Tutorial 遊戲] 物件，並進一步展開 [陰曆] 模組物件，您會發現有數個子物件具有稱為「x-光線」的材質。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-123">If you expand the Rocket Launcher_Tutorial game object in your hierarchy and further expand the Lunar Module object, you find several child objects that have a material called "x-ray."</span></span> <span data-ttu-id="1dbc2-124">「X 光線」材質允許使用稍微半透明的色彩，做為使用者的放置提示。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-124">The "x-ray" material allows for a slightly translucent color that will be used as placement hints for the user.</span></span>
+> [!NOTE]
+> <span data-ttu-id="1e50a-122">部分元件示範（腳本）元件不是 MRTK 的一部分。</span><span class="sxs-lookup"><span data-stu-id="1e50a-122">The Part Assembly Demo (Script) component is not part of MRTK.</span></span> <span data-ttu-id="1e50a-123">本教學課程的資產提供此說明。</span><span class="sxs-lookup"><span data-stu-id="1e50a-123">It was provided with this tutorial's assets.</span></span>
 
-    ![第6課 Chapter1.txt Noteaim](images/Lesson6_Chapter1_noteaim.PNG)
+### <a name="1-add-the-rocket-launcher-prefab-to-the-scene"></a><span data-ttu-id="1e50a-124">1. 將 Rocket 啟動器 prefab 新增至場景</span><span class="sxs-lookup"><span data-stu-id="1e50a-124">1. Add the Rocket Launcher prefab to the scene</span></span>
 
-    <span data-ttu-id="1dbc2-126">在陰曆模組中，有五個部分會與使用者互動，如下圖所示：</span><span class="sxs-lookup"><span data-stu-id="1dbc2-126">There are five parts to the lunar module that the user will interact with, as shown in the image below:</span></span>
+<span data-ttu-id="1e50a-125">在 [專案] 視窗中，流覽至 [**資產**] > **MRTK。GettingStarted** > **Prefabs** > **RocketLauncher**資料夾，將**RocketLauncher** prefab 拖曳到 [階層] 視窗中，將它新增至您的場景，然後將它放置在適當的位置，例如：</span><span class="sxs-lookup"><span data-stu-id="1e50a-125">In the Project window, navigate to the **Assets** > **MRTK.Tutorials.GettingStarted** > **Prefabs** > **RocketLauncher** folder, drag the **RocketLauncher** prefab into the Hierarchy window to add it to your scene, and then position it at a suitable location, for example:</span></span>
 
-    1. <span data-ttu-id="1dbc2-127">月球車外殼</span><span class="sxs-lookup"><span data-stu-id="1dbc2-127">The Rover Enclosure</span></span>
-    2. <span data-ttu-id="1dbc2-128">油箱</span><span class="sxs-lookup"><span data-stu-id="1dbc2-128">The Fuel Tank</span></span>
-    3. <span data-ttu-id="1dbc2-129">能量電池</span><span class="sxs-lookup"><span data-stu-id="1dbc2-129">The Energy Cell</span></span>
-    4. <span data-ttu-id="1dbc2-130">泊接座</span><span class="sxs-lookup"><span data-stu-id="1dbc2-130">The Docking Portal</span></span>
-    5. <span data-ttu-id="1dbc2-131">外部感應器</span><span class="sxs-lookup"><span data-stu-id="1dbc2-131">The External sensor</span></span>
+* <span data-ttu-id="1e50a-126">轉換位置 X = 1.5、Y =-0.4、Z = 0，使其位於 waist height 的使用者右方</span><span class="sxs-lookup"><span data-stu-id="1e50a-126">Transform Position X = 1.5, Y = -0.4, Z = 0, so it is positioned to the right of the user at waist height</span></span>
+* <span data-ttu-id="1e50a-127">轉換旋轉 X = 0、Y = 180、Z = 0，因此體驗的主要功能會面對使用者</span><span class="sxs-lookup"><span data-stu-id="1e50a-127">Transform Rotation X = 0, Y = 180, Z = 0, so the main features of the experience faces the user</span></span>
 
-    ![Lesson6 Chapter1 Notebim](images/Lesson6_Chapter1_notebim.PNG)
+![mrlearning-基底](images/mrlearning-base/tutorial6-section1-step1-1.png)
 
-    >[!NOTE]
-    ><span data-ttu-id="1dbc2-133">您在基底場景階層中看見的遊戲物件名稱並不會與場景中的物件名稱相對應。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-133">The game object names that you see in your base scene hierarchy do not correspond to the names of the objects in the scene.</span></span>
+### <a name="2-enable-object-manipulation-for-all-the-parts"></a><span data-ttu-id="1e50a-129">2. 為所有元件啟用物件操作</span><span class="sxs-lookup"><span data-stu-id="1e50a-129">2. Enable object manipulation for all the parts</span></span>
 
-2. <span data-ttu-id="1dbc2-134">將音訊來源新增至 LunarModule 遊戲物件。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-134">Add an audio source to the LunarModule game object.</span></span> <span data-ttu-id="1dbc2-135">請確定已在場景階層中選取 LunarModule，然後按一下 [新增元件]。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-135">Make sure the LunarModule is selected in your scene hierarchy and click Add Component.</span></span> <span data-ttu-id="1dbc2-136">搜尋 [音訊來源]，並將它新增至 [遊戲] 物件。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-136">Search for Audio Source and add it to the game object.</span></span> <span data-ttu-id="1dbc2-137">現在將 [AudioClip] 欄位保留空白，但將特殊 Blend 設定從0變更為1，以啟用空間音訊。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-137">Leave the AudioClip field blank for now, but change the Special Blend setting from 0 to 1 so to enable spatial audio.</span></span> <span data-ttu-id="1dbc2-138">您稍後將使用此音訊來源來播放啟動音效。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-138">You will use this audio source to play the launching sound later.</span></span>
+<span data-ttu-id="1e50a-130">在 [階層] 視窗中，找出 RocketLauncher > **LunarModuleParts**物件，並選取所有**子物件**、新增**操作處理常式（腳本）** 元件和**近端互動 Grabbable （腳本）** 元件，然後設定操作處理常式（腳本），如下所示：</span><span class="sxs-lookup"><span data-stu-id="1e50a-130">In the Hierarchy window, locate the RocketLauncher > **LunarModuleParts** object and select all the **child objects**, add the **Manipulation Handler (Script)** component and the **Near Interaction Grabbable (Script)** component, and then configure the Manipulation Handler (Script) as follows:</span></span>
 
-    ![第6課 Chapter1.txt Step2im](images/Lesson6_Chapter1_step2im.PNG)
+* <span data-ttu-id="1e50a-131">變更**兩個右手操作類型**以移動旋轉，以停用調整</span><span class="sxs-lookup"><span data-stu-id="1e50a-131">Change **Two Handed Manipulation Type** to Move Rotate so scaling is disabled</span></span>
+* <span data-ttu-id="1e50a-132">取消核取 [**允許**最大操作] 核取方塊，只允許近乎互動</span><span class="sxs-lookup"><span data-stu-id="1e50a-132">Un-check the **Allow Far Manipulation** checkbox to only allow near interaction</span></span>
 
-3. <span data-ttu-id="1dbc2-140">新增腳本切換位置提示。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-140">Add the script Toggle Placement Hints.</span></span> <span data-ttu-id="1dbc2-141">按一下 [新增元件]，並搜尋切換位置提示。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-141">Click Add Component and search for Toggle Placement Hints.</span></span> <span data-ttu-id="1dbc2-142">這是自訂腳本，可讓您開啟和關閉半透明提示（具有 x 光線材質的物件），如先前所述。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-142">This is a custom script that lets you turn on and off the translucent hints (objects with the x-ray material), as mentioned earlier.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial6-section1-step1-2.png)
 
-    ![第6課 Chapter1.txt Step3im](images/Lesson6_Chapter1_step3im.PNG)
+> [!TIP]
+> <span data-ttu-id="1e50a-134">如需提醒，使用逐步指示，瞭解如何執行物件操作，您可以參考[處理3D 物件](mrlearning-base-ch4.md#manipulating-3d-objects)的指示。</span><span class="sxs-lookup"><span data-stu-id="1e50a-134">For a reminder, with step by step instructions, on how to implement object manipulation, you can refer to the [Manipulating 3D Objects](mrlearning-base-ch4.md#manipulating-3d-objects) instructions.</span></span>
 
-4. <span data-ttu-id="1dbc2-144">因為我們有五個物件，所以請輸入 "5" 作為遊戲物件陣列大小。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-144">Since we have five objects, type "5" for the game object array size.</span></span> <span data-ttu-id="1dbc2-145">您接著會看到五個新的元素。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-145">You will then see five new elements appear.</span></span>
+### <a name="3-add-and-configure-the-part-assembly-demo-script-component"></a><span data-ttu-id="1e50a-135">3. 新增和設定元件元件示範（腳本）元件</span><span class="sxs-lookup"><span data-stu-id="1e50a-135">3. Add and configure the Part Assembly Demo (Script) component</span></span>
 
-    ![Lesson6 Chapter1 Step4bim](images/Lesson6_Chapter1_step4bim.PNG)
+<span data-ttu-id="1e50a-136">在仍選取所有 LunarModuleParts 子物件的情況下，新增**音訊來源**元件，然後進行設定，如下所示：</span><span class="sxs-lookup"><span data-stu-id="1e50a-136">With all the LunarModuleParts child objects still selected, add an **Audio Source** component and then configure it as follows:</span></span>
 
-    <span data-ttu-id="1dbc2-147">將每個半透明物件拖曳到所有 [名稱（遊戲物件）] 方塊中。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-147">Drag each of the translucent objects into all the Name (Game Object) boxes.</span></span> <span data-ttu-id="1dbc2-148">將下列物件從場景中的陰曆模組拖曳到 [物件陣列] 欄位中，如上圖所示：</span><span class="sxs-lookup"><span data-stu-id="1dbc2-148">Drag the following objects from the lunar module in your scene into the object array fields as shown in the image above:</span></span>
+* <span data-ttu-id="1e50a-137">將適當的音訊剪輯指派給**AudioClip**欄位，例如，MRKT_Scale_Start</span><span class="sxs-lookup"><span data-stu-id="1e50a-137">Assign a suitable audio clip to the **AudioClip** field, for example, MRKT_Scale_Start</span></span>
+* <span data-ttu-id="1e50a-138">取消勾選 [**在喚醒時播放**] 核取方塊，讓音訊剪輯不會在場景載入時自動播放</span><span class="sxs-lookup"><span data-stu-id="1e50a-138">Un-check the **Play On Awake** checkbox, so the audio clip does not automatically play when the scene loads</span></span>
+* <span data-ttu-id="1e50a-139">將**空間 Blend**變更為1，以啟用空間音訊</span><span class="sxs-lookup"><span data-stu-id="1e50a-139">Change **Spatial Blend** to 1, to enable spatial audio</span></span>
 
-    ![Lesson6 Chapter1 Step4aim](images/Lesson6_Chapter1_step4aim.PNG)
+![mrlearning-基底](images/mrlearning-base/tutorial6-section1-step2-1.png)
 
-    <span data-ttu-id="1dbc2-150">現在已設定了切換位置提示腳本，可讓我們開啟和關閉提示。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-150">The Toggle Placement Hints script is now configured, which allows us to turn hints on and off.</span></span>
+<span data-ttu-id="1e50a-141">在仍選取所有 LunarModuleParts 子物件的情況下，新增元件元件**示範（腳本）** 元件：</span><span class="sxs-lookup"><span data-stu-id="1e50a-141">With all the LunarModuleParts child objects still selected, add the **Part Assembly Demo  (Script)** component:</span></span>
 
-5. <span data-ttu-id="1dbc2-151">新增 [啟動陰曆模組] 腳本。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-151">Add the Launch Lunar Module script.</span></span> <span data-ttu-id="1dbc2-152">按一下 [新增元件] 按鈕，搜尋「啟動陰曆模組」並加以選取。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-152">Click the Add Component button, search for "launch lunar module" and select it.</span></span> <span data-ttu-id="1dbc2-153">此腳本會啟動農曆模組。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-153">This script launches the lunar module.</span></span> <span data-ttu-id="1dbc2-154">當我們按下設定的按鈕時，它會將向上的力新增至農曆模組的固定主體元件，並使模組向上啟動。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-154">When we press a configured button, it adds an upward force to the lunar module's rigid body component and causes the module to launch upwards.</span></span> <span data-ttu-id="1dbc2-155">如果您位於室內，登月小艇可能會撞擊您的天花板網格。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-155">If you are indoors, the lunar module may crash against your ceiling mesh.</span></span> <span data-ttu-id="1dbc2-156">如果您所在的區域具有高上限或沒有上限，農曆模組會無限期地進入空間。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-156">If you are in an area with high ceilings or no ceilings, the lunar module will fly into space indefinitely.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial6-section1-step2-2.png)
 
-    ![Lesson6 Chapter1 Step5im](images/Lesson6_Chapter1_step5im.PNG)
+<span data-ttu-id="1e50a-143">在 [階層] 視窗中，選取 [ **RoverEnclosure** ] 物件，並設定其 [元件元件**示範（腳本）** ] 元件，如下所示：</span><span class="sxs-lookup"><span data-stu-id="1e50a-143">In the Hierarchy window, select the **RoverEnclosure** object and configure its **Part Assembly Demo (Script)** component as follows:</span></span>
 
-6. <span data-ttu-id="1dbc2-158">調整推力來使登月小艇能優雅地向上升起。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-158">Adjust the thrust so that the lunar module will fly up gracefully.</span></span> <span data-ttu-id="1dbc2-159">試試使用 0.01 的值。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-159">Try a value of 0.01.</span></span> <span data-ttu-id="1dbc2-160">將 [Rb] 欄位保留空白。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-160">Leave the "Rb" field blank.</span></span> <span data-ttu-id="1dbc2-161">Rb 代表固定主體，而此欄位將會在執行時間自動填入。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-161">Rb stands for Rigid body and this field will be automatically populated during runtime.</span></span>
+* <span data-ttu-id="1e50a-144">在 [**要放置的物件**] 欄位中，指派物件本身，在此案例中為**RoverEnclosure**物件</span><span class="sxs-lookup"><span data-stu-id="1e50a-144">To the **Object To Place** field, assign the object itself, in this case, the **RoverEnclosure** object</span></span>
+* <span data-ttu-id="1e50a-145">在 [**要放置的位置**] 欄位中，指派對應的 PlacementHints 物件（在此案例中為**RoverEnclosure_PlacementHints**物件）</span><span class="sxs-lookup"><span data-stu-id="1e50a-145">To the **Location To Place** field, assign the corresponding PlacementHints object, in this case, the **RoverEnclosure_PlacementHints** object</span></span>
+* <span data-ttu-id="1e50a-146">在 [**工具提示物件**] 欄位中，指派對應的 ToolTipObject，在此案例中為**RoverEnclosure_ToolTip**物件</span><span class="sxs-lookup"><span data-stu-id="1e50a-146">To the **Tool Tip Object** field, assign the corresponding ToolTipObject, in this case, the **RoverEnclosure_ToolTip** object</span></span>
+* <span data-ttu-id="1e50a-147">在 [**音訊來源**] 欄位中，指派物件本身，在此案例中為**RoverEnclosure**物件</span><span class="sxs-lookup"><span data-stu-id="1e50a-147">To the **Audio Source** field, assign the object itself, in this case, the **RoverEnclosure** object</span></span>
 
-    ![Lesson6 Chapter1 Step6im](images/Lesson6_Chapter1_step6im.PNG)
+![mrlearning-基底](images/mrlearning-base/tutorial6-section1-step2-3.png)
 
-## <a name="lunar-module-parts-overview"></a><span data-ttu-id="1dbc2-163">陰曆模組元件總覽</span><span class="sxs-lookup"><span data-stu-id="1dbc2-163">Lunar Module Parts overview</span></span>
+<span data-ttu-id="1e50a-149">針對每個其他 LunarModuleParts 子物件**重複**，亦即 FuelTank、EnergyCell、DockingPortal 和 ExternalSensor。</span><span class="sxs-lookup"><span data-stu-id="1e50a-149">**Repeat** for each of the other LunarModuleParts child objects, i.e. FuelTank, EnergyCell, DockingPortal, and ExternalSensor.</span></span>
 
-<span data-ttu-id="1dbc2-164">陰曆模組元件父物件是使用者與之互動物件的集合。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-164">The Lunar Module Parts parent object is the collection of the objects that the user interacts with.</span></span> <span data-ttu-id="1dbc2-165">下列清單會提供遊戲物件名稱，加上括弧中標示為名稱的場景：</span><span class="sxs-lookup"><span data-stu-id="1dbc2-165">The Game object names with scene labeled names in parentheses, are provided in the list below:</span></span>
+<span data-ttu-id="1e50a-150">如果您現在進入遊戲模式，並將「物件」放在靠近其對應的「位置」，您會注意到：</span><span class="sxs-lookup"><span data-stu-id="1e50a-150">If you now enter Game mode and move an 'Object To Place' close to it's corresponding 'Location To Place' you will notice:</span></span>
 
-- <span data-ttu-id="1dbc2-166">死忠（能來源資料格）</span><span class="sxs-lookup"><span data-stu-id="1dbc2-166">Backpack (Energy Cell)</span></span>
-- <span data-ttu-id="1dbc2-167">GasTank （燃料箱）</span><span class="sxs-lookup"><span data-stu-id="1dbc2-167">GasTank (Fuel Tank)</span></span>
-- <span data-ttu-id="1dbc2-168">TopLeftBody (Rover Enclosure)</span><span class="sxs-lookup"><span data-stu-id="1dbc2-168">TopLeftBody (Rover Enclosure)</span></span>
-- <span data-ttu-id="1dbc2-169">Nose (Docking Portal)</span><span class="sxs-lookup"><span data-stu-id="1dbc2-169">Nose (Docking Portal)</span></span>
-- <span data-ttu-id="1dbc2-170">LeftTwirler (External Sensor)</span><span class="sxs-lookup"><span data-stu-id="1dbc2-170">LeftTwirler (External Sensor)</span></span>
+* <span data-ttu-id="1e50a-151">物件將會貼齊位置，並在 LunarModule 物件下成為父代，使其成為陰曆模組的一部分</span><span class="sxs-lookup"><span data-stu-id="1e50a-151">The object will snap into place and be parented under the LunarModule object so it becomes part of the Lunar Module</span></span>
+* <span data-ttu-id="1e50a-152">物件上的音訊來源會在物件的位置播放指派的音訊剪輯</span><span class="sxs-lookup"><span data-stu-id="1e50a-152">The Audio Source on the object will play the assigned Audio Clip at the location of the object</span></span>
+* <span data-ttu-id="1e50a-153">對應的工具提示物件將會隱藏</span><span class="sxs-lookup"><span data-stu-id="1e50a-153">The corresponding Tool Tip object will be hidden</span></span>
 
-<span data-ttu-id="1dbc2-171">請注意，每個物件都有操作處理常式，如第4課中所述。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-171">Notice that each of these objects has a manipulation handler, as explained in Lesson 4.</span></span> <span data-ttu-id="1dbc2-172">這項功能可讓使用者抓取和操作物件。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-172">This feature enables users to grab and manipulate the object.</span></span> <span data-ttu-id="1dbc2-173">另請注意，設定 [雙向操作類型] 設定為 [移動並旋轉]。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-173">Also note that the setting, Two Handed Manipulation Type, is set to Move and Rotate.</span></span> <span data-ttu-id="1dbc2-174">此選項只允許使用者移動物件，而不會變更其大小，這是元件應用程式所需的功能。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-174">This option only permits the user to move the object and not change its size, which is the desired functionality for an assembly application.</span></span>
-<span data-ttu-id="1dbc2-175">此外，會取消選取 [目前的操作]，只允許模組元件的直接互動。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-175">In addition, Far Manipulation is unchecked to allow only for direct interaction of module parts.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial6-section1-step2-4.png)
 
-![Lesson6 Chapter2im](images/Lesson6_Chapter2im.PNG)
+> [!TIP]
+> <span data-ttu-id="1e50a-155">如需有關如何使用編輯器內輸入模擬的提醒，您可以參考[MRTK 檔入口網站](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)中的[使用編輯器內的手寫輸入模擬來測試場景](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html#using-the-in-editor-hand-input-simulation-to-test-a-scene)指南。</span><span class="sxs-lookup"><span data-stu-id="1e50a-155">For a reminder on how to use the in-editor input simulation, you can refer to the [Using the In-Editor Hand Input Simulation to test a scene](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html#using-the-in-editor-hand-input-simulation-to-test-a-scene) guide in the [MRTK Documentation Portal](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html).</span></span>
 
-<span data-ttu-id="1dbc2-177">部分元件示範腳本（如上所示）是用來管理使用者在陰曆模組上由使用者放置之物件的腳本。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-177">The Part Assembly Demo script (shown above) is the script that manages the objects that the user places on the lunar module by the user.</span></span>
+## <a name="configuring-the-lunar-module"></a><span data-ttu-id="1e50a-156">設定登月小艇</span><span class="sxs-lookup"><span data-stu-id="1e50a-156">Configuring the Lunar Module</span></span>
 
-<span data-ttu-id="1dbc2-178">[要放置的物件] 欄位是已選取的轉換，如上圖所示，與所連接之物件相關聯的死忠/燃料箱。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-178">The Object To Place field is the transform that is selected, as shown in the image above, the backpack/fuel tank associated with the object that it connects to.</span></span>
+<span data-ttu-id="1e50a-157">在本節中，您會將其他功能新增至 Rocket 啟動器應用程式，讓使用者可以：</span><span class="sxs-lookup"><span data-stu-id="1e50a-157">In this section, you will add additional features to the Rocket Launcher application so the user can:</span></span>
 
-<span data-ttu-id="1dbc2-179">[近乎距離] 和 [距離距離] 設定會決定要放置或釋放的部分。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-179">The Near Distance and Far Distance settings determine the proximity to which parts snap in place or can be released.</span></span> <span data-ttu-id="1dbc2-180">例如，死忠/燃料箱必須是0.1 單位，而不是陰曆模組，才會貼齊位置。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-180">For example, the backpack/fuel tank needs to be 0.1 units away from the lunar module before it will snap into place.</span></span> <span data-ttu-id="1dbc2-181">[最遠距離] 設定會設定物件可以從農曆模組卸離之前的位置。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-181">The Far Distance setting sets the location where the object can be before it can detach from the lunar module.</span></span> <span data-ttu-id="1dbc2-182">在此情況下，使用者的手必須抓住 backpack/fuel tank，並將它拖曳至距離登月小艇 0.2 單位的距離，才能將它從原本的定位移除。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-182">In this case, the user’s hand must grab the backpack/fuel tank and pull it 0.2 units away from the lunar module to remove it from snapping back into place.</span></span>
+* <span data-ttu-id="1e50a-158">與陰曆模組互動</span><span class="sxs-lookup"><span data-stu-id="1e50a-158">Interact with the Lunar Module</span></span>
+* <span data-ttu-id="1e50a-159">將農曆模組啟動到空間中，並在啟動時播放音效</span><span class="sxs-lookup"><span data-stu-id="1e50a-159">Launch the Lunar Module into space and play a sound when it is launched</span></span>
+* <span data-ttu-id="1e50a-160">重設應用程式，使陰曆模組和所有元件都放回其原始位置</span><span class="sxs-lookup"><span data-stu-id="1e50a-160">Reset the application so the Lunar Module and all the part are placed back to their original position</span></span>
+* <span data-ttu-id="1e50a-161">隱藏放置提示，使部分元件的挑戰變得更困難。</span><span class="sxs-lookup"><span data-stu-id="1e50a-161">Hide the placement hints to make the part assembly challenge more difficult.</span></span>
 
-<span data-ttu-id="1dbc2-183">工具提示物件是場景中的工具提示標籤。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-183">The Tool Tip Object is the tool tip label in the scene.</span></span> <span data-ttu-id="1dbc2-184">當物件準備就緒時，會停用標籤。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-184">When the objects are snapped in place, the label is disabled.</span></span>
+<span data-ttu-id="1e50a-162">達成此目標所需採取的主要步驟如下：</span><span class="sxs-lookup"><span data-stu-id="1e50a-162">The main steps you will take to achieve this are:</span></span>
 
-<span data-ttu-id="1dbc2-185">音訊來源會自動抓取。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-185">The Audio Source is automatically grabbed.</span></span>
+1. <span data-ttu-id="1e50a-163">啟用物件操作</span><span class="sxs-lookup"><span data-stu-id="1e50a-163">Enable object manipulation</span></span>
+2. <span data-ttu-id="1e50a-164">啟用物理</span><span class="sxs-lookup"><span data-stu-id="1e50a-164">Enable physics</span></span>
+3. <span data-ttu-id="1e50a-165">新增音訊來源元件</span><span class="sxs-lookup"><span data-stu-id="1e50a-165">Add an Audio Source component</span></span>
+4. <span data-ttu-id="1e50a-166">新增和設定啟動陰曆模組（腳本）元件</span><span class="sxs-lookup"><span data-stu-id="1e50a-166">Add and configure the Launch Lunar Module (Script) component</span></span>
+5. <span data-ttu-id="1e50a-167">新增和設定切換位置提示（腳本）元件</span><span class="sxs-lookup"><span data-stu-id="1e50a-167">Add and configure the Toggle Placement Hints (Script) component</span></span>
 
-## <a name="configuring-the-placement-hints-button"></a><span data-ttu-id="1dbc2-186">設定放置提示按鈕</span><span class="sxs-lookup"><span data-stu-id="1dbc2-186">Configuring the Placement Hints button</span></span>
+> [!NOTE]
+> <span data-ttu-id="1e50a-168">啟動陰曆模組（腳本）元件和切換放置提示（腳本）元件不是 MRTK 的一部分。</span><span class="sxs-lookup"><span data-stu-id="1e50a-168">The Launch Lunar Module (Script) component and the Toggle Placement Hints (Script) component are not part of MRTK.</span></span> <span data-ttu-id="1e50a-169">這是本教學課程的資產所提供的。</span><span class="sxs-lookup"><span data-stu-id="1e50a-169">They were provided with this tutorial's assets.</span></span>
 
-<span data-ttu-id="1dbc2-187">在[第2課](mrlearning-base-ch2.md)中，您已瞭解如何放置和設定按鈕來執行一些動作，例如變更專案的色彩，或讓它在推送時播放音效。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-187">In [Lesson 2](mrlearning-base-ch2.md), you learned how to place and configure buttons to do things like change the color of an item or make it play a sound when pushed.</span></span> <span data-ttu-id="1dbc2-188">我們將會繼續使用那些原則來設定按鈕以切換放置提示。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-188">We will continue to use those principles as we configure our buttons for toggling placement hints.</span></span>
+### <a name="1-enable-object-manipulation"></a><span data-ttu-id="1e50a-170">1. 啟用物件操作</span><span class="sxs-lookup"><span data-stu-id="1e50a-170">1. Enable object manipulation</span></span>
 
-<span data-ttu-id="1dbc2-189">其目標是設定按鈕，讓每次使用者按下 [放置提示] 按鈕時，都會切換半透明放置提示的可見度。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-189">The goal is to configure our button so that every time the user presses the Placement hint button, it toggles the visibility of the translucent placement hints.</span></span>
+<span data-ttu-id="1e50a-171">在 [階層] 視窗中，選取 RocketLauncher > **LunarModule**物件、新增**操作處理常式（腳本）** 元件和**近乎互動 Grabbable （腳本）** 元件，然後設定操作處理常式（腳本），如下所示：</span><span class="sxs-lookup"><span data-stu-id="1e50a-171">In the Hierarchy window, select the RocketLauncher > **LunarModule** object, add the **Manipulation Handler (Script)** component and the **Near Interaction Grabbable (Script)** component, and then configure the Manipulation Handler (Script) as follows:</span></span>
 
-1. <span data-ttu-id="1dbc2-190">將 [陰曆] 模組移至 [偵測器] 面板中的 [僅限空白執行時間] 插槽，同時在您的基底場景階層中選取放置提示物件。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-190">Move the lunar module to the empty Runtime Only slot in the inspector panel while the Placement Hints object is selected in your base scene hierarchy.</span></span>
+* <span data-ttu-id="1e50a-172">變更**兩個右手操作類型**以移動旋轉，以停用調整</span><span class="sxs-lookup"><span data-stu-id="1e50a-172">Change **Two Handed Manipulation Type** to Move Rotate so scaling is disabled</span></span>
+* <span data-ttu-id="1e50a-173">取消核取 [**允許**最大操作] 核取方塊，只允許近乎互動</span><span class="sxs-lookup"><span data-stu-id="1e50a-173">Un-check the **Allow Far Manipulation** checkbox to only allow near interaction</span></span>
 
-    ![第6課 Chapter3 Step1im](images/Lesson6_Chapter3_step1im.PNG)
+![mrlearning-基底](images/mrlearning-base/tutorial6-section2-step1-1.png)
 
-2. <span data-ttu-id="1dbc2-192">按一下 [沒有函數] 下拉式清單。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-192">Click the No Function dropdown list.</span></span> <span data-ttu-id="1dbc2-193">向下 TogglePlacementHints，然後選取該功能表下的 [ToggleGameObjects （）]。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-193">Go down to TogglePlacementHints and select ToggleGameObjects () under that menu.</span></span> <span data-ttu-id="1dbc2-194">ToggleGameObjects （）會開啟和關閉放置提示，使其在每次按下按鈕時都可見或隱藏。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-194">ToggleGameObjects() toggles the placement hints on and off so that they are visible or invisible each time the button is pressed.</span></span>
+### <a name="2-enable-physics"></a><span data-ttu-id="1e50a-175">2. 啟用物理</span><span class="sxs-lookup"><span data-stu-id="1e50a-175">2. Enable physics</span></span>
 
-    ![第6課 Chapter3 Step2im](images/Lesson6_Chapter3_step2im.PNG)
+<span data-ttu-id="1e50a-176">在仍選取 RocketLauncher > **LunarModule**物件的情況下，新增 Rigidbody 元件，然後進行設定，如下所示：</span><span class="sxs-lookup"><span data-stu-id="1e50a-176">With the RocketLauncher > **LunarModule** object still selected, add a Rigidbody component and then configure it as follows:</span></span>
 
-## <a name="configuring-the-reset-button"></a><span data-ttu-id="1dbc2-196">設定重設按鈕</span><span class="sxs-lookup"><span data-stu-id="1dbc2-196">Configuring the Reset button</span></span>
+* <span data-ttu-id="1e50a-177">取消核取 [**使用重心**] 核取方塊，讓陰曆模組不會受到引力的影響</span><span class="sxs-lookup"><span data-stu-id="1e50a-177">Un-check the **Use Gravity** checkbox so the Lunar Module is not affected by gravity</span></span>
+* <span data-ttu-id="1e50a-178">勾選 [**是運動學**] 核取方塊，讓陰曆模組一開始不會受到 physic 強制影響</span><span class="sxs-lookup"><span data-stu-id="1e50a-178">Check the **Is Kinematic** checkbox so the Lunar Module initially isn't affected by physic forces</span></span>
 
-<span data-ttu-id="1dbc2-197">在某些情況下，使用者會犯錯誤，不小心將物件擲回，或只是想要重設體驗。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-197">There will be situations where the user makes a mistake, accidentally throws the object away or just wants to reset the experience.</span></span> <span data-ttu-id="1dbc2-198">[重設] 按鈕會新增重新開機體驗的功能。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-198">The Reset button adds the ability to restart the experience.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial6-section2-step2-1.png)
 
-1. <span data-ttu-id="1dbc2-199">選取 [重設] 按鈕。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-199">Select the Reset button.</span></span> <span data-ttu-id="1dbc2-200">在基底場景中，其名稱為 ResetRoundButton。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-200">In the base scene, it’s named ResetRoundButton.</span></span>
+### <a name="3-add-an-audio-source-component"></a><span data-ttu-id="1e50a-180">3. 新增音訊來源元件</span><span class="sxs-lookup"><span data-stu-id="1e50a-180">3. Add an Audio Source component</span></span>
 
-2. <span data-ttu-id="1dbc2-201">將 [陰曆] 模組從 [基底場景] 階層拖曳至 [偵測器] 面板上按下按鈕底下的空插槽。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-201">Drag the lunar module from the base scene hierarchy into the empty slot under Button Pressed on the inspector panel.</span></span>
+<span data-ttu-id="1e50a-181">在仍選取 RocketLauncher > **LunarModule**物件的情況下，新增**音訊來源**元件，然後進行設定，如下所示：</span><span class="sxs-lookup"><span data-stu-id="1e50a-181">With the RocketLauncher > **LunarModule** object still selected, add an **Audio Source** component and then configure it as follows:</span></span>
 
-    ![第6課 Chapter4 Step2im](images/Lesson6_Chapter4_step2im.PNG)
+* <span data-ttu-id="1e50a-182">將**空間 Blend**變更為1以啟用空間音訊</span><span class="sxs-lookup"><span data-stu-id="1e50a-182">Change **Spatial Blend** to 1 to enable spatial audio</span></span>
 
-3. <span data-ttu-id="1dbc2-203">選取 [沒有函式] 下拉式功能表，並將滑鼠停留在 [LaunchLunarModule] 上，然後選取 [resetModule （）]。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-203">Select the No Function dropdown menu and hover over LaunchLunarModule, then select resetModule ().</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial6-section2-step3-1.png)
 
-    ![Lesson6 Chapter4 Step3im](images/Lesson6_Chapter4_step3im.PNG)
+### <a name="4-add-and-configure-the-launch-lunar-module-script-component"></a><span data-ttu-id="1e50a-184">4. 新增和設定啟動陰曆模組（腳本）元件</span><span class="sxs-lookup"><span data-stu-id="1e50a-184">4. Add and configure the Launch Lunar Module (Script) component</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="1dbc2-205">請注意，根據預設，GameObject. BroadcastMessage 會設定為 ResetPlacement。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-205">Notice that by default, the GameObject.BroadcastMessage is configured to ResetPlacement.</span></span> <span data-ttu-id="1dbc2-206">這會為 RocketLauncher_Tutorial 的每個子物件廣播名為 ResetPlacement 的訊息。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-206">This broadcasts a message named ResetPlacement for every child object of the RocketLauncher_Tutorial.</span></span> <span data-ttu-id="1dbc2-207">具有 ResetPlacement （）方法的任何物件，都會藉由重設其位置來回應該訊息。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-207">Any object that has a method for ResetPlacement() responds to that message by resetting it's position.</span></span>
+<span data-ttu-id="1e50a-185">在仍選取 RocketLauncher > **LunarModule**物件的情況下，新增 [**啟動陰曆模組（腳本）** ] 元件，然後進行設定，如下所示：</span><span class="sxs-lookup"><span data-stu-id="1e50a-185">With the RocketLauncher > **LunarModule** object still selected, add the **Launch Lunar Module (Script)** component and then configure it as follows:</span></span>
 
-## <a name="configuring-the-launch-button"></a><span data-ttu-id="1dbc2-208">設定 [啟動] 按鈕</span><span class="sxs-lookup"><span data-stu-id="1dbc2-208">Configuring the Launch button</span></span>
+* <span data-ttu-id="1e50a-186">變更**天生**值，讓陰曆模組在啟動時正常運作，例如，到0.01</span><span class="sxs-lookup"><span data-stu-id="1e50a-186">Change **Thrust** value so the Lunar Module will fly up gracefully when launched, for example, to 0.01</span></span>
 
-<span data-ttu-id="1dbc2-209">本節說明如何設定 [啟動] 按鈕，讓使用者按下按鈕，並將 [陰曆] 模組啟動到空間。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-209">This section explains how to configure the Launch button, which permits the user to press the button and launch the lunar module into space.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial6-section2-step4-1.png)
 
-1. <span data-ttu-id="1dbc2-210">選取 [啟動] 按鈕。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-210">Select the Launch button.</span></span> <span data-ttu-id="1dbc2-211">在基底場景中，它稱為 LaunchRoundButton。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-211">In the base scene, it’s called LaunchRoundButton.</span></span> <span data-ttu-id="1dbc2-212">將 [陰曆] 模組拖曳至 [偵測器] 面板中 [Touch End] 底下的空插槽。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-212">Drag the lunar module to the empty slot under Touch End in the Inspector panel.</span></span>
+### <a name="5-add-and-configure-the-toggle-placement-hints-script-component"></a><span data-ttu-id="1e50a-188">5. 新增和設定切換位置提示（腳本）元件</span><span class="sxs-lookup"><span data-stu-id="1e50a-188">5. Add and configure the Toggle Placement Hints (Script) component</span></span>
 
-    ![第6課 Chapter5 Step1im](images/Lesson6_Chapter5_step1im.PNG)
+<span data-ttu-id="1e50a-189">在仍選取 RocketLauncher > **LunarModule**物件的情況下，新增**切換位置提示（腳本）** 元件，然後進行設定，如下所示：</span><span class="sxs-lookup"><span data-stu-id="1e50a-189">With the RocketLauncher > **LunarModule** object still selected, add the **Toggle Placement Hints (Script)** component and then configure it as follows:</span></span>
 
-2. <span data-ttu-id="1dbc2-214">選取 [沒有函式] 下拉式功能表，並將滑鼠停留在 [LaunchLunarModule] 上，然後選取 [StopThruster （）]。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-214">Select the No Function dropdown menu and hover over LaunchLunarModule, and select StopThruster ().</span></span> <span data-ttu-id="1dbc2-215">這會控制使用者想要提供給陰曆模組的天生量。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-215">This controls how much thrust the user wants to give to the lunar module.</span></span>
+* <span data-ttu-id="1e50a-190">將 [遊戲物件陣列**大小**] 屬性設定為5</span><span class="sxs-lookup"><span data-stu-id="1e50a-190">Set the Game Object Array **Size** property to 5</span></span>
+* <span data-ttu-id="1e50a-191">將每個**PlacementHints**物件的**子物件**指派給遊戲物件陣列中的**元素**欄位：</span><span class="sxs-lookup"><span data-stu-id="1e50a-191">Assign each of the **PlacementHints** object's **child objects** to the an **Element** field in the Game Object Array:</span></span>
 
-    ![第6課 Chapter5 Step2im](images/Lesson6_Chapter5_step2im.PNG)
+![mrlearning-基底](images/mrlearning-base/tutorial6-section2-step5-1.png)
 
-3. <span data-ttu-id="1dbc2-217">將 [陰曆] 模組從 [基底場景] 階層拖曳至 [偵測器] 面板中所按下按鈕底下的空插槽。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-217">Drag the lunar module from the base scene hierarchy into the empty slot under Button Pressed in the inspector panel.</span></span>
+## <a name="configuring-the-launch-button"></a><span data-ttu-id="1e50a-193">設定 [啟動] 按鈕</span><span class="sxs-lookup"><span data-stu-id="1e50a-193">Configuring the Launch button</span></span>
 
-4. <span data-ttu-id="1dbc2-218">按一下 [沒有函式] 下拉式功能表，然後在 [LaunchLunarModule] 上選取 [StartThruster （）]。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-218">Click the No function dropdown menu and then on LaunchLunarModule and select StartThruster ().</span></span>
+<span data-ttu-id="1e50a-194">在 階層 視窗中，選取 RocketLauncher > 按鈕 > **LaunchButton**物件，然後在  **Pressable 按鈕（腳本）** 元件上，建立已按下的新**按鈕（）** 事件、設定**LunarModule**物件以接收事件，並將**LaunchLunarModule**定義為要觸發的動作：</span><span class="sxs-lookup"><span data-stu-id="1e50a-194">In the Hierarchy window, select the RocketLauncher > Buttons > **LaunchButton** object, then on the **Pressable Button (Script)** component, create a new **Button Pressed ()** event, configure the **LunarModule** object to receive the event, and define **LaunchLunarModule.StartThruster** as the action to be triggered:</span></span>
 
-    ![第6課 Chapter5 Step4im](images/Lesson6_Chapter5_step4im.PNG)
+![mrlearning-基底](images/mrlearning-base/tutorial6-section3-step1-1.png)
 
-5. <span data-ttu-id="1dbc2-220">將音樂新增至農曆模組，以便在 rocket 時播放音樂。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-220">Add music to the lunar module so that music plays when the rocket takes off.</span></span> <span data-ttu-id="1dbc2-221">若要這麼做，請將 [陰曆] 模組拖曳至 [按下的按鈕] 下的下一個空白插槽（）。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-221">To do this, drag the lunar module to the next empty slot under Button Pressed().</span></span>
+> [!TIP]
+> <span data-ttu-id="1e50a-196">如需如何執行事件的提醒，您可以參考[手追蹤手勢和可互動按鈕](mrlearning-base-ch2.md#hand-tracking-gestures-and-interactable-buttons)的指示。</span><span class="sxs-lookup"><span data-stu-id="1e50a-196">For a reminder on how to implement events, you can refer to the [Hand tracking gestures and interactable buttons](mrlearning-base-ch2.md#hand-tracking-gestures-and-interactable-buttons) instructions.</span></span>
 
-6. <span data-ttu-id="1dbc2-222">選取 [沒有函式] 下拉式功能表，將滑鼠停留在 Spatialize 上，然後選取 [PlayOneShot （AudioClip）]。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-222">Select the No Function dropdown menu, hover over AudioSource and select PlayOneShot (AudioClip).</span></span> <span data-ttu-id="1dbc2-223">您可以自行探索包含在 MRTK 中的各種音效。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-223">Feel free to explore the variety of sounds included with the MRTK.</span></span> <span data-ttu-id="1dbc2-224">在此範例中，我們將使用「MRTK_Gem」。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-224">In this example, we'll use "MRTK_Gem."</span></span>
+<span data-ttu-id="1e50a-197">在 RocketLauncher > 按鈕 > 仍然選取 [ **LaunchButton**物件]，在 [ **Pressable] 按鈕（腳本）** 元件上，建立已**按下的新按鈕（）** 事件、設定**LunarModule**物件以接收事件、將**spatialize**定義為要觸發的動作，以及將適當的音訊剪輯指派給**音訊剪輯**欄位，例如 MRTK_Gem 的音訊剪輯：</span><span class="sxs-lookup"><span data-stu-id="1e50a-197">With the RocketLauncher > Buttons > **LaunchButton** object still selected, on the **Pressable Button (Script)** component, create a new **Button Pressed ()** event, configure the **LunarModule** object to receive the event, define **AudioSource.PlayOneShot** as the action to be triggered, and assign a suitable audio clip to the **Audio Clip** field, for example, the MRTK_Gem audio clip:</span></span>
 
-    ![第6課 Chapter5 Step6im](images/Lesson6_Chapter5_step6im.PNG)
+![mrlearning-基底](images/mrlearning-base/tutorial6-section3-step1-2.png)
 
-## <a name="congratulations"></a><span data-ttu-id="1dbc2-226">恭喜您</span><span class="sxs-lookup"><span data-stu-id="1dbc2-226">Congratulations</span></span>
+<span data-ttu-id="1e50a-199">在 RocketLauncher > 按鈕 > 仍然選取 [ **LaunchButton**物件]，在 [ **Pressable] 按鈕（腳本）** 元件上，建立新的**觸控結束（）** 事件、設定**LunarModule**物件以接收事件，並將**LaunchLunarModule**定義為要觸發的動作：</span><span class="sxs-lookup"><span data-stu-id="1e50a-199">With the RocketLauncher > Buttons > **LaunchButton** object still selected, on the **Pressable Button (Script)** component, create a new **Touch Ended ()** event, configure the **LunarModule** object to receive the event, and define **LaunchLunarModule.StopThruster** as the action to be triggered:</span></span>
 
-<span data-ttu-id="1dbc2-227">您已完全設定此應用程式。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-227">You have fully configured this application.</span></span> <span data-ttu-id="1dbc2-228">現在，當您按下 [播放] 時，您可以完整組合陰曆模組、切換提示、啟動陰曆模組，然後將它重設為重新啟動。</span><span class="sxs-lookup"><span data-stu-id="1dbc2-228">Now, when you press play, you can fully assemble the lunar module, toggle hints, launch the lunar module and reset it to start again.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial6-section3-step1-3.png)
+
+<span data-ttu-id="1e50a-201">如果您現在進入遊戲模式，並按下 [啟動] 按鈕，您會聽到播放音訊剪輯，如果您將 [啟動] 按鈕按下大約一秒或更長的時間，就會看到 [陰曆] 模組啟動進入空間：</span><span class="sxs-lookup"><span data-stu-id="1e50a-201">If you now enter Game mode and press the Launch button, you will hear the audio clip play, and if you hold the Launch button down for about a second or longer, you will see the Lunar Module launch into space:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial6-section3-step1-4.png)
+
+## <a name="configuring-the-reset-button"></a><span data-ttu-id="1e50a-203">設定重設按鈕</span><span class="sxs-lookup"><span data-stu-id="1e50a-203">Configuring the Reset button</span></span>
+
+<span data-ttu-id="1e50a-204">在 階層 視窗中，選取 RocketLauncher > 按鈕 > **ResetButton**物件，然後在  **Pressable 按鈕（腳本）** 元件上，建立已按下的新**按鈕（）** 事件、設定**LunarModule**物件以接收事件，並將**LaunchLunarModule**定義為要觸發的動作：</span><span class="sxs-lookup"><span data-stu-id="1e50a-204">In the Hierarchy window, select the RocketLauncher > Buttons > **ResetButton** object, then on the **Pressable Button (Script)** component, create a new **Button Pressed ()** event, configure the **LunarModule** object to receive the event, and define **LaunchLunarModule.ResetModule** as the action to be triggered:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial6-section4-step1-1.png)
+
+<span data-ttu-id="1e50a-206">在 RocketLauncher > 按鈕 > 仍然選取 [ **ResetButton**物件]，在 [ **Pressable] 按鈕（腳本）** 元件上，建立已**按下的新按鈕（）** 事件、設定**RocketLauncher**物件以接收事件、將**GameObject**定義為要觸發的動作，並在 [訊息] 欄位中輸入**BroadcastMessage** ：</span><span class="sxs-lookup"><span data-stu-id="1e50a-206">With the RocketLauncher > Buttons > **ResetButton** object still selected, on the **Pressable Button (Script)** component, create a new **Button Pressed ()** event, configure the **RocketLauncher** object to receive the event, define **GameObject.BroadcastMessage** as the action to be triggered, and enter **ResetPlacement** in message field:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial6-section4-step1-2.png)
+
+> [!TIP]
+> <span data-ttu-id="1e50a-208">GameObject. BroadcastMessage 動作會將 ResetPlacement 訊息從 RocketLauncher 物件傳送到其所有的子物件。</span><span class="sxs-lookup"><span data-stu-id="1e50a-208">The GameObject.BroadcastMessage action sends the ResetPlacement message from the RocketLauncher object to all its child object.</span></span> <span data-ttu-id="1e50a-209">具有 ResetPlacement 函式的任何子物件（定義于您加入至所有 LunarModuleParts 子物件的元件示範（Script）元件中）都會叫用 ResetPlacement 函式，該函式會重設該子物件的位置。</span><span class="sxs-lookup"><span data-stu-id="1e50a-209">Any child object that has the ResetPlacement function, which is defined in the Part Assembly Demo (Script) component you added to all the LunarModuleParts child object, will invoke the ResetPlacement function which resets that child object's placement.</span></span>
+
+<span data-ttu-id="1e50a-210">如果您現在進入遊戲模式，然後按下 [重設] 按鈕，就會聽到播放的音訊剪輯，並看到要啟動的陰曆模組：</span><span class="sxs-lookup"><span data-stu-id="1e50a-210">If you now enter Game mode and press the Reset button you will hear the audio clip being played and see the Lunar Module being launched into space:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial6-section4-step1-3.png)
+
+## <a name="configuring-the-placement-hints-button"></a><span data-ttu-id="1e50a-212">設定放置提示按鈕</span><span class="sxs-lookup"><span data-stu-id="1e50a-212">Configuring the Placement Hints button</span></span>
+<!-- TODO: Rename to 'Configuring the Hints button'-->
+
+<span data-ttu-id="1e50a-213">在 階層 視窗中，選取 RocketLauncher > 按鈕 > **HintsButton**物件，然後在  **Pressable 按鈕（腳本）** 元件上，建立已按下的新**按鈕（）** 事件、設定**LunarModule**物件以接收事件，以及定義**TogglePlacementHints。 ToggleGameObjects**要觸發的動作：</span><span class="sxs-lookup"><span data-stu-id="1e50a-213">In the Hierarchy window, select the RocketLauncher > Buttons > **HintsButton** object, then on the **Pressable Button (Script)** component, create a new **Button Pressed ()** event, configure the **LunarModule** object to receive the event, and define **TogglePlacementHints.ToggleGameObjects** the action to be triggered:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial6-section5-step1-1.png)
+
+<span data-ttu-id="1e50a-215">如果您現在進入遊戲模式，您會注意到，預設會停用半透明的放置提示，但是您可以按下 [提示] 按鈕，將它們切換為開啟或關閉：</span><span class="sxs-lookup"><span data-stu-id="1e50a-215">If you now enter Game mode you will notice that the translucent placement hints are disabled by default, but that you can toggle them on and off by pressing the Hints button:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial6-section5-step1-2.png)
+
+## <a name="congratulations"></a><span data-ttu-id="1e50a-217">恭喜</span><span class="sxs-lookup"><span data-stu-id="1e50a-217">Congratulations</span></span>
+
+<span data-ttu-id="1e50a-218">您已完全設定此應用程式。</span><span class="sxs-lookup"><span data-stu-id="1e50a-218">You have fully configured this application.</span></span> <span data-ttu-id="1e50a-219">現在，您的應用程式可讓使用者完整組合陰曆模組、啟動陰曆模組、切換提示，然後將應用程式重設為重新啟動。</span><span class="sxs-lookup"><span data-stu-id="1e50a-219">Now, your application allows users to fully assemble the Lunar Module, launch the Lunar Module, toggle hints, and reset the application to start again.</span></span>

@@ -6,182 +6,319 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: e961238b8fc7f2ef15bea5f25eba8a8e9eb2ef3e
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.openlocfilehash: 067832a130f130ffbaa8d455007b8e77e1b13671
+ms.sourcegitcommit: cc61f7ac08f9ac2f2f04e8525c3260ea073e04a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334390"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77130511"
 ---
-# <a name="3-creating-user-interface-and-configure-mixed-reality-toolkit"></a><span data-ttu-id="99633-105">3. 建立使用者介面和設定混合現實工具組</span><span class="sxs-lookup"><span data-stu-id="99633-105">3. Creating user interface and configure Mixed Reality Toolkit</span></span>
+# <a name="3-creating-user-interface-and-configure-mixed-reality-toolkit"></a><span data-ttu-id="875da-105">3. 建立使用者介面和設定混合現實工具組</span><span class="sxs-lookup"><span data-stu-id="875da-105">3. Creating user interface and configure Mixed Reality Toolkit</span></span>
+<!-- TODO: Consider renaming to 'Configuring Mixed Reality Toolkit profiles and creating user interfaces' -->
 
-<span data-ttu-id="99633-106">在上一課中，您已瞭解混合現實工具組（MRTK）針對 HoloLens 2 啟動第一個應用程式所提供的一些功能。</span><span class="sxs-lookup"><span data-stu-id="99633-106">In the previous lesson, you learned about some of the capabilities the Mixed Reality Toolkit (MRTK) has to offer by starting your first application for the HoloLens 2.</span></span> <span data-ttu-id="99633-107">在下一課中，您將學習如何建立和組織按鈕以及 UI 文字面板，並使用預設互動（觸控）與每個按鈕互動。</span><span class="sxs-lookup"><span data-stu-id="99633-107">In this next lesson you'll learn how to create and organize buttons along with UI text panels, and use default interaction (touch) to interact with each button.</span></span> <span data-ttu-id="99633-108">此外，您還會探索如何新增簡單的動作和效果，例如變更物件的大小、音效和色彩。</span><span class="sxs-lookup"><span data-stu-id="99633-108">You will also explore the addition of simple actions and effects, such as changing the size, sound and color of objects.</span></span> <span data-ttu-id="99633-109">本課程模組將介紹有關修改 MRTK 設定檔的基本概念，從關閉[空間對應](spatial-mapping.md)網格視覺效果開始。</span><span class="sxs-lookup"><span data-stu-id="99633-109">This module will introduce basic concepts about modifying MRTK profiles, starting with turning off the [spatial mapping](spatial-mapping.md) mesh visualization.</span></span>
+<span data-ttu-id="875da-106">在上一個教學課程中，您已瞭解混合現實工具組（MRTK）透過啟動第一個 HoloLens 的應用程式所提供的一些功能。</span><span class="sxs-lookup"><span data-stu-id="875da-106">In the previous tutorial, you learned about some of the capabilities the Mixed Reality Toolkit (MRTK) has to offer by starting your first application for the HoloLens 2.</span></span> <span data-ttu-id="875da-107">在本教學課程中，您將學習如何建立和組織按鈕以及 UI 文字面板，並使用預設互動（觸控）與每個按鈕互動。</span><span class="sxs-lookup"><span data-stu-id="875da-107">In this tutorial you will learn how to create and organize buttons along with UI text panels, and use default interaction (touch) to interact with each button.</span></span> <span data-ttu-id="875da-108">此外，您還會探索如何新增簡單的動作和效果，例如變更物件的大小、音效和色彩。</span><span class="sxs-lookup"><span data-stu-id="875da-108">You will also explore the addition of simple actions and effects, such as changing the size, sound and color of objects.</span></span> <span data-ttu-id="875da-109">本課程模組將介紹有關修改 MRTK 設定檔的基本概念，從關閉[空間對應](spatial-mapping.md)網格視覺效果開始。</span><span class="sxs-lookup"><span data-stu-id="875da-109">This module will introduce basic concepts about modifying MRTK profiles, starting with turning off the [spatial mapping](spatial-mapping.md) mesh visualization.</span></span>
 
-## <a name="objectives"></a><span data-ttu-id="99633-110">目標</span><span class="sxs-lookup"><span data-stu-id="99633-110">Objectives</span></span>
+## <a name="objectives"></a><span data-ttu-id="875da-110">目標</span><span class="sxs-lookup"><span data-stu-id="875da-110">Objectives</span></span>
 
-* <span data-ttu-id="99633-111">自訂和設定混合實境工具組設定檔</span><span class="sxs-lookup"><span data-stu-id="99633-111">Customize and configure Mixed Reality Toolkit profiles</span></span>
-* <span data-ttu-id="99633-112">使用 UI 元素和按鈕與全息影像互動</span><span class="sxs-lookup"><span data-stu-id="99633-112">Interact with holograms using UI elements and buttons</span></span>
-* <span data-ttu-id="99633-113">基本的「手部追蹤」輸入和互動</span><span class="sxs-lookup"><span data-stu-id="99633-113">Basic hand-tracking input and interactions</span></span>
+* <span data-ttu-id="875da-111">自訂和設定混合實境工具組設定檔</span><span class="sxs-lookup"><span data-stu-id="875da-111">Customize and configure Mixed Reality Toolkit profiles</span></span>
+* <span data-ttu-id="875da-112">使用 UI 元素和按鈕與全息影像互動</span><span class="sxs-lookup"><span data-stu-id="875da-112">Interact with holograms using UI elements and buttons</span></span>
+* <span data-ttu-id="875da-113">基本的「手部追蹤」輸入和互動</span><span class="sxs-lookup"><span data-stu-id="875da-113">Basic hand-tracking input and interactions</span></span>
 
-## <a name="how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option"></a><span data-ttu-id="99633-114">如何設定混合現實工具組設定檔（變更空間感知顯示選項）</span><span class="sxs-lookup"><span data-stu-id="99633-114">How to Configure the Mixed Reality Toolkit Profiles (Change Spatial Awareness Display Option)</span></span>
+## <a name="how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option"></a><span data-ttu-id="875da-114">如何設定混合現實工具組設定檔（變更空間感知顯示選項）</span><span class="sxs-lookup"><span data-stu-id="875da-114">How to configure the Mixed Reality Toolkit Profiles (Change Spatial Awareness Display Option)</span></span>
+<!-- TODO: Consider renaming to 'How to customize the MRTK profiles' -->
 
-<span data-ttu-id="99633-115">在本節中，您將瞭解如何藉由調整空間感知網格的顯示選項來自訂和設定預設的 MRTK 設定檔。</span><span class="sxs-lookup"><span data-stu-id="99633-115">In this section, you'll learn how to customize and configure the default MRTK profiles by adjusting the display option of the spatial awareness mesh.</span></span> <span data-ttu-id="99633-116">您可以遵循下列和在調整 MRTK 設定檔中的任何設定或值時相同的原則。</span><span class="sxs-lookup"><span data-stu-id="99633-116">You may follow these same principles for adjusting any settings or values in the MRTK profiles.</span></span>
+<span data-ttu-id="875da-115">在本節中，您將瞭解如何自訂和設定預設的 MRTK 設定檔。</span><span class="sxs-lookup"><span data-stu-id="875da-115">In this section, you will learn how to customize and configure the default MRTK profiles.</span></span>
 
-1. <span data-ttu-id="99633-117">從 BaseScene 階層中選取 [混合現實工具組（MRTK）]。</span><span class="sxs-lookup"><span data-stu-id="99633-117">Select Mixed-Reality Toolkit (MRTK) from the BaseScene hierarchy.</span></span> <span data-ttu-id="99633-118">在 [偵測器] 面板中，尋找 Mixed Reality 工具組腳本，並選取使用中的設定檔，如下圖所示。</span><span class="sxs-lookup"><span data-stu-id="99633-118">In the inspector panel, look for the Mixed Reality Toolkit Script and select the active profile as shown in the figure below.</span></span> <span data-ttu-id="99633-119">按兩下將它開啟。</span><span class="sxs-lookup"><span data-stu-id="99633-119">Double-click to open it.</span></span>
+<span data-ttu-id="875da-116">此特定範例將示範如何藉由變更空間網格觀察者的設定，來隱藏空間感知網格。</span><span class="sxs-lookup"><span data-stu-id="875da-116">This particular example will show you how to hide the spatial awareness mesh by changing the settings of the Spatial Mesh Observer.</span></span> <span data-ttu-id="875da-117">不過，您可以遵循這些相同的原則，自訂 MRTK 設定檔中的任何設定或值。</span><span class="sxs-lookup"><span data-stu-id="875da-117">However, you may follow these same principles to customize any setting or value in the MRTK profiles.</span></span>
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step1.png)
+<span data-ttu-id="875da-118">隱藏空間感知網格所需採取的主要步驟如下：</span><span class="sxs-lookup"><span data-stu-id="875da-118">The main steps you will take to hide the spatial awareness mesh are:</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="99633-121">根據預設，您無法編輯 MRTK 設定檔。</span><span class="sxs-lookup"><span data-stu-id="99633-121">By default, the MRTK profiles are not editable.</span></span> <span data-ttu-id="99633-122">這些是您可以複製和自訂的預設設定檔範本。</span><span class="sxs-lookup"><span data-stu-id="99633-122">These are default profile templates that you can copy and customize.</span></span> <span data-ttu-id="99633-123">有數個層級的自訂和設定檔。</span><span class="sxs-lookup"><span data-stu-id="99633-123">There are several layers of customization and profiles.</span></span> <span data-ttu-id="99633-124">因此，在設定一個或多個設定時，複製和自訂數個設定檔是標準作法。</span><span class="sxs-lookup"><span data-stu-id="99633-124">So, it is standard practice to copy and customize several profiles when configuring one or more settings.</span></span>
-    >
-    ><span data-ttu-id="99633-125">若要深入瞭解 MRTK 設定檔及其架構，請造訪[MRTK 檔](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/MixedRealityConfigurationGuide.html>)。</span><span class="sxs-lookup"><span data-stu-id="99633-125">To discover more about MRTK profiles and their architecture, visit the [MRTK documentation](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/MixedRealityConfigurationGuide.html>).</span></span>
+1. <span data-ttu-id="875da-119">複製預設設定設定檔</span><span class="sxs-lookup"><span data-stu-id="875da-119">Clone the default Configuration Profile</span></span>
+2. <span data-ttu-id="875da-120">啟用空間感知系統</span><span class="sxs-lookup"><span data-stu-id="875da-120">Enable the Spatial Awareness System</span></span>
+3. <span data-ttu-id="875da-121">複製預設空間感知系統設定檔</span><span class="sxs-lookup"><span data-stu-id="875da-121">Clone the default Spatial Awareness System Profile</span></span>
+4. <span data-ttu-id="875da-122">複製預設空間感知網格觀察者設定檔</span><span class="sxs-lookup"><span data-stu-id="875da-122">Clone the default Spatial Awareness Mesh Observer Profile</span></span>
+5. <span data-ttu-id="875da-123">變更空間感知網格的可見度</span><span class="sxs-lookup"><span data-stu-id="875da-123">Change the visibility of the spatial awareness mesh</span></span>
 
-2. <span data-ttu-id="99633-126">建立一份預設設定檔來進行自訂。</span><span class="sxs-lookup"><span data-stu-id="99633-126">Create a copy of the default profile to customize it.</span></span> <span data-ttu-id="99633-127">首先按一下 [**複製 & 自訂**]。</span><span class="sxs-lookup"><span data-stu-id="99633-127">Start by clicking **Copy & Customize**.</span></span>
+> [!NOTE]
+> <span data-ttu-id="875da-124">根據預設，您無法編輯 MRTK 設定檔。</span><span class="sxs-lookup"><span data-stu-id="875da-124">By default, the MRTK profiles are not editable.</span></span> <span data-ttu-id="875da-125">這些是預設設定檔範本，您必須先加以複製，才能進行編輯。</span><span class="sxs-lookup"><span data-stu-id="875da-125">These are default profile templates that you have to clone before they can be edited.</span></span> <span data-ttu-id="875da-126">有數個嵌套的設定檔層。</span><span class="sxs-lookup"><span data-stu-id="875da-126">There are several nested layers of profiles.</span></span> <span data-ttu-id="875da-127">因此，在設定一或多個設定時，通常會複製並編輯數個設定檔。</span><span class="sxs-lookup"><span data-stu-id="875da-127">Therefore, it is common to clone and edit several profiles when configuring one or more settings.</span></span>
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step2a.png)
+### <a name="1-clone-the-default-configuration-profile"></a><span data-ttu-id="875da-128">1. 複製預設設定設定檔</span><span class="sxs-lookup"><span data-stu-id="875da-128">1. Clone the default Configuration Profile</span></span>
 
-    <span data-ttu-id="99633-129">這會開啟 [*複製設定檔*] 快顯視窗。</span><span class="sxs-lookup"><span data-stu-id="99633-129">This will open the *Clone Profile* popup window.</span></span>
+> [!NOTE]
+> <span data-ttu-id="875da-129">設定設定檔是最上層的設定檔。</span><span class="sxs-lookup"><span data-stu-id="875da-129">The Configuration Profile is the top level profile.</span></span> <span data-ttu-id="875da-130">因此，若要能夠編輯任何其他設定檔，您必須先複製設定設定檔。</span><span class="sxs-lookup"><span data-stu-id="875da-130">Consequently, to be able to edit any other profiles, you first have to clone the Configuration Profile.</span></span>
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step2b.png)
+<span data-ttu-id="875da-131">在 [階層] 視窗中選取**MixedRealityToolkit**物件之後，在 [偵測器] 視窗中，按一下 [**複製 & 自訂**] 按鈕，以開啟 [複製設定檔] 視窗：</span><span class="sxs-lookup"><span data-stu-id="875da-131">With the **MixedRealityToolkit** object selected in the Hierarchy window, in the Inspector window, click the **Copy & Customize** button to open the Clone Profile window:</span></span>
 
-    <span data-ttu-id="99633-131">按一下 [**複製**]，以建立 MRTK 設定檔的複本。</span><span class="sxs-lookup"><span data-stu-id="99633-131">Click **Clone** to create a copy of the MRTK profile.</span></span> <span data-ttu-id="99633-132">您現在可以使用自己的 MRTK 設定檔複本，自訂此設定檔中的任何設定。</span><span class="sxs-lookup"><span data-stu-id="99633-132">With your own copy of the MRTK profile, you now have the ability to customize any settings in this profile.</span></span> <span data-ttu-id="99633-133">您也必須針對此設定檔下的任何其他設定檔，重複複製並自訂步驟，如後續步驟所述。</span><span class="sxs-lookup"><span data-stu-id="99633-133">You will also need to repeat the copy and customize step for any additional profiles nested under this profile as described in the subsequent steps.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial2-section1-step1-1.png)
 
-3. <span data-ttu-id="99633-134">停用空間感知網格的顯示。</span><span class="sxs-lookup"><span data-stu-id="99633-134">Disable the visibility of the spatial awareness mesh.</span></span> <span data-ttu-id="99633-135">若要這樣做，請尋找空間感知系統設定，如下圖所示。</span><span class="sxs-lookup"><span data-stu-id="99633-135">To do this, find Spatial Awareness system settings as shown in the image below.</span></span> <span data-ttu-id="99633-136">請確定已核取 [**啟用空間感知系統**] 選項。</span><span class="sxs-lookup"><span data-stu-id="99633-136">Make sure the **Enable Spatial Awareness System** option is checked.</span></span> <span data-ttu-id="99633-137">按一下 [空間感知] 系統設定檔右邊的 [**複製**] 按鈕，以可自訂的複本取代預設設定檔。</span><span class="sxs-lookup"><span data-stu-id="99633-137">Click the **Clone** button to the right of the Spatial Awareness System Profile to replace the default profile with a customizable copy.</span></span> <span data-ttu-id="99633-138">在出現的快顯視窗中，按下 [**複製**] 按鈕，如下圖中的第二個影像所示。</span><span class="sxs-lookup"><span data-stu-id="99633-138">In the pop-up window that appears, press the **Clone** button, as shown in the second image below.</span></span>
+<span data-ttu-id="875da-133">在 [複製設定檔] 視窗中，按一下 [**複製**] 按鈕，以建立**DefaultHololens2ConfigurationProfile**的可編輯複本：</span><span class="sxs-lookup"><span data-stu-id="875da-133">In the Clone Profile window, click the **Clone** button to create an editable copy of the **DefaultHololens2ConfigurationProfile**:</span></span>
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step3a.png)
+![mrlearning-基底](images/mrlearning-base/tutorial2-section1-step1-2.png)
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step3b.png)
+<span data-ttu-id="875da-135">新建立的設定檔現在已指派為您場景的設定檔：</span><span class="sxs-lookup"><span data-stu-id="875da-135">The newly created Configuration Profile is now assigned as the Configuration Profile for your scene:</span></span>
 
-4. <span data-ttu-id="99633-141">建立「預設混合實境空間網格觀察者」的自訂複本。</span><span class="sxs-lookup"><span data-stu-id="99633-141">Create a custom copy of the Default Mixed Reality Spatial Mesh Observer.</span></span> <span data-ttu-id="99633-142">按一下 [Windows Mixed Reality 空間網格觀察者] 旁邊的向下箭號，以查看其他選項。</span><span class="sxs-lookup"><span data-stu-id="99633-142">Click the down arrow next to Windows Mixed Reality Spatial Mesh Observer to see additional options.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial2-section1-step1-3.png)
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step4a.png)
+<span data-ttu-id="875da-137">在 Unity 功能表中 **，選取** 檔案 > **儲存** 以儲存場景。</span><span class="sxs-lookup"><span data-stu-id="875da-137">In the Unity menu, select **File** > **Save** to save your scene.</span></span>
 
-    <span data-ttu-id="99633-144">在這些選項中，您會看到呈現灰色的預設混合現實空間網格觀察者（無法編輯）。</span><span class="sxs-lookup"><span data-stu-id="99633-144">In these options, you will see the Default Mixed Reality Spatial Mesh Observer that is greyed-out (not editable).</span></span> <span data-ttu-id="99633-145">您必須使用可自訂複本來取代此預設設定檔，以便能夠進行編輯。</span><span class="sxs-lookup"><span data-stu-id="99633-145">You must replace this default profile with a customizable copy so you can edit it.</span></span> <span data-ttu-id="99633-146">如同您先前所做的，按一下 [**複製**] 按鈕，然後在出現的快顯視窗中按下 [**複製**] 按鈕，如下圖中的第二個影像所示。</span><span class="sxs-lookup"><span data-stu-id="99633-146">As you did earlier, click the **Clone** button and then, in the pop-up window that appears, press the **Clone** button, as shown in the second image below.</span></span>
+> [!TIP]
+> <span data-ttu-id="875da-138">請記得在整個教學課程中儲存工作。</span><span class="sxs-lookup"><span data-stu-id="875da-138">Remember to save your work throughout the tutorial.</span></span>
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step4b.png)
+### <a name="2-enable-the-spatial-awareness-system"></a><span data-ttu-id="875da-139">2. 啟用空間感知系統</span><span class="sxs-lookup"><span data-stu-id="875da-139">2. Enable the Spatial Awareness System</span></span>
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step4c.png)
+<span data-ttu-id="875da-140">在 [階層] 視窗中仍然選取**MixedRealityToolkit**物件，在 [偵測器] 視窗中，選取 [**空間感知**] 索引標籤，然後核取 [**啟用空間感知系統**] 核取方塊：</span><span class="sxs-lookup"><span data-stu-id="875da-140">With the **MixedRealityToolkit** object still selected in the Hierarchy window, in the Inspector window, select the **Spatial Awareness** tab, and then check the **Enable Spatial Awareness System** checkbox:</span></span>
 
-5. <span data-ttu-id="99633-149">接下來，您會將 [顯示選項] 的設定調整為 [遮蔽]。</span><span class="sxs-lookup"><span data-stu-id="99633-149">Next, you will adjust the settings for the display option to say “occlusion.”</span></span> <span data-ttu-id="99633-150">這會使空間對應網格可見，但仍會隱藏空間對應網格背後的遊戲物件，也稱為遮蔽。</span><span class="sxs-lookup"><span data-stu-id="99633-150">This makes the spatial mapping mesh invisible, but still hides game objects behind the spatial mapping mesh, also known as occlusion.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial2-section1-step2-1.png)
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step5.png)
+### <a name="3-clone-the-default-spatial-awareness-system-profile"></a><span data-ttu-id="875da-142">3. 複製預設空間感知系統設定檔</span><span class="sxs-lookup"><span data-stu-id="875da-142">3. Clone the default Spatial Awareness System Profile</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="99633-152">注意：雖然空間對應網格未顯示，但仍存在，而且您可以與它互動。</span><span class="sxs-lookup"><span data-stu-id="99633-152">Note: While the spatial mapping mesh is not visible, it is still present and you can interact with it.</span></span> <span data-ttu-id="99633-153">空間對應網格背後的任何全息影像（例如您可見牆後方的全息影像）將不會顯示，因為遮蔽設定。</span><span class="sxs-lookup"><span data-stu-id="99633-153">Any holograms behind the spatial mapping mesh, such as a hologram behind your visible wall, will not be visible because of the occlusion setting.</span></span>
+<span data-ttu-id="875da-143">在 [**空間感知**] 索引標籤中，按一下 [**複製**] 按鈕以開啟 [複製設定檔] 視窗：</span><span class="sxs-lookup"><span data-stu-id="875da-143">In the **Spatial Awareness** tab, click the **Clone** button to open the Clone Profile window:</span></span>
 
-<span data-ttu-id="99633-154">恭喜！</span><span class="sxs-lookup"><span data-stu-id="99633-154">Congratulations!</span></span> <span data-ttu-id="99633-155">您方才已了解如何修改 MRTK 設定檔中的設定。</span><span class="sxs-lookup"><span data-stu-id="99633-155">You just learned how to modify a setting in the MRTK profile.</span></span> <span data-ttu-id="99633-156">如您所見，若要修改 MRTK 設定，您必須建立預設設定檔複本，以便能夠加以編輯。</span><span class="sxs-lookup"><span data-stu-id="99633-156">As you can see, in order to modify MRTK settings you need to create copies of the default profiles so that you can edit them.</span></span> <span data-ttu-id="99633-157">如果您想要使用新的設定建立設定檔，或者您可以回頭參考預設設定檔，則一律會有無法編輯的預設設定檔。</span><span class="sxs-lookup"><span data-stu-id="99633-157">You will always have the default profiles, which are not editable, to go back to if you wanted to create a profile with new settings or you can refer back to the default profiles.</span></span> <span data-ttu-id="99633-158">您可以調整的設定很多。</span><span class="sxs-lookup"><span data-stu-id="99633-158">There are numerous settings that you can adjust.</span></span> <span data-ttu-id="99633-159">如需 MRTK 設定檔設定的完整參考，請參閱這裡的 MRTK 檔： [https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)</span><span class="sxs-lookup"><span data-stu-id="99633-159">For full reference to MRTK profile settings, refer to the MRTK documentation here: [https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial2-section1-step3-1.png)
 
-## <a name="hand-tracking-gestures-and-interactable-buttons"></a><span data-ttu-id="99633-160">手部追蹤手勢和可互動的按鈕</span><span class="sxs-lookup"><span data-stu-id="99633-160">Hand Tracking Gestures and Interactable buttons</span></span>
+<span data-ttu-id="875da-145">在 [複製設定檔] 視窗中，按一下 [**複製**] 按鈕，以建立**DefaultMixedRealitySpatialAwarenessSystemProfile**的可編輯複本：</span><span class="sxs-lookup"><span data-stu-id="875da-145">In the Clone Profile window, click the **Clone** button to create an editable copy of the **DefaultMixedRealitySpatialAwarenessSystemProfile**:</span></span>
 
-<span data-ttu-id="99633-161">在本節中，您將瞭解如何使用 [手動追蹤] 來按下 [pressable] 按鈕。</span><span class="sxs-lookup"><span data-stu-id="99633-161">In this section, you will learn how to use hand tracking to press a pressable button.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial2-section1-step3-2.png)
 
-1. <span data-ttu-id="99633-162">從 [專案] 資料夾選取 [資產]。</span><span class="sxs-lookup"><span data-stu-id="99633-162">Select Assets from the projects folder.</span></span>
+<span data-ttu-id="875da-147">新建立的空間感知系統設定檔現在會自動指派給您的設定設定檔：</span><span class="sxs-lookup"><span data-stu-id="875da-147">The newly created Spatial Awareness System Profile is now automatically assigned to your Configuration Profile:</span></span>
 
-2. <span data-ttu-id="99633-163">在搜尋列中輸入 "PressableButtonHoloLens2"。</span><span class="sxs-lookup"><span data-stu-id="99633-163">Type "PressableButtonHoloLens2" in the search bar.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial2-section1-step3-3.png)
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step2.png)
+### <a name="4-clone-the-default-spatial-awareness-mesh-observer-profile"></a><span data-ttu-id="875da-149">4. 複製預設空間感知網格觀察者設定檔</span><span class="sxs-lookup"><span data-stu-id="875da-149">4. Clone the default Spatial Awareness Mesh Observer Profile</span></span>
 
-3. <span data-ttu-id="99633-165">將名為 "PressableButtonHoloLens2" 的 prefab （以藍色方塊表示）拖曳至您的階層中，並將 [位置] 值設定為 x = 0、y = 0 和 z = 0.2，讓按鈕位於相機前方。</span><span class="sxs-lookup"><span data-stu-id="99633-165">Drag the prefab (represented by a blue box) named "PressableButtonHoloLens2" into your hierarchy and set set the position values to x = 0, y = 0 and z = 0.2 so the button is in front of the camera.</span></span> <span data-ttu-id="99633-166">（相機位於原始位置）。</span><span class="sxs-lookup"><span data-stu-id="99633-166">(The camera is positioned at origin).</span></span>
+<span data-ttu-id="875da-150">在仍選取 [**空間感知**] 索引標籤的情況下，展開 [ **Windows Mixed Reality 空間網格觀察**者] 區段，然後按一下 [**複製**] 按鈕以開啟 [複製設定檔] 視窗：</span><span class="sxs-lookup"><span data-stu-id="875da-150">With the **Spatial Awareness** tab still selected, expand the **Windows Mixed Reality Spatial Mesh Observer** section, then click the **Clone** button to open the Clone Profile window:</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="99633-167">如果您收到有關「匯入 TMP Essentials」的訊息，請在此時匯入。</span><span class="sxs-lookup"><span data-stu-id="99633-167">If you get a message about “importing TMP Essentials”, import it at this time.</span></span> <span data-ttu-id="99633-168">如果您的專案尚未包含 TMP Essentials，您可能需要在匯入 TMP Essentials 後重複此步驟，否則可能不會出現按鈕文字。</span><span class="sxs-lookup"><span data-stu-id="99633-168">If TMP Essentials was not already part of your project, you might need to repeat this step after importing TMP Essentials, otherwise button text may not appear.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial2-section1-step4-1.png)
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step3.png)
+<span data-ttu-id="875da-152">在 [複製設定檔] 視窗中，按一下 [**複製**] 按鈕，以建立**DefaultMixedRealitySpatialAwarenessMeshObserverProfile**的可編輯複本：</span><span class="sxs-lookup"><span data-stu-id="875da-152">In the Clone Profile window, click the **Clone** button to create an editable copy of the **DefaultMixedRealitySpatialAwarenessMeshObserverProfile**:</span></span>
 
-4. <span data-ttu-id="99633-170">在場景中新增立方體。</span><span class="sxs-lookup"><span data-stu-id="99633-170">Add a cube to the scene.</span></span> <span data-ttu-id="99633-171">以滑鼠右鍵按一下 [階層] 區域，選取3D 物件，然後按一下 [Cube]。</span><span class="sxs-lookup"><span data-stu-id="99633-171">Right-click on the hierarchy area, select a 3D object, then click on Cube.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial2-section1-step4-2.png)
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step6a.png)
+<span data-ttu-id="875da-154">新建立的空間感知網格觀察者設定檔現在會自動指派給您的空間感知系統設定檔：</span><span class="sxs-lookup"><span data-stu-id="875da-154">The newly created Spatial Awareness Mesh Observer Profile is now automatically assigned to your Spatial Awareness System Profile:</span></span>
 
-    <span data-ttu-id="99633-173">現在，立方體應該會在您的顯示區域內。</span><span class="sxs-lookup"><span data-stu-id="99633-173">Now, a cube should be in your display.</span></span> <span data-ttu-id="99633-174">它會非常大。</span><span class="sxs-lookup"><span data-stu-id="99633-174">It will appear very large.</span></span> <span data-ttu-id="99633-175">您可以調整座標（在 [階層] 區域中仍然選取 [Cube]）來減少大小。</span><span class="sxs-lookup"><span data-stu-id="99633-175">You can adjust the coordinates (while Cube is still selected in the hierarchy area) to decrease the size.</span></span> <span data-ttu-id="99633-176">將縮放值設定為 x = 0.02、y = 0.02 和 z = 0.02。</span><span class="sxs-lookup"><span data-stu-id="99633-176">Set the scale values to x = 0.02, y = 0.02 and z = 0.02.</span></span> <span data-ttu-id="99633-177">請務必將 cube 放在靠近按鈕的場景中，但不會與它重迭。</span><span class="sxs-lookup"><span data-stu-id="99633-177">Be sure to position the cube in your scene near the button, but not overlapping with it.</span></span> <span data-ttu-id="99633-178">在下圖中，cube 的位置是 x = 0、y = 0.04 和 z = 0.2。</span><span class="sxs-lookup"><span data-stu-id="99633-178">In the image below, the cube’s position is x = 0, y = 0.04, and z = 0.2.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial2-section1-step4-3.png)
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step6b.png)
+### <a name="5-change-the-visibility-of-the-spatial-awareness-mesh"></a><span data-ttu-id="875da-156">5. 變更空間感知網格的可見度</span><span class="sxs-lookup"><span data-stu-id="875da-156">5. Change the visibility of the spatial awareness mesh</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="99633-180">一般情況下，Unity 中的 1 個單位會大致等於真實世界的 1 公尺。</span><span class="sxs-lookup"><span data-stu-id="99633-180">In general, 1 unit in Unity is roughly equivalent to 1 meter in the physical world.</span></span> <span data-ttu-id="99633-181">這有一些例外狀況;例如，當物件是縮放物件的子系時。</span><span class="sxs-lookup"><span data-stu-id="99633-181">There are exceptions to this; for example, when objects are children of scaled objects.</span></span>
+<span data-ttu-id="875da-157">在 [**空間網格觀察**者] 設定中，將 [**顯示] 選項**變更為 [**遮蔽**]，讓空間對應網格在正常運作時不可見：</span><span class="sxs-lookup"><span data-stu-id="875da-157">In the **Spatial Mesh Observer Settings**, change the **Display Option** to **Occlusion** to make the spatial mapping mesh invisible while still being functional:</span></span>
 
-5. <span data-ttu-id="99633-182">選取 [PressableButtonHoloLens2 遊戲] 物件後，向下流覽至偵測器的底部，以尋找 [可互動（腳本）] 元件的 [事件] 區段。</span><span class="sxs-lookup"><span data-stu-id="99633-182">With the PressableButtonHoloLens2 game object selected, scroll towards the bottom in the Inspector to locate the Events section of the Interactable (Script) component.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial2-section1-step5-1.png)
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step4.png)
+> [!NOTE]
+> <span data-ttu-id="875da-159">雖然空間對應網格看不到，但仍存在且正常運作。</span><span class="sxs-lookup"><span data-stu-id="875da-159">Although the spatial mapping mesh is not visible, it is still present and functional.</span></span> <span data-ttu-id="875da-160">例如，空間對應網格背後的任何全息影像（例如，實體牆後方的全息圖）將不會顯示。</span><span class="sxs-lookup"><span data-stu-id="875da-160">For example, any holograms behind the spatial mapping mesh, such as a hologram behind a physical wall, will not be visible.</span></span>
 
-6. <span data-ttu-id="99633-184">我們會修改現有的事件，讓按鈕在推送時提供回應事件。</span><span class="sxs-lookup"><span data-stu-id="99633-184">We will modify the existing event to give the button an event to respond to when pushed.</span></span> <span data-ttu-id="99633-185">如您所見，事件接收器類型設定為 InteractableOnPressReceiver。</span><span class="sxs-lookup"><span data-stu-id="99633-185">As you can see, the Event Receiver Type is set to InteractableOnPressReceiver.</span></span> <span data-ttu-id="99633-186">在追蹤的手部按下按鈕時，這可讓按鈕回應按下事件。</span><span class="sxs-lookup"><span data-stu-id="99633-186">This allows the button to respond to a pressed event when a tracked hand presses the button.</span></span> <span data-ttu-id="99633-187">此時，您也應該將互動篩選器變更為近到遠。</span><span class="sxs-lookup"><span data-stu-id="99633-187">At this point, you should also change the Interaction Filter to Near and Far.</span></span>
+<span data-ttu-id="875da-161">您方才已了解如何修改 MRTK 設定檔中的設定。</span><span class="sxs-lookup"><span data-stu-id="875da-161">You just learned how to modify a setting in the MRTK profile.</span></span> <span data-ttu-id="875da-162">如您所見，為了自訂 MRTK 設定，您必須先建立預設設定檔的複本。</span><span class="sxs-lookup"><span data-stu-id="875da-162">As you can see, in order to customize the MRTK settings, you first need to create copies of the default profiles.</span></span> <span data-ttu-id="875da-163">由於預設設定檔無法編輯，因此如果您想要還原為預設設定，則一律會將它們當做參考。</span><span class="sxs-lookup"><span data-stu-id="875da-163">Because the default profiles are not editable, you will always have them as reference if you want revert back to the default settings.</span></span> <span data-ttu-id="875da-164">若要深入瞭解 MRTK 設定檔及其架構，您可以造訪[MRTK 檔入口網站](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)中的[混合現實工具組設定檔設定指南](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/MixedRealityConfigurationGuide.html)。</span><span class="sxs-lookup"><span data-stu-id="875da-164">To learn more about MRTK profiles and their architecture, you can visit the [Mixed Reality Toolkit profile configuration guide](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/MixedRealityConfigurationGuide.html) in the [MRTK Documentation Portal](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html).</span></span>
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step5.png)
+## <a name="hand-tracking-gestures-and-interactable-buttons"></a><span data-ttu-id="875da-165">手形追蹤筆勢和可互動按鈕</span><span class="sxs-lookup"><span data-stu-id="875da-165">Hand tracking gestures and interactable buttons</span></span>
 
-7. <span data-ttu-id="99633-189">在此步驟中，您會設定讓立方體在使用者按下按鈕時變更色彩。</span><span class="sxs-lookup"><span data-stu-id="99633-189">In this step you will set up the cube to change color when your button is pressed.</span></span> <span data-ttu-id="99633-190">選取 BaseScene 階層中的 [PressableButtonHoloLens2]，並將 [Cube 遊戲] 物件從 [BaseScene] 階層拖曳至 [僅限執行時間] 欄位，如下圖所示。</span><span class="sxs-lookup"><span data-stu-id="99633-190">Select the PressableButtonHoloLens2 in the BaseScene hierarchy and drag the Cube game object from the BaseScene hierarchy into the Runtime Only field as shown in the image below.</span></span>
+<span data-ttu-id="875da-166">在本節中，您將瞭解如何使用「手動追蹤」來按下按鈕並觸發事件，以在按下按鈕時引發動作。</span><span class="sxs-lookup"><span data-stu-id="875da-166">In this section, you will learn how to use hand tracking to press a button and trigger events to cause an action when the button is pressed.</span></span>
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step7a.png)
+<span data-ttu-id="875da-167">此特定範例將示範如何在按下按鈕時變更 cube 的色彩，並在放開按鈕時，將它變更回原始色彩。</span><span class="sxs-lookup"><span data-stu-id="875da-167">This particular example will show you how to change the color of a cube when the button is pressed and change it back to it's original color when the button is released.</span></span> <span data-ttu-id="875da-168">不過，您可以遵循這些相同的原則來建立其他事件。</span><span class="sxs-lookup"><span data-stu-id="875da-168">However, you may follow these same principles to create other events.</span></span>
 
-    <span data-ttu-id="99633-192">按一下顯示 [沒有函數] 的下拉式清單。</span><span class="sxs-lookup"><span data-stu-id="99633-192">Click the drop-down list that says No Function.</span></span> <span data-ttu-id="99633-193">選取 [MeshRenderer]，然後選取 [材質材質]。</span><span class="sxs-lookup"><span data-stu-id="99633-193">Select MeshRenderer, then select Material material.</span></span> <span data-ttu-id="99633-194">這可讓您在按下按鈕時變更材質。</span><span class="sxs-lookup"><span data-stu-id="99633-194">This lets you change the material when the button is pressed.</span></span>
+<span data-ttu-id="875da-169">您需要變更 cube 色彩的主要步驟如下：</span><span class="sxs-lookup"><span data-stu-id="875da-169">The main steps you will take to change the color of the cube are:</span></span>
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step7b.png)
+1. <span data-ttu-id="875da-170">將 pressable 按鈕 prefab 新增至場景</span><span class="sxs-lookup"><span data-stu-id="875da-170">Add a pressable button prefab to the scene</span></span>
+2. <span data-ttu-id="875da-171">將 cube 新增至場景</span><span class="sxs-lookup"><span data-stu-id="875da-171">Add a cube to the scene</span></span>
+3. <span data-ttu-id="875da-172">設定 InteractableOnPressReceiver 事件種類</span><span class="sxs-lookup"><span data-stu-id="875da-172">Configure the InteractableOnPressReceiver event type</span></span>
+4. <span data-ttu-id="875da-173">設定 cube 以在按下事件時接收</span><span class="sxs-lookup"><span data-stu-id="875da-173">Configure the cube to receive the On Press event</span></span>
+5. <span data-ttu-id="875da-174">定義要在按下事件時觸發的動作</span><span class="sxs-lookup"><span data-stu-id="875da-174">Define the action to be triggered by the On Press event</span></span>
+6. <span data-ttu-id="875da-175">設定 cube 以接收發行前事件</span><span class="sxs-lookup"><span data-stu-id="875da-175">Configure the cube to receive the On Release event</span></span>
+7. <span data-ttu-id="875da-176">定義要由「發行」事件觸發的動作</span><span class="sxs-lookup"><span data-stu-id="875da-176">Define the action to be triggered by the On Release event</span></span>
+8. <span data-ttu-id="875da-177">使用編輯器內模擬來測試按鈕</span><span class="sxs-lookup"><span data-stu-id="875da-177">Test the button using the in-editor simulation</span></span>
 
-    <span data-ttu-id="99633-196">按一下 [空白材質] 欄位旁的圓形，開啟 [選取材質] 快顯視窗。</span><span class="sxs-lookup"><span data-stu-id="99633-196">Click the circle next to the empty material field to open the Select Material popup.</span></span> <span data-ttu-id="99633-197">MRTK 包含許多材質和色彩可供選擇。</span><span class="sxs-lookup"><span data-stu-id="99633-197">The MRTK includes many materials and colors to choose from.</span></span> <span data-ttu-id="99633-198">在此範例中，您將使用在快顯搜尋列中輸入 "MRTK_Standard" 所找到的材質 MRTK_Standard_Cyan。</span><span class="sxs-lookup"><span data-stu-id="99633-198">For this example, you are going to use the material, MRTK_Standard_Cyan, found by typing in "MRTK_Standard" in the pop-up search bar.</span></span> <span data-ttu-id="99633-199">選取要填入 [材質] 欄位的 MRTK_Standard_Cyan 材質。</span><span class="sxs-lookup"><span data-stu-id="99633-199">Select the MRTK_Standard_Cyan material to populate the material field.</span></span>
+### <a name="1-add-a-pressable-button-prefab-to-the-scene"></a><span data-ttu-id="875da-178">1. 將 pressable 按鈕 prefab 新增至場景</span><span class="sxs-lookup"><span data-stu-id="875da-178">1. Add a pressable button prefab to the scene</span></span>
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step7c.png)
+> [!TIP]
+> <span data-ttu-id="875da-179"><a href="https://docs.unity3d.com/Manual/Prefabs.html" target="_blank">Prefab</a>是預先設定的 GameObject，儲存為 Unity 資產，並可在整個專案中重複使用。</span><span class="sxs-lookup"><span data-stu-id="875da-179">A <a href="https://docs.unity3d.com/Manual/Prefabs.html" target="_blank">prefab</a> is a pre-configured GameObject stored as a Unity Asset and can be reused throughout your project.</span></span>
 
-    <span data-ttu-id="99633-201">此事件現在已設定好，因此在按下按鈕時，立方體便會根據您指定的材質變更色彩。</span><span class="sxs-lookup"><span data-stu-id="99633-201">The event is now set so that when the button is pressed, the cube will change color based on the material you specified.</span></span> <span data-ttu-id="99633-202">在此範例中，立方體會變更為青色。</span><span class="sxs-lookup"><span data-stu-id="99633-202">In this example, the cube will change to the cyan color.</span></span>
+<span data-ttu-id="875da-180">在 [**專案] 視窗**中，搜尋**PressableButtonHoloLens2**以找出您將在此範例中使用的 prefab：</span><span class="sxs-lookup"><span data-stu-id="875da-180">In the **Project window**, search for **PressableButtonHoloLens2** to locate the prefab you will use for this example:</span></span>
 
-8. <span data-ttu-id="99633-203">接下來，您將設定發行動作，以便在發行時，按鈕會回到其預設色彩。</span><span class="sxs-lookup"><span data-stu-id="99633-203">Next, you are going to set up the release action so that upon release, the button will go back to its default color.</span></span> <span data-ttu-id="99633-204">重複上述的步驟7。</span><span class="sxs-lookup"><span data-stu-id="99633-204">Repeat Step 7, above.</span></span> <span data-ttu-id="99633-205">不過，這次使用 OnRelease 事件而非 OnPress MRTK_Standard_LightGray 材質，如下圖所示。</span><span class="sxs-lookup"><span data-stu-id="99633-205">However, this time with the OnRelease event instead of the OnPress MRTK_Standard_LightGray material as shown in the image below.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial2-section2-step1-1.png)
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step8.png)
+<span data-ttu-id="875da-182">在**搜尋**結果中，選取 [ **PressableButtonHoloLens2** ] prefab，並**將它拖曳** **至 [階層] 視窗，將**它新增至您的場景：</span><span class="sxs-lookup"><span data-stu-id="875da-182">In the **Search** result, select the **PressableButtonHoloLens2** prefab and **drag** it into the **Hierarchy** window to add it to your scene:</span></span>
 
-    <span data-ttu-id="99633-207">現在當按下按鈕時，它會變更為新的色彩。—.</span><span class="sxs-lookup"><span data-stu-id="99633-207">Now when the button is pressed, it will change to a new color; cyan.</span></span> <span data-ttu-id="99633-208">釋放按鈕時，它會變更回您指定的預設色彩（例如淺灰色）。按下畫面頂端的 [播放] 按鈕，在編輯器中試用，或部署至 HoloLens 2 以進行測試。</span><span class="sxs-lookup"><span data-stu-id="99633-208">When the button is released, it will change back to the default color you specified (e.g., light gray.) Press the Play button on the top of the screen to try it out in the editor or deploy to your HoloLens 2, to test.</span></span> <span data-ttu-id="99633-209">若要深入瞭解在編輯器中的模擬，包括手動模擬，請閱讀[MRTK 的模擬檔頁面](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/InputSimulation/InputSimulationService.html>)。</span><span class="sxs-lookup"><span data-stu-id="99633-209">To learn more about in-editor simulation, including hand simulation, read the [MRTK's simulation documentation page](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/InputSimulation/InputSimulationService.html>).</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial2-section2-step1-2.png)
 
-## <a name="creating-a-panel-of-buttons-using-mrtks-grid-object-collection"></a><span data-ttu-id="99633-210">使用 MRTK 的方格物件集合來建立按鈕面板</span><span class="sxs-lookup"><span data-stu-id="99633-210">Creating a panel of buttons using MRTK’s Grid Object Collection</span></span>
+> [!TIP]
+> <span data-ttu-id="875da-184">若要顯示您的場景（如下圖所示），請按兩下 [階層] 視窗中的 [PressableButtonHoloLens2] 物件，使其成為焦點，然後使用場景<a href="https://docs.unity3d.com/Manual/SceneViewNavigation.html" target="_blank">Gizmo</a>（位於場景視窗的右上角），將視角調整為沿著正向 Z 軸。</span><span class="sxs-lookup"><span data-stu-id="875da-184">To display your scene as shown in the image below, double-click the PressableButtonHoloLens2 object in the Hierarchy window to bring it into focus, then use the <a href="https://docs.unity3d.com/Manual/SceneViewNavigation.html" target="_blank">Scene Gizmo</a>, located in the top right corner of the Scene window, to adjust the viewing angle to be along the forward Z axis.</span></span>
 
-<span data-ttu-id="99633-211">在本節中，您將瞭解如何使用 MRTK 的 GridObjectCollection 工具，將多個按鈕自動對齊整齊的使用者介面。</span><span class="sxs-lookup"><span data-stu-id="99633-211">In this section, you will learn how to automatically align multiple buttons into a neat user interface by using the MRTK’s GridObjectCollection tool.</span></span>
+<span data-ttu-id="875da-185">在仍選取 PressableButtonHoloLens2 物件的情況下，在 [偵測**器**] 視窗中：</span><span class="sxs-lookup"><span data-stu-id="875da-185">With the PressableButtonHoloLens2 object still selected, in the **Inspector** window:</span></span>
 
-1. <span data-ttu-id="99633-212">複製上一節中的按鈕，直到您有五個按鈕為止。</span><span class="sxs-lookup"><span data-stu-id="99633-212">Duplicate the button from the previous section until you have five buttons.</span></span> <span data-ttu-id="99633-213">執行此動作的方法有好幾種：-以滑鼠右鍵按一下按鈕，然後按一下 [複製]。</span><span class="sxs-lookup"><span data-stu-id="99633-213">There are several ways to do this: -Right-click on the button, and click Copy.</span></span> <span data-ttu-id="99633-214">然後移至按鈕下方，再以滑鼠右鍵按一下，再按一下 [貼上]。</span><span class="sxs-lookup"><span data-stu-id="99633-214">Then go down to below the button and right-click again, then click Paste.</span></span>
-    <span data-ttu-id="99633-215">-以滑鼠右鍵按一下按鈕，然後按一下 [複製]。</span><span class="sxs-lookup"><span data-stu-id="99633-215">-Right-click on the button and click Duplicate.</span></span>
-    <span data-ttu-id="99633-216">-使用鍵盤命令，方法是按一下 cube，然後按下鍵盤上的 Ctrl D。</span><span class="sxs-lookup"><span data-stu-id="99633-216">-Use the keyboard command by clicking on the cube, and pressing Ctrl D on your keyboard.</span></span>
+* <span data-ttu-id="875da-186">變更其 [轉換**位置**]，使其定位於位於來源的相機前方，例如 x = 0、y = 0 和 z = 0。5</span><span class="sxs-lookup"><span data-stu-id="875da-186">Change its Transform **Position** so it's positioned in front of the camera, which is positioned at origin, for example, x = 0, y = 0, and z = 0.5</span></span>
 
-    <span data-ttu-id="99633-217">重複此動作，直到您有五個按鈕為止;請參閱下圖中的五個紅色箭號。</span><span class="sxs-lookup"><span data-stu-id="99633-217">Repeat this until you have five buttons; see the five red arrows in image below.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial2-section2-step1-3.png)
 
-    ![Mrlearning Base Ch2 3Step1im](images/mrlearning-base-ch2-3step1im.PNG)
+> [!NOTE]
+> <span data-ttu-id="875da-188">一般而言，Unity 中的1個位置單位大致等同于實體世界中的1個計量。</span><span class="sxs-lookup"><span data-stu-id="875da-188">In general, 1 position unit in Unity is roughly equivalent to 1 meter in the physical world.</span></span> <span data-ttu-id="875da-189">不過，這有一些例外狀況，例如，當物件是縮放物件的子系時。</span><span class="sxs-lookup"><span data-stu-id="875da-189">However, there are exceptions to this, for example, when objects are children of scaled objects.</span></span>
 
-2. <span data-ttu-id="99633-219">將按鈕群組到空白的父遊戲物件底下。</span><span class="sxs-lookup"><span data-stu-id="99633-219">Group the buttons under an empty parent game object.</span></span> <span data-ttu-id="99633-220">若要在方格集合中具有按鈕，您必須將按鈕分組在一般父物件底下。</span><span class="sxs-lookup"><span data-stu-id="99633-220">In order to have the buttons in the grid collection, you need to group your buttons under a common parent object.</span></span> <span data-ttu-id="99633-221">在 hiearachy 上按一下滑鼠右鍵，然後按一下 [建立空的]。</span><span class="sxs-lookup"><span data-stu-id="99633-221">Right-click in the hiearachy, and click Create Empty.</span></span> <span data-ttu-id="99633-222">這會建立新的空白遊戲物件供您放入所有按鈕。</span><span class="sxs-lookup"><span data-stu-id="99633-222">This creates a new empty game object for you to put all the buttons in.</span></span> <span data-ttu-id="99633-223">它會顯示為 gameObject。</span><span class="sxs-lookup"><span data-stu-id="99633-223">It shows up as gameObject.</span></span> <span data-ttu-id="99633-224">以滑鼠右鍵按一下，並將它重新命名為 ButtonCollection。</span><span class="sxs-lookup"><span data-stu-id="99633-224">Right-click and rename it, ButtonCollection.</span></span>
+### <a name="2-add-a-cube-to-the-scene"></a><span data-ttu-id="875da-190">2. 將 cube 新增至場景</span><span class="sxs-lookup"><span data-stu-id="875da-190">2. Add a cube to the scene</span></span>
 
-    ![Mrlearning Base Ch2 3Step2im](images/mrlearning-base-ch2-3step2im.PNG)
+<span data-ttu-id="875da-191">以滑鼠右鍵按一下 [階層] 視窗內的空白位置，然後選取 [ **3D 物件** > **Cube** ]，將 cube 新增至您的場景：</span><span class="sxs-lookup"><span data-stu-id="875da-191">Right-click on an empty spot inside the Hierarchy window and select **3D Object** > **Cube** to add a cube to your scene:</span></span>
 
-3. <span data-ttu-id="99633-226">將所有按鈕移至新的集合。</span><span class="sxs-lookup"><span data-stu-id="99633-226">Move all the buttons into the new collection.</span></span> <span data-ttu-id="99633-227">若要這麼做，請選取階層中的所有五個按鈕物件，並將其全部拖曳到 [ButtonCollection 遊戲物件] 底下，如下圖所示。</span><span class="sxs-lookup"><span data-stu-id="99633-227">Do this by selecting all five of the button objects in your heirarchy, and drag them all under ButtonCollection game object as shown in the image below.</span></span> <span data-ttu-id="99633-228">提示：按住 Ctrl 鍵並選取專案，以選取多個專案。</span><span class="sxs-lookup"><span data-stu-id="99633-228">Tip: select multiple items by holding the Ctrl key while selecting items.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial2-section2-step2-1.png)
 
-    ![Mrlearning Base Ch2 3Step3imb](images/mrlearning-base-ch2-3step3imb.PNG)
+<span data-ttu-id="875da-193">在仍選取 Cube 物件的情況下，在 [偵測**器**] 視窗中：</span><span class="sxs-lookup"><span data-stu-id="875da-193">With the Cube object still selected, in the **Inspector** window:</span></span>
 
-4. <span data-ttu-id="99633-230">將 MRTK 的 Grid 物件集合元件新增至按鈕集合。</span><span class="sxs-lookup"><span data-stu-id="99633-230">Add MRTK’s Grid Object Collection component to the button collection.</span></span> <span data-ttu-id="99633-231">若要這麼做，請選取 [ButtonCollection] 父物件。</span><span class="sxs-lookup"><span data-stu-id="99633-231">To do this, select the ButtonCollection parent object.</span></span> <span data-ttu-id="99633-232">從 [偵測器] 面板中，按一下 [新增元件] 按鈕。</span><span class="sxs-lookup"><span data-stu-id="99633-232">From the Inspector panel, click the Add Component button.</span></span> <span data-ttu-id="99633-233">在搜尋列中搜尋 Grid 物件集合，並在清單中出現它時加以選取。</span><span class="sxs-lookup"><span data-stu-id="99633-233">Search for Grid Object Collection in the search bar, and select it when it appears in the list.</span></span>
+* <span data-ttu-id="875da-194">變更其轉換**位置**，使其位於 [pressable] 按鈕附近，但不會與它重迭，例如 x = 0、y = 0.04 和 z = 0。5</span><span class="sxs-lookup"><span data-stu-id="875da-194">Change its Transform **Position** so its located near the pressable button, but not overlapping with it, for example, x = 0, y = 0.04, and z = 0.5</span></span>
+* <span data-ttu-id="875da-195">將其轉換**調整**為適當的大小，例如 x = 0.02、y = 0.02 和 z = 0.02</span><span class="sxs-lookup"><span data-stu-id="875da-195">Change its Transform **Scale** to a suitable size, for example, x = 0.02, y = 0.02, and z = 0.02</span></span>
 
-    ![Mrlearning Base Ch2 3Step4im](images/mrlearning-base-ch2-3-step4.png)
+![mrlearning-基底](images/mrlearning-base/tutorial2-section2-step2-2.png)
 
-    <span data-ttu-id="99633-235">Grid 物件集合元件可讓您在整齊的資料列、資料行或方格中組織按鈕或任何一組物件。</span><span class="sxs-lookup"><span data-stu-id="99633-235">The Grid Object Collection component lets you organize buttons or any set of objects in a neat row, column, or grid.</span></span> <span data-ttu-id="99633-236">這是 MRTK 所提供的其中一個建立區塊，可讓您快速且輕鬆地建立吸引人的使用者介面。</span><span class="sxs-lookup"><span data-stu-id="99633-236">This is one of the building blocks provided by the MRTK that gives you a quick and easy way to create enticing user interfaces.</span></span>
+### <a name="3-configure-the-interactableonpressreceiver-event-type"></a><span data-ttu-id="875da-197">3. 設定 InteractableOnPressReceiver 事件種類</span><span class="sxs-lookup"><span data-stu-id="875da-197">3. Configure the InteractableOnPressReceiver event type</span></span>
 
-5. <span data-ttu-id="99633-237">設定方格物件集合。</span><span class="sxs-lookup"><span data-stu-id="99633-237">Configure the grid object collection.</span></span> <span data-ttu-id="99633-238">若要確保所有按鈕都能面對使用者，請選取 [方向類型]。</span><span class="sxs-lookup"><span data-stu-id="99633-238">To ensure all the buttons face the user, select Orient Type.</span></span> <span data-ttu-id="99633-239">然後選取 [臉部父系轉寄]，如下圖所示。</span><span class="sxs-lookup"><span data-stu-id="99633-239">Then select Face Parent Forward as shown in the image below.</span></span> <span data-ttu-id="99633-240">接下來，變更儲存格大小來設定按鈕間距。</span><span class="sxs-lookup"><span data-stu-id="99633-240">Next, change the cell size to set the space between your buttons.</span></span> <span data-ttu-id="99633-241">針對儲存格寬度和儲存格高度，以0.05 個單位（依0.05 單位）開始，如下圖所示。</span><span class="sxs-lookup"><span data-stu-id="99633-241">Start with 0.05 units by 0.05 units for the Cell Width and Cell Height, as shown in the image below.</span></span> <span data-ttu-id="99633-242">請確定 [距離] 設定為0，而 [資料列] 設定為1。</span><span class="sxs-lookup"><span data-stu-id="99633-242">Make sure Distance is set to 0 and Rows is set to 1.</span></span> <span data-ttu-id="99633-243">按一下 [更新集合]。</span><span class="sxs-lookup"><span data-stu-id="99633-243">Click Update Collection.</span></span> <span data-ttu-id="99633-244">場景看起來會類似下圖。</span><span class="sxs-lookup"><span data-stu-id="99633-244">The scene will look similar to the picture below.</span></span>
+<span data-ttu-id="875da-198">在 [階層] 視窗中選取 PressableButtonHoloLens2 物件之後，在 [偵測**器**視窗]**漢堡功能表**中，選取 [ **Collaps 所有元件**] 以取得此物件上所有元件的總覽：</span><span class="sxs-lookup"><span data-stu-id="875da-198">With the PressableButtonHoloLens2 object selected in the Hierarchy window, in the **Inspector** window **hamburger menu**, select **Collaps All Components** to get an overview of all components on this object:</span></span>
 
-    ![Mrlearning Base Ch2 3Step5im](images/mrlearning-base-ch2-3-step5.png)
+![mrlearning-基底](images/mrlearning-base/tutorial2-section2-step3-1.png)
 
-    >[!NOTE]
-    ><span data-ttu-id="99633-246">根據子物件或父物件的方向，您可能需要在未來的專案中以不同的方式調整方向設定。</span><span class="sxs-lookup"><span data-stu-id="99633-246">Depending on the orientation of the child objects or parent object, you will likely need to adjust the orientation setting differently in future projects.</span></span> <span data-ttu-id="99633-247">根據集合中物件的大小，[儲存格寬度] 和 [儲存格高度] 欄位可能也需要以不同的方式定義。</span><span class="sxs-lookup"><span data-stu-id="99633-247">The Cell Width and the Cell Height fields may also need to be defined differently, depending on the size of the objects in your collection.</span></span>
+<span data-ttu-id="875da-200">展開 [**可互動（腳本）** ] 元件，然後找出並展開 [**事件** > **接收者**] 區段：</span><span class="sxs-lookup"><span data-stu-id="875da-200">Expand the **Interactable (Script)** component, then locate and expand the **Events** > **Receivers** section:</span></span>
 
-## <a name="adding-text-into-your-scene"></a><span data-ttu-id="99633-248">在場景中新增文字</span><span class="sxs-lookup"><span data-stu-id="99633-248">Adding Text into Your Scene</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial2-section2-step3-2.png)
 
-<span data-ttu-id="99633-249">在本節中，您會了解如何在混合實境體驗中新增和編輯文字。</span><span class="sxs-lookup"><span data-stu-id="99633-249">In this section, you will learn how to add and edit text to your mixed reality experiences.</span></span> <span data-ttu-id="99633-250">如果您還沒有這麼做，請遵循[這裡](https://docs.unity3d.com/Packages/com.unity.textmeshpro@2.0/manual/index.html#installation)的指示，確定您已在 Unity 中啟用 TextMeshPro。</span><span class="sxs-lookup"><span data-stu-id="99633-250">If you haven’t already, ensure you have TextMeshPro enabled in Unity by following the instructions [here](https://docs.unity3d.com/Packages/com.unity.textmeshpro@2.0/manual/index.html#installation).</span></span>
+<span data-ttu-id="875da-202">針對 [事件接收器類型**InteractableOnPressReceiver**]，將 [**互動] 篩選**變更為 [**近到目前**]：</span><span class="sxs-lookup"><span data-stu-id="875da-202">For the Event Receiver Type **InteractableOnPressReceiver**, change the **Interaction Filter** to **Near and Far**:</span></span>
 
-1. <span data-ttu-id="99633-251">選取 [ButtonCollection] 父物件，然後以滑鼠右鍵按一下集合。</span><span class="sxs-lookup"><span data-stu-id="99633-251">Select the ButtonCollection parent object, and right-click the collection.</span></span> <span data-ttu-id="99633-252">在下拉式功能表中展開 [3D 物件]。</span><span class="sxs-lookup"><span data-stu-id="99633-252">Expand 3D object in the drop-down menu.</span></span> <span data-ttu-id="99633-253">然後選取 [TextMeshPro-Text]。</span><span class="sxs-lookup"><span data-stu-id="99633-253">Then select TextMeshPro - Text.</span></span> <span data-ttu-id="99633-254">您應該會在按鈕集合底下看到 TextMeshPro 物件，如下圖所示。</span><span class="sxs-lookup"><span data-stu-id="99633-254">You should see a TextMeshPro object under the button collection as shown in the image below.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial2-section2-step3-3.png)
 
-    <span data-ttu-id="99633-255">![第2課 Chapter4 Step1a](images/Lesson2_Chapter4_Step1a.JPG) ![第2課 Chapter4 Step1b](images/Lesson2_Chapter4_Step1b.JPG)</span><span class="sxs-lookup"><span data-stu-id="99633-255">![Lesson2 Chapter4 Step1a](images/Lesson2_Chapter4_Step1a.JPG) ![Lesson2 Chapter4 Step1b](images/Lesson2_Chapter4_Step1b.JPG)</span></span>
+> [!NOTE]
+> <span data-ttu-id="875da-204">名為 InteractableOnPressReceiver 的事件接收器型別，可讓按鈕在追蹤的手按下按鈕時，回應按下的事件。</span><span class="sxs-lookup"><span data-stu-id="875da-204">The Event Receiver Type named InteractableOnPressReceiver allows the button to respond to a pressed event when a tracked hand presses the button.</span></span>
 
-2. <span data-ttu-id="99633-256">若要改善可讀性的文字大小和位置，請調整 [TextMeshPro] 元件中的 [字型大小] 欄位，以變更字型的大小。</span><span class="sxs-lookup"><span data-stu-id="99633-256">To improve the text size and placement for readability, adjust the Font Size field in the TextMeshPro component to change the size of the font.</span></span> <span data-ttu-id="99633-257">您也需要調整矩形轉換位置和尺規，如下圖所示。</span><span class="sxs-lookup"><span data-stu-id="99633-257">You will also need to adjust the Rect Transform position and scale as shown in the image below.</span></span> <span data-ttu-id="99633-258">請參閱下列影像，以瞭解用於文字設定的值。</span><span class="sxs-lookup"><span data-stu-id="99633-258">See the images below for values used for our text configuration.</span></span> <span data-ttu-id="99633-259">您可以隨意使用這些值做為起點，進一步改善文字欄位的大小和位置。</span><span class="sxs-lookup"><span data-stu-id="99633-259">Feel free to use these values as a starting point to further improve the size and placement of your text field.</span></span>
+### <a name="4-configure-the-cube-to-receive-the-on-press-event"></a><span data-ttu-id="875da-205">4. 設定 cube 以在按下事件時接收</span><span class="sxs-lookup"><span data-stu-id="875da-205">4. Configure the cube to receive the On Press event</span></span>
 
-    ![第2課 Chapter4 步驟3](images/mrlearning-base-ch2-4-step3.png)
+<span data-ttu-id="875da-206">從 [階層] 視窗中，**按一下並將** **cube**拖曳至 [**按下（）** ] 事件的 [**事件**內容] 物件欄位中，將 cube 指派為按下（）事件的接收者：</span><span class="sxs-lookup"><span data-stu-id="875da-206">From the Hierarchy window, **click-and-drag** the **Cube** into the **Event Properties** object field for the **On Press ()** event to assign the Cube as a receiver of the On Press () event:</span></span>
 
-3. <span data-ttu-id="99633-261">在 [偵測器] 面板的 [TextMeshPro] 元件的 [文字] 欄位中，輸入「按鈕集合文字」，然後將對齊屬性調整為置中和上方，如下圖所示。</span><span class="sxs-lookup"><span data-stu-id="99633-261">In the TextMeshPro component’s text field in the Inspector panel, type in "Button Collection Text" and adjust the Alignment properties to be Center and Top, as shown in the image below.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial2-section2-step4-1.png)
 
-    ![第2課 Chapter4 步驟4](images/mrlearning-base-ch2-4-step4.png)
+### <a name="5-define-the-action-to-be-triggered-by-the-on-press-event"></a><span data-ttu-id="875da-208">5. 定義要在按下事件時觸發的動作</span><span class="sxs-lookup"><span data-stu-id="875da-208">5. Define the action to be triggered by the On Press event</span></span>
 
-4. <span data-ttu-id="99633-263">若要修改按鈕物件上的文字值，請按一下任何按鈕旁的箭號將其展開，然後流覽至 SeeItSayItLabel 物件。</span><span class="sxs-lookup"><span data-stu-id="99633-263">To modify the text values on the button objects, click the arrow next to any button to expand it and navigate to the SeeItSayItLabel object.</span></span> <span data-ttu-id="99633-264">流覽至 TextMeshPro，您可以在其中編輯按鈕的文字，如上述步驟所述。</span><span class="sxs-lookup"><span data-stu-id="99633-264">Navigate to TextMeshPro, where you can edit the text to your buttons as described in the steps above.</span></span>
+<span data-ttu-id="875da-209">按一下 [動作] 下拉式清單（目前**未指派任何**函式），然後選取 [ **MeshRenderer** > **材質材質**]，將 Cube 的材質屬性設定為在觸發 On 按（）事件時變更：</span><span class="sxs-lookup"><span data-stu-id="875da-209">Click the action dropdown, currently assigned **No Function**, and select **MeshRenderer** > **Material material** to set the Cube's material property to be changed when the On Press () event is triggered:</span></span>
 
-    ![Lesson2 Chapter4 Step5](images/Lesson2_Chapter4_Step5.JPG)
+![mrlearning-基底](images/mrlearning-base/tutorial2-section2-step5-1.png)
 
-## <a name="congratulations"></a><span data-ttu-id="99633-266">恭喜您</span><span class="sxs-lookup"><span data-stu-id="99633-266">Congratulations</span></span>
+<span data-ttu-id="875da-211">按一下 [材質] 欄位旁的小**圓圈**圖示，目前已填入 [**無（材質）** ]，以開啟 [選取材質] 視窗：</span><span class="sxs-lookup"><span data-stu-id="875da-211">Click the small **circle** icon next to the material field, currently populated with **None (Material)**, to open the Select Material window:</span></span>
 
-<span data-ttu-id="99633-267">在這一課，您已瞭解如何複製、自訂和設定 MRTK 設定檔設定（也就是空間感知網格可見度）。您也已瞭解如何與按鈕互動，以在 HoloLens 2 上使用追蹤來觸發事件。</span><span class="sxs-lookup"><span data-stu-id="99633-267">In this lesson, you learned how to copy, customize, and configure an MRTK profile setting (i.e., spatial awareness mesh visibility.) You also learned how to interact with a button to trigger events using tracked hands on the HoloLens 2.</span></span> <span data-ttu-id="99633-268">最後，您已瞭解如何使用 Unity 的文本網格 Pro 和 MRTK 的 Grid 物件集合元件來建立簡單的 UI 介面。</span><span class="sxs-lookup"><span data-stu-id="99633-268">Finally, you learned how to create a simple UI interface using Unity's Text Mesh Pro and the MRTK's Grid Object Collection component.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial2-section2-step5-2.png)
 
-[<span data-ttu-id="99633-269">下一課： 4. 放置動態內容並使用解析器</span><span class="sxs-lookup"><span data-stu-id="99633-269">Next Lesson: 4. Placing dynamic content and using solvers</span></span>](mrlearning-base-ch3.md)
+<span data-ttu-id="875da-213">在 [選取材質] 視窗中，**搜尋** **MRTK_Standard**並選取適當的資料，例如， **MRTK_Standard_Cyan**因此當按下按鈕時，Cube 的色彩會變更為青色：</span><span class="sxs-lookup"><span data-stu-id="875da-213">In the Select Material window, **search** for **MRTK_Standard** and select a suitable material, for example, **MRTK_Standard_Cyan** so the Cube's color changes to cyan when the button is pressed:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial2-section2-step5-3.png)
+
+### <a name="6-configure-the-cube-to-receive-the-on-release-event"></a><span data-ttu-id="875da-215">6. 設定 cube 以接收發行前事件</span><span class="sxs-lookup"><span data-stu-id="875da-215">6. Configure the cube to receive the On Release event</span></span>
+
+<span data-ttu-id="875da-216">**重複**「發行時」事件的步驟4，將 Cube 指派為「On 發行」（）事件的接收者。</span><span class="sxs-lookup"><span data-stu-id="875da-216">**Repeat** Step 4 for the On Release event to assign the Cube as a receiver of the On Release () event.</span></span>
+
+### <a name="7-define-the-action-to-be-triggered-by-the-on-release-event"></a><span data-ttu-id="875da-217">7. 定義要由「發行」事件觸發的動作</span><span class="sxs-lookup"><span data-stu-id="875da-217">7. Define the action to be triggered by the On Release event</span></span>
+
+<span data-ttu-id="875da-218">**重複**[On Release] 事件的步驟5，但選擇 [ **MRTK_Standard_LightGray** ] 材質，讓 Cube 的色彩在放開按鈕時回到其原始的淺灰色色彩：</span><span class="sxs-lookup"><span data-stu-id="875da-218">**Repeat** Step 5 for the On Release event, but choose the **MRTK_Standard_LightGray** material so the Cube's color returns to its original light gray color when the button is released:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial2-section2-step7-1.png)
+
+### <a name="8-test-the-button-using-the-in-editor-simulation"></a><span data-ttu-id="875da-220">8. 使用編輯器內模擬來測試按鈕</span><span class="sxs-lookup"><span data-stu-id="875da-220">8. Test the button using the in-editor simulation</span></span>
+
+<span data-ttu-id="875da-221">按下 [**播放**] 按鈕進入遊戲模式，並使用編輯器內的輸入模擬來測試新設定的按鈕。</span><span class="sxs-lookup"><span data-stu-id="875da-221">Press the **Play** button to enter Game mode and use the in-editor input simulation to test your newly configured button.</span></span>
+
+<span data-ttu-id="875da-222">未按下按鈕（空格鍵 + 滑鼠滾輪向後回溯）：</span><span class="sxs-lookup"><span data-stu-id="875da-222">Button not pressed (spacebar + mouse scroll wheel backward):</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial2-section2-step8-1.png)
+
+<span data-ttu-id="875da-224">已按下按鈕（空格鍵 + 滑鼠滾輪向前滾動）：</span><span class="sxs-lookup"><span data-stu-id="875da-224">Button pressed (spacebar + mouse scroll wheel forward):</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial2-section2-step8-2.png)
+
+> [!TIP]
+> <span data-ttu-id="875da-226">若要瞭解如何使用編輯器內的輸入模擬，您可以參考[MRTK 檔入口網站](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)中的[使用編輯器中的手寫輸入模擬來測試場景](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html#using-the-in-editor-hand-input-simulation-to-test-a-scene)指南。</span><span class="sxs-lookup"><span data-stu-id="875da-226">To learn how to use the in-editor input simulation, you can refer to the [Using the In-Editor Hand Input Simulation to test a scene](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html#using-the-in-editor-hand-input-simulation-to-test-a-scene) guide in the [MRTK Documentation Portal](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html).</span></span>
+
+## <a name="creating-a-panel-of-buttons-using-mrtks-grid-object-collection"></a><span data-ttu-id="875da-227">使用 MRTK 的方格物件集合來建立按鈕面板</span><span class="sxs-lookup"><span data-stu-id="875da-227">Creating a panel of buttons using MRTK’s Grid Object Collection</span></span>
+
+<span data-ttu-id="875da-228">在本節中，您將學習如何使用 MRTK 的 Grid 物件集合工具，自動將多個按鈕對齊整齊的使用者介面。</span><span class="sxs-lookup"><span data-stu-id="875da-228">In this section, you will learn how to automatically align multiple buttons into a neat user interface by using the MRTK’s Grid Object Collection tool.</span></span>
+
+<span data-ttu-id="875da-229">此特定範例將示範如何建立一個水準對齊五個按鈕的面板。</span><span class="sxs-lookup"><span data-stu-id="875da-229">This particular example will show you how to a create a panel with five buttons aligned horizontally.</span></span> <span data-ttu-id="875da-230">不過，您可以遵循這些相同的原則來建立其他版面配置。</span><span class="sxs-lookup"><span data-stu-id="875da-230">However, you may follow these same principles to create other layouts.</span></span>
+
+<span data-ttu-id="875da-231">達成此目標所需採取的主要步驟如下：</span><span class="sxs-lookup"><span data-stu-id="875da-231">The main steps you will take to achieve this are:</span></span>
+
+1. <span data-ttu-id="875da-232">父系按鈕物件至父物件</span><span class="sxs-lookup"><span data-stu-id="875da-232">Parent the button objects to a parent object</span></span>
+2. <span data-ttu-id="875da-233">加入和設定 Grid 物件集合（腳本）元件</span><span class="sxs-lookup"><span data-stu-id="875da-233">Add and configure the Grid Object Collection (Script) component</span></span>
+3. <span data-ttu-id="875da-234">使用編輯器內模擬來測試按鈕</span><span class="sxs-lookup"><span data-stu-id="875da-234">Test the buttons using the in-editor simulation</span></span>
+
+### <a name="1-parent-the-button-objects-to-a-parent-object"></a><span data-ttu-id="875da-235">1. 將按鈕物件父系到父物件</span><span class="sxs-lookup"><span data-stu-id="875da-235">1. Parent the button objects to a parent object</span></span>
+
+<span data-ttu-id="875da-236">以滑鼠右鍵按一下 [階層] 視窗內的空白位置，然後選取 [**建立空**的]：</span><span class="sxs-lookup"><span data-stu-id="875da-236">Right-click on an empty spot inside the Hierarchy window and select **Create Empty**:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial2-section3-step1-1.png)
+
+<span data-ttu-id="875da-238">以滑鼠右鍵按一下新建立的物件，並選取 [**重新命名**]，然後指定適當的名稱，例如**ButtonCollection**：</span><span class="sxs-lookup"><span data-stu-id="875da-238">Right-click on the newly created object, select **Rename**, and give it a suitable name, for example, **ButtonCollection**:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial2-section3-step1-2.png)
+
+<span data-ttu-id="875da-240">選取**PressableButtonHoloLens2**物件，並**將它拖曳**至**ButtonCollection**物件的上方，使其成為 ButtonCollection 物件的子系：</span><span class="sxs-lookup"><span data-stu-id="875da-240">Select the **PressableButtonHoloLens2** object and **drag** it on top of the **ButtonCollection** object to make it a child of the ButtonCollection object:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial2-section3-step1-3.png)
+
+<span data-ttu-id="875da-242">在**PressableButtonHoloLens2**物件上按一下滑鼠右鍵，然後選取 [**複製**]，以建立其複本：</span><span class="sxs-lookup"><span data-stu-id="875da-242">Right-click the **PressableButtonHoloLens2** object and select **Duplicate** to create a copy of it:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial2-section3-step1-4.png)
+
+<span data-ttu-id="875da-244">**重複**此步驟四次，直到總共有五個 PressableButtonHoloLens2 物件為止。</span><span class="sxs-lookup"><span data-stu-id="875da-244">**Repeat** this step four more times until you have a total of five PressableButtonHoloLens2 objects.</span></span>
+
+### <a name="2-add-and-configure-the-grid-object-collection-script-component"></a><span data-ttu-id="875da-245">2. 加入及設定 Grid 物件集合（腳本）元件</span><span class="sxs-lookup"><span data-stu-id="875da-245">2. Add and configure the Grid Object Collection (Script) component</span></span>
+
+<span data-ttu-id="875da-246">在 [階層] 視窗中選取 ButtonCollection 物件之後，在 [偵測器] 視窗中，按一下 [**加入元件**] 按鈕，然後搜尋並選取 [**方格物件集合**]，將 Grid 物件集合（腳本）元件加入至 ButtonCollection 物件：</span><span class="sxs-lookup"><span data-stu-id="875da-246">With the ButtonCollection object selected in the Hierarchy window, in the Inspector window, click the **Add Component** button, then search for and select **Grid Object Collection** to add a Grid Object Collection (Script) component to the ButtonCollection object:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial2-section3-step2-1.png)
+
+<span data-ttu-id="875da-248">設定 Grid 物件集合（腳本），如下所示：</span><span class="sxs-lookup"><span data-stu-id="875da-248">Configure the Grid Object Collection (Script) as follows:</span></span>
+
+* <span data-ttu-id="875da-249">將 [Num] 資料**列**變更為 [1]，讓所有按鈕對齊一個單一資料列</span><span class="sxs-lookup"><span data-stu-id="875da-249">Change **Num Rows** to 1 to have all buttons aligned on one single row</span></span>
+* <span data-ttu-id="875da-250">將資料**格寬度**變更為0.05，以將資料列內的按鈕變成空白</span><span class="sxs-lookup"><span data-stu-id="875da-250">Change **Cell Width** to 0.05 to space out the buttons within the row</span></span>
+
+<span data-ttu-id="875da-251">然後按一下 [**更新集合**] 按鈕以套用新的設定：</span><span class="sxs-lookup"><span data-stu-id="875da-251">Then click the **Update Collection** button to apply the new configuration:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial2-section3-step2-2.png)
+
+> [!NOTE]
+> <span data-ttu-id="875da-253">您剛才套用的設定變更代表達到將按鈕放在單一資料列的目標所需的最小變更。</span><span class="sxs-lookup"><span data-stu-id="875da-253">The configuration changes you just applied represent the minimum changes required to achieve the objective of placing the buttons in a single row.</span></span> <span data-ttu-id="875da-254">不過，在未來的專案中，視因素（例如，父系和子物件的方向）而定，您可能需要調整其他設定（例如，方向類型）。</span><span class="sxs-lookup"><span data-stu-id="875da-254">However, in future projects, depending on factors such as, for example, the orientation of the parent and child objects, you might need to adjust other settings such as, for example, the Orient Type.</span></span> <span data-ttu-id="875da-255">若要深入瞭解 MRTK 的方格物件集合，您可以造訪[MRTK 檔入口網站](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)中的[物件集合腳本](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ObjectCollection.html#object-collection-scripts)指南。</span><span class="sxs-lookup"><span data-stu-id="875da-255">To learn more about MRTK's Grid Object Collection, you can visit the [Object collection scripts](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ObjectCollection.html#object-collection-scripts) guide in the [MRTK Documentation Portal](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html).</span></span>
+
+<span data-ttu-id="875da-256">在 [階層] 視窗中仍然選取 ButtonCollection 物件時，在 [偵測器] 視窗中，變更 ButtonCollection 物件的轉換**位置**，讓其子按鈕物件位於相機前方，例如 x = 0、y = 0 和 z = 0.5：</span><span class="sxs-lookup"><span data-stu-id="875da-256">With the ButtonCollection object still selected in the Hierarchy window, in the Inspector window, change the ButtonCollection object's Transform **Position** so its child button objects are positioned in front of the camera, which is positioned at origin, for example, x = 0, y = 0, and z = 0.5:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial2-section3-step2-3.png)
+
+> [!NOTE]
+> <span data-ttu-id="875da-258">當您第一次將 PressableButtonHoloLens2 prefab 新增至上方的 [[右手追蹤筆勢] 和 [可互動按鈕](mrlearning-base-ch2.md#hand-tracking-gestures-and-interactable-buttons)] 區段中的場景時，您會將它放在相機前方。</span><span class="sxs-lookup"><span data-stu-id="875da-258">When you first added the PressableButtonHoloLens2 prefab to the scene in the [Hand tracking gestures and interactable buttons](mrlearning-base-ch2.md#hand-tracking-gestures-and-interactable-buttons) section above, you positioned it in front of the camera.</span></span> <span data-ttu-id="875da-259">不過，由於 Grid 物件集合會控制其直屬子物件的位置，因此根據格線物件集合的預設距離0的父代值，PressableButtonHoloLens2 子物件的 Z 位置已重設為0。</span><span class="sxs-lookup"><span data-stu-id="875da-259">However, because the Grid Object Collection controls its immediate child objects' position, the PressableButtonHoloLens2 child objects' Z Position were reset to 0 according to the Grid Object Collection's default Distance from parent value of 0.</span></span> <span data-ttu-id="875da-260">這是為了讓父/子位置的關聯性保持組織，這就是為什麼我們會將父 ButtonCollection 物件的位置向前移動，而不是設定從父系值到向前移動 PressableButtonHoloLens2 子物件的距離。</span><span class="sxs-lookup"><span data-stu-id="875da-260">This, and to keep the parent/child positional relationship organized, is why we moved the parent ButtonCollection object's position forward instead of configuring the Distance from parent value to move the PressableButtonHoloLens2 child objects forward.</span></span>
+
+### <a name="3-test-the-buttons-using-the-in-editor-simulation"></a><span data-ttu-id="875da-261">3. 使用編輯器內模擬來測試按鈕</span><span class="sxs-lookup"><span data-stu-id="875da-261">3. Test the buttons using the in-editor simulation</span></span>
+
+<span data-ttu-id="875da-262">按下 [播放] 按鈕進入遊戲模式，並使用編輯器內的輸入模擬來測試新建立的按鈕面板中的每個按鈕：</span><span class="sxs-lookup"><span data-stu-id="875da-262">Press the Play button to enter Game mode and use the in-editor input simulation to test each of the buttons in in your newly created panel of buttons:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial2-section3-step3-1.png)
+
+> [!TIP]
+> <span data-ttu-id="875da-264">目前，當您按五個按鈕的任一個時，cube 色彩會變更為青色。</span><span class="sxs-lookup"><span data-stu-id="875da-264">Currently, when your press any of the five buttons, the cube color changes to cyan.</span></span> <span data-ttu-id="875da-265">若要讓體驗更加有趣，請使用您剛學習的內容，設定每個按鈕將 cube 變更為不同的色彩。</span><span class="sxs-lookup"><span data-stu-id="875da-265">To make the experience more interesting, use what you just learn to configure each button to change the cube to a different color.</span></span>
+
+## <a name="adding-text-into-your-scene"></a><span data-ttu-id="875da-266">將文字新增至您的場景</span><span class="sxs-lookup"><span data-stu-id="875da-266">Adding text into your scene</span></span>
+
+<span data-ttu-id="875da-267">在本節中，您將瞭解如何使用 Unity 的 TextMesh Pro （您在上一個教學課程的匯[入 TextMesh Pro 基本資源](mrlearning-base-ch1.md#import-textmesh-pro-essential-resources)一節中所準備），將文字新增至您的混合現實體驗。</span><span class="sxs-lookup"><span data-stu-id="875da-267">In this section, you will learn how to add text to your mixed reality experiences using Unity's TextMesh Pro, which you prepared in the [Import TextMesh Pro Essential Resources](mrlearning-base-ch1.md#import-textmesh-pro-essential-resources) section of the previous tutorial.</span></span>
+
+<span data-ttu-id="875da-268">在此特定範例中，您會在上一節中建立的按鈕集合底下新增一個簡單標籤。</span><span class="sxs-lookup"><span data-stu-id="875da-268">In this particular example, you will add a simple label underneath the button collection you created in the previous section.</span></span>
+
+<span data-ttu-id="875da-269">以滑鼠右鍵按一下 [ButtonCollection] 物件，然後選取 [ **3D 物件**] > [ **TextMeshPro** ]，將 TextMeshPro 物件建立為 ButtonCollection 物件的子系：</span><span class="sxs-lookup"><span data-stu-id="875da-269">Right-click on the ButtonCollection object and select **3D Object** > **Text - TextMeshPro** to create a TextMeshPro object as a child of the ButtonCollection object:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial2-section4-step1-1.png)
+
+<span data-ttu-id="875da-271">當新建立的 TextMeshPro 物件（名為 Text （TMP））仍為選取狀態時，在 [偵測器] 視窗中，變更其位置和大小，讓標籤整齊地放在按鈕集合底下，例如：</span><span class="sxs-lookup"><span data-stu-id="875da-271">With the newly created TextMeshPro object, named Text (TMP), still selected, in the Inspector window change its position and size so the label is placed neatly underneath the button collection, for example:</span></span>
+
+* <span data-ttu-id="875da-272">將矩形轉換**Pos Y**變更為-0.0425</span><span class="sxs-lookup"><span data-stu-id="875da-272">Change the Rect Transform **Pos Y** to -0.0425</span></span>
+* <span data-ttu-id="875da-273">將 [矩形轉換**寬度**] 變更為0.24</span><span class="sxs-lookup"><span data-stu-id="875da-273">Change the Rect Transform **Width** to 0.24</span></span>
+* <span data-ttu-id="875da-274">將矩形轉換**高度**變更為0.024</span><span class="sxs-lookup"><span data-stu-id="875da-274">Change the Rect Transform **Height** to 0.024</span></span>
+
+<span data-ttu-id="875da-275">然後更新文字以反映標籤的用途，並選擇 [字型屬性]，讓文字元合標籤，例如：</span><span class="sxs-lookup"><span data-stu-id="875da-275">Then update the text to reflect what the label is for and choose font properties so the text fits within the label, for example:</span></span>
+
+* <span data-ttu-id="875da-276">將文本網格 Pro （腳本）**文字**變更為按鈕集合</span><span class="sxs-lookup"><span data-stu-id="875da-276">Change the Text Mesh Pro (Script) **Text** to Button Collection</span></span>
+* <span data-ttu-id="875da-277">將文本網格 Pro （腳本）**字型樣式**變更為粗體</span><span class="sxs-lookup"><span data-stu-id="875da-277">Change the Text Mesh Pro (Script) **Font Style** to Bold</span></span>
+* <span data-ttu-id="875da-278">將文本網格 Pro （腳本）**字型大小**變更為0。2</span><span class="sxs-lookup"><span data-stu-id="875da-278">Change the Text Mesh Pro (Script) **Font Size** to 0.2</span></span>
+* <span data-ttu-id="875da-279">將文本網格 Pro （腳本）**對齊**變更為置中和中間</span><span class="sxs-lookup"><span data-stu-id="875da-279">Change the Text Mesh Pro (Script) **Alignment** to Center and Middle</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial2-section4-step1-2.png)
+
+## <a name="congratulations"></a><span data-ttu-id="875da-281">恭喜</span><span class="sxs-lookup"><span data-stu-id="875da-281">Congratulations</span></span>
+
+<span data-ttu-id="875da-282">在本教學課程中，您已瞭解如何複製、自訂和設定 MRTK 設定檔設定。</span><span class="sxs-lookup"><span data-stu-id="875da-282">In this tutorial, you learned how to clone, customize, and configure an MRTK profile setting.</span></span> <span data-ttu-id="875da-283">您也已瞭解如何與按鈕互動，以使用 HoloLens 2 上的追蹤來觸發事件。</span><span class="sxs-lookup"><span data-stu-id="875da-283">You also learned how to interact with buttons to trigger events using tracked hands on the HoloLens 2.</span></span> <span data-ttu-id="875da-284">最後，您已瞭解如何使用 MRTK 的 Grid 物件集合元件和 Unity 的文本網格 Pro 來建立簡單的 UI 介面。</span><span class="sxs-lookup"><span data-stu-id="875da-284">Finally, you learned how to create a simple UI interface using the MRTK's Grid Object Collection component and Unity's Text Mesh Pro.</span></span>
+
+[<span data-ttu-id="875da-285">下一個教學課程： 4. 放置動態內容並使用解析器</span><span class="sxs-lookup"><span data-stu-id="875da-285">Next Tutorial: 4. Placing dynamic content and using solvers</span></span>](mrlearning-base-ch3.md)

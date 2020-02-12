@@ -6,222 +6,284 @@ ms.author: jemccull
 ms.date: 05/02/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: fe068d0cfcea369f10e6fa636eb73fecb3002fa7
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.openlocfilehash: a1b26d56b4693ef23f2d77ba53e0961693489a3a
+ms.sourcegitcommit: cc61f7ac08f9ac2f2f04e8525c3260ea073e04a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334388"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77130237"
 ---
-# <a name="5-interacting-with-3d-objects"></a><span data-ttu-id="93a10-104">5. 與3D 物件互動</span><span class="sxs-lookup"><span data-stu-id="93a10-104">5. Interacting with 3D objects</span></span>
+# <a name="5-interacting-with-3d-objects"></a><span data-ttu-id="6d34d-104">5. 與3D 物件互動</span><span class="sxs-lookup"><span data-stu-id="6d34d-104">5. Interacting with 3D objects</span></span>
 
-<span data-ttu-id="93a10-105">在本教學課程中，您將瞭解基本的3D 內容和使用者體驗，例如：</span><span class="sxs-lookup"><span data-stu-id="93a10-105">In this tutorial, you will learn about basic 3D content and user experience, such as:</span></span>
+<span data-ttu-id="6d34d-105">在本教學課程中，您將瞭解基本的3D 內容和使用者體驗，例如將3D 物件組織為集合的一部分、進行基本操作的周框方塊、近遠的互動，以及觸控和抓取手勢與手動追蹤。</span><span class="sxs-lookup"><span data-stu-id="6d34d-105">In this tutorial, you will learn about basic 3D content and user experience, such as organizing 3D objects as part of a collection, bounding boxes for basic manipulation, near and far interaction, and touch and grab gestures with hand tracking.</span></span>
 
-* <span data-ttu-id="93a10-106">將3D 物件當做集合的一部分來組織</span><span class="sxs-lookup"><span data-stu-id="93a10-106">Organizing 3D objects as part of a collection</span></span>
-* <span data-ttu-id="93a10-107">基本操作的周框方塊</span><span class="sxs-lookup"><span data-stu-id="93a10-107">Bounding boxes for basic manipulation</span></span>
-* <span data-ttu-id="93a10-108">近與遠互動</span><span class="sxs-lookup"><span data-stu-id="93a10-108">Near and far interaction</span></span>
-* <span data-ttu-id="93a10-109">觸控和抓取筆勢與手勢追蹤</span><span class="sxs-lookup"><span data-stu-id="93a10-109">Touch and grab gestures with hand tracking</span></span>
+## <a name="objectives"></a><span data-ttu-id="6d34d-106">目標</span><span class="sxs-lookup"><span data-stu-id="6d34d-106">Objectives</span></span>
 
-## <a name="objectives"></a><span data-ttu-id="93a10-110">目標</span><span class="sxs-lookup"><span data-stu-id="93a10-110">Objectives</span></span>
+* <span data-ttu-id="6d34d-107">建立將用於其他學習目標的3D 物件面板</span><span class="sxs-lookup"><span data-stu-id="6d34d-107">Create a panel of 3D objects which will be used for the other learning objectives</span></span>
+* <span data-ttu-id="6d34d-108">實作週框方塊</span><span class="sxs-lookup"><span data-stu-id="6d34d-108">Implement bounding boxes</span></span>
+* <span data-ttu-id="6d34d-109">設定3D 物件進行基本操作，例如移動、旋轉和縮放</span><span class="sxs-lookup"><span data-stu-id="6d34d-109">Configure 3D objects for basic manipulation such as move, rotate, and scale</span></span>
+* <span data-ttu-id="6d34d-110">探索遠近互動</span><span class="sxs-lookup"><span data-stu-id="6d34d-110">Explore near and far interaction</span></span>
+* <span data-ttu-id="6d34d-111">深入瞭解其他的右手邊追蹤手勢，例如「抓取」和「觸控」</span><span class="sxs-lookup"><span data-stu-id="6d34d-111">Learn about additional hand tracking gestures, such as grab and touch</span></span>
 
-* <span data-ttu-id="93a10-111">瞭解如何使用 MRTK 的方格物件集合來組織3D 內容</span><span class="sxs-lookup"><span data-stu-id="93a10-111">Learn how to organize 3D content with MRTK's grid object collection</span></span>
-* <span data-ttu-id="93a10-112">實作週框方塊</span><span class="sxs-lookup"><span data-stu-id="93a10-112">Implement bounding boxes</span></span>
-* <span data-ttu-id="93a10-113">設定3D 物件進行基本操作--移動、旋轉和縮放</span><span class="sxs-lookup"><span data-stu-id="93a10-113">Configure 3D objects for basic manipulation--move, rotate, and scale</span></span>
-* <span data-ttu-id="93a10-114">探索遠近互動</span><span class="sxs-lookup"><span data-stu-id="93a10-114">Explore near and far interaction</span></span>
-* <span data-ttu-id="93a10-115">深入瞭解其他的右手邊追蹤手勢，例如「抓取」和「觸控」</span><span class="sxs-lookup"><span data-stu-id="93a10-115">Learn about additional hand tracking gestures, such as grab and touch</span></span>
+## <a name="importing-the-tutorial-assets"></a><span data-ttu-id="6d34d-112">匯入教學課程資產</span><span class="sxs-lookup"><span data-stu-id="6d34d-112">Importing the tutorial assets</span></span>
 
-## <a name="organizing-3d-objects-in-a-collection"></a><span data-ttu-id="93a10-116">組織集合中的 3D 物件</span><span class="sxs-lookup"><span data-stu-id="93a10-116">Organizing 3D Objects in a Collection</span></span>
+<span data-ttu-id="6d34d-113">下載並匯入 Unity 自訂套件：</span><span class="sxs-lookup"><span data-stu-id="6d34d-113">Download and import the Unity custom package:</span></span>
 
-1. <span data-ttu-id="93a10-117">以滑鼠右鍵按一下您的階層，然後選取 [建立空的] 以建立空白遊戲物件，將其重新命名為3DObjectCollection，並確定其位於 x = 0、y = 0 和 z = 0。</span><span class="sxs-lookup"><span data-stu-id="93a10-117">Right-click on your hierarchy and select Create Empty to create an empty game object, rename it to 3DObjectCollection, and make sure it is positioned at x = 0, y = 0, and z = 0.</span></span>
+* [<span data-ttu-id="6d34d-114">MRTK.HoloLens2 GettingStarted. 2.2.0.0. unitypackage</span><span class="sxs-lookup"><span data-stu-id="6d34d-114">MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.2.0.0.unitypackage</span></span>](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.2.0.0/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.2.0.0.unitypackage)
 
-    ![mrlearning-base-ch4-1-step1 .png](images/mrlearning-base-ch4-1-step1.png)
+<span data-ttu-id="6d34d-115">匯入教學課程資產之後，您的 [專案] 視窗看起來應該如下所示：</span><span class="sxs-lookup"><span data-stu-id="6d34d-115">After you have imported the tutorial assets your Project window should look similar to this:</span></span>
 
-2. <span data-ttu-id="93a10-119">下載 Unity 套件[unity. HoloLens2. GettingStarted](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.0/Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage) ，並使用相同的指示匯入[tut1-lesson1-step3](mrlearning-base-ch1.md)中所述的自訂套件。</span><span class="sxs-lookup"><span data-stu-id="93a10-119">Download the Unity package [Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.0/Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage) and import it using the same instructions to import custom packages outlined in [Lesson1](mrlearning-base-ch1.md).</span></span> <span data-ttu-id="93a10-120">此套件包含3D 模型和其他在本教學課程中使用的實用資產。</span><span class="sxs-lookup"><span data-stu-id="93a10-120">This package includes 3D models and other useful assets that are used throughout this tutorial.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial4-section1-step1-1.png)
 
-3. <span data-ttu-id="93a10-121">在 專案 面板中，流覽至 資產 > BaseModuleAssets > 基本模組 Prefabs，並搜尋「未完成」，我們將使用其中一些 Prefabs。</span><span class="sxs-lookup"><span data-stu-id="93a10-121">In the Project panel, navigate to Assets > BaseModuleAssets > Base Module Prefabs and search for "incomplete", we will use some of these prefabs.</span></span>
+> [!TIP]
+> <span data-ttu-id="6d34d-117">如需有關如何匯入 Unity 自訂套件的提醒，您可以參閱匯[入混合現實工具](mrlearning-base-ch1.md#import-the-mixed-reality-toolkit)組指示。</span><span class="sxs-lookup"><span data-stu-id="6d34d-117">For a reminder on how to import a Unity custom package, you can refer to the [Import the Mixed Reality Toolkit](mrlearning-base-ch1.md#import-the-mixed-reality-toolkit) instructions.</span></span>
 
-    ![mrlearning-base-ch4-1-step3 .png](images/mrlearning-base-ch4-1-step3.png)
+## <a name="decluttering-the-scene-view"></a><span data-ttu-id="6d34d-118">Decluttering 場景視圖</span><span class="sxs-lookup"><span data-stu-id="6d34d-118">Decluttering the scene view</span></span>
 
-4. <span data-ttu-id="93a10-123">將咖啡杯拖曳至步驟1中的3DObjectCollection 遊戲物件。</span><span class="sxs-lookup"><span data-stu-id="93a10-123">Drag the coffee cup into the 3DObjectCollection game object from Step 1.</span></span> <span data-ttu-id="93a10-124">咖啡杯現在是該集合的子系。</span><span class="sxs-lookup"><span data-stu-id="93a10-124">The coffee cup is now a child of the collection.</span></span>
+<span data-ttu-id="6d34d-119">若要讓您更輕鬆地使用場景，請按一下物件左側的**眼睛**圖示，將 Cube 和 ButtonCollection 物件的**場景可見度**設定為 [關閉]。</span><span class="sxs-lookup"><span data-stu-id="6d34d-119">To make it easier to work with your scene, set the **scene visibility** for the Cube and ButtonCollection objects to off by clicking the **eye** icon to the left of the objects.</span></span> <span data-ttu-id="6d34d-120">這會在場景視窗中隱藏物件，而不會變更其遊戲內可見度：</span><span class="sxs-lookup"><span data-stu-id="6d34d-120">This hides the object in the Scene window without changing their in-game visibility:</span></span>
 
-    ![mrlearning-base-ch4-1-step4 .png](images/mrlearning-base-ch4-1-step4.png)
+![mrlearning-基底](images/mrlearning-base/tutorial4-section2-step1-1.png)
 
-5. <span data-ttu-id="93a10-126">接下來，您會遵循與上一個步驟相同的程式，在場景中新增更多3D 物件。</span><span class="sxs-lookup"><span data-stu-id="93a10-126">Next, you'll add more 3D objects into our scene by following the same process as in the previous step.</span></span> <span data-ttu-id="93a10-127">以下是要在此範例中新增的物件清單。</span><span class="sxs-lookup"><span data-stu-id="93a10-127">Below is a list of objects to add in this example.</span></span> <span data-ttu-id="93a10-128">當您新增物件時，您可能會發現它們以各種大小出現在場景中。</span><span class="sxs-lookup"><span data-stu-id="93a10-128">As you add the objects, you might find they appear in your scene in various sizes.</span></span> <span data-ttu-id="93a10-129">調整 [偵測器] 面板中 [轉換設定] 下每個3D 模型的比例。</span><span class="sxs-lookup"><span data-stu-id="93a10-129">Adjust the scale of each 3D model under Transform settings in the Inspector panel.</span></span> <span data-ttu-id="93a10-130">以下的物件列出了此範例的建議調整。</span><span class="sxs-lookup"><span data-stu-id="93a10-130">Recommended adjustments for this example are listed with the objects below.</span></span>
+> [!TIP]
+> <span data-ttu-id="6d34d-122">若要深入瞭解場景可見度控制項，以及如何使用它們來優化場景視圖和工作流程，您可以造訪 Unity 的<a href="https://docs.unity3d.com/Manual/SceneVisibility.html" target="_blank">場景可見度</a>檔。</span><span class="sxs-lookup"><span data-stu-id="6d34d-122">To learn more about the Scene Visibility controls and how you can use them to optimize your scene view and workflow, you can visit Unity's <a href="https://docs.unity3d.com/Manual/SceneVisibility.html" target="_blank">Scene Visibility</a> documentation.</span></span>
 
-    * <span data-ttu-id="93a10-131">Cheese_BaseModuleIncomplete。</span><span class="sxs-lookup"><span data-stu-id="93a10-131">Cheese_BaseModuleIncomplete.</span></span> <span data-ttu-id="93a10-132">Scale： x = 0.05，y = 0.05，z = 0.05。</span><span class="sxs-lookup"><span data-stu-id="93a10-132">Scale: x = 0.05, y = 0.05, z = 0.05.</span></span>
-    * <span data-ttu-id="93a10-133">CoffeeCup_BaseModuleIncomplete。</span><span class="sxs-lookup"><span data-stu-id="93a10-133">CoffeeCup_BaseModuleIncomplete.</span></span> <span data-ttu-id="93a10-134">Scale： x = 0.1，y = 0.1，z = 0.1。</span><span class="sxs-lookup"><span data-stu-id="93a10-134">Scale: x = 0.1, y = 0.1, z = 0.1.</span></span>
-    * <span data-ttu-id="93a10-135">EarthCore_BaseModuleIncomplete。</span><span class="sxs-lookup"><span data-stu-id="93a10-135">EarthCore_BaseModuleIncomplete.</span></span> <span data-ttu-id="93a10-136">Scale： x = 50.0 y = 50.0，z = 50.0。</span><span class="sxs-lookup"><span data-stu-id="93a10-136">Scale: x = 50.0 y = 50.0, z = 50.0.</span></span>
-    * <span data-ttu-id="93a10-137">Model_Platonic_BaseModuleIncomplete。</span><span class="sxs-lookup"><span data-stu-id="93a10-137">Model_Platonic_BaseModuleIncomplete.</span></span> <span data-ttu-id="93a10-138">Scale： x = 0.13，y = 0.13，z = 0.13。</span><span class="sxs-lookup"><span data-stu-id="93a10-138">Scale: x = 0.13, y = 0.13, z = 0.13.</span></span>
-    * <span data-ttu-id="93a10-139">Octa_BaseModuleIncomplete。</span><span class="sxs-lookup"><span data-stu-id="93a10-139">Octa_BaseModuleIncomplete.</span></span> <span data-ttu-id="93a10-140">小數值： x = 0.13。</span><span class="sxs-lookup"><span data-stu-id="93a10-140">Scale: x = 0.13.</span></span> <span data-ttu-id="93a10-141">y = 0.13、z =0.13。</span><span class="sxs-lookup"><span data-stu-id="93a10-141">y = 0.13, z =0.13.</span></span>
-    * <span data-ttu-id="93a10-142">TheModule_BaseModuleIncomplete。</span><span class="sxs-lookup"><span data-stu-id="93a10-142">TheModule_BaseModuleIncomplete.</span></span> <span data-ttu-id="93a10-143">Scale： x = 0.03，y = 0.03，z = 0.03。</span><span class="sxs-lookup"><span data-stu-id="93a10-143">Scale: x = 0.03, y = 0.03, z = 0.03.</span></span>
+## <a name="organizing-3d-objects-in-a-collection"></a><span data-ttu-id="6d34d-123">組織集合中的3D 物件</span><span class="sxs-lookup"><span data-stu-id="6d34d-123">Organizing 3D objects in a collection</span></span>
 
-    ![mrlearning-base-ch4-1-step5 .png](images/mrlearning-base-ch4-1-step5.png)
+<span data-ttu-id="6d34d-124">在本節中，您將建立3D 物件的面板，當您在本教學課程的下列各節中探索與3D 物件互動的各種方式時，將會用到它。</span><span class="sxs-lookup"><span data-stu-id="6d34d-124">In this section, you will create a panel of 3D objects which you will use when exploring various ways of interacting with 3D objects in the following sections of this tutorial.</span></span> <span data-ttu-id="6d34d-125">具體而言，您會將3D 物件設定為置於 3 x 3 方格上。</span><span class="sxs-lookup"><span data-stu-id="6d34d-125">Specifically, you will configure the 3D objects to be positioned on a 3 x 3 grid.</span></span>
 
-6. <span data-ttu-id="93a10-145">將三個 cube 新增至您的場景。</span><span class="sxs-lookup"><span data-stu-id="93a10-145">Add three cubes into your scene.</span></span> <span data-ttu-id="93a10-146">以滑鼠右鍵按一下 [3DObjectCollection] 物件，選取 [3D 物件]，然後選取 [Cube]。</span><span class="sxs-lookup"><span data-stu-id="93a10-146">Right-click the 3DObjectCollection object, select 3D Object, then select Cube.</span></span> <span data-ttu-id="93a10-147">將比例設置為 x = 0.14、y = 0.14 且 z = 0.14。</span><span class="sxs-lookup"><span data-stu-id="93a10-147">Set the scale to x = 0.14, y = 0.14, and z = 0.14.</span></span> <span data-ttu-id="93a10-148">重複此步驟兩次，以建立總共三個 cube。</span><span class="sxs-lookup"><span data-stu-id="93a10-148">Repeat this step two additional times to create a total of three cubes.</span></span> <span data-ttu-id="93a10-149">或者，您可以將 cube 複製兩次，共三個 cube。</span><span class="sxs-lookup"><span data-stu-id="93a10-149">Alternatively, you can duplicate the cube twice for a total of three cubes.</span></span> <span data-ttu-id="93a10-150">您也可以選擇使用 Assets>BaseModuleAssets>Base Module Prefabs 中三個已備妥的立方體預製物件，並選取 GreenCube_BaseModuleIncomplete、BlueCube_BaseModuleIncomplete 和 OrangeCube_BaseModuleIncomplete。</span><span class="sxs-lookup"><span data-stu-id="93a10-150">You may also choose to use the three prepared cube prefabs from Assets>BaseModuleAssets>Base Module Prefabs and select GreenCube_BaseModuleIncomplete, BlueCube_BaseModuleIncomplete and OrangeCube_BaseModuleIncomplete.</span></span>
+<span data-ttu-id="6d34d-126">類似于當您[建立按鈕的面板](mrlearning-base-ch2.md#creating-a-panel-of-buttons-using-mrtks-grid-object-collection)時，要達到此目標所要採取的主要步驟如下：</span><span class="sxs-lookup"><span data-stu-id="6d34d-126">Similarly to when you [created a panel of buttons](mrlearning-base-ch2.md#creating-a-panel-of-buttons-using-mrtks-grid-object-collection), the main steps you will take to achieve this are:</span></span>
 
-    ![mrlearning-base-ch4-1-step6 .png](images/mrlearning-base-ch4-1-step6.png)
+1. <span data-ttu-id="6d34d-127">將3D 物件父系到父物件</span><span class="sxs-lookup"><span data-stu-id="6d34d-127">Parent the 3D objects to a parent object</span></span>
+2. <span data-ttu-id="6d34d-128">加入和設定 Grid 物件集合（腳本）元件</span><span class="sxs-lookup"><span data-stu-id="6d34d-128">Add and configure the Grid Object Collection (Script) component</span></span>
 
-7. <span data-ttu-id="93a10-152">使用 MRTK 的 Grid 物件集合，透過[第2課](mrlearning-base-ch2.md)中所述的程式，組織您的物件集合以形成方格。</span><span class="sxs-lookup"><span data-stu-id="93a10-152">Organize your collection of objects to form a grid, via the procedure described in [Lesson 2](mrlearning-base-ch2.md), using the MRTK’s Grid Object Collection.</span></span> <span data-ttu-id="93a10-153">如需在3x3 方格中設定物件的範例，請參閱下圖。</span><span class="sxs-lookup"><span data-stu-id="93a10-153">Refer to the image below, for an example of configuring the objects in a 3x3 grid.</span></span>
+### <a name="1-parent-the-3d-objects-to-a-parent-object"></a><span data-ttu-id="6d34d-129">1. 將3D 物件父系到父物件</span><span class="sxs-lookup"><span data-stu-id="6d34d-129">1. Parent the 3D objects to a parent object</span></span>
 
-    ![mrlearning-base-ch4-1-step7 .png](images/mrlearning-base-ch4-1-step7.png)
+<span data-ttu-id="6d34d-130">在 [階層] 視窗中，**建立空的物件**、提供適當的名稱（例如**3DObjectCollection**），並將它放在適當的位置，例如 X = 0、Y =-0.2、Z = 2。</span><span class="sxs-lookup"><span data-stu-id="6d34d-130">In the Hierarchy window, **create an empty object**, give it a suitable name, for example, **3DObjectCollection**, and position it in a suitable location, for example, X = 0, Y = -0.2, Z = 2.</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="93a10-155">您可能會注意到有些物件是停在中心，例如上圖中的物件。</span><span class="sxs-lookup"><span data-stu-id="93a10-155">You might notice that some of the objects are off-center, such as the objects in the image above.</span></span> <span data-ttu-id="93a10-156">這是因為預製物件或物件可能具有未對齊的子物件。</span><span class="sxs-lookup"><span data-stu-id="93a10-156">This is because prefabs or objects may have child objects that are not aligned.</span></span> <span data-ttu-id="93a10-157">隨意對物件位置或子物件位置進行必要的調整，以實現完善對齊的方格。</span><span class="sxs-lookup"><span data-stu-id="93a10-157">Feel free to make any necessary adjustments to object positions or child object positions to achieve a well-aligned grid.</span></span>
+<span data-ttu-id="6d34d-131">在 [專案] 視窗中，流覽至 [**資產**] [ > **MRTK]。GettingStarted** > **Prefabs**，然後將下列 Prefabs 的**父系**加入**3DObjectCollection**：</span><span class="sxs-lookup"><span data-stu-id="6d34d-131">In the Project window, navigate to **Assets** > **MRTK.Tutorials.GettingStarted** > **Prefabs**, then **Parent** the following prefabs to the **3DObjectCollection**:</span></span>
 
-## <a name="manipulating-3d-objects"></a><span data-ttu-id="93a10-158">操作 3D 物件</span><span class="sxs-lookup"><span data-stu-id="93a10-158">Manipulating 3D Objects</span></span>
+* <span data-ttu-id="6d34d-132">比薩餅</span><span class="sxs-lookup"><span data-stu-id="6d34d-132">Cheese</span></span>
+* <span data-ttu-id="6d34d-133">CoffeeCup</span><span class="sxs-lookup"><span data-stu-id="6d34d-133">CoffeeCup</span></span>
+* <span data-ttu-id="6d34d-134">EarthCore</span><span class="sxs-lookup"><span data-stu-id="6d34d-134">EarthCore</span></span>
+* <span data-ttu-id="6d34d-135">顆 octa</span><span class="sxs-lookup"><span data-stu-id="6d34d-135">Octa</span></span>
+* <span data-ttu-id="6d34d-136">Platonic</span><span class="sxs-lookup"><span data-stu-id="6d34d-136">Platonic</span></span>
+* <span data-ttu-id="6d34d-137">TheModule</span><span class="sxs-lookup"><span data-stu-id="6d34d-137">TheModule</span></span>
 
-1. <span data-ttu-id="93a10-159">新增可操作立方體的功能。</span><span class="sxs-lookup"><span data-stu-id="93a10-159">Add the ability to manipulate a cube.</span></span> <span data-ttu-id="93a10-160">若要新增操作3D 物件的功能，請執行下列動作：</span><span class="sxs-lookup"><span data-stu-id="93a10-160">To add the ability to manipulate 3D objects, do the following:</span></span>
-    * <span data-ttu-id="93a10-161">選取您想要在階層中操作的3D 物件（亦即您的其中一個 cube）。</span><span class="sxs-lookup"><span data-stu-id="93a10-161">Select the 3D object you want to manipulate in your hierarchy (i.e. one of your cubes).</span></span>
-    * <span data-ttu-id="93a10-162">按一下 [新增元件]</span><span class="sxs-lookup"><span data-stu-id="93a10-162">Click Add Component</span></span>
-    * <span data-ttu-id="93a10-163">搜尋「操作」</span><span class="sxs-lookup"><span data-stu-id="93a10-163">Search for "manipulation"</span></span>
-    * <span data-ttu-id="93a10-164">選取操作處理常式</span><span class="sxs-lookup"><span data-stu-id="93a10-164">Select Manipulation Handler</span></span>
-    * <span data-ttu-id="93a10-165">針對3DObjectCollection 物件下的所有3D 物件重複執行，但不針對3DObjectCollection 本身。</span><span class="sxs-lookup"><span data-stu-id="93a10-165">Repeat for all 3D objects under the 3DObjectCollection object, but not the 3DObjectCollection itself.</span></span>
-    * <span data-ttu-id="93a10-166">確定所有3D 物件都有碰撞或箱碰撞件（新增元件 > 方塊碰撞）。</span><span class="sxs-lookup"><span data-stu-id="93a10-166">Ensure that all 3D objects have a collider or box collider (Add Component>Box Collider).</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial4-section3-step1-1.png)
 
-    ![Lesson4 Chapter2 Step1im](images/Lesson4_chapter2_step1im.PNG)
+<span data-ttu-id="6d34d-139">在 [階層] 視窗中，**建立三個 cube**做為**3DObjectCollection**的子物件，並將其轉換**規模**設定為 X = 0.15、Y = 0.15、Z = 0.15：</span><span class="sxs-lookup"><span data-stu-id="6d34d-139">In the Hierarchy window, **create three cubes** as a child objects of the **3DObjectCollection** and set their Transform **Scale** to X = 0.15, Y = 0.15, Z = 0.15:</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="93a10-168">操作處理常式是一種元件，可讓您調整物件在操作時的行為方式設定。</span><span class="sxs-lookup"><span data-stu-id="93a10-168">The manipulation handler is a component that lets you adjust settings for how objects behave when manipulated.</span></span> <span data-ttu-id="93a10-169">這包括在特定軸上旋轉、縮放、移動和限制移動。</span><span class="sxs-lookup"><span data-stu-id="93a10-169">This includes rotation, scaling, moving, and constraining movement on a specific axis.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial4-section3-step1-2.png)
 
-2. <span data-ttu-id="93a10-170">限制一個立方體，使其只能縮放。</span><span class="sxs-lookup"><span data-stu-id="93a10-170">Restrict one cube so that it can only be scaled.</span></span> <span data-ttu-id="93a10-171">在3DObjectCollection 物件中選取一個 cube。</span><span class="sxs-lookup"><span data-stu-id="93a10-171">Select one cube in the 3DObjectCollection object.</span></span> <span data-ttu-id="93a10-172">在 [偵測器] 面板中，按一下 [兩個操作類型] 旁的下拉式功能表，然後選取 [調整]。</span><span class="sxs-lookup"><span data-stu-id="93a10-172">In the Inspector panel, next to Two Handed Manipulation Type, click the drop-down menu and select Scale.</span></span> <span data-ttu-id="93a10-173">這使得使用者只能變更立方體的大小。</span><span class="sxs-lookup"><span data-stu-id="93a10-173">This makes it so that the user can only change the cube’s size.</span></span>
+<!-- TODO: Finish -->
+> [!TIP]
+> <span data-ttu-id="6d34d-141">如需有關如何執行上述步驟的提醒，您可以參閱[建立使用者介面和設定混合現實工具](mrlearning-base-ch2.md)組教學課程。</span><span class="sxs-lookup"><span data-stu-id="6d34d-141">For a reminder on how to do the steps listed above, you can refer to the [Creating user interface and configure Mixed Reality Toolkit](mrlearning-base-ch2.md) tutorial.</span></span>
 
-    ![Lesson4 Chapter2 Step2im](images/Lesson4_Chapter2_step2im.PNG)
+<span data-ttu-id="6d34d-142">重新調整 cube 的位置，讓您可以看到每個 cube：</span><span class="sxs-lookup"><span data-stu-id="6d34d-142">Reposition the cubes so you can see each cube:</span></span>
 
-3. <span data-ttu-id="93a10-175">變更每個立方體的色彩，以便我們可以區分它們。</span><span class="sxs-lookup"><span data-stu-id="93a10-175">Change the color of each cube so that we can differentiate between them.</span></span>
-    * <span data-ttu-id="93a10-176">移至 [專案] 面板並向下 MixedRealityToolkit，直到您看到 [SDK]，然後選取它。</span><span class="sxs-lookup"><span data-stu-id="93a10-176">Go to the Project panel and scroll down until you see MixedRealityToolkit.SDK, then select it.</span></span>
-    * <span data-ttu-id="93a10-177">選取 [標準資產] 資料夾。</span><span class="sxs-lookup"><span data-stu-id="93a10-177">Select the Standard Assets folder.</span></span>
-    * <span data-ttu-id="93a10-178">按一下 [材質] 資料夾。</span><span class="sxs-lookup"><span data-stu-id="93a10-178">Click the Materials folder.</span></span>
-    * <span data-ttu-id="93a10-179">將不同的材質拖曳到每個立方體上。</span><span class="sxs-lookup"><span data-stu-id="93a10-179">Drag a different material onto each of your cubes.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial4-section3-step1-3.png)
 
-    >[!NOTE]
-    ><span data-ttu-id="93a10-180">您可以為立方體選擇任何色彩。</span><span class="sxs-lookup"><span data-stu-id="93a10-180">You can choose any color for your cubes.</span></span> <span data-ttu-id="93a10-181">在此範例中，會使用 glowingcyan、glowingorange 和綠色。</span><span class="sxs-lookup"><span data-stu-id="93a10-181">For this example, glowingcyan, glowingorange and green are used.</span></span> <span data-ttu-id="93a10-182">請隨意試驗不同的色彩。</span><span class="sxs-lookup"><span data-stu-id="93a10-182">Feel free to experiment with different colors.</span></span> <span data-ttu-id="93a10-183">若要將色彩加入 cube 中，請按一下您要變更的 cube，然後將材質拖曳至 cube 的 [偵測器] 面板中的網格轉譯器的 [材質] 欄位。</span><span class="sxs-lookup"><span data-stu-id="93a10-183">To add the color to the cube, click the cube you want to change, then drag the material to the mesh renderer's material field in the cube's Inspector panel.</span></span>
+<span data-ttu-id="6d34d-144">在 [專案] 視窗中，流覽至 [**資產**] [ > **MixedRealityToolkit** ] [ > **StandardAssets** > **材質**]，以查看 MRTK 所提供的材質。</span><span class="sxs-lookup"><span data-stu-id="6d34d-144">In the Project window, navigate to **Assets** > **MixedRealityToolkit.SDK** > **StandardAssets** > **Materials** to see materials provided with the MRTK.</span></span>
 
-    ![Lesson4 Chapter2 Step3im](images/Lesson4_Chapter2_step3im.PNG)
+<span data-ttu-id="6d34d-145">**按一下並拖曳**適當的資料到每個 Cube 的網格轉譯器**材質**元素0屬性，例如：</span><span class="sxs-lookup"><span data-stu-id="6d34d-145">**Click-and-drag** a suitable material on to each cube's Mesh Renderer **Materials** Element 0 property, for example:</span></span>
 
-4. <span data-ttu-id="93a10-185">選取3DObjectCollection 物件中的另一個 cube，並將它的移動限制為來自 head 的固定距離。</span><span class="sxs-lookup"><span data-stu-id="93a10-185">Select another cube in the 3DObjectCollection object and make it so that its movement is constrained to a fixed distance from the head.</span></span> <span data-ttu-id="93a10-186">若要這麼做，請在 [移動標籤上的條件約束] 右邊，按一下下拉式功能表，然後選取 [修正與 Head 的距離]。</span><span class="sxs-lookup"><span data-stu-id="93a10-186">To do this, to the right of Constraint on Movement label, click the drop-down menu and select Fix Distance from the Head.</span></span> <span data-ttu-id="93a10-187">這會將 cube 調整為其願景領域內。</span><span class="sxs-lookup"><span data-stu-id="93a10-187">This adjusts the cube to be within their field of vision.</span></span>
+* <span data-ttu-id="6d34d-146">MRTK_Standard_GlowingCyan</span><span class="sxs-lookup"><span data-stu-id="6d34d-146">MRTK_Standard_GlowingCyan</span></span>
+* <span data-ttu-id="6d34d-147">MRTK_Standard_GlowingOrange</span><span class="sxs-lookup"><span data-stu-id="6d34d-147">MRTK_Standard_GlowingOrange</span></span>
+* <span data-ttu-id="6d34d-148">MRTK_Standard_Green：</span><span class="sxs-lookup"><span data-stu-id="6d34d-148">MRTK_Standard_Green:</span></span>
 
-    ![Lesson4 Chapter2 Step4im](images/Lesson4_chapter2_step4im.PNG)
+![mrlearning-基底](images/mrlearning-base/tutorial4-section3-step1-4.png)
 
-    <span data-ttu-id="93a10-189">下列幾個步驟的目標是要啟用抓取並與我們的3D 物件互動，以及套用不同的操作設定。</span><span class="sxs-lookup"><span data-stu-id="93a10-189">The goal of the following few steps is to enable grabbing and interacting with our 3D objects and applying different manipulation settings.</span></span>
+### <a name="2-add-and-configure-the-grid-object-collection-script-component"></a><span data-ttu-id="6d34d-150">2. 加入及設定 Grid 物件集合（腳本）元件</span><span class="sxs-lookup"><span data-stu-id="6d34d-150">2. Add and configure the Grid Object Collection (Script) component</span></span>
 
-5. <span data-ttu-id="93a10-190">選取 [乳酪] 物件，然後按一下 [偵測器] 面板中的 [新增元件]。</span><span class="sxs-lookup"><span data-stu-id="93a10-190">Select the Cheese object, then click Add Component from the Inspector panel.</span></span>
+<span data-ttu-id="6d34d-151">將**Grid 物件集合（腳本）** 元件新增至3DObjectCollection 物件，並將其設定如下：</span><span class="sxs-lookup"><span data-stu-id="6d34d-151">Add a **Grid Object Collection (Script)** component to the 3DObjectCollection object, and configure it as follows:</span></span>
 
-6. <span data-ttu-id="93a10-191">在搜尋方塊中搜尋近乎互動的 Grabbable，然後選取腳本。</span><span class="sxs-lookup"><span data-stu-id="93a10-191">Search in the search box for Near Interaction Grabbable and select the script.</span></span> <span data-ttu-id="93a10-192">此元件可讓使用者使用已追蹤的手來觸及和抓取物件。</span><span class="sxs-lookup"><span data-stu-id="93a10-192">This component enables users to reach out and grab objects with tracked hands.</span></span> <span data-ttu-id="93a10-193">物件也可以從距離進行操作，除非取消核取 [允許最遠操作] 核取方塊，如下列影像中的綠色圓圈所表示。</span><span class="sxs-lookup"><span data-stu-id="93a10-193">Objects can also be manipulated from a distance, unless the Allow Far Manipulation checkbox is unchecked as denoted by a green circle in the image below.</span></span>
+* <span data-ttu-id="6d34d-152">將 [**排序類型**] 變更為 [子順序]，以確保子物件會依照您放在父物件底下的順序排序</span><span class="sxs-lookup"><span data-stu-id="6d34d-152">Change **Sort Type** to Child Order to ensure the child objects are sorted in the order you have placed them under the parent object</span></span>
 
-    ![Lesson4 Chapter2 Step6im](images/Lesson4_Chapter2_step6im.PNG)
+<span data-ttu-id="6d34d-153">然後按一下 [**更新集合**] 按鈕以套用新的設定：</span><span class="sxs-lookup"><span data-stu-id="6d34d-153">Then click the **Update Collection** button to apply the new configuration:</span></span>
 
-7. <span data-ttu-id="93a10-195">在這些物件上重複步驟5和6，以將近乎互動的 Grabbable 新增至顆 octa 物件、Platonic 物件、地球核心、陰曆模組和咖啡杯。</span><span class="sxs-lookup"><span data-stu-id="93a10-195">Add Near Interaction Grabbable to the Octa object, Platonic object, Earth Core, Lunar Module, and Coffee Cup by repeating Steps 5 and 6 on those objects.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial4-section3-step2-1.png)
 
-8. <span data-ttu-id="93a10-196">從八邊形物件中移除遠距操作的能力。</span><span class="sxs-lookup"><span data-stu-id="93a10-196">Remove the ability of far manipulation from the Octa object.</span></span> <span data-ttu-id="93a10-197">若要這麼做，請選取階層中的顆 octa，並取消核取 [允許最大的操作] 核取方塊（以綠色圓圈標示）。</span><span class="sxs-lookup"><span data-stu-id="93a10-197">To do this, select the Octa in the hierarchy and uncheck the Allow far Manipulation checkbox (marked by a green circle).</span></span> <span data-ttu-id="93a10-198">這使得使用者只能使用追蹤的手直接與顆 octa 互動。</span><span class="sxs-lookup"><span data-stu-id="93a10-198">This makes it so users can only interact with the octa directly using tracked hands.</span></span>
+## <a name="manipulating-3d-objects"></a><span data-ttu-id="6d34d-155">操作3D 物件</span><span class="sxs-lookup"><span data-stu-id="6d34d-155">Manipulating 3D objects</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="93a10-199">如需操作處理常式元件和其相關設定的完整檔，請參閱[MRTK 檔](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ManipulationHandler.html)。</span><span class="sxs-lookup"><span data-stu-id="93a10-199">For the full documentation of the manipulation handler component and it's associated settings, refer to the [MRTK Documentation](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ManipulationHandler.html).</span></span>
+<span data-ttu-id="6d34d-156">在本節中，您將新增在上一節中建立的面板中操作所有3D 物件的功能。</span><span class="sxs-lookup"><span data-stu-id="6d34d-156">In this section, you will add the ability to manipulate all the 3D objects in the panel you created in the previous section.</span></span> <span data-ttu-id="6d34d-157">此外，針對 prefab 物件，您可以讓使用者透過追蹤的手觸達這些物件，並將其抓取。</span><span class="sxs-lookup"><span data-stu-id="6d34d-157">Additionally, for the prefab objects, you will enable users to reach out and grab these objects with tracked hands.</span></span> <span data-ttu-id="6d34d-158">然後您會探索幾個可套用至物件的操作行為。</span><span class="sxs-lookup"><span data-stu-id="6d34d-158">Then you will explore a few manipulation behaviors that you can apply to your objects.</span></span>
 
-9. <span data-ttu-id="93a10-200">請確定已將近距離互動 Grabbable 元件新增到地球核心、農曆模組和咖啡杯（請參閱步驟7）。</span><span class="sxs-lookup"><span data-stu-id="93a10-200">Ensure that the Near Interaction Grabbable component has been added to the earth core, the lunar module and the coffee cup (see Step 7).</span></span>
+<span data-ttu-id="6d34d-159">達成此目標所需採取的主要步驟如下：</span><span class="sxs-lookup"><span data-stu-id="6d34d-159">The main steps you will take to achieve this are:</span></span>
 
-10. <span data-ttu-id="93a10-201">針對農曆模組，變更操作處理常式設定，使其在物件的中心前後旋轉，以進行近和遠的互動，如下圖所示。</span><span class="sxs-lookup"><span data-stu-id="93a10-201">For the lunar module, change the Manipulation Handler settings so that it rotates around the object's center for both near and far interaction, as shown in the image below.</span></span>
+1. <span data-ttu-id="6d34d-160">將操作處理常式（腳本）元件新增至所有物件</span><span class="sxs-lookup"><span data-stu-id="6d34d-160">Add the Manipulation Handler (Script) component to all the objects</span></span>
+2. <span data-ttu-id="6d34d-161">將近乎互動 Grabbable （腳本）元件新增至 prefab 物件</span><span class="sxs-lookup"><span data-stu-id="6d34d-161">Add the Near Interaction Grabbable (Script) component to the prefab objects</span></span>
+3. <span data-ttu-id="6d34d-162">設定操作處理常式（腳本）元件</span><span class="sxs-lookup"><span data-stu-id="6d34d-162">Configure the Manipulation Handler (Script) component</span></span>
 
-    ![Lesson4 Chapter2 Step10im](images/Lesson4_chapter2_step10im.PNG)
+> [!IMPORTANT]
+> <span data-ttu-id="6d34d-163">若要能夠**操作物件**，物件必須具有下列元件：</span><span class="sxs-lookup"><span data-stu-id="6d34d-163">To be able to **manipulate an object**, the object must have the following components:</span></span>
+>
+> * <span data-ttu-id="6d34d-164">**碰撞**元件，例如 Box 碰撞</span><span class="sxs-lookup"><span data-stu-id="6d34d-164">**Collider** component, for example, a Box Collider</span></span>
+> * <span data-ttu-id="6d34d-165">**操作處理常式（腳本）** 元件</span><span class="sxs-lookup"><span data-stu-id="6d34d-165">**Manipulation Handler (Script)** component</span></span>
+>
+> <span data-ttu-id="6d34d-166">若要能夠**操作**和**抓取具有已追蹤手的物件**，物件必須具有下列元件：</span><span class="sxs-lookup"><span data-stu-id="6d34d-166">To be able to **manipulate** and **grab an object with tracked hands**, the object must have the following components:</span></span>
+>
+> * <span data-ttu-id="6d34d-167">**碰撞**元件，例如 Box 碰撞</span><span class="sxs-lookup"><span data-stu-id="6d34d-167">**Collider** component, for example, a Box Collider</span></span>
+> * <span data-ttu-id="6d34d-168">**操作處理常式（腳本）** 元件</span><span class="sxs-lookup"><span data-stu-id="6d34d-168">**Manipulation Handler (Script)** component</span></span>
+> * <span data-ttu-id="6d34d-169">**近乎互動 Grabbable （腳本）** 元件</span><span class="sxs-lookup"><span data-stu-id="6d34d-169">**Near Interaction Grabbable (Script)** component</span></span>
 
-11. <span data-ttu-id="93a10-203">針對地球核心，將發行行為變更為 [無]。</span><span class="sxs-lookup"><span data-stu-id="93a10-203">For the earth core, change the release behavior to nothing.</span></span> <span data-ttu-id="93a10-204">如此一來，當地球核心從使用者的理解中放開之後，就不會繼續移動。</span><span class="sxs-lookup"><span data-stu-id="93a10-204">This makes it so that once the earth core is released from the user's grasp, it doesn’t continue to move.</span></span>
+### <a name="1-add-the-manipulation-handler-script-component-to-all-the-objects"></a><span data-ttu-id="6d34d-170">1. 將操作處理常式（腳本）元件加入至所有物件</span><span class="sxs-lookup"><span data-stu-id="6d34d-170">1. Add the Manipulation Handler (Script) component to all the objects</span></span>
 
-    ![Lesson4 Chapter2 Step11im](images/Lesson4_Chapter2_step11im.PNG)
+<span data-ttu-id="6d34d-171">在 [階層] 視窗中，選取 [**乳酪**] 物件，按住**Shift**鍵，然後選取**Cube （）** 物件，並將**操作處理常式（腳本）** 元件加入至所有物件：</span><span class="sxs-lookup"><span data-stu-id="6d34d-171">In the Hierarchy window, select the **Cheese** object, hold down the **Shift** key, and then select the **Cube ()** object and add the **Manipulation Handler (Script)** component to all the objects:</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="93a10-206">此設定適用于案例，例如建立您可以擲回的球。</span><span class="sxs-lookup"><span data-stu-id="93a10-206">This setting is useful for scenarios, such as creating a ball that you can throw.</span></span> <span data-ttu-id="93a10-207">保持適當的速度和角度速度，以確保在球放開後，它會繼續在其發行的速度移動;類似于實體球的行為。</span><span class="sxs-lookup"><span data-stu-id="93a10-207">Keeping the appropriate velocity and angular velocity to ensure that once the ball is released, it will continue to move at the velocity it was released at; similar to how a physical ball would behave.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial4-section4-step1-1.png)
 
-## <a name="adding-bounding-boxes"></a><span data-ttu-id="93a10-208">新增週框方塊</span><span class="sxs-lookup"><span data-stu-id="93a10-208">Adding Bounding Boxes</span></span>
+> [!NOTE]
+> <span data-ttu-id="6d34d-173">基於本教學課程的目的，colliders 已新增至 prefabs。</span><span class="sxs-lookup"><span data-stu-id="6d34d-173">For the purpose of this tutorial, colliders have already been added to the prefabs.</span></span> <span data-ttu-id="6d34d-174">對於 Unity 基本類型（例如 Cube 物件），當建立物件時，會自動新增碰撞元件。</span><span class="sxs-lookup"><span data-stu-id="6d34d-174">For Unity primitives, such as the Cube objects, the Collider component is automatically added when the object is created.</span></span> <span data-ttu-id="6d34d-175">在上圖中，colliders 是以綠色外框表示。</span><span class="sxs-lookup"><span data-stu-id="6d34d-175">In the image above, the colliders are represented by the green outlines.</span></span> <span data-ttu-id="6d34d-176">若要深入瞭解 colliders，您可以造訪 Unity 的<a href="https://docs.unity3d.com/Manual/CollidersOverview.html" target="_blank">碰撞</a>器檔。</span><span class="sxs-lookup"><span data-stu-id="6d34d-176">To learn more about colliders, you can visit Unity's <a href="https://docs.unity3d.com/Manual/CollidersOverview.html" target="_blank">Collider</a> documentation.</span></span>
 
-<span data-ttu-id="93a10-209">周框方塊可讓您更輕鬆且更直覺地操作物件，以進行直接操作（近乎互動）和以光線為基礎的操作（遠比互動）。周框方塊提供的控制碼可用於在特定軸上縮放和旋轉物件。</span><span class="sxs-lookup"><span data-stu-id="93a10-209">Bounding boxes make it easier and more intuitive to manipulate objects with one hand for both direct manipulation (near interaction) and ray-based manipulation (far interaction.) Bounding boxes provide handles that can be grabbed for scaling and rotating objects along a specific axis.</span></span>
+### <a name="2-add-the-near-interaction-grabbable-script-component-to-the-prefab-objects"></a><span data-ttu-id="6d34d-177">2. 將近乎互動 Grabbable （腳本）元件新增至 prefab 物件</span><span class="sxs-lookup"><span data-stu-id="6d34d-177">2. Add the Near Interaction Grabbable (Script) component to the prefab objects</span></span>
 
->[!NOTE]
-><span data-ttu-id="93a10-210">在您可以將周框方塊加入物件之前，您必須先在物件上具有碰撞器（例如，方塊碰撞器），如本課程前面所述。</span><span class="sxs-lookup"><span data-stu-id="93a10-210">Before you can add a bounding box to an object, you first need to have a collider on the object (e.g., a box collider), as was covered previously in this lesson.</span></span> <span data-ttu-id="93a10-211">您可以選取物件，然後在物件的 [偵測器] 面板中選取 [新增元件 > 方塊碰撞器] 來新增 Colliders。</span><span class="sxs-lookup"><span data-stu-id="93a10-211">Colliders can be added by selecting the object and in the object's inspector panel selecting Add Component>Box Collider.</span></span>
+<span data-ttu-id="6d34d-178">在 [階層] 視窗中，選取 [**乳酪**] 物件，按住**Shift**鍵，然後選取 [ **TheModule** ] 物件，並將**近端互動 Grabbable （腳本）** 元件新增至所有物件：</span><span class="sxs-lookup"><span data-stu-id="6d34d-178">In the Hierarchy window, select the **Cheese** object, hold down the **Shift** key, and then select the **TheModule** object and add the **Near Interaction Grabbable (Script)** component to all the objects:</span></span>
 
-1. <span data-ttu-id="93a10-212">將 box 碰撞項新增至地球核心物件（如果尚未存在）。</span><span class="sxs-lookup"><span data-stu-id="93a10-212">Add a box collider to the Earth Core object if one does not already exist.</span></span> <span data-ttu-id="93a10-213">如果根據給定的指示使用 [基本模組資產] 資料夾中提供的 prefab，則不需要箱碰撞和設定。</span><span class="sxs-lookup"><span data-stu-id="93a10-213">The box collider and setup are not required, if using the prefab provided in the Base Module Assets folder per the instructions given.</span></span> <span data-ttu-id="93a10-214">在地球核心的案例中，我們已將方塊碰撞項新增至地球核心底下的、node_id30、物件，如下圖所示。</span><span class="sxs-lookup"><span data-stu-id="93a10-214">In the case of the earth core, we added the box collider to the, node_id30, object underneath the earth core, as shown in the image below.</span></span> <span data-ttu-id="93a10-215">從物件的 [偵測器] 索引標籤中選取 [node_id30]，按一下 [新增元件]，然後搜尋方塊碰撞。</span><span class="sxs-lookup"><span data-stu-id="93a10-215">Select node_id30 from the object's Inspector tab, click Add Component, and search for box collider.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial4-section4-step2-1.png)
 
-    ![Lesson4 Chapter3 Step1im](images/Lesson4_Chapter3_step1im.PNG)
+### <a name="3-configure-the-manipulation-handler-script-component"></a><span data-ttu-id="6d34d-180">3. 設定操作處理常式（腳本）元件</span><span class="sxs-lookup"><span data-stu-id="6d34d-180">3. Configure the Manipulation Handler (Script) component</span></span>
 
-    ![Lesson4 Chapter3 Step2im](images/Lesson4_chapter3_step2im.PNG)
+#### <a name="default-manipulation"></a><span data-ttu-id="6d34d-181">預設操作</span><span class="sxs-lookup"><span data-stu-id="6d34d-181">Default manipulation</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="93a10-218">請確定您已調整方塊的碰撞器大小，使其變得太大或太小。</span><span class="sxs-lookup"><span data-stu-id="93a10-218">Make sure that you size the box collider so that it’s not too big or too small.</span></span> <span data-ttu-id="93a10-219">它的大小應與它周圍的物件大致相同 (在本例中為地核)。</span><span class="sxs-lookup"><span data-stu-id="93a10-219">It should be roughly the same size as the object it’s surrounding (in this example, the earth core).</span></span> <span data-ttu-id="93a10-220">選取方塊碰撞器中的 [編輯碰撞器] 選項，視需要調整方塊碰撞器。</span><span class="sxs-lookup"><span data-stu-id="93a10-220">Adjust the box collider as needed by selecting the Edit Collider option in the box collider.</span></span> <span data-ttu-id="93a10-221">您可以變更 [x]、[y] 和 [z] 值，或在編輯器場景視窗中拖曳周框方塊處理常式。</span><span class="sxs-lookup"><span data-stu-id="93a10-221">You can either changing the x, y, and z values or drag the bounding box handlers in the Editor Scene window.</span></span>
+<span data-ttu-id="6d34d-182">若為**Cube**物件，請保留所有屬性，以體驗預設的操作行為：</span><span class="sxs-lookup"><span data-stu-id="6d34d-182">For the **Cube** object, leave all properties at default, to experience the default manipulation behavior:</span></span>
 
-    ![Lesson4 Chapter3 Noteim](images/Lesson4_Chapter3_noteim.PNG)
+![mrlearning-基底](images/mrlearning-base/tutorial4-section4-step3-1.png)
 
-2. <span data-ttu-id="93a10-223">將周框方塊新增至地球核心的 node_id30 物件。</span><span class="sxs-lookup"><span data-stu-id="93a10-223">Add a bounding box to the earth core's node_id30 object.</span></span> <span data-ttu-id="93a10-224">若要這樣做，請從3DObjectCollection 中選取 node_id30 物件。</span><span class="sxs-lookup"><span data-stu-id="93a10-224">To do this, select the node_id30 object from the 3DObjectCollection.</span></span> <span data-ttu-id="93a10-225">在 [偵測器] 索引標籤中，按一下 [加入元件]，然後搜尋周框方塊。</span><span class="sxs-lookup"><span data-stu-id="93a10-225">In the inspector tab, click Add Component, and search for bounding box.</span></span> <span data-ttu-id="93a10-226">請確定週框方塊、方塊碰撞器和操作指令碼 (Manipulation Handler、Near Interaction Grabbable) 都在同一個遊戲物件上。</span><span class="sxs-lookup"><span data-stu-id="93a10-226">Ensure that the bounding box, box collider, and manipulation scripts (manipulation handler, near interaction grabbable) are all on the same game object.</span></span>
+> [!TIP]
+> <span data-ttu-id="6d34d-184">若要將元件重設為預設值，您可以選取元件的 [設定] 圖示，然後選取 [重設]。</span><span class="sxs-lookup"><span data-stu-id="6d34d-184">To reset a component to its default values, you can select the component's Settings icon and select Reset.</span></span>
 
-3. <span data-ttu-id="93a10-227">在周框方塊的 [行為] 區段中，從 [啟用] 下拉式清單選取 [啟動時啟用]。</span><span class="sxs-lookup"><span data-stu-id="93a10-227">In the bounding box's Behavior section, select Activate on Start from the Activation drop-down list.</span></span> <span data-ttu-id="93a10-228">若要查看有關各種啟用選項和其他周框方塊選項的其他詳細資料，請參閱[MRTK 的周框方塊檔](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html>)</span><span class="sxs-lookup"><span data-stu-id="93a10-228">To review additional details regarding the various activation options and other bounding box options, see the [MRTK's bounding box documentation](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html>)</span></span>
+#### <a name="restrict-manipulation-to-scale-only"></a><span data-ttu-id="6d34d-185">將操作限制為僅限縮放</span><span class="sxs-lookup"><span data-stu-id="6d34d-185">Restrict manipulation to scale only</span></span>
 
-    <span data-ttu-id="93a10-229">*在接下來的幾個步驟中，我們也會變更周框方塊的外觀，方法是調整預設的方塊材質、抓取的資料，以及角落和邊控點的視覺效果。MRTK 包含數個選項可自訂周框方塊。*</span><span class="sxs-lookup"><span data-stu-id="93a10-229">*In the next few steps, we will also change how the bounding box looks by adjusting the default box material, the material while it’s being grabbed as well as the visualization of the corner and side handles. The MRTK contains several options to customize the bounding box.*</span></span>
+<span data-ttu-id="6d34d-186">針對**Cube （1）** 物件，將**兩個右手操作類型**變更為 [調整]，只允許使用者變更物件的大小：</span><span class="sxs-lookup"><span data-stu-id="6d34d-186">For the **Cube (1)** object, change **Two Handed Manipulation Type** to Scale to only allow the user to change the object's size:</span></span>
 
-4. <span data-ttu-id="93a10-230">在 [專案] 面板中，搜尋 "boundingbox"，您會在搜尋結果中看到以藍色球體表示的材料清單，如下圖所示。</span><span class="sxs-lookup"><span data-stu-id="93a10-230">In the Project panel, search for "boundingbox" and you’ll see a list of materials denoted by a blue sphere in the search results as shown in the image below.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial4-section4-step3-2.png)
 
-5. <span data-ttu-id="93a10-231">將 boundingbox 材質拖曳至周框方塊元件上的方塊材質位置。</span><span class="sxs-lookup"><span data-stu-id="93a10-231">Drag the boundingbox material into the box material slot on the bounding box component.</span></span> <span data-ttu-id="93a10-232">此外，請抓取 boundingboxgrabbed 的資料，並將其放在 [周框方塊] 元件上的 [將其抓取材質] 方塊中</span><span class="sxs-lookup"><span data-stu-id="93a10-232">Also grab the boundingboxgrabbed material and put that in the box grabbed material slot on the bounding box component.</span></span>
+#### <a name="constrain-the-movement-to-a-fixed-distance-from-the-user"></a><span data-ttu-id="6d34d-188">將移動限制為與使用者的固定距離</span><span class="sxs-lookup"><span data-stu-id="6d34d-188">Constrain the movement to a fixed distance from the user</span></span>
 
-    ![mrlearning-base-ch4-3-step5 .png](images/mrlearning-base-ch4-3-step5.png)
+<span data-ttu-id="6d34d-189">針對**Cube （2）** 物件，變更**移動上的條件約束**以修正與 Head 的距離，如此一來，當物件移動時，它就會與使用者保持相同的距離：</span><span class="sxs-lookup"><span data-stu-id="6d34d-189">For the **Cube (2)** object, change **Constraint On Movement** to Fix Distance From Head so that when the object is moved, it stays at the same distance from the user:</span></span>
 
-6. <span data-ttu-id="93a10-234">將 MRTK_BoundingBox_ScaleHandle prefab 拖曳至 縮放控點 prefab 位置，並將 MRTK_BoundingBox_RotateHandle prefab 至 結合 方塊元件上的 旋轉控點 插槽。</span><span class="sxs-lookup"><span data-stu-id="93a10-234">Drag the MRTK_BoundingBox_ScaleHandle prefab into the scale handle prefab slot and the MRTK_BoundingBox_RotateHandle prefab into the rotation handle slot on the bonding box component.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial4-section4-step3-3.png)
 
-    ![mrlearning-base-ch4-3-step6 .png](images/mrlearning-base-ch4-3-step6.png)
+#### <a name="default-grabbable-manipulation"></a><span data-ttu-id="6d34d-191">預設 grabbable 操作</span><span class="sxs-lookup"><span data-stu-id="6d34d-191">Default grabbable manipulation</span></span>
 
-7. <span data-ttu-id="93a10-236">請確定週框方塊的目標是正確的物件。</span><span class="sxs-lookup"><span data-stu-id="93a10-236">Make sure the bounding box is targeting the right object.</span></span> <span data-ttu-id="93a10-237">在 [周框方塊] 元件中，有 [目標物件] 和 [界限覆寫] 腳本。</span><span class="sxs-lookup"><span data-stu-id="93a10-237">In the bounding box component, there is the target object and bounds override scripts.</span></span> <span data-ttu-id="93a10-238">將具有周框方塊的物件拖曳到這兩個位置。</span><span class="sxs-lookup"><span data-stu-id="93a10-238">Drag the object that has the bounding box around it to both of these slots.</span></span> <span data-ttu-id="93a10-239">在此範例中，將 node_id30 物件拖曳到這兩個位置，如下圖所示。</span><span class="sxs-lookup"><span data-stu-id="93a10-239">In this example, drag the node_id30 object to both of these slots, as shown in the image below.</span></span>
+<span data-ttu-id="6d34d-192">針對 [**乳酪**]、[ **CoffeCup**] 和 [ **EarthCore** ] 物件，保留 [所有屬性]，以體驗預設的 grabbable 操作行為：</span><span class="sxs-lookup"><span data-stu-id="6d34d-192">For the **Cheese**, **CoffeCup**, and **EarthCore** objects, leave all properties at default, to experience the default grabbable manipulation behavior:</span></span>
 
-    ![mrlearning-base-ch4-3-step7 .png](images/mrlearning-base-ch4-3-step7.png)
+![mrlearning-基底](images/mrlearning-base/tutorial4-section4-step3-4.png)
 
-    >[!NOTE]
-    ><span data-ttu-id="93a10-241">當您啟動或播放應用程式時，您的物件將會以藍色框架括住。</span><span class="sxs-lookup"><span data-stu-id="93a10-241">When you start or play the application, your object will be surrounded by a blue frame.</span></span> <span data-ttu-id="93a10-242">您可以拖曳該框架的角來調整物件的大小。</span><span class="sxs-lookup"><span data-stu-id="93a10-242">You’re welcome to drag the corners of that frame to resize the object.</span></span> <span data-ttu-id="93a10-243">如果您想要縮放控點和旋轉控點變得更大且更可見，則建議使用預設周框方塊設定（避免步驟4到6）。</span><span class="sxs-lookup"><span data-stu-id="93a10-243">If you want the scaling handles and the rotation handles to be larger and more visible, it is recommend using the default bounding box settings (avoiding Steps 4 -through 6.)</span></span>
+#### <a name="remove-the-ability-of-far-manipulation"></a><span data-ttu-id="6d34d-194">移除目前操作的能力</span><span class="sxs-lookup"><span data-stu-id="6d34d-194">Remove the ability of far manipulation</span></span>
 
-8. <span data-ttu-id="93a10-244">若要返回預設周框方塊視覺效果，請在周框方塊物件的 [檢查] 面板中選取旋轉控點 prefab，然後按下 delete 鍵將它移除。</span><span class="sxs-lookup"><span data-stu-id="93a10-244">To return to the default bounding box visualization, in the Inspector panel of the bounding box's object, select the rotation handle prefab and press delete to remove it.</span></span> <span data-ttu-id="93a10-245">當您進入「播放模式」時，wou 會看到如下圖所示的周框方塊視覺效果。</span><span class="sxs-lookup"><span data-stu-id="93a10-245">When you enter play mode, wou will see a bounding box visualization similar to the image below.</span></span>
+<span data-ttu-id="6d34d-195">針對**顆 octa**物件，取消核取 [允許最大**操作**] 核取方塊，讓使用者只能使用追蹤的手直接與物件互動：</span><span class="sxs-lookup"><span data-stu-id="6d34d-195">For the **Octa** object, uncheck the **Allow Far Manipulation** checkbox to make it so the user can only interact with the object directly using tracked hands:</span></span>
 
-    ![mrlearning-base-ch4-3-step8 .png](images/mrlearning-base-ch4-3-step8.png)
+![mrlearning-基底](images/mrlearning-base/tutorial4-section4-step3-5.png)
 
-    >[!NOTE]
-    ><span data-ttu-id="93a10-247">只有當處於播放模式時，才會顯示周框方塊的視覺效果。</span><span class="sxs-lookup"><span data-stu-id="93a10-247">The bounding box visualizations only appear when in play mode.</span></span>
+#### <a name="make-an-object-rotate-around-its-center"></a><span data-ttu-id="6d34d-197">使物件繞著中心旋轉</span><span class="sxs-lookup"><span data-stu-id="6d34d-197">Make an object rotate around its center</span></span>
 
-## <a name="adding-touch-effects"></a><span data-ttu-id="93a10-248">新增觸控效果</span><span class="sxs-lookup"><span data-stu-id="93a10-248">Adding touch effects</span></span>
+<span data-ttu-id="6d34d-198">針對**Platonic**物件，請將**一次**左右旋轉模式變更為接近，而在**一種旋轉模式**中旋轉，讓它在使用者手上旋轉物件時，旋轉物件中心：</span><span class="sxs-lookup"><span data-stu-id="6d34d-198">For the **Platonic** object, change **One Hand Rotation Mode Near** and **One Hand Rotation Mode Far** to Rotate About Object Center to make it so when the user rotates the object with one hand, it rotates around the object's center:</span></span>
 
-<span data-ttu-id="93a10-249">在此範例中，當您用手觸控物件時，我們將播放音效。</span><span class="sxs-lookup"><span data-stu-id="93a10-249">In this example, we are going to play a sound effect when you touch an object with your hand.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial4-section4-step3-6.png)
 
-1. <span data-ttu-id="93a10-250">將音訊來源元件新增至遊戲物件中。</span><span class="sxs-lookup"><span data-stu-id="93a10-250">Add an audio source component to your game object.</span></span> <span data-ttu-id="93a10-251">選取場景階層中的 [顆 octa] 物件。</span><span class="sxs-lookup"><span data-stu-id="93a10-251">Select the Octa object in your scene hierarchy.</span></span> <span data-ttu-id="93a10-252">在 [偵測器] 面板中，按一下 [新增元件] 按鈕，搜尋並選取 [音訊來源]。</span><span class="sxs-lookup"><span data-stu-id="93a10-252">In the inspector panel, click the Add Component button, search for and select audio source.</span></span> <span data-ttu-id="93a10-253">我們將在後續步驟中使用此音訊來源播放音效。</span><span class="sxs-lookup"><span data-stu-id="93a10-253">We’ll use this audio source to play a sound effect in a later step.</span></span>
+#### <a name="prevent-movement-after-object-is-released"></a><span data-ttu-id="6d34d-200">避免物件釋放後移動</span><span class="sxs-lookup"><span data-stu-id="6d34d-200">Prevent movement after object is released</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="93a10-254">請確定顆 octa 物件上有方塊碰撞器。</span><span class="sxs-lookup"><span data-stu-id="93a10-254">Ensure that the Octa object has a box collider on it.</span></span>
+<span data-ttu-id="6d34d-201">針對**TheModule**物件，將 [**發行行為**] 變更為 [無]，以便在物件從使用者手中釋放之後，不會繼續移動：</span><span class="sxs-lookup"><span data-stu-id="6d34d-201">For the **TheModule** object, change **Release Behavior** to Nothing so that once the object is released from the user's hand, it doesn’t continue to move:</span></span>
 
-2. <span data-ttu-id="93a10-255">新增附近的互動 Touchable 元件。</span><span class="sxs-lookup"><span data-stu-id="93a10-255">Add the Near Interaction Touchable component.</span></span> <span data-ttu-id="93a10-256">按一下 [偵測器] 面板中的 [新增元件] 按鈕，並搜尋近乎互動 touchable。</span><span class="sxs-lookup"><span data-stu-id="93a10-256">Click the Add Component button in the Inspector panel and search for near interaction touchable.</span></span> <span data-ttu-id="93a10-257">選取它以新增元件。</span><span class="sxs-lookup"><span data-stu-id="93a10-257">Select it to add the component.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial4-section4-step3-7.png)
 
-    >[!NOTE]
-    ><span data-ttu-id="93a10-258">在過去，我們新增了近乎互動的 grabbable。</span><span class="sxs-lookup"><span data-stu-id="93a10-258">Previously, we added near interaction grabbable.</span></span> <span data-ttu-id="93a10-259">此互動和近距離互動 touchable 之間的差異在於，grabbable 互動的目的是要讓物件能夠抓取並與互動。</span><span class="sxs-lookup"><span data-stu-id="93a10-259">The difference between this and near interaction touchable is that the grabbable interaction is intended for an object to be grabbed and interacted with.</span></span> <span data-ttu-id="93a10-260">Touchable 元件適用于要觸及的物件。</span><span class="sxs-lookup"><span data-stu-id="93a10-260">The touchable component is intended for the object to be touched.</span></span> <span data-ttu-id="93a10-261">這兩個元件可以作為互動組合一起使用。</span><span class="sxs-lookup"><span data-stu-id="93a10-261">Both components can be used together for a combination of interactions.</span></span>
+<span data-ttu-id="6d34d-203">若要深入瞭解操作處理常式元件及其相關聯的屬性，您可以造訪[MRTK 檔入口網站](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)中的[操作處理常式](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ManipulationHandler.html)指南。</span><span class="sxs-lookup"><span data-stu-id="6d34d-203">To learn more about the Manipulation handler component and its associated properties, you can visit the [Manipulation handler](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ManipulationHandler.html) guide in the [MRTK Documentation Portal](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html).</span></span>
 
-    ![Lesson4 Chapter4 Step1 2Im](images/Lesson4_chapter4_step1-2im.PNG)
+## <a name="adding-bounding-boxes"></a><span data-ttu-id="6d34d-204">加入周框方塊</span><span class="sxs-lookup"><span data-stu-id="6d34d-204">Adding bounding boxes</span></span>
 
-3. <span data-ttu-id="93a10-263">在手互動觸控腳本中加入。</span><span class="sxs-lookup"><span data-stu-id="93a10-263">Add in the Hand Interaction Touch script.</span></span> <span data-ttu-id="93a10-264">就像上一個步驟一樣，按一下 [新增元件]，然後搜尋 [手動互動觸控] 將它加入。</span><span class="sxs-lookup"><span data-stu-id="93a10-264">Just like the previous step, click Add Component and search for hand interaction touch to add it.</span></span>
+<span data-ttu-id="6d34d-205">周框方塊藉由提供可用於縮放和旋轉的控制碼，讓您更輕鬆且更直覺地操作物件。</span><span class="sxs-lookup"><span data-stu-id="6d34d-205">Bounding boxes make it easier and more intuitive to manipulate objects with one hand for both near and far interaction by providing handles that can be used for scaling and rotating.</span></span>
 
-    <span data-ttu-id="93a10-265">請注意，您有三個使用腳本的選項：</span><span class="sxs-lookup"><span data-stu-id="93a10-265">Notice that you have three options with the script:</span></span>
-    * <span data-ttu-id="93a10-266">觸控完成：當您接觸並釋放物件時觸發程式</span><span class="sxs-lookup"><span data-stu-id="93a10-266">On Touch Completed: Triggers when you touch and release the object</span></span>
-    * <span data-ttu-id="93a10-267">開始觸控時：觸及物件時觸發</span><span class="sxs-lookup"><span data-stu-id="93a10-267">On Touch Started: Triggers when the object is touched</span></span>
-    * <span data-ttu-id="93a10-268">觸控更新：當您的手中觸及物件時，定期觸發程式</span><span class="sxs-lookup"><span data-stu-id="93a10-268">On Touch Updated: Triggers periodically while your hand is touching the object</span></span>
+<span data-ttu-id="6d34d-206">在此範例中，您會將周框方塊新增至 EarthCore 物件，因此這個物件現在可以使用您在上一節中設定的物件操作進行互動，以及使用周框方塊控點來縮放和旋轉。</span><span class="sxs-lookup"><span data-stu-id="6d34d-206">In this example, you will add a bounding box to the EarthCore object so this object can now be interacted with using the object manipulation you configured in the previous section, as well as, scaled and rotated using the bounding box handles.</span></span>
 
-    <span data-ttu-id="93a10-269">在此範例中，我們將使用 [啟動觸控] 設定。</span><span class="sxs-lookup"><span data-stu-id="93a10-269">For this example, we will be working with the On Touch Started setting.</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="6d34d-207">若要能夠使用周**框**方塊，物件必須具有下列元件：</span><span class="sxs-lookup"><span data-stu-id="6d34d-207">To be able to use a **bounding box**, the object must have the following components:</span></span>
+>
+> * <span data-ttu-id="6d34d-208">**碰撞**元件，例如 Box 碰撞</span><span class="sxs-lookup"><span data-stu-id="6d34d-208">**Collider** component, for example, a Box Collider</span></span>
+> * <span data-ttu-id="6d34d-209">周**框方塊（腳本）** 元件</span><span class="sxs-lookup"><span data-stu-id="6d34d-209">**Bounding Box (Script)** component</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="93a10-270">此腳本隨附于您在本教學課程開頭匯入的 BaseModuleAssets Unity 封裝中，而且不會包含在原始 MRTK 中。</span><span class="sxs-lookup"><span data-stu-id="93a10-270">This script is included with the BaseModuleAssets Unity package that you imported as at the beginning of this tutorial and it is not included in the original MRTK.</span></span>
+### <a name="1-add-the-bounding-box-script-component-to-the-earthcore-object"></a><span data-ttu-id="6d34d-210">1. 將周框方塊（腳本）元件新增至 EarthCore 物件</span><span class="sxs-lookup"><span data-stu-id="6d34d-210">1. Add the Bounding Box (Script) component to the EarthCore object</span></span>
 
-4. <span data-ttu-id="93a10-271">按一下 [On Touch 已啟動] 選項上的 [+] 按鈕，並將顆 octa 物件拖曳至空白欄位。</span><span class="sxs-lookup"><span data-stu-id="93a10-271">Click the + button on the On Touch Started option and drag the Octa object into the empty field.</span></span>
+<span data-ttu-id="6d34d-211">在 [偵測器] 視窗中，選取**EarthCore**物件，並將周**框方塊（腳本）** 元件新增至 EarthCore 物件：</span><span class="sxs-lookup"><span data-stu-id="6d34d-211">In the Inspector window, select the **EarthCore** object and add the **Bounding Box (Script)** component to the EarthCore object:</span></span>
 
-    ![mrlearning-base-ch4-4-step4 .png](images/mrlearning-base-ch4-4-step4.png)
+![mrlearning-基底](images/mrlearning-base/tutorial4-section5-step1-1.png)
 
-5. <span data-ttu-id="93a10-273">在顯示 [沒有函式] 的下拉式選單中，選取 [Spatialize > PlayOneShot]。</span><span class="sxs-lookup"><span data-stu-id="93a10-273">In the drop-down that says No Function, select AudioSource > PlayOneShot.</span></span> <span data-ttu-id="93a10-274">我們將使用下列概念為此欄位新增音訊剪輯：</span><span class="sxs-lookup"><span data-stu-id="93a10-274">We will add an audio clip to this field using the concepts below:</span></span>
+> [!NOTE]
+> <span data-ttu-id="6d34d-213">周框方塊視覺效果是在執行時間建立，因此在您進入遊戲模式之前看不到。</span><span class="sxs-lookup"><span data-stu-id="6d34d-213">The Bounding Box visualizations is created at run time and therefore not visible before you enter Game mode.</span></span>
 
-    * <span data-ttu-id="93a10-275">MRTK 確實提供了一小部分音訊剪輯。</span><span class="sxs-lookup"><span data-stu-id="93a10-275">The MRTK does provide a small list of audio clips.</span></span> <span data-ttu-id="93a10-276">歡迎您在 [專案] 面板中探索這些功能。</span><span class="sxs-lookup"><span data-stu-id="93a10-276">Feel free to explore these in your Project panel.</span></span> <span data-ttu-id="93a10-277">您會在 [資產] > [MixedRealityToolkit] > [標準資產] > [音訊] 資料夾中找到這些專案。</span><span class="sxs-lookup"><span data-stu-id="93a10-277">You will find them under the Assets > MixedRealityToolkit.SDK > Standard Assets > Audio folder.</span></span>
-    * <span data-ttu-id="93a10-278">在此範例中，我們將使用 MRTK_Gem 音訊剪輯。</span><span class="sxs-lookup"><span data-stu-id="93a10-278">For this example, we are going to use the MRTK_Gem audio clip.</span></span>
-    * <span data-ttu-id="93a10-279">若要新增音訊剪輯，只要將您想要的剪輯從 [專案] 面板拖曳至 [Spatialize. PlayOneShot] 欄位即可。</span><span class="sxs-lookup"><span data-stu-id="93a10-279">To add an audio clip, simply drag the clip you want from the project panel into the AudioSource.PlayOneShot field.</span></span>
+### <a name="2-visualize-and-test-the-bounding-box-using-the-in-editor-simulation"></a><span data-ttu-id="6d34d-214">2. 使用編輯器內模擬來視覺化和測試周框方塊</span><span class="sxs-lookup"><span data-stu-id="6d34d-214">2. Visualize and test the bounding box using the in-editor simulation</span></span>
 
-    ![mrlearning-base-ch4-4-step5 .png](images/mrlearning-base-ch4-4-step5.png)
+<span data-ttu-id="6d34d-215">按下 [播放] 按鈕進入遊戲模式。</span><span class="sxs-lookup"><span data-stu-id="6d34d-215">Press the Play button to enter Game mode.</span></span> <span data-ttu-id="6d34d-216">然後按住空格鍵以顯示手，並使用滑鼠來與周框方塊互動：</span><span class="sxs-lookup"><span data-stu-id="6d34d-216">Then press and hold the spacebar to bring up the hand and use the mouse to interact with the bounding box:</span></span>
 
-   <span data-ttu-id="93a10-281">現在，當使用者到達並觸及顆 octa 物件時，就會播放音訊軌 MRTK_Gem。</span><span class="sxs-lookup"><span data-stu-id="93a10-281">Now, when the user reaches out and touches the Octa object, the audio track MRTK_Gem will play.</span></span> <span data-ttu-id="93a10-282">觸碰互動觸控腳本也會在觸及時調整物件的色彩。</span><span class="sxs-lookup"><span data-stu-id="93a10-282">The Hand Interaction Touch script will also adjust the color of the object, when touched.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial4-section5-step2-1.png)
 
-## <a name="congratulations"></a><span data-ttu-id="93a10-283">恭喜您</span><span class="sxs-lookup"><span data-stu-id="93a10-283">Congratulations</span></span>
+<span data-ttu-id="6d34d-218">若要深入瞭解周框方塊元件和其相關聯的屬性，您可以造訪[MRTK 檔入口網站](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)中的周[框](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html)方塊指南。</span><span class="sxs-lookup"><span data-stu-id="6d34d-218">To learn more about the Bounding Box component and its associated properties, you can visit the [Bounding box](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html) guide in the [MRTK Documentation Portal](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html).</span></span>
 
-<span data-ttu-id="93a10-284">在本教學課程中，您已瞭解如何在方格集合中組織3D 物件，以及如何使用近距離互動（直接抓取和旋轉）和即時互動（使用注視光線或手片）來操作這些物件（縮放、旋轉和移動）。</span><span class="sxs-lookup"><span data-stu-id="93a10-284">In this tutorial, you learned how to organize 3D objects in a grid collection and how to manipulate these objects (scaling, rotating, and moving) using near interaction (directly grabbing with tracked hands) and far interaction (using gaze rays or hand rays).</span></span> <span data-ttu-id="93a10-285">您也學到如何將周框方塊放在3D 物件周圍，學習如何使用和自訂周框方塊上的 gizmos。</span><span class="sxs-lookup"><span data-stu-id="93a10-285">You also learned how to put bounding boxes around 3D objects, and learned how to use and customize the gizmos on the bounding boxes.</span></span> <span data-ttu-id="93a10-286">最後，您學習到觸控物件時如何觸發事件。</span><span class="sxs-lookup"><span data-stu-id="93a10-286">Finally, you learned how to trigger events when touching an object.</span></span>
+## <a name="adding-touch-effects"></a><span data-ttu-id="6d34d-219">新增觸控效果</span><span class="sxs-lookup"><span data-stu-id="6d34d-219">Adding touch effects</span></span>
 
-[<span data-ttu-id="93a10-287">下一課： 6. 探索 advanced 輸入選項</span><span class="sxs-lookup"><span data-stu-id="93a10-287">Next Lesson: 6. Exploring advanced input options</span></span>](mrlearning-base-ch5.md)
+<span data-ttu-id="6d34d-220">在此範例中，您將會啟用當您以手觸碰物件時所要觸發的事件。</span><span class="sxs-lookup"><span data-stu-id="6d34d-220">In this example, you will enable events to be triggered when you touch an object with your hand.</span></span> <span data-ttu-id="6d34d-221">具體而言，您會將顆 octa 物件設定為在使用者接觸時播放音效效果。</span><span class="sxs-lookup"><span data-stu-id="6d34d-221">Specifically, you will configure the Octa object to play a sound effect when the user touches it.</span></span>
+
+<span data-ttu-id="6d34d-222">達成此目標所需採取的主要步驟如下：</span><span class="sxs-lookup"><span data-stu-id="6d34d-222">The main steps you will take to achieve this are:</span></span>
+
+1. <span data-ttu-id="6d34d-223">將音訊來源元件新增至物件</span><span class="sxs-lookup"><span data-stu-id="6d34d-223">Add an Audio Source component to the object</span></span>
+2. <span data-ttu-id="6d34d-224">將近乎互動 Touchable （腳本）元件新增至物件</span><span class="sxs-lookup"><span data-stu-id="6d34d-224">Add the Near Interaction Touchable (Script) component to the object</span></span>
+3. <span data-ttu-id="6d34d-225">將手互動觸控（腳本）元件新增至物件</span><span class="sxs-lookup"><span data-stu-id="6d34d-225">Add the Hand Interaction Touch (Script) component to the object</span></span>
+4. <span data-ttu-id="6d34d-226">執行觸控開始事件</span><span class="sxs-lookup"><span data-stu-id="6d34d-226">Implement the On Touch Started event</span></span>
+5. <span data-ttu-id="6d34d-227">使用編輯器內模擬來測試觸控互動</span><span class="sxs-lookup"><span data-stu-id="6d34d-227">Test the touch interaction using the in-editor simulation</span></span>
+
+> [!IMPORTANT]
+> <span data-ttu-id="6d34d-228">若要能夠**觸發觸控事件**，物件必須具有下列元件：</span><span class="sxs-lookup"><span data-stu-id="6d34d-228">To be able to **trigger touch events**, the object must have the following components:</span></span>
+>
+> * <span data-ttu-id="6d34d-229">**碰撞**元件，最好是 Box 碰撞</span><span class="sxs-lookup"><span data-stu-id="6d34d-229">**Collider** component, preferably a Box Collider</span></span>
+> * <span data-ttu-id="6d34d-230">**近乎互動 Touchable （腳本）** 元件</span><span class="sxs-lookup"><span data-stu-id="6d34d-230">**Near Interaction Touchable (Script)** component</span></span>
+> * <span data-ttu-id="6d34d-231">**手動互動觸控（腳本）** 元件</span><span class="sxs-lookup"><span data-stu-id="6d34d-231">**Hand Interaction Touch (Script)** component</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="6d34d-232">「手互動觸控」（Script）元件不是 MRTK 的一部分。</span><span class="sxs-lookup"><span data-stu-id="6d34d-232">The Hand Interaction Touch (Script) component is not part of MRTK.</span></span> <span data-ttu-id="6d34d-233">本教學課程的資產和原始部分的 MixedReality 工具組 Unity 範例已匯入它。</span><span class="sxs-lookup"><span data-stu-id="6d34d-233">It was imported with this tutorial's assets and originally part of the MixedReality Toolkit Unity Examples.</span></span>
+
+### <a name="1-add-an-audio-source-component-to-the-object"></a><span data-ttu-id="6d34d-234">1. 將音訊來源元件新增至物件</span><span class="sxs-lookup"><span data-stu-id="6d34d-234">1. Add an Audio Source component to the object</span></span>
+
+<span data-ttu-id="6d34d-235">在 [階層] 視窗中，選取 [**顆 octa** ] 物件，將 [**音訊來源**] 元件新增至顆 octa 物件，然後將 [**空間 Blend** ] 變更為1以啟用空間音訊：</span><span class="sxs-lookup"><span data-stu-id="6d34d-235">In the Hierarchy window, select the **Octa** object, add an **Audio Source** component to the Octa object, and then change **Spatial Blend** to 1 to enable spatial audio:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial4-section6-step1-1.png)
+
+### <a name="2-add-the-near-interaction-touchable-script-component-to-the-object"></a><span data-ttu-id="6d34d-237">2. 將近乎互動 Touchable （腳本）元件新增至物件</span><span class="sxs-lookup"><span data-stu-id="6d34d-237">2. Add the Near Interaction Touchable (Script) component to the object</span></span>
+
+<span data-ttu-id="6d34d-238">在仍選取**顆 octa**物件的情況下，將**近乎互動 Touchable （腳本）** 元件新增至顆 octa 物件，然後按一下 [**修正界限**] 和 [**修正中心**] 按鈕，將近端互動 Touchable （腳本）的本機中心和界限屬性更新為符合 BoxCollider：</span><span class="sxs-lookup"><span data-stu-id="6d34d-238">With the **Octa** object still selected, add the **Near Interaction Touchable (Script)** component to the Octa object, and then click the **Fix Bounds** and **Fix Center** buttons to update the Local Center and Bounds properties of the Near Interaction Touchable (Script) to match the BoxCollider:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial4-section6-step2-1.png)
+
+### <a name="3-add-the-hand-interaction-touch-script-component-to-the-object"></a><span data-ttu-id="6d34d-240">3. 將手互動觸控（腳本）元件新增至物件</span><span class="sxs-lookup"><span data-stu-id="6d34d-240">3. Add the Hand Interaction Touch (Script) component to the object</span></span>
+
+<span data-ttu-id="6d34d-241">在仍選取**顆 octa**物件的情況下，將「**手動互動觸控」（Script）** 元件新增至顆 octa 物件：</span><span class="sxs-lookup"><span data-stu-id="6d34d-241">With the **Octa** object still selected, add the **Hand Interaction Touch (Script)** component to the Octa object:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial4-section6-step3-1.png)
+
+### <a name="4-implement-the-on-touch-started-event"></a><span data-ttu-id="6d34d-243">4. 執行 Touch 已啟動事件</span><span class="sxs-lookup"><span data-stu-id="6d34d-243">4. Implement the On Touch Started event</span></span>
+
+<span data-ttu-id="6d34d-244">在 [手動互動觸控（腳本）] 元件上，按一下 [小型 **+** ] 圖示，以建立新**的 [觸控已啟動（）** ] 事件。</span><span class="sxs-lookup"><span data-stu-id="6d34d-244">On the Hand Interaction Touch (Script) component, click the small **+** icon to create a new **On Touch Started ()** event.</span></span> <span data-ttu-id="6d34d-245">然後設定**顆 octa**物件以接收事件，並將**spatialize**定義為要觸發的動作：</span><span class="sxs-lookup"><span data-stu-id="6d34d-245">Then configure the **Octa** object to receive the event and define **AudioSource.PlayOneShot** as the action to be triggered:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial4-section6-step4-1.png)
+
+<span data-ttu-id="6d34d-247">流覽至 **資產**  > **MixedRealityToolkit**  > **StandardAssets** > 材質，以查看 MRTK 所提供的音訊剪輯，然後將適當的音訊剪輯指派給 **音訊剪輯** 欄位，例如 MRTK_Gem 的音訊剪輯：</span><span class="sxs-lookup"><span data-stu-id="6d34d-247">Navigate to **Assets** > **MixedRealityToolkit.SDK** > **StandardAssets** > Materials to see audio clips provided with the MRTK, and then assign a suitable audio clip to the **Audio Clip** field, for example, the MRTK_Gem audio clip:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial4-section6-step4-2.png)
+
+> [!TIP]
+> <span data-ttu-id="6d34d-249">如需如何執行事件的提醒，您可以參考[手追蹤手勢和可互動按鈕](mrlearning-base-ch2.md#hand-tracking-gestures-and-interactable-buttons)的指示。</span><span class="sxs-lookup"><span data-stu-id="6d34d-249">For a reminder on how to implement events, you can refer to the [Hand tracking gestures and interactable buttons](mrlearning-base-ch2.md#hand-tracking-gestures-and-interactable-buttons) instructions.</span></span>
+
+### <a name="5-test-the-touch-interaction-using-the-in-editor-simulation"></a><span data-ttu-id="6d34d-250">5. 使用編輯器內模擬來測試觸控互動</span><span class="sxs-lookup"><span data-stu-id="6d34d-250">5. Test the touch interaction using the in-editor simulation</span></span>
+
+<span data-ttu-id="6d34d-251">按下 [播放] 按鈕進入遊戲模式。</span><span class="sxs-lookup"><span data-stu-id="6d34d-251">Press the Play button to enter Game mode.</span></span> <span data-ttu-id="6d34d-252">然後按住空格鍵以帶出手，並使用滑鼠來碰觸顆 octa 物件，並觸發音效效果：</span><span class="sxs-lookup"><span data-stu-id="6d34d-252">Then press and hold the spacebar to bring up the hand and use the mouse to touch the Octa object and trigger the sound effect:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial4-section6-step5-1.png)
+
+> [!NOTE]
+> <span data-ttu-id="6d34d-254">如上圖所示，當您在測試觸控互動時看到顆 octa 物件色彩 pulsated。</span><span class="sxs-lookup"><span data-stu-id="6d34d-254">As you saw when testing the touch interaction, and as shown in the image above, the Octa object color pulsated while it was touched.</span></span> <span data-ttu-id="6d34d-255">這項效果已硬式編碼到「手互動觸控」（腳本）元件中，而不是您在上述步驟中完成的事件設定結果。</span><span class="sxs-lookup"><span data-stu-id="6d34d-255">This effect is hard coded into the Hand Interaction Touch (Script) component and not a result of the event configuration you completed in the steps above.</span></span>
+>
+> <span data-ttu-id="6d34d-256">例如，如果您想要停用此效果，您可以將批註 out 或行 32 ' TargetRenderer = GetComponentInChildren<Renderer>（）; '，這會導致 TargetRenderer 剩餘的 null 和色彩不 pulsating。</span><span class="sxs-lookup"><span data-stu-id="6d34d-256">If you want to disable this effect, you can, for example, comment out or line 32 'TargetRenderer = GetComponentInChildren<Renderer>();' which will result in the TargetRenderer remaining null and the color not pulsating.</span></span>
+
+## <a name="congratulations"></a><span data-ttu-id="6d34d-257">恭喜</span><span class="sxs-lookup"><span data-stu-id="6d34d-257">Congratulations</span></span>
+
+<span data-ttu-id="6d34d-258">在本教學課程中，您已瞭解如何在方格集合中組織3D 物件，以及如何使用近距離互動（直接抓取和旋轉）和即時互動（使用注視光線或手片）來操作這些物件（縮放、旋轉和移動）。</span><span class="sxs-lookup"><span data-stu-id="6d34d-258">In this tutorial, you learned how to organize 3D objects in a grid collection and how to manipulate these objects (scaling, rotating, and moving) using near interaction (directly grabbing with tracked hands) and far interaction (using gaze rays or hand rays).</span></span> <span data-ttu-id="6d34d-259">您也學到如何將周框方塊放在3D 物件周圍，學習如何使用和自訂周框方塊上的控點。</span><span class="sxs-lookup"><span data-stu-id="6d34d-259">You also learned how to put bounding boxes around 3D objects, and learned how to use and customize the handles on the bounding boxes.</span></span> <span data-ttu-id="6d34d-260">最後，您學習到觸控物件時如何觸發事件。</span><span class="sxs-lookup"><span data-stu-id="6d34d-260">Finally, you learned how to trigger events when touching an object.</span></span>
+
+[<span data-ttu-id="6d34d-261">下一課： 6. 探索 advanced 輸入選項</span><span class="sxs-lookup"><span data-stu-id="6d34d-261">Next Lesson: 6. Exploring advanced input options</span></span>](mrlearning-base-ch5.md)

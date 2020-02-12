@@ -6,77 +6,114 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: e08de0bc769ceda493eafe40158b6aeed87751c7
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.openlocfilehash: 8275d5a97d7827d34ed3926cabe4032cc7f4cfac
+ms.sourcegitcommit: cc61f7ac08f9ac2f2f04e8525c3260ea073e04a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334367"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77129309"
 ---
-# <a name="4-placing-dynamic-content-and-using-solvers"></a><span data-ttu-id="be836-105">4. 放置動態內容並使用解析器</span><span class="sxs-lookup"><span data-stu-id="be836-105">4. Placing dynamic content and using solvers</span></span>
+# <a name="4-placing-dynamic-content-and-using-solvers"></a><span data-ttu-id="626d3-105">4. 放置動態內容並使用解析器</span><span class="sxs-lookup"><span data-stu-id="626d3-105">4. Placing dynamic content and using Solvers</span></span>
+<!-- Consider renaming to 'Placing dynamic content using Solvers' -->
 
-<span data-ttu-id="be836-106">在 HoloLens 2 中，當您以直覺方式追蹤使用者，並將其放在實體環境中，讓互動順暢且簡潔時，就能開始使用全息。</span><span class="sxs-lookup"><span data-stu-id="be836-106">Holograms come to life in HoloLens 2 when they intuitively follow the user and are placed in the physical environment in a way that makes interaction seamless and elegant.</span></span> <span data-ttu-id="be836-107">在本教學課程中，我們會探索如何使用 MRTK 的可用位置工具（稱為解析器）來動態地放置全息影像，以解決複雜的空間放置案例。</span><span class="sxs-lookup"><span data-stu-id="be836-107">In this tutorial, we explore ways to dynamically place holograms using the MRTK’s available placement tools (known as solvers) to solve complex spatial placement scenarios.</span></span> <span data-ttu-id="be836-108">在 MRTK 中，解析器是一種腳本和行為的系統，可用來允許 UI 專案在場景中追蹤您、使用者或其他遊戲物件。</span><span class="sxs-lookup"><span data-stu-id="be836-108">In the MRTK, solvers are a system of scripts and behaviors that are used to allow UI elements to follow you, the user, or other game objects in the scene.</span></span> <span data-ttu-id="be836-109">也可用來快速對齊特定位置，讓您的應用程式更具直覺性。</span><span class="sxs-lookup"><span data-stu-id="be836-109">They can also be used to snap to certain positions quickly, making your application more intuitive.</span></span>
+<span data-ttu-id="626d3-106">在 HoloLens 2 中，當您以直覺方式追蹤使用者，並將其放在實體環境中，讓互動順暢且簡潔時，就能開始使用全息。</span><span class="sxs-lookup"><span data-stu-id="626d3-106">Holograms come to life in HoloLens 2 when they intuitively follow the user and are placed in the physical environment in a way that makes interaction seamless and elegant.</span></span> <span data-ttu-id="626d3-107">在本教學課程中，我們會探索如何使用 MRTK 的可用位置工具（稱為解析器）來動態地放置全息影像，以解決複雜的空間放置案例。</span><span class="sxs-lookup"><span data-stu-id="626d3-107">In this tutorial, we explore ways to dynamically place holograms using the MRTK’s available placement tools, known as Solvers, to solve complex spatial placement scenarios.</span></span> <span data-ttu-id="626d3-108">在 MRTK 中，解析器是一種腳本和行為的系統，可用來允許 UI 專案在場景中追蹤您、使用者或其他遊戲物件。</span><span class="sxs-lookup"><span data-stu-id="626d3-108">In the MRTK, Solvers are a system of scripts and behaviors that are used to allow UI elements to follow you, the user, or other game objects in the scene.</span></span> <span data-ttu-id="626d3-109">也可用來快速對齊特定位置，讓您的應用程式更具直覺性。</span><span class="sxs-lookup"><span data-stu-id="626d3-109">They can also be used to snap to certain positions quickly, making your application more intuitive.</span></span>
 
-## <a name="objectives"></a><span data-ttu-id="be836-110">目標</span><span class="sxs-lookup"><span data-stu-id="be836-110">Objectives</span></span>
+## <a name="objectives"></a><span data-ttu-id="626d3-110">目標</span><span class="sxs-lookup"><span data-stu-id="626d3-110">Objectives</span></span>
 
-* <span data-ttu-id="be836-111">導入 MRTK 的解算器</span><span class="sxs-lookup"><span data-stu-id="be836-111">Introduce the MRTK's solvers</span></span>
-* <span data-ttu-id="be836-112">使用解算器讓一組按鈕追蹤使用者</span><span class="sxs-lookup"><span data-stu-id="be836-112">Use solvers to have a collection of buttons follow the user</span></span>
-* <span data-ttu-id="be836-113">使用解算器讓遊戲物件跟隨追蹤的使用者手部</span><span class="sxs-lookup"><span data-stu-id="be836-113">Use solvers to have a game object follow the user's tracked hands</span></span>
+* <span data-ttu-id="626d3-111">引進 MRTK 的解析器</span><span class="sxs-lookup"><span data-stu-id="626d3-111">Introduce the MRTK's Solvers</span></span>
+* <span data-ttu-id="626d3-112">使用解析器讓按鈕集合跟隨使用者</span><span class="sxs-lookup"><span data-stu-id="626d3-112">Use Solvers to have a collection of buttons follow the user</span></span>
+* <span data-ttu-id="626d3-113">使用解析器讓遊戲物件遵循使用者的追蹤手</span><span class="sxs-lookup"><span data-stu-id="626d3-113">Use Solvers to have a game object follow the user's tracked hands</span></span>
 
-## <a name="location-of-solvers-in-the-mrtk"></a><span data-ttu-id="be836-114">MRTK 中的解算器位置</span><span class="sxs-lookup"><span data-stu-id="be836-114">Location of solvers in the MRTK</span></span>
+## <a name="location-of-solvers-in-the-mrtk"></a><span data-ttu-id="626d3-114">MRTK 中的解析器位置</span><span class="sxs-lookup"><span data-stu-id="626d3-114">Location of Solvers in the MRTK</span></span>
 
- <span data-ttu-id="be836-115">若要在您的專案中尋找可用的解析器，請查看 MRTK SDK 資料夾（MixedRealityToolkit. SDK 資料夾）。</span><span class="sxs-lookup"><span data-stu-id="be836-115">To find the available solvers in your project, look in the MRTK SDK folder (MixedRealityToolkit.SDK folder).</span></span> <span data-ttu-id="be836-116">在 [公用程式] 資料夾底下，您會看到 [解析器] 資料夾，如下圖所示。</span><span class="sxs-lookup"><span data-stu-id="be836-116">Under the utilities folder, you will see the solvers folder, as shown in the image below.</span></span>
+ <span data-ttu-id="626d3-115">MRTK 的解析器位於 MRTK SDK 資料夾中。</span><span class="sxs-lookup"><span data-stu-id="626d3-115">The MRTK's Solvers are located in the MRTK SDK folder.</span></span> <span data-ttu-id="626d3-116">若要查看專案中的可用解析器，請在 [專案] 視窗中，流覽至 [**資產**] [ > **MixedRealityToolkit** ] [ > **功能**] > [**公用程式**] > **解析器**：</span><span class="sxs-lookup"><span data-stu-id="626d3-116">To see the available Solvers in your project, in the Project window, navigate to **Assets** > **MixedRealityToolkit.SDK** > **Features** > **Utilities** > **Solvers**:</span></span>
 
-![解算器](images/lesson3_chapter1_step1im.PNG)
+![mrlearning-基底](images/mrlearning-base/tutorial3-section1-step1-1.png)
 
->[!NOTE]
-><span data-ttu-id="be836-118">在這一課，我們只會探討 Orbital 規劃求解和 RadialView 規劃求解的執行。</span><span class="sxs-lookup"><span data-stu-id="be836-118">In this lesson, we will only review the implementation of the Orbital solver and the RadialView solver.</span></span> <span data-ttu-id="be836-119">若要深入瞭解 MRTK 中提供的完整解析器範圍，請造訪： [https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html)</span><span class="sxs-lookup"><span data-stu-id="be836-119">To learn more about the full range of solvers available in the MRTK, visit: [https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html)</span></span>
+<span data-ttu-id="626d3-118">在本教學課程中，我們將探討 Orbital 規劃求解和星形視圖規劃求解的執行。</span><span class="sxs-lookup"><span data-stu-id="626d3-118">In this tutorial, we will review the implementation of the Orbital Solver and the Radial View Solver.</span></span> <span data-ttu-id="626d3-119">若要深入瞭解 MRTK 中提供的完整解析器，您可以流覽[MRTK 檔入口網站](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)中的[解析器](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html)指南。</span><span class="sxs-lookup"><span data-stu-id="626d3-119">To learn more about the full range of Solvers available in the MRTK, you can visit the the [Solvers](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html) guide in the [MRTK Documentation Portal](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html).</span></span>
 
-## <a name="use-a-solver-to-follow-the-user"></a><span data-ttu-id="be836-120">使用解算器追蹤使用者</span><span class="sxs-lookup"><span data-stu-id="be836-120">Use a Solver to Follow the User</span></span>
+## <a name="use-a-solver-to-follow-the-user"></a><span data-ttu-id="626d3-120">使用規劃人員追蹤使用者</span><span class="sxs-lookup"><span data-stu-id="626d3-120">Use a Solver to follow the user</span></span>
+<!-- Consider renaming to 'Use a Solver to have an object follow the user' -->
 
-<span data-ttu-id="be836-121">本章的目標是要增強先前建立的按鈕集合，使其遵循使用者的注視方向。</span><span class="sxs-lookup"><span data-stu-id="be836-121">The goal of this chapter is to enhance the button collection that was previously created so that it follows the user’s gaze direction.</span></span> <span data-ttu-id="be836-122">在先前版本的 MRTK 和 HoloToolkit 中，這稱為 tagalong 功能。</span><span class="sxs-lookup"><span data-stu-id="be836-122">In the previous version of the MRTK and HoloToolkit, this was referred to as a tagalong functionality.</span></span>
+<span data-ttu-id="626d3-121">在本節中，您將增強在上一個教學課程中建立的按鈕集合，使其遵循使用者的注視方向。</span><span class="sxs-lookup"><span data-stu-id="626d3-121">In this section, you will enhance the button collection you created in the previous tutorial so it follows the user’s gaze direction.</span></span> <span data-ttu-id="626d3-122">此外，您也會設定 [規劃求解]，讓按鈕集合一律為：</span><span class="sxs-lookup"><span data-stu-id="626d3-122">Additionally, you will also configure the Solver so the button collection is always:</span></span>
 
-1. <span data-ttu-id="be836-123">選取前一課中的「按鈕集合」父系物件。</span><span class="sxs-lookup"><span data-stu-id="be836-123">Select the Button Collection parent object from the previous lesson.</span></span>
+* <span data-ttu-id="626d3-123">對使用者的閱讀方向進行的平行旋轉，以自然的向右閱讀</span><span class="sxs-lookup"><span data-stu-id="626d3-123">Rotated parallel to the user's reading direction, for natural left to right reading</span></span>
+* <span data-ttu-id="626d3-124">位置稍微低於使用者水準外觀，因此不會阻礙您稍後將在本教學課程中新增的其他物件。</span><span class="sxs-lookup"><span data-stu-id="626d3-124">Positioned slightly below the user horizontal gaze direction, so it's not obstructing the other objects you will add later in this tutorial</span></span>
+* <span data-ttu-id="626d3-125">接近使用者的一半 arm 長度，因此可以輕鬆按下按鈕</span><span class="sxs-lookup"><span data-stu-id="626d3-125">Positioned approximately a half arm's-length from the user, so the buttons can easily be pressed</span></span>
 
-    ![Lesson3 Chapter2 Step1im](images/Lesson3_chapter2_step1im.PNG)
+<span data-ttu-id="626d3-126">為此，您將使用**Orbital 的規劃求解**，將物件從參考的物件鎖定到指定的位置和位移。</span><span class="sxs-lookup"><span data-stu-id="626d3-126">For this, you will use the **Orbital Solver** which locks the object to a specified position and offset from the referenced object.</span></span>
 
-2. <span data-ttu-id="be836-125">在 [偵測器] 面板中，按一下 [加入元件] 按鈕，然後搜尋 orbital。</span><span class="sxs-lookup"><span data-stu-id="be836-125">In the Inspector panel, click the Add Component button and search for orbital.</span></span> <span data-ttu-id="be836-126">應該會出現 Orbital 元件。</span><span class="sxs-lookup"><span data-stu-id="be836-126">The Orbital component should appear.</span></span> <span data-ttu-id="be836-127">選取它以將 Orbital 元件新增至按鈕集合遊戲物件。</span><span class="sxs-lookup"><span data-stu-id="be836-127">Select it to add the Orbital component to the Button Collection game object.</span></span>
+### <a name="1-add-the-orbital-solver"></a><span data-ttu-id="626d3-127">1. 加入 Orbital 規劃求解</span><span class="sxs-lookup"><span data-stu-id="626d3-127">1. Add the Orbital Solver</span></span>
 
-    ![Lesson3 Chapter2 Step2im](images/Lesson3_Chapter2_step2im.PNG)
+<span data-ttu-id="626d3-128">在 [階層] 視窗中，選取 [ **ButtonCollection** ] 物件，然後在 [偵測器] 視窗中，使用 [**加入元件**] 按鈕將**Orbital （腳本）** 元件新增至 ButtonCollection 物件。</span><span class="sxs-lookup"><span data-stu-id="626d3-128">In the Hierarchy window, select the **ButtonCollection** object, then in the Inspector window, use the **Add Component** button to add the **Orbital (Script)** component to the ButtonCollection object.</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="be836-129">當您新增 Orbital 元件時，您會注意到系統也會新增 SolverHandler 元件，這是必要的元件。</span><span class="sxs-lookup"><span data-stu-id="be836-129">When you add the Orbital component you will notice that the system also adds the SolverHandler component, which is a required component.</span></span>
+> [!NOTE]
+> <span data-ttu-id="626d3-129">當您加入規劃求解時（在此案例中為 Orbital （Script）元件），會自動加入「規劃求解處理常式」（腳本）元件，因為它是規劃求解所需。</span><span class="sxs-lookup"><span data-stu-id="626d3-129">When you add a Solver, in this case the Orbital (Script) component, the Solver Handler (Script) component is automatically added because it is required by the Solver.</span></span>
 
-3. <span data-ttu-id="be836-130">若要設定按鈕集合以遵循使用者，我們需要執行下列調整（請參閱下圖）：</span><span class="sxs-lookup"><span data-stu-id="be836-130">In order to configure the Button Collection to follow the user, we need to implement the following adjustments (refer to the image below):</span></span>
+### <a name="2-configure-the-orbital-solver"></a><span data-ttu-id="626d3-130">2. 設定 Orbital 規劃求解</span><span class="sxs-lookup"><span data-stu-id="626d3-130">2. Configure the Orbital Solver</span></span>
 
-    * <span data-ttu-id="be836-131">在 Orbital 腳本中，將 [方向類型] 下拉式清單設定為 [僅偏擺]。</span><span class="sxs-lookup"><span data-stu-id="be836-131">In the Orbital script, set the Orientation Type drop-down list to Yaw Only.</span></span> <span data-ttu-id="be836-132">這可讓集合在追蹤使用者時，只有一個物件的軸會旋轉。</span><span class="sxs-lookup"><span data-stu-id="be836-132">This makes it so that only one axis of the object rotates as it follows the user.</span></span>
-    * <span data-ttu-id="be836-133">將所有軸上的區域位移設為 0。</span><span class="sxs-lookup"><span data-stu-id="be836-133">Set the local offset to 0 on all axes.</span></span> <span data-ttu-id="be836-134">將 [世界位移] 設定為 x = 0、y =-0.1 和 z = 0.6。</span><span class="sxs-lookup"><span data-stu-id="be836-134">Set the World Offset to x = 0, y = -0.1, and z = 0.6.</span></span> <span data-ttu-id="be836-135">這會鎖定物件的移動，因此當使用者變更高度時，物件在實體環境中會維持固定的高度，而當使用者移至環境時，仍允許它追蹤使用者。</span><span class="sxs-lookup"><span data-stu-id="be836-135">This locks movement of the object so that when the user changes height, the object will remain at a fixed height in the physical environment, while still allowing it to follow the user as the user moves about the environment.</span></span> <span data-ttu-id="be836-136">您可以調整這些值來達到各種不同的行為。</span><span class="sxs-lookup"><span data-stu-id="be836-136">These values may be adjusted to achieve a wide range of behaviors.</span></span>
-    * <span data-ttu-id="be836-137">針對下列行為，讓按鈕只會在使用者將其標題設為最遠之後追蹤使用者的觀點，您可以選取 [為全球位移使用角度逐步執行] 核取方塊（注意：在某些畫面上，此標題可能會被截斷，如下圖所示）。例如，若要讓物件只在每隔90度之後追蹤使用者，請將步驟數設定為等於4（以下列範例中的綠色箭號標示）。</span><span class="sxs-lookup"><span data-stu-id="be836-137">For a follow behavior whereby the buttons only follow the user’s view after the user turns his or her head sufficiently far, you could select the Use Angle Stepping For World Offset checkbox (Note: This title may be truncated on some screens, as it is in the image below.) For example, to have the object follow the user only every 90 degrees, set the number of steps equal to 4 (marked by a green arrow in the example below).</span></span>
+<span data-ttu-id="626d3-131">設定 [**規劃求解處理常式（腳本）** ] 元件：</span><span class="sxs-lookup"><span data-stu-id="626d3-131">Configure the **Solver Handler (Script)** component:</span></span>
 
-    ![Lesson3 Chapter2 Step3im](images/Lesson3_chapter2_step3im.PNG)
+* <span data-ttu-id="626d3-132">確認 [**追蹤的目標型別**] 設定為 [ **Head** ]</span><span class="sxs-lookup"><span data-stu-id="626d3-132">Verify that **Tracked Target Type**  is set to **Head**</span></span>
 
-## <a name="enabling-objects-to-follow-tracked-hands"></a><span data-ttu-id="be836-139">讓物件遵循追蹤的手</span><span class="sxs-lookup"><span data-stu-id="be836-139">Enabling objects to follow tracked hands</span></span>
+<span data-ttu-id="626d3-133">設定**Orbital （腳本）** 元件：</span><span class="sxs-lookup"><span data-stu-id="626d3-133">Configure the **Orbital (Script)** component:</span></span>
 
-<span data-ttu-id="be836-140">在本節中，我們將設定先前建立的 Cube 遊戲物件，以遵循使用 RadialView 求解的使用者追蹤手。</span><span class="sxs-lookup"><span data-stu-id="be836-140">In this section, we will configure the Cube game object previously created to follow the user’s tracked hands using the RadialView solver.</span></span>
+* <span data-ttu-id="626d3-134">將**方向類型**變更為**跟隨追蹤的物件**</span><span class="sxs-lookup"><span data-stu-id="626d3-134">Change **Orientation Type** to **Follow Tracked Object**</span></span>
+* <span data-ttu-id="626d3-135">將**區域位移**重設為 X = 0、Y = 0、Z = 0</span><span class="sxs-lookup"><span data-stu-id="626d3-135">Reset **Local Offset** to X = 0, Y = 0, Z = 0</span></span>
+* <span data-ttu-id="626d3-136">將**世界位移**變更為 X = 0，Y =-0.4，Z = 0。3</span><span class="sxs-lookup"><span data-stu-id="626d3-136">Change **World Offset** to X = 0, Y = -0.4, Z = 0.3</span></span>
 
-1. <span data-ttu-id="be836-141">選取 BaseScene 階層中的 Cube 物件。</span><span class="sxs-lookup"><span data-stu-id="be836-141">Select the Cube object in the BaseScene hierarchy.</span></span> <span data-ttu-id="be836-142">按一下 [偵測器] 面板中的 [新增元件]。</span><span class="sxs-lookup"><span data-stu-id="be836-142">Click Add Component in the Inspector panel.</span></span> <span data-ttu-id="be836-143">在搜尋方塊中輸入 RadialView，然後選取 [RadialView] 元件，將它加入至 cube。</span><span class="sxs-lookup"><span data-stu-id="be836-143">Type in RadialView in the search box and select the RadialView component to add it to the cube.</span></span> <span data-ttu-id="be836-144">SolverHandler 元件也會自動加入至 cube。</span><span class="sxs-lookup"><span data-stu-id="be836-144">The SolverHandler component will also be automatically added to the cube.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial3-section2-step2-1.png)
 
-    ![mrlearning-base-ch3-3-step3 .png](images/mrlearning-base-ch3-3-step1.png)
+### <a name="3-test-the-orbital-solver-using-the-in-editor-simulation"></a><span data-ttu-id="626d3-138">3. 使用編輯器內模擬來測試 Orbital 規劃求解</span><span class="sxs-lookup"><span data-stu-id="626d3-138">3. Test the Orbital Solver using the in-editor simulation</span></span>
 
-2. <span data-ttu-id="be836-146">若要將 RadialView 變更為追蹤，而不是標頭，請選取 [追蹤的目標型別] 選項旁邊的下拉式功能表，然後從功能表中選取 [手形聯合]。</span><span class="sxs-lookup"><span data-stu-id="be836-146">To change the RadialView to follow a hand instead of the head, select the dropdown menu next to the Tracked Target Type option and select Hand Joint from the menu.</span></span>
+<span data-ttu-id="626d3-139">按下 [播放] 按鈕進入遊戲模式，然後按住滑鼠右鍵以旋轉您的注視方向，並注意下列事項：</span><span class="sxs-lookup"><span data-stu-id="626d3-139">Press the Play button to enter Game mode and press and hold the right mouse button to rotate your gaze direction, and notice the following:</span></span>
 
-    ![mrlearning-base-ch3-3-step2 .png](images/mrlearning-base-ch3-3-step2a.png)
+* <span data-ttu-id="626d3-140">ButtonCollection 的轉換位置現在是由 [規劃求解] 設定所驅動</span><span class="sxs-lookup"><span data-stu-id="626d3-140">The ButtonCollection's Transform Position is now driven by the Solver settings</span></span>
+* <span data-ttu-id="626d3-141">不受規劃求解影響的 Cube 會保留在相同的位置</span><span class="sxs-lookup"><span data-stu-id="626d3-141">The Cube, which is not affected by the Solver, remains in the same position</span></span>
 
-    <span data-ttu-id="be836-148">您現在會看到兩個新選項： [已追蹤] Handness 類型和 [已追蹤]。</span><span class="sxs-lookup"><span data-stu-id="be836-148">You will now see two new options, Tracked Handness Type and Tracked Hand Joint.</span></span> <span data-ttu-id="be836-149">在此範例中，您會讓 RadialView 遵循左側的手腕，如下圖所示。</span><span class="sxs-lookup"><span data-stu-id="be836-149">For this example, you will have the RadialView follow the wrist of the left hand as shown in the image below.</span></span>
+![mrlearning-基底](images/mrlearning-base/tutorial3-section2-step3-1.png)
 
-    ![mrlearning-base-ch3-3-step2b .png](images/mrlearning-base-ch3-3-step2b.png)
+> [!TIP]
+> <span data-ttu-id="626d3-143">如果您沒有在場景視窗中看到相機光線，請確定已啟用 [Gizmos] 功能表。</span><span class="sxs-lookup"><span data-stu-id="626d3-143">If you don't see the camera ray in your Scene window, make sure your Gizmos menu is enabled.</span></span> <span data-ttu-id="626d3-144">若要深入瞭解 [Gizmos] 功能表，以及如何使用它來優化場景視圖，您可以造訪 Unity 的 [ <a href="https://docs.unity3d.com/Manual/GizmosMenu.html" target="_blank">Gizmos] 功能表</a>檔。</span><span class="sxs-lookup"><span data-stu-id="626d3-144">To learn more about the Gizmos menu and how you can use it to optimize your scene view, you can visit Unity's <a href="https://docs.unity3d.com/Manual/GizmosMenu.html" target="_blank">Gizmos menu</a> documentation.</span></span>
+>
+> <span data-ttu-id="626d3-145">若要並排顯示場景和遊戲視窗（如上圖所示），只需將遊戲視窗拖曳至場景視窗的右邊。</span><span class="sxs-lookup"><span data-stu-id="626d3-145">To display your Scene and Game window side by side as shown in the image above, simply drag the Game window to the right side of the Scene window.</span></span> <span data-ttu-id="626d3-146">若要深入瞭解如何自訂您的工作區，您可以造訪 Unity 的<a href="https://docs.unity3d.com/Manual/CustomizingYourWorkspace.html" target="_blank">自訂工作區</a>檔。</span><span class="sxs-lookup"><span data-stu-id="626d3-146">To learn more about customizing your workspace, you can visit Unity's <a href="https://docs.unity3d.com/Manual/CustomizingYourWorkspace.html" target="_blank">Customizing Your Workspace</a> documentation.</span></span>
 
-3. <span data-ttu-id="be836-151">將星形視圖的最大和最小距離設定為0，讓 cube 與使用者手腕之間不會有任何距離。</span><span class="sxs-lookup"><span data-stu-id="be836-151">Set the maximum and minimum distances of the Radial View to 0 so that the cube will not have any distance between it and the user’s wrist.</span></span> <span data-ttu-id="be836-152">設定好之後，該立方體會完全配合手腕。</span><span class="sxs-lookup"><span data-stu-id="be836-152">Once set, the cube will be perfectly aligned with the wrist.</span></span> <span data-ttu-id="be836-153">您也可以調整 [參考方向] 欄位來調整 cube 的導向行為，例如，如果您想要允許物件透過將參考方向設定為物件導向來旋轉使用者的手腕。</span><span class="sxs-lookup"><span data-stu-id="be836-153">You might also adjust the Reference Direction field to adjust the behavior of how the cube is oriented, such as if you want to allow the object to rotate with the user's wrist by setting the Reference Direction to Object Oriented.</span></span>
+## <a name="enabling-objects-to-follow-tracked-hands"></a><span data-ttu-id="626d3-147">讓物件遵循追蹤的手</span><span class="sxs-lookup"><span data-stu-id="626d3-147">Enabling objects to follow tracked hands</span></span>
 
-    ![mrlearning-base-ch3-3-step3 .png](images/mrlearning-base-ch3-3-step3.png)
+<span data-ttu-id="626d3-148">在本節中，您將設定您在上一個教學課程中建立的 Cube 物件，使其遵循使用者的追蹤手，特別是右邊的手腕。</span><span class="sxs-lookup"><span data-stu-id="626d3-148">In this section, you will configure the Cube object you created in the previous tutorial so it follows the user’s tracked hands, specifically the right hand wrist.</span></span> <span data-ttu-id="626d3-149">此外，您也會將此規劃求解設定為 cube：</span><span class="sxs-lookup"><span data-stu-id="626d3-149">Additionally, you will also configure the Solver so the cube:</span></span>
 
-## <a name="congratulations"></a><span data-ttu-id="be836-155">恭喜您</span><span class="sxs-lookup"><span data-stu-id="be836-155">Congratulations</span></span>
+* <span data-ttu-id="626d3-150">變更其與使用者的旋轉方向</span><span class="sxs-lookup"><span data-stu-id="626d3-150">Changes it's orientation with the user's hand rotation</span></span>
+* <span data-ttu-id="626d3-151">放在使用者的手腕上</span><span class="sxs-lookup"><span data-stu-id="626d3-151">Positioned on the user's wrist</span></span>
 
-<span data-ttu-id="be836-156">在本教學課程中，您已瞭解如何使用 MRTK 的解析器，讓 UI 直覺地跟隨使用者。</span><span class="sxs-lookup"><span data-stu-id="be836-156">In this tutorial, you learned how to use the MRTK’s solvers to have a UI intuitively follow the user.</span></span> <span data-ttu-id="be836-157">您也已了解如何將解算器連結到遊戲物件 (例如立方體)，以跟隨追蹤的使用者手部。</span><span class="sxs-lookup"><span data-stu-id="be836-157">You also learned how to attach a solver to a game object (i.e., cube) to follow the user’s tracked hands.</span></span> <span data-ttu-id="be836-158">若要深入了解 MRTK 隨附的這些解算器和其他解算器，歡迎您瀏覽 [MRTK 解算器文件頁面](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html)。</span><span class="sxs-lookup"><span data-stu-id="be836-158">To learn more about these and other solvers included with the MRTK, feel free to visit the [MRTK solvers documentation page](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html).</span></span>
+<span data-ttu-id="626d3-152">為此，您將使用星形**視圖規劃求解**，將物件保留在視圖中，並由參考的物件轉換。</span><span class="sxs-lookup"><span data-stu-id="626d3-152">For this, you will use the **Radial View Solver** which keeps the object within a view cone cast by the referenced object.</span></span>
 
-[<span data-ttu-id="be836-159">下一課： 5. 與3D 物件互動</span><span class="sxs-lookup"><span data-stu-id="be836-159">Next Lesson: 5. Interacting with 3D objects</span></span>](mrlearning-base-ch4.md)
+### <a name="1-add-the-radial-view-solver"></a><span data-ttu-id="626d3-153">1. 加入星形視圖規劃求解</span><span class="sxs-lookup"><span data-stu-id="626d3-153">1. Add the Radial View Solver</span></span>
+
+<span data-ttu-id="626d3-154">在 [階層] 視窗中，選取**Cube**物件，然後在 [偵測器] 視窗中，使用 [**加入元件**] 按鈕來加入星形**視圖（腳本）** 元件 Cube 物件。</span><span class="sxs-lookup"><span data-stu-id="626d3-154">In the Hierarchy window, select the **Cube** object, then in the Inspector window, use the **Add Component** button to add the **Radial View (Script)** component Cube object.</span></span>
+
+### <a name="2-configure-the-radial-view-solver"></a><span data-ttu-id="626d3-155">2. 設定放射狀視圖的規劃求解</span><span class="sxs-lookup"><span data-stu-id="626d3-155">2. Configure the Radial View Solver</span></span>
+
+<span data-ttu-id="626d3-156">設定 [**規劃求解處理常式（腳本）** ] 元件：</span><span class="sxs-lookup"><span data-stu-id="626d3-156">Configure the **Solver Handler (Script)** component:</span></span>
+
+* <span data-ttu-id="626d3-157">將**追蹤的目標型別**變更為**手動聯合**</span><span class="sxs-lookup"><span data-stu-id="626d3-157">Change **Tracked Target Type** to **Hand Joint**</span></span>
+* <span data-ttu-id="626d3-158">將**追蹤的 Handness**變更為**右方**</span><span class="sxs-lookup"><span data-stu-id="626d3-158">Change **Tracked Handness** to **Right**</span></span>
+* <span data-ttu-id="626d3-159">將**追蹤的接頭**變更為**手腕**</span><span class="sxs-lookup"><span data-stu-id="626d3-159">Change **Tracked Hand Joint** to **Wrist**</span></span>
+
+<span data-ttu-id="626d3-160">設定**放射狀視圖（腳本）** 元件：</span><span class="sxs-lookup"><span data-stu-id="626d3-160">Configure the **Radial View (Script)** component:</span></span>
+
+* <span data-ttu-id="626d3-161">將 [**參考方向**] 變更為 [**物件導向**]，然後選取 [**朝向參考方向**] 核取方塊</span><span class="sxs-lookup"><span data-stu-id="626d3-161">Change **Reference Direction** to **Object Oriented**, then check the **Orient To Reference Direction** checkbox</span></span>
+* <span data-ttu-id="626d3-162">將 [**最小距離**] 和 [**最大距離**] 變更為0</span><span class="sxs-lookup"><span data-stu-id="626d3-162">Change **Min Distance** and **Max Distance** to 0</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial3-section3-step2-1.png)
+
+### <a name="3-test-the-radial-view-solver-using-the-in-editor-simulation"></a><span data-ttu-id="626d3-164">3. 使用編輯器內模擬來測試星形視圖規劃</span><span class="sxs-lookup"><span data-stu-id="626d3-164">3. Test the Radial View Solver using the in-editor simulation</span></span>
+
+<span data-ttu-id="626d3-165">按下 [播放] 按鈕進入遊戲模式，然後按住空格鍵以顯示手。</span><span class="sxs-lookup"><span data-stu-id="626d3-165">Press the Play button to enter Game mode and then press and hold the spacebar to bring up the hand.</span></span> <span data-ttu-id="626d3-166">將滑鼠游標移到周圍以移動手，然後按住滑鼠左鍵以旋轉手：</span><span class="sxs-lookup"><span data-stu-id="626d3-166">Move the mouse cursor around to move the hand, and click and hold the left mouse button to rotate the hand:</span></span>
+
+![mrlearning-基底](images/mrlearning-base/tutorial3-section3-step3-1.png)
+
+## <a name="congratulations"></a><span data-ttu-id="626d3-168">恭喜</span><span class="sxs-lookup"><span data-stu-id="626d3-168">Congratulations</span></span>
+
+<span data-ttu-id="626d3-169">在本教學課程中，您已瞭解如何使用 MRTK 的解析器，讓 UI 直覺地跟隨使用者。</span><span class="sxs-lookup"><span data-stu-id="626d3-169">In this tutorial, you learned how to use the MRTK’s solvers to have a UI intuitively follow the user.</span></span> <span data-ttu-id="626d3-170">您也已瞭解如何將規劃求解附加至物件（例如 cube），以遵循使用者的追蹤手。</span><span class="sxs-lookup"><span data-stu-id="626d3-170">You also learned how to attach a Solver to an object (i.e., cube) to follow the user’s tracked hands.</span></span> <span data-ttu-id="626d3-171">若要深入瞭解 MRTK 隨附的這些和其他解析器，您可以流覽[MRTK 檔入口網站](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)中的[解析器](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html)指南。</span><span class="sxs-lookup"><span data-stu-id="626d3-171">To learn more about these and other solvers included with the MRTK,  you can visit the [Solvers](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html) guide in the [MRTK Documentation Portal](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html).</span></span>
+
+[<span data-ttu-id="626d3-172">下一個教學課程： 5. 與3D 物件互動</span><span class="sxs-lookup"><span data-stu-id="626d3-172">Next Tutorial: 5. Interacting with 3D objects</span></span>](mrlearning-base-ch4.md)

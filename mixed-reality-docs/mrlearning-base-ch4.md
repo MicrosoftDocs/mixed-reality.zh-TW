@@ -6,222 +6,284 @@ ms.author: jemccull
 ms.date: 05/02/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: fe068d0cfcea369f10e6fa636eb73fecb3002fa7
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.openlocfilehash: a1b26d56b4693ef23f2d77ba53e0961693489a3a
+ms.sourcegitcommit: cc61f7ac08f9ac2f2f04e8525c3260ea073e04a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334388"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77130237"
 ---
 # <a name="5-interacting-with-3d-objects"></a>5. 與3D 物件互動
 
-在本教學課程中，您將瞭解基本的3D 內容和使用者體驗，例如：
-
-* 將3D 物件當做集合的一部分來組織
-* 基本操作的周框方塊
-* 近與遠互動
-* 觸控和抓取筆勢與手勢追蹤
+在本教學課程中，您將瞭解基本的3D 內容和使用者體驗，例如將3D 物件組織為集合的一部分、進行基本操作的周框方塊、近遠的互動，以及觸控和抓取手勢與手動追蹤。
 
 ## <a name="objectives"></a>目標
 
-* 瞭解如何使用 MRTK 的方格物件集合來組織3D 內容
+* 建立將用於其他學習目標的3D 物件面板
 * 實作週框方塊
-* 設定3D 物件進行基本操作--移動、旋轉和縮放
+* 設定3D 物件進行基本操作，例如移動、旋轉和縮放
 * 探索遠近互動
 * 深入瞭解其他的右手邊追蹤手勢，例如「抓取」和「觸控」
 
-## <a name="organizing-3d-objects-in-a-collection"></a>組織集合中的 3D 物件
+## <a name="importing-the-tutorial-assets"></a>匯入教學課程資產
 
-1. 以滑鼠右鍵按一下您的階層，然後選取 [建立空的] 以建立空白遊戲物件，將其重新命名為3DObjectCollection，並確定其位於 x = 0、y = 0 和 z = 0。
+下載並匯入 Unity 自訂套件：
 
-    ![mrlearning-base-ch4-1-step1 .png](images/mrlearning-base-ch4-1-step1.png)
+* [MRTK.HoloLens2 GettingStarted. 2.2.0.0. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.2.0.0/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.2.0.0.unitypackage)
 
-2. 下載 Unity 套件[unity. HoloLens2. GettingStarted](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.0/Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage) ，並使用相同的指示匯入[tut1-lesson1-step3](mrlearning-base-ch1.md)中所述的自訂套件。 此套件包含3D 模型和其他在本教學課程中使用的實用資產。
+匯入教學課程資產之後，您的 [專案] 視窗看起來應該如下所示：
 
-3. 在 專案 面板中，流覽至 資產 > BaseModuleAssets > 基本模組 Prefabs，並搜尋「未完成」，我們將使用其中一些 Prefabs。
+![mrlearning-基底](images/mrlearning-base/tutorial4-section1-step1-1.png)
 
-    ![mrlearning-base-ch4-1-step3 .png](images/mrlearning-base-ch4-1-step3.png)
+> [!TIP]
+> 如需有關如何匯入 Unity 自訂套件的提醒，您可以參閱匯[入混合現實工具](mrlearning-base-ch1.md#import-the-mixed-reality-toolkit)組指示。
 
-4. 將咖啡杯拖曳至步驟1中的3DObjectCollection 遊戲物件。 咖啡杯現在是該集合的子系。
+## <a name="decluttering-the-scene-view"></a>Decluttering 場景視圖
 
-    ![mrlearning-base-ch4-1-step4 .png](images/mrlearning-base-ch4-1-step4.png)
+若要讓您更輕鬆地使用場景，請按一下物件左側的**眼睛**圖示，將 Cube 和 ButtonCollection 物件的**場景可見度**設定為 [關閉]。 這會在場景視窗中隱藏物件，而不會變更其遊戲內可見度：
 
-5. 接下來，您會遵循與上一個步驟相同的程式，在場景中新增更多3D 物件。 以下是要在此範例中新增的物件清單。 當您新增物件時，您可能會發現它們以各種大小出現在場景中。 調整 [偵測器] 面板中 [轉換設定] 下每個3D 模型的比例。 以下的物件列出了此範例的建議調整。
+![mrlearning-基底](images/mrlearning-base/tutorial4-section2-step1-1.png)
 
-    * Cheese_BaseModuleIncomplete。 Scale： x = 0.05，y = 0.05，z = 0.05。
-    * CoffeeCup_BaseModuleIncomplete。 Scale： x = 0.1，y = 0.1，z = 0.1。
-    * EarthCore_BaseModuleIncomplete。 Scale： x = 50.0 y = 50.0，z = 50.0。
-    * Model_Platonic_BaseModuleIncomplete。 Scale： x = 0.13，y = 0.13，z = 0.13。
-    * Octa_BaseModuleIncomplete。 小數值： x = 0.13。 y = 0.13、z =0.13。
-    * TheModule_BaseModuleIncomplete。 Scale： x = 0.03，y = 0.03，z = 0.03。
+> [!TIP]
+> 若要深入瞭解場景可見度控制項，以及如何使用它們來優化場景視圖和工作流程，您可以造訪 Unity 的<a href="https://docs.unity3d.com/Manual/SceneVisibility.html" target="_blank">場景可見度</a>檔。
 
-    ![mrlearning-base-ch4-1-step5 .png](images/mrlearning-base-ch4-1-step5.png)
+## <a name="organizing-3d-objects-in-a-collection"></a>組織集合中的3D 物件
 
-6. 將三個 cube 新增至您的場景。 以滑鼠右鍵按一下 [3DObjectCollection] 物件，選取 [3D 物件]，然後選取 [Cube]。 將比例設置為 x = 0.14、y = 0.14 且 z = 0.14。 重複此步驟兩次，以建立總共三個 cube。 或者，您可以將 cube 複製兩次，共三個 cube。 您也可以選擇使用 Assets>BaseModuleAssets>Base Module Prefabs 中三個已備妥的立方體預製物件，並選取 GreenCube_BaseModuleIncomplete、BlueCube_BaseModuleIncomplete 和 OrangeCube_BaseModuleIncomplete。
+在本節中，您將建立3D 物件的面板，當您在本教學課程的下列各節中探索與3D 物件互動的各種方式時，將會用到它。 具體而言，您會將3D 物件設定為置於 3 x 3 方格上。
 
-    ![mrlearning-base-ch4-1-step6 .png](images/mrlearning-base-ch4-1-step6.png)
+類似于當您[建立按鈕的面板](mrlearning-base-ch2.md#creating-a-panel-of-buttons-using-mrtks-grid-object-collection)時，要達到此目標所要採取的主要步驟如下：
 
-7. 使用 MRTK 的 Grid 物件集合，透過[第2課](mrlearning-base-ch2.md)中所述的程式，組織您的物件集合以形成方格。 如需在3x3 方格中設定物件的範例，請參閱下圖。
+1. 將3D 物件父系到父物件
+2. 加入和設定 Grid 物件集合（腳本）元件
 
-    ![mrlearning-base-ch4-1-step7 .png](images/mrlearning-base-ch4-1-step7.png)
+### <a name="1-parent-the-3d-objects-to-a-parent-object"></a>1. 將3D 物件父系到父物件
 
-    >[!NOTE]
-    >您可能會注意到有些物件是停在中心，例如上圖中的物件。 這是因為預製物件或物件可能具有未對齊的子物件。 隨意對物件位置或子物件位置進行必要的調整，以實現完善對齊的方格。
+在 [階層] 視窗中，**建立空的物件**、提供適當的名稱（例如**3DObjectCollection**），並將它放在適當的位置，例如 X = 0、Y =-0.2、Z = 2。
 
-## <a name="manipulating-3d-objects"></a>操作 3D 物件
+在 [專案] 視窗中，流覽至 [**資產**] [ > **MRTK]。GettingStarted** > **Prefabs**，然後將下列 Prefabs 的**父系**加入**3DObjectCollection**：
 
-1. 新增可操作立方體的功能。 若要新增操作3D 物件的功能，請執行下列動作：
-    * 選取您想要在階層中操作的3D 物件（亦即您的其中一個 cube）。
-    * 按一下 [新增元件]
-    * 搜尋「操作」
-    * 選取操作處理常式
-    * 針對3DObjectCollection 物件下的所有3D 物件重複執行，但不針對3DObjectCollection 本身。
-    * 確定所有3D 物件都有碰撞或箱碰撞件（新增元件 > 方塊碰撞）。
+* 比薩餅
+* CoffeeCup
+* EarthCore
+* 顆 octa
+* Platonic
+* TheModule
 
-    ![Lesson4 Chapter2 Step1im](images/Lesson4_chapter2_step1im.PNG)
+![mrlearning-基底](images/mrlearning-base/tutorial4-section3-step1-1.png)
 
-    >[!NOTE]
-    >操作處理常式是一種元件，可讓您調整物件在操作時的行為方式設定。 這包括在特定軸上旋轉、縮放、移動和限制移動。
+在 [階層] 視窗中，**建立三個 cube**做為**3DObjectCollection**的子物件，並將其轉換**規模**設定為 X = 0.15、Y = 0.15、Z = 0.15：
 
-2. 限制一個立方體，使其只能縮放。 在3DObjectCollection 物件中選取一個 cube。 在 [偵測器] 面板中，按一下 [兩個操作類型] 旁的下拉式功能表，然後選取 [調整]。 這使得使用者只能變更立方體的大小。
+![mrlearning-基底](images/mrlearning-base/tutorial4-section3-step1-2.png)
 
-    ![Lesson4 Chapter2 Step2im](images/Lesson4_Chapter2_step2im.PNG)
+<!-- TODO: Finish -->
+> [!TIP]
+> 如需有關如何執行上述步驟的提醒，您可以參閱[建立使用者介面和設定混合現實工具](mrlearning-base-ch2.md)組教學課程。
 
-3. 變更每個立方體的色彩，以便我們可以區分它們。
-    * 移至 [專案] 面板並向下 MixedRealityToolkit，直到您看到 [SDK]，然後選取它。
-    * 選取 [標準資產] 資料夾。
-    * 按一下 [材質] 資料夾。
-    * 將不同的材質拖曳到每個立方體上。
+重新調整 cube 的位置，讓您可以看到每個 cube：
 
-    >[!NOTE]
-    >您可以為立方體選擇任何色彩。 在此範例中，會使用 glowingcyan、glowingorange 和綠色。 請隨意試驗不同的色彩。 若要將色彩加入 cube 中，請按一下您要變更的 cube，然後將材質拖曳至 cube 的 [偵測器] 面板中的網格轉譯器的 [材質] 欄位。
+![mrlearning-基底](images/mrlearning-base/tutorial4-section3-step1-3.png)
 
-    ![Lesson4 Chapter2 Step3im](images/Lesson4_Chapter2_step3im.PNG)
+在 [專案] 視窗中，流覽至 [**資產**] [ > **MixedRealityToolkit** ] [ > **StandardAssets** > **材質**]，以查看 MRTK 所提供的材質。
 
-4. 選取3DObjectCollection 物件中的另一個 cube，並將它的移動限制為來自 head 的固定距離。 若要這麼做，請在 [移動標籤上的條件約束] 右邊，按一下下拉式功能表，然後選取 [修正與 Head 的距離]。 這會將 cube 調整為其願景領域內。
+**按一下並拖曳**適當的資料到每個 Cube 的網格轉譯器**材質**元素0屬性，例如：
 
-    ![Lesson4 Chapter2 Step4im](images/Lesson4_chapter2_step4im.PNG)
+* MRTK_Standard_GlowingCyan
+* MRTK_Standard_GlowingOrange
+* MRTK_Standard_Green：
 
-    下列幾個步驟的目標是要啟用抓取並與我們的3D 物件互動，以及套用不同的操作設定。
+![mrlearning-基底](images/mrlearning-base/tutorial4-section3-step1-4.png)
 
-5. 選取 [乳酪] 物件，然後按一下 [偵測器] 面板中的 [新增元件]。
+### <a name="2-add-and-configure-the-grid-object-collection-script-component"></a>2. 加入及設定 Grid 物件集合（腳本）元件
 
-6. 在搜尋方塊中搜尋近乎互動的 Grabbable，然後選取腳本。 此元件可讓使用者使用已追蹤的手來觸及和抓取物件。 物件也可以從距離進行操作，除非取消核取 [允許最遠操作] 核取方塊，如下列影像中的綠色圓圈所表示。
+將**Grid 物件集合（腳本）** 元件新增至3DObjectCollection 物件，並將其設定如下：
 
-    ![Lesson4 Chapter2 Step6im](images/Lesson4_Chapter2_step6im.PNG)
+* 將 [**排序類型**] 變更為 [子順序]，以確保子物件會依照您放在父物件底下的順序排序
 
-7. 在這些物件上重複步驟5和6，以將近乎互動的 Grabbable 新增至顆 octa 物件、Platonic 物件、地球核心、陰曆模組和咖啡杯。
+然後按一下 [**更新集合**] 按鈕以套用新的設定：
 
-8. 從八邊形物件中移除遠距操作的能力。 若要這麼做，請選取階層中的顆 octa，並取消核取 [允許最大的操作] 核取方塊（以綠色圓圈標示）。 這使得使用者只能使用追蹤的手直接與顆 octa 互動。
+![mrlearning-基底](images/mrlearning-base/tutorial4-section3-step2-1.png)
 
-    >[!NOTE]
-    >如需操作處理常式元件和其相關設定的完整檔，請參閱[MRTK 檔](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ManipulationHandler.html)。
+## <a name="manipulating-3d-objects"></a>操作3D 物件
 
-9. 請確定已將近距離互動 Grabbable 元件新增到地球核心、農曆模組和咖啡杯（請參閱步驟7）。
+在本節中，您將新增在上一節中建立的面板中操作所有3D 物件的功能。 此外，針對 prefab 物件，您可以讓使用者透過追蹤的手觸達這些物件，並將其抓取。 然後您會探索幾個可套用至物件的操作行為。
 
-10. 針對農曆模組，變更操作處理常式設定，使其在物件的中心前後旋轉，以進行近和遠的互動，如下圖所示。
+達成此目標所需採取的主要步驟如下：
 
-    ![Lesson4 Chapter2 Step10im](images/Lesson4_chapter2_step10im.PNG)
+1. 將操作處理常式（腳本）元件新增至所有物件
+2. 將近乎互動 Grabbable （腳本）元件新增至 prefab 物件
+3. 設定操作處理常式（腳本）元件
 
-11. 針對地球核心，將發行行為變更為 [無]。 如此一來，當地球核心從使用者的理解中放開之後，就不會繼續移動。
+> [!IMPORTANT]
+> 若要能夠**操作物件**，物件必須具有下列元件：
+>
+> * **碰撞**元件，例如 Box 碰撞
+> * **操作處理常式（腳本）** 元件
+>
+> 若要能夠**操作**和**抓取具有已追蹤手的物件**，物件必須具有下列元件：
+>
+> * **碰撞**元件，例如 Box 碰撞
+> * **操作處理常式（腳本）** 元件
+> * **近乎互動 Grabbable （腳本）** 元件
 
-    ![Lesson4 Chapter2 Step11im](images/Lesson4_Chapter2_step11im.PNG)
+### <a name="1-add-the-manipulation-handler-script-component-to-all-the-objects"></a>1. 將操作處理常式（腳本）元件加入至所有物件
 
-    >[!NOTE]
-    >此設定適用于案例，例如建立您可以擲回的球。 保持適當的速度和角度速度，以確保在球放開後，它會繼續在其發行的速度移動;類似于實體球的行為。
+在 [階層] 視窗中，選取 [**乳酪**] 物件，按住**Shift**鍵，然後選取**Cube （）** 物件，並將**操作處理常式（腳本）** 元件加入至所有物件：
 
-## <a name="adding-bounding-boxes"></a>新增週框方塊
+![mrlearning-基底](images/mrlearning-base/tutorial4-section4-step1-1.png)
 
-周框方塊可讓您更輕鬆且更直覺地操作物件，以進行直接操作（近乎互動）和以光線為基礎的操作（遠比互動）。周框方塊提供的控制碼可用於在特定軸上縮放和旋轉物件。
+> [!NOTE]
+> 基於本教學課程的目的，colliders 已新增至 prefabs。 對於 Unity 基本類型（例如 Cube 物件），當建立物件時，會自動新增碰撞元件。 在上圖中，colliders 是以綠色外框表示。 若要深入瞭解 colliders，您可以造訪 Unity 的<a href="https://docs.unity3d.com/Manual/CollidersOverview.html" target="_blank">碰撞</a>器檔。
 
->[!NOTE]
->在您可以將周框方塊加入物件之前，您必須先在物件上具有碰撞器（例如，方塊碰撞器），如本課程前面所述。 您可以選取物件，然後在物件的 [偵測器] 面板中選取 [新增元件 > 方塊碰撞器] 來新增 Colliders。
+### <a name="2-add-the-near-interaction-grabbable-script-component-to-the-prefab-objects"></a>2. 將近乎互動 Grabbable （腳本）元件新增至 prefab 物件
 
-1. 將 box 碰撞項新增至地球核心物件（如果尚未存在）。 如果根據給定的指示使用 [基本模組資產] 資料夾中提供的 prefab，則不需要箱碰撞和設定。 在地球核心的案例中，我們已將方塊碰撞項新增至地球核心底下的、node_id30、物件，如下圖所示。 從物件的 [偵測器] 索引標籤中選取 [node_id30]，按一下 [新增元件]，然後搜尋方塊碰撞。
+在 [階層] 視窗中，選取 [**乳酪**] 物件，按住**Shift**鍵，然後選取 [ **TheModule** ] 物件，並將**近端互動 Grabbable （腳本）** 元件新增至所有物件：
 
-    ![Lesson4 Chapter3 Step1im](images/Lesson4_Chapter3_step1im.PNG)
+![mrlearning-基底](images/mrlearning-base/tutorial4-section4-step2-1.png)
 
-    ![Lesson4 Chapter3 Step2im](images/Lesson4_chapter3_step2im.PNG)
+### <a name="3-configure-the-manipulation-handler-script-component"></a>3. 設定操作處理常式（腳本）元件
 
-    >[!NOTE]
-    >請確定您已調整方塊的碰撞器大小，使其變得太大或太小。 它的大小應與它周圍的物件大致相同 (在本例中為地核)。 選取方塊碰撞器中的 [編輯碰撞器] 選項，視需要調整方塊碰撞器。 您可以變更 [x]、[y] 和 [z] 值，或在編輯器場景視窗中拖曳周框方塊處理常式。
+#### <a name="default-manipulation"></a>預設操作
 
-    ![Lesson4 Chapter3 Noteim](images/Lesson4_Chapter3_noteim.PNG)
+若為**Cube**物件，請保留所有屬性，以體驗預設的操作行為：
 
-2. 將周框方塊新增至地球核心的 node_id30 物件。 若要這樣做，請從3DObjectCollection 中選取 node_id30 物件。 在 [偵測器] 索引標籤中，按一下 [加入元件]，然後搜尋周框方塊。 請確定週框方塊、方塊碰撞器和操作指令碼 (Manipulation Handler、Near Interaction Grabbable) 都在同一個遊戲物件上。
+![mrlearning-基底](images/mrlearning-base/tutorial4-section4-step3-1.png)
 
-3. 在周框方塊的 [行為] 區段中，從 [啟用] 下拉式清單選取 [啟動時啟用]。 若要查看有關各種啟用選項和其他周框方塊選項的其他詳細資料，請參閱[MRTK 的周框方塊檔](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html>)
+> [!TIP]
+> 若要將元件重設為預設值，您可以選取元件的 [設定] 圖示，然後選取 [重設]。
 
-    *在接下來的幾個步驟中，我們也會變更周框方塊的外觀，方法是調整預設的方塊材質、抓取的資料，以及角落和邊控點的視覺效果。MRTK 包含數個選項可自訂周框方塊。*
+#### <a name="restrict-manipulation-to-scale-only"></a>將操作限制為僅限縮放
 
-4. 在 [專案] 面板中，搜尋 "boundingbox"，您會在搜尋結果中看到以藍色球體表示的材料清單，如下圖所示。
+針對**Cube （1）** 物件，將**兩個右手操作類型**變更為 [調整]，只允許使用者變更物件的大小：
 
-5. 將 boundingbox 材質拖曳至周框方塊元件上的方塊材質位置。 此外，請抓取 boundingboxgrabbed 的資料，並將其放在 [周框方塊] 元件上的 [將其抓取材質] 方塊中
+![mrlearning-基底](images/mrlearning-base/tutorial4-section4-step3-2.png)
 
-    ![mrlearning-base-ch4-3-step5 .png](images/mrlearning-base-ch4-3-step5.png)
+#### <a name="constrain-the-movement-to-a-fixed-distance-from-the-user"></a>將移動限制為與使用者的固定距離
 
-6. 將 MRTK_BoundingBox_ScaleHandle prefab 拖曳至 縮放控點 prefab 位置，並將 MRTK_BoundingBox_RotateHandle prefab 至 結合 方塊元件上的 旋轉控點 插槽。
+針對**Cube （2）** 物件，變更**移動上的條件約束**以修正與 Head 的距離，如此一來，當物件移動時，它就會與使用者保持相同的距離：
 
-    ![mrlearning-base-ch4-3-step6 .png](images/mrlearning-base-ch4-3-step6.png)
+![mrlearning-基底](images/mrlearning-base/tutorial4-section4-step3-3.png)
 
-7. 請確定週框方塊的目標是正確的物件。 在 [周框方塊] 元件中，有 [目標物件] 和 [界限覆寫] 腳本。 將具有周框方塊的物件拖曳到這兩個位置。 在此範例中，將 node_id30 物件拖曳到這兩個位置，如下圖所示。
+#### <a name="default-grabbable-manipulation"></a>預設 grabbable 操作
 
-    ![mrlearning-base-ch4-3-step7 .png](images/mrlearning-base-ch4-3-step7.png)
+針對 [**乳酪**]、[ **CoffeCup**] 和 [ **EarthCore** ] 物件，保留 [所有屬性]，以體驗預設的 grabbable 操作行為：
 
-    >[!NOTE]
-    >當您啟動或播放應用程式時，您的物件將會以藍色框架括住。 您可以拖曳該框架的角來調整物件的大小。 如果您想要縮放控點和旋轉控點變得更大且更可見，則建議使用預設周框方塊設定（避免步驟4到6）。
+![mrlearning-基底](images/mrlearning-base/tutorial4-section4-step3-4.png)
 
-8. 若要返回預設周框方塊視覺效果，請在周框方塊物件的 [檢查] 面板中選取旋轉控點 prefab，然後按下 delete 鍵將它移除。 當您進入「播放模式」時，wou 會看到如下圖所示的周框方塊視覺效果。
+#### <a name="remove-the-ability-of-far-manipulation"></a>移除目前操作的能力
 
-    ![mrlearning-base-ch4-3-step8 .png](images/mrlearning-base-ch4-3-step8.png)
+針對**顆 octa**物件，取消核取 [允許最大**操作**] 核取方塊，讓使用者只能使用追蹤的手直接與物件互動：
 
-    >[!NOTE]
-    >只有當處於播放模式時，才會顯示周框方塊的視覺效果。
+![mrlearning-基底](images/mrlearning-base/tutorial4-section4-step3-5.png)
+
+#### <a name="make-an-object-rotate-around-its-center"></a>使物件繞著中心旋轉
+
+針對**Platonic**物件，請將**一次**左右旋轉模式變更為接近，而在**一種旋轉模式**中旋轉，讓它在使用者手上旋轉物件時，旋轉物件中心：
+
+![mrlearning-基底](images/mrlearning-base/tutorial4-section4-step3-6.png)
+
+#### <a name="prevent-movement-after-object-is-released"></a>避免物件釋放後移動
+
+針對**TheModule**物件，將 [**發行行為**] 變更為 [無]，以便在物件從使用者手中釋放之後，不會繼續移動：
+
+![mrlearning-基底](images/mrlearning-base/tutorial4-section4-step3-7.png)
+
+若要深入瞭解操作處理常式元件及其相關聯的屬性，您可以造訪[MRTK 檔入口網站](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)中的[操作處理常式](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ManipulationHandler.html)指南。
+
+## <a name="adding-bounding-boxes"></a>加入周框方塊
+
+周框方塊藉由提供可用於縮放和旋轉的控制碼，讓您更輕鬆且更直覺地操作物件。
+
+在此範例中，您會將周框方塊新增至 EarthCore 物件，因此這個物件現在可以使用您在上一節中設定的物件操作進行互動，以及使用周框方塊控點來縮放和旋轉。
+
+> [!IMPORTANT]
+> 若要能夠使用周**框**方塊，物件必須具有下列元件：
+>
+> * **碰撞**元件，例如 Box 碰撞
+> * 周**框方塊（腳本）** 元件
+
+### <a name="1-add-the-bounding-box-script-component-to-the-earthcore-object"></a>1. 將周框方塊（腳本）元件新增至 EarthCore 物件
+
+在 [偵測器] 視窗中，選取**EarthCore**物件，並將周**框方塊（腳本）** 元件新增至 EarthCore 物件：
+
+![mrlearning-基底](images/mrlearning-base/tutorial4-section5-step1-1.png)
+
+> [!NOTE]
+> 周框方塊視覺效果是在執行時間建立，因此在您進入遊戲模式之前看不到。
+
+### <a name="2-visualize-and-test-the-bounding-box-using-the-in-editor-simulation"></a>2. 使用編輯器內模擬來視覺化和測試周框方塊
+
+按下 [播放] 按鈕進入遊戲模式。 然後按住空格鍵以顯示手，並使用滑鼠來與周框方塊互動：
+
+![mrlearning-基底](images/mrlearning-base/tutorial4-section5-step2-1.png)
+
+若要深入瞭解周框方塊元件和其相關聯的屬性，您可以造訪[MRTK 檔入口網站](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)中的周[框](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html)方塊指南。
 
 ## <a name="adding-touch-effects"></a>新增觸控效果
 
-在此範例中，當您用手觸控物件時，我們將播放音效。
+在此範例中，您將會啟用當您以手觸碰物件時所要觸發的事件。 具體而言，您會將顆 octa 物件設定為在使用者接觸時播放音效效果。
 
-1. 將音訊來源元件新增至遊戲物件中。 選取場景階層中的 [顆 octa] 物件。 在 [偵測器] 面板中，按一下 [新增元件] 按鈕，搜尋並選取 [音訊來源]。 我們將在後續步驟中使用此音訊來源播放音效。
+達成此目標所需採取的主要步驟如下：
 
-    >[!NOTE]
-    >請確定顆 octa 物件上有方塊碰撞器。
+1. 將音訊來源元件新增至物件
+2. 將近乎互動 Touchable （腳本）元件新增至物件
+3. 將手互動觸控（腳本）元件新增至物件
+4. 執行觸控開始事件
+5. 使用編輯器內模擬來測試觸控互動
 
-2. 新增附近的互動 Touchable 元件。 按一下 [偵測器] 面板中的 [新增元件] 按鈕，並搜尋近乎互動 touchable。 選取它以新增元件。
+> [!IMPORTANT]
+> 若要能夠**觸發觸控事件**，物件必須具有下列元件：
+>
+> * **碰撞**元件，最好是 Box 碰撞
+> * **近乎互動 Touchable （腳本）** 元件
+> * **手動互動觸控（腳本）** 元件
 
-    >[!NOTE]
-    >在過去，我們新增了近乎互動的 grabbable。 此互動和近距離互動 touchable 之間的差異在於，grabbable 互動的目的是要讓物件能夠抓取並與互動。 Touchable 元件適用于要觸及的物件。 這兩個元件可以作為互動組合一起使用。
+> [!NOTE]
+> 「手互動觸控」（Script）元件不是 MRTK 的一部分。 本教學課程的資產和原始部分的 MixedReality 工具組 Unity 範例已匯入它。
 
-    ![Lesson4 Chapter4 Step1 2Im](images/Lesson4_chapter4_step1-2im.PNG)
+### <a name="1-add-an-audio-source-component-to-the-object"></a>1. 將音訊來源元件新增至物件
 
-3. 在手互動觸控腳本中加入。 就像上一個步驟一樣，按一下 [新增元件]，然後搜尋 [手動互動觸控] 將它加入。
+在 [階層] 視窗中，選取 [**顆 octa** ] 物件，將 [**音訊來源**] 元件新增至顆 octa 物件，然後將 [**空間 Blend** ] 變更為1以啟用空間音訊：
 
-    請注意，您有三個使用腳本的選項：
-    * 觸控完成：當您接觸並釋放物件時觸發程式
-    * 開始觸控時：觸及物件時觸發
-    * 觸控更新：當您的手中觸及物件時，定期觸發程式
+![mrlearning-基底](images/mrlearning-base/tutorial4-section6-step1-1.png)
 
-    在此範例中，我們將使用 [啟動觸控] 設定。
+### <a name="2-add-the-near-interaction-touchable-script-component-to-the-object"></a>2. 將近乎互動 Touchable （腳本）元件新增至物件
 
-    >[!NOTE]
-    >此腳本隨附于您在本教學課程開頭匯入的 BaseModuleAssets Unity 封裝中，而且不會包含在原始 MRTK 中。
+在仍選取**顆 octa**物件的情況下，將**近乎互動 Touchable （腳本）** 元件新增至顆 octa 物件，然後按一下 [**修正界限**] 和 [**修正中心**] 按鈕，將近端互動 Touchable （腳本）的本機中心和界限屬性更新為符合 BoxCollider：
 
-4. 按一下 [On Touch 已啟動] 選項上的 [+] 按鈕，並將顆 octa 物件拖曳至空白欄位。
+![mrlearning-基底](images/mrlearning-base/tutorial4-section6-step2-1.png)
 
-    ![mrlearning-base-ch4-4-step4 .png](images/mrlearning-base-ch4-4-step4.png)
+### <a name="3-add-the-hand-interaction-touch-script-component-to-the-object"></a>3. 將手互動觸控（腳本）元件新增至物件
 
-5. 在顯示 [沒有函式] 的下拉式選單中，選取 [Spatialize > PlayOneShot]。 我們將使用下列概念為此欄位新增音訊剪輯：
+在仍選取**顆 octa**物件的情況下，將「**手動互動觸控」（Script）** 元件新增至顆 octa 物件：
 
-    * MRTK 確實提供了一小部分音訊剪輯。 歡迎您在 [專案] 面板中探索這些功能。 您會在 [資產] > [MixedRealityToolkit] > [標準資產] > [音訊] 資料夾中找到這些專案。
-    * 在此範例中，我們將使用 MRTK_Gem 音訊剪輯。
-    * 若要新增音訊剪輯，只要將您想要的剪輯從 [專案] 面板拖曳至 [Spatialize. PlayOneShot] 欄位即可。
+![mrlearning-基底](images/mrlearning-base/tutorial4-section6-step3-1.png)
 
-    ![mrlearning-base-ch4-4-step5 .png](images/mrlearning-base-ch4-4-step5.png)
+### <a name="4-implement-the-on-touch-started-event"></a>4. 執行 Touch 已啟動事件
 
-   現在，當使用者到達並觸及顆 octa 物件時，就會播放音訊軌 MRTK_Gem。 觸碰互動觸控腳本也會在觸及時調整物件的色彩。
+在 [手動互動觸控（腳本）] 元件上，按一下 [小型 **+** ] 圖示，以建立新**的 [觸控已啟動（）** ] 事件。 然後設定**顆 octa**物件以接收事件，並將**spatialize**定義為要觸發的動作：
 
-## <a name="congratulations"></a>恭喜您
+![mrlearning-基底](images/mrlearning-base/tutorial4-section6-step4-1.png)
 
-在本教學課程中，您已瞭解如何在方格集合中組織3D 物件，以及如何使用近距離互動（直接抓取和旋轉）和即時互動（使用注視光線或手片）來操作這些物件（縮放、旋轉和移動）。 您也學到如何將周框方塊放在3D 物件周圍，學習如何使用和自訂周框方塊上的 gizmos。 最後，您學習到觸控物件時如何觸發事件。
+流覽至 **資產**  > **MixedRealityToolkit**  > **StandardAssets** > 材質，以查看 MRTK 所提供的音訊剪輯，然後將適當的音訊剪輯指派給 **音訊剪輯** 欄位，例如 MRTK_Gem 的音訊剪輯：
+
+![mrlearning-基底](images/mrlearning-base/tutorial4-section6-step4-2.png)
+
+> [!TIP]
+> 如需如何執行事件的提醒，您可以參考[手追蹤手勢和可互動按鈕](mrlearning-base-ch2.md#hand-tracking-gestures-and-interactable-buttons)的指示。
+
+### <a name="5-test-the-touch-interaction-using-the-in-editor-simulation"></a>5. 使用編輯器內模擬來測試觸控互動
+
+按下 [播放] 按鈕進入遊戲模式。 然後按住空格鍵以帶出手，並使用滑鼠來碰觸顆 octa 物件，並觸發音效效果：
+
+![mrlearning-基底](images/mrlearning-base/tutorial4-section6-step5-1.png)
+
+> [!NOTE]
+> 如上圖所示，當您在測試觸控互動時看到顆 octa 物件色彩 pulsated。 這項效果已硬式編碼到「手互動觸控」（腳本）元件中，而不是您在上述步驟中完成的事件設定結果。
+>
+> 例如，如果您想要停用此效果，您可以將批註 out 或行 32 ' TargetRenderer = GetComponentInChildren<Renderer>（）; '，這會導致 TargetRenderer 剩餘的 null 和色彩不 pulsating。
+
+## <a name="congratulations"></a>恭喜
+
+在本教學課程中，您已瞭解如何在方格集合中組織3D 物件，以及如何使用近距離互動（直接抓取和旋轉）和即時互動（使用注視光線或手片）來操作這些物件（縮放、旋轉和移動）。 您也學到如何將周框方塊放在3D 物件周圍，學習如何使用和自訂周框方塊上的控點。 最後，您學習到觸控物件時如何觸發事件。
 
 [下一課： 6. 探索 advanced 輸入選項](mrlearning-base-ch5.md)

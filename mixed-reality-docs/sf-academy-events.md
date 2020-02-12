@@ -6,12 +6,12 @@ ms.author: daescu
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 活動、行事曆、學院、排程、sf、三藩市、reactor
-ms.openlocfilehash: b7a410e40fa74cd76ed6c8dafd2519d6498d7af6
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 06abc916d6fc31d858aff2a32758ebf29c324466
+ms.sourcegitcommit: f5d6dd420aa347acf1de4798f4e3e0f6a11d19cc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438083"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77155495"
 ---
 # <a name="microsoft-mixed-reality-events"></a>Microsoft Mixed Reality 事件
 
@@ -24,60 +24,228 @@ ms.locfileid: "73438083"
 <br>
 
 ---
+###  <a name="feb-24-2020"></a>2020年2月24日
+## <a name="mixed-reality-workgroup"></a>混合現實工作組
+「混合現實工作組」是一種可讓 MR 開發人員共同作業、分享想法，並在易記且可獲得的環境中完成工作的機會。
+[請在這裡註冊。](https://www.meetup.com/hololens-mr/events/)
+<br>
 
-## <a name="mixed-reality-workgroup-san-francisco-reactorhttpsemea01safelinksprotectionoutlookcomurlhttps3a2f2fwwwmeetupcom2fhololens-mr2fdata027c017cdaescu40microsoftcom7ca8ddee063b7949a9992308d6903e62b07c72f988bf86f141af91ab2d7cd011db477c17c07c636854994961124360sdataymnaaiwvxij700mo9gj2boz4w82bgkdjdhijhytfczcfu3dreserved0"></a>[混合現實工作組，三藩市 Reactor](https://emea01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.meetup.com%2Fhololens-mr%2F&data=02%7C01%7Cdaescu%40microsoft.com%7Ca8ddee063b7949a9992308d6903e62b0%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636854994961124360&sdata=YmnAAiWVxIJ700mO9gj%2BOz4W8%2BgKDjDhiJhYtfCzCFU%3D&reserved=0)
-### <a name="october-21-2019"></a>2019年10月21日
+---
+###  <a name="march-9-2020"></a>2020年3月9日
+## <a name="mixed-reality-workgroup"></a>混合現實工作組
+「混合現實工作組」是一種可讓 MR 開發人員共同作業、分享想法，並在易記且可獲得的環境中完成工作的機會。
+[請在這裡註冊。](https://www.meetup.com/hololens-mr/events/)
+<br>
 
-身為工作組，我們想要將專案保持在最新狀態，只會顯示6:00、停止回應，並在一段時間內工作！ 這是取得其他開發人員意見反應的絕佳機會，向先前嘗試的人尋求協助與建議，或是在工作和程式碼之後冷藏一段時間！ 帶著膝上型電腦、帶著一個專案，並帶著開朗！ Microsoft Reactor 是 roomy 的地方，我們會保持出席者的限制，而不是忙碌的人。 我們希望能看到您！
+---
+### <a name="march-23-2020"></a>2020年3月23日
+## <a name="mixed-reality-workgroup"></a>混合現實工作組
+「混合現實工作組」是一種可讓 MR 開發人員共同作業、分享想法，並在易記且可獲得的環境中完成工作的機會。
+[請在這裡註冊。](https://www.meetup.com/hololens-mr/events/)
+<br>
 
-[註冊此工作組事件](https://emea01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.meetup.com%2Fhololens-mr%2F&data=02%7C01%7Cdaescu%40microsoft.com%7Ca8ddee063b7949a9992308d6903e62b0%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636854994961124360&sdata=YmnAAiWVxIJ700mO9gj%2BOz4W8%2BgKDjDhiJhYtfCzCFU%3D&reserved=0)
+---
+### <a name="march-31-2020"></a>2020年3月31日
+## <a name="hololens--mixed-reality-meetup"></a>HoloLens & Mixed Reality 聚會
+讓我們一起討論並瞭解 HoloLens 和混合現實。 開發人員有很大的機會可觸及數以千計的企業和數百萬個客戶，方法是建立經驗來協助人們每日生活！
+[請在這裡註冊。](https://www.meetup.com/hololens-mr/)
+<br>
 
+---
+###  <a name="april-2-3-2020"></a>2-3 年4月，2020
+## <a name="mixed-reality-accelerator"></a>混合現實加速器
+MR 加速器是一種駭客松式的研討會，其目標是加速開發混合現實應用程式，並從 HoloLens gen 1 移植至 HoloLens 2 （中繼/高階層級）。
+<br>
+
+---
+###  <a name="april-27-2020"></a>2020年4月27日
+## <a name="hololens--mixed-reality-meetup"></a>HoloLens & Mixed Reality 聚會
+讓我們一起討論並瞭解 HoloLens 和混合現實。 開發人員有很大的機會可觸及數以千計的企業和數百萬個客戶，方法是建立經驗來協助人們每日生活！
+[請在這裡註冊。](https://www.meetup.com/hololens-mr/)
+<br>
+
+---
+###  <a name="may-11-12-2020"></a>5月11-12 日，2020
+## <a name="mixed-reality-mentor-days"></a>混合現實導師日
+HoloLens 2 設計和開發的實際操作研討會。 僅限邀請。
+<br>
+
+---
+###  <a name="may-26-2020"></a>2020 5 月26日
+## <a name="hololens--mixed-reality-meetup"></a>HoloLens & Mixed Reality 聚會
+讓我們一起討論並瞭解 HoloLens 和混合現實。 開發人員有很大的機會可觸及數以千計的企業和數百萬個客戶，方法是建立經驗來協助人們每日生活！
+[請在這裡註冊。](https://www.meetup.com/hololens-mr/)
+<br>
+
+---
+###  <a name="june-8-9-2020"></a>8-9 年6月，2020
+## <a name="mixed-reality-accelerator"></a>混合現實加速器
+MR 加速器是一種駭客松式的研討會，其目標是加速開發混合現實應用程式，並從 HoloLens gen 1 移植至 HoloLens 2 （中繼/高階層級）。
 <br>
 
 ---
 
-## <a name="mixed-reality-workgroup-san-francisco-reactorhttpsemea01safelinksprotectionoutlookcomurlhttps3a2f2fwwwmeetupcom2fhololens-mr2fdata027c017cdaescu40microsoftcom7ca8ddee063b7949a9992308d6903e62b07c72f988bf86f141af91ab2d7cd011db477c17c07c636854994961124360sdataymnaaiwvxij700mo9gj2boz4w82bgkdjdhijhytfczcfu3dreserved0"></a>[混合現實工作組，三藩市 Reactor](https://emea01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.meetup.com%2Fhololens-mr%2F&data=02%7C01%7Cdaescu%40microsoft.com%7Ca8ddee063b7949a9992308d6903e62b0%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636854994961124360&sdata=YmnAAiWVxIJ700mO9gj%2BOz4W8%2BgKDjDhiJhYtfCzCFU%3D&reserved=0)
-### <a name="november-4-2019"></a>2019年11月4日
-
-身為工作組，我們想要將專案保持在最新狀態，只會顯示6:00、停止回應，並在一段時間內工作！ 這是取得其他開發人員意見反應的絕佳機會，向先前嘗試的人尋求協助與建議，或是在工作和程式碼之後冷藏一段時間！ 帶著膝上型電腦、帶著一個專案，並帶著開朗！ Microsoft Reactor 是 roomy 的地方，我們會保持出席者的限制，而不是忙碌的人。 我們希望能看到您！
-
-[註冊此工作組事件](https://emea01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.meetup.com%2Fhololens-mr%2F&data=02%7C01%7Cdaescu%40microsoft.com%7Ca8ddee063b7949a9992308d6903e62b0%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636854994961124360&sdata=YmnAAiWVxIJ700mO9gj%2BOz4W8%2BgKDjDhiJhYtfCzCFU%3D&reserved=0)
-
+###  <a name="june-8-2020"></a>2020年6月8日
+## <a name="mixed-reality-workgroup"></a>混合現實工作組
+「混合現實工作組」是一種可讓 MR 開發人員共同作業、分享想法，並在易記且可獲得的環境中完成工作的機會。
+[請在這裡註冊。](https://www.meetup.com/hololens-mr/events/)
 <br>
 
 ---
-
-## <a name="hololens-mixed-reality-design-and-development-meetuphttpswwwmeetupcomhololens-mr"></a>[HoloLens、混合現實設計和開發聚會](https://www.meetup.com/hololens-mr/)
-### <a name="november-18-2019"></a>2019年11月18日
-
-即將推出更多詳細資訊！
-
-[註冊此聚會](https://www.meetup.com/hololens-mr/)
-
+###  <a name="june-22-2020"></a>2020年6月22日
+## <a name="hololens--mixed-reality-meetup"></a>HoloLens & Mixed Reality 聚會
+讓我們一起討論並瞭解 HoloLens 和混合現實。 開發人員有很大的機會可觸及數以千計的企業和數百萬個客戶，方法是建立經驗來協助人們每日生活！
+[請在這裡註冊。](https://www.meetup.com/hololens-mr/)
 <br>
 
 ---
-
-## <a name="mixed-reality-workgroup-san-francisco-reactorhttpsemea01safelinksprotectionoutlookcomurlhttps3a2f2fwwwmeetupcom2fhololens-mr2fdata027c017cdaescu40microsoftcom7ca8ddee063b7949a9992308d6903e62b07c72f988bf86f141af91ab2d7cd011db477c17c07c636854994961124360sdataymnaaiwvxij700mo9gj2boz4w82bgkdjdhijhytfczcfu3dreserved0"></a>[混合現實工作組，三藩市 Reactor](https://emea01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.meetup.com%2Fhololens-mr%2F&data=02%7C01%7Cdaescu%40microsoft.com%7Ca8ddee063b7949a9992308d6903e62b0%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636854994961124360&sdata=YmnAAiWVxIJ700mO9gj%2BOz4W8%2BgKDjDhiJhYtfCzCFU%3D&reserved=0)
-### <a name="december-9-2019"></a>2019年12月9日
-
-身為工作組，我們想要將專案保持在最新狀態，只會顯示6:00、停止回應，並在一段時間內工作！ 這是取得其他開發人員意見反應的絕佳機會，向先前嘗試的人尋求協助與建議，或是在工作和程式碼之後冷藏一段時間！ 帶著膝上型電腦、帶著一個專案，並帶著開朗！ Microsoft Reactor 是 roomy 的地方，我們會保持出席者的限制，而不是忙碌的人。 我們希望能看到您！
-
-[註冊此工作組事件](https://emea01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.meetup.com%2Fhololens-mr%2F&data=02%7C01%7Cdaescu%40microsoft.com%7Ca8ddee063b7949a9992308d6903e62b0%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636854994961124360&sdata=YmnAAiWVxIJ700mO9gj%2BOz4W8%2BgKDjDhiJhYtfCzCFU%3D&reserved=0)
-
+###  <a name="july-9-10-2020"></a>9-10 年7月，2020
+## <a name="mixed-reality-mentor-days"></a>混合現實導師日
+HoloLens 2 設計和開發的實際操作研討會。 僅限邀請。
 <br>
 
 ---
-
-## <a name="hololens-mixed-reality-design-and-development-meetuphttpswwwmeetupcomhololens-mr"></a>[HoloLens、混合現實設計和開發聚會](https://www.meetup.com/hololens-mr/)
-### <a name="december-16-2019"></a>2019年12月16日
-
-即將推出更多詳細資訊！
-
-[註冊此聚會](https://www.meetup.com/hololens-mr/)
-
+###  <a name="july-13-2020"></a>2020年7月13日
+## <a name="mixed-reality-workgroup"></a>混合現實工作組
+「混合現實工作組」是一種可讓 MR 開發人員共同作業、分享想法，並在易記且可獲得的環境中完成工作的機會。
+[請在這裡註冊。](https://www.meetup.com/hololens-mr/events/)
 <br>
 
 ---
+###  <a name="july-21-2020"></a>2020年7月21日
+## <a name="hololens--mixed-reality-meetup"></a>HoloLens & Mixed Reality 聚會
+讓我們一起討論並瞭解 HoloLens 和混合現實。 開發人員有很大的機會可觸及數以千計的企業和數百萬個客戶，方法是建立經驗來協助人們每日生活！
+[請在這裡註冊。](https://www.meetup.com/hololens-mr/)
+<br>
 
-## <a name="more-mixed-reality-events-coming-soon"></a>即將推出更多的混合現實事件 。
+---
+###  <a name="july-27-2020"></a>2020年7月27日
+## <a name="mixed-reality-workgroup"></a>混合現實工作組
+「混合現實工作組」是一種可讓 MR 開發人員共同作業、分享想法，並在易記且可獲得的環境中完成工作的機會。
+[請在這裡註冊。](https://www.meetup.com/hololens-mr/events/)
+<br>
+
+---
+###  <a name="july-27-28-2020"></a>27-28 年7月，2020
+## <a name="mixed-reality-accelerator"></a>混合現實加速器
+MR 加速器是一種駭客松式的研討會，其目標是加速開發混合現實應用程式，並從 HoloLens gen 1 移植至 HoloLens 2 （中繼/高階層級）。
+<br>
+
+---
+###  <a name="august-3-2020"></a>2020年8月3日
+## <a name="mixed-reality-workgroup"></a>混合現實工作組
+「混合現實工作組」是一種可讓 MR 開發人員共同作業、分享想法，並在易記且可獲得的環境中完成工作的機會。
+[請在這裡註冊。](https://www.meetup.com/hololens-mr/events/)
+<br>
+
+---
+###  <a name="august-13-14-2020"></a>13-14 年8月，2020
+## <a name="mixed-reality-mentor-days"></a>混合現實導師日
+[在這裡註冊]。（HoloLens 2 設計和開發的實際操作研討會。 僅限邀請。
+<br>
+
+---
+###  <a name="august-17-2020"></a>2020年8月17日
+## <a name="mixed-reality-workgroup"></a>混合現實工作組
+「混合現實工作組」是一種可讓 MR 開發人員共同作業、分享想法，並在易記且可獲得的環境中完成工作的機會。
+[請在這裡註冊。](https://www.meetup.com/hololens-mr/events/)
+<br>
+
+---
+###  <a name="august-24-2020"></a>2020年8月24日
+## <a name="hololens--mixed-reality-meetup"></a>HoloLens & Mixed Reality 聚會
+讓我們一起討論並瞭解 HoloLens 和混合現實。 開發人員有很大的機會可觸及數以千計的企業和數百萬個客戶，方法是建立經驗來協助人們每日生活！
+[請在這裡註冊。](https://www.meetup.com/hololens-mr/)
+<br>
+
+---
+###  <a name="august-27-28-2020"></a>27-28 年8月，2020
+## <a name="mixed-reality-accelerator"></a>混合現實加速器
+MR 加速器是一種駭客松式的研討會，其目標是加速開發混合現實應用程式，並從 HoloLens gen 1 移植至 HoloLens 2 （中繼/高階層級）。
+<br>
+
+---
+###  <a name="september-17-18-2020"></a>2020年9月17-18 日
+## <a name="mixed-reality-accelerator"></a>混合現實加速器
+MR 加速器是一種駭客松式的研討會，其目標是加速開發混合現實應用程式，並從 HoloLens gen 1 移植至 HoloLens 2 （中繼/高階層級）。
+<br>
+
+---
+###  <a name="september-21-2020"></a>2020年9月21日
+## <a name="mixed-reality-workgroup"></a>混合現實工作組
+「混合現實工作組」是一種可讓 MR 開發人員共同作業、分享想法，並在易記且可獲得的環境中完成工作的機會。
+[請在這裡註冊。](https://www.meetup.com/hololens-mr/events/)
+<br>
+
+---
+###  <a name="september-22-2020"></a>2020年9月22日
+## <a name="hololens--mixed-reality-meetup"></a>HoloLens & Mixed Reality 聚會
+讓我們一起討論並瞭解 HoloLens 和混合現實。 開發人員有很大的機會可觸及數以千計的企業和數百萬個客戶，方法是建立經驗來協助人們每日生活！
+[請在這裡註冊。](https://www.meetup.com/hololens-mr/)
+<br>
+
+---
+###  <a name="october-5-6-2020"></a>5-6 年10月，2020
+## <a name="mixed-reality-mentor-days"></a>混合現實導師日
+HoloLens 2 設計和開發的實際操作研討會。 僅限邀請。
+<br>
+
+---
+###  <a name="october-5-2020"></a>2020年10月5日
+## <a name="mixed-reality-workgroup"></a>混合現實工作組
+「混合現實工作組」是一種可讓 MR 開發人員共同作業、分享想法，並在易記且可獲得的環境中完成工作的機會。
+[請在這裡註冊。](https://www.meetup.com/hololens-mr/events/)
+<br>
+
+---
+###  <a name="october-19-2020"></a>2020年10月19日
+## <a name="hololens--mixed-reality-meetup"></a>HoloLens & Mixed Reality 聚會
+讓我們一起討論並瞭解 HoloLens 和混合現實。 開發人員有很大的機會可觸及數以千計的企業和數百萬個客戶，方法是建立經驗來協助人們每日生活！
+[請在這裡註冊。](https://www.meetup.com/hololens-mr/)
+<br>
+
+---
+###  <a name="october-26-2020"></a>2020年10月26日
+## <a name="mixed-reality-workgroup"></a>混合現實工作組
+「混合現實工作組」是一種可讓 MR 開發人員共同作業、分享想法，並在易記且可獲得的環境中完成工作的機會。
+[請在這裡註冊。](https://www.meetup.com/hololens-mr/events/)
+<br>
+
+---
+###  <a name="october-26-27-2020"></a>26-27 年10月，2020
+## <a name="mixed-reality-mentor-days"></a>混合現實導師日
+HoloLens 2 設計和開發的實際操作研討會。 僅限邀請。
+<br>
+
+---
+###  <a name="november-9-10-2020"></a>2020年11月9-10 日
+## <a name="mixed-reality-mentor-days"></a>混合現實導師日
+ HoloLens 2 設計和開發的實際操作研討會。 僅限邀請。
+<br>
+
+---
+###  <a name="november-9-2020"></a>2020年11月9日
+## <a name="mixed-reality-workgroup"></a>混合現實工作組
+「混合現實工作組」是一種可讓 MR 開發人員共同作業、分享想法，並在易記且可獲得的環境中完成工作的機會。
+[請在這裡註冊。](https://www.meetup.com/hololens-mr/events/)
+<br>
+
+---
+###  <a name="november-16-2020"></a>2020年11月16日
+## <a name="hololens--mixed-reality-meetup"></a>HoloLens & Mixed Reality 聚會
+讓我們一起討論並瞭解 HoloLens 和混合現實。 開發人員有很大的機會可觸及數以千計的企業和數百萬個客戶，方法是建立經驗來協助人們每日生活！
+[請在這裡註冊。](https://www.meetup.com/hololens-mr/)
+<br>
+
+---
+###  <a name="november-23-2020"></a>2020年11月23日
+## <a name="mixed-reality-workgroup"></a>混合現實工作組
+「混合現實工作組」是一種可讓 MR 開發人員共同作業、分享想法，並在易記且可獲得的環境中完成工作的機會。
+[請在這裡註冊。](https://www.meetup.com/hololens-mr/events/)
+<br>
+
+---
+###  <a name="december-7-2020"></a>2020年12月7日
+## <a name="mixed-reality-workgroup"></a>混合現實工作組
+「混合現實工作組」是一種可讓 MR 開發人員共同作業、分享想法，並在易記且可獲得的環境中完成工作的機會。
+[請在這裡註冊。](https://www.meetup.com/hololens-mr/events/)

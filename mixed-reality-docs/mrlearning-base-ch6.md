@@ -6,159 +6,211 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 3127ffceea08202fe9d978ad77f8fddb6fba60a3
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.openlocfilehash: b5b1bd0115822449bd6098f78cfc94d909169737
+ms.sourcegitcommit: cc61f7ac08f9ac2f2f04e8525c3260ea073e04a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334371"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77129399"
 ---
 # <a name="7-creating-a-lunar-module-sample-application"></a>7. 建立農曆模組範例應用程式
+<!-- TODO: Rename to 'Creating a Rocket Launcher sample application' -->
 
-在本教學課程中，會將多個概念與前一課結合，以建立獨特的範例體驗。 您將瞭解如何建立一個陰曆模組元件應用程式，讓使用者必須使用追蹤的手來挑選陰曆模組零件，並嘗試組合陰曆模組。 我們會使用 [pressable] 按鈕來切換放置提示、重設我們的體驗，以及啟動我們的陰曆模組來進行空間！ 在未來的教學課程中，我們將繼續以這項體驗為基礎，其中包含強大的多使用者使用案例，可運用 Azure 空間錨點來進行空間對齊。
+在本教學課程中，會將多個概念與前一課結合，以建立獨特的範例體驗。 您將瞭解如何建立元件元件應用程式，讓使用者必須使用追蹤的手來挑選元件，並嘗試組合陰曆模組。 您將使用 [pressable] 按鈕來開啟和關閉放置提示、重設體驗，以及啟動農曆模組到空間中！
+
+在未來的教學課程中，您將繼續以這項體驗為基礎，其中包含強大的多使用者使用案例，可運用 Azure 空間錨點進行空間對齊。
 
 ## <a name="objectives"></a>目標
 
-- 結合來自先前課程的多個概念以建立獨特體驗
-- 了解如何切換物件
-- 使用可點按的按鈕來觸發複雜事件
-- 使用 rigidbody 物理特性和力
-- 探索工具提示的使用
+* 結合來自先前課程的多個概念以建立獨特體驗
+* 了解如何切換物件
+* 使用可點按的按鈕來觸發複雜事件
+* 使用 rigidbody 物理特性和力
+* 探索工具提示的使用
+
+## <a name="lunar-module-parts-overview"></a>陰曆模組元件總覽
+<!-- TODO: Rename to 'Implementing the part assembly functionality' -->
+
+在本節中，您將建立一個簡單的部分元件挑戰，使用者的目標是要將在該資料表上散佈的五個部分放在農曆模組的正確位置。
+
+達成此目標所需採取的主要步驟如下：
+
+1. 將 Rocket 啟動器 prefab 新增至場景
+2. 啟用所有元件的物件操作
+3. 新增和設定元件元件示範（腳本）元件
+
+> [!NOTE]
+> 部分元件示範（腳本）元件不是 MRTK 的一部分。 本教學課程的資產提供此說明。
+
+### <a name="1-add-the-rocket-launcher-prefab-to-the-scene"></a>1. 將 Rocket 啟動器 prefab 新增至場景
+
+在 [專案] 視窗中，流覽至 [**資產**] > **MRTK。GettingStarted** > **Prefabs** > **RocketLauncher**資料夾，將**RocketLauncher** prefab 拖曳到 [階層] 視窗中，將它新增至您的場景，然後將它放置在適當的位置，例如：
+
+* 轉換位置 X = 1.5、Y =-0.4、Z = 0，使其位於 waist height 的使用者右方
+* 轉換旋轉 X = 0、Y = 180、Z = 0，因此體驗的主要功能會面對使用者
+
+![mrlearning-基底](images/mrlearning-base/tutorial6-section1-step1-1.png)
+
+### <a name="2-enable-object-manipulation-for-all-the-parts"></a>2. 為所有元件啟用物件操作
+
+在 [階層] 視窗中，找出 RocketLauncher > **LunarModuleParts**物件，並選取所有**子物件**、新增**操作處理常式（腳本）** 元件和**近端互動 Grabbable （腳本）** 元件，然後設定操作處理常式（腳本），如下所示：
+
+* 變更**兩個右手操作類型**以移動旋轉，以停用調整
+* 取消核取 [**允許**最大操作] 核取方塊，只允許近乎互動
+
+![mrlearning-基底](images/mrlearning-base/tutorial6-section1-step1-2.png)
+
+> [!TIP]
+> 如需提醒，使用逐步指示，瞭解如何執行物件操作，您可以參考[處理3D 物件](mrlearning-base-ch4.md#manipulating-3d-objects)的指示。
+
+### <a name="3-add-and-configure-the-part-assembly-demo-script-component"></a>3. 新增和設定元件元件示範（腳本）元件
+
+在仍選取所有 LunarModuleParts 子物件的情況下，新增**音訊來源**元件，然後進行設定，如下所示：
+
+* 將適當的音訊剪輯指派給**AudioClip**欄位，例如，MRKT_Scale_Start
+* 取消勾選 [**在喚醒時播放**] 核取方塊，讓音訊剪輯不會在場景載入時自動播放
+* 將**空間 Blend**變更為1，以啟用空間音訊
+
+![mrlearning-基底](images/mrlearning-base/tutorial6-section1-step2-1.png)
+
+在仍選取所有 LunarModuleParts 子物件的情況下，新增元件元件**示範（腳本）** 元件：
+
+![mrlearning-基底](images/mrlearning-base/tutorial6-section1-step2-2.png)
+
+在 [階層] 視窗中，選取 [ **RoverEnclosure** ] 物件，並設定其 [元件元件**示範（腳本）** ] 元件，如下所示：
+
+* 在 [**要放置的物件**] 欄位中，指派物件本身，在此案例中為**RoverEnclosure**物件
+* 在 [**要放置的位置**] 欄位中，指派對應的 PlacementHints 物件（在此案例中為**RoverEnclosure_PlacementHints**物件）
+* 在 [**工具提示物件**] 欄位中，指派對應的 ToolTipObject，在此案例中為**RoverEnclosure_ToolTip**物件
+* 在 [**音訊來源**] 欄位中，指派物件本身，在此案例中為**RoverEnclosure**物件
+
+![mrlearning-基底](images/mrlearning-base/tutorial6-section1-step2-3.png)
+
+針對每個其他 LunarModuleParts 子物件**重複**，亦即 FuelTank、EnergyCell、DockingPortal 和 ExternalSensor。
+
+如果您現在進入遊戲模式，並將「物件」放在靠近其對應的「位置」，您會注意到：
+
+* 物件將會貼齊位置，並在 LunarModule 物件下成為父代，使其成為陰曆模組的一部分
+* 物件上的音訊來源會在物件的位置播放指派的音訊剪輯
+* 對應的工具提示物件將會隱藏
+
+![mrlearning-基底](images/mrlearning-base/tutorial6-section1-step2-4.png)
+
+> [!TIP]
+> 如需有關如何使用編輯器內輸入模擬的提醒，您可以參考[MRTK 檔入口網站](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)中的[使用編輯器內的手寫輸入模擬來測試場景](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html#using-the-in-editor-hand-input-simulation-to-test-a-scene)指南。
 
 ## <a name="configuring-the-lunar-module"></a>設定登月小艇
 
-在本節中，我們將介紹建立範例體驗所需的各種元件。
+在本節中，您會將其他功能新增至 Rocket 啟動器應用程式，讓使用者可以：
 
-1. 將 [農曆模組元件] prefab 新增至您的基礎場景。 若要這麼做，請在 [專案] 索引標籤中，流覽至 [資產] > BaseModuleAssets > Prefabs。 您會看到兩個 rocket 啟動器 prefabs，將 Rocket Launcher_Tutorial prefab 拖曳到您的場景中，並依您想要的位置。
+* 與陰曆模組互動
+* 將農曆模組啟動到空間中，並在啟動時播放音效
+* 重設應用程式，使陰曆模組和所有元件都放回其原始位置
+* 隱藏放置提示，使部分元件的挑戰變得更困難。
 
-    >[!NOTE]
-    >Rocket Launcher_Complete prefab 是已完成的啟動器，提供供參考之用。
+達成此目標所需採取的主要步驟如下：
 
-    ![Lesson6 Chapter1 Step1im](images/Lesson6_Chapter1_step1im.PNG)
+1. 啟用物件操作
+2. 啟用物理
+3. 新增音訊來源元件
+4. 新增和設定啟動陰曆模組（腳本）元件
+5. 新增和設定切換位置提示（腳本）元件
 
-    如果您展開階層中的 [Rocket Launcher_Tutorial 遊戲] 物件，並進一步展開 [陰曆] 模組物件，您會發現有數個子物件具有稱為「x-光線」的材質。 「X 光線」材質允許使用稍微半透明的色彩，做為使用者的放置提示。
+> [!NOTE]
+> 啟動陰曆模組（腳本）元件和切換放置提示（腳本）元件不是 MRTK 的一部分。 這是本教學課程的資產所提供的。
 
-    ![第6課 Chapter1.txt Noteaim](images/Lesson6_Chapter1_noteaim.PNG)
+### <a name="1-enable-object-manipulation"></a>1. 啟用物件操作
 
-    在陰曆模組中，有五個部分會與使用者互動，如下圖所示：
+在 [階層] 視窗中，選取 RocketLauncher > **LunarModule**物件、新增**操作處理常式（腳本）** 元件和**近乎互動 Grabbable （腳本）** 元件，然後設定操作處理常式（腳本），如下所示：
 
-    1. 月球車外殼
-    2. 油箱
-    3. 能量電池
-    4. 泊接座
-    5. 外部感應器
+* 變更**兩個右手操作類型**以移動旋轉，以停用調整
+* 取消核取 [**允許**最大操作] 核取方塊，只允許近乎互動
 
-    ![Lesson6 Chapter1 Notebim](images/Lesson6_Chapter1_notebim.PNG)
+![mrlearning-基底](images/mrlearning-base/tutorial6-section2-step1-1.png)
 
-    >[!NOTE]
-    >您在基底場景階層中看見的遊戲物件名稱並不會與場景中的物件名稱相對應。
+### <a name="2-enable-physics"></a>2. 啟用物理
 
-2. 將音訊來源新增至 LunarModule 遊戲物件。 請確定已在場景階層中選取 LunarModule，然後按一下 [新增元件]。 搜尋 [音訊來源]，並將它新增至 [遊戲] 物件。 現在將 [AudioClip] 欄位保留空白，但將特殊 Blend 設定從0變更為1，以啟用空間音訊。 您稍後將使用此音訊來源來播放啟動音效。
+在仍選取 RocketLauncher > **LunarModule**物件的情況下，新增 Rigidbody 元件，然後進行設定，如下所示：
 
-    ![第6課 Chapter1.txt Step2im](images/Lesson6_Chapter1_step2im.PNG)
+* 取消核取 [**使用重心**] 核取方塊，讓陰曆模組不會受到引力的影響
+* 勾選 [**是運動學**] 核取方塊，讓陰曆模組一開始不會受到 physic 強制影響
 
-3. 新增腳本切換位置提示。 按一下 [新增元件]，並搜尋切換位置提示。 這是自訂腳本，可讓您開啟和關閉半透明提示（具有 x 光線材質的物件），如先前所述。
+![mrlearning-基底](images/mrlearning-base/tutorial6-section2-step2-1.png)
 
-    ![第6課 Chapter1.txt Step3im](images/Lesson6_Chapter1_step3im.PNG)
+### <a name="3-add-an-audio-source-component"></a>3. 新增音訊來源元件
 
-4. 因為我們有五個物件，所以請輸入 "5" 作為遊戲物件陣列大小。 您接著會看到五個新的元素。
+在仍選取 RocketLauncher > **LunarModule**物件的情況下，新增**音訊來源**元件，然後進行設定，如下所示：
 
-    ![Lesson6 Chapter1 Step4bim](images/Lesson6_Chapter1_step4bim.PNG)
+* 將**空間 Blend**變更為1以啟用空間音訊
 
-    將每個半透明物件拖曳到所有 [名稱（遊戲物件）] 方塊中。 將下列物件從場景中的陰曆模組拖曳到 [物件陣列] 欄位中，如上圖所示：
+![mrlearning-基底](images/mrlearning-base/tutorial6-section2-step3-1.png)
 
-    ![Lesson6 Chapter1 Step4aim](images/Lesson6_Chapter1_step4aim.PNG)
+### <a name="4-add-and-configure-the-launch-lunar-module-script-component"></a>4. 新增和設定啟動陰曆模組（腳本）元件
 
-    現在已設定了切換位置提示腳本，可讓我們開啟和關閉提示。
+在仍選取 RocketLauncher > **LunarModule**物件的情況下，新增 [**啟動陰曆模組（腳本）** ] 元件，然後進行設定，如下所示：
 
-5. 新增 [啟動陰曆模組] 腳本。 按一下 [新增元件] 按鈕，搜尋「啟動陰曆模組」並加以選取。 此腳本會啟動農曆模組。 當我們按下設定的按鈕時，它會將向上的力新增至農曆模組的固定主體元件，並使模組向上啟動。 如果您位於室內，登月小艇可能會撞擊您的天花板網格。 如果您所在的區域具有高上限或沒有上限，農曆模組會無限期地進入空間。
+* 變更**天生**值，讓陰曆模組在啟動時正常運作，例如，到0.01
 
-    ![Lesson6 Chapter1 Step5im](images/Lesson6_Chapter1_step5im.PNG)
+![mrlearning-基底](images/mrlearning-base/tutorial6-section2-step4-1.png)
 
-6. 調整推力來使登月小艇能優雅地向上升起。 試試使用 0.01 的值。 將 [Rb] 欄位保留空白。 Rb 代表固定主體，而此欄位將會在執行時間自動填入。
+### <a name="5-add-and-configure-the-toggle-placement-hints-script-component"></a>5. 新增和設定切換位置提示（腳本）元件
 
-    ![Lesson6 Chapter1 Step6im](images/Lesson6_Chapter1_step6im.PNG)
+在仍選取 RocketLauncher > **LunarModule**物件的情況下，新增**切換位置提示（腳本）** 元件，然後進行設定，如下所示：
 
-## <a name="lunar-module-parts-overview"></a>陰曆模組元件總覽
+* 將 [遊戲物件陣列**大小**] 屬性設定為5
+* 將每個**PlacementHints**物件的**子物件**指派給遊戲物件陣列中的**元素**欄位：
 
-陰曆模組元件父物件是使用者與之互動物件的集合。 下列清單會提供遊戲物件名稱，加上括弧中標示為名稱的場景：
-
-- 死忠（能來源資料格）
-- GasTank （燃料箱）
-- TopLeftBody (Rover Enclosure)
-- Nose (Docking Portal)
-- LeftTwirler (External Sensor)
-
-請注意，每個物件都有操作處理常式，如第4課中所述。 這項功能可讓使用者抓取和操作物件。 另請注意，設定 [雙向操作類型] 設定為 [移動並旋轉]。 此選項只允許使用者移動物件，而不會變更其大小，這是元件應用程式所需的功能。
-此外，會取消選取 [目前的操作]，只允許模組元件的直接互動。
-
-![Lesson6 Chapter2im](images/Lesson6_Chapter2im.PNG)
-
-部分元件示範腳本（如上所示）是用來管理使用者在陰曆模組上由使用者放置之物件的腳本。
-
-[要放置的物件] 欄位是已選取的轉換，如上圖所示，與所連接之物件相關聯的死忠/燃料箱。
-
-[近乎距離] 和 [距離距離] 設定會決定要放置或釋放的部分。 例如，死忠/燃料箱必須是0.1 單位，而不是陰曆模組，才會貼齊位置。 [最遠距離] 設定會設定物件可以從農曆模組卸離之前的位置。 在此情況下，使用者的手必須抓住 backpack/fuel tank，並將它拖曳至距離登月小艇 0.2 單位的距離，才能將它從原本的定位移除。
-
-工具提示物件是場景中的工具提示標籤。 當物件準備就緒時，會停用標籤。
-
-音訊來源會自動抓取。
-
-## <a name="configuring-the-placement-hints-button"></a>設定放置提示按鈕
-
-在[第2課](mrlearning-base-ch2.md)中，您已瞭解如何放置和設定按鈕來執行一些動作，例如變更專案的色彩，或讓它在推送時播放音效。 我們將會繼續使用那些原則來設定按鈕以切換放置提示。
-
-其目標是設定按鈕，讓每次使用者按下 [放置提示] 按鈕時，都會切換半透明放置提示的可見度。
-
-1. 將 [陰曆] 模組移至 [偵測器] 面板中的 [僅限空白執行時間] 插槽，同時在您的基底場景階層中選取放置提示物件。
-
-    ![第6課 Chapter3 Step1im](images/Lesson6_Chapter3_step1im.PNG)
-
-2. 按一下 [沒有函數] 下拉式清單。 向下 TogglePlacementHints，然後選取該功能表下的 [ToggleGameObjects （）]。 ToggleGameObjects （）會開啟和關閉放置提示，使其在每次按下按鈕時都可見或隱藏。
-
-    ![第6課 Chapter3 Step2im](images/Lesson6_Chapter3_step2im.PNG)
-
-## <a name="configuring-the-reset-button"></a>設定重設按鈕
-
-在某些情況下，使用者會犯錯誤，不小心將物件擲回，或只是想要重設體驗。 [重設] 按鈕會新增重新開機體驗的功能。
-
-1. 選取 [重設] 按鈕。 在基底場景中，其名稱為 ResetRoundButton。
-
-2. 將 [陰曆] 模組從 [基底場景] 階層拖曳至 [偵測器] 面板上按下按鈕底下的空插槽。
-
-    ![第6課 Chapter4 Step2im](images/Lesson6_Chapter4_step2im.PNG)
-
-3. 選取 [沒有函式] 下拉式功能表，並將滑鼠停留在 [LaunchLunarModule] 上，然後選取 [resetModule （）]。
-
-    ![Lesson6 Chapter4 Step3im](images/Lesson6_Chapter4_step3im.PNG)
-
-    >[!NOTE]
-    >請注意，根據預設，GameObject. BroadcastMessage 會設定為 ResetPlacement。 這會為 RocketLauncher_Tutorial 的每個子物件廣播名為 ResetPlacement 的訊息。 具有 ResetPlacement （）方法的任何物件，都會藉由重設其位置來回應該訊息。
+![mrlearning-基底](images/mrlearning-base/tutorial6-section2-step5-1.png)
 
 ## <a name="configuring-the-launch-button"></a>設定 [啟動] 按鈕
 
-本節說明如何設定 [啟動] 按鈕，讓使用者按下按鈕，並將 [陰曆] 模組啟動到空間。
+在 階層 視窗中，選取 RocketLauncher > 按鈕 > **LaunchButton**物件，然後在  **Pressable 按鈕（腳本）** 元件上，建立已按下的新**按鈕（）** 事件、設定**LunarModule**物件以接收事件，並將**LaunchLunarModule**定義為要觸發的動作：
 
-1. 選取 [啟動] 按鈕。 在基底場景中，它稱為 LaunchRoundButton。 將 [陰曆] 模組拖曳至 [偵測器] 面板中 [Touch End] 底下的空插槽。
+![mrlearning-基底](images/mrlearning-base/tutorial6-section3-step1-1.png)
 
-    ![第6課 Chapter5 Step1im](images/Lesson6_Chapter5_step1im.PNG)
+> [!TIP]
+> 如需如何執行事件的提醒，您可以參考[手追蹤手勢和可互動按鈕](mrlearning-base-ch2.md#hand-tracking-gestures-and-interactable-buttons)的指示。
 
-2. 選取 [沒有函式] 下拉式功能表，並將滑鼠停留在 [LaunchLunarModule] 上，然後選取 [StopThruster （）]。 這會控制使用者想要提供給陰曆模組的天生量。
+在 RocketLauncher > 按鈕 > 仍然選取 [ **LaunchButton**物件]，在 [ **Pressable] 按鈕（腳本）** 元件上，建立已**按下的新按鈕（）** 事件、設定**LunarModule**物件以接收事件、將**spatialize**定義為要觸發的動作，以及將適當的音訊剪輯指派給**音訊剪輯**欄位，例如 MRTK_Gem 的音訊剪輯：
 
-    ![第6課 Chapter5 Step2im](images/Lesson6_Chapter5_step2im.PNG)
+![mrlearning-基底](images/mrlearning-base/tutorial6-section3-step1-2.png)
 
-3. 將 [陰曆] 模組從 [基底場景] 階層拖曳至 [偵測器] 面板中所按下按鈕底下的空插槽。
+在 RocketLauncher > 按鈕 > 仍然選取 [ **LaunchButton**物件]，在 [ **Pressable] 按鈕（腳本）** 元件上，建立新的**觸控結束（）** 事件、設定**LunarModule**物件以接收事件，並將**LaunchLunarModule**定義為要觸發的動作：
 
-4. 按一下 [沒有函式] 下拉式功能表，然後在 [LaunchLunarModule] 上選取 [StartThruster （）]。
+![mrlearning-基底](images/mrlearning-base/tutorial6-section3-step1-3.png)
 
-    ![第6課 Chapter5 Step4im](images/Lesson6_Chapter5_step4im.PNG)
+如果您現在進入遊戲模式，並按下 [啟動] 按鈕，您會聽到播放音訊剪輯，如果您將 [啟動] 按鈕按下大約一秒或更長的時間，就會看到 [陰曆] 模組啟動進入空間：
 
-5. 將音樂新增至農曆模組，以便在 rocket 時播放音樂。 若要這麼做，請將 [陰曆] 模組拖曳至 [按下的按鈕] 下的下一個空白插槽（）。
+![mrlearning-基底](images/mrlearning-base/tutorial6-section3-step1-4.png)
 
-6. 選取 [沒有函式] 下拉式功能表，將滑鼠停留在 Spatialize 上，然後選取 [PlayOneShot （AudioClip）]。 您可以自行探索包含在 MRTK 中的各種音效。 在此範例中，我們將使用「MRTK_Gem」。
+## <a name="configuring-the-reset-button"></a>設定重設按鈕
 
-    ![第6課 Chapter5 Step6im](images/Lesson6_Chapter5_step6im.PNG)
+在 階層 視窗中，選取 RocketLauncher > 按鈕 > **ResetButton**物件，然後在  **Pressable 按鈕（腳本）** 元件上，建立已按下的新**按鈕（）** 事件、設定**LunarModule**物件以接收事件，並將**LaunchLunarModule**定義為要觸發的動作：
 
-## <a name="congratulations"></a>恭喜您
+![mrlearning-基底](images/mrlearning-base/tutorial6-section4-step1-1.png)
 
-您已完全設定此應用程式。 現在，當您按下 [播放] 時，您可以完整組合陰曆模組、切換提示、啟動陰曆模組，然後將它重設為重新啟動。
+在 RocketLauncher > 按鈕 > 仍然選取 [ **ResetButton**物件]，在 [ **Pressable] 按鈕（腳本）** 元件上，建立已**按下的新按鈕（）** 事件、設定**RocketLauncher**物件以接收事件、將**GameObject**定義為要觸發的動作，並在 [訊息] 欄位中輸入**BroadcastMessage** ：
+
+![mrlearning-基底](images/mrlearning-base/tutorial6-section4-step1-2.png)
+
+> [!TIP]
+> GameObject. BroadcastMessage 動作會將 ResetPlacement 訊息從 RocketLauncher 物件傳送到其所有的子物件。 具有 ResetPlacement 函式的任何子物件（定義于您加入至所有 LunarModuleParts 子物件的元件示範（Script）元件中）都會叫用 ResetPlacement 函式，該函式會重設該子物件的位置。
+
+如果您現在進入遊戲模式，然後按下 [重設] 按鈕，就會聽到播放的音訊剪輯，並看到要啟動的陰曆模組：
+
+![mrlearning-基底](images/mrlearning-base/tutorial6-section4-step1-3.png)
+
+## <a name="configuring-the-placement-hints-button"></a>設定放置提示按鈕
+<!-- TODO: Rename to 'Configuring the Hints button'-->
+
+在 階層 視窗中，選取 RocketLauncher > 按鈕 > **HintsButton**物件，然後在  **Pressable 按鈕（腳本）** 元件上，建立已按下的新**按鈕（）** 事件、設定**LunarModule**物件以接收事件，以及定義**TogglePlacementHints。 ToggleGameObjects**要觸發的動作：
+
+![mrlearning-基底](images/mrlearning-base/tutorial6-section5-step1-1.png)
+
+如果您現在進入遊戲模式，您會注意到，預設會停用半透明的放置提示，但是您可以按下 [提示] 按鈕，將它們切換為開啟或關閉：
+
+![mrlearning-基底](images/mrlearning-base/tutorial6-section5-step1-2.png)
+
+## <a name="congratulations"></a>恭喜
+
+您已完全設定此應用程式。 現在，您的應用程式可讓使用者完整組合陰曆模組、啟動陰曆模組、切換提示，然後將應用程式重設為重新啟動。

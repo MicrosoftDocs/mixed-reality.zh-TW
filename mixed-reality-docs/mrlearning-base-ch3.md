@@ -6,77 +6,114 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: e08de0bc769ceda493eafe40158b6aeed87751c7
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.openlocfilehash: 8275d5a97d7827d34ed3926cabe4032cc7f4cfac
+ms.sourcegitcommit: cc61f7ac08f9ac2f2f04e8525c3260ea073e04a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334367"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77129309"
 ---
 # <a name="4-placing-dynamic-content-and-using-solvers"></a>4. 放置動態內容並使用解析器
+<!-- Consider renaming to 'Placing dynamic content using Solvers' -->
 
 在 HoloLens 2 中，當您以直覺方式追蹤使用者，並將其放在實體環境中，讓互動順暢且簡潔時，就能開始使用全息。 在本教學課程中，我們會探索如何使用 MRTK 的可用位置工具（稱為解析器）來動態地放置全息影像，以解決複雜的空間放置案例。 在 MRTK 中，解析器是一種腳本和行為的系統，可用來允許 UI 專案在場景中追蹤您、使用者或其他遊戲物件。 也可用來快速對齊特定位置，讓您的應用程式更具直覺性。
 
 ## <a name="objectives"></a>目標
 
-* 導入 MRTK 的解算器
-* 使用解算器讓一組按鈕追蹤使用者
-* 使用解算器讓遊戲物件跟隨追蹤的使用者手部
+* 引進 MRTK 的解析器
+* 使用解析器讓按鈕集合跟隨使用者
+* 使用解析器讓遊戲物件遵循使用者的追蹤手
 
-## <a name="location-of-solvers-in-the-mrtk"></a>MRTK 中的解算器位置
+## <a name="location-of-solvers-in-the-mrtk"></a>MRTK 中的解析器位置
 
- 若要在您的專案中尋找可用的解析器，請查看 MRTK SDK 資料夾（MixedRealityToolkit. SDK 資料夾）。 在 [公用程式] 資料夾底下，您會看到 [解析器] 資料夾，如下圖所示。
+ MRTK 的解析器位於 MRTK SDK 資料夾中。 若要查看專案中的可用解析器，請在 [專案] 視窗中，流覽至 [**資產**] [ > **MixedRealityToolkit** ] [ > **功能**] > [**公用程式**] > **解析器**：
 
-![解算器](images/lesson3_chapter1_step1im.PNG)
+![mrlearning-基底](images/mrlearning-base/tutorial3-section1-step1-1.png)
 
->[!NOTE]
->在這一課，我們只會探討 Orbital 規劃求解和 RadialView 規劃求解的執行。 若要深入瞭解 MRTK 中提供的完整解析器範圍，請造訪： [https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html)
+在本教學課程中，我們將探討 Orbital 規劃求解和星形視圖規劃求解的執行。 若要深入瞭解 MRTK 中提供的完整解析器，您可以流覽[MRTK 檔入口網站](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)中的[解析器](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html)指南。
 
-## <a name="use-a-solver-to-follow-the-user"></a>使用解算器追蹤使用者
+## <a name="use-a-solver-to-follow-the-user"></a>使用規劃人員追蹤使用者
+<!-- Consider renaming to 'Use a Solver to have an object follow the user' -->
 
-本章的目標是要增強先前建立的按鈕集合，使其遵循使用者的注視方向。 在先前版本的 MRTK 和 HoloToolkit 中，這稱為 tagalong 功能。
+在本節中，您將增強在上一個教學課程中建立的按鈕集合，使其遵循使用者的注視方向。 此外，您也會設定 [規劃求解]，讓按鈕集合一律為：
 
-1. 選取前一課中的「按鈕集合」父系物件。
+* 對使用者的閱讀方向進行的平行旋轉，以自然的向右閱讀
+* 位置稍微低於使用者水準外觀，因此不會阻礙您稍後將在本教學課程中新增的其他物件。
+* 接近使用者的一半 arm 長度，因此可以輕鬆按下按鈕
 
-    ![Lesson3 Chapter2 Step1im](images/Lesson3_chapter2_step1im.PNG)
+為此，您將使用**Orbital 的規劃求解**，將物件從參考的物件鎖定到指定的位置和位移。
 
-2. 在 [偵測器] 面板中，按一下 [加入元件] 按鈕，然後搜尋 orbital。 應該會出現 Orbital 元件。 選取它以將 Orbital 元件新增至按鈕集合遊戲物件。
+### <a name="1-add-the-orbital-solver"></a>1. 加入 Orbital 規劃求解
 
-    ![Lesson3 Chapter2 Step2im](images/Lesson3_Chapter2_step2im.PNG)
+在 [階層] 視窗中，選取 [ **ButtonCollection** ] 物件，然後在 [偵測器] 視窗中，使用 [**加入元件**] 按鈕將**Orbital （腳本）** 元件新增至 ButtonCollection 物件。
 
-    >[!NOTE]
-    >當您新增 Orbital 元件時，您會注意到系統也會新增 SolverHandler 元件，這是必要的元件。
+> [!NOTE]
+> 當您加入規劃求解時（在此案例中為 Orbital （Script）元件），會自動加入「規劃求解處理常式」（腳本）元件，因為它是規劃求解所需。
 
-3. 若要設定按鈕集合以遵循使用者，我們需要執行下列調整（請參閱下圖）：
+### <a name="2-configure-the-orbital-solver"></a>2. 設定 Orbital 規劃求解
 
-    * 在 Orbital 腳本中，將 [方向類型] 下拉式清單設定為 [僅偏擺]。 這可讓集合在追蹤使用者時，只有一個物件的軸會旋轉。
-    * 將所有軸上的區域位移設為 0。 將 [世界位移] 設定為 x = 0、y =-0.1 和 z = 0.6。 這會鎖定物件的移動，因此當使用者變更高度時，物件在實體環境中會維持固定的高度，而當使用者移至環境時，仍允許它追蹤使用者。 您可以調整這些值來達到各種不同的行為。
-    * 針對下列行為，讓按鈕只會在使用者將其標題設為最遠之後追蹤使用者的觀點，您可以選取 [為全球位移使用角度逐步執行] 核取方塊（注意：在某些畫面上，此標題可能會被截斷，如下圖所示）。例如，若要讓物件只在每隔90度之後追蹤使用者，請將步驟數設定為等於4（以下列範例中的綠色箭號標示）。
+設定 [**規劃求解處理常式（腳本）** ] 元件：
 
-    ![Lesson3 Chapter2 Step3im](images/Lesson3_chapter2_step3im.PNG)
+* 確認 [**追蹤的目標型別**] 設定為 [ **Head** ]
+
+設定**Orbital （腳本）** 元件：
+
+* 將**方向類型**變更為**跟隨追蹤的物件**
+* 將**區域位移**重設為 X = 0、Y = 0、Z = 0
+* 將**世界位移**變更為 X = 0，Y =-0.4，Z = 0。3
+
+![mrlearning-基底](images/mrlearning-base/tutorial3-section2-step2-1.png)
+
+### <a name="3-test-the-orbital-solver-using-the-in-editor-simulation"></a>3. 使用編輯器內模擬來測試 Orbital 規劃求解
+
+按下 [播放] 按鈕進入遊戲模式，然後按住滑鼠右鍵以旋轉您的注視方向，並注意下列事項：
+
+* ButtonCollection 的轉換位置現在是由 [規劃求解] 設定所驅動
+* 不受規劃求解影響的 Cube 會保留在相同的位置
+
+![mrlearning-基底](images/mrlearning-base/tutorial3-section2-step3-1.png)
+
+> [!TIP]
+> 如果您沒有在場景視窗中看到相機光線，請確定已啟用 [Gizmos] 功能表。 若要深入瞭解 [Gizmos] 功能表，以及如何使用它來優化場景視圖，您可以造訪 Unity 的 [ <a href="https://docs.unity3d.com/Manual/GizmosMenu.html" target="_blank">Gizmos] 功能表</a>檔。
+>
+> 若要並排顯示場景和遊戲視窗（如上圖所示），只需將遊戲視窗拖曳至場景視窗的右邊。 若要深入瞭解如何自訂您的工作區，您可以造訪 Unity 的<a href="https://docs.unity3d.com/Manual/CustomizingYourWorkspace.html" target="_blank">自訂工作區</a>檔。
 
 ## <a name="enabling-objects-to-follow-tracked-hands"></a>讓物件遵循追蹤的手
 
-在本節中，我們將設定先前建立的 Cube 遊戲物件，以遵循使用 RadialView 求解的使用者追蹤手。
+在本節中，您將設定您在上一個教學課程中建立的 Cube 物件，使其遵循使用者的追蹤手，特別是右邊的手腕。 此外，您也會將此規劃求解設定為 cube：
 
-1. 選取 BaseScene 階層中的 Cube 物件。 按一下 [偵測器] 面板中的 [新增元件]。 在搜尋方塊中輸入 RadialView，然後選取 [RadialView] 元件，將它加入至 cube。 SolverHandler 元件也會自動加入至 cube。
+* 變更其與使用者的旋轉方向
+* 放在使用者的手腕上
 
-    ![mrlearning-base-ch3-3-step3 .png](images/mrlearning-base-ch3-3-step1.png)
+為此，您將使用星形**視圖規劃求解**，將物件保留在視圖中，並由參考的物件轉換。
 
-2. 若要將 RadialView 變更為追蹤，而不是標頭，請選取 [追蹤的目標型別] 選項旁邊的下拉式功能表，然後從功能表中選取 [手形聯合]。
+### <a name="1-add-the-radial-view-solver"></a>1. 加入星形視圖規劃求解
 
-    ![mrlearning-base-ch3-3-step2 .png](images/mrlearning-base-ch3-3-step2a.png)
+在 [階層] 視窗中，選取**Cube**物件，然後在 [偵測器] 視窗中，使用 [**加入元件**] 按鈕來加入星形**視圖（腳本）** 元件 Cube 物件。
 
-    您現在會看到兩個新選項： [已追蹤] Handness 類型和 [已追蹤]。 在此範例中，您會讓 RadialView 遵循左側的手腕，如下圖所示。
+### <a name="2-configure-the-radial-view-solver"></a>2. 設定放射狀視圖的規劃求解
 
-    ![mrlearning-base-ch3-3-step2b .png](images/mrlearning-base-ch3-3-step2b.png)
+設定 [**規劃求解處理常式（腳本）** ] 元件：
 
-3. 將星形視圖的最大和最小距離設定為0，讓 cube 與使用者手腕之間不會有任何距離。 設定好之後，該立方體會完全配合手腕。 您也可以調整 [參考方向] 欄位來調整 cube 的導向行為，例如，如果您想要允許物件透過將參考方向設定為物件導向來旋轉使用者的手腕。
+* 將**追蹤的目標型別**變更為**手動聯合**
+* 將**追蹤的 Handness**變更為**右方**
+* 將**追蹤的接頭**變更為**手腕**
 
-    ![mrlearning-base-ch3-3-step3 .png](images/mrlearning-base-ch3-3-step3.png)
+設定**放射狀視圖（腳本）** 元件：
 
-## <a name="congratulations"></a>恭喜您
+* 將 [**參考方向**] 變更為 [**物件導向**]，然後選取 [**朝向參考方向**] 核取方塊
+* 將 [**最小距離**] 和 [**最大距離**] 變更為0
 
-在本教學課程中，您已瞭解如何使用 MRTK 的解析器，讓 UI 直覺地跟隨使用者。 您也已了解如何將解算器連結到遊戲物件 (例如立方體)，以跟隨追蹤的使用者手部。 若要深入了解 MRTK 隨附的這些解算器和其他解算器，歡迎您瀏覽 [MRTK 解算器文件頁面](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html)。
+![mrlearning-基底](images/mrlearning-base/tutorial3-section3-step2-1.png)
 
-[下一課： 5. 與3D 物件互動](mrlearning-base-ch4.md)
+### <a name="3-test-the-radial-view-solver-using-the-in-editor-simulation"></a>3. 使用編輯器內模擬來測試星形視圖規劃
+
+按下 [播放] 按鈕進入遊戲模式，然後按住空格鍵以顯示手。 將滑鼠游標移到周圍以移動手，然後按住滑鼠左鍵以旋轉手：
+
+![mrlearning-基底](images/mrlearning-base/tutorial3-section3-step3-1.png)
+
+## <a name="congratulations"></a>恭喜
+
+在本教學課程中，您已瞭解如何使用 MRTK 的解析器，讓 UI 直覺地跟隨使用者。 您也已瞭解如何將規劃求解附加至物件（例如 cube），以遵循使用者的追蹤手。 若要深入瞭解 MRTK 隨附的這些和其他解析器，您可以流覽[MRTK 檔入口網站](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)中的[解析器](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html)指南。
+
+[下一個教學課程： 5. 與3D 物件互動](mrlearning-base-ch4.md)

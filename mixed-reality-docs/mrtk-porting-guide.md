@@ -7,12 +7,12 @@ ms.date: 10/14/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality, 測試, MRTK, MRTK 第 2 版, HoloLens 2
-ms.openlocfilehash: 41e6f8b3632a53663f237deb54a3144fb8ad79e8
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 8e0c66a1c3d8ebd5422d19a02f313147ecf76653
+ms.sourcegitcommit: 40b37104b0aec4554502dcc7dc430e340a6fa46a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926205"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77092032"
 ---
 # <a name="get-your-existing-app-ready-for-hololens-2"></a>讓現有應用程式做好使用 HoloLens 2 的準備
 
@@ -22,7 +22,7 @@ ms.locfileid: "73926205"
 
 | 步驟 1 | 步驟 2 | 步驟 3 | 步驟 4 |
 |----------|-------------------|-------------------|-------------------|
-| ![Visual Studio 標誌](images/visualstudio_logo.png) | ![Unity 標誌](images/unity_logo.png)| ![Unity 圖示](images/hololens2_icon.jpg) | ![MRTK 標誌](images/MRTKIcon.jpg) |
+| ![Visual Studio 標誌](images/visualstudio_logo.png) | ![Unity 標誌](images/final_unity_logo.png)| ![Unity 圖示](images/hololens2_icon.jpg) | ![MRTK 標誌](images/final_mrtk-small_logo.png) |
 | 下載最新工具 | 更新 Unity 專案 | 針對 ARM 進行編譯 | 遷移至 MRTK v2
 
 必要條件：
@@ -141,7 +141,7 @@ HoloLens (第 1 代) 會在 x86 處理器上執行應用程式，HoloLens 2 則�
 
 - ARM 上的著色器編譯器會在第一次繪製呼叫期間，於著色器已載入或著色器所相依的某個項目有所變更後執行，而不是在著色器載入時執行。 視需要編譯的著色器數目多寡而定，畫面播放速率所受到的影響可能會非常明顯。 對於在 HoloLens 2 和 HoloLens (第 1 代) 上應該如何以不同方式處理、封裝、更新著色器，這一點會產生不同的影響。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [安裝工具](install-the-tools.md)
 * [開始使用 MRTK 第 2 版](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)
 * [HTK API 至 MRTK API](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/HTKToMRTKPortingGuide.html)

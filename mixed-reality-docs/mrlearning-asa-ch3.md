@@ -6,49 +6,53 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 19529cbfebd74938395545c329097d42b5af9ff9
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.openlocfilehash: f4f609a71b05a52e8761e282763a540b42e9f7f5
+ms.sourcegitcommit: a580166a19294f835b8e09c780f663f228dd5de0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334400"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77250681"
 ---
 # <a name="3-displaying-azure-spatial-anchor-feedback"></a>3. 顯示 Azure 空間錨點的意見反應
 
-在這一課，您將瞭解如何在使用 Azure 空間錨點時，為使用者提供錨點探索、事件和狀態的意見反應。
+在本教學課程中，您將瞭解如何在使用 Azure 空間錨點（ASA）時，為使用者提供錨點探索、事件和狀態的相關意見反應。
 
 ## <a name="objectives"></a>目標
 
 * 瞭解如何設定 UI 面板，以顯示目前 ASA 會話的相關重要資訊
-
 * 瞭解並探索 ASA SDK 可供使用者使用的意見反應元素
 
 ## <a name="set-up-asa-feedback-ui-panel"></a>設定 ASA 意見反應 UI 面板
 
-1. 在本課程中，我們不會使用 [SaveAnchorToDisk] 和 [ShareAnchor] 按鈕，因此，請選取這兩個按鈕，並取消核取 [偵測器] 面板中的核取方塊（如下所示）以隱藏這些按鈕。
+在 [階層] 視窗中，以滑鼠右鍵按一下 > **TextContent**物件的**指示**，然後選取 [ **3d 物件** > **TextMeshPro** ]，以建立 TextMeshPro 文字物件做為指示 > TextContent 物件的子系，並為其提供適當的名稱，例如**意見**反應：
 
-    ![module2chapter3step1im](images/module2chapter3step1im.PNG)
+![mrlearning-基底](images/mrlearning-asa/tutorial3-section1-step1-1.png)
 
-2. 建立指示面板。 首先，以滑鼠右鍵按一下 [指示] 按鈕，將滑鼠停留在 [3D 物件] 上，然後選取 [textmeshpro-text]。
+> [!TIP]
+> 若要讓您更輕鬆地使用場景，請按一下物件左側的眼睛圖示，將 ParentAnchor 物件的<a href="https://docs.unity3d.com/Manual/SceneVisibility.html" target="_blank">場景可見度</a>設定為 [關閉]。 這會隱藏場景視窗中的物件，而不會變更其遊戲內可見度。
 
-    ![module2chapter3step2im](images/module2chapter3step2im.PNG)
+在仍選取 [**意見**反應] 物件的情況下，在 [偵測器] 視窗中變更其位置和大小，使其整齊地放在指令文字底下，例如：
 
-3. 調整文字的縮放和定位，使其符合場景中的指示。 此外，請確定所有文字的對齊都會置中。 然後從文字編輯器中刪除範例文字，如下圖所示。
+* 將矩形轉換**Pos Y**變更為-0.24
+* 將 [矩形轉換**寬度**] 變更為0.555
+* 將矩形轉換**高度**變更為0。1
 
-    ![module2chapter3step3im](images/module2chapter3step3im.PNG)
+然後選擇 [字型屬性]，讓文字適當地放在文字區域中，例如：
 
-4. 將 TextMeshPro 物件的名稱變更為 "FeedbackPanel"。
+* 將文本網格 Pro （腳本）**字型樣式**變更為粗體
+* 將文本網格 Pro （腳本）**字型大小**變更為0.17
+* 將文本網格 Pro （腳本）**對齊**變更為置中和中間
 
-    ![module2chapter3step4im](images/module2chapter3step4im.PNG)
+![mrlearning-基底](images/mrlearning-asa/tutorial3-section1-step1-2.png)
 
-5. 請確定已在 ASA_feedback 階層中選取 "feedbackpanel" 文字，按一下 [新增元件]，並藉由搜尋並在其出現後加以選取，來新增錨點意見反應腳本。
+在仍選取 [**意見**反應] 物件的情況下，在 [偵測器] 視窗中，使用 [**加入元件**] 按鈕，將**錨點回饋腳本（腳本）** 元件新增至意見物件：
 
-    ![module2chapter3step8im](images/module2chapter3step8im.PNG)
+![mrlearning-基底](images/mrlearning-asa/tutorial3-section1-step1-3.png)
 
-6. 將 "feedbackPanel" 文字物件從 ASA_Feedback 階層拖曳至腳本底下的空插槽中，如下圖所示。
+將**意見**反應物件指派給**錨點意見反應腳本（腳本）** 元件的**意見文字**欄位：
 
-    ![module2chapter3step9im](images/module2chapter3step9im.PNG)
+![mrlearning-基底](images/mrlearning-asa/tutorial3-section1-step1-4.png)
 
-## <a name="congratulations"></a>恭喜您
+## <a name="congratulations"></a>恭喜！
 
-在本課程中，我們已瞭解如何建立 UI 面板，以顯示 Azure 空間錨點體驗的目前狀態，以提供使用者即時意見反應。
+在本教學課程中，您已瞭解如何建立 UI 面板，以顯示 Azure 空間錨點體驗的目前狀態，以提供使用者即時意見反應。

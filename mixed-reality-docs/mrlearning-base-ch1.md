@@ -7,157 +7,253 @@ ms.date: 11/01/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: d0c166f760884efab9719ecba1ff83285872e2ef
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.openlocfilehash: d3392df9bfad5938d71d3a01999be51834a98a5d
+ms.sourcegitcommit: 87aca9c2b73b0e83cb70a46443dcdb08c3621005
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334414"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77373452"
 ---
-# <a name="2-initializing-your-project-and-first-application"></a><span data-ttu-id="12ffa-105">2.初始化您的專案和第一個應用程式</span><span class="sxs-lookup"><span data-stu-id="12ffa-105">2. Initializing your project and first application</span></span>
+# <a name="2-initializing-your-project-and-first-application"></a><span data-ttu-id="9acbe-105">2.初始化您的專案和第一個應用程式</span><span class="sxs-lookup"><span data-stu-id="9acbe-105">2. Initializing your project and first application</span></span>
 
-## <a name="overview"></a><span data-ttu-id="12ffa-106">概觀</span><span class="sxs-lookup"><span data-stu-id="12ffa-106">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="9acbe-106">概觀</span><span class="sxs-lookup"><span data-stu-id="9acbe-106">Overview</span></span>
 
-<span data-ttu-id="12ffa-107">在此第一課中，您將了解<a href="https://github.com/microsoft/MixedRealityToolkit-Unity" target="_blank">混合實境工具組 (MRTK)</a>提供的一些功能，然後啟動第一個適用於 HoloLens 2 的應用程式，並將其部署到裝置。</span><span class="sxs-lookup"><span data-stu-id="12ffa-107">In this first lesson, you'll learn about some of the capabilities the <a href="https://github.com/microsoft/MixedRealityToolkit-Unity" target="_blank">Mixed Reality Toolkit (MRTK)</a> has to offer, start your first application for the HoloLens 2, and deploy it to the device.</span></span>
+<!-- TODO: Consider expanding to include summary of each tutorial in this tutorial series -->
+<span data-ttu-id="9acbe-107">在此第一篇教學課程中，您將了解<a href="https://github.com/microsoft/MixedRealityToolkit-Unity" target="_blank">混合實境工具組 (MRTK)</a>提供的一些功能，然後啟動第一個適用於 HoloLens 2 的應用程式，並將其部署到裝置。</span><span class="sxs-lookup"><span data-stu-id="9acbe-107">In this first tutorial, you will learn about some of the capabilities the <a href="https://github.com/microsoft/MixedRealityToolkit-Unity" target="_blank">Mixed Reality Toolkit (MRTK)</a> has to offer, start your first application for the HoloLens 2, and deploy it to the device.</span></span>
 
-## <a name="objectives"></a><span data-ttu-id="12ffa-108">目標</span><span class="sxs-lookup"><span data-stu-id="12ffa-108">Objectives</span></span>
+## <a name="objectives"></a><span data-ttu-id="9acbe-108">目標</span><span class="sxs-lookup"><span data-stu-id="9acbe-108">Objectives</span></span>
 
-* <span data-ttu-id="12ffa-109">設定 Unity 以用於 HoloLens 開發。</span><span class="sxs-lookup"><span data-stu-id="12ffa-109">Configure Unity for HoloLens development.</span></span>
-* <span data-ttu-id="12ffa-110">匯入資產並設定場景。</span><span class="sxs-lookup"><span data-stu-id="12ffa-110">Import assets and set up the scene.</span></span>
-* <span data-ttu-id="12ffa-111">空間對應網格、手部網格和畫面播放速率計數器的視覺效果。</span><span class="sxs-lookup"><span data-stu-id="12ffa-111">Visualization of the spatial mapping mesh, hand meshes, and the framerate counter.</span></span>
+* <span data-ttu-id="9acbe-109">設定 Unity 以用於 HoloLens 開發</span><span class="sxs-lookup"><span data-stu-id="9acbe-109">Configure Unity for HoloLens development</span></span>
+* <span data-ttu-id="9acbe-110">匯入資產並設定場景</span><span class="sxs-lookup"><span data-stu-id="9acbe-110">Import assets and set up the scene</span></span>
+* <span data-ttu-id="9acbe-111">空間對應網格、手部網格和畫面播放速率計數器的視覺效果</span><span class="sxs-lookup"><span data-stu-id="9acbe-111">Visualization of the spatial mapping mesh, hand meshes, and the framerate counter</span></span>
 
-## <a name="create-new-unity-project"></a><span data-ttu-id="12ffa-112">建立新的 Unity 專案</span><span class="sxs-lookup"><span data-stu-id="12ffa-112">Create new Unity project</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="9acbe-112">必要條件</span><span class="sxs-lookup"><span data-stu-id="9acbe-112">Prerequisites</span></span>
 
-1. <span data-ttu-id="12ffa-113">啟動 Unity。</span><span class="sxs-lookup"><span data-stu-id="12ffa-113">Start Unity.</span></span>
+* <span data-ttu-id="9acbe-113">已[安裝正確工具](install-the-tools.md)的 Windows 10 電腦</span><span class="sxs-lookup"><span data-stu-id="9acbe-113">A Windows 10 PC configured with the correct [tools installed](install-the-tools.md)</span></span>
+* <span data-ttu-id="9acbe-114">Windows 10 SDK 10.0.18362.0 或更新版本</span><span class="sxs-lookup"><span data-stu-id="9acbe-114">Windows 10 SDK 10.0.18362.0 or later</span></span>
+* <span data-ttu-id="9acbe-115">基本的 C# 程式設計能力</span><span class="sxs-lookup"><span data-stu-id="9acbe-115">Some basic C# programming ability</span></span>
+* <span data-ttu-id="9acbe-116">已[針對開發而設定](using-visual-studio.md#enabling-developer-mode)的 HoloLens 2 裝置</span><span class="sxs-lookup"><span data-stu-id="9acbe-116">A HoloLens 2 device [configured for development](using-visual-studio.md#enabling-developer-mode)</span></span>
+* <span data-ttu-id="9acbe-117"><a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity Hub</a>，已安裝 Unity 2019.2，且已新增通用 Windows 平台組建支援模組</span><span class="sxs-lookup"><span data-stu-id="9acbe-117"><a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity Hub</a> with Unity 2019.2.X installed and the Universal Windows Platform Build Support module added</span></span>
 
-2. <span data-ttu-id="12ffa-114">選取 [新增]  。</span><span class="sxs-lookup"><span data-stu-id="12ffa-114">Select **New**.</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="9acbe-118">本教學課程系列的建議 Unity 版本是 Unity 2019.2. X。</span><span class="sxs-lookup"><span data-stu-id="9acbe-118">The recommended Unity version for this tutorial series is Unity 2019.2.X.</span></span> <span data-ttu-id="9acbe-119">這個版本能取代上述連結之必要條件中所述的任何 Unity 版本需求或建議。</span><span class="sxs-lookup"><span data-stu-id="9acbe-119">This supersedes any Unity version requirements or recommendations stated in the prerequisites linked above.</span></span>
 
-    ![第 1 課第 1 節第 2 步](images/mrlearning-base-ch1-1-step2.JPG)
+## <a name="create-new-unity-project"></a><span data-ttu-id="9acbe-120">建立新的 Unity 專案</span><span class="sxs-lookup"><span data-stu-id="9acbe-120">Create new Unity project</span></span>
 
-3. <span data-ttu-id="12ffa-116">輸入專案名稱 (例如："MixedRealityBase")。</span><span class="sxs-lookup"><span data-stu-id="12ffa-116">Enter a project name (e.g. "MixedRealityBase").</span></span>
+<span data-ttu-id="9acbe-121">啟動 **Unity Hub**，選取 [專案]  索引標籤，然後按一下 [新增]  按鈕旁的**向下箭號**：</span><span class="sxs-lookup"><span data-stu-id="9acbe-121">Launch **Unity Hub**, select the **Projects** tab, and click the **down arrow** next to the **New** button:</span></span>
 
-    ![第 1 課第 1 節第 3 步](images/mrlearning-base-ch1-1-step3.JPG)
+![mrlearning-base](images/mrlearning-base/tutorial1-section1-step1-1.png)
 
-4. <span data-ttu-id="12ffa-118">輸入要儲存專案的位置。</span><span class="sxs-lookup"><span data-stu-id="12ffa-118">Enter a location to save your project.</span></span>
+<span data-ttu-id="9acbe-123">選取上述[必要條件](#prerequisites)一節中指定的 Unity 版本：</span><span class="sxs-lookup"><span data-stu-id="9acbe-123">Select the Unity version specified in the [Prerequisites](#prerequisites) section above:</span></span>
 
-    ![第 1 課第 1 節第 4 步](images/mrlearning-base-ch1-1-step4.JPG)
+![mrlearning-base](images/mrlearning-base/tutorial1-section1-step1-2.png)
 
-5. <span data-ttu-id="12ffa-120">確定專案已設定為 **3D**。</span><span class="sxs-lookup"><span data-stu-id="12ffa-120">Make sure the project is set to **3D**.</span></span>
+<span data-ttu-id="9acbe-125">在 [建立新專案] 視窗中：</span><span class="sxs-lookup"><span data-stu-id="9acbe-125">In the Create a new project window:</span></span>
 
-    ![第 1 課第 1 節第 5 步](images/mrlearning-base-ch1-1-step5.JPG)
+* <span data-ttu-id="9acbe-126">確定 [範本]  設定為 [3D] </span><span class="sxs-lookup"><span data-stu-id="9acbe-126">Ensure **Templates** is set to **3D**</span></span>
+* <span data-ttu-id="9acbe-127">輸入適當的 [專案名稱]  ，例如 MRTK Tutorials </span><span class="sxs-lookup"><span data-stu-id="9acbe-127">Enter a suitable **Project Name**, for example, _MRTK Tutorials_</span></span>
+* <span data-ttu-id="9acbe-128">選擇適當的 [位置]  來儲存您的專案，例如 D:\MixedRealityLearning </span><span class="sxs-lookup"><span data-stu-id="9acbe-128">Choose a suitable **Location** to store your project, for example, _D:\MixedRealityLearning_</span></span>
+* <span data-ttu-id="9acbe-129">按一下 [建立]  按鈕，以建立並啟動新的 Unity 專案</span><span class="sxs-lookup"><span data-stu-id="9acbe-129">Click the **Create** button to create and launch your new Unity project</span></span>
 
-6. <span data-ttu-id="12ffa-122">按一下 [建立專案]  。</span><span class="sxs-lookup"><span data-stu-id="12ffa-122">Click **Create Project**.</span></span>
+![mrlearning-base](images/mrlearning-base/tutorial1-section1-step1-3.png)
 
-    ![第 1 課第 1 節第 6 步](images/mrlearning-base-ch1-1-step6.JPG)
+> [!CAUTION]
+> <span data-ttu-id="9acbe-131">在 Windows 上建立時，有 255 個字元的 MAX_PATH 限制。</span><span class="sxs-lookup"><span data-stu-id="9acbe-131">When working on Windows, there is a MAX_PATH limit of 255 characters.</span></span> <span data-ttu-id="9acbe-132">Unity 受到這些限制的影響，如果有任何檔案路徑的長度超過 255 個字元，可能無法編譯。</span><span class="sxs-lookup"><span data-stu-id="9acbe-132">Unity is affected by these limits and may fail to compile if any file path is longer than 255 characters.</span></span> <span data-ttu-id="9acbe-133">因此，強烈建議您盡可能將 Unity 專案儲存在接近磁碟機根目錄的位置。</span><span class="sxs-lookup"><span data-stu-id="9acbe-133">Consequently, it is strongly recommended to store your Unity project as close to the root of the drive as possible.</span></span>
 
-## <a name="configure-the-unity-project-for-windows-mixed-reality"></a><span data-ttu-id="12ffa-124">設定適用於 Windows Mixed Reality 的 Unity 專案</span><span class="sxs-lookup"><span data-stu-id="12ffa-124">Configure the Unity project for Windows Mixed Reality</span></span>
+<span data-ttu-id="9acbe-134">等候 Unity 建立專案：</span><span class="sxs-lookup"><span data-stu-id="9acbe-134">Wait for Unity to create the project:</span></span>
 
-1. <span data-ttu-id="12ffa-125">請移至 [檔案]   >  [建置設定]  來開啟 [建置設定]  視窗。</span><span class="sxs-lookup"><span data-stu-id="12ffa-125">Open the *Build Settings* window by going to **File** > **Build Settings**.</span></span>
+![mrlearning-base](images/mrlearning-base/tutorial1-section1-step1-4.png)
 
-    ![第 1 課第 2 節第 1 步](images/mrlearning-base-ch1-2-step1.JPG)
+## <a name="configure-the-unity-project-for-windows-mixed-reality"></a><span data-ttu-id="9acbe-136">設定適用於 Windows Mixed Reality 的 Unity 專案</span><span class="sxs-lookup"><span data-stu-id="9acbe-136">Configure the Unity project for Windows Mixed Reality</span></span>
 
-2. <span data-ttu-id="12ffa-127">選取 [通用 Windows 平台]  ，然後按一下 [切換平台]  按鈕來切換平台。</span><span class="sxs-lookup"><span data-stu-id="12ffa-127">Select the *Universal Windows Platform* and click the **Switch Platform** button to switch platforms.</span></span> <span data-ttu-id="12ffa-128">HoloLens 2 上執行的應用程式必須與通用 Windows 平台 (UWP) 相容。</span><span class="sxs-lookup"><span data-stu-id="12ffa-128">Applications running on HoloLens 2 are required to be Universal Windows Platform (UWP) compatible.</span></span>
+<!-- TODO: Consider adding info about configuring Unity for WMR vs MRTK, or removing WMR section -->
 
-    ![第 1 課第 2 節第 2 步](images/mrlearning-base-ch1-2-step2.JPG)
+<span data-ttu-id="9acbe-137">在本節中，您將切換組建平台、啟用虛擬實境，並啟用空間感知功能。</span><span class="sxs-lookup"><span data-stu-id="9acbe-137">In this section, you will switch build platform, enable virtual reality, and enable spatial perception.</span></span>
 
-3. <span data-ttu-id="12ffa-130">在 [建置] 視窗中按一下 [播放器設定]  按鈕來啟用虛擬實境，然後在偵測程式面板的 [XR 設定] 下啟用 [支援的虛擬實境]  核取方塊，如下圖所示。</span><span class="sxs-lookup"><span data-stu-id="12ffa-130">Enable virtual reality by clicking the **Player Settings** button in the Build Window, and enable the *Virtual Reality Supported* checkbox under XR Settings from the inspector panel, as shown in the image below.</span></span> <span data-ttu-id="12ffa-131">請注意，您可能需要將 [建置設定]  視窗拖曳到其他位置，才能看到偵測程式面板。</span><span class="sxs-lookup"><span data-stu-id="12ffa-131">Note that you might need to drag the *Build Settings* window out of the way in order to see the inspector panel.</span></span> <span data-ttu-id="12ffa-132">[支援的虛擬實境]  核取方塊也適用混合實境和擴增實境頭戴式裝置，因為其與立體視覺 (為每個眼睛轉譯不同影像) 的啟用有關連。</span><span class="sxs-lookup"><span data-stu-id="12ffa-132">The *Virtual Reality Supported* checkbox also applies to Mixed Reality and Augmented Reality headsets because it refers to the enabling of stereoscopic vision (rendering different images for each eye.)</span></span>
+### <a name="1-switch-build-platform"></a><span data-ttu-id="9acbe-138">1.切換組建平台</span><span class="sxs-lookup"><span data-stu-id="9acbe-138">1. Switch build platform</span></span>
 
-    ![第 1 課第 2 節第 3 步](images/mrlearning-base-ch1-2-step3.JPG)
+<span data-ttu-id="9acbe-139">在 Unity 功能表中，選取 [檔案]   >  [組建設定...]  來開啟 [組建設定] 視窗：</span><span class="sxs-lookup"><span data-stu-id="9acbe-139">In the Unity menu, select **File** > **Build Settings...** to open the Build Settings window:</span></span>
 
-4. <span data-ttu-id="12ffa-134">此外，在 [XR 設定] 下，將 [立體聲轉譯模式]  變更為 [單通道執行個體化]  。</span><span class="sxs-lookup"><span data-stu-id="12ffa-134">Also under XR Settings, change the *Stereo Rendering Mode* to *Single Pass Instanced*.</span></span> <span data-ttu-id="12ffa-135">此[轉譯管線樣式](https://docs.unity3d.com/Manual/SinglePassStereoRenderingHoloLens.html)通常是 HoloLens 2 的最高效能。</span><span class="sxs-lookup"><span data-stu-id="12ffa-135">This [rendering pipeline style](https://docs.unity3d.com/Manual/SinglePassStereoRenderingHoloLens.html) is generally most performant for HoloLens 2.</span></span> <span data-ttu-id="12ffa-136">如果您對 Unity 環境的其他效能設定感興趣，請遵循[這些指示](recommended-settings-for-unity.md)。</span><span class="sxs-lookup"><span data-stu-id="12ffa-136">If interested in other performant configurations for your Unity environment, follow [these instructions](recommended-settings-for-unity.md).</span></span>
+![mrlearning-base](images/mrlearning-base/tutorial1-section2-step1-1.png)
 
-    ![第 1 課第 2 節第 4 步](images/mrlearning-base-ch1-2-step4.jpg)
+<span data-ttu-id="9acbe-141">在 [組建設定] 視窗中，選取 [通用 Windows 平台]  ，然後按一下 [切換平台]  按鈕：</span><span class="sxs-lookup"><span data-stu-id="9acbe-141">In the Build Settings window, select **Universal Windows Platform** and click the **Switch Platform** button:</span></span>
 
-5. <span data-ttu-id="12ffa-138">從相同的偵測程式面板，確認 [發佈設定]  底下的功能區段中已啟用 [空間感知]  核取方塊。</span><span class="sxs-lookup"><span data-stu-id="12ffa-138">From the same inspector panel, ensure that the *Spatial Perception* checkbox in the capabilities section is enabled under *Publishing Settings*.</span></span> <span data-ttu-id="12ffa-139">空間感知可讓我們將混合實境裝置 (例如 HoloLens 2) 上的空間對應網格視覺化。</span><span class="sxs-lookup"><span data-stu-id="12ffa-139">Spatial Perception allows us to visualize the spatial mapping mesh on a mixed reality device, such as HoloLens 2.</span></span> <span data-ttu-id="12ffa-140">[發佈設定] 位在偵測程式面板中的 [XR 設定] 上方及 [其他設定] 下方。</span><span class="sxs-lookup"><span data-stu-id="12ffa-140">Publishing Settings are found in the inspector panel, above XR Settings and under Other Settings.</span></span>
+![mrlearning-base](images/mrlearning-base/tutorial1-section2-step1-2.png)
 
-    ![第 1 課第 2 節第 5 步](images/mrlearning-base-ch1-2-step5.JPG)
+<span data-ttu-id="9acbe-143">等候 Unity 完成平台的切換：</span><span class="sxs-lookup"><span data-stu-id="9acbe-143">Wait for Unity to finish switching the platform:</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="12ffa-142">雖然未在本節中使用，但您可以啟用一些其他常見功能，包括麥克風  (適用於語音命令) 和 InternetClient  (適用於連線到需要網路連線的服務)。</span><span class="sxs-lookup"><span data-stu-id="12ffa-142">While not used in this section, some other common capabilities you might want to enable include the *Microphone* for voice commands, and *InternetClient* for connecting to services requiring a network connection.</span></span>
+![mrlearning-base](images/mrlearning-base/tutorial1-section2-step1-3.png)
 
-## <a name="import-the-mixed-reality-toolkit"></a><span data-ttu-id="12ffa-143">匯入混合實境工具組</span><span class="sxs-lookup"><span data-stu-id="12ffa-143">Import the Mixed Reality Toolkit</span></span>
+<span data-ttu-id="9acbe-145">當 Unity 完成平台切換之後，按一下紅色 **x** 圖示以關閉 [組建設定] 視窗：</span><span class="sxs-lookup"><span data-stu-id="9acbe-145">When Unity has finished switching the platform, click the red **x** icon to close the Build Settings window:</span></span>
 
-1. <span data-ttu-id="12ffa-144">下載[混合實境工具組](https://github.com/microsoft/MixedRealityToolkit-Unity/releases) Unity [基礎套件 2.1.0 版](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.1.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage)，並將其儲存在您電腦上的資料夾。</span><span class="sxs-lookup"><span data-stu-id="12ffa-144">Download the [Mixed Reality Toolkit](https://github.com/microsoft/MixedRealityToolkit-Unity/releases) Unity [foundation package version 2.1.0](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.1.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage) and save it to a folder on your PC.</span></span>
+![mrlearning-base](images/mrlearning-base/tutorial1-section2-step1-4.png)
 
-2. <span data-ttu-id="12ffa-145">匯入您在上一個步驟中下載的「混合實境工具組」  套件。</span><span class="sxs-lookup"><span data-stu-id="12ffa-145">Import the *Mixed Reality Toolkit* package that you downloaded in the previous step.</span></span> <span data-ttu-id="12ffa-146">從按一下 [資產]   >  [匯入]   >  [自訂套件]  開始，選取 [Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage]  ，然後將其開啟以便開始匯入程序。</span><span class="sxs-lookup"><span data-stu-id="12ffa-146">Start by clicking on **Assets** > **Import** > **Custom Package**, select *Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage* and open it to begin the importing process.</span></span> <span data-ttu-id="12ffa-147">稍候幾分鐘讓匯入程序完成。</span><span class="sxs-lookup"><span data-stu-id="12ffa-147">Allow a few minutes for the importing process to complete.</span></span>
-
-    ![第 1 課第 3 節第 2a 步](images/mrlearning-base-ch1-3-step2a.JPG)
-
-    ![第 1 課第 3 節第 2b 步](images/mrlearning-base-ch1-3-step2b.JPG)
-
-3. <span data-ttu-id="12ffa-150">在下一個快顯視窗中，按一下 [匯入]  ，開始將選取的套件匯入 Unity 專案。</span><span class="sxs-lookup"><span data-stu-id="12ffa-150">In the next pop-up window, click **Import** to begin importing the selected package into the Unity project.</span></span> <span data-ttu-id="12ffa-151">請確定已核取所有項目，如圖所示。</span><span class="sxs-lookup"><span data-stu-id="12ffa-151">Ensure all items are checked as shown in the image.</span></span>
-
-    ![第 1 課第 3 節第 3 步](images/mrlearning-base-ch1-3-step3.JPG)
-
-    > [!NOTE]
-    > <span data-ttu-id="12ffa-153">如果您看到快顯對話方塊詢問是否套用混合實境工具組的預設設定，請按一下 [套用]  。</span><span class="sxs-lookup"><span data-stu-id="12ffa-153">If you see a pop-up dialog box asking to apply the Mixed Reality Toolkit default settings, click **Apply**.</span></span> <span data-ttu-id="12ffa-154">匯入以進行自動化安裝時，MRTK 會分析您的專案是否有任何遺漏的建議設定。</span><span class="sxs-lookup"><span data-stu-id="12ffa-154">MRTK analyzes your project for any missing recommended settings when imported for automated setup.</span></span> <span data-ttu-id="12ffa-155">視您的設定而定，快顯看起來可能會與下圖不同。</span><span class="sxs-lookup"><span data-stu-id="12ffa-155">Depending on your settings, the pop-up might look different than the image below.</span></span>
-
-    ![第 1 課第 3 節第 4 步備註 1](images/mrlearning-base-ch1-3-step4-note1.JPG)
-
-## <a name="configure-the-mixed-reality-toolkit"></a><span data-ttu-id="12ffa-157">設定混合實境工具組</span><span class="sxs-lookup"><span data-stu-id="12ffa-157">Configure the Mixed Reality Toolkit</span></span>
-
-1. <span data-ttu-id="12ffa-158">藉由選取 [混合實境工具組]   >  [新增至場景和設定..]  ，將 [混合實境工具組]  新增至您目前的場景。</span><span class="sxs-lookup"><span data-stu-id="12ffa-158">Add the *Mixed Reality Toolkit* to your current scene by selecting **Mixed Reality Toolkit** > **Add to Scene and Configure..**</span></span> <span data-ttu-id="12ffa-159">從功能表列。</span><span class="sxs-lookup"><span data-stu-id="12ffa-159">from the menu bar.</span></span> <span data-ttu-id="12ffa-160">如果匯入混合實境工具組之後沒有看到此功能表項目，請重新啟動 Unity。</span><span class="sxs-lookup"><span data-stu-id="12ffa-160">If you don't see this menu item after importing the mixed reality toolkit, restart Unity.</span></span>
-
-    ![第 1 課第 4 節第 1 步](images/mrlearning-base-ch1-4-step1.JPG)
-
-    > [!NOTE]
-    > <span data-ttu-id="12ffa-162">您可能會看到一個快顯對話方塊，用來選取[混合實境工具組的設定檔](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Profiles/Profiles.html)。</span><span class="sxs-lookup"><span data-stu-id="12ffa-162">You may see a pop-up dialog box for selecting a [profile for the Mixed Reality Toolkit](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Profiles/Profiles.html).</span></span> <span data-ttu-id="12ffa-163">按兩下名為 DefaultHoloLens2ConfigurationProfile  的設定檔。</span><span class="sxs-lookup"><span data-stu-id="12ffa-163">Choose the profile named *DefaultHoloLens2ConfigurationProfile* by double-clicking it.</span></span>
-
-2. <span data-ttu-id="12ffa-164">您的場景會有數個新項目和修改。</span><span class="sxs-lookup"><span data-stu-id="12ffa-164">Your scene will have several new items and modifications.</span></span> <span data-ttu-id="12ffa-165">若要以不同名稱來儲存場景，請按一下 [檔案]   >  [另存新檔...]  ，然後為場景指定名稱，例如 BaseScene  。</span><span class="sxs-lookup"><span data-stu-id="12ffa-165">Save your scene under a different name by clicking **File** > **Save As...**, and give your scene a name, such as *BaseScene*.</span></span> <span data-ttu-id="12ffa-166">為了讓場景井然有序，您可以將場景儲存到專案 [資產]  資料夾中的 [場景]  資料夾。</span><span class="sxs-lookup"><span data-stu-id="12ffa-166">Keep your scene organized by saving it to the *Scenes* folder in your project’s *Assets* folder.</span></span>
-
-    ![第 1 課第 4 節第 2a 步](images/mrlearning-base-ch1-4-step2a.JPG)
-
-    ![第 1 課第 4 節第 2b 步](images/mrlearning-base-ch1-4-step2b.JPG)
-
-## <a name="build-your-application-to-your-device"></a><span data-ttu-id="12ffa-169">對您的裝置建置應用程式</span><span class="sxs-lookup"><span data-stu-id="12ffa-169">Build your application to your device</span></span>
-
-1. <span data-ttu-id="12ffa-170">如果您已關閉前面幾節中的 [建置設定]  視窗，請移至 [檔案]   >  [建置設定]  來重新開啟 [建置設定]  視窗。</span><span class="sxs-lookup"><span data-stu-id="12ffa-170">If you closed the *Build Settings* window from the previous sections, open the *Build Settings* window again by going to **File** > **Build Settings**.</span></span>
-
-    ![第 1 課第 5 節第 1 步](images/mrlearning-base-ch1-5-step1.JPG)
-
-2. <span data-ttu-id="12ffa-172">在您的場景於 Unity 開啟時，藉由按一下 [加入開啟場景]  按鈕，來確定您剛剛建立的場景有在 [建置中的場景]  清單中。</span><span class="sxs-lookup"><span data-stu-id="12ffa-172">Ensure the scene you just created is in the *Scenes in Build* list by clicking on the **Add Open Scenes** button while your scene is open in Unity.</span></span>
-
-3. <span data-ttu-id="12ffa-173">按下 [建置]  按鈕，開始建置程序。</span><span class="sxs-lookup"><span data-stu-id="12ffa-173">Press the **Build** button to begin the build process.</span></span>
-
-    ![第 1 課第 5 節第 3 步](images/mrlearning-base-ch1-5-step3.JPG)
-
-4. <span data-ttu-id="12ffa-175">為您的應用程式建立並命名新資料夾。</span><span class="sxs-lookup"><span data-stu-id="12ffa-175">Create and name a new folder for your application.</span></span> <span data-ttu-id="12ffa-176">在下圖中，已建立名為 App 的資料夾來包含應用程式。</span><span class="sxs-lookup"><span data-stu-id="12ffa-176">In the image below, a folder with the name App was created to contain the application.</span></span> <span data-ttu-id="12ffa-177">按一下 [選取資料夾]  ，即可開始對新建立的資料夾進行建置。</span><span class="sxs-lookup"><span data-stu-id="12ffa-177">Click **Select Folder** to begin building to the newly created folder.</span></span> <span data-ttu-id="12ffa-178">建置完成之後，您可以關閉 Unity 中的 [建置設定]  視窗。</span><span class="sxs-lookup"><span data-stu-id="12ffa-178">After the build has completed, you can close the *Build Settings* window in Unity.</span></span>
-
-    ![第 1 課第 5 節第 4 步](images/mrlearning-base-ch1-5-step4.JPG)
-
-    >[!IMPORTANT]
-    ><span data-ttu-id="12ffa-180">如果建置失敗，請再試一次，或重新啟動 Unity，然後重新建置。</span><span class="sxs-lookup"><span data-stu-id="12ffa-180">If the build fails, try building again or restarting Unity and building again.</span></span> <span data-ttu-id="12ffa-181">如果您看到錯誤，例如「錯誤：CS0246 = 找不到名為 "XX" 的類型或命名空間名稱 (您是否遺漏 using 指示詞或組件參考？)」。</span><span class="sxs-lookup"><span data-stu-id="12ffa-181">If you see an error, such as "Error: CS0246 = The type or namespace name “XX” could not be found (are you missing a using directive or an assembly reference?).</span></span> <span data-ttu-id="12ffa-182">若是如此，您可能需要安裝 [Windows 10 SDK (10.0.18362.0)](https://developer.microsoft.com//windows/downloads/windows-10-sdk)</span><span class="sxs-lookup"><span data-stu-id="12ffa-182">If so, you might need to install [Windows 10 SDK (10.0.18362.0)](https://developer.microsoft.com//windows/downloads/windows-10-sdk)</span></span>
-
-5. <span data-ttu-id="12ffa-183">在建置完成之後，開啟新建立的資料夾，其中包含您新建置的應用程式檔案。</span><span class="sxs-lookup"><span data-stu-id="12ffa-183">After the build is completed, open the newly created folder containing your newly built application files.</span></span> <span data-ttu-id="12ffa-184">按兩下 [MixedRealityBase.sln]  解決方案或是相對應名稱 (如果您為專案使用替代名稱的話)，以在 Visual Studio 中開啟解決方案檔案。</span><span class="sxs-lookup"><span data-stu-id="12ffa-184">Double-click on the *MixedRealityBase.sln* solution, or the corresponding name, if you used an alternative name for your project, to open the solution file in Visual Studio.</span></span>
-
-    >[!NOTE]
-    ><span data-ttu-id="12ffa-185">請務必開啟新建立的資料夾 (如果您遵循先前步驟中的命名慣例，此資料夾為 [App]  資料夾)，因為該資料夾外會有名稱類似的 .sln 檔案，不應與建置資料夾中的 .sln 檔案混淆。</span><span class="sxs-lookup"><span data-stu-id="12ffa-185">Be sure to open the newly created folder (i.e. the *App* folder, if following the naming conventions from the previous steps), as there will be a similarly named .sln file outside of that folder, that is not to be confused with the .sln file inside the build folder.</span></span> <span data-ttu-id="12ffa-186">資料夾結構看起來應該類似下圖。</span><span class="sxs-lookup"><span data-stu-id="12ffa-186">The folder structure should look similar to the image below.</span></span>
-    >
-    ><span data-ttu-id="12ffa-187">如果 Visual Studio 要求您安裝新元件，請花一些時間確認是否已安裝所有必要元件，如同 [[安裝工具] 頁面](install-the-tools.md)中所指定</span><span class="sxs-lookup"><span data-stu-id="12ffa-187">If Visual Studio asks you to install new components, take a moment to ensure that all prerequisite components are installed as specified in [the "Install the Tools" page](install-the-tools.md)</span></span>
-
-    ![第 1 課第 5 節第 5 步](images/mrlearning-base-ch1-5-step5.JPG)
-
-6. <span data-ttu-id="12ffa-189">將 HoloLens 2 連線到您的電腦。</span><span class="sxs-lookup"><span data-stu-id="12ffa-189">Connect your HoloLens 2 into your PC.</span></span> <span data-ttu-id="12ffa-190">雖然這些指示假設您會部署到 HoloLens 2 裝置，但是您也可以選擇部署到 [HoloLens 2 模擬器](using-the-hololens-emulator.md)或選擇建立[用於側載的應用程式套件](<https://docs.microsoft.com//windows/uwp/packaging/packaging-uwp-apps>)</span><span class="sxs-lookup"><span data-stu-id="12ffa-190">While these instructions assume you will be deploying to a HoloLens 2 device, you might also choose to deploy to the [HoloLens 2 emulator](using-the-hololens-emulator.md) or choose to create an [app package for sideloading](<https://docs.microsoft.com//windows/uwp/packaging/packaging-uwp-apps>)</span></span>
-
-    >[!IMPORTANT]
-    ><span data-ttu-id="12ffa-191">在建置您的裝置之前，裝置必須處於「開發人員模式」  ，並與您的開發電腦配對。</span><span class="sxs-lookup"><span data-stu-id="12ffa-191">Before building to your device, the device must be in *Developer Mode* and paired with your development machine.</span></span> <span data-ttu-id="12ffa-192">這兩個步驟都可以透過依照[這些指示](using-visual-studio.md)來完成</span><span class="sxs-lookup"><span data-stu-id="12ffa-192">Both of these steps can be completed by following [these instructions](using-visual-studio.md)</span></span>
-
-7. <span data-ttu-id="12ffa-193">若要設定 Visual Studio 來對 HoloLens 2 進行建置，請選取 [發行]  或 [主要]  組態、[ARM]  架構以及 [裝置]  作為目標。</span><span class="sxs-lookup"><span data-stu-id="12ffa-193">Configure Visual Studio for building to your HoloLens 2 by selecting the *Release* or *Master* configuration, the *ARM* architecture, and *Device* as target.</span></span>
-
-    ![第 1 課第 5 節第 8 步](images/mrlearning-base-ch1-5-step7.JPG)
-
-8. <span data-ttu-id="12ffa-195">最後一個步驟是藉由選取 [偵錯]   >  [啟動但不偵錯]  ，來對您的裝置進行建置和部署。</span><span class="sxs-lookup"><span data-stu-id="12ffa-195">The final step is to build and deploy to your device by selecting **Debug** > **Start without debugging**.</span></span> <span data-ttu-id="12ffa-196">選取 [啟動但不偵錯]  會讓裝置上的應用程式在建置成功時立即啟動，但 Visual Studio 中不會有偵錯工具連接，也不會出現資訊。</span><span class="sxs-lookup"><span data-stu-id="12ffa-196">Selecting *Start without Debugging* causes the application to immediately start on your device upon a successful build, but without the debugger attached and information appearing in Visual Studio.</span></span> <span data-ttu-id="12ffa-197">這也表示，當您的應用程式在 HoloLens 2 上執行時，您可以在不需要停止應用程式的情況下拔掉 USB 纜線。</span><span class="sxs-lookup"><span data-stu-id="12ffa-197">This also means that you can disconnect your USB cable while your application is running on your HoloLens 2 without stopping the application.</span></span>
-
-    > [!NOTE]
-    > <span data-ttu-id="12ffa-198">您也可以選取 [建置]   >  [部署解決方案]  ，在不自動啟動應用程式的情況下，對您的裝置進行部署。</span><span class="sxs-lookup"><span data-stu-id="12ffa-198">You might also select **Build** > **Deploy Solution** to deploy to your device without having the application automatically start.</span></span>
-
-    ![第 1 課第 5 節第 9 步](images/mrlearning-base-ch1-5-step8.JPG)
-
-## <a name="congratulations"></a><span data-ttu-id="12ffa-200">恭喜！</span><span class="sxs-lookup"><span data-stu-id="12ffa-200">Congratulations</span></span>
-
-<span data-ttu-id="12ffa-201">您現在已部署第一個 HoloLens 2 應用程式。</span><span class="sxs-lookup"><span data-stu-id="12ffa-201">You have now deployed your first HoloLens 2 application.</span></span> <span data-ttu-id="12ffa-202">當您隨處走動時，您應該會看到空間對應網格涵蓋了所有 HoloLens 2 所感知到的介面。</span><span class="sxs-lookup"><span data-stu-id="12ffa-202">As you walk around, you should see a spatial mapping mesh covering all the surfaces that have been perceived by the HoloLens 2.</span></span> <span data-ttu-id="12ffa-203">此外，您應該會看到雙手和手指上有用於手部追蹤的指標，還有用於留意應用程式效能的畫面播放速率計數器。</span><span class="sxs-lookup"><span data-stu-id="12ffa-203">Additionally, you should see indicators on your hands and fingers for hand tracking and a frame rate counter for keeping an eye on application performance.</span></span> <span data-ttu-id="12ffa-204">這些只是混合實境工具組的幾個現成基本項目。</span><span class="sxs-lookup"><span data-stu-id="12ffa-204">These are just a few of the foundational pieces, included out of the box, with the Mixed Reality Toolkit.</span></span> <span data-ttu-id="12ffa-205">在之後的課程中，您將開始在場景中加入更多內容和互動項目，讓您可以完整地探索 HoloLens 2 及混合實境工具組的功能。</span><span class="sxs-lookup"><span data-stu-id="12ffa-205">In the lessons to come, you will start adding more content and interactivity to your scene so that you can fully explore the capabilities of HoloLens 2 and the Mixed Reality Toolkit.</span></span>
+### <a name="2-enable-virtual-reality"></a><span data-ttu-id="9acbe-147">2.啟用虛擬實境</span><span class="sxs-lookup"><span data-stu-id="9acbe-147">2. Enable virtual reality</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="12ffa-206">在應用程式中，您可能會注意到 Visual Profiler。</span><span class="sxs-lookup"><span data-stu-id="12ffa-206">In the app, you may notice the visual profiler.</span></span> <span data-ttu-id="12ffa-207">您也將在[第 5 課](mrlearning-base-ch5.md)中了解如何使用語音命令切換畫面播放速率計數器。</span><span class="sxs-lookup"><span data-stu-id="12ffa-207">You will cover how to toggle the frame rate counter using a voice command in [Lesson 5](mrlearning-base-ch5.md).</span></span> <span data-ttu-id="12ffa-208">通常會建議您在開發期間保持 Visual Profiler 隨時可見，以了解程式碼變更可能會影響效能的時機。</span><span class="sxs-lookup"><span data-stu-id="12ffa-208">It is generally recommended to keep the visual profiler visible at all times during development to understand when code changes may have impacted perf.</span></span> <span data-ttu-id="12ffa-209">HoloLens 2 應用程式應該[持續以 60 FPS 執行](understanding-performance-for-mixed-reality.md)。</span><span class="sxs-lookup"><span data-stu-id="12ffa-209">HoloLens 2 application should [continuously run at 60 FPS](understanding-performance-for-mixed-reality.md).</span></span>
+> <span data-ttu-id="9acbe-148">「啟用虛擬實境」也適用於混合實境和擴增實境頭戴式裝置，因為都是啟用立體視覺，也就是為每隻眼睛轉譯不同影像。</span><span class="sxs-lookup"><span data-stu-id="9acbe-148">Enabling virtual reality also applies to mixed reality and augmented reality headsets because it refers to enabling stereoscopic vision, i.e. rendering different images for each eye.</span></span>
 
-[<span data-ttu-id="12ffa-210">下一課：3.建立使用者介面並設定混合實境工具組</span><span class="sxs-lookup"><span data-stu-id="12ffa-210">Next Lesson: 3. Creating user interface and configure Mixed Reality Toolkit</span></span>](mrlearning-base-ch2.md)
+<span data-ttu-id="9acbe-149">在 Unity 功能表中，選取 [編輯]   >  [專案設定...]  來開啟 [專案設定] 視窗：</span><span class="sxs-lookup"><span data-stu-id="9acbe-149">In the Unity menu, select **Edit** > **Project Settings...** to open the Project Settings window:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section2-step2-1.png)
+
+<span data-ttu-id="9acbe-151">在 [專案設定] 視窗中，選取 [播放器]   >  [XR 設定]  以展開 [XR 設定]：</span><span class="sxs-lookup"><span data-stu-id="9acbe-151">In the Project Settings window, select **Player** > **XR Settings** to expand the XR Settings:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section2-step2-2.png)
+
+<span data-ttu-id="9acbe-153">在 [XR 設定] 中，選取 [支援的虛擬實境]  核取方塊以啟用虛擬實境，按一下 **+** 圖示，然後選取 [Windows Mixed Reality]  以新增 Windows Mixed Reality SDK：</span><span class="sxs-lookup"><span data-stu-id="9acbe-153">In the XR Settings, check the **Virtual Reality Supported** checkbox to enable virtual reality, then click the **+** icon and select **Windows Mixed Reality** to add the Windows Mixed Reality SDK:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section2-step2-3.png)
+
+<span data-ttu-id="9acbe-155">等候 Unity 完成 SDK 的新增：</span><span class="sxs-lookup"><span data-stu-id="9acbe-155">Wait for Unity to finish adding the SDK:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section2-step2-4.png)
+
+<span data-ttu-id="9acbe-157">當 Unity 完成新增 SDK 之後，將 XR 設定最佳化，如下所示：</span><span class="sxs-lookup"><span data-stu-id="9acbe-157">When Unity has finished adding the SDK, optimize the XR Settings as follows:</span></span>
+
+* <span data-ttu-id="9acbe-158">將 Windows Mixed Reality 的 [深度格式]  設為 [16 位元深度] </span><span class="sxs-lookup"><span data-stu-id="9acbe-158">Set Windows Mixed Reality **Depth Format** to **16-bit depth**</span></span>
+* <span data-ttu-id="9acbe-159">勾選 Windows Mixed Reality 的 [啟用深度共用]  核取方塊</span><span class="sxs-lookup"><span data-stu-id="9acbe-159">Check the Windows Mixed Reality **Enable Depth Sharing** checkbox</span></span>
+* <span data-ttu-id="9acbe-160">將 [立體聲轉譯模式\*]  設為 [單通道執行個體化] </span><span class="sxs-lookup"><span data-stu-id="9acbe-160">Set Stereo **Rendering Mode\*** to **Single Pass Instanced**</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section2-step2-5.png)
+
+> [!TIP]
+> <span data-ttu-id="9acbe-162">若要深入瞭解如何將用於 Windows Mixed Reality 的 Unity 最佳化，您可以參閱 [Unity 的建議設定](recommended-settings-for-unity.md)文件。</span><span class="sxs-lookup"><span data-stu-id="9acbe-162">To learn more about optimizing Unity for Windows Mixed Reality, you can refer to the [Recommended settings for Unity](recommended-settings-for-unity.md) documentation.</span></span>
+
+### <a name="3-enable-spatial-perception"></a><span data-ttu-id="9acbe-163">3.啟用空間感知</span><span class="sxs-lookup"><span data-stu-id="9acbe-163">3. Enable spatial perception</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="9acbe-164">空間感知可讓 Windows Mixed Reality 裝置上的空間對應網格視覺化。</span><span class="sxs-lookup"><span data-stu-id="9acbe-164">Spatial perception allows visualization of the spatial mapping mesh on Windows Mixed Reality devices.</span></span>
+
+<span data-ttu-id="9acbe-165">在 [專案設定] 視窗中，選取 [播放器]   >  [發佈設定]  以展開發佈設定：</span><span class="sxs-lookup"><span data-stu-id="9acbe-165">In the Project Settings window, select **Player** > **Publishing Settings** to expand the Publishing Settings:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section2-step3-1.png)
+
+<span data-ttu-id="9acbe-167">在 [發佈設定] 中，向下捲動至 [功能]  區段，然後勾選 [SpatialPerception]  核取方塊：</span><span class="sxs-lookup"><span data-stu-id="9acbe-167">In the Publishing Settings, scroll down to the **Capabilities** section and check the **SpatialPerception** checkbox:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section2-step3-2.png)
+
+<!-- TODO: Consider adding info about audio spatializer plugin setting -->
+
+<span data-ttu-id="9acbe-169">關閉 [專案設定] 視窗。</span><span class="sxs-lookup"><span data-stu-id="9acbe-169">Close the Project Settings window.</span></span>
+
+## <a name="import-textmesh-pro-essential-resources"></a><span data-ttu-id="9acbe-170">匯入 TextMesh Pro 基本資源</span><span class="sxs-lookup"><span data-stu-id="9acbe-170">Import TextMesh Pro Essential Resources</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="9acbe-171">我們正在匯入此套件，因為混合實境工具組的 UI 元素會需要。</span><span class="sxs-lookup"><span data-stu-id="9acbe-171">We are importing this package because it is required by Mixed Reality Toolkit's UI elements.</span></span>
+
+<span data-ttu-id="9acbe-172">在 Unity 功能表中，選取 [視窗]   >  [TextMeshPro]   >  [匯入 TMP 基本資源]  ：</span><span class="sxs-lookup"><span data-stu-id="9acbe-172">In the Unity menu, select **Window** > **TextMeshPro** > **Import TMP Essential Resources**:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section3-step1-1.png)
+
+<span data-ttu-id="9acbe-174">在 [匯入 Unity 套件] 視窗中，按一下 [全部]  按鈕以確保選取所有資產，然後按一下 [匯入]  按鈕來匯入資產：</span><span class="sxs-lookup"><span data-stu-id="9acbe-174">In the Import Unity Package window, click the **All** button to ensure all the assets are selected, then click the **Import** button to import the assets:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section3-step1-2.png)
+
+## <a name="import-the-mixed-reality-toolkit"></a><span data-ttu-id="9acbe-176">匯入混合實境工具組</span><span class="sxs-lookup"><span data-stu-id="9acbe-176">Import the Mixed Reality Toolkit</span></span>
+
+<span data-ttu-id="9acbe-177">下載 Unity 自訂套件：</span><span class="sxs-lookup"><span data-stu-id="9acbe-177">Download the Unity custom package:</span></span>
+
+* [<span data-ttu-id="9acbe-178">Microsoft.MixedReality.Toolkit.Unity.Foundation.2.2.0.unitypackage</span><span class="sxs-lookup"><span data-stu-id="9acbe-178">Microsoft.MixedReality.Toolkit.Unity.Foundation.2.2.0.unitypackage</span></span>](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.2.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.2.0.unitypackage)
+
+<span data-ttu-id="9acbe-179">在 Unity 功能表中，選取 [資產]   >  [匯入套件]   >  [自訂套件 ...]  以開啟 [匯入套件...] 視窗：</span><span class="sxs-lookup"><span data-stu-id="9acbe-179">In the Unity menu, select **Assets** > **Import Package** > **Custom Package...** to open the Import package... window:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section4-step1-1.png)
+
+<span data-ttu-id="9acbe-181">在 [匯入套件...] 視窗中，選取您下載的 **Microsoft.MixedReality.Toolkit.Unity.Foundation.2.2.0.unitypackage**，然後按一下 [開啟]  按鈕：</span><span class="sxs-lookup"><span data-stu-id="9acbe-181">In the Import package... window, select the **Microsoft.MixedReality.Toolkit.Unity.Foundation.2.2.0.unitypackage** you downloaded and click the **Open** button:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section4-step1-2.png)
+
+<span data-ttu-id="9acbe-183">在 [匯入 Unity 套件] 視窗中，按一下 [全部]  按鈕以確保選取所有資產，然後按一下 [匯入]  按鈕來匯入資產：</span><span class="sxs-lookup"><span data-stu-id="9acbe-183">In the Import Unity Package window, click the **All** button to ensure all the assets are selected, then click the **Import** button to import the assets:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section4-step1-3.png)
+
+## <a name="configure-the-unity-project-for-the-mixed-reality-toolkit"></a><span data-ttu-id="9acbe-185">設定用於混合實境工具組的 Unity 專案</span><span class="sxs-lookup"><span data-stu-id="9acbe-185">Configure the Unity project for the Mixed Reality Toolkit</span></span>
+
+<!-- TODO: Consider adding info about configuring Unity for WMR vs MRTK, or removing WMR section -->
+
+<span data-ttu-id="9acbe-186">匯入套件之後，應該會出現 [MRTK 專案設定程式] 視窗。</span><span class="sxs-lookup"><span data-stu-id="9acbe-186">After the package has been imported, the MRTK Project Configurator window should appear.</span></span> <span data-ttu-id="9acbe-187">如果沒有，請在 Unity 功能表中選取 [混合現實工具組]   >  [公用程式]   >  [設定 Unity 專案]  加以開啟。</span><span class="sxs-lookup"><span data-stu-id="9acbe-187">If it does not, open it by selecting **Mixed Reality Toolkit** > **Utilities** > **Configure Unity Project** in the Unity menu.</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section5-step1-1.png)
+
+<span data-ttu-id="9acbe-189">在 [MRTK 專案設定程式] 視窗中，展開 [修改設定]  區段，取消勾選<u></u> [啟用適用於 Unity 的 MSBuild]  核取方塊，確定已勾選所有其他選項，然後按一下 [套用]  按鈕來套用設定：</span><span class="sxs-lookup"><span data-stu-id="9acbe-189">In the MRTK Project Configurator window, expand the **Modify Configurations** section, <u>uncheck</u> the **Enable MSBuild for Unity** checkbox, ensure all other options are checked, and click the **Apply** button to apply the settings:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section5-step1-2.png)
+
+> [!CAUTION]
+> <span data-ttu-id="9acbe-191">適用於 Unity 的 MSBuild 可能不支援您將使用的所有 SDK，且在啟用之後，可能會很難停用。</span><span class="sxs-lookup"><span data-stu-id="9acbe-191">MSBuild for Unity may not support all SDKs you will be using and can be challenging to disable after it has been enabled.</span></span> <span data-ttu-id="9acbe-192">因此，強烈建議您不要啟用適用於 Unity 的 MSBuild。</span><span class="sxs-lookup"><span data-stu-id="9acbe-192">Consequently, it is strongly recommended to not enable MSBuild for Unity.</span></span>
+
+## <a name="configure-the-mixed-reality-toolkit"></a><span data-ttu-id="9acbe-193">設定混合實境工具組</span><span class="sxs-lookup"><span data-stu-id="9acbe-193">Configure the Mixed Reality Toolkit</span></span>
+<!-- TODO: Consider renaming to 'Add the Mixed Reality Toolkit to the Unity scene' -->
+
+<span data-ttu-id="9acbe-194">在 Unity 功能表中，選取 [混合實境工具組]   >  [新增至場景並設定...]  來將混合實境工具組新增至目前的場景：</span><span class="sxs-lookup"><span data-stu-id="9acbe-194">In the Unity menu, select **Mixed Reality Toolkit** > **Add to Scene and Configure...** to add the Mixed Reality Toolkit to your current scene:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section6-step1-1.png)
+
+<span data-ttu-id="9acbe-196">在 [階層] 視窗中選取 MixedRealityToolkit 物件之後，在 [偵測器] 視窗中，將 [混合實境工具組] 設定中的設定檔變更為 **DefaultHoloLens2ConfigurationProfile**：</span><span class="sxs-lookup"><span data-stu-id="9acbe-196">With the MixedRealityToolkit object selected in the Hierarchy window, in the Inspector window, change the Mixed Reality Toolkit configuration profile to **DefaultHoloLens2ConfigurationProfile**:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section6-step1-2.png)
+
+<span data-ttu-id="9acbe-198">在 Unity 功能表中，選取 [檔案]   >  [另存新檔 ...]  以開啟 [儲存場景] 視窗：</span><span class="sxs-lookup"><span data-stu-id="9acbe-198">In the Unity menu, select **File** > **Save As...** to open the Save Scene window:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section6-step1-3.png)
+
+<span data-ttu-id="9acbe-200">在 [儲存場景] 視窗中，瀏覽至專案的 **Scenes** 資料夾，為您的場景取一個適當的名稱，例如 Getting Started  ，然後按一下 [儲存]  按鈕儲存場景：</span><span class="sxs-lookup"><span data-stu-id="9acbe-200">In the Save Scene window, navigate to your project's **Scenes** folder, give your scene a suitable name, for example, _Getting Started_, and click the **Save** button to save the scene:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section6-step1-4.png)
+
+## <a name="build-your-application-to-your-device"></a><span data-ttu-id="9acbe-202">對您的裝置建置應用程式</span><span class="sxs-lookup"><span data-stu-id="9acbe-202">Build your application to your device</span></span>
+
+### <a name="1-build-the-unity-project"></a><span data-ttu-id="9acbe-203">1.組建 Unity 專案</span><span class="sxs-lookup"><span data-stu-id="9acbe-203">1. Build the Unity project</span></span>
+
+<span data-ttu-id="9acbe-204">在 Unity 功能表中，選取 [檔案]   >  [組建設定...]  來開啟 [組建設定] 視窗。</span><span class="sxs-lookup"><span data-stu-id="9acbe-204">In the Unity menu, select **File** > **Build Settings...** to open the Build Settings window.</span></span>
+
+<span data-ttu-id="9acbe-205">在 [組建設定] 視窗中，按一下 [新增開啟的場景]  按鈕，將您目前的場景新增至 [組建中的場景]  清單，然後按一下 [組建]  按鈕以開啟 [組建通用 Windows 平台] 視窗：</span><span class="sxs-lookup"><span data-stu-id="9acbe-205">In the Build Settings window, click the **Add Open Scenes** button to add your current scene to the **Scenes In Build** list, then click the **Build** button to open the Build Universal Windows Platform window:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section7-step1-1.png)
+
+<span data-ttu-id="9acbe-207">在 [組建通用 Windows 平台] 視窗中，選擇適當的位置來儲存您的組建，例如 D:\MixedRealityLearning\Builds  ，建立新的資料夾並指定適當的名稱，例如 GettingStarted  ，然後按一下 [選取資料夾]  按鈕開始組建程序：</span><span class="sxs-lookup"><span data-stu-id="9acbe-207">In the Build Universal Windows Platform window, choose a suitable location to store your build, for example, _D:\MixedRealityLearning\Builds_, create a new folder and give it a suitable name, for example, _GettingStarted_, and then click the **Select Folder** button to start the build process:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section7-step1-2.png)
+
+<span data-ttu-id="9acbe-209">等候 Unity 完成組建程序：</span><span class="sxs-lookup"><span data-stu-id="9acbe-209">Wait for Unity to finish the build process:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section7-step1-3.png)
+
+### <a name="2-build-and-deploy-the-application"></a><span data-ttu-id="9acbe-211">2.組建和部署應用程式</span><span class="sxs-lookup"><span data-stu-id="9acbe-211">2. Build and deploy the application</span></span>
+
+<span data-ttu-id="9acbe-212">當組建程序完成時，Unity 會提示 Windows 檔案總管開啟您儲存組建的位置。</span><span class="sxs-lookup"><span data-stu-id="9acbe-212">When the build process is completed, Unity will prompt Windows File Explorer to open the location you stored the build.</span></span> <span data-ttu-id="9acbe-213">瀏覽該資料夾，按兩下解決方案的檔案即可在 Visual Studio 中開啟該檔案：</span><span class="sxs-lookup"><span data-stu-id="9acbe-213">Navigate inside the folder, and double-click the solution file to open it in Visual Studio:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section7-step2-1.png)
+
+> [!NOTE]
+> <span data-ttu-id="9acbe-215">如果 Visual Studio 要求您安裝新元件，請花一些時間確認是否已安裝所有必要元件，如同[安裝工具](install-the-tools.md)文件中所指定。</span><span class="sxs-lookup"><span data-stu-id="9acbe-215">If Visual Studio asks you to install new components, take a moment to ensure that all prerequisite components are installed as specified in the [Install the Tools](install-the-tools.md) documentation.</span></span>
+
+<span data-ttu-id="9acbe-216">設定 Visual Studio 以便用於 HoloLens 2，請選取 [Master]  或 [Release]  設定、[ARM]  架構，選取 [裝置]  作為目標：</span><span class="sxs-lookup"><span data-stu-id="9acbe-216">Configure Visual Studio for HoloLens 2 by selecting the **Master** or **Release** configuration, the **ARM** architecture, and **Device** as target:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section7-step2-2.png)
+
+<span data-ttu-id="9acbe-218">將 HoloLens 2 連線到您的電腦。</span><span class="sxs-lookup"><span data-stu-id="9acbe-218">Connect your HoloLens 2 to your computer.</span></span>
+
+> [!IMPORTANT]
+> <span data-ttu-id="9acbe-219">在組建您的裝置之前，裝置必須處於「開發人員模式」，並與開發電腦配對。</span><span class="sxs-lookup"><span data-stu-id="9acbe-219">Before building to your device, the device must be in Developer Mode and paired with your development computer.</span></span> <span data-ttu-id="9acbe-220">請遵循[這些指示](using-visual-studio.md)來完成這兩個步驟。</span><span class="sxs-lookup"><span data-stu-id="9acbe-220">Both of these steps can be completed by following [these instructions](using-visual-studio.md).</span></span>
+
+<span data-ttu-id="9acbe-221">最後一個步驟是選取 [偵錯]   >  [啟動但不偵錯]  ，來對您的裝置進行建置和部署：</span><span class="sxs-lookup"><span data-stu-id="9acbe-221">The final step is to build and deploy to your device by selecting **Debug** > **Start Without Debugging**:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial1-section7-step2-3.png)
+
+<span data-ttu-id="9acbe-223">雖然這些指示假設您會部署到 HoloLens 2 裝置，但是您也可以部署到 [HoloLens 2 模擬器](using-the-hololens-emulator.md)或是建立[用於側載的應用程式套件](<https://docs.microsoft.com//windows/uwp/packaging/packaging-uwp-apps>)。</span><span class="sxs-lookup"><span data-stu-id="9acbe-223">While these instructions assume you will be deploying to a HoloLens 2 device, you can also deploy to the [HoloLens 2 emulator](using-the-hololens-emulator.md) or create an [app package for sideloading](<https://docs.microsoft.com//windows/uwp/packaging/packaging-uwp-apps>).</span></span>
+
+<span data-ttu-id="9acbe-224">選取 [啟動但不偵錯] 會讓裝置上的應用程式在組建成功時立即啟動，但 Visual Studio 中不會連接偵錯工具，也不會出現資訊。</span><span class="sxs-lookup"><span data-stu-id="9acbe-224">Selecting Start without Debugging causes the application to immediately start on your device upon a successful build, but without the debugger attached and information appearing in Visual Studio.</span></span> <span data-ttu-id="9acbe-225">這也表示，當您的應用程式在 HoloLens 2 上執行時，您可以在不需要停止應用程式的情況下拔掉 USB 纜線。</span><span class="sxs-lookup"><span data-stu-id="9acbe-225">This also means that you can disconnect your USB cable while your application is running on your HoloLens 2 without stopping the application.</span></span>
+
+<span data-ttu-id="9acbe-226">若要在不自動啟動應用程式的情況下對您的裝置進行部署，您可以選取 [組建] > [部署解決方案]。</span><span class="sxs-lookup"><span data-stu-id="9acbe-226">To deploy to your device without having the application start automatically, you can select Build > Deploy Solution.</span></span>
+
+## <a name="congratulations"></a><span data-ttu-id="9acbe-227">恭喜！</span><span class="sxs-lookup"><span data-stu-id="9acbe-227">Congratulations</span></span>
+
+<!-- TODO: Consider cleanup and adding in app screenshots -->
+<span data-ttu-id="9acbe-228">您現在已部署第一個 HoloLens 2 應用程式。</span><span class="sxs-lookup"><span data-stu-id="9acbe-228">You have now deployed your first HoloLens 2 application.</span></span> <span data-ttu-id="9acbe-229">當您隨處走動時，您應該會看到空間對應網格涵蓋了所有 HoloLens 2 所感知到的介面。</span><span class="sxs-lookup"><span data-stu-id="9acbe-229">As you walk around, you should see a spatial mapping mesh covering all the surfaces that have been perceived by the HoloLens 2.</span></span> <span data-ttu-id="9acbe-230">此外，您應該會看到雙手和手指上有用於手部追蹤的指標，還有用於留意應用程式效能的畫面播放速率計數器。</span><span class="sxs-lookup"><span data-stu-id="9acbe-230">Additionally, you should see indicators on your hands and fingers for hand tracking and a frame rate counter for keeping an eye on application performance.</span></span> <span data-ttu-id="9acbe-231">這些只是混合實境工具組的幾個現成基本項目。</span><span class="sxs-lookup"><span data-stu-id="9acbe-231">These are just a few of the foundational pieces, included out of the box, with the Mixed Reality Toolkit.</span></span> <span data-ttu-id="9acbe-232">在之後的教學課程中，您將開始在場景中加入更多內容和互動項目，讓您可以完整地探索 HoloLens 2 及混合實境工具組的功能。</span><span class="sxs-lookup"><span data-stu-id="9acbe-232">In the tutorials to come, you will start adding more content and interactivity to your scene so that you can fully explore the capabilities of HoloLens 2 and the Mixed Reality Toolkit.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="9acbe-233">您可能會注意到應用程式中的診斷分析工具，可以使用 **Toogle Diagnostics** 語音命令來切換其可見度。</span><span class="sxs-lookup"><span data-stu-id="9acbe-233">In the app, you may notice the Diagnostics profiler, you can toggle it's visibility using the speech command **Toogle Diagnostics**.</span></span> <span data-ttu-id="9acbe-234">不過，通常會建議您在開發期間讓診斷分析工具保持隨時可見，以了解變更應用程式可能會影響效能的時機，例如 HoloLens 2 應用程式應[持續在 60 FPS 執行](understanding-performance-for-mixed-reality.md)。</span><span class="sxs-lookup"><span data-stu-id="9acbe-234">However, it is generally recommended to keep the profiler visible at all times during development to understand when changes to the app may have impacted performance, for example, HoloLens 2 application should [continuously run at 60 FPS](understanding-performance-for-mixed-reality.md).</span></span>
+
+[<span data-ttu-id="9acbe-235">下一個教學課程：3.建立使用者介面並設定混合實境工具組</span><span class="sxs-lookup"><span data-stu-id="9acbe-235">Next Tutorial: 3. Creating user interface and configure Mixed Reality Toolkit</span></span>](mrlearning-base-ch2.md)

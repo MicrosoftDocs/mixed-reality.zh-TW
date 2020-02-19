@@ -1,18 +1,18 @@
 ---
 title: 使用 HoloLens 模擬器
 description: 使用 HoloLens 模擬器在沒有實體 HoloLens 的電腦上測試混合實境應用程式。
-author: pbarnettms
-ms.author: pbarnett
-ms.date: 1/13/2020
+author: hamalawi
+ms.author: moelhama
+ms.date: 2/12/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: HoloLens, 模擬器
-ms.openlocfilehash: 3d358cf72e8481d27ca41784bbc059c45e0da7ff
-ms.sourcegitcommit: cf3b662cfcf3fb05a554c302e595eb018f01abf2
+ms.openlocfilehash: 1788e8bf2b362357380e43148cec222b21bcf396
+ms.sourcegitcommit: a580166a19294f835b8e09c780f663f228dd5de0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76521679"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77250973"
 ---
 # <a name="using-the-hololens-emulator"></a>使用 HoloLens 模擬器
 
@@ -25,7 +25,7 @@ HoloLens 模擬器可讓您在沒有實體 HoloLens 的電腦上測試全像攝�
 下載 HoloLens 模擬器。
 
 版本： 
-* [HoloLens 2 模擬器 (2020 年 1 月更新)](https://go.microsoft.com/fwlink/?linkid=2114824)。
+* [HoloLens 2 模擬器 (2020 年 2 月更新)](https://go.microsoft.com/fwlink/?linkid=2118321)。
 * [HoloLens 模擬器 (第 1 代) 和全像攝影專案範本](https://go.microsoft.com/fwlink/?linkid=2065980)。
 
 您可以在 [HoloLens 模擬器封存](hololens-emulator-archive.md)頁面上找到版本資訊和 HoloLens 模擬器的舊版組建。

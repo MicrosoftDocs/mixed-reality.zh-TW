@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: efa03c49a9a083d2b8e591e03bccbeb776bb57b2
-ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
+ms.openlocfilehash: d879144c7097d8b3873618f986b9f169e8553fa8
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901477"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77553816"
 ---
 # <a name="1-setting-up-photon-unity-networking"></a>1. 設定 Photon Unity 網路功能
 
@@ -25,18 +25,18 @@ ms.locfileid: "75901477"
 * 瞭解如何尋找和匯入 Photon Unity 網路功能
 * 設定本機 Photon 伺服器
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 >[!TIP]
 >如果您尚未完成[快速入門教學](mrlearning-base.md)課程和[Azure 空間錨點入門](mrlearning-asa-ch1.md)教學課程系列，建議您先完成這些教學課程。
 
-* [已安裝正確工具](install-the-tools.md)的 WINDOWS 10 電腦
+* 已[安裝正確工具](install-the-tools.md)的 Windows 10 電腦
 * Windows 10 SDK 10.0.18362.0 或更新版本
-* 一些基本C#的程式設計能力
-* [為開發設定](using-visual-studio.md#enabling-developer-mode)的 HoloLens 2 裝置
+* 基本的 C# 程式設計能力
+* 已[針對開發而設定](using-visual-studio.md#enabling-developer-mode)的 HoloLens 2 裝置
 
 >[!IMPORTANT]
->本教學課程系列需要<a href="https://unity3d.com/get-unity/download/archive" target="_blank">unity 2019.1</a> ，而建議的版本是 unity 2019.1.14。 這會取代上述所連結之必要條件中所述的任何 Unity 版本需求或建議。
+> 本教學課程系列的建議 Unity 版本是 Unity 2019.2. X。 這個版本能取代上述連結之必要條件中所述的任何 Unity 版本需求或建議。
 
 ## <a name="setting-up-photon"></a>設定 Photon
 
@@ -76,7 +76,7 @@ ms.locfileid: "75901477"
 
     ![module3chapter1step13im](images/module3chapter1step13im.PNG)
 
-## <a name="congratulations"></a>恭喜您
+## <a name="congratulations"></a>恭喜
 
 您已成功建立 Photon 帳戶、設定本機 Photon 伺服器，並將雙關語匯入 Unity。 下一個步驟是設定專案，並允許與其他使用者進行連線，讓多個使用者可以看到您的工作。
 

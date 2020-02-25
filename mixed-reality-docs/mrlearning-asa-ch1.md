@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 21883e95e92f8808bcf270e6d8091f31933ab6fa
-ms.sourcegitcommit: a580166a19294f835b8e09c780f663f228dd5de0
+ms.openlocfilehash: 0163b61bfbf8bd583532092581d94f63e1c2a624
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77250811"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77554634"
 ---
 # <a name="1-getting-started-with-azure-spatial-anchors"></a>1. 開始使用 Azure 空間錨點
 
@@ -35,20 +35,22 @@ ms.locfileid: "77250811"
 >[!TIP]
 >如果您尚未完成[快速入門教學](mrlearning-base.md)課程系列，建議您先完成這些教學課程。
 
-* [已安裝正確工具](install-the-tools.md)的 WINDOWS 10 電腦
+* 已[安裝正確工具](install-the-tools.md)的 Windows 10 電腦
 * Windows 10 SDK 10.0.18362.0 或更新版本
-* 一些基本C#的程式設計能力
-* [為開發設定](using-visual-studio.md#enabling-developer-mode)的 HoloLens 2 裝置
-* 已安裝 Unity 2019.2. X 的<a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity 中樞</a>，並已新增通用 Windows 平臺組建支援模組
+* 基本的 C# 程式設計能力
+* 已[針對開發而設定](using-visual-studio.md#enabling-developer-mode)的 HoloLens 2 裝置
+* <a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity Hub</a>，已安裝 Unity 2019.2，且已新增通用 Windows 平台組建支援模組
 * 完成[快速入門：建立使用 Azure 空間錨點的 Unity HoloLens 應用程式](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens)教學課程中的[建立空間錨點資源](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens#create-a-spatial-anchors-resource)一節。
 
 > [!IMPORTANT]
-> 本教學課程系列的建議 Unity 版本是 Unity 2019.2. X。 這會取代上述所連結之必要條件中所述的任何 Unity 版本需求或建議。
+> 本教學課程系列的建議 Unity 版本是 Unity 2019.2. X。 這個版本能取代上述連結之必要條件中所述的任何 Unity 版本需求或建議。
 
 ## <a name="creating-the-unity-project"></a>建立 Unity 專案
 <!-- TODO: Consider renaming to 'Creating and preparing the Unity scene and project'-->
 
-在本節中，您將建立新的 Unity 專案，並準備好進行 MRTK 開發。 為此，請遵循[初始化您的專案和第一個應用程式](mrlearning-base-ch1.md)，但不包括[組建您的應用程式到您的裝置](mrlearning-base-ch1.md#build-your-application-to-your-device)指示，其中包括下列步驟：
+在本節中，您將建立新的 Unity 專案，並準備好進行 MRTK 開發。
+
+為此，請先遵循[初始化您的專案和第一個應用程式](mrlearning-base-ch1.md)，但不包括將[您的應用程式建立至您的裝置](mrlearning-base-ch1.md#build-your-application-to-your-device)指示，其中包括下列步驟：
 
 1. [建立新的 Unity 專案](mrlearning-base-ch1.md#create-new-unity-project)，並為其提供適當的名稱，例如*MRTK 教學*課程。
 
@@ -62,8 +64,10 @@ ms.locfileid: "77250811"
 
 6. [將 Mixed Reality 工具組新增至 Unity 場景](mrlearning-base-ch1.md#configure-the-mixed-reality-toolkit)，並為場景提供適當的名稱，例如*AzureSpatialAnchors*
 
+然後遵循[如何設定混合現實工具組設定檔（變更空間感知顯示選項）](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option)指示，將場景的 MRTK 設定檔變更為**DefaultHoloLens2ConfigurationProfile** ，並將空間感知網格的顯示選項變更為**遮蔽**。
+
 > [!CAUTION]
-> 如上述連結的[混合現實工具組指示設定 Unity 專案](mrlearning-base-ch1.md#configure-the-unity-project-for-the-mixed-reality-toolkit)中所述，MSBuild for Unity 可能不支援您將使用的所有 sdk，而且在啟用後可能會很難停用。 因此，強烈建議您不要啟用適用于 Unity 的 MSBuild。
+> 如上述連結的[混合現實工具組指示設定 Unity 專案](mrlearning-base-ch1.md#configure-the-unity-project-for-the-mixed-reality-toolkit)中所述，強烈建議不要啟用適用于 Unity 的 MSBuild。
 
 ## <a name="adding-inbuilt-unity-packages"></a>新增內建 Unity 套件
 <!-- TODO: Consider renaming to 'Installing AR Foundation' -->
@@ -86,8 +90,8 @@ ms.locfileid: "77250811"
 依照**列出的順序**下載並匯**入**下列 Unity 自訂套件：
 
 * [AzureSpatialAnchors. unitypackage](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v2.1.1/AzureSpatialAnchors.unitypackage) （2.1.1 版）
-* [MRTK.HoloLens2 GettingStarted. 2.2.0.1. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.2.0.1/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.2.0.1.unitypackage)
-* [MRTK.HoloLens2 AzureSpatialAnchors. 2.2.0.0. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/azure-spatial-anchors-v2.2.0.0/MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpatialAnchors.2.2.0.0.unitypackage)
+* [MRTK.HoloLens2 GettingStarted. 2.3.0.2. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.3.0.2/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.2.unitypackage)
+* [MRTK.HoloLens2 AzureSpatialAnchors. 最新 2.3.0.0. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/azure-spatial-anchors-v2.3.0.0/MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpatialAnchors.2.3.0.0.unitypackage)
 
 > [!TIP]
 > 如需有關如何匯入 Unity 自訂套件的提醒，您可以參閱匯[入混合現實工具](mrlearning-base-ch1.md#import-the-mixed-reality-toolkit)組指示。
@@ -216,7 +220,7 @@ Azure 空間錨點無法在 Unity 中執行，因此若要測試 Azure 空間錨
 
 將**RocketLauncher_Complete**物件定位、旋轉和縮放至適當的縮放和方向，同時確保**ParentAnchor**物件仍會公開，例如：
 
-* 轉換**位置**X = 1，Y = 0，Z = 3.75
+* 轉換**位置**X = 0、Y = 0、Z = 3.75
 * 轉換**旋轉**X = 0、Y = 90、Z = 0
 * 轉換**小數值**X = 10，Y = 10，Z = 10
 
@@ -227,7 +231,7 @@ Azure 空間錨點無法在 Unity 中執行，因此若要測試 Azure 空間錨
 > [!TIP]
 > 有各種不同的使用者體驗流程可進行重新置放的體驗，包括使用重新置放的物件（例如本教學課程中使用的 cube）、使用按鈕來切換環繞體驗的周框方塊、使用位置和旋轉gizmos，還有更多。
 
-## <a name="congratulations"></a>恭喜！
+## <a name="congratulations"></a>恭喜
 
 在本教學課程中，您已瞭解 Azure 空間錨點的基本概念。 本教學課程提供您幾個按鈕，可讓您探索啟動和停止 Azure 空間錨點會話，以及在單一裝置上建立、上傳和下載 Azure 空間錨點所需的各種步驟。
 

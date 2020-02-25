@@ -5,13 +5,13 @@ author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
-keywords: mixed reality, unity, tutorial, hololens
-ms.openlocfilehash: e712fc2fd66b1add5b16b7dd8e6c37551aefe43a
-ms.sourcegitcommit: 9005b3fdfa87ac8fdc18a594a681e25c00ac5ce1
+keywords: 混合實境, unity, 教學課程, hololens
+ms.openlocfilehash: 8805fa6410e882bce2f0fe8da780dfd5f794cc74
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2019
-ms.locfileid: "75003207"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77553990"
 ---
 # <a name="4-setting-up-intent-and-natural-language-understanding"></a>4. 設定意圖和自然語言理解
 
@@ -33,7 +33,7 @@ ms.locfileid: "75003207"
 
     ![Module4Chapter4step1cim](images/module4chapter4step1cim.PNG)
 
-2. 登入 [Azure 入口網站](https://portal.azure.com/)。 登入之後，按一下 [建立資源]，搜尋 "Language Understanding"，然後按一下 Enter。
+2. 登入[Azure 入口網站](https://portal.azure.com/)。 登入之後，按一下 [建立資源]，搜尋 "Language Understanding"，然後按一下 Enter。
 
     ![mrlearning-speech-ch4-1-step2 .png](images/mrlearning-speech-ch4-1-step2.png)
 
@@ -98,7 +98,7 @@ ms.locfileid: "75003207"
 
     ![Module4Chapter4step14aim](images/module4chapter4step14aim.PNG)
 
-    按一下 [輸入範例 ...] . 然後，輸入下列語句：
+    按一下 [輸入範例 ...] 文字方塊。 然後，輸入下列語句：
 
     ![Module4Chapter4step14bim](images/module4chapter4step14bim.PNG)
 
@@ -147,20 +147,28 @@ ms.locfileid: "75003207"
 
     ![Module4Chapter4step23im](images/module4chapter4step23im.PNG)
 
-23. 在 [偵測器] 面板中 "LunarcomIntentRecognizer" 的 [Luis 端點] 欄位中，輸入您在步驟22中儲存的端點 URL。
+23. 在 [偵測器] 面板中 "LunarcomIntentRecognizer" 的 [Luis 端點] 欄位中，輸入您在步驟21中儲存的端點 URL。
 
     ![Module4Chapter4step24im](images/module4chapter4step24im.PNG)
 
     >[!NOTE]
     >在 [偵測器] 面板的 [LunarcomOfflineRecognizer] 元件中，確定已針對 [SimulateOfflineMode] 選取 [停用]，否則測試程式將無法正常執行。
 
-24. 按下 Unity 編輯器中的 [播放] 按鈕，然後按一下 [rocket] 按鈕以啟動意圖辨識。 有些純粹是「選取啟動 rocket 按鈕」一詞。
+24. 在 專案 視窗中，流覽至 資產 > MRTK。GettingStarted > Prefabs > RocketLauncher 資料夾中，將 RocketLauncher_Complete prefab 拖曳到您的階層視窗中，並將它放在 Lunarcom_Base 物件的前方。
+
+    ![Module4Chapter4step24im](images/module4chapter4step24im-missing01.png)
+
+25. 在 [階層] 視窗中，選取 [Lunarcom_Base] 物件，並找出 [Lunarcom 意圖辨識器（腳本）] 元件，然後展開 [RocketLauncher_Complete >] 按鈕物件，並將每個按鈕物件指派給對應的陰曆啟動器按鈕欄位.
+
+    ![Module4Chapter4step24im](images/module4chapter4step24im-missing02.png)
+
+26. 按下 Unity 編輯器中的 [播放] 按鈕，然後按一下 [rocket] 按鈕以啟動意圖辨識。 有些純粹是「選取啟動 rocket 按鈕」一詞。
 
     >[!NOTE]
     >應用程式已辨識所需的函式，並已啟用 [rocket] 按鈕。
     >
     >![Module4Chapter4step24im](images/module4chapter4note2im.PNG)
 
-## <a name="congratulations"></a>恭喜！
+## <a name="congratulations"></a>恭喜
 
 在這一課，您已瞭解如何新增 AI 驅動的語音命令。 現在，您的程式可以辨識使用者的意圖，即使他們沒有有些純粹是精確的語音命令也一樣！

@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 05728cf090b2e998e92980816943a2c3bef18dfb
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.openlocfilehash: 25e5aa05839845620a23c3dba6698ac7b5854d6d
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334289"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77553968"
 ---
 # <a name="1-integrating-and-using-speech-recognition-and-transcription"></a>1. 整合和使用語音辨識與轉譯
 
@@ -25,20 +25,20 @@ ms.locfileid: "75334289"
 * 瞭解如何使用語音命令
 * 瞭解如何使用語音轉換文字功能
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 >[!TIP]
 >如果您尚未完成[快速入門教學](mrlearning-base.md)課程系列，建議您先完成這些教學課程。
 
-* [已安裝正確工具](install-the-tools.md)的 WINDOWS 10 電腦
+* 已[安裝正確工具](install-the-tools.md)的 Windows 10 電腦
 * Windows 10 SDK 10.0.18362.0 或更新版本
-* 一些基本C#的程式設計能力
-* [為開發設定](using-visual-studio.md#enabling-developer-mode)的 HoloLens 2 裝置
+* 基本的 C# 程式設計能力
+* 已[針對開發而設定](using-visual-studio.md#enabling-developer-mode)的 HoloLens 2 裝置
 
 >[!IMPORTANT]
->本教學課程系列需要<a href="https://unity3d.com/get-unity/download/archive" target="_blank">unity 2019.1</a> ，而建議的版本是 unity 2019.1.14。 這會取代上述所連結之必要條件中所述的任何 Unity 版本需求或建議。
+> 本教學課程系列的建議 Unity 版本是 Unity 2019.2. X。 這個版本能取代上述連結之必要條件中所述的任何 Unity 版本需求或建議。
 
-## <a name="getting-started"></a>開始使用
+## <a name="getting-started"></a>使用者入門
 
 1. 啟動 Unity，並建立新的專案。 輸入專案名稱 [語音 SDK 學習模組]。 選擇要儲存專案的位置。 按一下 [建立專案]。
 
@@ -47,7 +47,7 @@ ms.locfileid: "75334289"
     >[!NOTE]
     >請確定範本已設定為3D，如上圖所示。
 
-2. 下載[混合實境工具組](https://github.com/microsoft/MixedRealityToolkit-Unity/releases) Unity [基礎套件 2.1.0 版](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.1.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage)，並將其儲存在您電腦上的資料夾。 將套件匯入至您的 Unity 專案。 如需如何執行此動作的詳細指示，請參閱[快速入門教學課程-第2課。初始化您的專案和第一個應用程式](mrlearning-base-ch1.md)。
+2. 下載[Mixed Reality 工具](https://github.com/microsoft/MixedRealityToolkit-Unity/releases)組 Unity [foundation 封裝版本 2.3.0](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.3.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.3.0.unitypackage) ，並將它儲存到您電腦上的資料夾。 將套件匯入至您的 Unity 專案。 如需如何執行此動作的詳細指示，請參閱[快速入門教學課程-第2課。初始化您的專案和第一個應用程式](mrlearning-base-ch1.md)。
 
 3. 下載並匯入 Unity 資產套件的 Azure[語音 SDK](https://aka.ms/csspeech/unitypackage) 。 按一下 [資產]，選取 [匯入套件]，然後選取 [自訂套件]，以匯入語音 SDK 套件。 尋找稍早下載的語音 SDK 套件，然後開啟以開始匯入程式。
 
@@ -59,9 +59,13 @@ ms.locfileid: "75334289"
 
     ![mrlearning-speech-ch1-1-step4 .png](images/mrlearning-speech-ch1-1-step4.png)
 
-5. 按一下[此連結](https://github.com/microsoft/MixedRealityLearning/releases/tag/Speech_2)，以下載語音 SDK 模組資產套件（也稱為 Lunarcom 套件）。 Lunarcom 資產套件是針對此課程系列所開發的資產和腳本集合，以展示 Azure 語音 SDK 的實際使用。 這是語音命令終端機，最終會與[快速入門教學課程-第7課所開發的陰曆模組元件體驗互動。建立農曆模組範例應用程式](mrlearning-base-ch6.md)。
+5. 下載教學課程資產：
+    * [MRTK.HoloLens2 GettingStarted. 2.3.0.2. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.3.0.2/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.2.unitypackage)
+    * [SpeechSDKAssets. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/Speech_2/SpeechSDKAssets.unitypackage) （版本1.2）
 
-6. 遵循匯入混合現實工具組和語音 SDK 所需的類似步驟，將 Lunarcom 資產封裝匯入 Unity 專案。
+    SpeechSDKAssets 資產套件是針對此教學課程系列所開發的資產和腳本集合，以展示 Azure 語音 SDK 的實際使用。 這是語音命令終端機，最終會與[快速入門教學課程-第7課所開發的 Rocket 啟動器元件體驗互動。建立農曆模組範例應用程式](mrlearning-base-ch6.md)。
+
+6. 遵循匯入混合現實工具組和語音 SDK 所需的類似步驟，將兩個教學課程資產封裝匯入 Unity 專案。
 
 7. 設定混合現實工具組（MRTK）。
 
@@ -69,7 +73,7 @@ ms.locfileid: "75334289"
 
     ![mrlearning-speech-ch1-1-step7a .png](images/mrlearning-speech-ch1-1-step7a.png)
 
-    在出現的快顯視窗中，選取 [DefaultHoloLens2ConfigurationProfile]，使其成為混合現實工具組的作用中設定檔。
+    在場景階層中選取 MixedRealityToolkit 物件之後，在 [偵測器] 視窗中選取 [DefaultHoloLens2ConfigurationProfile]，使其成為混合現實工具組的作用中設定檔。
 
     ![mrlearning-speech-ch1-1-step7b .png](images/mrlearning-speech-ch1-1-step7b.png)
 
@@ -187,8 +191,8 @@ ms.locfileid: "75334289"
 
     ![mrlearning-speech-ch1-2-step11.JPG](images/mrlearning-speach-ch1-2-step11.jpg)
 
-## <a name="congratulations"></a>恭喜您
+## <a name="congratulations"></a>恭喜
 
-您已在應用程式中設定語音辨識（由 Azure 提供技術支援）。 執行應用程式，以確保所有功能和功能都能正常運作。 從說出您在步驟22中輸入的喚醒字，啟用終端機。 選取 [麥克風] 按鈕以開始語音辨識。 開始說話。 您會在說話時看到您在終端機中轉譯的單字。 第二次按下 [麥克風] 按鈕，以停止語音辨識。 假設 [關閉終端機] 以隱藏 Lunarcom 終端機。 在下一課中，您將瞭解如何在因為 HoloLens 2 離線而無法使用 Azure 語音 SDK 的情況下，以動態方式切換至使用裝置供電的語音辨識。
+您已在應用程式中設定語音辨識（由 Azure 提供技術支援）。 執行應用程式，以確保所有功能和功能都能正常運作。 從說出您在步驟25輸入的喚醒字，啟用終端機。 選取 [麥克風] 按鈕以開始語音辨識。 開始說話。 您會在說話時看到您在終端機中轉譯的單字。 第二次按下 [麥克風] 按鈕，以停止語音辨識。 假設 [關閉終端機] 以隱藏 Lunarcom 終端機。 在下一課中，您將瞭解如何在因為 HoloLens 2 離線而無法使用 Azure 語音 SDK 的情況下，以動態方式切換至使用裝置供電的語音辨識。
 
 [下一個教學課程： 2. 新增本機語音轉換文字翻譯的離線模式](mrlearning-speechSDK-ch2.md)

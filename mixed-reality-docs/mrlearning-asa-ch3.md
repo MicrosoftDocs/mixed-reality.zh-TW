@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: f4f609a71b05a52e8761e282763a540b42e9f7f5
-ms.sourcegitcommit: a580166a19294f835b8e09c780f663f228dd5de0
+ms.openlocfilehash: 3d762950ea8e211fd5a8e4cf8af717674d3fe7e1
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77250681"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77553924"
 ---
 # <a name="3-displaying-azure-spatial-anchor-feedback"></a>3. 顯示 Azure 空間錨點的意見反應
 
@@ -26,7 +26,7 @@ ms.locfileid: "77250681"
 
 在 [階層] 視窗中，以滑鼠右鍵按一下 > **TextContent**物件的**指示**，然後選取 [ **3d 物件** > **TextMeshPro** ]，以建立 TextMeshPro 文字物件做為指示 > TextContent 物件的子系，並為其提供適當的名稱，例如**意見**反應：
 
-![mrlearning-基底](images/mrlearning-asa/tutorial3-section1-step1-1.png)
+![mrlearning-base](images/mrlearning-asa/tutorial3-section1-step1-1.png)
 
 > [!TIP]
 > 若要讓您更輕鬆地使用場景，請按一下物件左側的眼睛圖示，將 ParentAnchor 物件的<a href="https://docs.unity3d.com/Manual/SceneVisibility.html" target="_blank">場景可見度</a>設定為 [關閉]。 這會隱藏場景視窗中的物件，而不會變更其遊戲內可見度。
@@ -43,16 +43,16 @@ ms.locfileid: "77250681"
 * 將文本網格 Pro （腳本）**字型大小**變更為0.17
 * 將文本網格 Pro （腳本）**對齊**變更為置中和中間
 
-![mrlearning-基底](images/mrlearning-asa/tutorial3-section1-step1-2.png)
+![mrlearning-base](images/mrlearning-asa/tutorial3-section1-step1-2.png)
 
 在仍選取 [**意見**反應] 物件的情況下，在 [偵測器] 視窗中，使用 [**加入元件**] 按鈕，將**錨點回饋腳本（腳本）** 元件新增至意見物件：
 
-![mrlearning-基底](images/mrlearning-asa/tutorial3-section1-step1-3.png)
+![mrlearning-base](images/mrlearning-asa/tutorial3-section1-step1-3.png)
 
-將**意見**反應物件指派給**錨點意見反應腳本（腳本）** 元件的**意見文字**欄位：
+將**意見**物件本身指派給**錨點意見反應腳本（腳本）** 元件的**意見反應文字**欄位：
 
-![mrlearning-基底](images/mrlearning-asa/tutorial3-section1-step1-4.png)
+![mrlearning-base](images/mrlearning-asa/tutorial3-section1-step1-4.png)
 
-## <a name="congratulations"></a>恭喜！
+## <a name="congratulations"></a>恭喜
 
 在本教學課程中，您已瞭解如何建立 UI 面板，以顯示 Azure 空間錨點體驗的目前狀態，以提供使用者即時意見反應。

@@ -1,19 +1,19 @@
 ---
-title: MRTK 右手指導設計指導方針
+title: 手動教練
 description: 當系統偵測不到使用者的手協助時，所觸發的3D 手。
 author: grayclee
 ms.author: glee
 ms.date: 09/25/2019
 ms.topic: article
 keywords: Windows Mixed Reality、設計、手勢、沉浸式耳機、MRTK、手中的協助
-ms.openlocfilehash: dc04f8f77548b226a822576befd60be107f4d3fb
-ms.sourcegitcommit: 87aca9c2b73b0e83cb70a46443dcdb08c3621005
+ms.openlocfilehash: c5f0a0c241ff71dc93f370a5a8caa627128bfb1a
+ms.sourcegitcommit: 1ec628a9107194c0a9d4073b5ca09ee816030e85
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77373519"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78202731"
 ---
-# <a name="hand-coach-design-guidance"></a>手動指導設計指引
+# <a name="hand-coach"></a>手動教練
 
 「手動操作」是一種3D 模型化的手，會在系統未偵測到使用者手時觸發。 這會實作為「教學」元件，可在未教授手勢時協助引導使用者。 如果使用者尚未針對某個時間執行指定的手勢，則手會以延遲方式迴圈。 右手教練可用來代表按下按鈕或挑選全像投影。  
 

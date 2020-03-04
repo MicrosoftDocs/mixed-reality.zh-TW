@@ -7,18 +7,18 @@ ms.author: grbury
 ms.date: 11/15/2019
 ms.topic: overview
 keywords: Windows Mixed Reality，設計，應用程式模式，控制項，樣式，HoloLens，互動，UX 元素，行為，建立區塊
-ms.openlocfilehash: 16a6c08230dbe16ebb04c39751cce306bbc57c2d
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.openlocfilehash: 9e2173e55a8c37ae4333d459ffe37fc01389b143
+ms.sourcegitcommit: 1ec628a9107194c0a9d4073b5ca09ee816030e85
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334191"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78202748"
 ---
 # <a name="ux-elements-overview"></a>UX 元素總覽
 
 ![HoloLens 2 使用者與全像攝影按鈕互動](images/06_AppPatterns.png)
 
-## <a name="style"></a>[樣式]
+## <a name="style"></a>樣式
 
 :::row:::
     :::column:::
@@ -31,7 +31,7 @@ ms.locfileid: "75334191"
 
 :::row:::
     :::column:::
-       [![印刷](images/text_in_unity_viewingangle.png)](typography.md)  **[](typography.md)樣式**
+       [![印刷](images/text_in_unity_viewingangle.png)](typography.md)  **[樣式](typography.md)**
     :::column-end:::
     :::column:::
        [![聲](images/spatialaudio.png)](spatial-sound.md) **[音效](spatial-sound.md)**
@@ -114,6 +114,15 @@ ms.locfileid: "75334191"
     :::column-end:::
 :::row-end:::
 
+:::row:::
+    :::column:::
+       [![手勢的指導](images/HandCoach/MRTK_handCoach.jpg)](hand-coach.md)  **[手勢的指導](hand-coach.md)**
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
 
 <br>
 

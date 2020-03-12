@@ -3,15 +3,15 @@ title: HoloLens 模擬器封存
 description: Microsoft HoloLens 模擬器的已發行組建清單。
 author: hamalawi
 ms.author: moelhama
-ms.date: 2/12/2020
+ms.date: 3/10/2020
 ms.topic: article
 keywords: HoloLens、模擬器、組建、版本
-ms.openlocfilehash: 4696330e62d2b7b5d58c73e13713e0731f5ec3bc
-ms.sourcegitcommit: a580166a19294f835b8e09c780f663f228dd5de0
+ms.openlocfilehash: 7aed01ecc155e4ea93bbbf9c347f117b319d2bc7
+ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77250663"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79031769"
 ---
 # <a name="hololens-2-emulator-archive"></a>HoloLens 2 模擬器封存
 
@@ -19,6 +19,7 @@ HoloLens 模擬器（第1代）和 HoloLens 2 模擬器組建會並存安裝。 
 
 |  組建 |  發行日期 |  注意事項 | 
 |----------|----------|----------|
+|  [HoloLens 2 模擬器組建10.0.18362.1056](https://go.microsoft.com/fwlink/?linkid=2121323) | 2020年3月10日 | 2020年3月的 HoloLens 2 組建。  如需一般 HoloLens 2 版本資訊，請參閱 https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 模擬器組建10.0.18362.1053](https://go.microsoft.com/fwlink/?linkid=2118321) | 2020年2月11日 | 2020年2月2日組建。  如需一般 HoloLens 2 版本資訊，請參閱 https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 模擬器組建10.0.18362.1044](https://go.microsoft.com/fwlink/?linkid=2114824) | 2020年1月13日 | 2020年1月的 HoloLens 2 組建。  如需一般 HoloLens 2 版本資訊，請參閱 https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 模擬器組建10.0.18362.1042](https://go.microsoft.com/fwlink/?linkid=2112589) | 2019年12月6日 | 12月 2019 HoloLens 2 組建。  解決在顯示 [針腳] 面板時，在模擬器中執行的全像攝影應用程式不會意外暫停的問題。  使用認知模擬 API 或感知模擬控制應用程式時，可讓您連接到遠端模擬器。  如需一般 HoloLens 2 版本資訊，請參閱 https://docs.microsoft.com/hololens/hololens-release-notes |

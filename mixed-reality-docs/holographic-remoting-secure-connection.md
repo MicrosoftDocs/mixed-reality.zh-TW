@@ -1,17 +1,17 @@
 ---
 title: 使用全像攝影遠端建立安全連線
 description: 此頁面說明如何在使用全像攝影遠端時建立安全的加密連接。
-author: bethau
-ms.author: bethau
-ms.date: 10/21/2019
+author: FlorianBagarMicrosoft
+ms.author: flbagar
+ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、遠端、全像攝影遠端
-ms.openlocfilehash: 1142ba3bd8b0d05202ccd04885de5d70165872d1
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: ac1170cb3e6d681fc164c3f4cee14da6ab6eb90b
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73434200"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79092478"
 ---
 # <a name="establishing-a-secure-connection-with-holographic-remoting"></a>使用全像攝影遠端建立安全連線
 
@@ -25,7 +25,7 @@ ms.locfileid: "73434200"
 >[!IMPORTANT]
 >即使在使用受信任的本機 WiFi 時，也應該考慮使用加密的連接。
 
-若要能夠使用加密的連線，您必須同時執行[自訂播放機](holographic-remoting-create-player.md)和[自訂主機應用程式](holographic-remoting-create-host.md)。
+若要能夠使用加密的連線，您必須同時執行[自訂播放機](holographic-remoting-create-player.md)和[自訂遠端應用程式](holographic-remoting-create-host.md)。
 
 加密是透過使用基礎平臺的 TLS 實現來達成。
 
@@ -60,8 +60,8 @@ ms.locfileid: "73434200"
 
 一旦執行這些物件 ```ListenSecure``` 必須呼叫，而不是 ```Listen``` 和 ```ConnectSecure```，而不是分別在遠端內容和播放者內容上 ```Connect```。 ```ListenSecure``` 需要額外的憑證提供者和驗證接收器，而不是 ```Listen```。 ```ConnectSecure``` 需要額外的驗證提供者，以及透過 ```Connect```的憑證驗證程式。
 
-## <a name="see-also"></a>請參閱
-* [撰寫全像的遠端主機應用程式](holographic-remoting-create-host.md)
+## <a name="see-also"></a>另請參閱
+* [撰寫全像攝影遠端應用程式](holographic-remoting-create-host.md)
 * [撰寫自訂的全像遠端播放播放機應用程式](holographic-remoting-create-player.md)
 * [全像攝影遠端疑難排解和限制](holographic-remoting-troubleshooting.md)
 * [全像攝影遠端軟體授權條款](https://docs.microsoft.com//legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)

@@ -3,15 +3,15 @@ title: 全像攝影遠端疑難排解和限制
 description: HoloLens 2 上全像攝影遠端處理的疑難排解步驟。
 author: FlorianBagarMicrosoft
 ms.author: flbagar
-ms.date: 12/17/2019
+ms.date: 03/11/2020
 ms.topic: article
 keywords: Windows Mixed Reality，全息影像，全像攝影遠端，遠端轉譯，網路轉譯，HoloLens，遠端全息影像，疑難排解，協助
-ms.openlocfilehash: 05333c8911010945a543cf603b9925eb30c841db
-ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
+ms.openlocfilehash: 79258832d29741c56a1e7e89baeb7d728c806dd1
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75181968"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79092365"
 ---
 # <a name="holographic-remoting-troubleshooting"></a>全像攝影遠端疑難排解
 
@@ -22,7 +22,7 @@ ms.locfileid: "75181968"
 
 全像攝影遠端範例應用程式在發行設定中啟用了 Spectre 緩和措施（/Qspectre）。
 
-如果您收到嚴重的連結器錯誤，指出無法開啟 ' vccorlib.h '，請確定您的 Visual Studio 工作負載包含 Spectre 緩和程式庫。 如需相關資訊，請參閱 https://aka.ms/Ofhn4c 。
+如果您收到嚴重的連結器錯誤，指出無法開啟 ' vccorlib.h '，請確定您的 Visual Studio 工作負載包含 Spectre 緩和程式庫。 如需相關資訊，請參閱 https://aka.ms/Ofhn4c。
 
 ## <a name="limitations"></a>限制
 
@@ -40,6 +40,7 @@ ms.locfileid: "75181968"
 * [HolographicCameraPose.OverrideViewTransform](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose.overrideviewtransform)
 * [HolographicCameraRenderingParameters.CommitDirect3D11DepthBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.commitdirect3d11depthbuffer#Windows_Graphics_Holographic_HolographicCameraRenderingParameters_CommitDirect3D11DepthBuffer_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_)
   - 不會失敗，但深度緩衝區將不會進行遠端處理。
+  - 從版本[2.1.0](holographic-remoting-version-history.md#v2.1.0)開始支援
 * [HolographicDisplay.TryGetViewConfiguration](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicdisplay.trygetviewconfiguration)
   - 查詢 HolographicViewConfigurationKind。 PhotoVideoCamera 一律會傳回 ```nullptr```。
   - 從版本[2.0.18 版](holographic-remoting-version-history.md#v2.0.18)開始支援
@@ -58,7 +59,7 @@ ms.locfileid: "75181968"
 * [Spatiallocation. AbsoluteLinearAcceleration](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatiallocation.absolutelinearacceleration)
 * [Spatiallocation. AbsoluteLinearVelocity](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatiallocation.absolutelinearvelocity)
 * [SpatialStageFrameOfReference。目前](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialstageframeofreference.current)
-  - 永遠會傳回 ```nullptr```。
+  - 一律會傳回 ```nullptr```。
 * [SpatialStageFrameOfReference.RequestNewStageAsync](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialstageframeofreference.requestnewstageasync)
 * [SpatialAnchor.RemovedByUser](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialanchor.removedbyuser)
 * [SpatialAnchorExporter.GetDefault](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialanchorexporter.getdefault
@@ -88,9 +89,9 @@ ms.locfileid: "75181968"
 * [SpatialGraphInteropPreview.TryCreateFrameOfReference](https://docs.microsoft.com/uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview.trycreateframeofreference)
 * [SpatialInteractionSource 控制器](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionsource.controller#Windows_UI_Input_Spatial_SpatialInteractionSource_Controller)
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [全像遠端版本歷程記錄](holographic-remoting-version-history.md)
-* [撰寫全像的遠端主機應用程式](holographic-remoting-create-host.md)
+* [撰寫全像攝影遠端應用程式](holographic-remoting-create-host.md)
 * [撰寫自訂的全像遠端播放播放機應用程式](holographic-remoting-create-player.md)
 * [全像攝影遠端軟體授權條款](https://docs.microsoft.com/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
 * [Microsoft 隱私權聲明](https://go.microsoft.com/fwlink/?LinkId=521839)

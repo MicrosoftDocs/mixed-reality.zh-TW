@@ -1,17 +1,17 @@
 ---
 title: 自訂全像攝影遠端資料通道
 description: 自訂資料通道可以用來透過已建立的全像攝影遠端連線傳送使用者資料。
-author: NPohl-MSFT
-ms.author: nopohl
-ms.date: 10/21/2019
+author: FlorianBagarMicrosoft
+ms.author: flbagar
+ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、遠端、全像攝影遠端
-ms.openlocfilehash: 2861c780c5d7e516d5b7ddc757bbcba6da7e6559
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 8bfa19b7af0f3429130aabf70d9d11083bc56a52
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926663"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79092300"
 ---
 # <a name="custom-holographic-remoting-data-channels"></a>自訂全像攝影遠端資料通道
 
@@ -21,10 +21,10 @@ ms.locfileid: "73926663"
 使用自訂資料通道，透過已建立的遠端連線傳送自訂資料。
 
 >[!IMPORTANT]
->自訂資料通道需要自訂的主機應用程式和自訂播放機應用程式，因為它允許兩個自訂應用程式之間的通訊。
+>自訂資料通道需要自訂的遠端應用程式和自訂播放機應用程式，因為這可讓兩個自訂應用程式之間進行通訊。
 
 >[!TIP]
->您可以在全像「全像」[遠端範例 github 存放庫](https://github.com/microsoft/MixedReality-HolographicRemoting-Samples)內的主機和播放機範例中找到簡單的乒乓球範例。 取消批註 SampleHostMain 中的 ```#define ENABLE_CUSTOM_DATA_CHANNEL_SAMPLE```，以啟用範例程式碼。
+>您可以在全像攝影[遠端範例 github 存放庫](https://github.com/microsoft/MixedReality-HolographicRemoting-Samples)中的遠端和播放機範例中找到簡單的乒乓球範例。 取消批註 SampleRemoteMain 中的 ```#define ENABLE_CUSTOM_DATA_CHANNEL_SAMPLE```，以啟用範例程式碼。
 
 
 ## <a name="create-a-custom-data-channel"></a>建立自訂資料通道
@@ -38,11 +38,11 @@ winrt::Microsoft::Holographic::AppRemoting::IDataChannel::OnDataReceived_revoker
 winrt::Microsoft::Holographic::AppRemoting::IDataChannel::OnClosed_revoker m_customChannelClosedEventRevoker;
 ```
 
-成功建立連接之後，就可以從主機端和（或）播放程式端起始新的資料通道建立。 RemoteCoNtext 和 PlayerCoNtext 都提供 ```CreateDataChannel()``` 方法來執行這項操作。 第一個參數是通道識別碼，用來識別後續作業中的資料通道。 第二個參數是優先順序，指定此通道的資料傳輸到另一端的優先順序。 通道識別碼的有效範圍為0到（含），最多為主機端63，包括玩家端的127和64。 有效的優先順序為 ```Low```、```Medium``` 或 ```High``` （兩端）。
+成功建立連接之後，就可以從遠端端和/或播放程式端起始新的資料通道。 RemoteCoNtext 和 PlayerCoNtext 都提供 ```CreateDataChannel()``` 方法來執行這項操作。 第一個參數是通道識別碼，用來識別後續作業中的資料通道。 第二個參數是優先順序，指定此通道的資料傳輸到另一端的優先順序。 通道識別碼的有效範圍為0到遠端端，包括63，而最多則為64，而不是播放程式端的127。 有效的優先順序為 ```Low```、```Medium``` 或 ```High``` （兩端）。
 
-若要起始在**主機**端建立資料通道：
+若要起始在**遠端**端建立資料通道：
 ```cpp
-// Valid channel ids for channels created on the host side are 0 up to and including 63
+// Valid channel ids for channels created on the remote side are 0 up to and including 63
 m_remoteContext.CreateDataChannel(0, DataChannelPriority::Low);
 ```
 
@@ -53,11 +53,11 @@ m_playerContext.CreateDataChannel(64, DataChannelPriority::Low);
 ```
 
 >[!NOTE]
->若要建立新的自訂資料通道，只有一個側邊（主機或玩家）需要呼叫 ```CreateDataChannel``` 方法。
+>若要建立新的自訂資料通道，只有一個側邊（遠端或玩家）需要呼叫 ```CreateDataChannel``` 方法。
 
 ## <a name="handling-custom-data-channel-events"></a>處理自訂資料通道事件
 
-若要建立自訂資料通道，必須處理 ```OnDataChannelCreated``` 事件（在 player 和主機端）。 它會在使用者資料通道已由任一端建立時觸發，並提供 ```IDataChannel``` 物件，可用於透過此通道傳送和接收資料。
+若要建立自訂資料通道，必須處理 ```OnDataChannelCreated``` 事件（在玩家和遠端端）。 它會在使用者資料通道已由任一端建立時觸發，並提供 ```IDataChannel``` 物件，可用於透過此通道傳送和接收資料。
 
 若要在 ```OnDataChannelCreated``` 事件上註冊接聽程式：
 ```cpp
@@ -113,8 +113,8 @@ m_customDataChannel.SendData(data, true);
 m_customDataChannel.Close();
 ```
 
-## <a name="see-also"></a>請參閱
-* [撰寫全像的遠端主機應用程式](holographic-remoting-create-host.md)
+## <a name="see-also"></a>另請參閱
+* [撰寫全像攝影遠端應用程式](holographic-remoting-create-host.md)
 * [撰寫自訂的全像遠端播放播放機應用程式](holographic-remoting-create-player.md)
 * [全像攝影遠端疑難排解和限制](holographic-remoting-troubleshooting.md)
 * [全像攝影遠端軟體授權條款](https://docs.microsoft.com//legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)

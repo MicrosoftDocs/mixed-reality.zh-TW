@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 12/27/2019
 ms.topic: article
 keywords: 混合現實、社區、mvp、聚會
-ms.openlocfilehash: 08cb0142a2e26d3c855b742ab3b8d0054f698efb
-ms.sourcegitcommit: 1ec628a9107194c0a9d4073b5ca09ee816030e85
+ms.openlocfilehash: 7814db195e105c2fdf9ba894dc1877e2cbdc4675
+ms.sourcegitcommit: fcd4ca74d59bd4cf469b71f07169defd0887ac21
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2020
-ms.locfileid: "78202764"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79084580"
 ---
 # <a name="mixed-reality-community"></a>混合現實社區
 
@@ -36,8 +36,8 @@ ms.locfileid: "78202764"
 |**芝加哥 AWE Nite**|A|芝加哥|[連結](https://www.meetup.com/AWENiteChicago/)|
 |**Mixed Reality 使用者群組-荷蘭**|荷蘭|Rijswijk|[連結](https://www.mixug.com)|
 |**VR 菲律賓**|菲律賓|N/A|[連結](https://www.facebook.com/vrphilippines/)|
+|**XRLA**|A|洛杉磯|[連結](https://www.meetup.com/XRLA_Meetup/)|
 <!--
-|Row3     |         |         |         |
 |Row4     |         |         |         |
 |Row5     |         |         |         |
 |Row6     |         |         |         |
@@ -98,7 +98,7 @@ Microsoft 最有價值專家（或 Mvp）是努力與社區分享其知識的技
 |![Dave Smits](images/BiographyImages/DaveSmits_270x270.jpg)</br>**Dave Smits**</br>*Amersfoort，荷蘭*|自2014起，Dave Smits 會 Microsoft MVP，並在第一版啟動後使用 HoloLens。 為客戶提供數個專案，從簡單模型開始，到包含要用於全息影像之動作追蹤感應器的應用程式。|[電子郵件](mailto:dave@familie-smits.com)|
 |![Eric Provencher](images/BiographyImages/EricProvencher_270x270.jpg)</br>**Eric Provencher**</br>*蒙特利爾、QC、加拿大*|Eric 是 CAE 的資深混合現實架構和 UX 開發人員，其中一個是 Microsoft Mixed Reality 合作夥伴，另一個是 wave 1 HoloLens 採納者。 他的主要角色是領先內部跨平臺開發架構的架構和開發，非常類似于 MRTK，以及開發和維護新的和現有的醫療保健模擬和訓練應用程式。他主要是在 Unity 中建立應用程式，在 VR （Oculus go）中，AR （HoloLens 1 & 2），以及以螢幕為基礎（WebGL + iOS/Android）。|[電子郵件](mailto:erproven@gmail.com)|
 |![Fabrice Barbin](images/BiographyImages/FabriceBarbin_270x270.jpg)</br>**Fabrice Barbin**</br>*法國*|多年來的企業家、創新和技術愛好者，Fabrice 是[SYNERGIZ](http://www.synergiz.com)、Microsoft Mixed Reality 合作夥伴、法國的 HoloLens 使用案例先鋒的 CEO。 主動將 Microsoft 技術升階為說話者，讓 MVP 獲得12年的 Fabrice，對大量產品有興趣： HoloLens、Kinect4Azure、IoT、Surface Hub、筆墨、Touch、IA、Machine Learning、認知服務、Azure|[電子郵件](mailto:fbarbin@synergiz.com)|
-|![Francesco Clasadonte](images/BiographyImages/FrancescoClasadonte_270x270.jpg)</br>**Francesco Clasadonte**</br>*米蘭，義大利*|Fanciful 和創意，我參與了我 passioned 的所有專案。 過去三年來，我一直致力於米蘭理工大學 di Milano 的研究人員，把我的研究重點放在 disabilites 的孩子，取得開發 IOT 系統、智慧型物件、機器人互動、光源設計的經驗。在全國和國際專案中 multisensory 環境和自然使用者介面。</br></br>目前，我正致力於 IOT、web 解決方案、系統整合等領域的兼職顧問，著重在新興及創新的技術，例如混合現實及人工智慧。|[電子郵件](mailto:klasaf@outlook.com)|
+|![Francesco Clasadonte](images/BiographyImages/FrancescoClasadonte_270x270.jpg)</br>**Francesco Clasadonte**</br>*米蘭，義大利*|Fanciful 和創意，我參與了我 passioned 的所有專案。 過去三年來，我一直致力於米蘭理工大學 di Milano 的研究人員，把我的研究重點放在 disabilites 的孩子，取得開發 IOT 系統、智慧型物件、機器人互動、光源設計的經驗。在全國和國際專案中 multisensory 環境和自然使用者介面。</br></br>目前，我正以資深創意開發人員的身分，在 IOT 的領域、web 解決方案、系統整合的[FifthIngenium](https://fifthingenium.com)中工作，著重于新興及創新的技術，例如混合現實和人工智慧。|[電子郵件](mailto:klasaf@outlook.com)|
 |![Gianni Rosa Gallina](images/BiographyImages/GianniRosaGallina_270x270.png)</br>**Gianni Rosa Gallina**</br>*義大利*|Gianni 是自2011起的 Microsoft MVP，著重于從2013開始的新興技術、AI 和虛擬/增強/混合現實。 目前，& 他在 Deltatre 的創新實驗室中的資深軟體工程師，為下一代的運動相關經驗與服務設計和原型，從 VR/MR 應用程式到端對端的 Azure 架構和影片工作流程，以認知服務、AI 和更多功能的方式傳遞。 除此之外，他是當地社區「Torino 技術小組」（TTG）、召集人和訓練人員的活動成員 Gym Torino 每月聚會、Pluralsight 線上課程作者、在他的 blog 中發佈文章，以及在全國與他的演說國際科技會議和活動。|[電子郵件](mailto:giannishub@hotmail.com)|
 |![Jessica Engstrom](images/BiographyImages/JessicaEngstrom_270x270.jpg)</br>**Jessica Engstrom**</br>*斯德哥爾摩，瑞典*|Microsoft MVP-Windows 平臺開發、公用說話者、UX、Bot 和混合現實。 撰寫工作後的程式碼播客共同主機。 使用者群組和會議召集人|[電子郵件](mailto:jessica@catoholic.se)|
 |![Jimmy Engstrom](images/BiographyImages/JimmyEngstrom_270x270.jpg)</br>**Jimmy Engstrom**</br>*斯德哥爾摩，瑞典*|Microsoft MVP-Windows 平臺開發、講師、Blazor、Mixed Reality、HoloLens 和 Windows 開發人員。 撰寫工作後的程式碼播客共同主機。 使用者群組和會議召集人|[電子郵件](mailto:jimmy@engstromjimmy.se)|

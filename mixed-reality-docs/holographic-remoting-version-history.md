@@ -1,25 +1,32 @@
 ---
 title: 全像遠端版本歷程記錄
 description: HoloLens 2 上全像攝影遠端處理的版本歷程記錄。
-author: NPohl-MSFT
-ms.author: nopohl
-ms.date: 10/21/2019
+author: FlorianBagarMicrosoft
+ms.author: flbagar
+ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、遠端、全像攝影遠端
-ms.openlocfilehash: f051dbf24cab550470a312933ffb99e1ba595257
-ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
+ms.openlocfilehash: 62f54dbcf5327cdd5f13622704684a2cb0606d7d
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75181958"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79092316"
 ---
 # <a name="holographic-remoting-version-history"></a>全像遠端版本歷程記錄
 
 > [!IMPORTANT]
 > 本指導方針專屬於 HoloLens 2 上的全像攝影遠端處理。
 
-## 版本2.0.18.0 （2019年12月17日）<a name="v2.0.18"></a>
-* 已新增對 HolographicViewConfiguration 的支援： https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicviewconfiguration
+## 版本2.1.0 （2020年3月11日）<a name="v2.1.0"></a>
+* 已將網路傳輸切換為使用[RTP](https://en.wikipedia.org/wiki/Real-time_Transport_Protocol) via UDP。 安全連線立即使用[SRTP](https://en.wikipedia.org/wiki/Secure_Real-time_Transport_Protocol) 。 請注意，全像之前發行的「全像攝影[」遠端處理](holographic-remoting-player.md)版本仍然相容。 若要從新的網路傳輸中獲益，全像攝影的遠端播放程式和遠端應用程式有問題，必須使用版本2.1.0。
+* 已新增對[HolographicCameraRenderingParameters 的支援。 CommitDirect3D11DepthBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.commitdirect3d11depthbuffer#Windows_Graphics_Holographic_HolographicCameraRenderingParameters_CommitDirect3D11DepthBuffer_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_)。 
+
+## 版本2.0.20 版（2020年2月2日）<a name="v2.0.20"></a>
+* 已修正導致當機的各種錯誤。
+
+## 版本2.0.18 版（2019年12月17日）<a name="v2.0.18"></a>
+* 已新增對[HolographicViewConfiguration](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicviewconfiguration)的支援
 * 已修正導致當機的各種錯誤。
 * 已修正 HolographicCamera 要接受並顯示為 HoloraphicFrame 中新增的相機所需的 HolographicSpace CameraAdded 回呼的 bug。
 
@@ -54,7 +61,7 @@ ms.locfileid: "75181958"
 
 * HoloLens 2 的第一個公開發行的全像攝影遠端功能。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [撰寫自訂的全像遠端播放播放機應用程式](holographic-remoting-create-player.md)
 * [撰寫全像的遠端主機應用程式](holographic-remoting-create-host.md)
 * [全像攝影遠端疑難排解和限制](holographic-remoting-troubleshooting.md)

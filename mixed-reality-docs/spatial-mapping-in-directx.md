@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows mixed reality，空間對應，環境，互動，directx，winrt，api，範例程式碼，UWP，SDK，逐步解說
 ms.openlocfilehash: 456fcf1c00e23a287a741673e94b3f8d2d2d346c
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437450"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375815"
 ---
 # <a name="spatial-mapping-in-directx"></a>DirectX 中的空間對應
 
@@ -74,7 +74,7 @@ ms.locfileid: "73437450"
   - 從這裡，您的應用程式可以選擇性地執行網格資料的分析或[處理](spatial-mapping.md#mesh-processing)，並使用它來[呈現](spatial-mapping.md#rendering)和物理[raycasting 和衝突](spatial-mapping.md#raycasting-and-collision)。
   - 要注意的一個重要詳細資料，就是您必須將縮放比例套用至網格頂點位置（例如，在用來轉譯網格的頂點著色器中），將它們從儲存在緩衝區中的優化整數單位轉換成計量。 您可以藉由呼叫[VertexPositionScale](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfacemesh.vertexpositionscale.aspx)來取得這項調整。
 
-### <a name="troubleshooting"></a>[疑難排解]
+### <a name="troubleshooting"></a>疑難排解
 * 別忘了使用 SpatialSurfaceMesh 所傳回的小數值，來調整頂點著色器中的網格頂點位置[。 VertexPositionScale](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfacemesh.vertexpositionscale.aspx)
 
 ## <a name="spatial-mapping-code-sample-walkthrough"></a>空間對應程式碼範例逐步解說
@@ -216,7 +216,7 @@ m_surfaceObserver->SetBoundingVolume(
             );
 ```
 
-如果您的應用程式在表面對應資料無法使用時，需要以不同的方式執行任何動作，您可以撰寫程式碼來回應不**允許** [SpatialPerceptionAccessStatus](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialperceptionaccessstatus.aspx)的情況，例如，不允許在具有沉浸式的電腦上使用。已連接的裝置，因為這些裝置沒有空間對應的硬體。 針對這些裝置，您應該改為依賴空間階段，以取得使用者環境和裝置設定的相關資訊。
+如果您的應用程式在表面對應資料無法使用時，需要以不同的方式執行任何動作，您可以撰寫程式碼來回應不**允許** [SpatialPerceptionAccessStatus](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialperceptionaccessstatus.aspx)的情況，例如，不允許在已連接沉浸式裝置的電腦上使用，因為這些裝置沒有空間對應的硬體。 針對這些裝置，您應該改為依賴空間階段，以取得使用者環境和裝置設定的相關資訊。
 
 ### <a name="initialize-and-update-the-surface-mesh-collection"></a>初始化和更新 surface 網狀集合
 
@@ -673,6 +673,6 @@ context->OMSetRenderTargets(1, targets, pCameraResources->GetSurfaceDepthStencil
 m_meshCollection->Render(pCameraResources->IsRenderingStereoscopic(), false);
 ```
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [建立全像攝影 DirectX 專案](creating-a-holographic-directx-project.md)
 * [Windows 感知空間 API](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.aspx)

@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: 如何，配件，藍牙，bt，控制器，遊戲台，clicker，xbox
 ms.openlocfilehash: 566d4217fb674057e1dc3d9791b247185bf61d32
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435143"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375695"
 ---
 # <a name="hardware-accessories"></a>硬體配件
 

@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: mixed reality，全像，ar，vr，mr，xr，增強的現實，虛擬實境，說明
 ms.openlocfilehash: e3205590ce46e0fc9113421e0dbaeb87fe6bc0c2
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334032"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79376035"
 ---
 # <a name="what-is-mixed-reality"></a>什麼是混合實境？
 
@@ -113,7 +113,7 @@ ms.locfileid: "75334032"
 * **向右（接近數位現實）。** 使用者會遇到完全數位的環境，而且不會察覺實體環境中發生的情況。
 
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [什麼是全像投影？](hologram.md)
 * [瞭解混合現實的基本概念](index.md#understand-the-basics)

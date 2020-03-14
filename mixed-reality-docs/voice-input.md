@@ -7,11 +7,11 @@ ms.date: 10/03/2019
 ms.topic: article
 keywords: ggv、語音、cortana、語音、輸入
 ms.openlocfilehash: f2ae18d4063c7c4a63346a1202cacaa7fbbdf959
-ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75723187"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375985"
 ---
 # <a name="voice-input"></a>語音輸入
 
@@ -42,7 +42,7 @@ ms.locfileid: "75723187"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>功能</strong></td>
+        <td><strong>特徵</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 代)</strong></a></td>
         <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
@@ -121,7 +121,7 @@ ms.locfileid: "75723187"
         *影像：使用者可以在應用程式行中顯示 [調整] 命令，以調整應用程式的位置*
     :::column-end:::
         :::column:::
-        ![space](images/spacer-20x582.png)<br>
+        ![空間](images/spacer-20x582.png)<br>
         ![查看應用程式視窗或全息影像時，使用者可以說出他們在應用程式行中看到的「調整」命令，以調整應用程式在世界中的位置](images/microphone-600px.png)<br>
     :::column-end:::
 :::row-end:::
@@ -183,7 +183,7 @@ ms.locfileid: "75723187"
 
 請考慮對您所建置的任何體驗新增語音命令。 語音是功能強大的方式，可方便您控制系統和應用程式。 因為使用者說話時的語調和口音各異，適當選擇語音關鍵字才能確保系統會分毫不差地解讀出使用者的命令。
 
-### <a name="best-practices"></a>最佳做法
+### <a name="best-practices"></a>最佳作法
 
 以下是有助於順利辨識語音的一些做法。
 * **使用精簡的命令** - 盡可能選擇有兩個以上音節的關鍵字。 口音不同的人在說單音節的單字時往往會使用不同的元音。 範例：「播放影片」比「播放目前選取的影片」好
@@ -282,11 +282,11 @@ ms.locfileid: "75723187"
 
 所有此音訊處理都是硬體加速的，這表示在 HoloLens CPU 上進行相同的處理時，這些功能的耗電量會少很多。 避免在 CPU 上執行其他音訊輸入處理，以將系統電池壽命最大化，並利用內建的卸載音訊輸入處理。
 
-## <a name="languages"></a>語言
+## <a name="languages"></a>程式語言
 
 HoloLens 2 也支援其他語言。 請記住，即使已安裝多個鍵盤，或是應用程式嘗試以不同的語言建立語音辨識器，語音命令也一律會以系統的顯示語言執行。
 
-## <a name="troubleshooting"></a>[疑難排解]
+## <a name="troubleshooting"></a>疑難排解
 
 如果您在使用「選取」和「嘿 Cortana」時遇到任何問題，請嘗試移到更好的空間、離開雜訊來源，或說出更大的聲音。 目前，所有的 HoloLens 語音辨識都是針對美國英文的原生喇叭進行微調與優化。
 
@@ -304,7 +304,7 @@ HoloLens 2 也支援其他語言。 請記住，即使已安裝多個鍵盤，�
 
 ---
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [目光和行動](gaze-and-commit.md)
 * [本能互動](interaction-fundamentals.md)
 * [MR 輸入212：語音](holograms-212.md)

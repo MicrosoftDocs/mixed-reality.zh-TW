@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: 3D，模型化，指南，資產需求，撰寫方針，啟動器，3D 啟動器，材質，材質，複雜度，三角形，網格，多邊形，polycount，限制
 ms.openlocfilehash: 536fd9bc2002d679ee3bf73d5c906b84c51e5d46
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926573"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375625"
 ---
 # <a name="create-3d-models-for-use-in-the-home"></a>建立要在首頁中使用的3D 模型
 
@@ -54,13 +54,13 @@ Windows Mixed Reality home 不支援具有超過10000三角形的型號。 建�
 |  LOD 層級  |  建議的三角形計數  |  最大三角形計數 | 
 |------|------|------|
 |  LOD 0 |  10000 |  10000 | 
-|  LOD 1 |  5000  |  10000 | 
+|  LOD 1 |  5,000  |  10000 | 
 |  LOD 2 |  2500  |  10000 | 
 
 ### <a name="node-counts-and-submesh-limits"></a>節點計數和 submesh 限制
 Windows Mixed Reality home 不支援每個 LOD 具有超過64個節點或 32 submeshes 的模型。 節點是[glTF 規格](https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#nodes-and-hierarchy)中的概念，可定義場景中的物件。 Submeshes 是在物件的網格的[基本](https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#meshes)陣列中定義。 
 
-|  功能 |  說明  |  支援的最大值 | 文件 |
+|  功能 |  描述  |  支援的最大值 | 文件 |
 |------|------|------|------|
 |  節點 |  GlTF 場景中的物件 |  每 LOD 64 | [如下](https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#nodes-and-hierarchy)|
 |  Submeshes |  所有網格的基本類型總和 |  每 LOD 32 | [如下](https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#meshes)|
@@ -167,7 +167,7 @@ Windows MR 使用幾何節點 LODs，根據螢幕涵蓋範圍，在不同的詳�
 |  LOD 層級  |  建議的三角形計數  |  最大三角形計數 | 
 |-------|-------|-------|
 |  LOD 0 |  10000 |  10000 | 
-|  LOD 1 |  5000  |  10000 | 
+|  LOD 1 |  5,000  |  10000 | 
 |  LOD 2 |  2500  |  10000 | 
 
 使用 LODs 時，請一律指定3個 LOD 層級。 遺漏 LODs 會導致模型不會意外轉譯，因為 LOD 系統切換到遺失的 LOD 層級。 glTF 2.0 目前不支援 LODs 做為核心規格的一部分。因此，應該使用[MSFT_LOD 延伸](https://github.com/sbtron/glTF/tree/MSFT_lod/extensions/Vendor/MSFT_lod)模組來定義 LODs。
@@ -235,10 +235,10 @@ Windows Mixed Reality home 支援下列動畫觸發程式的語法。
 ### <a name="restrictions"></a>限制
 動畫的長度不能超過20分鐘，且不能包含超過36000個主要畫面格（20分鐘，30 FPS）。 此外，使用以平滑目標為基礎的動畫時，不會超過8192的平滑目標頂點或更少。 超過這些計數將導致 Windows Mixed Reality home 中的動畫資產不受支援。 
 
-|功能|最大值|
+|功能|最大需求|
 |-----|-----|
-|Duration|20 分鐘|
-|幀|36000| 
+|持續期間|20 分鐘|
+|幀|36,000| 
 |變形目標頂點|8192|
 
 ## <a name="gltf-implementation-notes"></a>glTF 執行注意事項
@@ -277,7 +277,7 @@ Windows MR 不支援基本模式線和點。
 * [HoloLens Mixed Reality 材質封裝延伸模組規格](https://github.com/KhronosGroup/glTF/blob/master/extensions/2.0/Vendor/MSFT_packing_normalRoughnessMetallic/README.md)
 * [Microsoft DDS 材質 glTF 擴充功能規格](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Vendor/MSFT_texture_dds)
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [實作 3D 應用程式啟動器 (UWP 應用程式)](implementing-3d-app-launchers.md)
 * [實作 3D 應用程式啟動器 (Win32 應用程式)](implementing-3d-app-launchers-win32.md)

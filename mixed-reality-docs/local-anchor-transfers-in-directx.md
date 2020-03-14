@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens，同步處理，空間錨點，傳輸，多人遊戲，視圖，案例，逐步解說，範例程式碼，傳輸，本機錨點傳輸，錨點匯出，錨點匯入
 ms.openlocfilehash: f961862c3c49872484683e264fb9c62b5d0b60ee
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437952"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79376025"
 ---
 # <a name="local-anchor-transfers-in-directx"></a>DirectX 中的本機錨點傳輸
 
@@ -284,7 +284,7 @@ Blob 會在 SpatialAnchor 區域中包含環境的標記法，以便在匯入 Sp
 
 ### <a name="export-of-multiple-spatialanchors"></a>匯出多個 SpatialAnchors
 
-如同匯出單一 SpatialAnchor，blob 會在所有指定 SpatialAnchors 的鄰近範圍中包含環境的標記法。 此外，blob 會包含包含的 SpatialAnchors 之間的連線相關資訊（如果它們位於相同的實體空間）。 這表示如果匯入兩個鄰近的 SpatialAnchors，則即使裝置只會辨識*第一個*SpatialAnchor 周圍的環境，也會找出附加到*第二*個 SpatialAnchor 的全息影像，因為有足夠的資料可供兩個 SpatialAnchors 之間的計算轉換已包含在 blob 中。 如果這兩個 SpatialAnchors 是個別匯出的（兩個 TryExportSpatialAnchors 呼叫），則 blob 中可能不會包含足夠的資料，以供連接到第二個 SpatialAnchor 的全息影像在第一個位置找到。
+如同匯出單一 SpatialAnchor，blob 會在所有指定 SpatialAnchors 的鄰近範圍中包含環境的標記法。 此外，blob 會包含包含的 SpatialAnchors 之間的連線相關資訊（如果它們位於相同的實體空間）。 這表示如果匯入兩個鄰近的 SpatialAnchors，則即使裝置只會辨識*第一個*SpatialAnchor 的環境，也會找出附加到*第二*個 SpatialAnchor 的全息影像，因為這兩個 SpatialAnchors 之間有足夠的資料可計算轉換，包括在 blob 中。 如果這兩個 SpatialAnchors 是個別匯出的（兩個 TryExportSpatialAnchors 呼叫），則 blob 中可能不會包含足夠的資料，以供連接到第二個 SpatialAnchor 的全息影像在第一個位置找到。
 
 ![使用單一 TryExportAnchorsAsync 呼叫匯出多個錨點](images/multipleanchors.png) ![針對每個錨點使用個別的 TryExportAnchorsAsync 呼叫匯出多個錨點](images/separateanchors.png)
 
@@ -674,7 +674,7 @@ void SampleAnchorTcpClient::HandleException(Exception^ exception)
 
 這樣就完成了！ 現在，您應該要有足夠的資訊，以嘗試尋找透過網路接收的錨點。 同樣地，請注意，用戶端必須有足夠的視覺化追蹤資料，空間才能成功找出錨點;如果無法立即使用，請嘗試一段時間。 如果仍然無法運作，請讓伺服器傳送更多錨點，並使用網路通訊來同意適用于用戶端的訊息。 您可以下載 HolographicSpatialAnchorTransferSample、設定您的用戶端和伺服器 Ip，並將其部署至用戶端和伺服器 HoloLens 裝置，以試做。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [平行模式程式庫（PPL）](https://msdn.microsoft.com/library/dd492418.aspx)
 * [StreamSocket](https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.streamsocket.aspx)
 * [StreamSocketListener](https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.streamsocketlistener.aspx)

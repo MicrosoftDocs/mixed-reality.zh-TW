@@ -7,11 +7,11 @@ ms.date: 10/22/2019
 ms.topic: article
 keywords: 混合現實、手勢、互動、設計
 ms.openlocfilehash: 9cfee1104cb9b8135dae51bea73850062fadd25c
-ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75181998"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375905"
 ---
 # <a name="system-gesture"></a>系統手勢
 
@@ -27,13 +27,13 @@ ms.locfileid: "75181998"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>功能</strong></td>
+        <td><strong>特徵</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 代)</strong></a></td>
         <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
     </tr>
      <tr>
-        <td>盛開</td>
+        <td>Bloom</td>
         <td>✔️</td>
         <td>❌</td>
         <td>❌</td>
@@ -52,7 +52,7 @@ ms.locfileid: "75181998"
     </tr>
 </table>
 
-## <a name="bloom"></a>盛開
+## <a name="bloom"></a>Bloom
 為了在 HoloLens （第1代）中顯示 [開始] 功能表，我們設計了 "Bloom"，這是模擬花卉櫻花的符號手勢。 它是 surefooted 互動、易於執行和快速召回的獨特之處。 若要在 HoloLens （第1代）上進行 bloom 手勢，請將您的手掌放在一起，並將您的手合在一起，然後藉由散佈手指來開手。
 
 :::row:::
@@ -113,7 +113,7 @@ ms.locfileid: "75181998"
 
 ---
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [本能互動](interaction-fundamentals.md)
 * [眼睛目光](eye-tracking.md)

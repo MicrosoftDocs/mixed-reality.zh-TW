@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，全息影像，轉譯，3D 圖形，HolographicFrame，轉譯迴圈，更新迴圈，逐步解說，範例程式碼，Direct3D
 ms.openlocfilehash: 6b2e2dca9115d7093e94019d5ed91201f6ee3424
-ms.sourcegitcommit: f4812e1312c4751a22a2de56771c475b22a4ba24
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74940866"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375975"
 ---
 # <a name="rendering-in-directx"></a>在 DirectX 中轉譯
 
@@ -536,7 +536,7 @@ if (options.VPAndRTArrayIndexFromAnyShaderFeedingRasterizer)
 }
 ```
 
-若要支援不使用此選擇性功能的轉譯，您的應用程式必須使用幾何著色器來設定轉譯目標陣列索引。 此程式碼片段會在 **VSSetConstantBuffers**之後，以及上一節所示的程式碼範例中的**pssetshade** *之前*新增，說明如何在 HoloLens 上呈現身歷聲。
+若要支援不使用此選擇性功能的轉譯，您的應用程式必須使用幾何著色器來設定轉譯目標陣列索引。 此程式碼片段會在*after* **VSSetConstantBuffers**之後，以及上一節所示的程式碼範例中的**pssetshade** *之前*新增，說明如何在 HoloLens 上呈現身歷聲。
 
 從**SpinningCubeRenderer：： Render**：
 
@@ -593,7 +593,7 @@ void main(triangle GeometryShaderInput input[3], inout TriangleStream<GeometrySh
 }
 ```
 
-## <a name="present"></a>目前
+## <a name="present"></a>存在
 
 ### <a name="enable-the-holographic-frame-to-present-the-swap-chain"></a>讓全像攝影畫面呈現交換鏈
 
@@ -743,6 +743,6 @@ if (FAILED(hr))
     return hr;
 ```
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [DirectX 中的座標系統](coordinate-systems-in-directx.md)
 * [使用 HoloLens 模擬器](using-the-hololens-emulator.md)

@@ -7,11 +7,11 @@ ms.date: 10/31/2019
 ms.topic: article
 keywords: Mixed Reality，注視，注視目標，互動，設計，眼睛追蹤，head 追蹤
 ms.openlocfilehash: df152f6a3a6e4ae2d6c32a0c56fbb615bcfa7aa8
-ms.sourcegitcommit: a5dc182da237f63f0487d40a2e11894027208b6c
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73441120"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375845"
 ---
 # <a name="gaze-and-commit"></a>注視和認可
 
@@ -249,7 +249,7 @@ Xbox 調適型控制器會使用 [A] 按鈕，以次要輸入的形式執行按�
 ### <a name="air-tap"></a>空中點選
 [空中] 手勢（以及下面的其他手勢）只會對特定點碰做出回應。 您的應用程式必須直接使用上述兩個主要元件手勢一節中所述的較低層級互動，以偵測其他功能表或抓住。
 
-### <a name="tap-and-hold"></a>Tap and hold
+### <a name="tap-and-hold"></a>點一下並按住
 按住只是維持空中點選的手指朝下位置。 結合 [按下] 和 [按住]，可讓您在結合 arm 動作（例如，挑選物件，而不是啟動它或 mousedown 次要互動，例如顯示操作功能表）時，使用各種較複雜的「按一下並拖曳」互動。
 不過，針對這個手勢進行設計時應格外小心，因為使用者很容易在任何延伸手勢的過程中放鬆其手勢。
 
@@ -290,13 +290,13 @@ HoloLens 可藉由追蹤裝置可見的任一手或雙手位置來辨識手勢�
 
 
 
-## <a name="see-also"></a>請參閱
-* [目視互動](eye-gaze-interaction.md)
-* [HoloLens 2 上的眼睛追蹤](eye-tracking.md)
+## <a name="see-also"></a>另請參閱
+* [眼動式互動](eye-gaze-interaction.md)
+* [HoloLens 2 的眼球追蹤](eye-tracking.md)
 * [目光和停駐](gaze-and-dwell.md)
-* [直接操作](direct-manipulation.md)
-* [實習手勢](gaze-and-commit.md#composite-gestures)
-* [實際操作和認可](point-and-commit.md)
+* [手 - 直接操作](direct-manipulation.md)
+* [手 - 手勢](gaze-and-commit.md#composite-gestures)
+* [手 - 指向和行動](point-and-commit.md)
 * [本能互動](interaction-fundamentals.md)
 * [語音輸入](voice-input.md)
 

@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: 全息影像、穩定性、hololens
 ms.openlocfilehash: ad48d057ee55d4d0d9ae3080d8030a481aef130f
-ms.sourcegitcommit: 5054f5c23965ce56599cb29ac9d9c6e48812dabd
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75623314"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375775"
 ---
 # <a name="hologram-stability"></a>全息影像穩定性
 
@@ -91,8 +91,8 @@ Reprojection 有四種主要類型
 
 穩定類型 |    沉浸式耳機 |    HoloLens 第1代 | HoloLens 2
 --- | --- | --- | ---
-深度 Reprojection |    建議執行 |   無 |   建議執行<br/><br/>Unity 應用程式必須使用 Unity 2018.4.12 或更新版本，或 Unity 2019.3 或更新版本。 否則，請使用自動平面 Reprojection。
-自動平面 Reprojection | 無 |   建議的預設值 |   如果深度 Reprojection 未提供最佳結果，則建議使用<br/><br/>建議 unity 應用程式使用 Unity 2018.4.12 或更新版本，或 Unity 2019.3 或更新版本。  先前的 Unity 版本將會使用稍微降級的 reprojection 結果。
+深度 Reprojection |    推薦項目 |   N/A |   推薦項目<br/><br/>Unity 應用程式必須使用 Unity 2018.4.12 或更新版本，或 Unity 2019.3 或更新版本。 否則，請使用自動平面 Reprojection。
+自動平面 Reprojection | N/A |   建議的預設值 |   如果深度 Reprojection 未提供最佳結果，則建議使用<br/><br/>建議 unity 應用程式使用 Unity 2018.4.12 或更新版本，或 Unity 2019.3 或更新版本。  先前的 Unity 版本將會使用稍微降級的 reprojection 結果。
 平面 Reprojection |   不建議 |   如果自動平面未提供最佳結果，則建議使用此選項 |    如果深度選項都不提供所需的結果，請使用    
 
 ### <a name="verifying-depth-is-set-correctly"></a>確認已正確設定深度
@@ -137,7 +137,7 @@ renderingParameters.SetFocusPoint(
 
 **最佳做法**沒有通用的方式可設定穩定平面，而且它是應用程式特定的，因此主要建議是實驗並查看最適合您案例的功能。 不過，請儘量將穩定平面的內容對齊，因為這個平面上的所有內容都是完美穩定的。
 
-例如：
+例如，
 * 如果您只有平面內容（讀取應用程式、影片播放應用程式），請將穩定平面與具有內容的平面對齊。
 * 如果有3個以世界鎖定的小球體，請讓穩定平面變成「剪下」，但目前在使用者觀點中的所有球中心。
 * 如果您的場景有非常不同深度的內容，則偏好進一步的物件。
@@ -174,7 +174,7 @@ renderingParameters.SetFocusPoint(
 
 如先前所示，在 60 FPS 和設定穩定平面的情況下，是最重要的全像影像穩定性技術。 如果面對明顯的色彩分隔，請先確定畫面播放速率符合預期。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [瞭解混合現實的效能](understanding-performance-for-mixed-reality.md)
 * [色彩、光線和材質](color,-light-and-materials.md)
 * [本能互動](interaction-fundamentals.md)

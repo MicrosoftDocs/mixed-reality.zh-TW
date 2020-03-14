@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: shell，os，平臺，cliff 房屋，房屋，首頁，環境，開始，開始功能表，首頁功能表，pin，應用程式，啟動應用程式，放置應用程式，傳送，移動，流覽
 ms.openlocfilehash: 9de4cb44505d6cf4d0d3e4bd0fd9c5ee681063a5
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438156"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375895"
 ---
 # <a name="navigating-the-windows-mixed-reality-home"></a>流覽 Windows Mixed Reality 首頁
 
@@ -134,7 +134,7 @@ Windows Mixed Reality 有數個內建應用程式，例如：
 * **桌面**（沉浸式耳機），可在沉浸式耳機中觀賞桌面監視器
 * 檔案**瀏覽器**存取位於您裝置上的檔案和資料夾
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [應用程式檢視](app-views.md)
 * [運動控制器](motion-controllers.md)
 * [硬體配件](hardware-accessories.md)

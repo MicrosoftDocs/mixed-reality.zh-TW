@@ -7,14 +7,14 @@ ms.date: 10/22/2019
 ms.topic: article
 keywords: 混合現實，Windows Mixed Reality，HoloLens，沉浸，vr，mr，開始使用，全息影像，學院，教學課程
 ms.openlocfilehash: 0600383b3cca3f580f014597217afc6ae78836dd
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926635"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375595"
 ---
 >[!NOTE]
->混合現實學術教學課程的設計是使用 HoloLens （第1代）和混合現實的沉浸式耳機。  因此，對於仍在尋找這些裝置開發指引的開發人員而言，我們覺得這些教學課程很重要。  這些教學課程 **_不_** 會以最新的工具組或用於 HoloLens 2 的互動進行更新。  系統會保留這些資訊，以繼續在支援的裝置上運作。 HoloLens 2 已張貼[一系列新的教學](mrlearning-base.md)課程。
+>混合實境學院教學課程的設計是以 HoloLens (第 1 代) 和混合實境沉浸式頭戴裝置為準。  因此，對於仍在尋找這些裝置開發指引的開發人員而言，我們覺得這些教學課程很重要。  這些教學課程 **_不會_** 使用用於 HoloLens 2 的最新工具組或互動進行更新。  系統會保留這些資訊，以繼續在支援的裝置上運作。 已針對 HoloLens 2 公佈[一系列新的教學課程](mrlearning-base.md)。
 
 <br>
 
@@ -26,7 +26,7 @@ ms.locfileid: "73926635"
 
 <table>
 <tr>
-<th>粗</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></th>
+<th>課程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></th>
 </tr><tr>
 <td>MR 基本概念100：開始使用 Unity</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
@@ -81,7 +81,7 @@ Unity 主要攝影機會處理 head 追蹤和 stereoscopic 轉譯。 主要相�
 
 若是**hololens 應用程式**，接近的裁剪平面可以設定為[hololens 建議](camera-in-unity.md#clip-planes)的0.85 計量。
 
-1. **在 [階層] 面板中**仍然選取**主要相機**時，請在 [偵測**器**] 面板中尋找**相機**元件，並將 [**近端剪切平面**] 欄位從預設**0.3**變更為 [HoloLens 建議**0.85]** .
+1. **在 [階層] 面板中**仍然選取**主要相機**時，請在 [偵測**器**] 面板中尋找**相機**元件，並將 [**接近剪切平面**] 欄位從預設**0.3**變更為 [HoloLens 建議**0.85**]。
 
 **對於以沉浸式耳機為目標的混合現實應用程式**，我們可以使用 Unity 提供的預設設定。
 
@@ -164,7 +164,7 @@ Unity 主要攝影機會處理 head 追蹤和 stereoscopic 轉譯。 主要相�
 2. 開啟**Window > XR >** 全像的模擬。
 3. 將**模擬模式**從 [**無**] 變更為 [**遠端] 至 [裝置**]。
 4. 在 [**遠端電腦**] 中，輸入您先前記下的 HOLOLENS 的 IP 位址。
-5. 按一下 **\[連線\]** 。
+5. 按一下 [連接]。
 6. 確定 [**連接狀態**] 變更為 [綠色**已連接**]。
 7. 現在您可以按一下 Unity 編輯器中的 [**播放**]。
 
@@ -234,7 +234,7 @@ Unity 主要攝影機會處理 head 追蹤和 stereoscopic 轉譯。 主要相�
 
 現在您已部署您的應用程式，請嘗試在 cube 前後移動，並觀察它是否留在您的前方。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [Unity 開發概觀](unity-development-overview.md)
 * [使用 Unity 和 Visual Studio 的最佳作法](best-practices-for-working-with-unity-and-visual-studio.md)

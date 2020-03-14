@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: 空間對應，HoloLens，混合現實，表面重建，網格
 ms.openlocfilehash: c4e2f9e49cfe4df9cf875d18b19d62e25c200d76
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926741"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375825"
 ---
 # <a name="spatial-mapping"></a>空間對應
 
@@ -129,7 +129,7 @@ ms.locfileid: "73926741"
 
 請注意，Unity 中的內建 NavMesh 功能無法與空間對應介面搭配使用。 這是因為在應用程式啟動之前，空間對應介面不是已知的，而 NavMesh 資料檔案必須事先從來源資產產生。 另請注意，空間對應系統不會提供與使用者目前位置[非常遠之表面的相關資訊](spatial-mapping.md#the-environment-scanning-experience)。 因此，如果應用程式要建立非常大區域的對應，就必須「記住」自己的表面。
 
-### <a name="visualization"></a>化
+### <a name="visualization"></a>視覺化
 
 大部分時間都適用于空間表面不可見;以最小化視覺效果，並讓真實世界自行溝通。 不過，有時候直接將空間對應介面視覺化會很有用，儘管實際的對應專案已經看得見。
 
@@ -194,7 +194,7 @@ ms.locfileid: "73926741"
 
 以下是使用空間和時態性遲滯的範例網格快取策略：
 * 假設有一個應用程式想要在使用者看起來前後，使用類似的錐狀空間量，
-* 空間表面可能會暫時消失于此磁片區，這是因為使用者看起來遠離表面或從其外部的步驟 .。。請稍後再回頭查看或移動更接近的時間。 在此情況下，捨棄並重新建立此介面的網格代表許多多餘的處理。
+* 空間表面可能會暫時消失于此磁片區, 這是因為使用者看起來遠離表面或從其外部的步驟 ... 請稍後再回頭查看或移動更接近的時間。 在此情況下，捨棄並重新建立此介面的網格代表許多多餘的處理。
 * 為了減少已處理的變更數目，應用程式會使用兩個空間表面觀察器，其中一個會包含在另一個範圍內。 較大的磁片區是球形，並遵循使用者的「延遲」;只有在必要時才會移動，以確保其中心位於使用者的 2.0 metres 內。
 * 新的和更新的空間表面網格一律會從較小的內部介面觀察器進行處理，但是網格會快取，直到它們從較大的外部表面觀察器消失為止。 這可讓應用程式避免因本機使用者移動而處理許多多餘的變更。
 * 由於空間表面可能也會因為追蹤遺失而暫時消失，因此應用程式也會在追蹤遺失期間，延遲捨棄已移除的空間表面。
@@ -245,7 +245,7 @@ ms.locfileid: "73926741"
 
 針對空間表面執行 raycasts 時，請記住，這些表面通常是很複雜、雜亂的圖案，而且有雜亂的細節，就像您的辦公桌一樣！ 這表示單一 raycast 通常不足以提供介面圖形的足夠資訊，以及接近其附近的空白空間的形狀。 因此，在小型區域中執行許多 raycasts，以及使用匯總結果來衍生更可靠的介面瞭解，通常是個不錯的主意。 例如，使用單一 raycast 的平均 10 raycasts 來引導全息影像放置在表面上，會產生更流暢且較少的「抖動」結果。
 
-不過，請記住，每個 raycast 都有高計算成本。 因此，視您的使用案例而定，您應該將其他 raycasts （每個框架執行）的計算成本與[網格處理](spatial-mapping.md#mesh-processing)的計算成本進行取捨，以平滑和移除空間介面中的漏洞（在空間時執行）網格已更新）。
+不過，請記住，每個 raycast 都有高計算成本。 因此，視您的使用案例而定，您應該將其他 raycasts （每個框架執行）的計算成本與[網格處理](spatial-mapping.md#mesh-processing)的計算成本進行取捨，以平滑和移除空間介面（當空間網格更新時執行）中的漏洞。
 
 ## <a name="the-environment-scanning-experience"></a>環境掃描體驗
 
@@ -365,11 +365,11 @@ ms.locfileid: "73926741"
 * 同樣地，雖然綜合或記錄的資料可用於進行調試，但不太依賴相同的幾個測試案例。 這可能會延遲找出更多測試會稍早發現的重要問題。
 * 最好是使用實際（而且在理想的指導）使用者來執行測試，因為他們可能無法使用 HoloLens 或您的應用程式，其方式與您的做法完全相同。 事實上，這可能會讓您感到驚訝，人們的行為、知識和假設有多容易！
 
-## <a name="troubleshooting"></a>[疑難排解]
+## <a name="troubleshooting"></a>疑難排解
 * 為了讓 surface 網格能夠正確導向，每個 GameObject 都必須是作用中，然後才會將它傳送至 SurfaceObserver，以將其網格結構化。 否則，網格會顯示在您的空間中，但會以怪度旋轉。
 * 執行與 SurfaceObserver 通訊之腳本的 GameObject 必須設定為來源。 否則，您所建立並傳送至 SurfaceObserver 的所有 Gameobject，其網格都會與父遊戲物件的位移相等。 如此一來，您的網格就會顯示數個計量，讓您很難進行檢查的狀況。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [座標系統](coordinate-systems.md)
 * [DirectX 中的空間對應](spatial-mapping-in-directx.md)
 * [Unity 中的空間對應](spatial-mapping-in-unity.md)

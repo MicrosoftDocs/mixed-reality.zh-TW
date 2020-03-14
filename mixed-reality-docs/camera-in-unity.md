@@ -7,15 +7,15 @@ ms.date: 10/22/2019
 ms.topic: article
 keywords: holotoolkit、mixedrealitytoolkit、mixedrealitytoolkit-unity、全像攝影、全像投影、沉浸式、焦點、深度緩衝區、僅限方向、位置、不透明、透明、裁剪
 ms.openlocfilehash: 1a2e66d5c028109a58ea8682668521f50158add9
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73436955"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375585"
 ---
 # <a name="camera-in-unity"></a>Unity 中的相機
 
-當您磨損混合現實耳機時，它會成為您的全像攝影世界的中心。 Unity[攝影機](https://docs.unity3d.com/Manual/class-Camera.html)元件會自動處理 stereoscopic 轉譯，並在您的專案已選取 [Windows Mixed reality] 做為裝置（在其他設定中）時，遵循您的 head 移動和旋轉區段中的 [Windows Store Player 設定]）。 在舊版 Unity 中，這可能會列為「Windows 全像」。
+當您磨損混合現實耳機時，它會成為您的全像攝影世界的中心。 Unity[攝影機](https://docs.unity3d.com/Manual/class-Camera.html)元件會自動處理 stereoscopic 轉譯，並會在您的專案具有「Windows Mixed reality」所選的「虛擬實境受支援」時，遵循您的頭移動和旋轉，做為裝置（在 Windows Store Player 設定的 [其他設定] 區段中）。 在舊版 Unity 中，這可能會列為「Windows 全像」。
 
 不過，若要完全優化視覺品質和全息圖形的[穩定性](hologram-stability.md)，您應該設定以下所述的相機設定。
 
@@ -76,7 +76,7 @@ HoloLens 和沉浸式耳機都會 reproject 應用程式轉譯的每個畫面格
 * 如果應用程式提供特定框架的深度緩衝區，則**沉浸式耳機**會執行位置 reprojection、調整您的全像位置和方向 misprediction 的全息影像。  如果未提供深度緩衝區，系統只會在方向更正 mispredictions。
 * 如 HoloLens 這類全像的**耳機**將會執行位置 reprojection，不論應用程式是否提供其深度緩衝區。  在 HoloLens 上可能沒有深度緩衝區，因為轉譯通常是以真實世界提供的穩定背景來進行稀疏。
 
-如果您知道您要使用嚴格的主體鎖定內容來建立[僅限方向的體驗](coordinate-systems-in-unity.md#building-an-orientation-only-or-seated-scale-experience)（例如，360度的影片內容），您可以將 reprojection 模式明確設定為僅透過設定[的方向。HolographicSettings. ReprojectionMode](https://docs.unity3d.com/ScriptReference/XR.WSA.HolographicSettings.ReprojectionMode.html) To [HolographicReprojectionMode. OrientationOnly](https://docs.unity3d.com/ScriptReference/XR.WSA.HolographicSettings.HolographicReprojectionMode.html)。
+如果您知道您要使用嚴格的主體鎖定內容來建立[僅限方向的體驗](coordinate-systems-in-unity.md#building-an-orientation-only-or-seated-scale-experience)（例如，360度的影片內容），您可以將 reprojection 模式明確地設定為方向，方法是將[HolographicSettings](https://docs.unity3d.com/ScriptReference/XR.WSA.HolographicSettings.ReprojectionMode.html)設定為[HolographicReprojectionMode. OrientationOnly](https://docs.unity3d.com/ScriptReference/XR.WSA.HolographicSettings.HolographicReprojectionMode.html)。
 
 ## <a name="sharing-your-depth-buffers-with-windows"></a>與 Windows 共用深度緩衝區
 
@@ -93,7 +93,7 @@ HoloLens 和沉浸式耳機都會 reproject 應用程式轉譯的每個畫面格
 
 只要 Windows 能夠精確地將深度緩衝區中正規化的每圖元深度值對應到量表中的距離，並使用您在主攝影機上的 Unity 中所設定的近和遠平面，就能為 Windows 提供深度緩衝區來改善視覺品質。  如果您的轉譯行程以一般方式處理深度值，您通常應該會在這裡正常運作，但在顯示到現有的色彩圖元時，寫入深度緩衝區的半透明轉譯傳遞可能會使 reprojection 混淆。  如果您知道您的轉譯行程會讓許多最後深度的圖元變得不正確，您可能會取消核取 [啟用深度緩衝區共用]，以取得更佳的視覺品質。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [全像投影穩定性](hologram-stability.md)
 * [MixedRealityToolkit 主要攝影機 prefab](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit/Input/Prefabs)

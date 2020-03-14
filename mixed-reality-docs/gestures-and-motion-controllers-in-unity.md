@@ -7,15 +7,15 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: 手勢，動作控制器，unity，注視，輸入
 ms.openlocfilehash: a85797bfb443f33147c116e90a02c88abda63c67
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926568"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375645"
 ---
 # <a name="gestures-and-motion-controllers-in-unity"></a>Unity 中的手勢和運動控制器
 
-有兩個主要的方式可對您的[目光](gaze-in-unity.md)採取行動, 包括 HoloLens 和沉浸式 HMD 中的[右手手勢](gaze-and-commit.md#composite-gestures)和[運動控制器](motion-controllers.md)。 您可以透過 Unity 中的相同 Api，存取這兩個空間輸入來源的資料。
+有兩個主要的方式可[對您的](gaze-in-unity.md)目光採取行動，包括 HoloLens 和沉浸式 HMD 中的[右手手勢](gaze-and-commit.md#composite-gestures)和[運動控制器](motion-controllers.md)。 您可以透過 Unity 中的相同 Api，存取這兩個空間輸入來源的資料。
 
 Unity 提供兩種主要方式來存取 Windows Mixed Reality 的空間輸入資料、可跨多個 Unity XR Sdk 運作的一般*GetButton/GetAxis* api，以及 Windows Mixed reality 特有的*InteractionManager/GestureRecognizer* api，會公開可用的完整空間輸入資料集。
 
@@ -525,7 +525,7 @@ void OnDestroy()
 [![MR 輸入 213-運動控制器](images/mr213-main-600px.jpg)](https://docs.microsoft.com/windows/mixed-reality/mixed-reality-213)<br>
 *MR 輸入 213-運動控制器*
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [頭部目光和行動](gaze-and-commit.md)
 * [運動控制器](motion-controllers.md)

@@ -7,11 +7,11 @@ ms.date: 02/24/2019
 ms.topic: article
 keywords: mrc、相片、影片、capture、攝影機
 ms.openlocfilehash: 72600f889997c96a629faebc35aba4b4841d4d8b
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926793"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375965"
 ---
 # <a name="mixed-reality-capture-for-developers"></a>開發人員的混合現實 capture
 
@@ -197,17 +197,17 @@ Unity 應用程式應該會看到屬性[Locatable_camera_in_Unity](locatable-cam
 
 MRC 影片效果（**Windows. MixedRealityCapture. MixedRealityCaptureVideoEffect**）
 
-|  內容名稱  |  在工作列搜尋方塊中輸入  |  預設值  |  說明 | 
+|  內容名稱  |  類型  |  預設值  |  描述 | 
 |----------|----------|----------|----------|
 |  StreamType  |  UINT32 （[MediaStreamType](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaStreamType)）  |  1（VideoRecord）  |  描述此效果用於哪一個捕捉串流。 音訊無法使用。 | 
-|  HologramCompositionEnabled  |  boolean  |  TRUE  |  用來啟用或停用影片捕捉中的全息影像的旗標。 | 
-|  RecordingIndicatorEnabled  |  boolean  |  TRUE  |  用來啟用或停用在全息影像捕捉期間錄製指示器的旗標。 | 
-|  VideoStabilizationEnabled  |  boolean  |  FALSE  |  用來啟用或停用 HoloLens 追蹤程式所支援之視頻穩定的旗標。 | 
+|  HologramCompositionEnabled  |  布林值  |  TRUE  |  用來啟用或停用影片捕捉中的全息影像的旗標。 | 
+|  RecordingIndicatorEnabled  |  布林值  |  TRUE  |  用來啟用或停用在全息影像捕捉期間錄製指示器的旗標。 | 
+|  VideoStabilizationEnabled  |  布林值  |  FALSE  |  用來啟用或停用 HoloLens 追蹤程式所支援之視頻穩定的旗標。 | 
 |  VideoStabilizationBufferLength  |  UINT32  |  0  |  設定用於視頻穩定的歷程記錄畫面格數目。 從電源和效能的角度來看，0為 0-延遲，幾乎是「免費」。 15是建議的最高品質（以延遲和記憶體15個畫面的成本為代價）。 | 
-|  GlobalOpacityCoefficient  |  浮點數  |  0.9 （HoloLens）1.0 （沉浸式耳機）  |  設定從0.0 （完全透明）到1.0 （完全不透明）範圍內的全息影像全域不透明度係數。 | 
-|  BlankOnProtectedContent  |  boolean  |  FALSE  |  當有 2d UWP 應用程式顯示受保護的內容時，啟用或停用的旗標會傳回空白框架。 如果此旗標為 false，而 2d UWP 應用程式顯示受保護的內容，則 2d UWP 應用程式將會被耳機和混合現實捕捉中的受保護內容材質取代。 |
-|  ShowHiddenMesh  |  boolean  |  FALSE  |  用來啟用或停用顯示全像攝影機的隱藏區網格和鄰近內容的旗標。 |
-| OutputSize | Size | 0、0 | 在裁剪影片穩定之後，設定所需的輸出大小。 如果指定0或不正確輸出大小，則會選擇預設的裁剪大小。 |
+|  GlobalOpacityCoefficient  |  float  |  0.9 （HoloLens）1.0 （沉浸式耳機）  |  設定從0.0 （完全透明）到1.0 （完全不透明）範圍內的全息影像全域不透明度係數。 | 
+|  BlankOnProtectedContent  |  布林值  |  FALSE  |  當有 2d UWP 應用程式顯示受保護的內容時，啟用或停用的旗標會傳回空白框架。 如果此旗標為 false，而 2d UWP 應用程式顯示受保護的內容，則 2d UWP 應用程式將會被耳機和混合現實捕捉中的受保護內容材質取代。 |
+|  ShowHiddenMesh  |  布林值  |  FALSE  |  用來啟用或停用顯示全像攝影機的隱藏區網格和鄰近內容的旗標。 |
+| OutputSize | 大小 | 0, 0 | 在裁剪影片穩定之後，設定所需的輸出大小。 如果指定0或不正確輸出大小，則會選擇預設的裁剪大小。 |
 | PreferredHologramPerspective | UINT32 | 1（PhotoVideoCamera） | 列舉，用來指出應該捕捉的全像攝影視圖設定。 設定0（顯示）表示不會要求應用程式從相片/攝影機呈現 |
 
 MRC 音訊效果（**Windows MixedRealityCapture. MixedRealityCaptureAudioEffect**）
@@ -215,9 +215,9 @@ MRC 音訊效果（**Windows MixedRealityCapture. MixedRealityCaptureAudioEffect
 <table>
 <tr>
 <th>內容名稱</th>
-<th>在工作列搜尋方塊中輸入</th>
+<th>類型</th>
 <th>預設值</th>
-<th>說明</th>
+<th>描述</th>
 </tr>
 <tr>
 <td>MixerMode</td>
@@ -267,6 +267,6 @@ Windows 10 內建的 MRC 功能（透過 Cortana、[開始] 功能表、硬體�
 
 在 Windows 10 4 月2018更新之前，應用程式的自訂 MRC 錄製器與系統 MRC （從 Windows 裝置入口網站捕捉相片、捕獲影片或串流）互斥。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [混合實境擷取](mixed-reality-capture.md)
 * [觀眾檢視](spectator-view.md)

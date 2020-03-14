@@ -7,11 +7,11 @@ ms.date: 02/24/2019
 ms.topic: article
 keywords: Mixed Reality，空間定位器，空間參考框架，空間座標系統，空間階段，範例程式碼，影像穩定，空間錨點，空間錨點存放區，追蹤遺失，逐步解說
 ms.openlocfilehash: a0bce897c1982715af24f0bf7c398cdee10f017f
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73436230"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375615"
 ---
 # <a name="coordinate-systems-in-directx"></a>在 DirectX 中協調系統
 
@@ -574,7 +574,7 @@ std::vector<unsigned short> SpatialStageManager::TriangulatePoints(std::vector<f
 
 ## <a name="create-holograms-using-a-device-attached-frame-of-reference"></a>使用裝置附加的參考框架建立全息影像
 
-有時候，您會想要轉譯[保留連接](coordinate-systems.md#attached-frame-of-reference)至裝置位置的全息影像，例如，具有偵錯工具資訊的面板，或當裝置只能判斷其方向，而不是在中的位置時的參考訊息space. 為了達成此目的，我們使用了附加的參考框架。
+有時候您會想要轉譯[保留連接](coordinate-systems.md#attached-frame-of-reference)至裝置位置的全息影像，例如，具有偵錯工具資訊的面板，或當裝置只能判斷其方向，而不是其在空間中的位置時的參考訊息。 為了達成此目的，我們使用了附加的參考框架。
 
 SpatialLocatorAttachedFrameOfReference 類別會定義相對於裝置而非真實世界的座標系統。 此框架的固定標題相對於使用者的周圍，其指向建立參考框架時所面臨的方向。 從 then 開始，此參考框架中的所有方向都會相對於該固定標題，即使使用者旋轉裝置也是如此。
 
@@ -794,7 +794,7 @@ Windows 全像攝影應用程式範本隨附已為您建立的 LocatabilityChang
 
 [空間對應](spatial-mapping-in-directx.md)api 會使用座標系統來取得 surface 網格的模型轉換。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [座標系統](coordinate-systems.md)
 * [空間錨點](spatial-anchors.md)
 * <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure Spatial Anchors</a>

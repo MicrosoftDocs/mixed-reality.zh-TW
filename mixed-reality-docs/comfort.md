@@ -8,11 +8,11 @@ ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境, 設計, 舒適度, HoloLens 2, HoloLens (第 1 代)
 ms.openlocfilehash: 178044ce8c76de75b7cce5e10664ce65d108f0f8
-ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74491151"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79376065"
 ---
 # <a name="comfort"></a>舒適度
 
@@ -173,7 +173,7 @@ Windows Mixed Reality 沉浸式 HMD 沒有 IPD 或 VO 的自動校正。 IPD 可
 
 當使用者預期會在體驗持續期間內保持手臂抬起時，會累積肌肉疲勞。 要求使用者長時間重複做空中點選手勢，也會讓使用者疲勞。 因此，我們建議體驗要避免要求經常、重複的手勢輸入。 這個目標可以藉由將簡短休息合併到與應用程式的互動，或者在互動中提供混合的手勢和語音輸入來達成。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [目光](gaze-and-commit.md)
 * [全像投影穩定性](hologram-stability.md)
 * [本能互動](interaction-fundamentals.md)

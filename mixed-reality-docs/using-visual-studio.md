@@ -8,11 +8,11 @@ ms.topic: article
 ms.localizationpriority: high
 keywords: Visual Studio, HoloLens, 混合實境, 偵錯, 部署
 ms.openlocfilehash: b7e6a8d538670a53de20a2f3a2850639e756da1a
-ms.sourcegitcommit: 05fa75193059a2dac4b580a9eef7b6c4bb64d8d7
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74830834"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79376105"
 ---
 # <a name="using-visual-studio-to-deploy-and-debug"></a>使用 Visual Studio 來部署和偵錯
 
@@ -136,7 +136,7 @@ Visual Studio 程式碼剖析工具可讓您分析應用程式的效能和資源
 6. 選擇要進行偵錯的程式碼類型 (受控、原生、混合)
 7. 按一下 [附加]  或 [啟動] 
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [安裝工具](install-the-tools.md)
 * [使用 HoloLens 模擬器](using-the-hololens-emulator.md)
 * [部署和偵錯通用 Windows 平台 (UWP) app](https://msdn.microsoft.com/library/windows/apps/xaml/mt613243.aspx)

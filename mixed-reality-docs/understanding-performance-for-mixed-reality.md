@@ -6,12 +6,12 @@ ms.author: trferrel
 ms.date: 3/26/2019
 ms.topic: article
 keywords: Windows Mixed Reality，混合現實，虛擬實境，VR，MR，效能，優化，CPU，GPU
-ms.openlocfilehash: 7d8a0c95d59ec7e42e11bc1e1b6b40c702e01529
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 287b95363acff00ab7a0407475e0a419fc076611
+ms.sourcegitcommit: 184227dc591ca2791f523d520555730ba1e95b5c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438240"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79479571"
 ---
 # <a name="understanding-performance-for-mixed-reality"></a>瞭解混合現實的效能
 
@@ -82,7 +82,7 @@ ms.locfileid: "73438240"
 
 - **記憶體頻寬**是 GPU 可以從記憶體執行的讀取和寫入速率
     - 若要找出頻寬限制，請降低材質品質，並檢查幀的是否已改善。
-    - 在 Unity 中, 您可以在 [ **編輯**專案設定 >  > 品質] 設定 **[中變更](https://docs.unity3d.com/Manual/class-QualitySettings.html)材質品質**來完成這項作業。
+    - 在 Unity 中，這可以藉由變更 [**編輯**] > **專案設定** >  **[品質設定](https://docs.unity3d.com/Manual/class-QualitySettings.html)** 中的**材質品質**來完成。
 - [**填滿速率**] 是指 GPU 每秒可繪製的圖元。
     - 若要識別填滿率限制，請減少顯示器解析度，並檢查是否已改善畫面播放速率。 
     - 在 Unity 中，這可以透過 *[XRSettings. renderViewportScale](https://docs.unity3d.com/ScriptReference/XR.XRSettings-renderViewportScale.html)* 屬性來完成。
@@ -98,7 +98,8 @@ ms.locfileid: "73438240"
 4) 要呈現的圖元數（顯示解析度）
 
 #### <a name="reduce-polygon-count"></a>減少多邊形計數
-較高的多邊形計數會產生更多 GPU 的作業;減少場景中的多邊形數目會減少轉譯時間。 有一些其他因素會使幾何變得昂貴，但多邊形計數是最簡單的計量，用以判斷要呈現場景的成本。
+
+較高的多邊形計數會產生更多 GPU 的作業;減少場景中的[多邊形數目](https://docs.microsoft.com/dynamics365/mixed-reality/import-tool/optimize-models#performance-targets)會減少轉譯時間。 有一些其他因素會使幾何變得昂貴，但多邊形計數是最簡單的計量，用以判斷要呈現場景的成本。
 
 #### <a name="limit-overdraw"></a>限制過度繪製
 
@@ -123,9 +124,11 @@ ms.locfileid: "73438240"
     - 通常，頂點數目遠小於圖元數（720p 為921600圖元、1080p 為2073600圖元等等）。
 
 #### <a name="remove-gpu-stages"></a>移除 GPU 階段
+
 後續處理效果可能非常昂貴，而且會增加應用程式的填滿率。 這包括消除鋸齒的技術，例如 MSAA。 在 HoloLens 上，建議您完全避免這些技術，以及額外的著色器階段，例如幾何、輪廓和計算著色器。
 
 ## <a name="memory-recommendations"></a>記憶體建議
+
 過多的記憶體配置和解除配置作業，可能會導致效能不一致、凍結的框架和其他不利的行為。 在 Unity 中開發時，請務必瞭解記憶體考慮，因為記憶體管理是由垃圾收集行程所控制。
 
 #### <a name="object-pooling"></a>物件共用
@@ -135,3 +138,6 @@ ms.locfileid: "73438240"
 ## <a name="see-also"></a>另請參閱
 - [對 Unity 的效能建議](performance-recommendations-for-unity.md)
 - [Unity 的建議設定](recommended-settings-for-unity.md)
+- [優化3D 模型](https://docs.microsoft.com/dynamics365/mixed-reality/import-tool/optimize-models#performance-targets)
+- [轉換和優化即時3D 模型的最佳做法](https://docs.microsoft.com/dynamics365/mixed-reality/import-tool/best-practices)
+

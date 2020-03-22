@@ -6,12 +6,12 @@ ms.author: kurtie
 ms.date: 10/22/2019
 ms.topic: article
 keywords: 混合現實，Windows Mixed Reality，HoloLens，沉浸，vr，mr，開始使用，全息影像，學院，教學課程
-ms.openlocfilehash: 0600383b3cca3f580f014597217afc6ae78836dd
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: fe0fb256e5aed7aa83f8bb9b1e8ba7bb873a0613
+ms.sourcegitcommit: ee8c7e821cb337cbccd8af64b13ee5f50109a776
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79375595"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082056"
 ---
 >[!NOTE]
 >混合實境學院教學課程的設計是以 HoloLens (第 1 代) 和混合實境沉浸式頭戴裝置為準。  因此，對於仍在尋找這些裝置開發指引的開發人員而言，我們覺得這些教學課程很重要。  這些教學課程 **_不會_** 使用用於 HoloLens 2 的最新工具組或互動進行更新。  系統會保留這些資訊，以繼續在支援的裝置上運作。 已針對 HoloLens 2 公佈[一系列新的教學課程](mrlearning-base.md)。

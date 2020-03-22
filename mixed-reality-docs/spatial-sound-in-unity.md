@@ -6,12 +6,12 @@ ms.author: kegodin
 ms.date: 11/07/2019
 ms.topic: article
 keywords: Unity、空間音效、HRTF、會議室大小
-ms.openlocfilehash: 6720eac30c69ebfcd0f003cf131f60295818d676
-ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
+ms.openlocfilehash: af3f1486c3e931ad93d7b8960d822653ec740c12
+ms.sourcegitcommit: ee8c7e821cb337cbccd8af64b13ee5f50109a776
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77553696"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082036"
 ---
 # <a name="spatial-sound-in-unity"></a>Unity 中的空間音效
 
@@ -35,6 +35,9 @@ ms.locfileid: "77553696"
 * 核取 [**啟用 spatialization** ] 核取方塊
 * 將**空間 Blend**滑杆移至 ' 1 '
 * 請確定您的開發人員工作站上已啟用空間音訊。 以滑鼠右鍵按一下工作列中的磁片區圖示，並確定 [空間音效] 設定為 [關閉] 以外的專案，即可加以啟用。 若要取得您在 HoloLens 2 上聽到的最佳呈現方式，請選擇 [ **Windows Sonic For 耳機**]。
+
+>[!NOTE]
+>如果您在 Unity 中收到錯誤，指出無法載入外掛程式 SpatialAudio，因為遺漏了其中一個相依性，請檢查您的電腦上是否已安裝最新版的[Microsoft Visual C++ ](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)可轉散發套件。
 
 如需詳細資訊，請參閱：
 * [Microsoft 空間定位器 GitHub 存放庫](https://github.com/microsoft/spatialaudio-unity)

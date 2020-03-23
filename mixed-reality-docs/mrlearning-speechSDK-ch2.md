@@ -1,45 +1,57 @@
 ---
-title: Azure 語音服務教學課程-2。 新增用於本機語音轉換文字翻譯的離線模式
-description: 完成此課程，以瞭解如何在混合現實應用程式中執行 Azure 語音 SDK。
+title: Azure 語音服務教學課程 - 2。 新增本機語音轉換文字翻譯離線模式
+description: 完成此課程以了解如何在混合實境應用程式中實作 Azure 語音 SDK。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 06/27/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 962d7d4750cf59fe56de4af9088c90e8ecd0aa16
-ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
-ms.translationtype: MT
+ms.localizationpriority: high
+ms.openlocfilehash: 75ddce9063bb9d33f5fe2343fe30178222a5f8ac
+ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2019
-ms.locfileid: "73913215"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79031606"
 ---
-# <a name="2-adding-an-offline-mode-for-local-speech-to-text-translation"></a><span data-ttu-id="c87b9-105">2. 新增本機語音轉換文字翻譯的離線模式</span><span class="sxs-lookup"><span data-stu-id="c87b9-105">2. Adding an offline mode for local speech-to-text translation</span></span>
+# <a name="2-using-speech-recognition-to-execute-commands"></a><span data-ttu-id="902f8-105">2.使用語音辨識來執行命令</span><span class="sxs-lookup"><span data-stu-id="902f8-105">2. Using speech recognition to execute commands</span></span>
 
-<span data-ttu-id="c87b9-106">在本教學課程中，我們將新增離線模式，讓您在無法連線到 Azure 服務時執行本機語音轉換文字翻譯。</span><span class="sxs-lookup"><span data-stu-id="c87b9-106">In this tutorial, we'll add an offline mode that lets you perform local speech-to-text translation when we are unable to connect to the Azure service.</span></span> <span data-ttu-id="c87b9-107">我們也會*模擬*中斷連線的狀態。</span><span class="sxs-lookup"><span data-stu-id="c87b9-107">We will also *simulate* a disconnected state.</span></span>
+<span data-ttu-id="902f8-106">在本教學課程中，您將新增使用 Azure 語音辨識執行命令的功能，這可讓您根據所定義的單字或片語進行一些動作。</span><span class="sxs-lookup"><span data-stu-id="902f8-106">In this tutorial, you will add the ability to execute commands using Azure speech recognition which will allow you to make something happen based on the word or phrase you define.</span></span>
 
-## <a name="instructions"></a><span data-ttu-id="c87b9-108">指示</span><span class="sxs-lookup"><span data-stu-id="c87b9-108">Instructions</span></span>
+## <a name="objectives"></a><span data-ttu-id="902f8-107">目標</span><span class="sxs-lookup"><span data-stu-id="902f8-107">Objectives</span></span>
 
-1. <span data-ttu-id="c87b9-109">選取階層中的 [Lunarcom_Base] 物件。</span><span class="sxs-lookup"><span data-stu-id="c87b9-109">Select the Lunarcom_Base object in the hierarchy.</span></span>
+* <span data-ttu-id="902f8-108">了解如何使用 Azure 語音辨識來執行命令</span><span class="sxs-lookup"><span data-stu-id="902f8-108">Learn how Azure speech recognition can be used to execute commands</span></span>
 
-2. <span data-ttu-id="c87b9-110">按一下 [偵測器] 面板中的 [新增元件]。</span><span class="sxs-lookup"><span data-stu-id="c87b9-110">Click Add Component in the Inspector panel.</span></span> <span data-ttu-id="c87b9-111">搜尋並選取 [Lunarcom 離線識別]。</span><span class="sxs-lookup"><span data-stu-id="c87b9-111">Search for and select the Lunarcom Offline Recognition.</span></span>
+## <a name="instructions"></a><span data-ttu-id="902f8-109">指示</span><span class="sxs-lookup"><span data-stu-id="902f8-109">Instructions</span></span>
 
-    ![Module4Chapter2step1im](images/module4chapter2step1im.PNG)
+<span data-ttu-id="902f8-110">在 [階層] 視窗中選取 **Lunarcom** 物件，然後在 [偵測器] 視窗中使用 [新增元件]  按鈕來將 **Lunarcom Wake Word Recognizer (指令碼)** 元件新增至 Lunarcom 物件，並進行以下設定：</span><span class="sxs-lookup"><span data-stu-id="902f8-110">In the Hierarchy window, select the **Lunarcom** object, then in the Inspector window, use the **Add Component** button to add the **Lunarcom Wake Word Recognizer (Script)** component to the Lunarcom object and configure it as follows:</span></span>
 
-3. <span data-ttu-id="c87b9-113">按一下 LunarcomOfflineRecognizer 中的下拉式選單，然後選取 [已啟用]。</span><span class="sxs-lookup"><span data-stu-id="c87b9-113">Click the drop-down in the LunarcomOfflineRecognizer and select Enabled.</span></span> <span data-ttu-id="c87b9-114">這會讓專案的行為與使用者不具有連接。</span><span class="sxs-lookup"><span data-stu-id="c87b9-114">This programs the project to act like the user doesn't have a connection.</span></span>
+* <span data-ttu-id="902f8-111">在 [喚醒字詞]  欄位中，入適當的片語，例如「啟動終端機 (Activate terminal)」  。</span><span class="sxs-lookup"><span data-stu-id="902f8-111">In the **Wake Word** field, enter a suitable phrase, for example, _Activate terminal_.</span></span>
+* <span data-ttu-id="902f8-112">在 [關閉字詞]  欄位中，輸入適當的片語，例如「關閉終端機 (Dismiss terminal)」  。</span><span class="sxs-lookup"><span data-stu-id="902f8-112">In the **Dismiss Word** field, enter a suitable phrase, for example, _Dismiss terminal_.</span></span>
 
-    ![Module4Chapter2step1im](images/module4chapter2step2im.PNG)
+![mrlearning-speech](images/mrlearning-speech/tutorial2-section1-step1-1.png)
 
-4. <span data-ttu-id="c87b9-116">按下 [在 Unity 編輯器中播放] 並加以測試。</span><span class="sxs-lookup"><span data-stu-id="c87b9-116">Press Play in Unity Editor, and test it.</span></span> <span data-ttu-id="c87b9-117">按下場景左下角的麥克風並開始說話。</span><span class="sxs-lookup"><span data-stu-id="c87b9-117">Press the microphone in the bottom-left corner in the scene and begin speaking.</span></span>
+> [!NOTE]
+> <span data-ttu-id="902f8-114">Lunarcom Wake Word Recognizer (指令碼) 元件不是 MRTK 的一部分。</span><span class="sxs-lookup"><span data-stu-id="902f8-114">The Lunarcom Wake Word Recognizer (Script) component is not part of MRTK.</span></span> <span data-ttu-id="902f8-115">這是本教學課程資產隨附的元件。</span><span class="sxs-lookup"><span data-stu-id="902f8-115">It was provided with this tutorial's assets.</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="c87b9-118">因為我們已離線，所以已停用喚醒 word 功能。</span><span class="sxs-lookup"><span data-stu-id="c87b9-118">Because we’re offline, wake word functionality has been disabled.</span></span> <span data-ttu-id="c87b9-119">每次您想要在離線時辨識語音時，都必須實際按一下麥克風。</span><span class="sxs-lookup"><span data-stu-id="c87b9-119">You'll need to physically click the microphone every time you wish to have your speech recognized when offline.</span></span>
+<span data-ttu-id="902f8-116">如果您現在進入遊戲模式，如先前的教學課程所示，預設會啟用終端機面板，但您現在可以藉由說出關閉字詞：**關閉終端機**，來將其停用：</span><span class="sxs-lookup"><span data-stu-id="902f8-116">If you now enter Game mode, as in the previous tutorial, the terminal panel is enabled by default, but you can now disable it by saying the Dismiss Word, **Dismiss terminal**:</span></span>
 
-    <span data-ttu-id="c87b9-120">以下是您的場景可能外觀的範例。</span><span class="sxs-lookup"><span data-stu-id="c87b9-120">Below is an example of what your scene could look like.</span></span>
+![mrlearning-speech](images/mrlearning-speech/tutorial2-section1-step1-2.png)
 
-    ![Module4Chapter2exampleim](images/module4chapter2exampleim.PNG)
+<span data-ttu-id="902f8-118">然後藉由說出喚醒字詞：**啟動終端機**，來再次將其啟動：</span><span class="sxs-lookup"><span data-stu-id="902f8-118">And enable it again by saying the Wake Word, **Activate terminal**:</span></span>
 
-## <a name="congratulations"></a><span data-ttu-id="c87b9-122">恭喜！</span><span class="sxs-lookup"><span data-stu-id="c87b9-122">Congratulations</span></span>
+![mrlearning-speech](images/mrlearning-speech/tutorial2-section1-step1-3.png)
 
-<span data-ttu-id="c87b9-123">已啟用離線模式。</span><span class="sxs-lookup"><span data-stu-id="c87b9-123">The offline mode has been enabled.</span></span> <span data-ttu-id="c87b9-124">現在，當您離線時，您仍然可以使用語音 SDK 來處理您的專案！</span><span class="sxs-lookup"><span data-stu-id="c87b9-124">Now, when you're offline, you can still work on your project with the speech-SDK!</span></span>
+> [!CAUTION]
+> <span data-ttu-id="902f8-120">應用程式必須連線到 Azure，因此請確定您的電腦/裝置已連線到網際網路。</span><span class="sxs-lookup"><span data-stu-id="902f8-120">The application needs to connect to Azure, so make sure your computer/device is connected to the internet.</span></span>
 
-[<span data-ttu-id="c87b9-125">下一個教學課程： 3. 新增 Azure 認知服務語音翻譯元件</span><span class="sxs-lookup"><span data-stu-id="c87b9-125">Next Tutorial: 3. Adding the Azure Cognitive Services speech translation component</span></span>](mrlearning-speechSDK-ch3.md)
+> [!TIP]
+> <span data-ttu-id="902f8-121">如果您預期無法經常連線到 Azure，您也可以遵循[啟用語音命令](mrlearning-base-ch5.md#enabling-voice-commands)指示，使用 MRTK 來實作語音命令。</span><span class="sxs-lookup"><span data-stu-id="902f8-121">If you anticipate frequently not being able to connect to Azure, you can also implement speech commands using MRTK by following the [Enabling Voice Commands](mrlearning-base-ch5.md#enabling-voice-commands) instructions.</span></span>
+
+## <a name="congratulations"></a><span data-ttu-id="902f8-122">恭喜！</span><span class="sxs-lookup"><span data-stu-id="902f8-122">Congratulations</span></span>
+
+<span data-ttu-id="902f8-123">您已實作由 Azure 提供技術支援的語音命令。</span><span class="sxs-lookup"><span data-stu-id="902f8-123">You have implemented speech commands powered by Azure.</span></span> <span data-ttu-id="902f8-124">在您的裝置上執行應用程式，以確保功能可正常運作。</span><span class="sxs-lookup"><span data-stu-id="902f8-124">Run the application on your device to ensure the feature is working properly.</span></span>
+
+<span data-ttu-id="902f8-125">在下一個教學課程中，您將了解如何使用 Azure 語音翻譯來轉譯語音。</span><span class="sxs-lookup"><span data-stu-id="902f8-125">In the next tutorial, you will learn how to translate speech using Azure speech translation.</span></span>
+
+[<span data-ttu-id="902f8-126">下一個教學課程：3.新增 Azure 認知服務語音翻譯元件</span><span class="sxs-lookup"><span data-stu-id="902f8-126">Next Tutorial: 3. Adding the Azure Cognitive Services speech translation component</span></span>](mrlearning-speechSDK-ch3.md)

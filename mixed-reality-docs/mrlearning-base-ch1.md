@@ -7,12 +7,12 @@ ms.date: 11/01/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境, unity, 教學課程, hololens
-ms.openlocfilehash: 9c219313ad6e73cde78efd8e5e718a466ebd6137
-ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
+ms.openlocfilehash: 56adb4bfc66768684c8269c0f0cafd70c486ea8a
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77554370"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79376205"
 ---
 # <a name="2-initializing-your-project-and-first-application"></a>2.初始化您的專案和第一個應用程式
 
@@ -236,6 +236,9 @@ ms.locfileid: "77554370"
 
 ![mrlearning-base](images/mrlearning-base/tutorial1-section7-step2-2.png)
 
+> [!NOTE]
+> 如果您沒有看到 [裝置] 選項，您可能需要將預設的啟動專案從 IC2Lpp 專案變更為 UWP 專案。 在 [方案總管]  中，以滑鼠右鍵按一下 **yourprojectname (通用 Windows)** 並選取 [設定為啟動專案]  。 
+
 將 HoloLens 2 連線到您的電腦。
 
 > [!IMPORTANT]
@@ -257,6 +260,6 @@ ms.locfileid: "77554370"
 您現在已部署第一個 HoloLens 2 應用程式。 當您隨處走動時，您應該會看到空間對應網格涵蓋了所有 HoloLens 2 所感知到的介面。 此外，您應該會看到雙手和手指上有用於手部追蹤的指標，還有用於留意應用程式效能的畫面播放速率計數器。 這些只是混合實境工具組的幾個現成基本項目。 在之後的教學課程中，您將開始在場景中加入更多內容和互動項目，讓您可以完整地探索 HoloLens 2 及混合實境工具組的功能。
 
 > [!NOTE]
-> 您可能會注意到應用程式中的診斷分析工具，可以使用 **Toogle Diagnostics** 語音命令來切換其可見度。 不過，通常會建議您在開發期間讓診斷分析工具保持隨時可見，以了解變更應用程式可能會影響效能的時機，例如 HoloLens 2 應用程式應[持續在 60 FPS 執行](understanding-performance-for-mixed-reality.md)。
+> 您可能會注意到應用程式中的診斷分析工具，可以使用 **Toggle Diagnostics** 語音命令來切換其可見度。 不過，通常會建議您在開發期間讓診斷分析工具保持隨時可見，以了解變更應用程式可能會影響效能的時機，例如 HoloLens 2 應用程式應[持續在 60 FPS 執行](understanding-performance-for-mixed-reality.md)。
 
 [下一個教學課程：3.建立使用者介面並設定混合實境工具組](mrlearning-base-ch2.md)

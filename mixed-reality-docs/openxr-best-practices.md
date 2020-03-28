@@ -6,16 +6,16 @@ ms.author: alexturn
 ms.date: 2/28/2020
 ms.topic: article
 keywords: OpenXR，Khronos，BasicXRApp，DirectX，原生，原生應用程式，自訂引擎，中介軟體，最佳做法，效能，品質，穩定性
-ms.openlocfilehash: 01ce2ac0a69ffdf5dd1f00b92f37f54964f4c30c
-ms.sourcegitcommit: 9de2cb11321e6517db69e8c93459a205900a2174
+ms.openlocfilehash: c0ddbd0604760ccae34d347e93b918be4aead269
+ms.sourcegitcommit: 536fd45b48a70bbeca1454cef517ae007225e533
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80163352"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80362017"
 ---
 # <a name="openxr-app-best-practices"></a>OpenXR 應用程式最佳做法
 
-您可以在 BasicXrApp 的[OpenXRProgram .cpp](https://github.com/microsoft/OpenXR-SDK-VisualStudio/blob/master/samples/BasicXrApp/OpenXrProgram.cpp)檔案中查看下列最佳做法的範例。 開頭的 Run （）函式會從初始化到事件和轉譯迴圈，捕獲一般的 OpenXR 應用程式代碼流程。
+您可以在<a href="https://github.com/microsoft/OpenXR-MixedReality/tree/master/samples/BasicXrApp" target="_blank">BasicXrApp</a>的 OpenXRProgram .cpp 檔案中查看下列最佳做法的範例。 開頭的 Run （）函式會從初始化到事件和轉譯迴圈，捕獲一般的 OpenXR 應用程式代碼流程。
 
 ## <a name="best-practices-for-visual-quality-and-stability"></a>視覺品質和穩定性的最佳做法
 

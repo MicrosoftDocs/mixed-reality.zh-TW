@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 2/28/2020
 ms.topic: article
 keywords: OpenXR，Khronos，BasicXRApp，windows Mixed Reality OpenXR 開發人員入口網站，DirectX，原生，原生應用程式，自訂引擎，中介軟體，開始使用，101，預覽延伸模組
-ms.openlocfilehash: 7a210ce25d1e7c22710f1029aca2ca7f55a8b71c
-ms.sourcegitcommit: 9de2cb11321e6517db69e8c93459a205900a2174
+ms.openlocfilehash: db45308834f920413420f080a35b378f6a55fa49
+ms.sourcegitcommit: 536fd45b48a70bbeca1454cef517ae007225e533
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80163332"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80362024"
 ---
 # <a name="getting-started-with-openxr"></a>開始使用 OpenXR
 
@@ -50,7 +50,7 @@ ms.locfileid: "80163332"
 
 如果您還沒有 OpenXR 開發所需的工具，請務必加以[安裝](install-the-tools.md)。
 
-<a href="https://github.com/Microsoft/OpenXR-SDK-VisualStudio/tree/master/samples/BasicXrApp" target="_blank">BasicXrApp</a>專案示範一個簡單的 OpenXR 範例，其中包含兩個 Visual Studio 專案檔，一個用於 Win32 桌面應用程式，另一個用於 UWP HoloLens 2 應用程式。  因為解決方案包含 HoloLens UWP 專案，所以您需要安裝在 Visual Studio 中的[通用 Windows 平臺開發工作負載](install-the-tools.md#installation-checklist)，才能完全開啟它。
+<a href="https://github.com/microsoft/OpenXR-MixedReality/tree/master/samples/BasicXrApp" target="_blank">BasicXrApp</a>專案示範一個簡單的 OpenXR 範例，其中包含兩個 Visual Studio 專案檔，一個用於 Win32 桌面應用程式，另一個用於 UWP HoloLens 2 應用程式。  因為解決方案包含 HoloLens UWP 專案，所以您需要安裝在 Visual Studio 中的[通用 Windows 平臺開發工作負載](install-the-tools.md#installation-checklist)，才能完全開啟它。
 
 請注意，雖然 Win32 和 UWP 專案檔因封裝和部署的差異而不同，但每個專案內的應用程式代碼都是100% 的相同！
 
@@ -77,7 +77,7 @@ ms.locfileid: "80163332"
 1. 按一下 [確定] 以接受專案的變更。
 1. 將 `#include <openxr/openxr.h>` 新增至來源檔案，以開始使用 OpenXR API。
 
-若要查看作用中的 OpenXR API 範例，請參閱<a href="https://github.com/Microsoft/OpenXR-SDK-VisualStudio/tree/master/samples/BasicXrApp" target="_blank">BasicXrApp</a>範例應用程式。
+若要查看作用中的 OpenXR API 範例，請參閱<a href="https://github.com/microsoft/OpenXR-MixedReality/tree/master/samples/BasicXrApp" target="_blank">BasicXrApp</a>範例應用程式。
 
 ### <a name="include-official-openxr-loader-source"></a>包含官方 OpenXR 載入器來源
 
@@ -99,7 +99,7 @@ ms.locfileid: "80163332"
      * 如果您的目標裝置是連接沉浸式耳機外設的桌上型電腦，請在目標桌上型電腦上<a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop#set-up-device-portal-on-windows-desktop" target="_blank">遵循這些指示</a>。
   1. 流覽至左窗格中的 [ **OpenXR** ] 索引標籤，並啟用 [**使用最新的預覽 OpenXR 運行**時間]。  這會啟用您裝置上的預覽執行時間，其已啟用預覽延伸模組。
 
-如需這些預覽延伸模組的檔，以及如何使用它們的範例，請參閱<a href="https://github.com/Microsoft/OpenXR-MixedReality#openxr-preview-extensions" target="_blank">Mixed Reality OpenXR</a>存放庫。
+如需這些預覽延伸模組的檔，以及如何使用它們的範例，請參閱<a href="https://github.com/microsoft/OpenXR-MixedReality#openxr-preview-extensions" target="_blank">Mixed Reality OpenXR</a>存放庫。
 
 ## <a name="troubleshooting"></a>疑難排解
 

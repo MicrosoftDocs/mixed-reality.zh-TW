@@ -7,18 +7,20 @@ ms.date: 03/26/2019
 ms.topic: article
 keywords: 圖形, cpu, gpu, 轉譯, 記憶體回收行程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: f889d899ba55f4b3040080f6632cd27db86d6fc3
-ms.sourcegitcommit: ee8c7e821cb337cbccd8af64b13ee5f50109a776
+ms.openlocfilehash: 18691ab7993b2802268d3c4ce05532dfa5bd1723
+ms.sourcegitcommit: 9de2cb11321e6517db69e8c93459a205900a2174
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80082072"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80160014"
 ---
 # <a name="performance-recommendations-for-unity"></a>對 Unity 的效能建議
 
 本文是以[混合實境效能建議](understanding-performance-for-mixed-reality.md)中所述的討論為基礎，但著重於 Unity 引擎環境的特定學習。
 
-另外強烈建議開發人員檢閱 [Unity 文章的建議環境設定](Recommended-settings-for-unity.md)。 本文包含的內容具有一些最重要的場景設定，適用於建立高效能的混合實境應用程式。 其中一些建議的設定也會反白顯示，如下所示。
+## <a name="use-recommended-unity-project-settings"></a>使用建議的 Unity 專案設定
+
+將 Unity 中的混合實境應用程式效能最佳化時，最重要的第一個步驟是確定您已使用 [Unity 的建議環境設定](recommended-settings-for-unity.md)。 該文章包含的內容具有一些最重要的場景設定，適用於建立高效能的混合實境應用程式。 其中一些建議的設定也會反白顯示，如下所示。
 
 ## <a name="how-to-profile-with-unity"></a>如何使用 Unity 進行分析
 

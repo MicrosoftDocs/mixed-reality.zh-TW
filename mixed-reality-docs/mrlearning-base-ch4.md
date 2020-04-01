@@ -7,12 +7,12 @@ ms.date: 05/02/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 419b381c1240b2cc10708eab03245ed3aabfa859
-ms.sourcegitcommit: 61291e83536c8cb2e8401a8e66060128ede35922
+ms.openlocfilehash: 65bcef6a7c10450816d7a928302b0b266b132f0f
+ms.sourcegitcommit: 536fd45b48a70bbeca1454cef517ae007225e533
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79416133"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80362068"
 ---
 # <a name="5-interacting-with-3d-objects"></a>5.與 3D 物件互動
 
@@ -268,7 +268,7 @@ ms.locfileid: "79416133"
 
 ![mrlearning-base](images/mrlearning-base/tutorial4-section6-step4-1.png)
 
-瀏覽至 [資產]   > [MixedRealityToolkit.SDK]   > [StandardAssets]  材質，以查看 MRTK 所提供的音訊片段，然後將適當的音訊片段指派給 [音訊片段]  欄位，例如 MRTK_Gem 音訊片段：
+瀏覽至 [資產]   > [MixedRealityToolkit.SDK]   > [StandardAssets]   > [音訊]  材質，以查看 MRTK 所提供的音訊片段，然後將適當的音訊片段指派給 [音訊片段]  欄位，例如 MRTK_Gem 音訊片段：
 
 ![mrlearning-base](images/mrlearning-base/tutorial4-section6-step4-2.png)
 

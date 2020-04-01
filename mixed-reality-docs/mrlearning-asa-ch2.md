@@ -7,12 +7,12 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 4de40bb0b66ed299fa4a571490b33a0454f25817
-ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.openlocfilehash: 36f25229469e848a3f0612a5971cc8e9381262f5
+ms.sourcegitcommit: 536fd45b48a70bbeca1454cef517ae007225e533
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79031700"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80362006"
 ---
 # <a name="2-saving-retrieving-and-sharing-azure-spatial-anchors"></a>2.儲存、擷取和共用 Azure Spatial Anchors
 
@@ -54,6 +54,9 @@ ms.locfileid: "79031700"
 7. 啟動 Azure 工作階段。
 8. 尋找 Azure 錨點 (將火箭發射器體驗置於步驟 3 的位置)。
 
+> [!NOTE]
+> 若要完全重新啟動應用程式，在結束沉浸式應用程式檢視之後，您必須先關閉混合實境首頁中的應用程式視窗，然後再從 [開始] 功能表重新啟動應用程式。 如需其他詳細資料，您可以參閱[在 HoloLens 上使用應用程式](https://docs.microsoft.com/hololens/holographic-home#using-apps-on-hololens)一文。
+
 ## <a name="share-azure-anchors-between-multiple-devices"></a>在多個裝置之間共用 Azure 錨點
 
 在本節中，您將了解如何在多個裝置之間共用 Azure 錨點識別碼。 這可讓多個裝置查詢 Azure 是否有相同的錨點識別碼，以便具有錨點的全像投影能夠進行空間對齊。 空間對齊 (亦即，在多個裝置之間看到相同實體位置中的相同全像投影) 是 HoloLens 2 本機共用體驗的關鍵。
@@ -75,7 +78,7 @@ ms.locfileid: "79031700"
 2. 在 HoloLens 裝置 1 上：啟動 Azure 工作階段。
 3. 在 HoloLens 裝置 1 上：建立 Azure 錨點 (在火箭發射器體驗的位置上建立錨點)。
 4. 在 HoloLens 裝置 1 上：將 Azure 錨點識別碼共用至網路。
-5. 在 HoloLens 裝置 2 上：重新啟動應用程式。
+5. 在 HoloLens 裝置 2 上：啟動應用程式。
 6. 在 HoloLens 裝置 2 上：從網路取得共用錨點識別碼 (提取剛從 HoloLens 裝置 1 共用的錨點識別碼)。
 7. 在 HoloLens 裝置 2 上：啟動 Azure 工作階段。
 8. 在 HoloLens 裝置 2 上：尋找 Azure 錨點 (將火箭發射器體驗置於步驟 3 的位置)。

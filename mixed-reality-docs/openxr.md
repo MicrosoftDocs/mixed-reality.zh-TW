@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 7/29/2019
 ms.topic: article
 keywords: OpenXR、Khronos、BasicXRApp、DirectX、原生、原生應用程式、自訂引擎、中介軟體
-ms.openlocfilehash: 8a3cfef506f47a7cc49bff2851b9fc14c8a830b4
-ms.sourcegitcommit: 9de2cb11321e6517db69e8c93459a205900a2174
+ms.openlocfilehash: 04b2404889dc74f191543466beb7ae1e516d0d42
+ms.sourcegitcommit: 46bd1a56d272a5880f410751fa8429d65d816431
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80160004"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80549380"
 ---
 # <a name="openxr"></a>OpenXR
 
@@ -62,7 +62,7 @@ OpenXR 規格定義了擴充機制，可讓執行時間實施者公開超出<a h
 | [手互動<br />（抓握/瞄準姿勢、空中碰、抓住）](hands-and-tools.md) | **可用 `MSFT_preview` 擴充功能：**<br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_hand_interaction_preview">XR_MSFT_hand_interaction_preview</a></code><p>**`MSFT` 版本**：2020年4月 *（已規劃）*</p> |
 | [手形文字清晰度 + 手上網格](hands-and-tools.md) | **可用 `MSFT_preview` 擴充功能：**<br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_hand_tracking_preview">XR_MSFT_hand_tracking_preview</a></code><br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_hand_tracking_mesh_preview">XR_MSFT_hand_tracking_mesh_preview</a></code><p>**`MSFT` 版本**：5月 2020 *（已規劃）*</p> |
 | 與其他 HoloLens Sdk 交互操作（例如[QR](qr-code-tracking.md)） | **可用 `MSFT_preview` 擴充功能：**<br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_spatial_graph_bridge_preview">XR_MSFT_spatial_graph_bridge_preview</a></code><p>**`MSFT` 版本**：5月 2020 *（已規劃）*</p> |
-| [眼睛目光](eye-tracking.md) | <p>**`MSFT_preview`** ：2020年4月 *（已規劃）*</p><p>**`MSFT` 或 `EXT` 版本**：5月 2020 *（已規劃）*</p> |
+| [眼睛目光](eye-tracking.md) | <p>**已定義`EXT` 延伸**模組： *（尚不支援）*<br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#XR_EXT_eye_gaze_interaction" target="_blank">XR_EXT_eye_gaze_interaction</a></code><p>**預覽支援**：4月 2020 *（已規劃）*</p><p>**完整支援**：5月 2020 *（已規劃）*</p> |
 | [混合現實 Capture<br />（PV 攝影機的第三個轉譯）](mixed-reality-capture-for-developers.md#render-from-the-pv-camera-opt-in) | **可用 `MSFT_preview` 擴充功能：**<br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_secondary_view_configuration_preview">XR_MSFT_secondary_view_configuration_preview</a></code><br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_first_person_observer_preview">XR_MSFT_first_person_observer_preview</a></code><br /><p>**`MSFT` 版本**：2020年6月 *（已規劃）*</p> |
 | [運動控制器呈現模型](motion-controllers.md#rendering-the-motion-controller-model) | <p>**`MSFT_preview`** ：2020年4月 *（已規劃）*</p><p>**`MSFT` 版本**：2020年7月 *（已規劃）*</p> |
 | [場景理解（平面、網格）](scene-understanding.md) | <p>**`MSFT_preview`** ：5月 2020 *（已規劃）*</p><p>**`MSFT` 版本**：2020年7月 *（已規劃）*</p> |

@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 2/28/2020
 ms.topic: article
 keywords: OpenXR，Khronos，BasicXRApp，DirectX，原生，原生應用程式，自訂引擎，中介軟體，最佳做法，效能，品質，穩定性
-ms.openlocfilehash: c0ddbd0604760ccae34d347e93b918be4aead269
-ms.sourcegitcommit: 536fd45b48a70bbeca1454cef517ae007225e533
+ms.openlocfilehash: 0a0bbd37521be52ec328b4f32e53969c0ec7fef4
+ms.sourcegitcommit: 46bd1a56d272a5880f410751fa8429d65d816431
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80362017"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80549362"
 ---
 # <a name="openxr-app-best-practices"></a>OpenXR 應用程式最佳做法
 
@@ -25,8 +25,8 @@ ms.locfileid: "80362017"
 
 ### <a name="gamma-correct-rendering"></a>Gamma-正確呈現
 
-請務必小心，以確保您的轉譯管線是 gamma 正確的。 當轉譯為 swapchain 時，轉譯目標視圖格式應符合 swapchain 格式（例如，swapchain 格式和轉譯目標視圖的 DXGI_FORMAT_B8G8R8A8_UNORM_SRGB）。
-例外狀況是如果應用程式的轉譯管線在著色器程式碼中執行手動的 sRGB 轉換，在這種情況下，應用程式應該要求 sRGB swapchain 格式，但針對轉譯目標視圖使用線性格式（例如，要求 DXGI_FORMAT_B8G8R8A8_UNORM_SRGB 做為swapchain 格式，但使用 DXGI_FORMAT_B8G8R8A8_UNORM 做為轉譯目標視圖），以避免將內容更正為雙 gamma。
+請務必小心，以確保您的轉譯管線是 gamma 正確的。 當轉譯為 swapchain 時，轉譯目標視圖格式應符合 swapchain 格式（例如，swapchain 格式和轉譯目標視圖的 `DXGI_FORMAT_B8G8R8A8_UNORM_SRGB`）。
+例外狀況是，如果應用程式的轉譯管線在著色器程式碼中執行手動的 sRGB 轉換，在這種情況下，應用程式應該要求 sRGB swapchain 格式，但針對轉譯目標視圖使用線性格式（例如，要求 `DXGI_FORMAT_B8G8R8A8_UNORM_SRGB` 做為 swapchain 格式，但使用 `DXGI_FORMAT_B8G8R8A8_UNORM` 做為轉譯目標視圖），以避免將內容的雙 gamma 更正。
 
 ### <a name="submit-depth-buffer-for-projection-layers"></a>提交預測層的深度緩衝區
 

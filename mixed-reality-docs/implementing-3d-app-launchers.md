@@ -6,12 +6,12 @@ ms.author: thmignon
 ms.date: 07/12/2018
 ms.topic: article
 keywords: 3D，標誌，圖示，模型，啟動器，3D 啟動器，磚，即時 cube，深層連結，secondarytile，次要磚，UWP
-ms.openlocfilehash: 5d18f699792760c39df4f814bde470fb9f889db7
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 0a2e2177ffa7e381c461a58f373c818c9c5e72c4
+ms.sourcegitcommit: 46bd1a56d272a5880f410751fa8429d65d816431
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926763"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80549384"
 ---
 # <a name="implement-3d-app-launchers-uwp-apps"></a>執行3D 應用程式啟動器（UWP 應用程式）
 
@@ -42,12 +42,12 @@ ms.locfileid: "73926763"
 在資訊清單的頂端，新增 uap5 架構，並將它包含為可忽略的命名空間：
 
 ```xml
-<Package xmlns:mp="https://schemas.microsoft.com/appx/2014/phone/manifest" 
-         xmlns:uap="https://schemas.microsoft.com/appx/manifest/uap/windows10" 
-         xmlns:uap2="https://schemas.microsoft.com/appx/manifest/uap/windows10/2" 
-         xmlns:uap5="https://schemas.microsoft.com/appx/manifest/uap/windows10/5"
+<Package xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" 
+         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" 
+         xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" 
+         xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"
          IgnorableNamespaces="uap uap2 uap5 mp"
-         xmlns="https://schemas.microsoft.com/appx/manifest/foundation/windows10">
+         xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10">
 ```
 
 接下來，在應用程式的預設磚中指定 "MixedRealityModel"：
@@ -85,13 +85,13 @@ MixedRealityModel 元素會接受指向儲存在應用程式套件中之3D 資�
 周框方塊屬性的支援將隨附于 Windows RS4 update，做為 MixedRealityModel 元素上的屬性。 若要先在應用程式資訊清單頂端定義周框方塊，請新增 uap6 架構，並將其包含為可忽略的命名空間：
 
 ```xml
-<Package xmlns:mp="https://schemas.microsoft.com/appx/2014/phone/manifest" 
-         xmlns:uap="https://schemas.microsoft.com/appx/manifest/uap/windows10" 
-         xmlns:uap2="https://schemas.microsoft.com/appx/manifest/uap/windows10/2" 
-         xmlns:uap5="https://schemas.microsoft.com/appx/manifest/uap/windows10/5"
-         xmlns:uap6="https://schemas.microsoft.com/appx/manifest/uap/windows10/6"
+<Package xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" 
+         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" 
+         xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" 
+         xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"
+         xmlns:uap6="http://schemas.microsoft.com/appx/manifest/uap/windows10/6"
          IgnorableNamespaces="uap uap2 uap5 uap6 mp"
-         xmlns="https://schemas.microsoft.com/appx/manifest/foundation/windows10">
+         xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10">
 ```
 接下來，在 MixedRealityModel 上設定 SpatialBoundingBox 屬性以定義周框方塊： 
 
@@ -118,7 +118,7 @@ MixedRealityModel 元素會接受指向儲存在應用程式套件中之3D 資�
 >[!IMPORTANT]
 >3D 深層連結（secondaryTiles）僅適用于 2D UWP 應用程式。 不過，您可以建立[3d 應用程式啟動器](implementing-3d-app-launchers.md)，從 Windows Mixed Reality home 啟動專屬的應用程式。
 
-藉由新增將3D 模型從您的應用程式放入[Windows Mixed reality 首頁](navigating-the-windows-mixed-reality-home.md)，做為2d 應用程式中內容的深層連結，就像 windows Start 上的[2d 次要磚](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-secondary-tiles)一樣，您可以增強2D 應用程式的 windows mixed reality 功能下拉式功能表. 例如，您可以建立可直接連結至360相片檢視器應用程式的360° photospheres，或讓使用者從一組資產集合中開啟3D 內容，這些資產會開啟有關作者的詳細資料頁面。 這些只是使用3D 內容擴充2D 應用程式功能的幾種方式。
+藉由新增將3D 模型從您的應用程式放入[Windows Mixed reality home](navigating-the-windows-mixed-reality-home.md)做為2d 應用程式中內容的深層連結，就像 Windows [開始] 功能表上的[2d 次要磚](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-secondary-tiles)一樣，您可以增強2D 應用程式的 windows mixed reality 功能。 例如，您可以建立可直接連結至360相片檢視器應用程式的360° photospheres，或讓使用者從一組資產集合中開啟3D 內容，這些資產會開啟有關作者的詳細資料頁面。 這些只是使用3D 內容擴充2D 應用程式功能的幾種方式。
 
 ### <a name="creating-a-3d-secondarytile"></a>建立 3D "secondaryTile"
 
@@ -202,7 +202,7 @@ if (!tile.VisualElements.MixedRealityModel.Uri.Equals(updatedUri))
 
 如需其他圖格功能和屬性以及它們如何用於2D 磚的詳細資訊，請參閱[UWP 應用程式的磚檔](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles)。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * 包含3D 應用程式啟動器的[混合現實模型範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MixedRealityModel)。
 * [3D 應用程式啟動程式設計指引](3d-app-launcher-design-guidance.md)

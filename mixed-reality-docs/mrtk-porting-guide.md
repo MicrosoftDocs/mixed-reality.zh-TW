@@ -7,12 +7,12 @@ ms.date: 10/14/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality, 測試, MRTK, MRTK 第 2 版, HoloLens 2
-ms.openlocfilehash: 8e0c66a1c3d8ebd5422d19a02f313147ecf76653
-ms.sourcegitcommit: 40b37104b0aec4554502dcc7dc430e340a6fa46a
+ms.openlocfilehash: ced33a082152822779ae23a854800072bc8dfb5f
+ms.sourcegitcommit: d451b2055593ba8d0e4e05132ce889d60c71ee81
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77092032"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80613995"
 ---
 # <a name="get-your-existing-app-ready-for-hololens-2"></a>讓現有應用程式做好使用 HoloLens 2 的準備
 
@@ -77,7 +77,7 @@ HoloLens (第 1 代) 會在 x86 處理器上執行應用程式，HoloLens 2 則�
 如需使用 MRTK 第 2 版的詳細資訊，請參閱下列內容：
 - [MRTK 登陸頁面](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)
 - [開始使用 MRTK](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)
-- [MRTK 手部](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/InputSystem/HandTracking.html)
+- [MRTK 手部](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/HandTracking.html)
 - [MRTK 眼球追蹤](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_Main.html)
 
 ### <a name="prepare-for-the-migration"></a>準備移轉

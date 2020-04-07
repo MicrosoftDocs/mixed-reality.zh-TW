@@ -6,12 +6,12 @@ ms.author: kegodin
 ms.date: 11/02/2019
 ms.topic: article
 keywords: Windows Mixed Reality，空間音效，設計，樣式
-ms.openlocfilehash: 34923e1ebfc8e46ea8e67a4444fe3c2691efd4db
-ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
+ms.openlocfilehash: 08844f6d837407d52ad2ab84b78440ce856151fc
+ms.sourcegitcommit: b1ca4194eff452804ce5852208cce9815c6a4500
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75182008"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80677987"
 ---
 # <a name="how-to-use-sound-in-mixed-reality-applications"></a>如何在混合現實應用程式中使用音效
 
@@ -46,20 +46,20 @@ ms.locfileid: "75182008"
 
 ### <a name="gesture-interactions"></a>手勢互動
 在混合的現實中，使用者可以使用滑鼠來與按鈕互動。 按鈕動作通常會在使用者放開時進行，而不是按下按鈕，讓使用者有機會取消互動。 使用音效來強化這些階段。 若要協助使用者以遠處按鈕為目標，也請考慮使用指標游標暫留音效。
-* 按鈕-按下 [音效] 應該是簡短的觸覺，請按 [按一下]。<br/>範例： [MRTK_ButtonPress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_ButtonPress.wav)
-* 按鈕-"unpress" 聽起來應該有類似的觸覺風格。 比按音效更高的音調會強調完成的意義。<br/>範例： [MRTK_ButtonUnpress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_ButtonUnpress.wav)
+* 按鈕-按下 [音效] 應該是簡短的觸覺，請按 [按一下]。<br/>範例： [MRTK_ButtonPress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Audio/MRTK_ButtonPress.wav)
+* 按鈕-"unpress" 聽起來應該有類似的觸覺風格。 比按音效更高的音調會強調完成的意義。<br/>範例： [MRTK_ButtonUnpress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Audio/MRTK_ButtonUnpress.wav)
 * 針對滑鼠停留音效，請考慮使用微妙且不會有危險的音效，例如低頻率 thud 或凹凸效果。
 
 ### <a name="direct-manipulation"></a>直接操作
 在 HoloLens 2 上，明確表述的「手寫」追蹤支援使用者介面元素的直接操作。 當沒有其他實體意見反應時，聽起來很重要。
 
 *按鈕按*音效在直接操作中很重要，因為使用者在到達按鍵筆觸的底部時，不會收到任何其他指示。 重要旅遊的音效指標可以是小型、微妙和 pixels occluded。 如同筆勢互動，按下按鈕應該會得到簡短的觸覺音效，像是按一下。 Unpresses 應該有類似的按一下音效，但有凸起的音調。
-* 範例： [MRTK_ButtonPress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_ButtonPress.wav)
-* 範例： [MRTK_ButtonUnpress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_ButtonUnpress)
+* 範例： [MRTK_ButtonPress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Audio/MRTK_ButtonPress.wav)
+* 範例： [MRTK_ButtonUnpress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Audio/MRTK_ButtonUnpress.wav)
 
 很難以以視覺方式確認抓取或發行動作。 使用者的手中通常會有任何視覺效果，而主體的物件則缺乏真實世界的「抓取」的視覺方式。 音效可以有效地溝通成功的抓取和發行互動。
-* 抓取動作應該有一個簡短、有點 muffled 的觸覺音效，以 evokes 在物件周圍關閉的想法。 有時候也會有「竊竊私語」音效，會導致抓取音效傳達手的運動。<br/>範例： [MRTK_Move_Start .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_Move_Start.wav)
-* 發行動作應該會得到類似的簡短和觸覺音效。 它通常會比捕捉音效更低，而且會以相反的順序出現，並會產生影響，然後再進行「竊竊私語」來溝通物件正在進行的情況。<br/>範例： [MRTK_Move_End .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_Move_End.wav)
+* 抓取動作應該有一個簡短、有點 muffled 的觸覺音效，以 evokes 在物件周圍關閉的想法。 有時候也會有「竊竊私語」音效，會導致抓取音效傳達手的運動。<br/>範例： [MRTK_Move_Start .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Audio/MRTK_Move_Start.wav)
+* 發行動作應該會得到類似的簡短和觸覺音效。 它通常會比捕捉音效更低，而且會以相反的順序出現，並會產生影響，然後再進行「竊竊私語」來溝通物件正在進行的情況。<br/>範例： [MRTK_Move_End .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Audio/MRTK_Move_End.wav)
 
 *繪圖*互動應會取得持續的迴圈音效，其音量是由使用者的手移動所決定。 當使用者繼續進行時，應該以無訊息的方式進行，並在手上快速移動時 loudest。
 

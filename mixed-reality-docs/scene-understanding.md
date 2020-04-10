@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: 場景理解，空間對應，Windows Mixed Reality，Unity
-ms.openlocfilehash: 4b959b7b7ec58fc30ed0fe93b568d123cbe70bb1
-ms.sourcegitcommit: 7e8b9de561cbc8483e84511f3e9cbd779f3a999f
+ms.openlocfilehash: 3d56f375c38b1dee6ab9eb97219a5e37fe698c63
+ms.sourcegitcommit: 37816514b8fe20669c487774b86e80ec08edcadf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/27/2019
-ms.locfileid: "75502669"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "81003334"
 ---
 # <a name="scene-understanding"></a>場景理解
 
@@ -53,7 +53,7 @@ ms.locfileid: "75502669"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>功能</strong></td>
+        <td><strong>特徵</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 代)</strong></a></td>
         <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
@@ -73,7 +73,7 @@ ms.locfileid: "75502669"
 
 <br>
 
-環境感知應用程式的許多核心案例（放置、遮蔽、物理等等）都可透過空間對應和場景理解來定址，而本節將強調這些差異。 「場景理解」和「空間對應」之間的主要差異，是針對結構和簡易性的最大精確度和延遲進行取捨。 如果您的應用程式需要的可能是最低延遲及網格三角形，而您只想要直接存取空間對應，但您正在執行較高層級的處理，您可以考慮改用應該提供的場景理解模型您有功能的超集合。 另請注意，由於場景理解會提供空間對應網格做為其表示的一部分，因此您一律可以存取最完整且正確的空間對應資料。
+環境感知應用程式的許多核心案例（放置、遮蔽、物理等等）都可透過空間對應和場景理解來定址，而本節將強調這些差異。 「場景理解」和「空間對應」之間的主要差異，是針對結構和簡易性的最大精確度和延遲進行取捨。 如果您的應用程式需要只有您想要存取的最低延遲可能和網格三角形，請直接使用空間對應。 如果您要執行較高層級的處理，您可以考慮改用「場景理解模型」，因為它應該提供您功能的超集合。 另請注意，由於場景理解會提供空間對應網格的快照集作為其表示方式的一部分，因此您一律可以存取最完整且正確的空間對應資料。
 
 下列各節會重新流覽新場景理解 SDK 內容中的核心空間對應案例。
 
@@ -105,7 +105,7 @@ ms.locfileid: "75502669"
 
 如果您的需求可容忍場景理解的延遲增加，應用程式開發人員應該考慮使用場景理解防水網格，而空間對應網格則與平面表示一致。 這會提供「兩種世界的最佳」案例，其中簡化的防水遮蔽會使用更精細的 nonplanar 幾何，以提供最實際的遮蔽地圖。
 
-### <a name="physics"></a>物理學
+### <a name="physics"></a>物理
 
 場景理解會產生使用語義分解空間的防水網格，特別是為了解決空間對應網格所強加的許多物理限制。 防水結構可確保物理光線轉換一律會被叫用，而語義分解則允許針對室內導覽較簡單的 nav 網格產生。 如[遮蔽](#occlusion)一節中所述，使用 EnableSceneObjectMeshes 和 EnableWorldMesh 建立場景，將會產生最實際的完整網格。 環境網格的 [防水] 屬性會防止點擊的測試無法到達介面，而網格資料會確保物理與場景中的所有物件互動，而不只是與房間結構互動。
 
@@ -115,13 +115,13 @@ ms.locfileid: "75502669"
 
 產生精確的導覽網格目前仍需要後置處理，也就是應用程式仍然必須在樓層上進行阻隔器，以確保導覽不會通過雜亂/資料表等等 .。。完成此動作最精確的方式是，在使用 EnableWorldMesh 旗標來計算場景時，針對所提供的世界網格資料進行投影。
 
-### <a name="visualization"></a>虛擬化
+### <a name="visualization"></a>視覺化
 
 雖然[空間對應視覺效果](spatial-mapping.md#visualization)可以用於環境的即時意見反應，但在許多情況下，平面和防水物件的簡單性可提供更高的效能或視覺品質。 如果投影在四邊形或平面防水網格所提供的平面表面上，使用空間對應所描述的陰影投射和接地技術可能會更滿意。 特別是在環境/案例中，因為場景將會推斷，而完整的預先掃描並不是最理想的情況，而完成的環境和平面假設會將成品降到最低。
 
 此外，空間對應所傳回的表面總數會受到內部空間快取的限制，而場景理解的空間對應網格版本則能夠存取未快取的空間對應資料。 因此，場景理解較適合用來針對視覺效果或進一步的網格處理來捕獲較大空間的網格標記法（例如，大於單一房間）。 以 EnableWorldMesh 傳回的世界網格會在整個中具有一致的詳細資料層級，如果轉譯為線框，這可能會產生更令人滿意的視覺效果。
 
-### <a name="see-also"></a>請參閱
+### <a name="see-also"></a>另請參閱
 
 * [場景理解 SDK](scene-understanding-SDK.md)
 * [空間對應](spatial-mapping.md)

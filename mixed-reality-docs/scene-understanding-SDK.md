@@ -6,16 +6,16 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: 場景理解，空間對應，Windows Mixed Reality，Unity
-ms.openlocfilehash: f365b0444576e03acd8dba194d7f8f24175e7bee
-ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
+ms.openlocfilehash: f293e779b041cdf4aa636cf317b7eaca70e16410
+ms.sourcegitcommit: 37816514b8fe20669c487774b86e80ec08edcadf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539518"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "81003324"
 ---
 # <a name="scene-understanding-sdk-overview"></a>場景理解 SDK 總覽
 
-場景理解的目標是要轉換混合現實裝置所捕捉到的非結構化環境感應器資料，並將它轉換成可直覺且易於開發的功能強大但抽象化的標記法。 SDK 會作為應用程式與場景理解執行時間之間的通訊層。 其目的是要模擬現有的標準結構，例如3d 呈現的3d 場景圖形，以及2d 應用程式的2D 矩形/面板。 雖然結構的場景理解模擬會對應到您可能使用的具體架構，但在一般的 SceneUnderstanding 中，不會有架構中立，允許在與它互動的不同架構之間進行交互操作。 隨著場景的理解發展，SDK 的角色是為了確保新的標記法和功能會繼續在統一的架構中公開。 在本檔中，我們會先引進高階概念，協助您熟悉開發環境/使用方式，然後針對特定的類別和結構提供更詳細的檔。
+場景理解的目標是要轉換混合現實裝置所捕捉到的非結構化環境感應器資料，並將它轉換成可直覺且易於開發的功能強大但抽象化的標記法。 SDK 會作為應用程式與場景理解執行時間之間的通訊層。 其目的是要模擬現有的標準結構，例如3D 呈現的3D 場景圖形，以及2d 應用程式的2D 矩形和麵板。 雖然結構的場景理解模擬會對應到您可能使用的具體架構，但在一般的 SceneUnderstanding 中，不會有架構中立，允許在與它互動的不同架構之間進行交互操作。 隨著場景的理解發展，SDK 的角色是為了確保新的標記法和功能會繼續在統一的架構中公開。 在本檔中，我們會先引進高階概念，協助您熟悉開發環境/使用方式，然後針對特定的類別和結構提供更詳細的檔。
 
 ## <a name="where-do-i-get-the-sdk"></a>哪裡可以取得 SDK？
 
@@ -31,13 +31,13 @@ SceneUnderstanding 需要18362或更高版本 Windows SDK。
 
 如果您在 Unity 專案中使用 SDK，請使用適用于[unity 的 NuGet](https://github.com/GlitchEnzo/NuGetForUnity)將套件安裝到您的專案中。
 
-## <a name="conceptual-overview"></a>概念總覽
+## <a name="conceptual-overview"></a>概念式概觀
 
 ### <a name="the-scene"></a>場景
 
 您的混合現實裝置會持續整合其在您環境中所見到的資訊。 場景瞭解漏斗圖所有這些資料來源，並產生一個單一的統一抽象概念。 場景理解會產生場景，這是代表單一事物（例如牆/天花板/樓層）實例的[SceneObjects](scene-understanding-SDK.md#sceneobjects)組合。場景物件本身是[SceneComponents](scene-understanding-SDK.md#scenecomponents)的組合，代表組成此 SceneObject 的更細微部分。 元件的範例包括四邊形和網格，但未來可能會代表周框方塊、碰撞網格、中繼資料等。
 
-將原始感應器資料轉換成場景的程式，是可能耗費資源的作業，可能需要幾秒鐘的時間，才會有非常大的空間（~ 50x50m），而不是由裝置所計算，因此不會有任何問題應用程式要求。 相反地，場景產生是由您的應用程式隨選觸發。 SceneObserver 類別具有可計算或還原序列化場景的靜態方法，您可以接著列舉/與之互動。 「計算」動作會隨選執行，並在 CPU 上執行，但在不同的進程（混合現實驅動程式）中執行。 不過，雖然我們會在另一個進程中計算，但產生的場景資料會儲存在應用程式的場景物件中並加以維護。 
+將原始感應器資料轉換成場景的程式，是可能耗費資源的作業，可能需要幾秒鐘的時間（約10x10m）到幾分鐘，才會有非常大的空間（~ 50x50m），因此不會在沒有應用程式要求的情況下，由裝置所計算的東西。 相反地，場景產生是由您的應用程式隨選觸發。 SceneObserver 類別具有可計算或還原序列化場景的靜態方法，您可以接著列舉/與之互動。 「計算」動作會隨選執行，並在 CPU 上執行，但在不同的進程（混合現實驅動程式）中執行。 不過，雖然我們會在另一個進程中計算，但產生的場景資料會儲存在應用程式的場景物件中並加以維護。 
 
 以下圖表說明此流程流程，並顯示兩個應用程式與場景理解執行時間互動的範例。 
 
@@ -54,11 +54,11 @@ SceneUnderstanding 需要18362或更高版本 Windows SDK。
 在下方，我們以其平面和邏輯形式呈現結構的範例。
 
 <table>
-<tr><th>邏輯版面配置</th><th>實體版面配置</th></tr>
+<tr><th>邏輯版面配置</th><th>實體配置</th></tr>
 <tr>
 <td>
 <ul>
-  切換
+  場景
   <ul>
   <li>SceneObject_1
     <ul>
@@ -117,15 +117,15 @@ SceneObjects 可以有下列任何一項：
 
 <table>
 <tr>
-<th>SceneObjectKind</th> <th>說明</th>
+<th>SceneObjectKind</th> <th>描述</th>
 </tr>
 <tr><td>背景</td><td>已知 SceneObject<b>不</b>是其他可辨識類型的場景物件之一。 此類別不應與 [不明] 混淆，其中的背景已知不是牆/樓層/上限等等 .。。雖然不明尚未分類。</b></td></tr>
 <tr><td>內牆</td><td>實體牆。 牆會假設為 immovable 環境結構。</td></tr>
 <tr><td>車間</td><td>樓層是其中一個可以進行的任何表面。 注意：樓梯不是樓層。 另請注意，該樓層會假設任何 walkable 介面，因此不會明確假設為單一樓層。 多層結構、斜坡等等 .。。全都分類為樓層。</td></tr>
-<tr><td>向上</td><td>房間的上方表面。</td></tr>
+<tr><td>Ceiling</td><td>房間的上方表面。</td></tr>
 <tr><td>平台</td><td>您可以放置全息影像的大型平面。 這些通常會代表資料表、countertops 和其他大型水準表面。</td></tr>
 <tr><td>World</td><td>標記不可知之幾何資料的保留標籤。 藉由設定 EnableWorldMesh 更新旗標所產生的網格會分類為「世界」。</td></tr>
-<tr><td>Unknown</td><td>這個場景物件尚未分類並指派一種類型。 這不應該與背景混淆，因為此物件可能是任何專案，系統還不會為其提供強大的分類。</td></tr>
+<tr><td>未知</td><td>這個場景物件尚未分類並指派一種類型。 這不應該與背景混淆，因為此物件可能是任何專案，系統還不會為其提供強大的分類。</td></tr>
 </tr>
 </table>
 
@@ -263,9 +263,9 @@ foreach (var mesh in firstFloor.Meshes)
 
 ### <a name="dealing-with-transforms"></a>處理轉換
 
-在處理轉換時，場景理解已刻意嘗試配合傳統的3D 場景標記法。 因此，每個場景會限制為單一座標系統，與最常見的3D 環境表示相同。 SceneObjects 每個都會提供其位置作為座標系統內的位置和方向。 如果您的應用程式正在處理的場景會延伸單一來源提供的限制，可以將 SceneObjects 錨定至 SpatialAnchors，或產生數個場景並將它們合併在一起，但為了簡單起見，我們假設防水場景存在於自己的由 OriginSpatialGraphNodeId 所定義之一個等位所當地語系化的原始來源。
+在處理轉換時，場景理解已刻意嘗試配合傳統的3D 場景標記法。 因此，每個場景會限制為單一座標系統，與最常見的3D 環境表示相同。 SceneObjects 每個都會提供其位置作為座標系統內的位置和方向。 如果您的應用程式正在處理的場景會延伸單一來源提供的限制，可將 SceneObjects 錨定至 SpatialAnchors，或產生數個場景並將它們合併在一起，但為了簡單起見，我們假設防水場景存在於其本身的原始來源中，而這些專案是由場景所定義的一個同位來當地語系化。 OriginSpatialGraphNodeId。
 
-例如，下列 Unity 程式碼示範如何使用 Windows 認知和 Unity Api，將座標系統對齊在一起。 如需有關取得對應至 Unity 之 SpatialCoordinateSystem 的詳細資訊，請參閱[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem)和[SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview) ，以取得有關 Windows 認知 api 的詳細資料，以及[unity 中的混合現實原生物件](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced)。世界原點，以及在 `System.Numerics.Matrix4x4` 和 `UnityEngine.Matrix4x4`之間轉換 `.ToUnity()` 擴充方法。
+例如，下列 Unity 程式碼示範如何使用 Windows 認知和 Unity Api，將座標系統對齊在一起。 如需有關如何取得對應于 Unity 世界原點的 SpatialCoordinateSystem，以及在 `System.Numerics.Matrix4x4` 和 `UnityEngine.Matrix4x4`之間轉換的 `.ToUnity()` 擴充方法，請參閱[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem)和[SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview)以取得 Windows 認知 api 的詳細資料，以及[Unity 中的混合現實原生物件](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced)。
 
 ```cs
 public class SceneRootComponent : MonoBehavior
@@ -380,7 +380,7 @@ mesh.GetVertexPositions(positions);
 
 [場景瞭解範例場景](https://github.com/sceneunderstanding-microsoft/unitysample/tree/master/Assets/Resources/SerializedScenesForPCPath)
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [空間對應](spatial-mapping.md)
 * [場景理解](scene-understanding.md)

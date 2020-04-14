@@ -1,17 +1,17 @@
 ---
 title: DirectX 中的鍵盤、滑鼠和控制器輸入
 description: 說明如何為使用鍵盤、滑鼠和遊戲控制器的 Windows Mixed Reality 建立應用程式。
-author: MikeRiches
+author: mikeriches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，鍵盤，滑鼠，遊戲控制器，xbox controller，HoloLens，桌面，逐步解說，範例程式碼
-ms.openlocfilehash: 1e61cb50a561492fdc6849b5b231e97fab1bb6cf
-ms.sourcegitcommit: 05fa75193059a2dac4b580a9eef7b6c4bb64d8d7
+ms.openlocfilehash: 27f1bf72435ce6889ba3f7b83664367a4440b162
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74835094"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278086"
 ---
 # <a name="keyboard-mouse-and-controller-input-in-directx"></a>DirectX 中的鍵盤、滑鼠和控制器輸入
 
@@ -265,5 +265,5 @@ if (m_gamepadAddedEventToken.Value != 0)
 * 鍵盤輸入是控制應用程式或遊戲引擎之調試層面的絕佳方式，尤其是因為使用者不需要使用鍵盤。 連接的方式與使用 CoreWindow 事件 Api 時相同。 在此案例中，您可以選擇執行方法，將您的應用程式設定為在您的 debug 會話期間將鍵盤事件路由至「僅限偵錯工具輸入」模式。
 * Bluetooth 控制器也會運作。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [硬體配件](hardware-accessories.md)

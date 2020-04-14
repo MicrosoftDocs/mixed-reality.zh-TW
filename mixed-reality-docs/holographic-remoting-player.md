@@ -1,17 +1,17 @@
 ---
 title: 全像攝影遠端播放
 description: 全像攝影遠端播放程式是一種隨附的應用程式，可連接到支援全像攝影遠端的電腦應用程式和遊戲。 全像攝影遠端處理會使用 Wi-fi 連線，即時將全像個人電腦的內容串流至您的 Microsoft HoloLens。
-author: FlorianBagarMicrosoft
+author: florianbagarmicrosoft
 ms.author: flbagar
 ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、遠端、全像攝影遠端
-ms.openlocfilehash: 88a9aa0bb058776a32016e51fc22bcb73f08ab85
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: e5255fb5537201058c491f5e4c682bb1c22d0edb
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79092367"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278206"
 ---
 # <a name="holographic-remoting-player"></a>全像攝影遠端播放
 

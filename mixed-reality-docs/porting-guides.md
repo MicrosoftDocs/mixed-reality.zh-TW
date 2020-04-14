@@ -1,17 +1,17 @@
 ---
 title: 移植指南
 description: 逐步解說 walthrough 說明如何將現有的沉浸式應用程式移植到 Windows Mixed Reality。
-author: ChimeraScorn
+author: chimerascorn
 ms.author: alexturn
 ms.date: 10/02/2018
 ms.topic: article
 keywords: 埠、移植、unity、中介軟體、引擎、UWP
-ms.openlocfilehash: 5d3debc9a810873f21a9f55a32061565d4ce75ae
-ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
+ms.openlocfilehash: 06501742d4b5c30036982deef2ec2a88171912bf
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539513"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278036"
 ---
 # <a name="porting-guides"></a>移植指南
 
@@ -152,7 +152,7 @@ Windows Mixed Reality 會在廣泛的裝置上提供，範圍從高階遊戲電�
 
 [Unity](https://docs.unity3d.com/Manual/Profiler.html)和[Visual Studio](https://docs.microsoft.com/visualstudio/profiling/index)都包含效能分析工具，以及[Microsoft](understanding-performance-for-mixed-reality.md)和[Intel](https://software.intel.com/articles/vr-content-developer-guide)都發佈有關效能分析和優化的指導方針。 在[瞭解混合現實的效能](understanding-performance-for-mixed-reality.md)方面，有廣泛的效能討論。 此外，unity 的[效能建議](performance-recommendations-for-unity.md)下還有 unity 的特定詳細資料。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [Unity 的輸入移植指南](input-porting-guide-for-unity.md)
 * [Windows Mixed Reality 最低電腦硬體相容性指導方針](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)
 * [瞭解混合現實的效能](understanding-performance-for-mixed-reality.md)

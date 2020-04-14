@@ -1,17 +1,17 @@
 ---
 title: 適用于 HoloLens 的 WinRT Api 搭配 Unity
 description: 說明如何在適用于 HoloLens 的 Unity 專案中使用 WinRT Api （Windows 命名空間）。
-author: MikeRiches
+author: mikeriches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Unity，WinRT，windows mixed reality，API，逐步解說
-ms.openlocfilehash: 73764d191813f6dcae750e74ce3181af987c9e0e
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 80f950d7571a936e93eb08490ad83dbb34a50b3a
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437240"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277986"
 ---
 # <a name="winrt-apis-with-unity-for-hololens"></a>適用于 HoloLens 的 WinRT Api 搭配 Unity
 
@@ -64,6 +64,6 @@ public class WinRTAPI : MonoBehaviour {
 
 當您按兩下 Unity 編輯器中的腳本時，預設會在編輯器專案中啟動您的腳本。 WinRT Api 會顯示為未知，因為 Visual Studio 專案未參考 Windows 執行階段。 此外， **ENABLE_WINMD_SUPPORT**指示詞將會是未定義的，而且除非您將專案建立到 UWP Visual Studio 解決方案，否則會忽略任何 *#if*包裝的程式碼。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [匯出和建置 Unity Visual Studio 解決方案](exporting-and-building-a-unity-visual-studio-solution.md)
 * [Windows 執行階段支援 Unity](https://docs.unity3d.com/Manual/IL2CPP-WindowsRuntimeSupport.html)

@@ -1,17 +1,17 @@
 ---
 title: 在 HoloLens 上測試您的應用程式
 description: 測試 HoloLens 應用程式的指引和建議
-author: JonMLyons
+author: jonmlyons
 ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: HoloLens，測試
-ms.openlocfilehash: 9a189bf139c97fc13034d94f05aa8f5974cc19b9
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 3ab5eeec4046b81dc41db51ae138eb9d1069d1ff
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437390"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277586"
 ---
 # <a name="testing-your-app-on-hololens"></a>在 HoloLens 上測試您的應用程式
 
@@ -36,14 +36,14 @@ ms.locfileid: "73437390"
 
 ![適用于 HoloLens 應用程式開發的環境測試矩陣](images/environment-matrix-600px.png)
 
-## <a name="comfort"></a>舒服
+## <a name="comfort"></a>舒適度
 1. **剪輯平面。** 用心至[呈現全息影像](hologram-stability.md#hologram-render-distances)的位置。
 2. **避免虛擬移動與實際的 head 移動不一致。** 避免以不代表使用者實際動作的方式移動相機。 如果您的應用程式需要透過場景移動使用者，請將動作設為可預測、最小化加速，並讓使用者控制移動。
 3. **請遵循全息的品質方針。** 執行全像投影[品質指引](hologram-stability.md)的高效能應用程式較不可能導致使用者 discomfort。
 4. **水準散發全像投影，而不是垂直分佈。** 強制使用者花很長的時間來搜尋或縮小，可能會導致在頸部中疲勞。
 
 
-## <a name="input"></a>Input
+## <a name="input"></a>輸入
 
 ### <a name="interaction-models"></a>互動模型
 
@@ -67,7 +67,7 @@ ms.locfileid: "73437390"
 
 ## <a name="system-integration"></a>系統整合
 
-### <a name="battery"></a>[電池]
+### <a name="battery"></a>電池
 
 在未連線電源的情況下測試您的應用程式，以瞭解耗盡電池的速度。 您可以藉由查看電源 LED 讀數，輕鬆瞭解電池狀態。 
 
@@ -112,5 +112,5 @@ ms.locfileid: "73437390"
 
 若要讓您的應用程式能夠在[Windows](submitting-an-app-to-the-microsoft-store.md)市集中發佈，最好先在本機進行驗證並測試，再提交憑證以進行認證。 如果您的應用程式以 Windows 全像裝置系列為目標，則[Windows 應用程式認證套件](https://msdn.microsoft.com/library/windows/apps/xaml/mt186449.aspx)只會在您的電腦上執行本機靜態分析測試。 您的 HoloLens 不會執行任何測試。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [將應用程式提交到 Windows Store](submitting-an-app-to-the-microsoft-store.md)

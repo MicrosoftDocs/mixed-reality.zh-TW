@@ -1,17 +1,17 @@
 ---
 title: 撰寫自訂的全像遠端播放播放機
 description: 藉由建立自訂的全像遠端播放機應用程式，您可以建立自訂應用程式，能夠將遠端電腦上呈現的內容顯示到 HoloLens 2。 本文說明如何達成此目的。
-author: FlorianBagarMicrosoft
+author: florianbagarmicrosoft
 ms.author: flbagar
 ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、遠端、全像攝影遠端
-ms.openlocfilehash: eaa6549eb34d3a37c21b3decb348bf43594a110f
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: b276558e43fc545be9e5c0be6feded229904ee97
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79092411"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278216"
 ---
 # <a name="writing-a-custom-holographic-remoting-player-app"></a>撰寫自訂的全像遠端播放播放機應用程式
 
@@ -218,7 +218,7 @@ winrt::Microsoft::Holographic::AppRemoting::BlitResult result = m_playerContext.
 - ```Remote``` 投射轉換會反映遠端應用程式所指定的近/遠平面距離。
 - ```Merged```-與您的遠端應用程式接近/遠的平面距離，並會合並您的自訂播放機應用程式。 根據預設，這會透過最少的平面距離和最大的平面距離來完成。 如果遠端或本機端反向，比方說 < 近距離，則會翻轉遠端接近/遠平面距離。
 
-## 選擇性：設定 BlitRemoteFrameTimeout<a name="BlitRemoteFrameTimeout"></a>
+## <a name="optional-set-blitremoteframetimeout"></a>選擇性：設定 BlitRemoteFrameTimeout<a name="BlitRemoteFrameTimeout"></a>
 >[!IMPORTANT]
 > 從版本[2.0.9](holographic-remoting-version-history.md#v2.0.9)開始支援 ```PlayerContext::BlitRemoteFrameTimeout```。 
 

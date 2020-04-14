@@ -1,18 +1,18 @@
 ---
 title: 使用 Windows 裝置入口網站
-description: HoloLens 的 Windows 裝置入口網站能讓您從遠端透 Wi-Fi 或 USB 來設定及管理您的裝置。 Device Portal 是您 HoloLens 上的網頁伺服器，您可以從電腦上的網頁瀏覽器與其連線。 裝置入口網站包含許多工具，可協助您管理 HoloLens，並對應用程式進行偵錯及最佳化。
-author: JonMLyons
+description: HoloLens 的 Windows 裝置入口網站能讓您從遠端透 Wi-Fi 或 USB 來設定及管理您的裝置。 Device Portal 是您 HoloLens 上的網頁伺服器，您可以從電腦上的網頁瀏覽器與它連線。 裝置入口網站包含許多工具，可協助您管理 HoloLens，並對應用程式進行偵錯及最佳化。
+author: jonmlyons
 ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: Windows 裝置入口網站, HoloLens
 ms.localizationpriority: high
-ms.openlocfilehash: 6a5a0ef164cbbe80f74f0fe6cc42e08834d2a4b4
-ms.sourcegitcommit: ee8c7e821cb337cbccd8af64b13ee5f50109a776
+ms.openlocfilehash: 9cd9b33fed12802e5b41afa3fee850356911a989
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80082088"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278026"
 ---
 # <a name="using-the-windows-device-portal"></a>使用 Windows 裝置入口網站
 
@@ -24,7 +24,7 @@ ms.locfileid: "80082088"
 </tr>
 </table>
 
-HoloLens 的 Windows 裝置入口網站能讓您從遠端透 Wi-Fi 或 USB 來設定及管理您的裝置。 Device Portal 是您 HoloLens 上的網頁伺服器，您可以從電腦上的網頁瀏覽器與其連線。 裝置入口網站包含許多工具，可協助您管理 HoloLens，並對應用程式進行偵錯及最佳化。
+HoloLens 的 Windows 裝置入口網站能讓您從遠端透 Wi-Fi 或 USB 來設定及管理您的裝置。 Device Portal 是您 HoloLens 上的網頁伺服器，您可以從電腦上的網頁瀏覽器與它連線。 裝置入口網站包含許多工具，可協助您管理 HoloLens，並對應用程式進行偵錯及最佳化。
 
 本文件特別說明適用於 HoloLens 的 Windows 裝置入口網站。 若要使用適用於傳統型 Windows 裝置入口網站 (包括 Windows Mixed Reality)，請參閱 [Windows 裝置入口網站概觀](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal)
 
@@ -68,8 +68,8 @@ HoloLens 的 Windows 裝置入口網站能讓您從遠端透 Wi-Fi 或 USB 來�
 1. 在您電腦上的網頁瀏覽器中，輸入 HoloLens 的 IP 位址。 [設定存取] 頁面將會開啟。
 2. 按一下或點選 [要求 PIN]  ，並查看 HoloLens 顯示畫面，以取得所產生的 PIN。
 3. 輸入 [您裝置上顯示的 PIN]  文字方塊中的 PIN。
-4. 輸入您會用來連線到 Device Portal 的使用者名稱。 該名稱不需要是 Microsoft 帳戶 (MSA) 或網域名稱。
-5. 輸入密碼並加以確認。 密碼長度必須至少為七個字元。 該密碼不需要是 MSA 或網域密碼。
+4. 輸入您會用來連線到 Device Portal 的使用者名稱。 它並不需要是 Microsoft 帳戶 (MSA) 或網域名稱。
+5. 輸入密碼並確認它。 密碼長度必須至少為七個字元。 它並不需要是 MSA 或網域密碼。
 6. 按一下 [配對]  ，在 HoloLens 上連線到 Windows 裝置入口網站。
 
 如果您想在任何時候變更此使用者名稱或密碼，可以造訪裝置安全性頁面來重複此程序，方法是瀏覽到： https://<YOUR_HOLOLENS_IP_ADDRESS>/devicepair.htm。
@@ -78,7 +78,7 @@ HoloLens 的 Windows 裝置入口網站能讓您從遠端透 Wi-Fi 或 USB 來�
 
 如果您在瀏覽器中看見「憑證錯誤」，可透過與裝置建立信任關係來加以修正。
 
-每個 HoloLens 都會為其 SSL 連線產生唯一的自我簽署憑證。 根據預設，此憑證並不會受到您電腦的網頁瀏覽器信任，因此您可能會收到「憑證錯誤」。 藉由從您的 HoloLens 下載此憑證 (透過 USB 或您信任的 Wi-Fi 網路)，並在電腦上設為信任，便能安全地連線到您的裝置。
+每個 HoloLens 都會為其 SSL 連線產生唯一的自我簽署憑證。 根據預設，此憑證並不會受到您電腦的網頁瀏覽器信任，因此您可能會收到「憑證錯誤」。 藉由從您的 HoloLens 下載此憑證 (透過 USB 或您信任的 Wi-Fi 網路)，並在電腦上信任它，您便能安全地連線到您的裝置。
 1. **請確保您是在安全的網路上 (USB 或您信任的 Wi-Fi 網路)。**
 2. 從裝置入口網站上的 [安全性] 頁面下載此裝置的憑證。
    * 瀏覽到： https://<YOUR_HOLOLENS_IP_ADDRESS>/devicepair.htm

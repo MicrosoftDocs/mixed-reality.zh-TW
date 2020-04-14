@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 07/11/2019
 ms.topic: article
 keywords: 版本資訊，版本，windows 10，組建，19h1，os，5月2019
-ms.openlocfilehash: f5163e128c3f1e1b68d827b09078b565a58c5a4d
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 97bf4c3b5c24fc6f0c763b8dd9f146bbaa01187a
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438315"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277626"
 ---
 # <a name="release-notes---may-2019"></a>版本資訊-5 月2019
 
@@ -44,6 +44,10 @@ ms.locfileid: "73438315"
 
 HoloLens （第1代）是進入長期服務（LTS）狀態。 未來的更新將著重于問題和安全性修正，同時維持與[Windows 10 2018 年10月版](release-notes-october-2018.md)的 HoloLens （也稱為 RS5）的功能同位。 
 
+## <a name="known-issues"></a>已知問題
+
+我們正在追蹤一個問題，要求監視器必須連線到電腦，才能讓沉浸式耳機正常運作。 死忠電腦使用者可能會想要使用作用中的顯示介面卡（或 EDID 模擬器），確保當沒有任何電腦監視器在使用中時，他們的沉浸式耳機仍會繼續呈現。 
+
 ## <a name="provide-feedback-and-report-issues"></a>提供意見反應和報告問題
 
 請[在您的 Windows 10 電腦或 HoloLens 裝置上使用意見反應中樞應用程式](give-us-feedback.md)，以提供意見反應和報告問題。 使用意見反應中樞可確保包含所有必要的診斷資訊，以協助我們的工程師快速地進行分析並解決問題。
@@ -61,7 +65,7 @@ HoloLens （第1代）是進入長期服務（LTS）狀態。 未來的更新將
 * [版本資訊 - 2016 年 5 月](release-notes-may-2016.md)
 * [版本資訊 - 2016 年 3 月](release-notes-march-2016.md)
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [沉浸式耳機支援（外部連結）](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/troubleshooting-windows-mixed-reality)
 * [HoloLens 支援（外部連結）](https://support.microsoft.com/products/hololens)
 * [安裝工具](install-the-tools.md)

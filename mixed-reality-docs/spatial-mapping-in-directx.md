@@ -1,17 +1,17 @@
 ---
 title: DirectX 中的空間對應
 description: 說明如何在 DirectX 應用程式中執行空間對應。 這包括通用 Windows 平臺 SDK 隨附之空間對應範例應用程式的詳細說明。
-author: MikeRiches
+author: mikeriches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows mixed reality，空間對應，環境，互動，directx，winrt，api，範例程式碼，UWP，SDK，逐步解說
-ms.openlocfilehash: 456fcf1c00e23a287a741673e94b3f8d2d2d346c
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: b3ef74a7e11e0e73fce47e4c7193ace42ffe7c20
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79375815"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277496"
 ---
 # <a name="spatial-mapping-in-directx"></a>DirectX 中的空間對應
 

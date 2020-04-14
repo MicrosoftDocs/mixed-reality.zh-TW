@@ -7,12 +7,12 @@ ms.author: grbury
 ms.date: 08/21/2019
 ms.topic: overview
 keywords: 混合現實、開發、開發、HoloLens、Azure 服務、空間錨點、語音、願景、遠端呈現
-ms.openlocfilehash: 692c99bfa21fab8e01d38bebb34f656114d9fee3
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: a79495fd9bc82622d0ded14b7b4048584aed1da3
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73439499"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277746"
 ---
 # <a name="azure-mixed-reality-services"></a>Azure mixed reality 服務
 使用 Azure mixed reality 服務，將每位人力（這是三維實體世界）的專家解除鎖定。 藉由在工作和世界的內容中捕捉並呈現數位資訊，協助人員更有效率地建立、學習和共同作業。 將3D 帶入行動裝置、耳機和其他非網路共用裝置。 使用 Azure，協助確保您最敏感的資訊受到保護。
@@ -46,7 +46,7 @@ ms.locfileid: "73439499"
        [![語音](images/speech.jpg)](https://docs.microsoft.com/azure/cognitive-services/speech-service/)
     :::column-end:::
     :::column span="2":::
-        ### <a name="speechhttpsdocsmicrosoftcomazurecognitive-servicesspeech-service"></a>[語音](https://docs.microsoft.com/azure/cognitive-services/speech-service/)
+        ### <a name="speech"></a>[語音](https://docs.microsoft.com/azure/cognitive-services/speech-service/)
         探索語音如何讓語音處理功能整合到任何應用程式或服務中。 使用標準（或可自訂）的聲音字型，將說話的語言轉換成文字，或從文字產生自然發音的語音。 免費試用任何服務，並使用下列功能，快速建立具備語音功能的應用程式和服務。
     :::column-end:::
 :::row-end:::
@@ -58,15 +58,13 @@ ms.locfileid: "73439499"
        [![願景](images/vision.jpg)](https://docs.microsoft.com/azure/cognitive-services/computer-vision/)
     :::column-end:::
     :::column span="2":::
-        ### <a name="visionhttpsdocsmicrosoftcomazurecognitive-servicescomputer-vision"></a>[轉變](https://docs.microsoft.com/azure/cognitive-services/computer-vision/)
+        ### <a name="vision"></a>[轉變](https://docs.microsoft.com/azure/cognitive-services/computer-vision/)
         辨識、識別、標題、編制索引，以及仲裁您的圖片、影片和數位筆跡內容。瞭解願景如何讓應用程式和服務正確地識別和分析影像、影片和數位筆跡中的內容。
     :::column-end:::
 :::row-end:::
 
 
-
-
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * 適用于 HoloLens 2-1/3 的 azure 空間錨點教學課程[開始使用 Azure 空間錨點](mrlearning-asa-ch1.md)
 * 適用于 HoloLens 2-1 （共4部）的 Azure 語音服務教學課程，[整合並使用語音辨識與](mrlearning-speechSDK-ch1.md)轉譯

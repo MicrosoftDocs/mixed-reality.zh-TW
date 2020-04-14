@@ -1,17 +1,17 @@
 ---
 title: 語音輸入
 description: 語音輸入是 HoloLens 和 Windows Mixed Reality 沉浸式耳機的核心輸入。 語音可以用於命令、聽寫、Cortana 等等。
-author: Hak0n
+author: hak0n
 ms.author: hakons
 ms.date: 10/03/2019
 ms.topic: article
 keywords: ggv、語音、cortana、語音、輸入
-ms.openlocfilehash: f2ae18d4063c7c4a63346a1202cacaa7fbbdf959
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: 6cf94e6bc828c6f07ee81cb121cb64601df41c4e
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79375985"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277976"
 ---
 # <a name="voice-input"></a>語音輸入
 
@@ -275,7 +275,7 @@ ms.locfileid: "79375985"
 
 ## <a name="communication"></a>通訊
 
-對於想要利用 HoloLens 所提供之自訂音訊輸入處理選項的應用程式，請務必瞭解您的應用程式可以使用的各種[音訊串流類別](https://msdn.microsoft.com/library/windows/desktop/hh404178(v=vs.85).aspx)。 Windows 10 支援數種不同的串流類別和 HoloLens，利用其中三種來啟用自訂處理，以優化專為語音、通訊及其他可用於環境音訊的麥克風音訊品質capture （亦即「攝影機」）案例。
+對於想要利用 HoloLens 所提供之自訂音訊輸入處理選項的應用程式，請務必瞭解您的應用程式可以使用的各種[音訊串流類別](https://msdn.microsoft.com/library/windows/desktop/hh404178(v=vs.85).aspx)。 Windows 10 支援數種不同的串流類別和 HoloLens，使用其中三種來啟用自訂處理，以優化專為語音、通訊及其他的麥克風音訊品質，可用於環境的音訊捕捉（也就是「攝影機」）案例。
 * [AudioCategory_Communications 串流] 類別是針對呼叫品質和旁白案例自訂，並為用戶端提供使用者語音的 Riff-16khz-16bit-mono-pcm 24bit mono 音訊串流
 * [AudioCategory_Speech 串流] 類別是針對 HoloLens （Windows）語音引擎自訂，並提供該使用者語音的 Riff-16khz-16bit-mono-pcm 24bit mono 串流。 如有需要，可由協力廠商語音引擎使用此類別。
 * [AudioCategory_Other 資料流程] 類別是針對環境環境音訊錄製而自訂，並提供 48kHz 24 位身歷聲音訊串流的用戶端。

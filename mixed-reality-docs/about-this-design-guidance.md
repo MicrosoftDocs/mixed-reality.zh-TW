@@ -1,17 +1,17 @@
 ---
 title: 關於這種設計指引
 description: 本指南是以 Microsoft 設計工具、開發人員、程式經理和研究人員所撰寫，其工作橫跨全像攝影裝置) 例如 HoloLens) 和沈浸式裝置 (例如 Acer 和 HP Windows Mixed Reality 頭戴式裝置)。
-author: MRWied
+author: mrwied
 ms.author: jonwie
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、設計、簡介、指引
-ms.openlocfilehash: fd2b8d704c9053d9eeb63ab2cceca1e4257d86ed
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 114a3808d57b2bd78044ce743d568bd5effe25bb
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437092"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277516"
 ---
 # <a name="about-this-design-guidance"></a>關於這種設計指引
 
@@ -25,7 +25,7 @@ ms.locfileid: "73437092"
 
 在可行的情況下，我們將提供可操作的設計指導方針與 GitHub 上的相關程式碼。 話雖如此，因為我們正向您學習，所以我們不一定能夠在此提供特定、可採取動作的指導方針。 我們分享的部分將會是「我們學到的課程」的精神，而「請避免該路徑的關閉」。
 
-我們也知道，許多創新都是由較大型的設計小組所產生。 因此，我們期待向您聽取意見、從中學習，以及與您密切合作。 在我們的部分中，我們會盡全力分享我們的見解，即使它們是探索性和早期，也是為了讓開發人員和設計人員能夠運用設計思考、最佳作法，以及您可以使用的相關開放原始碼控制項、模式和範例應用程式。直接在您自己的工作中。
+我們也知道，許多創新都是由較大型的設計小組所產生。 因此，我們期待向您聽取意見、從中學習，以及與您密切合作。 在我們的部分中，我們將盡力分享我們的見解，即使它們是探索性和早期，也是為了讓開發人員和設計人員具有設計思考、最佳作法，以及您可以直接在自己的工作中使用的相關開放原始碼控制項、模式和範例應用程式。
 
 ## <a name="overview"></a>概觀
 
@@ -58,7 +58,7 @@ ms.locfileid: "73437092"
 
 ![滿足其所在的建立者](images/500px-creators.jpg) <br>
 
-我們希望有許多目標物件發現這方面的指導方針很有説明。 您有不同的技能集（開始、中級、先進）、使用不同的工具（Unity、DirectX C++、 C#、其他），熟悉各種平臺（Windows、iOS、Android），來自不同的背景（行動裝置、企業版、遊戲），而且正在處理不同大小的小組（單規格、小型、中型、大型）。 因此，您可以使用不同的觀點和需求來觀看這本指引。 可能的話，我們會嘗試記住這項多樣性，並盡可能將我們的指引視為盡可能相關的人員。 此外，我們還知道有許多人都已經在 GitHub 上。 因此，我們將直接連結至 GitHub 存放庫和論壇，以符合您的需求。 
+我們希望有許多目標物件發現這方面的指導方針很有説明。 您有不同的技能集（開始、中級、高階）、使用不同的工具（Unity、DirectX C++、 C#、其他），熟悉各種平臺（Windows、iOS、Android）、來自不同的背景（行動、企業、遊戲），並可在不同的大小小組（單點、小型、中型、大型）上運作。 因此，您可以使用不同的觀點和需求來觀看這本指引。 可能的話，我們會嘗試記住這項多樣性，並盡可能將我們的指引視為盡可能相關的人員。 此外，我們還知道有許多人都已經在 GitHub 上。 因此，我們將直接連結至 GitHub 存放庫和論壇，以符合您的需求。 
 
 ### <a name="share-as-much-as-possible-from-experimental-to-explicit"></a>盡可能從實驗性到明確地共用
 

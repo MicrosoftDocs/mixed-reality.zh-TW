@@ -1,17 +1,17 @@
 ---
 title: 案例研究-適用于 HoloTour 的空間音效設計
 description: 若要為 Microsoft HoloLens 建立真正的沉浸式3D 虛擬導覽，全景影片和全像攝影景象只是公式的一部分。
-author: JSyltebo
+author: jsyltebo
 ms.author: jsylte
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、HoloLens、HoloTour、空間音效、個案研究
-ms.openlocfilehash: f2dd704089d9c76b7ba175a4a1ad5cebf9ec6c68
-ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
+ms.openlocfilehash: 5c6331bd93447f53c1dd4c9941bfa13a5eadc1bd
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75181923"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278136"
 ---
 # <a name="case-study-spatial-sound-design-for-holotour"></a>案例研究： HoloTour 的空間音效設計
 
@@ -65,7 +65,7 @@ ms.locfileid: "75181923"
 * **曲線發射器：** 這些發射器會在3D 空間中移動，相對於其所附加物件的視覺位置。 其中一個範例是 Machu Picchu 中的訓練，我們使用曲線發射器來提供不同的方向和移動意義。
 * **音樂和 SFX：** HoloTour 的某些層面代表更具風格或 cinematic 的方法，會使用音樂和音效效果來提高情緒的影響。 在羅馬導覽結束的 gladiator 中，例如 whooshes 和 stingers 等特殊效果，有助於強化出現在幕後的標籤效果。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [空間音效](spatial-sound.md)
 * [空間音效設計](spatial-sound-design.md)
 * [Unity 中的空間音效](spatial-sound-in-unity.md)

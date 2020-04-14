@@ -1,17 +1,17 @@
 ---
 title: 使用全像攝影遠端建立安全連線
 description: 此頁面說明如何在使用全像攝影遠端時建立安全的加密連接。
-author: FlorianBagarMicrosoft
+author: florianbagarmicrosoft
 ms.author: flbagar
 ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、遠端、全像攝影遠端
-ms.openlocfilehash: ac1170cb3e6d681fc164c3f4cee14da6ab6eb90b
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: 4006a317ed2ecfd7a1e67336a80a4e536d45e554
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79092478"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278226"
 ---
 # <a name="establishing-a-secure-connection-with-holographic-remoting"></a>使用全像攝影遠端建立安全連線
 

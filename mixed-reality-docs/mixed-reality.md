@@ -1,18 +1,18 @@
 ---
 title: 什麼是混合實境？
 description: 本文定義混合實境，並示範混合實境頻譜搭配簡單的 AR 和 VR 裝置以及 Windows Mixed Reality 裝置 (例如 Microsoft HoloLens 和 Windows Mixed Reality 沉浸式頭戴裝置)。
-author: BrandonBray
+author: brandonbray
 ms.author: branbray
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 混合實境, 全像攝影, ar, vr, mr, xr, 擴增實境, 虛擬實境, 說明
 ms.localizationpriority: high
-ms.openlocfilehash: f170fe7a3353ac0cce1bd7532802eaff7a357494
-ms.sourcegitcommit: ee8c7e821cb337cbccd8af64b13ee5f50109a776
+ms.openlocfilehash: 7b0dcbdb88f880d4c1632fae874ba6a610f023fb
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80082084"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278046"
 ---
 # <a name="what-is-mixed-reality"></a>什麼是混合實境？
 

@@ -1,17 +1,17 @@
 ---
 title: DirectX 中的語音輸入
 description: 說明如何在適用于 Windows Mixed Reality 的 DirectX 應用程式中，執行語音命令和小型片語和句子辨識。
-author: MikeRiches
+author: mikeriches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 逐步解說，語音命令，片語，辨識，語音，directx，平臺，cortana，windows mixed reality
-ms.openlocfilehash: c0a7ca85c24147e607603e733c9d191c64cbd927
-ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
+ms.openlocfilehash: 2837a0fc42e8fdebb2e1facee118d20b5668cd43
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75181818"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277966"
 ---
 # <a name="voice-input-in-directx"></a>DirectX 中的語音輸入
 
@@ -427,6 +427,6 @@ catch (Exception^ exception)
    });
 ```
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [語音應用程式設計](https://msdn.microsoft.com/library/dn596121.aspx)
 * [SpeechRecognitionAndSynthesis 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)

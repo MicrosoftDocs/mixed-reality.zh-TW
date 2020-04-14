@@ -1,18 +1,18 @@
 ---
 title: 對 Unity 的效能建議
 description: 使用混合實境應用程式改善效能的 Unity 特有秘訣。
-author: Troy-Ferrell
+author: troy-ferrell
 ms.author: trferrel
 ms.date: 03/26/2019
 ms.topic: article
 keywords: 圖形, cpu, gpu, 轉譯, 記憶體回收行程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 18691ab7993b2802268d3c4ce05532dfa5bd1723
-ms.sourcegitcommit: 9de2cb11321e6517db69e8c93459a205900a2174
+ms.openlocfilehash: 28f09986cdb8c562aedfc9deae7b0369214ebc05
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80160014"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277566"
 ---
 # <a name="performance-recommendations-for-unity"></a>對 Unity 的效能建議
 

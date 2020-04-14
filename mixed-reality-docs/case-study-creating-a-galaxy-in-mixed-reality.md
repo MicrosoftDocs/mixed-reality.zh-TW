@@ -1,17 +1,17 @@
 ---
 title: 案例研究-在混合現實中建立 galaxy
 description: 在 Microsoft HoloLens 推出之前，我們會要求開發人員小組想要看到新裝置有經驗的內部團隊組建。 分享超過5000的想法，在24小時的 Twitter 輪詢之後，獲勝者就是所謂的「Galaxy Explorer」的想法。
-author: KarimLUCCIN
+author: karimluccin
 ms.author: kaluccin
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Galaxy Explorer、HoloLens、Windows Mixed Reality、分享您的想法、個案研究
-ms.openlocfilehash: 696662eb92371708389f8a128dcee6a61acf1816
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: f13395250c8a73718408c051ab95d2ec4bf62014
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73436866"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278176"
 ---
 # <a name="case-study---creating-a-galaxy-in-mixed-reality"></a>案例研究-在混合現實中建立 galaxy
 
@@ -23,7 +23,7 @@ Zibits，這是專案的 Karim Luccin，這是團隊的圖形工程師，談到�
 
 [我們的團隊](galaxy-explorer.md#meet-the-team)由兩個設計師組成，三名開發人員、四個演出者、生產者和一個測試人員，建立功能完整的應用程式，讓人們能夠瞭解及探索銀河方式 Galaxy 的 vastness 和美。
 
-我們想要充分利用 HoloLens 在您的生活空間中直接轉譯3D 物件的能力，所以我們決定要建立一個逼真的外觀，讓使用者能夠放大並查看個別的星星，每個都在自己的軌跡上.
+我們想要充分利用 HoloLens 在您的生活空間中直接轉譯3D 物件的能力，所以我們決定要建立一個逼真的外觀，讓使用者能夠放大並查看個別的星星，每個都在自己的軌跡上。
 
 在第一周的開發過程中，我們提供了一些目標，讓我們以銀河的方式呈現 Galaxy：它必須有深度、移動和感覺體積型，這是一項可協助建立 Galaxy 圖形的完整星星。
 
@@ -41,7 +41,7 @@ Zibits，這是專案的 Karim Luccin，這是團隊的圖形工程師，談到�
 
 ### <a name="creating-the-position-of-the-stars"></a>建立星星的位置
 
-我們的其中一個小組成員已撰寫程式C#代碼，它會在其初始位置產生星星。 星星位於橢圓形，而且其位置可以由（**curveOffset**， **ellipseSize**，提高**許可權**）描述，其中**curveOffset**是星形沿著橢圓形的角度， **ellipseSize**是橢圓形的維度沿著 X 和 Z，並提高 galaxy 內適當的星號提升許可權。 因此，我們可以建立一個緩衝區（[Unity 的 ComputeBuffer](https://docs.unity3d.com/ScriptReference/ComputeBuffer.html)），它會使用每個星型屬性進行初始化，並在 GPU 上將它傳送給其餘的經驗。 為了繪製這個緩衝區，我們使用[Unity 的 DrawProcedural](https://docs.unity3d.com/ScriptReference/Graphics.DrawProcedural.html) ，允許在任意一組點上執行著色器（GPU 上的程式碼），而不需要實際的網格來表示 galaxy：
+我們的其中一個小組成員已撰寫程式C#代碼，它會在其初始位置產生星星。 星星位於橢圓形上，而且其位置可以由（**curveOffset**， **ellipseSize**，提高**許可權**）來描述，其中**curveOffset**是星形沿著橢圓形的角度， **ellipseSize**是沿著 X 和 Z 的橢圓形維度，而提高 galaxy 內適當的許可權提升。 因此，我們可以建立一個緩衝區（[Unity 的 ComputeBuffer](https://docs.unity3d.com/ScriptReference/ComputeBuffer.html)），它會使用每個星型屬性進行初始化，並在 GPU 上將它傳送給其餘的經驗。 為了繪製這個緩衝區，我們使用[Unity 的 DrawProcedural](https://docs.unity3d.com/ScriptReference/Graphics.DrawProcedural.html) ，允許在任意一組點上執行著色器（GPU 上的程式碼），而不需要實際的網格來表示 galaxy：
 
 **使用率**
 
@@ -74,7 +74,7 @@ v2g vert (uint index : SV_VertexID)
 
 我們嘗試了各種旋轉的模式和物件系統，就像這樣。
 
-我們的團隊進行了 galaxies 函式的一些研究，我們為 galaxy 建立了自訂的物件系統，讓我們可以根據「[密度波理論](https://en.wikipedia.org/wiki/Density_wave_theory)」來移動省略號上的微粒，這 theorizes 了 galaxy 的臂密度較高，但在固定的 flux 中，就像流量卡紙一樣。 它看起來穩定又穩固，但星形在沿著其各自的橢圓形移動時，實際上會移入和移出臂。 在我們的系統中，粒子永遠不會存在於 CPU 上—我們會產生卡片並在 GPU 上調整其方向，因此整個系統只是初始狀態 + 時間。 它的進展如下：
+我們的團隊進行了 galaxies 函式的一些研究，我們為 galaxy 建立了自訂的物件系統，讓我們可以根據「[密度 wave 理論](https://en.wikipedia.org/wiki/Density_wave_theory)」來移動省略號上的微粒，這會 theorizes galaxy 的臂是密度較高的區域，而在固定的 flux 中，像是交通不足。 它看起來穩定又穩固，但星形在沿著其各自的橢圓形移動時，實際上會移入和移出臂。 在我們的系統中，粒子永遠不會存在於 CPU 上—我們會產生卡片並在 GPU 上調整其方向，因此整個系統只是初始狀態 + 時間。 它的進展如下：
 
 ![具有 GPU 轉譯之物件的進展](images/spiral-galaxy-arms-500px.jpg)
 
@@ -203,6 +203,6 @@ Left，升級從 1/8 到完整解析;和 right，使用2的乘冪3升級。
 </table>
 
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [GitHub 上的 Galaxy Explorer](https://github.com/Microsoft/GalaxyExplorer)
 * [YouTube 上的 Galaxy Explorer 專案更新](https://www.youtube.com/playlist?list=PLZCHH_4VqpRj0Nl46J0LNRkMyBNU4knbL)

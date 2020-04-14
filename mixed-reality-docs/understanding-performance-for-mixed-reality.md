@@ -1,17 +1,17 @@
 ---
 title: 瞭解混合現實的效能
 description: 優化 Windows Mixed Reality 應用程式效能的 Advanced 主題和詳細資料
-author: Troy-Ferrell
+author: troy-ferrell
 ms.author: trferrel
 ms.date: 3/26/2019
 ms.topic: article
 keywords: Windows Mixed Reality，混合現實，虛擬實境，VR，MR，效能，優化，CPU，GPU
-ms.openlocfilehash: 287b95363acff00ab7a0407475e0a419fc076611
-ms.sourcegitcommit: 184227dc591ca2791f523d520555730ba1e95b5c
+ms.openlocfilehash: 54e1eec5445fe655a0b498be5c18f08efe2270f0
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79479571"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277476"
 ---
 # <a name="understanding-performance-for-mixed-reality"></a>瞭解混合現實的效能
 
@@ -82,7 +82,7 @@ ms.locfileid: "79479571"
 
 - **記憶體頻寬**是 GPU 可以從記憶體執行的讀取和寫入速率
     - 若要找出頻寬限制，請降低材質品質，並檢查幀的是否已改善。
-    - 在 Unity 中，這可以藉由變更 [**編輯**] > **專案設定** >  **[品質設定](https://docs.unity3d.com/Manual/class-QualitySettings.html)** 中的**材質品質**來完成。
+    - 在 Unity 中，這可以藉由變更 **編輯**] > **專案設定** >  **[品質設定](https://docs.unity3d.com/Manual/class-QualitySettings.html)** ] 中的**材質品質**來完成。
 - [**填滿速率**] 是指 GPU 每秒可繪製的圖元。
     - 若要識別填滿率限制，請減少顯示器解析度，並檢查是否已改善畫面播放速率。 
     - 在 Unity 中，這可以透過 *[XRSettings. renderViewportScale](https://docs.unity3d.com/ScriptReference/XR.XRSettings-renderViewportScale.html)* 屬性來完成。
@@ -131,9 +131,9 @@ ms.locfileid: "79479571"
 
 過多的記憶體配置和解除配置作業，可能會導致效能不一致、凍結的框架和其他不利的行為。 在 Unity 中開發時，請務必瞭解記憶體考慮，因為記憶體管理是由垃圾收集行程所控制。
 
-#### <a name="object-pooling"></a>物件共用
+#### <a name="object-pooling"></a>物件集區
 
-物件共用是降低連續配置和物件取消配置成本的常用技術。 這是藉由配置相同物件的大型集區，並重複使用此集區中的非作用中、可用的實例來完成，而不是在一段時間內不斷產生和終結物件。 物件集區非常適合在應用程式期間有變數存留期的重複使用元件。
+物件共用是降低連續配置和物件取消配置成本的常用技術。 這是藉由配置相同物件的大型集區，並重複使用此集區中非使用中的可用實例來完成，而不是在一段時間內不斷產生和終結物件。 物件集區非常適合在應用程式期間有變數存留期的重複使用元件。
 
 ## <a name="see-also"></a>另請參閱
 - [對 Unity 的效能建議](performance-recommendations-for-unity.md)

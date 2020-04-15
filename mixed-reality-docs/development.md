@@ -8,18 +8,18 @@ ms.date: 08/27/2019
 ms.topic: overview
 ms.localizationpriority: high
 keywords: 混合實境, 開發, 開發, HoloLens, unity, directx
-ms.openlocfilehash: 7b1a67f05941fc862ad3f36834efe071b0d1c57b
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.openlocfilehash: 3bd5fea55a8dad2982a1a14680169eb51764c1df
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334252"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277718"
 ---
 # <a name="learn-the-tools-and-architecture"></a>了解工具和架構
 
 ![抽象 3D 球體](images/07_Development.png)
 
-## <a name="expand-your-design-processcase-study-expanding-the-design-process-for-mixed-realitymd"></a>[展開您的設計程序](case-study-expanding-the-design-process-for-mixed-reality.md)
+## <a name="expand-your-design-process"></a>[展開您的設計程序](case-study-expanding-the-design-process-for-mixed-reality.md)
 
 隨著 Microsoft 在 2016 年向積極的開發人員推出了 HoloLens，該團隊已與 Microsoft 內部及外部的工作室合作，以建立裝置的啟動體驗。 這些團隊藉由實踐，在混合實境設計的新領域中找到機會和挑戰。 [閱讀更多內容](case-study-expanding-the-design-process-for-mixed-reality.md)
 
@@ -44,9 +44,9 @@ ms.locfileid: "75334252"
         Unreal Engine 4.23 中也會包含 HoloLens 2 的生產環境就緒支援 。    
     :::column-end:::
     :::column:::    
-        [![WebVR](images/WebVR_logo.png)](development.md#webvr)<br>
-        **[WebVR](development.md#webvr)**<br>
-        WebVR 是一種開放規格，讓您可以在瀏覽器中體驗 VR。 
+        [![JavaScript](images/web-logo.png)](development.md#javascript)<br>
+        **[JavaScript](development.md#javascript)**<br>
+        JavaScript 和 WebXR 裝置 API 是一個開放的規格，可讓您在任何平台的瀏覽器中體驗混合實境。    
     :::column-end:::        
     :::column:::    
         [![Native](images/VisualStudio-small_logo.png)](development.md#native)<br>
@@ -62,27 +62,27 @@ ms.locfileid: "75334252"
 ## <a name="unity"></a>Unity
 
 
-### <a name="unity-development-overviewunity-development-overviewmd"></a>[Unity 開發概觀](unity-development-overview.md)
+### <a name="unity-development-overview"></a>[Unity 開發概觀](unity-development-overview.md)
 我們建議您花一些時間來探索 Unity 教學課程。 如果您需要資產，Unity 具有完整的資產存放區。 
 
 <br>
 
-### <a name="microsofts-mixed-reality-toolkit-mrtk-for-unitymrtk-getting-startedmd"></a>[適用於 Unity 的 Microsoft 混合實境工具組 (MRTK)](mrtk-getting-started.md)
+### <a name="microsofts-mixed-reality-toolkit-mrtk-for-unity"></a>[適用於 Unity 的 Microsoft 混合實境工具組 (MRTK)](mrtk-getting-started.md)
 Unity 的 MRTK v2 是混合實境應用程式的開放原始碼跨平台開發套件。 MRTK 第 2 版主要用於加速開發以 Microsoft HoloLens、Windows Mixed Reality 沈浸式 (VR) 頭戴裝置和 OpenVR 平台為目標的應用程式。
 
 <br>
 
-### <a name="open-source-sample-apps-and-step-by-step-tutorialstutorialsmd"></a>[開放原始碼範例應用程式和逐步教學課程](tutorials.md)
+### <a name="open-source-sample-apps-and-step-by-step-tutorials"></a>[開放原始碼範例應用程式和逐步教學課程](tutorials.md)
 HoloLens 2 教學課程的設計目的是協助開發人員了解開發混合實境應用程式的技術和最佳做法。 這些教學課程是以混合實境工具組 2.0 (MRTK 2.0) 為基礎。
 
 <br>
 
-### <a name="hand-interaction-examples-scene-mrtk-for-unityhttpsmicrosoftgithubiomixedrealitytoolkit-unitydocumentationgettingstartedwiththemrtkhtmlopen-and-run-the-handinteractionexamples-scene-in-editor"></a>[Unity 的手部互動範例場景 (MRTK)](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html#open-and-run-the-handinteractionexamples-scene-in-editor)
+### <a name="hand-interaction-examples-scene-mrtk-for-unity"></a>[Unity 的手部互動範例場景 (MRTK)](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html#open-and-run-the-handinteractionexamples-scene-in-editor)
 HandInteractionExamples.unity 的範例場景包含各種類型的互動和 UI 控制項，其強調以關節連接的手部輸入。
 >[!NOTE]
 >需要安裝 MRTK Foundation 和範例 Unity 套件。
 
-### <a name="eye-tracking-examples-mrtk-for-unityhttpsmicrosoftgithubiomixedrealitytoolkit-unitydocumentationeyetrackingeyetracking_examplesoverviewhtml"></a>[Unity 的眼球追蹤範例 (MRTK)](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_ExamplesOverview.html)
+### <a name="eye-tracking-examples-mrtk-for-unity"></a>[Unity 的眼球追蹤範例 (MRTK)](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_ExamplesOverview.html)
 本頁面說明如何以我們提供的 MRTK 眼球追蹤範例為本，快速開始使用眼球追蹤。
 >[!NOTE]
 >需要安裝 MRTK Foundation 和範例 Unity 套件。
@@ -93,17 +93,17 @@ HandInteractionExamples.unity 的範例場景包含各種類型的互動和 UI �
 
 ## <a name="unreal"></a>Unreal
 
-### <a name="unreal-development-overviewunreal-development-overviewmd"></a>[Unreal 開發概觀](unreal-development-overview.md)
+### <a name="unreal-development-overview"></a>[Unreal 開發概觀](unreal-development-overview.md)
 瞭解如何使用 Unreal 建立混合實境應用程式。
 
 <br>
 
 ---
 
-## <a name="webvr"></a>WebVR    
+## <a name="javascript"></a>JavaScript   
 
-### <a name="babylon-development-overviewhttpsdocbabylonjscom"></a>[Babylon 開發概觀](https://doc.babylonjs.com/)  
-瞭解如何使用 Babylon 建立混合實境應用程式。 我們建議您花一些時間來探索 Babylon 教學課程。
+### <a name="javascript-development-overview"></a>[JavaScript 開發概觀](javascript-development-overview.md)   
+了解如何使用任何平台的 JavaScript 建立混合實境應用程式。
 
 <br>
 
@@ -112,12 +112,12 @@ HandInteractionExamples.unity 的範例場景包含各種類型的互動和 UI �
 ## <a name="native"></a>原生
 
 
-### <a name="native-development-overviewdirectx-development-overviewmd"></a>[原生開發概觀](directx-development-overview.md)
+### <a name="native-development-overview"></a>[原生開發概觀](directx-development-overview.md)
 最快速的路徑是建立原生的混合實境應用程式。
 
 <br>
 
-### <a name="directx-uwp-app-templates-for-mixed-realityhttpsmarketplacevisualstudiocomitemsitemnamewindowsmixedrealityteamwindowsmixedrealityapptemplatesvsix"></a>[適用於混合實境的 DirectX UWP 應用程式範本](https://marketplace.visualstudio.com/items?itemName=WindowsMixedRealityteam.WindowsMixedRealityAppTemplatesVSIX)
+### <a name="directx-uwp-app-templates-for-mixed-reality"></a>[適用於混合實境的 DirectX UWP 應用程式範本](https://marketplace.visualstudio.com/items?itemName=WindowsMixedRealityteam.WindowsMixedRealityAppTemplatesVSIX)
 使用 DirectX 開始撰寫混合實境應用程式所需的所有基本知識。
 
 <br>

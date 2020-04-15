@@ -1,18 +1,18 @@
 ---
 title: 使用 HoloLens 模擬器
 description: 使用 HoloLens 模擬器在沒有實體 HoloLens 的電腦上測試混合實境應用程式。
-author: hamalawi
-ms.author: moelhama
-ms.date: 3/10/2020
+author: pbarnettms
+ms.author: pbarnett
+ms.date: 4/13/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: HoloLens, 模擬器
-ms.openlocfilehash: 57a20b476ba0b1cc02a7e9bf41b33367b64d539c
-ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.openlocfilehash: bbdf389a1b7bf42e3dfb1fffb09cf6d3b1a65b6a
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79028258"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278016"
 ---
 # <a name="using-the-hololens-emulator"></a>使用 HoloLens 模擬器
 
@@ -20,12 +20,15 @@ HoloLens 模擬器可讓您在沒有實體 HoloLens 的電腦上測試全像攝�
 
 如果您想要開發適用於桌上型電腦的 Windows Mixed Reality 沈浸式 (VR) 頭戴式裝置應用程式或遊戲，請參閱 [Windows Mixed Reality 模擬器](using-the-windows-mixed-reality-simulator.md)，以模擬桌上型電腦的頭戴式裝置。
 
+## <a name="hololens-2-emulator-overview"></a>HoloLens 2 模擬器概觀
+
+>[!VIDEO https://channel9.msdn.com/Shows/Docs-Mixed-Reality/HoloLens-2-Emulator-Overview/player?format=ny]
 
 ## <a name="installing-the-hololens-emulator"></a>安裝 HoloLens 模擬器
 下載 HoloLens 模擬器。
 
 版本： 
-* [HoloLens 2 模擬器 (2020 年 3 月更新)](https://go.microsoft.com/fwlink/?linkid=2121323)。
+* [HoloLens 2 模擬器 (2020 年 4 月更新)](https://go.microsoft.com/fwlink/?linkid=2126826)。
 * [HoloLens 模擬器 (第 1 代) 和全像攝影專案範本](https://go.microsoft.com/fwlink/?linkid=2065980)。
 
 您可以在 [HoloLens 模擬器封存](hololens-emulator-archive.md)頁面上找到版本資訊和 HoloLens 模擬器的舊版組建。

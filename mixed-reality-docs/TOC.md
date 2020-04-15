@@ -197,8 +197,10 @@
 #### [使用 Unity 的 Vuforia](vuforia-development-overview.md)
 ## Unreal
 ### [Unreal 開發概觀](unreal-development-overview.md)
-## WebVR
-### [在 Edge 中使用 Windows Mixed Reality 的 WebVR](using-webvr-in-edge-with-windows-mixed-reality.md)
+## JavaScript
+### [JavaScript 開發概觀](javascript-development-overview.md)
+### [WebXR](webxr-overview.md)
+### [WebVR](webvr-overview.md)
 ## 原生
 ### [原生開發概觀](directx-development-overview.md)
 ### OpenXR

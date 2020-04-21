@@ -235,7 +235,7 @@
 #### [運作方式 - 混合實境擷取工作室](how-it-works-mixed-reality-capture-studios.md)
 ### 全像攝影遠端處理
 #### [全像攝影遠端播放程式](holographic-remoting-player.md)
-#### [撰寫全像攝影遠端主機應用程式](holographic-remoting-create-host.md)
+#### [撰寫全像攝影遠端應用程式](holographic-remoting-create-host.md)
 #### [撰寫自訂全像攝影遠端播放程式](holographic-remoting-create-player.md)
 #### [自訂全像攝影遠端資料通道](holographic-remoting-custom-data-channels.md)
 #### [保護全像攝影遠端連線的安全](holographic-remoting-secure-connection.md)

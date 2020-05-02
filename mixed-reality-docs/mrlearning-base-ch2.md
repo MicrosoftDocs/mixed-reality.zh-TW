@@ -8,10 +8,10 @@ ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
 ms.localizationpriority: high
 ms.openlocfilehash: c389c7a3d16770dcbf57d9acdcfd81c6507f7cd6
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/14/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79376135"
 ---
 # <a name="3-creating-user-interface-and-configure-mixed-reality-toolkit"></a>3.建立使用者介面並設定混合實境工具組

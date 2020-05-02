@@ -8,10 +8,10 @@ ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
 ms.localizationpriority: high
 ms.openlocfilehash: ec078015304e1cddc9b042fb5e94cf1904a302cb
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/14/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79376085"
 ---
 # <a name="6-exploring-advanced-input-options"></a>6.探索進階的輸入選項
@@ -269,4 +269,4 @@ ms.locfileid: "79376085"
 
 您已成功為應用程式新增了基本的眼球追蹤功能。 這些動作只是眼球追蹤功能無限可能性的開端。 在本教學課程中，您也了解了其他進階級輸入功能，例如語音命令和平移手勢。
 
-[下一課：7.建立登月小艇應用程式範例](mrlearning-base-ch6.md)
+[下一課：7.建立月球模組應用程式範例](mrlearning-base-ch6.md)

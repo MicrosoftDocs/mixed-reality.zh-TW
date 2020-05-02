@@ -7,18 +7,20 @@ ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unity, 混合實境, 開發, 開始使用, 新專案, 移植, 功能, 相機, 模擬, 模擬, 文件
-ms.openlocfilehash: 23b3d9a3fe419911e774722a7d2db6809c2955cf
-ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
+ms.openlocfilehash: e0fe775f5fe891416145d91e52a5a801e049c568
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74491089"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81433414"
 ---
 # <a name="unity-development-overview"></a>Unity 開發概觀
 
 建置[混合實境應用程式](app-views.md)的最快速路徑是透過 [Unity](https://unity.com)。 我們建議您花一些時間來探索 [Unity 教學課程](https://unity3d.com/learn/tutorials)。 如果您需要資產，Unity 具有完整的[資產存放區](https://www.assetstore.unity3d.com/)。 建立 Unity 的基本了解之後，您可以造訪[教學課程](tutorials.md)，了解使用 Unity 進行混合實境開發的細節。 請務必造訪 [Unity 混合實境論壇](https://forum.unity3d.com/forums/hololens.102/)，與在 Unity 中建置混合實境應用程式的其他人互動，並找出您所遇到問題的解決方案。
 
 若要開始使用 Unity 建置混合實境應用程式，請先[安裝工具](install-the-tools.md)。 
+
+>[!VIDEO https://channel9.msdn.com/Shows/Docs-Mixed-Reality/Setting-up-your-HoloLens-2-development-environment/player?format=ny]
 
 ## <a name="new-unity-project-with-mixed-reality-toolkit"></a>使用混合實境工具組的新 Unity 專案 
 
@@ -79,7 +81,7 @@ ms.locfileid: "74491089"
     * 本手冊的設計目的是協助您了解如何從基本到進階技術來使用 Unity。
     * 透過 [說明 > 手冊]  ，可以從 Unity 編輯器存取
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [混合實境工具組 v2](mrtk-getting-started.md)
 * [MR Basics 100：開始使用 Unity](holograms-100.md)
 * [Unity 的建議設定](recommended-settings-for-unity.md)

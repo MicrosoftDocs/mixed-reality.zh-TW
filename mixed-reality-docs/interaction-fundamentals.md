@@ -8,10 +8,10 @@ ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境, 注視, 注視定向, 互動, 設計, hololens, MMR, 多樣式
 ms.openlocfilehash: 6b54d6e844c1b501a0835fc3a48deb4932ba551d
-ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74539724"
 ---
 # <a name="introducing-instinctual-interactions"></a>本能互動簡介
@@ -176,7 +176,7 @@ ms.locfileid: "74539724"
 > 我們會繼續撰寫更多適用於開發人員和設計人員的指引，讓他們了解使用多個 MR 互動模型的方式、時機和原因。
  
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [舒適度](comfort.md)
 * [眼動式互動](eye-gaze-interaction.md)
 * [HoloLens 2 的眼球追蹤](eye-tracking.md)

@@ -8,10 +8,10 @@ ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, beta, 串流, 遠端, 混合實境, 開發, 開始使用, 新專案, 模擬器, 文件
 ms.openlocfilehash: 96b0259e4ac567389f999d3a453fb68bb848b266
-ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74491177"
 ---
 # <a name="unreal-development-overview"></a>Unreal 開發概觀
@@ -38,5 +38,5 @@ Unreal Engine 4 的混合實境支援現在是搶鮮版！ 如果您是 Unreal �
 
 若要開始使用串流，請參閱 <a href="https://docs.unrealengine.com//Platforms/AR/HoloLens2/QuickStartStreaming/index.html" target="_blank">HoloLens 2 串流快速入門</a>[]()。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * <a href="https://docs.unrealengine.com//Platforms/Mobile/Performance/index.html" target="_blank">行動裝置的 Unreal 效能指導方針</a>

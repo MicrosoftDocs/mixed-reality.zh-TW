@@ -123,10 +123,9 @@
 ###### [4.設定意圖和自然語言理解](mrlearning-speechSDK-ch4.md)
 ##### 多使用者功能教學課程
 ###### [1.設定 Photon Unity 網路](mrlearning-sharing(photon)-ch1.md)
-###### [2.準備 Unity 以進行開發](mrlearning-sharing(photon)-ch2.md)
-###### [3.連線多個使用者](mrlearning-sharing(photon)-ch3.md)
-###### [4.與多個使用者共用物件移動](mrlearning-sharing(photon)-ch4.md)
-###### [5.將 Azure Spatial Anchors 整合到共用體驗](mrlearning-sharing(photon)-ch5.md)
+###### [2.連線多個使用者](mrlearning-sharing(photon)-ch2.md)
+###### [3.與多個使用者共用物件移動](mrlearning-sharing(photon)-ch3.md)
+###### [4.將 Azure Spatial Anchors 整合到共用體驗](mrlearning-sharing(photon)-ch4.md)
 ##### 空間音訊教學課程
 ###### [1.在專案中新增空間音訊](unity-spatial-audio-ch1.md)
 ###### [2.空間化按鈕互動音效](unity-spatial-audio-ch2.md)

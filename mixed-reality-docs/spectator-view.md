@@ -8,10 +8,10 @@ ms.topic: article
 ms.localizationpriority: high
 keywords: 觀眾檢視, iPhone, iOS, iPad, OpenCV, 相機, ARKit, HoloLens, 混合實境, MixedRealityToolkit, 示範, 錄製
 ms.openlocfilehash: 9bc1c2809c7d780d439d9efb58f464b41de3dccd
-ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74491168"
 ---
 # <a name="spectator-view-for-hololens-and-hololens-2"></a>HoloLens 和 HoloLens 2 的觀眾檢視
@@ -47,7 +47,7 @@ ms.locfileid: "74491168"
 
 下表顯示不同的觀眾檢視功能及其功能。 選擇最適合您影片錄製需求的選項：
 
-|                                      | 行動裝置                  |                    攝影機              |
+|                                      | 行動電話                  |                    攝影機              |
 |--------------------------------------|:-----------------------:|:-------------------------------------------:|
 | HD 品質                           |         Full HD         |        專業品質攝影 (由攝影機決定)      |
 | 簡易相機移動                 |            ✔            |                      ✔                      |
@@ -60,7 +60,7 @@ ms.locfileid: "74491168"
 | 跨平台                       |           Android、iOS   |                                             |
 | 同步處理的內容                 |            ✔            |                      ✔                      |
 | 執行階段安裝持續時間               |         立即          |                     慢速                    |
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [混合實境擷取](mixed-reality-capture.md) 
 * [適用於開發人員的混合實境擷取](mixed-reality-capture-for-developers.md)

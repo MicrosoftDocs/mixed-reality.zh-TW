@@ -7,12 +7,12 @@ ms.date: 10/29/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 眼球追蹤, Mixed Reality, 輸入, 眼部注視, 眼部定向, HoloLens 2, 眼動式選取, 停駐
-ms.openlocfilehash: 0ec5d5e3b7f56038c7be9930a4468d286b388a65
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: ba793f6b1a95fe4b95aa9a043d36823487886b5e
+ms.sourcegitcommit: 92ff5478a5c55b4e2c5cc2f44f1588702f4ec5d1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926611"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82604899"
 ---
 # <a name="eye-gaze-and-dwell"></a>眼部目光和停駐
 
@@ -32,14 +32,15 @@ ms.locfileid: "73926611"
 
 ## <a name="design-recommendations"></a>設計建議
 我們建議您對停駐回饋採取兩個狀態的做法：
-1. 啟動延遲  ：當使用者開始注視目標時，不要立即發生任何事，因為這可能會導致使用者應接不暇的不愉快體驗。 我們改成啟動計時器來偵測使用者是刻意在注視目標或只是目光掃過它而已。
-2. 啟動停駐回饋  ：確定使用者刻意注視目標後，我們會開始顯示停駐回饋，來通知使用者停駐啟動已經開始。 我們建議給定約 150-250 毫秒的啟動時間 (表示使用者關注與尋找大型目標)。  
+1. 啟動延遲  ：當使用者開始注視目標時，不要立即發生任何事，因為這可能會導致使用者應接不暇的不愉快體驗。 改成啟動計時器來偵測使用者是刻意在注視目標或只是瞥了一眼。
+我們建議給定約 150-250 毫秒的啟動時間 (表示使用者關注與尋找大型目標)。  
+2. 啟動停駐回饋  ：確定使用者刻意注視目標後，則會開始顯示停駐回饋，來通知使用者停駐啟動已經開始。 
 3. 連續回饋  ：當使用者持續看著目標時，顯示持續的進度指示器，讓使用者知道他們必須繼續看著目標。 特別是針對眼部目光輸入，我們建議先從較大的圓圈或球體開始，再逐漸縮小圓圈或球體，以抓住使用者的視覺注意  。 顯示最終狀態的指示器 (小圓圈)，協助與使用者溝通何時將完成停駐完成。 下方有範例圖。 
 4. 完成  ：如果使用者繼續關注目標 (再 650-850 毫秒)，便完成停駐啟動並選取注視的目標。
 
 ![停駐狀態](images/eyes_dwellstate_recommendation.png)<br>
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [眼球追蹤](eye-tracking.md)
 * [眼部目光和行動](gaze-and-commit-eyes.md)
 * [目光和行動](gaze-and-commit.md)

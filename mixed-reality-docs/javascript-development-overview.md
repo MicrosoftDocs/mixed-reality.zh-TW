@@ -6,18 +6,18 @@ ms.author: ayyonet
 ms.date: 04/10/2020
 ms.topic: article
 keywords: WebXR，WinMR，WebAR，WebVR，WindowsMixedReality，HoloLens，windows mixed reality，web vr，web xr，web mr，web ar，360，360 video，360影片，360相片，360相片，360內容，沉浸式 web，沉浸式 web，IW，immersiveweb
-ms.openlocfilehash: 5756af9f48f4bb25477e75fb1f7c09e7239bdab9
-ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
+ms.openlocfilehash: a1288e8f477f42b0937e797623fb83fe8f63685c
+ms.sourcegitcommit: ba4c8c2a19bd6a9a181b2cec3cb8e0402f8cac62
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81278479"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82835607"
 ---
 # <a name="mixed-reality-development-with-javascript-overview"></a>使用 JavaScript 的混合現實開發總覽
 
 ## <a name="mixed-reality-applications-on-the-web"></a>Web 上的混合現實應用程式
 
-混合現實功能可透過使用[WebXR 裝置 api](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API)和 [已淘汰的 WebVR api] （[WebXR 總覽](webxr-overview.md)，在 web 上取得。 針對不支援完整 WebXR 功能的瀏覽器，您可以將[WebXR Polyfills](https://github.com/immersive-web/webxr-polyfill)新增至您的網站。
+混合現實功能可透過使用[WebXR 裝置 api](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API)和已[淘汰的 WebVR api](webxr-overview.md)，在 web 上取得。 針對不支援完整 WebXR 功能的瀏覽器，您可以將[WebXR Polyfills](https://github.com/immersive-web/webxr-polyfill)新增至您的網站。
 
 ## <a name="what-is-webxr-polyfill"></a>什麼是 WebXR Polyfill
 

@@ -8,10 +8,10 @@ ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境, 互動, 設計, HoloLens, 手部, 遠方, 指向和行動
 ms.openlocfilehash: d3f886fd8e892fe34116c3a1d601ae3a87d87a9b
-ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75901534"
 ---
 # <a name="point-and-commit-with-hands"></a>手部指向和行動
@@ -147,7 +147,7 @@ ms.locfileid: "75901534"
     :::column-end:::
     :::column:::
        ![3D 物件操作遠距縮放](images/3d-object-manipulation-far-scale.jpg)<br>
-       **縮放比例**<br>
+       **縮放**<br>
     :::column-end:::
 :::row-end:::
 
@@ -211,7 +211,7 @@ ms.locfileid: "75901534"
 
 ---
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 * [手部直接操作](direct-manipulation.md)
 * [目光和行動](gaze-and-commit.md)
 * [手 - 直接操作](direct-manipulation.md)

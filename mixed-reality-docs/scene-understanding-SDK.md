@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: 場景理解，空間對應，Windows Mixed Reality，Unity
-ms.openlocfilehash: f293e779b041cdf4aa636cf317b7eaca70e16410
-ms.sourcegitcommit: 37816514b8fe20669c487774b86e80ec08edcadf
+ms.openlocfilehash: 3eb54f84e30b2354907204895e62accdb9ad54f9
+ms.sourcegitcommit: 92ff5478a5c55b4e2c5cc2f44f1588702f4ec5d1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "81003324"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82604949"
 ---
 # <a name="scene-understanding-sdk-overview"></a>場景理解 SDK 總覽
 
@@ -25,13 +25,13 @@ SceneUnderstanding SDK 可透過 NuGet 下載。
 
 **注意：** 最新版本取決於預覽套件，而您必須啟用發行前版本套件才能看到它。
 
-從版本 0.5.2022-rc，場景理解支援的C#語言投影，並C++允許應用程式開發適用于 Win32 或 UWP 平臺的應用程式。 在此版本中，SceneUnderstanding 支援使用 unity 的編輯器支援，而使 SceneObserver 僅用於與 HoloLens2 通訊。 
+從版本 0.5.2022-rc，場景理解支援 c # 和 c + + 的語言投影，讓應用程式可以開發適用于 Win32 或 UWP 平臺的應用程式。 在此版本中，SceneUnderstanding 支援使用 unity 的編輯器支援，而使 SceneObserver 僅用於與 HoloLens2 通訊。 
 
 SceneUnderstanding 需要18362或更高版本 Windows SDK。 
 
 如果您在 Unity 專案中使用 SDK，請使用適用于[unity 的 NuGet](https://github.com/GlitchEnzo/NuGetForUnity)將套件安裝到您的專案中。
 
-## <a name="conceptual-overview"></a>概念式概觀
+## <a name="conceptual-overview"></a>概觀說明
 
 ### <a name="the-scene"></a>場景
 
@@ -47,7 +47,7 @@ SceneUnderstanding 需要18362或更高版本 Windows SDK。
 
 因為每個場景都會將它的資料儲存在您應用程式的記憶體空間中，所以您可以假設場景物件或其內部資料的所有函式一律會在應用程式的進程中執行。
 
-### <a name="layout"></a>配置
+### <a name="layout"></a>版面配置
 
 若要使用場景理解，請務必瞭解並瞭解執行時間如何在邏輯上或實際地代表元件。 場景代表具有特定版面配置的資料，而該配置已選擇簡單，同時維持 pliable 以符合未來需求的基礎結構，而不需要主要的修訂。 此場景的運作方式是將所有元件（所有場景物件的建立區塊）儲存在一般清單中，並透過參考（其中特定元件會參考其他專案）來定義階層和組合。
 
@@ -101,7 +101,7 @@ SceneUnderstanding 需要18362或更高版本 Windows SDK。
 
 下一節提供場景理解中之結構的高階總覽。 閱讀本節可讓您瞭解場景的呈現方式，以及各種元件的用途/用途。 下一節將提供在此總覽中說明 mda 的具體程式碼範例和其他詳細資料。
 
-下面所述的所有類型都位於 `Microsoft.MixedReality.SceneUnderstanding` 命名空間中。
+以下所述的所有類型都位於`Microsoft.MixedReality.SceneUnderstanding`命名空間中。
 
 ### <a name="scenecomponents"></a>SceneComponents
 
@@ -121,11 +121,11 @@ SceneObjects 可以有下列任何一項：
 </tr>
 <tr><td>背景</td><td>已知 SceneObject<b>不</b>是其他可辨識類型的場景物件之一。 此類別不應與 [不明] 混淆，其中的背景已知不是牆/樓層/上限等等 .。。雖然不明尚未分類。</b></td></tr>
 <tr><td>內牆</td><td>實體牆。 牆會假設為 immovable 環境結構。</td></tr>
-<tr><td>車間</td><td>樓層是其中一個可以進行的任何表面。 注意：樓梯不是樓層。 另請注意，該樓層會假設任何 walkable 介面，因此不會明確假設為單一樓層。 多層結構、斜坡等等 .。。全都分類為樓層。</td></tr>
+<tr><td>樓層</td><td>樓層是其中一個可以進行的任何表面。 注意：樓梯不是樓層。 另請注意，該樓層會假設任何 walkable 介面，因此不會明確假設為單一樓層。 多層結構、斜坡等等 .。。全都分類為樓層。</td></tr>
 <tr><td>Ceiling</td><td>房間的上方表面。</td></tr>
 <tr><td>平台</td><td>您可以放置全息影像的大型平面。 這些通常會代表資料表、countertops 和其他大型水準表面。</td></tr>
 <tr><td>World</td><td>標記不可知之幾何資料的保留標籤。 藉由設定 EnableWorldMesh 更新旗標所產生的網格會分類為「世界」。</td></tr>
-<tr><td>未知</td><td>這個場景物件尚未分類並指派一種類型。 這不應該與背景混淆，因為此物件可能是任何專案，系統還不會為其提供強大的分類。</td></tr>
+<tr><td>Unknown</td><td>這個場景物件尚未分類並指派一種類型。 這不應該與背景混淆，因為此物件可能是任何專案，系統還不會為其提供強大的分類。</td></tr>
 </tr>
 </table>
 
@@ -265,7 +265,7 @@ foreach (var mesh in firstFloor.Meshes)
 
 在處理轉換時，場景理解已刻意嘗試配合傳統的3D 場景標記法。 因此，每個場景會限制為單一座標系統，與最常見的3D 環境表示相同。 SceneObjects 每個都會提供其位置作為座標系統內的位置和方向。 如果您的應用程式正在處理的場景會延伸單一來源提供的限制，可將 SceneObjects 錨定至 SpatialAnchors，或產生數個場景並將它們合併在一起，但為了簡單起見，我們假設防水場景存在於其本身的原始來源中，而這些專案是由場景所定義的一個同位來當地語系化。 OriginSpatialGraphNodeId。
 
-例如，下列 Unity 程式碼示範如何使用 Windows 認知和 Unity Api，將座標系統對齊在一起。 如需有關如何取得對應于 Unity 世界原點的 SpatialCoordinateSystem，以及在 `System.Numerics.Matrix4x4` 和 `UnityEngine.Matrix4x4`之間轉換的 `.ToUnity()` 擴充方法，請參閱[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem)和[SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview)以取得 Windows 認知 api 的詳細資料，以及[Unity 中的混合現實原生物件](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced)。
+例如，下列 Unity 程式碼示範如何使用 Windows 認知和 Unity Api，將座標系統對齊在一起。 如需有關如何取得對應于 Unity 世界來源的 SpatialCoordinateSystem，以及`.ToUnity()`在和`System.Numerics.Matrix4x4` `UnityEngine.Matrix4x4`之間進行轉換的擴充方法，請參閱[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem)和[SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview) ，以取得有關 Windows 認知 Api 的詳細資料，以及[Unity 中的混合現實原生物件](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced)。
 
 ```cs
 public class SceneRootComponent : MonoBehavior
@@ -295,7 +295,7 @@ public class SceneRootComponent : MonoBehavior
 }
 ```
 
-每個 `SceneObject` 都有一個 `Position` 和 `Orientation` 的屬性，可以用來定位相對於包含 `Scene`之來源的對應內容。 例如，下列範例假設遊戲是場景根目錄的子系，並指派其本機位置和旋轉以配合指定的 `SceneObject`：
+每`SceneObject`個都`Position`有`Orientation`一個和屬性，可用來定位相對於包含`Scene`之來源的對應內容。 例如，下列範例假設遊戲是場景根目錄的子系，並指派其本機位置和旋轉以配合指定`SceneObject`的：
 
 ```cs
 void SetLocalTransformFromSceneObject(GameObject gameObject, SceneObject sceneObject)
@@ -343,9 +343,9 @@ foreach (var sceneObject in myScene.SceneObjects)
 
 步驟1-4 高度相依于您的特定架構/執行，但主題應該類似。 請務必注意，四個部分只代表在空間中當地語系化的界限2D 平面。 藉由讓您的引擎/架構知道四個的位置，並將您的物件與四個相對應，您的全息影像將會正確地放在真實世界。 如需詳細資訊，請參閱四邊形上的範例，其中會顯示特定的實作為。
 
-### <a name="mesh"></a>網格
+### <a name="mesh"></a>網狀
 
-網格代表物件或環境的幾何標記法。 與[空間對應](spatial-mapping.md)一樣，每個空間 surface 網格提供的網格索引和頂點資料，都會使用與在所有新式轉譯 api 中用來呈現三角形網格的頂點和索引緩衝區相同的熟悉配置。 頂點位置會在 `Scene`的座標系統中提供。 用來參考此資料的特定 Api 如下所示：
+網格代表物件或環境的幾何標記法。 與[空間對應](spatial-mapping.md)一樣，每個空間 surface 網格提供的網格索引和頂點資料，都會使用與在所有新式轉譯 api 中用來呈現三角形網格的頂點和索引緩衝區相同的熟悉配置。 頂點位置會在的座標系統中提供`Scene`。 用來參考此資料的特定 Api 如下所示：
 
 ```cs
 void GetTriangleIndices(int[] indices);
@@ -362,7 +362,7 @@ mesh.GetTriangleIndices(indices);
 mesh.GetVertexPositions(positions);
 ```
 
-索引/頂點緩衝區必須 > = 索引/頂點計數，否則可以任意調整大小，以便有效率地重複使用記憶體。
+索引/頂點緩衝區必須 >= 索引/頂點計數，否則可以任意調整大小，以便有效率地重複使用記憶體。
 
 ## <a name="developing-with-scene-understandings"></a>使用場景稍微瞭解進行開發
 
@@ -378,10 +378,10 @@ mesh.GetVertexPositions(positions);
 
 如果您沒有 HoloLens2 裝置，但想要使用場景理解來播放，您必須下載預先捕捉的場景。 場景理解範例目前隨附于序列化的幕後，可供您自行下載並使用。 您可以在這裡找到：
 
-[場景瞭解範例場景](https://github.com/sceneunderstanding-microsoft/unitysample/tree/master/Assets/Resources/SerializedScenesForPCPath)
+[場景瞭解範例場景](https://github.com/microsoft/MixedReality-SceneUnderstanding-Samples/tree/master/Assets/Resources/SerializedScenesForPCPath)
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 * [空間對應](spatial-mapping.md)
 * [場景理解](scene-understanding.md)
-* [Unity 範例](https://github.com/sceneunderstanding-microsoft/unitysample)
+* [Unity 範例](https://github.com/microsoft/MixedReality-SceneUnderstanding-Samples)

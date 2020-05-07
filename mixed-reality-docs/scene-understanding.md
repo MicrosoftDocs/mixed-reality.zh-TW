@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: 場景理解，空間對應，Windows Mixed Reality，Unity
-ms.openlocfilehash: 3d56f375c38b1dee6ab9eb97219a5e37fe698c63
-ms.sourcegitcommit: 37816514b8fe20669c487774b86e80ec08edcadf
+ms.openlocfilehash: 615da20df95f4a435216457e8b9f16bb7d7d069b
+ms.sourcegitcommit: 92ff5478a5c55b4e2c5cc2f44f1588702f4ec5d1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "81003334"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82604959"
 ---
 # <a name="scene-understanding"></a>場景理解
 
@@ -29,7 +29,7 @@ ms.locfileid: "81003334"
 
 您可以從範例 GitHub 網站下載場景瞭解範例應用程式：
 
-[場景理解範例](https://github.com/sceneunderstanding-microsoft/unitysample)
+[場景理解範例](https://github.com/microsoft/MixedReality-SceneUnderstanding-Samples)
 
 如果您沒有裝置，而且想要存取範例場景來嘗試進行場景瞭解，範例資產資料夾中會有場景：
 
@@ -53,8 +53,8 @@ ms.locfileid: "81003334"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>特徵</strong></td>
-        <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 代)</strong></a></td>
+        <td><strong>功能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens （第1代）</strong></a></td>
         <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
     </tr>
@@ -68,7 +68,7 @@ ms.locfileid: "81003334"
 
 ## <a name="common-usage-scenarios"></a>常見使用案例
 
-![常見的空間對應使用案例圖例：位置、遮蔽、物理和流覽](images/sm-concepts-1000px.png)<br>
+![一般空間對應使用案例的圖例：位置、遮蔽、物理和流覽](images/sm-concepts-1000px.png)<br>
 *常見的空間對應使用案例：位置、遮蔽、物理和導覽。*
 
 <br>
@@ -77,17 +77,17 @@ ms.locfileid: "81003334"
 
 下列各節會重新流覽新場景理解 SDK 內容中的核心空間對應案例。
 
-### <a name="placement"></a>位置
+### <a name="placement"></a>放置
 
 場景理解提供專為簡化放置案例而設計的新結構。 場景可以計算名為 SceneQuads 的基本型別，其中描述可以放置全息影像的平面表面。 SceneQuads 特別設計于放置和描述2D 介面，並提供 API 以放置在介面上。 先前，使用三角形網格來執行放置時，必須掃描所有的四個區域，並執行洞填滿/後置處理，以識別出適合物件放置的位置。 這不一定是四邊形的必要，因為場景理解執行時間能夠推斷出四個未掃描的區域，而使四個不屬於介面的區域失效。
 
 :::row:::
     :::column:::
-       已停用推斷的 ![SceneQuads，可捕捉掃描區域的放置區域。](images/SUQuads.png)<br>
+       ![已停用推斷的 SceneQuads，可捕捉掃描區域的放置區域。](images/SUQuads.png)<br>
        **影像 #1** -已停用推斷的 SceneQuads，可捕捉掃描區域的放置區域。
     :::column-end:::
         :::column:::
-       ![四邊形，並已啟用推斷，則位置不再限於掃描的區域。](images/SUWatertight.png)<br>
+       ![已啟用推斷的四邊形，放置不再限於掃描的區域。](images/SUWatertight.png)<br>
         **影像 #2** -已啟用推斷的四邊形，放置不再限於掃描的區域。
     :::column-end:::
 :::row-end:::
@@ -109,13 +109,13 @@ ms.locfileid: "81003334"
 
 場景理解會產生使用語義分解空間的防水網格，特別是為了解決空間對應網格所強加的許多物理限制。 防水結構可確保物理光線轉換一律會被叫用，而語義分解則允許針對室內導覽較簡單的 nav 網格產生。 如[遮蔽](#occlusion)一節中所述，使用 EnableSceneObjectMeshes 和 EnableWorldMesh 建立場景，將會產生最實際的完整網格。 環境網格的 [防水] 屬性會防止點擊的測試無法到達介面，而網格資料會確保物理與場景中的所有物件互動，而不只是與房間結構互動。
 
-### <a name="navigation"></a>瀏覽
+### <a name="navigation"></a>導覽
 
 依語義類別分解的平面網格是理想的導覽和路徑規劃結構，可簡化[空間對應導覽](spatial-mapping.md#navigation)總覽中所述的許多問題。 在場景中計算的 SceneMesh 物件已由表面類型取消群組，確保 nav 層代僅限於可以導覽的表面。 由於 floor 結構的簡單性，3d 引擎（例如 Unity）中的動態 nav 網格產生會根據即時需求而達到。
 
 產生精確的導覽網格目前仍需要後置處理，也就是應用程式仍然必須在樓層上進行阻隔器，以確保導覽不會通過雜亂/資料表等等 .。。完成此動作最精確的方式是，在使用 EnableWorldMesh 旗標來計算場景時，針對所提供的世界網格資料進行投影。
 
-### <a name="visualization"></a>視覺化
+### <a name="visualization"></a>視覺效果
 
 雖然[空間對應視覺效果](spatial-mapping.md#visualization)可以用於環境的即時意見反應，但在許多情況下，平面和防水物件的簡單性可提供更高的效能或視覺品質。 如果投影在四邊形或平面防水網格所提供的平面表面上，使用空間對應所描述的陰影投射和接地技術可能會更滿意。 特別是在環境/案例中，因為場景將會推斷，而完整的預先掃描並不是最理想的情況，而完成的環境和平面假設會將成品降到最低。
 

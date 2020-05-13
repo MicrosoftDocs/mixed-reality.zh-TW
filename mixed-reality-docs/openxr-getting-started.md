@@ -5,13 +5,13 @@ author: thetuvix
 ms.author: alexturn
 ms.date: 2/28/2020
 ms.topic: article
-keywords: OpenXR，Khronos，BasicXRApp，windows Mixed Reality OpenXR 開發人員入口網站，DirectX，原生，原生應用程式，自訂引擎，中介軟體，開始使用，101，預覽延伸模組
-ms.openlocfilehash: db45308834f920413420f080a35b378f6a55fa49
-ms.sourcegitcommit: 536fd45b48a70bbeca1454cef517ae007225e533
+keywords: OpenXR，Khronos，BasicXRApp，Windows Mixed Reality OpenXR 開發人員工具，DirectX，原生，原生應用程式，自訂引擎，中介軟體，個開始使用，101，預覽延伸模組，OpenXR 執行階段版本，系統狀態
+ms.openlocfilehash: b4cf91c7a7b5bd203a4fef43c7a988d3ff1e9b16
+ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80362024"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83228047"
 ---
 # <a name="getting-started-with-openxr"></a>開始使用 OpenXR
 
@@ -22,7 +22,7 @@ ms.locfileid: "80362024"
 若要開始開發 HoloLens 2 的 OpenXR 應用程式：
 
 1. 設定 HoloLens 2 或遵循指示來[安裝最新版本的 hololens 2 模擬器](using-the-hololens-emulator.md)。  如果您的裝置最近已更新其 OS，或者您使用的是最新的模擬器映射，您應該已準備好 OpenXR 1.0。
-1. 若要確定您已具備所有[延伸](openxr.md#roadmap)模組的最新 OpenXR 執行時間，請從裝置或模擬器內啟動 Store 應用程式，開啟右上方的功能表，按一下 [**下載和更新**]，然後按一下 [**取得更新**]。  這可確保 HoloLens 上的 OpenXR 執行時間是最新的。  請注意，如果您使用模擬器，模擬器映射會在您每次啟動時重設，因此最好的辦法就是確定您擁有[最新版的 HoloLens 2 模擬器映射](using-the-hololens-emulator.md)。
+1. 若要確定您已具備所有[延伸](openxr.md#roadmap)模組的最新 OpenXR 執行時間，請從裝置或模擬器內啟動**Store**應用程式，開啟右上方的功能表，按一下 [**下載和更新**]，然後按一下 [**取得更新**]。  這可確保 HoloLens 上的 OpenXR 執行時間是最新的。  請注意，如果您使用模擬器，模擬器映射會在您每次啟動時重設，因此最好的辦法就是確定您擁有[最新版的 HoloLens 2 模擬器映射](using-the-hololens-emulator.md)。
 
 ## <a name="getting-started-with-openxr-for-windows-mixed-reality-headsets"></a>開始使用 OpenXR for Windows Mixed Reality 耳機
 
@@ -38,13 +38,13 @@ ms.locfileid: "80362024"
 > [!NOTE]
 > Windows Mixed Reality OpenXR 執行時間很快就會自動為所有 Windows Mixed Reality 使用者進行作用。
 
-## <a name="getting-the-windows-mixed-reality-openxr-developer-portal"></a>取得 Windows Mixed Reality OpenXR 開發人員入口網站
+## <a name="getting-the-windows-mixed-reality-openxr-developer-tools"></a>取得 Windows Mixed Reality OpenXR 開發人員工具
 
-若要試用 Windows Mixed Reality OpenXR 執行時間，您可以安裝<a href="https://www.microsoft.com/store/productId/9n5cvvl23qbt" target="_blank">Mixed Reality OpenXR 開發人員入口網站應用程式</a>。  此應用程式提供的示範場景會演練 OpenXR 的各種功能，以及提供作用中執行時間和目前耳機的重要資訊的 [系統狀態] 頁面。
+若要試用 Windows Mixed Reality OpenXR 執行時間，您可以安裝<a href="https://www.microsoft.com/store/productId/9n5cvvl23qbt" target="_blank">混合現實 OpenXR 開發人員工具應用程式</a>。  此應用程式提供的示範場景會演練 OpenXR 的各種功能，以及提供作用中執行時間和目前耳機的重要資訊的 [系統狀態] 頁面。
 
-如果使用模擬器，安裝混合現實 OpenXR 開發人員入口網站的最簡單方式是使用[Windows 裝置入口網站](using-the-windows-device-portal.md)，方法是流覽至 [OpenXR] 頁面，然後按一下 [開發人員功能] 底下的 [安裝] 按鈕。 （這也適用于實體 HoloLens 2 裝置）
+如果使用模擬器，安裝混合現實 OpenXR 開發人員工具的最簡單方式是使用[Windows 裝置入口網站](using-the-windows-device-portal.md)，方法是流覽至 [OpenXR] 頁面，然後按一下 [開發人員功能] 底下的 [安裝] 按鈕。 （這也適用于實體 HoloLens 2 裝置）
 
-![Mixed Reality OpenXR 開發人員入口網站應用程式](images/mixed-reality-openxr-developer-portal.png)
+![Mixed Reality OpenXR 開發人員工具應用程式](images/mixed-reality-openxr-developer-tools.png)
 
 ## <a name="building-a-sample-openxr-app"></a>建立範例 OpenXR 應用程式
 
@@ -62,42 +62,45 @@ ms.locfileid: "80362024"
 
 若要開始在現有的專案中使用 OpenXR，您將包含 OpenXR 載入器。  載入器會在裝置上探索作用中的 OpenXR 執行時間，並提供其所執行核心函式和擴充功能的存取權。
 
-您可以從 Visual Studio 專案[參考官方的 OpenXR NuGet 套件](#reference-official-openxr-nuget-package)，或從 Khronos GitHub 存放庫中[包含官方的 OpenXR 載入器來源](#include-official-openxr-loader-source)。  任一種方法都可讓您存取 OpenXR 1.0 核心功能，加上發佈的 `KHR`、`EXT` 和 `MSFT` 延伸模組。
+您可以從 Visual Studio 專案[參考官方的 OpenXR NuGet 套件](#reference-official-openxr-nuget-package)，或從 Khronos GitHub 存放庫中[包含官方的 OpenXR 載入器來源](#include-official-openxr-loader-source)。  這兩種方法都可讓您存取 OpenXR 1.0 核心功能，加上發佈 `KHR` 的 `EXT` 和 `MSFT` 延伸模組。
 
-如果您有興趣試驗 `MSFT_preview` 延伸模組，您可以從混合現實 GitHub 存放庫[複製預覽版 OpenXR 標頭](#using-preview-extensions)。
+如果您有興趣試驗延伸模組 `MSFT_preview` ，您可以從混合現實 GitHub 存放庫[複製預覽版 OpenXR 標頭](#using-preview-extensions)。
 
 ### <a name="reference-official-openxr-nuget-package"></a>參考官方 OpenXR NuGet 套件
 
-<a href="https://www.nuget.org/packages/OpenXR.Loader/" target="_blank"> **OpenXR 載入**器 NuGet 封裝</a>是參考預先建立 OpenXR 載入器的最簡單方式。Visual Studio C++解決方案中的 DLL。  這可讓您存取 OpenXR 1.0 核心功能，加上發佈的 `KHR`、`EXT` 和 `MSFT` 延伸模組。
+<a href="https://www.nuget.org/packages/OpenXR.Loader/" target="_blank"> **OpenXR 載入**器 NuGet 封裝</a>是參考預先建立 OpenXR 載入器的最簡單方式。Visual Studio c + + 方案中的 DLL。  這可讓您存取 OpenXR 1.0 核心功能，加上發佈 `KHR` 的 `EXT` 和 `MSFT` 延伸模組。
 
-若要將 OpenXR 的 NuGet 套件參考新增至您的C++ Visual Studio 解決方案：
-1. 在**方案總管**中，以滑鼠右鍵按一下要使用 OpenXR 的專案，然後選取 [**管理 NuGet 套件 ...** ]。
+若要將 OpenXR 的 NuGet 套件參考新增至您的 Visual Studio c + + 解決方案：
+1. 在**方案總管**中，以滑鼠右鍵按一下要使用 OpenXR 的專案，然後選取 [**管理 NuGet 套件 ...**]。
 1. 切換至 [**流覽**] 索引標籤，並搜尋**OpenXR**。
 1. 選取**OpenXR 載入**器套件，然後按一下右邊詳細資料窗格中的 [安裝]。
 1. 按一下 [確定] 以接受專案的變更。
-1. 將 `#include <openxr/openxr.h>` 新增至來源檔案，以開始使用 OpenXR API。
+1. 將新增 `#include <openxr/openxr.h>` 至來源檔案，以開始使用 OPENXR API。
 
 若要查看作用中的 OpenXR API 範例，請參閱<a href="https://github.com/microsoft/OpenXR-MixedReality/tree/master/samples/BasicXrApp" target="_blank">BasicXrApp</a>範例應用程式。
 
 ### <a name="include-official-openxr-loader-source"></a>包含官方 OpenXR 載入器來源
 
-如果您想要自行建立載入器，例如避免額外的載入器。DLL，您可以將官方的 Khronos OpenXR 載入器來源提取到您的專案中。  這可讓您存取 OpenXR 1.0 核心功能，加上發佈的 `KHR`、`EXT` 和 `MSFT` 延伸模組。
+如果您想要自行建立載入器，例如避免額外的載入器。DLL，您可以將官方的 Khronos OpenXR 載入器來源提取到您的專案中。  這可讓您存取 OpenXR 1.0 核心功能，加上發佈 `KHR` 的 `EXT` 和 `MSFT` 延伸模組。
 
 若要從這裡開始，請遵循<a href="https://github.com/KhronosGroup/OpenXR-SDK" target="_blank">GitHub 上的 Khronos OpenXR-SDK</a>存放庫中的指示。  專案設定為以 CMake 建立-如果您使用 MSBuild，則需要將程式碼複製到您自己的專案。
 
 ## <a name="using-preview-extensions"></a>使用預覽擴充功能
 
-[延伸模組藍圖](openxr.md#roadmap)中所列的 `MSFT_preview` 延伸模組是預覽的實驗廠商延伸模組，以收集意見反應。  這些擴充功能僅適用于開發人員裝置，並會在真正的延伸模組隨附時移除。
+`MSFT_preview`[延伸模組藍圖](openxr.md#roadmap)中所列的延伸模組是預覽的實驗廠商延伸模組，以收集意見反應。  這些擴充功能僅適用于開發人員裝置，並會在真正的延伸模組隨附時移除。
 
-如果您有興趣試用可用的 `MSFT_preview` 延伸模組，請執行下列步驟來更新您的專案：
+如果您有興趣試用可用的延伸模組 `MSFT_preview` ，請執行下列步驟來更新您的專案：
 1. 遵循上述其中一種方法，將 OpenXR 載入器整合到您的專案中。
 1. 以<a href="https://github.com/microsoft/OpenXR-MixedReality/tree/master/openxr_preview/include/openxr" target="_blank">GitHub 上的 Mixed Reality OpenXR</a>存放庫中的預覽標頭取代您專案中的標準 OpenXR 標頭。
 
-然後在目標 HoloLens 2 或桌上型電腦上啟用預覽延伸模組：
+然後在您的目標 HoloLens 2 或桌上型電腦上啟用預覽延伸模組支援：
+  1. 若要確定您已擁有所有[延伸](openxr.md#roadmap)模組的最新 OpenXR 執行時間，請從目標裝置或模擬器中啟動**Store**應用程式，開啟右上方的功能表，按一下 [**下載和更新**]，然後按一下 [**取得更新**]。
   1. 在目標裝置上啟用 Windows 裝置入口網站：
      * 如果您的目標裝置是 HoloLens 2 裝置，請遵循目標裝置上的[這些指示](using-the-windows-device-portal.md)。  請注意，這需要實體頭戴式裝置，因為 HoloLens 2 模擬器中的已知問題會讓下一個步驟中的 UI 無法出現在模擬器中。
      * 如果您的目標裝置是連接沉浸式耳機外設的桌上型電腦，請在目標桌上型電腦上<a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop#set-up-device-portal-on-windows-desktop" target="_blank">遵循這些指示</a>。
   1. 流覽至左窗格中的 [ **OpenXR** ] 索引標籤，並啟用 [**使用最新的預覽 OpenXR 運行**時間]。  這會啟用您裝置上的預覽執行時間，其已啟用預覽延伸模組。
+  1. 確認 [ [Windows Mixed Reality OpenXR 開發人員工具](openxr-getting-started.md#getting-the-windows-mixed-reality-openxr-developer-tools)] 的 [**系統狀態**] 索引標籤上顯示的**執行階段版本**，現在符合您打算嘗試的預覽延伸模組所需的版本。  若是如此，您應該會在 [**擴充**功能] 清單中看到此延伸模組。  請注意，一旦穩定的擴充功能可供使用，將會移除其預覽延伸模組。<br />
+     ![Mixed Reality OpenXR 開發人員工具應用程式系統狀態索引標籤](images/mixed-reality-openxr-developer-tools-status.png)
 
 如需這些預覽延伸模組的檔，以及如何使用它們的範例，請參閱<a href="https://github.com/microsoft/OpenXR-MixedReality#openxr-preview-extensions" target="_blank">Mixed Reality OpenXR</a>存放庫。
 

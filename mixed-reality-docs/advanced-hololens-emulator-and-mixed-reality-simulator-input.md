@@ -1,19 +1,19 @@
 ---
-title: 先進的 HoloLens 模擬器和混合現實模擬器輸入
+title: 進階 HoloLens 模擬器和混合實境模擬器輸入
 description: 使用鍵盤、滑鼠和 Xbox 控制器來模擬 HoloLens 模擬器和 Windows Mixed Reality 模擬器輸入的詳細指示。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 04/26/2019
+ms.date: 05/12/2020
 ms.topic: article
 keywords: HoloLens、模擬器、模擬、Windows Mixed Reality
-ms.openlocfilehash: c5601ae2caf235cb22248ce7c6bf7e29225ade2c
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: e9051ae9e7853924f583b6c38f6177f2f967d9f0
+ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926602"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83227947"
 ---
-# <a name="advanced-hololens-emulator-and-mixed-reality-simulator-input"></a>先進的 HoloLens 模擬器和混合現實模擬器輸入
+# <a name="advanced-hololens-emulator-and-mixed-reality-simulator-input"></a>進階 HoloLens 模擬器和混合實境模擬器輸入
 
 大部分的模擬器使用者只需要使用[HoloLens 模擬器](using-the-hololens-emulator.md#basic-emulator-input)或[Windows Mixed Reality](using-the-windows-mixed-reality-simulator.md#basic-simulator-input)模擬器的基本輸入控制項。 下列詳細資料適用于已發現需要模擬更複雜輸入類型的 advanced 使用者。
 
@@ -32,7 +32,7 @@ ms.locfileid: "73926602"
 
 筆勢和動作控制器輸入會緊密對應到實體裝置的方式：
 * **動作**：這會模擬按下食指至 thumb 的動作，或在控制器上提取 [動作] 按鈕。 例如，您可以使用動作輸入來模擬點按手勢、滾動內容，以及按下-按住。
-* **[Bloom](system-gesture.md#bloom)/系統手勢或 Home**： HoloLens Bloom/系統手勢或控制器的 [首頁] 按鈕可用來返回 shell，並執行系統動作。
+* ** [Bloom](system-gesture.md#bloom)/系統手勢或 Home**： HoloLens Bloom/系統手勢或控制器的 [首頁] 按鈕可用來返回 shell，並執行系統動作。
 
 手在 HoloLens 2 中有豐富的標記法。  除了追蹤/未追蹤，以及可用於駕駛手勢的情況外，現在手上有一個明確的基本架構模型可供使用，並對開發人員公開。  這會在每一手勢引進26個追蹤點。  
 * **聯合**：指定之追蹤手的二十個追蹤位置的其中一個。 這會有一個與3d 空間相關聯的點。
@@ -54,16 +54,16 @@ ms.locfileid: "73926602"
 |  |  鍵盤 |  滑鼠 |  Xbox 控制器 | 
 |----------|----------|----------|----------|
 |  Yaw |  向左/向右箭號 |  向左/向右拖曳 |  向左/向右控制杆 | 
-|  Pitch |  向上/向下鍵 |  向上/向下拖曳 |  向上/向下移動右杆 | 
+|  音調 |  向上/向下鍵 |  向上/向下拖曳 |  向上/向下移動右杆 | 
 |  Roll |  Q/E |  |  向左/向右 DPad | 
 |  X |  A/D |  |  左側的控制杆左/右 | 
 |  Y |  Page up/page down |  |  向上/向下 DPad | 
 |  Z |  W/S |  |  向上/向下移動控制杆 | 
-|  [動作] |  輸入或空格 |  右按鈕 |  按鈕或任一觸發程式 | 
+|  動作 |  輸入或空格 |  向右按鈕 |  按鈕或任一觸發程式 | 
 |  Bloom/系統 |  F2 或 Windows 鍵 |  |  B 按鍵 | 
 |  控制器手柄按鈕 |  G  |  |  | 
 |  控制器功能表按鈕 |  M  |  |  | 
-|  控制器觸控板觸控 |  那麼  |  |  | 
+|  控制器觸控板觸控 |  U  |  |  | 
 |  控制器觸控板按下 |  P  |  |  | 
 |  控制器操縱杆按下 |  K  |  |  | 
 |  左側控制器追蹤狀態 |  F9 |  |  | 
@@ -73,31 +73,31 @@ ms.locfileid: "73926602"
 |  手形「點」姿勢 | 9 |  |  |
 |  手上「縮小」姿勢 | 0 |  |  |
 |  重設 |  Escape 鍵 |  |  [開始] 按鈕 | 
-|  修訂 |  T 或 F3 |  |  X 按鈕 | 
+|  追蹤 |  T 或 F3 |  |  X 按鈕 | 
 
 
 注意：控制器按鈕的目標可以是一個右手/控制器，另一個則是使用右手目標修飾詞。
 
-## <a name="targeting"></a>目標預測 
+## <a name="targeting"></a>目標 
 
 上述一些輸入概念會各自獨立。  [動作]、[Bloom]/[系統]、[重設] 和 [追蹤] 都是完整的概念，不需要且不會受到任何目標的其他修飾詞所影響。  不過，其餘的概念可以套用至多個目標的其中一個。 我們引進了一些方式，可讓您指定命令應套用至哪一個預定目標。  在所有情況下，都可以透過 UI 或透過鍵盤按下（要鎖定的物件）來指定。  在某些情況下，您也可以直接使用 xbox 控制器來指定。 
 
 下表描述目標的選項，以及啟用每一個專案的方式。
 
-| 物件 | 鍵盤修飾詞 | 控制器修飾詞 | 模擬器 UI 修飾詞 |
+| Object | 鍵盤修飾詞 | 控制器修飾詞 | 模擬器 UI 修飾詞 |
 |----------|----------|----------|----------|
-| Body | (預設值) | (預設值) | (預設值) |
-| 前端 | 按住 H | （無法使用） | （無法使用） |
+| body | (預設值) | (預設值) | (預設值) |
+| Head | 按住 H | (無法使用) | (無法使用) |
 | 左側/控制器 | 按住左 ALT 鍵 | 保留左側的肩按鈕 | 左圖釘 | 
 | 右手/控制器 | 按住右 ALT 鍵 | 按住右肩按鈕 | 右圖釘 |
-| 認為 | 按住 Y | （無法使用） | 眼睛圖釘 |
+| 認為 | 按住 Y | (無法使用) | 眼睛圖釘 |
   
 下表顯示每個目標修飾詞如何對應每個核心移動輸入概念
 
 |  | 預設值（主體） |  手/控制器（按住 Alt、按住遊戲台的肩按鈕，或切換 UI 圖釘） |  Head （按住 H）  |  眼睛（按住 Y 或切換 UI 圖釘） |
 |----------|----------|----------|----------|
 |  Yaw |  將本文向左/右開啟 |  向左/向右移動 |  向左/右旋轉 | 眼睛向左/右尋找 |
-|  Pitch |  開啟或關閉 head |  向上/向下移動 |  開啟或關閉 head | 眼睛外觀向上/向下 | 
+|  音調 |  開啟或關閉 head |  向上/向下移動 |  開啟或關閉 head | 眼睛外觀向上/向下 | 
 |  Roll |  向左/右翻轉 |  |  向左/右翻轉 | （無動作） |
 |  X |  左側/右側的投影片主體 |  向左/向右鍵移動手/控制器 |  向左/右旋轉 | （無動作） |
 |  Y |  向上/向下移動內文 |  向上/向下移動手/控制器 |  開啟或關閉 head | （無動作） |
@@ -108,7 +108,7 @@ ms.locfileid: "73926602"
 
 以下是建議使用的一組控制項，以取得日常用途：
 
-|  操作 |  鍵盤和滑鼠 |  控管者 | 
+|  作業 |  鍵盤和滑鼠 |  控制器 | 
 |----------|----------|----------|
 |  Body X |  A/D |  左側的控制杆左/右 | 
 |  Body Y |  Page up/page down |  向上/向下 DPad | 
@@ -123,19 +123,37 @@ ms.locfileid: "73926602"
 |  手形/控制器偏擺 |  Alt + 拖曳滑鼠向左/向右鍵 |  肩 + 右控制杆向左/右 | 
 |  手/控制器音調 |  Alt + 向上/向下拖曳滑鼠 |  肩 + 右杆向上/向下 | 
 |  手形/控制器變換 |  Alt + Q/E |  肩 + DPad 左/右 | 
-|  [動作] |  滑鼠右鍵 |  界限 | 
+|  動作 |  滑鼠右鍵 |  觸發程序 | 
 |  Bloom/系統/首頁 |  F2 或 Windows 鍵 |  B 按鍵 | 
-|  重設 |  ESC 鍵 |  [開始] 按鈕 | 
-|  修訂 |  T |  X 按鈕 | 
+|  重設 |  逸出 |  [開始] 按鈕 | 
+|  追蹤 |  T |  X 按鈕 | 
 |  捲動 |  Alt + 滑鼠右鍵按鈕 + 上下拖曳滑鼠 |  肩 + 觸發程式 + 向上/向下的杆 | 
 |  移動/旋轉更快 | 左或右 Shift 鍵 | 按住適當的操縱杆 |
 |  移動/旋轉緩慢 | 左或右 Ctrl 鍵 | 按住左側的操縱杆 |
+
+## <a name="using-a-windows-mixed-reality-immersive-headset-and-motion-controllers-with-the-hololens-2-emulator"></a>搭配 HoloLens 2 模擬器使用 Windows Mixed Reality 沉浸式耳機和運動控制器
+
+使用 Windows Mixed Reality 沉浸式耳機搭配 HoloLens 2 模擬器時，移動和旋轉會自動對應至耳機移動和旋轉。  動作控制器的位置和方向會自動對應至模擬器中的手寫位置和方向。  下表列出使用「動作控制器」時可用的其他動作。
+
+請注意，使用耳機時，會自動忽略標準鍵盤、滑鼠和遊戲台控制項。
+
+|  作業 |  動作 |  附註 | 
+|----------|----------|----------|
+|  Body X |  操縱杆向左/向右 |   | 
+|  Body Z |  操縱杆向前/向後 |   | 
+|  Body Y |  鍵盤分頁向上/Down | 確定 Windows Mixed Reality 具有焦點。  如果焦點是在 Windows 桌面上，請按 Win + Y，將焦點回復到 Windows Mixed Reality。 |
+|  向左/向右外觀 |  向左/向右 DPad | |
+|  眼睛查詢/下 | 向上/向下 DPad | |
+|  點選 | 觸發程序 | |
+|  縮小/抓住 | [抓握] 按鈕 | |
+|  系統手勢 | 功能表按鈕 | |
+|  重設位置 | 操縱杆按一下 | |
 
 ## <a name="perception-simulation-control-panel-keyboard-shortcuts"></a>感知模擬控制台鍵盤快速鍵
 
 下列鍵盤快速鍵可用於存取認知模擬控制台，以及啟用或停用電腦輸入裝置以搭配模擬使用。
 
-| 操作 | 快速鍵 | 描述/附注 |
+| 作業 | 快速鍵 | 描述/附注 |
 |-----------|----------|-------------|
 | 切換「使用鍵盤進行模擬」 | F4 | 當關閉時，鍵盤輸入會進入 HoloLens 或 Windows Mixed Reality 應用程式。 |
 | 切換「使用滑鼠進行模擬」 | F5 | 當關閉時，滑鼠輸入會進入混合現實環境（僅限 Windows Mixed Reality） |

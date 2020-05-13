@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 7/29/2019
 ms.topic: article
 keywords: OpenXR、Khronos、BasicXRApp、DirectX、原生、原生應用程式、自訂引擎、中介軟體
-ms.openlocfilehash: 04b2404889dc74f191543466beb7ae1e516d0d42
-ms.sourcegitcommit: 46bd1a56d272a5880f410751fa8429d65d816431
+ms.openlocfilehash: 8263e530336d53020ebe35091426f0596f257805
+ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80549380"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83228033"
 ---
 # <a name="openxr"></a>OpenXR
 
@@ -21,7 +21,7 @@ OpenXR 是一項開放的免費免權利 API 標準，來自<a href="https://www
 
 ## <a name="why-openxr"></a>為什麼要 OpenXR？
 
-有了 OpenXR，您就可以建立以全像是 HoloLens 2）為目標的引擎，將數位內容放在真實世界中，就像真正的一樣，還有沉浸式裝置（例如桌上型電腦的 Windows Mixed Reality 耳機），其會隱藏實體全球，並以數位體驗取代。  OpenXR 可讓您撰寫程式碼一次，然後在各種不同的硬體平臺上進行移植。
+有了 OpenXR，您就可以建立以全像是 HoloLens 2）為目標的引擎，將數位內容放在真實世界中，就像真正的一樣，還有沉浸式裝置（例如適用于桌上型電腦的 Windows Mixed Reality 耳機），其會隱藏實體世界並以數位體驗取代。  OpenXR 可讓您撰寫程式碼一次，然後在各種不同的硬體平臺上進行移植。
 
 OpenXR API 會使用載入器，將您的應用程式直接連接到頭戴式裝置的原生平臺支援。  這可為使用者提供最大的效能和最小延遲，不論是使用 Windows Mixed Reality 耳機或任何其他耳機。
 
@@ -40,34 +40,35 @@ OpenXR API 提供核心姿勢預測、框架時間和空間輸入功能，您將
 OpenXR 規格定義了擴充機制，可讓執行時間實施者公開超出<a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html" target="_blank">Base OpenXR 1.0 規格</a>中所定義之[核心功能](#what-is-openxr)的其他功能。
 
 有三種 OpenXR 擴充功能：
-* **廠商擴充功能（例如 `MSFT`）：** 啟用硬體或軟體功能中的每一廠商創新。  任何執行時間廠商隨時都可以引進和運送廠商延伸模組。
-  * **實驗性廠商擴充功能（例如 `MSFT_preview`）：** 即將預覽的實驗廠商延伸模組，以收集意見反應。  `MSFT_preview` 延伸模組僅適用于開發人員裝置，並會在真正的延伸模組隨附時移除。  若要進行實驗，您可以[在開發人員裝置上啟用預覽擴充](openxr-getting-started.md#using-preview-extensions)功能。
-* **跨廠商 `EXT` 延伸模組：** 多家公司所定義和實行的跨廠商擴充功能。  有興趣的公司群組可以隨時引進 EXT 延伸模組。
+* **廠商延伸模組（例如 `MSFT` ）：** 啟用硬體或軟體功能中的每一廠商創新。  任何執行時間廠商隨時都可以引進和運送廠商延伸模組。
+  * **實驗性廠商擴充功能（例如 `MSFT_preview` ）：** 預覽實驗廠商延伸模組，以收集意見反應。  `MSFT_preview`延伸模組僅適用于開發人員裝置，並會在真正的延伸模組隨附時移除。  若要進行實驗，您可以[在開發人員裝置上啟用預覽擴充](openxr-getting-started.md#using-preview-extensions)功能。
+* **跨廠商 `EXT` 擴充功能：** 多家公司所定義和實行的跨廠商擴充功能。  有興趣的公司群組可以隨時引進 EXT 延伸模組。
 * **官方 `KHR` 延伸模組：** 正式 Khronos 延伸模組已核准為核心規格版本的一部分。  KHR 延伸模組是由與核心規格本身相同的授權所涵蓋。
 
-在2020年7月，Windows Mixed Reality OpenXR 執行時間將支援一組 `MSFT` 和 `EXT` 延伸模組，可將一組完整的 HoloLens 2 功能帶入 OpenXR 應用程式：
+Windows Mixed Reality OpenXR 執行時間會在2020年7月支援一組 `MSFT` 和 `EXT` 延伸模組，以將一組完整的 HoloLens 2 功能帶入 OpenXR 應用程式：
 
 | 功能區域 | 延伸模組可用性 |
 |--------------|------------------------|
-| 系統 + 會話 | **OpenXR 1.0 核心規格：**<br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#instance" target="_blank">XrInstance</a></code>、 <code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#system" target="_blank">XrSystemId</a></code>、 <code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#session" target="_blank">XrSession</a></code> |
+| 系統 + 會話 | **OpenXR 1.0 核心規格：**<br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#instance" target="_blank">XrInstance</a></code>, <code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#system" target="_blank">XrSystemId</a></code>, <code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#session" target="_blank">XrSession</a></code> |
 | [參考空間（view、local、stage）](coordinate-systems.md) | **OpenXR 1.0 核心規格：**<br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#spaces" target="_blank">XrSpace</a></code> |
 | 視圖設定（mono、身歷聲） | **OpenXR 1.0 核心規格：**<br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#view_configurations" target="_blank">XrView...</a></code> |
-| [Swapchains](rendering.md) + [框架時間](understanding-performance-for-mixed-reality.md) | **OpenXR 1.0 核心規格：**<br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#rendering" target="_blank">XrSwapchain...</a></code> + <code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#frame-synchronization" target="_blank">xrWaitFrame</a></code> |
+| [Swapchains](rendering.md)  + [畫面格時間](understanding-performance-for-mixed-reality.md) | **OpenXR 1.0 核心規格：**<br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#rendering" target="_blank">XrSwapchain...</a></code> + <code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#frame-synchronization" target="_blank">xrWaitFrame</a></code> |
 | 組合圖層<br />（投影，四） | **OpenXR 1.0 核心規格：**<br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#compositing" target="_blank">XrCompositionLayer...</a></code> + <code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#frame-submission" target="_blank">xrEndFrame</a></code> |
 | [輸入和 haptics](interaction-fundamentals.md) | **OpenXR 1.0 核心規格：**<br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#input" target="_blank">XrAction...</a></code> |
-| Direct3D 11 整合 | **正式發行 `KHR` 延伸模組：**<br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#XR_KHR_D3D11_enable" target="_blank">XR_KHR_D3D11_enable</a></code><br /> |
-| Direct3D 12 整合 | **已定義官方 `KHR` 延伸模組：** *（尚不支援）*<br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#XR_KHR_D3D12_enable" target="_blank">XR_KHR_D3D12_enable</a></code><br /><p>**預覽支援**：4月 2020 *（已規劃）*</p><p>**完整支援**：5月 2020 *（已規劃）*</p> |
-| [未系結的參考空間<br />（全球規模的經驗）](coordinate-systems.md#building-a-world-scale-experience) | **已發行 `MSFT` 延伸模組：**<br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#XR_MSFT_unbounded_reference_space" target="_blank">XR_MSFT_unbounded_reference_space</a></code> |
-| [空間錨點](spatial-anchors.md) | **已發行 `MSFT` 延伸模組：**<br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#XR_MSFT_spatial_anchor">XR_MSFT_spatial_anchor</a></code> |
-| [手互動<br />（抓握/瞄準姿勢、空中碰、抓住）](hands-and-tools.md) | **可用 `MSFT_preview` 擴充功能：**<br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_hand_interaction_preview">XR_MSFT_hand_interaction_preview</a></code><p>**`MSFT` 版本**：2020年4月 *（已規劃）*</p> |
-| [手形文字清晰度 + 手上網格](hands-and-tools.md) | **可用 `MSFT_preview` 擴充功能：**<br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_hand_tracking_preview">XR_MSFT_hand_tracking_preview</a></code><br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_hand_tracking_mesh_preview">XR_MSFT_hand_tracking_mesh_preview</a></code><p>**`MSFT` 版本**：5月 2020 *（已規劃）*</p> |
-| 與其他 HoloLens Sdk 交互操作（例如[QR](qr-code-tracking.md)） | **可用 `MSFT_preview` 擴充功能：**<br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_spatial_graph_bridge_preview">XR_MSFT_spatial_graph_bridge_preview</a></code><p>**`MSFT` 版本**：5月 2020 *（已規劃）*</p> |
-| [眼睛目光](eye-tracking.md) | <p>**已定義`EXT` 延伸**模組： *（尚不支援）*<br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#XR_EXT_eye_gaze_interaction" target="_blank">XR_EXT_eye_gaze_interaction</a></code><p>**預覽支援**：4月 2020 *（已規劃）*</p><p>**完整支援**：5月 2020 *（已規劃）*</p> |
-| [混合現實 Capture<br />（PV 攝影機的第三個轉譯）](mixed-reality-capture-for-developers.md#render-from-the-pv-camera-opt-in) | **可用 `MSFT_preview` 擴充功能：**<br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_secondary_view_configuration_preview">XR_MSFT_secondary_view_configuration_preview</a></code><br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_first_person_observer_preview">XR_MSFT_first_person_observer_preview</a></code><br /><p>**`MSFT` 版本**：2020年6月 *（已規劃）*</p> |
-| [運動控制器呈現模型](motion-controllers.md#rendering-the-motion-controller-model) | <p>**`MSFT_preview`** ：2020年4月 *（已規劃）*</p><p>**`MSFT` 版本**：2020年7月 *（已規劃）*</p> |
-| [場景理解（平面、網格）](scene-understanding.md) | <p>**`MSFT_preview`** ：5月 2020 *（已規劃）*</p><p>**`MSFT` 版本**：2020年7月 *（已規劃）*</p> |
+| Direct3D 11 整合 | **正式 `KHR` 發行延伸模組：**<br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#XR_KHR_D3D11_enable" target="_blank">XR_KHR_D3D11_enable</a></code> |
+| Direct3D 12 整合 | **`KHR`[預覽執行時間 2003](openxr-getting-started.md#using-preview-extensions)中的官方延伸模組：**<br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#XR_KHR_D3D12_enable" target="_blank">XR_KHR_D3D12_enable</a></code><br /><p>**穩定執行時間中的支援**：5月 2020 *（已規劃）*</p> |
+| [未系結的參考空間 <br /> （全球規模的體驗）](coordinate-systems.md#building-a-world-scale-experience) | **`MSFT`發行的延伸模組：**<br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#XR_MSFT_unbounded_reference_space" target="_blank">XR_MSFT_unbounded_reference_space</a></code> |
+| [空間錨點](spatial-anchors.md) | **`MSFT`發行的延伸模組：**<br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#XR_MSFT_spatial_anchor">XR_MSFT_spatial_anchor</a></code> |
+| [手互動 <br /> （抓握/瞄準姿勢、空中碰、抓住）](hands-and-tools.md)<p>*僅限 HoloLens 2*</p> | **`MSFT`發行的延伸模組：**<br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#XR_MSFT_hand_interaction">XR_MSFT_hand_interaction</a></code> |
+| [手形文字清晰度 + 手上網格](hands-and-tools.md)<p>*僅限 HoloLens 2*</p> | **`MSFT_preview`[預覽執行時間 2001](openxr-getting-started.md#using-preview-extensions)中的延伸模組：**<br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_hand_tracking_preview">XR_MSFT_hand_tracking_preview</a></code><br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_hand_tracking_mesh_preview">XR_MSFT_hand_tracking_mesh_preview</a></code><p>** `MSFT` 或 `EXT` 預覽執行時間中的延伸**模組：5月 2020 *（已規劃）*</p> |
+| [眼睛目光](eye-tracking.md)<p>*僅限 HoloLens 2*</p> | ** `EXT` [預覽執行時間 2003](openxr-getting-started.md#using-preview-extensions)中的延伸**模組：<br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#XR_EXT_eye_gaze_interaction" target="_blank">XR_EXT_eye_gaze_interaction</a></code><p>**穩定執行時間中的支援**：5月 2020 *（已規劃）*</p> |
+| 與其他 HoloLens Sdk 交互操作（例如[QR](qr-code-tracking.md)）<p>*僅限 HoloLens 2*</p> | **`MSFT_preview`[預覽執行時間 2001](openxr-getting-started.md#using-preview-extensions)中的延伸模組：**<br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_spatial_graph_bridge_preview">XR_MSFT_spatial_graph_bridge_preview</a></code><p>** `MSFT` 預覽執行時間中的延伸**模組：5月 2020 *（已規劃）*</p> |
+| [混合現實 Capture <br /> （PV 攝影機的第三個轉譯）](mixed-reality-capture-for-developers.md#render-from-the-pv-camera-opt-in)<p>*僅限 HoloLens 2*</p> | **`MSFT_preview`[預覽執行時間 2003](openxr-getting-started.md#using-preview-extensions)中的延伸模組：**<br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_secondary_view_configuration_preview">XR_MSFT_secondary_view_configuration_preview</a></code><br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_first_person_observer_preview">XR_MSFT_first_person_observer_preview</a></code><p>** `MSFT` 預覽執行時間中的延伸**模組：2020年6月 *（已規劃）*</p> |
+| [運動控制器呈現模型](motion-controllers.md#rendering-the-motion-controller-model) | **`MSFT_preview`[預覽執行時間 2003](openxr-getting-started.md#using-preview-extensions)中的延伸模組：**<br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_controller_model_preview">XR_MSFT_controller_model_preview</a></code><p>** `MSFT` 預覽執行時間中的延伸**模組：2020年7月 *（已規劃）*</p> |
+| [場景理解（平面、網格）](scene-understanding.md)<p>*僅限 HoloLens 2*</p> | <p>** `MSFT_preview` 預覽執行時間中的延伸**模組：2020年6月 *（已規劃）*</p><p>** `MSFT` 預覽執行時間中的延伸**模組：2020年7月 *（已規劃）*</p> |
+| 其他跨廠商擴充功能 | <p>**發行的官方 `KHR` 延伸模組：**</p><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#XR_KHR_composition_layer_depth" target="_blank">XR_KHR_composition_layer_depth</a></code><br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#XR_KHR_visibility_mask" target="_blank">XR_KHR_visibility_mask</a></code><br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#XR_KHR_win32_convert_performance_counter_time" target="_blank">XR_KHR_win32_convert_performance_counter_time</a></code><p>**`EXT`發行的延伸模組：**</p><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#XR_EXT_win32_appcontainer_compatible" target="_blank">XR_EXT_win32_appcontainer_compatible</a></code><br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#XR_EXT_debug_utils" target="_blank">XR_EXT_debug_utils</a></code> |
 
-雖然其中一些延伸模組可能會從廠商專屬的 `MSFT` 延伸模組開始，但 Microsoft 和其他 OpenXR 執行時間廠商會共同合作，以設計跨廠商的 `EXT` 或 `KHR` 延伸模組，以用於這些功能領域的許多。  這可讓您針對這些功能所撰寫的程式碼在執行時間廠商之間具有可攜性，就像使用核心規格一樣。
+雖然其中一些延伸模組可能會以廠商專屬的 `MSFT` 擴充功能作為開頭，但 Microsoft 和其他 OpenXR 執行時間廠商會共同合作， `EXT` 為 `KHR` 這些功能領域設計跨廠商或延伸模組。  這可讓您針對這些功能所撰寫的程式碼在執行時間廠商之間具有可攜性，就像使用核心規格一樣。
 
 ## <a name="get-started-with-openxr"></a>開始使用 OpenXR
 
@@ -75,7 +76,7 @@ OpenXR 規格定義了擴充機制，可讓執行時間實施者公開超出<a h
 
 若要開始開發 HoloLens 2 或沉浸式 Windows Mixed Reality 耳機的 OpenXR 應用程式，請參閱[如何開始使用 OpenXR 開發](openxr-getting-started.md)。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 * <a href="https://www.khronos.org/openxr/" target="_blank">OpenXR 的詳細資訊</a>
 * <a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html" target="_blank">OpenXR 1.0 規格</a>

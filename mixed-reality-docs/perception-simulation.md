@@ -1,19 +1,19 @@
 ---
-title: 認知模擬
+title: 感知模擬
 description: 使用認知模擬程式庫將沉浸式應用程式的模擬輸入自動化的指南
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 04/26/2019
+ms.date: 05/12/2020
 ms.topic: article
 keywords: HoloLens、模擬、測試
-ms.openlocfilehash: 503533bc5a2e9307b7c5217632d42670285aac0a
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 701fd39490d87b70df9bd68cc99da6482d41b676
+ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437543"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83228023"
 ---
-# <a name="perception-simulation"></a>認知模擬
+# <a name="perception-simulation"></a>感知模擬
 
 您要為您的應用程式建立自動化測試嗎？ 您是否想要讓測試超越元件層級的單元測試，並確實執行應用程式端對端？ 認知模擬是您要尋找的。 認知模擬程式庫會將人類和世界的輸入資料傳送至您的應用程式，讓您可以自動化測試。 例如，您可以模擬人類的輸入，尋找特定、可重複的位置，然後執行手勢或使用動作控制器。
 
@@ -23,22 +23,22 @@ ms.locfileid: "73437543"
 
 ## <a name="setting-up-a-visual-studio-project-for-perception-simulation"></a>設定認知模擬的 Visual Studio 專案
 1. 在開發電腦上[安裝 HoloLens 模擬器](install-the-tools.md)。 模擬器包含您將用於認知模擬的程式庫。
-2. 建立新的 Visual Studio C#桌面專案（主控台專案非常適合用來開始使用）。
-3. 將下列二進位檔新增至您的專案做為參考（專案 > 的 [加入 > 參考 ...]）。您可以在% ProgramFiles （x86）% \ Microsoft XDE\\（版本）中找到它們，例如適用于 HoloLens 2 模擬器的 **% ProgramFiles （x86）% \ MICROSOFT XDE\\10.0.18362.0** 。  （注意：雖然二進位檔是 HoloLens 2 模擬器的一部分，但它們也適用于桌上型電腦上的 Windows Mixed Reality）。為. PerceptionSimulationManager 感知模擬的 Managed C#包裝函式。
-    b。 PerceptionSimulationRest：用於設定 HoloLens 或模擬器之 web 通訊端通道的程式庫。
+2. 建立新的 Visual Studio c # 桌面專案（主控台專案非常適合用來開始使用）。
+3. 將下列二進位檔新增至您的專案做為參考（專案 >的 [加入 >參考 ...]）。您可以在% ProgramFiles （x86）% \ Microsoft XDE \\ （版本）中找到它們，例如適用于 HoloLens 2 模擬器的 **% ProgramFiles （x86）% \ microsoft XDE \\ 10.0.18362.0** 。  （注意：雖然二進位檔是 HoloLens 2 模擬器的一部分，但它們也適用于桌上型電腦上的 Windows Mixed Reality）。為. PerceptionSimulationManager 感知模擬的 Managed c # 包裝函式。
+    b. PerceptionSimulationRest：用於設定 HoloLens 或模擬器之 web 通訊端通道的程式庫。
     c. SimulationStream：模擬的共用類型。
-4. 將 [執行二進位 PerceptionSimulationManager] 加入至您的專案 a。 首先，將它當做二進位檔新增至專案（專案 > [加入 > 現有專案 ...]）。將它儲存為連結，讓它不會將它複製到您的專案源資料夾。 ![將 PerceptionSimulationManager 新增至專案，做為連結](images/saveaslink.png) b。 然後，確定它已複製到組建上的輸出檔案夾。 這是在二進位檔的屬性工作表中。 ![將 PerceptionSimulationManager 標記為複製到輸出目錄](images/copyalways.png)
+4. 將 [執行二進位 PerceptionSimulationManager] 加入至您的專案 a。 首先，將它當做二進位檔新增至專案（專案 >[加入 >現有專案 ...]）。將它儲存為連結，讓它不會將它複製到您的專案源資料夾。 ![將 PerceptionSimulationManager 新增至專案，做為連結 ](images/saveaslink.png) b。 然後，確定它已複製到組建上的輸出檔案夾。 這是在二進位檔的屬性工作表中。 ![將 PerceptionSimulationManager 標記為要複製到輸出目錄](images/copyalways.png)
 5. 將使用中的方案平臺設定為 x64。  （如果不存在，請使用 Configuration Manager 來建立 x64 的平臺專案）。
 
 ## <a name="creating-an-iperceptionsimulation-manager-object"></a>建立 IPerceptionSimulation Manager 物件
 
 若要控制模擬，您會對從 IPerceptionSimulationManager 物件取得的物件發出更新。 第一個步驟是取得該物件，並將它連接到您的目標裝置或模擬器。 您可以按一下[工具列](using-the-hololens-emulator.md)中的 [裝置入口網站] 按鈕，以取得您的模擬器的 IP 位址
 
-![開啟裝置入口網站 圖示](images/emulator-deviceportal.png)**開啟 [裝置入口網站**]：在模擬器中開啟 HoloLens OS 的 Windows 裝置入口網站。  對於 Windows Mixed Reality，可以在 [更新 & 安全性] 底下的 [設定] 應用程式中抓取，然後在 [啟用裝置入口網站] 底下的 [使用下列方式連線] 區段中，找到 [適用于開發人員]。  請務必記下 IP 位址和埠。
+![開啟裝置入口網站圖示 ](images/emulator-deviceportal.png) **開啟裝置入口網站**：在模擬器中開啟 HoloLens OS 的 Windows 裝置入口網站。  對於 Windows Mixed Reality，可以在 [更新 & 安全性] 底下的 [設定] 應用程式中抓取，然後在 [啟用裝置入口網站] 底下的 [使用下列方式連線] 區段中，找到 [適用于開發人員]。  請務必記下 IP 位址和埠。
 
 首先，您會呼叫 RestSimulationStreamSink 來取得 RestSimulationStreamSink 物件。 這是您將透過 HTTP 連接控制的目標裝置或模擬器。 您的命令將會傳遞至裝置或模擬器上執行的[Windows 裝置入口網站](using-the-windows-device-portal.md)並加以處理。 建立物件所需的四個參數如下：
-* Uri uri-目標裝置的 IP 位址（例如，"https://123.123.123.123" 或 "https://123.123.123.123:50080"）
-* NetworkCredential 認證-使用者名稱/密碼，用於連接至目標裝置或模擬器上的[Windows 裝置入口網站](using-the-windows-device-portal.md)。 如果您是透過本機位址連接到模擬器（例如，*168 ...* *）在同一部電腦上，將會接受任何認證。
+* Uri uri-目標裝置的 IP 位址（例如，" https://123.123.123.123 " 或 " https://123.123.123.123:50080 "）
+* NetworkCredential 認證-使用者名稱/密碼，用於連接至目標裝置或模擬器上的[Windows 裝置入口網站](using-the-windows-device-portal.md)。 如果您是透過本機位址連接到模擬器（例如，*168 ...**）在同一部電腦上，將會接受任何認證。
 * 一般優先權為 bool 標準-True，低優先順序為 false。 在測試案例中，您通常會想要將此設定為*true* ，讓您的測試能夠取得控制權。  模擬器和 Windows Mixed Reality 模擬會使用低優先順序的連接。  如果您的測試也使用低優先順序的連接，最近建立的連接將會受到控制。
 * CancellationToken token-用來取消非同步作業的 Token。
 
@@ -52,7 +52,7 @@ IPerceptionSimulationManager 具有可傳回 ISimulatedHuman 物件的人類屬�
 manager.Human.Move(new Vector3(0.1f, 0.0f, 0.0f))
 ```
 
-## <a name="basic-sample-c-console-application"></a>基本範例C#主控台應用程式
+## <a name="basic-sample-c-console-application"></a>基本 c # 主控台應用程式範例
 
 ```
 using System;
@@ -108,7 +108,7 @@ namespace ConsoleApplication1
 }
 ```
 
-## <a name="extended-sample-c-console-application"></a>擴充的C#範例主控台應用程式
+## <a name="extended-sample-c-console-application"></a>擴充的範例 c # 主控台應用程式
 
 ```
 using System;
@@ -226,7 +226,7 @@ namespace ConsoleApplication1
     PerceptionSimulationDevice.exe <action> 6dof <instance>
 ```
 
-例如
+例如：
 
 ```
     PerceptionSimulationDevice.exe i 6dof 1
@@ -250,7 +250,7 @@ namespace ConsoleApplication1
 
 
 
-## <a name="api-reference"></a>API 參考資料
+## <a name="api-reference"></a>API 參考
 
 ### <a name="microsoftperceptionsimulationsimulateddevicetype"></a>PerceptionSimulation. SimulatedDeviceType
 
@@ -545,21 +545,21 @@ public struct Vector3
 
 **PerceptionSimulation. Vector3. X**
 
-向量的 X 元件。
+此向量的 X 元件。
 
 **PerceptionSimulation. Vector3. Y**
 
-向量的 Y 元件。
+此向量的 Y 元件。
 
 **PerceptionSimulation. Vector3. Z**
 
-向量的 Z 元件。
+此向量的 Z 元件。
 
 **PerceptionSimulation. Vector3. #ctor （System.web，system.object，system.string）**
 
 建立新的 Vector3。
 
-Parameters
+參數
 * x-向量的 x 元件。
 * y-向量的 y 元件。
 * z-向量的 z 元件。
@@ -594,7 +594,7 @@ public struct Rotation3
 
 建立新的 Rotation3。
 
-Parameters
+參數
 * 音調-旋轉的螺距元件。
 * 偏擺-旋轉的偏擺元件。
 * 變換：旋轉的滾動部分。
@@ -655,6 +655,52 @@ public struct Frustum
 
 水準欄位和視圖垂直欄位的比例。
 
+### <a name="microsoftperceptionsimulationsimulateddisplayconfiguration"></a>PerceptionSimulation. SimulatedDisplayConfiguration
+
+說明模擬耳機顯示的設定。
+
+```
+public struct SimulatedDisplayConfiguration
+{
+    public Vector3 LeftEyePosition;
+    public Rotation3 LeftEyeRotation;
+    public Vector3 RightEyePosition;
+    public Rotation3 RightEyeRotation;
+    public float Ipd;
+    public bool ApplyEyeTransforms;
+    public bool ApplyIpd;
+}
+```
+
+**PerceptionSimulation. SimulatedDisplayConfiguration. LeftEyePosition**
+
+從開頭到左邊的轉換，以供身歷聲轉譯之用。
+
+**PerceptionSimulation. SimulatedDisplayConfiguration. LeftEyeRotation**
+
+針對身歷聲轉譯的目的而左邊的旋轉。
+
+**PerceptionSimulation. SimulatedDisplayConfiguration. RightEyePosition**
+
+從前端到右眼的轉換，以供身歷聲轉譯之用。
+
+**PerceptionSimulation. SimulatedDisplayConfiguration. RightEyeRotation**
+
+針對身歷聲轉譯的角度所做的調整。
+
+**PerceptionSimulation. SimulatedDisplayConfiguration Ipd**
+
+系統報告的 Ipd 值，用於呈現身歷聲轉譯。
+
+**PerceptionSimulation. SimulatedDisplayConfiguration. ApplyEyeTransforms**
+
+針對 left 和 right 眼轉換提供的值是否應視為有效，並套用至執行中的系統。
+
+**PerceptionSimulation. SimulatedDisplayConfiguration. ApplyIpd**
+
+是否應將為 Ipd 提供的值視為有效，並套用至執行中的系統。
+
+
 ### <a name="microsoftperceptionsimulationiperceptionsimulationmanager"></a>PerceptionSimulation. IPerceptionSimulationManager
 
 用於產生用於控制裝置之封包的根目錄。
@@ -705,8 +751,29 @@ public interface ISimulatedDevice
 
 設定模擬裝置的屬性，以符合提供的裝置類型。
 
-Parameters
+參數
 * 類型-模擬裝置的新類型
+
+### <a name="microsoftperceptionsimulationisimulateddevice2"></a>PerceptionSimulation. ISimulatedDevice2
+
+藉由將 ISimulatedDevice 轉型為 ISimulatedDevice2，可以使用其他屬性。
+
+```
+public interface ISimulatedDevice2
+{
+    bool IsUserPresent { [return: MarshalAs(UnmanagedType.Bool)] get; [param: MarshalAs(UnmanagedType.Bool)] set; }
+    SimulatedDisplayConfiguration DisplayConfiguration { get; set; }
+
+};
+```
+
+**PerceptionSimulation. ISimulatedDevice2. IsUserPresent**
+
+抓取或設定模擬的人是否積極戴頭戴式裝置。
+
+**PerceptionSimulation. ISimulatedDevice2. DisplayConfiguration**
+
+取出或設定模擬顯示的屬性。
 
 ### <a name="microsoftperceptionsimulationisimulatedheadtracker"></a>PerceptionSimulation. ISimulatedHeadTracker
 
@@ -804,14 +871,14 @@ public interface ISimulatedHuman
 
 將模擬人相對於其目前位置（以計量為單位）。
 
-Parameters
+參數
 * 轉譯-要移動的轉譯，相對於目前的位置。
 
 **PerceptionSimulation. ISimulatedHuman. 旋轉（System.web）**
 
 以順時針方向針對 Y 軸，將模擬的人類旋轉相對於其目前方向
 
-Parameters
+參數
 * 弧度-要繞著 Y 軸旋轉的數量。
 
 ### <a name="microsoftperceptionsimulationisimulatedhuman2"></a>PerceptionSimulation. ISimulatedHuman2
@@ -877,14 +944,14 @@ public interface ISimulatedHand
 
 移動模擬手相對於其目前位置的位置（以量為單位）。
 
-Parameters
+參數
 * 轉譯-要轉譯模擬手的數量。
 
 **PerceptionSimulation. ISimulatedHand. PerformGesture （Microsoft PerceptionSimulation. SimulatedGesture）**
 
 使用模擬的手執行手勢。  只有在已啟用手時，系統才會偵測到此檔案。
 
-Parameters
+參數
 * 手勢-要執行的手勢。
 
 ### <a name="microsoftperceptionsimulationisimulatedhand2"></a>PerceptionSimulation. ISimulatedHand2
@@ -958,7 +1025,7 @@ public interface ISimulatedHead
 
 將模擬的標頭旋轉成相對於目前的旋轉。 正弧度在沿著軸進行檢查時，順時針旋轉。
 
-Parameters
+參數
 * 旋轉-要旋轉的數量。
 
 ### <a name="microsoftperceptionsimulationisimulatedhead2"></a>PerceptionSimulation. ISimulatedHead2
@@ -1016,28 +1083,28 @@ public interface ISimulatedSixDofController
 
 移動模擬控制器相對於其目前位置的位置（以計量為單位）。
 
-Parameters
+參數
 * 轉譯-要轉譯模擬控制器的數量。
 
 **PerceptionSimulation. ISimulatedSixDofController. PressButton （SimulatedSixDofControllerButton）**
 
 在模擬控制器上按下按鈕。  只有在已啟用控制器的情況下，系統才會偵測到它。
 
-Parameters
+參數
 * 按鈕-要按的按鈕。
 
 **PerceptionSimulation. ISimulatedSixDofController. ReleaseButton （SimulatedSixDofControllerButton）**
 
 釋放模擬控制器上的按鈕。  只有在已啟用控制器的情況下，系統才會偵測到它。
 
-Parameters
+參數
 * 按鈕-要發行的按鈕。
 
 **PerceptionSimulation. ISimulatedSixDofController. GetTouchpadPosition （out float，out float）**
 
 取得模擬控制器的觸控板上的模擬手指位置。
 
-Parameters
+參數
 * x-手指的水準位置。
 * y-手指的垂直位置。
 
@@ -1045,7 +1112,7 @@ Parameters
 
 將模擬手指的位置設定在模擬控制器的觸控板上。
 
-Parameters
+參數
 * x-手指的水準位置。
 * y-手指的垂直位置。
 
@@ -1067,7 +1134,7 @@ public interface ISimulatedSixDofController2
 
 取得模擬控制站上模擬的操縱杆位置。
 
-Parameters
+參數
 * x-操縱杆的水準位置。
 * y-操縱杆的垂直位置。
 
@@ -1075,7 +1142,7 @@ Parameters
 
 在模擬的控制器上設定模擬的操縱杆位置。
 
-Parameters
+參數
 * x-操縱杆的水準位置。
 * y-操縱杆的垂直位置。
 
@@ -1106,7 +1173,7 @@ public interface ISimulatedEyes
 
 旋轉模擬的眼睛，相對於其目前的旋轉。 正弧度在沿著軸進行檢查時，順時針旋轉。
 
-Parameters
+參數
 * 旋轉-要旋轉的數量。
 
 **PerceptionSimulation. ISimulatedEyes. CalibrationState**
@@ -1154,7 +1221,7 @@ public interface ISimulationRecording
 
 將記錄搜尋到指定的時間（從一開始的100毫微秒間隔），並在該位置暫停。 如果時間超過錄製的結尾，則會在最後一個畫面上暫停。
 
-Parameters
+參數
 * 刻度-要搜尋的時間。
 
 **PerceptionSimulation. ISimulationRecording. Stop**
@@ -1176,7 +1243,7 @@ public interface ISimulationRecordingCallback
 
 當 ISimulationRecording 的播放狀態變更時呼叫。
 
-Parameters
+參數
 * newState-記錄的新狀態。
 
 ### <a name="microsoftperceptionsimulationperceptionsimulationmanager"></a>PerceptionSimulation. PerceptionSimulationManager
@@ -1196,7 +1263,7 @@ public static class PerceptionSimulationManager
 
 在物件上建立以產生模擬封包，並將它們傳遞至提供的接收。
 
-Parameters
+參數
 * sink-接收所有產生的封包的接收器。
 
 傳回值
@@ -1207,7 +1274,7 @@ Parameters
 
 建立接收，將所有接收的封包儲存在檔案中的指定路徑。
 
-Parameters
+參數
 * path-要建立之檔案的路徑。
 
 傳回值
@@ -1218,7 +1285,7 @@ Parameters
 
 從指定的檔案載入記錄。
 
-Parameters
+參數
 * path-要載入的檔案路徑。
 * factory-記錄在需要時用來建立 ISimulationStreamSink 的 factory。
 
@@ -1226,11 +1293,11 @@ Parameters
 
 載入的記錄。
 
-**PerceptionSimulation. PerceptionSimulationManager. LoadPerceptionSimulationRecording （System.string，Microsoft PerceptionSimulation. ISimulationStreamSinkFactory，PerceptionSimulation. ISimulationRecordingCallback）**
+**PerceptionSimulation. PerceptionSimulationManager. LoadPerceptionSimulationRecording （System.string，microsoft. PerceptionSimulation. ISimulationStreamSinkFactory，PerceptionSimulation）**
 
 從指定的檔案載入記錄。
 
-Parameters
+參數
 * path-要載入的檔案路徑。
 * factory-記錄在需要時用來建立 ISimulationStreamSink 的 factory。
 * 回呼-接收更新的回呼會 regrading 記錄的狀態。
@@ -1252,7 +1319,10 @@ public enum StreamDataTypes
     SpatialMapping = 0x08,
     Calibration = 0x10,
     Environment = 0x20,
-    All = None | Head | Hands | SpatialMapping | Calibration | Environment
+    SixDofControllers = 0x40,
+    Eyes = 0x80,
+    DisplayConfiguration = 0x100
+    All = None | Head | Hands | SpatialMapping | Calibration | Environment | SixDofControllers | Eyes | DisplayConfiguration
 }
 ```
 
@@ -1280,6 +1350,18 @@ public enum StreamDataTypes
 
 關於裝置環境的資料流程。
 
+**PerceptionSimulation. StreamDataTypes. SixDofControllers**
+
+有關動作控制器的資料流程。
+
+**PerceptionSimulation. StreamDataTypes 眼**
+
+關於模擬人類眼的資料流程。
+
+**PerceptionSimulation. StreamDataTypes. DisplayConfiguration**
+
+關於裝置顯示設定的資料流程。
+
 **PerceptionSimulation. StreamDataTypes. 全部**
 
 用來表示所有記錄資料類型的 sentinel 值。
@@ -1299,7 +1381,7 @@ public interface ISimulationStreamSink
 
 接收單一封包，其為內部輸入和版本設定。
 
-Parameters
+參數
 * length-封包的長度。
 * 封包-封包的資料。
 

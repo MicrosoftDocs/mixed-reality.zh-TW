@@ -1,19 +1,19 @@
 ---
-title: 裝置入口網站 API 參考
+title: 裝置入口網站 API 參照
 description: HoloLens 上 Windows 裝置入口網站的 API 參考
 author: jonmlyons
 ms.author: jlyons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens，Windows 裝置入口網站，API
-ms.openlocfilehash: 236de35c2c736fc5a0289b7be1f1548f0a08fa26
-ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
+ms.openlocfilehash: 8c9d60f458cddd3ba258aed0ee82f7aa16c10ba6
+ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81278236"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83227950"
 ---
-# <a name="device-portal-api-reference"></a>裝置入口網站 API 參考
+# <a name="device-portal-api-reference"></a>裝置入口網站 API 參照
 
 [Windows 裝置入口網站](using-the-windows-device-portal.md)中的所有專案都是以 REST API 為基礎，您可以用它來存取資料並以程式設計方式控制您的裝置。
 
@@ -33,7 +33,7 @@ ms.locfileid: "81278236"
 參數
 * package：要安裝之封裝的檔案名。
 
-裝載
+Payload
 * 多部分符合的 HTTP 主體
 
 **/api/app/packagemanager/packages （GET）**
@@ -135,7 +135,7 @@ ms.locfileid: "81278236"
 
 **/api/holographic/os/webmanagement/settings/HTTPs （GET）**
 
-取得 Device Portal 的 HTTPS 需求
+取得裝置入口網站的 HTTPS 需求
 
 **/api/holographic/os/webmanagement/settings/HTTPs （POST）**
 
@@ -183,6 +183,10 @@ ms.locfileid: "81278236"
 **/api/holographic/simulation/control/stream （POST）**
 
 建立控制資料流程（需要優先權）或將資料張貼到建立的資料流程（需要 streamId）。 張貼的資料應該是「應用程式/八位串流」類型。
+
+**/api/holographic/simulation/display/stream （GET/WebSocket）**
+
+要求模擬影片串流，其中包含在「模擬」模式下呈現給系統顯示的內容。  簡單的格式描述元標頭會一開始傳送，後面接著 h.264 編碼材質，每一個標頭前面會加上指示眼睛索引和材質大小的標題。
 
 ## <a name="perception-simulation-playback"></a>認知模擬播放
 
@@ -415,7 +419,7 @@ HoloLens 支援透過區塊下載的分散的方式，即時預覽混合現實�
 傳回資料
 * 具有系統資訊的 JSON： CPU、GPU、記憶體、網路、IO
 
-## <a name="power"></a>電源
+## <a name="power"></a>Power
 
 **/api/power/battery （GET）**
 
@@ -497,7 +501,7 @@ HoloLens 支援透過區塊下載的分散的方式，即時預覽混合現實�
 
 上傳 WPR 設定檔，並使用上傳的設定檔開始追蹤。
 
-裝載
+Payload
 * 多部分符合的 HTTP 主體
 
 傳回資料
@@ -527,6 +531,6 @@ HoloLens 支援透過區塊下載的分散的方式，即時預覽混合現實�
 傳回資料
 * 在啟動時，會傳回 WPR 會話狀態。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 * [使用 Windows 裝置入口網站](using-the-windows-device-portal.md)
 * [裝置入口網站核心 API 參考（UWP）](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

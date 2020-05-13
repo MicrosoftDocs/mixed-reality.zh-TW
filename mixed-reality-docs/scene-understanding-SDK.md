@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: 場景理解，空間對應，Windows Mixed Reality，Unity
-ms.openlocfilehash: 3eb54f84e30b2354907204895e62accdb9ad54f9
-ms.sourcegitcommit: 92ff5478a5c55b4e2c5cc2f44f1588702f4ec5d1
+ms.openlocfilehash: 2f958d45f72d6c39d4222840615c5b177db7c76f
+ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82604949"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83228013"
 ---
 # <a name="scene-understanding-sdk-overview"></a>場景理解 SDK 總覽
 
@@ -101,7 +101,7 @@ SceneUnderstanding 需要18362或更高版本 Windows SDK。
 
 下一節提供場景理解中之結構的高階總覽。 閱讀本節可讓您瞭解場景的呈現方式，以及各種元件的用途/用途。 下一節將提供在此總覽中說明 mda 的具體程式碼範例和其他詳細資料。
 
-以下所述的所有類型都位於`Microsoft.MixedReality.SceneUnderstanding`命名空間中。
+以下所述的所有類型都位於 `Microsoft.MixedReality.SceneUnderstanding` 命名空間中。
 
 ### <a name="scenecomponents"></a>SceneComponents
 
@@ -117,7 +117,7 @@ SceneObjects 可以有下列任何一項：
 
 <table>
 <tr>
-<th>SceneObjectKind</th> <th>描述</th>
+<th>SceneObjectKind</th> <th>說明</th>
 </tr>
 <tr><td>背景</td><td>已知 SceneObject<b>不</b>是其他可辨識類型的場景物件之一。 此類別不應與 [不明] 混淆，其中的背景已知不是牆/樓層/上限等等 .。。雖然不明尚未分類。</b></td></tr>
 <tr><td>內牆</td><td>實體牆。 牆會假設為 immovable 環境結構。</td></tr>
@@ -158,7 +158,7 @@ SceneQuads 定義2d 中的界限矩形介面。 不過，SceneQuads 是以任意
 場景會使用 SceneObserver 來計算。 在建立場景之前，您的應用程式應該查詢您的裝置，以確保它支援 SceneUnderstanding，以及要求使用者存取 SceneUnderstanding 所需的資訊。
 
 ```cs
-if (SceneObserver.IsSupported())
+if (!SceneObserver.IsSupported())
 {
     // Handle the error
 }
@@ -265,7 +265,7 @@ foreach (var mesh in firstFloor.Meshes)
 
 在處理轉換時，場景理解已刻意嘗試配合傳統的3D 場景標記法。 因此，每個場景會限制為單一座標系統，與最常見的3D 環境表示相同。 SceneObjects 每個都會提供其位置作為座標系統內的位置和方向。 如果您的應用程式正在處理的場景會延伸單一來源提供的限制，可將 SceneObjects 錨定至 SpatialAnchors，或產生數個場景並將它們合併在一起，但為了簡單起見，我們假設防水場景存在於其本身的原始來源中，而這些專案是由場景所定義的一個同位來當地語系化。 OriginSpatialGraphNodeId。
 
-例如，下列 Unity 程式碼示範如何使用 Windows 認知和 Unity Api，將座標系統對齊在一起。 如需有關如何取得對應于 Unity 世界來源的 SpatialCoordinateSystem，以及`.ToUnity()`在和`System.Numerics.Matrix4x4` `UnityEngine.Matrix4x4`之間進行轉換的擴充方法，請參閱[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem)和[SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview) ，以取得有關 Windows 認知 Api 的詳細資料，以及[Unity 中的混合現實原生物件](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced)。
+例如，下列 Unity 程式碼示範如何使用 Windows 認知和 Unity Api，將座標系統對齊在一起。 如需有關如何取得對應于 Unity 世界來源的 SpatialCoordinateSystem，以及在和之間進行轉換的擴充方法，請參閱[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem)和[SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview) ，以取得有關 Windows 認知 api 的詳細資料，以及[Unity 中的混合現實原生物件](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced) `.ToUnity()` `System.Numerics.Matrix4x4` `UnityEngine.Matrix4x4` 。
 
 ```cs
 public class SceneRootComponent : MonoBehavior
@@ -295,7 +295,7 @@ public class SceneRootComponent : MonoBehavior
 }
 ```
 
-每`SceneObject`個都`Position`有`Orientation`一個和屬性，可用來定位相對於包含`Scene`之來源的對應內容。 例如，下列範例假設遊戲是場景根目錄的子系，並指派其本機位置和旋轉以配合指定`SceneObject`的：
+每個 `SceneObject` 都有一個 `Position` 和 `Orientation` 屬性，可用來定位相對於包含之來源的對應內容 `Scene` 。 例如，下列範例假設遊戲是場景根目錄的子系，並指派其本機位置和旋轉以配合指定的 `SceneObject` ：
 
 ```cs
 void SetLocalTransformFromSceneObject(GameObject gameObject, SceneObject sceneObject)
@@ -345,7 +345,7 @@ foreach (var sceneObject in myScene.SceneObjects)
 
 ### <a name="mesh"></a>網狀
 
-網格代表物件或環境的幾何標記法。 與[空間對應](spatial-mapping.md)一樣，每個空間 surface 網格提供的網格索引和頂點資料，都會使用與在所有新式轉譯 api 中用來呈現三角形網格的頂點和索引緩衝區相同的熟悉配置。 頂點位置會在的座標系統中提供`Scene`。 用來參考此資料的特定 Api 如下所示：
+網格代表物件或環境的幾何標記法。 與[空間對應](spatial-mapping.md)一樣，每個空間 surface 網格提供的網格索引和頂點資料，都會使用與在所有新式轉譯 api 中用來呈現三角形網格的頂點和索引緩衝區相同的熟悉配置。 頂點位置會在的座標系統中提供 `Scene` 。 用來參考此資料的特定 Api 如下所示：
 
 ```cs
 void GetTriangleIndices(int[] indices);

@@ -100,6 +100,7 @@
 ## [了解工具和架構](development.md)
 ## [安裝工具](install-the-tools.md)
 ## 混合實境雲端服務
+### [Azure 遠端轉譯](https://docs.microsoft.com/azure/remote-rendering)
 ### [Azure Spatial Anchors](https://docs.microsoft.com/azure/spatial-anchors)
 ## [教學課程和範例應用程式](tutorials.md)
 ### Unity

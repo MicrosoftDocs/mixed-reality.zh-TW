@@ -4,16 +4,16 @@ title: 了解工具和架構
 description: HoloLens 和沉浸式頭戴裝置的混合實境開發人員文件。
 author: grbury
 ms.author: grbury
-ms.date: 08/27/2019
+ms.date: 04/27/2020
 ms.topic: overview
 ms.localizationpriority: high
-keywords: 混合實境, 開發, 開發, HoloLens, unity, directx
-ms.openlocfilehash: 3bd5fea55a8dad2982a1a14680169eb51764c1df
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+keywords: 混合實境, 開發, 開發, HoloLens, unity, unreal, directx
+ms.openlocfilehash: 97a6e130af45a9444ead5e6ed40168351c4dbbf6
+ms.sourcegitcommit: ba4c8c2a19bd6a9a181b2cec3cb8e0402f8cac62
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81277718"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82835287"
 ---
 # <a name="learn-the-tools-and-architecture"></a>了解工具和架構
 
@@ -36,12 +36,12 @@ ms.locfileid: "81277718"
     :::column:::    
        [![Unity](images/unity_logo.png)](development.md#unity)<br>
         **[Unity](development.md#unity)**<br>   
-        建立混合實境應用程式的最快速路徑是透過 Unity。 
+        使用 Unity 建置跨平台、功能完整的混合實境應用程式。
     :::column-end:::    
     :::column:::    
         [![Unreal](images/Unreal_logo.png)](development.md#unreal)<br>
-         **[Unreal](development.md#unreal)**<br>    
-        Unreal Engine 4.23 中也會包含 HoloLens 2 的生產環境就緒支援 。    
+        **[Unreal](development.md#unreal)**<br> 
+        在 Unreal Engine 中，透過生產環境就緒的支援來建立美觀的混合實境體驗。 
     :::column-end:::
     :::column:::    
         [![JavaScript](images/web-logo.png)](development.md#javascript)<br>
@@ -95,6 +95,16 @@ HandInteractionExamples.unity 的範例場景包含各種類型的互動和 UI �
 
 ### <a name="unreal-development-overview"></a>[Unreal 開發概觀](unreal-development-overview.md)
 瞭解如何使用 Unreal 建立混合實境應用程式。
+
+<br>
+
+### <a name="microsofts-mixed-reality-toolkit-mrtk-for-unreal"></a>[適用於 Unreal 的 Microsoft 混合實境工具組 (MRTK)](https://github.com/microsoft/MixedRealityToolkit-Unreal)
+適用於 Unreal 的混合實境工具組 (MRTK-Unreal) 是一組元件，形式為外掛程式、範例和文件，其設計目的是加速使用 Unreal Engine 的混合實境應用程式開發。
+
+<br>
+
+### <a name="open-source-sample-apps-and-a-step-by-step-tutorial"></a>[開放原始碼範例應用程式和逐步教學課程](unreal-uxt-ch1.md)
+在 Unreal 中開始使用混合實境開發的教學課程，會逐步引導開發人員完成使用[適用於 Unreal 的 UX 工具 v0.8](https://github.com/microsoft/MixedReality-UXTools-Unreal) 來建立 HoloLens 2 應用程式的端對端程序。
 
 <br>
 

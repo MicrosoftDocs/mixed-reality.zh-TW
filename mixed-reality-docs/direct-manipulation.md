@@ -7,12 +7,12 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境, 注視, 定向注視, 互動, 設計, 手部接近, HoloLens
-ms.openlocfilehash: 6811fe0b09ecff1ddc76d9df9ddc440f9c934ce3
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: 40a8441177582a55b58acbfbd15c7b506853e4da
+ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75723247"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83227993"
 ---
 # <a name="direct-manipulation-with-hands"></a>手部直接操作
 
@@ -41,7 +41,7 @@ ms.locfileid: "75723247"
      <td>手部直接操作</td>
      <td>❌ 未支援</td>
      <td>✔️ 建議使用</td>
-     <td>➕ 建議使用替代方案<a href="point-and-commit.md">手部指向和行動</a>。</td>
+     <td>➕ 支援。  針對 UI，建議您改為使用<a href="point-and-commit.md">手部指向和行動</a>。</td>
     
 </tr>
 </table>

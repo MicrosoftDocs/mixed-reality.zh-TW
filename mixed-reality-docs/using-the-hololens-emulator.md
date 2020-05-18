@@ -3,16 +3,16 @@ title: 使用 HoloLens 模擬器
 description: 使用 HoloLens 模擬器在沒有實體 HoloLens 的電腦上測試混合實境應用程式。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 4/13/2020
+ms.date: 5/12/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: HoloLens, 模擬器
-ms.openlocfilehash: bbdf389a1b7bf42e3dfb1fffb09cf6d3b1a65b6a
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: f525276d127bc0bbb682d7cea6821028258c6177
+ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81278016"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83227983"
 ---
 # <a name="using-the-hololens-emulator"></a>使用 HoloLens 模擬器
 
@@ -28,7 +28,7 @@ HoloLens 模擬器可讓您在沒有實體 HoloLens 的電腦上測試全像攝�
 下載 HoloLens 模擬器。
 
 版本： 
-* [HoloLens 2 模擬器 (2020 年 4 月更新)](https://go.microsoft.com/fwlink/?linkid=2126826)。
+* [HoloLens 2 模擬器 (Windows 全像攝影 2004 版)](https://go.microsoft.com/fwlink/?linkid=2129088)。
 * [HoloLens 模擬器 (第 1 代) 和全像攝影專案範本](https://go.microsoft.com/fwlink/?linkid=2065980)。
 
 您可以在 [HoloLens 模擬器封存](hololens-emulator-archive.md)頁面上找到版本資訊和 HoloLens 模擬器的舊版組建。
@@ -78,6 +78,8 @@ HoloLens (第 1 代) 上的游標會跟著頭部的移動和旋轉。 在 HoloLe
 * **綻開/系統手勢** - 按鍵盤上的 Windows 鍵或 F2 鍵，或按 Xbox 控制器上的 B 鈕。
 * **移動手部來捲動** - 同時按住 Alt 鍵和滑鼠右鍵，然後將滑鼠往上或往下拖曳，或在 Xbox 控制器中，按下 RT 鍵和 A 鈕並將右搖桿往上和往下移動。
 * **手部移動和方向** (僅限 HoloLens 2 模擬器) - 按住 Alt 鍵並將滑鼠往上、往下、往左或往右拖曳來移動手部，或使用方向鍵和 Q 或 E 來旋轉及傾斜手部。 若為 Xbox 控制器，則按住 LB 鍵或 RB 鍵並使用左搖桿將手部往左、往右、往前和往後移動、使用右搖桿來旋轉手部，以及 Dpad 上的向上或向下來提高或降低手部。
+
+您有 Windows Mixed Reality 沉浸式頭戴裝置嗎？  從 HoloLens 2 模擬器 (Windows 全像攝影 2004 版) 開始，您已可以使用 Windows Mixed Reality 沉浸式頭戴裝置和運動控制器來控制 HoloLens 2 模擬器，並觀看立體影像。  請參閱[搭配使用 Windows Mixed Reality 沉浸式頭戴裝置和運動控制器與 HoloLens 2 模擬器](#using-a-windows-mixed-reality-immersive-headset-and-motion-controllers-with-the-hololens-2-emulator)
 
 ## <a name="anatomy-of-the-hololens-2-emulator"></a>HoloLens 2 模擬器的結構 
 
@@ -164,6 +166,34 @@ HoloLens (第 1 代) 上的游標會跟著頭部的移動和旋轉。 在 HoloLe
 
 ![HoloLens 模擬器的更新索引標籤](images/emulator-updates-500px.png)
 
+### <a name="using-a-windows-mixed-reality-immersive-headset-and-motion-controllers-with-the-hololens-2-emulator"></a>搭配使用 Windows Mixed Reality 沉浸式頭戴裝置和運動控制器與 HoloLens 2 模擬器
+
+從 HoloLens 2 模擬器 (Windows 全像攝影 2004 版) 開始，您已可以使用 Windows Mixed Reality 沉浸式頭戴裝置和運動控制器來以立體影像的方式觀看 HoloLens 2 模擬器，並與其互動。  這可讓您更快速、更自然地用您的頭部和手部進行移動，而不必依靠 HoloLens 2 裝置。  請注意，這不是要完全取代 HoloLens 2 裝置，而是要提供遠非在 2D 桌面視窗中使用鍵盤、滑鼠和遊戲控制器來與模擬器互動所能比得上的更好體驗。  若要啟用這項功能：
+
+1. 確定電腦上已設定好 Windows Mixed Reality，且已接好 Windows Mixed Reality 沉浸式頭戴裝置。
+2. 啟動 HoloLens 2 模擬器
+3. 按一下工具列按鈕或按 F7 鍵，以開啟 [模擬] 面板。
+4. 將面板往下捲動到底部。
+5. 核取標示為 [使用 HMD 來模擬] 的方塊
+6. Windows Mixed Reality 隨即會啟動，且模擬器的顯示器會稍微變更。  如果沒有頭戴式裝置，模擬器會將雙眼放在頭部中央，並只顯示其中一眼。  有頭戴式裝置時，模擬器則會產生真正的立體影像輸出，但只會在其桌面視窗呈現其中一眼，並同時在頭戴式裝置中呈現雙眼。
+7. 選擇性開啟其中一個運動控制器，或是將兩個全都開啟。  控制器輸入會對應到模擬器中的手部輸入。  例如，若要點選物件，請壓下運動控制器上的發射鍵。  若要四處移動，則請使用搖桿。  如需控制項的完整清單，請參閱[進階 HoloLens 模擬器和混合實境模擬器輸入](advanced-hololens-emulator-and-mixed-reality-simulator-input.md)
+
+無法在頭戴式裝置中看到內容嗎？
+
+- 如果頭戴式裝置和混合實境入口中的顯示都是空白的，但您在桌面上的 HoloLens 2 模擬器視窗中卻能看到內容，請確認模擬器是否已啟用硬體圖形加速。  若要支援 Windows Mixed Reality 沉浸式頭戴裝置，就必須在模擬器中啟用硬體圖形加速。
+- 如果您在頭戴式裝置中看到內容，但全像投影卻很模糊或看到雙重影像，則請使用下列步驟來調整眼睛的立體影像：
+
+1. 暫時關閉 [使用 HMD 來模擬]。
+2. 啟動登錄編輯程式 (regedit.exe)
+3. 瀏覽至 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\PerceptionSimulation
+4. 建立名為 "EnableEyePoseControl" 的新 DWORD 值，並將其值設定為 1。
+5. 在模擬器中啟用 [使用 HMD 來模擬]。
+6. 當內容出現在頭戴式裝置時，請使用方向鍵來調整眼睛的旋轉。  按住左 Alt 鍵以調整左眼，按住右 Alt 鍵以調整右眼。  使用 Q 和 E 鍵來調整每隻眼睛的轉動，同樣地，請針對所要調整的眼睛按住適用的 Alt 鍵。  使用 + 和 - 鍵來調整兩眼之間的距離。  (請注意，數字鍵台上的 +/- 不會有作用。  請使用主要鍵盤上的按鍵)。
+7. 當立體影像正確顯示時，請按 S 鍵來儲存變更。  新的設定便會儲存下來，以供未來模擬器啟動時使用。
+8. 如果您想要放棄變更並回復為先前的設定，請按 L 鍵來載入預設設定或先前的設定。
+9. 將登錄中的 "EnableEyePoseControl" 值變更為 0，然後循環切換 [使用 HMD 來模擬] 選項。
+
+請注意，如果您已儲存設定並想要將其移除，則可以在 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\PerceptionSimulation 刪除名為 "DisplayConfiguration" 的值。  如果您目前搭配使用頭戴式裝置與模擬器，則必須先關閉 [使用 HMD 來模擬] 再將其重新開啟，才會看到此變更生效。
 
 ## <a name="anatomy-of-the-hololens-1st-gen-emulator"></a>HoloLens (第 1 代) 模擬器的結構
 
@@ -218,6 +248,11 @@ HoloLens (第 1 代) 上的游標會跟著頭部的移動和旋轉。 在 HoloLe
 您也可以在 HoloLens (第 1 代) 上使用 [Windows 裝置入口網站](using-the-windows-device-portal.md)的 [模擬] 頁面，來記錄自己的空間以便在模擬器中使用。
 
 在模擬器中，您只會看到您所呈現的全像投影。 您不會看到全像投影背後的模擬空間。 相較之下，在實際的 HoloLens 中，您會看到兩者混合在一起。 如果您想要在 HoloLens 模擬器中看到模擬空間，就必須更新應用程式以呈現場景中的空間對應網格。
+
+## <a name="known-issues"></a>已知問題
+
+* 在解除安裝 HoloLens 2 模擬器時，硬碟映像 (Flash.vhdx) 可能會遺留在硬碟上的 Windows Kits\10\Emulation\HoloLens\<組建編號> 資料夾中。  您可以放心地刪除此檔案。
+* 硬體圖形加速可能會使全像攝影應用程式在某些搭載 AMD 或 Intel 顯示卡的系統上當機。  在模擬器的 [工具] 視窗中停用硬體圖形加速可解決此問題。
 
 ## <a name="troubleshooting"></a>疑難排解
 

@@ -6,12 +6,12 @@ ms.author: wguyman
 ms.date: 06/12/2019
 ms.topic: article
 keywords: 相機，hololens，彩色攝影機，正面，hololens 2，cv，電腦視覺，基準，標記，qr 代碼，qr，相片，影片
-ms.openlocfilehash: f4c62a1c2ad7cf4de569e815ffc405fbcb06744a
-ms.sourcegitcommit: d0da0214fdd2bbac5a91a5d895bf0e87413b29b2
+ms.openlocfilehash: b8e9d926db09d277b3fde7572dd68257599c8d5e
+ms.sourcegitcommit: 09d9fa153cd9072f60e33a5f83ced8167496fcd7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/01/2020
-ms.locfileid: "75597621"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83520013"
 ---
 # <a name="locatable-camera"></a>定位相機
 
@@ -25,10 +25,10 @@ HoloLens 包含掛接在裝置前方的全球化相機，可讓應用程式查�
 * 當相機處於作用中狀態時，將會照亮世界上的白色隱私權 LED
 * 相機支援下列模式（所有模式都是16:9 外觀比例），其為30、24、20、15和 5 fps：
 
-  |  視訊  |  Preview  |  但是  |  視圖的水準欄位（H-FOV） |  建議的使用方式 | 
+  |  影片  |  預覽  |  但是  |  視圖的水準欄位（H-FOV） |  建議的使用方式 | 
   |----------|----------|----------|----------|----------|
   |  1280x720 |  1280x720 |  1280x720 |  45deg  |  （具有視頻穩定的預設模式） | 
-  |  無 |  無 |  2048x1152 |  67deg |  最高解析度仍然影像 | 
+  |  N/A |  N/A |  2048x1152 |  67deg |  最高解析度仍然影像 | 
   |  1408x792 |  1408x792 |  1408x792 |  48deg |  影片穩定前的 Overscan （填補）解析度 | 
   |  1344x756 |  1344x756 |  1344x756 |  67deg |  具有 overscan 的大型 FOV 影片模式 | 
   |  896x504 |  896x504 |  896x504 |  48deg |  影像處理工作的低電源/低解析度模式 | 
@@ -40,7 +40,7 @@ HoloLens 包含掛接在裝置前方的全球化相機，可讓應用程式查�
 * HoloLens 2 支援不同的相機設定檔。 瞭解如何[探索並選取攝影機功能](https://docs.microsoft.com//windows/uwp/audio-video-camera/camera-profiles)。
 * 相機支援下列設定檔和解決方案（所有的影片模式都是16:9 外觀比例）：
   
-  | Profile                                         | 視訊     | Preview   | 但是     | 畫面播放速率 | 視圖的水準欄位（H-FOV） | 建議的使用方式                             |
+  | 設定檔                                         | 影片     | 預覽   | 但是     | 畫面播放速率 | 視圖的水準欄位（H-FOV） | 建議的使用方式                             |
   |-------------------------------------------------|-----------|-----------|-----------|-------------|----------------------------------|---------------------------------------------|
   | 舊版，0 BalancedVideoAndPhoto，100             | 2272x1278 | 2272x1278 |           | 15、30       | 64.69                            | 高品質的影片錄製                |
   | 舊版，0 BalancedVideoAndPhoto，100             | 896x504   | 896x504   |           | 15、30       | 64.69                            | 適用于高品質相片捕獲的預覽串流 |
@@ -69,28 +69,131 @@ HoloLens 包含掛接在裝置前方的全球化相機，可讓應用程式查�
 
 HoloLens 檔中其他地方的「相機」可能是指「虛擬遊戲攝影機」（應用程式轉譯成的截錐）。 除非另有指示，否則此頁面上的「相機」是指真實世界的 RGB 色彩相機。
 
-本頁的詳細資料涵蓋了如何使用[MediaFrameReference](https://docs.microsoft.com//uwp/api/windows.media.capture.frames.mediaframereference)類別。 不過，也有一些 Api 可使用[媒體基礎屬性](https://msdn.microsoft.com/library/windows/desktop/mt740395(v=vs.85).aspx)來提取相機內建函式和位置。 如需詳細資訊，請參閱全像攝影的[臉部追蹤範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicFaceTracking)。
+### <a name="using-unity"></a>使用 Unity
 
-### <a name="images-with-coordinate-systems"></a>具有座標系統的影像
+若要從「CameraIntrinsics」和「CameraCoordinateSystem」移至您的應用程式/全局座標系統，請依照[Unity 中](locatable-camera-in-unity.md)的位置攝影機一文中的指示進行。  CameraToWorldMatrix 是由 PhotoCaptureFrame 類別自動提供，因此您不需要擔心下面所討論的 CameraCoordinateSystem 轉換。
+
+### <a name="using-mediaframereference"></a>使用 MediaFrameReference
+
+如果您使用[MediaFrameReference](https://docs.microsoft.com//uwp/api/windows.media.capture.frames.mediaframereference)類別來讀取相機中的影像框架，則適用這些指示。
 
 每個影像框架（不論是相片或影片）都會在 capture 時包含根目錄在相機上的[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem) ，這可以使用[MediaFrameReference](https://docs.microsoft.com//uwp/api/Windows.Media.Capture.Frames.MediaFrameReference)的[CoordinateSystem](https://docs.microsoft.com//uwp/api/windows.media.capture.frames.mediaframereference.coordinatesystem#Windows_Media_Capture_Frames_MediaFrameReference_CoordinateSystem)屬性來存取。 此外，每個畫面格都包含相機鏡頭模型的描述，可以在[CameraIntrinsics](https://docs.microsoft.com//uwp/api/windows.media.capture.frames.videomediaframe.cameraintrinsics#Windows_Media_Capture_Frames_VideoMediaFrame_CameraIntrinsics)屬性中找到。 這些轉換會一起定義3D 空間中的每個圖元光線，其代表產生圖元的光子所採用的路徑。 這些光線可以與應用程式中的其他內容相關，方法是從框架的座標系統取得轉換到其他的座標系統（例如，從[固定的參考框架](coordinate-systems.md#stationary-frame-of-reference)）。 總而言之，每個影像框架都會提供下列各項：
 * 圖元資料（RGB/NV12/JPEG/等格式）
 * 從 capture 的位置[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem)
 * 包含相機鏡頭模式的[CameraIntrinsics](https://docs.microsoft.com//uwp/api/windows.media.capture.frames.videomediaframe.cameraintrinsics#Windows_Media_Capture_Frames_VideoMediaFrame_CameraIntrinsics)類別
 
-### <a name="camera-to-application-specified-coordinate-system"></a>攝影機至應用程式指定的座標系統
+[HolographicFaceTracking 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicFaceTracking)顯示在相機座標系統與您自己的應用程式座標系統之間查詢轉換的簡單方式。
 
-若要從「CameraIntrinsics」和「CameraCoordinateSystem」移至您的應用程式/全局座標系統，您需要下列各項：
+### <a name="using-media-foundation"></a>使用媒體基礎
 
-[Unity 中](locatable-camera-in-unity.md)的可置相機： CameraToWorldMatrix 是由 PhotoCaptureFrame 類別自動提供（因此，您不需要擔心 CameraCoordinateSystem 轉換）。
+如果您使用媒體基礎直接從相機讀取影像框架，您可以使用每個畫面格的[MFSampleExtension_CameraExtrinsics 屬性](https://docs.microsoft.com/windows/win32/medfound/mfsampleextension-cameraextrinsics)和[MFSampleExtension_PinholeCameraIntrinsics 屬性](https://docs.microsoft.com/windows/win32/medfound/mfsampleextension-pinholecameraintrinsics)，以找出相對於應用程式其他座標系統的相機框架，如下列範例程式碼所示：
 
-[DirectX](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicFaceTracking)：全像攝影的臉部追蹤範例顯示在相機座標系統與您自己的應用程式座標系統之間查詢轉換的相當直接方式。
+```cpp
+#include <winrt/windows.perception.spatial.preview.h>
+#include <mfapi.h>
+#include <mfidl.h>
+ 
+using namespace winrt::Windows::Foundation;
+using namespace winrt::Windows::Foundation::Numerics;
+using namespace winrt::Windows::Perception;
+using namespace winrt::Windows::Perception::Spatial;
+using namespace winrt::Windows::Perception::Spatial::Preview;
+ 
+class CameraFrameLocator
+{
+public:
+    struct CameraFrameLocation
+    {
+        SpatialCoordinateSystem CoordinateSystem;
+        float4x4 CameraViewToCoordinateSytemTransform;
+        MFPinholeCameraIntrinsics Intrinsics;
+    };
+ 
+    std::optional<CameraFrameLocation> TryLocateCameraFrame(IMFSample* pSample)
+    {
+        MFCameraExtrinsics cameraExtrinsics;
+        MFPinholeCameraIntrinsics cameraIntrinsics;
+        UINT32 sizeCameraExtrinsics = 0;
+        UINT32 sizeCameraIntrinsics = 0;
+        UINT64 sampleTimeQpc = 0;
+ 
+        // query sample for calibration and validate
+        if (FAILED(pSample->GetUINT64(MFSampleExtension_DeviceTimestamp, &sampleTimeQpc)) ||
+            FAILED(pSample->GetBlob(MFSampleExtension_CameraExtrinsics, (UINT8*)& cameraExtrinsics, sizeof(cameraExtrinsics), &sizeCameraExtrinsics)) ||
+            FAILED(pSample->GetBlob(MFSampleExtension_PinholeCameraIntrinsics, (UINT8*)& cameraIntrinsics, sizeof(cameraIntrinsics), &sizeCameraIntrinsics)) ||
+            (sizeCameraExtrinsics != sizeof(cameraExtrinsics)) ||
+            (sizeCameraIntrinsics != sizeof(cameraIntrinsics)) ||
+            (cameraExtrinsics.TransformCount == 0))
+        {
+            return std::nullopt;
+        }
+ 
+        // compute extrinsic transform
+        const auto& calibratedTransform = cameraExtrinsics.CalibratedTransforms[0];
+        const GUID& dynamicNodeId = calibratedTransform.CalibrationId;
+        const float4x4 cameraToDynamicNode =
+            make_float4x4_from_quaternion(quaternion{ calibratedTransform.Orientation.x, calibratedTransform.Orientation.y, calibratedTransform.Orientation.z, calibratedTransform.Orientation.w }) *
+            make_float4x4_translation(calibratedTransform.Position.x, calibratedTransform.Position.y, calibratedTransform.Position.z);
+ 
+        // update locator cache for dynamic node
+        if (dynamicNodeId != m_currentDynamicNodeId || !m_locator)
+        {
+            m_locator = SpatialGraphInteropPreview::CreateLocatorForNode(dynamicNodeId);
+            if (!m_locator)
+            {
+                return std::nullopt;
+            }
+ 
+            m_frameOfReference = m_locator.CreateAttachedFrameOfReferenceAtCurrentHeading();
+            m_currentDynamicNodeId = dynamicNodeId;
+        }
+ 
+        // locate dynamic node
+        auto timestamp = PerceptionTimestampHelper::FromSystemRelativeTargetTime(TimeSpanFrodmQpcTicks(sampleTimeQpc));
+        auto coordinateSystem = m_frameOfReference.GetStationaryCoordinateSystemAtTimestamp(timestamp);
+        auto location = m_locator.TryLocateAtTimestamp(timestamp, coordinateSystem);
+        if (!location)
+        {
+            return std::nullopt;
+        }
+ 
+        const float4x4 dynamicNodeToCoordinateSystem = make_float4x4_from_quaternion(location.Orientation()) * make_float4x4_translation(location.Position());
+ 
+        return CameraFrameLocation{ coordinateSystem, cameraToDynamicNode * dynamicNodeToCoordinateSystem, cameraIntrinsics };
+    }
+ 
+private:
+    GUID m_currentDynamicNodeId{ GUID_NULL };
+    SpatialLocator m_locator{ nullptr };
+    SpatialLocatorAttachedFrameOfReference m_frameOfReference{ nullptr };
+ 
+    // Convert a duration value from a source tick frequency to a destination tick frequency.
+    static inline int64_t SourceDurationTicksToDestDurationTicks(int64_t sourceDurationInTicks, int64_t sourceTicksPerSecond, int64_t destTicksPerSecond)
+    {
+        int64_t whole = (sourceDurationInTicks / sourceTicksPerSecond) * destTicksPerSecond;                          // 'whole' is rounded down in the target time units.
+        int64_t part = (sourceDurationInTicks % sourceTicksPerSecond) * destTicksPerSecond / sourceTicksPerSecond;    // 'part' is the remainder in the target time units.
+        return whole + part;
+    }
+ 
+    static inline TimeSpan TimeSpanFromQpcTicks(int64_t qpcTicks)
+    {
+        static const int64_t qpcFrequency = []
+        {
+            LARGE_INTEGER frequency;
+            QueryPerformanceFrequency(&frequency);
+            return frequency.QuadPart;
+        }();
+ 
+        return TimeSpan{ SourceDurationTicksToDestDurationTicks(qpcTicks, qpcFrequency, winrt::clock::period::den) / winrt::clock::period::num };
+    }
+};
+```
 
 ### <a name="distortion-error"></a>失真錯誤
 
 在 HoloLens 上，影片和靜止影像串流會在系統的影像處理管線中 undistorted，然後才能讓應用程式使用框架（預覽串流包含原始的失真框架）。 因為只有 CameraIntrinsics 可供使用，所以應用程式必須假設影像框架代表完美的 pinhole 攝影機。
 
-在 HoloLens （第一代）上，使用框架中繼資料中的 CameraIntrinsics 時，映射處理器中的 undistortion 函式可能仍會留下最多10圖元的錯誤。 在許多使用案例中，此錯誤並不重要，但如果您要將全息影像對齊真實世界的海報/標記，而且您注意到 < 10px 位移（大約是11mm，表示有2米的全息影像），這種失真錯誤可能是原因。 
+在 HoloLens （第一代）上，使用框架中繼資料中的 CameraIntrinsics 時，映射處理器中的 undistortion 函式可能仍會留下最多10圖元的錯誤。 在許多使用案例中，此錯誤並不重要，但如果您要將全息影像對齊真實世界的海報/標記，而且您注意到 <10px 位移（大約是11mm，表示有2米的全息影像），這種失真錯誤可能是原因。 
 
 ## <a name="locatable-camera-usage-scenarios"></a>定位相機使用案例
 
@@ -100,7 +203,7 @@ HoloLens 檔中其他地方的「相機」可能是指「虛擬遊戲攝影機�
 
 ### <a name="tag--pattern--poster--object-tracking"></a>標記/模式/海報/物件追蹤
 
-許多混合現實應用程式會使用可辨識的影像或視覺效果模式，在空間中建立可追蹤的點。 這會接著用來呈現相對於該點的物件，或建立已知的位置。 HoloLens 的部分用途包括尋找以 fiducials 標記的真實世界物件（例如具有 QR 代碼的電視監視器）、將全息影像放在 fiducials 上，以及與非 HoloLens 裝置（如已設定為透過與 HoloLens 進行通訊的平板電腦）進行視覺化配對Wi-fi。
+許多混合現實應用程式會使用可辨識的影像或視覺效果模式，在空間中建立可追蹤的點。 這會接著用來呈現相對於該點的物件，或建立已知的位置。 HoloLens 的某些用途包括尋找以 fiducials 標記的真實世界物件（例如具有 QR 代碼的電視監視器）、將全息影像放在 fiducials 上，以及與非 HoloLens 裝置（如已設定為透過 Wi-fi 與 HoloLens 進行通訊的平板電腦）進行視覺化配對。
 
 若要辨識視覺效果模式，然後將該物件放在應用程式的世界空間中，您需要進行幾項動作：
 1. 影像模式辨識工具組，例如 QR 代碼、AR 標記、臉部搜尋工具、圓形追蹤器、OCR 等等。
@@ -112,7 +215,7 @@ HoloLens 檔中其他地方的「相機」可能是指「虛擬遊戲攝影機�
 * [OpenCV](https://opencv.org/)
 * [QR 標記](https://en.wikipedia.org/wiki/QR_code)
 * [FaceSDK](https://research.microsoft.com/projects/facesdk/)
-* [Microsoft 線上翻譯](https://www.microsoft.com/translator/business)
+* [Microsoft Translator](https://www.microsoft.com/translator/business)
 
 保持互動式應用程式框架速率非常重要，特別是在處理長時間執行的影像辨識演算法時。 基於這個理由，我們通常會使用下列模式：
 1. 主要執行緒：管理攝影機物件
@@ -171,7 +274,7 @@ public static Vector3 ClosestPointBetweenRays(
 * 識別和辨識房間中的物件
 * 識別和辨識房間中的人員（例如，將全像攝影的連絡人卡片放在臉部）
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [定位相機範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicFaceTracking)
 * [Unity 中的定位相機](locatable-camera-in-unity.md)
 * [混合實境擷取](mixed-reality-capture.md)

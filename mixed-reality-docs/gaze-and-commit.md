@@ -1,19 +1,19 @@
 ---
-title: 注視和認可
+title: 目光和行動
 description: 「注視和認可」輸入模型的一般總覽-使用眼睛或 head 輸入。
 author: sostel
 ms.author: sostel
 ms.date: 10/31/2019
 ms.topic: article
 keywords: Mixed Reality，注視，注視目標，互動，設計，眼睛追蹤，head 追蹤
-ms.openlocfilehash: df152f6a3a6e4ae2d6c32a0c56fbb615bcfa7aa8
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: c44c1a75e831869a3ed4d12bb6c9e87c478daf56
+ms.sourcegitcommit: e65f1463aec3c040a1cd042e61fc2bd156a42ff8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79375845"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83866888"
 ---
-# <a name="gaze-and-commit"></a>注視和認可
+# <a name="gaze-and-commit"></a>目光和行動
 
 _注視和認可_是一種基本的輸入模型，與我們使用滑鼠進行互動的方式密切相關： _Point & 按一下_。
 在此頁面上，我們引進兩種類型的注視輸入（head 和眼睛）和不同類型的認可動作。 
@@ -56,9 +56,9 @@ _注視和認可_會被視為具有間接操作的輸入模型。
     </tr>
          <tr>
         <td>眼部注視並認可</td>
-        <td>❌ 無法使用</td>
+        <td>❌無法使用</td>
         <td>✔️ 建議使用 (第三個選擇 - <a href="interaction-fundamentals.md">查看其他選項</a>)</td>
-        <td>❌ 無法使用</td>
+        <td>❌無法使用</td>
     </tr>
 </table>
 
@@ -80,7 +80,7 @@ _注視和認可_會被視為具有間接操作的輸入模型。
     </colgroup>
    <tr>
         <td><strong>眼睛目標</strong></td>
-        <td><strong>頭部注視目標</strong></td>
+        <td><strong>頭部注視定向</strong></td>
     </tr>
     <tr>
         <td>地!</td>
@@ -114,7 +114,7 @@ _注視和認可_會被視為具有間接操作的輸入模型。
 
 ---
 
-### <a name="cursor"></a>游標
+### <a name="cursor"></a>資料指標
 
 :::row:::
     :::column:::
@@ -123,7 +123,7 @@ _注視和認可_會被視為具有間接操作的輸入模型。
         就眼睛而言，我們通常建議*不要*顯示游標，因為這可能會很快就會變得令人困擾，而且不會讓使用者雜亂。 相反地，反白顯示視覺效果目標，或使用非常不好的眼游標，讓您安心瞭解使用者的互動方式。 如需詳細資訊，請查看我們在 HoloLens 2 上[以眼睛為基礎之輸入的設計指引](eye-tracking.md)。
     :::column-end:::
         :::column:::
-       ![視覺效果游標的範例，以顯示注視](images/cursor.jpg)<br>
+       ![顯示注視的視覺化游標範例](images/cursor.jpg)<br>
        *影像：顯示注視的視覺化游標範例*
     :::column-end:::
 :::row-end:::
@@ -132,14 +132,14 @@ _注視和認可_會被視為具有間接操作的輸入模型。
 
 ---
 
-## <a name="commit"></a>認可
+## <a name="commit"></a>Commit
 _在談到某個_目標的不同方式之後，讓我們更進一步討論_注視和認可_的_認可_部分。
 以物件或 UI 元素為目標之後，使用者可以使用次要輸入進行互動或按一下。 這就是所謂的輸入模型認可步驟。 
 
 支援的認可方法如下：
 - 點按手勢（也就是在您的前方舉手，並結合您的食指和拇指）
 - 說「 _select_ 」或其中一個目標語音命令
-- 在[HoloLens Clicker](hardware-accessories.md#hololens-clicker)上按一個按鈕
+- 在[HoloLens Clicker](https://docs.microsoft.com/hololens/hololens1-clicker)上按一個按鈕
 - 按下 Xbox 遊戲台上的 [A] 按鈕
 - 按 Xbox 調適型控制器上的 [A] 按鈕
 
@@ -149,11 +149,11 @@ _在談到某個_目標的不同方式之後，讓我們更進一步討論_注�
 
 :::row:::
     :::column:::
-       在 [就緒] 位置中 ![手指](images/readyandpress-ready.jpg)<br>
+       ![觸達就緒位置](images/readyandpress-ready.jpg)<br>
        **觸達就緒位置**<br>
     :::column-end:::
     :::column:::
-       ![按向下鍵以點擊或按一下](images/readyandpress-press.jpg)<br>
+       ![按下手指以點按或按一下](images/readyandpress-press.jpg)<br>
         **按下手指以點按或按一下**<br>
     :::column-end:::
 :::row-end:::
@@ -263,7 +263,7 @@ Xbox 調適型控制器會使用 [A] 按鈕，以次要輸入的形式執行按�
 
 與 rails 的導覽指的是在特定軸中辨識移動的能力，直到達到該軸上的特定臨界值為止。 這僅適用于開發人員在應用程式中啟用多個軸的移動時，例如，如果應用程式設定為在 X、Y 軸上辨識導覽手勢，但也使用 rails 指定 X 軸。 在此情況下，如果 Y 軸上也發生手移動，系統將會辨識 X 軸上的手上移動，前提是它們會保留在 X 軸上的虛數滑軌（guide）中。
 
-在 2D 應用程式內，使用者可以使用垂直瀏覽手勢在應用程式內捲動、縮放或拖曳。 這會在應用程式中插入虛擬手指觸控，以模擬同類型的觸控手勢。 使用者可以藉由選取按鈕或說「< Scroll/拖曳/縮放 > 工具」，在應用程式上方的工具之間切換，藉以選取要執行的動作。
+在 2D 應用程式內，使用者可以使用垂直瀏覽手勢在應用程式內捲動、縮放或拖曳。 這會在應用程式中插入虛擬手指觸控，以模擬同類型的觸控手勢。 使用者可以藉由選取按鈕或說「<Scroll/拖曳/縮放> 工具」，在應用程式上方的工具之間切換，藉以選取要執行的動作。
 
 [複合手勢的詳細資訊](gaze-and-commit.md#composite-gestures)
 

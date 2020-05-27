@@ -6,12 +6,12 @@ ms.author: hakons
 ms.date: 10/03/2019
 ms.topic: article
 keywords: ggv、語音、cortana、語音、輸入
-ms.openlocfilehash: 6cf94e6bc828c6f07ee81cb121cb64601df41c4e
-ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
+ms.openlocfilehash: a5411c338a854660652cfc89aa2d48d85ee89778
+ms.sourcegitcommit: e65f1463aec3c040a1cd042e61fc2bd156a42ff8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81277976"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83866918"
 ---
 # <a name="voice-input"></a>語音輸入
 
@@ -25,7 +25,7 @@ ms.locfileid: "81277976"
 
 ## <a name="voice-and-gaze"></a>語音和注視
 
-使用語音命令時，（head 或眼睛）注視通常用來做為目的機制，不論使用游標（"select"），或將命令隱含地通道至您要查看的應用程式。 在此情況下，可能甚至不需要顯示任何看過的游標 _（「見它，說它」）_ 。 當然，有些語音命令根本不需要目標，例如「移至開始」或「嗨，Cortana」。
+使用語音命令時，（head 或眼睛）注視通常用來做為目的機制，不論使用游標（"select"），或將命令隱含地通道至您要查看的應用程式。 在此情況下，可能甚至不需要顯示任何看過的游標 _（「見它，說它」）_。 當然，有些語音命令根本不需要目標，例如「移至開始」或「嗨，Cortana」。
 
 <br>
 
@@ -42,7 +42,7 @@ ms.locfileid: "81277976"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>特徵</strong></td>
+        <td><strong>功能</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 代)</strong></a></td>
         <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
@@ -59,7 +59,7 @@ ms.locfileid: "81277976"
 
 **HoloLens (第 1 代)**
 
-即使不特別將語音支援新增至您的應用程式，您的使用者只要說出系統語音命令「選取」，就可以啟動全息影像。 其行為與 HoloLens 上的[空中](gaze-and-commit.md#composite-gestures)按鍵、按下[hololens clicker](hardware-accessories.md#hololens-clicker)上的 [選取] 按鈕，或在[Windows Mixed Reality 動作控制器](motion-controllers.md)上按下觸發程式一樣。 您會聽到音效，並看到包含 [選取] 的工具提示會顯示為 [確認]。 「選取」是由低乘冪關鍵字偵測演算法所啟用，因此隨時都可讓您以最少的電池壽命影響來表示，即使您的手中也一樣。
+即使不特別將語音支援新增至您的應用程式，您的使用者只要說出系統語音命令「選取」，就可以啟動全息影像。 其行為與 HoloLens 上的[空中](gaze-and-commit.md#composite-gestures)按鍵、按下[hololens clicker](https://docs.microsoft.com/hololens/hololens1-clicker)上的 [選取] 按鈕，或在[Windows Mixed Reality 動作控制器](motion-controllers.md)上按下觸發程式一樣。 您會聽到音效，並看到包含 [選取] 的工具提示會顯示為 [確認]。 「選取」是由低乘冪關鍵字偵測演算法所啟用，因此隨時都可讓您以最少的電池壽命影響來表示，即使您的手中也一樣。
 
 <br>
 
@@ -91,8 +91,8 @@ ms.locfileid: "81277976"
 **HoloLens 特有的命令**
 * 「我可以說什麼？」
 * [移至開始]-而不是 [ [bloom](system-gesture.md#bloom) ] 以進入 [[開始] 功能表](navigating-the-windows-mixed-reality-home.md#start-menu)
-* 「啟動 <app>」
-* 「移 <app> 這裡」
+* 「啟動 <app> 」
+* 「移至 <app> 這裡」
 * 「拍照」
 * 「開始錄製」
 * 「停止錄製」
@@ -121,8 +121,8 @@ ms.locfileid: "81277976"
         *影像：使用者可以在應用程式行中顯示 [調整] 命令，以調整應用程式的位置*
     :::column-end:::
         :::column:::
-        ![空間](images/spacer-20x582.png)<br>
-        ![查看應用程式視窗或全息影像時，使用者可以說出他們在應用程式行中看到的「調整」命令，以調整應用程式在世界中的位置](images/microphone-600px.png)<br>
+        ![space](images/spacer-20x582.png)<br>
+        ![查看應用程式視窗或全息影像時，使用者可以說出他們在應用程式行中看到的「調整」命令，以調整應用程式在世界中的位置。](images/microphone-600px.png)<br>
     :::column-end:::
 :::row-end:::
 
@@ -240,15 +240,15 @@ ms.locfileid: "81277976"
 
 :::row:::
     :::column:::
-       ![1。一般資料指標狀態](images/voicefeedbackstates-regular.jpg)<br>
+       ![1. 一般資料指標狀態](images/voicefeedbackstates-regular.jpg)<br>
        **1. 一般資料指標狀態**<br>
     :::column-end:::
     :::column:::
-       ![2。傳達語音意見反應，然後消失](images/voicefeedbackstates-voice.jpg)<br>
+       ![2. 傳達語音意見反應，然後消失](images/voicefeedbackstates-voice.jpg)<br>
         **2. 傳達語音意見反應，然後消失**<br>
     :::column-end:::
     :::column:::
-       ![* 3。 一般資料指標狀態](images/voicefeedbackstates-regular.jpg)<br>
+       ![第. 一般游標狀態](images/voicefeedbackstates-regular.jpg)<br>
        **3. 回到一般游標狀態**<br>
     :::column-end:::
 :::row-end:::
@@ -282,7 +282,7 @@ ms.locfileid: "81277976"
 
 所有此音訊處理都是硬體加速的，這表示在 HoloLens CPU 上進行相同的處理時，這些功能的耗電量會少很多。 避免在 CPU 上執行其他音訊輸入處理，以將系統電池壽命最大化，並利用內建的卸載音訊輸入處理。
 
-## <a name="languages"></a>程式語言
+## <a name="languages"></a>語言
 
 HoloLens 2 也支援其他語言。 請記住，即使已安裝多個鍵盤，或是應用程式嘗試以不同的語言建立語音辨識器，語音命令也一律會以系統的顯示語言執行。
 
@@ -297,7 +297,7 @@ HoloLens 2 也支援其他語言。 請記住，即使已安裝多個鍵盤，�
 ---
 
 ## <a name="voice-input-in-mrtk-mixed-reality-toolkit-for-unity"></a>適用于 Unity 的 MRTK （混合現實工具組）中的語音輸入
-有了 **[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** ，您就可以輕鬆地在任何物件上指派語音命令。 使用 MRTK 的**語音輸入設定檔**來定義您的關鍵字。 藉由指派**SpeechInputHandler**腳本，您可以讓任何物件回應語音輸入設定檔中所定義的關鍵字。 SpeechInputHandler 也提供語音確認標籤，以改善使用者的信心。
+有了**[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)**，您就可以輕鬆地在任何物件上指派語音命令。 使用 MRTK 的**語音輸入設定檔**來定義您的關鍵字。 藉由指派**SpeechInputHandler**腳本，您可以讓任何物件回應語音輸入設定檔中所定義的關鍵字。 SpeechInputHandler 也提供語音確認標籤，以改善使用者的信心。
 
 * [MRTK-Voice 命令](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Speech.html)
 
@@ -307,6 +307,6 @@ HoloLens 2 也支援其他語言。 請記住，即使已安裝多個鍵盤，�
 ## <a name="see-also"></a>另請參閱
 * [目光和行動](gaze-and-commit.md)
 * [本能互動](interaction-fundamentals.md)
-* [MR 輸入212：語音](holograms-212.md)
+* [MR Input 212：語音](holograms-212.md)
 * [DirectX 中的語音輸入](voice-input-in-directx.md)
 * [Unity 中的語音輸入](voice-input-in-unity.md)

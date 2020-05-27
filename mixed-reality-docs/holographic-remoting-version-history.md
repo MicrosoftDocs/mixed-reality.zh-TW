@@ -6,23 +6,29 @@ ms.author: flbagar
 ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、遠端、全像攝影遠端
-ms.openlocfilehash: cd6d076c00fd21ca6fa60cafb94eb9d89796825a
-ms.sourcegitcommit: 48456c607a2d0dcf035a77e8ba67615396b0a211
+ms.openlocfilehash: b128f91947fa8700502f7541cba23c726238a067
+ms.sourcegitcommit: e65f1463aec3c040a1cd042e61fc2bd156a42ff8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81484298"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83866848"
 ---
 # <a name="holographic-remoting-version-history"></a>全像遠端版本歷程記錄
 
 > [!IMPORTANT]
 > 本指導方針專屬於 HoloLens 2 上的全像攝影遠端處理。
 
+## <a name="version-213-may-25-2020"></a>版本2.1.3 （2020 5 月25日）<a name="v2.1.3"></a>
+* 已變更[HolographicSpace CameraAdded](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace.cameraadded?view=winrt-18362)事件的行為。 在先前的版本中，當透過[HolographicSpace](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace.createnextframe?view=winrt-18362#Windows_Graphics_Holographic_HolographicSpace_CreateNextFrame)建立下一個畫面格時，**不**保證新增的[HolographicCamera](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera?view=winrt-18362)也具有有效的[HolographicCameraPose](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose?view=winrt-18362) 。 從版本 2.1.3 [HolographicSpace](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace.cameraadded?view=winrt-18362)開始，會與來自全像遠端播放程式的姿勢資料同步處理，而使用者可以預期在新增相機時，在下一個畫面上，該攝影機也會有有效的[HolographicCameraPose](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose?view=winrt-18362)可用。
+* 已將**停用**的新增至 DepthBufferStreamResolution，可用來停用深度緩衝區串流（透過 RemoteCoNtext. ConfigureDepthVideoStream）。 請注意，如果使用[HolographicCameraRenderingParameters，CommitDirect3D11DepthBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.commitdirect3d11depthbuffer?view=winrt-18362#Windows_Graphics_Holographic_HolographicCameraRenderingParameters_CommitDirect3D11DepthBuffer_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_)將會失敗，並*E_ILLEGAL_METHOD_CALL*。
+* 全像攝影遠端播放程式的啟動畫面已重新設計，現在不會封鎖使用者的觀看。
+* 穩定性改善和 buf 修正。
+
 ## <a name="version-212-april-5-2020"></a>版本2.1.2 （2020年4月5日）<a name="v2.1.2"></a>
 * 已修正最新的全像攝影遠端播放程式與使用小於2.1.0 版本之遠端應用程式之間的音訊回溯相容性問題。
 * 已修正未預期地關閉全像攝影遠端播放播放機的空間錨點問題。 此問題也會影響自訂播放機。
 
-## <a name="version-211-march-20-2020"></a>2\.1.1 版（2020年3月20日）<a name="v2.1.1"></a>
+## <a name="version-211-march-20-2020"></a>2.1.1 版（2020年3月20日）<a name="v2.1.1"></a>
 * 已修正使用 AMD Gpu 時，遠端應用程式的影片編碼問題。
 * 全像攝影遠端播放播放機效能改進。
 
@@ -55,9 +61,9 @@ ms.locfileid: "81484298"
 
 ## <a name="version-209-september-19-2019"></a>版本2.0.9 （2019年9月19日）<a name="v2.0.9"></a>
 * 已新增對[SpatialAnchorExporter](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialanchorexporter)的支援
-* 已新增介面 ```IPlayerContext2``` （由 ```PlayerContext```執行），提供下列成員：
+* 已加入新介面 ```IPlayerContext2``` （由所執行 ```PlayerContext``` ）以提供下列成員：
   - [BlitRemoteFrameTimeout](holographic-remoting-create-player.md#BlitRemoteFrameTimeout)屬性。
-* 已將 ```Failed_RemoteFrameTooOld``` 值新增至 ```BlitResult```
+* 已 ```Failed_RemoteFrameTooOld``` 將值新增至```BlitResult```
 * 穩定性和可靠性的改進
 
 ## <a name="version-208-august-20-2019"></a>版本2.0.8 （2019年8月20日）<a name="v2.0.8"></a>

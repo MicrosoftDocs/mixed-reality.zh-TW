@@ -5,7 +5,7 @@
 ## 計畫和活動
 ### [San Francisco Reactor Academy 活動行事曆](sf-academy-events.md)
 ### [CVPR 2019 混合實境研討會](cvpr-2019.md)
-## [目前的混合實境版本資訊](release-notes-may-2019.md)
+## [目前的混合實境版本資訊](release-notes-may-2020.md)
 ## [社群資源](community.md)
 ## [投稿至此文件](CONTRIBUTING.md)
 # 探索

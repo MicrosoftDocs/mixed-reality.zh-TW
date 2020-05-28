@@ -6,14 +6,14 @@ ms.author: trferrel
 ms.date: 3/26/2019
 ms.topic: article
 keywords: Windows Mixed Reality，混合現實，虛擬實境，VR，MR，效能，優化，CPU，GPU
-ms.openlocfilehash: 54e1eec5445fe655a0b498be5c18f08efe2270f0
-ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
+ms.openlocfilehash: 4a0f4cd9caea5dd601ad663801e760261980c429
+ms.sourcegitcommit: b0d15083ec1095e08c9d776e5bae66b4449383bb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81277476"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84111029"
 ---
-# <a name="understanding-performance-for-mixed-reality"></a>瞭解混合現實的效能
+# <a name="understanding-performance-for-mixed-reality"></a>了解混合實境的效能
 
 本文介紹如何瞭解混合現實應用程式的效能重要性。  如果您的應用程式未以最佳畫面播放速率執行，則使用者體驗可能會大幅降低。 全像投影會出現不穩定的情況，而環境的頭追蹤則不正確，導致使用者的體驗不佳。 效能必須視為混合現實開發的第一類功能，而不是波蘭文工作。
 
@@ -58,7 +58,7 @@ ms.locfileid: "81277476"
 1) 應用程式的畫面播放速率**未**變更，您可能會受到**CPU 限制**
 
 >[!NOTE]
->Unity 可讓您透過 *[XRSettings renderViewportScale](https://docs.unity3d.com/ScriptReference/XR.XRSettings-renderViewportScale.html)* 屬性，在執行時間輕鬆修改應用程式的呈現目標解析度。 裝置上顯示的最終映射具有固定的解析度。 平臺會取樣較低的解析度輸出，以建立更高解析度的影像，以便在顯示器上呈現。 
+>Unity 可讓您透過*[XRSettings renderViewportScale](https://docs.unity3d.com/ScriptReference/XR.XRSettings-renderViewportScale.html)* 屬性，在執行時間輕鬆修改應用程式的呈現目標解析度。 裝置上顯示的最終映射具有固定的解析度。 平臺會取樣較低的解析度輸出，以建立更高解析度的影像，以便在顯示器上呈現。 
 >
 >```CS
 >UnityEngine.XR.XRSettings.renderScale = 0.7f;
@@ -82,10 +82,10 @@ ms.locfileid: "81277476"
 
 - **記憶體頻寬**是 GPU 可以從記憶體執行的讀取和寫入速率
     - 若要找出頻寬限制，請降低材質品質，並檢查幀的是否已改善。
-    - 在 Unity 中，這可以藉由變更 **編輯**] > **專案設定** >  **[品質設定](https://docs.unity3d.com/Manual/class-QualitySettings.html)** ] 中的**材質品質**來完成。
+    - 在 Unity 中，您可以在 [**編輯** **Texture Quality**  >  **專案設定**  >  **[品質] 設定](https://docs.unity3d.com/Manual/class-QualitySettings.html)** 中變更材質品質來完成這項作業。
 - [**填滿速率**] 是指 GPU 每秒可繪製的圖元。
     - 若要識別填滿率限制，請減少顯示器解析度，並檢查是否已改善畫面播放速率。 
-    - 在 Unity 中，這可以透過 *[XRSettings. renderViewportScale](https://docs.unity3d.com/ScriptReference/XR.XRSettings-renderViewportScale.html)* 屬性來完成。
+    - 在 Unity 中，這可以透過*[XRSettings. renderViewportScale](https://docs.unity3d.com/ScriptReference/XR.XRSettings-renderViewportScale.html)* 屬性來完成。
 
 記憶體頻寬通常牽涉到下列其中一項的優化：
 1) 減少材質解析度
@@ -131,9 +131,9 @@ ms.locfileid: "81277476"
 
 過多的記憶體配置和解除配置作業，可能會導致效能不一致、凍結的框架和其他不利的行為。 在 Unity 中開發時，請務必瞭解記憶體考慮，因為記憶體管理是由垃圾收集行程所控制。
 
-#### <a name="object-pooling"></a>物件集區
+#### <a name="object-pooling"></a>物件共用
 
-物件共用是降低連續配置和物件取消配置成本的常用技術。 這是藉由配置相同物件的大型集區，並重複使用此集區中非使用中的可用實例來完成，而不是在一段時間內不斷產生和終結物件。 物件集區非常適合在應用程式期間有變數存留期的重複使用元件。
+物件共用是降低連續配置和物件取消配置成本的常用技術。 這是藉由配置相同物件的大型集區，並重複使用此集區中的非作用中、可用的實例來完成，而不是在一段時間內不斷產生和終結物件。 物件集區非常適合在應用程式期間有變數存留期的重複使用元件。
 
 ## <a name="see-also"></a>另請參閱
 - [對 Unity 的效能建議](performance-recommendations-for-unity.md)

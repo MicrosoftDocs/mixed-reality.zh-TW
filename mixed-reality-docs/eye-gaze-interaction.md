@@ -1,17 +1,17 @@
 ---
-title: 眼睛眼的互動
+title: 眼部目光導向的互動
 description: HoloLens 2 將全像攝影體驗的內容和人類理解能力帶入了新境界；它讓開發人員能夠運用使用者視線方向的相關資訊。 本頁涵蓋的設計建議，適用于想要使用眼睛做為輸入的開發人員。
 author: sostel
 ms.author: sostel
 ms.date: 10/29/2019
 ms.topic: article
 keywords: 眼睛追蹤，混合現實，輸入，眼睛
-ms.openlocfilehash: 93d2cfd82b5aa2a410268c5594b5772bcc0b21c7
-ms.sourcegitcommit: a5dc182da237f63f0487d40a2e11894027208b6c
+ms.openlocfilehash: 2ae7723f116771986edc757f1c9d4f454b0a256f
+ms.sourcegitcommit: b0d15083ec1095e08c9d776e5bae66b4449383bb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73441107"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84111033"
 ---
 # <a name="eye-gaze-based-interaction-on-hololens-2"></a>HoloLens 2 上的眼睛互動
 
@@ -19,7 +19,7 @@ ms.locfileid: "73441107"
 
 我們在 HoloLens 2 上令人興奮的新功能之一，就是眼追蹤。
 在 HoloLens 2 頁面上的[眼睛追蹤](eye-tracking.md)中，我們提到了每個使用者完成[校正](https://docs.microsoft.com/hololens/hololens-calibration)的需求，並提供一些開發人員指引和醒目提示的使用案例來進行眼追蹤。
-眼中的輸入仍是一種新的使用者輸入類型，而且有很多要學習的東西。 雖然監看式輸入只會在我們的全像攝影介面體驗（您在啟動 HoloLens 2 時看到的使用者介面）中非常細微地使用，但有數個應用程式（例如「 [MR 遊樂場](https://www.microsoft.com/p/mr-playground/9nb31lh723s2)」）會展示如何將眼睛輸入新增至魔術的絕佳範例您的全像攝影體驗。
+眼中的輸入仍是一種新的使用者輸入類型，而且有很多要學習的東西。 雖然監看式輸入只會在我們的全像攝影介面體驗（您在啟動 HoloLens 2 時看到的使用者介面）中非常細微地使用，但有數個應用程式（例如["HoloLens 遊樂場"](https://www.microsoft.com/p/mr-playground/9nb31lh723s2)）會展示如何將眼睛輸入新增至您的全像攝影體驗的絕佳範例。
 在此頁面上，我們將討論整合眼睛的輸入以與您的全像攝影應用程式互動的設計考慮。
 您將瞭解重要的優點，以及眼睛輸入所帶來的獨特挑戰。  
 根據這些，我們提供了數個設計建議，協助您建立滿足眼睛支援的使用者介面。 
@@ -34,7 +34,7 @@ ms.locfileid: "73441107"
     <col width="25%" />
 </colgroup>
 <tr>
-     <td><strong>特徵</strong></td>
+     <td><strong>功能</strong></td>
      <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 代)</strong></a></td>
      <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
      <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
@@ -105,7 +105,7 @@ ms.locfileid: "73441107"
 
     - **同步處理樣式輸入的需求：** 結合快速的移動與更複雜的其他輸入（例如，長時間語音命令或手勢），會造成使用者在完成和辨識其他輸入命令之前，已繼續尋找的風險。 因此，如果您建立自己的輸入控制項（例如，自訂手勢），請務必記錄此輸入或大約持續時間的萌芽，使其與使用者過去查看的內容相互關聯。
     
-3. **目視追蹤輸入的細微意見反應：** 當目標查看以指出系統正如預期方式運作，但應該保持細微時，提供意見反應會很有説明。 這可能包括緩慢的混合、進出、視覺效果反白顯示或執行其他細微的目標行為，例如緩慢的動作，例如稍微增加目標大小，以指出系統是否已正確偵測到使用者正在查看目標，而沒有不必要地中斷使用者目前的工作流程。 
+3. **目視追蹤輸入的細微意見反應：** 當目標查看以指出系統正如預期方式運作，但應該保持細微時，提供意見反應會很有説明。 這可能包括緩慢的混合、進出、視覺效果反白顯示或執行其他細微的目標行為，例如緩慢的動作（例如，稍微增加目標大小），表示系統已正確偵測到使用者正在查看目標，而不需要中斷使用者目前的工作流程。 
 
 4. **避免強制執行非自然眼動作做為輸入：** 請勿強制使用者執行特定的眼睛移動（注視手勢）來觸發應用程式中的動作。
 
@@ -117,11 +117,11 @@ ms.locfileid: "73441107"
 此頁面提供您良好的總覽，讓您開始瞭解混合現實中的眼睛。 若要開始進行開發，請查看我們在[Unity 中眼](https://aka.ms/mrtk-eyes)的資訊，以及[DirectX 中的眼睛](gaze-in-directx.md)。
 
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [舒適度](comfort.md)
 * [在 DirectX 中的眼睛](gaze-in-directx.md)
 * [Unity 中的眼睛（混合現實工具組）](https://aka.ms/mrtk-eyes)
-* [HoloLens 2 上的眼睛追蹤](eye-tracking.md)
-* [注視和認可](gaze-and-commit.md)
+* [HoloLens 2 的眼球追蹤](eye-tracking.md)
+* [目光和行動](gaze-and-commit.md)
 * [目光和停駐](gaze-and-dwell.md)
 * [語音輸入](voice-design.md)

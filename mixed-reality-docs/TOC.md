@@ -4,7 +4,8 @@
 ## [準備好使用新的 Microsoft Edge](new-microsoft-edge.md)
 ## 計畫和活動
 ### [San Francisco Reactor Academy 活動行事曆](sf-academy-events.md)
-### [CVPR 2019 混合實境研討會](cvpr-2019.md)
+### [混合實境開發日](mr-dev-days.md)
+#### [工作階段記錄](mr-dev-days-sessions.md)
 ## [目前的混合實境版本資訊](release-notes-may-2020.md)
 ## [社群資源](community.md)
 ## [投稿至此文件](CONTRIBUTING.md)

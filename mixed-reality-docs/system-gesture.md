@@ -1,21 +1,21 @@
 ---
-title: 系統手勢
-description: 系統手勢以呼叫 [開始] 功能表。
+title: 開始手勢
+description: 開始手勢以呼叫 [開始] 功能表。
 author: shengkait
 ms.author: cmeekhof
 ms.date: 10/22/2019
 ms.topic: article
 keywords: 混合現實、手勢、互動、設計
-ms.openlocfilehash: 9cfee1104cb9b8135dae51bea73850062fadd25c
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: 84088156d0c9cdacc421985b922d5e9370f6a87e
+ms.sourcegitcommit: fd606e87e3c4785d3ca2a26632be3bb580e39afb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79375905"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84152517"
 ---
-# <a name="system-gesture"></a>系統手勢
+# <a name="start-gesture"></a>開始手勢
 
-系統手勢是用來叫用 [開始] 功能表的手勢。 這相當於按下鍵盤上的 Windows 鍵、Xbox 控制器上的 Xbox 按鈕，或沉浸式耳機運動控制器上的 Windows 按鈕。 請務必瞭解在每個混合現實裝置上保留給系統的筆勢，以避免在設計互動時發生衝突。
+開始手勢是用來叫用 [開始] 功能表的手勢。 這相當於按下鍵盤上的 Windows 鍵、Xbox 控制器上的 Xbox 按鈕，或沉浸式耳機運動控制器上的 Windows 按鈕。 請務必瞭解在每個混合現實裝置上保留給系統的筆勢，以避免在設計互動時發生衝突。
 
 ## <a name="device-support"></a>裝置支援
 
@@ -27,13 +27,13 @@ ms.locfileid: "79375905"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>特徵</strong></td>
+        <td><strong>功能</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 代)</strong></a></td>
         <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
     </tr>
      <tr>
-        <td>Bloom</td>
+        <td>盛開</td>
         <td>✔️</td>
         <td>❌</td>
         <td>❌</td>
@@ -52,7 +52,7 @@ ms.locfileid: "79375905"
     </tr>
 </table>
 
-## <a name="bloom"></a>Bloom
+## <a name="bloom"></a>盛開
 為了在 HoloLens （第1代）中顯示 [開始] 功能表，我們設計了 "Bloom"，這是模擬花卉櫻花的符號手勢。 它是 surefooted 互動、易於執行和快速召回的獨特之處。 若要在 HoloLens （第1代）上進行 bloom 手勢，請將您的手掌放在一起，並將您的手合在一起，然後藉由散佈手指來開手。
 
 :::row:::
@@ -79,7 +79,7 @@ ms.locfileid: "79375905"
         **步驟1： Palm 以顯示手腕按鈕**<br>
     :::column-end:::
     :::column:::
-        ![手腕按鈕按](images/wrist-button-press.png)<br>
+        ![手腕按鈕按下](images/wrist-button-press.png)<br>
         **步驟2：按 [手腕] 按鈕**<br>
     :::column-end:::
 :::row-end:::
@@ -116,5 +116,5 @@ ms.locfileid: "79375905"
 ## <a name="see-also"></a>另請參閱
 
 * [本能互動](interaction-fundamentals.md)
-* [眼睛目光](eye-tracking.md)
+* [眼睛](eye-tracking.md)
 * [語音輸入](voice-input.md)

@@ -7,12 +7,12 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 11342bada65e963db6393d35c99e2c2fbffe8ff1
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: 62ce1151837a345dea1bea4a8bea275cc851b9bd
+ms.sourcegitcommit: e65f1463aec3c040a1cd042e61fc2bd156a42ff8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79031258"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83866898"
 ---
 # <a name="3-displaying-azure-spatial-anchor-feedback"></a>3.顯示 Azure Spatial Anchor 意見反應
 
@@ -25,7 +25,7 @@ ms.locfileid: "79031258"
 
 ## <a name="set-up-asa-feedback-ui-panel"></a>設定 ASA 回饋 UI 面板
 
-在 [階層] 視窗中，以滑鼠右鍵按一下 [指示]   > [TextContent]  物件，然後選取 [3D 物件]   > [文字 - TextMeshPro]  ，將 TextMeshPro 文字物件建立為 [指示] > [TextContent 物件] 的子系，並為其提供適當的名稱，例如 **Feedback**：
+在 [階層] 視窗中，以滑鼠右鍵按一下 [指示] > [TextContent] 物件，然後選取 [3D 物件] > [文字 - TextMeshPro]，將 TextMeshPro 文字物件建立為 [指示] > [TextContent 物件] 的子系，並為其提供適當的名稱，例如 **Feedback**：
 
 ![mrlearning-base](images/mrlearning-asa/tutorial3-section1-step1-1.png)
 
@@ -46,14 +46,16 @@ ms.locfileid: "79031258"
 
 ![mrlearning-base](images/mrlearning-asa/tutorial3-section1-step1-2.png)
 
-在仍選取 **Feedback** 物件的情況下，在 [偵測器] 視窗中，使用 [新增元件]  按鈕，將 **Anchor Feedback Script (指令碼)** 元件新增至 Feedback 物件：
+在仍選取 **Feedback** 物件的情況下，在 [偵測器] 視窗中，使用 [新增元件] 按鈕，將 **Anchor Feedback Script (指令碼)** 元件新增至 Feedback 物件：
 
 ![mrlearning-base](images/mrlearning-asa/tutorial3-section1-step1-3.png)
 
-將 **Feedback** 物件本身指派給 **Anchor Feedback Script (指令碼)** 元件的 [回饋文字]  欄位：
+將 **Feedback** 物件本身指派給 **Anchor Feedback Script (指令碼)** 元件的 [回饋文字] 欄位：
 
 ![mrlearning-base](images/mrlearning-asa/tutorial3-section1-step1-4.png)
 
 ## <a name="congratulations"></a>恭喜！
 
 在本教學課程中，您已了解如何建立 UI 面板，以顯示 Azure Spatial Anchor 驗的目前狀態，進而提供使用者即時回饋。
+
+[下一課：4.適用於 Android 和 iOS 的 Azure Spatial Anchors](mrlearning-asa-ch4.md)

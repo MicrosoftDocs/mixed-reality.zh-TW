@@ -7,24 +7,26 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: d0fd22ad6fbefc6889373b00847721cfc0655ce3
-ms.sourcegitcommit: 92ff5478a5c55b4e2c5cc2f44f1588702f4ec5d1
+ms.openlocfilehash: 2a171d601d094375a56734e8d7890c9d3e17c887
+ms.sourcegitcommit: e65f1463aec3c040a1cd042e61fc2bd156a42ff8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82604999"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83866908"
 ---
 # <a name="1-getting-started-with-azure-spatial-anchors"></a>1.開始使用 Azure Spatial Anchors
 
 ## <a name="overview"></a>概觀
 
-歡迎使用第二個系列的 HoloLens 2 教學課程。 在此三個部分的教學課程系列中，您將了解 Azure Spatial Anchors 的基本概念。
+歡迎使用第二個系列的 HoloLens 2 教學課程。 在此四個部分的教學課程系列中，您將了解 Azure Spatial Anchors 的基本概念。
 
 在第一個教學課程：[開始使用 Azure Spatial Anchors](mrlearning-asa-ch1.md) 中，您將探索啟動和停止 Azure 工作階段，以及在單一裝置上建立、上傳和下載 Azure 錨點所需的各種步驟。
 
 在第二個教學課程：[儲存、擷取和共用 Azure Spatial Anchors](mrlearning-asa-ch2.md) 中，您將了解如何藉由將錨點資訊儲存至 HoloLens 2 的儲存體，來將 Azure Spatial Anchors 儲存到多個應用程式工作階段，以及如何將此錨點資訊與其他裝置共用，使多個裝置的錨點一致。
 
 在第三個教學課程：[顯示 Azure Spatial Anchor 回饋](mrlearning-asa-ch3.md)中，您將了解如何在使用 Azure Spatial Anchors 時，向使用者提供錨點事件和狀態的意見反應。
+
+在第四個教學課程中，[適用於 Android 和 iOS 的 Azure Spatial Anchors](mrlearning-asa-ch4.md)，您將了解如何建置專案並將其部署至 Android 和 iOS 裝置。
 
 ## <a name="objectives"></a>目標
 
@@ -42,6 +44,13 @@ ms.locfileid: "82604999"
 * 已[針對開發而設定](using-visual-studio.md#enabling-developer-mode)的 HoloLens 2 裝置
 * <a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity Hub</a>，已安裝 Unity 2019.2，且已新增通用 Windows 平台組建支援模組
 * 完成[建立空間錨點資源](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens#create-a-spatial-anchors-resource)區段，其位於[教學課程：建立使用 Azure Spatial Anchors 的 Unity HoloLens 應用程式](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens)。
+* 如果想要部署至 Android
+    * 已啟用<a href="https://developer.android.com/studio/debug/dev-options" target="_blank">開發人員</a>和具有 <a href="https://developers.google.com/ar/discover/supported-devices" target="_blank">ARCore 功能</a>的 Android 裝置，可透過 USB 連接至您的 Windows 或 macOS 電腦
+    * <a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity Hub</a>，已安裝 Unity 2019.2.X，且已新增 Android 組建支援模組
+* 如果想要部署至 iOS
+    * 已安裝最新版 <a href="https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12" target="_blank">Xcode</a> 和 <a href="https://cocoapods.org" target="_blank">CocoaPods</a> 的 macOS 電腦
+    * <a href="https://developer.apple.com/documentation/arkit/verifying_device_support_and_user_permission" target="_blank">ARKit 相容</a>的 iOS 裝置可透過 USB 連接至您的 macOS 電腦
+    * <a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity Hub</a>，已安裝 Unity 2019.2.X，且已新增 iOS 組建支援模組
 
 > [!IMPORTANT]
 > 本教學課程系列的建議 Unity 版本是 Unity 2019.2. X。 這個版本能取代上述連結之必要條件中所述的任何 Unity 版本需求或建議。
@@ -53,7 +62,7 @@ ms.locfileid: "82604999"
 
 為此，請先遵循[初始化您的專案和第一個應用程式](mrlearning-base-ch1.md) (但不包括[對您的裝置建置應用程式](mrlearning-base-ch1.md#build-your-application-to-your-device)的指示)，其中包括下列步驟：
 
-1. [建立新的 Unity 專案](mrlearning-base-ch1.md#create-new-unity-project)，並為其提供適當的名稱，例如「MRTK 教學課程」 
+1. [建立新的 Unity 專案](mrlearning-base-ch1.md#create-new-unity-project)，並為其提供適當的名稱，例如「MRTK 教學課程」
 
 2. [設定適用於 Windows Mixed Reality 的 Unity 專案](mrlearning-base-ch1.md#configure-the-unity-project-for-windows-mixed-reality)
 
@@ -63,9 +72,9 @@ ms.locfileid: "82604999"
 
 5. [設定用於混合實境工具組的 Unity 專案](mrlearning-base-ch1.md#configure-the-unity-project-for-the-mixed-reality-toolkit)
 
-6. [將 Mixed Reality 工具組新增至 Unity 場景](mrlearning-base-ch1.md#configure-the-mixed-reality-toolkit)並為場景提供適當的名稱，例如 AzureSpatialAnchors 
+6. [將 Mixed Reality 工具組新增至 Unity 場景](mrlearning-base-ch1.md#configure-the-mixed-reality-toolkit)並為場景提供適當的名稱，例如 AzureSpatialAnchors
 
-然後遵循[如何設定混合實境工具組設定檔 (變更空間感知顯示選項)](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option) 的指示，將場景的 MRTK 組態設定檔變更為 **DefaultHoloLens2ConfigurationProfile**，並將空間感知網格的顯示選項變更為 [遮蔽]  。
+然後遵循[如何設定混合實境工具組設定檔 (變更空間感知顯示選項)](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option) 的指示，將場景的 MRTK 組態設定檔變更為 **DefaultHoloLens2ConfigurationProfile**，並將空間感知網格的顯示選項變更為 [遮蔽]。
 
 > [!CAUTION]
 > 如上方連結：[設定用於混合實境工具組的 Unity 專案](mrlearning-base-ch1.md#configure-the-unity-project-for-the-mixed-reality-toolkit)中所述的指示，強烈建議您不要為 Unity 啟用 MSBuild。
@@ -75,14 +84,14 @@ ms.locfileid: "82604999"
 
 在本節中，您將安裝 Unity 的內建 AR Foundation 套件，因為您在下一節匯入 Azure Spatial Anchors SDK 時會需要此套件。
 
-在 Unity 功能表中，選取 [視窗]   >  **[套件管理員]** ：
+在 Unity 功能表中，選取 [視窗] >  **[套件管理員]** ：
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section2-step1-1.png)
 
 > [!NOTE]
 > 可能需要幾秒鐘的時間，AR Foundation 套件才會出現在清單中。
 
-在 [套件管理員] 視窗中選取 [AR Foundation]  ，然後按一下 [安裝]  按鈕來安裝套件：
+在 [套件管理員] 視窗中選取 [AR Foundation]，然後按一下 [安裝] 按鈕來安裝套件：
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section2-step1-2.png)
 
@@ -106,7 +115,7 @@ ms.locfileid: "82604999"
 
 在本節中，您將藉由新增一些教學課程 Prefab 來準備場景。
 
-在 [專案] 視窗中，瀏覽至 [資產]   > [MRTK.Tutorials.AzureSpatialAnchors]   > [Prefab]  資料夾。 按住 CTRL 鍵並按一下 [ButtonParent]  、[DebugWindow]  、[Instructions]  和 [ParentAnchor]  以選取四個 Prefab：
+在 [專案] 視窗中，瀏覽至 [資產] > [MRTK.Tutorials.AzureSpatialAnchors] > [Prefab] 資料夾。 按住 CTRL 鍵並按一下 [ButtonParent]、[DebugWindow]、[Instructions] 和 [ParentAnchor] 以選取四個 Prefab：
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section4-step1-1.png)
 
@@ -131,15 +140,15 @@ ms.locfileid: "82604999"
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section5-step1-1.png)
 
-在 [偵測器] 視窗中，找出 **Pressable Button Holo Lens 2 (指令碼)** 元件，然後按一下 [+]  圖示，將新的事件接聽程式新增至 **Button Pressed ()** 事件：
+在 [偵測器] 視窗中，找出 **Pressable Button Holo Lens 2 (指令碼)** 元件，然後按一下 [+] 圖示，將新的事件接聽程式新增至 **Button Pressed ()** 事件：
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section5-step1-2.png)
 
-在 [階層] 視窗中仍選取 StartAzureSession 物件的情況下，按一下 **ParentAnchor** 物件並將其從 [階層] 視窗拖曳至您剛才所新增事件接聽程式的空白 [無 (物件)]  欄位，讓 ParentAnchor 物件可以從此按鈕接聽按下按鈕的事件：
+在 [階層] 視窗中仍選取 StartAzureSession 物件的情況下，按一下 **ParentAnchor** 物件並將其從 [階層] 視窗拖曳至您剛才所新增事件接聽程式的空白 [無 (物件)] 欄位，讓 ParentAnchor 物件可以從此按鈕接聽按下按鈕的事件：
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section5-step1-3.png)
 
-按一下相同事件接聽程式的 [無函式]  下拉式清單，然後選取 [AnchorModuleScript]   > [StartAzureSession ()]  ，將 StartAzureSession () 函式設定為從此按鈕引發「按下按鈕」事件時所觸發的動作：
+按一下相同事件接聽程式的 [無函式] 下拉式清單，然後選取 [AnchorModuleScript] > [StartAzureSession ()]，將 StartAzureSession () 函式設定為從此按鈕引發「按下按鈕」事件時所觸發的動作：
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section5-step1-4.png)
 
@@ -155,9 +164,9 @@ ms.locfileid: "82604999"
 
 * 針對 **StopAzureSession** 物件，請指派 AnchorModuleScript > **StopAzureSession ()** 函式。
 * 針對 **CreateAzureAnchor** 物件，請指派 AnchorModuleScript > **CreateAzureAnchor ()** 函式，
-  * 然後將 **ParentAnchor** 再次拖曳到空白的 [無 (遊戲)]  欄位中。
+  * 然後將 **ParentAnchor** 再次拖曳到空白的 [無 (遊戲)] 欄位中。
 * 針對 **RemoveLocalAnchor** 物件，請指派 AnchorModuleScript > **RemoveLocalAnchor ()** 函式，
-  * 然後將 **ParentAnchor** 再次拖曳到空白的 [無 (遊戲)]  欄位中。
+  * 然後將 **ParentAnchor** 再次拖曳到空白的 [無 (遊戲)] 欄位中。
 * 針對 **FindAzureAnchor** 物件，請指派 AnchorModuleScript > **FindAzureAnchor ()** 函式。
 * 針對 **DeleteAzureAnchor** 物件，請指派 AnchorModuleScript > **DeleteAzureAnchor ()** 函式。
 
@@ -165,7 +174,7 @@ ms.locfileid: "82604999"
 
 在 [階層] 視窗中，選取 **ParentAnchor** 物件，然後在 [偵測器] 視窗中，向下瀏覽至 **Spatial Anchor Manager (指令碼)** 元件。
 
-然後，在 [認證]  區段中，將您在本教學課程[必要條件](mrlearning-asa-ch1.md#prerequisites)中所建立的 Spatial Anchors 帳戶識別碼和金鑰，貼入對應的 [Spatial Anchors 帳戶識別碼]  和 [Spatial Anchors 帳戶金鑰]  欄位：
+然後，在 [認證] 區段中，將您在本教學課程[必要條件](mrlearning-asa-ch1.md#prerequisites)中所建立的 Spatial Anchors 帳戶識別碼和金鑰，貼入對應的 [Spatial Anchors 帳戶識別碼] 和 [Spatial Anchors 帳戶金鑰] 欄位：
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section5-step4-1.png)
 
@@ -175,15 +184,15 @@ ms.locfileid: "82604999"
 
 ### <a name="1-add-additional-required-capabilities"></a>1.新增額外的必要功能
 
-在 Unity 功能表中，選取 [編輯]   > [專案設定...]  來開啟 [玩家設定] 視窗：
+在 Unity 功能表中，選取 [編輯] > [專案設定...] 來開啟 [玩家設定] 視窗：
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section6-step1-1.png)
 
-在 [玩家設定] 視窗中選取 [玩家]  ，然後選取 [發佈設定]  ：
+在 [玩家設定] 視窗中選取 [玩家]，然後選取 [發佈設定]：
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section6-step1-2.png)
 
-在 [發佈設定]  中，向下捲動至 [功能]  區段，然後再次確認您在教學課程開頭建立專案時所啟用的 **InternetClient**、**Microphone** 和 **SpatialPerception** 功能是否皆已啟用。 然後，啟用 **InternetClientServer**、**PrivateNetworkClientServer**、**RemovableStorage**和 **Webcam** 功能：
+在 [發佈設定] 中，向下捲動至 [功能] 區段，然後再次確認您在教學課程開頭建立專案時所啟用的 **InternetClient**、**Microphone** 和 **SpatialPerception** 功能是否皆已啟用。 然後，啟用 **InternetClientServer**、**PrivateNetworkClientServer**、**RemovableStorage**和 **Webcam** 功能：
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section6-step1-3.png)
 
@@ -209,7 +218,7 @@ Azure Spatial Anchors 無法在 Unity 中執行，因此若要測試 Azure Spati
 
 ### <a name="1-add-the-rocket-launcher-experience"></a>1.新增火箭發射器的體驗
 
-在 [專案] 視窗中，流覽至 [資產]   > [MRTK.Tutorials.GettingStarted]   > [Prefabs]   > [RocketLauncher]  資料夾，並選取 **RocketLauncher_Complete** Prefab：
+在 [專案] 視窗中，流覽至 [資產] > [MRTK.Tutorials.GettingStarted] > [Prefabs] > [RocketLauncher] 資料夾，並選取 **RocketLauncher_Complete** Prefab：
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section7-step1-1.png)
 

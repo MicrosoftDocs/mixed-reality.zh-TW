@@ -6,12 +6,12 @@ ms.author: flbagar
 ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、遠端、全像攝影遠端
-ms.openlocfilehash: b128f91947fa8700502f7541cba23c726238a067
-ms.sourcegitcommit: e65f1463aec3c040a1cd042e61fc2bd156a42ff8
+ms.openlocfilehash: 319e76efbbe1085fc9d60251a6f0f38133de6505
+ms.sourcegitcommit: 7011ac6fde80e5c45f04192fa1db6e1eb559e3b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83866848"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327898"
 ---
 # <a name="holographic-remoting-version-history"></a>全像遠端版本歷程記錄
 
@@ -22,7 +22,7 @@ ms.locfileid: "83866848"
 * 已變更[HolographicSpace CameraAdded](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace.cameraadded?view=winrt-18362)事件的行為。 在先前的版本中，當透過[HolographicSpace](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace.createnextframe?view=winrt-18362#Windows_Graphics_Holographic_HolographicSpace_CreateNextFrame)建立下一個畫面格時，**不**保證新增的[HolographicCamera](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera?view=winrt-18362)也具有有效的[HolographicCameraPose](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose?view=winrt-18362) 。 從版本 2.1.3 [HolographicSpace](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace.cameraadded?view=winrt-18362)開始，會與來自全像遠端播放程式的姿勢資料同步處理，而使用者可以預期在新增相機時，在下一個畫面上，該攝影機也會有有效的[HolographicCameraPose](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose?view=winrt-18362)可用。
 * 已將**停用**的新增至 DepthBufferStreamResolution，可用來停用深度緩衝區串流（透過 RemoteCoNtext. ConfigureDepthVideoStream）。 請注意，如果使用[HolographicCameraRenderingParameters，CommitDirect3D11DepthBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.commitdirect3d11depthbuffer?view=winrt-18362#Windows_Graphics_Holographic_HolographicCameraRenderingParameters_CommitDirect3D11DepthBuffer_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_)將會失敗，並*E_ILLEGAL_METHOD_CALL*。
 * 全像攝影遠端播放程式的啟動畫面已重新設計，現在不會封鎖使用者的觀看。
-* 穩定性改善和 buf 修正。
+* 穩定性改進和 bug 修正。
 
 ## <a name="version-212-april-5-2020"></a>版本2.1.2 （2020年4月5日）<a name="v2.1.2"></a>
 * 已修正最新的全像攝影遠端播放程式與使用小於2.1.0 版本之遠端應用程式之間的音訊回溯相容性問題。

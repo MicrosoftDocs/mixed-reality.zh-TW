@@ -1,34 +1,51 @@
 ---
 title: Unreal 中的注視輸入
-description: 說明如何在 Unreal 中使用注視輸入
-author: AndreyChistyakov
-ms.author: anchisty
+description: 設定 HoloLens 和 Unreal 引擎的注視輸入教學課程
+author: hferrone
+ms.author: v-haferr
 ms.date: 04/08/2020
 ms.topic: article
-keywords: Windows Mixed Reality、全息影像、HoloLens、眼睛追蹤
-ms.openlocfilehash: 7387bb3f25cdbdfac32f508c173fbd098f844e84
-ms.sourcegitcommit: ba4c8c2a19bd6a9a181b2cec3cb8e0402f8cac62
+keywords: Windows Mixed Reality，全息影像，HoloLens 2，眼睛追蹤，注視輸入，head 裝載的顯示器，Unreal 引擎
+ms.openlocfilehash: c77e33df2a1dfffdb5ea55e685d30af3fc2a22da
+ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82835619"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84330620"
 ---
 # <a name="gaze-input"></a>注視輸入
 
-Windows Mixed Reality 外掛程式不會針對注視輸入提供任何特殊功能。 所有專案都可透過標準 Unreal API 運作。
+## <a name="overview"></a>概觀
 
-[Head 注視 API](https://docs.unrealengine.com/en-US/BlueprintAPI/Input/HeadMountedDisplay/index.html)
+[Windows Mixed Reality 外掛程式](https://docs.unrealengine.com/Platforms/VR/WMR/index.html)並未提供任何內建的監看式輸入功能，但 HoloLens 2 確實支援眼追蹤。 實際的追蹤功能是由 Unreal 的前端**裝載的顯示**和**眼睛追蹤**api 所提供，包括：
 
-## <a name="eye-tracking"></a>眼球追蹤
+- 裝置資訊
+- 追蹤感應器
+- 方向和位置
+- 裁剪窗格
+- 注視資料和追蹤資訊
 
-若要使用眼睛追蹤 API，開發人員應該在其 HoloLens 專案設定中啟用「注視輸入」功能。 當應用程式啟動時，使用者會看到下列同意提示
+您可以在 Unreal 的前端[裝載的顯示](https://docs.unrealengine.com/BlueprintAPI/Input/HeadMountedDisplay/index.html)和[眼睛追蹤](https://docs.unrealengine.com/BlueprintAPI/EyeTracking/index.html)檔中找到完整的功能清單。 
+
+除了 Unreal Api 之外，也請查看 HoloLens 2 的[眼睛互動](eye-gaze-interaction.md)相關檔，並閱讀[hololens 2 眼追蹤](https://docs.microsoft.com/windows/mixed-reality/eye-tracking)的運作方式。
+
+> [!IMPORTANT]
+> 只有 HoloLens 2 才支援眼睛追蹤。 
+
+## <a name="enabling-eye-tracking"></a>啟用眼睛追蹤
+您必須先在 HoloLens 專案設定中啟用注視輸入，才能使用任何 Unreal 的 Api。 當應用程式啟動時，您會看到如下列螢幕擷取畫面所示的同意提示。
+
+- 選取 **[是]** 以設定許可權，並取得注視輸入的存取權。 如果您需要隨時變更此設定，可以在 [**設定**] 應用程式中找到。
 
 ![目視輸入許可權](images/unreal/eye-input-permissions.png)
- 
-如果使用者提供其許可權，應用程式將會看到眼睛的輸入。 
 
-Unreal 的眼睛追蹤 API 記載在[這裡](https://docs.unrealengine.com/en-US/BlueprintAPI/EyeTracking/index.html)
+> [!NOTE] 
+> Unreal 中的 HoloLens 眼追蹤只有兩個眼睛的單一注視光線，而不是 stereoscopic 追蹤所需的兩張光線，這是不支援的。
 
-眼睛追蹤的技術詳細資料在[這裡](eye-tracking.md)
+這就是您開始在 Unreal 中新增注視輸入至 HoloLens 2 應用程式所需的所有設定。 您可以在下列連結中找到關於注視輸入的詳細資訊，以及它如何影響混合現實中的使用者。 建立您的互動體驗時，請務必考慮這些資訊。 
 
-請注意，特別是針對 Unreal，HoloLens 眼追蹤對於這兩種眼睛都有單一的注視光線。 HoloLens 並不提供 stereoscopic 眼追蹤。
+## <a name="see-also"></a>另請參閱
+* [校正](calibration.md)
+* [舒適度](comfort.md)
+* [目光和行動](gaze-and-commit.md)
+* [語音輸入](voice-design.md)

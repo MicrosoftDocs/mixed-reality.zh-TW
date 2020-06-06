@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens，Windows 裝置入口網站，API
-ms.openlocfilehash: 8c9d60f458cddd3ba258aed0ee82f7aa16c10ba6
-ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
+ms.openlocfilehash: 17268c9a20d3da0ee90e5d6cead4342d3badf800
+ms.sourcegitcommit: f24ac845e184c2f90e8b15adab9addb913f5cb83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83227950"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84451323"
 ---
 # <a name="device-portal-api-reference"></a>裝置入口網站 API 參照
 
@@ -320,7 +320,15 @@ Payload
 
 **/api/holographic/mrc/status （GET）**
 
-取得已記錄之混合事實的狀態（執行中、已停止）
+取得 Windows 裝置入口網站中的混合現實 capture 的狀態。
+
+***回應***
+
+回應包含 JSON 屬性，指出 Windows 裝置入口網站是否正在錄製影片。
+
+``` javascript
+{"IsRecording" : boolean}
+```
 
 **/api/holographic/mrc/thumbnail （GET）**
 
@@ -419,7 +427,7 @@ HoloLens 支援透過區塊下載的分散的方式，即時預覽混合現實�
 傳回資料
 * 具有系統資訊的 JSON： CPU、GPU、記憶體、網路、IO
 
-## <a name="power"></a>Power
+## <a name="power"></a>電源
 
 **/api/power/battery （GET）**
 
@@ -531,6 +539,6 @@ Payload
 傳回資料
 * 在啟動時，會傳回 WPR 會話狀態。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [使用 Windows 裝置入口網站](using-the-windows-device-portal.md)
 * [裝置入口網站核心 API 參考（UWP）](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

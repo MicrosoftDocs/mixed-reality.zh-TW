@@ -6,31 +6,23 @@ ms.author: v-haferr
 ms.date: 04/08/2020
 ms.topic: article
 keywords: Windows Mixed Reality，Unreal，Unreal Engine 4，UE4，HoloLens 2，語音，語音輸入，語音辨識，混合現實，開發，功能，檔，指南，全息記錄，遊戲開發
-ms.openlocfilehash: c5de0cd912674ccd681fd398fb6fe5fd345ab6f2
-ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
+ms.openlocfilehash: 134a8c5bbeb700a973d3732d24fa9078feb568ef
+ms.sourcegitcommit: 7f50210b71a65631fd1bc3fdb215064e0db34333
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84330630"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84551784"
 ---
 # <a name="voice-input-in-unreal"></a>Unreal 中的語音輸入
 
 ## <a name="overview"></a>概觀
-語音輸入可讓您與全息影像互動，而不需要使用右手手勢，而且在 HoloLens （第1代）和 HoloLens 2 上支援。 它是由在所有其他通用 Windows 應用程式中支援語音的相同引擎所提供，而且可以在混合現實中的互動方式中新增自然感覺。 
-
-支援的語音功能包括：
-- [Select 命令](https://docs.microsoft.com/windows/mixed-reality/voice-input#the-select-command)
-- [您好，Cortana](https://docs.microsoft.com/windows/mixed-reality/voice-input#hey-cortana)
-- 「見它」，用於按鈕和標籤互動
-- 聽寫
-
-如需詳細資訊，請參閱主要的[語音輸入](voice-input.md)檔。
+Unreal 中的語音輸入可讓您與全息影像互動，而不需要使用右手手勢，而且只支援 HoloLens 2。 雖然 HoloLens 2 上的語音輸入是由在所有其他通用 Windows 應用程式中支援語音的相同引擎所提供，但 Unreal 會使用其自有的更有限引擎來處理語音輸入。 這會將 Unreal 中的語音輸入功能限制為預先定義的語音對應，如下節所述。 
 
 ## <a name="enabling-speech-recognition"></a>啟用語音辨識
 
 若要在 HoloLens 上啟用語音辨識：
 1. 選取 [**專案設定] > [平臺 > HoloLens > 功能**]，並啟用 [**麥克風**]。 
-2. 在 [設定] 中啟用語音 recogniztion **> 隱私權 > 語音**]，然後選取 [**英文**]。
+2. 啟用 [設定] 中的語音辨識 **> 隱私權 > 語音**]，然後選取 [**英文**]。
 
 > [!NOTE]
 > 語音辨識一律會在 [**設定**] 應用程式中設定的 Windows 顯示語言中運作。 建議您也啟用**線上語音辨識**，以獲得最佳的服務品質。
@@ -53,7 +45,7 @@ ms.locfileid: "84330630"
 > [!NOTE]
 > 任何英文單字或短句子都可以當做關鍵字使用。 
 
-![UE4 引擎輸入](images/unreal/engine-input.png)
+![UE4 引擎輸入設定](images/unreal/engine-input.png)
 
 語音對應可以做為輸入元件（例如動作或軸對應），或當做事件圖形中的藍圖節點使用。 例如，您可以連結跳躍命令，根據說出單字的時間，列印出兩個不同的記錄檔：
 
@@ -68,6 +60,8 @@ ms.locfileid: "84330630"
 這就是您在 Unreal 中開始將語音輸入新增至 HoloLens 應用程式所需的所有設定。 如需有關語音和互動的詳細資訊，請參閱下列連結，並請務必考慮您為使用者建立的體驗。
 
 ## <a name="see-also"></a>另請參閱
+* [語音輸入](voice-input.md)
 * [目光和行動](gaze-and-commit.md)
 * [本能互動](interaction-fundamentals.md)
 * [MR Input 212：語音](holograms-212.md)
+

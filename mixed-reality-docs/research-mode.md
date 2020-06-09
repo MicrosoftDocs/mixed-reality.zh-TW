@@ -1,84 +1,135 @@
 ---
 title: HoloLens 研究模式
 description: 使用 HoloLens 的 Research 模式，應用程式可以存取金鑰裝置感應器串流（深度、環境追蹤和 IR-反射率）。
-author: davidgedye
-ms.author: dgedye
+author: hferrone
+ms.author: v-haferr
 ms.date: 05/03/2018
 ms.topic: article
-keywords: 研究模式，cv，rs4，電腦視覺，research，HoloLens
-ms.openlocfilehash: 307df0c226221422f13af09d8f4944c22ead3865
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+keywords: 研究模式，cv，rs4，電腦視覺，research，HoloLens，HoloLens 2
+ms.openlocfilehash: ec6f7b73a1f25932f10c10a7f0daaf78e536c0c4
+ms.sourcegitcommit: 7f50210b71a65631fd1bc3fdb215064e0db34333
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438311"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84533100"
 ---
 # <a name="hololens-research-mode"></a>HoloLens 研究模式
 
-> [!NOTE]
-> 這項功能已新增為 HoloLens 的[Windows 10 2018 年4月更新](release-notes-april-2018.md)的一部分，且在舊版中無法使用。
+## <a name="overview"></a>概觀
 
-Research 模式是 HoloLens 的新功能，可讓應用程式存取裝置上的重要感應器。 它們包括：
-- 系統使用的四個環境追蹤攝影機，用於地圖建立和標題追蹤。
-- 兩個版本的深度相機資料–一個用於高頻率（30 FPS）近深度檢測，通常用於手動追蹤，另一個用於較低頻率（1-5 FPS）的深度感應，目前用於空間對應，
-- 有兩個版本的 IR 反射率串流，由 HoloLens 用來計算深度，但有價值，因為這些影像會從 HoloLens 照亮，而且會受到環境光線的適當影響。
+Research 模式是在第1代 HoloLens 中引進，可讓您存取裝置上的主要感應器，特別是針對不適合部署的研究應用程式。 您現在可以從下列輸入收集資料：
 
-![Research 模式應用程式螢幕擷取畫面](images/sensor-stream-viewer.jpg)<br>
+* **可見的光線環境追蹤攝影機**-供系統用來進行頭追蹤和地圖建築物。
+* **深度相機**–以兩種模式運作：  
+    + 短期擲回、高頻率（30 FPS）用於[手動追蹤](interaction-fundamentals.md)的近深度檢測
+    + [空間對應](spatial-mapping.md)所使用的長時間擲回、低頻率（1-5 FPS）深度感應
+* **兩個版本的 IR 反射率串流**-由 HoloLens 用來計算深度。 這些映射是由紅外線所照亮，並不會受到環境可見光線的影響。
+
+如果您使用 HoloLens 2，您也可以存取下列輸入：
+
+* **加速**計–系統用來判斷沿著 X、Y 和 Z 軸和引力的線性加速。
+* **Gyro** –由系統用來判斷旋轉。
+* **磁力計**–由系統用來估計絕對方向。
+
+![研究模式應用程式螢幕擷取畫面](images/sensor-stream-viewer.jpg)<br>
 *測試應用程式的混合現實捕捉，會顯示 Research 模式中提供的八個感應器串流*
+
+> [!NOTE]
+> Research 模式功能已新增為 HoloLens 的[Windows 10 2018 年4月更新](release-notes-april-2018.md)的一部分，且在舊版中無法使用。
+
+## <a name="usage"></a>使用方式
+
+研究模式是針對在電腦視覺和機器人領域中探索新想法的學術和產業研究人員所設計。  它不適用於部署在企業環境中的應用程式，或透過 Microsoft Store 或其他散發通道提供。
+
+此外，Microsoft 不保證未來的硬體或作業系統更新將會支援研究模式或對等功能。 不過，這不應該阻止您使用它來開發和測試新的想法！
+
+## <a name="security-and-performance"></a>安全性與效能
+
+請注意，啟用 research 模式比在正常情況下使用 HoloLens 2 的電池電力更高。 即使使用研究模式功能的應用程式不在執行中，也是如此。  啟用此模式也可以降低裝置的整體安全性，因為應用程式可能會誤用感應器資料。  您可以在[HoloLens 安全性常見問題](https://docs.microsoft.com/hololens/hololens-faq-security)中找到更多有關裝置安全性的資訊。  
+
 
 ## <a name="device-support"></a>裝置支援
 
 <table>
     <colgroup>
-    <col width="33%" />
-    <col width="33%" />
-    <col width="33%" />
+    <col width="50%" />
+    <col width="50%" />
+    <!-- <col width="33%" /> -->
     </colgroup>
     <tr>
         <td><strong>功能</strong></td>
-        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens 第1代</strong></a></td>
+        <!-- <td><a href="hololens2-hardware.md"><strong>HoloLens 2</strong></a></td> -->
     </tr>
      <tr>
-        <td>研究模式</td>
+        <td>Head 追蹤攝影機</td>
         <td>✔️</td>
+        <!-- <td>❌</td> -->
+    </tr>
+    <tr>
+        <td>深度 & IR 相機</td>
+        <td>✔️</td>
+        <!-- <td>❌</td> -->
+    </tr>
+    <tr>
+        <td>加速計</td>
         <td>❌</td>
+        <!-- <td>❌</td> -->
+    </tr>
+    <tr>
+        <td>迴轉儀</td>
+        <td>❌</td>
+        <!-- <td>❌</td> -->
+    </tr>
+    <tr>
+        <td>磁力計</td>
+        <td>❌</td>
+        <!-- <td>❌</td> -->
     </tr>
 </table>
 
-## <a name="before-using-research-mode"></a>使用研究模式之前
-
-研究模式的命名良好：它適用于學術和產業研究人員在電腦視覺和機器人領域中嘗試新構想。  研究模式不適用於將在企業中部署或可在 Microsoft Store 中使用的應用程式。 這是因為研究模式會降低裝置的安全性，而且耗用的電池電力遠高於正常作業。 Microsoft 不會承諾在任何未來的裝置上支援此模式。 因此，我們建議您使用它來開發和測試新的想法;不過，您將無法廣泛部署使用研究模式的應用程式，也無法保證它會繼續在未來的硬體上工作。
+> [!IMPORTANT]
+> HoloLens 2 的 Research 模式支援預計會在2020年7月提供公開預覽，並將包含上述所有功能。 請回來查看以取得詳細資訊。 
 
 ## <a name="enabling-research-mode"></a>啟用研究模式
 
-Research 模式是開發人員模式的子模式。 您必須先在 設定 應用程式中啟用開發人員模式（**設定 > 適用于開發人員的 更新 & 安全性 >** ）：
+Research 模式是「開發人員模式」的延伸模組。 開始之前，必須先啟用裝置的開發人員功能，才能存取 research 模式設定： 
 
-1. 將 [使用開發人員功能] 設定為 [**開啟**]
-2. 將 [啟用裝置入口網站] 設定為 [**開啟**]
+* 開啟 [**開始] 功能表 > 設定**]，然後選取 [**更新**]。
+* **為開發人員**選取並啟用**開發人員模式**。
+* 向下滾動並啟用 [**裝置入口網站**]。
 
-然後使用連線到與 HoloLens 相同之 Wi-fi 網路的網頁瀏覽器，流覽至 HoloLens 的 IP 位址（透過 [**設定] > [網路 &] [網際網路] > [wi-fi > 硬體**內容]）來取得。 這是[裝置入口網站](using-the-windows-device-portal.md)，您會在入口網站的 [系統] 區段中找到 [研究模式] 頁面：
+啟用開發人員功能之後，請[連接到裝置入口網站](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)以啟用研究模式功能。
 
-HoloLens 裝置入口網站的 ![Research 模式] 索引標籤](images/ResearchModeDevPortal.png)<br>
-*HoloLens 裝置入口網站中的研究模式*
+在*HoloLens 第1代*上：
 
-選取 [**允許存取感應器串流**] 之後，您將需要重新開機 HoloLens。 您可以從裝置入口網站，在頁面頂端的 [電源] 功能表項目底下執行此動作。
+* 前往**裝置入口網站**中的 [**系統 > 研究模式]** 。
+* 選取 [**允許存取感應器串流**]。
+* 從頁面頂端的 [**電源**] 功能表項目重新開機裝置。
 
-一旦您的裝置重新開機，透過裝置入口網站載入的應用程式應該能夠存取研究模式串流。
+一旦您重新開機裝置，透過**裝置入口網站**載入的應用程式就可以存取研究模式串流。
+
+![HoloLens 裝置入口網站的 [研究模式] 索引標籤](images/ResearchModeDevPortal.png)<br>
+*HoloLens 裝置入口網站中的 Research 強制回應視窗*
 
 ## <a name="using-sensor-data-in-your-apps"></a>在您的應用程式中使用感應器資料
 
-應用程式可以藉由以存取相片/視頻相機串流的相同方式，開啟[媒體基礎](https://msdn.microsoft.com/library/windows/desktop/ms694197)串流來存取感應器串流資料。 
+*HoloLens 第1代*
 
-在研究模式下也可以使用適用于 HoloLens 開發的所有 Api。 特別是，應用程式可以確切知道 HoloLens 在每個感應器框架捕獲時間的6DoF 空間。
+應用程式可以使用透過[媒體基礎](https://msdn.microsoft.com/library/windows/desktop/ms694197)存取相片和攝影機串流的相同方式來存取感應器串流資料。 
 
-範例應用程式會顯示如何存取各種研究模式串流、如何使用內建函式和 extrinsics，以及如何記錄串流，可在[HoloLensForCV GitHub](https://github.com/Microsoft/HoloLensForCV)存放庫中取得。
+所有適用于 HoloLens 開發的 Api 也會以 Research 模式提供。 特別是，應用程式會確切知道 HoloLens 在每個感應器框架捕獲時間的6DoF 空間。
+
+您可以找到如何存取各種研究模式串流的範例應用程式、如何使用[內建函式和 extrinsics](https://docs.microsoft.com/windows/mixed-reality/locatable-camera#locating-the-device-camera-in-the-world)，以及如何在[HoloLensForCV GitHub](https://github.com/Microsoft/HoloLensForCV)存放庫存放庫中記錄串流。
+
+ > [!NOTE]
+ > 目前，HoloLensForCV 範例不適用於 HoloLens 2。
 
 ## <a name="known-issues"></a>已知問題
 
-請參閱 HoloLensForCV 存放庫中的[問題追蹤](https://github.com/Microsoft/HololensForCV/issues)器。
+您可以使用 HoloLensForCV 存放庫中的[問題追蹤](https://github.com/Microsoft/HololensForCV/issues)程式來遵循已知問題。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [Microsoft 媒體基礎](https://msdn.microsoft.com/library/windows/desktop/ms694197)
 * [HoloLensForCV GitHub 存放庫](https://github.com/Microsoft/HoloLensForCV)

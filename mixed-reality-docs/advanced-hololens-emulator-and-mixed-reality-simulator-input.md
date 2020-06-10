@@ -3,15 +3,15 @@ title: 進階 HoloLens 模擬器和混合實境模擬器輸入
 description: 使用鍵盤、滑鼠和 Xbox 控制器來模擬 HoloLens 模擬器和 Windows Mixed Reality 模擬器輸入的詳細指示。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 05/12/2020
+ms.date: 06/8/2020
 ms.topic: article
 keywords: HoloLens、模擬器、模擬、Windows Mixed Reality
-ms.openlocfilehash: e9051ae9e7853924f583b6c38f6177f2f967d9f0
-ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
+ms.openlocfilehash: 0812b1d498ea557e84eecc44142b38d86099f832
+ms.sourcegitcommit: dc60c6ca075e7086b87478f1d7e87ebe02160c0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83227947"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84631481"
 ---
 # <a name="advanced-hololens-emulator-and-mixed-reality-simulator-input"></a>進階 HoloLens 模擬器和混合實境模擬器輸入
 
@@ -42,7 +42,7 @@ ms.locfileid: "83227947"
 
 您也可以控制模擬感應器輸入的狀態：
 * **Reset**：這會將所有模擬感應器傳回其預設值。  從 HoloLens 2 模擬器開始，重設的範圍可以使用適當的輔助按鍵或按鈕（左和/或右 Alt，或遊戲台上的左和/或右緩衝），藉此吸引一或兩個人。
-* **追蹤**：迴圈流覽位置追蹤模式。 這包括：
+* **追蹤**：迴圈流覽位置追蹤模式。 包括：
   * **預設值**： OS 會根據系統所提出的要求，選擇最佳的追蹤模式。
    * **方向**：只會強制追蹤方向，而不論系統所提出的要求為何。
    * **位置**：強制執行位置追蹤，而不考慮系統所提出的要求。
@@ -61,7 +61,7 @@ ms.locfileid: "83227947"
 |  Z |  W/S |  |  向上/向下移動控制杆 | 
 |  動作 |  輸入或空格 |  向右按鈕 |  按鈕或任一觸發程式 | 
 |  Bloom/系統 |  F2 或 Windows 鍵 |  |  B 按鍵 | 
-|  控制器手柄按鈕 |  G  |  |  | 
+|  控制器把手按鈕/抓握 |  G  |  |  | 
 |  控制器功能表按鈕 |  M  |  |  | 
 |  控制器觸控板觸控 |  U  |  |  | 
 |  控制器觸控板按下 |  P  |  |  | 
@@ -84,9 +84,9 @@ ms.locfileid: "83227947"
 
 下表描述目標的選項，以及啟用每一個專案的方式。
 
-| Object | 鍵盤修飾詞 | 控制器修飾詞 | 模擬器 UI 修飾詞 |
+| 物件 | 鍵盤修飾詞 | 控制器修飾詞 | 模擬器 UI 修飾詞 |
 |----------|----------|----------|----------|
-| body | (預設值) | (預設值) | (預設值) |
+| 主體 | (預設值) | (預設值) | (預設值) |
 | Head | 按住 H | (無法使用) | (無法使用) |
 | 左側/控制器 | 按住左 ALT 鍵 | 保留左側的肩按鈕 | 左圖釘 | 
 | 右手/控制器 | 按住右 ALT 鍵 | 按住右肩按鈕 | 右圖釘 |
@@ -108,7 +108,7 @@ ms.locfileid: "83227947"
 
 以下是建議使用的一組控制項，以取得日常用途：
 
-|  作業 |  鍵盤和滑鼠 |  控制器 | 
+|  操作 |  鍵盤和滑鼠 |  控制器 | 
 |----------|----------|----------|
 |  Body X |  A/D |  左側的控制杆左/右 | 
 |  Body Y |  Page up/page down |  向上/向下 DPad | 
@@ -131,13 +131,13 @@ ms.locfileid: "83227947"
 |  移動/旋轉更快 | 左或右 Shift 鍵 | 按住適當的操縱杆 |
 |  移動/旋轉緩慢 | 左或右 Ctrl 鍵 | 按住左側的操縱杆 |
 
-## <a name="using-a-windows-mixed-reality-immersive-headset-and-motion-controllers-with-the-hololens-2-emulator"></a>搭配 HoloLens 2 模擬器使用 Windows Mixed Reality 沉浸式耳機和運動控制器
+## <a name="using-a-windows-mixed-reality-immersive-headset-and-motion-controllers-with-the-hololens-2-emulator"></a>搭配使用 Windows Mixed Reality 沉浸式頭戴裝置和運動控制器與 HoloLens 2 模擬器
 
 使用 Windows Mixed Reality 沉浸式耳機搭配 HoloLens 2 模擬器時，移動和旋轉會自動對應至耳機移動和旋轉。  動作控制器的位置和方向會自動對應至模擬器中的手寫位置和方向。  下表列出使用「動作控制器」時可用的其他動作。
 
 請注意，使用耳機時，會自動忽略標準鍵盤、滑鼠和遊戲台控制項。
 
-|  作業 |  動作 |  附註 | 
+|  操作 |  動作 |  注意 | 
 |----------|----------|----------|
 |  Body X |  操縱杆向左/向右 |   | 
 |  Body Z |  操縱杆向前/向後 |   | 
@@ -153,7 +153,7 @@ ms.locfileid: "83227947"
 
 下列鍵盤快速鍵可用於存取認知模擬控制台，以及啟用或停用電腦輸入裝置以搭配模擬使用。
 
-| 作業 | 快速鍵 | 描述/附注 |
+| 操作 | 快速鍵 | 描述/附注 |
 |-----------|----------|-------------|
 | 切換「使用鍵盤進行模擬」 | F4 | 當關閉時，鍵盤輸入會進入 HoloLens 或 Windows Mixed Reality 應用程式。 |
 | 切換「使用滑鼠進行模擬」 | F5 | 當關閉時，滑鼠輸入會進入混合現實環境（僅限 Windows Mixed Reality） |
@@ -162,7 +162,7 @@ ms.locfileid: "83227947"
 | 將鍵盤焦點設定至控制台 | F8 | 如果面板目前不可見，則會先顯示。 |
 | 在模擬器或混合現實入口網站視窗中停駐或停用面板 | F9 | 如果視窗在停駐時關閉，則會停駐並隱藏。 |
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [安裝工具](install-the-tools.md)
 * [使用 HoloLens 模擬器](using-the-hololens-emulator.md)
 * [使用 Windows Mixed Reality 模擬器](using-the-windows-mixed-reality-simulator.md)

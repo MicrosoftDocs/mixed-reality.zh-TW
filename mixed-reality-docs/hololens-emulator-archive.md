@@ -3,26 +3,28 @@ title: HoloLens 模擬器封存
 description: Microsoft HoloLens 模擬器的已發行組建清單。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 5/12/2020
+ms.date: 6/8/2020
 ms.topic: article
 keywords: HoloLens、模擬器、組建、版本
-ms.openlocfilehash: e01f58783645bccd473418639d5fa495bbc7817f
-ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
+ms.openlocfilehash: 7fe48203a3670490a2ac78040ea9f0ac8e811bd5
+ms.sourcegitcommit: dc60c6ca075e7086b87478f1d7e87ebe02160c0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83227933"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84631487"
 ---
 # <a name="hololens-2-emulator-archive"></a>HoloLens 2 模擬器封存
 
 HoloLens 模擬器（第1代）和 HoloLens 2 模擬器組建會並存安裝。 我們通常建議使用最新的可用組建，但您可能會想要或需要針對舊的模擬器測試應用程式。 此頁面包含已發行版本本的連結。
 
-|  Build |  發行日期 |  附註 | 
+|  組建 |  發行日期 |  注意 | 
 |----------|----------|----------|
-|  [HoloLens 2 模擬器組建10.0.19041.1103](https://go.microsoft.com/fwlink/?linkid=2129088) | 2020 5 月12日 | Windows 全像版本2004。  Windows Mixed Reality 耳機和運動控制器可以用來控制和觀看身歷聲的 HoloLens 2 模擬器。  如需一般 HoloLens 2 版本資訊，請參閱https://docs.microsoft.com/hololens/hololens-release-notes |
-|  [HoloLens 2 模擬器組建10.0.18362.1061](https://go.microsoft.com/fwlink/?linkid=2129833) | 2020 5 月12日 | Windows 全像版本1903可能會更新2020。  如需一般 HoloLens 2 版本資訊，請參閱https://docs.microsoft.com/hololens/hololens-release-notes |
+|  [HoloLens 2 模擬器組建10.0.19041.1106](https://go.microsoft.com/fwlink/?linkid=2132415) | 2020年6月9日 | Windows 全像版本2004年6月2020更新。  解決無法轉譯的 DirectX 12 應用程式問題、螢幕小鍵盤未出現、具有手的物件未如預期般運作，以及模擬器無法啟動，並出現關於以 AMD 為基礎之系統上的嵌套虛擬化錯誤。  如需一般 HoloLens 2 版本資訊，請參閱https://docs.microsoft.com/hololens/hololens-release-notes |
+|  [HoloLens 2 模擬器組建10.0.18362.1064](https://go.microsoft.com/fwlink/?linkid=2132601) | 2020年6月9日 | Windows 全像版本1903年6月2020更新。  解決 DirectX 12 應用程式未呈現的問題、螢幕小鍵盤未出現，以及未如預期般運作的物件。  如需一般 HoloLens 2 版本資訊，請參閱https://docs.microsoft.com/hololens/hololens-release-notes |
+|  [HoloLens 2 模擬器組建10.0.19041.1103](https://go.microsoft.com/fwlink/?linkid=2129088) | 2020 年 5 月 12 日 | Windows 全像版本2004。  Windows Mixed Reality 耳機和運動控制器可以用來控制和觀看身歷聲的 HoloLens 2 模擬器。  如需一般 HoloLens 2 版本資訊，請參閱https://docs.microsoft.com/hololens/hololens-release-notes |
+|  [HoloLens 2 模擬器組建10.0.18362.1061](https://go.microsoft.com/fwlink/?linkid=2129833) | 2020 年 5 月 12 日 | Windows 全像版本1903可能會更新2020。  如需一般 HoloLens 2 版本資訊，請參閱https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 模擬器組建10.0.18362.1059](https://go.microsoft.com/fwlink/?linkid=2126826) | 2020年4月13日 | Windows 全像版本1903年4月2020更新。  如需一般 HoloLens 2 版本資訊，請參閱https://docs.microsoft.com/hololens/hololens-release-notes |
-|  [HoloLens 2 模擬器組建10.0.18362.1056](https://go.microsoft.com/fwlink/?linkid=2121323) | 2020年3月10日 | Windows 全像版本1903年3月2020更新。  如需一般 HoloLens 2 版本資訊，請參閱https://docs.microsoft.com/hololens/hololens-release-notes |
+|  [HoloLens 2 模擬器組建10.0.18362.1056](https://go.microsoft.com/fwlink/?linkid=2121323) | 2020 年 3 月 10 日 | Windows 全像版本1903年3月2020更新。  如需一般 HoloLens 2 版本資訊，請參閱https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 模擬器組建10.0.18362.1053](https://go.microsoft.com/fwlink/?linkid=2118321) | 2020 年 2 月 11 日 | Windows 全像版本 1903 2 月2020更新。  如需一般 HoloLens 2 版本資訊，請參閱https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 模擬器組建10.0.18362.1044](https://go.microsoft.com/fwlink/?linkid=2114824) | 2020 年 1 月 13 日 | Windows 全像版本1903年1月2020更新。  如需一般 HoloLens 2 版本資訊，請參閱https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 模擬器組建10.0.18362.1042](https://go.microsoft.com/fwlink/?linkid=2112589) | 2019年12月6日 | Windows 全像版本 1903 2019 年12月更新。  解決在顯示 [針腳] 面板時，在模擬器中執行的全像攝影應用程式不會意外暫停的問題。  使用認知模擬 API 或感知模擬控制應用程式時，可讓您連接到遠端模擬器。  如需一般 HoloLens 2 版本資訊，請參閱https://docs.microsoft.com/hololens/hololens-release-notes |
@@ -35,7 +37,7 @@ HoloLens 模擬器（第1代）和 HoloLens 2 模擬器組建會並存安裝。 
 
 ## <a name="hololens-emulator-1st-gen-archive"></a>HoloLens 模擬器（第1代）封存
 
-|  Build |  發行日期 |  附註 | 
+|  組建 |  發行日期 |  注意 | 
 |----------|----------|----------|
 |  [HoloLens 模擬器組建10.0.17763.134](https://go.microsoft.com/fwlink/?linkid=2065980) | 2018 年 11 月 19 日 | 最新的 HoloLens （第1代）組建。 Windows 10 2018 年10月更新。 |
 |  [HoloLens 模擬器組建10.0.17134.80](https://go.microsoft.com/fwlink/?linkid=874531) | 2018 年 5 月 21 日 | 
@@ -44,7 +46,7 @@ HoloLens 模擬器（第1代）和 HoloLens 2 模擬器組建會並存安裝。 
 |  [HoloLens 模擬器組建10.0.14342.1018](https://go.microsoft.com/fwlink/?LinkID=823018) |  2016 年 5 月 31 日 |
 |  [HoloLens 模擬器組建10.0.11082.1033](https://go.microsoft.com/fwlink/?LinkID=724053) |  2016年3月30日 |
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [安裝工具](install-the-tools.md)
 * [使用 HoloLens 模擬器](using-the-hololens-emulator.md)
 * [先進的 HoloLens 模擬器和混合現實模擬器輸入](advanced-hololens-emulator-and-mixed-reality-simulator-input.md)

@@ -3,15 +3,15 @@ title: HoloLens 研究模式
 description: 使用 HoloLens 的 Research 模式，應用程式可以存取金鑰裝置感應器串流（深度、環境追蹤和 IR-反射率）。
 author: hferrone
 ms.author: v-haferr
-ms.date: 05/03/2018
+ms.date: 06/10/2020
 ms.topic: article
 keywords: 研究模式，cv，rs4，電腦視覺，research，HoloLens，HoloLens 2
-ms.openlocfilehash: ec6f7b73a1f25932f10c10a7f0daaf78e536c0c4
-ms.sourcegitcommit: 7f50210b71a65631fd1bc3fdb215064e0db34333
+ms.openlocfilehash: 62b82e3a36452d4b104bf04999e556ec19d2a5e3
+ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84533100"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84720394"
 ---
 # <a name="hololens-research-mode"></a>HoloLens 研究模式
 
@@ -37,7 +37,7 @@ Research 模式是在第1代 HoloLens 中引進，可讓您存取裝置上的主
 > [!NOTE]
 > Research 模式功能已新增為 HoloLens 的[Windows 10 2018 年4月更新](release-notes-april-2018.md)的一部分，且在舊版中無法使用。
 
-## <a name="usage"></a>使用方式
+## <a name="usage"></a>使用量
 
 研究模式是針對在電腦視覺和機器人領域中探索新想法的學術和產業研究人員所設計。  它不適用於部署在企業環境中的應用程式，或透過 Microsoft Store 或其他散發通道提供。
 
@@ -97,7 +97,7 @@ Research 模式是「開發人員模式」的延伸模組。 開始之前，必�
 
 * 開啟 [**開始] 功能表 > 設定**]，然後選取 [**更新**]。
 * **為開發人員**選取並啟用**開發人員模式**。
-* 向下滾動並啟用 [**裝置入口網站**]。
+* 向下捲動並啟用**裝置入口網站**。
 
 啟用開發人員功能之後，請[連接到裝置入口網站](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)以啟用研究模式功能。
 

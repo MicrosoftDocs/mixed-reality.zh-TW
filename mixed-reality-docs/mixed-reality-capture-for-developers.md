@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 02/24/2019
 ms.topic: article
 keywords: mrc、相片、影片、capture、攝影機
-ms.openlocfilehash: 0d51945444a411563b67af8569fee7ffe3449957
-ms.sourcegitcommit: f24ac845e184c2f90e8b15adab9addb913f5cb83
+ms.openlocfilehash: 1116e9a0923129aa2b18d838917eebf12adae694
+ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84451343"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84720414"
 ---
 # <a name="mixed-reality-capture-for-developers"></a>適用於開發人員的混合實境擷取
 
@@ -97,12 +97,12 @@ if (view != null)
 ##### <a name="enable-the-photovideocamera-holographicviewconfiguration-in-unreal"></a>在 Unreal 中啟用 PhotoVideoCamera HolographicViewConfiguration
 
 > [!NOTE]
-> 這需要**Unreal 引擎 4.25**或更新版本。
+> 這需要 **Unreal Engine 4.25** 或更新版本。
 
-若要從 PV 攝影機選擇進行轉譯：
+若要選擇從 PV 相機呈現：
 
-1. 呼叫**SetEnabledMixedRealityCamera**和**ResizeMixedRealityCamera**
-    * 使用 [**大小 X** ] 和 [ **Y 大小**] 值來設定影片大小。
+1. 呼叫 **SetEnabledMixedRealityCamera** 和 **ResizeMixedRealityCamera**
+    * 使用 **Size X** 和 **Size Y** 值來設定影片大小。
 
 ![第三相機](images/unreal-camera-3rd.PNG)
 
@@ -232,15 +232,25 @@ MRC 影片效果（**Windows. MixedRealityCapture. MixedRealityCaptureVideoEffec
 |  BlankOnProtectedContent  |  boolean  |  FALSE  |  當有 2d UWP 應用程式顯示受保護的內容時，啟用或停用的旗標會傳回空白框架。 如果此旗標為 false，而 2d UWP 應用程式顯示受保護的內容，則 2d UWP 應用程式將會被耳機和混合現實捕捉中的受保護內容材質取代。 |
 |  ShowHiddenMesh  |  boolean  |  FALSE  |  用來啟用或停用顯示全像攝影機的隱藏區網格和鄰近內容的旗標。 |
 | OutputSize | 大小 | 0, 0 | 在裁剪影片穩定之後，設定所需的輸出大小。 如果指定0或不正確輸出大小，則會選擇預設的裁剪大小。 |
-| PreferredHologramPerspective | UINT32 | 0（顯示） | 用來指出應該捕捉哪一種全像相機視圖設定的列舉：0（顯示）表示不會要求應用程式從相片/攝影機轉譯，1（PhotoVideoCamera）會要求應用程式從相片/攝影機呈現（如果應用程式支援） |
+| PreferredHologramPerspective | UINT32 | Windows 裝置入口網站中的 [**從相機**轉譯] 設定 | 用來指出應該捕捉哪一種全像相機視圖設定的列舉：0（顯示）表示不會要求應用程式從相片/攝影機轉譯，1（PhotoVideoCamera）會要求應用程式從相片/攝影機（如果應用程式支援）呈現。 僅在 HoloLens 2 上支援 |
+
+>[!NOTE]
+> 您可以在 Windows 裝置入口網站中變更預設值**PreferredHologramPerspective** ，方法是前往 [[混合現實](using-the-windows-device-portal.md#mixed-reality-capture)] [捕捉] 頁面，並**從 [相機**] 取消核取 [轉譯]。 設定的預設值為**1 （PhotoVideoCamera）**，但可以取消核取，將其設定為**0 （顯示）**。
+>
+> 在2020年6月更新（Windows 全像版本 2004 build 19041.1106 和 Windows 全像版本 1903 build 18362.1064）之前， **PreferredHologramPerspective**的預設值是**0 （顯示）** 。
 
 MRC 音訊效果（**Windows MixedRealityCapture. MixedRealityCaptureAudioEffect**）
 
 | 屬性名稱 | 類型 | 預設值 | 描述 |
 |----------|----------|----------|----------|
 | MixerMode | UINT32 | 2（Mic 和系統音訊） | 列舉，用來指出應該使用的音訊來源：0（僅限 Mic 音訊）、1（僅限系統音訊）、2（Mic 和系統音訊） |
-| LoopbackGain | FLOAT | 1.0 | 適用于系統音訊磁片區的增益。 範圍從0.0 到5.0。 僅在 HoloLens 2 上支援 |
-| MicrophoneGain | FLOAT | 1.0 | 適用于 mic volume 的增益。 範圍從0.0 到5.0。 僅在 HoloLens 2 上支援 |
+| LoopbackGain | FLOAT | Windows 裝置入口網站中的**應用程式音訊增益**設定 | 適用于系統音訊磁片區的增益。 範圍從0.0 到5.0。 僅在 HoloLens 2 上支援 |
+| MicrophoneGain | FLOAT | Windows 裝置入口網站中的**Mic 音訊增益**設定 | 適用于 mic volume 的增益。 範圍從0.0 到5.0。 僅在 HoloLens 2 上支援 |
+
+>[!NOTE]
+> 您可以在 Windows 裝置入口網站中變更**LoopbackGain**或**MicrophoneGain**的預設值，方法是移至 [ [Mixed Reality](using-the-windows-device-portal.md#mixed-reality-capture) ] [Capture] 頁面，然後調整其各自設定旁的滑杆。 這兩個設定預設為**1.0**，但可以設定為**0.0**與**5.0**之間的任何值。
+>
+> 使用 Windows 裝置入口網站設定預設增益值的方式是在2020年6月更新（Windows 全像版本2004組建19041.1106 和 Windows 全像版本 1903 build 18362.1064）中加入。
 
 ### <a name="simultaneous-mrc-limitations"></a>同時 MRC 限制
 
@@ -278,7 +288,7 @@ Windows 10 內建的 MRC 功能（透過 Cortana、[開始] 功能表、硬體�
 
 ## <a name="see-also"></a>另請參閱
 
-* [混合實境擷取](mixed-reality-capture.md)
+* [混合現實 capture](mixed-reality-capture.md)
 * [觀眾檢視](spectator-view.md)
 * [Unity 開發總覽](unity-development-overview.md)
 * [Unreal 開發概觀](unreal-development-overview.md)

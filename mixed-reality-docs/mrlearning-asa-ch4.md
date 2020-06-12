@@ -7,12 +7,12 @@ ms.date: 05/18/2020
 ms.topic: article
 keywords: 混合實境、unity、教學課程、課程、hololens、azure、空間錨點
 ms.localizationpriority: high
-ms.openlocfilehash: a35f73ae5aee493182f0f4990aa345d990c3f513
-ms.sourcegitcommit: e65f1463aec3c040a1cd042e61fc2bd156a42ff8
+ms.openlocfilehash: 78fa6a2cdd29bd424ec3016a5467760063b87a14
+ms.sourcegitcommit: 7011ac6fde80e5c45f04192fa1db6e1eb559e3b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83867620"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327924"
 ---
 # <a name="4-azure-spatial-anchors-for-android-and-ios"></a>4.適用於 Android 和 iOS 的 Azure Spatial Anchors
 
@@ -23,7 +23,8 @@ ms.locfileid: "83867620"
 * 了解如何使用 Unity AR Foundation 和 ARCore XR 外掛程式，在 Android 裝置上建置專案。
 * 了解如何使用 Unity AR Foundation 和 ARKit XR 外掛程式，在 iOS 裝置上建置專案。
 
-[!NOTE] 若要完成本教學課程，請確定您已完成 Azure Spatial Anchors 教學課程 -> [開始使用 Azure Spatial Anchors](mrlearning-asa-ch1.md)。
+> [!NOTE]
+> 若要完成本教學課程，請確定您已完成 Azure Spatial Anchors 教學課程 -> [開始使用 Azure Spatial Anchors](mrlearning-asa-ch1.md)。
 
 ## <a name="adding-inbuilt-unity-packages"></a>新增內建的 Unity 套件
 
@@ -35,7 +36,8 @@ ms.locfileid: "83867620"
 * **ARCore XR 外掛程式 2.2.0 預覽版 2**
 * **ARKit XR 外掛程式 2.1.1**
 
-[!NOTE] 如果您正針對 Android 開發本專案，則不需要安裝 ARKit XR 外掛程式套件。 同樣地，如果您要針對 iOS 開發本專案，就不需要安裝 ARCore XR 外掛程式。
+> [!NOTE]
+> 如果您正針對 Android 開發本專案，則不需要安裝 ARKit XR 外掛程式套件。 同樣地，如果您要針對 iOS 開發本專案，就不需要安裝 ARCore XR 外掛程式。
 
 在 Unity 功能表中，選取 [視窗] >  **[套件管理員]** ：
 
@@ -45,11 +47,11 @@ ms.locfileid: "83867620"
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial4-section1-step1-2.png)
 
-在 [套件管理員] 視窗中，選取 [AR Foundation]，您會在此看到許多版本，請按一下 [更新至 2.1.4] 按鈕以選取版本 2.1.4 並更新套件：
+在 [套件管理員] 視窗中，選取 [AR Foundation]，您會在此看到許多版本，且需要選取 [版本 2.1.4]，然後按一下 [更新至 2.1.4] 按鈕以更新套件：
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial4-section1-step1-3.png)
 
-若要支援 Android 裝置，請遵循相同的程序來匯入 ARCore XR 外掛程式 2.2.0 預覽版 2。
+若要支援 Android 裝置，請遵循相同的程序來匯入 **ARCore XR 外掛程式 2.2.0 預覽版 2**。
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial4-section1-step1-4.png)
 
@@ -63,32 +65,35 @@ ms.locfileid: "83867620"
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial4-section2-step1-1.png)
 
-當您按一下 [複製] 按鈕時，會出現新的 [複製設定檔] 視窗，然後再按一下 [複製] 按鈕來複製 DefaultMixedRealityToolkitProfile。
+當您按一下 [複製] 按鈕時，會出現新的 [複製設定檔] 視窗，然後再按一下 [複製] 按鈕來複製 **DefaultMixedRealityToolkitProfile**。
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial4-section2-step1-2.png)
 
-同樣地，在 [偵測器] 視窗中複製相機設定檔，並將設定檔重新命名為 "UnityARConfigurationProfile"，然後按一下 [複製] 按鈕。 在 [偵測器] 視窗中，找出 MixedReality，並選取 [相機] 索引標籤，展開 [偵測器] 視窗中的相機設定提供者，然後按一下 [+ 新增相機設定提供者] > 展開 [新的資料提供者 1] > 選取類型 [無] > 選取 [Microsoft.MixedReality.Toolkit.Experimental.UnityAR] > 選取 [UnityARCameraSettings]。
-
+同樣地，在 [偵測器] 視窗中複製 [相機設定檔]。
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial4-section2-step1-3.png)
 
-在 [階層] 視窗中選取 MixedRealityToolKit 物件之後，在 [偵測器] 視窗中按一下 [新增元件] 按鈕，然後輸入 AR 參考點管理員並選取指令碼，即可附加支援的指令碼。
-
-新增「AR 參考點管理員」指令碼會自動隨附在 [偵測器] 視窗中新增「AR 工作階段來源」。 新增支援的指令碼之後，[偵測器] 視窗外觀如下所示。
+在 [偵測器] 視窗中，找出 MixedReality，並選取 [相機] 索引標籤。展開 [偵測器] 視窗中的相機設定提供者，然後按一下 [+ 新增相機設定提供者] > 展開 [新的資料提供者 1] > 選取類型 [無] > 選取 [Microsoft.MixedReality.Toolkit.Experimental.UnityAR] > 選取 [UnityARCameraSettings]。
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial4-section2-step1-4.png)
 
-## <a name="build-application-to-android-device"></a>將應用程式建置到 Android 裝置
+在 [階層] 視窗中選取 MixedRealityToolKit 物件之後，在 [偵測器] 視窗中按一下 [新增元件] 按鈕，然後輸入 AR 參考點管理員並選取指令碼，即可附加支援的指令碼。
+
+新增 [AR 參考點管理員] 指令碼會自動將 [AR 工作階段來源] 新增至 [偵測器] 視窗。 新增支援的指令碼之後，[偵測器] 視窗外觀如下所示。
+
+![mrlearning-asa](images/mrlearning-asa/tutorial4-section2-step1-5.png)
+
+## <a name="build-an-application-to-an-android-device"></a>將應用程式建置到 Android 裝置
 
 若要將此應用程式建置到 Android 裝置，請按一下視窗頂端的 [檔案]，然後選取 [建置設定]。 畫面上會出現新的視窗，選取 [Android]，然後按一下 [切換平台]。 切換平台需要幾分鐘的時間。 切換至 Android 平台之後，按一下 [新增開啟場景]，並確定您目前的場景是 [組建中的場景] 清單中唯一選取的場景。
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial4-section3-step1-1.png)
 
-關閉 [建置設定] 視窗。 在 Unity 功能表中，選取 [混合實境工具組]  >  [公用程式]  >  [設定 Unity 專案] ，然後按一下 [套用] 來設定 Android 平台的 Unity 專案。
+關閉 [建置設定] 視窗。 在 Unity 功能表中，選取 [混合實境工具組] > [公用程式] > [設定 Unity 專案] ，然後按一下 [套用] 來設定 Android 平台的 Unity 專案。
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial4-section3-step1-2.png)
 
-在 Unity 功能表中，選取 [編輯]  >  [專案設定] 來開啟 [專案設定] 視窗。 在 [專案設定] 視窗中，選取 [玩家] 索引標籤，展開 [其他設定] 區段，選取 [Vulkan]，並按一下 "-" 符號將其移除。
+在 Unity 功能表中，選取 [編輯]  >  [專案設定] 來開啟 [專案設定] 視窗。 在 [專案設定] 視窗中，選取 [玩家] 索引標籤，展開 [其他設定] 區段，選取 [Vulkan]，並按一下 " **-** " 符號將其移除。
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial4-section3-step1-3.png)
 
@@ -101,13 +106,13 @@ ms.locfileid: "83867620"
 
 當建置程序完成時，應用程式應該會自動載入您的 Android 裝置。
 
-## <a name="build-application-to-ios-device"></a>將應用程式建置到 iOS 裝置
+## <a name="build-an-application-to-ios-device"></a>將應用程式建置到 iOS 裝置
 
 若要將此應用程式建置到 iOS 裝置，請按一下視窗頂端的 [檔案]，然後選取 [組建設定]。 畫面上會出現新的視窗，選取 [iOS]，然後按一下 [切換平台]。
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial4-section4-step1-1.png)
 
-關閉 [建置設定] 視窗。 在 Unity 功能表中，選取 [混合實境工具組]  >  [公用程式]  >  [設定 Unity 專案] ，然後按一下 [套用] 來設定 iOS 平台的 Unity 專案。
+關閉 [建置設定] 視窗。 在 Unity 功能表中，選取 [混合實境工具組] > [公用程式] > [設定 Unity 專案] ，然後按一下 [套用] 來設定 iOS 平台的 Unity 專案。
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial4-section4-step1-2.png)
 

@@ -1,40 +1,58 @@
 ---
 title: Unreal 開發概觀
 description: 使用 Unreal Engine 4 的混合實境開發概觀
-author: sw5813
-ms.author: suwu
+author: hferrone
+ms.author: v-haferr
 ms.date: 5/5/2020
 ms.topic: article
 ms.localizationpriority: high
-keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 串流, 遠端, 混合實境, 開發, 開始使用, 功能, 新專案, 模擬器, 文件, 指南, 功能, 全像投影
-ms.openlocfilehash: 08ba760acc1a35d8f47de6a7bf6cbc020c8aca3f
-ms.sourcegitcommit: 189a47b8712dd5b620e19815f5cf6d1ac0f29880
+keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 串流, 遠端, 混合實境, 開發, 開始使用, 功能, 新專案, 模擬器, 文件, 指南, 功能, 全像投影, 遊戲開發
+ms.openlocfilehash: 3e3862bd701d6e873f623abc9f9cda0b3085e753
+ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82851562"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84330155"
 ---
 # <a name="unreal-development-overview"></a>Unreal 開發概觀
 
-Unreal Engine 4 現在完全支援 Windows Mixed Reality (VR) 和 HoloLens 2 (AR) 裝置的開發！ 如果您是 Unreal 開發的新手，<a href="https://docs.unrealengine.com//GettingStarted/index.html" target="_blank">開始使用 Unreal Engine 4</a> 是一個絕佳的探索頁面。 如果您需要資產，Unreal 具有完整的 <a href="https://www.unrealengine.com/marketplace//store" target="_blank">Marketplace</a>。 
+開始使用 <a href="https://docs.microsoft.com/en-us/windows/mixed-reality" target="_blank" title="Mixed Reality Docs"> 混合實境應用程式</a>是一項大型工作。 新的概念、平台和尖端硬體看起來可能像是障礙。 不過，如果您是 Unreal 開發人員，很幸運。 在 Unreal Engine 的最新 <a href="https://docs.unrealengine.com/en-US/Support/Builds/ReleaseNotes/4_25/index.html" target="_blank" title="Unreal Engine 4.25 版本資訊">版本</a>中，現在引進了 <a href="https://www.microsoft.com/en-us/windows/windows-mixed-reality" target="_blank" title="Windows Mixed Reality Docs">Windows Mixed Reality</a> (VR) 和 <a href="https://www.microsoft.com/en-us/hololens/hardware" target="_blank" title="HoloLens 2 Docs">HoloLens 2</a> (AR) 的支援。 此更新包括：
+* 混合實境 UX 工具外掛程式支援
+* OpenXR 支援
+* 從傳統型應用程式進行的應用程式遠端處理
+* 更好的效能
+* 混合實境擷取
+* Azure Spatial Anchors 的初始支援
 
-在您取得 Unreal 開發的基本了解之後，請參閱下一節中的教學課程，以了解如何在 HoloLens 上建置及執行您的應用程式。 請務必造訪 <a href="https://forums.unrealengine.com/development-discussion/vr-ar-development" target="_blank">Unreal 混合實境論壇</a>，與在 Unreal 中建置混合實境應用程式的社群進行互動。 這是尋找您可能遇到問題解決方案的絕佳位置。
-
-## <a name="tutorial"></a>教學課程
-
-請遵循我們的端對端教學課程，以了解如何針對 HoloLens 2 [建置及部署簡單的國際象棋應用程式](unreal-uxt-ch1.md)。 本教學課程使用 UX 工具外掛程式來加速使用互動式 UX 元件 (包括按鈕和操作工具) 開發應用程式。 如需 UX 工具外掛程式的詳細資訊，請參閱下一節的 MRTK。 
+如果您不熟悉 Unreal 開發，請不要盲目跳入。 探索 Unreal <a href="https://docs.unrealengine.com//GettingStarted/index.html" target="_blank">教學課程系列</a>，以快速了解並尋找 Unreal <a href="https://www.unrealengine.com/marketplace//store" target="_blank">市集</a>和混合實境<a href="https://forums.unrealengine.com/development-discussion/vr-ar-development" target="_blank">論壇</a>中的資產和支援。 這些資源可將您連結至今日混合實境市集中建置者和問題解決者的社群。
 
 ## <a name="mixed-reality-toolkit-for-unreal"></a>適用於 Unreal 的混合實境工具組
 
-[適用於 Unreal 的混合實境工具組](https://github.com/microsoft/MixedRealityToolkit-Unreal)是一組元件，形式為外掛程式、範例和文件，其設計目的是加速使用 Unreal Engine 的混合實境應用程式開發。 此工具組中發行的第一個元件是[適用於 Unreal 的 UX 工具](https://github.com/microsoft/MixedReality-UXTools-Unreal)，這是可新增至 HoloLens 2 專案的外掛程式，為 HoloLens 2 應用程式提供 UX 功能。 您可以在各自的 GitHub 存放庫中找到混合實境工具組和適用於 Unreal 的 UX 工具的文件。 
+[適用於 Unreal 的混合實境工具組](https://github.com/microsoft/MixedRealityToolkit-Unreal)是為了加速您在 Unreal 中進行開發而設計的一組元件。 每個元件都包含用於設定沉浸式體驗的外掛程式、範例和文件。 
+
+[適用於 Unreal 的 UX 工具](https://github.com/microsoft/MixedReality-UXTools-Unreal)是第一個要發行的元件，目前僅在 HoloLens 2 上提供支援。 元件外掛程式包括常用 UX 功能的程式碼、藍圖和範例資產，包括：
+* 輸入模擬
+* 手部互動動作項目
+* 可點按的按鈕元件
+* 操作工具元件
+* 追蹤行為元件
+
+您可以深入了解[適用於 Unreal 的 UX 工具](https://github.com/microsoft/MixedReality-UXTools-Unreal) GitHub 存放庫，以取得功能詳細資料和設定專案的相關資訊。
+
+## <a name="tutorial"></a>教學課程
+
+使用您的雙手建置東西，是學習新技能的最佳方法。 了解如何使用 UX 工具外掛程式，為 HoloLens 2 [建置和部署簡單的國際象棋應用程式](unreal-uxt-ch1.md)，是很好的起點。 
+
+端對端教學課程系列提供與常見互動式 UX 元件和案例的實際操作聯繫。 您將逐步完成專案設定、新增場景的互動，以及部署至裝置或模擬器。 您只需要 Windows 10、模擬器和 Visual Studio 2019。
+
 
 ## <a name="performance"></a>效能
 
-HoloLens 2 應用程式必須以每秒 60 格執行，才能讓全像投影穩定顯示並且看起來有回應。 若要在您的應用程式中達到此目的，我們強烈建議您遵循我們[對 Unreal 的效能建議](performance-recommendations-for-unreal.md)。 
+針對混合實境進行開發時，隨附依賴平台的效能檢查點。 HoloLens 2 應用程式必須以每秒 60 格執行，才能讓全像投影穩定顯示並且看起來有回應。 幸好，Unreal 提供[效能建議](performance-recommendations-for-unreal.md)，以在您的應用程式中實現此目的。
 
 ## <a name="guides-to-specific-features"></a>特定功能的指南
 
-若要了解如何使用 Unreal 中的特定功能，請參閱下列指南： 
+混合實境開發有幾個重要功能不在我們的教學課程系列討論範圍內。 參閱下列指南以取得詳細資料和實用應用程式： 
 * [手勢追蹤](unreal-hand-tracking.md)
 * [眼球追蹤](unreal-gaze-input.md)
 * [空間對應](unreal-spatial-mapping.md)
@@ -42,6 +60,7 @@ HoloLens 2 應用程式必須以每秒 60 格執行，才能讓全像投影穩�
 * [語音輸入](unreal-voice-input.md)
 * [HoloLens 相機](unreal-hololens-camera.md)
 * [QR 代碼](unreal-qr-codes.md)
+
 
 ## <a name="supported-features"></a>支援的功能
 

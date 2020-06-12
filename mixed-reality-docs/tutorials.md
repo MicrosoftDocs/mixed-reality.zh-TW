@@ -8,12 +8,12 @@ ms.date: 10/22/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: holotoolkit, mixedrealitytoolkit, mixedrealitytoolkit-unity, 學院, 教學課程
-ms.openlocfilehash: db60ff35156ea20aadd1ba04f9304aa27a2488cb
-ms.sourcegitcommit: ba4c8c2a19bd6a9a181b2cec3cb8e0402f8cac62
+ms.openlocfilehash: e5961a178d571d2f71e98ff4c3c729d6feb0fd40
+ms.sourcegitcommit: 7011ac6fde80e5c45f04192fa1db6e1eb559e3b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82835647"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327958"
 ---
 # <a name="tutorials-and-sample-apps"></a>教學課程和範例應用程式
 
@@ -28,7 +28,7 @@ HoloLens 2 教學課程的設計目的是協助開發人員了解開發混合實
 * 入門教學課程
     * Unity - [7 之 1 概觀和目標](mrlearning-base.md)
     * Unreal - [6 之 1 開始使用](unreal-uxt-ch1.md)
-* Azure 空間錨點教學課程 - [開始使用 Azure 空間錨點 3 之 1](mrlearning-asa-ch1.md)
+* Azure 空間錨點教學課程 - [開始使用 Azure 空間錨點 4 之 1](mrlearning-asa-ch1.md)
 * Azure 語音服務教學課程 - [整合並使用語音辨識和文字記錄 4 之 1](mrlearning-speechSDK-ch1.md)
 * 多使用者功能教學課程 - [設定 Photon Unity 網路 5 之 1](mrlearning-sharing(photon)-ch1.md)
 
@@ -50,7 +50,7 @@ HoloLens 2 教學課程的設計目的是協助開發人員了解開發混合實
 * [已安裝正確工具](install-the-tools.md)的 Windows 10 電腦，是完成每個教學課程的一般先決條件。
 
 >[!NOTE]
->混合實境學院教學課程的設計是以 HoloLens (第 1 代) 和混合實境沉浸式頭戴裝置為準。 因此，對於仍在尋找這些裝置開發指引的開發人員而言，我們覺得這些教學課程很重要。 這些教學課程 **_不會_** 使用用於 HoloLens 2 的最新工具組或互動進行更新。 系統會保留這些資訊，以繼續在支援的裝置上運作。 已針對 HoloLens 2 公佈[一系列新的教學課程](mrlearning-base.md)。
+>混合實境學院教學課程的設計是以 HoloLens (第 1 代) 和混合實境沉浸式頭戴裝置為準。 因此，對於仍在尋找這些裝置開發指引的開發人員而言，我們覺得這些教學課程很重要。 這些教學課程**_不會_** 使用用於 HoloLens 2 的最新工具組或互動進行更新。 系統會保留這些資訊，以繼續在支援的裝置上運作。 已針對 HoloLens 2 公佈[一系列新的教學課程](mrlearning-base.md)。
 
 <br>
 <ul id="cardtypes-W" class="cardsW panelContent" style="display: flex; margin-top: 0px;">

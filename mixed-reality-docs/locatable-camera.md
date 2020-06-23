@@ -6,12 +6,12 @@ ms.author: wguyman
 ms.date: 06/12/2019
 ms.topic: article
 keywords: 相機，hololens，彩色攝影機，正面，hololens 2，cv，電腦視覺，基準，標記，qr 代碼，qr，相片，影片
-ms.openlocfilehash: b8e9d926db09d277b3fde7572dd68257599c8d5e
-ms.sourcegitcommit: 09d9fa153cd9072f60e33a5f83ced8167496fcd7
+ms.openlocfilehash: e158eb2e708164cbd68620f3f46d3039c2eaa730
+ms.sourcegitcommit: 4282d92e93869e4829338bdf7d981c3ee0260bfd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83520013"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85216219"
 ---
 # <a name="locatable-camera"></a>定位相機
 
@@ -115,10 +115,10 @@ public:
         MFPinholeCameraIntrinsics cameraIntrinsics;
         UINT32 sizeCameraExtrinsics = 0;
         UINT32 sizeCameraIntrinsics = 0;
-        UINT64 sampleTimeQpc = 0;
+        UINT64 sampleTimeHns = 0;
  
         // query sample for calibration and validate
-        if (FAILED(pSample->GetUINT64(MFSampleExtension_DeviceTimestamp, &sampleTimeQpc)) ||
+        if (FAILED(pSample->GetUINT64(MFSampleExtension_DeviceTimestamp, &sampleTimeHns)) ||
             FAILED(pSample->GetBlob(MFSampleExtension_CameraExtrinsics, (UINT8*)& cameraExtrinsics, sizeof(cameraExtrinsics), &sizeCameraExtrinsics)) ||
             FAILED(pSample->GetBlob(MFSampleExtension_PinholeCameraIntrinsics, (UINT8*)& cameraIntrinsics, sizeof(cameraIntrinsics), &sizeCameraIntrinsics)) ||
             (sizeCameraExtrinsics != sizeof(cameraExtrinsics)) ||
@@ -149,7 +149,7 @@ public:
         }
  
         // locate dynamic node
-        auto timestamp = PerceptionTimestampHelper::FromSystemRelativeTargetTime(TimeSpanFrodmQpcTicks(sampleTimeQpc));
+        auto timestamp = PerceptionTimestampHelper::FromSystemRelativeTargetTime(TimeSpan{ sampleTimeHns });
         auto coordinateSystem = m_frameOfReference.GetStationaryCoordinateSystemAtTimestamp(timestamp);
         auto location = m_locator.TryLocateAtTimestamp(timestamp, coordinateSystem);
         if (!location)
@@ -161,31 +161,11 @@ public:
  
         return CameraFrameLocation{ coordinateSystem, cameraToDynamicNode * dynamicNodeToCoordinateSystem, cameraIntrinsics };
     }
- 
+
 private:
     GUID m_currentDynamicNodeId{ GUID_NULL };
     SpatialLocator m_locator{ nullptr };
     SpatialLocatorAttachedFrameOfReference m_frameOfReference{ nullptr };
- 
-    // Convert a duration value from a source tick frequency to a destination tick frequency.
-    static inline int64_t SourceDurationTicksToDestDurationTicks(int64_t sourceDurationInTicks, int64_t sourceTicksPerSecond, int64_t destTicksPerSecond)
-    {
-        int64_t whole = (sourceDurationInTicks / sourceTicksPerSecond) * destTicksPerSecond;                          // 'whole' is rounded down in the target time units.
-        int64_t part = (sourceDurationInTicks % sourceTicksPerSecond) * destTicksPerSecond / sourceTicksPerSecond;    // 'part' is the remainder in the target time units.
-        return whole + part;
-    }
- 
-    static inline TimeSpan TimeSpanFromQpcTicks(int64_t qpcTicks)
-    {
-        static const int64_t qpcFrequency = []
-        {
-            LARGE_INTEGER frequency;
-            QueryPerformanceFrequency(&frequency);
-            return frequency.QuadPart;
-        }();
- 
-        return TimeSpan{ SourceDurationTicksToDestDurationTicks(qpcTicks, qpcFrequency, winrt::clock::period::den) / winrt::clock::period::num };
-    }
 };
 ```
 
@@ -277,7 +257,7 @@ public static Vector3 ClosestPointBetweenRays(
 ## <a name="see-also"></a>另請參閱
 * [定位相機範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicFaceTracking)
 * [Unity 中的定位相機](locatable-camera-in-unity.md)
-* [混合實境擷取](mixed-reality-capture.md)
+* [混合現實 capture](mixed-reality-capture.md)
 * [適用於開發人員的混合實境擷取](mixed-reality-capture-for-developers.md)
 * [媒體捕捉簡介](https://msdn.microsoft.com/library/windows/apps/mt243896.aspx)
 * [全像臉部追蹤範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicFaceTracking)

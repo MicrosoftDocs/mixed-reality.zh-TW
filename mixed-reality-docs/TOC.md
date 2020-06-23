@@ -94,7 +94,7 @@
 ## 資源
 ### [學習 Unity](https://learn.unity.com/)
 ### [混合實境工具組](https://github.com/Microsoft/MixedRealityToolkit-Unity)
-### [混合實境設計實驗室](https://github.com/Microsoft/MRDL_Unity_PeriodicTable)
+### [混合實境設計實驗室](https://github.com/microsoft/MixedRealityDesignLabs_Unity)
 ### [Microsoft Maquette](https://www.maquette.ms)
 ### [資產建立程序](asset-creation-process.md)
 ### [設計自己的沉浸式環境](add-custom-home-environments.md)
@@ -136,10 +136,14 @@
 ###### [3.從影片空間化音訊](unity-spatial-audio-ch3.md)
 ###### [4.在執行時間啟用和停用空間音訊](unity-spatial-audio-ch4.md)
 ###### [5.使用殘響增加空間音訊的距離](unity-spatial-audio-ch5.md)
+#### HoloLens 2 開放原始碼範例應用程式
+##### [表面](sampleapp-surfaces.md)
+##### [元素週期表 2.0](https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158)
+##### [Galaxy Explorer 2.0](galaxy-explorer-update.md)
 #### HoloLens (第 1 代) 開啟原始碼範例應用程式
-##### [元素週期表](periodic-table-of-the-elements.md)
+##### [元素週期表 1.0](periodic-table-of-the-elements.md)
+##### [Galaxy Explorer 1.0](galaxy-explorer.md)
 ##### [月球模組](lunar-module.md)
-##### [星系探險](galaxy-explorer.md)
 #### HoloLens (第 1 代) 和沉浸式頭戴裝置教學課程
 ##### [MR Basics 100：開始使用 Unity](holograms-100.md)
 ##### [MR Basics 101：使用裝置完成專案](holograms-101.md)

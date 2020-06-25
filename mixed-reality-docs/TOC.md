@@ -62,14 +62,13 @@
 ### [眼部目光導向的互動](eye-gaze-interaction.md)
 ## UX 元素
 ### [概觀](app-patterns-landingpage.md)
-### 樣式
+### 基本元素
 #### [色彩、光線和材質](color-light-and-materials.md)
 #### [縮放比例](scale.md)
 #### [印刷樣式](typography.md)
-### 空間音效
-#### [空間音效設計](spatial-sound-design.md)
-#### [案例研究：Holotour](case-study-spatial-sound-design-for-holotour.md)
-#### [案例研究：Roboraid](case-study-using-spatial-sound-in-roboraid.md)
+#### [音效](spatial-sound-design.md)
+##### [案例研究：Holotour](case-study-spatial-sound-design-for-holotour.md)
+##### [案例研究：Roboraid](case-study-using-spatial-sound-in-roboraid.md)
 
 ### 控制項和行為
 #### [游標](cursors.md)
@@ -81,13 +80,15 @@
 #### [手部功能表](hand-menu.md)
 #### [近端功能表](near-menu.md)
 #### [物件集合](object-collection.md)
-#### [語音命令](voice-input.md)
+#### [語音輸入](voice-input.md)
 #### [鍵盤](keyboard.md)
 #### [工具提示](tooltip.md)
 #### [平板](slate.md)
 #### [滑桿](slider.md)
 #### [著色器](shader.md)
+#### [對話方塊](dialog-ui.md)
 #### [手勢指導](hand-coach.md)
+#### [空間網格](spatial-mesh-ux.md)
 #### [佈告板和常駐標籤](billboarding-and-tag-along.md)
 #### [顯示進度](progress.md)
 #### [表面磁性](surface-magnetism.md)
@@ -98,12 +99,15 @@
 ### [Microsoft Maquette](https://www.maquette.ms)
 ### [資產建立程序](asset-creation-process.md)
 ### [設計自己的沉浸式環境](add-custom-home-environments.md)
+
 # 開發
 ## [了解工具和架構](development.md)
 ## [安裝工具](install-the-tools.md)
+
 ## 混合實境雲端服務
 ### [Azure 遠端轉譯](https://docs.microsoft.com/azure/remote-rendering)
 ### [Azure Spatial Anchors](https://docs.microsoft.com/azure/spatial-anchors)
+
 ## [教學課程和範例應用程式](tutorials.md)
 ### Unity
 #### HoloLens 2 教學課程
@@ -178,6 +182,7 @@
 #### [4.使場景成為互動式場景](unreal-uxt-ch4.md)
 #### [5.新增按鈕並重設部分位置](unreal-uxt-ch5.md)
 #### [6.封裝並部署至裝置或模擬器](unreal-uxt-ch6.md)
+
 ## Unity
 ### [Unity 開發概觀](unity-development-overview.md)
 ### 開始使用
@@ -209,21 +214,25 @@
 #### [搭配使用 HoloLens 的 Windows 命名空間和 Unity 應用程式](using-the-windows-namespace-with-unity-apps-for-hololens.md)
 #### [Unity 中的混合實境原生物件](unity-xrdevice-advanced.md)
 #### [使用 Unity 的 Vuforia](vuforia-development-overview.md)
+
 ## Unreal
 ### [Unreal 開發概觀](unreal-development-overview.md)
 ### [Unreal 中的手勢追蹤](unreal-hand-tracking.md)
 ### [Unreal 中的注視輸入](unreal-gaze-input.md)
 ### [Unreal 中的空間對應](unreal-spatial-mapping.md)
+### [Unreal 中的空間音訊](unreal-spatial-sound.md)
 ### [Unreal 中的空間錨點](unreal-spatial-anchors.md)
 ### [Unreal 中的語音輸入](unreal-voice-input.md)
 ### [Unreal 中的 HoloLens 相機](unreal-hololens-camera.md)
 ### [Unreal 中的 QR 代碼](unreal-qr-codes.md)
 ### [Unreal 中的串流](unreal-streaming.md)
 ### [對 Unreal 的效能建議](performance-recommendations-for-unreal.md)
+
 ## JavaScript
 ### [JavaScript 開發概觀](javascript-development-overview.md)
 ### [WebXR](webxr-overview.md)
 ### [WebVR](webvr-overview.md)
+
 ## 原生
 ### [原生開發概觀](directx-development-overview.md)
 ### OpenXR
@@ -236,6 +245,7 @@
 #### [建立原生全像攝影專案](creating-a-holographic-directx-project.md)
 #### [取得 HolographicSpace](getting-a-holographicspace.md)
 #### [原生呈現](rendering-in-directx.md)
+
 ## 平台功能和 API
 ### 核心基本要素
 #### [座標系統](coordinate-systems-in-directx.md)
@@ -286,12 +296,14 @@
 #### [使用 Windows 裝置入口網站](using-the-windows-device-portal.md)
 #### [裝置入口網站 API 參照](device-portal-api-reference.md)
 #### [HoloLens 研究模式](research-mode.md)
+
 ## 移植應用程式
 ### [移植 HTK/MRTK 至 MRTK 第 2 版](mrtk-porting-guide.md)
 ### [沈浸式應用程式的移植指南](porting-guides.md)
 ### [Unity 的輸入移植指南](input-porting-guide-for-unity.md)
 ### [更新 Windows Mixed Reality 的 SteamVR 應用程式](updating-your-steamvr-application-for-windows-mixed-reality.md)
 ### [更新混合實境的 2D UWP 應用程式](building-2d-apps.md)
+
 # 散佈
 ## [3D 應用程式啟動程式設計指引](3d-app-launcher-design-guidance.md)
 ## [建立用於住家的 3D 模型](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)

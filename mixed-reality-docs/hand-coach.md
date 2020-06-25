@@ -6,20 +6,17 @@ ms.author: glee
 ms.date: 09/25/2019
 ms.topic: article
 keywords: Windows Mixed Reality、設計、手勢、沉浸式耳機、MRTK、手中的協助
-ms.openlocfilehash: c5f0a0c241ff71dc93f370a5a8caa627128bfb1a
-ms.sourcegitcommit: 1ec628a9107194c0a9d4073b5ca09ee816030e85
+ms.openlocfilehash: 38da046256dce3242b464a0741f2afa7fb19ff3c
+ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2020
-ms.locfileid: "78202731"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85345660"
 ---
 # <a name="hand-coach"></a>手動教練
+![範例：手型教練](images/HandCoach/MRTK_handCoach.jpg)<br>
 
 「手動操作」是一種3D 模型化的手，會在系統未偵測到使用者手時觸發。 這會實作為「教學」元件，可在未教授手勢時協助引導使用者。 如果使用者尚未針對某個時間執行指定的手勢，則手會以延遲方式迴圈。 右手教練可用來代表按下按鈕或挑選全像投影。  
-
-
-![範例：手動操作](images/HandCoach/MRTK_handCoach.jpg)<br>
-*MRTK 的 HandCoach 範例*
 
 ## <a name="hand-coach-provided"></a>提供的手形指導
 
@@ -27,38 +24,38 @@ ms.locfileid: "78202731"
 
 :::row:::
     :::column:::
-       接近的 Select](images/HandCoach/NearSelect.gif) ![範例<br>
+       ![近乎選取的範例](images/HandCoach/NearSelect.gif)<br>
        **接近選取使用方式的範例示範如何選取按鈕或關閉可互動物件**<br>
     :::column-end:::
     :::column:::
-       ![的空中點](images/HandCoach/AirTap.gif) 範例<br>
+       ![點擊點的範例](images/HandCoach/AirTap.gif)<br>
         **點一下的範例-用來示範如何選取距離最遠的物件**<br>
     :::column-end:::
     :::column:::
-       ![移動](images/HandCoach/Move.gif) 的範例<br>
+       ![移動的範例](images/HandCoach/Move.gif)<br>
        **在空間中移動物件的範例-用來示範如何在空間中移動全息影像**<br>
     :::column-end:::
     :::column:::
-       ![旋轉](images/HandCoach/Rotate.gif) 的範例<br>
+       ![旋轉的範例](images/HandCoach/Rotate.gif)<br>
        **旋轉範例-用來示範如何旋轉全息影像或物件**<br>
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-       ![Scale](images/HandCoach/Scale.gif) 範例<br>
+       ![調整的範例](images/HandCoach/Scale.gif)<br>
        **縮放的範例，用來顯示如何操作全像更大的全息影像**<br>
     :::column-end:::
     :::column:::
-       ![的 Palm](images/HandCoach/PalmUp.gif) 範例<br>
+       ![Palm 的範例](images/HandCoach/PalmUp.gif)<br>
         **掌上-建議使用的範例，以顯示功能表**<br>
     :::column-end:::
     :::column:::
-       HandFlip](images/HandCoach/HandFlip.gif) ![範例<br>
+       ![HandFlip 的範例](images/HandCoach/HandFlip.gif)<br>
        **右手手勢範例–另一種顯示功能表的方式**<br>
     :::column-end:::
     :::column:::
-       ![Scroll](images/HandCoach/Scoll.gif) 的範例<br>
+       ![Scroll 的範例](images/HandCoach/Scoll.gif)<br>
        **Scroll 範例-用於滾動清單或長檔**<br>
     :::column-end:::
 :::row-end:::
@@ -87,16 +84,16 @@ ms.locfileid: "78202731"
 
 ## <a name="can-i-create-my-own"></a>我可以建立自己的嗎？
 
-是的！ 我們鼓勵您為遊戲建立自己獨特的手勢，並向您貢獻給此社區！
-我們提供了 Rigged 手的 Maya 檔案，可用於您的應用程式，您可以從這裡下載：<a href="files/HandCoach_MRTK.zip">下載 HandCoach_MRTK .zip</a>
+可以！ 我們鼓勵您為遊戲建立自己獨特的手勢，並向您貢獻給此社區！
+我們提供了 Rigged 手的 Maya 檔案，可用於您的應用程式，您可以從這裡下載：<a href="files/HandCoach_MRTK.zip">下載 HandCoach_MRTK.zip</a>
 
-Maya](images/HandCoach/MayaSelect_Gif.gif) 的動畫 ![範例<br>
+![Maya 中的動畫實習範例](images/HandCoach/MayaSelect_Gif.gif)<br>
 *Maya 中的動畫手勢刺探的範例*
 
 
 **建議的 authoring tool**
 
-在3D 演出者之間，許多選擇使用[Autodesk 的 Maya，其本身能夠使用 HoloLens](https://www.youtube.com/watch?v=q0K3n0Gf8mA)來轉換資產的建立方式。 提供的實習檔案是 Maya 二進位檔案，因此建議使用 Maya 來建立動畫並匯出手。 如果您想要使用另一個3D 程式，以下是<b>。FBX</b>：<a href="files/HandCoachMRTK_FBX.zip">下載 HandCoachMRTK_FBX .zip</a> ，以建立您自己的控制器設定。 
+在3D 演出者之間，許多選擇使用[Autodesk 的 Maya，其本身能夠使用 HoloLens](https://www.youtube.com/watch?v=q0K3n0Gf8mA)來轉換資產的建立方式。 提供的實習檔案是 Maya 二進位檔案，因此建議使用 Maya 來建立動畫並匯出手。 如果您想要使用另一個3D 程式，以下是<b>。FBX</b>：<a href="files/HandCoachMRTK_FBX.zip">下載 HandCoachMRTK_FBX.zip</a>以建立您自己的控制器設定。 
 
 如果使用提供的可下載 maya 手檔案，建議您將 unity 中的手向下延展至0.6。
 
@@ -116,7 +113,7 @@ Maya](images/HandCoach/MayaSelect_Gif.gif) 的動畫 ![範例<br>
 *   當您感到滿意動畫時：
     *   選取所有接點並製作主要畫面格
     *   刪除控制器，選取接點和網格並匯出為 FBX
-    *  如果有多個動畫，您可以使用 Maya 的內建遊戲匯出工具： https://knowledge.autodesk.com/support/maya/learn-explore/caas/CloudHelp/cloudhelp/2015/ENU/Maya/files/Game-Exporter-htm.html
+    *  如果有多個動畫，您可以使用 Maya 的內建遊戲匯出工具：https://knowledge.autodesk.com/support/maya/learn-explore/caas/CloudHelp/cloudhelp/2015/ENU/Maya/files/Game-Exporter-htm.html
 
 ## <a name="exporting-from-maya"></a>從 Maya 匯出
 
@@ -166,11 +163,11 @@ Maya](images/HandCoach/MayaSelect_Gif.gif) 的動畫 ![範例<br>
 
 
 
-### <a name="what-to-avoid"></a>應避免的事項
+### <a name="what-to-avoid"></a>避免事項
 * 調整太大的手
 * 將手放在靠近使用者的附近
 * 手上應該只教授一次。 透過教學可能會造成混淆和 messiness
-*   將它帶入 Unity，請在這裡下載最新的 MRTK： https://github.com/microsoft/MixedRealityToolkit-Unity
+*   將它帶入 Unity，請在這裡下載最新的 MRTK：https://github.com/microsoft/MixedRealityToolkit-Unity
     *   材質： Teaching_Hand2
     *   腳本：請參閱<a href= "https://github.com/MixedRealityToolkit-Unity/blob/'HandCoachUX'/Documentation/README_HandCoach.md">MRTK 手勢指導</a>的 MRTK 指導方針
     *   每個專案的設定
@@ -179,7 +176,7 @@ Maya](images/HandCoach/MayaSelect_Gif.gif) 的動畫 ![範例<br>
 ## <a name="see-also"></a>另請參閱
 * [互動-基本概念](interaction-fundamentals.md)
 * [資產建立流程](asset-creation-process.md)
-* [筆勢](gestures.md)
+* [軌跡](gestures.md)
 * [安裝工具](install-the-tools.md)
 * [設定 Unity 專案](Configure-Unity-Project.md)
 * [Unity 開發概觀](unity-development-overview.md)

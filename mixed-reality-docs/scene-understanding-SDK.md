@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: 場景理解，空間對應，Windows Mixed Reality，Unity
-ms.openlocfilehash: 2f958d45f72d6c39d4222840615c5b177db7c76f
-ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
+ms.openlocfilehash: eb2c6d88ce5a5ba637976a7d67abfdc2763c1674
+ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83228013"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85345678"
 ---
 # <a name="scene-understanding-sdk-overview"></a>場景理解 SDK 總覽
 
@@ -47,7 +47,7 @@ SceneUnderstanding 需要18362或更高版本 Windows SDK。
 
 因為每個場景都會將它的資料儲存在您應用程式的記憶體空間中，所以您可以假設場景物件或其內部資料的所有函式一律會在應用程式的進程中執行。
 
-### <a name="layout"></a>版面配置
+### <a name="layout"></a>Layout
 
 若要使用場景理解，請務必瞭解並瞭解執行時間如何在邏輯上或實際地代表元件。 場景代表具有特定版面配置的資料，而該配置已選擇簡單，同時維持 pliable 以符合未來需求的基礎結構，而不需要主要的修訂。 此場景的運作方式是將所有元件（所有場景物件的建立區塊）儲存在一般清單中，並透過參考（其中特定元件會參考其他專案）來定義階層和組合。
 
@@ -117,7 +117,7 @@ SceneObjects 可以有下列任何一項：
 
 <table>
 <tr>
-<th>SceneObjectKind</th> <th>說明</th>
+<th>SceneObjectKind</th> <th>描述</th>
 </tr>
 <tr><td>背景</td><td>已知 SceneObject<b>不</b>是其他可辨識類型的場景物件之一。 此類別不應與 [不明] 混淆，其中的背景已知不是牆/樓層/上限等等 .。。雖然不明尚未分類。</b></td></tr>
 <tr><td>內牆</td><td>實體牆。 牆會假設為 immovable 環境結構。</td></tr>
@@ -199,7 +199,7 @@ byte[] newSceneData = new byte[newSceneBuffer.Size];
 newSceneBuffer.GetData(newSceneData);
 Scene mySceneDeSerialized = Scene.Deserialize(newSceneData);
 
-// Save newSceneBlob for later
+// Save newSceneData for later
 ```
 
 ### <a name="sceneobject-enumeration"></a>SceneObject 列舉
@@ -380,7 +380,7 @@ mesh.GetVertexPositions(positions);
 
 [場景瞭解範例場景](https://github.com/microsoft/MixedReality-SceneUnderstanding-Samples/tree/master/Assets/Resources/SerializedScenesForPCPath)
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [空間對應](spatial-mapping.md)
 * [場景理解](scene-understanding.md)

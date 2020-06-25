@@ -6,12 +6,12 @@ ms.author: hakons
 ms.date: 10/03/2019
 ms.topic: article
 keywords: ggv、語音、cortana、語音、輸入
-ms.openlocfilehash: a5411c338a854660652cfc89aa2d48d85ee89778
-ms.sourcegitcommit: e65f1463aec3c040a1cd042e61fc2bd156a42ff8
+ms.openlocfilehash: 78ff63f2f794bb2b3a4868e38ccaff0582ccca8c
+ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83866918"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85345698"
 ---
 # <a name="voice-input"></a>語音輸入
 
@@ -284,7 +284,7 @@ ms.locfileid: "83866918"
 
 ## <a name="languages"></a>語言
 
-HoloLens 2 也支援其他語言。 請記住，即使已安裝多個鍵盤，或是應用程式嘗試以不同的語言建立語音辨識器，語音命令也一律會以系統的顯示語言執行。
+HoloLens 2[支援多種語言](https://docs.microsoft.com/hololens/hololens2-language-support)。 請記住，即使已安裝多個鍵盤，或是應用程式嘗試以不同的語言建立語音辨識器，語音命令也一律會以系統的顯示語言執行。
 
 ## <a name="troubleshooting"></a>疑難排解
 

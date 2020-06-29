@@ -1,17 +1,17 @@
 ---
 title: 裝置入口網站 API 參照
 description: HoloLens 上 Windows 裝置入口網站的 API 參考
-author: jonmlyons
-ms.author: jlyons
+author: hamalawi
+ms.author: moelhama
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens，Windows 裝置入口網站，API
-ms.openlocfilehash: 17268c9a20d3da0ee90e5d6cead4342d3badf800
-ms.sourcegitcommit: f24ac845e184c2f90e8b15adab9addb913f5cb83
+ms.openlocfilehash: b9b9ada49b4f9810dc97c9da2873d4ccb60df424
+ms.sourcegitcommit: 5612e8bfb9c548eac42182702cec87b160efbbfe
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84451323"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85441795"
 ---
 # <a name="device-portal-api-reference"></a>裝置入口網站 API 參照
 
@@ -376,15 +376,15 @@ HoloLens 支援透過區塊下載的分散的方式，即時預覽混合現實�
 
 解析度為 1280x720p 30fps 5Mbit 串流。
 
-**/api/holographic/stream/live_high. （GET）**
+**/api/holographic/stream/live_high.mp4 （GET）**
 
 解析度為 1280x720p 30fps 5Mbit 串流。
 
-**/api/holographic/stream/live_med. （GET）**
+**/api/holographic/stream/live_med.mp4 （GET）**
 
 854x480p 30fps 2.5 Mbit 串流。
 
-**/api/holographic/stream/live_low. （GET）**
+**/api/holographic/stream/live_low.mp4 （GET）**
 
 428x240p 15fps 0.6 Mbit 串流。
 
@@ -534,7 +534,7 @@ Payload
 啟動 WPR （效能）追蹤會話
 
 參數
-* 設定檔：設定檔名稱。 可用的設定檔會儲存在 perfprofiles/profiles 中。 json
+* 設定檔：設定檔名稱。 可用的設定檔會儲存在 perfprofiles/profiles.js
 
 傳回資料
 * 在啟動時，會傳回 WPR 會話狀態。

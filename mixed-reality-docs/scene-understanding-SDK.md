@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: 場景理解，空間對應，Windows Mixed Reality，Unity
-ms.openlocfilehash: eb2c6d88ce5a5ba637976a7d67abfdc2763c1674
-ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
+ms.openlocfilehash: 71b5509065ecf6fc700b7f448083754d330e9371
+ms.sourcegitcommit: 5612e8bfb9c548eac42182702cec87b160efbbfe
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345678"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85441805"
 ---
 # <a name="scene-understanding-sdk-overview"></a>場景理解 SDK 總覽
 
@@ -47,7 +47,7 @@ SceneUnderstanding 需要18362或更高版本 Windows SDK。
 
 因為每個場景都會將它的資料儲存在您應用程式的記憶體空間中，所以您可以假設場景物件或其內部資料的所有函式一律會在應用程式的進程中執行。
 
-### <a name="layout"></a>Layout
+### <a name="layout"></a>配置
 
 若要使用場景理解，請務必瞭解並瞭解執行時間如何在邏輯上或實際地代表元件。 場景代表具有特定版面配置的資料，而該配置已選擇簡單，同時維持 pliable 以符合未來需求的基礎結構，而不需要主要的修訂。 此場景的運作方式是將所有元件（所有場景物件的建立區塊）儲存在一般清單中，並透過參考（其中特定元件會參考其他專案）來定義階層和組合。
 
@@ -311,6 +311,9 @@ void SetLocalTransformFromSceneObject(GameObject gameObject, SceneObject sceneOb
 
 四邊形有矩形範圍，但它們代表任意形狀的2D 介面。 若要在這些2D 介面上啟用放置，這些介面會與3D 環境四邊形供應專案公用程式互動，以實現這種互動。 目前場景理解提供兩個這類函數： **FindCentermostPlacement**和**GetOcclusionMask**。 FindCentermostPlacement 是高階 API，它會找出可放置物件的四個位置，並嘗試尋找您的物件的最佳位置，以確保您提供的周框方塊會位於基礎介面上。
 
+> [!NOTE]
+> 輸出的座標是相對於「四個空間」中的四個，左上角為（x = 0，y = 0），如同其他 windows 矩形類型。 使用您自己的物件的原始來源時，請務必將此納入考慮。 
+
 下列範例顯示如何尋找 centermost 可放置位置，並將全息圖形錨定到四個。
 
 ```cs
@@ -341,7 +344,12 @@ foreach (var sceneObject in myScene.SceneObjects)
 }
 ```
 
-步驟1-4 高度相依于您的特定架構/執行，但主題應該類似。 請務必注意，四個部分只代表在空間中當地語系化的界限2D 平面。 藉由讓您的引擎/架構知道四個的位置，並將您的物件與四個相對應，您的全息影像將會正確地放在真實世界。 如需詳細資訊，請參閱四邊形上的範例，其中會顯示特定的實作為。
+步驟1-4 高度相依于您的特定架構/執行，但主題應該類似。 請務必注意，四個部分只代表在空間中當地語系化的界限2D 平面。 藉由讓您的引擎/架構知道四個的位置，並將您的物件與四個相對應，您的全息影像將會正確地放在真實世界。 
+
+<!-- 
+// TODO: Add sample link when released
+For more detailed information please see our samples on quads which show specific implementations.
+-->
 
 ### <a name="mesh"></a>網狀
 

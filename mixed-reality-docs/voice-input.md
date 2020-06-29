@@ -6,12 +6,12 @@ ms.author: hakons
 ms.date: 10/03/2019
 ms.topic: article
 keywords: ggv、語音、cortana、語音、輸入
-ms.openlocfilehash: 78ff63f2f794bb2b3a4868e38ccaff0582ccca8c
-ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
+ms.openlocfilehash: 37364e90aa1d8a7b607a99f4c9b830972f7f80b3
+ms.sourcegitcommit: 5612e8bfb9c548eac42182702cec87b160efbbfe
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345698"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85441825"
 ---
 # <a name="voice-input"></a>語音輸入
 
@@ -96,6 +96,8 @@ ms.locfileid: "85345698"
 * 「拍照」
 * 「開始錄製」
 * 「停止錄製」
+* 「顯示手光線」
+* 「隱藏手光線」
 * 「增加亮度」
 * 「降低亮度」
 * 「增加音量」

@@ -220,7 +220,7 @@
 ### [Unreal 中的手勢追蹤](unreal-hand-tracking.md)
 ### [Unreal 中的注視輸入](unreal-gaze-input.md)
 ### [Unreal 中的空間對應](unreal-spatial-mapping.md)
-### [Unreal 中的空間音訊](unreal-spatial-sound.md)
+### [Unreal 中的空間音訊](unreal-spatial-audio.md)
 ### [Unreal 中的空間錨點](unreal-spatial-anchors.md)
 ### [Unreal 中的語音輸入](unreal-voice-input.md)
 ### [Unreal 中的 HoloLens 相機](unreal-hololens-camera.md)

@@ -1,19 +1,19 @@
 ---
-title: 全像攝影畫面
+title: 全像攝影框架
 description: 使用者透過全像攝影框架來瞭解混合現實的世界。
 author: cre8ivepark
 ms.author: dongpark
-ms.date: 03/21/2018
+ms.date: 06/25/2020
 ms.topic: article
 keywords: HoloLens，Windows Mixed Reality，全像攝影框架，視圖的欄位
-ms.openlocfilehash: 2145ba3b13bbd903299ad342292dfa8f5c05c023
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 0eae511d6dcbe5b379c8368d8878df6114d805aa
+ms.sourcegitcommit: 5612e8bfb9c548eac42182702cec87b160efbbfe
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73434669"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85441765"
 ---
-# <a name="holographic-frame"></a>全像攝影畫面
+# <a name="holographic-frame"></a>全像攝影框架
 
 使用者透過其頭戴式裝置所提供的矩形視口，來看到混合實境的世界。 在 HoloLens 上，這個矩形區域稱為全像攝影框架，可讓使用者看到其周圍真實世界中的數位內容。 為全像攝影框架優化的設計經驗可創造機會、降低挑戰，並增強混合現實應用程式的使用者體驗。
 
@@ -37,22 +37,7 @@ ms.locfileid: "73434669"
 
 達成此目標的方法之一，就是在將內容錨定到真實世界的體驗中，提供持續點（也稱為地標）。 例如，地標可能是真實世界中的實體物件（例如數位內容出現所在的資料表）或數位物件（例如一組經常出現內容的數位螢幕）。 物件也可以放在全像攝影框架的其邊界中，以鼓勵使用者查看重要內容，而其邊界以外的內容則可以透過[注意總監](holographic-frame.md#attention-directors)來輔助。
 
-將物件放在其邊界中可以鼓勵使用者查看這一端，而這可由注意總監來輔助，如下所述。
-
-<br>
-
----
-
-## <a name="user-comfort"></a>使用者舒適
-
-對於大型物件或多個物件的混合現實體驗，請務必考慮與內容互動所需的前端和頸部移動程度。 體驗可分為三個類別，包括 head 移動：**水準**（側邊）、**垂直**（上下）或**沉浸式**（水準和垂直）。 可能的話，請將大部分的互動限制為水準或垂直類別，最好是在全像攝影畫面的中央，當使用者的標頭位於中立的位置時，大部分的體驗都會發生 避免造成使用者經常將其觀點移至非自然標頭位置的互動（例如，一律會查看以存取金鑰功能表互動）。
-
-內容的 ![最佳區域的範圍為0到35度](images/optimal-field-of-view-2.png)<br>
-*內容的最佳區域為0到35度低於水準*
-
-水準移動較適合頻繁的互動，而垂直移動則應保留給不[常見的事件](comfort.md)。 例如，涉及長水準時間軸的經驗應該會限制垂直方向移動（例如在功能表中向下查看）。
-
-請考慮將物件放在使用者的空間周圍，而不只是 head 移動。 移動物件或大型物件的經驗應該特別注意 head 移動，特別是在水準和垂直軸需要經常移動的地方。
+將物件放在其邊界中可以鼓勵使用者查看這一端，而這可由注意總監來輔助，如下所述。 如需有關全像攝影框架考慮的詳細資訊，請參閱[舒適](comfort.md#holographic-frame-considerations)。
 
 <br>
 
@@ -76,7 +61,7 @@ ms.locfileid: "73434669"
 
 ### <a name="gaze-and-gaze-targeting"></a>注視和注視目標
 
-全像攝影畫面呈現一種工具，可讓開發人員觸發互動，以及評估使用者注意 dwells 的位置。 [注視](gaze-and-commit.md)是 HoloLens 的其中一[項關鍵互動](interaction-fundamentals.md)，其中注視可以與[手勢](gaze-and-commit.md#composite-gestures)（例如，按下）或[語音](voice-input.md)配對（以進行較短、更自然的語音互動）。 因此，這讓全像攝影框架都能觀察數位內容以及與其互動。 如果體驗呼叫與使用者空間的多個物件互動（例如，在使用者的空間周圍以注視 + 手勢複選的多個物件），請考慮將這些物件帶入使用者的觀點，或限制所需的標頭數量移動以提升[使用者的緩和](comfort.md)度。
+全像攝影畫面呈現一種工具，可讓開發人員觸發互動，以及評估使用者注意 dwells 的位置。 [注視](gaze-and-commit.md)是 HoloLens 的其中一[項關鍵互動](interaction-fundamentals.md)，其中注視可以與[手勢](gaze-and-commit.md#composite-gestures)（例如，按下）或[語音](voice-input.md)配對（以進行較短、更自然的語音互動）。 因此，這讓全像攝影框架都能觀察數位內容以及與其互動。 如果經驗需要在使用者的空間上與多個物件互動（例如，在使用者的空間周圍以注視 + 手勢來多重選取物件），請考慮將這些物件帶入使用者的觀點，或限制必要的 head 移動量，以提升[使用者的緩和](comfort.md)度。
 
 注視也可以用來追蹤使用者的經驗，並查看使用者最注意的是哪些物件或場景的哪些部分。 這可以特別用於偵測體驗，讓分析工具（例如熱度圖）查看使用者花費最多時間或遺失特定物件或互動的位置。 注視追蹤也可以提供強大的工具來 facilitators 體驗（請參閱[Lowe 的廚房](holographic-frame.md#lowes-kitchen)範例）。
 
@@ -125,11 +110,11 @@ Lowe 的商店體驗邀請客戶進入廚房的完整規模 mockup，展現透�
 
 ---
 
-### <a name="fragments"></a>分段
+### <a name="fragments"></a>片段
 
 在 HoloLens 遊戲片段中，您的聊天室會轉換成虛擬犯罪場景，其中顯示線索和辨識項，以及虛擬會議室，讓您與您的椅子上的字元和您的牆上的精簡。
 
-![片段是設計在使用者的家中進行，並以與真實世界物件和表面互動的字元來進行。](images/fragments-750px.jpg)<br>
+![片段是設計在使用者的家裡進行，其中的字元與真實世界的物件和表面互動。](images/fragments-750px.jpg)<br>
 *片段是設計在使用者的家裡進行，其中的字元與真實世界的物件和表面互動。*
 
 當使用者最初開始體驗時，會有短暫的調整時間，需要非常少的互動，而改為鼓勵他們四處尋找。 這也有助於確保該遊戲的互動式內容已正確對應房間。
@@ -144,7 +129,7 @@ Lowe 的商店體驗邀請客戶進入廚房的完整規模 mockup，展現透�
 
 在[NASA 的甘迺迪空間中心](https://blogs.windows.com/devices/2016/09/19/hololens-experience-destination-mars-now-open-at-kennedy-space-center-visitor-complex/)的 [目的地： Mars] 體驗中，訪客已受邀進入 mars 介面，並以虛擬表示利用傳說太空人的熱門 Aldrin 來引導。
 
-![虛擬的 Aldrin 會成為目的地： Mars 中使用者的焦點。](images/destinationmars-750px.png)<br>
+![虛擬內容 Aldrin 會成為目的地： Mars 中使用者的焦點。](images/destinationmars-750px.png)<br>
 *虛擬內容 Aldrin 會成為目的地： Mars 中使用者的焦點。*
 
 這是一種沉浸式的經驗，鼓勵這些使用者四處移動，以查看虛擬 Martian 的發展。 雖然為了確保使用者的舒適，但在整個經驗中，都能獲得 Aldrin 的旁白和虛擬目前狀態。 這項在聊天室的虛擬錄影（由[Microsoft 的混合現實 Capture 工作室](https://www.microsoft.com/mixed-reality/capture-studios)所建立）勇敢面對考驗為真實的人力大小，可讓使用者查看近乎完整的觀點。 內容敘述的旁白會引導使用者專注于環境中的不同點（例如，地面上的一組 Martian rocks，或距離中的山地範圍）與他所引進的特定場景變更或物件。
@@ -154,9 +139,9 @@ Lowe 的商店體驗邀請客戶進入廚房的完整規模 mockup，展現透�
 
 實際的口頭標記法提供了強大的焦點，並以微妙的技巧完成，讓使用者覺得像他一樣，向您說話。 當使用者移動經驗時，如果使用者移動的範圍太遠超過他的其邊界，則在回到中性狀態之前，會先將您導向至臨界值。 如果使用者完全看過內容（例如，查看場景中其他地方的某個專案），然後回到 [即時]，則朗讀程式的方向位置將會再次著重于使用者。 這類技術可提供強大的深度，並在全像攝影的框架內建立焦點，以減少過多的 head 移動並提升[使用者的緩和](comfort.md)程度。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [本能互動](interaction-fundamentals.md)
 * [舒適度](comfort.md)
-* [縮放](scale.md)
+* [縮放比例](scale.md)
 * [頭部目光和停駐](gaze-and-dwell.md)
 * [全像投影穩定性](hologram-stability.md)

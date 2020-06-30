@@ -3,18 +3,20 @@ title: Unreal 中的 HoloLens 相片/影片相機
 description: 在 Unreal 中使用 HoloLens 相片/影片相機的指南
 author: hferrone
 ms.author: v-haferr
-ms.date: 5/5/2020
+ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合實境, 開發, 功能, 文件, 指南, holograms, 相機, PV 相機, MRC
-ms.openlocfilehash: 06ceb26d58fe60848e5e90360aa2e05984a901c5
-ms.sourcegitcommit: f24ac845e184c2f90e8b15adab9addb913f5cb83
+ms.openlocfilehash: e15ea593283a22dc31cd496de596159035d83799
+ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84451333"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84720324"
 ---
 # <a name="hololens-photovideo-camera-in-unreal"></a>Unreal 中的 HoloLens 相片/影片相機
+
+## <a name="overview"></a>概觀
 
 HoloLens 具有相片/影片 (PV) 相機，用於混合實境擷取 (MRC)，並可供應用程式用來存取真實世界的視覺效果。
 

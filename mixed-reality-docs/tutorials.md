@@ -8,12 +8,12 @@ ms.date: 10/22/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: holotoolkit, mixedrealitytoolkit, mixedrealitytoolkit-unity, 學院, 教學課程
-ms.openlocfilehash: e5961a178d571d2f71e98ff4c3c729d6feb0fd40
-ms.sourcegitcommit: 7011ac6fde80e5c45f04192fa1db6e1eb559e3b0
+ms.openlocfilehash: 57ddf1569ff87a278134eff0204942094b1cd014
+ms.sourcegitcommit: 4282d92e93869e4829338bdf7d981c3ee0260bfd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84327958"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85216249"
 ---
 # <a name="tutorials-and-sample-apps"></a>教學課程和範例應用程式
 
@@ -36,9 +36,15 @@ HoloLens 2 教學課程的設計目的是協助開發人員了解開發混合實
 
 開放原始碼範例應用程式是由我們的小組所建立，我們提供了原始程式碼，讓開發人員可以從我們的專案中查看並學習。
 
-* [元素週期表](periodic-table-of-the-elements.md)
+### <a name="hololens-2-open-source-sample-apps"></a>HoloLens 2 開放原始碼範例應用程式
+* [表面](sampleapp-surfaces.md)
+* [元素週期表 2.0](https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158)
+* [Galaxy Explorer 2.0](galaxy-explorer-update.md)
+
+### <a name="hololens-1st-gen-open-source-sample-apps"></a>HoloLens (第 1 代) 開啟原始碼範例應用程式
+* [元素週期表 1.0](periodic-table-of-the-elements.md)
+* [Galaxy Explorer 1.0](galaxy-explorer.md)
 * [月球模組](lunar-module.md)
-* [星系探險](galaxy-explorer.md)
 
 ## <a name="mixed-reality-academy-tutorials"></a>混合實境學院教學課程
 

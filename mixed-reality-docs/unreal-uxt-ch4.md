@@ -3,16 +3,16 @@ title: 4. 使場景成為互動式場景
 description: 教學課程系列的第 4 部分 (共有 6 部分)，使用 Unreal Engine 4 和混合實境工具組 UX 工具外掛程式來建置簡單的國際象棋應用程式
 author: hferrone
 ms.author: v-haferr
-ms.date: 5/5/2020
+ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合實境, 教學課程, 開始使用, mrtk, uxt, UX 工具, 文件
-ms.openlocfilehash: a9de5755ab86c96322a8d50fecd7ba2cdea866d3
-ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
+ms.openlocfilehash: 62c0ff839718f7fda34bdc7560eae634fa37d44f
+ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84330215"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84720334"
 ---
 # <a name="4-making-your-scene-interactive"></a>4.使場景成為互動式場景
 

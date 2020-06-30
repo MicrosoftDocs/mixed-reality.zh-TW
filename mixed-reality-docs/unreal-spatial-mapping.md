@@ -3,16 +3,16 @@ title: Unreal 中的空間對應
 description: 在 Unreal 中使用空間對應的指南
 author: hferrone
 ms.author: v-haferr
-ms.date: 5/5/2020
+ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合實境, 開發, 功能, 文件, 指南, holograms, 空間對應
-ms.openlocfilehash: 2bbfc3972acdb9dc7d5ebd23c85ab0ef5532cfb9
-ms.sourcegitcommit: ee7f04148d3608b0284c59e33b394a67f0934255
+ms.openlocfilehash: ffa57749cd96e240ac4812f950f4e13a6dbc68bd
+ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84428785"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84720404"
 ---
 # <a name="spatial-mapping-in-unreal"></a>Unreal 中的空間對應
 

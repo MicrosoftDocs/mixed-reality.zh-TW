@@ -6,19 +6,17 @@ ms.author: kurtie
 ms.date: 10/22/2019
 ms.topic: article
 keywords: 混合現實，Windows Mixed Reality，HoloLens，沉浸，vr，mr，開始使用，全息影像，學院，教學課程
-ms.openlocfilehash: fe0fb256e5aed7aa83f8bb9b1e8ba7bb873a0613
-ms.sourcegitcommit: ee8c7e821cb337cbccd8af64b13ee5f50109a776
+ms.openlocfilehash: 58a1785ef74872c633cf65d6a32e24d517367359
+ms.sourcegitcommit: f523b74a549721b6bec69cb5d2eca5b7673a793c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80082056"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85570311"
 ---
->[!NOTE]
->混合實境學院教學課程的設計是以 HoloLens (第 1 代) 和混合實境沉浸式頭戴裝置為準。  因此，對於仍在尋找這些裝置開發指引的開發人員而言，我們覺得這些教學課程很重要。  這些教學課程 **_不會_** 使用用於 HoloLens 2 的最新工具組或互動進行更新。  系統會保留這些資訊，以繼續在支援的裝置上運作。 已針對 HoloLens 2 公佈[一系列新的教學課程](mrlearning-base.md)。
+# <a name="mr-basics-100-getting-started-with-unity"></a>MR Basics 100：開始使用 Unity
 
-<br>
-
-# <a name="mr-basics-100-getting-started-with-unity"></a>MR 基本概念100：開始使用 Unity
+>[!IMPORTANT]
+>混合實境學院教學課程的設計是以 HoloLens (第 1 代) 和混合實境沉浸式頭戴裝置為準。  因此，對於仍在尋找這些裝置開發指引的開發人員而言，我們覺得這些教學課程很重要。  這些教學課程**_不會_** 使用用於 HoloLens 2 的最新工具組或互動進行更新。  系統會保留這些資訊，以繼續在支援的裝置上運作。 已針對 HoloLens 2 公佈[一系列新的教學課程](mrlearning-base.md)。
 
 本教學課程將逐步引導您建立以 Unity 建立的基本混合現實應用程式。
 
@@ -28,7 +26,7 @@ ms.locfileid: "80082056"
 <tr>
 <th>課程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></th>
 </tr><tr>
-<td>MR 基本概念100：開始使用 Unity</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
+<td>MR Basics 100：開始使用 Unity</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
 </table>
 
@@ -40,7 +38,7 @@ ms.locfileid: "80082056"
 
 >[!VIDEO https://www.youtube.com/embed/2L5IFO0hnYA]
 
-若要使用 Unity 來建立應用程式，您必須先建立專案。 此專案會組織成幾個資料夾，其中最重要的是您的資產資料夾。 這是保存您從數位內容建立工具（例如 Maya、最大影院4D 或 Photoshop）匯入之所有資產的資料夾，您使用 Visual Studio 或慣用的程式碼編輯器建立的所有程式碼，以及 Unity 在撰寫場景時所建立的任何內容檔案數目、動畫，以及編輯器中的其他 Unity 資產類型。
+若要使用 Unity 來建立應用程式，您必須先建立專案。 此專案會組織成幾個資料夾，其中最重要的是您的資產資料夾。 此資料夾會保存您從數位內容建立工具（例如 Maya、最大電影院4D 或 Photoshop）匯入的所有資產、您使用 Visual Studio 或慣用的程式碼編輯器建立的所有程式碼，以及 Unity 在您撰寫場景、動畫及編輯器中的其他 Unity 資產類型時所建立的任何內容檔案數目。
 
 若要建立和部署 UWP 應用程式，Unity 可以將專案匯出為 Visual Studio 方案，其中包含所有必要的資產和程式碼檔案。
 
@@ -70,7 +68,7 @@ Unity 主要攝影機會處理 head 追蹤和 stereoscopic 轉譯。 主要相�
 
 若是**HoloLens 應用程式**，真實世界應該會出現在相機呈現的所有內容後方，而不是 Skybox 材質。
 
-1. 在 [階層] 面板中仍然選取**主要相機**後，**在 [偵測** **器**] 面板中尋找**相機**元件，並將 [**清除旗標**] 下拉式清單從**Skybox**變更為**純色**。
+1. 在 [階層] 面板中仍然選取**主要相機**後，**在 [偵測****器**] 面板中尋找**相機**元件，並將 [**清除旗標**] 下拉式清單從**Skybox**變更為**純色**。
 2. 選取**背景**色彩選擇器，並將**RGBA**值變更為（0，0，0，0）
 
 **對於以沉浸式耳機為目標的混合現實應用程式**，我們可以使用 Unity 提供的預設 Skybox 材質。
@@ -87,13 +85,13 @@ Unity 主要攝影機會處理 head 追蹤和 stereoscopic 轉譯。 主要相�
 
 1. **在 [階層] 面板中**仍然選取**主要相機**時，請在 [偵測**器**] 面板中尋找**相機**元件，並將 [**近端剪切平面**] 欄位保留為預設值**0.3**。
 
-最後，讓我們來儲存我們目前的進度。 若要儲存場景變更，請選取 檔案 **> 另存場景**，將場景命名為**Main**，然後選取 **儲存**。
+最後，讓我們來儲存我們目前的進度。 若要儲存場景變更，請選取 [檔案] **> 另存場景**]，將場景命名為**Main**，然後選取 [**儲存**]。
 
 ## <a name="chapter-3---setup-the-project-settings"></a>第3章-設定專案設定
 
 >[!VIDEO https://www.youtube.com/embed/ItRoiXccC0g]
 
-在本章中，我們將設定一些 Unity 專案設定，以協助我們以 Windows 全像開發 SDK 為目標。 我們也會為應用程式設定一些品質設定。 最後，我們會確保組建目標設定為 Windows Store。
+在本章中，我們將設定一些 Unity 專案設定，以協助我們以 Windows 全像開發 SDK 為目標。 我們也會為應用程式設定一些品質設定。 最後，我們會確保組建目標設定為通用 Windows 平臺。
 
 ### <a name="unity-performance-and-quality-settings"></a>Unity 效能和品質設定
 
@@ -104,7 +102,7 @@ Unity 主要攝影機會處理 head 追蹤和 stereoscopic 轉譯。 主要相�
 因為在 HoloLens 上維持高畫面播放速率相當重要，所以我們想要調整品質設定以取得最快的效能。 如需更詳細的效能資訊，請[查看 Unity 的效能建議](performance-recommendations-for-unity.md)。
 
 1. 選取 [**編輯] > 專案設定 > 品質**
-2. 選取 [ **Windows Store** ] 標誌底下的**下拉式清單**，然後選取 [**非常低**]。 當 [Windows Store] 資料行中的方塊和**非常低**的資料列都是綠色時，您會知道設定已正確套用。
+2. 選取 [**通用 Windows 平臺**標誌底下的**下拉式清單**，然後選取 [**非常低**]。 當 [通用 Windows 平臺] 資料行中的方塊和**非常低**的資料列都是綠色時，您會知道設定已正確套用。
 
 **針對以 pixels occluded 為目標的混合現實應用程式**，您可以將品質設定保留為預設值。
 
@@ -116,22 +114,14 @@ Unity 主要攝影機會處理 head 追蹤和 stereoscopic 轉譯。 主要相�
 
 我們需要讓 Unity 知道，我們嘗試匯出的應用程式應該建立[沉浸式視圖](app-views.md)，而不是2d 視圖。 我們的作法是在以 Windows 10 SDK 為目標的 Unity 上啟用虛擬實境支援。
 
-1. 移至 **編輯 > 專案設定 > Player**。
-2. 在 [玩家設定] 的 [偵測**器] 面板**中，選取 [ **Windows Store** ] 圖示。
-3. 展開 [ **XR 設定**] 群組。
+1. 移至 [**編輯] > 專案設定 > Player**]。
+2. 在 [玩家設定] 的 [偵測**器] 面板**中，選取 [**通用 Windows 平臺**] 圖示。
+3. 展開 [XR 設定] 群組。
 4. **在轉譯區段中**，勾選 [**支援虛擬實境**] 核取方塊，以新增**虛擬實境 sdk**清單。
-5. 確認清單中出現**Windows Mixed Reality** 。 如果沒有，請選取清單底部的 [ **+** ] 按鈕，然後選擇 [ **Windows Mixed Reality**]。
+5. 確認 **Windows Mixed Reality** 出現在清單中。 如果沒有，請選取清單底部的 **+** 按鈕，然後選擇 [Windows Mixed Reality]。
 
 >[!NOTE]
->如果您看不到 [ **Windows store** ] 圖示，請再次檢查以確定您在安裝之前已選取 [windows Store .Net 腳本後端]。 如果不是，您可能需要使用正確的 Windows 安裝來重新安裝 Unity。
-
-**確認 .NET 設定**
-
-![確認 .NET 設定](images/configoptions-375px.png)
-
-1. 移至 **編輯 > 專案設定 > 播放** （您在上一個步驟中可能還是會這麼做）。
-2. 在 [玩家設定] 的 [偵測**器] 面板**中，選取 [ **Windows Store** ] 圖示。
-3. 在 [**其他設定**] 區段中，確認 [**腳本後端**] 已設定為 [ **.net** ]
+>如果您看不到 [**通用 Windows 平臺**] 圖示，請再次檢查以確定您在安裝期間已選取 [通用 Windows 平臺組建支援]。 如果沒有，您可能需要以正確的 Windows 安裝重新安裝 Unity。
 
 取得套用所有專案設定的絕佳作業。 接下來，讓我們新增全息影像！
 
@@ -145,7 +135,7 @@ Unity 主要攝影機會處理 head 追蹤和 stereoscopic 轉譯。 主要相�
 2. 在 [階層 **] 面板中**選取新建立的**Cube**
 3. 在偵測**器**中，尋找 [**轉換**] 元件，並將 [**位置**] 變更為（**X**：0， **Y**：0， **Z**：2）。 *這會將 cube 2 計量置於使用者開始位置的前方。*
 4. 在 [**轉換**] 元件中，將 [**旋轉**] 變更為（**x**：45， **Y**：45， **Z**：45），並將 [**調整**為] （**x**：0.25， **Y**：0.25， **z**：0.25）。 *這會將 cube 調整為0.25 計量。*
-5. 若要儲存場景變更，請選取 檔案 **> 儲存場景**。
+5. 若要儲存場景變更，請選取 [檔案] **> 儲存場景**]。
 
 ## <a name="chapter-5---verify-on-device-from-unity-editor"></a>第5章-從 Unity 編輯器進行裝置驗證
 
@@ -164,7 +154,7 @@ Unity 主要攝影機會處理 head 追蹤和 stereoscopic 轉譯。 主要相�
 2. 開啟**Window > XR >** 全像的模擬。
 3. 將**模擬模式**從 [**無**] 變更為 [**遠端] 至 [裝置**]。
 4. 在 [**遠端電腦**] 中，輸入您先前記下的 HOLOLENS 的 IP 位址。
-5. 按一下 [連接]。
+5. 按一下 [ **連接**]。
 6. 確定 [**連接狀態**] 變更為 [綠色**已連接**]。
 7. 現在您可以按一下 Unity 編輯器中的 [**播放**]。
 
@@ -186,20 +176,19 @@ Unity 主要攝影機會處理 head 追蹤和 stereoscopic 轉譯。 主要相�
 
 ### <a name="export-to-the-visual-studio-solution"></a>匯出至 Visual Studio 解決方案
 
-1.  開啟 檔案 **> 組建設定** 視窗。
-2.  按一下 [新增] [**開啟場景**] 以加入場景。
-3.  將**平臺**變更為**通用 Windows 平臺**，然後按一下 [**切換平臺**]。
-4.  在**Windows Store**設定中， **SDK**為**通用 10**。
-5.  針對 [目標裝置]，保留 [**任何裝置**以進行 pixels occluded] 或 [切換至**HoloLens**]。
-6.  **UWP 組建類型**應該是**D3D**。
-7.  **UWP SDK**可以保持在**最新的安裝**位置。
-8.  檢查 [調試] 底下的**Unity C#專案**。
-9.  按一下 [建置]。
-10. 在 [檔案瀏覽器] 中，按一下 [**新增資料夾**]，並將資料夾命名為「**應用程式**」。
-11. 選取**應用程式**資料夾後，按一下 [**選取資料夾**] 按鈕。
-12. Unity 完成建立時，將會出現 Windows 檔案瀏覽器視窗。
-13. 在檔案瀏覽器中開啟**應用程式**資料夾。
-14. 開啟產生的 Visual Studio 方案（在此範例中為 MixedRealityIntroduction）
+1. 開啟 [檔案] **> 組建設定**] 視窗。
+1. 按一下 [新增] [**開啟場景**] 以加入場景。
+1. 將**平臺**變更為**通用 Windows 平臺**，然後按一下 [**切換平臺**]。
+1. 在**通用 Windows 平臺**設定中，請確定**SDK**是**通用 10**。
+1. 針對 [目標裝置]，保留 [**任何裝置**以進行 pixels occluded] 或 [切換至**HoloLens**]。
+1. **UWP 組建類型**應該是**D3D**。
+1. **UWP SDK**可以保持在**最新的安裝**位置。
+1. 按一下 [建置]****。
+1. 在 [檔案瀏覽器] 中，按一下 [**新增資料夾**]，並將資料夾命名為「**應用程式**」。
+1. 選取**應用程式**資料夾後，按一下 [**選取資料夾**] 按鈕。
+1. Unity 完成建立時，將會出現 Windows 檔案瀏覽器視窗。
+1. 在檔案瀏覽器中開啟**應用程式**資料夾。
+1. 開啟產生的 Visual Studio 方案（在此範例中為 MixedRealityIntroduction）
 
 ### <a name="compile-the-visual-studio-solution"></a>編譯 Visual Studio 解決方案
 
@@ -238,5 +227,5 @@ Unity 主要攝影機會處理 head 追蹤和 stereoscopic 轉譯。 主要相�
 
 * [Unity 開發概觀](unity-development-overview.md)
 * [使用 Unity 和 Visual Studio 的最佳作法](best-practices-for-working-with-unity-and-visual-studio.md)
-* [MR 基本101](holograms-101.md)
-* [MR 基本概念101E](holograms-101e.md)
+* [MR Basics 101](holograms-101.md)
+* [MR Basics 101E](holograms-101e.md)

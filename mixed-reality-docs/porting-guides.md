@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 10/02/2018
 ms.topic: article
 keywords: 埠、移植、unity、中介軟體、引擎、UWP
-ms.openlocfilehash: 06501742d4b5c30036982deef2ec2a88171912bf
-ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
+ms.openlocfilehash: 73126ae90ed12988177cc9192b7db41bae30fcc2
+ms.sourcegitcommit: f523b74a549721b6bec69cb5d2eca5b7673a793c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81278036"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85570317"
 ---
 # <a name="porting-guides"></a>移植指南
 
@@ -70,9 +70,10 @@ Windows Mixed Reality 平臺仍在開發中，而且最有效率的是，我們�
 ### <a name="unity-step-4-target-your-application-to-run-on-universal-windows-platform-uwp"></a>Unity 步驟4：將您的應用程式目標設為在通用 Windows 平臺（UWP）上執行
 
 安裝工具之後，您需要讓應用程式以通用 Windows 應用程式的身分執行。
+
 * 依照 Unity 提供的[詳細逐步](https://unity3d.com/partners/microsoft/porting-guides)解說逐步解說。 請注意，您應該隨時掌握適用于 Windows MR 的最新 LTS 版本（任何 20xx. 4 版）。
 * 如需更多 UWP 開發資源，請參閱《 [Windows 10 遊戲開發指南》](https://docs.microsoft.com/windows/uwp/gaming/e2e)。
-* 請注意，Unity 會繼續改善 IL2CPP 支援;IL2CPP 讓一些 UWP 埠變得更容易。 如果您目前的目標是 .Net 腳本後端，您應該考慮轉換以改用 IL2CPP 後端。
+* 請注意，Unity 會繼續改善 IL2CPP 支援;IL2CPP 讓一些 UWP 埠變得更容易。 如果您目前的目標是 .NET 腳本後端，您應該考慮轉換以改用 IL2CPP 後端。
 
 注意：如果您的應用程式與裝置特定服務有任何相依性，例如從串流進行的比對，您必須在此步驟停用它們。 稍後，您可以連接到 Windows 所提供的對等服務。
 
@@ -104,7 +105,7 @@ XRDevice.SetTrackingSpaceType(TrackingSpaceType.Stationary);
 
 這會設定 Unity 的全局座標系統，以追蹤[固定的參考框架](coordinate-systems.md#spatial-coordinate-systems)。 在「固定」追蹤模式中，放在編輯器中的內容，就像是在相機的預設位置前方（[轉寄] 為-Z），會在應用程式啟動時顯示在使用者的前方。 若要 recenter 使用者的固定來源，您可以呼叫 Unity 的[XR。InputTracking. Recenter](https://docs.unity3d.com/ScriptReference/XR.InputTracking.Recenter.html)方法。
 
-如果您要移植的是**大規模體驗**或**會議室規模的體驗**，您將會放在與樓層相關的內容。 您的使用者使用 **[空間階段](coordinate-systems.md#spatial-coordinate-systems)** （代表使用者定義的樓層層級原點和選擇性的房間界限），這是您在第一次執行期間設定的原因。 針對這些經驗，您必須確定 Unity 已設定為**RoomScale**追蹤空間類型。 雖然 RoomScale 是預設值，但您會想要明確設定並確保您得到 true，以攔截使用者已將其電腦從其校正的房間中移出的情況：
+如果您要移植的是**大規模體驗**或**會議室規模的體驗**，您將會放在與樓層相關的內容。 您的使用者使用**[空間階段](coordinate-systems.md#spatial-coordinate-systems)**（代表使用者定義的樓層層級原點和選擇性的房間界限），這是您在第一次執行期間設定的原因。 針對這些經驗，您必須確定 Unity 已設定為**RoomScale**追蹤空間類型。 雖然 RoomScale 是預設值，但您會想要明確設定並確保您得到 true，以攔截使用者已將其電腦從其校正的房間中移出的情況：
 
 ```cs
 if (XRDevice.SetTrackingSpaceType(TrackingSpaceType.RoomScale))
@@ -141,7 +142,7 @@ else
 ### <a name="unity-step-9-work-through-your-input-model"></a>Unity 步驟9：逐步執行您的輸入模型
 
 以現有 HMD 為目標的每個遊戲或應用程式將會有一組其處理的輸入、體驗所需的輸入類型，以及它所呼叫以取得這些輸入的特定 Api。 我們致力於嘗試讓它盡可能簡單明瞭，以利用 Windows Mixed Reality 提供的輸入。
-1. 請仔細閱讀 **[適用于 Unity 的輸入移植指南](input-porting-guide-for-unity.md)** ，以取得有關 Windows Mixed Reality 如何公開輸入的詳細資訊，以及如何對應至您的應用程式目前所能執行的工作。
+1. 請仔細閱讀**[適用于 Unity 的輸入移植指南](input-porting-guide-for-unity.md)**，以取得有關 Windows Mixed Reality 如何公開輸入的詳細資訊，以及如何對應至您的應用程式目前所能執行的工作。
 2. 選擇您要利用 Unity 的跨 VR-SDK 輸入 API，或 MR 特定的輸入 API。 Unity VR 應用程式現在會使用一般的 GetButton/GetAxis Api 來進行[oculus go 輸入](https://docs.unity3d.com/Manual/OculusControllers.html)和[OpenVR 輸入](https://docs.unity3d.com/Manual/OpenVRControllers.html)。 如果您的應用程式已經使用這些適用于動作控制器的 Api，這是最簡單的路徑，您應該只需要在輸入管理員中重新對應按鈕和軸。
     * 您可以使用一般的跨 VR-SDK 輸入來存取 Unity 中的動作控制器資料。 GetButton/GetAxis Api 或 MR 專屬的 UnityEngine. XR。輸入 Api。 （之前在 Unity 5.6 中的 UnityEngine. XR 命名空間）
     * 請參閱結合遊戲台和動作控制器的[工具組中的範例](https://github.com/Microsoft/HoloToolkit-Unity/pull/572)。

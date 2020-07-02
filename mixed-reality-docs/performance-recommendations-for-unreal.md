@@ -7,12 +7,12 @@ ms.date: 5/5/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合實境, 效能, 最佳化, 設定, 文件
-ms.openlocfilehash: 3c65eb519b57457e6c9e9747af0ad75e6a5e1b4d
-ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
+ms.openlocfilehash: 9f128a3ef09f29fc745c21b09b7ec97f5db33605
+ms.sourcegitcommit: 7f50210b71a65631fd1bc3fdb215064e0db34333
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84330181"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84533120"
 ---
 # <a name="performance-recommendations-for-unreal"></a>Unreal 的效能建議
 

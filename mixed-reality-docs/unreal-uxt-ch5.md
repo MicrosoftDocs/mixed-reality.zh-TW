@@ -3,16 +3,16 @@ title: 5. 新增按鈕並重設棋子位置
 description: 教學課程系列的第 5 部分 (共有 6 部分)，使用 Unreal Engine 4 和混合實境工具組 UX 工具外掛程式來建置簡單的國際象棋應用程式
 author: hferrone
 ms.author: v-haferr
-ms.date: 5/5/2020
+ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合實境, 教學課程, 開始使用, mrtk, uxt, UX 工具, 文件
-ms.openlocfilehash: 49cab5c5a8c6736b800b5ba05de2c88edf008008
-ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
+ms.openlocfilehash: 473f47884bbc492451007436f80e8d9762cf1ab7
+ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84330265"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84720254"
 ---
 # <a name="5-adding-a-button--resetting-piece-locations"></a>5.新增按鈕並重設棋子位置
 
@@ -54,7 +54,7 @@ ms.locfileid: "84330265"
 
 ![從 SimpleButton 中為新藍圖建立子類別](images/unreal-uxt/5-subclass.PNG)
 
-2. 從 [元件] 面板中按一下 **PressableButton (Inherited)** ，然後將 [詳細資料] 面板向下捲動至 [事件] 區段。 
+2. 從 [元件] 面板中按一下 **可點按的按鈕 (繼承)** ，然後將 [詳細資料] 面板向下捲動至 [事件] 區段。 
     * 按一下 [On Button Pressed] 旁邊的綠色 **+** 按鈕，將事件新增至事件圖形，如此在按下按鈕時便會呼叫該事件。 
     
 從這裡開始，您會想要呼叫 **WhiteKing** 的 **Reset Location** 函式，該函式需要參考層級中的 **WhiteKing** 動作項目。 

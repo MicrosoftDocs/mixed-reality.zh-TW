@@ -7,12 +7,12 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: ec078015304e1cddc9b042fb5e94cf1904a302cb
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: 9a19ad59e520a2743aafd954910f43c6f51d6c8a
+ms.sourcegitcommit: 5612e8bfb9c548eac42182702cec87b160efbbfe
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79376085"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85441855"
 ---
 # <a name="6-exploring-advanced-input-options"></a>6.探索進階的輸入選項
 
@@ -38,23 +38,28 @@ ms.locfileid: "79376085"
 5. 實作語音命令的回應事件
 
 ### <a name="1-clone-the-default-input-system-profile"></a>1.複製預設的輸入系統設定檔
-
-在 [階層] 視窗中，選取 **MixedRealityToolkit** 物件，然後在 [偵測器] 視窗中選取 [輸入]  索引標籤，複製 **DefaultHoloLens2InputSystemProfile** 來將其取代為您自己可自訂的**輸入系統設定檔**：
+在 [階層] 視窗中，選取 **MixedRealityToolkit** 物件，然後在 [偵測器] 視窗中選取 [輸入] 索引標籤，複製 **DefaultHoloLens2InputSystemProfile** 來將其取代為您自己可自訂的**輸入系統設定檔**：
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section1-step1-1.png)
+
+> [!NOTE]
+> 如果您使用 MRTK 2.4.0 或更新版本：
+> * 從 [階層] 索引標籤中選取 **MixedRealityToolkit** 物件，然後按一下 [偵測器] 視窗中的 [輸入] 索引標籤，並展開 [指標] 區段。 
+> * 複製 **DefaultMixedRealityInputPointerProfile**，並將其取代為您自己的可自訂**輸入指標設定檔**。
+> * 在 [注視設定] 區段中檢查 [啟用眼睛追蹤] 是否為 true。 
 
 > [!TIP]
 > 如需有關如何複製 MRTK 設定檔的提示，您可以參閱[如何設定混合實境工具組設定檔](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option)的指示。
 
 ### <a name="2-clone-the-default-speech-commands-profile"></a>2.複製預設的語音命令設定檔
 
-展開 [語音]  區段，然後複製 **DefaultMixedRealitySpeechCommandsProfile** 來將其取代為您自己可自訂的**語音命令設定檔**：
+展開 [語音] 區段，然後複製 **DefaultMixedRealitySpeechCommandsProfile** 來將其取代為您自己可自訂的**語音命令設定檔**：
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section1-step2-1.png)
 
 ### <a name="3-create-a-new-speech-command"></a>3.建立新的語音命令
 
-在 [語音命令]  區段中按一下 [+ 新增語音命令]  按鈕，將新的語音命令新增至現有語音命令清單的底部，然後在 [關鍵字]  欄位中輸入適當的單字或片語，例如 **Play Music** (播放音樂)：
+在 [語音命令] 區段中按一下 [+ 新增語音命令] 按鈕，將新的語音命令新增至現有語音命令清單的底部，然後在 [關鍵字] 欄位中輸入適當的單字或片語，例如 **Play Music** (播放音樂)：
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section1-step3-1.png)
 
@@ -63,7 +68,7 @@ ms.locfileid: "79376085"
 
 ### <a name="4-add-and-configure-the-speech-input-handler-script-component"></a>4.新增和設定 Speech Input Handler (指令碼) 元件
 
-在 [階層] 視窗中，選取 **Octa** 物件，並將 **Speech Input Handler (指令碼)** 元件新增至 Octa 物件。 然後取消核取 [需要對焦]  核取方塊，如此使用者就不需要看著 Octa 物件來觸發語音命令：
+在 [階層] 視窗中，選取 **Octa** 物件，並將 **Speech Input Handler (指令碼)** 元件新增至 Octa 物件。 然後取消核取 [需要對焦] 核取方塊，如此使用者就不需要看著 Octa 物件來觸發語音命令：
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section1-step4-1.png)
 
@@ -73,14 +78,14 @@ ms.locfileid: "79376085"
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section1-step5-1.png)
 
-按一下新建立的**元素 0** 來將其展開，然後從 [關鍵字]  下拉式清單中，選擇您稍早建立的 [Play Music]  關鍵字：
+按一下新建立的**元素 0** 來將其展開，然後從 [關鍵字] 下拉式清單中，選擇您稍早建立的 [Play Music] 關鍵字：
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section1-step5-2.png)
 
 > [!NOTE]
 > 在關鍵字下拉式清單中填入的關鍵字，是以語音命令設定檔中「語音命令」清單上定義的關鍵字為基礎。
 
-建立新的 **Response ()** 事件、設定 **Octa** 物件以接收事件、將 **AudioSource.PlayOneShot** 定義為要觸發的動作，並將適當的音訊片段指派給 [音訊片段]  欄位，例如 MRTK_Gem 音訊片段：
+建立新的 **Response ()** 事件、設定 **Octa** 物件以接收事件、將 **AudioSource.PlayOneShot** 定義為要觸發的動作，並將適當的音訊片段指派給 [音訊片段] 欄位，例如 MRTK_Gem 音訊片段：
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section1-step5-3.png)
 
@@ -105,7 +110,7 @@ ms.locfileid: "79376085"
 
 ### <a name="1-create-a-quad-object-that-can-be-used-for-panning"></a>1.建立可用於平移的 Quad (四邊形) 物件
 
-在 [階層] 視窗中，以滑鼠右鍵按一下空白區域，然後選取 [3D 物件]   > [Quad]  ，將一個四邊形新增至您的場景。 為其指定一個適當的名稱 (例如 **PanGesture**)，然後放在適當的位置，例如 X = 0、Y = -0.2、Z = 2。
+在 [階層] 視窗中，以滑鼠右鍵按一下空白區域，然後選取 [3D 物件] > [Quad]，將一個四邊形新增至您的場景。 為其指定一個適當的名稱 (例如 **PanGesture**)，然後放在適當的位置，例如 X = 0、Y = -0.2、Z = 2。
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section2-step1-1.png)
 
@@ -114,23 +119,23 @@ ms.locfileid: "79376085"
 
 如同任何其他互動，平移手勢也需要碰撞器。 根據預設，Quad 具有網格碰撞器 (Mesh Collider)。 然而，網格碰撞器並不理想，因為其非常薄。 為了讓使用者更容易與碰撞器互動，我們將以方塊碰撞器來取代網格碰撞器。
 
-在仍選取 PanGesture 物件的情況下，按一下 **網格碰撞器** 元件的 [設定]  圖示，然後選取 [移除元件]  來移除網格碰撞器：
+在仍選取 PanGesture 物件的情況下，按一下 **網格碰撞器** 元件的 [設定] 圖示，然後選取 [移除元件] 來移除網格碰撞器：
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section2-step1-2.png)
 
-在 [偵測器] 視窗中，使用 [新增元件]  按鈕來新增**方塊碰撞器**，然後將方塊碰撞器**大小** 的 Z 變更為 0.15，以增加方塊碰撞器的厚度：
+在 [偵測器] 視窗中，使用 [新增元件] 按鈕來新增**方塊碰撞器**，然後將方塊碰撞器**大小** 的 Z 變更為 0.15，以增加方塊碰撞器的厚度：
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section2-step1-3.png)
 
 ### <a name="2-add-the-near-interaction-touchable-script-component"></a>2.新增 Near Interaction Touchable (指令碼) 元件
 
-在仍選取 **PanGesture** 物件的情況下，將 **Near Interaction Touchable (指令碼)** 元件新增至 PanGesture 物件，然後按一下 [修正周框]  和 [修正中心]  按鈕，以更新 Near Interaction Touchable (指令碼) 的區域中心和界限屬性來符合 BoxCollider：
+在仍選取 **PanGesture** 物件的情況下，將 **Near Interaction Touchable (指令碼)** 元件新增至 PanGesture 物件，然後按一下 [修正周框] 和 [修正中心] 按鈕，以更新 Near Interaction Touchable (指令碼) 的區域中心和界限屬性來符合 BoxCollider：
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section2-step2-1.png)
 
 ### <a name="3-add-the-hand-interaction-pan-zoom-script-component"></a>3.新增 Hand Interaction Pan Zoom (指令碼) 元件
 
-在仍選取 PanGesture  物件的情況下，將 **Hand Interaction Pan Zoom (指令碼)** 元件新增至 PanGesture 物件，然後勾選 [鎖定水平方向]  核取方塊來僅限垂直捲動：
+在仍選取 PanGesture 物件的情況下，將 **Hand Interaction Pan Zoom (指令碼)** 元件新增至 PanGesture 物件，然後勾選 [鎖定水平方向] 核取方塊來僅限垂直捲動：
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section2-step3-1.png)
 
@@ -156,30 +161,30 @@ ms.locfileid: "79376085"
 
 若要將立方體平均隔開，並節省一些時間，請將 **Grid Object Collection (指令碼)** 元件新增至立方體的父物件 (也就是 **PanGesture** 物件)，然後設定 Grid Object Collection (指令碼)，如下所示：
 
-* 將 [資料列數目]  變更為 1，使所有立方體對齊一個單一資料列
-* 將 [儲存格寬度]  變更為 0.25，以拉開資料列內的立方體距離
+* 將 [資料列數目] 變更為 1，使所有立方體對齊一個單一資料列
+* 將 [儲存格寬度] 變更為 0.25，以拉開資料列內的立方體距離
 
-然後按一下 [更新集合]  按鈕以套用新的設定：
+然後按一下 [更新集合] 按鈕以套用新的設定：
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section2-step5-2.png)
 
 ### <a name="6-add-the-move-with-pan-script-component"></a>6.新增 Move With Pan (指令碼) 元件
 
-在 [階層] 視窗中，選取所有**立方體子物件**，然後在 [偵測器] 視窗中，使用 [新增元件]  按鈕，將 **Move With Pan (指令碼)** 元件新增至所有立方體：
+在 [階層] 視窗中，選取所有**立方體子物件**，然後在 [偵測器] 視窗中，使用 [新增元件] 按鈕，將 **Move With Pan (指令碼)** 元件新增至所有立方體：
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section2-step6-1.png)
 
 > [!TIP]
 > 如需有關如何在 [階層] 視窗中選取多個物件的提示，您可以參閱[將 Manipulation Handler (指令碼) 元件新增至所有物件](mrlearning-base-ch4.md#1-add-the-manipulation-handler-script-component-to-all-the-objects)的指示。
 
-在仍選取所有立方體的情況下，按一下 **PanGesture** 物件並將其拖曳至 [平移輸入來源]  欄位：
+在仍選取所有立方體的情況下，按一下 **PanGesture** 物件並將其拖曳至 [平移輸入來源] 欄位：
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section2-step6-2.png)
 
 > [!TIP]
 > 每個立方體上的 Move With Pan (指令碼) 元件都會接聽 PanGesture 物件 (已在上個步驟指派為 Pan Input Source) 上 HandInteractionPanZoom (指令碼) 元件所傳送的 Pan Updated 事件，並據以更新每個立方體的位置。
 
-在 [階層] 視窗中，選取 **PanGesture** 物件，然後在偵測器中**取消核取** [網格轉譯器]  核取方塊，以停用網格轉譯器元件：
+在 [階層] 視窗中，選取 **PanGesture** 物件，然後在偵測器中**取消核取** [網格轉譯器] 核取方塊，以停用網格轉譯器元件：
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section2-step6-3.png)
 
@@ -202,20 +207,20 @@ ms.locfileid: "79376085"
 
 ### <a name="1-add-the-eye-tracking-target-script-component-to-all-target-objects"></a>1.將 Eye Tracking Target (指令碼) 元件新增至目標物件
 
-在 [階層] 視窗中，展開 **3DObjectCollection** 物件，並選取所有**子物件**，然後在 [偵測器] 視窗中，使用 [新增元件]  按鈕，將 **Eye Tracking Target (指令碼)** 元件新增至所有子物件：
+在 [階層] 視窗中，展開 **3DObjectCollection** 物件，並選取所有**子物件**，然後在 [偵測器] 視窗中，使用 [新增元件] 按鈕，將 **Eye Tracking Target (指令碼)** 元件新增至所有子物件：
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section3-step1-1.png)
 
 在仍然選取所有**子物件**的情況下，設定 **Eye Tracking Target (指令碼)** 元件，如下所示：
 
-* 將 [選取動作]  變更為 [選取]  ，即可將此物件的空中點選動作定義為「選取」
-* 展開 [語音選取]  ，並將語音命令清單的**大小**設為 1，然後在出現的新元素清單中，將 **元素 0** 變更為 [選取]  ，以將此物件的語音命令動作定義為「選取」
+* 將 [選取動作] 變更為 [選取]，即可將此物件的空中點選動作定義為「選取」
+* 展開 [語音選取]，並將語音命令清單的**大小**設為 1，然後在出現的新元素清單中，將 **元素 0** 變更為 [選取]，以將此物件的語音命令動作定義為「選取」
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section3-step1-2.png)
 
 ### <a name="2-add-the-eye-tracking-tutorial-demo-script-component--to-all-target-objects"></a>2.將 Eye Tracking Tutorial Demo (指令碼) 元件新增至所有目標物件
 
-在仍選取所有**子物件**的情況下，使用 [新增元件]  按鈕，將 **Eye Tracking Tutorial Demo (指令碼)** 元件新增至所有子物件：
+在仍選取所有**子物件**的情況下，使用 [新增元件] 按鈕，將 **Eye Tracking Tutorial Demo (指令碼)** 元件新增至所有子物件：
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section3-step2-1.png)
 
@@ -243,14 +248,14 @@ ms.locfileid: "79376085"
 
 ### <a name="5-enable-simulated-eye-tracking-for-in-editor-simulations"></a>5.針對編輯器內的模擬啟用模擬的眼球追蹤
 
-在 [階層] 視窗中，選取 **MixedRealityToolkit** 物件，然後在 [偵測器] 視窗中，選取 [輸入]  索引標籤並依序展開 [輸入資料提供者]  區段和 [輸入模擬服務]  區段，然後複製 **DefaultMixedRealityInputSimulationProfile** 來將其取代為您自己可自訂的**輸入模擬設定檔**：
+在 [階層] 視窗中，選取 **MixedRealityToolkit** 物件，然後在 [偵測器] 視窗中，選取 [輸入] 索引標籤並依序展開 [輸入資料提供者] 區段和 [輸入模擬服務] 區段，然後複製 **DefaultMixedRealityInputSimulationProfile** 來將其取代為您自己可自訂的**輸入模擬設定檔**：
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section3-step5-1.png)
 
 > [!TIP]
 > 如需有關如何複製 MRTK 設定檔的提示，您可以參閱[如何設定混合實境工具組設定檔](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option)的指示。
 
-在 [眼球模擬]  區段中，核取 [模擬眼球位置]  核取方塊，以啟用眼球追蹤模擬：
+在 [眼球模擬] 區段中，核取 [模擬眼球位置] 核取方塊，以啟用眼球追蹤模擬：
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section3-step5-2.png)
 

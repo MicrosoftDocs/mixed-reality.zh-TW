@@ -7,12 +7,12 @@ ms.date: 03/26/2019
 ms.topic: article
 keywords: 圖形, cpu, gpu, 轉譯, 記憶體回收行程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 28f09986cdb8c562aedfc9deae7b0369214ebc05
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: c6c68a6dd6e8ba59bee983e158e210aed27d2b17
+ms.sourcegitcommit: 4282d92e93869e4829338bdf7d981c3ee0260bfd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81277566"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85216239"
 ---
 # <a name="performance-recommendations-for-unity"></a>對 Unity 的效能建議
 
@@ -31,7 +31,7 @@ Unity 提供的絕佳文件：
 2) 如何使用 Unity 分析工具有效率地[診斷效能問題](https://unity3d.com/learn/tutorials/temas/performance-optimization/diagnosing-performance-problems-using-profiler-window)
 
 >[!NOTE]
-> 當 Unity 分析工具已連線並新增 GPU 分析工具之後 (請參閱右上角的「新增分析工具」  )，使用者可以在分析工具的中間查看 CPU 與 GPU 分別花費了多少時間。 這可讓開發人員在其應用程式為 CPU 或 GPU 限定時，取得快速近似值。
+> 當 Unity 分析工具已連線並新增 GPU 分析工具之後 (請參閱右上角的「新增分析工具」)，使用者可以在分析工具的中間查看 CPU 與 GPU 分別花費了多少時間。 這可讓開發人員在其應用程式為 CPU 或 GPU 限定時，取得快速近似值。
 >
 > ![Unity CPU 與 GPU](images/unity-profiler-cpu-gpu.png)
 
@@ -221,8 +221,8 @@ Unity 有一篇很棒的文章，可讓您大致瞭解並探討其平台的批�
 Unity 中的 [單通道執行個體化轉譯] 可讓您將每個眼球的繪製呼叫降低至一個執行個體化的繪製呼叫。 由於兩個繪製呼叫之間的快取一致性，GPU 上也有一些效能改善。
 
 若要在 Unity 專案中啟用這項功能
-1)  開啟 [Player XR 設定]  (移至 [編輯]   > [專案設定]   > [播放器]   > [XR 設定]  )
-2) 從 [立體聲轉譯方法]  下拉式功能表中，選取 [單通道執行個體化]  (必須核取 [支援的虛擬實境]  核取方塊)
+1)  開啟 [Player XR 設定] (移至 [編輯] > [專案設定] > [播放器] > [XR 設定])
+2) 從 [立體聲轉譯方法] 下拉式功能表中，選取 [單通道執行個體化] (必須核取 [支援的虛擬實境] 核取方塊)
 
 如需此轉譯方法的詳細資料，請在 Unity 中參閱下列文章。
 - [如何使用進階的立體聲轉譯將 AR 和 VR 效能最大化](https://blogs.unity3d.com/2017/11/21/how-to-maximize-ar-and-vr-performance-with-advanced-stereo-rendering/)
@@ -235,15 +235,15 @@ Unity 中的 [單通道執行個體化轉譯] 可讓您將每個眼球的繪製�
 
 #### <a name="static-batching"></a>靜態批次處理
 
-Unity 能夠批次處理許多靜態物件，以減少對 GPU 的繪製呼叫。 靜態批次處理適用於 Unity 中大部分的[轉譯器](https://docs.unity3d.com/ScriptReference/Renderer.html)物件，這些物件會 **1) 共用相同的資料** 且 **2) 全部標示為 [靜態] ** (在 Unity 中選取物件，然後按一下偵測器右上方的核取方塊)。 標記為「靜態」  的 GameObject 無法在整個應用程式的執行時間移動。 因此，靜態批次處理可能很容易在 HoloLens 上運用，因為幾乎每個物件都必須放置、移動、調整等等。針對沉浸式頭戴裝置，靜態批次處理可以大幅減少繪製呼叫，因而改善效能。
+Unity 能夠批次處理許多靜態物件，以減少對 GPU 的繪製呼叫。 靜態批次處理適用於 Unity 中大部分的[轉譯器](https://docs.unity3d.com/ScriptReference/Renderer.html)物件，這些物件會 **1) 共用相同的資料** 且 **2) 全部標示為 [靜態]** (在 Unity 中選取物件，然後按一下偵測器右上方的核取方塊)。 標記為「靜態」的 GameObject 無法在整個應用程式的執行時間移動。 因此，靜態批次處理可能很容易在 HoloLens 上運用，因為幾乎每個物件都必須放置、移動、調整等等。針對沉浸式頭戴裝置，靜態批次處理可以大幅減少繪製呼叫，因而改善效能。
 
-如需詳細資料，請參閱[在 Unity 中繪製呼叫批次處理](https://docs.unity3d.com/Manual/DrawCallBatching.html)中的「靜態批次處理」  。
+如需詳細資料，請參閱[在 Unity 中繪製呼叫批次處理](https://docs.unity3d.com/Manual/DrawCallBatching.html)中的「靜態批次處理」。
 
 #### <a name="dynamic-batching"></a>動態批次處理
 
-由於將 HoloLens 開發的物件標示為「靜態」  會有問題，因此動態批次處理可能是彌補這項缺乏功能的絕佳工具。 當然，該功能也適用於沉浸式頭戴裝置。 不過，Unity 中的動態批次處理可能難以啟用，因為 GameObject 必須 **a) 共用相同的資料** 且 **b) 符合一長串的其他條件**。
+由於將 HoloLens 開發的物件標示為「靜態」會有問題，因此動態批次處理可能是彌補這項缺乏功能的絕佳工具。 當然，該功能也適用於沉浸式頭戴裝置。 不過，Unity 中的動態批次處理可能難以啟用，因為 GameObject 必須 **a) 共用相同的資料** 且 **b) 符合一長串的其他條件**。
 
-如需完整清單，請參閱[在 Unity 中繪製呼叫批次處理](https://docs.unity3d.com/Manual/DrawCallBatching.html)中的「動態批次處理」  。 最常見的情況是，因為相關聯的網格資料不能超過 300 個頂點，所以 GameObject 會變成無效而無法動態地進行批次處理。
+如需完整清單，請參閱[在 Unity 中繪製呼叫批次處理](https://docs.unity3d.com/Manual/DrawCallBatching.html)中的「動態批次處理」。 最常見的情況是，因為相關聯的網格資料不能超過 300 個頂點，所以 GameObject 會變成無效而無法動態地進行批次處理。
 
 #### <a name="other-techniques"></a>其他技術
 
@@ -260,7 +260,7 @@ Unity 能夠批次處理許多靜態物件，以減少對 GPU 的繪製呼叫。
 
 ### <a name="optimize-depth-buffer-sharing"></a>將深度緩衝區共用進行最佳化
 
-通常建議您啟用 [Player XR 設定]  下的 [深度緩衝區共用]  ，以將[全像投影穩定性](Hologram-stability.md)進行最佳化。 不過，使用此設定來啟用深度延遲階段重新投影時，建議選取 [16 位元深度格式]  ，而不是 [24 位元深度格式]  。 16 位元深度緩衝區會大幅降低與深度緩衝區流量相關聯的頻寬 (和電源)。 這在降低電源和改善效能方面都是一大優勢。 不過，使用「16 位元深度格式」  可能會有兩個負面結果。
+通常建議您啟用 [Player XR 設定] 下的 [深度緩衝區共用]，以將[全像投影穩定性](Hologram-stability.md)進行最佳化。 不過，使用此設定來啟用深度延遲階段重新投影時，建議選取 [16 位元深度格式]，而不是 [24 位元深度格式]。 16 位元深度緩衝區會大幅降低與深度緩衝區流量相關聯的頻寬 (和電源)。 這在降低電源和改善效能方面都是一大優勢。 不過，使用「16 位元深度格式」可能會有兩個負面結果。
 
 **Z 衝突**
 
@@ -276,11 +276,13 @@ Unity 能夠批次處理許多靜態物件，以減少對 GPU 的繪製呼叫。
 
 ### <a name="optimal-lighting-settings"></a>最佳光源設定
 
-Unity 中的[即時全域照明](https://docs.unity3d.com/Manual/GIIntro.html)可以提供優異的視覺結果，但牽涉到相當高成本的光源計算。 建議您透過 [視窗]   > [轉譯]   > [光源設定]  > 取消核取 [即時全域照明]  ，停用每個 Unity 場景檔案的即時全域照明。
+Unity 中的[即時全域照明](https://docs.unity3d.com/Manual/GIIntro.html)可以提供優異的視覺結果，但牽涉到相當高成本的光源計算。 建議您透過 [視窗] > [轉譯] > [光源設定] > 取消核取 [即時全域照明]，停用每個 Unity 場景檔案的即時全域照明。
 
 此外，建議停用所有陰影轉換，因為這些也會在 Unity 場景上增加高成本的 GPU 通道。 可針對光源停用陰影，也可以透過 [品質] 設定進行全面性控制。
 
-[編輯]   > [專案設定]  ，然後選取 [品質]  類別 > 針對 UWP 平台，選取 [低品質]  。 使用者也可以只將 [陰影]  屬性設定為 [停用陰影]  。
+[編輯] > [專案設定]，然後選取 [品質] 類別 > 針對 UWP 平台，選取 [低品質]。 使用者也可以只將 [陰影] 屬性設定為 [停用陰影]。
+
+在 Unity 中建議您對模型使用烘焙光源。
 
 ### <a name="reduce-poly-count"></a>減少多邊形計數
 
@@ -293,10 +295,10 @@ Unity 中的[即時全域照明](https://docs.unity3d.com/Manual/GIIntro.html)�
 
 比較效能中著色器的簡單近似值，是識別在執行時間每個執行的平均作業數目。 這可以在 Unity 中輕鬆完成。
 
-1) 選取您的著色器資產或選取材質，然後在偵測器視窗的右上角，選取後接 [選取著色器]  的齒輪圖示
+1) 選取您的著色器資產或選取材質，然後在偵測器視窗的右上角，選取後接 [選取著色器] 的齒輪圖示
 
     ![選取 Unity 中的著色器](images/Select-shader-unity.png)
-2) 選取著色器資產後，按一下偵測器視窗下的 [編譯並顯示程式碼]  按鈕
+2) 選取著色器資產後，按一下偵測器視窗下的 [編譯並顯示程式碼] 按鈕
 
     ![在 Unity 中編譯著色器程式碼](images/compile-shader-code-unity.PNG)
 
@@ -320,11 +322,11 @@ Unity 也提供無光、頂點光、擴散和其他簡化的著色器選項，�
 
 #### <a name="shader-preloading"></a>著色器預先載入
 
-使用「著色器預先載入」  和其他訣竅，將[著色器載入時間](https://docs.unity3d.com/Manual/OptimizingShaderLoadTime.html)進行最佳化。 特別是，著色器預先載入表示您不會因為執行時間著色器編譯而看到任何停頓。
+使用「著色器預先載入」和其他訣竅，將[著色器載入時間](https://docs.unity3d.com/Manual/OptimizingShaderLoadTime.html)進行最佳化。 特別是，著色器預先載入表示您不會因為執行時間著色器編譯而看到任何停頓。
 
 ### <a name="limit-overdraw"></a>限制過度繪製
 
-在 Unity 中，使用者可以顯示其場景的過度繪製，方法是切換 [場景視圖]  左上角的 [[繪製模式] 功能表  ](https://docs.unity3d.com/Manual/ViewModes.html)，然後選取 [過度繪製]  。
+在 Unity 中，使用者可以顯示其場景的過度繪製，方法是切換 [場景視圖] 左上角的 [[繪製模式] 功能表](https://docs.unity3d.com/Manual/ViewModes.html)，然後選取 [過度繪製]。
 
 一般來說，在將物件傳送至 GPU 之前，您可以將這些物件先行剔除，藉以減輕過度繪製。 Unity 提供針對其引擎實作[遮蔽剔除](https://docs.unity3d.com/Manual/OcclusionCulling.html)的詳細資料。
 
@@ -344,7 +346,7 @@ Unity 提供了絕佳的頁面，詳細說明記憶體回收行程的運作方�
 其他快速提示：
 - 使用 [StringBuilder](https://docs.microsoft.com/dotnet/api/system.text.stringbuilder?view=netframework-4.7.2) C# 類別，在執行時間以動態方式建置複雜字串
 - 當您不再需要 Debug.Log() 的呼叫時，請加以移除，因為該函式仍會在應用程式的所有組建版本中執行
-- 如果您的全像攝影應用程式通常需要大量的記憶體，請考慮在載入階段 (例如，呈現載入或轉換畫面時) 呼叫 [ _**System.GC.Collect()**_ ](https://docs.microsoft.com/dotnet/api/system.gc.collect?view=netframework-4.7.2)
+- 如果您的全像攝影應用程式通常需要大量的記憶體，請考慮在載入階段 (例如，呈現載入或轉換畫面時) 呼叫 [_**System.GC.Collect()**_](https://docs.microsoft.com/dotnet/api/system.gc.collect?view=netframework-4.7.2)
 
 #### <a name="object-pooling"></a>物件集區
 

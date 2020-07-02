@@ -3,16 +3,16 @@ title: 2. 初始化您的專案和第一個應用程式
 description: 教學課程系列的第 2 部分 (共有 6 部分)，使用 Unreal Engine 4 和混合實境工具組 UX 工具外掛程式來建置簡單的國際象棋應用程式
 author: hferrone
 ms.author: v-haferr
-ms.date: 5/5/2020
+ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合實境, 教學課程, 開始使用, mrtk, uxt, UX 工具, 文件
-ms.openlocfilehash: e8f03a87ec6b92e4c62cf3f88f519146254e7387
-ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
+ms.openlocfilehash: 150fee721bb9cd72d287737aca4262bd87dccba8
+ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84330329"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85345728"
 ---
 # <a name="2-initializing-your-project-and-first-application"></a>2.初始化您的專案和第一個應用程式
 
@@ -20,15 +20,15 @@ ms.locfileid: "84330329"
 
 在此第一個教學課程中，您將針對 HoloLens 2 開始使用新的 Unreal 應用程式。 這會包括新增 HoloLens 外掛程式、建立和照亮層級，以及在其中填入遊戲棋盤和象棋。 您將針對3D 棋子和物件材質使用預先製作的資產，因此別擔心從頭開始建立任何項目的模型。 在本教學課程結束時，您將會有一個可供混合實境使用的空白畫布。
 
-在繼續之前，請確定您擁有[入門](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch1)頁面中的所有必要條件。
+在繼續之前，請確定您擁有[開始使用](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch1)頁面中的所有必要項目。
 
 ## <a name="objectives"></a>目標
-* 設定 Unreal 專案進行 HoloLens 開發
+* 設定 Unreal 專案以用於 HoloLens 開發
 * 匯入資產和設定場景
 * 使用藍圖建立動作項目和指令碼層級事件
 
 ## <a name="creating-a-new-unreal-project"></a>建立新的 Unreal 專案
-您需要的第一個項目是供您使用的專案。
+您需要的第一個項目是供您使用的專案。 如果這是您第一次建立適用於 HoloLens 的 Unreal 應用程式，則需從 Epic Launcher [下載支援的檔案](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch6#packaging-and-deploying-the-app)。
 
 1. 啟動 Unreal Engine
 
@@ -42,6 +42,9 @@ ms.locfileid: "84330329"
 
 4. 將 [C++]、[可縮放 3D 或 2D]、[行動裝置/平板電腦] 及 [無起始內容] 設為您的 [專案設定]。 
     * 選擇儲存位置，然後按一下 [建立專案]。 
+
+> [!NOTE]
+> 您必須選取 C++ 專案 (而非藍圖專案) 以建置 UX 工具外掛程式 (您稍後將在第 4 節設定此外掛程式)。
 
 ![初始專案設定](images/unreal-uxt/2-project-settings.PNG)
 
@@ -63,7 +66,7 @@ ms.locfileid: "84330329"
 > [!NOTE]
 > 這兩個外掛程式都是進行 HoloLens 2 開發的必要項目。
 
-這麼做之後，您的空白層級已備妥可供公司使用。
+完成此作業後，您的空白層級即可供公司使用。
 
 ## <a name="creating-a-level"></a>建立層級
 您的下一個工作是建立簡單的玩家設定，其中包含一個起點和一個用於參考和調整的立方體。

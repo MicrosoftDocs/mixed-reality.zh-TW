@@ -3,16 +3,16 @@ title: 6. 封裝並部署至裝置或模擬器
 description: 教學課程系列的第 6 部分 (共有 6 部分)，使用 Unreal Engine 4 和混合實境工具組 UX 工具外掛程式來建置簡單的國際象棋應用程式
 author: hferrone
 ms.author: v-haferr
-ms.date: 5/5/2020
+ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合實境, 教學課程, 開始使用, mrtk, uxt, UX 工具, 文件
-ms.openlocfilehash: 99c431920c72cf85fed5a0eec6fc72ddf9fb112c
-ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
+ms.openlocfilehash: 99407a4069f914bf077e6323dde3e12978f6b765
+ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84330229"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85345688"
 ---
 # <a name="6-packaging--deploying-to-device-or-emulator"></a>6.封裝並部署至裝置或模擬器
 
@@ -48,30 +48,40 @@ ms.locfileid: "84330229"
 
 1.  移至 [編輯] > [專案設定]。 
     * 在 [專案] > [描述] > [關於] > [專案名稱] 底下，新增專案名稱。 
-    * 在 [專案] > [描述] > [發行者] > [公司辨別名稱] 底下，新增 **CN={INSERT COMPANY NAME}** 。
+    * 在 [專案] > [描述] > [發行者] > [公司辨別名稱] 底下，新增 **CN=YourCompanyName**。
 
 > [!IMPORTANT]
-> 將其中一個欄位留空會導致錯誤。 
+> 當您嘗試在步驟 3 中產生新的憑證時，將其中一個欄位留空會導致錯誤。 
+
+> [!IMPORTANT]
+> 發行者的名稱必須採用 [LADPv3 辨別名稱格式](https://www.ietf.org/rfc/rfc2253.txt)。 若發行者名稱的格式不正確，在封裝時將會導致「找不到簽署金鑰。 無法以數位方式簽署應用程式。」 錯誤。
 
 ![專案設定 - 描述](images/unreal-uxt/6-cn.PNG)
 
 2.  在 [平台] > [HoloLens] 底下，啟用 [針對 HoloLens 模擬進行建置] 和/或 [針對 HoloLens 裝置進行建置]。
 
-3.  按一下 [封裝] (在 [簽署憑證] 旁邊) 區段中的 [產生新項目]，然後返回主視窗。
+3.  按一下 [封裝] 區段 (在 [簽署憑證] 旁邊) 中的 [產生新項目]。
+
+> [!IMPORTANT]
+> 如果您使用的是已產生的憑證，則憑證的發行者名稱必須與應用程式的發行者名稱相同。 否則將會導致「找不到簽署金鑰。 無法以數位方式簽署應用程式。」 錯誤內容。
 
 ![專案設定 - 平台 - HoloLens](images/unreal-uxt/6-packaging.PNG)
 
-4.  移至 [檔案] > [封裝專案]，然後選取 [HoloLens]。 
+4. 當系統提示您建立私密金鑰密碼時，請按一下 [無] 以供測試之用。
+
+![產生新的憑證](images/unreal-uxt/6-private-key-testing.png)
+
+5. 移至 [檔案] > [封裝專案]，然後選取 [HoloLens]。 
     * 建立新資料夾來儲存您的封裝，然後按一下 [選取資料夾]。 
 
-5.  一旦封裝了應用程式後，請開啟 [Windows 裝置入口網站](https://docs.microsoft.com/windows/mixed-reality/using-the-windows-device-portal)移至 [檢視] > [應用程式]，然後尋找 [部署應用程式] 區段。
+6.  一旦封裝了應用程式後，請開啟 [Windows 裝置入口網站](https://docs.microsoft.com/windows/mixed-reality/using-the-windows-device-portal)移至 [檢視] > [應用程式]，然後尋找 [部署應用程式] 區段。
 
-6.  按一下 [瀏覽 ...]、移至您的 **ChessApp.appxbundle** 檔案，然後按一下 [開啟]。 
+7.  按一下 [瀏覽 ...]、移至您的 **ChessApp.appxbundle** 檔案，然後按一下 [開啟]。 
 
     * 如果這是您第一次在裝置上安裝應用程式，請勾選 [允許我選取架構套件] 旁的方塊。 
     * 在下一個對話方塊中，包含適當的 **VCLibs** 和 **appx** 檔案 (若為裝置則為 arm64，若為模擬器則為 x64)。 您可以在儲存套件的資料夾內 **HoloLens** 底下找到這些檔案。
 
-7.  按一下 [安裝]
+8.  按一下 [安裝]
     * 您現在可以移至 [所有應用程式]，然後點選新安裝的應用程式來執行，也可以直接從 **Windows 裝置入口網站**啟動應用程式。 
 
-恭喜！ 您已完成是 HoloLens 混合實境應用程式，並可以開始進行。 不過，這不是盡頭。 MRTK 有許多獨立功能，您可以將其新增至專案，包括空間對應、注視和語音輸入，甚至是 QR 代碼。 如需這些功能的詳細資訊，請參閱 [Unreal 開發概觀](https://docs.microsoft.com/windows/mixed-reality/unreal-development-overview)。
+恭喜！ 您的 HoloLens 混合實境應用程式已完成，且已可開始使用。 不過，這不是盡頭。 MRTK 有許多獨立功能，您可以將其新增至專案，包括空間對應、注視和語音輸入，甚至是 QR 代碼。 如需這些功能的詳細資訊，請參閱 [Unreal 開發概觀](https://docs.microsoft.com/windows/mixed-reality/unreal-development-overview)。

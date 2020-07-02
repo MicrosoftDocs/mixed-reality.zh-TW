@@ -8,12 +8,12 @@ ms.date: 08/24/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境, 探索, 散佈, 索引, 登陸頁面, 設計, 開發, 教學課程, 範例應用程式, 基本概念, 案例研究, 資源, HoloLens 操作說明, 開放原始碼專案, 核心概念, 互動
-ms.openlocfilehash: 9ef408e1551e9f6c52a6c5fcf7df3123cc099c8c
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: d011a00b55a6b78332233b21535a129774f99c9f
+ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75334090"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85345648"
 ---
 # <a name="start-designing-and-prototyping"></a>開始設計並建立原型
 
@@ -60,7 +60,7 @@ ms.locfileid: "75334090"
 
 <br>
 
-![互動設計因素](images/MRTK_BoundingBox_Main.png)
+![互動設計因素](images/UX/UX_Hero_Manipulation.jpg)
 
 ## <a name="interaction-design-factors-to-consider"></a>要考慮的互動設計因素
 
@@ -85,6 +85,17 @@ HoloLens 2 將全像攝影體驗的內容和人類理解能力帶入了新境界
 
 <br>
 
+
+---
+
+<br>
+
+
+![UX 元素](images/UX/UX_Hero_BoundingBox.jpg)
+
+## <a name="user-experience-elements-for-mixed-reality"></a>混合實境的使用者體驗元素
+
+
 ### <a name="color-light-and-materials"></a>[色彩、光線和材質](color,-light-and-materials.md)
 設計混合實境的內容時，必須仔細考慮您體驗中所使用的每個視覺資產的色彩、光源和材質。
 
@@ -100,8 +111,11 @@ HoloLens 2 將全像攝影體驗的內容和人類理解能力帶入了新境界
 
 <br>
 
-### <a name="ux-elements-for-the-mixed-reality"></a>[混合實境的 UX 元素](app-patterns-landingpage.md)
-了解混合實境中空間互動和 UI 的建置元素。
+### <a name="common-controls-and-behaviors"></a>[通用控制項和行為](app-patterns-landingpage.md)
+了解混合實境體驗常用的通用空間互動和 UI 建置組塊。
+
+
+
 <br>
 
 

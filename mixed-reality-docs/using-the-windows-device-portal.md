@@ -7,12 +7,12 @@ ms.date: 02/24/2019
 ms.topic: article
 keywords: Windows 裝置入口網站, HoloLens
 ms.localizationpriority: high
-ms.openlocfilehash: 4c84670e616d822bb8a9701a82f779a66ec19fe1
-ms.sourcegitcommit: f24ac845e184c2f90e8b15adab9addb913f5cb83
+ms.openlocfilehash: 234f8a5f2550c4437445ec3ac2726a3588f8bdbe
+ms.sourcegitcommit: 5612e8bfb9c548eac42182702cec87b160efbbfe
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84451355"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85441837"
 ---
 # <a name="using-the-windows-device-portal"></a>使用 Windows 裝置入口網站
 
@@ -44,8 +44,12 @@ HoloLens 的 Windows 裝置入口網站能讓您從遠端透 Wi-Fi 或 USB 來�
 ## <a name="connecting-over-wi-fi"></a>透過 Wi-Fi 連線
 
 1. [將您的 HoloLens 連線到 Wi-Fi](connecting-to-wi-fi-on-hololens.md)。
-2. 尋找裝置的 IP 位址。
-   * 在裝置上的 [設定] > [網路和網際網路] > [Wi-Fi] > [進階選項] 下尋找 IP 位址。
+2. 尋找裝置的 IP 位址，可行方式如下：
+   * 移至 [設定] > [網路和網際網路] > [Wi-Fi] > [進階選項]。
+   * 移至 [設定] > [網路和網際網路]，然後選取 [硬體屬性]。
+
+![HoloLens 2 設定](images/windows-device-portal-img-16.png)
+
 3. 從您電腦上的網頁瀏覽器，移至 https://<YOUR_HOLOLENS_IP_ADDRESS>
    * 瀏覽器將會顯示下列訊息：「此網站的安全性憑證有問題」。 這是因為核發給 Device Portal 的憑證是測試憑證。 您可以暫時略過這個憑證錯誤並繼續。
 
@@ -175,6 +179,7 @@ HoloLens 的 Windows 裝置入口網站能讓您從遠端透 Wi-Fi 或 USB 來�
 * **影片與相片**：顯示在裝置上所拍攝影片和相片擷取的清單。
 
 此頁面上的所有設定適用於使用 Windows 裝置入口網站所拍攝的擷取，但有些則適用於系統 MRC (開始功能表、硬體按鈕、全域語音命令、Miracast) 以及自訂的 MRC 錄製器。
+
 |  設定  |  適用於系統 MRC  |  適用於自訂 MRC 錄製器 |
 |----------|----------|----------|
 |  全像投影  |  否  |  否 |

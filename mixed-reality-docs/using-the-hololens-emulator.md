@@ -3,16 +3,16 @@ title: 使用 HoloLens 模擬器
 description: 使用 HoloLens 模擬器在沒有實體 HoloLens 的電腦上測試混合實境應用程式。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 5/12/2020
+ms.date: 6/8/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: HoloLens, 模擬器
-ms.openlocfilehash: f525276d127bc0bbb682d7cea6821028258c6177
-ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
+ms.openlocfilehash: dba0b1a1260c62ac7f26bc80678439d12183d77f
+ms.sourcegitcommit: dc60c6ca075e7086b87478f1d7e87ebe02160c0c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83227983"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84631508"
 ---
 # <a name="using-the-hololens-emulator"></a>使用 HoloLens 模擬器
 
@@ -28,7 +28,7 @@ HoloLens 模擬器可讓您在沒有實體 HoloLens 的電腦上測試全像攝�
 下載 HoloLens 模擬器。
 
 版本： 
-* [HoloLens 2 模擬器 (Windows 全像攝影 2004 版)](https://go.microsoft.com/fwlink/?linkid=2129088)。
+* [HoloLens 2 模擬器 (Windows 全像攝影 2004 版 2020 年 6 月更新)](https://go.microsoft.com/fwlink/?linkid=2132415)。
 * [HoloLens 模擬器 (第 1 代) 和全像攝影專案範本](https://go.microsoft.com/fwlink/?linkid=2065980)。
 
 您可以在 [HoloLens 模擬器封存](hololens-emulator-archive.md)頁面上找到版本資訊和 HoloLens 模擬器的舊版組建。
@@ -62,7 +62,7 @@ HoloLens 模擬器會使用 Hyper-V 與 RemoteFx (第 1 代模擬器) 或 GPU-PV
     >在使用 Unity 時，請從 Unity 建置專案，然後如往常般將建置好的解決方案載入至 Visual Studio。
 2. 若為 HoloLens 模擬器 (第 1 代)，請確定平台已設定為 **x86**。 若為 HoloLens 2 模擬器，請確定平台已設定為 **x86** 或 **x64**。
 3. 選取想要的 **HoloLens 模擬器**版本作為要偵錯的目標裝置。
-4. 移至 [偵錯] > [開始偵錯]  或按 **F5** 啟動模擬器，然後部署要偵錯的應用程式。
+4. 移至 [偵錯] > [開始偵錯] 或按 **F5** 啟動模擬器，然後部署要偵錯的應用程式。
 
 模擬器首次啟動時，可能需要一分鐘以上的時間才能啟動。 建議您在偵錯工作階段期間讓模擬器保持開啟，以便能夠快速地將應用程式部署到模擬器。
 
@@ -97,7 +97,7 @@ HoloLens (第 1 代) 上的游標會跟著頭部的移動和旋轉。 在 HoloLe
 * ![縮放圖示](images/emulator-zoom.png) **縮放**：讓模擬器放大和縮小。
 * ![說明圖示](images/emulator-help.png) **說明**：開啟模擬器的說明。
 * ![開啟裝置入口網站圖示](images/emulator-deviceportal.png) **開啟裝置入口網站**：在模擬器中開啟 HoloLens OS 的 Windows 裝置入口網站。
-* ![工具圖示](images/emulator-tools.png) **工具**：開啟 [其他工具]  窗格。
+* ![工具圖示](images/emulator-tools.png) **工具**：開啟 [其他工具] 窗格。
 
 ### <a name="simulation-control-panel"></a>模擬控制台
 
@@ -214,11 +214,11 @@ HoloLens (第 1 代) 上的游標會跟著頭部的移動和旋轉。 在 HoloLe
 * ![縮放圖示](images/emulator-zoom.png) **縮放**：讓模擬器放大和縮小。
 * ![說明圖示](images/emulator-help.png) **說明**：開啟模擬器的說明。
 * ![開啟裝置入口網站圖示](images/emulator-deviceportal.png) **開啟裝置入口網站**：在模擬器中開啟 HoloLens OS 的 Windows 裝置入口網站。
-* ![工具圖示](images/emulator-tools.png) **工具**：開啟 [其他工具]  窗格。
+* ![工具圖示](images/emulator-tools.png) **工具**：開啟 [其他工具] 窗格。
 
 ### <a name="simulation-tab"></a>[模擬] 索引標籤
 
-[其他工具]  窗格中的預設索引標籤是 [模擬]  索引標籤。
+[其他工具] 窗格中的預設索引標籤是 [模擬] 索引標籤。
 
 ![HoloLens 模擬器的其他工具窗格](images/emulator-simulation-500px.png)
 
@@ -251,12 +251,12 @@ HoloLens (第 1 代) 上的游標會跟著頭部的移動和旋轉。 在 HoloLe
 
 ## <a name="known-issues"></a>已知問題
 
-* 在解除安裝 HoloLens 2 模擬器時，硬碟映像 (Flash.vhdx) 可能會遺留在硬碟上的 Windows Kits\10\Emulation\HoloLens\<組建編號> 資料夾中。  您可以放心地刪除此檔案。
+* 在解除安裝 HoloLens 2 模擬器時，硬碟映像 (Flash.vhdx) 可能會遺留在硬碟上的 Windows Kits\10\Emulation\HoloLens\<build number> 資料夾中。  您可以放心地刪除此檔案。
 * 硬體圖形加速可能會使全像攝影應用程式在某些搭載 AMD 或 Intel 顯示卡的系統上當機。  在模擬器的 [工具] 視窗中停用硬體圖形加速可解決此問題。
 
 ## <a name="troubleshooting"></a>疑難排解
 
-您可能會在安裝模擬器時看到錯誤訊息，內容指出您需要「Visual Studio 2015 Update 1 和 UWP 工具 1.2 版」  。 此錯誤有三個可能的原因：
+您可能會在安裝模擬器時看到錯誤訊息，內容指出您需要「Visual Studio 2015 Update 1 和 UWP 工具 1.2 版」。 此錯誤有三個可能的原因：
 * 您的 Visual Studio 版本不夠新 (Visual Studio 2019、Visual Studio 2017 或 Visual Studio 2015 Update 1 或更新版本)。 若要修正此問題，請安裝最新版的 Visual Studio。
 * 您有最新版的 Visual Studio，但未安裝通用 Windows 平台 (UWP) 工具。 這是 Visual Studio 的選用功能。 若是 HoloLens (第 1 代)，您需要適用於 Visual Studio 2015 或 Visual Studio 2017 的 UWP 工具。
 

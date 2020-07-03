@@ -7,12 +7,12 @@ ms.date: 10/14/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality, 測試, MRTK, MRTK 第 2 版, HoloLens 2
-ms.openlocfilehash: ced33a082152822779ae23a854800072bc8dfb5f
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: 409959b3c73eff684585706dfde87afc5f8a5495
+ms.sourcegitcommit: f523b74a549721b6bec69cb5d2eca5b7673a793c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80613995"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85570337"
 ---
 # <a name="get-your-existing-app-ready-for-hololens-2"></a>讓現有應用程式做好使用 HoloLens 2 的準備
 
@@ -27,7 +27,7 @@ ms.locfileid: "80613995"
 
 必要條件：
 
-**強烈建議**開發人員在開始移植程序之前，先利用原始檔控制來儲存其應用程式原始狀態的快照集。 此外，也建議開發人員在移植程序進行期間於各個時間點「儲存」  檢查點狀態。 為原始應用程式準備另一個 Unity 執行個體以便能在移植程序進行期間兩相比較，也會非常有幫助。 
+**強烈建議**開發人員在開始移植程序之前，先利用原始檔控制來儲存其應用程式原始狀態的快照集。 此外，也建議開發人員在移植程序進行期間於各個時間點「儲存」檢查點狀態。 為原始應用程式準備另一個 Unity 執行個體以便能在移植程序進行期間兩相比較，也會非常有幫助。 
 
 > [!NOTE]
 > 在移植之前，請確定您已安裝可用於開發 Windows Mixed Reality 的最新工具。 對大部分現有的 HoloLens 開發人員來說，這主要涉及更新至最新版的 Visual Studio 2019，以及安裝適當的 Windows SDK。 以下內容將進一步說明不同的 Unity 版本和混合實境工具組 (MRTK) 第 2 版。
@@ -36,12 +36,11 @@ ms.locfileid: "80613995"
 
 ## <a name="migrate-project-to-the-latest-version-of-unity"></a>將專案遷移至最新版的 Unity
 
-如果您使用 [MRTK v2](https://github.com/microsoft/MixedRealityToolkit-Unity)，則 [Unity 2018 LTS](https://unity3d.com/unity/qa/lts-releases) 會是最佳的長期支援途徑，因為 Unity 或 MRTK 沒有重大變更。 此外，MRTK v2 一律保證會支援 Unity 2018 LTS，但不一定保證支援 Unity 2019.x 的每個新版本。 
+如果您使用 [MRTK v2](https://github.com/microsoft/MixedRealityToolkit-Unity)，則 [Unity 2018 LTS](https://unity3d.com/unity/qa/lts-releases) 會是最佳的長期支援途徑，因為 Unity 或 MRTK 沒有重大變更。 此外，MRTK v2 一律保證會支援 Unity 2018 LTS，但不一定保證支援 Unity 2019.x 的每個新版本。
 
-為了協助您釐清 [Unity 2018 LTS](https://unity3d.com/unity/qa/lts-releases) 與 Unity 2019.1.x 之間的其他差異，以下將概述這兩個版本的優劣之處。 兩者的主要差異在於 Unity 2019 中的 ARM64 編譯能力。 
+為了協助您釐清 [Unity 2018 LTS](https://unity3d.com/unity/qa/lts-releases) 與 Unity 2019.1.x 之間的其他差異，以下將概述這兩個版本的優劣之處。 兩者的主要差異在於 Unity 2019 中的 ARM64 編譯能力。
 
-開發人員應該評估任何目前存在於其專案中的[外掛程式相依性](https://docs.unity3d.com/Manual/Plugins.html)，並決定是否針對 ARM64 建置這些 DLL。 如果無法針對 ARM64 建置硬式相依性外掛程式，您就必須使用 Unity 2018 LTS。
-
+開發人員應該評估任何目前存在於其專案中的[外掛程式相依性](https://docs.unity3d.com/Manual/Plugins.html)，並決定是否針對 ARM64 建置這些 DLL。 如果無法建置適用於 ARM64 的硬式相依性外掛程式，您可能需要繼續建置適用於 ARM 的應用程式。
 
 | Unity 2018 LTS | Unity 2019.x |
 |----------|-------------------|
@@ -54,19 +53,19 @@ ms.locfileid: "80613995"
 
 在更新至 [Unity 2018 LTS](https://unity3d.com/unity/qa/lts-releases) 或 Unity 2019+ 之後，建議您更新 Unity 中的特殊設定，以便在裝置上獲得最佳結果。 **[Unity 的建議設定](Recommended-settings-for-Unity.md)** 底下會詳述這些設定。
 
-再次重申，[.NET 指令碼處理後端](https://docs.unity3d.com/Manual/windowsstore-dotnet.html)在 Unity 2018 中即將過時，且在 Unity 2019 中「已移除」  。 開發人員應積極考慮將其專案轉換至 [IL2CPP](https://docs.unity3d.com/Manual/IL2CPP.html)。 
+再次重申，[.NET 指令碼處理後端](https://docs.unity3d.com/Manual/windowsstore-dotnet.html)在 Unity 2018 中即將過時，且在 Unity 2019 中「已移除」。 開發人員應積極考慮將其專案轉換至 [IL2CPP](https://docs.unity3d.com/Manual/IL2CPP.html)。
 
 > [!NOTE]
 > IL2CPP 指令碼處理後端會讓從 Unity 到 Visual Studio 的建置時間變長，開發人員應設定其開發人員機器，以[最佳化 IL2CPP 建置時間](https://docs.unity3d.com/Manual/IL2CPP-OptimizingBuildTimes.html)。
 > 設定[快取伺服器](https://docs.unity3d.com/Manual/CacheServer.html)也可能會有幫助，對於有大量資產 (排除指令檔) 或不斷變更場景和資產的 Unity 專案來說，更是如此。 開啟專案時，Unity 會將符合資格的資產以內部快取格式儲存在開發機器上。 項目必須重新匯入，且在修改後必須重新處理。 此程序可以執行一次後就儲存在快取伺服器中，之後再與其他開發人員共用以節省時間，而不是每個開發人員都在本機處理新變更的重新匯入工作。
 
-移至已更新的 Unity 版本之後若有解決任何重大變更，開發人員就應該在 HoloLens (第 1 代) 上建置並測試其目前的應用程式。 這是建立認可並儲存至原始檔控制的好時機。 
+移至已更新的 Unity 版本之後若有解決任何重大變更，開發人員就應該在 HoloLens (第 1 代) 上建置並測試其目前的應用程式。 這是建立認可並儲存至原始檔控制的好時機。
 
 ## <a name="compile-dependenciesplugins-for-arm-processor"></a>針對 ARM 處理器編譯相依性/外掛程式
 
-HoloLens (第 1 代) 會在 x86 處理器上執行應用程式，HoloLens 2 則會使用 ARM 處理器。 因此，現有的 HoloLens 應用程式必須移植過去才能支援 ARM。 如前所述，Unity 2018 LTS 支援編譯 ARM32 的應用程式，而 Unity 2019.x 則支援編譯 ARM32 和 ARM64 的應用程式。 一般會比較喜歡開發 ARM64 的應用程式，因為效能差異極大。 但要這麼做，所有的[外掛程式相依性](https://docs.unity3d.com/Manual/Plugins.html)也必須針對 ARM64 來建置。 
+HoloLens (第 1 代) 會在 x86 處理器上執行應用程式，HoloLens 2 則會使用 ARM 處理器。 因此，現有的 HoloLens 應用程式必須移植過去才能支援 ARM。 如前所述，Unity 2018 LTS 支援編譯 ARM32 的應用程式，而 Unity 2019.x 則支援編譯 ARM32 和 ARM64 的應用程式。 一般會比較喜歡開發 ARM64 的應用程式，因為效能差異極大。 但要這麼做，所有的[外掛程式相依性](https://docs.unity3d.com/Manual/Plugins.html)也必須針對 ARM64 來建置。
 
-請檢閱您的應用程式中所有的 DLL 相依性。 建議您從專案中移除任何不再需要的相依性。 至於其餘的必要外掛程式，則請將個別的 ARM32 或 ARM64 二進位檔案嵌入至您的 Unity 專案中。 
+請檢閱您的應用程式中所有的 DLL 相依性。 建議您從專案中移除任何不再需要的相依性。 至於其餘的必要外掛程式，則請將個別的 ARM32 或 ARM64 二進位檔案嵌入至您的 Unity 專案中。
 
 嵌入相關的 DLL 之後，請從 Unity 建置 Visual Studio 解決方案，然後在 Visual Studio 中針對 ARM 來編譯 AppX，以測試是否可以針對 ARM 處理器來建置您的應用程式。 建議您在原始檔控制解決方案中將應用程式儲存為認可。
 
@@ -75,6 +74,7 @@ HoloLens (第 1 代) 會在 x86 處理器上執行應用程式，HoloLens 2 則�
 [MRTK 第 2 版](https://github.com/microsoft/MixedRealityToolkit-Unity) 是 Unity 上的新工具組，支援 HoloLens (第1代) 和 HoloLens 2。 它也是 HoloLens 2 所有新增功能的所在位置，例如手動互動和眼球追蹤。
 
 如需使用 MRTK 第 2 版的詳細資訊，請參閱下列內容：
+
 - [MRTK 登陸頁面](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)
 - [開始使用 MRTK](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)
 - [MRTK 手部](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/HandTracking.html)
@@ -84,11 +84,11 @@ HoloLens (第 1 代) 會在 x86 處理器上執行應用程式，HoloLens 2 則�
 
 在嵌入新的 [*.unitypackage 檔案 (適用於 MRTK v2)](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases) 之前，建議您清查 **1) 與 MRTK v1 整合的任何自訂建置程式碼**和 **2) 用於輸入互動或 UX 元件的任何自訂建置程式碼**。 內嵌 MRTK v2 的混合實境開發人員會在輸入和互動方面遇到最常見也最普遍的衝突。 建議您開始閱讀並了解 [MRTK v2 輸入模型](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Overview.html)。
 
-終於，新的 [MRTK v2](https://github.com/microsoft/MixedRealityToolkit-Unity) 已從指令碼和場景中管理員物件的模型轉換為設定和服務提供者架構。 這會讓場景階層和架構模型更為簡潔，但需要花一段時間學習才能了解新的組態設定檔。 因此，請閱讀[混合實境工具組設定指南](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/MixedRealityConfigurationGuide.html)來開始熟悉重要設定和設定檔，以調整為符合應用程式的需求。 
+終於，新的 [MRTK v2](https://github.com/microsoft/MixedRealityToolkit-Unity) 已從指令碼和場景中管理員物件的模型轉換為設定和服務提供者架構。 這會讓場景階層和架構模型更為簡潔，但需要花一段時間學習才能了解新的組態設定檔。 因此，請閱讀[混合實境工具組設定指南](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/MixedRealityConfigurationGuide.html)來開始熟悉重要設定和設定檔，以調整為符合應用程式的需求。
 
 ### <a name="perform-the-migration"></a>執行移轉
 
-匯入 [MRTK v2](https://github.com/microsoft/MixedRealityToolkit-Unity) 之後，Unity 專案很可能會有許多編譯器相關錯誤。 之所以有這些錯誤，通常是因為使用了新的命名空間結構和新的元件名稱。 請繼續藉由將指令碼修改為新的命名空間和元件，來解決這些錯誤。 
+匯入 [MRTK v2](https://github.com/microsoft/MixedRealityToolkit-Unity) 之後，Unity 專案很可能會有許多編譯器相關錯誤。 之所以有這些錯誤，通常是因為使用了新的命名空間結構和新的元件名稱。 請繼續藉由將指令碼修改為新的命名空間和元件，來解決這些錯誤。
 
 如需 HTK/MRTK 和 MRTK 第 2 版之間特定 API 差異的詳細資訊，請參閱 [MRTK 第 2 版 Wiki](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/HTKToMRTKPortingGuide.html) 上的移植指南。
 
@@ -100,7 +100,7 @@ HoloLens (第 1 代) 會在 x86 處理器上執行應用程式，HoloLens 2 則�
 - 盡可能使用預設的 MRTK UX (按鈕、靜態圖像等)。
 - 避免直接修改 MRTK 檔案；請建立 MRTK 元件的包裝函式。
     - 這麼做可減少日後需要內嵌和更新 MRTK。
-- 檢閱和探索 MRTK 中提供的場景範例，尤其是 HandInteractionExamples.scene  。
+- 檢閱和探索 MRTK 中提供的場景範例，尤其是 HandInteractionExamples.scene。
 - 重建有四色、collider 和 TextMeshPro 文字的畫布式 UI。
 - 啟用[深度緩衝區共用](camera-in-unity.md#sharing-your-depth-buffers-with-windows)或[設定焦點點](focus-point-in-unity.md)；最好使用 16 位元深度緩衝區以提升效能。 在轉譯色彩時，請務必同時轉譯深度。 對於透明和文字 gameobject，Unity 通常不會寫入深度。 
 - 設定單一階段執行個體化轉譯路徑。

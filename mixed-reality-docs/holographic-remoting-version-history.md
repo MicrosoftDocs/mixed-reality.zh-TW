@@ -6,21 +6,32 @@ ms.author: flbagar
 ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、遠端、全像攝影遠端
-ms.openlocfilehash: 319e76efbbe1085fc9d60251a6f0f38133de6505
-ms.sourcegitcommit: 7011ac6fde80e5c45f04192fa1db6e1eb559e3b0
+ms.openlocfilehash: 131c5237801c381a371b197a5b7d8e0ec64fa2d6
+ms.sourcegitcommit: fef42e2908e49822f2d13b05d2f9260bf0d72158
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84327898"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86061121"
 ---
 # <a name="holographic-remoting-version-history"></a>全像遠端版本歷程記錄
 
 > [!IMPORTANT]
 > 本指導方針專屬於 HoloLens 2 上的全像攝影遠端處理。
 
+## <a name="version-221-july-6-2020"></a>版本2.2.1 （2020年7月6日）<a name="v2.2.1"></a>
+> [!IMPORTANT]
+> 具有版本[2.2.0](holographic-remoting-version-history.md#v2.2.0)的[Windows 應用程式認證套件](https://developer.microsoft.com/windows/downloads/app-certification-kit/)驗證將會失敗。 如果您是在版本[2.2.0](holographic-remoting-version-history.md#v2.2.0) ，而且想要將應用程式提交至 Microsoft store，請至少更新為版本2.2.1。
+* 已修正[Windows 應用程式認證套件](https://developer.microsoft.com/windows/downloads/app-certification-kit/)合規性問題。
+
+## <a name="version-220-july-1-2020"></a>版本2.2.0 （2020年7月1日）<a name="v2.2.0"></a>
+* 全像攝影遠端播放播放機現在可以安裝在執行[Windows Mixed Reality](navigating-the-windows-mixed-reality-home.md)的電腦上，讓它可以串流到沉浸式耳機。
+* 透過 SpatialInteractionSource，您現在可以透過「全像」遠端處理來支援[動態](motion-controllers.md)控制站，並可透過[SpatialInteractionSource.Controller](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionsource.controller#Windows_UI_Input_Spatial_SpatialInteractionSource_Controller)取得控制器特定的資料。
+* 現在支援[SpatialStageFrameOfReference](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialstageframeofreference) ，而且可以透過[SpatialStageFrameOfReference](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialstageframeofreference.current)來抓取目前的階段。 此外，您也可以透過 SpatialStageFrameOfReference 來要求新的階段[。 RequestNewStageAsync](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialstageframeofreference.requestnewstageasync)。
+* 在舊版中，「全像攝影」遠端播放程式會在玩家端完整處理預測。 從版本2.2.0 開始，全像攝影遠端處理具有時間同步，而預測則是由遠端應用程式來完成。 在艱難的網路情況下，使用者應該也會獲得改良的全息影像穩定性。
+
 ## <a name="version-213-may-25-2020"></a>版本2.1.3 （2020 5 月25日）<a name="v2.1.3"></a>
 * 已變更[HolographicSpace CameraAdded](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace.cameraadded?view=winrt-18362)事件的行為。 在先前的版本中，當透過[HolographicSpace](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace.createnextframe?view=winrt-18362#Windows_Graphics_Holographic_HolographicSpace_CreateNextFrame)建立下一個畫面格時，**不**保證新增的[HolographicCamera](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera?view=winrt-18362)也具有有效的[HolographicCameraPose](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose?view=winrt-18362) 。 從版本 2.1.3 [HolographicSpace](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace.cameraadded?view=winrt-18362)開始，會與來自全像遠端播放程式的姿勢資料同步處理，而使用者可以預期在新增相機時，在下一個畫面上，該攝影機也會有有效的[HolographicCameraPose](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose?view=winrt-18362)可用。
-* 已將**停用**的新增至 DepthBufferStreamResolution，可用來停用深度緩衝區串流（透過 RemoteCoNtext. ConfigureDepthVideoStream）。 請注意，如果使用[HolographicCameraRenderingParameters，CommitDirect3D11DepthBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.commitdirect3d11depthbuffer?view=winrt-18362#Windows_Graphics_Holographic_HolographicCameraRenderingParameters_CommitDirect3D11DepthBuffer_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_)將會失敗，並*E_ILLEGAL_METHOD_CALL*。
+* 已將**停用**的新增至 DepthBufferStreamResolution，可用來透過 RemoteContext.ConfigureDepthVideoStream 停用深度緩衝區串流。 請注意，如果使用[HolographicCameraRenderingParameters，CommitDirect3D11DepthBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.commitdirect3d11depthbuffer?view=winrt-18362#Windows_Graphics_Holographic_HolographicCameraRenderingParameters_CommitDirect3D11DepthBuffer_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_)將會失敗，並*E_ILLEGAL_METHOD_CALL*。
 * 全像攝影遠端播放程式的啟動畫面已重新設計，現在不會封鎖使用者的觀看。
 * 穩定性改進和 bug 修正。
 
@@ -76,7 +87,7 @@ ms.locfileid: "84327898"
 * HoloLens 2 的第一個公開發行的全像攝影遠端功能。
 
 ## <a name="see-also"></a>另請參閱
-* [撰寫自訂的全像遠端播放播放機應用程式](holographic-remoting-create-player.md)
+* [撰寫自訂全像攝影遠端播放應用程式](holographic-remoting-create-player.md)
 * [撰寫全像的遠端主機應用程式](holographic-remoting-create-host.md)
 * [全像攝影遠端疑難排解和限制](holographic-remoting-troubleshooting.md)
 * [全像攝影遠端軟體授權條款](https://docs.microsoft.com/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)

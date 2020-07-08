@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 02/24/2019
 ms.topic: article
 keywords: mrc、相片、影片、capture、攝影機
-ms.openlocfilehash: 1116e9a0923129aa2b18d838917eebf12adae694
-ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
+ms.openlocfilehash: 44b853e96ab956e5ea6c03d8c23a61e91ac733d4
+ms.sourcegitcommit: fef42e2908e49822f2d13b05d2f9260bf0d72158
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84720414"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86061141"
 ---
 # <a name="mixed-reality-capture-for-developers"></a>適用於開發人員的混合實境擷取
 
@@ -64,10 +64,10 @@ HoloLens 2 增加了當混合現實捕捉正在執行時，沉浸式應用程式
 若要選擇從 PV 攝影機轉譯，應用程式只會啟用 PhotoVideoCamera 的[HolographicViewConfiguration](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic.HolographicViewConfiguration)：
 ```csharp
 var display = Windows.Graphics.Holographic.HolographicDisplay.GetDefault();
-var view = display.TryGetViewConfiguration(Windows.Graphics.Holographic.HolographicViewConfiguration.PhotoVideoCamera);
+var view = display.TryGetViewConfiguration(Windows.Graphics.Holographic.HolographicViewConfigurationKind.PhotoVideoCamera);
 if (view != null)
 {
-   view.IsEnabled = true;
+    view.IsEnabled = true;
 }
 ```
 
@@ -221,7 +221,7 @@ Unity 應用程式應該會看到屬性[Locatable_camera_in_Unity](locatable-cam
 
 MRC 影片效果（**Windows. MixedRealityCapture. MixedRealityCaptureVideoEffect**）
 
-|  屬性名稱  |  類型  |  預設值  |  描述 |
+|  屬性名稱  |  類型  |  預設值  |  說明 |
 |----------|----------|----------|----------|
 |  StreamType  |  UINT32 （[MediaStreamType](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaStreamType)）  |  1（VideoRecord）  |  描述此效果用於哪一個捕捉串流。 音訊無法使用。 |
 |  HologramCompositionEnabled  |  boolean  |  TRUE  |  用來啟用或停用影片捕捉中的全息影像的旗標。 |
@@ -241,7 +241,7 @@ MRC 影片效果（**Windows. MixedRealityCapture. MixedRealityCaptureVideoEffec
 
 MRC 音訊效果（**Windows MixedRealityCapture. MixedRealityCaptureAudioEffect**）
 
-| 屬性名稱 | 類型 | 預設值 | 描述 |
+| 屬性名稱 | 類型 | 預設值 | 說明 |
 |----------|----------|----------|----------|
 | MixerMode | UINT32 | 2（Mic 和系統音訊） | 列舉，用來指出應該使用的音訊來源：0（僅限 Mic 音訊）、1（僅限系統音訊）、2（Mic 和系統音訊） |
 | LoopbackGain | FLOAT | Windows 裝置入口網站中的**應用程式音訊增益**設定 | 適用于系統音訊磁片區的增益。 範圍從0.0 到5.0。 僅在 HoloLens 2 上支援 |

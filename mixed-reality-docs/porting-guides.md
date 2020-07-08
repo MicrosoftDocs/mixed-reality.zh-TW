@@ -1,29 +1,31 @@
 ---
 title: 移植指南
-description: 逐步解說 walthrough 說明如何將現有的沉浸式應用程式移植到 Windows Mixed Reality。
-author: chimerascorn
+description: 逐步解說說明如何將現有的沉浸式應用程式移植到 Windows Mixed Reality。
+author: JBrentJ
 ms.author: alexturn
-ms.date: 10/02/2018
+ms.date: 07/07/2020
 ms.topic: article
 keywords: 埠、移植、unity、中介軟體、引擎、UWP
-ms.openlocfilehash: 73126ae90ed12988177cc9192b7db41bae30fcc2
-ms.sourcegitcommit: f523b74a549721b6bec69cb5d2eca5b7673a793c
+ms.openlocfilehash: 5cf66ce857806ab6fcf8c94b94c7a9a540339b97
+ms.sourcegitcommit: fef42e2908e49822f2d13b05d2f9260bf0d72158
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85570317"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86061151"
 ---
 # <a name="porting-guides"></a>移植指南
 
-Windows 10 包含直接支援沉浸式和全像攝影耳機。 如果您已經為另一個裝置（例如 Oculus go Rift 或 HTC Vive）建立內容，這些專案就會相依于存在於作業系統平臺 API 的程式庫。 將現有內容帶入 Windows Mixed Reality 牽涉到將這些其他 Sdk 的使用重定至 Windows Api。 [適用于 mixed reality 的 Windows 平臺 api](https://docs.microsoft.com/uwp/api/Windows.Perception)僅適用于通用 WINDOWS 平臺（UWP）應用程式模型。 因此，如果您的應用程式尚未針對 UWP 建立，則移植到 UWP 將會是移植體驗的一部分。
+## <a name="overview"></a>概觀
+
+Windows 10 包含沉浸式和全像攝影耳機的直接支援。 如果您已針對其他裝置（例如 Oculus go Rift 或 HTC Vive）建立內容，這些專案會相依于存在於作業系統平臺 API 的程式庫。 將現有內容帶入 Windows Mixed Reality 牽涉到將這些其他 Sdk 的使用重定至 Windows Api。 [適用于 mixed reality 的 windows 平臺 api](https://docs.microsoft.com/uwp/api/Windows.Perception)適用于 windows x86 和通用 WINDOWS 平臺（UWP）應用程式模型。 如果您的應用程式尚未針對 UWP 建立，則變更為 UWP 將會是移植體驗的一部分。
 
 ## <a name="porting-overview"></a>移植總覽
 
-概括而言，這些是移植現有內容所需的步驟：
+概括而言，移植現有的內容牽涉到下列步驟：
 1. **確定您的電腦正在執行 Windows 10 秋季建立者更新（16299）。** 我們不再建議從內部跳躍略過的通道接收預覽組建，因為這些組建對混合現實開發而言並不是最穩定的。
 2. **升級至圖形或遊戲引擎的最新版本。** 遊戲引擎必須支援 Windows 10 SDK 版本10.0.15063.0 （于2017年4月發行）或更高版本。
 3. **升級任何中介軟體、外掛程式或元件。** 如果您的應用程式包含任何元件，最好先升級至最新版本。 較新版本的最常見外掛程式支援 UWP。
-4. **移除重複 sdk 的**相依性。 根據您的內容設為目標的裝置，您必須移除或有條件地編譯該 SDK （例如 SteamVR），才能改以 Windows Api 為目標。
+4. **移除重複 sdk 的**相依性。 根據您的內容設為目標的裝置，您必須移除或有條件地編譯該 SDK （例如，SteamVR），如此您才能改為以 Windows Api 為目標。
 5. **解決組建問題。** 此時，移植練習僅適用于您的應用程式、您的引擎和您擁有的元件相依性。
 
 ## <a name="common-porting-steps"></a>一般移植步驟
@@ -34,21 +36,21 @@ Windows 10 包含直接支援沉浸式和全像攝影耳機。 如果您已經�
 
 ### <a name="common-step-2-upgrade-to-the-latest-flight-of-windows-10"></a>常見步驟2：升級至最新的 Windows 10 航班
 
-Windows Mixed Reality 平臺仍在開發中，而且最有效率的是，我們建議您在「Windows 測試人員快速」的飛行。 為了能夠存取 windows 航班，您必須[加入 Windows 測試人員計畫](https://insider.windows.com/)。
+Windows Mixed Reality 平臺仍在開發中。 我們建議您[加入 Windows 測試人員程式](https://insider.windows.com/)，以存取「Windows 測試人員快速」航班。
 1. 安裝[Windows 10 建立者更新](https://www.microsoft.com/software-download/windows10)
 2. [加入](https://insider.windows.com/)Windows 測試人員計畫。
 3. 啟用[開發人員模式](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)
-4. 透過 [設定] 切換至 [ [Windows 測試人員快速航班](https://blogs.technet.microsoft.com/uktechnet/2016/07/01/joining-insider-preview)--> 更新 & 安全性] 區段
+4. 透過**設定 > 更新 & 安全性區段**，切換至[Windows 測試人員快速航班](https://blogs.technet.microsoft.com/uktechnet/2016/07/01/joining-insider-preview)
 
-### <a name="common-step-3-upgrade-to-the-most-recent-build-of-visual-studio"></a>一般步驟3：升級至最新的 Visual Studio 組建
+### <a name="common-step-3-upgrade-to-the-most-recent-build-of-visual-studio-uwp-only"></a>一般步驟3：升級至最新的 Visual Studio 組建（僅限 UWP）
 * 請參閱 Visual Studio 2019 底下[的 [安裝工具](install-the-tools.md#installation-checklist)] 頁面
 
-### <a name="common-step-4-be-ready-for-the-store"></a>一般步驟4：準備好存放區
+### <a name="common-step-4-be-ready-for-the-store-uwp-only"></a>一般步驟4：準備好存放區（僅限 UWP）
 * 儘早且經常使用[Windows 應用程式認證套件](https://developer.microsoft.com/windows/develop/app-certification-kit)（也稱為 WACK）！
 * 使用可[移植性分析器](https://docs.microsoft.com/dotnet/standard/portability-analyzer)（[下載](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer)）
 
 ### <a name="common-step-5-choose-the-correct-adapter"></a>一般步驟5：選擇正確的介面卡
-* 在具有兩個 Gpu 的筆記本這類系統中，以[正確的介面卡為目標](rendering-in-directx.md#hybrid-graphics-pcs-and-mixed-reality-applications)。 這適用于 Unity 應用程式，除了原生 DirectX 應用程式之外，也會以明確或隱含的方式（媒體基礎）來建立 ID3D11Device，以供其功能使用。
+* 在具有兩個 Gpu 的筆記本這類系統中，以[正確的介面卡為目標](rendering-in-directx.md#hybrid-graphics-pcs-and-mixed-reality-applications)。 這適用于 Unity 和原生 DirectX 應用程式，其中會以明確或隱含的方式（媒體基礎）建立 ID3D11Device 以供其功能使用。
 
 ## <a name="unity-porting-guidance"></a>Unity 移植指引
 
@@ -61,27 +63,43 @@ Windows Mixed Reality 平臺仍在開發中，而且最有效率的是，我們�
 2. 在開始之前，請先儲存您的專案複本
 3. 請參閱移植上的 Unity 所提供的[檔](https://docs.unity3d.com/Manual/UpgradeGuides.html)。
 4. 遵循 Unity 網站上的[指示](https://docs.unity3d.com/Manual/APIUpdater.html)，使用其自動 API 更新程式
-5. 檢查並查看是否有其他需要進行的變更，以便讓您的專案執行，並處理任何剩餘的錯誤和警告。 注意：如果您有相依的中介軟體，您可能需要更新該中介軟體才能開始進行（以下的步驟3中有更多詳細資料）。
+5. 檢查並查看是否有其他需要進行的變更，以便讓您的專案執行，並處理任何剩餘的錯誤和警告。 
+
+> [!Note] 
+> 如果您有相依的中介軟體，請檢查您使用的是最新版本（以下步驟3中的詳細資料）。
 
 ### <a name="unity-step-3-upgrade-your-middleware-to-the-latest-versions"></a>Unity 步驟3：將您的中介軟體升級至最新版本
 
-有了任何 Unity 更新，您很有可能需要更新您的遊戲或應用程式所依賴的一個或多個中介軟體套件。 此外，在所有中介軟體的最新版本上，會增加您在移植程式其餘部分的成功機率。 許多中介軟體套件最近新增了對通用 Windows 平臺（UWP）的支援，而升級至最新版本可讓您運用該工作。
+有了任何 Unity 更新，您很有可能需要更新您的遊戲或應用程式所依賴的一個或多個中介軟體套件。 此外，最新的中介軟體也會在移植程式的其餘部分中，增加成功的可能性。 許多中介軟體套件最近新增了對通用 Windows 平臺（UWP）的支援，而升級至最新版本可讓您運用該工作。
 
 ### <a name="unity-step-4-target-your-application-to-run-on-universal-windows-platform-uwp"></a>Unity 步驟4：將您的應用程式目標設為在通用 Windows 平臺（UWP）上執行
 
+如果您的目標是 Windows x86，可以略過此步驟並繼續進行步驟5。
+
 安裝工具之後，您需要讓應用程式以通用 Windows 應用程式的身分執行。
 
-* 依照 Unity 提供的[詳細逐步](https://unity3d.com/partners/microsoft/porting-guides)解說逐步解說。 請注意，您應該隨時掌握適用于 Windows MR 的最新 LTS 版本（任何 20xx. 4 版）。
+* 依照 Unity 提供的[詳細逐步](https://unity3d.com/partners/microsoft/porting-guides)解說逐步解說。 您應該隨時掌握適用于 Windows MR 的最新 LTS 版本（任何 20xx. 4 版）。
 * 如需更多 UWP 開發資源，請參閱《 [Windows 10 遊戲開發指南》](https://docs.microsoft.com/windows/uwp/gaming/e2e)。
-* 請注意，Unity 會繼續改善 IL2CPP 支援;IL2CPP 讓一些 UWP 埠變得更容易。 如果您目前的目標是 .NET 腳本後端，您應該考慮轉換以改用 IL2CPP 後端。
 
-注意：如果您的應用程式與裝置特定服務有任何相依性，例如從串流進行的比對，您必須在此步驟停用它們。 稍後，您可以連接到 Windows 所提供的對等服務。
+> [!NOTE]
+> Unity 繼續改善 IL2CPP 支援;IL2CPP 可讓某些 UWP 埠變得更容易。 如果您目前的目標是 .NET 腳本後端，您應該考慮轉換以改用 IL2CPP 後端。
 
-### <a name="unity-step-5-deprecated"></a>Unity 步驟5：（已淘汰）
+* 您可以略過 "Unity step 5"，因為您是以 UWP 為目標，而不是 x86。
 
-不再需要步驟5。 我們會將它保留在此處，讓步驟的索引維持不變。
+> [!NOTE] 
+> 如果您的應用程式與裝置特定的服務有任何相依性，例如從串流進行的比對，您必須在此步驟停用它們。 您可以連結到 Windows 稍後提供的對等服務。
 
-### <a name="unity-step-6-get-your-windows-mixed-reality-hardware-set-up"></a>Unity 步驟6：取得您的 Windows Mixed Reality 硬體設定
+### <a name="unity-step-5-target-your-application-to-run-on-windows-x86"></a>Unity 步驟5：將您的應用程式設為目標以在 Windows x86 上執行
+
+從您的 Unity 應用程式內：
+
+* 流覽至檔案 > 組建設定
+* 選取 [PC，Mac，Linux 獨立版]
+* 將 [目標平臺] 設定為 [Windows]
+* 將 [架構] 設定為 [x86] 選取 [切換平臺]
+
+
+### <a name="unity-step-6-setup-your-windows-mixed-reality-hardware"></a>Unity 步驟6：設定您的 Windows Mixed Reality 硬體
 1. 流覽[沉浸式耳機設定](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/before-you-start
 )中的步驟
 2. 瞭解如何[使用 Windows Mixed reality](using-the-windows-mixed-reality-simulator.md)模擬器，以及如何[流覽 windows mixed reality 首頁](navigating-the-windows-mixed-reality-home.md)
@@ -103,7 +121,7 @@ Windows Mixed Reality 平臺仍在開發中，而且最有效率的是，我們�
 XRDevice.SetTrackingSpaceType(TrackingSpaceType.Stationary);
 ```
 
-這會設定 Unity 的全局座標系統，以追蹤[固定的參考框架](coordinate-systems.md#spatial-coordinate-systems)。 在「固定」追蹤模式中，放在編輯器中的內容，就像是在相機的預設位置前方（[轉寄] 為-Z），會在應用程式啟動時顯示在使用者的前方。 若要 recenter 使用者的固定來源，您可以呼叫 Unity 的[XR。InputTracking. Recenter](https://docs.unity3d.com/ScriptReference/XR.InputTracking.Recenter.html)方法。
+上述程式碼會將 Unity 的全局座標系統設定為追蹤[固定的參考框架](coordinate-systems.md#spatial-coordinate-systems)。 在「固定」追蹤模式中，在應用程式啟動時，位於相機預設位置前方的內容（[轉寄] 為-Z）會出現在使用者的前方。 若要 recenter 使用者的固定來源，您可以呼叫 Unity 的[XR。InputTracking. Recenter](https://docs.unity3d.com/ScriptReference/XR.InputTracking.Recenter.html)方法。
 
 如果您要移植的是**大規模體驗**或**會議室規模的體驗**，您將會放在與樓層相關的內容。 您的使用者使用**[空間階段](coordinate-systems.md#spatial-coordinate-systems)**（代表使用者定義的樓層層級原點和選擇性的房間界限），這是您在第一次執行期間設定的原因。 針對這些經驗，您必須確定 Unity 已設定為**RoomScale**追蹤空間類型。 雖然 RoomScale 是預設值，但您會想要明確設定並確保您得到 true，以攔截使用者已將其電腦從其校正的房間中移出的情況：
 
@@ -120,13 +138,13 @@ else
 
 一旦您的應用程式成功設定 RoomScale 追蹤空間類型，放置在 y = 0 平面上的內容就會出現在樓層上。 位於（0，0，0）的原點會是在室內設定期間使用者勇敢面對考驗的特定位置，其中-Z 代表在安裝期間所面臨的正向方向。
 
-在腳本程式碼中，您可以在上呼叫 TryGetGeometry 方法，以取得界限多邊形，並指定 TrackedArea 的界限類型。 如果使用者定義界限（您會取得頂點清單），您就知道可以安全地提供**會議室規模的體驗**給使用者，讓他們能在其中四處流覽您建立的場景。
+在腳本程式碼中，您可以在上呼叫 TryGetGeometry 方法，以取得界限多邊形，並指定 TrackedArea 的界限類型。 如果使用者定義界限（您會取得頂點清單），則可安全地為使用者提供**會議室規模的體驗**，讓他們可以在其中四處流覽您建立的場景。
 
-請注意，當使用者對邊界進行方法時，系統將會自動呈現界限。 您的應用程式不需要使用此多邊形來呈現界限本身。
+系統會在使用者進行方法時，自動呈現界限。 您的應用程式不需要使用此多邊形來呈現界限本身。
 
-如需詳細資訊，請參閱在[Unity 中座標系統](coordinate-systems-in-unity.md)頁面。
+如需詳細資訊，請參閱在[Unity 中協調系統](coordinate-systems-in-unity.md)頁面。
 
-有些應用程式會使用矩形來限制其互動。 UWP API 或 Unity 中不直接支援抓取最大的矩形。 以下連結的範例程式碼顯示如何在追蹤界限內尋找矩形。 這是以啟發學習法為基礎，因此可能找不到最佳的解決方案，不過結果通常與預期一致。 演算法中的參數可以微調，以在處理時間的成本中尋找更精確的結果。 此演算法是使用 Unity 的 5.6 preview MRTP 版本之混合現實工具組的分叉。 這不是公開提供。 程式碼應該可以直接在2017.2 和更新版本的 Unity 中使用。 程式碼將會在不久的將來移植到目前的 MRTK。
+有些應用程式會使用矩形來限制其互動。 UWP API 或 Unity 中不直接支援抓取最大的矩形。 以下連結的範例程式碼顯示如何在追蹤界限內尋找矩形。 它是以啟發學習法為基礎，因此可能找不到最佳的解決方案，不過結果會與預期一致。 演算法中的參數可以微調，以在處理時間的成本中尋找更精確的結果。 此演算法是使用 Unity 的 5.6 preview MRTP 版本之混合現實工具組的分叉。 這不是公開提供。 程式碼應該可以直接在2017.2 和更新版本的 Unity 中使用。 程式碼將會在不久的將來移植到目前的 MRTK。
 
 [GitHub 上的程式碼 zip](https://github.com/KevinKennedy/MixedRealityToolkit-Unity/releases/tag/5.6.MRTP20)檔案重要檔案：
 * 資產/HoloToolkit/階段/腳本/StageManager .cs-使用方式的範例
@@ -149,7 +167,7 @@ else
 
 ### <a name="unity-step-10-performance-testing-and-tuning"></a>Unity 步驟10：效能測試和微調
 
-Windows Mixed Reality 會在廣泛的裝置上提供，範圍從高階遊戲電腦到廣泛的市場主流電腦。 根據您的目標市場，應用程式的可用計算和圖形預算會有顯著的差異。 在此移植練習中，您很可能會利用高階電腦，而且您的應用程式可以使用大量的計算和圖形預算。 如果您想要讓您的應用程式可供更多物件使用，您應該在[想要作為目標的代表性硬體](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)上測試和分析應用程式。
+Windows Mixed Reality 會在廣泛的裝置上提供，範圍從高階遊戲電腦到廣泛的市場主流電腦。 根據您的目標市場，您的應用程式可用的計算和圖形預算會有顯著的差異。 在此移植練習中，您很可能會利用高階電腦，而且您的應用程式可以使用大量的計算和圖形預算。 如果您想要讓您的應用程式可供更多物件使用，您應該在[想要作為目標的代表性硬體](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)上測試和分析應用程式。
 
 [Unity](https://docs.unity3d.com/Manual/Profiler.html)和[Visual Studio](https://docs.microsoft.com/visualstudio/profiling/index)都包含效能分析工具，以及[Microsoft](understanding-performance-for-mixed-reality.md)和[Intel](https://software.intel.com/articles/vr-content-developer-guide)都發佈有關效能分析和優化的指導方針。 在[瞭解混合現實的效能](understanding-performance-for-mixed-reality.md)方面，有廣泛的效能討論。 此外，unity 的[效能建議](performance-recommendations-for-unity.md)下還有 unity 的特定詳細資料。
 

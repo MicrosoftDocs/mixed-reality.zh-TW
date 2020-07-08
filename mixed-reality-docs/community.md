@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 12/27/2019
 ms.topic: article
 keywords: 混合現實、社區、mvp、聚會
-ms.openlocfilehash: b87d6e0d65870d8795770d9662b90d5169ce6edc
-ms.sourcegitcommit: 8599a11b012f4261ae3b37a75b7a3f52a9067196
+ms.openlocfilehash: b62ef1a0a7262421b6f197561203af6577e56d54
+ms.sourcegitcommit: 0e09e0be430d931da4d0a0919dba294c97833fd6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85372080"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86092372"
 ---
 # <a name="mixed-reality-community"></a>混合現實社區
 
@@ -34,11 +34,11 @@ ms.locfileid: "85372080"
 |群體名稱|國家/地區|City|連結|
 |---------|---------|---------|---------|
 |**_增強的現實墨爾本_**|澳洲|墨爾本|[連結](https://www.meetup.com/armelbourne/)|
-|**_芝加哥 AWE Nite_**|USA|芝加哥|[連結](https://www.meetup.com/AWENiteChicago/)|
+|**_芝加哥 AWE Nite_**|美國|芝加哥|[連結](https://www.meetup.com/AWENiteChicago/)|
 |**_HoloMagicians_**|日本|東京|[連結](https://hololens.connpass.com/)|
 |**_Mixed Reality 使用者群組-荷蘭_**|荷蘭|Rijswijk|[連結](https://www.mixug.com)|
 |**_VR 菲律賓_**|菲律賓|N/A|[連結](https://www.facebook.com/vrphilippines/)|
-|**_XRLA_**|USA|Los Angeles|[連結](https://www.meetup.com/XRLA_Meetup/)|
+|**_XRLA_**|美國|Los Angeles|[連結](https://www.meetup.com/XRLA_Meetup/)|
 
 <br>
 
@@ -84,7 +84,6 @@ Microsoft 最有價值專家（或 Mvp）是努力與社區分享其知識的技
 |![Bronwen Zande](images/BiographyImages/BronwenZande_270x270.png)</br>**Bronwen Zande**</br>*布利斯班，澳大利亞*|Bronwen Zande 是靈魂解決方案的總監，將她的生活花費在開發人員以外的時間。</br></br>她是長期的 Microsoft 最有價值專家（MVP），已獲得 Windows 開發、新興體驗、Kinect、Bing 地圖服務及 Live Services 的 MVP 狀態。</br></br>Bronwen 是一項活躍的社區成員，其中涉及將它升階為參與 Imagine Cup，年輕人的流覽程式和技術會帶您到任何地方。 Bronwen 是布里斯班女孩萬能技客 Dinners、developer、Developer、developer 布里斯班（現在是 DDD 布里斯班）和多年澳大利亞啟動程式（適用于 SheEO）所成立的成員。</br></br>她是一個 avid 的旅行，而不在相機的鏡頭後方，通常可以在旅行時，在本機聚會或使用者群組中找到。|[電子郵件](mailto:bronwen@soulsolutions.com.au)|
 |![Bruno Anjos](images/BiographyImages/BrunoAnjos_270x270.jpg)</br>**Bruno Anjos**</br>*巴西*|創新管理員，在數位頁面創新專案的管理和架構上工作，並提供 XR 增強的現實、混合和虛擬實境平臺的專業知識。 混合現實2020-2021 中的 Microsoft MVP，我是開發和規劃混合現實解決方案的專家，著重于 Microsoft HoloLens。 體驗遊戲和應用程式開發，以及資產建立與多媒體內容。|[電子郵件](mailto:brunof.anjos@outlook.com)|
 |![Clemente Giorio](images/BiographyImages/ClementeGiorio_270x270.png)</br>**Clemente Giorio**</br>*Torino、Italia*|「駭客，萬能技客，maker，研究員，創新者，講師，開發人員 .。。</br>讓科學和技術成為他的工作。</br>遵循許多社區，而且通常會積極地參與作為說話者和事件召集人，特別是：撰寫 Gym、DotNetPodcast、FabLabNapoli、DotNetCampania 和 HoloLens 開發人員的程式碼。</br>他的簽章內容不在火中，而是：人工智慧、電腦視覺、物聯網、自然使用者介面和混合現實。</br>Microsoft MVP 和 Intel 軟體創新者，可做為 Deltatre 的資深研究 & 開發工程師，他會在其中開發軟體原型。|[電子郵件](mailto:tinuxnet@hotmail.com)|
-|![Dave Smits](images/BiographyImages/DaveSmits_270x270.jpg)</br>**Dave Smits**</br>*Amersfoort，荷蘭*|自2014起，Dave Smits 會 Microsoft MVP，並在第一版啟動後使用 HoloLens。 為客戶提供數個專案，從簡單模型開始，到包含要用於全息影像之動作追蹤感應器的應用程式。|[電子郵件](mailto:dave@familie-smits.com)|
 |![Eric Provencher](images/BiographyImages/EricProvencher_270x270.jpg)</br>**Eric Provencher**</br>*加拿大魁北克省蒙特婁*|Eric 是一位空間設計工程師，致力於 Unity 實驗室的先進 XR 撰寫研究。從他的時間開始使用 MRTK 和跨平臺混合現實應用程式架構開發的經驗，Microsoft Mixed Reality 合作夥伴的，Eric 保有 MRTK，這是一項廣泛使用的開放原始碼延伸模組，提供 MRTK 生態系統的原生支援，包括對 Oculus go 執行的控制器和追蹤支援|[電子郵件](mailto:erproven@gmail.com)|
 |![Fabrice Barbin](images/BiographyImages/FabriceBarbin_270x270.jpg)</br>**Fabrice Barbin**</br>*法國*|多年來的企業家、創新和技術愛好者，Fabrice 是[SYNERGIZ](http://www.synergiz.com)、Microsoft Mixed Reality 合作夥伴、法國的 HoloLens 使用案例先鋒的 CEO。 主動將 Microsoft 技術升階為說話者，讓 MVP 獲得12年的 Fabrice，對大量產品有興趣： HoloLens、Kinect4Azure、IoT、Surface Hub、筆墨、Touch、IA、Machine Learning、認知服務、Azure|[電子郵件](mailto:fbarbin@synergiz.com)|
 |![Francesco Clasadonte](images/BiographyImages/FrancescoClasadonte_270x270.jpg)</br>**Francesco Clasadonte**</br>*米蘭，義大利*|Fanciful 和創意，我參與了我 passioned 的所有專案。 多年來，我一直致力於米蘭理工大學 di Milano 的研究人員，將我的研究重點放在 disabilites 的孩子，取得開發 IOT 系統、智慧型物件、機器人互動、光源設計、multisensory 環境，以及在全國和國際專案中自然使用者介面的經驗。</br></br>目前，我正以資深創意開發人員的身分，在 IOT 的領域、web 解決方案、系統整合的[FifthIngenium](https://fifthingenium.com)中工作，著重于新興及創新的技術，例如混合現實和人工智慧。|[電子郵件](mailto:klasaf@outlook.com)|
@@ -99,7 +98,6 @@ Microsoft 最有價值專家（或 Mvp）是努力與社區分享其知識的技
 |![Rafał Legiędź](images/BiographyImages/RafelLegiedz_270x270.jpg)</br>**Rafał Legiędź**</br>*Pabianice，波蘭*|Rafał的運作方式是 Avenga 的軟體工程師。 自2007起，他將在每個可能的時間，為軟體發展他的熱情。 他認為在我們的領域中，這是非常有用的，而且會在需要學習新概念時，切換他所使用的技術來證明。 從 .NET 後端解決方案開始，他很快就會成為一位 web 專家，然後他的領導著不同種類的行動技術和 VR/AR。 同時也是 Windows 開發的 Microsoft MVP。</br></br>隨著他的熱情發展，他著迷知識分享和社團活動。 這會導致共同合作的會議和一系列的其他動作，例如提供交談或進行研討會。|[電子郵件](mailto:rafal.legiedz@gmail.com)|
 |![René Schulte](images/BiographyImages/ReneSchulte_270x270.jpg)</br>**René Schulte**</br>*Dresden，德國*|René Schulte 是 Valorem 回復的全球創新總監，與全球各地的團隊一起使用新興的技術，例如革命性3D 體積型影片擬真視頻解決方案 HoloBeam 和 AR 雲端，讓您能夠使用持續性的大型跨平臺使用者體驗。</br></br>他是一個創意的思維領導者，在 VR/AR/MR/XR 技術和3D 程式設計中，從10年來的 UX 和深度技術知識的熱情，在 Forbes 上是針對 Microsoft HoloLens 進行開發，自2015起，這是一項功能，並列為 VR/AR/MR 開發人員。 他也撰寫了 AI 深度學習神經網路的程式碼，然後再運用現代化 AI 來加強人類的能力。</br></br>他是一場經常的專題演說和研討會演講者，panelist 在像是 build、聯合、願景 VR/AR 高峰、VRDC （GDC）、AWE、ESA 等等的會議。 關於許多主題的 blog。 他也建立了熱門的開放原始碼程式庫，例如 WriteableBitmapEx 和 AR library SLARToolKit。</br></br>他曾為他的開發人員提供了數次的 Microsoft MVP 獎項，其公認為 Microsoft 區域主管，而全球諮詢委員會成員則為 VR/AR 關聯。</br></br>他居住在 Dresden，德國他的妻子和5個子系。|[電子郵件](mailto:schulte.rene@outlook.com)|
 |![Simon Darkside Jackson](images/BiographyImages/SimonJackson_270x270.jpg)</br>**Simon Darkside Jackson**</br>*英國*|長時間遊戲推廣人員，從基本、pascal 和 c + + 的早期日子開始。</br></br>從 sailing 出貨 MDX 的成形中，bandwagon 的「硬碟型」，從這裡開始，我們將討論遊戲和開發架構。</br></br>目前在第一年中做為已發佈的作者，並可在 ID 計畫中享用，並尋求盡可能讓上線人數的人。</br></br>此外，我正拖曳的是 UK 支援 Unity 移植程式（可能是稍後的 MonoGame），並在 windows 平臺上取得許多專案。|[電子郵件](mailto:gamedevspace@hotmail.co.uk)|
-|![Stephen Hodgson](images/BiographyImages/StephenHodgson_270x270.jfif)</br>**Stephen Hodgson**</br>*亞特蘭大、GA、US*|大家好，</br>我 Stephen Hodgson，這是一項 Microsoft MVP 著重于以亞特蘭大為基礎的 AR/XR/VR。</br></br>[https://twitter.com/StephenHodgson_](https://twitter.com/StephenHodgson_)</br>[https://linkedin.com/in/stephenjhodgson/](https://linkedin.com/in/stephenjhodgson/)</br></br></br>我在 Unity 中有15年以上的經驗，並著重于幾乎10年來訓練和模擬的混合現實應用程式。 我已經從航太、AEC & 建築、單核用故事行銷到互動的每個市場領域工作。 我已經處理過從 Unity、Tribeca 有和 Webby 贏得獎項的數個專案。</br></br>我是混合現實工具組的原始作者和架構設計師，並致力於想要製作混合現實內容的任何人，都能更輕鬆地進行平臺中立的開發。 我的主要目標是要讓您在建立及上傳 YouTube 影片時，輕鬆建立 XR 的內容。</br></br>我是專家的 c # 開發人員，而且我可以協助您回答 Unity 中困難的問題，並充分瞭解 2d/3d 資產的所有內容管線（UX prefab 結構）到專案組織和設定的最佳作法。||
 |![Takahiro Miyaura](images/BiographyImages/TakahiroMiyaura_270x270.jpg)</br>**Takahiro Miyaura**</br>*Nara，日本*|我正以軟體工程師和 IT 產業的開發人員身分運作。 特別是，我已經進行 research XR （VR/AR/MR 等等）。 ）技術，以及可利用 XR 的各種技術（AI、IoT 等 ...）。|[電子郵件](mailto:cafe.kobe@gmail.com)|
 |![Tamás Deme](images/BiographyImages/tamasdeme_270.png)</br>**Tamás Deme**</br>*布達佩斯，匈牙利*|Tamás 是一種在以亞特蘭大為基礎的 VIM 上工作的混合現實工程師，他將從伺服器到耳機的裝置開發解決方案，以顯示您的全息影像。 他是 Windows 開發的5倍 Microsoft MVP，對開放原始碼專案、教學和指導感興趣。 您可以在或 twitter 上找到他的， [https://tomzorz.me](https://tomzorz.me) 網址為 [https://twitter.com/tomzorz_](https://twitter.com/tomzorz_) 。|[電子郵件](mailto:mixedreality@tomzorz.me)|
 |![Tatsuro Ueda](images/BiographyImages/TatsuroUeda_270x270.png)</br>**Tatsuro Ueda**</br>*Mie，日本*|5個國家（地區）中物理的 MR 教育者（包括 Afrika）、「感覺」物理|[電子郵件](mailto:tatsuro.ueda@feel-physics.jp)|

@@ -5,19 +5,19 @@ author: JBrentJ
 ms.author: alexturn
 ms.date: 07/07/2020
 ms.topic: article
-keywords: 埠、移植、unity、中介軟體、引擎、UWP
-ms.openlocfilehash: 5cf66ce857806ab6fcf8c94b94c7a9a540339b97
-ms.sourcegitcommit: fef42e2908e49822f2d13b05d2f9260bf0d72158
+keywords: 埠、移植、unity、中介軟體、引擎、UWP、Win32
+ms.openlocfilehash: a1e3cd47096d728091d62d6c038bf6b2eb6bab16
+ms.sourcegitcommit: 0eb99fae933d4374af2c032af4e9ceda1807e532
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86061151"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86156769"
 ---
 # <a name="porting-guides"></a>移植指南
 
 ## <a name="overview"></a>概觀
 
-Windows 10 包含沉浸式和全像攝影耳機的直接支援。 如果您已針對其他裝置（例如 Oculus go Rift 或 HTC Vive）建立內容，這些專案會相依于存在於作業系統平臺 API 的程式庫。 將現有內容帶入 Windows Mixed Reality 牽涉到將這些其他 Sdk 的使用重定至 Windows Api。 [適用于 mixed reality 的 windows 平臺 api](https://docs.microsoft.com/uwp/api/Windows.Perception)適用于 windows x86 和通用 WINDOWS 平臺（UWP）應用程式模型。 如果您的應用程式尚未針對 UWP 建立，則變更為 UWP 將會是移植體驗的一部分。
+Windows 10 包含沉浸式和全像攝影耳機的直接支援。 如果您已針對其他裝置（例如 Oculus go Rift 或 HTC Vive）建立內容，這些專案會相依于存在於作業系統平臺 API 的程式庫。 將現有內容帶入 Windows Mixed Reality 牽涉到將這些其他 Sdk 的使用重定至 Windows Api。 [適用于 mixed reality 的 Windows 平臺 api](https://docs.microsoft.com/uwp/api/Windows.Perception)可同時與 Win32 和通用 WINDOWS 平臺（UWP）應用程式模型搭配使用。 如果您的應用程式尚未針對 UWP 建立，則變更為 UWP 將會是移植體驗的一部分。
 
 ## <a name="porting-overview"></a>移植總覽
 
@@ -74,7 +74,7 @@ Windows Mixed Reality 平臺仍在開發中。 我們建議您[加入 Windows �
 
 ### <a name="unity-step-4-target-your-application-to-run-on-universal-windows-platform-uwp"></a>Unity 步驟4：將您的應用程式目標設為在通用 Windows 平臺（UWP）上執行
 
-如果您的目標是 Windows x86，可以略過此步驟並繼續進行步驟5。
+如果您的目標是 Win32，可以略過此步驟並繼續執行步驟5。
 
 安裝工具之後，您需要讓應用程式以通用 Windows 應用程式的身分執行。
 
@@ -84,12 +84,12 @@ Windows Mixed Reality 平臺仍在開發中。 我們建議您[加入 Windows �
 > [!NOTE]
 > Unity 繼續改善 IL2CPP 支援;IL2CPP 可讓某些 UWP 埠變得更容易。 如果您目前的目標是 .NET 腳本後端，您應該考慮轉換以改用 IL2CPP 後端。
 
-* 您可以略過 "Unity step 5"，因為您是以 UWP 為目標，而不是 x86。
+* 您可以略過 "Unity step 5"，因為您是以 UWP 為目標，而不是 Win32。
 
 > [!NOTE] 
 > 如果您的應用程式與裝置特定的服務有任何相依性，例如從串流進行的比對，您必須在此步驟停用它們。 您可以連結到 Windows 稍後提供的對等服務。
 
-### <a name="unity-step-5-target-your-application-to-run-on-windows-x86"></a>Unity 步驟5：將您的應用程式設為目標以在 Windows x86 上執行
+### <a name="unity-step-5-target-your-application-to-run-on-win32"></a>Unity 步驟5：將您的應用程式設定為在 Win32 上執行
 
 從您的 Unity 應用程式內：
 

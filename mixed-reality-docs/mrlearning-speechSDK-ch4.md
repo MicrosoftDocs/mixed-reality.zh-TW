@@ -7,12 +7,12 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: b2342e7d0d502af2787ca311d18a44f8726acf2d
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: 8cebe1fb203aeed9a262a2e9f482993b4775e0a6
+ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79028551"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86303659"
 ---
 # <a name="4-setting-up-intent-and-natural-language-understanding"></a>4.設定意圖和自然語言理解
 
@@ -63,7 +63,7 @@ ms.locfileid: "79028551"
 > 從撰寫本文的時間起，您不需要建立撰寫資源，因為當您在下一節中建立 Language Understanding Intelligent Service (LUIS) 時，系統會在 LUIS 內自動產生撰寫試用版金鑰。
 
 > [!TIP]
-> 如果您的 Azure 帳戶中已有另一個適當的資源群組 (例如，您已完成 [Azure Spatial Anchors](mrlearning-asa-ch1.md) 教學課程)，您就可以使用此資源群組，而不用建立新的資源群組。
+> 如果您的 Azure 帳戶中已有另一個適當的資源群組 (例如，您已完成 [Azure Spatial Anchors](mr-learning-asa-01.md) 教學課程)，您就可以使用此資源群組，而不用建立新的資源群組。
 
 繼續在 [建立] 頁面上輸入下列值：
 

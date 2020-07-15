@@ -112,34 +112,47 @@
 ### Unity
 #### HoloLens 2 教學課程
 ##### 入門教學課程
-###### [1.概觀和目標](mrlearning-base.md)
-###### [2.初始化您的專案和第一個應用程式](mrlearning-base-ch1.md)
-###### [3.建立使用者介面並設定混合實境工具組](mrlearning-base-ch2.md)
-###### [4.放置動態內容並使用解算器](mrlearning-base-ch3.md)
-###### [5.與 3D 物件互動](mrlearning-base-ch4.md)
-###### [6.探索進階的輸入選項](mrlearning-base-ch5.md)
-###### [7.建立月球模組應用程式範例](mrlearning-base-ch6.md)
+###### [1.簡介](mr-learning-base-01.md)
+###### [2.初始化您的專案和第一個應用程式](mr-learning-base-02.md)
+###### [3.設定混合實境工具組設定檔](mr-learning-base-03.md)
+###### [4.將物件置放在場景中](mr-learning-base-04.md)
+###### [5.使用解析器建立動態內容](mr-learning-base-05.md)
+###### [6.建立使用者介面](mr-learning-base-06.md)
+###### [7.與 3D 物件互動](mr-learning-base-07.md)
+###### [8.使用眼球追蹤](mr-learning-base-08.md)
+###### [9.使用語音命令](mr-learning-base-09.md)
 ##### Azure Spatial Anchor 教學課程
-###### [1.開始使用 Azure Spatial Anchors](mrlearning-asa-ch1.md)
-###### [2.儲存、擷取和共用 Azure Spatial Anchors](mrlearning-asa-ch2.md)
-###### [3.顯示 Azure Spatial Anchor 意見反應](mrlearning-asa-ch3.md)
-###### [4.適用於 Android 和 iOS 的 Azure Spatial Anchors](mrlearning-asa-ch4.md)
+###### [1.簡介](mr-learning-asa-01.md)
+###### [2.開始使用 Azure Spatial Anchors](mr-learning-asa-02.md)
+###### [3.儲存、擷取和共用 Azure Spatial Anchors](mr-learning-asa-03.md)
+###### [4.顯示 Azure Spatial Anchor 意見反應](mr-learning-asa-04.md)
+###### [5.適用於 Android 和 iOS 的 Azure Spatial Anchors](mr-learning-asa-05.md)
+##### 多使用者功能教學課程
+###### [1.簡介](mr-learning-sharing-01.md)
+###### [2.設定 Photon Unity 網路](mr-learning-sharing-02.md)
+###### [3.連線多個使用者](mr-learning-sharing-03.md)
+###### [4.與多個使用者共用物件移動](mr-learning-sharing-04.md)
+###### [5.將 Azure Spatial Anchors 整合到共用體驗](mr-learning-sharing-05.md)
 ##### Azure 語音服務教學課程
 ###### [1.整合並使用語音辨識和文字記錄](mrlearning-speechSDK-ch1.md)
 ###### [2.新增本機語音轉換文字翻譯離線模式](mrlearning-speechSDK-ch2.md)
 ###### [3.新增 Azure 辨識服務語音翻譯元件](mrlearning-speechSDK-ch3.md)
 ###### [4.設定意圖和自然語言理解](mrlearning-speechSDK-ch4.md)
-##### 多使用者功能教學課程
-###### [1.設定 Photon Unity 網路](mrlearning-sharing(photon)-ch1.md)
-###### [2.連線多個使用者](mrlearning-sharing(photon)-ch2.md)
-###### [3.與多個使用者共用物件移動](mrlearning-sharing(photon)-ch3.md)
-###### [4.將 Azure Spatial Anchors 整合到共用體驗](mrlearning-sharing(photon)-ch4.md)
 ##### 空間音訊教學課程
 ###### [1.在專案中新增空間音訊](unity-spatial-audio-ch1.md)
 ###### [2.空間化按鈕互動音效](unity-spatial-audio-ch2.md)
 ###### [3.從影片空間化音訊](unity-spatial-audio-ch3.md)
 ###### [4.在執行時間啟用和停用空間音訊](unity-spatial-audio-ch4.md)
 ###### [5.使用殘響增加空間音訊的距離](unity-spatial-audio-ch5.md)
+#### Azure 雲端服務教學課程
+##### [1.適用於 HoloLens 2 的 Azure 雲端服務](mr-learning-azure-01.md)
+##### [2.整合 Azure 儲存體](mr-learning-azure-02.md)
+##### [3.整合 Azure 自訂視覺](mr-learning-azure-03.md)
+##### [4.整合 Azure Spatial Anchors](mr-learning-azure-04.md)
+##### [5.整合 Azure Bot Service](mr-learning-azure-05.md)
+#### 電腦全像攝影遠端處理教學課程
+##### [1.開始使用電腦全像攝影遠端處理](mr-learning-pc-holographic-remoting-01.md)
+##### [2.建立全像攝影遠端處理電腦應用程式](mr-learning-pc-holographic-remoting-02.md)
 #### HoloLens 2 開放原始碼範例應用程式
 ##### [表面](sampleapp-surfaces.md)
 ##### [元素週期表 2.0](https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158)
@@ -217,15 +230,17 @@
 
 ## Unreal
 ### [Unreal 開發概觀](unreal-development-overview.md)
-### [Unreal 中的手勢追蹤](unreal-hand-tracking.md)
 ### [Unreal 中的注視輸入](unreal-gaze-input.md)
+### [Unreal 中的手勢追蹤](unreal-hand-tracking.md)
+### [Unreal 中的 HoloLens 相機](unreal-hololens-camera.md)
+### [Unreal 中的 QR 代碼](unreal-qr-codes.md)
 ### [Unreal 中的空間對應](unreal-spatial-mapping.md)
 ### [Unreal 中的空間音訊](unreal-spatial-audio.md)
 ### [Unreal 中的空間錨點](unreal-spatial-anchors.md)
-### [Unreal 中的語音輸入](unreal-voice-input.md)
-### [Unreal 中的 HoloLens 相機](unreal-hololens-camera.md)
-### [Unreal 中的 QR 代碼](unreal-qr-codes.md)
 ### [Unreal 中的串流](unreal-streaming.md)
+### [在 Unreal 中部署至裝置](unreal-deploying.md)
+### [Unreal 中的語音輸入](unreal-voice-input.md)
+### [Unreal 中的 WinRT](unreal-winrt.md)
 ### [對 Unreal 的效能建議](performance-recommendations-for-unreal.md)
 
 ## JavaScript

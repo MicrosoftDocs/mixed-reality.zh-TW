@@ -5,20 +5,20 @@ author: alfred-msft
 ms.author: yuripek
 ms.date: 05/16/2019
 ms.topic: article
-keywords: lbe、MixedRealitySpatialDataPackager、MixedRealitySpatialDataPackager
-ms.openlocfilehash: 3beb8f9168bfb6fd921d6d5c1eb6d250c70a714d
-ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
+keywords: lbe、MixedRealitySpatialDataPackager.exe、MixedRealitySpatialDataPackager
+ms.openlocfilehash: 4a285cbd7423d7cacaf52370e6e19acf42672289
+ms.sourcegitcommit: cfca6cb016d8683fa2c611a97d493a4947935dbb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539682"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86402737"
 ---
 # <a name="mixed-reality-spatial-data-packager-documentation"></a>混合現實空間資料封裝程式檔
 
 >[!NOTE]
 > 此工具和其作業是依自己提供。 如有任何變更，恕不另行通知，而且可能無法與未來的 Windows 或 Windows Mixed Reality HMD 版本相容。
 
-## <a name="download"></a>您剛才購買的產品旁的 [下載]
+## <a name="download"></a>下載
  [在此下載 MixedRealitySpatialDataPackager](https://download.microsoft.com/download/A/1/2/A12B8A90-B3F7-4ED9-A4BB-D59DDCDAA125/MixedRealitySpatialDataPackager.zip)
 
 ## <a name="device-support"></a>裝置支援
@@ -31,7 +31,7 @@ ms.locfileid: "74539682"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>特徵</strong></td>
+        <td><strong>功能</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 代)</strong></a></td>
         <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式頭戴裝置</strong></a></td>
@@ -44,7 +44,7 @@ ms.locfileid: "74539682"
     </tr>
 </table>
 
-## <a name="quickstart"></a>入門
+## <a name="quickstart"></a>快速入門
 
 Mixed Reality 空間資料封裝工具會透過兩個步驟的匯出和匯入程式，將目標應用程式的空間資料從一部電腦複製到另一部電腦。 此工具必須以系統管理員許可權執行，並在匯入時刪除現有的空間資料。 匯出會讓現有的空間資料保持不變。
 
@@ -71,7 +71,7 @@ Mixed Reality 空間資料封裝工具會透過兩個步驟的匯出和匯入程
 
 ## <a name="running-mixed-reality-spatial-data-packager-with-companion-script"></a>使用隨附腳本執行混合現實空間資料封裝工具
 
-我們提供的 MRSpatialPackagerHelperScript 會執行地圖封裝工具。 
+我們已提供執行地圖封裝工具的 MRSpatialPackagerHelperScript.ps1。 
 
 
 腳本參數定義如下：
@@ -135,14 +135,14 @@ Started SPECTRUM
 IMPORT SUCCESS
 ```
 
-### <a name="how-to-export-using-mixedrealitypackagerexe"></a>如何使用 MixedRealityPackager 匯出
+### <a name="how-to-export-using-mixedrealityspatialdatapackagerexe"></a>如何使用 MixedRealitySpatialDataPackager.exe 匯出
 ```
 MixedRealitySpatialDataPackager.exe export <folderpath to mapx files> <source package family name>    
 ```
 
 將地圖服務匯出關閉裝置會產生兩個 mapx 檔案： het. mapx 和 sa. mapx。 在匯出過程中，除了指定的應用程式和使用者建立的界限（如果存在）之外，所有空間錨點都會移除。 來源套件系列名稱必須符合現有已安裝的應用程式，否則 exe 將會失敗。
 
-### <a name="how-to-import-using-mixedrealitypackagerexe"></a>如何使用 MixedRealityPackager 匯入
+### <a name="how-to-import-using-mixedrealityspatialdatapackagerexe"></a>如何使用 MixedRealitySpatialDataPackager.exe 匯入
 ```
 MixedRealitySpatialDataPackager.exe import <folderpath to mapx files> <target package family name> <user SID>
 ```

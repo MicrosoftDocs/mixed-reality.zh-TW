@@ -8,12 +8,12 @@ ms.date: 04/27/2020
 ms.topic: overview
 ms.localizationpriority: high
 keywords: 混合實境, 開發, 開發, HoloLens, unity, unreal, directx
-ms.openlocfilehash: 97a6e130af45a9444ead5e6ed40168351c4dbbf6
-ms.sourcegitcommit: ba4c8c2a19bd6a9a181b2cec3cb8e0402f8cac62
+ms.openlocfilehash: 3c874e45e555ec6defa611bd5404abbb18e6612e
+ms.sourcegitcommit: 8daefb763d1f23fe02b95b766b00b373f04c5c2d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82835287"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86447854"
 ---
 # <a name="learn-the-tools-and-architecture"></a>了解工具和架構
 
@@ -140,8 +140,8 @@ HandInteractionExamples.unity 的範例場景包含各種類型的互動和 UI �
 
 :::row:::
     :::column:::
-       [![了解基本概念](images/icon-lightbulb.png)](index.md#understand-the-basics)<br>
-        **[了解基本概念](index.md#understand-the-basics)**<br>
+       [![了解基本概念](images/icon-lightbulb.png)](get-started-with-mr.md#understand-the-basics)<br>
+        **[了解基本概念](get-started-with-mr.md#understand-the-basics)**<br>
         進一步瞭解混合實境的定義以及其使用方式。
     :::column-end:::
     :::column:::

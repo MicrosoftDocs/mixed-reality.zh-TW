@@ -8,12 +8,12 @@ ms.date: 08/24/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境, 探索, 散佈, 索引, 登陸頁面, 設計, 開發, 教學課程, 範例應用程式, 基本概念, 案例研究, 資源, HoloLens 操作說明, 開放原始碼專案, 核心概念, 互動
-ms.openlocfilehash: d011a00b55a6b78332233b21535a129774f99c9f
-ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
+ms.openlocfilehash: 708a6f83c2de149be9c221130b83f5d787f8f56a
+ms.sourcegitcommit: 8daefb763d1f23fe02b95b766b00b373f04c5c2d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345648"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86447914"
 ---
 # <a name="start-designing-and-prototyping"></a>開始設計並建立原型
 
@@ -156,8 +156,8 @@ HoloLens 2 將全像攝影體驗的內容和人類理解能力帶入了新境界
 
 :::row:::
     :::column:::
-       [![了解基本概念](images/icon-lightbulb.png)](index.md#understand-the-basics)<br>
-        **[了解基本概念](index.md#understand-the-basics)**<br>
+       [![了解基本概念](images/icon-lightbulb.png)](get-started-with-mr.md#understand-the-basics)<br>
+        **[了解基本概念](get-started-with-mr.md#understand-the-basics)**<br>
         進一步瞭解混合實境的定義以及其使用方式。
     :::column-end:::
     :::column:::

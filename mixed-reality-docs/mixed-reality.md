@@ -7,12 +7,12 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: 混合實境, 全像攝影, ar, vr, mr, xr, 擴增實境, 虛擬實境, 說明
 ms.localizationpriority: high
-ms.openlocfilehash: 7b0dcbdb88f880d4c1632fae874ba6a610f023fb
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: 541752ef32149f64f9b85616883c284b33bb8fed
+ms.sourcegitcommit: 8daefb763d1f23fe02b95b766b00b373f04c5c2d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81278046"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86447904"
 ---
 # <a name="what-is-mixed-reality"></a>什麼是混合實境？
 
@@ -117,7 +117,7 @@ ms.locfileid: "81278046"
 ## <a name="see-also"></a>另請參閱
 
 * [什麼是全像投影？](hologram.md)
-* [了解混合實境的基本概念](index.md#understand-the-basics)
+* [了解混合實境的基本概念](get-started-with-mr.md#understand-the-basics)
 * [開始建立並建立原型](design.md)
 * [了解工具和架構](development.md)
 

@@ -134,20 +134,22 @@
 ###### [8.使用眼球追蹤](mr-learning-base-08.md)
 ###### [9.使用語音命令](mr-learning-base-09.md)
 ##### Azure Spatial Anchor 教學課程
-###### [1.開始使用 Azure Spatial Anchors](mrlearning-asa-ch1.md)
-###### [2.儲存、擷取和共用 Azure Spatial Anchors](mrlearning-asa-ch2.md)
-###### [3.顯示 Azure Spatial Anchor 意見反應](mrlearning-asa-ch3.md)
-###### [4.適用於 Android 和 iOS 的 Azure Spatial Anchors](mrlearning-asa-ch4.md)
+###### [1.簡介](mr-learning-asa-01.md)
+###### [2.開始使用 Azure Spatial Anchors](mr-learning-asa-02.md)
+###### [3.儲存、擷取和共用 Azure Spatial Anchors](mr-learning-asa-03.md)
+###### [4.顯示 Azure Spatial Anchor 意見反應](mr-learning-asa-04.md)
+###### [5.適用於 Android 和 iOS 的 Azure Spatial Anchors](mr-learning-asa-05.md)
+##### 多使用者功能教學課程
+###### [1.簡介](mr-learning-sharing-01.md)
+###### [2.設定 Photon Unity 網路](mr-learning-sharing-02.md)
+###### [3.連線多個使用者](mr-learning-sharing-03.md)
+###### [4.與多個使用者共用物件移動](mr-learning-sharing-04.md)
+###### [5.將 Azure Spatial Anchors 整合到共用體驗](mr-learning-sharing-05.md)
 ##### Azure 語音服務教學課程
 ###### [1.整合並使用語音辨識和文字記錄](mrlearning-speechSDK-ch1.md)
 ###### [2.新增本機語音轉換文字翻譯離線模式](mrlearning-speechSDK-ch2.md)
 ###### [3.新增 Azure 辨識服務語音翻譯元件](mrlearning-speechSDK-ch3.md)
 ###### [4.設定意圖和自然語言理解](mrlearning-speechSDK-ch4.md)
-##### 多使用者功能教學課程
-###### [1.設定 Photon Unity 網路](mrlearning-sharing(photon)-ch1.md)
-###### [2.連線多個使用者](mrlearning-sharing(photon)-ch2.md)
-###### [3.與多個使用者共用物件移動](mrlearning-sharing(photon)-ch3.md)
-###### [4.將 Azure Spatial Anchors 整合到共用體驗](mrlearning-sharing(photon)-ch4.md)
 ##### 空間音訊教學課程
 ###### [1.在專案中新增空間音訊](unity-spatial-audio-ch1.md)
 ###### [2.空間化按鈕互動音效](unity-spatial-audio-ch2.md)

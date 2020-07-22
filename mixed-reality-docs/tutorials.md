@@ -8,12 +8,12 @@ ms.date: 10/22/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: holotoolkit, mixedrealitytoolkit, mixedrealitytoolkit-unity, 學院, 教學課程
-ms.openlocfilehash: 57ddf1569ff87a278134eff0204942094b1cd014
-ms.sourcegitcommit: 4282d92e93869e4829338bdf7d981c3ee0260bfd
+ms.openlocfilehash: b1c448e7a5289c6d099d73c3bcf18d0f552dbc51
+ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85216249"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86303649"
 ---
 # <a name="tutorials-and-sample-apps"></a>教學課程和範例應用程式
 
@@ -26,11 +26,11 @@ ms.locfileid: "85216249"
 HoloLens 2 教學課程的設計目的是協助開發人員了解開發混合實境應用程式的技術和最佳做法。 Unity 教學課程是根據[混合實境工具組 2.0 (MRTK 2.0)](https://github.com/microsoft/MixedRealityToolkit-Unity)，Unreal 教學課程是根據[適用於 Unreal Engine 的 UX 工具 0.8](https://github.com/microsoft/MixedReality-UXTools-Unreal)。
 
 * 入門教學課程
-    * Unity - [7 之 1 概觀和目標](mrlearning-base.md)
+    * Unity - [9 之 1 簡介](mr-learning-base-01.md)
     * Unreal - [6 之 1 開始使用](unreal-uxt-ch1.md)
-* Azure 空間錨點教學課程 - [開始使用 Azure 空間錨點 4 之 1](mrlearning-asa-ch1.md)
+* Azure Spatial Anchors 教學課程 - [5 之 1 簡介](mr-learning-asa-01.md)
+* 多使用者功能教學課程 - [5 之 1 簡介](mr-learning-sharing-01.md)
 * Azure 語音服務教學課程 - [整合並使用語音辨識和文字記錄 4 之 1](mrlearning-speechSDK-ch1.md)
-* 多使用者功能教學課程 - [設定 Photon Unity 網路 5 之 1](mrlearning-sharing(photon)-ch1.md)
 
 ## <a name="open-source-sample-apps"></a>開放原始碼範例應用程式
 
@@ -56,7 +56,7 @@ HoloLens 2 教學課程的設計目的是協助開發人員了解開發混合實
 * [已安裝正確工具](install-the-tools.md)的 Windows 10 電腦，是完成每個教學課程的一般先決條件。
 
 >[!NOTE]
->混合實境學院教學課程的設計是以 HoloLens (第 1 代) 和混合實境沉浸式頭戴裝置為準。 因此，對於仍在尋找這些裝置開發指引的開發人員而言，我們覺得這些教學課程很重要。 這些教學課程**_不會_** 使用用於 HoloLens 2 的最新工具組或互動進行更新。 系統會保留這些資訊，以繼續在支援的裝置上運作。 已針對 HoloLens 2 公佈[一系列新的教學課程](mrlearning-base.md)。
+>混合實境學院教學課程的設計是以 HoloLens (第 1 代) 和混合實境沉浸式頭戴裝置為準。 因此，對於仍在尋找這些裝置開發指引的開發人員而言，我們覺得這些教學課程很重要。 這些教學課程**_不會_** 使用用於 HoloLens 2 的最新工具組或互動進行更新。 系統會保留這些資訊，以繼續在支援的裝置上運作。 已針對 HoloLens 2 公佈[一系列新的教學課程](mr-learning-base-01.md)。
 
 <br>
 <ul id="cardtypes-W" class="cardsW panelContent" style="display: flex; margin-top: 0px;">

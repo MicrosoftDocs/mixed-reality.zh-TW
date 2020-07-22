@@ -1,21 +1,21 @@
 ---
 title: Unreal 中的串流
 description: Unreal 至 HoloLens 2 的串流指南
-author: suwu
+author: sw5813
 ms.author: suwu
-ms.date: 6/8/2020
+ms.date: 7/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合實境, 串流, 電腦, 全像攝影應用程式遠端處理, 全像攝影遠端播放程式, 文件
 appliesto:
 - HoloLens
 - HoloLens 2
-ms.openlocfilehash: 78a019f5b74b254c1f32ec85dc639df47648555f
-ms.sourcegitcommit: ff0e89b07d0b4a945967d64c5b8845a21dc5f476
+ms.openlocfilehash: d25efbcf83e45749cc4eb8b99581b71105c59c9d
+ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84888909"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86303529"
 ---
 # <a name="streaming-in-unreal"></a>Unreal 中的串流
 
@@ -32,7 +32,8 @@ ms.locfileid: "84888909"
 進行串流時，您可以存取您在裝置上執行應用程式時可用的絕大多數 HoloLens 功能。 其中包括[手部關節追蹤](unreal-hand-tracking.md) (如果您是在 HoloLens 2 上)、[空間對應](unreal-spatial-mapping.md)和[空間錨點](unreal-spatial-anchors.md)，但不包括此[限制清單](holographic-remoting-troubleshooting.md)上的功能。 
 
 > [!NOTE]
-> 串流品質高度取決於您的 wifi 網路強度。
+> * 串流品質高度取決於您的 wifi 網路強度。
+> * 全像攝影遠端處理播放程式會自動啟用所有功能。 如果您發現某個功能需要使用者權限 (例如：眼睛追蹤)，才能透過串流方式來使用，但在裝置上執行時則不用，請檢查並確定您已在專案設定下啟用適當的功能。
 
 ## <a name="device-support"></a>裝置支援
 
@@ -50,7 +51,7 @@ ms.locfileid: "84888909"
     </tr>
      <tr>
         <td>Unreal 編輯器</td>
-        <td>✔</td>
+        <td>✔️</td>
         <td>✔️</td>
         <td>❌</td>
     </tr>

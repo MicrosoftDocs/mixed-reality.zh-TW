@@ -7,24 +7,22 @@ ms.date: 05/15/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality, 測試, 混合實境工具組, MRTK 第 2 版, MRTK, 工具, SDK, HoloLens, HoloLens 2
-ms.openlocfilehash: fc9638f405604bed7c7531ace0977a88509e91b5
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: a7fdd7b199530b38fb0921baa57d9783fa45672a
+ms.sourcegitcommit: 8daefb763d1f23fe02b95b766b00b373f04c5c2d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74491098"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86447886"
 ---
-# <a name="getting-started-with-mrtk-v2"></a>開始使用 MRTK 第 2 版
-
-## <a name="mrtk-getting-started-guide"></a>MRTK 入門指南
-如需開始使用 MRTK V2 的詳細資訊，請參閱 [MRTK 入門指南](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)。
+# <a name="getting-started-with-mrtk-for-unity"></a>開始使用適用於 Unity 的 MRTK
+![MRTK](images/UX/MRTK_UX_Hero.png)
 
 ## <a name="what-is-mixed-reality-toolkit-mrtk"></a>混合實境工具組 (MRTK) 是什麼？
 MRTK 是一項令人驚奇的開放原始碼工具組，自 HoloLens 首次發行之後就已經存在，沒有我們開發人員社群的努力，就不會達到今天的境界。 過去 3 年來，我們聽取了開發人員社群的意見反應，將最主要的考量納入，建置了 MRTK v2。  
 
-Unity 的 MRTK v2 是混合實境應用程式的開放原始碼跨平台開發套件。  MRTK 第 2 版主要用於加速開發以 Microsoft HoloLens、Windows Mixed Reality 沈浸式 (VR) 頭戴裝置和 OpenVR 平台為目標的應用程式。 此專案的目標是減少建立混合實境應用程式的進入障礙，以及回饋伴著我們成長的社群。 
+適用於 Unity 的 MRTK 是混合實境應用程式的開放原始碼跨平台開發套件。 MRTK 提供跨平台輸入系統、基礎元件，以及空間互動的常見基本要素。 MRTK 第 2 版主要用於加速開發以 Microsoft HoloLens、Windows Mixed Reality 沈浸式 (VR) 頭戴裝置和 OpenVR 平台為目標的應用程式。 此專案的目標是減少進入障礙、建立混合實境應用程式，以及回饋伴著我們成長的社群。
 
-若要深入了解，請參閱 [MRTK 文件入口網站](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)。
+如需深入了解，請參閱 [GitHub 上的 MRTK 文件](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)。
 
 ## <a name="new-with-mrtk-v2"></a>MRTK v2 的新功能
 我們想要強調我們對這些平台工具的承諾。  事實上，我們利用 MRTK 第 2 版來開發收件匣體驗，例如安裝體驗 (OOBE) 和我們的混合實境學習應用程式。  您也可以預期新的 HoloLens 2 功能會先透過 MRTK 公開，因為我們認為這是在我們的平台上進行開發的最佳方式。 
@@ -38,7 +36,7 @@ Unity 的 MRTK v2 是混合實境應用程式的開放原始碼跨平台開發�
 ### <a name="performant"></a>效能
 使用行動平台時，我們會考慮到效能。  這是非常重要的，我們想要確保工具不會與您作對。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [MRTK 入門指南](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)
 * [MRTK 文件集首頁](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)
 * [安裝工具](install-the-tools.md)

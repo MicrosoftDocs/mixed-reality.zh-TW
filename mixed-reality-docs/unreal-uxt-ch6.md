@@ -7,12 +7,12 @@ ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合實境, 教學課程, 開始使用, mrtk, uxt, UX 工具, 文件
-ms.openlocfilehash: 99407a4069f914bf077e6323dde3e12978f6b765
-ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
+ms.openlocfilehash: c49e2a69cb97a996da4bf601a105c2176ccf267f
+ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345688"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86303539"
 ---
 # <a name="6-packaging--deploying-to-device-or-emulator"></a>6.封裝並部署至裝置或模擬器
 
@@ -30,15 +30,15 @@ ms.locfileid: "85345688"
 
 如果您是使用國際象棋應用程式前往此路由，將需要進行一些事項：
 
-1.  從您的 HoloLens 2 上的 Microsoft Store 安裝**全像攝影遠端播放程式**並執行應用程式。
+1.  從您的 HoloLens 2 上的 Microsoft Store 安裝**全像攝影遠端播放程式**並執行應用程式。 請記下應用程式中顯示的 IP 位址。
 
-2.  移至 [編輯] > [專案設定]，然後勾選 [全像攝影遠端處理] 區段中的 [啟用遠端處理]。
+2.  回到 Unreal 編輯器，移至 [編輯] > [專案設定]，然後勾選 [全像攝影遠端處理] 區段中的 [啟用遠端處理]。
 
-3.  重新啟動編輯器、[尋找您裝置的 IP 位址](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens#connect-over-wi-fi) 並將其輸入，然後按一下 [連線]。
+3.  重新啟動編輯器，然後輸入您裝置的 IP 位址 (如全像遠端處理播放程式中所顯示)，接著按一下 [連線]。
 
 連線之後，請按一下 [播放] 按鈕右邊的下拉箭號，然後選取 [VR 預覽]。 這會在 [VR 預覽] 視窗中執行應用程式，進而串流至 HoloLens 頭戴式裝置。 
 
-## <a name="packaging-and-deploying-the-app"></a>封裝和部署應用程式 
+## <a name="packaging-and-deploying-the-app-via-device-portal"></a>透過裝置入口網站封裝和部署應用程式
 
 >[!NOTE]
 >如果這是您第一次為適用於 HoloLens 的 Unreal 應用程式進行封裝，則需從 Epic Launcher 下載支援的檔案。 

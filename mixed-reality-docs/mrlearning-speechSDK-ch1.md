@@ -7,12 +7,12 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 71a6c2124258f05e80e624b940386db72a36070b
-ms.sourcegitcommit: 92ff5478a5c55b4e2c5cc2f44f1588702f4ec5d1
+ms.openlocfilehash: f376ab268e9c2869e48b325fa728672a16ee6d32
+ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82604979"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86303679"
 ---
 # <a name="1-integrating-and-using-speech-recognition-and-transcription"></a>1.整合並使用語音辨識和文字記錄
 
@@ -29,7 +29,7 @@ ms.locfileid: "82604979"
 ## <a name="prerequisites"></a>必要條件
 
 >[!TIP]
->如果您尚未完成[入門教學課程](mrlearning-base.md)系列，建議您先完成這些教學課程。
+>如果您尚未完成[入門教學課程](mr-learning-base-01.md)系列，建議您先完成這些教學課程。
 
 * 已[安裝正確工具](install-the-tools.md)的 Windows 10 電腦
 * Windows 10 SDK 10.0.18362.0 或更新版本
@@ -44,43 +44,35 @@ ms.locfileid: "82604979"
 
 在本節中，您將建立新的 Unity 專案，並使該專案準備好進行 MRTK 開發。
 
-為此，請先遵循[初始化您的專案和第一個應用程式](mrlearning-base-ch1.md) (但不包括[對您的裝置建置應用程式](mrlearning-base-ch1.md#build-your-application-to-your-device)的指示)，其中包括下列步驟：
+為此，請先遵循[初始化您的專案和第一個應用程式](mr-learning-base-02.md) (但不包括[對您的裝置建置應用程式](mr-learning-base-02.md#building-your-application-to-your-hololens-2)的指示)，其中包括下列步驟：
 
-1. [建立新的 Unity 專案](mrlearning-base-ch1.md#create-new-unity-project)，並為其提供適當的名稱，例如「MRTK 教學課程」 
+1. [建立 Unity 專案](mr-learning-base-02.md#creating-the-unity-project)，並為其提供適當的名稱，例如「MRTK 教學課程」
+2. [切換建置平台](mr-learning-base-02.md#configuring-the-unity-project)
+3. [匯入 TextMeshPro 基本資源](mr-learning-base-02.md#importing-the-textmeshpro-essential-resources)
+4. [匯入混合實境工具組](mr-learning-base-02.md#importing-the-mixed-reality-toolkit)
+5. [設定 Unity 專案](mr-learning-base-02.md#configuring-the-unity-project)
+6. [建立和設定場景](mr-learning-base-02.md#creating-and-configuring-the-scene)並為場景提供適當的名稱，例如 AzureCloudServices
 
-2. [設定適用於 Windows Mixed Reality 的 Unity 專案](mrlearning-base-ch1.md#configure-the-unity-project-for-windows-mixed-reality)
-
-3. [匯入 TextMesh Pro 基本資源](mrlearning-base-ch1.md#import-textmesh-pro-essential-resources)
-
-4. [匯入混合實境工具組](mrlearning-base-ch1.md#import-the-mixed-reality-toolkit)
-
-5. [設定用於混合實境工具組的 Unity 專案](mrlearning-base-ch1.md#configure-the-unity-project-for-the-mixed-reality-toolkit)
-
-6. [將 Mixed Reality 工具組新增至 Unity 場景](mrlearning-base-ch1.md#configure-the-mixed-reality-toolkit)並為場景提供適當的名稱，例如 AzureSpeechServices 
-
-然後遵循[如何設定混合實境工具組設定檔 (變更空間感知顯示選項)](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option) 的指示，將場景的 MRTK 組態設定檔變更為 **DefaultHoloLens2ConfigurationProfile**，並將空間感知網格的顯示選項變更為 [遮蔽]  。
-
-> [!CAUTION]
-> 如上方連結：[設定用於混合實境工具組的 Unity 專案](mrlearning-base-ch1.md#configure-the-unity-project-for-the-mixed-reality-toolkit)中所述的指示，強烈建議您不要為 Unity 啟用 MSBuild。
+然後遵循[變更空間感知顯示選項](mr-learning-base-03.md#changing-the-spatial-awareness-display-option)的指示，將場景的 MRTK 組態設定檔變更為 **DefaultHoloLens2ConfigurationProfile**，並將空間感知網格的顯示選項變更為 [遮蔽]。
 
 ## <a name="configuring-the-speech-commands-start-behavior"></a>設定語音命令啟動行為
 
 由於您將使用語音 SDK 進行語音辨識和轉譯，因此您需要設定 MRTK 語音命令，使其不會干擾語音 SDK 功能。 若要達到此目的，您可以將語音命令啟動行為從 [自動啟動] 變更為 [手動啟動]。
 
-在 [階層] 視窗中選取 **MixedRealityToolkit** 物件之後，於 [偵測器] 視窗中選取 [輸入]  索引標籤，並複製 **DefaultHoloLens2InputSystemProfile** 和 **DefaultMixedRealitySpeechCommandsProfile**，然後將**啟動行為**的語音命令變更為 [手動啟動]  ：
+在 [階層] 視窗中選取 **MixedRealityToolkit** 物件之後，於 [偵測器] 視窗中選取 [輸入] 索引標籤，並複製 **DefaultHoloLens2InputSystemProfile** 和 **DefaultMixedRealitySpeechCommandsProfile**，然後將**啟動行為**的語音命令變更為 [手動啟動]：
 
 ![mrlearning-speech](images/mrlearning-speech/tutorial1-section2-step1-1.png)
 
 > [!TIP]
-> 如需有關如何複製和設定 MRTK 設定檔的提示，您可以參閱[如何設定混合實境工具組設定檔 (變更空間感知顯示選項)](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option) 的指示。
+> 如需有關如何複製及設定 MRTK 設定檔的提示，您可以參閱[設定混合實境工具組設定檔](mr-learning-base-03.md)的指示。
 
 ## <a name="configuring-the-capabilities"></a>設定功能
 
-在 Unity 功能表中，選取 [編輯]   > [專案設定...]  來開啟 [玩家設定] 視窗，然後找出 [玩家]   >  [發佈設定]  區段：
+在 Unity 功能表中，選取 [編輯] > [專案設定...] 來開啟 [玩家設定] 視窗，然後找出 [玩家] >  [發佈設定] 區段：
 
 ![mrlearning-speech](images/mrlearning-speech/tutorial1-section3-step1-1.png)
 
-在 [發佈設定]  中，向下捲動至 [功能]  區段，然後再次確認您在教學課程開頭建立專案時所啟用的 **InternetClient**、**Microphone** 和 **SpatialPerception** 功能是否皆已啟用。 然後，啟用 **InternetClientServer** 和 **PrivateNetworkClientServer** 功能：
+在 [發佈設定] 中，向下捲動至 [功能] 區段，然後再次確認您在教學課程開頭建立專案時所啟用的 **InternetClient**、**Microphone** 和 **SpatialPerception** 功能是否皆已啟用。 然後，啟用 **InternetClientServer** 和 **PrivateNetworkClientServer** 功能：
 
 ![mrlearning-speech](images/mrlearning-speech/tutorial1-section3-step1-2.png)
 
@@ -93,7 +85,7 @@ ms.locfileid: "82604979"
 * [MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpeechServices.2.3.0.0.unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/azure-speech-services-v2.3.0.0/MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpeechServices.2.3.0.0.unitypackage)
 
 > [!TIP]
-> 如需有關如何匯入 Unity 自訂套件的提示，您可以參閱[匯入混合實境工具組](mrlearning-base-ch1.md#import-the-mixed-reality-toolkit) 的指示。
+> 如需有關如何匯入 Unity 自訂套件的提示，您可以參閱[匯入混合實境工具組](mr-learning-base-02.md#importing-the-mixed-reality-toolkit) 的指示。
 
 匯入教學課程資產之後，您的專案視窗看起來應該會像這樣：
 
@@ -103,26 +95,26 @@ ms.locfileid: "82604979"
 
 在本節中，您將藉由新增教學課程 Prefab 來準備場景，並設定 Lunarcom Controller (指令碼) 元件來控制您的場景。
 
-在 [專案] 視窗中，瀏覽至 [資產]   > [MRTK.Tutorials.AzureSpeechServices]   > [Prefabs]  資料夾，並將 **Lunarcom** Prefab 拖曳至 [階層] 視窗來新增至您的場景：
+在 [專案] 視窗中，瀏覽至 [資產] > [MRTK.Tutorials.AzureSpeechServices] > [Prefabs] 資料夾，並將 **Lunarcom** Prefab 拖曳至 [階層] 視窗來新增至您的場景：
 
 ![mrlearning-speech](images/mrlearning-speech/tutorial1-section5-step1-1.png)
 
-在 [階層] 視窗中仍選取 **Lunarcom** 物件的情況下，於 [偵測器] 視窗中使用 [新增元件]  按鈕來將 **Lunarcom Controller (指令碼)** 元件新增至 Lunarcom 物件：
+在 [階層] 視窗中仍選取 **Lunarcom** 物件的情況下，於 [偵測器] 視窗中使用 [新增元件] 按鈕來將 **Lunarcom Controller (指令碼)** 元件新增至 Lunarcom 物件：
 
 ![mrlearning-speech](images/mrlearning-speech/tutorial1-section5-step1-2.png)
 
 > [!NOTE]
 > The Lunarcom Controller (指令碼) 元件不是 MRTK 的一部分。 這是本教學課程資產隨附的元件。
 
-在仍選取 **Lunarcom** 物件的情況下，將其展開以顯示其子物件，然後將**Terminal** 物件拖曳到 Lunarcom Controller (指令碼) 元件的 [終端機]  欄位中：
+在仍選取 **Lunarcom** 物件的情況下，將其展開以顯示其子物件，然後將**Terminal** 物件拖曳到 Lunarcom Controller (指令碼) 元件的 [終端機] 欄位中：
 
 ![mrlearning-speech](images/mrlearning-speech/tutorial1-section5-step1-3.png)
 
-在仍選取 **Lunarcom** 物件的情況下，展開 [終端機] 物件以顯示其子物件，然後將 **ConnectionLight** 物件拖曳至 Lunarcom Controller (指令碼) 元件的 [連接光源]  欄位，並將 **OutputText** 物件拖曳至 [輸出文字]  欄位中：
+在仍選取 **Lunarcom** 物件的情況下，展開 [終端機] 物件以顯示其子物件，然後將 **ConnectionLight** 物件拖曳至 Lunarcom Controller (指令碼) 元件的 [連接光源] 欄位，並將 **OutputText** 物件拖曳至 [輸出文字] 欄位中：
 
 ![mrlearning-speech](images/mrlearning-speech/tutorial1-section5-step1-4.png)
 
-在仍選取 **Lunarcom** 物件的情況下，展開 Buttons 物件以顯示其子物件，然後在 [偵測器] 視窗中展開 [按鈕]  清單，將其 [大小]  設定為 3，然後將 **MicButton**、**SatelliteButton** 和 **RocketButton** 物件分別拖曳至**元素** 0、1 及 2 的欄位：
+在仍選取 **Lunarcom** 物件的情況下，展開 Buttons 物件以顯示其子物件，然後在 [偵測器] 視窗中展開 [按鈕] 清單，將其 [大小] 設定為 3，然後將 **MicButton**、**SatelliteButton** 和 **RocketButton** 物件分別拖曳至**元素** 0、1 及 2 的欄位：
 
 ![mrlearning-speech](images/mrlearning-speech/tutorial1-section5-step1-5.png)
 
@@ -130,16 +122,16 @@ ms.locfileid: "82604979"
 
 若要使用 Azure 語音服務，您必須建立 Azure 資源，並取得語音服務的 API 金鑰。 請遵循[免費試用語音服務](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started)的指示，並記下您的服務區域 (也就是「位置」) 和 API 金鑰 (也就是 Key1 或 Key2)。
 
-在 [階層] 視窗中選取 **Lunarcom** 物件，然後在 [偵測器] 視窗中尋找 **Lunarcom Controller (指令碼)** 元件的 [語音 SDK 認證]  區段並進行設定，如下所示：
+在 [階層] 視窗中選取 **Lunarcom** 物件，然後在 [偵測器] 視窗中尋找 **Lunarcom Controller (指令碼)** 元件的 [語音 SDK 認證] 區段並進行設定，如下所示：
 
-* 在 [語音服務 API 金鑰]  欄位中，輸入您的 API 金鑰 (Key1 或 Key2)
-* 在 [語音服務區域]  欄位中，輸入您的服務區域 (位置)，請使用小寫字母並將空格移除
+* 在 [語音服務 API 金鑰] 欄位中，輸入您的 API 金鑰 (Key1 或 Key2)
+* 在 [語音服務區域] 欄位中，輸入您的服務區域 (位置)，請使用小寫字母並將空格移除
 
 ![mrlearning-speech](images/mrlearning-speech/tutorial1-section6-step1-1.png)
 
 ## <a name="using-speech-recognition-to-transcribe-speech"></a>使用語音辨識來轉譯語音
 
-在 [階層] 視窗中選取 **Lunarcom** 物件，然後在 [偵測器] 視窗中使用 [新增元件]  按鈕來將 **Lunarcom Speech Recognizer (指令碼)** 元件新增至 Lunarcom 物件：
+在 [階層] 視窗中選取 **Lunarcom** 物件，然後在 [偵測器] 視窗中使用 [新增元件] 按鈕來將 **Lunarcom Speech Recognizer (指令碼)** 元件新增至 Lunarcom 物件：
 
 ![mrlearning-speech](images/mrlearning-speech/tutorial1-section7-step1-1.png)
 

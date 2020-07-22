@@ -7,12 +7,12 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境, 注視, 定向注視, 互動, 設計, 手部接近, HoloLens
-ms.openlocfilehash: 40a8441177582a55b58acbfbd15c7b506853e4da
-ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
+ms.openlocfilehash: 2a63f53464e354ae49f8c63fafbf592508bd5e3b
+ms.sourcegitcommit: 0eb99fae933d4374af2c032af4e9ceda1807e532
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83227993"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86156779"
 ---
 # <a name="direct-manipulation-with-hands"></a>手部直接操作
 
@@ -327,9 +327,9 @@ HoloLens 2 可讓使用者將週框方塊套用至每個 3D 物件，以便用�
 ---
 
 ## <a name="manipulation-in-mrtk-mixed-reality-toolkit-for-unity"></a>MRTK (混合實境工具組) 中適用於 Unity 的操作
-使用 **[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** ，您可以使用指令碼 **ManipulationHandler**.輕鬆執行常見的操作行為。 使用 ManipulationHandler，您可以直接用手或透過手部射線來抓取和移動物件。 它也支援雙手操作來縮放和旋轉物件。
+透過 **[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** ，您可以使用指令碼 **ObjectManipulator** 輕鬆執行常見的操作行為。 使用 ObjectManipulator，您可以直接用手或透過手部射線來抓取和移動物件。 它也支援雙手操作來縮放和旋轉物件。
 
-* [MRTK - 操作](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ManipulationHandler.html)
+* [MRTK - 操作](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ObjectManipulator.html)
 
 
 ---

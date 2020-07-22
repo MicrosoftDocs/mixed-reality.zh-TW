@@ -7,12 +7,12 @@ ms.date: 06/27/2019
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 75ddce9063bb9d33f5fe2343fe30178222a5f8ac
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: 7a0fa915a80763300eff470e29356034d6a0f841
+ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79031606"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86303669"
 ---
 # <a name="2-using-speech-recognition-to-execute-commands"></a>2.使用語音辨識來執行命令
 
@@ -24,10 +24,10 @@ ms.locfileid: "79031606"
 
 ## <a name="instructions"></a>指示
 
-在 [階層] 視窗中選取 **Lunarcom** 物件，然後在 [偵測器] 視窗中使用 [新增元件]  按鈕來將 **Lunarcom Wake Word Recognizer (指令碼)** 元件新增至 Lunarcom 物件，並進行以下設定：
+在 [階層] 視窗中選取 **Lunarcom** 物件，然後在 [偵測器] 視窗中使用 [新增元件] 按鈕來將 **Lunarcom Wake Word Recognizer (指令碼)** 元件新增至 Lunarcom 物件，並進行以下設定：
 
-* 在 [喚醒字詞]  欄位中，入適當的片語，例如「啟動終端機 (Activate terminal)」  。
-* 在 [關閉字詞]  欄位中，輸入適當的片語，例如「關閉終端機 (Dismiss terminal)」  。
+* 在 [喚醒字詞] 欄位中，入適當的片語，例如「啟動終端機 (Activate terminal)」。
+* 在 [關閉字詞] 欄位中，輸入適當的片語，例如「關閉終端機 (Dismiss terminal)」。
 
 ![mrlearning-speech](images/mrlearning-speech/tutorial2-section1-step1-1.png)
 
@@ -46,7 +46,7 @@ ms.locfileid: "79031606"
 > 應用程式必須連線到 Azure，因此請確定您的電腦/裝置已連線到網際網路。
 
 > [!TIP]
-> 如果您預期無法經常連線到 Azure，您也可以遵循[啟用語音命令](mrlearning-base-ch5.md#enabling-voice-commands)指示，使用 MRTK 來實作語音命令。
+> 如果您預期無法經常連線到 Azure，您也可以遵循[使用語音命令](mr-learning-base-09.md)指示，使用 MRTK 來實作語音命令。
 
 ## <a name="congratulations"></a>恭喜！
 

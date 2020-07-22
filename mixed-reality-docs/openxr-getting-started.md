@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 2/28/2020
 ms.topic: article
 keywords: OpenXR，Khronos，BasicXRApp，Windows Mixed Reality OpenXR 開發人員工具，DirectX，原生，原生應用程式，自訂引擎，中介軟體，個開始使用，101，預覽延伸模組，OpenXR 執行階段版本，系統狀態
-ms.openlocfilehash: b4cf91c7a7b5bd203a4fef43c7a988d3ff1e9b16
-ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
+ms.openlocfilehash: e09ff2748921789d74bafdb321f19882336ea500
+ms.sourcegitcommit: 3c32f45fd941767d408cccc5a76f1ff1cec763da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83228047"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86879219"
 ---
 # <a name="getting-started-with-openxr"></a>開始使用 OpenXR
 
@@ -29,20 +29,18 @@ ms.locfileid: "83228047"
 若要開始開發沉浸式 Windows Mixed Reality 耳機的 OpenXR 應用程式：
 
 1. 請確定您至少執行 Windows 10 5 月2019更新（1903），這是 Windows Mixed Reality 終端使用者執行 OpenXR 應用程式的最低需求。  如果您是在舊版的 Windows 10 上，您可以使用<a href="https://www.microsoft.com/software-download/windows10" target="_blank">windows 10 更新</a>小幫手進行升級。
-2. 設定 Windows Mixed Reality 耳機，或遵循指示[啟用 Windows Mixed reality](using-the-windows-mixed-reality-simulator.md)模擬器。  當您設定 Windows Mixed Reality 時，混合現實入口網站會自動安裝 Windows Mixed Reality OpenXR 執行時間。  然後，Microsoft Store 會讓執行時間保持在最新狀態。
-3. 從 [開始] 功能表啟動混合現實入口網站，然後按一下 [...]，讓 Windows Mixed Reality OpenXR 執行時間變成作用中功能表左下方選取 [設定 OpenXR]。<br>
+2. 設定 Windows Mixed Reality 耳機，或遵循指示[啟用 Windows Mixed reality](using-the-windows-mixed-reality-simulator.md)模擬器。
+
+就這麼簡單！  Windows Mixed Reality OpenXR 執行時間已安裝，並自動為所有 Windows Mixed Reality 使用者進行作用。  然後 Microsoft Store 會讓執行時間保持在最新狀態。
+
+如果您需要讓 Windows Mixed Reality OpenXR 執行時間再次作用，請從 [開始] 功能表啟動混合現實入口網站，按一下 [...]功能表左下方選取 [設定 OpenXR]。  如果該功能表項目遺失，OpenXR 執行時間就已在使用中。<br>
 ![在混合現實入口網站中設定 OpenXR](images/mixed-reality-portal-set-up-openxr.png)
-
-如果您需要讓 Windows Mixed Reality OpenXR 執行時間再次生效，請重複步驟3。
-
-> [!NOTE]
-> Windows Mixed Reality OpenXR 執行時間很快就會自動為所有 Windows Mixed Reality 使用者進行作用。
 
 ## <a name="getting-the-windows-mixed-reality-openxr-developer-tools"></a>取得 Windows Mixed Reality OpenXR 開發人員工具
 
 若要試用 Windows Mixed Reality OpenXR 執行時間，您可以安裝<a href="https://www.microsoft.com/store/productId/9n5cvvl23qbt" target="_blank">混合現實 OpenXR 開發人員工具應用程式</a>。  此應用程式提供的示範場景會演練 OpenXR 的各種功能，以及提供作用中執行時間和目前耳機的重要資訊的 [系統狀態] 頁面。
 
-如果使用模擬器，安裝混合現實 OpenXR 開發人員工具的最簡單方式是使用[Windows 裝置入口網站](using-the-windows-device-portal.md)，方法是流覽至 [OpenXR] 頁面，然後按一下 [開發人員功能] 底下的 [安裝] 按鈕。 （這也適用于實體 HoloLens 2 裝置）
+如果使用 HoloLens 2 模擬器，安裝 Mixed Reality OpenXR 開發人員工具最簡單的方式是使用[Windows 裝置入口網站](using-the-windows-device-portal.md)，方法是流覽至 [OpenXR] 頁面，然後按一下 [開發人員功能] 底下的 [安裝] 按鈕。 （這也適用于實體 HoloLens 2 裝置）
 
 ![Mixed Reality OpenXR 開發人員工具應用程式](images/mixed-reality-openxr-developer-tools.png)
 
@@ -50,9 +48,9 @@ ms.locfileid: "83228047"
 
 如果您還沒有 OpenXR 開發所需的工具，請務必加以[安裝](install-the-tools.md)。
 
-<a href="https://github.com/microsoft/OpenXR-MixedReality/tree/master/samples/BasicXrApp" target="_blank">BasicXrApp</a>專案示範一個簡單的 OpenXR 範例，其中包含兩個 Visual Studio 專案檔，一個用於 Win32 桌面應用程式，另一個用於 UWP HoloLens 2 應用程式。  因為解決方案包含 HoloLens UWP 專案，所以您需要安裝在 Visual Studio 中的[通用 Windows 平臺開發工作負載](install-the-tools.md#installation-checklist)，才能完全開啟它。
+<a href="https://github.com/microsoft/OpenXR-MixedReality/tree/master/samples/BasicXrApp" target="_blank">BasicXrApp</a> 專案會示範一個簡單的 OpenXR 範例，其中包含兩個 Visual Studio 專案檔，一個用於 Win32 桌面應用程式，另一個用於 UWP HoloLens 2 應用程式。  因為解決方案包含 HoloLens UWP 專案，所以您需要安裝在 Visual Studio 中的[通用 Windows 平臺開發工作負載](install-the-tools.md#installation-checklist)，才能完全開啟它。
 
-請注意，雖然 Win32 和 UWP 專案檔因封裝和部署的差異而不同，但每個專案內的應用程式代碼都是100% 的相同！
+請注意，雖然 Win32 和 UWP 專案檔因封裝和部署的差異而不同，但每個專案內的應用程式程式碼幾乎完全相同！
 
 建立 OpenXR 的 Win32 桌面之後。EXE，不論是 Windows Mixed Reality 耳機或任何其他耳機，您都可以在任何支援 OpenXR 的 desktop VR 平臺上搭配使用 VR 頭戴式裝置。
 
@@ -99,6 +97,7 @@ ms.locfileid: "83228047"
      * 如果您的目標裝置是 HoloLens 2 裝置，請遵循目標裝置上的[這些指示](using-the-windows-device-portal.md)。  請注意，這需要實體頭戴式裝置，因為 HoloLens 2 模擬器中的已知問題會讓下一個步驟中的 UI 無法出現在模擬器中。
      * 如果您的目標裝置是連接沉浸式耳機外設的桌上型電腦，請在目標桌上型電腦上<a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop#set-up-device-portal-on-windows-desktop" target="_blank">遵循這些指示</a>。
   1. 流覽至左窗格中的 [ **OpenXR** ] 索引標籤，並啟用 [**使用最新的預覽 OpenXR 運行**時間]。  這會啟用您裝置上的預覽執行時間，其已啟用預覽延伸模組。
+     ![裝置入口網站 OpenXR 預覽執行時間核取方塊](images/device-portal-openxr-preview-runtime.png)
   1. 確認 [ [Windows Mixed Reality OpenXR 開發人員工具](openxr-getting-started.md#getting-the-windows-mixed-reality-openxr-developer-tools)] 的 [**系統狀態**] 索引標籤上顯示的**執行階段版本**，現在符合您打算嘗試的預覽延伸模組所需的版本。  若是如此，您應該會在 [**擴充**功能] 清單中看到此延伸模組。  請注意，一旦穩定的擴充功能可供使用，將會移除其預覽延伸模組。<br />
      ![Mixed Reality OpenXR 開發人員工具應用程式系統狀態索引標籤](images/mixed-reality-openxr-developer-tools-status.png)
 

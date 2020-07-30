@@ -3,15 +3,15 @@ title: Unity 的建議設定
 description: Unity 提供一些混合現實特有的行為，可以透過專案設定進行切換。
 author: troy-ferrell
 ms.author: trferrel
-ms.date: 03/26/2019
+ms.date: 07/07/2020
 ms.topic: article
 keywords: unity，設定，混合現實
-ms.openlocfilehash: e7628a8653fffbab9c792161ac8ff1666b47fa62
-ms.sourcegitcommit: f523b74a549721b6bec69cb5d2eca5b7673a793c
+ms.openlocfilehash: d2cc79ba0818985795c49f8812d33eba77b92b74
+ms.sourcegitcommit: 161f3c5a80f6988a9c4af26e29481fee06840e0f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85570322"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87390115"
 ---
 # <a name="recommended-settings-for-unity"></a>Unity 的建議設定
 
@@ -23,9 +23,7 @@ Unity 提供一組預設選項，通常是所有平臺的平均案例。 不過�
 
 請務必將您環境的**Unity 品質設定**修改為**極低**。 這將有助於確保您的應用程式以適當的幀速度執行 performantly。 這對於 HoloLens 開發而言非常重要。 為了在沉浸式耳機上進行開發，視桌上型電腦為 VR 經驗所提供的規格而定，您仍然可以在沒有最低品質參數的情況下達到畫面播放速率。
 
-在 Unity 2018 LTS + 中，可透過下列方式設定專案的品質等級：
-
-在 [**編輯**  >  **專案設定**  >  **品質**] 底下 > 按一下向下箭號**非常低**的品質等級，以設定**預設值**。
+在 Unity 2019 LTS + 中，您可以藉由前往 [**編輯**專案設定品質] 來設定專案的品質等級  >  **Project Settings**  >  **Quality** ，並按一下向下箭號到**非常低**的品質等級來設定**預設值**。
 
 ### <a name="lighting-settings"></a>光源設定
 
@@ -44,18 +42,18 @@ Unity 提供一組預設選項，通常是所有平臺的平均案例。 不過�
 
 若要在 Unity 專案中啟用這項功能
 
-1)  開啟**播放 XR 設定**（移至 [**編輯**] [專案] [設定] [  >  **Project Settings**  >  **播放**  >  **XR 設定**]）
-2) 從 [**身歷聲轉譯方法**] 下拉式功能表選取 [**單一傳遞實例**] （必須核取 [**虛擬實境支援**] 核取方塊）
+1)  開啟 [Player XR 設定] (移至 [編輯] > [專案設定] > [播放器] > [XR 設定])
+2) 從 [立體聲轉譯方法] 下拉式功能表中，選取 [單通道執行個體化] (必須核取 [支援的虛擬實境] 核取方塊)
 
 如需此轉譯方法的詳細資訊，請參閱 Unity 中的下列文章。
 
-- [如何使用 advanced 身歷聲轉譯將 AR 和 VR 效能最大化](https://blogs.unity3d.com/2017/11/21/how-to-maximize-ar-and-vr-performance-with-advanced-stereo-rendering/)
-- [單一階段實例](https://docs.unity3d.com/Manual/SinglePassInstancing.html)
+- [如何使用進階的立體聲轉譯將 AR 和 VR 效能最大化](https://blogs.unity3d.com/2017/11/21/how-to-maximize-ar-and-vr-performance-with-advanced-stereo-rendering/)
+- [單通道執行個體](https://docs.unity3d.com/Manual/SinglePassInstancing.html)
 
 >[!NOTE]
-> 如果開發人員已經有不為實例撰寫的現有自訂著色器，就會發生單一階段實例轉譯的一個常見問題。 啟用這項功能之後，開發人員可能會注意到有些 Gameobject 只會以一眼呈現。 這是因為相關聯的自訂著色器沒有適當的實例屬性。
+> 如果開發人員已經有非針對執行個體撰寫的現有自訂著色器，就會發生單通道執行個體化轉譯的一個常見問題。 啟用這項功能之後，開發人員可能會注意到，有些 GameObject 只會在單一眼球中轉譯。 這是因為相關聯的自訂著色器沒有適當的執行個體屬性。
 >
-> 如需解決此問題的方式，請參閱從 Unity 的[HoloLens 的單次傳遞身歷聲](https://docs.unity3d.com/Manual/SinglePassStereoRenderingHoloLens.html)轉譯
+> 如需解決此問題的方法，請參閱 Unity 中的[適用於 HoloLens 的單通道立體聲轉譯](https://docs.unity3d.com/Manual/SinglePassStereoRenderingHoloLens.html)
 
 ### <a name="enable-depth-buffer-sharing"></a>啟用深度緩衝區共用
 
@@ -63,7 +61,7 @@ Unity 提供一組預設選項，通常是所有平臺的平均案例。 不過�
 
 若要在 Unity 專案中啟用這項功能
 
-1) 開啟**播放 XR 設定**（移至 [**編輯**] [專案] [設定] [  >  **Project Settings**  >  **播放**  >  **XR 設定**]）
+1) 開啟 [Player XR 設定] (移至 [編輯] > [專案設定] > [播放器] > [XR 設定])
 2) 選取 [**虛擬實境 sdk**] 底下的 [**啟用深度緩衝區共用**] 核取方塊 [  >  **Windows Mixed Reality**擴充] （必須核取 [**虛擬實境支援**] 核取方塊）
 
 此外，建議您在此面板中選取 [**深度格式**] 設定下的 [ **16 位深度**]，特別是針對 HoloLens 開發。 相較于24位，選取 [16 位] 會大幅降低頻寬需求，因為需要移動/處理的資料才會變少。
@@ -116,9 +114,9 @@ HoloLens 具有行動類別的 CPU 和 GPU，這表示應用程式可能需要�
 
 |  顯示 Unity 啟動顯示畫面  |  全像攝影啟動顯示畫面  |  行為 |
 |----------|----------|----------|
-|  開啟  |  None  |  在5秒內顯示預設的 Unity 啟動顯示畫面，或在載入應用程式之前，以較長的時間為准。 |
+|  開啟  |  無  |  在5秒內顯示預設的 Unity 啟動顯示畫面，或在載入應用程式之前，以較長的時間為准。 |
 |  開啟  |  自訂  |  在5秒內顯示自訂啟動顯示畫面，或在載入應用程式之前，以較長的時間為准。 |
-|  關閉  |  None  |  在載入應用程式之前，顯示透明的黑色（無）。 |
+|  關閉  |  無  |  在載入應用程式之前，顯示透明的黑色（無）。 |
 |  關閉  |  自訂  |  在5秒內顯示自訂啟動顯示畫面，或在載入應用程式之前，以較長的時間為准。 |
 
 如需詳細資訊，請閱讀[Unity 的啟動顯示畫面檔](https://docs.unity3d.com/Manual/class-PlayerSettingsSplashScreen.html)。
@@ -172,5 +170,5 @@ HoloLens 具有行動類別的 CPU 和 GPU，這表示應用程式可能需要�
 ## <a name="see-also"></a>另請參閱
 
 * [Unity 開發概觀](unity-development-overview.md)
-* [瞭解混合現實的效能](understanding-performance-for-mixed-reality.md)
+* [了解混合實境的效能](understanding-performance-for-mixed-reality.md)
 * [對 Unity 的效能建議](performance-recommendations-for-unity.md)

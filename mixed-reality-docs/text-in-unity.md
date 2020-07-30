@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 06/03/2019
 ms.topic: article
 keywords: Windows Mixed Reality，設計，控制項，字型，印刷樣式，ui，ux
-ms.openlocfilehash: 8662ff8a8e1e99455354392d7dc852feb1fe1589
-ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
+ms.openlocfilehash: 6aa03eedf717fb73877db8660526e13444c43fe9
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345708"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376570"
 ---
 # <a name="text-in-unity"></a>Unity 中的文字
 
@@ -65,14 +65,14 @@ Unity 假設所有新增至場景的新專案都是大小的1個 Unity 單位，
  *內容*
 
 ### <a name="the-minimum-legible-font-size"></a>最小的清晰字型大小
-| Distance | 視角 | 文字高度 | 字型大小 |
+| 距離 | 視角 | 文字高度 | 字型大小 |
 |---------|---------|---------|---------|
 | 45cm （直接操作距離） | 0.4 °-0.5 ° | 3.14 –3.9 毫米 | 8.9 – 11.13 pt |
 | 2m | 0.35 °-0.4 ° | 12.21 – 13.97 mm | 34.63-39.58 pt |
 
 
 ### <a name="the-comfortably-legible-font-size"></a>舒適的字型大小
-| Distance | 視角 | 文字高度 | 字型大小 |
+| 距離 | 視角 | 文字高度 | 字型大小 |
 |---------|---------|---------|---------|
 | 45cm （直接操作距離） | 0.65 °-0.8 ° | 5.1-6.3 mm | 14.47-17.8 pt |
 | 2m | 0.6 °-0.75 ° | 20.9-26.2 mm | 59.4-74.2 pt |
@@ -99,7 +99,7 @@ Unity 的預設字型材質不支援遮蔽。 因此，根據預設，您會看�
 
 
 ## <a name="see-also"></a>另請參閱
-* [MRTK 中的文字 Prefab](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Prefabs/Text)
+* [MRTK 中的文字 Prefab](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Prefabs/Text)
 * [印刷樣式](typography.md)
 
  

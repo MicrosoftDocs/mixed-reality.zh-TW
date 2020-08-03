@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 06/03/2019
 ms.topic: article
 keywords: Windows Mixed Reality，設計，控制項，字型，印刷樣式，ui，ux
-ms.openlocfilehash: 6aa03eedf717fb73877db8660526e13444c43fe9
-ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
+ms.openlocfilehash: 63f0992a4623cf91c1b9c62c4ebf30de12529515
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87376570"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476940"
 ---
 # <a name="text-in-unity"></a>Unity 中的文字
 
@@ -83,22 +83,24 @@ Segoe UI （Windows 的預設字型）在大多數情況下都很好用。 不�
 ![查看角度 ](images/Text_In_Unity_ViewingAngle.jpg)
  *視圖距離、角度和文字高度*
 
-## <a name="sharp-text-rendering-quality-with-proper-dimension"></a>具有適當維度的銳利文字轉譯品質
+## <a name="text-with-mixed-reality-toolkit-v2"></a>混合現實工具組 v2 的文字
+
+### <a name="sharp-text-rendering-quality-with-proper-dimension"></a>具有適當維度的銳利文字轉譯品質
 
 根據這些縮放因素，我們建立[了具有 UI 文字和3D 文字網格的文字 prefabs](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Prefabs/Text)。 開發人員可以使用這些 prefabs 來取得清晰的文字和一致的字型大小。
 
 ![具有適當維度的銳利文字轉譯品質](images/hug-text-06-1000px.png)<br>
 *具有適當維度的銳利文字轉譯品質*
 
-## <a name="shader-with-occlusion-support"></a>具有遮蔽支援的著色器
+### <a name="shader-with-occlusion-support"></a>具有遮蔽支援的著色器
 
-Unity 的預設字型材質不支援遮蔽。 因此，根據預設，您會看到物件後面的文字。 我們已包含[支援遮蔽的簡單著色器](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit/StandardAssets/Shaders/Text3DShader.shader)。 下圖顯示具有預設字型材質（左）的文字，以及具有適當遮蔽的文字（right）。
+Unity 的預設字型材質不支援遮蔽。 因此，根據預設，您會看到物件後面的文字。 我們已包含[支援遮蔽的簡單著色器](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MRTK/Core/StandardAssets/Shaders/Text3DShader.shader)。 下圖顯示具有預設字型材質（左）的文字，以及具有適當遮蔽的文字（right）。
 
 ![具有遮蔽支援的著色器](images/hug-text-07-1000px.png)<br>
 *具有遮蔽支援的著色器*
 
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 * [MRTK 中的文字 Prefab](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Prefabs/Text)
 * [印刷樣式](typography.md)
 

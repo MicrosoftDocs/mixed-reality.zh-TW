@@ -156,17 +156,15 @@
 ###### [3.從影片空間化音訊](unity-spatial-audio-ch3.md)
 ###### [4.在執行時間啟用和停用空間音訊](unity-spatial-audio-ch4.md)
 ###### [5.使用殘響增加空間音訊的距離](unity-spatial-audio-ch5.md)
-
-#### Azure 雲端服務教學課程
-##### [1.適用於 HoloLens 2 的 Azure 雲端服務](mr-learning-azure-01.md)
-##### [2.整合 Azure 儲存體](mr-learning-azure-02.md)
-##### [3.整合 Azure 自訂視覺](mr-learning-azure-03.md)
-##### [4.整合 Azure Spatial Anchors](mr-learning-azure-04.md)
-##### [5.整合 Azure Bot Service](mr-learning-azure-05.md)
-
-#### 電腦全像攝影遠端處理教學課程
-##### [1.開始使用電腦全像攝影遠端處理](mr-learning-pc-holographic-remoting-01.md)
-##### [2.建立全像攝影遠端處理電腦應用程式](mr-learning-pc-holographic-remoting-02.md)
+##### Azure 雲端服務教學課程
+###### [1.適用於 HoloLens 2 的 Azure 雲端服務](mr-learning-azure-01.md)
+###### [2.整合 Azure 儲存體](mr-learning-azure-02.md)
+###### [3.整合 Azure 自訂視覺](mr-learning-azure-03.md)
+###### [4.整合 Azure Spatial Anchors](mr-learning-azure-04.md)
+###### [5.整合 Azure Bot Service](mr-learning-azure-05.md)
+##### 電腦全像攝影遠端處理教學課程
+###### [1.開始使用電腦全像攝影遠端處理](mr-learning-pc-holographic-remoting-01.md)
+###### [2.建立全像攝影遠端處理電腦應用程式](mr-learning-pc-holographic-remoting-02.md)
 
 #### HoloLens (第 1 代) 和沉浸式頭戴裝置教學課程
 ##### [MR Basics 100：開始使用 Unity](holograms-100.md)
@@ -224,7 +222,7 @@
 #### [使用 Unity 的 Vuforia](vuforia-development-overview.md)
 
 ### 範例應用程式
-#### HoloLens 2 
+#### HoloLens 2
 ##### [表面](sampleapp-surfaces.md)
 ##### [元素週期表 2.0](https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158)
 ##### [Galaxy Explorer 2.0](galaxy-explorer-update.md)
@@ -257,7 +255,8 @@
 #### [Unreal 中的手勢追蹤](unreal-hand-tracking.md)
 #### [Unreal 中的空間對應](unreal-spatial-mapping.md)
 #### [Unreal 中的空間音訊](unreal-spatial-audio.md)
-#### [Unreal 中的空間錨點](unreal-spatial-anchors.md)
+#### [Unreal 中的本機空間錨點](unreal-spatial-anchors.md)
+#### [Unreal 中的 Azure 空間錨點](unreal-azure-spatial-anchors.md)
 #### [Unreal 中的語音輸入](unreal-voice-input.md)
 ### 平台功能和 API
 #### [Unreal 中的 HoloLens 相機](unreal-hololens-camera.md)

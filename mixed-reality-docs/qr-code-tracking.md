@@ -6,12 +6,12 @@ ms.author: dobrown
 ms.date: 05/15/2019
 ms.topic: article
 keywords: vr，lbe，以位置為基礎的娛樂，vr arcade，arcade，沉浸，qr，qr 代碼，hololens2
-ms.openlocfilehash: e14fe14fd76bceaf506dd7b85a57825c3f18d223
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 6d3dc442c28e498cc00e14325398de2026261a17
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438115"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476760"
 ---
 # <a name="qr-code-tracking"></a>QR 代碼追蹤
 
@@ -23,12 +23,12 @@ HoloLens 2 可以在耳機周圍偵測到 QR 代碼，並在每個程式碼的�
 <tr>
 <th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens (第 1 代)</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式頭戴裝置</a></th>
 </tr><tr>
-<td> QR 代碼偵測</td><td style="text-align: center;">‎</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;">請參閱附注</td>
+<td> QR 代碼偵測</td><td style="text-align: center;">️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;">✔️</td>
 </tr>
 </table>
 
 >[!NOTE]
->下列 NuGet 套件目前不支援桌上型電腦上的沉浸式 Windows Mixed Reality 耳機。  隨時掌握有關桌面支援的進一步更新。
+>Windows 10 2004 版和更新版本支援在桌上型電腦上使用沉浸式 Windows Mixed Reality 耳機的 QR 代碼追蹤。 使用 MixedReality. QRCodeWatcher. IsSupported （） API 來判斷目前裝置上是否支援此功能。
 
 ## <a name="getting-the-qr-package"></a>取得 QR 套件
 您可以在[這裡](https://nuget.org/Packages/Microsoft.MixedReality.QR)下載適用于 QR 代碼偵測的 NuGet 套件。
@@ -36,23 +36,23 @@ HoloLens 2 可以在耳機周圍偵測到 QR 代碼，並在每個程式碼的�
 ## <a name="detecting-qr-codes"></a>偵測 QR 代碼
 
 ### <a name="adding-the-webcam-capability"></a>加入網路攝影機功能
-您必須將功能 `webcam` 新增至您的資訊清單，以偵測 QR 代碼。 這項功能是必要的，因為在使用者環境中偵測到的程式碼內的資料可能包含機密資訊。
+您必須將功能新增 `webcam` 至您的資訊清單，以偵測 QR 代碼。 這項功能是必要的，因為在使用者環境中偵測到的程式碼內的資料可能包含機密資訊。
 
-呼叫 `QRCodeWatcher.RequestAccessAsync()`可以要求許可權：
+呼叫來要求許可權 `QRCodeWatcher.RequestAccessAsync()` ：
 
-_C#:_
+_編寫_
 ```cs
 await QRCodeWatcher.RequestAccessAsync();
 ```
 
-_C++:_
+_C + +_
 ```cpp
 co_await QRCodeWatcher.RequestAccessAsync();
 ```
 
 您必須先要求許可權，才能建立 QRCodeWatcher 物件。
 
-當 QR 代碼偵測需要 `webcam` 功能時，會使用裝置的追蹤攝影機進行偵測。 相較于使用裝置的相片/影片（PV）攝影機偵測，這可提供更廣泛的偵測 FOV，以及更好的電池壽命。
+當 QR 代碼偵測需要此 `webcam` 功能時，會使用裝置的追蹤攝影機進行偵測。 相較于使用裝置的相片/影片（PV）攝影機偵測，這可提供更廣泛的偵測 FOV，以及更好的電池壽命。
 
 ### <a name="detecting-qr-codes-in-unity"></a>在 Unity 中偵測 QR 代碼
 
@@ -60,7 +60,7 @@ co_await QRCodeWatcher.RequestAccessAsync();
 
 有一個範例 Unity 應用程式會顯示 QR 代碼的全像投影方塊，以及相關聯的資料，例如 GUID、實體大小、時間戳記和解碼的資料。 此應用程式可以位於 https://github.com/chgatla-microsoft/QRTracking/tree/master/SampleQRCodes 。
 
-### <a name="detecting-qr-codes-in-c"></a>偵測中的 QR 代碼C++
+### <a name="detecting-qr-codes-in-c"></a>偵測 c + + 中的 QR 代碼
 
 ```cpp
 using namespace winrt::Windows::Foundation;
@@ -128,7 +128,7 @@ QR 代碼的 SpatialCoordinateSystem 會對齊，如下所示。 藉由呼叫<a 
 
 ![QR 代碼座標系統](images/Qr-coordinatesystem.png) 
 
-針對 QRCode 物件，下列C++程式碼會示範如何建立矩形，並使用 QR 代碼的座標系統來放置它：
+針對 QRCode 物件，下列 c + + 程式碼會示範如何建立矩形，並使用 QR 代碼的座標系統來放置它：
 
 ```cpp
 // Creates a 2D rectangle in the x-y plane, with the specified properties.
@@ -190,7 +190,7 @@ void MyApplication::OnAddedQRCode(const QRCodeAddedEventArgs& args)
 
 [QR 規格](https://www.qrcode.com/en/howto/code.html)包含有關 quiet 區域的詳細資訊。
 
-### <a name="lighting-and-backdrop"></a>光源和背景
+### <a name="lighting-and-backdrop"></a>光源和底圖
 QR 代碼偵測品質容易受到不同的照明和背景影響。 
 
 在具有特別明亮光源的場景中，列印灰色背景上為黑色的程式碼。 否則，請將黑色 QR 代碼列印在白色背景上。
@@ -456,6 +456,6 @@ namespace Microsoft.MixedReality.QR
 }
 ```
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 * [座標系統](coordinate-systems.md)
 * <a href="https://docs.microsoft.com/azure/spatial-anchors/overview" target="_blank">Azure Spatial Anchors</a>

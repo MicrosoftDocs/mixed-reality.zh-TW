@@ -3,16 +3,16 @@ title: 電腦全像攝影遠端處理教學課程 - 2。 建立全像攝影遠�
 description: 完成此課程，以了解如何從電腦到 HoloLens 2 進行遠端混合實境體驗。
 author: jessemcculloch
 ms.author: jemccull
-ms.date: 05/19/2020
+ms.date: 07/01/2020
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 32fccbaf6bae8031572ff716f3c9fc26a43849e5
-ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
+ms.openlocfilehash: 6d11d91a0e08c48c09f676171dcb9bb8a0ff74de
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86304683"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376370"
 ---
 # <a name="2-creating-a-holographic-remoting-pc-application"></a>2.建立全像攝影遠端處理電腦應用程式
 

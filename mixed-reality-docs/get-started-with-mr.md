@@ -3,16 +3,16 @@ title: 開始使用混合實境
 description: 協助新手學習混合實境並了解其功能。
 author: grbury
 ms.author: grbury
-ms.date: 08/24/2019
+ms.date: 07/29/2020
 ms.topic: overview
 ms.localizationpriority: high
 keywords: 混合實境、探索、散佈、索引、登陸頁面、設計、開發、教學課程、範例應用程式、基本概念、案例研究、資源、HoloLens 操作說明、開放原始碼專案
-ms.openlocfilehash: 720261164a4b2eedc47c1054f19edfb109ed3f83
-ms.sourcegitcommit: 8daefb763d1f23fe02b95b766b00b373f04c5c2d
+ms.openlocfilehash: 010e0b9d73b5537d480a28ee510fe2ae1bde3b10
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86451354"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476920"
 ---
 # <a name="get-started-with-mixed-reality"></a>開始使用混合實境
 
@@ -184,7 +184,7 @@ HoloLens 2 提供最舒適且身歷其境的沈浸式混合實境體驗，採用
     :::column:::
        [![試試看](images/icon-hololensuser.jpg)](https://www.microsoft.com//windows/windows-mixed-reality?icid=SSM_Search_Promo_XCat_WindowsMixedReality_CTA1#storelocator)<br>
         **[試用混合實境](https://www.microsoft.com//windows/windows-mixed-reality?icid=SSM_Search_Promo_XCat_WindowsMixedReality_CTA1#storelocator)**<br>
-        在本地 Microsoft Store 取得混合實境和 HoloLens 的示範。 
+        在本地 Microsoft Store 取得混合實境和 HoloLens 的示範。
     :::column-end:::
     :::column:::
         [![成為建立者](images/icon-design.jpg)](design.md)<br>
@@ -211,4 +211,4 @@ HoloLens 2 提供最舒適且身歷其境的沈浸式混合實境體驗，採用
 
 
 >[!IMPORTANT]
->本網站所提供的所有混合實境開發資料僅供參考。 您的應用程式、其使用方式和對終端使用者的影響是應用程式開發人員的唯一責任，包括確保應用程式不會對使用者造成不適、傷害或任何其他損害，並包含適切的警告和免責聲明。 您需要在開發和發佈應用程式時隨時採取適當的步驟，以確保應用程式的安全，並符合 [Microsoft 應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)中的所有義務。 
+>本網站所提供的所有混合實境開發資料僅供參考。 您的應用程式、其使用方式和對終端使用者的影響是應用程式開發人員的唯一責任，包括確保應用程式不會對使用者造成不適、傷害或任何其他損害，並包含適切的警告和免責聲明。 您需要在開發和發佈應用程式時隨時採取適當的步驟，以確保應用程式的安全，並符合 [Microsoft 應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)中的所有義務。

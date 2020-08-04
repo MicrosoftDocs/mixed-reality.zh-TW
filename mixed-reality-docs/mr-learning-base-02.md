@@ -3,16 +3,16 @@ title: 入門教學課程 - 2。 初始化您的專案並部署您的第一個�
 description: 本課程說明如何使用混合實境工具組 (MRTK) 來建立混合實境應用程式。
 author: jessemcculloch
 ms.author: jemccull
-ms.date: 11/01/2019
+ms.date: 07/01/2020
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 4f72f70b9eaac159f7d9231e61f23d18d708d0c7
-ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
+ms.openlocfilehash: 5cac7d6f776619cbc2a0e0891b7915b656708726
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86304630"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376650"
 ---
 # <a name="2-initializing-your-project-and-deploying-your-first-application"></a>2.初始化您的專案並部署您的第一個應用程式
 

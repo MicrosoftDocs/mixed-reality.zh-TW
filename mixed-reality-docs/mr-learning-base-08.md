@@ -3,16 +3,16 @@ title: 入門教學課程 - 8。 使用眼球追蹤
 description: 本課程說明如何使用混合實境工具組 (MRTK) 來建立混合實境應用程式。
 author: jessemcculloch
 ms.author: jemccull
-ms.date: 02/26/2019
+ms.date: 07/01/2020
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 9a9fc7f860e6bf9c5cb3370a9c9ff11e627fe73f
-ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
+ms.openlocfilehash: 31552cba9a68d1f1214395dbf4e4ed84ecd3f388
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86304743"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376600"
 ---
 # <a name="8-using-eye-tracking"></a>8.使用眼球追蹤
 

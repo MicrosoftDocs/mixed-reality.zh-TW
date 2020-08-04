@@ -8,17 +8,17 @@ ms.date: 08/24/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合實境, 探索, 散佈, 索引, 登陸頁面, 設計, 開發, 教學課程, 範例應用程式, 基本概念, 案例研究, 資源, HoloLens 操作說明, 開放原始碼專案, 核心概念, 互動
-ms.openlocfilehash: 708a6f83c2de149be9c221130b83f5d787f8f56a
-ms.sourcegitcommit: 8daefb763d1f23fe02b95b766b00b373f04c5c2d
+ms.openlocfilehash: a95de2020e4020db86e7e226a81fcad8a12e7427
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86447914"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476862"
 ---
 # <a name="start-designing-and-prototyping"></a>開始設計並建立原型
 
 
-![混合實境設計抽象](images/03_Design.png)
+![混合實境設計抽象](images/design-hero-image.png)
 
 ## <a name="expand-your-design-process"></a>[展開您的設計程序](case-study-expanding-the-design-process-for-mixed-reality.md)
 

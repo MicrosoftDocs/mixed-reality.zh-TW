@@ -3,16 +3,16 @@ title: 多使用者功能教學課程 - 4。 與多個使用者共用物件移�
 description: 完成此課程以了解如何在 HoloLens 2 應用程式中實作使用者共用體驗。
 author: jessemcculloch
 ms.author: jemccull
-ms.date: 02/26/2019
+ms.date: 07/01/2020
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: cd8f0cb8888e7225566acc8c4b26aced3e4d977e
-ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
+ms.openlocfilehash: 7dbe25cd1b0329e366fcbd567074018025032f9e
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86304618"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376560"
 ---
 # <a name="4-sharing-object-movements-with-multiple-users"></a>4.與多個使用者共用物件移動
 

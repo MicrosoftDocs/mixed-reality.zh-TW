@@ -3,16 +3,16 @@ title: Azure Spatial Anchors 教學課程 - 5。 適用於 Android 和 iOS 的 A
 description: 完成此課程，以了解如何將包含混合實境工具組和 Azure Spatial Anchors 的 Unity 專案部署至 Android 和 iOS。
 author: jessemcculloch
 ms.author: jemccull
-ms.date: 02/26/2019
+ms.date: 07/01/2020
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens, android, ios
 ms.localizationpriority: high
-ms.openlocfilehash: e95b659eed3bfb406dcc41d5b3ad6e5e18c764a5
-ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
+ms.openlocfilehash: 8c63204948b3e4aa3d25e5b2ca948798726f0838
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86304442"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376540"
 ---
 # <a name="5-azure-spatial-anchors-for-android-and-ios"></a>5.適用於 Android 和 iOS 的 Azure Spatial Anchors
 

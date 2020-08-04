@@ -1,99 +1,219 @@
-### YamlMime:Landing
-title: 歡迎來到混合實境
-summary: 使用 Windows Mixed Reality、混合實境工具組 (MRTK)、Unity、Unreal 以及 HoloLens 和 Windows 沉浸式頭戴裝置的更多功能，進入混合實境應用程式的擴充世界。
+### YamlMime:Hub
+title: 混合實境文件
+summary: 使用 Windows Mixed Reality、混合實境工具組 (MRTK)、Unity、Unreal 以及 HoloLens 和 Windows 沉浸式頭戴裝置的更多功能，探索混合實境應用程式的擴充世界。
+brand: windows
 metadata:
-  title: 歡迎來到混合實境
-  description: 了解如何在 HoloLens 2 這類裝置上使用混合實境工具和功能。
-  ms.topic: landing-page
+  title: 混合實境文件
+  description: 使用 Windows Mixed Reality、混合實境工具組 (MRTK)、Unity、Unreal 以及 HoloLens 和 Windows 沉浸式頭戴裝置的更多功能，進入混合實境應用程式的擴充世界。
+  services: service
+  ms.service: service
+  ms.subservice: subservice
+  ms.topic: hub-page
+  ms.collection: collection
   author: hferrone
   ms.author: v-haferr
-  ms.date: 07/03/2020
-  ms.openlocfilehash: 4e4d070b04c722c66c04bb28c5880dc64f46b15b
-  ms.sourcegitcommit: 161f3c5a80f6988a9c4af26e29481fee06840e0f
+  ms.date: 07/23/2020
+  ms.openlocfilehash: def9c41323029265a3f7d1c89b811eda94d88cbf
+  ms.sourcegitcommit: 36316e2658d3dfa804d798b9f4fb2f9186052144
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 07/29/2020
-  ms.locfileid: "87390195"
-landingContent:
-- title: 探索新的沉浸式世界
-  linkLists:
-  - linkListType: overview
+  ms.lasthandoff: 08/01/2020
+  ms.locfileid: "87507702"
+highlightedContent:
+  items:
+  - title: 什麼是混合實境？
+    itemType: overview
+    url: mixed-reality.md
+  - title: HoloLens 2 簡介
+    itemType: overview
+    url: https://docs.microsoft.com/hololens/hololens2-hardware
+  - title: 試用範例應用程式
+    itemType: sample
+    url: samples.md
+  - title: 開發人員
+    itemType: overview
+    url: development.md
+  - title: IT 系統管理員
+    itemType: concept
+    url: https://docs.microsoft.com/hololens/hololens-requirements
+  - title: VR 愛好者
+    itemType: overview
+    url: https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/
+productDirectory:
+  title: 深入了解混合實境
+  summary: 無論您是設計師、開發人員、IT 專業人員，我們都有正確的策劃路徑，可讓您循序漸進。
+  items:
+  - title: 設計
+    imageSrc: images/icon-design.jpg
     links:
-    - text: 什麼是混合實境？
-      url: get-started-with-mr.md
-    - text: 了解混合實境情勢
-      url: case-study-expanding-the-design-process-for-mixed-reality.md
-    - text: 與社群聯繫
-      url: community.md
-- title: 混合實境的設計
-  linkLists:
-  - linkListType: concept
+    - url: design.md
+      text: 設計和原型
+    - url: types-of-mixed-reality-apps.md
+      text: 選擇您的混合實境應用程式類型
+    - url: case-study-expanding-the-design-process-for-mixed-reality.md
+      text: 展開您的設計程序
+    - url: app-patterns-landingpage.md
+      text: 了解 UX 元素
+    - url: comfort.md
+      text: 了解使用者舒適度
+    - url: interaction-fundamentals.md
+      text: 了解互動基本概念
+  - title: 開發
+    imageSrc: images/icon-developer.jpg
     links:
-    - text: 開始設計並建立原型
-      url: design.md
-    - text: 探索核心設計概念
-      url: core-concepts-landingpage.md
-    - text: 了解互動基本概念
-      url: interaction-fundamentals.md
-    - text: 併入 UX 元素
-      url: app-patterns-landingpage.md
-- title: 混合實境的開發
-  linkLists:
-  - linkListType: get-started
+    - url: development.md
+      text: 選擇您的技術路徑
+    - url: install-the-tools.md
+      text: 安裝工具
+    - url: unity-development-overview.md
+      text: 開始使用 Unity
+    - url: unreal-development-overview.md
+      text: 開始使用 Unreal
+    - url: directx-development-overview.md
+      text: 開始使用 Native
+    - url: mrtk-porting-guide.md
+      text: 讓應用程式做好使用 HoloLens 2 的準備
+  - title: 部署 HoloLens 2
+    imageSrc: images/icon-distribution.png
     links:
-    - text: 選擇您的混合實境開發旅程
-      url: development.md
-    - text: 安裝您的工具
-      url: install-the-tools.md
-    - text: 遵循教學課程
-      url: tutorials.md
-    - text: 開始您的 Unity 旅程
+    - url: https://docs.microsoft.com/hololens/hololens-requirements
+      text: 準備進行商業部署
+    - url: https://docs.microsoft.com/hololens/hololens-identity
+      text: 管理使用者身分識別和登入
+    - url: https://docs.microsoft.com/hololens/hololens-enroll-mdm
+      text: 註冊您的裝置
+    - url: https://docs.microsoft.com/hololens/hololens-updates
+      text: 管理您的 HoloLens 更新
+    - url: https://docs.microsoft.com/hololens/hololens-release-notes
+      text: 版本資訊
+    - url: https://docs.microsoft.com/hololens/hololens-feedback
+      text: 疑難排解與支援
+conceptualContent:
+  title: 架構
+  summary: 無論您的開發程序是取決於您偏好的引擎或語言或您手邊的硬體，我們都已涵蓋在內。
+  items:
+  - title: Unity
+    summary: 使用混合實境工具組 SDK，在 Unity 中建立、設定及部署應用程式。
+    links:
+    - url: unity-development-overview.md
+      itemType: overview
+      text: Unity 開發概觀
+    - url: mrtk-getting-started.md
+      itemType: overview
+      text: 什麼是 MRTK？
+    - url: mr-learning-base-01.md
+      itemType: tutorial
+      text: HoloLens 2 教學課程系列
+    - url: mrtk-101.md
+      itemType: concept
+      text: 核心基本要素
+    - url: shared-experiences-in-unity.md
+      itemType: concept
+      text: 平台功能和 API
+    - url: exporting-and-building-a-unity-visual-studio-solution.md
+      itemType: deploy
+      text: 部署至裝置或模擬器
+    footerLink:
       url: unity-development-overview.md
-    - text: 開始您的 Unreal 旅程
+      text: 查看更多
+  - title: Unreal
+    summary: 使用混合實境工具組 SDK，在 Unreal 中建置、自訂及部署應用程式。
+    links:
+    - url: unreal-development-overview.md
+      itemType: overview
+      text: Unreal 開發概觀
+    - url: unreal-uxt-ch1.md
+      itemType: tutorial
+      text: 建置國際象棋應用程式教學課程系列
+    - url: unreal-gaze-input.md
+      itemType: concept
+      text: 核心基本要素
+    - url: unreal-hololens-camera.md
+      itemType: concept
+      text: 平台功能和 API
+    - url: performance-recommendations-for-unreal.md
+      itemType: concept
+      text: 效能建議
+    - url: unreal-deploying.md
+      itemType: deploy
+      text: 部署至裝置或模擬器
+    footerLink:
       url: unreal-development-overview.md
-    - text: 開始您的 JavaScript 旅程
-      url: javascript-development-overview.md
-    - text: 開始您的原生 (OpenXR/WinRT) 旅程
+      text: 查看更多
+  - title: 原生
+    summary: 使用 OpenXR、WinRT 和 DirectX 建構原生全像攝影體驗。
+    links:
+    - url: directx-development-overview.md
+      itemType: overview
+      text: 原生開發概觀
+    - url: openxr.md
+      itemType: overview
+      text: 什麼是 OpenXR？
+    - url: openxr-getting-started.md
+      itemType: get-started
+      text: 開始使用 OpenXR
+    - url: openxr-best-practices.md
+      itemType: concept
+      text: OpenXR 最佳做法
+    - url: openxr-troubleshooting.md
+      itemType: reference
+      text: 針對 OpenXR 進行疑難排解
+    footerLink:
       url: directx-development-overview.md
-- title: 散發您的應用程式
-  linkLists:
-  - linkListType: deploy
-    links:
-    - text: 3D 應用程式啟動程式設計指引
-      url: 3d-app-launcher-design-guidance.md
-    - text: 整合應用程式內購買
-      url: in-app-purchases.md
-    - text: 上傳至 Microsoft Store
-      url: submitting-an-app-to-the-microsoft-store.md
-- title: 進入 HoloLens
-  linkLists:
-  - linkListType: reference
-    links:
-    - text: 什麼是 HoloLens？
-      url: https://docs.microsoft.com/hololens/
-    - text: HoloLens 2 硬體
-      url: https://docs.microsoft.com/hololens/hololens2-hardware
-    - text: 瀏覽 HoloLens 2
-      url: https://docs.microsoft.com/hololens/hololens2-basic-usage
-    - text: 在商業環境中部署 HoloLens
-      url: https://docs.microsoft.com/hololens/hololens-requirements
-- title: Azure 開發人員服務
-  linkLists:
-  - linkListType: concept
-    links:
-    - text: 雲端服務概觀
-      url: mixed-reality-cloud-services.md
-    - text: 跳入 Azure Spatial Anchors
-      url: https://docs.microsoft.com/azure/spatial-anchors/
-    - text: 使用 Azure 遠端轉譯進行開發
-      url: https://docs.microsoft.com/azure/remote-rendering/
-- title: 查看新功能！
-  linkLists:
-  - linkListType: whats-new
-    links:
-    - text: 了解 Azure 服務
-      url: azure-services.md
-    - text: 新的 Microsoft Edge
-      url: new-microsoft-edge.md
-    - text: 加入混合實境社群
-      url: community.md
+      text: 查看更多
+tools:
+  title: SDK 和 API
+  summary: 在您最愛的遊戲引擎中開始使用混合實境工具組 SDK。
+  items:
+  - title: 適用於 Unity 的 MRTK
+    imageSrc: images/Final_mrtk-small_logo.png
+    url: https://github.com/microsoft/MixedRealityToolkit-Unity
+  - title: 適用於 Unreal 的 MRTK
+    imageSrc: images/Final_mrtk-small_logo.png
+    url: https://github.com/microsoft/MixedRealityToolkit-Unreal
+  - title: 適用於 Unity 的 Windows XR 外掛程式
+    imageSrc: images/Final_unity_logo.png
+    url: https://docs.unity3d.com/Manual/com.unity.xr.windowsmr.html
+  - title: OpenXR 規格
+    imageSrc: images/Final_mrdl_logo.png
+    url: https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html
+  - title: OpenXR API
+    imageSrc: images/Final_mrdl_logo.png
+    url: https://www.khronos.org/registry/OpenXR/specs/1.0/man/html/openxr.html
+additionalContent:
+  sections:
+  - title: 其他資源
+    summary: 讓您的應用程式準備好進行商業部署、整合 Azure 雲端服務，或測試我們的範例應用程式。
+    items:
+    - title: 散佈
+      links:
+      - text: 設計 3D 應用程式啟動器
+        url: 3d-app-launcher-design-guidance.md
+      - text: 建立混合實境首頁的 3D 模型
+        url: creating-3d-models-for-use-in-the-windows-mixed-reality-home.md
+      - text: 在 UWP 應用程式中實作 3D 應用程式啟動器
+        url: implementing-3d-app-launchers.md
+      - text: 新增應用程式內購買
+        url: in-app-purchases.md
+      - text: 提交至 Microsoft Store
+        url: submitting-an-app-to-the-microsoft-store.md
+    - title: Azure 雲端服務
+      links:
+      - text: 雲端服務概觀
+        url: mixed-reality-cloud-services.md
+      - text: 跳入 Azure Spatial Anchors
+        url: https://docs.microsoft.com/azure/spatial-anchors/
+      - text: Azure Spatial Anchors 教學課程
+        url: mr-learning-asa-01.md
+      - text: 使用 Azure 遠端轉譯進行開發
+        url: https://docs.microsoft.com/azure/remote-rendering/
+      - text: Azure 遠端轉譯教學課程
+        url: https://docs.microsoft.com/en-us/azure/remote-rendering/tutorials/unity/tutorial-landing
+    - title: HoloLens 2 範例應用程式
+      links:
+      - text: 表面
+        url: sampleapp-surfaces.md
+      - text: 元素週期表 2.0
+        url: https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158
+      - text: Galaxy Explorer 2.0
+        url: galaxy-explorer-update.md

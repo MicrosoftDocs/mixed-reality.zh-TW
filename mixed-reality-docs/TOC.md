@@ -102,7 +102,7 @@
 
 <!-- Develop top level folder -->
 # 開發
-## [了解工具和架構](development.md)
+## [混合實境開發簡介](development.md)
 ## [安裝工具](install-the-tools.md)
 ## [雲端服務概觀](mixed-reality-cloud-services.md)
 
@@ -222,6 +222,7 @@
 #### [使用 Unity 的 Vuforia](vuforia-development-overview.md)
 
 ### 範例應用程式
+#### [概觀](samples.md)
 #### HoloLens 2
 ##### [表面](sampleapp-surfaces.md)
 ##### [元素週期表 2.0](https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158)

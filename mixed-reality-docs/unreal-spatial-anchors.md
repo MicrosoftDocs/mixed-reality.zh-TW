@@ -1,5 +1,5 @@
 ---
-title: Unreal 中的空間錨點
+title: Unreal 中的本機空間錨點
 description: 在 Unreal 中使用空間錨點的指南
 author: hferrone
 ms.author: v-haferr
@@ -7,18 +7,21 @@ ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合實境, 開發, 功能, 文件, 指南, holograms, 空間錨點
-ms.openlocfilehash: 58394f4e27aff5070d55ed5f0d62cd81ff579d1f
-ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
+ms.openlocfilehash: b102d506b1d670291c3b97ca34d277e2597af043
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84720314"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376042"
 ---
-# <a name="spatial-anchors-in-unreal"></a>Unreal 中的空間錨點
+# <a name="local-spatial-anchors-in-unreal"></a>Unreal 中的本機空間錨點
 
 ## <a name="overview"></a>概觀
 
-空間錨點是用來在應用程式工作階段之間，在真實世界空間中儲存全像投影。  這些會透過 Unreal 呈現為 **ARPins**，並儲存在 HoloLens 的錨點存放區中，可在未來的工作階段中載入。 
+空間錨點是用來在應用程式工作階段之間，在真實世界空間中儲存全像投影。 這些會透過 Unreal 呈現為 **ARPins**，並儲存在 HoloLens 的錨點存放區中，可在未來的工作階段中載入。 本機錨點是沒有網際網路連線時的理想後援。
+
+> [!IMPORTANT]
+> 本機錨點會儲存在裝置上，而 Azure Spatial Anchors 會儲存在雲端。 如果您想要使用 Azure 雲端服務來儲存您的錨點，我們有一份文件可引導您整合 [Azure Spatial Anchors](unreal-azure-spatial-anchors.md)。 請注意，您在同一個專案中可以有本機和 Azure 錨點，而不會發生衝突。
 
 ## <a name="checking-the-anchor-store"></a>檢查錨定存放區
 
@@ -65,5 +68,6 @@ ms.locfileid: "84720314"
 > 請記住，空間錨點仍是 Beta 版，因此請務必回頭查看是否有更新的資訊和功能。
 
 ## <a name="see-also"></a>另請參閱
+* [Azure Spatial Anchors](unreal-azure-spatial-anchors.md)
 * [空間錨點](spatial-anchors.md)
 * [座標系統](coordinate-systems.md)

@@ -1,20 +1,22 @@
 ---
 title: 讓現有應用程式做好使用 HoloLens 2 的準備
-description: 適用對象為擁有可在 HoloLens (第 1 代) 及/或較舊 MRTK 上運作的現有應用程式，並想要移植到 MRTK 第 2 版和 HoloLens 2 的開發人員。
+description: 適用對象為擁有可在 HoloLens (第一代) 及/或較舊 MRTK 上運作的現有應用程式，並想要移植到 MRTK 第 2 版和 HoloLens 2 的開發人員。
 author: grbury
 ms.author: grbury
-ms.date: 10/14/2019
+ms.date: 07/29/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality, 測試, MRTK, MRTK 第 2 版, HoloLens 2
-ms.openlocfilehash: 409959b3c73eff684585706dfde87afc5f8a5495
-ms.sourcegitcommit: f523b74a549721b6bec69cb5d2eca5b7673a793c
+ms.openlocfilehash: a6d6c4ad2b9ec0de2663536f2299f31f7d79571a
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85570337"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476990"
 ---
 # <a name="get-your-existing-app-ready-for-hololens-2"></a>讓現有應用程式做好使用 HoloLens 2 的準備
+
+## <a name="overview"></a>概觀
 
 本指南的宗旨是要協助開發人員將現有的 HoloLens (第 1 代) Unity 應用程式移植到 HoloLens 2 裝置使用。 將 HoloLens (第 1 代) Unity 應用程式移植到 HoloLens 2 的作業有四個重要步驟。 
 
@@ -25,33 +27,35 @@ ms.locfileid: "85570337"
 | ![Visual Studio 標誌](images/visualstudio_logo.png) | ![Unity 標誌](images/final_unity_logo.png)| ![Unity 圖示](images/hololens2_icon.jpg) | ![MRTK 標誌](images/final_mrtk-small_logo.png) |
 | 下載最新工具 | 更新 Unity 專案 | 針對 ARM 進行編譯 | 遷移至 MRTK v2
 
-必要條件：
+先決條件：
 
-**強烈建議**開發人員在開始移植程序之前，先利用原始檔控制來儲存其應用程式原始狀態的快照集。 此外，也建議開發人員在移植程序進行期間於各個時間點「儲存」檢查點狀態。 為原始應用程式準備另一個 Unity 執行個體以便能在移植程序進行期間兩相比較，也會非常有幫助。 
+**強烈建議**您在開始移植程序之前，先利用原始檔控制來儲存您應用程式原始狀態的快照集。 此外，也建議在移植程序進行期間於不同時間「儲存」檢查點狀態。 為原始應用程式準備另一個 Unity 執行個體以便在移植程序進行期間兩相比較，也很有幫助。 
 
 > [!NOTE]
-> 在移植之前，請確定您已安裝可用於開發 Windows Mixed Reality 的最新工具。 對大部分現有的 HoloLens 開發人員來說，這主要涉及更新至最新版的 Visual Studio 2019，以及安裝適當的 Windows SDK。 以下內容將進一步說明不同的 Unity 版本和混合實境工具組 (MRTK) 第 2 版。
+> 在移植之前，請確定您已安裝可用於開發 Windows Mixed Reality 的最新工具。 對大部分現有的 HoloLens 開發人員來說，這涉及更新至最新版的 Visual Studio 2019，以及安裝適當的 Windows SDK。 以下內容將進一步說明不同的 Unity 版本和混合實境工具組 (MRTK) 第 2 版。
 >
 > 如需詳細資訊，請參閱[安裝工具](install-the-tools.md)。
 
 ## <a name="migrate-project-to-the-latest-version-of-unity"></a>將專案遷移至最新版的 Unity
 
-如果您使用 [MRTK v2](https://github.com/microsoft/MixedRealityToolkit-Unity)，則 [Unity 2018 LTS](https://unity3d.com/unity/qa/lts-releases) 會是最佳的長期支援途徑，因為 Unity 或 MRTK 沒有重大變更。 此外，MRTK v2 一律保證會支援 Unity 2018 LTS，但不一定保證支援 Unity 2019.x 的每個新版本。
+如果您使用 [MRTK v2](https://github.com/microsoft/MixedRealityToolkit-Unity)，則 [Unity 2019 LTS](https://unity3d.com/unity/qa/lts-releases) 會是最佳的長期支援途徑，因為 Unity 或 MRTK 沒有重大變更。 您應該評估任何目前存在於您專案中的[外掛程式相依性](https://docs.unity3d.com/Manual/Plugins.html)，並決定是否針對 ARM64 建置這些 DLL。 如果無法建置適用於 ARM64 的硬式相依性外掛程式，您可能需要繼續建置適用於 ARM 的應用程式。
 
-為了協助您釐清 [Unity 2018 LTS](https://unity3d.com/unity/qa/lts-releases) 與 Unity 2019.1.x 之間的其他差異，以下將概述這兩個版本的優劣之處。 兩者的主要差異在於 Unity 2019 中的 ARM64 編譯能力。
+<!-- MRTK v2 always guarantees support for Unity 2018 LTS, but does not necessarily guarantee support for every iteration of Unity 2019.x.
 
-開發人員應該評估任何目前存在於其專案中的[外掛程式相依性](https://docs.unity3d.com/Manual/Plugins.html)，並決定是否針對 ARM64 建置這些 DLL。 如果無法建置適用於 ARM64 的硬式相依性外掛程式，您可能需要繼續建置適用於 ARM 的應用程式。
+To help clarify additional differences between [Unity 2018 LTS](https://unity3d.com/unity/qa/lts-releases) and Unity 2019.x, the following table outlines the trade-offs between the two versions. The primary difference between the two is the ability to compile for ARM64 in Unity 2019.
 
 | Unity 2018 LTS | Unity 2019.x |
 |----------|-------------------|
-| ARM32 組建支援 | ARM32 和 ARM64 組建支援 |
-| 穩定的 LTS 組建發行 | Beta 穩定性 |
-| [.NET 指令碼處理後端](https://docs.unity3d.com/2018.4/Documentation/Manual/windowsstore-dotnet.html) *已過時* | [.NET 指令碼處理後端](https://docs.unity3d.com/2018.4/Documentation/Manual/windowsstore-dotnet.html) *已移除* |
-| UNET 網路 *已過時* | UNET 網路 *已過時* |
+| ARM32 build support | ARM32 and ARM64 build support |
+| Stable LTS build release | Beta stability |
+| [.NET Scripting back-end](https://docs.unity3d.com/2018.4/Documentation/Manual/windowsstore-dotnet.html) *deprecated* | [.NET Scripting back-end](https://docs.unity3d.com/2018.4/Documentation/Manual/windowsstore-dotnet.html) *removed* |
+| UNET Networking *deprecated* | UNET Networking *deprecated* |
+
+-->
 
 ## <a name="update-sceneproject-settings-in-unity"></a>更新 Unity 中的場景/專案設定
 
-在更新至 [Unity 2018 LTS](https://unity3d.com/unity/qa/lts-releases) 或 Unity 2019+ 之後，建議您更新 Unity 中的特殊設定，以便在裝置上獲得最佳結果。 **[Unity 的建議設定](Recommended-settings-for-Unity.md)** 底下會詳述這些設定。
+在更新至 [Unity 2019 LTS](https://unity3d.com/unity/qa/lts-releases) 之後，建議您更新 Unity 中的特殊設定，以便在裝置上獲得最佳結果。 [Unity 的建議設定](Recommended-settings-for-Unity.md)底下會詳述這些設定。
 
 再次重申，[.NET 指令碼處理後端](https://docs.unity3d.com/Manual/windowsstore-dotnet.html)在 Unity 2018 中即將過時，且在 Unity 2019 中「已移除」。 開發人員應積極考慮將其專案轉換至 [IL2CPP](https://docs.unity3d.com/Manual/IL2CPP.html)。
 
@@ -59,21 +63,24 @@ ms.locfileid: "85570337"
 > IL2CPP 指令碼處理後端會讓從 Unity 到 Visual Studio 的建置時間變長，開發人員應設定其開發人員機器，以[最佳化 IL2CPP 建置時間](https://docs.unity3d.com/Manual/IL2CPP-OptimizingBuildTimes.html)。
 > 設定[快取伺服器](https://docs.unity3d.com/Manual/CacheServer.html)也可能會有幫助，對於有大量資產 (排除指令檔) 或不斷變更場景和資產的 Unity 專案來說，更是如此。 開啟專案時，Unity 會將符合資格的資產以內部快取格式儲存在開發機器上。 項目必須重新匯入，且在修改後必須重新處理。 此程序可以執行一次後就儲存在快取伺服器中，之後再與其他開發人員共用以節省時間，而不是每個開發人員都在本機處理新變更的重新匯入工作。
 
-移至已更新的 Unity 版本之後若有解決任何重大變更，開發人員就應該在 HoloLens (第 1 代) 上建置並測試其目前的應用程式。 這是建立認可並儲存至原始檔控制的好時機。
+解決移至已更新 Unity 版本中的任何重大變更之後，您就應該在 HoloLens (第一代) 上建置並測試您目前的應用程式。 這是建立認可並儲存至原始檔控制的好時機。
 
 ## <a name="compile-dependenciesplugins-for-arm-processor"></a>針對 ARM 處理器編譯相依性/外掛程式
 
-HoloLens (第 1 代) 會在 x86 處理器上執行應用程式，HoloLens 2 則會使用 ARM 處理器。 因此，現有的 HoloLens 應用程式必須移植過去才能支援 ARM。 如前所述，Unity 2018 LTS 支援編譯 ARM32 的應用程式，而 Unity 2019.x 則支援編譯 ARM32 和 ARM64 的應用程式。 一般會比較喜歡開發 ARM64 的應用程式，因為效能差異極大。 但要這麼做，所有的[外掛程式相依性](https://docs.unity3d.com/Manual/Plugins.html)也必須針對 ARM64 來建置。
+HoloLens (第 1 代) 會在 x86 處理器上執行應用程式，HoloLens 2 則會使用 ARM 處理器。 因此，現有的 HoloLens 應用程式必須移植過去才能支援 ARM。 如前所述，Unity 2018 LTS 支援編譯 ARM32 的應用程式，而 Unity 2019.x 則支援編譯 ARM32 和 ARM64 的應用程式。 偏好開發 ARM64 應用程式，因為效能差異極大。 但要這麼做，所有的[外掛程式相依性](https://docs.unity3d.com/Manual/Plugins.html)也必須針對 ARM64 來建置。
 
 請檢閱您的應用程式中所有的 DLL 相依性。 建議您從專案中移除任何不再需要的相依性。 至於其餘的必要外掛程式，則請將個別的 ARM32 或 ARM64 二進位檔案嵌入至您的 Unity 專案中。
 
 嵌入相關的 DLL 之後，請從 Unity 建置 Visual Studio 解決方案，然後在 Visual Studio 中針對 ARM 來編譯 AppX，以測試是否可以針對 ARM 處理器來建置您的應用程式。 建議您在原始檔控制解決方案中將應用程式儲存為認可。
 
+> [!IMPORTANT]
+> 將建置目標變更為 ARM 之後，使用 MRTK v1 的應用程式可以在 HoloLens 2 上執行，前提是已符合所有其他需求。 這包括確定您具有所有外掛程式的 ARM 版本。 不過，您的應用程式將無法存取 HoloLens 2 特有功能，例如以關節連接的手部和眼球追蹤。 MRTK v1 和 MRTK v2 有不同的命名空間，可讓兩個版本位於相同專案中，這對於不同版本的轉換很有幫助。
+
 ## <a name="update-to-mrtk-version-2"></a>更新至 MRTK 第 2 版
 
 [MRTK 第 2 版](https://github.com/microsoft/MixedRealityToolkit-Unity) 是 Unity 上的新工具組，支援 HoloLens (第1代) 和 HoloLens 2。 它也是 HoloLens 2 所有新增功能的所在位置，例如手動互動和眼球追蹤。
 
-如需使用 MRTK 第 2 版的詳細資訊，請參閱下列內容：
+如需使用 MRTK 第 2 版的詳細資訊，請查看下列資源：
 
 - [MRTK 登陸頁面](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)
 - [開始使用 MRTK](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)
@@ -133,13 +140,13 @@ HoloLens (第 1 代) 會在 x86 處理器上執行應用程式，HoloLens 2 則�
 
 - 在某些情況下，應用程式所需的外掛程式可能沒有 UWP/ARM 外掛程式，因此無法將應用程式移植到 HoloLens 2 並執行。 請連絡您的外掛程式提供者以解決問題，並提供對 ARM 的支援。
 
-- 著色器中的 minfloat (和 min16float、minint 等變化) 在 HoloLens 2 上和在 HoloLens (第 1 代) 上的行為可能會不一樣。 具體來說，這些數字會保證至少會使用指定的位元數。 Intel/Nvidia GPU 多半會將這些數字當做 32 位元來處理。 在 ARM 上則會實際採用指定的位元數。 這表示實際上這些數字在 HoloLens 2 上的精確度或範圍，可能會比在 HoloLens (第 1 代) 上來得少。
+- 著色器中的 minfloat (和 min16float、minint 等變化) 在 HoloLens 2 上和在 HoloLens (第一代) 上的行為可能會不一樣。 具體來說，這些數字會保證至少會使用指定的位元數。 Intel/Nvidia GPU 多半會將這些數字當作 32 位元來處理。 在 ARM 上則會實際採用指定的位元數。 這表示實際上這些數字在 HoloLens 2 上的精確度或範圍，可能會比在 HoloLens (第 1 代) 上來得少。
 
 - _asm 指令似乎無法在 ARM 上運作，這表示任何使用 _asm 指令的程式碼必須重寫。
 
 - ARM 不支援 SIMD 指令集，因為在 ARM 上無法使用 xmmintrin.h、emmintrin.h、tmmintrin.h 和 immintrin.h 等多種標頭。
 
-- ARM 上的著色器編譯器會在第一次繪製呼叫期間，於著色器已載入或著色器所相依的某個項目有所變更後執行，而不是在著色器載入時執行。 視需要編譯的著色器數目多寡而定，畫面播放速率所受到的影響可能會非常明顯。 對於在 HoloLens 2 和 HoloLens (第 1 代) 上應該如何以不同方式處理、封裝、更新著色器，這一點會產生不同的影響。
+- ARM 上的著色器編譯器會在第一次繪製呼叫期間，於著色器已載入或著色器所相依的某個項目有所變更後執行，而不是在著色器載入時執行。 視需要編譯的著色器數目多寡而定，畫面播放速率所受到的影響可能很明顯。 對於在 HoloLens 2 和 HoloLens (第 1 代) 上應該如何以不同方式處理、封裝、更新著色器，這一點會產生不同的影響。
 
 ## <a name="see-also"></a>另請參閱
 * [安裝工具](install-the-tools.md)

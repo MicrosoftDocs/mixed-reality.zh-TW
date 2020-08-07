@@ -3,28 +3,26 @@ title: Unity 開發概觀
 description: 開始在 Unity 中建置混合實境應用程式。
 author: thetuvix
 ms.author: kurtie
-ms.date: 10/25/2018
+ms.date: 07/29/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unity, 混合實境, 開發, 開始使用, 新專案, 移植, 功能, 相機, 模擬, 模擬, 文件
-ms.openlocfilehash: e0fe775f5fe891416145d91e52a5a801e049c568
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: 4679e1a2b58a7e0d77e6b295803624a4de1fac19
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81433414"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476710"
 ---
 # <a name="unity-development-overview"></a>Unity 開發概觀
 
 建置[混合實境應用程式](app-views.md)的最快速路徑是透過 [Unity](https://unity.com)。 我們建議您花一些時間來探索 [Unity 教學課程](https://unity3d.com/learn/tutorials)。 如果您需要資產，Unity 具有完整的[資產存放區](https://www.assetstore.unity3d.com/)。 建立 Unity 的基本了解之後，您可以造訪[教學課程](tutorials.md)，了解使用 Unity 進行混合實境開發的細節。 請務必造訪 [Unity 混合實境論壇](https://forum.unity3d.com/forums/hololens.102/)，與在 Unity 中建置混合實境應用程式的其他人互動，並找出您所遇到問題的解決方案。
 
-若要開始使用 Unity 建置混合實境應用程式，請先[安裝工具](install-the-tools.md)。 
-
->[!VIDEO https://channel9.msdn.com/Shows/Docs-Mixed-Reality/Setting-up-your-HoloLens-2-development-environment/player?format=ny]
+若要開始使用 Unity 建置混合實境應用程式，請先[安裝工具](install-the-tools.md)。
 
 ## <a name="new-unity-project-with-mixed-reality-toolkit"></a>使用混合實境工具組的新 Unity 專案 
 
-在 Unity 中開發最簡單的方式，就是使用混合實境工具組。 這個工具組可協助您自動設定專案，並提供一組混合實境功能來加速您的開發。 請查看[混合實境工具組 v2](mrtk-getting-started.md) 以深入了解並開始使用。 
+在 Unity 中開發的最簡單方法就是使用混合實境工具組，其可協助您自動設定專案，並提供一組混合實境功能來加速您的開發。 請查看[混合實境工具組 v2](mrtk-getting-started.md) 以深入了解並開始使用。 
 
 ## <a name="porting-an-existing-unity-app-to-windows-mixed-reality"></a>將現有的 Unity 應用程式移植到 Windows Mixed Reality
 
@@ -32,7 +30,7 @@ ms.locfileid: "81433414"
 
 ## <a name="configuring-new-unity-project-for-windows-mixed-reality"></a>設定適用於 Windows Mixed Reality 的新 Unity 專案
 
-如果您想要在未匯入混合實境工具組的情況下建立新的 Unity 專案，則您需要為 Windows Mixed Reality 手動變更一小組 Unity 設定。 這些設定分成兩個類別：每個專案和每個場景。 請參閱這裡以取得[設定適用於 Windows Mixed Reality 的新 Unity 專案](Configure-Unity-Project.md)的逐步指南
+如果您要在未匯入混合實境工具組的情況下建立新的 Unity 專案，則需要為 Windows Mixed Reality 變更一小組 Unity 設定。 這些設定分成兩個類別：每個專案和每個場景。 請參閱這裡以取得[設定適用於 Windows Mixed Reality 的新 Unity 專案](Configure-Unity-Project.md)的逐步指南
 
 ## <a name="adding-mixed-reality-capabilities-and-inputs"></a>新增混合實境功能和輸入
 
@@ -76,10 +74,10 @@ ms.locfileid: "81433414"
 除了可以在 docs.microsoft.com 上取得的本文件之外，Unity 還會隨著 Unity 編輯器一起安裝 Windows Mixed Reality 功能的文件。 Unity 提供的文件包含兩個不同的區段：
 1. **Unity 指令碼參考**
     * 文件中的此區段包含 Unity 所提供 API 指令碼的詳細資料。
-    * 透過 [說明 > 指令碼參考]  ，可以從 Unity 編輯器存取
+    * 透過 [說明 > 指令碼參考]，可以從 Unity 編輯器存取
 2. **Unity 手冊**
     * 本手冊的設計目的是協助您了解如何從基本到進階技術來使用 Unity。
-    * 透過 [說明 > 手冊]  ，可以從 Unity 編輯器存取
+    * 透過 [說明 > 手冊]，可以從 Unity 編輯器存取
 
 ## <a name="see-also"></a>另請參閱
 * [混合實境工具組 v2](mrtk-getting-started.md)

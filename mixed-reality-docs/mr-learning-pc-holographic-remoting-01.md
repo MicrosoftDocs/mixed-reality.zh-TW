@@ -3,16 +3,16 @@ title: 電腦全像攝影遠端處理教學課程 - 1。 開始使用電腦全�
 description: 完成此課程，以了解如何從電腦到 HoloLens 2 進行遠端混合實境體驗。
 author: jessemcculloch
 ms.author: jemccull
-ms.date: 05/19/2020
+ms.date: 07/29/2020
 ms.topic: article
 keywords: 混合實境, unity, 教學課程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: cbbad9548abeb1b8392b99d187b5b051d5b4ddd4
-ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
+ms.openlocfilehash: 4929634d70a082e835eb7bd6b5680719338a5e92
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86304814"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476970"
 ---
 # <a name="1-getting-started-with-pc-holographic-remoting"></a>1.開始使用電腦全像攝影遠端處理
 
@@ -38,10 +38,11 @@ ms.locfileid: "86304814"
 * 已[針對開發而設定](using-visual-studio.md#enabling-developer-mode)的 HoloLens 2 裝置
 * <a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity Hub</a>，已掛接 Unity 2019.3.X，且已新增通用 Windows 平台組建支援模組
 
->[!強烈建議] 完成使用者入門教學課程系列或一些基本的 Unity 和 MRTK 體驗
+**強烈建議**先完成[使用者入門](mr-learning-base-01.md)教學課程系列或一些基本的 Unity 和 MRTK 體驗，再繼續執行。
 
 > [!IMPORTANT]
-> 本教學課程系列的建議 Unity 版本是 Unity 2019.3.X。 這個版本能取代上述連結必要條件中所述的任何 Unity 版本需求或建議。
+> * 本教學課程系列的建議 Unity 版本是 Unity 2019.3.X。 這個版本能取代上述連結必要條件中所述的任何 Unity 版本需求或建議。
+> * 透過 MRTK 專案進行全像攝影遠端處理只會使用舊版 XR。 目前不支援 XR SDK。
 
 ## <a name="creating-and-preparing-the-unity-project"></a>建立和準備 Unity 專案
 
@@ -168,11 +169,11 @@ ms.locfileid: "86304814"
 
 在本節中，您將探索如何在專案中啟用眼球追蹤。 例如，您將會實作功能以在查看 MarsCuriosityRover 組件時醒目提示附加至其中的工具提示，並且在您移開視線時將其隱藏。
 
-### <a name="1-identify-target-objects-and-associated-tooltips"></a>1.識別目標物件和相關聯的工具提示。
+### <a name="1-identify-target-objects-and-associated-tooltips"></a>1.識別目標物件和相關聯的工具提示
 
 在 [階層] 視窗中，選取 [ModelParent] 物件。 展開 [MarsCuriosity] -> [Rover]，以尋找 MarsCuriosityRover 的五個主要組件：**POI-Camera**、**POI-Wheels**、**POI-Antena**、**POI-Spectrometer**、**POI-RUHF Antenna**。
 
-* 觀察與 [階層] 視窗中 MarsCuriosityRover 組件相關聯的五個對應工具提示物件。 
+* 觀察與 [階層] 視窗中 MarsCuriosityRover 組件相關聯的五個對應工具提示物件。
 * 當您查看 MarsCuriosityRover 組件時，將會設定這些物件以醒目提示體驗。
 
 ![mrlearning-pc-holographic-remoting](images/mrlearning-pc-holographic-remoting/Tutorial1-Section6-Step1-1.png)

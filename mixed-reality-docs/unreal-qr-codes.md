@@ -7,12 +7,12 @@ ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合實境, 開發, 功能, 文件, 指南, holograms, qr 代碼
-ms.openlocfilehash: cf6c113f6bf4a13a96f46d6420a3093966455c3b
-ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
+ms.openlocfilehash: a53fad14ab76136f1da419379dd39eca3a29701a
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84720384"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376100"
 ---
 # <a name="qr-codes-in-unreal"></a>Unreal 中的 QR 代碼
 
@@ -32,6 +32,8 @@ HoloLens 2 可以使用網路攝影機查看世界空間中的 QR 代碼，這�
     + 展開 [功能] 區段，並勾選 [網路攝影機]。  
 
 您也必須[新增 ARSessionConfig 資產](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch3#adding-the-session-asset)，來加入 QR 代碼追蹤。
+
+在使用之前，您應藉由呼叫 `UHoloLensARFunctionLibrary::StartQRCodeCapture()`來手動啟用追蹤。 在結束 QR 代碼追蹤之後，您應經由 `UHoloLensARFunctionLibrary::StopCameraCapture()` 將其停用，以儲存裝置資源。 
 
 ## <a name="setting-up-a-tracked-image"></a>設定追蹤的影像
 

@@ -7,12 +7,12 @@ ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合實境, 教學課程, 開始使用, mrtk, uxt, UX 工具, 文件
-ms.openlocfilehash: 473f47884bbc492451007436f80e8d9762cf1ab7
-ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
+ms.openlocfilehash: e81da5a4550f258b629443df9b2b655d81108c21
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84720254"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376360"
 ---
 # <a name="5-adding-a-button--resetting-piece-locations"></a>5.新增按鈕並重設棋子位置
 
@@ -59,8 +59,8 @@ ms.locfileid: "84720254"
     
 從這裡開始，您會想要呼叫 **WhiteKing** 的 **Reset Location** 函式，該函式需要參考層級中的 **WhiteKing** 動作項目。 
 
-1.  向下捲動至 [詳細資料] 面板中的 [變數] 區段、按一下 **+** 按鈕，並將變數命名為 **WhiteKing**。 
-    * 選取 [變數類型] 旁的下拉式清單，並搜尋 **WhiteKing**，然後選取 [物件參考]。 
+1.  在 [我的藍圖] 面板中，瀏覽至 [變數] 區段、按一下 **+** 按鈕，並將變數命名為 **WhiteKing**。 
+    * 在 [詳細資料] 面板中，選取 [變數類型] 旁的下拉式清單，搜尋 **WhiteKing**，然後選取 [物件參考]。 
     * 勾選 [可編輯執行個體] 旁的方塊。 這可讓您從主要層級設定變數。 
 
 ![建立變數](images/unreal-uxt/5-var.PNG)

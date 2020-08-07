@@ -7,12 +7,12 @@ ms.date: 7/13/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: HoloLens, 模擬器
-ms.openlocfilehash: e7c89cc2d839edc46a73a765acad603341b52716
-ms.sourcegitcommit: 3c867622e99c07f95db92e88551d2b904ceb8def
+ms.openlocfilehash: 597a0a9103f8313d26449b996c1e7af6f5619b2c
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86383070"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376660"
 ---
 # <a name="using-the-hololens-emulator"></a>使用 HoloLens 模擬器
 
@@ -253,6 +253,8 @@ HoloLens (第 1 代) 上的游標會跟著頭部的移動和旋轉。 在 HoloLe
 
 * 在解除安裝 HoloLens 2 模擬器時，硬碟映像 (Flash.vhdx) 可能會遺留在硬碟上的 Windows Kits\10\Emulation\HoloLens\<build number> 資料夾中。  您可以放心地刪除此檔案。
 * 硬體圖形加速可能會使全像攝影應用程式在某些搭載 AMD 或 Intel 顯示卡的系統上當機。  在模擬器的 [工具] 視窗中停用硬體圖形加速可解決此問題。
+* 安裝截至 2020 年 7 月為止的最新 Windows 更新之後，HoloLens 模擬器 (第一代) 中的硬體圖形加速功能可能無法再使用。
+硬體圖形加速所需的 RemoteFX 元件已經淘汰，將在未來的 Windows 版本中移除。  若要重新啟用硬體圖形加速，請使用 [Enable-VMRemoteFXPhysicalVideoAdapter PowerShell cmdlet](https://docs.microsoft.com/powershell/module/hyper-v/enable-vmremotefxphysicalvideoadapter?view=win10-ps)。  如需其他資訊，請參閱 [Windows 中 RemoteFX 支援淘汰和移除相關文件](https://support.microsoft.com/help/4570006/update-to-disable-and-remove-the-remotefx-vgpu-component)。 
 
 ## <a name="troubleshooting"></a>疑難排解
 

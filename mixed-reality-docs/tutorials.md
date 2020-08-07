@@ -1,27 +1,27 @@
 ---
 layout: LandingPage
-title: 教學課程和範例應用程式
-description: 提供有關混合實境開發的程式碼範例和教學課程。
+title: 教學課程
+description: 提供有關混合實境開發的教學課程。
 author: keveleigh
 ms.author: kurtie
-ms.date: 10/22/2019
+ms.date: 07/30/2020
 ms.topic: article
 ms.localizationpriority: high
-keywords: holotoolkit, mixedrealitytoolkit, mixedrealitytoolkit-unity, 學院, 教學課程
-ms.openlocfilehash: b1c448e7a5289c6d099d73c3bcf18d0f552dbc51
-ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
+keywords: mixedrealitytoolkit, mixedrealitytoolkit-unity, 學院, 教學課程
+ms.openlocfilehash: dc446be531e2a2fa1b27cdaefbf3adfeb7814740
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86303649"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87477000"
 ---
-# <a name="tutorials-and-sample-apps"></a>教學課程和範例應用程式
+# <a name="tutorials"></a>教學課程 
 
 ![HoloLens 2 使用者](images/08_Tutorials.png)
 
 目前，我們所有的教學課程和範例應用程式都是以 Unity 或 Unreal 為基礎。 隨著我們開發其他引擎和平台的內容，您會在目錄中的相關標題底下找到它們。
 
-## <a name="hololens-2-tutorials"></a>HoloLens 2 教學課程
+## <a name="hololens-2"></a>HoloLens 2 
 
 HoloLens 2 教學課程的設計目的是協助開發人員了解開發混合實境應用程式的技術和最佳做法。 Unity 教學課程是根據[混合實境工具組 2.0 (MRTK 2.0)](https://github.com/microsoft/MixedRealityToolkit-Unity)，Unreal 教學課程是根據[適用於 Unreal Engine 的 UX 工具 0.8](https://github.com/microsoft/MixedReality-UXTools-Unreal)。
 
@@ -32,21 +32,7 @@ HoloLens 2 教學課程的設計目的是協助開發人員了解開發混合實
 * 多使用者功能教學課程 - [5 之 1 簡介](mr-learning-sharing-01.md)
 * Azure 語音服務教學課程 - [整合並使用語音辨識和文字記錄 4 之 1](mrlearning-speechSDK-ch1.md)
 
-## <a name="open-source-sample-apps"></a>開放原始碼範例應用程式
-
-開放原始碼範例應用程式是由我們的小組所建立，我們提供了原始程式碼，讓開發人員可以從我們的專案中查看並學習。
-
-### <a name="hololens-2-open-source-sample-apps"></a>HoloLens 2 開放原始碼範例應用程式
-* [表面](sampleapp-surfaces.md)
-* [元素週期表 2.0](https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158)
-* [Galaxy Explorer 2.0](galaxy-explorer-update.md)
-
-### <a name="hololens-1st-gen-open-source-sample-apps"></a>HoloLens (第 1 代) 開啟原始碼範例應用程式
-* [元素週期表 1.0](periodic-table-of-the-elements.md)
-* [Galaxy Explorer 1.0](galaxy-explorer.md)
-* [月球模組](lunar-module.md)
-
-## <a name="mixed-reality-academy-tutorials"></a>混合實境學院教學課程
+## <a name="mixed-reality-academy"></a>混合實境學院 
 
 「混合實境學院」是具有對應專案檔案的一組線上逐步教學課程：
 

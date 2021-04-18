@@ -17,7 +17,7 @@ ms.locfileid: "81278439"
 
 ## <a name="what-is-webxr"></a>什麼是 WebXR
 
-**WebXR 裝置 API**是用來存取**虛擬實境（VR）** 和增強的**現實（AR）** 裝置，**包括感應器**和**網路**上的前端**裝載顯示器**。 WebXR 裝置 API 目前可在 Microsoft Edge 和 Chrome 79 版和更新版本上取得，並支援 WebXR 作為預設值。 您可以在[caniuse.com](https://caniuse.com/#search=webxr)檢查 WebXR 的最新瀏覽器支援狀態。
+**WebXR 裝置 API**是用來存取**虛擬實境（VR）** 和 **擴增實境（AR）** 裝置，**包括感應器**和**網路**上的前端**裝載顯示器**。 WebXR 裝置 API 目前可在 Microsoft Edge 和 Chrome 79 版和更新版本上取得，並支援 WebXR 作為預設值。 您可以在[caniuse.com](https://caniuse.com/#search=webxr)檢查 WebXR 的最新瀏覽器支援狀態。
 
 在[新功能](https://docs.microsoft.com/windows/mixed-reality/mrtk-porting-guide)一節中深入瞭解[Windows Mixed Reality 和新的 Microsoft Edge](https://docs.microsoft.com/windows/mixed-reality/new-microsoft-edge#introducing-the-new-microsoft-edge)。
 

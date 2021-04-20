@@ -48,14 +48,13 @@ ms.locfileid: "75694002"
 ---
 
 ## <a name="button-in-mrtkmixed-reality-toolkit-for-unity"></a>適用於 Unity 的 MRTK (混合實境工具套件) 中的按鈕
-**[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 提供各種的預製合成 (Prefab) 按鈕。 您可以搜尋 HoloLens 2 和 HoloLens (第1代) 的 Shell 樣式按鈕，以及更多的自訂範例。 在 HoloLens 2 當中的預製合成 (Prefab) 按鈕包含更多詳細的視覺上的顯目提醒和操作提示，可幫助與提昇使用者的操作信心:
+**[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 提供各種的預製合成 (Prefab) 按鈕。 您可以找到 HoloLens 2 和 HoloLens (第1代) 中使用 Shell 樣式設計的按鈕，以及更多的自訂範例。 而在 HoloLens 2 當中的預製合成 (Prefab) 按鈕包含更多詳細的視覺上的顯目提醒和操作提示，可幫助與提昇使用者的操作信心，其中包含:
 
-* 其中包含以移動靠近時為基礎的相關顯目提醒。
+* 以移動靠近時為基礎的相關顯目提醒。
 * 按壓的操作提示。
 * 引發控制時的選取提示。
 
 可前往 [MRTK-按鈕](https://docs.microsoft.com/windows/mixed-reality/mrtk-unity/features/ux-building-blocks/button) 了解更多指引資訊與有關客製化按鈕的範例。
-
 
 
 <br>
